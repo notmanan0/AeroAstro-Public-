@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.8.2–8.8.3", "MA
 ## Definition
 
 > [!note] Definition
+>
 > $$\int f(g(x))\,g'(x)\,\mathrm dx=\int f(u)\,\mathrm du,\qquad u=g(x);\qquad\int_a^b\cdots\,\mathrm dx=\int_{g(a)}^{g(b)}\cdots\,\mathrm du$$
 
 ## Explanation

@@ -17,7 +17,9 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf"]
 
 > [!note] Definition
 > A conductor of active length $L$ cutting a field $B$ at speed $u$ (with $N$ turns):
+>
 > $$\mathcal E = NBLu$$
+>
 > In a rotating machine $u = \omega D/2$, and a coil has two active sides.
 
 ## Explanation

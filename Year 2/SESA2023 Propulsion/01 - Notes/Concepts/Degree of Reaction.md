@@ -16,15 +16,20 @@ sources: ["02 - Sources/Lectures/Week 08 - Turbomachinery Principles.pdf"]
 
 > [!note] Definition
 > The fraction of a stage's static-enthalpy (≈ pressure) change that happens in the **rotor**:
+>
 > $$R = \frac{h_2-h_1}{h_3-h_1}$$
+>
 > For a constant-$V_x$ repeating stage ($\alpha_3 = \alpha_1$):
+>
 > $$R = -\frac{\phi}{2}(\tan\alpha_{1,rel}+\tan\alpha_{2,rel}) = 1-\frac{\phi}{2}(\tan\alpha_1+\tan\alpha_2)$$
 
 ## Explanation
 - **50 % reaction** gives **mirror-image blading**: the stator is the rotor reflected, so $\alpha_1 = -\alpha_{2,rel}$ and $\alpha_2 = -\alpha_{1,rel}$. The velocity triangles are symmetric, and the static pressure rise is shared equally. It is a good starting point for axial compressors: blade loading is balanced, and it is an acceptable choice (the lecture calls it "mirror blading"). Real machines don't have to use it.
 - For **incompressible, loss-free** flow in a blade row, $\Delta p/(\rho U^2) = \Delta h/U^2$.
 - **Solving a 50 % stage from $\phi$ and $\psi$**:
+
   $$\tan\alpha_1+\tan\alpha_2 = \frac{1}{\phi},\qquad\tan\alpha_2-\tan\alpha_1 = \frac{\psi}{\phi}$$
+
 - The first rotor of a 50 % machine needs inlet swirl, so **inlet guide vanes** are required.
 
 ## Examples

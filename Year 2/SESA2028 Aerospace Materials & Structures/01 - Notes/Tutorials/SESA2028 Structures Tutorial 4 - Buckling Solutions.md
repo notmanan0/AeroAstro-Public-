@@ -115,7 +115,7 @@ $$
 Set this equal to $\sigma_{allow}$ and solve for $a_0$:
 
 $$
-a_0=left(\sigma_{allow}-\frac PA\right)
+a_0=\left(\sigma_{allow}-\frac PA\right)
 \frac{I}{Pc}\left(1-\frac P{P_E}\right)
 =\boxed{6.65\ \mathrm{mm}}.
 $$

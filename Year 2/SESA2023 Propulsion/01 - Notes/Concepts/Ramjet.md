@@ -22,7 +22,9 @@ sources: ["02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 - $p_{04} = p_{01}$ and $p_4 = p_a$, so the exit temperature ratio equals the inlet one and **$M_e = M_0$**.
 - $V_e = M_0\sqrt{\gamma RT_{03}/(1+\tfrac{\gamma-1}{2}M_0^2)}$.
 - Specific thrust:
+
   $$\frac{F}{\dot m_a} = (1+f)V_e-V_0 = M_0\sqrt{\gamma RT_a}\left[(1+f)\sqrt{\frac{T_{03}}{T_a(1+\frac{\gamma-1}{2}M_0^2)}}-1\right]$$
+
   This derivation is asked in 2018-19 Q4(ii).
 
 **"Given $f$ and $T_{max}$, find the flight speed"** (a classic 2013–18 question):

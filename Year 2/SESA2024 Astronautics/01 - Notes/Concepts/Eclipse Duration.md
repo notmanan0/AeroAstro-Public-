@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - com
 
 > [!note] Definition
 > For a circular orbit of radius $a$, the **worst-case** eclipse (Earth–Sun vector in the orbit plane, cylindrical shadow) is
+>
 > $$t_e = \frac{180^\circ-2\rho}{360^\circ}\,\tau,\qquad \cos\rho = \frac{R_E}{a}\ \ (\text{the lecture's }\alpha),\qquad t_s = \tau-t_e$$
 
 ## Explanation

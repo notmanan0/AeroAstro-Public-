@@ -38,7 +38,9 @@ sources: ["tmp/md/module_12_differential_equations_ii.md", "02 - Sources/Modern 
 
 ## Example 10.14: $t^2\dot x=x^2+xt$ (homogeneous type)
 Divide by $t^2$: $\dot x=\big(\tfrac xt\big)^2+\tfrac xt$. This is a function of $x/t$ only. Put $x=vt$, so $\dot x=v+t\dot v$:
+
 $$v+t\dot v=v^2+v\ \Rightarrow\ t\dot v=v^2\ \Rightarrow\ \int\frac{\mathrm dv}{v^2}=\int\frac{\mathrm dt}t\ \Rightarrow\ -\frac1v=\ln t+C$$
+
 $$\boxed{x=\frac{t}{A-\ln t}}$$
 
 ## Example 10.16: $(\ln\sin t-3x^2)\dot x+x\cot t+4t=0$ (exact)
@@ -51,12 +53,16 @@ Here $f=\ln\sin t-3x^2$ and $g=x\cot t+4t$.
 - Then $F_t=x\cot t+h'(t)$. This must equal $x\cot t+4t$, so $h'=4t$ and $h=2t^2$.
 
 $$\boxed{x\ln\sin t-x^3+2t^2=C}$$
+
 The solution is left implicit, which is normal for exact equations.
 
 ## Example 10.17: $\dot x+tx=t$ (linear, integrating factor)
 The integrating factor is $\mu=e^{\int t\,\mathrm dt}=e^{t^2/2}$. Multiplying through turns the left side into an exact derivative:
+
 $$\frac{\mathrm d}{\mathrm dt}\big(xe^{t^2/2}\big)=te^{t^2/2}\ \Rightarrow\ xe^{t^2/2}=e^{t^2/2}+C$$
+
 $$\boxed{x=1+Ce^{-t^2/2}}$$
+
 Every solution decays to the equilibrium $x=1$. (The equation is also separable: $\dot x=t(1-x)$.)
 
 ---
@@ -65,19 +71,27 @@ Every solution decays to the equilibrium $x=1$. (The equation is also separable:
 
 ## Exercise 18(b): $x^2\dot x=\dfrac{t^3+x^3}{t}$
 Divide by $x^2$: $\dot x=\dfrac{t^2}{x^2}+\dfrac xt$. Every term depends only on $x/t$, so it is homogeneous. Put $x=vt$:
+
 $$v+t\dot v=\frac1{v^2}+v\ \Rightarrow\ v^2\,\mathrm dv=\frac{\mathrm dt}t\ \Rightarrow\ \tfrac13v^3=\ln t+c$$
+
 $$\boxed{x^3=t^3(3\ln t+C)}\quad\text{i.e. }x=t\,(3\ln t+C)^{1/3}$$
 
 ## Exercise 20(d): $t\dot x=x+t\tan(x/t)$
 $\dot x=\frac xt+\tan\frac xt$. With $x=vt$:
+
 $$t\dot v=\tan v\ \Rightarrow\ \int\cot v\,\mathrm dv=\int\frac{\mathrm dt}t\ \Rightarrow\ \ln|\sin v|=\ln t+c\ \Rightarrow\ \sin v=At$$
+
 $$\boxed{x=t\sin^{-1}(At)}$$
 
 ## Exercise 21(b): $xt\dot x=2(x^2+t^2)$, $x(2)=-1$
 $\dot x=\dfrac{2x}t+\dfrac{2t}x$. With $x=vt$:
+
 $$t\dot v=v+\frac2v=\frac{v^2+2}v\ \Rightarrow\ \int\frac{v\,\mathrm dv}{v^2+2}=\int\frac{\mathrm dt}t\ \Rightarrow\ \tfrac12\ln(v^2+2)=\ln t+c\ \Rightarrow\ v^2+2=At^2$$
+
 So $x^2=At^4-2t^2$. At $t=2$: $1=16A-8$, so $A=\frac9{16}$. Since $x(2)<0$, take the negative root:
+
 $$\boxed{x=-t\sqrt{\tfrac{9}{16}t^2-2}=-\tfrac t4\sqrt{9t^2-32}}$$
+
 This is valid for $t>\sqrt{32}/3\approx1.886$.
 
 ## Exercise 23(e): $(x-t)\dot x-x+t-1=0$
@@ -90,6 +104,7 @@ Here $f=x-t$ and $g=-x+t-1$.
 - $F_t=-x+h'(t)=-x+t-1$, so $h=\tfrac12t^2-t$.
 
 So $F=\tfrac12x^2-tx+\tfrac12t^2-t=\tfrac12(x-t)^2-t$, and $F=C$ gives
+
 $$\boxed{(x-t)^2=2t+A\quad\Leftrightarrow\quad x=t\pm\sqrt{2t+A}}$$
 
 ## Exercise 24(d): $\cos t\,\dot x-x\sin t+1=0$, $x(0)=2$
@@ -98,6 +113,7 @@ Here $f=\cos t$ and $g=-x\sin t+1$.
 **Test**: $\partial f/\partial t=-\sin t=\partial g/\partial x$, so it is **exact** ✔. In fact the first two terms are $\frac{\mathrm d}{\mathrm dt}(x\cos t)$.
 
 **Find $F$**: $F=x\cos t+h(t)$, with $h'=1$, so $F=x\cos t+t=C$. The initial condition gives $C=2$:
+
 $$\boxed{x=\frac{2-t}{\cos t}}$$
 
 ## Exercise 25(b): $\sqrt t\,\dot x-xt=0$
@@ -107,20 +123,29 @@ Here $f=\sqrt t$ and $g=-xt$. Then $\partial f/\partial t=\dfrac1{2\sqrt t}$ but
 
 ## Exercise 31(c): $\dot x+2x=e^{-4t}$
 The integrating factor is $e^{2t}$:
+
 $$\frac{\mathrm d}{\mathrm dt}\big(xe^{2t}\big)=e^{-2t}\ \Rightarrow\ xe^{2t}=-\tfrac12e^{-2t}+C$$
+
 $$\boxed{x=Ce^{-2t}-\tfrac12e^{-4t}}$$
+
 **Check**: with $x_p=-\frac12e^{-4t}$, $\dot x_p+2x_p=2e^{-4t}-e^{-4t}=e^{-4t}$ ✔.
 
 ## Exercise 32(c): $\dot x-\dfrac xt=t^2-3$, $x(1)=-1$
 The integrating factor is $e^{-\int\mathrm dt/t}=e^{-\ln t}=\frac1t$:
+
 $$\frac{\mathrm d}{\mathrm dt}\Big(\frac xt\Big)=t-\frac3t\ \Rightarrow\ \frac xt=\tfrac12t^2-3\ln t+C$$
+
 At $t=1$: $-1=\frac12+C$, so $C=-\frac32$.
+
 $$\boxed{x=\tfrac12t^3-3t\ln t-\tfrac32t}$$
 
 ## Exercise 33(c): $\dot x+\dfrac{2x}{t}=\cos t$
 The integrating factor is $e^{\int2/t\,\mathrm dt}=t^2$:
+
 $$\frac{\mathrm d}{\mathrm dt}(t^2x)=t^2\cos t$$
+
 By parts twice, $\int t^2\cos t\,\mathrm dt=t^2\sin t+2t\cos t-2\sin t$. So
+
 $$\boxed{x=\sin t+\frac{2\cos t}{t}-\frac{2\sin t}{t^2}+\frac{C}{t^2}}$$
 
 ---
@@ -142,14 +167,20 @@ Rewrite it as $\dot x=t^2-\frac xt$.
 
 ## Q2: $\dot x+\frac2tx=t$, $x(1)=\frac14$
 The integrating factor is $e^{\int2/t}=t^2$:
+
 $$(t^2x)'=t^3\ \Rightarrow\ t^2x=\tfrac14t^4+C$$
+
 At $t=1$: $\frac14=\frac14+C$, so $C=0$:
+
 $$\boxed{x=\tfrac14t^2}$$
 
 ## Q3: $t^2\dot x=tx+x^2$ with $x=yt$
 $\dot x=\frac xt+\big(\frac xt\big)^2$. With $x=yt$, $\dot x=y+t\dot y$:
+
 $$y+t\dot y=y+y^2\ \Rightarrow\ \int\frac{\mathrm dy}{y^2}=\int\frac{\mathrm dt}t\ \Rightarrow\ -\frac1y=\ln t+c$$
+
 $$\boxed{x=\frac{t}{C-\ln t}}$$
+
 This is the same equation as Example 10.14.
 
 ## Q4: Exactness

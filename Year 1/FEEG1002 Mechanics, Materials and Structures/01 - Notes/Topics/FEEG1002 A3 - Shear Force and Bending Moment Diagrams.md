@@ -21,6 +21,7 @@ sources: ["02 - Sources/Statics 1/Lectures/Lecture 05 - Beams, Shear Force and B
 > [!abstract] Summary
 > A beam is a laterally loaded member that is slender compared with its length. Cut it anywhere, and the kept part needs an internal **shear force** $Q$ and **bending moment** $M$ to stay in equilibrium. The SF and BM diagrams plot these along the beam; the peak $|M|$ sets the bending stress and the peak $|Q|$ the shear stress.
 > Two differential relations let you sketch both diagrams almost by inspection:
+>
 > $$\frac{dQ}{dx} = -w(x),\qquad \frac{dM}{dx} = Q$$
 
 ## Key Concepts

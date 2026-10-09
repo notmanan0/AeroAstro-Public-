@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/CH3-2 Blasius and Falkner-Skan(1).pdf", "02 - S
 
 > [!note] Definition
 > For $U_e=cx^m$ (flow past a wedge of angle $\beta\pi$), the variables $\xi=\sqrt{2\nu x/((m+1)U_e)}$, $\eta=y/\xi$, $\psi=U_e\xi f(\eta)$ reduce the BL equations to
+>
 > $$f'''+ff''+\beta(1-f'^2)=0,\qquad\beta=\frac{2m}{m+1},\qquad f(0)=f'(0)=0,\ f'(\infty)=1,$$
+>
 > with $u/U_e=f'(\eta)$. $\beta=0$ is **Blasius** (flat plate): $f'''+ff''=0$.
 
 ## Key results (course scaling)

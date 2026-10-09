@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.3", "MATH1054 Mod
 ## Definition
 
 > [!note] Definition
+>
 > $$(uv)'=u'v+uv',\qquad\Big(\frac uv\Big)'=\frac{u'v-uv'}{v^2},\qquad\frac{\mathrm dy}{\mathrm dx}=\frac{\mathrm dy}{\mathrm du}\frac{\mathrm du}{\mathrm dx}$$
 
 ## Explanation

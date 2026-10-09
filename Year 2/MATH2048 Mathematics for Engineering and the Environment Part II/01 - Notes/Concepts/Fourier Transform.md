@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier and Laplace Transform/
 ## Definition
 
 > [!note] Definition (MATH2048 symmetric convention)
+>
 > $$F(\omega)=\frac1{\sqrt{2\pi}}\int_{-\infty}^\infty f(t)e^{-j\omega t}dt,\qquad f(t)=\frac1{\sqrt{2\pi}}\int_{-\infty}^\infty F(\omega)e^{j\omega t}d\omega$$
 
 ## Explanation

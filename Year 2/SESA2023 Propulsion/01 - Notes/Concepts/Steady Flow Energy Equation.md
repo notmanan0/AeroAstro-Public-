@@ -15,7 +15,9 @@ sources: ["02 - Sources/Lectures/Week 02 - Thermodynamics.pdf", "02 - Sources/Le
 ## Definition
 
 > [!note] Definition
+>
 > $$\dot Q-\dot W_x = \sum_{out}\dot m\left(h+\tfrac12V^2+gz\right)-\sum_{in}\dot m\left(h+\tfrac12V^2+gz\right)\;\Rightarrow\; q-w_x = h_{0,out}-h_{0,in}$$
+>
 > Here $\dot Q>0$ means heat added and $\dot W_x>0$ means shaft work done **by** the fluid.
 
 ## Explanation

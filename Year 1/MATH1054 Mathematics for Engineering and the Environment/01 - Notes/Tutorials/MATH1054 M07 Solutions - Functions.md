@@ -54,12 +54,17 @@ sources: ["tmp/md/module_07_functions.md", "02 - Sources/Modern Engineering Math
 
 ## Example 2.6: Inverse of $y=\frac15(4x-3)$
 Swap the roles by solving for $x$: $5y=4x-3$, so $x=\frac{5y+3}4$. Hence
+
 $$\boxed{f^{-1}(x)=\frac{5x+3}4}$$
+
 **Check**: $f(f^{-1}(x))=\frac15\big(5x+3-3\big)=x$ ✔
 
 ## Example 2.7: Inverse of $y=\frac{x+2}{x+1}$, $x\neq-1$
+
 $$y(x+1)=x+2\ \Rightarrow\ x(y-1)=2-y\ \Rightarrow\ x=\frac{2-y}{y-1}$$
+
 $$\boxed{f^{-1}(x)=\frac{2-x}{x-1},\quad x\neq1}$$
+
 The excluded value $x=1$ is the horizontal asymptote $y=1$ of $f$: its range omits 1.
 
 ## Example 2.8: Graphs of $f^{-1}$
@@ -72,7 +77,9 @@ The graph of $f^{-1}$ is the **reflection of the graph of $f$ in the line $y=x$*
 - **(c)** $f(x)=x^2$ is **not one-to-one** on $\mathbb R$ (e.g. $f(2)=f(-2)$), so it has no inverse there. Its reflection fails the vertical-line test. Restricting to $x\ge0$ gives $f^{-1}(x)=\sqrt x$.
 
 ## Example 2.9: Composite functions, $f=x^2+2x$, $g=x-1$
+
 $$f(g(x))=(x-1)^2+2(x-1)=\boxed{x^2-1},\qquad g(f(x))=\boxed{x^2+2x-1}$$
+
 Note that $f\circ g\neq g\circ f$ in general.
 
 ## Example 2.11: Odd, even or neither (Fig. 2.20)
@@ -118,14 +125,17 @@ The result is a **triangular wave** of amplitude $\frac\pi2$. It is *not* $y=x$.
 **(a)** $\log_232=\log_22^5=\boxed5$.
 
 **(b)** $\frac13\log_28=\frac13\cdot3=1$, and $\log_2\frac27=1-\log_27$. So
+
 $$\tfrac13\log_28-\log_2\tfrac27=1-(1-\log_27)=\boxed{\log_27\approx2.807}$$
 
 **(c)**
+
 $$\ln\frac{\sqrt{10x}}{y^2}=\boxed{\tfrac12\ln10+\tfrac12\ln x-2\ln y}$$
 
 **(d)** By the change of base formula, $\dfrac{\log_{10}32}{\log_{10}2}=\log_232=\boxed5$.
 
 **(e)**
+
 $$\frac{\log_3x}{\log_9x}=\frac{\ln x/\ln3}{\ln x/\ln9}=\frac{\ln9}{\ln3}=\frac{2\ln3}{\ln3}=\boxed2$$
 
 ## Example 2.58: $f=A\cosh2x+B\sinh2x$, $f(0)=5$, $f(1)=0$
@@ -133,23 +143,33 @@ $$\frac{\log_3x}{\log_9x}=\frac{\ln x/\ln3}{\ln x/\ln9}=\frac{\ln9}{\ln3}=\frac{
 - $f(1)=5\cosh2+B\sinh2=0$, so $B=-5\coth2$.
 
 Then
+
 $$f=\frac{5}{\sinh2}\big(\sinh2\cosh2x-\cosh2\sinh2x\big)=\boxed{\frac{5\sinh(2-2x)}{\sinh2}}$$
+
 This uses the addition formula $\sinh(a-b)=\sinh a\cosh b-\cosh a\sinh b$.
 
 ## Example 2.59: $5\cosh x+3\sinh x=4$
 Substitute the exponential definitions:
+
 $$\tfrac52(e^x+e^{-x})+\tfrac32(e^x-e^{-x})=4e^x+e^{-x}=4$$
+
 Multiply by $e^x$: $4e^{2x}-4e^x+1=(2e^x-1)^2=0$. So $e^x=\tfrac12$, giving
+
 $$\boxed{x=-\ln2\approx-0.6931}$$
+
 This is a repeated root: the curve just touches the line $y=4$.
 
 ## Example 2.60: $\tanh2x=\dfrac{2\tanh x}{1+\tanh^2x}$
 Let $t=\tanh x=\dfrac{e^x-e^{-x}}{e^x+e^{-x}}$. Then
+
 $$\frac{2t}{1+t^2}=\frac{2(e^x-e^{-x})(e^x+e^{-x})}{(e^x+e^{-x})^2+(e^x-e^{-x})^2}=\frac{2(e^{2x}-e^{-2x})}{2e^{2x}+2e^{-2x}}=\tanh2x\ ✔$$
+
 **Osborn's rule**: start from $\tan2x=\dfrac{2\tan x}{1-\tan^2x}$. Replace each trig function by its hyperbolic counterpart, and change the sign of any term containing a product of two sines. Now $\tan^2x=\sin^2x/\cos^2x$ contains $\sin^2$, so $-\tan^2x$ becomes $+\tanh^2x$. This gives exactly the identity above ✔.
 
 ## Example 2.61: Inverse hyperbolics via logs (4 s.f.)
+
 $$\sinh^{-1}x=\ln\big(x+\sqrt{x^2+1}\big),\quad\cosh^{-1}x=\ln\big(x+\sqrt{x^2-1}\big)\ (x\ge1),\quad\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}\ (|x|<1)$$
+
 **(a)** $\sinh^{-1}0.5=\ln(0.5+\sqrt{1.25})=\ln1.61803=\boxed{0.4812}$.
 **(b)** $\cosh^{-1}3=\ln(3+\sqrt8)=\ln5.82843=\boxed{1.763}$.
 **(c)** $\tanh^{-1}(-0.4)=\tfrac12\ln\dfrac{0.6}{1.4}=\boxed{-0.4236}$.
@@ -169,10 +189,13 @@ Parts (a)–(e) and 8.18(a) are worked in [[MATH1054 M03 Solutions - Differentia
 **(b)** $\dfrac{\mathrm d}{\mathrm dx}\cosh^2x=2\cosh x\sinh x=\boxed{\sinh2x}$.
 
 **(c)** By the product rule:
+
 $$\frac{\mathrm d}{\mathrm dx}e^{-3x}\sinh3x=-3e^{-3x}\sinh3x+3e^{-3x}\cosh3x=3e^{-3x}(\cosh3x-\sinh3x)=3e^{-3x}e^{-3x}=\boxed{3e^{-6x}}$$
+
 This uses $\cosh u-\sinh u=e^{-u}$. Equivalently, $e^{-3x}\sinh3x=\tfrac12(1-e^{-6x})$.
 
 **(d)** With $\frac{\mathrm d}{\mathrm du}\sinh^{-1}u=\frac1{\sqrt{1+u^2}}$ and $u=\frac{3x}4$:
+
 $$\frac{3/4}{\sqrt{1+9x^2/16}}=\boxed{\frac{3}{\sqrt{16+9x^2}}}$$
 
 ---
@@ -238,26 +261,33 @@ Use $\cosh^2x-\sinh^2x=1$.
 
 ## Exercise 35(a),(c),(f) (p.586): Inverse-trig derivatives
 **(a)**
+
 $$\frac{\mathrm d}{\mathrm dx}\sin^{-1}\frac x2=\frac{1/2}{\sqrt{1-x^2/4}}=\boxed{\frac1{\sqrt{4-x^2}}}$$
 
 **(c)** By the product rule:
+
 $$\frac{\mathrm d}{\mathrm dx}\Big[\sqrt{1+x^2}\tan^{-1}x\Big]=\frac{x}{\sqrt{1+x^2}}\tan^{-1}x+\frac{\sqrt{1+x^2}}{1+x^2}=\boxed{\frac{1+x\tan^{-1}x}{\sqrt{1+x^2}}}$$
 
 **(f)** By the product rule:
+
 $$\frac{\mathrm d}{\mathrm dx}\Big[\sqrt{1-x^2}\sin^{-1}x\Big]=-\frac{x\sin^{-1}x}{\sqrt{1-x^2}}+\frac{\sqrt{1-x^2}}{\sqrt{1-x^2}}=\boxed{1-\frac{x\sin^{-1}x}{\sqrt{1-x^2}}}$$
 
 ## Exercise 40(c),(d) (p.591)
 **(c)** $\dfrac{\mathrm d}{\mathrm dx}x^3\cosh2x=\boxed{3x^2\cosh2x+2x^3\sinh2x}$.
 
 **(d)**
+
 $$\frac{\mathrm d}{\mathrm dx}\ln\big(\cosh\tfrac12x\big)=\frac{\tfrac12\sinh\tfrac12x}{\cosh\tfrac12x}=\boxed{\tfrac12\tanh\tfrac12x}$$
 
 ## Exercise 41(a),(b) (p.591)
 **(a)**
+
 $$\frac{\mathrm d}{\mathrm dx}\sinh^{-1}2x=\boxed{\frac{2}{\sqrt{1+4x^2}}}$$
 
 **(b)** $\cosh^{-1}(2x^2-1)$. The argument must be $\ge1$, so we need $|x|\ge1$. Using $\frac{\mathrm d}{\mathrm du}\cosh^{-1}u=\frac1{\sqrt{u^2-1}}$:
+
 $$\frac{4x}{\sqrt{(2x^2-1)^2-1}}=\frac{4x}{\sqrt{4x^4-4x^2}}=\frac{4x}{2|x|\sqrt{x^2-1}}=\boxed{\frac{2}{\sqrt{x^2-1}}\ (x>1)}$$
+
 For $x<-1$, the derivative is $-\dfrac{2}{\sqrt{x^2-1}}$.
 
 ---
@@ -275,6 +305,7 @@ For $x<-1$, the derivative is $-\dfrac{2}{\sqrt{x^2-1}}$.
 ![[m1054_arccos_specimen.png|520]]
 
 ## Q3: Simplify $y=\exp\{\ln x-\tfrac12\ln(x-3)\}$ for $x>3$
+
 $$y=\exp\Big\{\ln\frac{x}{\sqrt{x-3}}\Big\}=\boxed{\frac{x}{\sqrt{x-3}}}$$
 
 ## Q4: $\sinh x=-\tfrac5{12}$
@@ -286,15 +317,20 @@ $$y=\exp\Big\{\ln\frac{x}{\sqrt{x-3}}\Big\}=\boxed{\frac{x}{\sqrt{x-3}}}$$
 **(i)** $\sinh y=\dfrac{e^y-e^{-y}}2$.
 
 **(ii)** $x=\dfrac{e^y-e^{-y}}2$. Multiply by $2e^y$: $2xe^y=e^{2y}-1$, which rearranges to
+
 $$\boxed{(e^y)^2-2x\,e^y-1=0}$$
 
 **(iii)** Solve this quadratic in $e^y$:
+
 $$e^y=\frac{2x\pm\sqrt{4x^2+4}}2=x\pm\sqrt{x^2+1}$$
+
 Since $\sqrt{x^2+1}>|x|$, the minus sign gives a **negative** value. That is impossible, because $e^y>0$. So $e^y=x+\sqrt{x^2+1}$, and
+
 $$\boxed{\sinh^{-1}x=y=\ln\big(x+\sqrt{x^2+1}\big)}$$
 
 ## Q6: Differentiate
 **(i)**
+
 $$\frac{\mathrm d}{\mathrm dx}\tan^{-1}4x=\frac{4}{1+(4x)^2}=\boxed{\frac{4}{1+16x^2}}$$
 
 **(ii)** $\dfrac{\mathrm d}{\mathrm dx}x^3\sinh x=\boxed{3x^2\sinh x+x^3\cosh x}$.

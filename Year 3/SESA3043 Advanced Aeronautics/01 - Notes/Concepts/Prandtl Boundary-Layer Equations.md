@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/CH1-4 2D Incompressible BL(1).pdf"]
 
 > [!note] Definition
 > Steady, 2-D, incompressible, thin layer ($\delta\ll L$):
+>
 > $$\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0,\qquad u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}=U_e\frac{\mathrm dU_e}{\mathrm dx}+\nu\frac{\partial^2u}{\partial y^2},\qquad\frac{\partial p}{\partial y}=0.$$
+>
 > Boundary conditions: $u=v=0$ at $y=0$; $u\to U_e(x)$ at the edge.
 
 ## What was dropped, and why

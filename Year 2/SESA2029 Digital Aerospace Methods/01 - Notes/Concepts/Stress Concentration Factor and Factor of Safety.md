@@ -16,7 +16,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_5_Mimimum_Potnetial_Energy.pdf", "0
 ## Definition
 
 > [!note] Definition
+>
 > $$K_t = \frac{\sigma_{max}}{\sigma_{bulk}},\qquad FoS = \frac{\sigma_{yield}}{\sigma_{max}}$$
+>
 > $\sigma_{bulk}$ is the nominal stress far from the discontinuity. $K_t$ quantifies local amplification at holes, fillets and steps. The FoS is the margin against yield (typically ≥ 1.5–2 by code).
 
 ## Explanation

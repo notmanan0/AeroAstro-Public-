@@ -21,7 +21,9 @@ sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture
 
 > [!abstract] Summary
 > **Quasi-one-dimensional isentropic duct flow obeys**
+>
 > $$\frac{\mathrm dA}{A}=(M^2-1)\frac{\mathrm dU}{U}.$$
+>
 > Subsonic flow speeds up in a converging duct, supersonic flow in a diverging one, and $M=1$ can only occur at a throat.
 >
 > **Laval nozzle.** Integrating mass flow against the sonic state gives the area–Mach relation $A/A^*(M)$. For each area ratio it has one subsonic and one supersonic root. Once the throat is sonic the nozzle is **choked**: $\dot m\propto p_0A_t/\sqrt{T_0}$, whatever happens downstream.

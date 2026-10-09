@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9)", "02 - Sources/C
 
 > [!note] Definition
 > Models that close RANS by relating the Reynolds stresses to the mean strain rate through a **turbulent (eddy) viscosity** $\nu_t$. For a boundary layer:
+>
 > $$-\overline{u'v'} = \nu_t\frac{\partial\bar u}{\partial y}$$
+>
 > The model then supplies $\nu_t$ from one or two extra transport equations.
 
 ## Explanation

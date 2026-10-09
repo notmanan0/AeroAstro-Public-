@@ -39,6 +39,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture14_Hyperbolic1.pdf
 ---
 
 ## 1. Classification (L14)
+
 $$
 a\,u_{xx}+2b\,u_{xy}+c\,u_{yy}+d\,u_x+e\,u_y+f\,u=0 .
 $$
@@ -69,22 +70,28 @@ Take a string with tension $T$ and mass per unit length $\rho$. Look at a small 
 
 1. **Horizontal balance** (the string moves only vertically): $T_1\cos\theta=T_2\cos\theta'=T$.
 2. **Vertical: Newton's second law**:
+
 $$
 \underbrace{\rho\,\Delta x}_{\text{mass}}\,\frac{\partial^2y}{\partial t^2}=T_2\sin\theta'-T_1\sin\theta=T(\tan\theta'-\tan\theta).
 $$
+
    The second step divides each term by the matching horizontal balance.
 3. **Small slopes**: $\tan\theta=\partial_xy\big|_x$ and $\tan\theta'=\partial_xy\big|_{x+\Delta x}$.
 4. Divide by $\rho\,\Delta x$ and let $\Delta x\to0$:
+
 $$
 \frac{\partial^2y}{\partial t^2}=\frac T\rho\lim_{\Delta x\to0}\frac{y_x(x+\Delta x)-y_x(x)}{\Delta x}=\frac{T}{\rho}\frac{\partial^2y}{\partial x^2}\qquad\Longrightarrow\qquad \boxed{y_{tt}=c^2y_{xx},\quad c=\sqrt{T/\rho}}
 $$
 
 ## 3. D'Alembert's solution (Notes §5.3)
 Change to **characteristic coordinates** $\xi=x+ct$ and $\eta=x-ct$. By the chain rule,
+
 $$
 \partial_x=\partial_\xi+\partial_\eta,\qquad \partial_t=c(\partial_\xi-\partial_\eta).
 $$
+
 Substituting, $y_{tt}-c^2y_{xx}=c^2\big[(\partial_\xi-\partial_\eta)^2-(\partial_\xi+\partial_\eta)^2\big]y=-4c^2y_{\xi\eta}$. So the wave equation becomes
+
 $$
 \frac{\partial^2y}{\partial\xi\,\partial\eta}=0\quad\Longrightarrow\quad y=f(\xi)+g(\eta)=\boxed{f(x+ct)+g(x-ct)} .
 $$
@@ -97,7 +104,9 @@ $$
 ## 4. Extra results from the Lecture Notes (Ch. 5)
 ### Where the $b^2-ac$ test comes from (§5.1)
 Change variables to $\xi=x+\beta y$ and $\eta=x+\delta y$, choosing $\beta$ and $\delta$ as the roots of
+
 $$c\lambda^2+2b\lambda+a=0 .$$
+
 The $u_{\xi\xi}$ and $u_{\eta\eta}$ terms then vanish, leaving the **canonical form** $\frac{4}{c}(ac-b^2)\,u_{\xi\eta}=G$. The type of the roots decides the type of the PDE:
 
 | Roots $\beta,\delta$ | Type |
@@ -112,6 +121,7 @@ For the wave equation this is exactly d'Alembert's $\xi=x\pm ct$.
 - Kinetic energy: $\mathrm{KE}=\int_0^L\tfrac12\rho\,y_t^2\,dx$.
 - Potential energy: $\mathrm{PE}=T\int_0^L\big(\sqrt{1+y_x^2}-1\big)dx\approx\int_0^L\tfrac12T\,y_x^2\,dx$ for small slopes.
 - Total:
+
 $$E=\int_0^L\frac\rho2\big(y_t^2+c^2y_x^2\big)\,dx .$$
 
 $E$ is conservative. **Proof**: $\dot E=\rho\int(y_ty_{tt}+c^2y_xy_{xt})\,dx$. Substitute $y_{tt}=c^2y_{xx}$ and integrate the second term by parts. What remains is $\rho c^2\big[y_xy_t\big]_0^L=0$, because $y_t=0$ at fixed ends.
@@ -127,6 +137,7 @@ At $x=0$ two conditions hold:
 - $Ty_x$ is continuous (force balance): $\frac{-A+B}{c_-}=-\frac{D}{c_+}$.
 
 Solving:
+
 $$B=\frac{c_+-c_-}{c_++c_-}A\ \ (\text{reflected}),\qquad D=\frac{2c_+}{c_++c_-}A\ \ (\text{transmitted})\qquad\text{(SymPy ✔)}.$$
 
 | Limit | Result | Meaning |

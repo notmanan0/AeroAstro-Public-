@@ -16,6 +16,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W03-2ab Magnetism and Induction - Rec
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf F = q(\mathbf E + \mathbf v\times\mathbf B),\qquad F = BIL\ \ \text{(straight wire, }\mathbf B\perp\mathbf L)$$
 
 ## Explanation

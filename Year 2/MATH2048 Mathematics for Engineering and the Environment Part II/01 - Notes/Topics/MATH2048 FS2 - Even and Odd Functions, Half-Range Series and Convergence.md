@@ -85,11 +85,15 @@ $$
 
 ### Example (Lecture Notes §2.3.2): half pulse, $f=1$ on $(0,\frac\ell2)$ and $0$ on $(\frac\ell2,\ell)$
 **(i) Odd extension (sine series).**
+
 $$b_n=\frac2\ell\int_0^{\ell/2}\sin\frac{n\pi x}\ell\,dx=\frac{2}{n\pi}\Big(1-\cos\frac{n\pi}{2}\Big),$$
+
 so
+
 $$f=\frac2\pi\Big[\sin\frac{\pi x}\ell+\sin\frac{2\pi x}\ell+\frac13\sin\frac{3\pi x}\ell+\frac15\sin\frac{5\pi x}\ell+\frac13\sin\frac{6\pi x}\ell+\dots\Big].$$
 
 **(ii) Even extension (cosine series).** $a_0=1$ and $a_n=\frac{2}{n\pi}\sin\frac{n\pi}2$, so
+
 $$f=\frac12+\frac2\pi\Big[\cos\frac{\pi x}\ell-\frac13\cos\frac{3\pi x}\ell+\frac15\cos\frac{5\pi x}\ell-\dots\Big].$$
 
 Both were checked in SymPy ✔. At the jump $x=\frac\ell2$, both series give $\frac12$.
@@ -107,6 +111,7 @@ Both were checked in SymPy ✔. At the jump $x=\frac\ell2$, both series give $\f
 3. $f$ has finitely many extrema and discontinuities in one period.
 
 **Theorem**: if $f$ satisfies the Dirichlet conditions, its Fourier series converges at every $x$, to
+
 $$
 S(x)=\begin{cases}f(x)&f\text{ continuous at }x,\\[3pt]\tfrac12\big[f(x^-)+f(x^+)\big]&f\text{ jumps at }x.\end{cases}
 $$

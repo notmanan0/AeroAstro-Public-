@@ -620,8 +620,11 @@ This is the regime discriminator for air:
 At $T_1=2^\circ\mathrm C$ and $p_1=80\ \mathrm{kPa}$:
 
 1. If the probe reads $150\ \mathrm{kPa}$, then $p_0/p_1=1.875<1.8929$. The flow is subsonic and the isentropic result is
+
    $$U_1=329.7\ \mathrm{m\,s^{-1}}.$$
+
 2. If the probe reads $400\ \mathrm{kPa}$, then $p_{02}/p_1=5>1.8929$. The normal-shock table or Rayleigh relation gives
+
    $$M_1=1.8705,\qquad U_1=M_1\sqrt{\gamma RT_1}=621.8\ \mathrm{m\,s^{-1}}.$$
 
 The lecture uses $T_1=275\ \mathrm K$, so $a_1=\sqrt{1.4\times287\times275}=332.4\ \mathrm{m\,s^{-1}}$. Using $275.15\ \mathrm K$ adds about $0.1\ \mathrm{m\,s^{-1}}$ to each answer.

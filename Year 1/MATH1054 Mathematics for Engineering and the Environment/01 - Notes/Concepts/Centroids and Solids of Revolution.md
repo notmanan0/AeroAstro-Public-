@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.9", "02 - Sources
 
 > [!note] Definition
 > For the region under $y=f(x)\ge0$ on $[a,b]$:
+>
 > $$A=\int y\,\mathrm dx,\quad\bar x=\frac1A\int xy\,\mathrm dx,\quad\bar y=\frac1{2A}\int y^2\,\mathrm dx,\quad V=\pi\int y^2\,\mathrm dx,\quad\bar x_V=\frac\pi V\int xy^2\,\mathrm dx$$
 
 ## Explanation

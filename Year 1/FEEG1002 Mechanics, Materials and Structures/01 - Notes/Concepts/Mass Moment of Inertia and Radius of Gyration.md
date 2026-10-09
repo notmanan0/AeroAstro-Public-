@@ -16,7 +16,9 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$I_O = \int r_O^2\,dm\ \ [\text{kg m}^2],\qquad I_O = I_G + md^2,\qquad I = mk^2$$
+>
 > Standard values about G: rod $\tfrac1{12}mL^2$ ($\tfrac13mL^2$ about an end), disc/cylinder $\tfrac12mr^2$, hoop $mr^2$, sphere $\tfrac25mr^2$, plate $\tfrac1{12}m(a^2 + b^2)$.
 
 ## Explanation

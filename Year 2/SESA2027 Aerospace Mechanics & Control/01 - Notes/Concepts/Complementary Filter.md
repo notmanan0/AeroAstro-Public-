@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 3.03.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > A fusion rule that combines a **fast** estimate (good short-term, drifts) with a **slow** estimate (stable long-term, noisy):
+>
 > $$\hat\theta[k] = \alpha\,\hat\theta_{gyro}[k]+(1-\alpha)\,\hat\theta_{acc}[k],\qquad \text{usually implemented as}\quad \hat\theta[k] = \alpha(\hat\theta[k-1]+T_sq[k])+(1-\alpha)\theta_{acc}[k]$$
+>
 > The gyro path is effectively **high-pass** filtered and the accelerometer path **low-pass** filtered. The two filters sum to 1.
 
 ## Explanation

@@ -15,6 +15,7 @@ sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf", "
 ## Definition
 
 > [!note] Definition
+>
 > $$\eta_P = \frac{\text{power to aircraft}}{\text{power to jet}} = \frac{FV_0}{\tfrac12\dot m_a\big[(1+f)V_j^2-V_0^2\big]}\;\xrightarrow{P_j = P_A,\ f\ll1}\;\frac{2}{1+V_j/V_0}$$
 
 ## Explanation

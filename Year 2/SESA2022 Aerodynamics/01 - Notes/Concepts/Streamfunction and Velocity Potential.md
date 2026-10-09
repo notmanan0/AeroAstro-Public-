@@ -17,6 +17,7 @@ sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf"]
 
 > [!note] Definition
 > For 2D incompressible flow the **streamfunction** $\psi$ satisfies continuity automatically. For irrotational flow the **velocity potential** $\phi$ satisfies irrotationality automatically:
+>
 > $$u = \frac{\partial\psi}{\partial y} = \frac{\partial\phi}{\partial x},\quad v = -\frac{\partial\psi}{\partial x} = \frac{\partial\phi}{\partial y};\qquad u_r = \frac1r\frac{\partial\psi}{\partial\theta} = \frac{\partial\phi}{\partial r},\quad u_\theta = -\frac{\partial\psi}{\partial r} = \frac1r\frac{\partial\phi}{\partial\theta}$$
 
 ## Explanation

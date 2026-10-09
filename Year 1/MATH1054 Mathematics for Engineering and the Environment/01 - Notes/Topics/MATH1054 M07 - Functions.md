@@ -79,21 +79,26 @@ Useful identity: $\sin^{-1}x+\cos^{-1}x=\frac\pi2$.
 ![[m1054_inverse_trig_compositions.png|800]]
 
 ## 4. Exponentials and logarithms (James §2.7.1–2.7.3)
+
 $$
 \log_a(xy)=\log_ax+\log_ay,\quad\log_a\frac xy=\log_ax-\log_ay,\quad\log_ax^n=n\log_ax,\quad\log_ax=\frac{\log_bx}{\log_ba}
 $$
+
 $e^{\ln x}=x$ for $x>0$, and $\ln e^x=x$. So $e^{2\ln x}=x^2$, and $\exp\{\tfrac12\ln u\}=\sqrt u$.
 
 ## 5. Hyperbolic functions (James §2.7.4–2.7.5)
+
 $$
 \cosh x=\frac{e^x+e^{-x}}2,\qquad\sinh x=\frac{e^x-e^{-x}}2,\qquad\tanh x=\frac{\sinh x}{\cosh x}
 $$
+
 - $\cosh^2x-\sinh^2x=1$, which follows by multiplying out the definitions.
 - $\cosh x\pm\sinh x=e^{\pm x}$.
 - **Osborn's rule**: a trig identity becomes a hyperbolic one if you swap each function for its hyperbolic version **and** flip the sign of every product of two sines. For example, $\cos^2+\sin^2=1$ becomes $\cosh^2-\sinh^2=1$.
 - To **solve** $a\cosh x+b\sinh x=c$, substitute the exponentials and solve the quadratic in $e^x$ (Ex 2.59).
 
 **Inverse hyperbolics in log form.** These are derived by solving a quadratic in $e^y$ (Specimen Q5):
+
 $$
 \sinh^{-1}x=\ln\big(x+\sqrt{x^2+1}\big),\quad\cosh^{-1}x=\ln\big(x+\sqrt{x^2-1}\big)\ (x\ge1),\quad\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}\ (|x|<1)
 $$

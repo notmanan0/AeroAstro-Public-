@@ -16,7 +16,9 @@ sources: ["MATH1054 Module Booklet, Module 25 (booklet §8–10)", "James, Moder
 ## Definition
 
 > [!note] Definition
+>
 > $$\text{CI: }\bar x\pm z_{\alpha/2}\frac{\sigma}{\sqrt n};\qquad\text{test statistic: }Z=\frac{\bar x-\mu_0}{\sigma/\sqrt n}$$
+>
 > Replace $\sigma$ by $s$ when $n\ge30$.
 
 ## Explanation

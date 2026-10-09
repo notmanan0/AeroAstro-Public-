@@ -17,6 +17,7 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L5–L6)", "02 - Sour
 
 > [!note] Definition
 > Dimensionless groups that set the stability of explicit time stepping:
+>
 > $$C = \mathrm{CFL} = \frac{c\,\Delta t}{h}\ \ (\text{convection}),\qquad F = \frac{\alpha\,\Delta t}{h^2}\ \ (\text{diffusion/heat}),\qquad\mathrm{CFL}_\nu = \frac{\nu\,\Delta t}{h^2}\ \ (\text{viscous})$$
 
 ## Explanation

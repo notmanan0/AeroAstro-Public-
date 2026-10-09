@@ -15,6 +15,7 @@ sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf", "
 ## Definition
 
 > [!note] Definition
+>
 > $$\text{TSFC} = \frac{\dot m_f}{F} = \frac{f}{F/\dot m_a}\quad[\text{kg s}^{-1}\text{N}^{-1},\text{ usually quoted in g s}^{-1}\text{kN}^{-1}\text{ or mg N}^{-1}\text{s}^{-1}]$$
 
 ## Explanation

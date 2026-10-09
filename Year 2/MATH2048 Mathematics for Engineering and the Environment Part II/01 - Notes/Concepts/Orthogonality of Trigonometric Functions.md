@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier Series/Lecture4_Fourie
 
 > [!note] Definition
 > For integers $m,n\geq1$ and $k=\pi/\ell$:
+>
 > $$\int_{-\ell}^{\ell}\cos mkx\cos nkx\,dx=\ell\delta_{mn},\quad\int_{-\ell}^{\ell}\sin mkx\sin nkx\,dx=\ell\delta_{mn},\quad\int_{-\ell}^{\ell}\cos mkx\sin nkx\,dx=0 .$$
+>
 > The exception is $\int_{-\ell}^{\ell}1\,dx=2\ell$.
 
 ## Explanation

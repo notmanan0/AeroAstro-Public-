@@ -15,11 +15,14 @@ sources: ["02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$BPR = \frac{\dot m_{bypass}}{\dot m_{core}},\qquad fpr = \frac{p_{013}}{p_{02}}\ \text{(stagnation, bypass stream)}$$
+>
 > The fpr alone fixes the bypass jet velocity for a given flight condition. A fixed core then fixes the BPR through the LP-spool power balance.
 
 ## Explanation
 **Bypass jet**:
+
 $$T_{013} = T_{02}\Big(1+\frac{fpr^{(\gamma-1)/\gamma}-1}{\eta_f}\Big),\quad V_{jb} = \sqrt{2c_pT_{013}\big[1-(p_a/(fpr\,p_{02}))^{(\gamma-1)/\gamma}\big]}$$
 
 **LP spool**: $(1+f)(h_{045}-h_{05}) = (h_{023}-h_{02})+BPR(h_{013}-h_{02})$.

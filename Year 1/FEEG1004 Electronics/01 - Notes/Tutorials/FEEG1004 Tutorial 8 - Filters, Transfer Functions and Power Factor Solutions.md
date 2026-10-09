@@ -69,16 +69,21 @@ fig.savefig("q1.png"); plt.close(fig)
 - $Z_p = Z_{load}\parallel Z_C = 2.815 + j1.355$ Ω.
 
 **(c) Cable current** (taking $\mathbf V_s$ = 400∠0°):
+
 $$\mathbf I_2 = \frac{400}{Z_{cab} + Z_p} = 127.4\angle-25.9°\ \mathrm A$$
 
 **(a) Load voltage**:
+
 $$\mathbf V = \mathbf I_2Z_p = 398.0\angle-0.18°\ \mathrm V$$
+
 The cable drops only about 2 V.
 
 **(b) Load power**: $\mathbf I_1 = \mathbf V/Z_{load}$ = 213.7∠−57.7° A, so
+
 $$P_{load} = I_1^2R_1 = 45.7\ \mathrm{kW},\qquad Q_{load} = I_1^2X_{L1} = 71.8\ \mathrm{kVAR}\quad(\mathrm{pf}\ 0.54)$$
 
 **(d) Supply**:
+
 $$\mathbf S_s = \mathbf V_s\mathbf I_2^* = 45.8\ \mathrm{kW} + j22.2\ \mathrm{kVAR}\quad(\mathrm{pf}\ 0.90\ \text{lagging})$$
 
 **Power bookkeeping** (conservation of P and Q separately):

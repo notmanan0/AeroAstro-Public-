@@ -156,7 +156,9 @@ $$
 
 > [!example] 2013-14 B1(ii): lower-wing 7xxx alloy
 > $K_{Ic}=45\ \mathrm{MPa\sqrt m}$, $\sigma_{max}=200$ MPa, $Q=1.2$:
+>
 > $$a_c=\frac1\pi\left(\frac{45}{1.2\times200}\right)^2=0.01119\ \mathrm m=11.2\ \mathrm{mm}.$$
+>
 > Always use $\sigma_{max}$ here, not the stress range: fast fracture happens at the peak of the cycle.
 
 ## 7. Fracture toughness $K_{Ic}$ and when LEFM is valid

@@ -82,13 +82,19 @@ A quadratic form only "sees" the symmetric part $\frac12(\mathbf A+\mathbf A^{\m
 This confirms $(\mathbf{AB})^{\mathrm T}=\mathbf B^{\mathrm T}\mathbf A^{\mathrm T}$. It also shows $\mathbf B=\mathbf A^{-1}$.
 
 **(b)** Pre-multiply $\mathbf{BX}=\mathbf c$ by $\mathbf A$: $\mathbf{ABX}=\mathbf{IX}=\mathbf X=\mathbf{Ac}$. So
+
 $$\mathbf X=\begin{bmatrix}1&2&2\\0&1&1\\1&0&1\end{bmatrix}\begin{bmatrix}1\\0\\1\end{bmatrix}=\boxed{\begin{bmatrix}3\\1\\2\end{bmatrix}}$$
+
 That is, $x=3$, $y=1$, $z=2$. **Check** in $\mathbf{BX}$: $3-2=1$, $3-1-2=0$, $-3+2+2=1$ ✔.
 
 ## Example 5.7: Associative and distributive laws
+
 $$\mathbf{AB}=\begin{bmatrix}1&0&1\\3&6&7\\-2&-2&-3\end{bmatrix},\qquad\mathbf{BC}=\begin{bmatrix}-3&1\\-11&7\\-9&10\end{bmatrix}$$
+
 $$(\mathbf{AB})\mathbf C=\begin{bmatrix}-1&4\\-21&28\\7&-13\end{bmatrix}=\mathbf A(\mathbf{BC})\ ✔\ \text{(associative)}$$
+
 $$(\mathbf A+\mathbf B)\mathbf C=\begin{bmatrix}1&-1&2\\-2&2&6\\1&3&1\end{bmatrix}\mathbf C=\begin{bmatrix}-3&3\\-24&4\\-4&10\end{bmatrix}=\mathbf{AC}+\mathbf{BC}$$
+
 Here $\mathbf{AC}=\begin{bmatrix}0&2\\-13&-3\\5&0\end{bmatrix}$ and $\mathbf{BC}$ is as above ✔ (distributive).
 
 ## Example 5.8: A rotation maps the square onto a square
@@ -106,11 +112,15 @@ The edges from the first image vertex are $(0.866,0.500)$ and $(0.500,-0.866)$. 
 In general, a rotation matrix $\mathbf R$ satisfies $\mathbf R^{\mathrm T}\mathbf R=\mathbf I$, so it preserves lengths and angles. This is a clockwise rotation by $60°$.
 
 ## Example 5.14: Expand along the first row
+
 $$\begin{vmatrix}1&2&4\\-1&0&3\\3&1&-2\end{vmatrix}=1(0-3)-2(2-9)+4(-1-0)=-3+14-4=\boxed7$$
 
 ## Example 5.15: Minors and cofactors of the first row
+
 $$M_{11}=\begin{vmatrix}-4&2\\-1&1\end{vmatrix}=-2,\quad M_{12}=\begin{vmatrix}6&2\\2&1\end{vmatrix}=2,\quad M_{13}=\begin{vmatrix}6&-4\\2&-1\end{vmatrix}=2$$
+
 The cofactors are $A_{11}=-2$, $A_{12}=-2$ and $A_{13}=2$. Then
+
 $$|\mathbf A|=3(-2)+4(-2)+5(2)=\boxed{-4}$$
 
 ## Example 5.16: Properties of determinants
@@ -130,7 +140,9 @@ $$|\mathbf A|=3(-2)+4(-2)+5(2)=\boxed{-4}$$
 
 ## Example 5.18: A $4\times4$ determinant by row operations
 Subtract row 1 from rows 2, 3 and 4. This doesn't change the determinant:
+
 $$D=\begin{vmatrix}1&1&1&1\\0&a&0&0\\0&0&b&0\\0&0&0&c\end{vmatrix}=\boxed{abc}$$
+
 The determinant of a triangular matrix is the product of its diagonal.
 
 ## Example 5.21: $\operatorname{adj}\mathbf A$ and $\mathbf A(\operatorname{adj}\mathbf A)=|\mathbf A|\mathbf I$
@@ -140,7 +152,9 @@ For $\mathbf A=\begin{bmatrix}1&1&2\\2&0&1\\3&1&1\end{bmatrix}$, the cofactors a
 - row 3: $A_{31}=(1-0)=1$, $A_{32}=-(1-4)=3$, $A_{33}=(0-2)=-2$
 
 $\operatorname{adj}\mathbf A$ is the **transpose** of the cofactor matrix:
+
 $$\operatorname{adj}\mathbf A=\begin{bmatrix}-1&1&1\\1&-5&3\\2&2&-2\end{bmatrix},\qquad|\mathbf A|=1(-1)+1(1)+2(2)=4$$
+
 Multiplying out gives $\mathbf A(\operatorname{adj}\mathbf A)=(\operatorname{adj}\mathbf A)\mathbf A=4\mathbf I$ ✔.
 
 ---
@@ -148,8 +162,11 @@ Multiplying out gives $\mathbf A(\operatorname{adj}\mathbf A)=(\operatorname{adj
 # Part B: Assigned exercises
 
 ## Exercise 12: Products, and which are special
+
 $$\mathbf{AB}=\begin{bmatrix}2&2&-1\\2&2&-1\end{bmatrix},\quad\mathbf{AC}=\begin{bmatrix}0&2\\0&2\end{bmatrix},\quad\mathbf{BC}=\begin{bmatrix}1&3\\1&3\\1&1\end{bmatrix}$$
+
 $$\mathbf{CA}=\begin{bmatrix}2&2&2\\2&2&2\\-2&-2&-2\end{bmatrix},\quad\mathbf{BA}^{\mathrm T}=\begin{bmatrix}2&2\\2&2\\-1&-1\end{bmatrix}$$
+
 - Only $\mathbf{AC}$ ($2\times2$) and $\mathbf{CA}$ ($3\times3$) are square.
 - $\mathbf{AC}$ is not symmetric ($2\neq0$ off the diagonal), and $\mathbf{CA}$ is not symmetric ($(\mathbf{CA})_{13}=2\neq(\mathbf{CA})_{31}=-2$).
 
@@ -168,34 +185,46 @@ $\mathbf A$ and $\mathbf B$ are $2\times3$, and $\mathbf C$ is $3\times2$. A pro
 | $\mathbf{BC}^{\mathrm T}$ | $(2\times3)(2\times3)$ | no |
 
 **(b)**
+
 $$\mathbf{AC}=\begin{bmatrix}1+6+2&2+2+3\\3+0+4&6+0+6\end{bmatrix}=\begin{bmatrix}9&7\\7&12\end{bmatrix},\quad\mathbf{BC}=\begin{bmatrix}13&18\\8&5\end{bmatrix},\quad\mathbf{AB}^{\mathrm T}=\begin{bmatrix}9&5\\18&2\end{bmatrix}$$
 
 ## Exercise 35(a),(b): Determinants
 **(a)** $\begin{vmatrix}1&7\\4&9\end{vmatrix}=9-28=\boxed{-19}$
 
 **(b)**
+
 $$\begin{vmatrix}1&4&3\\2&-4&1\\3&2&-6\end{vmatrix}=1(24-2)-4(-12-3)+3(4+12)=22+60+48=\boxed{130}$$
 
 ## Exercise 34: All minors and cofactors of $\begin{vmatrix}1&2&3\\1&0&1\\1&1&1\end{vmatrix}$
+
 $$\text{Minors }M_{ij}=\begin{bmatrix}-1&0&1\\-1&-2&-1\\2&-2&-2\end{bmatrix},\qquad\text{Cofactors }A_{ij}=\begin{bmatrix}-1&0&1\\1&-2&1\\2&2&-2\end{bmatrix}$$
+
 Expanding along row 1: $1(-1)+2(0)+3(1)=\boxed2$.
 **Check** with column 2: $2(0)+0(-2)+1(2)=2$ ✔. Any row or column gives the same value.
 
 ## Booklet Exercise A: Exercise 35(c) expanded along the third row
 For $\begin{bmatrix}2&-1&3\\4&2&9\\1&3&-4\end{bmatrix}$, row 3 is $(1,3,-4)$ with signs $(+,-,+)$:
+
 $$A_{31}=+\begin{vmatrix}-1&3\\2&9\end{vmatrix}=-15,\quad A_{32}=-\begin{vmatrix}2&3\\4&9\end{vmatrix}=-6,\quad A_{33}=+\begin{vmatrix}2&-1\\4&2\end{vmatrix}=8$$
+
 $$|\mathbf A|=1(-15)+3(-6)+(-4)(8)=\boxed{-65}$$
 
 ## Exercise 39: $\operatorname{adj}\mathbf A$ for $\mathbf A=\begin{bmatrix}2&1&1\\3&2&2\\1&1&2\end{bmatrix}$
 The cofactor matrix is $\begin{bmatrix}2&-4&1\\-1&3&-1\\0&-1&1\end{bmatrix}$. Transposing it:
+
 $$\operatorname{adj}\mathbf A=\begin{bmatrix}2&-1&0\\-4&3&-1\\1&-1&1\end{bmatrix},\qquad|\mathbf A|=2(2)+1(-4)+1(1)=1$$
+
 Then $\mathbf A(\operatorname{adj}\mathbf A)=\mathbf I=(\operatorname{adj}\mathbf A)\mathbf A$ ✔. Since $|\mathbf A|=1$, $\operatorname{adj}\mathbf A$ **is** $\mathbf A^{-1}$.
 
 ## Exercise 45(b): A $4\times4$ determinant
 Exploit the symmetry. Do the column operations $C_1\to C_1-C_2$ and $C_3\to C_3-C_4$:
+
 $$\begin{vmatrix}1&4&0&1\\-1&5&0&1\\0&1&2&2\\0&1&-2&4\end{vmatrix}$$
+
 Then do the row operations $R_2\to R_2+R_1$ and $R_4\to R_4+R_3$:
+
 $$\begin{vmatrix}1&4&0&1\\0&9&0&2\\0&1&2&2\\0&2&0&6\end{vmatrix}=1\cdot\begin{vmatrix}9&0&2\\1&2&2\\2&0&6\end{vmatrix}=9(12-0)-0+2(0-4)=\boxed{100}$$
+
 **Cross-check with eigenvalues** (from M18):
 - $(1,-1,0,0)$ and $(0,0,1,-1)$ are eigenvectors, with eigenvalues $1$ and $2$.
 - On vectors of the form $(a,a,b,b)$, the matrix acts as $\begin{bmatrix}9&2\\2&6\end{bmatrix}$, which has eigenvalues $5$ and $10$.
@@ -246,7 +275,9 @@ $$|\cdot|=(-7)(15)+4(-34)+1(43)=-105-136+43=\boxed{-198}$$
 
 ## Q7: $\operatorname{adj}\mathbf A$ for $\mathbf A=\begin{pmatrix}1&2&1\\3&0&-1\\-2&1&1\end{pmatrix}$
 The cofactor matrix is $\begin{pmatrix}1&-1&3\\-1&3&-5\\-2&4&-6\end{pmatrix}$. Transposing:
+
 $$\operatorname{adj}\mathbf A=\boxed{\begin{pmatrix}1&-1&-2\\-1&3&4\\3&-5&-6\end{pmatrix}}$$
+
 **Check**: $|\mathbf A|=2$ and $\mathbf A(\operatorname{adj}\mathbf A)=2\mathbf I$ ✔.
 
 ## Sources

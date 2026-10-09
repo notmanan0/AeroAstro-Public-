@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.2", "MATH1054 Mod
 
 > [!note] Definition
 > The derivative of $f$ at $x$ is the limit of the difference quotient:
+>
 > $$f'(x)=\frac{\mathrm df}{\mathrm dx}=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}$$
 
 ## Explanation

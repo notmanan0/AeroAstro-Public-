@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 ## Definition
 
 > [!note] Definition
+>
 > $$z=\bar z+\frac{b^2}{\bar z},\qquad\frac{\mathrm dz}{\mathrm d\bar z}=1-\frac{b^2}{\bar z^2}\ (=0\text{ at }\bar z=\pm b).$$
 
 ## Shapes from a circle of radius $a$, centre $\bar z_0$

@@ -17,6 +17,7 @@ sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf"]
 
 > [!note] Definition
 > Uniform flow plus a doublet of strength $\kappa = 2\pi V_\infty R^2$ gives flow round a circular cylinder of radius $R$. Adding a vortex $\Gamma$ gives the **lifting cylinder**:
+>
 > $$\psi = V_\infty r\sin\theta\left(1-\frac{R^2}{r^2}\right)+\frac{\Gamma}{2\pi}\ln\frac rR$$
 
 ## Explanation

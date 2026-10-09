@@ -17,6 +17,7 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf
 
 > [!note] Definition
 > With the parabolic drag polar $C_D = C_{D_0}+\dfrac{C_L^2}{\pi eAR}$, $L/D$ is maximised when **induced drag equals zero-lift drag**:
+>
 > $$C_{D_i} = C_{D_0}\;\Rightarrow\;C_L^* = \sqrt{\pi eAR\,C_{D_0}},\qquad \left(\frac LD\right)_{max} = \frac12\sqrt{\frac{\pi eAR}{C_{D_0}}}$$
 
 ## Explanation

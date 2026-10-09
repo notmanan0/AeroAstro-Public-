@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Orb
 ## Definition
 
 > [!note] Definition
+>
 > $$\varepsilon = \frac{V^2}{2}-\frac{\mu}{r} = -\frac{\mu}{2a}\qquad\Longleftrightarrow\qquad V^2 = \mu\left(\frac2r-\frac1a\right)$$
+>
 > This holds for **all conics**. It is given on every recent exam formula sheet.
 
 ## Explanation

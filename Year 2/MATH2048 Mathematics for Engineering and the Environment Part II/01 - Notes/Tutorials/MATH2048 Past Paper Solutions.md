@@ -42,9 +42,11 @@ sources: ["03 - Exams & Past Papers/MATH2048-202324-01-MATH2048W1.pdf", "03 - Ex
 ## A1 (20 marks)
 ### (a) Prove $\mathcal L[f']=s\tilde f(s)-f(0)$ [5]
 From the definition, integrate by parts with $u=e^{-sx}$ and $dv=f'\,dx$:
+
 $$
 \mathcal L[f']=\int_0^\infty f'(x)e^{-sx}dx=\Big[f(x)e^{-sx}\Big]_0^\infty+s\int_0^\infty f(x)e^{-sx}dx=\lim_{x\to\infty}f(x)e^{-sx}-f(0)+s\tilde f(s).
 $$
+
 **Condition**: $\lim_{x\to\infty}f(x)e^{-sx}=0$. This holds whenever $\mathcal L[f]$ exists, e.g. if $|f|\leq Ke^{ax}$ and $\mathrm{Re}\,s>a$. Then $\mathcal L[f']=s\tilde f-f(0)$ ∎.
 
 ### (b)(i) Show $\tilde y=-\frac e2\frac{e^{-s}}{s-1}+\frac e6\frac{e^{-s}}{s+1}+\frac e3\frac{e^{-s}}{s-2}$ [10]
@@ -53,26 +55,33 @@ $$
 - the derivative rules with $y(0)=y'(0)=0$.
 
 **Transform.**
+
 $$
 (s^2-s-2)\tilde y=\frac{e\,e^{-s}}{s-1}\quad\Longrightarrow\quad\tilde y=\frac{e\,e^{-s}}{(s-1)(s+1)(s-2)} .
 $$
 
 **Partial fractions** (cover-up at $s=1,-1,2$):
+
 $$
 \frac{1}{(s-1)(s+1)(s-2)}=\frac{1/[(2)(-1)]}{s-1}+\frac{1/[(-2)(-3)]}{s+1}+\frac{1/[(1)(3)]}{s-2}=-\frac{1}{2(s-1)}+\frac1{6(s+1)}+\frac1{3(s-2)} .
 $$
+
 Multiplying through by $e\,e^{-s}$ gives the stated result ✔.
 
 ### (b)(ii) Invert [5]
 Use $\mathcal L^{-1}\big[e^{-s}\tfrac1{s-\alpha}\big]=e^{\alpha(t-1)}H(t-1)$:
+
 $$
 y=H(t-1)\Big[-\tfrac e2e^{t-1}+\tfrac e6e^{-(t-1)}+\tfrac e3e^{2(t-1)}\Big]=H(t-1)\Big[-\tfrac12e^{t}+\tfrac16e^{2-t}+\tfrac13e^{2t-1}\Big].
 $$
+
 **Check**: at $t=1^+$ the bracket is $e\big(-\frac12+\frac16+\frac13\big)=0$, so $y$ is continuous ✔. SymPy ✔.
 
 ## A2 (25 marks): $u_t=\frac14u_{xx}$ on $[0,\pi]$, $u_x(0,t)=u_x(\pi,t)=0$, $u(x,0)=\cos^3x$
 **(a) Separate [5].** Substitute $u=XT$:
+
 $$XT'=\tfrac14X''T\ \Longrightarrow\ \frac{4T'}{T}=\frac{X''}{X}=\lambda .$$
+
 So $X''-\lambda X=0$ and $T'-\frac\lambda4T=0$.
 
 **(b) Eigenproblem [10].** The BCs become $X'(0)=X'(\pi)=0$.
@@ -83,12 +92,17 @@ So $X''-\lambda X=0$ and $T'-\frac\lambda4T=0$.
 $$X_n=\cos nx,\qquad\lambda_n=-n^2,\qquad n=0,1,2,\dots$$
 
 **(c) Time equation [5].** $T_n'=-\frac{n^2}{4}T_n$, so $\int\frac{dT_n}{T_n}=-\frac{n^2}4\int dt$ and
+
 $$T_n=C_ne^{-n^2t/4}.$$
 
 **(d) Fit the initial condition [5].** $u=\sum_{n\geq0}A_ne^{-n^2t/4}\cos nx$. Using the hint's identities,
+
 $$\cos^3x=\cos x\cdot\tfrac12(1+\cos2x)=\tfrac12\cos x+\tfrac14(\cos3x+\cos x)=\tfrac34\cos x+\tfrac14\cos3x .$$
+
 By orthogonality $A_1=\frac34$, $A_3=\frac14$, and all other $A_n=0$:
+
 $$\boxed{u=\tfrac34e^{-t/4}\cos x+\tfrac14e^{-9t/4}\cos3x}\ ✔$$
+
 SymPy confirms the PDE residual is $0$ and both BCs hold.
 
 ## B1 (15 marks)
@@ -98,10 +112,12 @@ SymPy confirms the PDE residual is $0$ and both BCs hold.
 **(ii) Maximum rate of change.** $|\nabla\phi|=\sqrt{64+16+9}=\sqrt{89}\approx9.43$.
 
 **(iii) Laplacian.**
+
 $$\nabla^2\phi=2y^2+\big(2x^2-z^2\sin yz\big)+\big(-y^2\sin yz\big)=2(x^2+y^2)-(y^2+z^2)\sin yz .$$
 
 ### (b) $\mathbf G=z^2\,\mathbf i+2y\,\mathbf j+2xz\,\mathbf k$ along $\mathbf r=(t^2,e^t,t)$
 **(i) Line integral.** On the curve $\mathbf G=(t^2,\ 2e^t,\ 2t^3)$ and $\dot{\mathbf r}=(2t,\ e^t,\ 1)$. So
+
 $$\int_0^1\big(2t^3+2e^{2t}+2t^3\big)dt=\Big[t^4+e^{2t}\Big]_0^1=\boxed{e^2}.$$
 
 **(ii) Curl.** $\nabla\times\mathbf G=(0-0,\ 2z-2z,\ 0-0)=\mathbf 0$, and $\mathbb R^3$ is simply connected. So $\mathbf G$ is conservative, and the integral depends only on the endpoints.
@@ -121,6 +137,7 @@ Indeed $\mathbf G=\nabla(xz^2+y^2)$, and $\phi(1,e,1)-\phi(0,1,0)=(1+e^2)-1=e^2$
 So $d\mathbf A=\big(\sin^2s\cos t,\ \sin^2s\sin t,\ \sin s\cos s\big)\,ds\,dt$ ✔. This points outward.
 
 **(c) Flux of $\mathbf F=3z\,\mathbf k$.** $\mathbf F\cdot d\mathbf A=3\cos s\cdot\sin s\cos s$, so
+
 $$\int_0^{2\pi}\!\!\int_0^{\pi/2}3\cos^2s\sin s\,ds\,dt=2\pi\Big[-\cos^3s\Big]_0^{\pi/2}=2\pi\ ✔$$
 
 **(d) Base disc.** On $z=0$, $\mathbf F=\mathbf 0$, so the flux is $0$.
@@ -133,14 +150,18 @@ $$\int_0^{2\pi}\!\!\int_0^{\pi/2}3\cos^2s\sin s\,ds\,dt=2\pi\Big[-\cos^3s\Big]_0
 
 ## A1 (20 marks)
 ### (a) $\mathcal L[\delta(x-a)]=e^{-as}$ for $a>0$ [4]
+
 $$\mathcal L[\delta(x-a)]=\int_0^\infty\delta(x-a)e^{-sx}dx=e^{-sa}$$
+
 This uses the sifting property $\int\delta(x-a)f\,dx=f(a)$, which **requires $a$ to lie inside the integration range** $(0,\infty)$. If $a<0$, the spike is outside $[0,\infty)$ and the integral is $0$. That is why $a>0$ is needed.
 
 ### (b) $y'+2=2\sum_{n\geq1}\delta(t-n)$, $y(0)=2$
 **(i) [7]** Use $\mathcal L[y']=s\tilde y-2$, $\mathcal L[1]=\frac1s$ and $\mathcal L[\delta(t-n)]=e^{-ns}$:
+
 $$s\tilde y-2+\frac2s=2\sum e^{-ns}\ \Longrightarrow\ \tilde y=2\Big[\frac1s-\frac1{s^2}+\sum_{n\geq1}\frac{e^{-ns}}{s}\Big].$$
 
 **(ii) [5]** Invert term by term: $\frac1s\to1$, $\frac1{s^2}\to t$ and $\frac{e^{-ns}}s\to H(t-n)$. So
+
 $$\boxed{y=2(1-t)+2\sum_{n\geq1}H(t-n)}$$
 
 **(iii) Sketch [4].** On $n<t<n+1$ the solution is $y=2(n+1)-2t$: a line of slope $-2$ from $(n,2)$ down to $(n+1,0)$. Each kick adds $+2$, which produces a **sawtooth**.
@@ -149,6 +170,7 @@ $$\boxed{y=2(1-t)+2\sum_{n\geq1}H(t-n)}$$
 
 ## A2 (25 marks): $u_{tt}=u_{xx}+\cos x$ on $[0,\pi]$, Neumann ends, $u(x,0)=\cos x+\cos3x$, $u_t(x,0)=0$
 **(a) Homogeneous case [7].** Separating gives $\frac{T''}T=\frac{X''}X=\lambda$. With $X'(0)=X'(\pi)=0$, the three cases (exactly as in 2023/24 A2) give
+
 $$X_0=A_0,\qquad X_n=A_n\cos nx .$$
 
 **(b) Forced problem [13].**
@@ -178,7 +200,9 @@ Note that the $\cos x$ mode sits at its **static equilibrium**, because the forc
 **(ii)** $\nabla\cdot\mathbf F=0+0+0=0$.
 
 **(iii)**
+
 $$\nabla\times\mathbf F=\big(0-2e^{2z}\big)\,\mathbf i+\big(0-2x\big)\,\mathbf j+\big(0-2y\cos y^2\big)\,\mathbf k,$$
+
 which at the origin is $(-2,\,0,\,0)$.
 
 ### (b) A potential with $\nabla\phi=-\mathbf G$
@@ -191,7 +215,9 @@ $$\phi=-e^{xz}-\sin xy\ (+\text{const})$$
 
 ### (c) Line integral from $(0,0,0)$ to $(1,0,1)$
 Along $\mathbf r=(t,0,t)$, $\mathbf G\cdot\dot{\mathbf r}=G_1+G_3=te^{t^2}+te^{t^2}=2te^{t^2}$. So
+
 $$\int_0^1 2te^{t^2}\,dt=e-1 .$$
+
 Check with the potential: $\phi(\mathbf 0)-\phi(1,0,1)=-1-(-e)=e-1$ ✔.
 
 ### (d) Is $\mathbf H=\mathbf G+\sin(xyz)\,\mathbf k$ path independent?
@@ -201,6 +227,7 @@ $\nabla\times\mathbf H=\nabla\times\big(\sin(xyz)\mathbf k\big)=(xz\cos xyz,\ -y
 **(a) Jacobian [7].** $J=r^2\sin\theta$. The full cofactor expansion is in [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem|VC5]], and SymPy `det` ✔.
 
 **(b) Volume [7].**
+
 $$V=\int_0^\Phi\!\!\int_0^\Theta\!\!\int_0^Rr^2\sin\theta\,dr\,d\theta\,d\phi=\Phi\,[1-\cos\Theta]\,\frac{R^3}{3}=\boxed{\frac{\Phi R^3}{3}(1-\cos\Theta)}$$
 
 **(c) Sketch of $V(\Theta,2\pi)=\frac{2\pi R^3}{3}(1-\cos\Theta)$ [6].** Features to show:
@@ -217,10 +244,12 @@ $$V=\int_0^\Phi\!\!\int_0^\Theta\!\!\int_0^Rr^2\sin\theta\,dr\,d\theta\,d\phi=\P
 ## A1 (20 marks)
 ### (a) Prove the second shift theorem [5]
 See the boxed proof in [[MATH2048 TR3 - Heaviside and Delta Functions and the Second Shift Theorem|TR3]]:
+
 $$\int_a^\infty f(x-a)e^{-sx}dx\ \xrightarrow{\ \tau=x-a\ }\ e^{-as}\int_0^\infty f(\tau)e^{-s\tau}d\tau=e^{-as}\tilde f(s).$$
 
 ### (b) $y''+2y'+2y=\delta(x-13)$, $y(0)=y'(0)=0$
 **(i) [7]** $(s^2+2s+2)\tilde y=e^{-13s}$, so
+
 $$\tilde y=\frac{e^{-13s}}{(s+1)^2+1}.$$
 
 **(ii) [8]**
@@ -232,7 +261,9 @@ $$\boxed{y=H(x-13)\,e^{-(x-13)}\sin(x-13)}$$
 
 ## A2 (25 marks): damped string $u_{tt}+2\kappa u_t=u_{xx}$, $0<\kappa<1$, $u(t,0)=u(t,\pi)=0$, $u_t(0,x)=0$
 **(a) Separate [5].** Substitute $u=XT$ and divide by $XT$:
+
 $$\frac{\ddot T+2\kappa\dot T}{T}=\frac{X''}{X}=\lambda .$$
+
 So $X''-\lambda X=0$ and $\ddot T+2\kappa\dot T-\lambda T=0$ ✔.
 
 **(b) Eigenproblem [9].** Dirichlet BCs, $X(0)=X(\pi)=0$:
@@ -248,10 +279,13 @@ $$X_n=\sin nx,\qquad\lambda_n=-n^2,\qquad n\geq1 .$$
 - Apply $u_t(0,x)=0$: $\dot T_n(0)=\omega_nC_n-\kappa D_n=0$, so $D_n=C_n\frac{\omega_n}{\kappa}=C_n\sqrt{(n/\kappa)^2-1}$.
 
 $$u=\sum_{n\geq1}C_n\sin(nx)\,e^{-\kappa t}\Big[\sin\omega_nt+\sqrt{(n/\kappa)^2-1}\,\cos\omega_nt\Big]\ ✔$$
+
 SymPy confirms that the residual is $0$ for general $n$ and $\kappa$, and that $u_t(0)=0$.
 
 **(d) Second initial condition [4].** $u(0,x)=\sum C_n\sqrt{(n/\kappa)^2-1}\,\sin nx=\sin x$. By orthogonality, only $n=1$ survives:
+
 $$C_1=\frac1{\sqrt{1/\kappa^2-1}}=\frac{\kappa}{\sqrt{1-\kappa^2}},\qquad C_n=0\ (n\geq2).$$
+
 $$\boxed{u=\sin x\;e^{-\kappa t}\Big[\cos\sqrt{1-\kappa^2}\,t+\frac{\kappa}{\sqrt{1-\kappa^2}}\sin\sqrt{1-\kappa^2}\,t\Big]}$$
 
 ![[m2048_pp_2526_a2_damped_string.png|640]]
@@ -261,7 +295,9 @@ $$\boxed{u=\sin x\;e^{-\kappa t}\Big[\cos\sqrt{1-\kappa^2}\,t+\frac{\kappa}{\sqr
 
 ## B1 (15 marks): $\mathbf F=xyz\,\mathbf i+z^2\mathbf j+y^2\mathbf k$
 **(a) Not conservative [6].**
+
 $$\nabla\times\mathbf F=\big(2y-2z\big)\,\mathbf i+\big(xy-0\big)\,\mathbf j+\big(0-xz\big)\,\mathbf k=(2y-2z,\ xy,\ -xz).$$
+
 This is not identically zero; for example, at $(1,1,0)$ it is $(2,1,0)$. So $\mathbf F$ is not conservative.
 
 **(b) Line integral along $\mathbf r=\big(3(t+1),\,t,\,t^2\big)$, $0\leq t\leq1$ [9].**
@@ -274,17 +310,20 @@ $$\int_0^1(10t^4+11t^3)\,dt=2+\frac{11}{4}=\boxed{\frac{19}{4}}\ ✔$$
 ## B2 (20 marks): unit upper hemisphere, $\phi=x^2+y^2+z^3$
 **(a)** $\mathbf F=\nabla\phi=(2x,\ 2y,\ 3z^2)$.
 
-**(b)** $\nabla\cdot\mathbf F=4+6z$. By Gauss, $\oiint\mathbf F\cdot d\mathbf S=\iiint_V(4+6z)\,dV$.
+**(b)** $\nabla\cdot\mathbf F=4+6z$. By Gauss, $\mathop{\large ∯}\mathbf F\cdot d\mathbf S=\iiint_V(4+6z)\,dV$.
 
 **(c)** $dV=r^2\sin\theta\,dr\,d\theta\,d\phi$ (Jacobian, as in 2024/25 B2a).
 
 **(d) Evaluate.**
+
 $$I=\int_0^{2\pi}\!\!\int_0^{\pi/2}\!\!\int_0^1(4+6r\cos\theta)\,r^2\sin\theta\,dr\,d\theta\,d\phi=2\pi\Big[4\cdot\tfrac13\cdot1+6\cdot\tfrac14\cdot\tfrac12\Big]=2\pi\Big(\tfrac43+\tfrac34\Big)=\boxed{\frac{25\pi}{6}}$$
+
 The two pieces use $\int_0^{\pi/2}\sin\theta\,d\theta=1$ and $\int_0^{\pi/2}\cos\theta\sin\theta\,d\theta=\tfrac12$.
 
 *Cross-check*: the flux through the curved surface alone, computed by explicit parametrisation, is also $\frac{25\pi}6$. The base disc contributes $\mathbf F\cdot(-\mathbf k)=-3z^2=0$ at $z=0$ ✔.
 
 **(e) Hemisphere centred at $(0,0,1)$ [4].** Shift $z=z'+1$; the Jacobian of this shift is $1$. Then $4+6z=(4+6z')+6$, so
+
 $$I'=I+6\,\mathrm{Vol}=\frac{25\pi}{6}+6\cdot\frac{2\pi}{3}=\boxed{\frac{49\pi}{6}}\ ✔$$
 
 ---

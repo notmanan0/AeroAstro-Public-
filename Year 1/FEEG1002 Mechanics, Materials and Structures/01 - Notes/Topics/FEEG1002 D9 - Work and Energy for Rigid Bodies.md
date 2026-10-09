@@ -20,7 +20,9 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 09 - Work and Energy for Rigid
 
 > [!abstract] Summary
 > A rigid body stores kinetic energy in translation **and** rotation:
+>
 > $$KE = \tfrac12mv_G^2 + \tfrac12I_G\omega^2 = \tfrac12I_{IC}\omega^2$$
+>
 > The second form uses the instantaneous centre. The work–energy principle carries over unchanged, $KE_1 + V_1 + \sum U_{1-2} = KE_2 + V_2$, with one addition: a **couple** does work $\int M\,d\theta$. Many forces do **no** work:
 > - pin reactions;
 > - normal forces;
@@ -64,6 +66,7 @@ Summing $\tfrac12v^2\,dm$ with $\mathbf v_i = \mathbf v_G + \boldsymbol\omega\ti
   - $V_e = \tfrac12k(l - l_0)^2$ with the spring length from the geometry, e.g. the cosine rule $l^2 = b^2 + c^2 - 2bc\cos\theta$.
 
 ## 3. The principle and conservation (L9.2)
+
 $$
 KE_1 + V_{g1} + V_{e1} + \sum U^{nc}_{1-2} = KE_2 + V_{g2} + V_{e2}
 $$

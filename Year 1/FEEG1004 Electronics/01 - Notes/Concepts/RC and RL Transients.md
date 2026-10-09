@@ -17,7 +17,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W05-5abc Inductors and Resonance - Re
 
 > [!note] Definition
 > Any first-order circuit relaxes exponentially from its initial to its final value:
+>
 > $$x(t) = x_\infty + (x_0 - x_\infty)e^{-t/\tau},\qquad \tau_{RC} = RC,\qquad \tau_{RL} = \frac{L}{R}$$
+>
 > Here $R$ is the Thévenin resistance seen by the $C$ or $L$.
 
 ## Explanation

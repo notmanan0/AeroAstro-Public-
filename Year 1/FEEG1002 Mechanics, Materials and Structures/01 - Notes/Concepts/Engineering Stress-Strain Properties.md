@@ -14,6 +14,7 @@ sources: []
 # Engineering Stress-Strain Properties
 
 ## Definition
+
 $$\sigma=F/A_0,\quad\varepsilon=\Delta L/L_0,\quad E=d\sigma/d\varepsilon,\quad \nu=-\varepsilon_t/\varepsilon_a$$
 
 - Yield/proof stress: onset of plasticity.

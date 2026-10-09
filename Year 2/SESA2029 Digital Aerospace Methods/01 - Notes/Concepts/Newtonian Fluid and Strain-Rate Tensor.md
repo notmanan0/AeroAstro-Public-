@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L8)", "02 - Sources/C
 
 > [!note] Definition
 > A **Newtonian fluid** has internal (viscous) stress proportional to the **strain rate** only:
+>
 > $$\sigma_{ij} = 2\mu S_{ij},\qquad S_{ij} = \tfrac12\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)$$
+>
 > (plus pressure, and a bulk term if compressible). It is the fluid analogue of Hooke's law.
 
 ## Explanation

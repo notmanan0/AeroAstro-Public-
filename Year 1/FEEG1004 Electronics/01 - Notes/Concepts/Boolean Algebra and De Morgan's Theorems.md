@@ -16,7 +16,9 @@ sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors
 ## Definition
 
 > [!note] Definition
+>
 > $$\overline{A + B} = \overline A\cdot\overline B,\qquad \overline{A\cdot B} = \overline A + \overline B\qquad(\text{"break the line, change the sign"})$$
+>
 > Also key: $A + 1 = 1$, $A + A = A$, $A + \overline A = 1$, $A\overline A = 0$, $A + AB = A$, $A + BC = (A + B)(A + C)$ and $A\oplus B = A\overline B + \overline AB$.
 
 ## Explanation

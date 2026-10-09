@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 08 - Turbomachinery Principles.pdf"]
 
 > [!note] Definition
 > The vector relation between absolute velocity $\mathbf V$, relative velocity $\mathbf V_{rel}$ and blade velocity $\mathbf U$: $\mathbf V = \mathbf V_{rel}+\mathbf U$. In components:
+>
 > $$V_x = V_{x,rel},\qquad V_{\theta,rel} = V_\theta-U,\qquad\tan\alpha = \frac{V_\theta}{V_x},\qquad\tan\alpha_{rel} = \frac{V_\theta-U}{V_x}$$
 
 ## Explanation

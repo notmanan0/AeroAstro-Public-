@@ -17,6 +17,7 @@ sources: []
 S-N: stress amplitude versus cycles to failure. Fatigue life is $N$ at specified $S$; fatigue strength is $S$ at specified $N$; some alloys show a fatigue limit.
 
 For a known crack:
+
 $$\Delta K=Y\Delta\sigma\sqrt{\pi a},\qquad \frac{da}{dN}=A(\Delta K)^m$$
 
 ## Explanation

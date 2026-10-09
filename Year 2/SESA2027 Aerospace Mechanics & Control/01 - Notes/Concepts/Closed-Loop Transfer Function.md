@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 2.02.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > For controller $C$, plant $G$ and sensor $H$ in negative feedback:
+>
 > $$\frac{X(s)}{R(s)} = \frac{G(s)C(s)}{1+G(s)C(s)H(s)}$$
+>
 > With unity feedback ($H = 1$) and $G = B/A$, the **closed-loop characteristic equation** is $1+GC = 0$. For a proportional controller this becomes $A(s)+K_pB(s) = 0$.
 
 ## Explanation

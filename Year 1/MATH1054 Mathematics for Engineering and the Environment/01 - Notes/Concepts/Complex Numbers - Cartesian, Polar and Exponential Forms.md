@@ -16,7 +16,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §3.2", "MATH1054 Mod
 ## Definition
 
 > [!note] Definition
+>
 > $$z=x+\mathrm jy=r(\cos\theta+\mathrm j\sin\theta)=re^{\mathrm j\theta},\qquad r=|z|=\sqrt{x^2+y^2},\quad\theta=\arg z$$
+>
 > The **principal argument** lies in $(-\pi,\pi]$.
 
 ## Explanation

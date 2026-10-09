@@ -54,7 +54,9 @@ Check (b): OFF means no current, so no drop across the 2.5 kΩ and $V_{out}$ = 5
 **Regions**:
 - $|v_{in}| < 5$ V: both diodes are off. No current flows, so $v_{out} = v_{in}$.
 - $v_{in} > 5$ V: the upper branch conducts. KCL at the output:
+
 $$\frac{v_{in} - v_{out}}{10\,\mathrm k} = \frac{v_{out} - 5}{10\,\mathrm k}\ \Rightarrow\ v_{out} = \frac{v_{in} + 5}{2}$$
+
 - $v_{in} < -5$ V: by symmetry $v_{out} = (v_{in} - 5)/2$.
 
 **Description**: a **unity-slope** region between ±5 V, with **half-slope** beyond. The 10 kΩ inside each branch softens the clipping instead of holding the output flat. This is limiter (d) in the figure.
@@ -80,7 +82,9 @@ $$
 
 ## Q6: Full-wave rectifier with smoothing: 10 V average, 0.2 V ripple, 5 mA, 50 Hz
 - **(a)** The full-wave ripple period is $T/2$ = 10 ms:
+
 $$C = \frac{I}{2f\,\Delta V} = \frac{0.005}{2(50)(0.2)} = 250\ \mu\mathrm F$$
+
 - **(b)** The average 10 V sits $\Delta V/2$ below the peak, so $V_{p,out}$ = 10.1 V. Two diodes conduct at once: $V_{p,in} = 10.1 + 1.4$ = 11.5 V, so $v_{in}$ = **23 V peak-to-peak**.
 
 ![[ee_b2_rectifiers.png|700]]

@@ -29,6 +29,7 @@ sources: ["02 - Sources/Dynamics/Tutorials/Tutorial Sheet 01 - Linear Motion.pdf
 ---
 
 ## Q1: Boat, $s = 4t + 1.6t^2 - 0.08t^3$ ($2\le t\le10$ s)
+
 $$v = 4 + 3.2t - 0.24t^2,\qquad a = 3.2 - 0.48t$$
 
 - At $t = 4$ s: **$v = 12.96$ m/s**, **$a = 1.28$ m/s²**.
@@ -150,9 +151,11 @@ The platform accelerates with magnitude $a$ along the 60° guide. The object nee
 - normal force $N = m(g\mp a\sin60°)$, with $-$ when accelerating downwards.
 
 **Downward acceleration**: $a\cos60° \le \mu_s(g - a\sin60°)$, so
+
 $$a_{max} = \frac{\mu_sg}{\cos60° + \mu_s\sin60°} = \mathbf{2.91}\ \text{m/s}^2,\qquad N = \mathbf{656}\ \text{N}$$
 
 **Upward acceleration**: $a\cos60° \le \mu_s(g + a\sin60°)$, so
+
 $$a_{max} = \frac{\mu_sg}{\cos60° - \mu_s\sin60°} = \mathbf{6.00}\ \text{m/s}^2,\qquad N = \mathbf{1351}\ \text{N}$$
 
 Accelerating downwards unloads the contact (smaller $N$, less friction available), so the downward limit is lower.

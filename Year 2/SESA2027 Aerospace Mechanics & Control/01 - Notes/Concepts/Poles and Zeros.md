@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.07.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > In zero–pole–gain (ZPK) form,
+>
 > $$G(s) = k\frac{(s-z_1)\cdots(s-z_m)}{(s-p_1)\cdots(s-p_n)},\qquad m\le n$$
+>
 > - The **poles** $p_i$ (plotted ×) are the roots of the denominator: the system's natural modes and eigenvalues.
 > - The **zeros** $z_j$ (plotted ○) are the roots of the numerator: they shape how strongly each mode appears in the output.
 

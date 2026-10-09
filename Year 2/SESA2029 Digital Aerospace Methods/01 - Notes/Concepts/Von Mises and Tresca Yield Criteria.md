@@ -17,6 +17,7 @@ sources: ["02 - Sources/FEM Lectures/Lecture_4_Linear_elastic_FEA_Final_2.pdf", 
 
 > [!note] Definition
 > Scalar measures that compare a 3D stress state with the uniaxial yield stress:
+>
 > $$\text{Tresca: }\max\left(|\sigma_1-\sigma_2|,|\sigma_2-\sigma_3|,|\sigma_3-\sigma_1|\right) = \sigma_Y,\qquad\text{von Mises: }\sqrt{\tfrac12\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right]} = \sigma_Y$$
 
 ## Explanation

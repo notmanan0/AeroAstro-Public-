@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > With weight as the only force, $a_x = 0$ and $a_y = -g$: two independent straight-line motions.
+>
 > $$x = x_0 + v_0\cos\theta_0\,t,\qquad y = y_0 + v_0\sin\theta_0\,t - \tfrac12gt^2$$
+>
 > The trajectory is a parabola: $y = y_0 + \tan\theta_0(x - x_0) - \dfrac{g(x - x_0)^2}{2v_0^2\cos^2\theta_0}$.
 
 ## Explanation

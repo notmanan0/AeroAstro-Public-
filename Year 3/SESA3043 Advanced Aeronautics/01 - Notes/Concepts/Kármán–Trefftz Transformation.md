@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 ## Definition
 
 > [!note] Definition
+>
 > $$z=2b\,\frac{(\bar z+b)^p+(\bar z-b)^p}{(\bar z+b)^p-(\bar z-b)^p},\qquad p=2-\frac\tau\pi,$$
+>
 > where $\tau$ is the trailing-edge included angle. $p=2$ recovers Joukowski.
 
 ## Key points

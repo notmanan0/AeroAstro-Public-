@@ -17,6 +17,7 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 
 > [!note] Definition
 > Three EMFs of equal amplitude 120° apart. Connected in **star** (one end of each phase at a common neutral) or **delta** (a closed ring). For a **balanced** load:
+>
 > $$i_N = i_A + i_B + i_C = 0,\qquad p(t) = 3V_{ph}I_{ph}\cos\phi = \text{constant}$$
 
 ## Explanation

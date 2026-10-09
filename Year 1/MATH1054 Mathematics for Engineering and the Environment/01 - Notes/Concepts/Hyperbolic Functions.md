@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §2.7.4–2.7.5, §8.
 ## Definition
 
 > [!note] Definition
+>
 > $$\cosh x=\frac{e^x+e^{-x}}2,\qquad\sinh x=\frac{e^x-e^{-x}}2,\qquad\tanh x=\frac{\sinh x}{\cosh x}$$
 
 ## Explanation

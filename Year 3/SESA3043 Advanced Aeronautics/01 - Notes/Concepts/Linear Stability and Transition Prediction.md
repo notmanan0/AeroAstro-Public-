@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/CH3-4 Transition to Turbulence(1).pdf"]
 
 > [!note] Definition
 > Perturb a parallel laminar flow $\bar u(y)$ with a small wave $v'=\hat v(y)e^{i(\alpha x-\omega t)}$ and linearise Navier–Stokes. The amplitude obeys the **Orr–Sommerfeld equation**
+>
 > $$(\bar u-c_{ph})(\hat v''-\alpha^2\hat v)-\bar u''\hat v=-\frac{i\nu}{\alpha}\left(\hat v''''-2\alpha^2\hat v''+\alpha^4\hat v\right),\qquad c_{ph}=\frac\omega\alpha.$$
+>
 > With real $\omega$ and $\alpha=\alpha_r+i\alpha_i$, the wave grows downstream where $\alpha_i<0$.
 
 ## The chain of ideas

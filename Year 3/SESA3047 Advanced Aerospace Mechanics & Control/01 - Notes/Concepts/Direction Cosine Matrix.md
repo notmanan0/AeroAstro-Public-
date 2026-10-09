@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf u^b=\mathbf C_{b/a}\,\mathbf u^a,\qquad C_{ij}=\mathbf b_i\cdot\mathbf a_j=\cos(\angle\,\mathbf b_i,\mathbf a_j).$$
+>
 > It converts the **components** of the same physical vector from coordinates $a$ to coordinates $b$. Row $i$ is the new axis $\mathbf b_i$ in old components.
 
 ## Properties

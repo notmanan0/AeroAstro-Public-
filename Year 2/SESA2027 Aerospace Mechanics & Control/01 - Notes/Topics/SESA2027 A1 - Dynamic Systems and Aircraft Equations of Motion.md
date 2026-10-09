@@ -23,7 +23,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.01.pdf", "02 - Sources/Lectures/Lectu
 
 > [!abstract] Summary
 > A **dynamic system** has a state that evolves according to $\dot{\mathbf x} = f(\mathbf x,\mathbf u)$. For a rigid aircraft we apply Newton's laws in six degrees of freedom, written in the **body frame**:
+>
 > $$\mathbf F_B = m(\dot{\mathbf v}_B + \boldsymbol\omega_B\times\mathbf v_B),\qquad \mathbf M_B = \dot{\mathbf h}_B + \boldsymbol\omega_B\times\mathbf h_B,\quad \mathbf h_B = \mathbf I_B\boldsymbol\omega_B$$
+>
 > Symmetry ($I_{xy}=I_{yz}=0$) and **small-perturbation linearisation** about trim **decouple** these into longitudinal equations (in $u,w,q$) and lateral equations (in $v,p,r$).
 
 ## Key Concepts

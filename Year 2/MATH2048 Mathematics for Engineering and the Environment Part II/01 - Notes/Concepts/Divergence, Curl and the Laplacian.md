@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture24_vect
 ## Definition
 
 > [!note] Definition
+>
 > $$\nabla\cdot\mathbf F=\partial_xF_1+\partial_yF_2+\partial_zF_3,\qquad \nabla\times\mathbf F=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\partial_x&\partial_y&\partial_z\\F_1&F_2&F_3\end{vmatrix},\qquad \nabla^2\phi=\nabla\cdot\nabla\phi .$$
 
 ## Explanation

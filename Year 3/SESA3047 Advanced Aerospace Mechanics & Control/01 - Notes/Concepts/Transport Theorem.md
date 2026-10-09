@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 
 > [!note] Definition
 > For any vector $\mathbf p$ and frames $F_a$, $F_b$ with $F_b$ rotating at $\boldsymbol\omega_{b/a}$ relative to $F_a$:
+>
 > $${}^a\dot{\mathbf p}={}^b\dot{\mathbf p}+\boldsymbol\omega_{b/a}\times\mathbf p\qquad(\text{Eq. 2.22}).$$
+>
 > ${}^b\dot{\mathbf p}$ is the change seen inside $F_b$. $\boldsymbol\omega\times\mathbf p$ is the extra change seen from $F_a$ because $F_b$ rotates.
 
 ## Derivation in three lines

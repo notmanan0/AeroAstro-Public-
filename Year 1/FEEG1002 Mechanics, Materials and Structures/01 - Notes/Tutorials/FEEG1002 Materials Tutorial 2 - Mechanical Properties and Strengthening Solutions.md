@@ -22,11 +22,15 @@ sources: ["02 - Sources/Materials/Tutorials/Tutorial Sheet 02 - Plastic Deformat
 ---
 
 ## Q1: Copper rod, $d=10$ mm, $L_0=305$ mm, $\sigma=276$ MPa
+
 $$\varepsilon_z=\frac\sigma E=\frac{276}{110000}=2.509\times10^{-3}$$
+
 $$\boxed{\Delta L=\varepsilon_zL_0=0.765\ \text{mm}}$$
 
 The lateral strain is $\varepsilon_d=-\nu\varepsilon_z=-0.34(2.509\times10^{-3})=-8.531\times10^{-4}$:
+
 $$\boxed{\Delta d=\varepsilon_dd=-0.00853\ \text{mm}}$$
+
 The diameter decreases by 8.53 $\mu$m.
 
 ## Q2: Aluminium tensile curve, $d=12.8$ mm, $L_0=50.8$ mm
@@ -41,13 +45,19 @@ Readings from the supplied graph:
 | extension at failure | $0.165(50.8)=\boxed{8.38\ \text{mm}}$ |
 
 Original area:
+
 $$A_0=\frac{\pi d^2}{4}=\frac{\pi(12.8)^2}{4}=128.68\ \text{mm}^2$$
+
 Maximum load:
+
 $$\boxed{F_{max}=UTS\,A_0\approx370(128.68)=47.6\ \text{kN}}$$
 
 At 340 MPa the graph gives total strain about $0.033$. On elastic unloading, recovered strain is
+
 $$\varepsilon_e=\frac{340}{60000}=0.00567$$
+
 so permanent strain is about $0.0273$ and
+
 $$\boxed{\Delta L_{permanent}\approx0.0273(50.8)=1.39\ \text{mm}}$$
 
 > [!note] These are graph readings; $E$ and the 340 MPa intersection dominate the last answer. Reporting extra digits would be misleading.
@@ -75,11 +85,15 @@ Anneal the cold-worked material:
 
 ## Q7: Aluminium crystal-growth velocity
 Growth is diffusion controlled, so
+
 $$v=Ae^{-Q/RT}\quad\Rightarrow\quad \ln v=\ln A-\frac QR\frac1T$$
 
 A least-squares fit to the four supplied points (200–400°C) gives
+
 $$Q\approx229\ \text{kJ mol}^{-1}$$
+
 and setting $v=10^{-2}$ m/s gives
+
 $$\boxed{T\approx797\ \text K\approx523^\circ\text C}$$
 
 This is an extrapolation well beyond the data, so a graph should be quoted as roughly **520°C**.

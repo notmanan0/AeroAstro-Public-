@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/ODEs/Lecture3_ODE.pdf (slide 1
 
 > [!note] Definition
 > Forcing an undamped oscillator $\ddot y+\omega_0^2y=\cos\omega_st$ **at its natural frequency** ($\omega_s=\omega_0$) gives a particular integral whose amplitude grows without bound:
+>
 > $$y_p=\frac{t}{2\omega_0}\sin\omega_0t .$$
 
 ## Explanation

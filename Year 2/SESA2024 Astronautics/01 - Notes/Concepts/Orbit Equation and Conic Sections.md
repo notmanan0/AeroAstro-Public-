@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_orb
 ## Definition
 
 > [!note] Definition
+>
 > $$r = \frac{a(1-e^2)}{1+e\cos\theta} = \frac{h^2/\mu}{1+e\cos\theta}$$
+>
 > Here $\theta$ is the **true anomaly**, measured from periapsis, and $p = a(1-e^2) = h^2/\mu$ is the semi-latus rectum.
 
 ## Explanation
@@ -30,7 +32,9 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_orb
 - **Apsides**: $r_p = a(1-e)$ at $\theta = 0$; $r_a = a(1+e)$ at $\theta = 180^\circ$.
 - So $a = (r_p+r_a)/2$ and $e = (r_a-r_p)/(r_a+r_p)$.
 - **Inverting for $\theta$**:
+
 $$\cos\theta = \frac1e\left[\frac{a(1-e^2)}{r}-1\right]$$
+
   Choose $\theta$ or $360^\circ-\theta$ from the direction of motion (outbound or inbound).
 - Ellipse properties: $b = a\sqrt{1-e^2}$, area $\pi ab$, the focus lies $ae$ from the centre.
 

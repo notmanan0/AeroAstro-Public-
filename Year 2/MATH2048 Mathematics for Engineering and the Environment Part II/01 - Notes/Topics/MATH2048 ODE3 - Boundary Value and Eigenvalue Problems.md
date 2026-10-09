@@ -173,9 +173,11 @@ For $y''+\lambda y=0$, $y(0)=y(\pi)=0$ (and, via Sturm–Liouville, far more gen
 5. The eigenfunctions are **complete**, so any reasonable $f$ can be expanded as $\sum a_ny_n$. **This is exactly a Fourier series** and leads into Block 2.
 
 **Proof of orthogonality** (from the ODE, without integrating trig products). Let $y_m''=-\lambda_my_m$ and $y_n''=-\lambda_ny_n$ with the same homogeneous BCs. Then
+
 $$
 (\lambda_n-\lambda_m)\int_0^Ly_my_n\,dx=\int_0^L\big(y_m''y_n-y_n''y_m\big)dx=\Big[y_m'y_n-y_n'y_m\Big]_0^L-\int_0^L(y_m'y_n'-y_n'y_m')\,dx .
 $$
+
 The last integral is identically zero. For Dirichlet or Neumann BCs the boundary bracket also vanishes, because every term contains a factor $y$ or $y'$ that is zero at the ends. So $\lambda_m\neq\lambda_n\Rightarrow\int_0^Ly_my_n\,dx=0$ ∎.
 
 *(Not examinable: Sturm–Liouville form $(py')'-qy+\lambda wy=0$ generalises all of this with weight $w(x)$.)*

@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf"]
 
 > [!note] Definition
 > A combination of $\phi$ and $\psi$ that **eliminates the size $D$**, so it can be evaluated from the duty ($Q$, $\Delta p$, $\Omega$) before the machine is designed:
+>
 > $$N_s = \frac{\phi^{1/2}}{\psi^{3/4}} = \frac{Q^{1/2}\,\Omega}{(\Delta p/\rho)^{3/4}}\quad(\Omega\text{ in rad/s, SI units})$$
 
 ## Explanation

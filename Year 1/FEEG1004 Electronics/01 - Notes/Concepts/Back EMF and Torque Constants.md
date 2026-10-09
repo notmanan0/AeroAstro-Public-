@@ -16,7 +16,9 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$E = K_E\omega,\qquad T = K_Ti,\qquad K_E = K_T = \frac{ZN_p\Phi}{2\pi a}\ \ [\mathrm{V\,s/rad} = \mathrm{N\,m/A}]$$
+>
 > Steady equivalent circuit: $V = E\pm iR_a$ (+ for a motor, − for a generator).
 
 ## Explanation

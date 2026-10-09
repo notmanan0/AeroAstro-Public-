@@ -17,7 +17,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §4.2", "MATH1054 Mod
 
 > [!note] Definition
 > $\mathbf a=(a_1,a_2,a_3)=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k$, with
+>
 > $$|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2},\qquad\hat{\mathbf a}=\frac{\mathbf a}{|\mathbf a|}$$
+>
 > The direction cosines $(l,m,n)$ are the components of $\hat{\mathbf a}$.
 
 ## Explanation

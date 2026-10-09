@@ -38,14 +38,19 @@ At 21°C, amorphous coils begin to uncoil and align in the neck. Alignment packs
 Polymer chains need time to rotate, uncoil, disentangle and slide. A slow test allows more rearrangement and gives lower apparent stiffness/strength and more creep; a rapid test looks stiffer/more brittle. Raising temperature has a similar effect (time-temperature equivalence).
 
 ### (b) Rubber stress relaxation
+
 $$\sigma(t)=\sigma_0e^{-t/\tau}$$
+
 With $\sigma(24)/\sigma_0=0.15/0.20=0.75$:
+
 $$\tau=-\frac{24}{\ln0.75}=83.43\ \text h$$
 
 For $\sigma=0.10$ MPa:
+
 $$t=-\tau\ln(0.10/0.20)=57.83\ \text h$$
 
 Additional time:
+
 $$\boxed{57.83-24=33.83\ \text h}$$
 
 ## Q3: Relaxation modulus and crystallinity
@@ -55,19 +60,24 @@ For fixed observation time, $E_r(t)$ falls as temperature rises: glassy plateau 
 Given $V_f=0.40$, $E_f=69$ GPa, $V_m=0.60$, $E_m=3.4$ GPa.
 
 ### (a) Longitudinal and transverse moduli
+
 $$E_L=V_fE_f+V_mE_m=0.4(69)+0.6(3.4)=\boxed{29.64\ \text{GPa}}$$
 
 $$E_T=\frac{E_fE_m}{V_fE_m+V_mE_f}=\frac{69(3.4)}{0.4(3.4)+0.6(69)}=\boxed{5.49\ \text{GPa}}$$
 
 ### (b) Phase loads under $\sigma_c=50$ MPa, $A=250$ mm²
 Longitudinal loading is isostrain:
+
 $$\varepsilon_c=\frac{\sigma_c}{E_L}=\frac{50}{29640}=1.6869\times10^{-3}$$
 
 Phase stresses:
+
 $$\sigma_f=E_f\varepsilon=116.40\ \text{MPa},\qquad \sigma_m=E_m\varepsilon=5.735\ \text{MPa}$$
 
 Phase areas: $A_f=0.4(250)=100$ mm², $A_m=150$ mm².
+
 $$\boxed{F_f=11.64\ \text{kN}},\qquad \boxed{F_m=0.860\ \text{kN}}$$
+
 Check: $F_f+F_m=12.50$ kN $=\sigma_cA$.
 
 ![[m11_composite_moduli.png|760]]

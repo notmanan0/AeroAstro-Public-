@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §13.5.3", "MATH1054 
 
 > [!note] Definition
 > $X\sim N(\mu,\sigma^2)$, where the second parameter is the **variance**. Standardise with $Z=\frac{X-\mu}\sigma\sim N(0,1)$:
+>
 > $$P(X\le x)=\Phi\Big(\frac{x-\mu}{\sigma}\Big),\qquad\Phi(-z)=1-\Phi(z)$$
 
 ## Explanation

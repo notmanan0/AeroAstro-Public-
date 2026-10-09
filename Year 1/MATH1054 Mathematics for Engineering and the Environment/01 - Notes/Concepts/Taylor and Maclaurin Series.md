@@ -16,7 +16,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §9.4", "MATH1054 Mod
 ## Definition
 
 > [!note] Definition
+>
 > $$f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}x^k+R_n(x),\qquad R_n(x)=\frac{f^{(n+1)}(\theta x)}{(n+1)!}x^{n+1}\ \ (0<\theta<1)$$
+>
 > The Taylor series about $a$ replaces $x$ by $x-a$ and evaluates the derivatives at $a$.
 
 ## Explanation

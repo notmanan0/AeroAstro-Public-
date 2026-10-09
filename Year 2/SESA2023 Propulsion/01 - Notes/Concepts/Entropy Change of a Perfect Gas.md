@@ -15,6 +15,7 @@ sources: ["02 - Sources/Lectures/Week 02 - Thermodynamics.pdf", "02 - Sources/Le
 ## Definition
 
 > [!note] Definition
+>
 > $$T\,ds = du+p\,dv = dh-v\,dp\;\Rightarrow\; s_2-s_1 = c_p\ln\frac{T_2}{T_1}-R\ln\frac{p_2}{p_1} = c_v\ln\frac{T_2}{T_1}+R\ln\frac{v_2}{v_1} = c_v\ln\frac{p_2}{p_1}+c_p\ln\frac{v_2}{v_1}$$
 
 ## Explanation

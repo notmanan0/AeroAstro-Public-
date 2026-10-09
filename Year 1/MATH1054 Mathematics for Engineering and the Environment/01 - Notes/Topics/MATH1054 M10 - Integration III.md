@@ -48,15 +48,19 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 1
 2. For the rest, compare coefficients, usually of the highest power or the constant term.
 
 **Integrating each term**:
+
 $$
 \int\frac{\mathrm dx}{x-a}=\ln|x-a|,\qquad\int\frac{\mathrm dx}{(x-a)^2}=-\frac1{x-a},\qquad\int\frac{Bx+C}{x^2+bx+c}\,\mathrm dx\to\text{a }\ln\text{ part}+\text{a }\tan^{-1}\text{ part}
 $$
+
 For the quadratic, write $Bx+C=\frac B2(2x+b)+\big(C-\frac{Bb}2\big)$. The first part is $f'/f$, which gives a $\ln$. For the second, complete the square to get a $\tan^{-1}$.
 
 ## 2. Completing the square (James §8.8)
+
 $$
 ax^2+bx+c=a\Big[\Big(x+\frac b{2a}\Big)^2+\frac{4ac-b^2}{4a^2}\Big]
 $$
+
 Then match a standard form:
 
 | Form after completing the square | Integral |
@@ -69,9 +73,11 @@ Then match a standard form:
 For example, $3+2x-x^2=4-(x-1)^2$, so $\int_0^2\frac{\mathrm dx}{\sqrt{3+2x-x^2}}=\frac\pi3$.
 
 ## 3. Improper integrals (James §9.2)
+
 $$
 \int_a^\infty f\,\mathrm dx=\lim_{R\to\infty}\int_a^Rf\,\mathrm dx,\qquad\int_0^1f\,\mathrm dx=\lim_{\varepsilon\to0^+}\int_\varepsilon^1f\,\mathrm dx\ \text{(when $f$ is unbounded at 0)}
 $$
+
 The integral **converges** if the limit exists and is finite, and **diverges** otherwise.
 
 **The $p$-test** is worth memorising:

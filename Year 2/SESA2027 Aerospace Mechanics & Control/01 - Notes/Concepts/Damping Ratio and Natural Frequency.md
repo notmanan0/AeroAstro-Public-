@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.05.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > Any second-order mode can be written as
+>
 > $$\lambda^2+2\zeta\omega_n\lambda+\omega_n^2 = 0\quad\Rightarrow\quad\lambda = -\zeta\omega_n\pm i\omega_n\sqrt{1-\zeta^2} = \sigma\pm i\omega$$
+>
 > For a quadratic $\lambda^2+a\lambda+b$: $\omega_n = \sqrt b$ and $\zeta = a/(2\sqrt b)$. From the roots: $\omega_n = \sqrt{\sigma^2+\omega^2}$ and $\zeta = -\sigma/\omega_n$.
 
 ## Explanation

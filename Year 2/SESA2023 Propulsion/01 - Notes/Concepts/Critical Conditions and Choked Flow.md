@@ -16,8 +16,11 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
 
 > [!note] Definition
 > **Critical** (starred) conditions are those at $M = 1$:
+>
 > $$\frac{T^*}{T_0} = \frac{2}{\gamma+1},\qquad\frac{p^*}{p_0} = \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}},\qquad\frac{\rho^*}{\rho_0} = \left(\frac{2}{\gamma+1}\right)^{\frac{1}{\gamma-1}}$$
+>
 > A nozzle is **choked** when its throat reaches $M = 1$. Its mass flow is then the maximum possible:
+>
 > $$\dot m_{max} = \frac{A_tp_0}{\sqrt{T_0}}\sqrt{\frac{\gamma}{R}}\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}$$
 
 ## Explanation
@@ -36,7 +39,9 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
   - $\dot m\propto p_0$ at fixed $T_0$. This is PS9 Q9.5: throttling a choked steam turbine gives $\dot m\propto$ the downstream pressure, with constant volume flow.
   - An afterburner raises $T_{06}$, so a choked nozzle must open its throat: $A_8\propto\dot m\sqrt{T_{06}}/p_{06}$.
 - **General isentropic mass flow** at local pressure $p$ (lecture eq. 3.79):
+
   $$\frac{\dot m}{\rho_0\sqrt{2c_pT_0}} = A\left(\frac{p}{p_0}\right)^{1/\gamma}\left[1-\left(\frac{p}{p_0}\right)^{\frac{\gamma-1}{\gamma}}\right]^{1/2}$$
+
   Setting $p = p^*$ gives the choked form.
 
 ## Examples

@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.05.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > The **slow, lightly damped** longitudinal mode. It is a long-period exchange of kinetic and potential energy at roughly **constant angle of attack**:
+>
 > $$mgh+\tfrac12mV^2\approx\text{const}$$
+>
 > The aircraft climbs and slows, then dives and speeds up, with a period of tens of seconds to minutes.
 
 ## Explanation

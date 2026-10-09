@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture17_Parabolic1.pdf"
 ## Definition
 
 > [!note] Definition
+>
 > $$u_t=\kappa^2u_{xx}$$
+>
 > This is parabolic. Only $u(x,0)$ is needed as initial data.
 
 ## Explanation

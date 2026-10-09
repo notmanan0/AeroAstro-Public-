@@ -23,6 +23,7 @@ sources: ["02 - Sources/FEM Lectures/Lecture_8_ 2D_3D_elements_final.pdf", "02 -
 ## Explanation
 
 $$\text{Plane stress: }[D] = \frac{E}{1-\nu^2}\begin{bmatrix}1&\nu&0\\\nu&1&0\\0&0&\frac{1-\nu}{2}\end{bmatrix},\qquad\varepsilon_z = -\frac{\nu}{1-\nu}(\varepsilon_x+\varepsilon_y)$$
+
 $$\text{Plane strain: }[D] = \frac{E}{(1+\nu)(1-2\nu)}\begin{bmatrix}1-\nu&\nu&0\\\nu&1-\nu&0\\0&0&\frac{1-2\nu}{2}\end{bmatrix},\qquad\sigma_z = \nu(\sigma_x+\sigma_y)$$
 
 - **Plane stress** suits skins, webs, plates with holes and fillets: most aerospace 2D problems.

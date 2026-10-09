@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L10)", "02 - Sources/
 
 > [!note] Definition
 > A discretisation of the **integral** conservation laws over non-overlapping control volumes (cells). Each cell's balance is written as
+>
 > $$\frac{d}{dt}(\bar\phi_P\Delta V)+\sum_{\text{faces}}F_f\,A_f = Q_P\Delta V$$
+>
 > The face fluxes $F_f$ are shared by neighbouring cells, so conservation holds exactly over the whole domain.
 
 ## Explanation

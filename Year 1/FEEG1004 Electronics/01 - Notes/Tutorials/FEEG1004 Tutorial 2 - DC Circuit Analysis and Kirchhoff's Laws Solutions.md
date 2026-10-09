@@ -81,7 +81,9 @@ $$
 
 ## Q3: Thévenin equivalent at A–B
 - **$R_{TH}$**: short $V_1$. The 4 Ω and 12 Ω are then in parallel (3 Ω). Add the series 5 Ω to A. The two 1 Ω resistors between the middle and bottom rails are in parallel (0.5 Ω):
+
 $$R_{TH} = 5 + 3 + 0.5 = 8.5\ \Omega$$
+
 - **$V_{TH}$**:
   - With A–B open, no current flows in the 5 Ω or down to the bottom rail.
   - $V_1$ drives current round the 4 Ω + 12 Ω loop, so the 12 Ω carries $V_1\times12/16$.
@@ -112,9 +114,13 @@ The hydraulic analogy: the membrane fills and stops the flow; the heavy wheel sl
 
 ## Q5: Opening the switch on a 5 mH inductor fed from 12 V with 0.2 Ω internal resistance
 - **(a)** Before opening, the only resistance in the loop is the 0.2 Ω battery resistance (the inductor is a DC short):
+
   $$I_0 = 12/0.2 = 60\ \mathrm A$$
+
   - The inductor current cannot change instantly, so at $t = 0^+$ the 60 A must flow through the only path, the air modelled as 1 MΩ:
+
   $$V = 60\times10^6 = 60\ \mathrm{MV}$$
+
   - It decays with $\tau = L/R = 5\ \mathrm{mH}/1\ \mathrm{M\Omega}$ = 5 ns.
 - **(b) In practice**:
   - The spark occurs at the **switch contacts** as they separate; the gap is tiny there and the field enormous.

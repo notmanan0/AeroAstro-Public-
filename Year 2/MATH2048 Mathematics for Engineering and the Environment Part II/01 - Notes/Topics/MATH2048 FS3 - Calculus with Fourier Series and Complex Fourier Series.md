@@ -35,9 +35,11 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier Series/Lecture7_Fourie
 **Example: $x^2$ on $[-\pi,\pi]$** (even, so it has a cosine series).
 - $a_0=\frac2\pi\int_0^\pi x^2dx=\frac{2\pi^2}3$.
 - $a_n=\frac2\pi\int_0^\pi x^2\cos nx\,dx$. Integrate by parts twice:
+
 $$
 \int x^2\cos nx\,dx=\frac{x^2\sin nx}{n}+\frac{2x\cos nx}{n^2}-\frac{2\sin nx}{n^3},
 $$
+
 so $a_n=\frac2\pi\cdot\frac{2\pi(-1)^n}{n^2}=\frac{4(-1)^n}{n^2}$.
 
 $$
@@ -62,9 +64,13 @@ This extension is continuous, because $(-\pi)^2=\pi^2$. At $x=\pi$: $\pi^2=\frac
 
 > [!example] Lecture Notes §2.5.1: a legitimate differentiation
 > On $(-\pi,\pi)$, $f=x\sin x$ is even and continuous, with $f(\pm\pi)=0$. Its series is
+>
 > $$x\sin x=1-\tfrac12\cos x-2\sum_{n\geq2}\frac{(-1)^n}{n^2-1}\cos nx=1-\tfrac12\cos x-\frac{2\cos2x}{1\cdot3}+\frac{2\cos3x}{2\cdot4}-\dots$$
+>
 > Differentiating is allowed (conditions 4 and 5 hold), and it gives $\sin x+x\cos x$. Subtracting the $\sin x$ leaves
+>
 > $$x\cos x=-\tfrac12\sin x+\sum_{n\geq2}\frac{2n(-1)^n}{n^2-1}\sin nx .$$
+>
 > SymPy checks both sets of coefficients ✔.
 
 > [!example] Lecture Notes §2.5.1: a failed differentiation
@@ -75,6 +81,7 @@ This extension is continuous, because $(-\pi)^2=\pi^2$. At $x=\pi$: $\pi^2=\frac
 
 ## 2. Integration (L7)
 Integrating $\frac12a_0+\sum(a_n\cos nx+b_n\sin nx)$ term by term gives
+
 $$
 \int f\,dx=C+\frac12a_0x+\sum_{n=1}^\infty\frac{a_n\sin nx-b_n\cos nx}{n}.
 $$
@@ -84,14 +91,18 @@ This is always valid, because integration *divides* by $n$ and so improves conve
 **Example: $x^3$ from $x^2$.**
 1. Integrate the $x^2$ series from $0$ to $x$: $\frac{x^3}3=\frac{\pi^2}3x+\sum\frac{4(-1)^n}{n^3}\sin nx$. The constant $C=0$, which you can see by setting $x=0$.
 2. Substitute $x=\sum\frac{2(-1)^{n+1}}{n}\sin nx$ and multiply by 3:
+
 $$
 x^3=\sum_{n=1}^\infty\Big[\frac{2\pi^2(-1)^{n+1}}{n}+\frac{12(-1)^n}{n^3}\Big]\sin nx=\sum_{n=1}^\infty\frac{2(-1)^n\big(6-n^2\pi^2\big)}{n^3}\sin nx .
 $$
+
 3. Checks: the series is odd ✔, and it matches direct integration in SymPy ✔.
 
 > [!example] Lecture Notes route: $x^2$ by integrating from $-\pi$
 > Integrate $x=2\sum\frac{(-1)^{n-1}}{n}\sin nx$ from $-\pi$ to $x$:
+>
 > $$\frac{x^2-\pi^2}{2}=2\sum\frac{(-1)^n}{n^2}\big[\cos nx-(-1)^n\big],\qquad\text{so}\qquad x^2=\frac{a_0}2+4\sum\frac{(-1)^n}{n^2}\cos nx .$$
+>
 > The constant is best found directly: $a_0=\frac1\pi\int_{-\pi}^{\pi}x^2dx=\frac{2\pi^2}3$. The alternative, using the known value of $\sum\frac1{n^2}$, also works.
 
 ## 3. Complex Fourier series (L8)
@@ -110,9 +121,11 @@ c_n=\begin{cases}\tfrac12(a_n-jb_n)&n>0\\ \tfrac12a_0&n=0\\ \tfrac12(a_{-n}+jb_{
 $$
 
 **Derivation of the single formula for $c_n$**: for $n>0$,
+
 $$
 \tfrac12(a_n-jb_n)=\frac1{2\ell}\int f\Big(\cos\tfrac{n\pi x}\ell-j\sin\tfrac{n\pi x}\ell\Big)dx=\frac1{2\ell}\int fe^{-jn\pi x/\ell}dx .
 $$
+
 The cases $n<0$ and $n=0$ give the same expression.
 
 **Orthogonality**: $\int_{-\ell}^{\ell}e^{jm\pi x/\ell}\,\overline{e^{jn\pi x/\ell}}\,dx=2\ell\,\delta_{mn}$.
@@ -127,6 +140,7 @@ For real $f$, $c_{-n}=\overline{c_n}$.
 > A real function has a complex series too. The imaginary parts cancel in conjugate pairs.
 
 ### Example (L8): $f(x)=e^x$ on $(-\pi,\pi)$
+
 $$
 c_n=\frac1{2\pi}\int_{-\pi}^{\pi}e^{(1-jn)x}dx=\frac1{2\pi}\cdot\frac{e^{(1-jn)\pi}-e^{-(1-jn)\pi}}{1-jn}.
 $$

@@ -38,16 +38,20 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 3
 ---
 
 ## 1. The derivative (James §8.2)
+
 $$
 f'(x)=\frac{\mathrm df}{\mathrm dx}=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x}
 $$
+
 Geometrically, this is the slope of the tangent: the limit of the chord slopes as the second point slides onto the first. Physically, it is an instantaneous rate: $v=\dot s$, $a=\dot v=\ddot s$.
 
 - **Tangent** at $(x_0,y_0)$: $y-y_0=f'(x_0)(x-x_0)$.
 - **Normal** at $(x_0,y_0)$: $y-y_0=-\dfrac{1}{f'(x_0)}(x-x_0)$. Perpendicular lines have gradients with product $m_1m_2=-1$.
 
 > [!example] First principles in three lines: $f=x^2-2$
+>
 > $$\frac{(x+\Delta x)^2-2-(x^2-2)}{\Delta x}=2x+\Delta x\to2x.$$
+>
 > The recipe is always the same: expand, cancel $f(x)$, divide by $\Delta x$, then let $\Delta x\to0$.
 
 ## 2. The rules (James §8.3.1, 8.3.6; learn these)
@@ -89,6 +93,7 @@ $f''=\frac{\mathrm d}{\mathrm dx}f'$ and so on. The classic use is verifying tha
 
 ## 5. Newton–Raphson (James §9.4.8)
 To solve $f(x)=0$, replace the curve by its tangent at $x_n$ and take the tangent's $x$-intercept:
+
 $$
 x_{n+1}=x_n-\frac{f(x_n)}{f'(x_n)}
 $$
@@ -106,9 +111,11 @@ See also [[Direct Substitution and Newton-Raphson]] (SESA/numerical-methods cont
 
 ## 6. Partial derivatives (James §9.6)
 For $f(x,y)$, differentiate with respect to one variable while treating the other as a constant:
+
 $$
 \frac{\partial f}{\partial x}=\lim_{\Delta x\to0}\frac{f(x+\Delta x,y)-f(x,y)}{\Delta x}
 $$
+
 All the one-variable rules still apply. For example, $\dfrac{\partial}{\partial y}e^{-xy}=-xe^{-xy}$, because $x$ is a constant multiplier of $y$.
 
 > [!note] Where this goes next

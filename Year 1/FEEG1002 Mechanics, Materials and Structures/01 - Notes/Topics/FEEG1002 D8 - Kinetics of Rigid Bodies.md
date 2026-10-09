@@ -20,7 +20,9 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 08 - Kinetics of Rigid Bodies.
 
 > [!abstract] Summary
 > A rigid body needs three planar equations of motion. Two are for its **centre of mass** G, which moves as if all the mass and force were there; one is for rotation:
+>
 > $$\sum F_x = ma_{Gx},\qquad \sum F_y = ma_{Gy},\qquad \sum M_G = I_G\alpha\ \ \big(\text{or }\sum M_P = \text{moments of the kinetic diagram about P}\big)$$
+>
 > The **mass moment of inertia** $I = \int r^2\,dm$ is rotation's "mass". It moves between axes with the parallel axis theorem $I_O = I_G + md^2$, and $I = mk^2$ defines the radius of gyration.
 > - For fixed-axis rotation about O: $\sum M_O = I_O\alpha$.
 > - For rolling you must **assume** slip or no slip, then **check** it.
@@ -31,6 +33,7 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 08 - Kinetics of Rigid Bodies.
 ---
 
 ## 1. Centre of mass (L8.1)
+
 $$
 x_G = \frac1m\int x\,dm,\qquad y_G = \frac1m\int y\,dm;\qquad \text{composite: } x_G = \frac{\sum m_ix_{Gi}}{\sum m_i}
 $$

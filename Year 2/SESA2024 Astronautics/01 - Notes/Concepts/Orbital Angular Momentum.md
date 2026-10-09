@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Kep
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf h = \mathbf r\times\mathbf V,\qquad h = r^2\dot\theta = rV\sin\alpha = rV\cos\gamma = \sqrt{\mu a(1-e^2)}$$
+>
 > This is the moment of momentum per unit mass. It is **conserved** under a central force.
 
 ## Explanation

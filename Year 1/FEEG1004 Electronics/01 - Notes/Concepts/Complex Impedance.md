@@ -16,6 +16,7 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W22-23 AC Analysis 02 - Impedance and 
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf V = Z\mathbf I,\qquad Z = R + jX,\qquad Z_R = R,\quad Z_L = j\omega L,\quad Z_C = \frac{1}{j\omega C} = -\frac{j}{\omega C}$$
 
 ## Explanation

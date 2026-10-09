@@ -36,9 +36,11 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 1
 ---
 
 ## 1. Components, magnitude and direction (James §4.2)
+
 $$
 \mathbf a=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k,\qquad|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2},\qquad\hat{\mathbf a}=\frac{\mathbf a}{|\mathbf a|}
 $$
+
 - **Direction cosines**: $(l,m,n)=\hat{\mathbf a}$, with $l^2+m^2+n^2=1$.
 - **Position vectors**: $\vec{\mathrm{AB}}=\mathbf b-\mathbf a$ (end minus start). A closed loop sums to $\mathbf0$.
 - **Collinear points**: $\vec{\mathrm{PQ}}=\lambda\vec{\mathrm{QR}}$.
@@ -49,9 +51,11 @@ The **apparent** velocity of B seen by A is $\mathbf v_B-\mathbf v_A$. A wind "f
 ![[m1054_relative_velocity.png|760]]
 
 ## 3. The scalar (dot) product (James §4.3.1)
+
 $$
 \mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos\theta=a_1b_1+a_2b_2+a_3b_3
 $$
+
 | Use | Formula |
 |---|---|
 | Angle between vectors | $\cos\theta=\dfrac{\mathbf a\cdot\mathbf b}{\lvert\mathbf a\rvert\lvert\mathbf b\rvert}$ |
@@ -62,9 +66,11 @@ $$
 The dot product is commutative and distributive. But you **cannot cancel**: $\mathbf a\cdot\mathbf b=\mathbf a\cdot\mathbf c$ only means $\mathbf a\perp(\mathbf b-\mathbf c)$.
 
 ## 4. The vector (cross) product (James §4.3.2)
+
 $$
 \mathbf a\times\mathbf b=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix},\qquad|\mathbf a\times\mathbf b|=|\mathbf a||\mathbf b|\sin\theta
 $$
+
 - The result is perpendicular to both $\mathbf a$ and $\mathbf b$, with its sense given by the **right-hand rule**.
 - **Anti-commutative**: $\mathbf b\times\mathbf a=-\mathbf a\times\mathbf b$. **Not associative** (Ex 4.24).
 - $\mathbf a\times\mathbf b=\mathbf0$ iff $\mathbf a\parallel\mathbf b$.
@@ -77,6 +83,7 @@ $$
 | Velocity of a point on a rotating body | $\mathbf v=\boldsymbol\omega\times\vec{\mathrm{AP}}$, with A on the axis |
 
 **The triple vector product** ("BAC-CAB"):
+
 $$
 \mathbf a\times(\mathbf b\times\mathbf c)=(\mathbf a\cdot\mathbf c)\mathbf b-(\mathbf a\cdot\mathbf b)\mathbf c
 $$

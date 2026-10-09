@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) pp.114–119, §8.8",
 
 > [!note] Definition
 > A proper rational function $P/Q$ splits into simple terms, one group per factor of $Q$:
+>
 > $$\frac{A}{x-a},\qquad\frac{A}{x-a}+\frac{B}{(x-a)^2},\qquad\frac{Bx+C}{x^2+bx+c}\ (\text{irreducible})$$
 
 ## Explanation

@@ -64,6 +64,7 @@ See [[Displacement and Momentum Thickness]] for the full definitions and physica
 | $H$ | $\delta^*/\theta$ | Shape factor: laminar $H>2$ (Blasius $2.59$), turbulent $H<2$ |
 
 In non-dimensional form with $\eta = y/\delta$:
+
 $$
 \frac{\delta^*}{\delta} = \int_0^1\left(1-\frac{u}{U_\infty}\right)d\eta,\qquad \frac{\theta}{\delta} = \int_0^1 \frac{u}{U_\infty}\left(1-\frac{u}{U_\infty}\right)d\eta
 $$

@@ -17,6 +17,7 @@ sources: ["02 - Sources/BL/Topic 2 Boundary layers.pdf"]
 
 > [!note] Definition
 > When a boundary layer transitions at $x_T$, the turbulent correlations (written for a layer starting at the leading edge) are applied from a fictitious **virtual origin** $x_0<x_T$. $x_0$ is chosen so that the **momentum thickness is continuous** at transition:
+>
 > $$\theta_{lam}(x_T) = \theta_{turb}(x_T-x_0)$$
 
 ## Explanation

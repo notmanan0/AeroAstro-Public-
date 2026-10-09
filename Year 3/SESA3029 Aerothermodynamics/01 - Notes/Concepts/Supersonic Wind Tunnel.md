@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture2-7.pdf"]
 
 > [!note] Definition
 > A supersonic wind tunnel runs: reservoir → Laval nozzle (first throat $A_{t1}$) → test section → diffuser with a **second throat** $A_{t2}$. To **start**, the normal shock that first stands in the test section must be swallowed, which needs
+>
 > $$\frac{A_{t2}}{A_{t1}}\ \ge\ \frac{p_{01}}{p_{02}}\Big|_{\text{normal shock at }M_{test}}.$$
 
 ## Explanation

@@ -104,6 +104,7 @@ $$
 ![[e2223_a_q2_fan_streamlines.png|520]]
 
 #### (ii) $C_p$ along the wall
+
 $$
 w(0,z) = -\left.\frac{\partial\psi}{\partial x}\right|_{x=0} = \frac{2\kappa az}{\pi(a^2+z^2)^2}
 $$

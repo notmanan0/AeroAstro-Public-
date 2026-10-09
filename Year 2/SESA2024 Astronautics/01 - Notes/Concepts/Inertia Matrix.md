@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 6/Chapter 6 - Attitude Control - prerec
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf H = [\mathbf I]\boldsymbol\omega,\qquad[\mathbf I] = \begin{bmatrix}I_{xx}&-I_{xy}&-I_{xz}\\-I_{xy}&I_{yy}&-I_{yz}\\-I_{xz}&-I_{yz}&I_{zz}\end{bmatrix}$$
+>
 > - **Moments of inertia**: $I_{xx} = \int(y^2+z^2)\,dm$.
 > - **Products of inertia**: $I_{xy} = \int xy\,dm$.
 > Both are taken about the centre of mass.

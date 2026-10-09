@@ -27,7 +27,9 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_S
 > - **Sun-synchronous**: the orbit plane keeps a fixed angle $\phi = \alpha_S-\Omega$ to the Sun, so the node must precess **East at 0.986°/day** (360°/365.25 d). Propulsion cannot afford this, but **Earth oblateness ($J_2$)** can: $\dot\Omega = -2.0647\times10^{14}a^{-3.5}\cos i$ °/day. A positive $\dot\Omega$ needs $\cos i<0$, so **$i\approx98$–99° at 700–900 km**.
 > - **Earth-synchronous** (repeat ground track): after $n$ orbits in $m$ days the track has shifted exactly $m\times360^\circ$.
 > - Combining the Earth's rotation beneath the orbit with Sun-synchronous nodal drift gives the design condition
+>
 > $$\boxed{\tau = \frac{m}{n}\,86\,400\ \text{s}}$$
+>
 > i.e. $m$ **solar** days for $n$ orbits.
 
 ## Key Concepts
@@ -100,10 +102,13 @@ At 700 / 800 / 900 km, $i$ = 98.19° / 98.61° / 99.04°.
 The track shift per orbit has two parts ($\tau$ = nodal period, taken equal to the orbit period):
 
 1. **Earth rotation** beneath the plane moves the track **West**:
+
 $$
 \Delta\lambda_{ROT} = 360^\circ\frac{\tau}{\tau_E},\qquad \tau_E = 86\,164\ \text{s (sidereal day)}
 $$
+
 2. **Nodal regression** (Sun-synchronous) moves it **East**. $360^\circ\,\tau_E/\tau_Y$ per day becomes, per orbit,
+
 $$
 \Delta\lambda_{REG} = 360^\circ\frac{\tau}{\tau_Y},\qquad \tau_Y = 3.155815\times10^7\ \text{s}
 $$

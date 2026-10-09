@@ -17,6 +17,7 @@ sources: []
 
 > [!note] Definition
 > Remove a redundant support and replace it by an unknown force $F$. By linearity, the deflection at that point is the sum of the deflection due to the applied loads and that due to $F$. **Compatibility** (zero deflection, or zero slope, at the real support) fixes $F$:
+>
 > $$v_{loads}(x_s) + v_F(x_s) = 0$$
 
 ## Explanation
@@ -29,6 +30,7 @@ sources: []
 ## Examples
 
 Propped cantilever with UDL:
+
 $$\frac{wL^4}{8EI} = \frac{FL^3}{3EI}\;\Rightarrow\;R_B = \tfrac38wL,\quad R_A = \tfrac58wL,\quad M_A = \tfrac18wL^2$$
 
 ![[s1_superposition_propped_cantilever.png|640]]

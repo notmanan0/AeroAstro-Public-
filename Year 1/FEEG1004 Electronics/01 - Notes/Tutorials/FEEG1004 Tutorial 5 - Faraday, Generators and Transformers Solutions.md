@@ -73,7 +73,9 @@ Data: 24 fully pitched coils × 10 turns per phase, in series; $D = L$ = 0.4 m; 
 
 ## Q5: Single-phase transformer, 70:350 turns, 100 cm² core, 230 V at 50 Hz
 - **(i) Peak flux density**:
+
 $$\Phi_m = \frac{V}{4.44fN_1} = \frac{230}{4.44(50)(70)} = 14.8\ \mathrm{mWb},\qquad B_m = \frac{0.0148}{0.01} = 1.48\ \mathrm T$$
+
   This is right at the ~1.5 T design limit.
 - **(ii)** $V_2 = 230\times350/70$ = **1150 V**.
 - **(iii)** An ideal transformer has $P_1 = P_2$ = 10 kW, so $I_1 = 10\,000/230$ = **43.5 A**. (The secondary current is $10\,000/1150$ = 8.70 A, consistent with $I_1/I_2 = N_2/N_1 = 5$.)

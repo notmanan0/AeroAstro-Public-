@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > For a solid or hollow circular shaft under torque $T$:
+>
 > $$\frac{T}{J} = \frac{\tau}{r} = \frac{G\theta}{L},\qquad J = \frac{\pi D^4}{32}\ (\text{solid}),\quad J = \frac{\pi(D_o^4-D_i^4)}{32}\ (\text{hollow})$$
+>
 > The shear stress rises linearly with radius; $GJ/L$ is the torsional stiffness.
 
 ## Explanation

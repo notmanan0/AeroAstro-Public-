@@ -154,11 +154,14 @@ $$
 
 > [!example] The satisfying cancellation
 > In index notation, expand the left-hand side with the product rule:
+>
 > $$
 > \frac{\partial(\rho u_i)}{\partial t} + \frac{\partial(\rho u_i u_j)}{\partial x_j}
 > = u_i\underbrace{\left[\frac{\partial \rho}{\partial t} + \frac{\partial(\rho u_j)}{\partial x_j}\right]}_{=\,0 \text{ by continuity!}} + \rho\left[\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j}\right]
 > $$
+>
 > Mass conservation removes a whole bracket, leaving **mass × acceleration = force** per unit volume:
+>
 > $$
 > \rho\,\frac{D\mathbf{u}}{Dt} = \nabla\cdot\boldsymbol{\sigma} + \rho\,\mathbf{g} \qquad \text{(Cauchy momentum equation)}
 > $$
@@ -228,12 +231,15 @@ $$
 (The order of differentiation swaps freely, and the divergence vanishes.) Divide by $\rho$ and write $\nu = \mu/\rho$ for the **kinematic viscosity**:
 
 > [!important] The incompressible Navier–Stokes equations
+>
 > $$
 > \nabla\cdot\mathbf{u} = 0
 > $$
+>
 > $$
 > \underbrace{\frac{\partial \mathbf{u}}{\partial t}}_{\substack{\text{unsteady}\\\text{acceleration}}} + \underbrace{(\mathbf{u}\cdot\nabla)\mathbf{u}}_{\substack{\text{convective}\\\text{acceleration}}} = \underbrace{-\frac{1}{\rho}\nabla p}_{\substack{\text{pressure}\\\text{force}}} + \underbrace{\nu\nabla^2\mathbf{u}}_{\substack{\text{viscous}\\\text{diffusion}}} + \underbrace{\mathbf{g}}_{\substack{\text{body}\\\text{force}}}
 > $$
+>
 > Four equations (in 3D) for four unknowns $(u, v, w, p)$. Closed at last.
 
 ---
@@ -379,14 +385,18 @@ To see what goes wrong, study the model problem $f_t + c f_x = 0$ with $c > 0$. 
 
 > [!important] The modified equation: what the scheme *actually* solves
 > Taylor-expand upwind + forward Euler:
+>
 > $$
 > \frac{f^{n+1}_i - f^n_i}{\Delta t} + c\,\frac{f^n_i - f^n_{i-1}}{h}
 > = f_t + \frac{\Delta t}{2}f_{tt} + c f_x - \frac{ch}{2}f_{xx} + O(h^2, \Delta t^2) = 0 .
 > $$
+>
 > To leading order $f_t = -c f_x$, so $f_{tt} = c^2 f_{xx}$. Substitute:
+>
 > $$
 > \boxed{\; f_t + c f_x = \nu_{num}\, f_{xx}, \qquad \nu_{num} = \frac{ch}{2}\,(1 - C)\;}
 > $$
+>
 > **The upwind scheme is not solving the advection equation. It is solving an advection–*diffusion* equation, with a viscosity nobody asked for.**
 > - At exactly $C = 1$ the error vanishes: the scheme shifts every value one cell per step, which is exact.
 > - As $C \to 0$ the extra viscosity is largest.
@@ -427,22 +437,29 @@ Suppose we march momentum forward in time with any scheme from §12–14. Nothin
 
 > [!info] Helmholtz–Hodge decomposition
 > Any smooth vector field can be split uniquely into a divergence-free part and a gradient:
+>
 > $$
 > \mathbf{w} = \underbrace{\mathbf{u}}_{\nabla\cdot\mathbf{u}\,=\,0} + \nabla\phi .
 > $$
+>
 > Pressure is exactly the gradient part that removes the divergence. **The pressure gradient is the projection that throws away the compressible part of the velocity.**
 
 **Chorin's projection method (1968).** Each time step has three moves:
 
 1. **Predict**: advance momentum *ignoring* pressure. The intermediate $\mathbf{u}^*$ is **not** divergence-free.
+
 $$
 \mathbf{u}^* = \mathbf{u}^n + \Delta t\left[-(\mathbf{u}^n\cdot\nabla)\mathbf{u}^n + \nu\nabla^2\mathbf{u}^n\right]
 $$
+
 2. **Solve for pressure**: require $\nabla\cdot\mathbf{u}^{n+1} = 0$ in step 3.
+
 $$
 \nabla^2 p^{n+1} = \frac{\rho}{\Delta t}\,\nabla\cdot\mathbf{u}^*
 $$
+
 3. **Project (correct)**:
+
 $$
 \mathbf{u}^{n+1} = \mathbf{u}^* - \frac{\Delta t}{\rho}\nabla p^{n+1}
 $$

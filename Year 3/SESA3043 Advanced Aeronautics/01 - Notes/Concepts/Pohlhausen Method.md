@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/CH3-3 Pohlhausen.pdf", "02 - Sources/Lectures/C
 
 > [!note] Definition
 > Assume a quartic profile in $\eta=y/\delta$ and fix its coefficients with no slip, matched edge velocity, zero slope and curvature at the edge, and the BL momentum equation at the wall. Result:
+>
 > $$\frac{u}{U_e}=\underbrace{2\eta-2\eta^3+\eta^4}_{F(\eta)}+\lambda\underbrace{\tfrac16\eta(1-\eta)^3}_{G(\eta)},\qquad\lambda=\frac{\delta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}.$$
 
 ## Key results

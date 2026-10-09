@@ -20,7 +20,9 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 04 - Generalised Hooke's Law.
 
 > [!abstract] Summary
 > For a **homogeneous, isotropic, linear elastic** material, a normal stress produces strain in its own direction plus Poisson contraction in the other two. By superposition:
+>
 > $$\varepsilon_{xx} = \frac{1}{E}\left[\sigma_{xx} - \nu(\sigma_{yy}+\sigma_{zz})\right],\qquad \varepsilon_{xy} = \frac{1+\nu}{E}\sigma_{xy}$$
+>
 > Only **two** constants ($E$, $\nu$) are independent; $G$ and $K$ follow from them. Two reduced forms matter:
 > - **plane stress** (thin plates): $\sigma_{zz} = 0$ but $\varepsilon_{zz}\ne0$;
 > - **plane strain** (long dams, tunnels): $\varepsilon_{zz} = 0$ but $\sigma_{zz}\ne0$.

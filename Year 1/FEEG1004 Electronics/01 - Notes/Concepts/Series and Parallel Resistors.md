@@ -16,6 +16,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-3ab Circuits KCL KVL Resistors - 
 ## Definition
 
 > [!note] Definition
+>
 > $$R_s = R_1 + R_2 + R_3,\qquad \frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3},\qquad R_1\parallel R_2 = \frac{R_1R_2}{R_1 + R_2}$$
 
 ## Explanation

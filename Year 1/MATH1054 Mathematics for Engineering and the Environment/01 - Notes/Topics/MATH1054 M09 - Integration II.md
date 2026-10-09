@@ -37,9 +37,11 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 9
 
 ## 1. Substitution (James §8.8.2–8.8.3)
 If $u=g(x)$, then $\mathrm du=g'(x)\,\mathrm dx$, and
+
 $$
 \int f(g(x))g'(x)\,\mathrm dx=\int f(u)\,\mathrm du,\qquad\int_a^bf(g(x))g'(x)\,\mathrm dx=\int_{g(a)}^{g(b)}f(u)\,\mathrm du
 $$
+
 **Change the limits** in definite integrals (Ex 8.62, 115). Then there is no need to back-substitute.
 
 | Pattern | Substitution | Example |
@@ -74,9 +76,11 @@ For the region under $y=f(x)\ge0$ on $[a,b]$:
 
 ## 3. Arc length and surface area
 These usually produce $\int\sqrt{1+k^2u^2}\,\mathrm du$. Use the substitution $ku=\sinh t$, which gives
+
 $$
 \int\sqrt{1+k^2u^2}\,\mathrm du=\frac u2\sqrt{1+k^2u^2}+\frac1{2k}\sinh^{-1}(ku).
 $$
+
 This is where the hyperbolic functions of [[MATH1054 M07 - Functions|M07]] earn their keep (the suspension-bridge cable, Ex 8.69).
 
 ## Method checklist

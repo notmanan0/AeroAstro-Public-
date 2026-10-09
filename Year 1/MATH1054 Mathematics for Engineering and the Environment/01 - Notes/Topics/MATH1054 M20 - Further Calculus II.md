@@ -60,15 +60,19 @@ $\sum a_k$ converges if the partial sums $S_n$ tend to a finite limit.
 | **d'Alembert's ratio test** | $\ell=\lim\left\lvert\frac{a_{k+1}}{a_k}\right\rvert$: converges if $\ell<1$, diverges if $\ell>1$, inconclusive if $\ell=1$ |
 
 **Power series** $\sum c_nx^n$ converge for $|x|<R$, where the radius of convergence is
+
 $$
 R=\lim_{n\to\infty}\left|\frac{c_n}{c_{n+1}}\right|
 $$
+
 For example, $\sum\frac{x^n}n$ has $R=1$; $\sum n^nx^n$ has $R=0$; $e^x$ has $R=\infty$.
 
 ## 4. Maclaurin's theorem with remainder (James §9.4, booklet)
+
 $$
 f(x)=\sum_{k=0}^{n}\frac{f^{(k)}(0)}{k!}x^k+R_n(x),\qquad R_n(x)=\frac{f^{(n+1)}(\theta x)}{(n+1)!}x^{n+1}\quad(0<\theta<1)
 $$
+
 The Lagrange remainder turns "approximately" into a **guaranteed error bound**: bound $|f^{(n+1)}|$ on the interval.
 - $\cos x\approx1-\frac{x^2}2$ has error less than $\frac{x^4}{24}$, which is $4.06\times10^{-4}$ at $x=\frac\pi{10}$.
 - $\sqrt{1.02}\approx1.01$ has error less than $5\times10^{-5}$.

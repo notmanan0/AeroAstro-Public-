@@ -20,7 +20,9 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 01 - Linear Motion.pdf"]
 
 > [!abstract] Summary
 > A **particle** has mass but negligible size, so only the motion of its centre of mass matters and rotation is ignored. Along a straight line, three kinematic quantities are linked by calculus:
+>
 > $$v = \frac{ds}{dt},\qquad a = \frac{dv}{dt} = \frac{d^2s}{dt^2},\qquad a = v\frac{dv}{ds}$$
+>
 > **Kinetics** then links $a$ to forces through $\sum F = ma$, measured in an inertial (non-accelerating) frame. The chapter's toolkit has three parts:
 > - **pick the integral** that matches how the force is given: as a function of $t$, $s$ or $v$;
 > - **model the force**: gravity, friction, springs, ropes, drag, buoyancy;

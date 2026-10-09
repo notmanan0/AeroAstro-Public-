@@ -35,7 +35,9 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 02 - Strain in Multiple Dimen
 - Bar in tension: $\varepsilon_L = \Delta L/L_0 > 0$ and $\varepsilon_W = \Delta W/W_0 < 0$ (Poisson contraction).
 - 3D element: $\varepsilon_{xx} = \Delta L_x/L_{x0}$, and likewise in $y$ and $z$.
 - **Volumetric strain**:
+
 $$\varepsilon_{vol} = \frac{V - V_0}{V_0} = (1+\varepsilon_{xx})(1+\varepsilon_{yy})(1+\varepsilon_{zz}) - 1 \approx \varepsilon_{xx}+\varepsilon_{yy}+\varepsilon_{zz}$$
+
   The products are second order, which is the small-strain assumption.
 - **Strain is local**, so in a non-uniform field $\varepsilon_{xx} = \dfrac{du_x}{dx}$. Equal displacement everywhere means pure translation, and no strain.
 - **Magnitudes are tiny**: an aluminium alloy with $E = 70$ GPa at yield (250 MPa) is at $\varepsilon = 0.0036 = 0.36\% = 3600\ \mu\varepsilon$.
@@ -45,7 +47,9 @@ $$\varepsilon_{vol} = \frac{V - V_0}{V_0} = (1+\varepsilon_{xx})(1+\varepsilon_{
 ![[s2_strain_definitions.png|900]]
 
 - The engineering shear strain is the **decrease** in the angle between the $x$ and $y$ faces:
+
 $$\gamma_{xy} = \alpha + \beta = \frac{\partial u_x}{\partial y} + \frac{\partial u_y}{\partial x}$$
+
 - $\gamma_{xy} > 0$ means the angle between the left and bottom faces gets smaller.
 - **Rigid rotation**: $\alpha$ and $\beta$ are equal and opposite, so $\gamma_{xy} = 0$. No deformation.
 - Shear alone changes **no volume** (a deck of cards sliding).
@@ -61,7 +65,9 @@ $$
 - It is **isotropic**: $\varepsilon_{xx} = \varepsilon_{yy} = \varepsilon_{zz} = \varepsilon_T$. The body scales up uniformly and there is no thermal shear.
 - **Stress-free if unconstrained.** Stress appears only when the expansion is resisted.
 - **Fully constrained bar**:
+
 $$\delta_T + \delta_F = \alpha\Delta TL + \frac{FL}{EA} = 0\;\Rightarrow\;\sigma = -E\alpha\Delta T$$
+
   This does not depend on the length or the area.
 
 ### Superposition recipe
@@ -80,7 +86,9 @@ $$\delta_T + \delta_F = \alpha\Delta TL + \frac{FL}{EA} = 0\;\Rightarrow\;\sigma
 
 > [!example] Tutorial 2 Q1: aluminium shell bonded to a brass core, heated by 180 °C
 > - $\alpha_{Al} > \alpha_{brass}$: the shell wants to grow more but is held back, so it goes into compression while the core is stretched.
+>
 > $$F_{Al}\left(\frac{1}{A_{Al}E_{Al}} + \frac{1}{A_{Br}E_{Br}}\right) = (\alpha_{Br} - \alpha_{Al})\Delta T$$
+>
 > - Result: $\sigma_{Al} = -8.15$ MPa and $\sigma_{core} = +38.8$ MPa. With a stiffer, lower-$\alpha$ steel core, $\sigma_{Al} = -56.2$ MPa.
 
 ![[s2_t2_bimaterial_thermal.png|700]]

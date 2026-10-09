@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L8, L10)", "02 - Sour
 
 > [!note] Definition
 > Writing a conservation law so that every flux term sits **inside** a spatial derivative:
+>
 > $$\frac{\partial\phi}{\partial t}+\frac{\partial(\phi u)}{\partial x}+\frac{\partial(\phi v)}{\partial y} = \text{sources},\qquad\text{or integrally}\quad\frac{\partial}{\partial t}\int_V\phi\,dV+\oint_S\phi\,\mathbf v\cdot\mathbf n\,dS = \text{sources}$$
+>
 > with $\phi\in\{\rho,\rho u,\rho v,\rho E\}$.
 
 ## Explanation

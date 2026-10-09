@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/CH1-3 Potential Flow.pdf"]
 
 > [!note] Definition
 > The limit of a sink $-m$ at the origin and a source $+m$ at $le^{i\nu}$ as $l\to0$ with $\mu=ml$ fixed:
+>
 > $$\Phi=-\frac{\mu}{2\pi}\frac{e^{i\nu}}{z},\qquad u=\frac{\mu\cos(2\theta-\nu)}{2\pi r^2},\quad v=\frac{\mu\sin(2\theta-\nu)}{2\pi r^2}.$$
 
 ## Derivation in four lines

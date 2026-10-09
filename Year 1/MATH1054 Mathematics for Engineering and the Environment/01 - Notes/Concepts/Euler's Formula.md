@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §3.2.8", "MATH1054 M
 ## Definition
 
 > [!note] Definition
+>
 > $$e^{\mathrm j\theta}=\cos\theta+\mathrm j\sin\theta,\qquad\cos\theta=\frac{e^{\mathrm j\theta}+e^{-\mathrm j\theta}}2,\qquad\sin\theta=\frac{e^{\mathrm j\theta}-e^{-\mathrm j\theta}}{2\mathrm j}$$
 
 ## Explanation

@@ -23,7 +23,9 @@ sources: ["02 - Sources/Lectures/Lecture 2.01.pdf", "02 - Sources/Lectures/Lectu
 
 > [!abstract] Summary
 > A **control system** compares a reference $r$ with a measured output $y$. The error $e = r-y$ drives a controller $C(s)$, which commands the plant $G(s)$. With unity feedback the closed loop is $\dfrac{X}{R} = \dfrac{GC}{1+GC}$, and its **closed-loop characteristic polynomial** decides stability. The **PID** controller
+>
 > $$C(s) = K_P+\frac{K_I}{s}+K_Ds$$
+>
 > combines present error (P), accumulated error (I) and predicted error (D). Each term changes the closed-loop poles differently.
 
 ## Key Concepts

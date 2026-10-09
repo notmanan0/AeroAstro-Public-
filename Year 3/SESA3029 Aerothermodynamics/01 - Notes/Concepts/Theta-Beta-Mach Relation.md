@@ -26,7 +26,9 @@ $\theta$ is the flow deflection and $\beta$ the shock angle, both measured from 
 1. From the velocity triangles: $\tan\beta=U_{n1}/U_t$ and $\tan(\beta-\theta)=U_{n2}/U_t$, using $U_{t1}=U_{t2}$.
 2. Divide: $U_{n1}/U_{n2}=\tan\beta/\tan(\beta-\theta)$.
 3. Mass: $U_{n1}/U_{n2}=\rho_2/\rho_1$. Insert the density jump at $M_{n1}=M_1\sin\beta$:
+
    $$\frac{\tan\beta}{\tan(\beta-\theta)}=\frac{(\gamma+1)M_1^2\sin^2\beta}{2+(\gamma-1)M_1^2\sin^2\beta}.$$
+
 4. Expand $\tan(\beta-\theta)=(\tan\beta-\tan\theta)/(1+\tan\beta\tan\theta)$, collect the $\tan\theta$ terms, and use $(\gamma-1)\sin^2\beta+(\gamma+1)\cos^2\beta=\gamma+\cos2\beta$.
 
 Step-by-step algebra and figure: [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#5. The θ–β–M relation, step by step|W02 §5]].

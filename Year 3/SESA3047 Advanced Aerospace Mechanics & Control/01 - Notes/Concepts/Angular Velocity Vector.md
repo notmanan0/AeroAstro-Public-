@@ -27,7 +27,9 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 | same derivative in both frames | ${}^a\dot{\boldsymbol\omega}_{b/a}={}^b\dot{\boldsymbol\omega}_{b/a}$ | $\boldsymbol\omega\times\boldsymbol\omega=\mathbf 0$ |
 
 > [!warning] Angular acceleration does not simply add
+>
 > $${}^a\dot{\boldsymbol\omega}_{c/a}={}^b\dot{\boldsymbol\omega}_{c/b}+\boldsymbol\omega_{b/a}\times\boldsymbol\omega_{c/b}+{}^a\dot{\boldsymbol\omega}_{b/a}.$$
+>
 > The cross term is the source of gyroscopic effects.
 
 ## Not the rate of the Euler angles

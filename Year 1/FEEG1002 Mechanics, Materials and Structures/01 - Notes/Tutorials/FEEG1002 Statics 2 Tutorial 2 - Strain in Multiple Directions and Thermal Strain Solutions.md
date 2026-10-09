@@ -58,7 +58,9 @@ $$
 **(b)** $\sigma_{st} = F/A_{st} = \mathbf{-201.8}$ **MPa** and $\sigma_{br} = \mathbf{-72.7}$ **MPa** ✔. The same force acts on a smaller area in the steel.
 
 **(c)** Total strain = thermal + mechanical:
+
 $$\varepsilon_{st} = \alpha_{st}\Delta T + \frac{\sigma_{st}}{E_{st}} = -4.24\times10^{-4},\qquad \varepsilon_{br} = \alpha_{br}\Delta T + \frac{\sigma_{br}}{E_{br}} = +3.53\times10^{-4}$$
+
 The brass **extends** and the steel **shortens**: the brass wins.
 
 **(d)** Point B: $\delta_B = \varepsilon_{st}L_{st} = -0.106$ mm, i.e. B moves **0.106 mm towards A**. Check: $\varepsilon_{br}L_{br} = +0.106$ mm ✔

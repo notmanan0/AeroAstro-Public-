@@ -48,6 +48,7 @@ This relies on linearity: stress is proportional to load up to first yield.
 
 ## Q2: Microchip on a rigid board ($E = 140$ GPa, $\nu = 0.265$, $\alpha = 2.59\times10^{-6}$/K, $d = 15$ mm, $t = 2$ mm, 12 joints per side, $\Delta T = +30$ °C)
 Fully restrained **in plane** in both directions:
+
 $$\varepsilon_{total} = \varepsilon_M + \alpha\Delta T = 0\;\Rightarrow\;\varepsilon_{xx} = \varepsilon_{yy} = -\alpha\Delta T$$
 
 Equibiaxial plane stress:

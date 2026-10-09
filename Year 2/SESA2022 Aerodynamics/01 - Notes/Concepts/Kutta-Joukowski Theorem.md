@@ -17,7 +17,9 @@ sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf"]
 
 > [!note] Definition
 > The lift per unit span on **any** 2D closed body in a steady, inviscid, incompressible stream is
+>
 > $$L' = \rho_\infty V_\infty\Gamma$$
+>
 > where $\Gamma = -\oint\mathbf V\cdot d\mathbf s$ is the circulation round the body (clockwise positive in this course). The drag is zero.
 
 ## Explanation

@@ -20,7 +20,9 @@ sources: ["02 - Sources/Tutorial Sheets/Problem Sheet Week 04.pdf"]
 > Four ramjet questions: ideal (flight speed from $f$ and $T_{max}$), real (with $\Gamma$ values and combustion efficiency), a normal-shock inlet, and perfect vs real gas.
 >
 > All the printed answers are reproduced ✔, using the energy balance
+>
 > $$(1+f)c_pT_{03} = c_pT_{02}+f\,LCV\qquad(\text{fuel enthalpy referenced to 0 K})$$
+>
 > With the lecture's $T_{ref} = 298$ K form the answers change by about 1 %. Q4.2(a) asks for the "air–fuel ratio" but the answer given (0.0521) is the **fuel–air** ratio.
 
 ## Theory Links

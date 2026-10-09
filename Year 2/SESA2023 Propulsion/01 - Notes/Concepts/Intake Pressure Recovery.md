@@ -39,7 +39,9 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 | Mixed compression | External obliques, then an internal convergent section (stays supersonic) and internal ramps | | Shorter and lighter, but efficiency depends strongly on flight Mach. Ideal C–D intakes suffer "starting" problems |
 
 **Normal-shock loss** (Pitot intake):
+
 $$\frac{p_{01}}{p_{0a}} = \left[\frac{\frac{\gamma+1}{2}M^2}{1+\frac{\gamma-1}{2}M^2}\right]^{\frac{\gamma}{\gamma-1}}\left[\frac{2\gamma}{\gamma+1}M^2-\frac{\gamma-1}{\gamma+1}\right]^{\frac{1}{1-\gamma}}$$
+
 This gives 0.93 at M 1.5, 0.72 at M 2 and 0.33 at M 3. See the shock tables.
 
 **The SR-71 J58 (legacy exams)** handled the whole speed range with:

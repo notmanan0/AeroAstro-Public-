@@ -20,7 +20,9 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 05 - Angular Impulse and Momen
 
 > [!abstract] Summary
 > The **angular momentum** of a particle about a point O is the moment of its linear momentum, $\mathbf H_O = \mathbf r\times m\mathbf v$. Crossing $\sum\mathbf F = \dot{\mathbf L}$ with $\mathbf r$ gives $\sum\mathbf M_O = \dot{\mathbf H}_O$. Integrating over time:
+>
 > $$(\mathbf H_O)_1 + \sum\int_{t_1}^{t_2}\mathbf M_O\,dt = (\mathbf H_O)_2$$
+>
 > If every force passes through O (a **central force**), the angular impulse is zero and $H_O = rmv_\perp$ is **conserved**. Pull a whirling mass inwards and it speeds up. A satellite moves faster at perigee than apogee.
 
 ## Key Concepts
@@ -44,6 +46,7 @@ $$
 - Directions follow the right-hand rule.
 
 ## 2. The principle (L5.1)
+
 $$
 \sum\mathbf r\times\mathbf F = \mathbf r\times m\dot{\mathbf v}\qquad\text{and}\qquad \dot{\mathbf H}_O = \underbrace{\dot{\mathbf r}\times m\mathbf v}_{\mathbf v\times m\mathbf v = 0} + \mathbf r\times m\dot{\mathbf v}\quad\Rightarrow\quad\sum\mathbf M_O = \dot{\mathbf H}_O
 $$

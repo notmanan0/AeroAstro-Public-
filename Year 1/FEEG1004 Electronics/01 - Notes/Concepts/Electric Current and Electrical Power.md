@@ -16,6 +16,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W02-1ab Electrostatics and Electric C
 ## Definition
 
 > [!note] Definition
+>
 > $$I = \frac{dQ}{dt}\ [\mathrm{A} = \mathrm{C/s}],\qquad P = VI\ [\mathrm W],\qquad I = neAv_d$$
 
 ## Explanation

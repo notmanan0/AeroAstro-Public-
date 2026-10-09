@@ -20,7 +20,9 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 02 - Displacement S
 
 > [!abstract] Summary
 > Each passive component formula has a length in it, so each can sense displacement:
+>
 > $$R = \frac{\rho L}{A},\qquad C = \frac{\varepsilon_0\varepsilon_rA}{d},\qquad L = \frac{N^2}{\mathcal R} = \frac{N^2\mu_0\mu_rA}{l}$$
+>
 > - **Potentiometer**: a divider with $V_{out}/V_{in} = x$, but **loading** makes it non-linear. Fix it with an op-amp buffer.
 > - **Capacitive**: $C\propto1/d$ is non-linear. Put the sensor in the **feedback** path of an inverting amplifier and $V_{out}\propto d$.
 > - **LVDT**: a movable core couples an AC primary to two opposed secondaries. The output amplitude is ∝ displacement and the phase gives the direction.

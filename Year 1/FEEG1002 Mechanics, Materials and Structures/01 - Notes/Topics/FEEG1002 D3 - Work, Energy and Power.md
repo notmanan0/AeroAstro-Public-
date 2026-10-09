@@ -20,7 +20,9 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 03 - Work, Energy and Power.pd
 
 > [!abstract] Summary
 > Integrating $\sum F_t = mv\,dv/ds$ **over displacement** turns Newton's law into a scalar energy balance:
+>
 > $$KE_1 + V_1 + \sum U^{nc}_{1-2} = KE_2 + V_2,\qquad KE = \tfrac12mv^2,\quad V = V_g + V_e$$
+>
 > - **Conservative forces** have path-independent work and are counted as potential energy: weight $V_g = mgy$ (or $-GMm/r$) and springs $V_e = \tfrac12k\,\Delta l^2$.
 > - **Everything else** (friction, applied forces, drag) goes into $U^{nc}$.
 >
@@ -32,6 +34,7 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 03 - Work, Energy and Power.pd
 ---
 
 ## 1. Work of a force (L3.1)
+
 $$
 dU = \mathbf F\cdot d\mathbf r = F\,ds\cos\theta\qquad\Rightarrow\qquad U_{1-2} = \int_{\mathbf r_1}^{\mathbf r_2}\mathbf F\cdot d\mathbf r = \int_{s_1}^{s_2}F\cos\theta\,ds
 $$
@@ -93,6 +96,7 @@ The same $T/mg = v_0^2/gL - 2 + 3\cos\theta$ governs a pendulum given a push (Tu
 ![[d_t3_q9_pendulum_regimes.png|720]]
 
 ## 4. Power and efficiency (L3.3)
+
 $$
 P = \frac{dU}{dt} = \mathbf F\cdot\mathbf v = Fv\cos\theta\quad[\text{W} = \text{J/s}],\qquad 1\ \text{hp} = 746\ \text{W}
 $$

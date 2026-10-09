@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §5.4", "MATH1054 Mod
 
 > [!note] Definition
 > $\mathbf A^{-1}\mathbf A=\mathbf A\mathbf A^{-1}=\mathbf I$. The inverse exists iff $|\mathbf A|\neq0$, and then
+>
 > $$\mathbf A^{-1}=\frac{\operatorname{adj}\mathbf A}{|\mathbf A|},\qquad\begin{bmatrix}a&b\\c&d\end{bmatrix}^{-1}=\frac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}$$
 
 ## Explanation

@@ -56,9 +56,11 @@ $\mathbf A+\mathbf A^{\mathrm T}$ is always symmetric. A **quadratic form** $\ma
 **Rotation** by $\theta$: $\mathbf R=\begin{bmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{bmatrix}$ satisfies $\mathbf R^{\mathrm T}\mathbf R=\mathbf I$, so it preserves lengths and angles ([[Euler Angles and Rotation Matrices]]).
 
 ## 2. Determinants (James §5.4)
+
 $$
 \begin{vmatrix}a&b\\c&d\end{vmatrix}=ad-bc,\qquad|\mathbf A|=\sum_{j}a_{ij}A_{ij}\ \ (\text{expansion along any row }i\text{ or column})
 $$
+
 Here the cofactor is $A_{ij}=(-1)^{i+j}M_{ij}$, and $M_{ij}$ is the minor: the determinant left after deleting row $i$ and column $j$.
 
 **Properties** (these make big determinants tractable):
@@ -79,9 +81,11 @@ Here the cofactor is $A_{ij}=(-1)^{i+j}M_{ij}$, and $M_{ij}$ is the minor: the d
 > - Ex 45(b) collapses to a single $3\times3$ determinant after $C_1-C_2$ and $C_3-C_4$.
 
 ## 3. The adjoint (James §5.4.x)
+
 $$
 \operatorname{adj}\mathbf A=[A_{ij}]^{\mathrm T}\quad(\text{the transposed cofactor matrix}),\qquad\mathbf A\,(\operatorname{adj}\mathbf A)=(\operatorname{adj}\mathbf A)\,\mathbf A=|\mathbf A|\,\mathbf I
 $$
+
 Hence $\mathbf A^{-1}=\dfrac{\operatorname{adj}\mathbf A}{|\mathbf A|}$ whenever $|\mathbf A|\neq0$. This is continued in [[MATH1054 M17 - Matrices II|M17]].
 
 **Don't forget the transpose**: the entry in row $i$, column $j$ of the adjoint is the cofactor $A_{ji}$.

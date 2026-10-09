@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
 
 > [!note] Definition
 > For a point P with position $\mathbf p=\mathbf p_{P/Q}$ in a frame $F_b$ (origin $Q$) that moves and rotates at $\boldsymbol\omega$ (angular acceleration $\boldsymbol\alpha$) relative to $F_a$:
+>
 > $$\mathbf v_{P/a}=\mathbf v_{P/b}+\underbrace{\mathbf v_{Q/a}+\boldsymbol\omega\times\mathbf p}_{\text{transport velocity}}\qquad(3.23)$$
+>
 > $$\mathbf a_{P/a}=\mathbf a_{P/b}+\underbrace{\mathbf a_{Q/a}+\boldsymbol\alpha\times\mathbf p+\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf p)}_{\text{transport acceleration}}+\underbrace{2\boldsymbol\omega\times\mathbf v_{P/b}}_{\text{Coriolis}}\qquad(3.26)$$
 
 ## The terms

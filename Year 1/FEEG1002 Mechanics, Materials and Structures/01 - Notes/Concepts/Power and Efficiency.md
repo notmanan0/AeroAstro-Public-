@@ -16,6 +16,7 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$P = \frac{dU}{dt} = \mathbf F\cdot\mathbf v = Fv\cos\theta\ \ [\text{W}],\qquad P = M\omega\ \text{for a couple},\qquad \eta = \frac{P_{out}}{P_{in}} < 1$$
 
 ## Explanation

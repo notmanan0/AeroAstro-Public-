@@ -17,7 +17,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-3ab Circuits KCL KVL Resistors - 
 
 > [!note] Definition
 > For two resistors in series across $V_{in}$, with the output taken across $R_1$:
+>
 > $$V_{out} = V_{in}\frac{R_1}{R_1 + R_2}$$
+>
 > It is valid only when **negligible current** is drawn from the output node.
 
 ## Explanation

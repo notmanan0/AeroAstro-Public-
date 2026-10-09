@@ -15,7 +15,9 @@ sources: ["02 - Sources/Lectures/Week 02 - Thermodynamics.pdf", "02 - Sources/Le
 ## Definition
 
 > [!note] Definition
+>
 > $$\eta_c = \frac{\text{ideal work in}}{\text{actual work in}} = \frac{T_{2s}-T_1}{T_2-T_1},\qquad \eta_t = \frac{\text{actual work out}}{\text{ideal work out}} = \frac{T_1-T_2}{T_1-T_{2s}}$$
+>
 > Both compare against the isentropic process **to the same exit pressure**. Use stagnation temperatures for machines.
 
 ## Explanation
@@ -29,6 +31,7 @@ For a turbine you usually know the **work** (from the spool balance), which give
 **Checks**: $\eta<1$, and the real exit is hotter than the isentropic exit for **both** machines, so $w_c>w_{c,s}$ and $w_t<w_{t,s}$.
 
 **Diffuser efficiency**: $\eta_d = (T_{2s}-T_1)/(T_{02}-T_1)$. It relates to the pressure recovery by
+
 $$\eta_d = \frac{\Gamma_d^{(\gamma-1)/\gamma}\big(1+\tfrac{\gamma-1}{2}M^2\big)-1}{\tfrac{\gamma-1}{2}M^2}$$
 
 Net work is the *difference* of turbine and compressor work, so it is very sensitive to $\eta$. In PS7 Q7.3, going from 90 % to 85 % efficiency cuts net work by 22 % and $\eta_{th}$ from 0.50 to 0.40.

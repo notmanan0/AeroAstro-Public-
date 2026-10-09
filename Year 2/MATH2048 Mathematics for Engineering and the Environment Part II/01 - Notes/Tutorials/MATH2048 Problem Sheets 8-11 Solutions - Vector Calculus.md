@@ -99,6 +99,7 @@ The useful derivatives are:
 
 ## Q3: Curl
 **(i)**
+
 $$\nabla\times\mathbf F=\Big(0-0\Big)\mathbf i+\Big(y\sinh z-\frac{x}{\sqrt{x^2+z^2}}\Big)\mathbf j+\big(2y^2-\cosh z\big)\mathbf k .$$
 
 **(ii)** $\nabla\times\mathbf r=\mathbf 0$. Indeed $\mathbf r=\nabla\big(\tfrac12r^2\big)$, so this follows from curl grad $=\mathbf 0$.
@@ -109,12 +110,17 @@ $$\nabla\times\mathbf F=\Big(0-0\Big)\mathbf i+\Big(y\sinh z-\frac{x}{\sqrt{x^2+
 **(ii)** $\mathbf G\cdot(\nabla\times\mathbf F)=-2y^3-3x^2yz^3-x^2\cos x$.
 
 **(iii)** $(\mathbf F\times\nabla)\cdot\mathbf G=\sum_i(\mathbf F\times\nabla)_iG_i$. Expanding:
+
 $$(F_2\partial_z-F_3\partial_y)G_1+(F_3\partial_x-F_1\partial_z)G_2+(F_1\partial_y-F_2\partial_x)G_3 .$$
+
 Regrouping by $F_1$, $F_2$, $F_3$ gives $F_1(\partial_yG_3-\partial_zG_2)+\dots=\mathbf F\cdot(\nabla\times\mathbf G)$. So the answer is the same as (i).
 
 **(iv)**
+
 $$\mathbf F\times(\nabla\times\mathbf G)=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\x^2y&y^2z&z^2x\\-3x^2y&\sin x&6xyz-2\end{vmatrix}$$
+
 $$=\big(y^2z(6xyz-2)-z^2x\sin x\big)\,\mathbf i+\big(-3x^3yz^2-x^2y(6xyz-2)\big)\,\mathbf j+\big(x^2y\sin x+3x^2y^3z\big)\,\mathbf k$$
+
 SymPy ✔.
 
 ## Q5: curl curl
@@ -144,16 +150,20 @@ $\nabla^2\mathbf F=(\nabla^2y^2,\ \nabla^2x^2,\ \nabla^2z^2)=2\,\mathbf i+2\,\ma
 - $\mathbf r_\theta\times\mathbf r_z=\Big(\tfrac ah z\cos\theta,\ \tfrac ah z\sin\theta,\ -\tfrac{a^2}{h^2}z\Big)$.
 
 **Area element.**
+
 $$|\mathbf r_\theta\times\mathbf r_z|=\frac{a}{h}z\sqrt{1+\frac{a^2}{h^2}}=\frac{a\sqrt{a^2+h^2}}{h^2}\,z,\qquad dA=\frac{a\sqrt{a^2+h^2}}{h^2}\,z\,d\theta\,dz .$$
 
 **Area.**
+
 $$A=\frac{a\sqrt{a^2+h^2}}{h^2}\cdot2\pi\cdot\frac{h^2}{2}=\boxed{\pi a\sqrt{a^2+h^2}}\ ✔$$
 
 ## Q2: Flux through the upper hemisphere $r=a$, $z\geq0$, upward normal
 The upward normal is $\hat{\mathbf n}=\mathbf r/a$, with $dA=a^2\sin\theta\,d\theta\,d\phi$. The outward normal points up on the upper hemisphere, as required.
 
 **(a)** $\mathbf F=y\,\mathbf j$ gives $\mathbf F\cdot\hat{\mathbf n}=y^2/a$. The flux is
+
 $$\frac1a\iint y^2\,dA=\frac1a\cdot\frac{a^2}{3}\cdot2\pi a^2=\boxed{\frac{2\pi a^3}{3}},$$
+
 using the symmetry $\iint x^2=\iint y^2=\iint z^2=\frac13\iint a^2\,dA$.
 
 **(b)** $\mathbf F=-y\,\mathbf i+x\,\mathbf j+\mathbf k$ gives $\mathbf F\cdot\hat{\mathbf n}=\frac{-xy+xy+z}{a}=\frac za$. Using $\iint z\,dA=\int_0^{2\pi}\int_0^{\pi/2}a\cos\theta\,a^2\sin\theta\,d\theta\,d\phi=\pi a^3$, the flux is $\boxed{\pi a^2}$.
@@ -165,22 +175,30 @@ using the symmetry $\iint x^2=\iint y^2=\iint z^2=\frac13\iint a^2\,dA$.
 All three checked by explicit parametrisation ✔.
 
 ## Q3: $\mathbf F=y\,\mathbf i+xz^3\,\mathbf j-zy^3\,\mathbf k$ on the disc $x^2+y^2\leq a^2$, $z=b$
+
 $$\nabla\times\mathbf F=\big(-3zy^2-3xz^2\big)\,\mathbf i+0\,\mathbf j+\big(z^3-1\big)\,\mathbf k .$$
+
 With $d\mathbf S=\mathbf k\,dA$ (upward):
+
 $$\iint(\nabla\times\mathbf F)\cdot d\mathbf S=(b^3-1)\,\pi a^2 .$$
 
 *Stokes check*: take the boundary circle $\mathbf r=(a\cos t,a\sin t,b)$. Then
+
 $$\oint\mathbf F\cdot d\mathbf r=\int_0^{2\pi}\big(-a^2\sin^2t+a^2b^3\cos^2t\big)\,dt=\pi a^2(b^3-1)\ ✔$$
 
 ## Q4: Funnel $x^2+y^2=z^2$, $0\leq z\leq9$
 **(a) Sketch.** An inverted cone with its vertex at the origin, opening upward to a circle of radius 9 at $z=9$. Its half-angle is $45^\circ$.
 
 **(b) Outward normal.** Parametrise $\mathbf r=(z\cos\theta,\ z\sin\theta,\ z)$. Then
+
 $$\mathbf r_\theta\times\mathbf r_z=(z\cos\theta,\ z\sin\theta,\ -z)=(x,\ y,\ -z).$$
+
 This points away from the axis and downward, i.e. **outward** from the funnel. Normalised: $\hat{\mathbf n}=\frac{(x,y,-z)}{\sqrt2\,z}$.
 
 **(c) Flux.** $\mathbf F=-y\,\mathbf i+x\,\mathbf j+z\,\mathbf k$ gives $\mathbf F\cdot(\mathbf r_\theta\times\mathbf r_z)=-xy+xy-z^2=-z^2$. So
+
 $$\iint\mathbf F\cdot d\mathbf S=\int_0^9\int_0^{2\pi}-z^2\,d\theta\,dz=-2\pi\cdot\frac{729}{3}=\boxed{-486\pi}.$$
+
 With the inward normal the answer would be $+486\pi$.
 
 ---
@@ -188,13 +206,16 @@ With the inward normal the answer would be $+486\pi$.
 # PS11: Volume, divergence and Stokes
 
 ## Q1: Shell $1\leq r\leq2$ with a $\pi/3$ wedge removed
+
 $$V=\int_0^{5\pi/3}\int_0^\pi\int_1^2r^2\sin\theta\,dr\,d\theta\,d\phi=\frac{5\pi}{3}\cdot2\cdot\frac{7}{3}=\boxed{\frac{70\pi}{9}}\ \Big(=\tfrac56\text{ of the full shell }\tfrac{28\pi}{3}\Big).$$
 
 ## Q2: Inside $x^2+y^2=a^2$, between $z=0$ and $z=x^2+y^2$
+
 $$V=\int_0^{2\pi}\int_0^a\underbrace{r^2}_{\text{height}}\cdot\underbrace{r\,dr\,d\theta}_{dA}=2\pi\frac{a^4}{4}=\boxed{\frac{\pi a^4}{2}}\ ✔$$
 
 ## Q3: Verify Gauss for $\mathbf F=(x,y,z^2)$ on the quarter cylinder $x,y\geq0$, $x^2+y^2\leq1$, $0\leq z\leq1$
 **Volume side.** $\nabla\cdot\mathbf F=2+2z$. In cylindrical coordinates,
+
 $$\int_0^1\!\int_0^{\pi/2}\!\int_0^1(2+2z)\,r\,dr\,d\theta\,dz=\frac{\pi}{4}\cdot3=\frac{3\pi}{4}.$$
 
 **Surface side**, five faces with outward normals:
@@ -217,6 +238,7 @@ The total is $\frac{3\pi}{4}$ ✔, so the theorem is verified.
 So the flux is $-3\pi$.
 
 **Line side.** The boundary is the unit circle, traversed anticlockwise from above: $\mathbf r=(\cos t,\sin t,0)$. Then
+
 $$\oint\mathbf F\cdot d\mathbf r=\int_0^{2\pi}\big[2\sin t(-\sin t)+(-\cos t)\cos t\big]dt=-2\pi-\pi=-3\pi\ ✔$$
 
 *Shortcut*: by the corollary, the flat unit disc would give $\iint(-3)\,dA=-3\pi$ too.

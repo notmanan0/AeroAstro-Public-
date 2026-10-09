@@ -17,9 +17,11 @@ sources: []
 For continuous aligned fibres, $V_f+V_m=1$.
 
 Longitudinal isostrain:
+
 $$E_L=V_fE_f+V_mE_m$$
 
 Transverse isostress idealisation:
+
 $$\frac1{E_T}=\frac{V_f}{E_f}+\frac{V_m}{E_m}$$
 
 ## Explanation

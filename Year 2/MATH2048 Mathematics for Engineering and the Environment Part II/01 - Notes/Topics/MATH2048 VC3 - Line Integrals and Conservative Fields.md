@@ -24,7 +24,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture21_vect
 
 > [!abstract] Summary
 > **Line integral** (work done by a force field along a path):
+>
 > $$\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F(\mathbf r(t))\cdot\dot{\mathbf r}(t)\,dt .$$
+>
 > Substitute the parametrisation, take the dot product with the tangent, and do an ordinary integral. In general the result **depends on the path**.
 >
 > **Conservative fields** $\mathbf F=\nabla\phi$ are the exception: $\int_A^B\mathbf F\cdot d\mathbf r=\phi(B)-\phi(A)$. The test (in a simply connected region) is **$\nabla\times\mathbf F=\mathbf 0$**. You find $\phi$ by partial integration.
@@ -71,7 +73,9 @@ Different answers, so this field is **path dependent**, and indeed $\nabla\times
 **Proposition**: $\displaystyle\int_C\nabla\phi\cdot d\mathbf r=\phi(\mathbf r_B)-\phi(\mathbf r_A)$.
 
 **Proof**: along the curve,
+
 $$\nabla\phi\cdot\dot{\mathbf r}=\phi_x\dot x+\phi_y\dot y+\phi_z\dot z=\frac{d}{dt}\phi(\mathbf r(t))$$
+
 by the chain rule. So the integral is $\big[\phi(\mathbf r(t))\big]_{t_0}^{t_1}$. ∎
 
 **Physics**: with $\mathbf F=-\nabla V$, the work done equals the loss of potential energy. Energy is conserved, which is where the name **conservative** comes from.
@@ -101,13 +105,16 @@ by the chain rule. So the integral is $\big[\phi(\mathbf r(t))\big]_{t_0}^{t_1}$
 2. **Integrate $\phi_x=F_1$ in $x$.** $\phi=x^2y+x\cos2y+f(y)$, where the "constant" can depend on $y$.
 3. **Differentiate in $y$ and compare with $F_2$.** $\phi_y=x^2-2x\sin2y+f'(y)=F_2$, so $f'(y)=2y$ and $f=y^2+c$.
 4. **Result.**
+
 $$\phi=x^2y+x\cos2y+y^2+c .$$
 
 In 3D, repeat the pattern: integrate in $x$, match the $y$ derivative, then match the $z$ derivative. Each "constant" is a function of the variables not yet integrated.
 
 ## 5. Exam 2025/26 B1: $\mathbf F=xyz\,\mathbf i+z^2\mathbf j+y^2\mathbf k$
 **(a) Not conservative.**
+
 $$\nabla\times\mathbf F=(2y-2z)\,\mathbf i+xy\,\mathbf j-xz\,\mathbf k\neq\mathbf 0 .$$
+
 For example, at $(1,1,0)$ it equals $(2,1,0)$.
 
 **(b) Along $\mathbf r=\big(3(t+1),\,t,\,t^2\big)$ from $t=0$ to $t=1$.** The full working is in [[MATH2048 Past Paper Solutions]]. The path cannot be shortcut, because the field is not conservative.

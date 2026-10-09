@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > For internal gauge pressure $p$, mean radius $R$ and wall thickness $t$, with $t/R < 0.1$:
+>
 > $$\text{cylinder: } \sigma_{hoop} = \frac{pR}{t},\quad \sigma_{long} = \frac{pR}{2t};\qquad \text{sphere: } \sigma = \frac{pR}{2t}\ \text{(all directions)}$$
+>
 > The radial stress (of order $p$) is neglected, so the wall is in plane stress.
 
 ## Explanation

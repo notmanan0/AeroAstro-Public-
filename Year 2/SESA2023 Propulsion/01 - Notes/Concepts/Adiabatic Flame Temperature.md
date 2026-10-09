@@ -24,10 +24,13 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf", "02 - Sources/Lectur
 
 ## Explanation
 **Premixed form** (all reactants at $T_1$):
+
 $$T_2 = T_0+\frac{LCV/(AFR+1)-c_{p,r}(T_0-T_1)}{c_{p,p}}$$
 
 **Engine form** (air at $T_{03}$, fuel at $T_{ref}$, per kg air):
+
 $$f = \frac{c_{p,p}(T_{04}-T_{ref})-c_{p,a}(T_{03}-T_{ref})}{\eta_bLCV-c_{p,p}(T_{04}-T_{ref})}$$
+
 With a single $c_p$ this becomes $f = \dfrac{T_{04}-T_{03}}{LCV/c_p-(T_{04}-T_{ref})}$.
 
 **Simplified forms used in older papers and PS4**:

@@ -17,7 +17,9 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 02 - Displacement S
 
 > [!note] Definition
 > An AC-excited primary coil with two symmetric secondaries in **series opposition** and a movable ferromagnetic core:
+>
 > $$V_{out} = V_a - V_b\ \propto\ \text{core displacement}$$
+>
 > It is zero at the centre (null) and changes phase by 180° across it.
 
 ## Explanation

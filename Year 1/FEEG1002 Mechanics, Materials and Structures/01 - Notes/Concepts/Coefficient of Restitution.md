@@ -16,7 +16,9 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$e = \frac{v_{B2} - v_{A2}}{v_{A1} - v_{B1}} = \frac{\text{relative speed of separation}}{\text{relative speed of approach}}$$
+>
 > taken along the **line of impact**. $e = 1$ is elastic (KE conserved); $e = 0$ is plastic (the bodies stick).
 
 ## Explanation

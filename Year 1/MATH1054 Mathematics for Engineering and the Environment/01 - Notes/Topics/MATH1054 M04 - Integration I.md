@@ -35,9 +35,11 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 4
 ---
 
 ## 1. Definite integral = signed area (James §8.6)
+
 $$
 \int_a^bf(x)\,\mathrm dx=F(b)-F(a),\qquad F'=f
 $$
+
 Area **below** the axis counts negative. For Ex 8.38, $\int_{-5}^5(x+3)\,\mathrm dx=32-2=30$. To find the *geometric* area, split the range at the zeros of $f$ and add the absolute values.
 
 ## 2. Standard integrals (James Fig. 8.56)
@@ -69,9 +71,11 @@ $$
 > $\int_0^\pi\sin5x\sin6x\,\mathrm dx=0$, while $\int_0^\pi\sin^25x\,\mathrm dx=\frac\pi2$. Different frequencies integrate to zero over a full half-period. This is the whole basis of Fourier series ([[Orthogonality of Trigonometric Functions]], MATH2048).
 
 ## 4. Integration by parts (James §8.8.4)
+
 $$
 \int u\frac{\mathrm dv}{\mathrm dx}\,\mathrm dx=uv-\int v\frac{\mathrm du}{\mathrm dx}\,\mathrm dx\qquad\text{(from the product rule)}
 $$
+
 **Choosing $u$ (LIATE)**: take $u$ from whichever comes first in **L**ogs, **I**nverse trig, **A**lgebraic, **T**rig, **E**xponential. The aim is to make $u$ simpler when differentiated.
 - $\int x^3\ln x$: take $u=\ln x$, because the log disappears on differentiation.
 - $\int x^2\cos x$: take $u=x^2$, and apply parts twice to reduce the power to zero.
@@ -85,10 +89,13 @@ $$
 With $n$ strips of width $h=(b-a)/n$ and ordinates $f_r=f(a+rh)$:
 
 **Trapezium rule** (straight-line tops, error $\propto h^2$):
+
 $$
 T(h)=h\Big[\tfrac12(f_0+f_n)+f_1+f_2+\dots+f_{n-1}\Big]
 $$
+
 **Simpson's rule** ($n$ **even**, parabolic tops, error $\propto h^4$):
+
 $$
 S=\frac h3\Big[f_0+f_n+4(f_1+f_3+\dots+f_{n-1})+2(f_2+f_4+\dots+f_{n-2})\Big]
 $$

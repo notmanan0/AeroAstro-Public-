@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §10.5.1", "MATH1054 
 ## Definition
 
 > [!note] Definition
+>
 > $$\frac{\mathrm dx}{\mathrm dt}=f(t)g(x)\quad\Longrightarrow\quad\int\frac{\mathrm dx}{g(x)}=\int f(t)\,\mathrm dt+C$$
 
 ## Explanation

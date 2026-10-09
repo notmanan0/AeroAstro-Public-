@@ -16,7 +16,9 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$f = \frac{N_p}{2}\cdot\frac{\mathrm{rpm}}{60}\qquad\Longleftrightarrow\qquad \mathrm{rpm} = \frac{120f}{N_p}$$
+>
 > Each pole **pair** passing a coil gives one electrical cycle.
 
 ## Explanation

@@ -17,6 +17,7 @@ sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors
 
 > [!note] Definition
 > Diodes convert AC to unidirectional current. A capacitor across the load holds the peak:
+>
 > $$\Delta V = \frac{I}{2fC}\ \text{(full-wave)},\qquad \Delta V = \frac{I}{fC}\ \text{(half-wave)},\qquad V_{avg} = V_p - \frac{\Delta V}{2}$$
 
 ## Explanation

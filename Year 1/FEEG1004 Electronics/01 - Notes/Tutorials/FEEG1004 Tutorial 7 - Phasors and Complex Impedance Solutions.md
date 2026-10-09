@@ -66,11 +66,17 @@ The result is capacitive: the −j1 branch dominates the parallel pair.
 ## Q5: Currents $\mathbf I_1$ and $\mathbf I_2$ from a 20∠45° A source
 **Topology**: the source feeds a 2 Ω shunt; in parallel with it is a j3 Ω series branch ($\mathbf I_1$) leading to 4 Ω ($\mathbf I_2$) in parallel with −j15 Ω.
 - **Impedance to the right of the 2 Ω**:
+
 $$Z_r = j3 + \frac{4(-j15)}{4 - j15} = 3.73 + j2.00 = 4.24\angle28.2°\ \Omega$$
+
 - **First current divider** (2 Ω vs $Z_r$):
+
 $$\mathbf I_1 = \frac{2}{2 + Z_r}\times20\angle45° = 5.93 + j2.86 = 6.59\angle25.7°\ \mathrm A\ ✔$$
+
 - **Second current divider** (4 Ω vs −j15 Ω):
+
 $$\mathbf I_2 = \frac{-j15}{4 - j15}\times\mathbf I_1 = 6.25 + j1.19 = 6.36\angle10.8°\ \mathrm A\ ✔$$
+
   The solution sheet rounds this to 6.4∠10.8°.
 - **Check** by KCL: the 2 Ω branch carries $\mathbf I_s - \mathbf I_1$ = 13.9∠54.1° A, and the phasors close (right panel of the figure above).
 

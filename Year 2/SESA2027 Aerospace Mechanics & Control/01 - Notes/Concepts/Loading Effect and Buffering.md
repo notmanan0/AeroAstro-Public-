@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 3.07.pdf"]
 
 > [!note] Definition
 > Connecting a measuring device draws current from the sensor. The sensor's output impedance and the device's input impedance form a voltage divider:
+>
 > $$V_{meas} = V_{sensor}\frac{Z_{in}}{Z_{out}+Z_{in}},\qquad \varepsilon_{load} = \frac{Z_{out}}{Z_{out}+Z_{in}}$$
+>
 > An accurate measurement needs $Z_{in}\gg Z_{out}$.
 
 ## Explanation

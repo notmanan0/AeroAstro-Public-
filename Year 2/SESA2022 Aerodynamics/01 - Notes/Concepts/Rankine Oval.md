@@ -17,6 +17,7 @@ sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf"]
 
 > [!note] Definition
 > A uniform flow $V_\infty$ plus an **equal-strength** source ($+\Lambda$ at $x = -b$) and sink ($-\Lambda$ at $x = +b$). The dividing streamline $\psi = 0$ closes into an oval body:
+>
 > $$\psi = V_\infty r\sin\theta+\frac{\Lambda}{2\pi}(\theta_1-\theta_2)$$
 
 ## Explanation

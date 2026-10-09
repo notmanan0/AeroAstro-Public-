@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier Series/Lecture8_Fourie
 ## Definition
 
 > [!note] Definition
+>
 > $$f(x)=\sum_{n=-\infty}^{\infty}c_ne^{jn\pi x/\ell},\qquad c_n=\frac1{2\ell}\int_{-\ell}^{\ell}f(x)e^{-jn\pi x/\ell}dx .$$
 
 ## Explanation

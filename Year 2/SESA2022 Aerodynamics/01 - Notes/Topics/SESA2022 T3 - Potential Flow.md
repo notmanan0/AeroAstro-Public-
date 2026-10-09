@@ -47,6 +47,7 @@ The course uses the **$x$–$z$ plane**: $x$ is streamwise, $z$ is vertical, and
 ## 2. Governing equations
 
 Euler (steady, 2D):
+
 $$
 \frac{\partial u}{\partial x}+\frac{\partial w}{\partial z}=0,\quad u\frac{\partial u}{\partial x}+w\frac{\partial u}{\partial z}=-\frac1\rho\frac{\partial p}{\partial x},\quad u\frac{\partial w}{\partial x}+w\frac{\partial w}{\partial z}=-\frac1\rho\frac{\partial p}{\partial z}
 $$

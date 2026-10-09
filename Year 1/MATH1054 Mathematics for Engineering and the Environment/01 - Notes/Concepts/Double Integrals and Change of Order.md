@@ -17,6 +17,7 @@ sources: ["MATH1054 Module Booklet, Module 11 (booklet-only topic)"]
 
 > [!note] Definition
 > $\iint_Rf\,\mathrm dA=\lim\sum f_i\,\delta S_i$: the volume under $z=f(x,y)$ above the region $R$. It is evaluated as repeated single integrals, e.g.
+>
 > $$\iint_Rf\,\mathrm dA=\int_{x_1}^{x_2}\!\!\int_{g_1(x)}^{g_2(x)}f\,\mathrm dy\,\mathrm dx$$
 
 ## Explanation

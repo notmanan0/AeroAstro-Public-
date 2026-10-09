@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf"]
 
 > [!note] Definition
 > The heat released per kg of fuel when the reactants and products are both at the reference state (298.15 K, 1 bar), i.e. **isothermal, constant-pressure** combustion:
+>
 > $$\dot Q_{out} = \dot m_f\,LCV$$
+>
 > The **LCV** leaves product water as **vapour**. The **HCV** condenses it, so HCV > LCV. Propulsion uses the **LCV**.
 
 ## Explanation

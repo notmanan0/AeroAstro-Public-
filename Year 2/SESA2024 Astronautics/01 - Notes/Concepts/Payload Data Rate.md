@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/SESA2024 Astronautics PROBLEM SHEET WORKBOOK 20
 ## Definition
 
 > [!note] Definition
+>
 > $$V_{gd} = \sqrt{\frac{\mu}{a}}\,\frac{R_E}{a},\qquad t_s = \frac{p}{V_{gd}},\qquad R_b = \frac{N_{px}\cdot b\cdot N_{bands}}{t_s}$$
+>
 > - $p$ = ground pixel size;
 > - $b$ = bits per pixel (or per pixel pair);
 > - $N_{px}$ = pixels read per line.

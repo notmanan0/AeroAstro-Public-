@@ -16,7 +16,9 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$\sum F_x = ma_{Gx},\qquad \sum F_y = ma_{Gy},\qquad \sum M_G = I_G\alpha\quad\text{or}\quad\sum M_P = (\bar r\times m\mathbf a_G)_P + I_G\alpha$$
+>
 > For rotation about a fixed axis O: $\sum F_n = mr_G\omega^2$, $\sum F_t = mr_G\alpha$ and $\sum M_O = I_O\alpha$.
 
 ## Explanation

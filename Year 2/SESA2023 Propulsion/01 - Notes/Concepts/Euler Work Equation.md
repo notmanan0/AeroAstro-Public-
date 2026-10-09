@@ -15,7 +15,9 @@ sources: ["02 - Sources/Lectures/Week 08 - Turbomachinery Principles.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$\Delta h_0 = U_2V_{\theta2}-U_1V_{\theta1},\qquad\dot W_x = \dot m\,\Delta h_0 = T\Omega,\qquad T = \dot m(r_2V_{\theta2}-r_1V_{\theta1})$$
+>
 > At constant radius: $\Delta h_0 = U\,\Delta V_\theta = U\,\Delta V_{\theta,rel} = UV_x(\tan\alpha_2-\tan\alpha_1)$.
 
 ## Explanation

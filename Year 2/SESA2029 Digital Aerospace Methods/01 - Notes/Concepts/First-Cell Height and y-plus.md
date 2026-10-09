@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L2, L9)", "02 - Sourc
 
 > [!note] Definition
 > The wall distance of the first cell centre, expressed in wall units:
+>
 > $$y_1^+ = \frac{y_1u_\tau}{\nu},\qquad u_\tau = \sqrt{\tau_w/\rho}$$
+>
 > It decides whether the grid **resolves** the viscous sublayer ($y_1^+\lesssim1$–5) or relies on a **wall function** in the log layer ($30<y_1^+\lesssim200$).
 
 ## Explanation

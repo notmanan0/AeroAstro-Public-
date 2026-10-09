@@ -15,6 +15,7 @@ sources: []
 
 ## Definition
 > [!note] Definition
+>
 > $$J=-D\frac{dC}{dx},\qquad \frac{\partial C}{\partial t}=D\frac{\partial^2C}{\partial x^2},\qquad D=D_0e^{-Q/RT}$$
 
 ## Explanation

@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 3.07.pdf"]
 
 > [!note] Definition
 > An $n$-bit ADC maps its input window to $2^n$ integer codes:
+>
 > $$Q = \frac{V_{ADC,max}-V_{ADC,min}}{2^n},\qquad N[k] = \mathrm{round}\!\left(\frac{V_{out}[k]}{Q}\right),\qquad \hat V = NQ,\qquad |e_q|\le\frac Q2$$
+>
 > Before the ADC, the sensor voltage is **range-mapped**: $V_{out} = A_vV_{in}+V_{os}$, with $A_v = \dfrac{\Delta V_{ADC}}{\Delta V_{in}}$ and $V_{os} = V_{ADC,min}-A_vV_{min}$.
 
 ## Explanation

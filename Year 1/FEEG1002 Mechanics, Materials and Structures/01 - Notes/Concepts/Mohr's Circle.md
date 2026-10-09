@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > The transformation equations trace a circle in the ($\sigma_{x'x'}$, $\sigma_{x'y'}$) plane:
+>
 > $$(\sigma_{x'x'} - \sigma_{avg})^2 + \sigma_{x'y'}^2 = R^2,\qquad \sigma_{avg} = \frac{\sigma_{xx}+\sigma_{yy}}2,\qquad R = \sqrt{\left(\frac{\sigma_{xx}-\sigma_{yy}}2\right)^2 + \sigma_{xy}^2}$$
+>
 > **FEEG1002 convention**: shear is plotted **positive downwards**, so a rotation $\theta$ of the element is a rotation $2\theta$ in the **same sense** on the circle.
 
 ## Explanation

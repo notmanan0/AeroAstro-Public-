@@ -16,6 +16,7 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 ## Definition
 
 > [!note] Definition
+>
 > $$T = 2\,B\,A\,V_R,\qquad A = \frac{Zi_c}{\pi D}\ \text{(electric loading)},\qquad B\ \text{(magnetic loading)},\qquad V_R = \frac{\pi D^2L}{4}$$
 
 ## Explanation

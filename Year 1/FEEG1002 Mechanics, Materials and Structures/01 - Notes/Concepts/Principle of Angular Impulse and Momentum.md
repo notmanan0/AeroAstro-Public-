@@ -16,7 +16,9 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf H_O = \mathbf r\times m\mathbf v,\qquad \sum\mathbf M_O = \dot{\mathbf H}_O,\qquad (\mathbf H_O)_1 + \sum\int_{t_1}^{t_2}\mathbf M_O\,dt = (\mathbf H_O)_2$$
+>
 > If all the forces pass through O (**central forces**), $H_O = rmv_\perp$ is conserved.
 
 ## Explanation

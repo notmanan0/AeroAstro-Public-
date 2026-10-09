@@ -21,7 +21,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W05-5abc Inductors and Resonance - Re
 > [!abstract] Summary
 > An inductor stores energy in the **magnetic field** of its own current.
 > - Flux linkage is proportional to current, $N\Phi = LI$ (inductance $L$ in H = Wb/A). With Faraday's law this gives
+>
 > $$v = L\frac{di}{dt}$$
+>
 > - Consequences: inductor **current cannot change instantaneously**; at DC steady state an inductor is a **short circuit**; stored energy is $\tfrac{1}{2}LI^2$.
 > - Put $L$ with $C$ and energy sloshes between the two stores: electrical **resonance**. The car ignition coil uses exactly this.
 

@@ -55,9 +55,11 @@ The coefficients may depend on the **independent** variable without breaking lin
 - **Direct integration**: if $\dfrac{\mathrm d^nx}{\mathrm dt^n}=f(t)$, integrate $n$ times, adding a constant each time.
 
 ## 3. Separable first-order equations (James §10.5)
+
 $$
 \frac{\mathrm dx}{\mathrm dt}=f(t)\,g(x)\quad\Longrightarrow\quad\int\frac{\mathrm dx}{g(x)}=\int f(t)\,\mathrm dt+C
 $$
+
 1. Move all the $x$ terms to the left and all the $t$ terms to the right.
 2. Integrate both sides, with **one** constant.
 3. Apply the initial condition, then solve for $x$ if possible. Choose the $\pm$ sign from the initial data.
@@ -68,9 +70,11 @@ $$
 > - **Finite-time blow-up**: $\dot x=e^{x+t}$ gives $x=-\ln(1+e^{-a}-e^t)$, which escapes to infinity at $t=\ln(1+e^{-a})$. Nonlinear ODEs can do this; linear ones cannot.
 
 ## 4. Second-order linear, constant coefficients, homogeneous (James §10.9)
+
 $$
 a\ddot x+b\dot x+cx=0,\qquad x=e^{mt}\ \Rightarrow\ am^2+bm+c=0
 $$
+
 | Discriminant $b^2-4ac$ | Roots | General solution | Behaviour |
 |---|---|---|---|
 | $>0$ | $m_1\neq m_2$ real | $Ae^{m_1t}+Be^{m_2t}$ | over-damped / exponential |

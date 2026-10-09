@@ -27,13 +27,17 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 05 - Elastic and Plastic Mech
 ---
 
 ## 1. Engineering stress and strain
+
 $$\sigma=\frac{F}{A_0},\qquad \varepsilon=\frac{L-L_0}{L_0},\qquad E=\frac{d\sigma}{d\varepsilon}\quad\text{(linear elastic region)}$$
 
 Poisson's ratio links transverse contraction to axial extension:
+
 $$\nu=-\frac{\varepsilon_{transverse}}{\varepsilon_{axial}}$$
 
 True quantities use the instantaneous dimensions:
+
 $$\sigma_T=\frac{F}{A},\qquad \varepsilon_T=\ln\frac{L}{L_0}$$
+
 Before necking, assuming constant volume, $\sigma_T=\sigma(1+\varepsilon)$ and $\varepsilon_T=\ln(1+\varepsilon)$.
 
 ## 2. Mechanical properties from the curve
@@ -79,6 +83,7 @@ In steel, carbon atmospheres pin dislocations. Extra stress is required for init
 
 > [!example] Elastic copper rod
 > For $\sigma=276$ MPa, $E=110$ GPa, $L=305$ mm and $\nu=0.34$:
+>
 > $$\Delta L=\frac{\sigma}{E}L=0.765\ \text{mm},\qquad \Delta d=-\nu\frac{\sigma}{E}d=-0.00853\ \text{mm}\quad(d=10\ \text{mm})$$
 
 ## Design bridge to Statics

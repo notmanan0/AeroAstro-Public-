@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §10.5.4", "MATH1054 
 
 > [!note] Definition
 > For $\dot x+P(t)x=Q(t)$, multiply by $\mu=e^{\int P\,\mathrm dt}$:
+>
 > $$\frac{\mathrm d}{\mathrm dt}(\mu x)=\mu Q\quad\Rightarrow\quad x=\frac1\mu\Big[\int\mu Q\,\mathrm dt+C\Big]$$
 
 ## Explanation

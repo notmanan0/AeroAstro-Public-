@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/ODEs/Lecture2_ODE.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$ax^2y''+bxy'+cy=0,\qquad x>0 .$$
+>
 > Substituting $y=x^n$ gives the **indicial equation** $an(n-1)+bn+c=0$, i.e. $an^2+(b-a)n+c=0$.
 
 ## Explanation

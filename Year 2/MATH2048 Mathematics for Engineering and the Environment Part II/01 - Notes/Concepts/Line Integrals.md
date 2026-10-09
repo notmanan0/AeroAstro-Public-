@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture22_vect
 ## Definition
 
 > [!note] Definition
+>
 > $$\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F(\mathbf r(t))\cdot\frac{d\mathbf r}{dt}\,dt .$$
+>
 > This is the work done by $\mathbf F$ along $C$. Around a closed loop, $\oint_C\mathbf F\cdot d\mathbf r$ is the **circulation**.
 
 ## Explanation

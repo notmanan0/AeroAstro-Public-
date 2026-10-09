@@ -32,13 +32,16 @@ FCC has many close-packed slip systems, so yielding/plastic crack-tip blunting r
 
 ## Q2: Griffith flaw in fused silica
 Given $\gamma=4.32$ J/m², $E=70000$ MPa $=70\times10^9$ Pa, $\sigma=35$ MPa:
+
 $$\sigma_f=\sqrt{\frac{2E\gamma}{\pi a}}\quad\Rightarrow\quad a=\frac{2E\gamma}{\pi\sigma_f^2}$$
+
 $$a=\frac{2(70\times10^9)(4.32)}{\pi(35\times10^6)^2}=\boxed{1.57\times10^{-4}\ \text m=0.157\ \text{mm}}$$
 
 Here $a$ is the half-length of a central crack, so the corresponding total crack length is $2a=\boxed{0.314\ \text{mm}}$.
 
 ## Q3: Nuclear pressure-vessel steel
 Detection threshold: internal total crack length $2a=1.6$ mm, so $a=0.8$ mm. With $Y=1$ as stated/implicit:
+
 $$\sigma_f=\frac{K_C}{\sqrt{\pi a}}=\frac{65}{\sqrt{\pi(0.8\times10^{-3})}}=\boxed{1.30\ \text{GPa}}$$
 
 This exceeds the yield strength 375 MPa. The plate therefore reaches **general yielding first**, not LEFM fast fracture at 1.30 GPa. Assumptions: Mode I, central/infinite-plate idealisation, $Y=1$, crack length means $2a$, no residual stress, room-temperature $K_C$, and linear elasticity up to the comparison. Once widespread yielding occurs, the $K$ result is outside strict validity.
@@ -47,7 +50,9 @@ This exceeds the yield strength 375 MPa. The plate therefore reaches **general y
 
 ## Q4: Safety factor for the pressure vessel
 A nuclear pressure vessel must be designed to the applicable pressure-vessel/fracture-control code; one should not choose a single ad-hoc number. For the classroom comparison, a conservative yield-based factor of about **3–4** is defensible for high consequence and uncertainty:
+
 $$\sigma_{allow}=\frac{375}{3\text{ to }4}=125\text{ to }93.8\ \text{MPa}$$
+
 and the design also needs a separate fracture margin, proof testing, NDE probability-of-detection basis, fatigue growth allowance, residual-stress assessment and inspection interval.
 
 ## Q5: S-N curve
@@ -65,19 +70,24 @@ These are graph readings, not exact analytic values.
 
 ## Q6: Steady-state creep
 ### (a) Form of the rate law
+
 $$\dot\varepsilon=K_2\sigma^n\exp\left(-\frac{Q_c}{RT}\right)$$
+
 - $\sigma^n$ captures mechanism-dependent sensitivity to driving stress;
 - the Arrhenius exponential describes thermally activated diffusion/dislocation processes;
 - $K_2$ contains material and unit-dependent constants.
 
 ### (b) Rate at 1123 K and 25 MPa
 At the same $T_1=1273$ K, divide the two data equations:
+
 $$\frac{10^{-4}}{10^{-6}}=\left(\frac{15}{4.5}\right)^n\Rightarrow n=\frac{\ln100}{\ln(15/4.5)}=3.825$$
 
 Avoid finding $K_2$ by forming a ratio to the 15 MPa datum:
+
 $$\frac{\dot\varepsilon_2}{10^{-4}}=\left(\frac{25}{15}\right)^n\exp\left[-\frac{Q_c}{R}\left(\frac1{1123}-\frac1{1273}\right)\right]$$
 
 $$\boxed{\dot\varepsilon_2=2.28\times10^{-5}\ \text{s}^{-1}}$$
+
 Higher stress accelerates creep, but the 150 K temperature reduction dominates and makes the result lower than $10^{-4}$ s$^{-1}$.
 
 ## Q7: Corrosion

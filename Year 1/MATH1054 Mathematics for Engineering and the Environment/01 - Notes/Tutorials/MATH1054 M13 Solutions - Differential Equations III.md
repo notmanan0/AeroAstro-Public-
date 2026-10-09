@@ -33,7 +33,9 @@ sources: ["tmp/md/module_13_differential_equations_iii.md", "02 - Sources/Modern
 An **operator** maps functions to functions.
 
 **Ex 10.23**, $\phi[f]=f^2$. Check the expansion:
+
 $$(3t^2-2t+4)^2=9t^4-12t^3+(4+24)t^2-16t+16=9t^4-12t^3+28t^2-16t+16\ ✔$$
+
 Note that this $\phi$ is **not linear**: $\phi[2f]=4f^2\neq2\phi[f]$.
 
 **Ex 10.24**, $\phi[f]=tf^2-4f+t^2$:
@@ -46,8 +48,11 @@ Note that this $\phi$ is **not linear**: $\phi[2f]=4f^2\neq2\phi[f]$.
 
 ## Example 10.27: Show $\ddot x+4t\dot x-(\sin t)x=\cos t$ is linear
 The operator is $\mathrm L=\mathrm D^2+4t\,\mathrm D-\sin t$. For constants $a,b$:
+
 $$\mathrm L[ax_1+bx_2]=(ax_1+bx_2)''+4t(ax_1+bx_2)'-\sin t\,(ax_1+bx_2)$$
+
 $$=a\big(x_1''+4tx_1'-\sin t\,x_1\big)+b\big(x_2''+4tx_2'-\sin t\,x_2\big)=a\mathrm L[x_1]+b\mathrm L[x_2]\ ✔$$
+
 This works because differentiation is linear, and multiplication by a function of $t$ is linear. The variable coefficients do not spoil linearity.
 
 ## Example 10.28: Superposition for $\ddot x+\lambda^2x=0$
@@ -55,19 +60,26 @@ $\mathrm L[\sin\lambda t]=0$ and $\mathrm L[\cos\lambda t]=0$. By linearity, $\m
 
 ## Example 10.29: $x^{(4)}-\lambda^4x=0$
 The auxiliary equation factorises as a difference of squares:
+
 $$m^4-\lambda^4=(m^2-\lambda^2)(m^2+\lambda^2)=0\ \Rightarrow\ m=\pm\lambda,\ \pm\mathrm j\lambda$$
+
 $$\boxed{x=Ae^{\lambda t}+Be^{-\lambda t}+C\cos\lambda t+D\sin\lambda t}$$
+
 Equivalently, $x=A'\cosh\lambda t+B'\sinh\lambda t+C\cos\lambda t+D\sin\lambda t$. This is the beam-vibration equation.
 
 ## Example 10.30: $\dddot x-2\ddot x-\dot x+2x=0$
 Factor by grouping:
+
 $$m^3-2m^2-m+2=m^2(m-2)-(m-2)=(m-2)(m-1)(m+1)$$
+
 $$\boxed{x=Ae^{2t}+Be^{t}+Ce^{-t}}$$
 
 ## Example 10.32: $\ddot x+\lambda^2x=4t^3$
 - **CF**: $A\cos\lambda t+B\sin\lambda t$.
 - **PI**: the forcing is a cubic, so try a full cubic $x_p=at^3+bt^2+ct+d$. Then $\ddot x_p=6at+2b$, and
+
 $$6at+2b+\lambda^2(at^3+bt^2+ct+d)=4t^3$$
+
 - Compare coefficients:
   - $t^3$: $a=4/\lambda^2$
   - $t^2$: $b=0$
@@ -83,6 +95,7 @@ $$\boxed{x=A\cos\lambda t+B\sin\lambda t+\frac{4t^3}{\lambda^2}-\frac{24t}{\lamb
 - $x(\frac\pi4)=B\sinh\frac{k\pi}4-\dfrac{\sin\frac\pi2}{k^2+4}=0$, so $B=\dfrac{1}{(k^2+4)\sinh(k\pi/4)}$.
 
 $$\boxed{x=\frac{1}{k^2+4}\left[\frac{\sinh kt}{\sinh(k\pi/4)}-\sin2t\right]}$$
+
 The solution is unique, because $\sinh(k\pi/4)\neq0$ for $k>0$.
 
 ## Examples 10.34–10.36
@@ -96,11 +109,15 @@ These are repeated from Module 06. Full working is in [[MATH1054 M06 Solutions -
 
 ## Examples 10.40–10.43: $\ddot x+5\dot x-9x=f(t)$
 These four share one CF. The auxiliary equation $m^2+5m-9=0$ gives $m_{1,2}=\dfrac{-5\pm\sqrt{61}}2$ ($\approx1.405$ and $-6.405$):
+
 $$x_c=Ae^{m_1t}+Be^{m_2t}$$
+
 None of the forcing terms clash with the CF.
 
 **10.40**, $f=t^2$. Try $x_p=at^2+bt+c$:
+
 $$2a+5(2at+b)-9(at^2+bt+c)=t^2$$
+
 - $t^2$: $-9a=1$, so $a=-\frac19$.
 - $t$: $10a-9b=0$, so $b=-\frac{10}{81}$.
 - constant: $2a+5b-9c=0$, so $c=-\frac{68}{729}$.
@@ -108,9 +125,11 @@ $$2a+5(2at+b)-9(at^2+bt+c)=t^2$$
 $$x_p=-\tfrac19t^2-\tfrac{10}{81}t-\tfrac{68}{729}$$
 
 **10.41**, $f=\cos2t$. Try $x_p=a\cos2t+b\sin2t$. Substituting gives $(-13a+10b)\cos2t+(-10a-13b)\sin2t$. So $-13a+10b=1$ and $10a+13b=0$, which give $a=-\frac{13}{269}$ and $b=\frac{10}{269}$:
+
 $$x_p=\tfrac1{269}(10\sin2t-13\cos2t)$$
 
 **10.42**, $f=e^{4t}$. Try $Ce^{4t}$: $P(4)C=(16+20-9)C=27C=1$, so
+
 $$x_p=\tfrac1{27}e^{4t}$$
 
 **10.43**, $f=e^{-2t}+2-t$. By **superposition**, add the PIs for each piece:
@@ -127,11 +146,14 @@ In each case the general solution is $x=x_c+x_p$.
 - For a simple root this gives $C=1/P'(-2)$, where $P'(m)=2m+1$. So $C=\frac1{-3}$.
 
 $$\boxed{x=Ae^t+Be^{-2t}-\tfrac13te^{-2t}}$$
+
 **Check**: with $x_p=Cte^{-2t}$, $\dot x_p=C(1-2t)e^{-2t}$ and $\ddot x_p=C(4t-4)e^{-2t}$. The sum $\ddot x_p+\dot x_p-2x_p=C(-3)e^{-2t}$, so $C=-\frac13$ ✔.
 
 ## Example 10.45: $x^{(4)}-2\dddot x+5\ddot x-8\dot x+4x=e^t$
 $P(m)=m^4-2m^3+5m^2-8m+4$. Since $P(1)=0$ and $P'(1)=4-6+10-8=0$, $m=1$ is a **double** root. Dividing out gives
+
 $$P(m)=(m-1)^2(m^2+4).$$
+
 - **CF**: $(A+Bt)e^t+C\cos2t+D\sin2t$.
 - **PI**: $e^t$ matches a double root, so try $Kt^2e^t$. The coefficient is $K=\dfrac{1}{P''(1)}$ with $P''(1)=2(1^2+4)=10$.
 
@@ -142,10 +164,12 @@ $$\boxed{x=(A+Bt)e^t+C\cos2t+D\sin2t+\tfrac1{10}t^2e^t}$$
 # Part B: Assigned exercises
 
 ## Exercise 46(a): The operator for $\dot x+t^2x=0$
+
 $$\boxed{\mathrm L=\frac{\mathrm d}{\mathrm dt}+t^2}$$
 
 ## Exercise 49(c): The operator for $\ddot x+(\sin t)\dot x=(t+\cos t)x$
 Move everything to the left: $\ddot x+(\sin t)\dot x-(t+\cos t)x=0$. So
+
 $$\boxed{\mathrm L=\frac{\mathrm d^2}{\mathrm dt^2}+(\sin t)\frac{\mathrm d}{\mathrm dt}-(t+\cos t)}$$
 
 ## Exercise 62(b): $\ddot x-2\dot x-5x=t^2-2t$
@@ -184,6 +208,7 @@ $$\boxed{x=Ae^{\frac{-3+\sqrt{21}}6t}+Be^{\frac{-3-\sqrt{21}}6t}-t^2-6t-24+\tfra
 - **PI for $2\sin4t$**: this is at the natural frequency, so it clashes. Try $t(a\cos4t+b\sin4t)$. Substituting leaves only $8(b\cos4t-a\sin4t)=2\sin4t$, so $a=-\frac14$ and $b=0$.
 
 $$\boxed{x=A\cos4t+B\sin4t+\tfrac1{16}-\tfrac14t\cos4t}$$
+
 The amplitude grows linearly in $t$. This is **resonance** ([[Resonance]]).
 
 ## Exercise 66(b): $\ddot x+4\dot x+7x=0$
@@ -203,6 +228,7 @@ Multiply by $\eta$ to get standard form: $\ddot x+40\eta\dot x+25\eta^2x=0$.
 - $\dot x(0)=-A+2B=0$ gives $B=-\frac1{10}$.
 
 $$\boxed{x=\tfrac15-e^{-t}\Big(\tfrac15\cos2t+\tfrac1{10}\sin2t\Big)}$$
+
 This is the classic under-damped **step response**. It overshoots, then settles to the steady state $\frac15$ ([[Step Response Specifications]]).
 
 ![[m1054_step_response_21a.png|600]]
@@ -215,6 +241,7 @@ This is the classic under-damped **step response**. It overshoots, then settles 
 > Transcribed from the MATH1054 Module Booklet (the final page of Module 13), then solved and checked with SymPy, NumPy or SciPy.
 
 ## Q1: The operator
+
 $$\boxed{\mathrm L=\frac{\mathrm d^2}{\mathrm dt^2}+3\frac{\mathrm d}{\mathrm dt}+4}$$
 
 ## Q2: $\ddot x+5\dot x+6x=f(t)$
@@ -222,10 +249,15 @@ $$\boxed{\mathrm L=\frac{\mathrm d^2}{\mathrm dt^2}+3\frac{\mathrm d}{\mathrm dt
 
 **(ii)** Particular integrals, with $P(m)=m^2+5m+6$:
 - **(a)** $f=\cos t$. Try $a\cos t+b\sin t$. Substituting gives $(5a+5b)\cos t+(5b-5a)\sin t=\cos t$, so $a=b=\frac1{10}$:
+
 $$x_p=\tfrac1{10}(\cos t+\sin t)$$
+
 - **(b)** $f=e^{-2t}$. This is in the CF (a simple root), so try $Cte^{-2t}$. Then $C=\frac1{P'(-2)}=\frac1{-4+5}=1$:
+
 $$x_p=te^{-2t}$$
+
 - **(c)** $f=1-6t$. Try $at+b$. Then $5a+6(at+b)=1-6t$, so $a=-1$ and $b=1$:
+
 $$x_p=1-t$$
 
 **(iii)** The general solution is $x=Ae^{-3t}+Be^{-2t}+te^{-2t}$. Then:
@@ -233,6 +265,7 @@ $$x_p=1-t$$
 - $\dot x(0)=-3A-2B+1=0$
 
 Solving gives $A=\frac12$ and $B=-\frac14$:
+
 $$\boxed{x=\tfrac12e^{-3t}-\tfrac14e^{-2t}+te^{-2t}}$$
 
 ## Q3: $\ddot x+6\alpha\dot x+16x=0$ with $\alpha>0$

@@ -16,7 +16,9 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 03 - Complete Syste
 ## Definition
 
 > [!note] Definition
+>
 > $$V = \frac{N\,E\,G\,\varepsilon}{4}$$
+>
 > Here $N$ is the number of active gauges, $E$ the excitation, $G$ the gauge factor and $\varepsilon$ the strain. **Adjacent** arms subtract; **opposite** arms add.
 
 ## Explanation

@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > A **free body diagram** isolates a body (or part of one) and replaces everything it touches with the forces and moments those contacts exert. A body in **static equilibrium** has zero resultant force and moment:
+>
 > $$\sum F_x = 0,\qquad \sum F_y = 0,\qquad \sum M_A = 0\ \ (\text{any point A})$$
+>
 > In 2D that is three independent equations, so at most three unknowns can be found per rigid body.
 
 ## Explanation

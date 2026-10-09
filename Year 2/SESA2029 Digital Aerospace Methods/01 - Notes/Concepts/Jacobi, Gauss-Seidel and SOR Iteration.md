@@ -17,6 +17,7 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L4–L5, L11)", "02 -
 
 > [!note] Definition
 > Iterative methods for large sparse linear systems. Each unknown is updated from its discrete equation:
+>
 > $$\text{Jacobi: }T_j^{n+1} = \tfrac12(T_{j-1}^n+T_{j+1}^n),\qquad\text{Gauss–Seidel: }T_j^{n+1} = \tfrac12(T_{j-1}^{n+1}+T_{j+1}^n),\qquad\text{SOR: }T_j^{n+1} = (1-\omega)T_j^n+\omega\tilde T_j^{n+1}$$
 
 ## Explanation

@@ -47,9 +47,11 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 1
 This works for over- and under-determined systems too (Ex 90).
 
 ## 2. Eigenvalues and eigenvectors (James §5.7)
+
 $$
 \mathbf A\mathbf X=\lambda\mathbf X,\ \mathbf X\neq\mathbf0\quad\Longleftrightarrow\quad(\mathbf A-\lambda\mathbf I)\mathbf X=\mathbf0\ \text{has a non-trivial solution}\quad\Longleftrightarrow\quad|\mathbf A-\lambda\mathbf I|=0
 $$
+
 1. Expand the **characteristic equation** $|\mathbf A-\lambda\mathbf I|=0$, a polynomial of degree $n$. Solve it for the $\lambda$.
 2. For each $\lambda$, solve $(\mathbf A-\lambda\mathbf I)\mathbf X=\mathbf0$. The equations are dependent: drop one and solve for the ratios.
 

@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 7/Chapter 7 - Propulsion - original sli
 
 > [!note] Definition
 > EP is **power-limited**. With $M_0 = M_p+M_W+M_e$, jet power $\tfrac12\sigma V_{ex}^2 = \eta W$, specific power $\beta = W/M_W$ and $\sigma = M_e/t_b$:
+>
 > $$V_c = \sqrt{2\eta\beta t_b},\qquad M_e = \frac{M_0-M_p}{1+(V_{ex}/V_c)^2},\qquad \frac{\Delta V}{V_c} = x\ln\frac{1+x^2}{M_p/M_0+x^2},\ \ x = \frac{V_{ex}}{V_c}$$
 
 ## Explanation

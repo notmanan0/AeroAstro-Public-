@@ -17,7 +17,9 @@ sources: ["02 - Sources/BL/Topic 2 Boundary layers.pdf"]
 
 > [!note] Definition
 > Near the wall, a turbulent boundary layer's mean velocity depends only on the wall shear stress and viscosity. Scaled in **wall (inner) units**:
+>
 > $$u_\tau = \sqrt{\tau_w/\rho} = U_\infty\sqrt{C_f/2},\qquad u^+ = \frac{u}{u_\tau},\qquad y^+ = \frac{yu_\tau}{\nu}$$
+>
 > the profiles from all flows collapse onto one universal curve.
 
 ## Explanation

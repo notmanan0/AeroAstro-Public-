@@ -17,6 +17,7 @@ sources: []
 
 > [!note] Definition
 > For a beam with downward distributed load $w(x)$, shear force $Q$ (positive downwards on the left part's cut face) and bending moment $M$ (sagging positive):
+>
 > $$\frac{dQ}{dx} = -w(x),\qquad \frac{dM}{dx} = Q,\qquad M(x_2) - M(x_1) = \int_{x_1}^{x_2}Q\,dx$$
 
 ## Explanation

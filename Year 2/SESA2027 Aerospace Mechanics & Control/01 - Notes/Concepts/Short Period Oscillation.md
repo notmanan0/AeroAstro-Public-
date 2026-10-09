@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture 1.05.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > The **fast, usually heavily damped** longitudinal mode. It is a pitching oscillation in $\alpha$ ($w$) and $q$ at almost **constant airspeed**, with a period of a few seconds. The **SPO approximation** (with $u = 0$, $\gamma_0 = 0$, $\mathring Z_{\dot w}\ll m$, $\mathring Z_q\ll mU_\infty$) gives
+>
 > $$\omega_n^2 = \frac{\mathring M_q\mathring Z_w-mU_\infty\mathring M_w}{mI_{yy}},\qquad 2\zeta\omega_n = -\left(\frac{\mathring Z_w}{m}+\frac{\mathring M_q}{I_{yy}}+\frac{U_\infty\mathring M_{\dot w}}{I_{yy}}\right)$$
 
 ## Explanation

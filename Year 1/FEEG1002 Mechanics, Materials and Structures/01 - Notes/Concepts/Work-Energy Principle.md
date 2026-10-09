@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > Integrating $\sum F_t = mv\,dv/ds$ along the path gives
+>
 > $$KE_1 + V_1 + \sum U^{nc}_{1-2} = KE_2 + V_2,\qquad U = \int\mathbf F\cdot d\mathbf r,\quad KE = \tfrac12mv^2\ \big(+\tfrac12I_G\omega^2\big)$$
+>
 > With only conservative forces, $KE + V$ is constant.
 
 ## Explanation

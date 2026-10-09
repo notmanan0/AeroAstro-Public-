@@ -16,6 +16,7 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$\frac{V_1}{V_2} = \frac{N_1}{N_2},\qquad V_1I_1 = V_2I_2\ \Rightarrow\ \frac{I_2}{I_1} = \frac{N_1}{N_2},\qquad \eta = \frac{P_2}{P_1}\ (\to99\ \%\ \text{large units})$$
 
 ## Explanation

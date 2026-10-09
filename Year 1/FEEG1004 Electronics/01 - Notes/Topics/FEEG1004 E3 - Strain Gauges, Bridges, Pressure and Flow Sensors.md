@@ -21,7 +21,9 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 03 - Complete Syste
 > [!abstract] Summary
 > - A **strain gauge** is a resistor whose resistance changes with strain: $\Delta R/R = G\varepsilon$. The gauge factor is $G\approx2$ for metal foil (geometric) and 100–120 for semiconductor (piezoresistive).
 > - Tiny $\Delta R$ is read with a **Wheatstone bridge**:
+>
 > $$V = \frac{N\,E\,G\,\varepsilon}{4}\qquad(N = \text{number of active gauges})$$
+>
 > - Placing gauges in adjacent or opposite arms lets the bridge **add** the wanted strain and **cancel** unwanted strain and temperature.
 > - Gauges on a **diaphragm** make pressure sensors. Differential pressure across a **Venturi** or **pitot-static** probe gives flow and airspeed through Bernoulli.
 

@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
 
 > [!note] Definition
 > The state a flow would reach if brought to rest **isentropically**:
+>
 > $$h_0 = h+\tfrac12V^2,\quad \frac{T_0}{T} = 1+\frac{\gamma-1}{2}M^2,\quad \frac{p_0}{p} = \left(1+\frac{\gamma-1}{2}M^2\right)^{\frac{\gamma}{\gamma-1}},\quad \frac{\rho_0}{\rho} = \left(1+\frac{\gamma-1}{2}M^2\right)^{\frac{1}{\gamma-1}}$$
 
 ## Explanation
@@ -25,6 +26,7 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
 - Every property has a static and a stagnation value. In a moving frame they differ; "pressure" alone means static.
 - Rearranged: $T_0 = T+V^2/(2c_p)$, so $V = \sqrt{2c_p(T_0-T)}$. This is how the jet velocity is found in every nozzle.
 - **Flow functions** (data book p. 11 and Tables 19–22):
+
   $$\frac{V}{\sqrt{c_pT_0}} = \sqrt{\gamma-1}\,M\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{-1/2},\qquad\frac{\dot m\sqrt{c_pT_0}}{Ap_0} = \frac{\gamma}{\sqrt{\gamma-1}}M\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{-\frac{\gamma+1}{2(\gamma-1)}}$$
 
 ## Examples

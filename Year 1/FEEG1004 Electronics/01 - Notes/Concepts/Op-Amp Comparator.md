@@ -17,6 +17,7 @@ sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors
 
 > [!note] Definition
 > An op-amp **without feedback**. Because $A_{OL}$ is huge, the output saturates:
+>
 > $$V_{out} = \begin{cases}+V_{sat} & V_+ > V_-\\ -V_{sat} & V_+ < V_-\end{cases}\qquad V_{sat}\approx V_{CC} - 1\ \mathrm V$$
 
 ## Explanation

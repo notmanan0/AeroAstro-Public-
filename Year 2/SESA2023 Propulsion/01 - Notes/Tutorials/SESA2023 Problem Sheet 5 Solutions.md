@@ -57,8 +57,11 @@ All ✔.
 ## Q5.2: Flame temperature, reactants at 500 K and 1 bar, $AFR = 16$
 ### (a) Mixture $c_p$ (mass-weighted)
 - **Reactants**: 44 kg of fuel with 704 kg of air.
+
   $$c_{p,r} = \frac{44(2.547)+704(1.030)}{748} = \boxed{1119\text{ J kg}^{-1}\text{K}^{-1}}\;✔$$
+
 - **Products** (masses per kmol of fuel): CO₂ 132 kg, H₂O 72 kg, O₂ 3.37 kg, N₂* 540.6 kg; 748 kg in total (mass is conserved ✔).
+
   $$c_{p,p} = \frac{132(1.015)+72(1.981)+3.37(0.972)+540.6(1.056)}{748} = \boxed{1138\text{ J kg}^{-1}\text{K}^{-1}}\;✔$$
 
 ### (b) Exhaust temperature

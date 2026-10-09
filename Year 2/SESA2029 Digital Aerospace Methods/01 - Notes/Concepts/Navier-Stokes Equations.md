@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L8)", "02 - Sources/C
 
 > [!note] Definition
 > The conservation laws of mass and momentum for a Newtonian viscous fluid. For incompressible flow (index notation, summed over $j$):
+>
 > $$\frac{\partial u_i}{\partial x_i} = 0,\qquad\frac{\partial u_i}{\partial t}+\frac{\partial(u_iu_j)}{\partial x_j}+\frac1\rho\frac{\partial p}{\partial x_i} = \nu\frac{\partial^2u_i}{\partial x_j\partial x_j}$$
+>
 > Dropping the viscous term gives the **Euler equations**.
 
 ## Explanation

@@ -16,7 +16,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §4.3.2", "MATH1054 M
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf a\times\mathbf b=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix},\qquad|\mathbf a\times\mathbf b|=|\mathbf a||\mathbf b|\sin\theta$$
+>
 > The result is perpendicular to both $\mathbf a$ and $\mathbf b$ (right-hand rule).
 
 ## Explanation

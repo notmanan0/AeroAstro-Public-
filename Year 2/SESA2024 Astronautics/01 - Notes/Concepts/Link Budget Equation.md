@@ -16,14 +16,18 @@ sources: ["02 - Sources/Lectures/Chapter 9/2025 Chapter 9 - Communications - Lec
 ## Definition
 
 > [!note] Definition
+>
 > $$10\log\frac{C}{N_0} = 10\log(P_TG_T)+10\log\frac{G_R}{T_R}-20\log\frac{4\pi\rho}{\lambda}-10\log L_A-10\log k$$
+>
 > In words, $C/N_0$ = EIRP + $G/T$ − free-space loss − other losses + 228.6 dB.
 
 ## Explanation
 **Derivation**:
 1. The flux from an isotropic source at range $\rho$ is $P_T/4\pi\rho^2$. With gain $G_T$ it becomes $P_TG_T/4\pi\rho^2$.
 2. The received power is flux × $A_{eff,R}$, with $A_{eff,R} = G_R\lambda^2/4\pi$:
+
 $$P_R = \frac{P_TG_TG_R}{(4\pi\rho/\lambda)^2} = \frac{P_TG_TG_R}{L_{FS}}$$
+
 3. Add other losses $L_A$: atmosphere, rain, depointing, circuits.
 4. Set $C = P_R$ and $N_0 = kT_R$ (noise, with $N = kTB$ over bandwidth $B$).
 5. Take $10\log$.

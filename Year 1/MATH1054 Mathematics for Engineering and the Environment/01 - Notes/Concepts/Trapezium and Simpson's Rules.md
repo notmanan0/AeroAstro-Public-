@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.10", "MATH1054 Mo
 
 > [!note] Definition
 > With $n$ strips of width $h$ and ordinates $f_r$:
+>
 > $$T=h\Big[\tfrac12(f_0+f_n)+\sum_{r=1}^{n-1}f_r\Big],\qquad S=\frac h3\Big[f_0+f_n+4\!\!\sum_{\text{odd }r}\!\!f_r+2\!\!\sum_{\text{even }r}\!\!f_r\Big]\ (n\text{ even})$$
 
 ## Explanation

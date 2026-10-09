@@ -17,7 +17,9 @@ sources: ["02 - Sources/Stability/Topic 6 Aircraft aerodynamics and static stabi
 
 > [!note] Definition
 > The **neutral point** $h_n$ is the CG position at which the aircraft's pitching moment doesn't change with incidence, $dC_{M_{CG}}/d\alpha = 0$ (neutral static stability). The **static margin** is the non-dimensional distance of the CG ahead of it:
+>
 > $$h_n = h_0+K\frac{C_{L_{T,\alpha}}}{C_{L^*_\alpha}},\qquad H_s = h_n-h,\qquad \frac{dC_{M_{CG}}}{dC_{L^*}} = -H_s$$
+>
 > The aircraft is statically stable if $H_s>0$ (CG ahead of the neutral point).
 
 ## Explanation

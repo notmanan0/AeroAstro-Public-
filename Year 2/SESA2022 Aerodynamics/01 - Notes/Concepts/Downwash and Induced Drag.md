@@ -17,6 +17,7 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf
 
 > [!note] Definition
 > The trailing vortices of a finite wing induce a downward velocity $w$ at the wing. This tilts the local relative wind down by the **induced angle** $\alpha_i = -w/V_\infty$. The section's lift, perpendicular to the *local* wind, therefore has a rearward component: the **induced drag**.
+>
 > $$\alpha_{eff} = \alpha-\alpha_i,\qquad D_i' = L'\alpha_i,\qquad C_{D_i} = \frac{C_L^2}{\pi AR}(1+\delta) = \frac{C_L^2}{\pi eAR}$$
 
 ## Explanation

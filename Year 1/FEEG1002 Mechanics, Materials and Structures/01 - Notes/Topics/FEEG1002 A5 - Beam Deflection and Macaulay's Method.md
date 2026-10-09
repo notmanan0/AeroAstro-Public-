@@ -20,7 +20,9 @@ sources: ["02 - Sources/Statics 1/Lectures/Lecture 09 - Beams, Deflection.pdf", 
 
 > [!abstract] Summary
 > Engineer's bending theory gives the local curvature $1/R = M/EI$. For small slopes $1/R\approx\pm d^2v/dx^2$. With deflection $v$ measured **downwards** and sagging $M$ positive, the result is
+>
 > $$EI\frac{d^2v}{dx^2} = -M(x)$$
+>
 > Integrating twice gives the slope and then the deflection, with two constants fixed by the support conditions.
 > **Macaulay's method** writes $M(x)$ as **one** expression valid along the whole beam by using switch-on brackets $[x-a]^n$. However many point loads there are, there are only two constants to find.
 
@@ -87,9 +89,13 @@ Rules:
 4. Apply the two boundary conditions.
 
 > [!example] L10: point load at $a$ with Macaulay
+>
 > $$M = \frac{F(L-a)}{L}x - F[x-a]$$
+>
 > $$EIv = -\frac{F(L-a)}{6L}x^3 + \frac{F}{6}[x-a]^3 + C_0x + C_1$$
+>
 > With $v(0) = v(L) = 0$:
+>
 > $$v = \frac1{EI}\left[\frac{F(L-a)x}{6L}(2La - a^2 - x^2) + \frac{F}{6}[x-a]^3\right]$$
 
 ### Writing $M$ with brackets (L10c)

@@ -41,6 +41,7 @@ $$
 - Drawing conventions: **×** means into the page (the tail of a cross-head screw); **•** means out of the page (the point).
 
 ## 2. Faraday's law and Lenz's law
+
 $$
 \mathcal E = -N\frac{d\Phi}{dt}
 $$
@@ -66,6 +67,7 @@ $$
 This is exactly the AC generator of [[FEEG1004 C2 - AC Synchronous Generators and Three-Phase Systems]].
 
 ## 3. The Lorentz force (L2b)
+
 $$
 \mathbf F = q(\mathbf E + \mathbf v\times\mathbf B)
 $$

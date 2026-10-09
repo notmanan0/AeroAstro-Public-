@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §3.2.11", "MATH1054 
 ## Definition
 
 > [!note] Definition
+>
 > $$(\cos\theta+\mathrm j\sin\theta)^n=\cos n\theta+\mathrm j\sin n\theta,\qquad z^{1/n}=r^{1/n}\,e^{\mathrm j(\theta+2k\pi)/n},\ k=0,\dots,n-1$$
 
 ## Explanation

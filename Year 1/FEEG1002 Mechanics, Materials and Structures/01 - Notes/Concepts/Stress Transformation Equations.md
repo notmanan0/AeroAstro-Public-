@@ -17,8 +17,11 @@ sources: []
 
 > [!note] Definition
 > For axes $x'y'$ rotated **anticlockwise** by $\theta$ from $xy$ (plane stress):
+>
 > $$\sigma_{x'x'} = \frac{\sigma_{xx}+\sigma_{yy}}2 + \frac{\sigma_{xx}-\sigma_{yy}}2\cos2\theta + \sigma_{xy}\sin2\theta$$
+>
 > $$\sigma_{x'y'} = -\frac{\sigma_{xx}-\sigma_{yy}}2\sin2\theta + \sigma_{xy}\cos2\theta$$
+>
 > Strains transform identically with $\varepsilon_{xy} = \gamma_{xy}/2$ in place of $\sigma_{xy}$.
 
 ## Explanation

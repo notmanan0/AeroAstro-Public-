@@ -195,6 +195,7 @@ See [[Propulsive Efficiency]].
 ## Q4: Axial compressor rotor (2 kg/s, 15,000 rpm, $r = 0.2$ m, $V_{\theta2} = 200$ m/s)
 
 ### (i) Shaft power (6)
+
 $$
 U = \Omega r = \frac{15{,}000(2\pi)}{60}(0.2) = 314.2\text{ m/s}
 $$
@@ -208,6 +209,7 @@ $$
 See [[Euler Work Equation]].
 
 ### (ii) Isentropic pressure ratio (8)
+
 $$
 T_{02} = 300+\frac{62{,}832}{1005} = 362.5\text{ K},\qquad \frac{p_{02}}{p_{01}} = \left(\frac{362.5}{300}\right)^{3.5} = \boxed{1.94},\qquad p_{02} = 1.94(101.325) = \boxed{196.5\text{ kPa}}
 $$
@@ -220,6 +222,7 @@ $V_x = 100$ m/s and $V_\theta = 200$ m/s.
 ![[prop_e2425_q4_triangle.png|560]]
 
 ### (iv) Static pressure at rotor exit (4)
+
 $$
 T_2 = T_{02}-\frac{V_2^2}{2c_p} = 362.5-\frac{223.6^2}{2010} = 337.6\text{ K}
 $$

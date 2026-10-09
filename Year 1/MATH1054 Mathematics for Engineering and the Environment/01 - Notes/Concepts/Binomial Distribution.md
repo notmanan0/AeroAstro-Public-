@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §13.5.1", "MATH1054 
 
 > [!note] Definition
 > The number of successes $X$ in $n$ independent trials, each with probability $p$, has
+>
 > $$P(X=r)=\binom nr p^r(1-p)^{n-r},\qquad E[X]=np,\qquad\operatorname{Var}X=np(1-p)$$
 
 ## Explanation

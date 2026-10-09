@@ -64,6 +64,7 @@ Polymers have elastic storage plus time-dependent chain motion.
 - **Creep**: strain rises under constant stress.
 - **Stress relaxation**: stress falls under constant strain.
 - Simple exponential relaxation:
+
 $$\sigma(t)=\sigma_0e^{-t/\tau},\qquad E_r(t)=\frac{\sigma(t)}{\varepsilon_0}$$
 
 Higher temperature and longer time both allow more rearrangement (**time-temperature equivalence**). Semicrystalline polymers retain more modulus above the amorphous $T_g$ because crystallites constrain the chains until $T_m$.

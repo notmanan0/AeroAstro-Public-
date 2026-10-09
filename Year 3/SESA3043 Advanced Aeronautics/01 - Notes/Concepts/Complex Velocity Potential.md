@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/CH1-3 Potential Flow.pdf"]
 
 > [!note] Definition
 > In 2-D incompressible irrotational flow, $\Phi(z)=\phi+i\psi$ with $z=x+iy$, and
+>
 > $$\frac{\mathrm d\Phi}{\mathrm dz}=u-iv,\qquad q=\left|\frac{\mathrm d\Phi}{\mathrm dz}\right|.$$
 
 ## Why it works

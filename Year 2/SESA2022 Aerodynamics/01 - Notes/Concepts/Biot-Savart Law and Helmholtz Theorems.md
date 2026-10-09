@@ -17,7 +17,9 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf
 
 > [!note] Definition
 > **Biot–Savart**: a vortex filament of strength $\Gamma$ induces a velocity
+>
 > $$d\mathbf V = \frac{\Gamma}{4\pi}\frac{d\mathbf l\times\mathbf r}{|\mathbf r|^3}$$
+>
 > For a **semi-infinite** straight filament, at perpendicular distance $h$ from its end, $V = \dfrac{\Gamma}{4\pi h}$ (half the $\Gamma/(2\pi h)$ of an infinite filament).
 
 ## Explanation

@@ -39,22 +39,27 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 2
 - For independent $X,Y$: $P(X=u,Y=v)=P(X=u)P(Y=v)$. To find $P(X+Y\le k)$, sum the relevant cells.
 - **Sample mean**: $\bar x=\frac1n\sum x_i$.
 - **Sample variance**, using the $n-1$ divisor as the booklet requires:
+
 $$
 s^2=\frac{1}{n-1}\sum(x_i-\bar x)^2=\frac{\sum x_i^2-n\bar x^2}{n-1}
 $$
 
 ## 2. The binomial distribution (James §13.5.1)
 $n$ independent trials, each succeeding with probability $p$:
+
 $$
 P(X=r)=\binom nr p^r(1-p)^{n-r},\qquad E[X]=np,\qquad\operatorname{Var}X=np(1-p)
 $$
+
 "At least $k$" means summing from $k$ to $n$, or using the complement.
 
 ## 3. The normal distribution (James §13.5.3)
 $X\sim N(\mu,\sigma^2)$, where the second parameter is the **variance**. Standardise and use the table of $\Phi(z)=P(Z\le z)$:
+
 $$
 P(X\le x)=\Phi\Big(\frac{x-\mu}{\sigma}\Big),\qquad\Phi(-z)=1-\Phi(z)
 $$
+
 **Inverse problems** (Ex 59, 13.28(b)): read $z$ from the table, then solve $x=\mu+z\sigma$.
 
 | Coverage | $\pm z$ |
@@ -67,15 +72,19 @@ $$
 ![[m1054_normal_tests.png|800]]
 
 ## 4. The sampling distribution of $\bar X$ (booklet)
+
 $$
 E[\bar X]=\mu,\qquad\text{SE}=\sigma_{\bar X}=\frac{\sigma}{\sqrt n},\qquad Z=\frac{\bar X-\mu}{\sigma/\sqrt n}\sim N(0,1)
 $$
+
 This is exact if the parent distribution is normal. For $n\ge30$ it holds approximately for *any* parent: the **central limit theorem**. For $n\ge30$ with $\sigma$ unknown, use $s$. (Small samples need the $t$-distribution, which is not in this module.)
 
 ## 5. Confidence intervals
+
 $$
 \bar x\pm z_{\alpha/2}\frac{\sigma}{\sqrt n}\qquad(95\%:\ z=1.96;\ 99\%:\ z=2.58;\ 90\%:\ z=1.645)
 $$
+
 Interpretation: 95% of intervals built this way contain the true $\mu$.
 
 ## 6. Hypothesis tests for a mean

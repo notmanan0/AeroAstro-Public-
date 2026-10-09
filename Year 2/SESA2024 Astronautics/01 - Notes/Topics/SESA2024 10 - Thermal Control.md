@@ -111,7 +111,9 @@ If $q_S\gg q_E, P$, then **$T = f(\alpha_S/\varepsilon)$**.
 
 > [!example] In eclipse with $P = 0$, $\varepsilon$ cancels (2023/24 A5, 2024/25 A8)
 > Only Earth IR remains: $q_E\varepsilon A_E^{proj}F = \varepsilon\sigma T^4A_{surf}$, so
+>
 > $$T = \left(\frac{q_EA_E^{proj}F}{\sigma A_{surf}}\right)^{1/4}$$
+>
 > This is independent of both $\varepsilon$ and $\alpha_S$. A derelict spacecraft in shadow reaches the same temperature whatever its paint.
 
 ## 7. Passive design guidelines

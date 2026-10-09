@@ -30,6 +30,7 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W22 AC Analysis 01 - Phasors and Compl
 ---
 
 ## 1. Describing a sinusoid (AC 01)
+
 $$
 v(t) = V_p\cos(\omega t + \theta) = \sqrt2\,V\cos(2\pi ft + \theta)
 $$

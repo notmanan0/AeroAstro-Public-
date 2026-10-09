@@ -94,6 +94,7 @@ $$
 ![[ast_eclipse_vs_altitude.png|650]]
 
 ### Step 2: cycles
+
 $$n = \frac{10\ \text{yr}}{\tau}\approx\mathbf{3660}$$
 
 In practice GEO has only about 90 eclipses a year, in two equinox seasons, but the sheet takes the worst case on every orbit.

@@ -37,9 +37,11 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 8
 ---
 
 ## 1. Parametric differentiation (James §8.3.14, 8.4)
+
 $$
 \frac{\mathrm dy}{\mathrm dx}=\frac{\dot y}{\dot x},\qquad\frac{\mathrm d^2y}{\mathrm dx^2}=\frac{\frac{\mathrm d}{\mathrm dt}\Big(\frac{\mathrm dy}{\mathrm dx}\Big)}{\dot x}\ \ \Big(\neq\frac{\ddot y}{\ddot x}\Big)
 $$
+
 Cycloid: $x=a(\theta-\sin\theta)$, $y=a(1-\cos\theta)$ gives $y'=\cot\frac\theta2$ and $y''=-\dfrac{1}{a(1-\cos\theta)^2}$.
 
 ## 2. Implicit differentiation
@@ -48,9 +50,11 @@ Differentiate every term with respect to $x$, treating $y=y(x)$. Chain-rule each
 - $\dfrac{\mathrm d}{\mathrm dx}(xy)=y+xy'$
 
 Then collect the $y'$ terms and solve for $y'$. A useful shortcut is
+
 $$
 y'=-\frac{F_x}{F_y}
 $$
+
 using the partial derivatives from [[MATH1054 M03 - Differentiation I|M03]]. For $y''$, differentiate $y'$ again, substitute $y'$, and simplify **using the curve's own equation**. For the circle in Ex 8.29(b), this collapses $y''$ to $-25/(y+2)^3$.
 
 ## 3. Logarithmic differentiation (James §8.3.14)
@@ -94,9 +98,11 @@ Build the model $C(q)$, set $C'=0$, then check that it is a minimum. The three t
 When the optimality condition is transcendental, solve it numerically, e.g. with [[Direct Substitution and Newton-Raphson|Newton–Raphson]].
 
 ## 6. Maclaurin series (James §9.4)
+
 $$
 f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\frac{f'''(0)}{3!}x^3+\cdots=\sum_{n=0}^\infty\frac{f^{(n)}(0)}{n!}x^n
 $$
+
 | $f$ | series |
 |---|---|
 | $e^x$ | $1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\cdots$ |

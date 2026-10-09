@@ -15,20 +15,27 @@ sources: ["02 - Sources/Lectures/Week 10 - Rockets.pdf", "02 - Sources/Lectures/
 ## Definition
 
 > [!note] Definition
+>
 > $$I_{sp} = \frac{I_T}{g_0m_p} = \frac{F}{g_0\dot m},\quad c_e = \frac{F}{\dot m} = g_0I_{sp},\quad C^* = \frac{P_cA_t}{\dot m},\quad C_F = \frac{F}{P_cA_t},\quad c_e = C^*C_F$$
 
 ## Explanation
 - **$I_{sp}$** (s): impulse per unit *weight* of propellant, so it is the same number in SI and imperial units.
 - **$c_e$**: the equivalent uniform exhaust velocity, including pressure thrust: $c_e = V_j+A_e(P_e-P_A)/\dot m$.
 - **$C^*$**: a figure of merit for the **combustion chamber and propellants**. It is set at the choked throat, independent of the diverging section. Ideally
+
   $$C^* = \frac{\sqrt{\gamma RT_c}}{\gamma}\Big(\frac{\gamma+1}{2}\Big)^{\frac{\gamma+1}{2(\gamma-1)}},$$
+
   which is high for high $T_c$ and low molar mass.
 - **$C_F$**: a figure of merit for the **nozzle expansion**, typically 1.3–1.9. Ideally
+
   $$C_F = \sqrt{\frac{2\gamma^2}{\gamma-1}\Big(\frac{2}{\gamma+1}\Big)^{\frac{\gamma+1}{\gamma-1}}\Big[1-\Big(\frac{P_e}{P_c}\Big)^{\frac{\gamma-1}{\gamma}}\Big]}+\frac{P_e-P_A}{P_c}\frac{A_e}{A_t}$$
+
 - **Isp derivation** (2013-14 and 2014-15 Q4(ii)):
   - Assume steady flow, an adiabatic isentropic nozzle, full expansion and a uniform exit.
   - The SFEE gives $V_j = \sqrt{2c_pT_{02}[1-(p_e/p_{02})^{(\gamma-1)/\gamma}]}$, so
+
   $$I_{sp} = \frac{1}{g_0}\sqrt{2c_pT_{02}\left[1-\left(\frac{p_e}{p_{02}}\right)^{\frac{\gamma-1}{\gamma}}\right]}$$
+
   - Hence high $T_c$, a high $P_c/P_e$ (large expansion ratio) and a light exhaust (large $c_p = \frac{\gamma}{\gamma-1}\frac{\bar R}{M}$).
 - **Altitude**: $\dot m$ is fixed by the choked throat and is independent of altitude. $F$, $c_e$, $I_{sp}$ and $C_F$ all rise as $P_A$ falls.
 - **Typical $I_{sp}$**:

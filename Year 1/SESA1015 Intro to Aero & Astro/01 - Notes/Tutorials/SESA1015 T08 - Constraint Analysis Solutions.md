@@ -17,7 +17,9 @@ sources: ["02 - Sources/Mechanics of Flight/Calculator for Revision Questions.xl
 
 > [!abstract] Shared method
 > Let $x=W/S$ and $y=T/W$. The simplified take-off boundary is horizontal:
+>
 > $$y_{TO}=\mu+\frac{V_2^2}{2gs_1}.$$
+>
 > The minimum required $T/W$ occurs at its lower-$x$ intersection with the turn, climb or cruise boundary specified in the question.
 
 ## Question 35 — take-off versus 2-g turn

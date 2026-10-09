@@ -77,6 +77,7 @@ sources: ["02 - Sources/Lectures", "03 - Exams & Past Papers"]
 | PCM | $f_s\ge2f_{max}$, $R_b = nf_s$ |
 
 ## Thermal ([[SESA2024 10 - Thermal Control|Ch 10]])
+
 $$q_S\alpha_SA_S^{proj}+aq_S\alpha_SA_E^{proj}\cos\phi\,\beta F+q_E\varepsilon A_E^{proj}F+P = \varepsilon\sigma T^4A_{surf},\qquad F = (R_E/R_{orb})^2$$
 
 - Wien: $\lambda_{max}T = 2.898\times10^{-3}$ m K

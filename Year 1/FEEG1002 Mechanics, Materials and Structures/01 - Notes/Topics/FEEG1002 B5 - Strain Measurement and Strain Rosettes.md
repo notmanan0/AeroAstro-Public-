@@ -31,7 +31,9 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 07 - Strain Measurement.pdf"]
 ## 1. Strain gauges (L7a)
 - In a tensile test the strain is uniform, so $\varepsilon = \Delta L/L$. In general the field is non-uniform, and we need local gradients $\varepsilon_{xx}\approx(u_2 - u_1)/\Delta x$ over tiny distances.
 - A foil gauge is a wire zig-zagging back and forth. Stretching it makes it longer and thinner, so its resistance rises:
+
 $$\frac{\Delta R}{R} = k\,\varepsilon_{xx},\qquad k\approx2\ \text{(gauge factor)}$$
+
 - It is read with a **Wheatstone bridge**, either balanced (adjust $R_2$ until $V_G = 0$, so $R_x = R_2R_3/R_1$) or from the out-of-balance voltage. Resolution is about 1 με.
 - Watch for **debonding** and **temperature compensation** (thermal strain in the gauge and substrate, [[Thermal Strain]]).
 - A gauge is **unidirectional**: it measures the normal strain along its axis only, and **cannot measure shear directly**.
@@ -52,7 +54,9 @@ $$
 
 > [!example] Torsion: measuring shear with normal-strain gauges
 > A shaft in torsion is in pure shear, so its Mohr's circle is centred on the origin. Gauges at +45° and −45° read $\varepsilon_I > 0$ and $\varepsilon_{II} = -\varepsilon_I$. Then
+>
 > $$\varepsilon_{xy} = R = \frac{\varepsilon_I - \varepsilon_{II}}{2}$$
+>
 > This is how torque transducers work.
 
 ## 3. Rosettes (L7c)

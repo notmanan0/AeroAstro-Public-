@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture20_LaplaceEquation
 ## Definition
 
 > [!note] Definition
+>
 > $$\nabla^2u=u_{xx}+u_{yy}(+u_{zz})=0 .$$
+>
 > This is elliptic. Its solutions are called **harmonic** functions.
 
 ## Explanation
@@ -41,6 +43,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture20_LaplaceEquation
 
 ## Examples
 - With $u=x(1-x)$ on $y=1$ and $u=0$ on the other sides:
+
 $$u=\sum_{n\ \text{odd}}\frac{8\sin n\pi x\sinh n\pi y}{(n\pi)^3\sinh n\pi}.$$
 
 ![[m2048_pde_laplace_square.png|480]]

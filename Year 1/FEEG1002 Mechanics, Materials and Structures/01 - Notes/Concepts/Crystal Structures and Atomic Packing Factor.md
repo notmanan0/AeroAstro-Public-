@@ -15,7 +15,9 @@ sources: []
 
 ## Definition
 > [!note] Definition
+>
 > $$APF=\frac{N(4\pi R^3/3)}{V_{cell}}$$
+>
 > FCC: $N=4$, $a=2\sqrt2R$, APF 0.740. BCC: $N=2$, $a=4R/\sqrt3$, APF 0.680. HCP is close packed with APF 0.740.
 
 ## Explanation

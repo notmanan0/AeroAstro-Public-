@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > Small-strain components are **displacement gradients**:
+>
 > $$\varepsilon_{xx} = \frac{\partial u_x}{\partial x},\qquad \gamma_{xy} = \frac{\partial u_x}{\partial y} + \frac{\partial u_y}{\partial x},\qquad \varepsilon_{xy} = \tfrac12\gamma_{xy}$$
+>
 > $$\varepsilon_{vol} = \frac{\Delta V}{V}\approx\varepsilon_{xx}+\varepsilon_{yy}+\varepsilon_{zz}$$
 
 ## Explanation

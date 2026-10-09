@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > For two points on one rigid body:
+>
 > $$\mathbf v_B = \mathbf v_A + \boldsymbol\omega\times\mathbf r_{B/A},\qquad \mathbf a_B = \mathbf a_A + \boldsymbol\alpha\times\mathbf r_{B/A} - \omega^2\mathbf r_{B/A}$$
+>
 > Relative to A, B moves on a circle, so $v_{B/A} = \omega r_{B/A}$, perpendicular to $\mathbf r_{B/A}$.
 
 ## Explanation

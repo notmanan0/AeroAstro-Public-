@@ -48,7 +48,9 @@ Points (d), (e) and (f) of Exercise 1 all have modulus 2. They lie on the circle
 
 ## Example 3.2: Equal complex numbers
 Two complex numbers are equal **iff** their real parts are equal **and** their imaginary parts are equal.
+
 $$z_1=(3a+2)+\mathrm j(3b-1),\qquad z_2=(b+1)-\mathrm j(a+2-b)$$
+
 - Real parts: $3a+2=b+1$, so $b=3a+1$.
 - Imaginary parts: $3b-1=-(a+2-b)$, so $2b=-a-1$.
 
@@ -62,19 +64,27 @@ Substituting the first into the second: $6a+2=-a-1$, so $a=-\tfrac37$ and $b=-\t
 **(b)** $z_1-z_2=(3-5)+\mathrm j(2+3)=\boxed{-2+\mathrm j5}$.
 
 ## Example 3.4
+
 $$z_1z_2=(3+\mathrm j2)(5+\mathrm j3)=15+\mathrm j9+\mathrm j10+\mathrm j^2\,6=\boxed{9+\mathrm j19}$$
 
 ## Example 3.5
 To divide, multiply the top and bottom by the conjugate of the denominator:
+
 $$\frac{3+\mathrm j2}{5+\mathrm j3}\cdot\frac{5-\mathrm j3}{5-\mathrm j3}=\frac{15-\mathrm j9+\mathrm j10+6}{25+9}=\frac{21+\mathrm j}{34}=\boxed{\tfrac{21}{34}+\mathrm j\tfrac1{34}}$$
 
 ## Example 3.6: $z+1/z$ for $z=\dfrac{2+\mathrm j}{1-\mathrm j}$
 First simplify $z$:
+
 $$z=\frac{(2+\mathrm j)(1+\mathrm j)}{(1-\mathrm j)(1+\mathrm j)}=\frac{2+3\mathrm j-1}{2}=\tfrac12+\tfrac32\mathrm j$$
+
 Then find $1/z$:
+
 $$\frac1z=\frac{1-\mathrm j}{2+\mathrm j}=\frac{(1-\mathrm j)(2-\mathrm j)}{5}=\frac{1-3\mathrm j}{5}=\tfrac15-\tfrac35\mathrm j$$
+
 Add:
+
 $$z+\frac1z=\Big(\tfrac12+\tfrac15\Big)+\mathrm j\Big(\tfrac32-\tfrac35\Big)=\tfrac7{10}+\mathrm j\tfrac9{10}$$
+
 So $\boxed{\operatorname{Re}=\tfrac7{10},\ \operatorname{Im}=\tfrac9{10}}$.
 
 ## Example 3.10: Modulus and argument
@@ -109,18 +119,26 @@ Use (3.5a) and (3.5b): $|z_1z_2|=|z_1||z_2|$ and $\arg(z_1z_2)=\arg z_1+\arg z_2
 $\dfrac{r_1\angle\theta_1}{r_2\angle\theta_2}=\dfrac{r_1}{r_2}\angle(\theta_1-\theta_2)$.
 
 **(a)** $z_1=4\angle\frac\pi2$ and $z_2=9\angle\frac\pi3$:
+
 $$\frac{z_1}{z_2}=\tfrac49\Big(\cos\tfrac\pi6+\mathrm j\sin\tfrac\pi6\Big)=\tfrac{2\sqrt3}9+\mathrm j\tfrac29,\qquad\frac{z_2}{z_1}=\tfrac94\Big(\cos\tfrac\pi6-\mathrm j\sin\tfrac\pi6\Big)=\tfrac{9\sqrt3}8-\mathrm j\tfrac98$$
 
 **(b)** $z_1=1\angle\frac{3\pi}4$ and $z_2=2\angle\frac\pi8$:
+
 $$\frac{z_1}{z_2}=\tfrac12\Big(\cos\tfrac{5\pi}8+\mathrm j\sin\tfrac{5\pi}8\Big)\approx-0.191+0.462\mathrm j,\qquad\frac{z_2}{z_1}=2\Big(\cos\tfrac{5\pi}8-\mathrm j\sin\tfrac{5\pi}8\Big)\approx-0.765-1.848\mathrm j$$
 
 ## Example 3.14: Modulus and argument of a product and quotient
+
 $$z=\frac{(1+\mathrm j2)^2(4-\mathrm j3)^3}{(3+\mathrm j4)^4(2-\mathrm j)^3}$$
+
 Moduli multiply and divide; arguments add and subtract.
 - $|1+2\mathrm j|=\sqrt5$, $|4-3\mathrm j|=5$, $|3+4\mathrm j|=5$, $|2-\mathrm j|=\sqrt5$.
+
 $$|z|=\frac{5\cdot125}{625\cdot5\sqrt5}=\frac1{5\sqrt5}=\boxed{\frac{\sqrt5}{25}\approx0.0894}$$
+
 - $\arg(1+2\mathrm j)=1.1071$, $\arg(4-3\mathrm j)=-0.6435$, $\arg(3+4\mathrm j)=0.9273$, $\arg(2-\mathrm j)=-0.4636$.
+
 $$\arg z=2(1.1071)+3(-0.6435)-4(0.9273)-3(-0.4636)=\boxed{-2.0344\ \text{rad}\ (-116.57°)}$$
+
 This already lies in $(-\pi,\pi]$. So $z=\frac{\sqrt5}{25}\angle(-116.57°)=-\tfrac1{25}-\tfrac2{25}\mathrm j$ ✔ (SymPy).
 
 ## Example 3.15: Exponential form $re^{\mathrm j\theta}$
@@ -128,6 +146,7 @@ This already lies in $(-\pi,\pi]$. So $z=\frac{\sqrt5}{25}\angle(-116.57°)=-\tf
 **(b)** $-2+\mathrm j$ (second quadrant): $r=\sqrt5$ and $\theta=\pi-\tan^{-1}\frac12=2.6779$, so $\boxed{\sqrt5\,e^{\mathrm j2.678}}$.
 
 ## Example 3.16: $e^{2+\mathrm j\pi/3}$ in cartesian form
+
 $$e^{2}e^{\mathrm j\pi/3}=e^2\Big(\cos\tfrac\pi3+\mathrm j\sin\tfrac\pi3\Big)=\tfrac12e^2+\mathrm j\tfrac{\sqrt3}2e^2=\boxed{3.695+\mathrm j6.399}$$
 
 ## Example 4.15: Square on OP, with $\vec{\mathrm{OP}}=(1,2)$, in quadrants 1 and 2
@@ -136,6 +155,7 @@ Treat $\vec{\mathrm{OP}}$ as $p=1+2\mathrm j$. Multiplying by $\mathrm j$ rotate
 - The fourth vertex is $p+\mathrm jp=-1+3\mathrm j$, so Q is $(-1,3)$.
 
 $$\boxed{\text{vertices }(-2,1)\text{ and }(-1,3)}$$
+
 Rotating by $-90°$ instead ($-\mathrm jp=2-\mathrm j$) would put a vertex at $(2,-1)$, in the fourth quadrant, which is not allowed.
 
 **Check**: $|\mathrm{OR}|=\sqrt5=|\mathrm{OP}|$, and $\vec{\mathrm{OP}}\cdot\vec{\mathrm{OR}}=-2+2=0$ ✔
@@ -150,20 +170,26 @@ Rotating by $-90°$ instead ($-\mathrm jp=2-\mathrm j$) would put a vertex at $(
 **(b)** $(1-2\mathrm j)^2=1-4\mathrm j+4\mathrm j^2=\boxed{-3-4\mathrm j}$.
 
 **(d)**
+
 $$\frac{1-\mathrm j}{1+\mathrm j}=\frac{(1-\mathrm j)^2}{2}=\frac{1-2\mathrm j-1}{2}=\boxed{-\mathrm j}$$
 
 **(f)** $(3-2\mathrm j)^2=9-12\mathrm j-4=\boxed{5-12\mathrm j}$.
 
 **(g)**
+
 $$\frac1{5-3\mathrm j}-\frac1{5+3\mathrm j}=\frac{(5+3\mathrm j)-(5-3\mathrm j)}{25+9}=\boxed{\tfrac{3}{17}\mathrm j}$$
 
 ## Exercise 8: Roots of polynomials
 **(a)** $x^2+2x+2=0$:
+
 $$x=\frac{-2\pm\sqrt{4-8}}{2}=\frac{-2\pm2\mathrm j}{2}=\boxed{-1\pm\mathrm j}$$
 
 **(b)** $x^3+8=0$. One root is $x=-2$. Factor it out: $(x+2)(x^2-2x+4)=0$. Then
+
 $$x=\frac{2\pm\sqrt{4-16}}{2}=1\pm\mathrm j\sqrt3.$$
+
 $$\boxed{x=-2,\ 1+\mathrm j\sqrt3,\ 1-\mathrm j\sqrt3}$$
+
 All three have modulus 2 and are spaced $120°$ apart. They are the three cube roots of $-8$ ([[MATH1054 M22 - Complex Numbers II|M22]]).
 
 ## Exercise 10: $z=2-3\mathrm j$
@@ -172,24 +198,35 @@ All three have modulus 2 and are spaced $120°$ apart. They are the three cube r
 **(b)** $z^*=\boxed{2+3\mathrm j}$.
 
 **(c)**
+
 $$\frac1z=\frac{z^*}{|z|^2}=\boxed{\frac{2+3\mathrm j}{13}}$$
 
 ## Exercise 12: Simultaneous equations
+
 $$4z+3w=23,\qquad z+\mathrm jw=6+8\mathrm j$$
+
 From the second equation, $z=6+8\mathrm j-\mathrm jw$. Substitute into the first:
+
 $$24+32\mathrm j-4\mathrm jw+3w=23\ \Rightarrow\ w(3-4\mathrm j)=-1-32\mathrm j$$
+
 $$w=\frac{(-1-32\mathrm j)(3+4\mathrm j)}{25}=\frac{-3-4\mathrm j-96\mathrm j+128}{25}=\frac{125-100\mathrm j}{25}=5-4\mathrm j$$
+
 Back-substitute: $z=6+8\mathrm j-\mathrm j(5-4\mathrm j)=6+8\mathrm j-5\mathrm j-4=2+3\mathrm j$.
+
 $$\boxed{z=2+3\mathrm j,\quad w=5-4\mathrm j}$$
+
 **Check**: $4z+3w=8+12\mathrm j+15-12\mathrm j=23$ ✔
 
 ## Exercise 17: Find the real $x$ and $y$
 Cross-multiply:
+
 $$2+x-\mathrm jy=(1+2\mathrm j)(3x+\mathrm jy)=(3x-2y)+\mathrm j(6x+y)$$
+
 - Real parts: $2+x=3x-2y$, so $x-y=1$.
 - Imaginary parts: $-y=6x+y$, so $y=-3x$.
 
 Hence $4x=1$:
+
 $$\boxed{x=\tfrac14,\quad y=-\tfrac34}$$
 
 ## Exercise 24: Polar form
@@ -207,7 +244,9 @@ $$\boxed{x=\tfrac14,\quad y=-\tfrac34}$$
 - $\arg(z_1^3/z_2)=\frac{3\pi}4+\frac\pi3=\frac{13\pi}{12}$. Subtract $2\pi$ to get the principal value, $\boxed{-\tfrac{11\pi}{12}}$.
 
 **(b)** $z_1^2=e^{\mathrm j\pi/2}=\mathrm j$, and $\mathrm jz_2=e^{\mathrm j\pi/2}e^{-\mathrm j\pi/3}=e^{\mathrm j\pi/6}=\frac{\sqrt3}2+\frac12\mathrm j$. So
+
 $$z_1^2+\mathrm jz_2=\frac{\sqrt3}2+\mathrm j\Big(1+\frac12\Big),$$
+
 giving $\boxed{\operatorname{Re}=\tfrac{\sqrt3}2,\ \operatorname{Im}=\tfrac32}$.
 
 ## Exercise 27: $z_1=2e^{\mathrm j\pi/3}$, $z_2=4e^{-2\mathrm j\pi/3}$
@@ -227,6 +266,7 @@ giving $\boxed{\operatorname{Re}=\tfrac{\sqrt3}2,\ \operatorname{Im}=\tfrac32}$.
 (iii) $w^*=-3-\mathrm j$
 (iv) $\mathrm jz-2w=(2\mathrm j-1)-(-6+2\mathrm j)=\boxed{5}$
 (v)
+
 $$\frac zw=\frac{(2+\mathrm j)(-3-\mathrm j)}{(-3)^2+1^2}=\frac{-6-2\mathrm j-3\mathrm j+1}{10}=\boxed{-\tfrac12-\tfrac12\mathrm j}$$
 
 ## Q2: Sum and difference on the Argand diagram
@@ -251,12 +291,14 @@ $$\frac zw=\frac{(2+\mathrm j)(-3-\mathrm j)}{(-3)^2+1^2}=\frac{-6-2\mathrm j-3\
 **(i)** (a) $|z_1z_2|=|z_1||z_2|$ (b) $\left|\dfrac{z_1}{z_2}\right|=\dfrac{|z_1|}{|z_2|}$ (c) $|z_1^n|=|z_1|^n$
 
 **(ii)** $|2+\mathrm j|=|-1-2\mathrm j|=\sqrt5$, so
+
 $$\left|\frac{(2+\mathrm j)^{11}}{(-1-2\mathrm j)^9}\right|=\frac{(\sqrt5)^{11}}{(\sqrt5)^9}=(\sqrt5)^2=\boxed5$$
 
 ## Q5: Euler's formula
 **(i)** $e^{\mathrm j\alpha}=\cos\alpha+\mathrm j\sin\alpha$.
 
 **(ii)** Replace $\alpha$ by $-\alpha$, using $\cos$ even and $\sin$ odd: $e^{-\mathrm j\alpha}=\cos\alpha-\mathrm j\sin\alpha$. Adding and subtracting the two:
+
 $$\boxed{\cos\alpha=\frac{e^{\mathrm j\alpha}+e^{-\mathrm j\alpha}}2,\qquad\sin\alpha=\frac{e^{\mathrm j\alpha}-e^{-\mathrm j\alpha}}{2\mathrm j}}$$
 
 ## Sources

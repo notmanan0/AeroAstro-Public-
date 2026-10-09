@@ -24,6 +24,7 @@ sources: ["02 - Sources/Materials/Tutorials/Tutorial Sheet 03 - Phase Diagrams.p
 ## Q1: Ag-Cu, 20 wt% Ag (Cu-rich hypoeutectic)
 ### (a) Solidification range
 The vertical 20 wt% Ag line crosses the liquidus at about **1000°C**. Remaining liquid reaches the eutectic at 779°C, so solidification occurs over approximately
+
 $$\boxed{1000^\circ\text C\ \text{to}\ 779^\circ\text C}$$
 
 ### (b) Primary $\alpha$ composition
@@ -32,7 +33,9 @@ $$\boxed{1000^\circ\text C\ \text{to}\ 779^\circ\text C}$$
 
 ### (c) Amount of primary $\alpha$
 Immediately above 779°C, $C_L=C_E=71.9$ and $C_\alpha=8.0$ wt% Ag:
+
 $$f_{primary\ \alpha}=\frac{C_L-C_0}{C_L-C_\alpha}=\frac{71.9-20}{71.9-8.0}=\boxed{0.812\ (81.2\%)}$$
+
 The remaining 18.8% liquid becomes eutectic $\alpha+\beta$.
 
 ## Q2: Al-Cu, 20 wt% Cu hypoeutectic alloy
@@ -63,18 +66,23 @@ A **phase** is chemically/structurally homogeneous. A **microconstituent** is a 
 
 ### (d) 0.35 wt% C: proeutectoid ferrite and pearlite
 At 727°C:
+
 $$f_{proeutectoid\ \alpha}=\frac{0.76-0.35}{0.76-0.022}=\boxed{0.556}$$
+
 $$f_P=\frac{0.35-0.022}{0.76-0.022}=\boxed{0.444}$$
 
 ### (e) 0.35 wt% C at 500°C: total phases
 With $C_\alpha=0.015$ and $C_{Fe_3C}=6.70$ wt% C:
+
 $$f_\alpha=\frac{6.70-0.35}{6.70-0.015}=\boxed{0.950}$$
+
 $$f_{Fe_3C}=\frac{0.35-0.015}{6.70-0.015}=\boxed{0.0501}$$
 
 These are total phase fractions; ferrite exists both proeutectoid and inside pearlite.
 
 ### (f) 1.3 wt% C at 600°C
 Hypereutectoid structure: pearlite colonies plus a proeutectoid cementite network at prior-austenite boundaries. Fractions at the eutectoid are approximately
+
 $$f_{proeutectoid\ Fe_3C}=\frac{1.3-0.76}{6.70-0.76}=\boxed{9.1\%},\qquad f_P=90.9\%$$
 
 ## Q4: Precipitation hardening

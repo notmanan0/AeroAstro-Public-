@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - com
 ## Definition
 
 > [!note] Definition
+>
 > $$A_{SA} = \frac{P_{EOL}}{S\cos\theta\;\eta\;\eta_p\;(1-D_0)},\qquad P_{EOL} = P_{load}+RV_A$$
+>
 > - $S$ ≈ 1350–1370 W/m² at 1 AU;
 > - $\theta$ = maximum off-normal Sun angle;
 > - $\eta$ = BOL cell efficiency (0.10–0.30);

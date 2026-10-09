@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 
 > [!note] Definition
 > Across an oblique shock at angle $\beta$ to the upstream velocity, the tangential velocity is unchanged ($U_{t1}=U_{t2}$). The normal component obeys exactly the normal-shock equations. All static jumps, and $p_{02}/p_{01}$, are therefore the [[Normal-Shock Jump Relations]] evaluated at
+>
 > $$M_{n1}=M_1\sin\beta.$$
 
 ## Relations

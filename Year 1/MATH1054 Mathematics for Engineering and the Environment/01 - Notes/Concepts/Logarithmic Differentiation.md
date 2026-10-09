@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.3.14", "MATH1054 
 
 > [!note] Definition
 > Take $\ln$ of both sides, differentiate implicitly, then multiply through by $y$:
+>
 > $$\ln y=\ln f(x)\ \Rightarrow\ \frac{y'}{y}=\frac{\mathrm d}{\mathrm dx}\ln f(x)\ \Rightarrow\ y'=y\,\frac{\mathrm d}{\mathrm dx}\ln f(x)$$
 
 ## Explanation

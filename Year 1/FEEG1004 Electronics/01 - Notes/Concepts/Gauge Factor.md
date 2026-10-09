@@ -16,7 +16,9 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 03 - Complete Syste
 ## Definition
 
 > [!note] Definition
+>
 > $$G = \frac{\Delta R/R}{\varepsilon},\qquad \frac{\Delta R}{R} = \frac{\Delta\rho}{\rho} + (1 + 2\nu)\varepsilon$$
+>
 > The first term is piezoresistive; the second is geometric (length up, diameter down through Poisson's ratio ν).
 
 ## Explanation

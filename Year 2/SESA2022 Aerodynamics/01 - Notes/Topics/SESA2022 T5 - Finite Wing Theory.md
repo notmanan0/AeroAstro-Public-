@@ -24,7 +24,9 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf
 
 > [!abstract] Summary
 > On a finite wing, high pressure below and low pressure above spill round the tips as **trailing (tip) vortices**. These induce **downwash** $w$, which reduces the effective angle of attack by $\alpha_i$ and tilts the lift back, producing **induced drag** $D_i' = L'\alpha_i$. Prandtl's **lifting-line theory** models the wing as a bound vortex with a continuous trailing vortex sheet. Writing $\Gamma(\theta) = 2bV_\infty\sum B_n\sin n\theta$ gives
+>
 > $$C_L = \pi AR\,B_1,\qquad C_{D_i} = \frac{C_L^2}{\pi AR}(1+\delta) = \frac{C_L^2}{\pi e AR},\qquad a = \frac{a_0}{1+\frac{a_0}{\pi AR}(1+\tau)}$$
+>
 > The **elliptic lift distribution** gives minimum induced drag ($\delta=0$) with constant downwash.
 
 ## Key Concepts

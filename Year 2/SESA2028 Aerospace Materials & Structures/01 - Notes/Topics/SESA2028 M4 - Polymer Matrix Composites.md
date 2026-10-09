@@ -124,7 +124,9 @@ The rule of mixtures works for **density**, electrical properties and longitudin
 
 > [!example] Worked answers
 > **2013-14 B2(v)**, 60 % glass ($E_f=72.5$ GPa) in resin ($E_m=4$ GPa):
+>
 > $$E_L=0.6(72.5)+0.4(4)=45.1\ \text{GPa},\qquad E_T=\left(\tfrac{0.6}{72.5}+\tfrac{0.4}{4}\right)^{-1}=9.24\ \text{GPa}.$$
+>
 > **2014-15 B2(iii)**, 55 % carbon (325 GPa) in epoxy (3.1 GPa): $E_L=180$ GPa, $E_T=6.81$ GPa, an anisotropy ratio of 26.
 > **Less anisotropic:** use a cross-ply 0/90 or quasi-isotropic 0/±45/90 lay-up, woven fabric, or chopped-strand mat. This gives up peak $E_L$ for balanced in-plane properties.
 

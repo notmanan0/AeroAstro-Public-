@@ -26,9 +26,13 @@ sources: ["02 - Sources/Tutorial Sheets/Tutorial Sheet 04 - Electronics B - Oper
 ## Q1: Circuit transfer function of the three-stage chain
 Break it into standard blocks (the Mills worked-example method).
 - **Stage 1**: a 100 kΩ / 25 kΩ divider feeds a **voltage follower**. GR2 means the follower draws no current, so the divider is unloaded:
+
 $$V_a = V_1\frac{25}{100 + 25} = 0.2V_1$$
+
 - **Stage 2**: a **summing amplifier**, with $V_a$ through 25 kΩ and $V_2$ through 100 kΩ, and 50 kΩ feedback:
+
 $$V_b = -50\left(\frac{V_a}{25} + \frac{V_2}{100}\right) = -(2V_a + 0.5V_2)$$
+
 - **Stage 3**: a **non-inverting** amplifier with 150 kΩ feedback and 50 kΩ to ground, gain $1 + 150/50 = 4$.
 
 $$
@@ -67,6 +71,7 @@ The columns agree line by line ✔.
 - A and B feed a **NAND**: $\overline{AB}$.
 - B and C feed an **XOR**: $B\oplus C$.
 - Both feed a **NOR**:
+
 $$F = \overline{\overline{AB} + (B\oplus C)}$$
 
 **(b)** Algebra only:
@@ -96,6 +101,7 @@ $$F = \overline{\overline{AB} + (B\oplus C)}$$
 **Step 2 (Ohm)**: $I_1 = V_{in}/R_1$.
 
 **Step 3 (GR2)**: no current enters the op-amp, so $I_2 = I_1$, flowing $V_-\to V_x$ through $R_2$:
+
 $$V_x = 0 - I_1R_2 = -\frac{R_2}{R_1}V_{in}$$
 
 **Step 4**: $I_3$ from ground up to $V_x$ through $R_3$ is $(0 - V_x)/R_3 = \dfrac{R_2}{R_1R_3}V_{in}$.

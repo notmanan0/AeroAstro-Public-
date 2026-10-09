@@ -17,18 +17,23 @@ parent: ["[[SESA2028 S10 - Thick Cylinders and Shrink Fits]]"]
 1. **Equilibrium** ([[Axisymmetric Equilibrium]]): $\dfrac{d\sigma_r}{dr}+\dfrac{\sigma_r-\sigma_\theta}{r}=0$.
 2. **Compatibility** ([[Polar Strain-Displacement Relations]]): $\varepsilon_r=\dfrac{du}{dr}$, $\varepsilon_\theta=\dfrac ur$.
 3. **Hooke's law:**
+
 $$
 \sigma_r=\frac{E}{1-\nu^2}(\varepsilon_r+\nu\varepsilon_\theta),\qquad
 \sigma_\theta=\frac{E}{1-\nu^2}(\varepsilon_\theta+\nu\varepsilon_r).
 $$
+
 4. Substituting into equilibrium gives the displacement equation
+
 $$
 \frac{d^2u}{dr^2}+\frac1r\frac{du}{dr}-\frac{u}{r^2}=0
 \quad\Longleftrightarrow\quad
 \frac{d}{dr}\left[\frac1r\frac{d}{dr}(ru)\right]=0,
 $$
+
 so $u=C_1r+\dfrac{C_2}{r}$.
 5. Back into Hooke's law:
+
 $$
 \boxed{\sigma_r=A-\frac{B}{r^2},\qquad \sigma_\theta=A+\frac{B}{r^2}},\qquad A=\frac{EC_1}{1-\nu},\ B=\frac{EC_2}{1+\nu}.
 $$

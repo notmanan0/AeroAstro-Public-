@@ -25,7 +25,9 @@ sources: ["02 - Sources/Statics 1/Lectures/Lecture 07 - Beams, Stress Due to Ben
 > - **Moment** equilibrium brings in the geometric stiffness $I = \iint y^2\,dA$.
 >
 > Together these give engineer's bending theory:
+>
 > $$\frac{M}{I} = \frac{\sigma}{y} = \frac{E}{R}$$
+>
 > The **parallel axis theorem** $I_{z'z'} = I_{zz} + Ab^2$ builds $I$ for composite sections. It also explains why I-beams and tubes are so efficient: material far from the neutral axis is worth $b^2$.
 
 ## Key Concepts
@@ -54,10 +56,13 @@ with $y$ measured **downwards** from the neutral surface.
 ## 2. Equilibrium gives the theory (L7b)
 
 **Axial force:**
+
 $$F = \iint\sigma_{xx}\,dA = \frac{E}{R}\iint y\,dA = 0\;\Rightarrow\;\iint y\,dA = 0$$
+
 The first moment of area about the neutral axis is zero, so the **neutral axis passes through the centroid**. Picture the section balancing on a knife-edge.
 
 **Moment:**
+
 $$M = \iint\sigma_{xx}\,y\,dA = \frac{E}{R}\iint y^2\,dA = \frac{EI}{R}$$
 
 $$
@@ -80,7 +85,9 @@ The theory is strictly for pure bending ($Q = 0$). With shear present the error 
 
 > [!example] L7 example 3: rectangular cantilever with end load $F$
 > $M_{max} = -FL$ at the root, so
+>
 > $$\sigma_{max} = \frac{(-FL)(\mp d/2)}{bd^3/12} = \pm\frac{6FL}{bd^2}$$
+>
 > The top is in **tension** (hogging) and the bottom in compression.
 
 **Superposition.** For a linear elastic beam, combined axial and bending stresses add: $\sigma = F/A + My/I$. An eccentric load does both.

@@ -47,6 +47,7 @@ Plastic strain multiplies dislocations. Their elastic fields interact and they t
 - grains become elongated and the material can become anisotropic.
 
 Cold work is often expressed as percentage area reduction:
+
 $$\%CW=\frac{A_0-A_f}{A_0}\times100\%$$
 
 ## 3. Grain-boundary strengthening

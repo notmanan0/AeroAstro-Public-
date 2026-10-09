@@ -17,7 +17,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_6_Rayleigh-Ritz_&_Shape_function_fi
 
 > [!note] Definition
 > Interpolation functions $N_i(x)$ that express the displacement anywhere in an element in terms of its nodal DOF:
+>
 > $$u = [N]\{d\} = \sum_iN_iu_i$$
+>
 > Each $N_i$ equals 1 at its own node (or DOF) and 0 at all the others.
 
 ## Explanation

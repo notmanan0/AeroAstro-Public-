@@ -17,6 +17,7 @@ sources: []
 
 > [!note] Definition
 > For an underdamped free response, successive peaks decay by the constant ratio $e^{\zeta\omega_nT_d}$:
+>
 > $$\Delta = \ln\frac{x_1}{x_2} = \frac1n\ln\frac{x_1}{x_{n+1}}\approx2\pi\zeta\quad(\zeta\ll1);\qquad \text{exactly } \zeta = \frac{\Delta}{\sqrt{4\pi^2 + \Delta^2}}$$
 
 ## Explanation

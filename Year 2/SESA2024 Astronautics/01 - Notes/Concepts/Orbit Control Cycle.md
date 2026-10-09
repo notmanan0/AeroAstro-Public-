@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/SESA2024 Astronautics PROBLEM SHEET WORKBOOK 20
 ## Definition
 
 > [!note] Definition
+>
 > $$\delta a = -2\pi\rho\frac{SC_D}{m}a^2,\quad\delta\tau = \frac{3\pi}{V}\delta a\quad(\text{per orbit})$$
+>
 > $$\delta\lambda = \frac{2E_0}{R_E}\frac{180}{\pi},\quad\Delta t_0 = \frac{\delta\lambda}{\omega_E},\quad k = \sqrt{\frac{2\Delta t_0}{|\delta\tau|}},\quad\Delta a = 2k|\delta a|,\quad T_{cycle} = 2k\tau$$
 
 ## Explanation

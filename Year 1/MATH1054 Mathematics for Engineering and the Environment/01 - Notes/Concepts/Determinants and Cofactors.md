@@ -16,7 +16,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §5.3–5.4", "MATH10
 ## Definition
 
 > [!note] Definition
+>
 > $$|\mathbf A|=\sum_ja_{ij}A_{ij}\ \ (\text{expanding along any row or column}),\qquad A_{ij}=(-1)^{i+j}M_{ij}$$
+>
 > Here $M_{ij}$ is the minor: the determinant left after deleting row $i$ and column $j$.
 
 ## Explanation

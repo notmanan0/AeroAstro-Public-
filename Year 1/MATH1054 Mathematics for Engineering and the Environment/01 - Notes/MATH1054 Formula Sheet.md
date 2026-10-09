@@ -15,6 +15,7 @@ Methods and results by block. Each section links to its topic note, which has th
 ## Block 1: Calculus
 
 ### Differentiation ([[MATH1054 M03 - Differentiation I|M03]], [[MATH1054 M07 - Functions|M07]], [[MATH1054 M08 - Differentiation II|M08]])
+
 $$
 f'(x)=\lim_{\Delta x\to0}\frac{f(x+\Delta x)-f(x)}{\Delta x},\qquad(uv)'=u'v+uv',\qquad\Big(\frac uv\Big)'=\frac{u'v-uv'}{v^2},\qquad\frac{\mathrm dy}{\mathrm dx}=\frac{\mathrm dy}{\mathrm du}\frac{\mathrm du}{\mathrm dx}
 $$
@@ -36,9 +37,11 @@ $$
 ### Functions ([[MATH1054 M07 - Functions|M07]])
 - Hyperbolic definitions: $\cosh x=\frac{e^x+e^{-x}}2$ and $\sinh x=\frac{e^x-e^{-x}}2$, with $\cosh^2-\sinh^2=1$.
 - Inverse hyperbolics:
+
 $$
 \sinh^{-1}x=\ln(x+\sqrt{x^2+1}),\qquad\cosh^{-1}x=\ln(x+\sqrt{x^2-1}),\qquad\tanh^{-1}x=\tfrac12\ln\frac{1+x}{1-x}
 $$
+
 - Principal ranges: $\sin^{-1}\in[-\frac\pi2,\frac\pi2]$, $\cos^{-1}\in[0,\pi]$, $\tan^{-1}\in(-\frac\pi2,\frac\pi2)$.
 - Log laws: $\log_ax=\frac{\log_bx}{\log_ba}$.
 
@@ -51,15 +54,20 @@ $$
 | $\frac{f'}{f}$ | $\ln\lvert f\rvert$ | $\frac1{\sqrt{x^2-a^2}}$ | $\cosh^{-1}\frac xa$ |
 
 - **Parts**: $\int uv'=uv-\int u'v$ (LIATE). Also:
+
 $$\int e^{ax}\cos bx\,\mathrm dx=\frac{e^{ax}(a\cos bx+b\sin bx)}{a^2+b^2}$$
+
 - **Trig**: $\cos^2x=\frac12(1+\cos2x)$ and $2\sin A\cos B=\sin(A+B)+\sin(A-B)$.
 - **Partial fractions**: $\frac A{x-a}$; $\frac A{x-a}+\frac B{(x-a)^2}$; $\frac{Bx+C}{x^2+bx+c}$. Divide first if the fraction is improper.
 - **Improper integrals**: $\int_1^\infty x^{-p}$ converges iff $p>1$; $\int_0^1x^{-p}$ converges iff $p<1$.
 - **Applications**:
+
 $$
 \bar x=\tfrac1A\int xy,\quad\bar y=\tfrac1{2A}\int y^2,\quad V=\pi\int y^2,\quad L=\int\sqrt{1+y'^2},\quad S=2\pi\int y\sqrt{1+y'^2},\quad f_{\text{rms}}^2=\tfrac1{b-a}\int f^2
 $$
+
 - **Numerical integration**:
+
 $$
 T=h\big[\tfrac12(f_0+f_n)+\textstyle\sum f_r\big],\quad S=\tfrac h3\big[f_0+f_n+4\textstyle\sum f_{\text{odd}}+2\sum f_{\text{even}}\big],\quad\tfrac13[4T(h)-T(2h)]=S
 $$
@@ -69,9 +77,11 @@ $$
 - **Polar**: $\mathrm dA=r\,\mathrm dr\,\mathrm d\theta$, so the area of $r=f(\theta)$ is $\frac12\int f^2\,\mathrm d\theta$.
 
 ## Block 2: Complex numbers ([[MATH1054 M05 - Complex Numbers I|M05]], [[MATH1054 M22 - Complex Numbers II|M22]])
+
 $$
 z=x+\mathrm jy=re^{\mathrm j\theta},\quad\frac{z_1}{z_2}=\frac{z_1z_2^*}{|z_2|^2},\quad e^{\mathrm j\theta}=\cos\theta+\mathrm j\sin\theta,\quad z^{1/n}=r^{1/n}e^{\mathrm j(\theta+2k\pi)/n}
 $$
+
 - **Argument by quadrant**: $\alpha$, $\pi-\alpha$, $-(\pi-\alpha)$, $-\alpha$ for Q1–Q4.
 - **Complex functions**:
   - $\sin z=\sin x\cosh y+\mathrm j\cos x\sinh y$
@@ -99,13 +109,17 @@ $$
 - **Damping**: $\ddot x+2\zeta\omega\dot x+\omega^2x=0$. $\zeta<1$ is under-damped, $\zeta=1$ critical, $\zeta>1$ over-damped.
 
 ## Block 4: Vectors and matrices ([[MATH1054 M14 - Vectors I|M14]]–[[MATH1054 M18 - Matrices III|M18]])
+
 $$
 \mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos\theta,\quad|\mathbf a\times\mathbf b|=|\mathbf a||\mathbf b|\sin\theta,\quad[\mathbf a,\mathbf b,\mathbf c]=\det,\quad\mathbf a\times(\mathbf b\times\mathbf c)=(\mathbf a\cdot\mathbf c)\mathbf b-(\mathbf a\cdot\mathbf b)\mathbf c
 $$
+
 - **Moment**: $\mathbf M_{\mathrm A}=\vec{\mathrm{AP}}\times\mathbf F$. **Rigid-body velocity**: $\mathbf v=\boldsymbol\omega\times\vec{\mathrm{AP}}$. **Work**: $W=\mathbf F\cdot\mathbf d$.
 - **Line**: $\mathbf r=\mathbf a+t\mathbf d$. **Plane**: $\mathbf r\cdot\mathbf n=d$. **Point–plane distance**: $\frac{|\mathbf n\cdot\mathbf p-d|}{|\mathbf n|}$.
 - **Skew-line distance**:
+
 $$d=\frac{|(\mathbf a_2-\mathbf a_1)\cdot(\mathbf d_1\times\mathbf d_2)|}{|\mathbf d_1\times\mathbf d_2|}$$
+
 - **Polar acceleration**: $\ddot{\mathbf r}=(\ddot r-r\dot\theta^2)\hat{\mathbf r}+(2\dot r\dot\theta+r\ddot\theta)\hat{\boldsymbol\theta}$.
 - **Matrices**: $(\mathbf{AB})^{\mathrm T}=\mathbf B^{\mathrm T}\mathbf A^{\mathrm T}$, $(\mathbf{AB})^{-1}=\mathbf B^{-1}\mathbf A^{-1}$, $\mathbf A^{-1}=\frac{\operatorname{adj}\mathbf A}{|\mathbf A|}$, $|\mathbf{AB}|=|\mathbf A||\mathbf B|$.
 - **Consistency**: $\operatorname{rank}\mathbf A=\operatorname{rank}[\mathbf A|\mathbf b]$. If both equal $n$, the solution is unique; if both are $r<n$, there are $n-r$ free parameters.

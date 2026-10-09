@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf", 
 
 > [!note] Definition
 > Model a propeller as an infinitely thin disk of area $A$ that adds a uniform pressure jump $\Delta p$ to a streamtube, with no swirl and no losses. Then
+>
 > $$V_{disk} = \tfrac12(V_\infty+V_j),\qquad T = \dot m(V_j-V_\infty) = A\,\Delta p,\qquad\eta_P = \frac{2}{1+V_j/V_\infty}$$
 
 ## Explanation

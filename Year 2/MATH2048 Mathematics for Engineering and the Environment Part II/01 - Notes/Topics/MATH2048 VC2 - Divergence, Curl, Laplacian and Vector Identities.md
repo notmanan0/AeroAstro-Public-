@@ -39,6 +39,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture24_vect
 ---
 
 ## 1. Divergence (L24, Notes §8.1.8)
+
 $$
 \nabla\cdot\mathbf F=\frac{\partial F_1}{\partial x}+\frac{\partial F_2}{\partial y}+\frac{\partial F_3}{\partial z} .
 $$
@@ -55,6 +56,7 @@ Useful results:
 - Product rule: $\nabla\cdot(\phi\mathbf F)=\nabla\phi\cdot\mathbf F+\phi\nabla\cdot\mathbf F$.
 
 ## 2. Curl (L24, Notes §8.1.10)
+
 $$
 \nabla\times\mathbf F=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\partial_x&\partial_y&\partial_z\\F_1&F_2&F_3\end{vmatrix}=\Big(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\Big)\mathbf i+\Big(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\Big)\mathbf j+\Big(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\Big)\mathbf k .
 $$
@@ -74,13 +76,16 @@ $$
 > - $\mathbf k$: $\partial_x(e^z)-\partial_y(xy^2)=-2xy$.
 >
 > $$\nabla\times\mathbf F=(\sin x\,e^z-e^z)\,\mathbf i-y\cos x\,e^z\,\mathbf j-2xy\,\mathbf k .$$
+>
 > Every component carries a minus sign, which is easy to drop. This result was checked in SymPy.
 
 ## 3. The two "zero" theorems (prove them, $C^2$ fields)
 **(a) $\nabla\times(\nabla\phi)=\mathbf 0$.** The $\mathbf i$ component is $\partial_y\phi_z-\partial_z\phi_y=\phi_{zy}-\phi_{yz}=0$, because mixed partial derivatives commute for $C^2$ functions. The same holds for every component.
 
 **(b) $\nabla\cdot(\nabla\times\mathbf F)=0$.** Expanding,
+
 $$\partial_x(\partial_yF_3-\partial_zF_2)+\partial_y(\partial_zF_1-\partial_xF_3)+\partial_z(\partial_xF_2-\partial_yF_1)=0 .$$
+
 The six terms cancel in pairs.
 
 Consequences:
@@ -88,14 +93,18 @@ Consequences:
 - A curl field is divergence-free, so it has a **vector potential** (VC5).
 
 ## 4. The Laplacian (L25, Notes §8.1.9)
+
 $$
 \nabla^2\phi=\nabla\cdot(\nabla\phi)=\phi_{xx}+\phi_{yy}+\phi_{zz} .
 $$
+
 For a vector field it acts component-wise: $\nabla^2\mathbf F=(\nabla^2F_1,\nabla^2F_2,\nabla^2F_3)$.
 
 > [!example] Notes Example: $\phi=e^xy^3\sin z$
 > $\phi_{xx}=e^xy^3\sin z$, $\phi_{yy}=6e^xy\sin z$ and $\phi_{zz}=-e^xy^3\sin z$. The first and last cancel, so
+>
 > $$\nabla^2\phi=6e^xy\sin z .$$
+>
 > SymPy agrees ✔.
 
 ## 5. Vector identities (L25, Notes §8.1.11)

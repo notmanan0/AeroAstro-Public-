@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture 1.02.pdf"]
 
 > [!note] Definition
 > The attitude of the body frame relative to the Earth frame is given by three **Tait–Bryan (Euler) angles**, applied in the order **yaw $\psi$ → pitch $\theta$ → roll $\phi$**:
+>
 > $$\mathbf v_B = \mathbf R_{BE}\mathbf v_E,\qquad \mathbf R_{BE} = \mathbf R_x(\phi)\mathbf R_y(\theta)\mathbf R_z(\psi)$$
 
 ## Explanation

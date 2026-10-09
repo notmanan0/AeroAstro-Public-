@@ -29,8 +29,11 @@ sources: ["02 - Sources/Statics 1/Tutorials/Tutorial Sheet 05 - Beam Deflection 
 - Reactions: $R_A = F$ and $M_A = FL/2$ (anticlockwise).
 - Cut beyond the load: $M + M_A - R_Ax + F[x - L/2] = 0$, so $M = -\dfrac{FL}{2} + Fx - F[x - \tfrac L2]$.
 - Integrate $EIv'' = -M$:
+
 $$EIv' = \frac{FL}{2}x - \frac F2x^2 + \frac F2[x-\tfrac L2]^2 + C_1,\qquad EIv = \frac{FL}{4}x^2 - \frac F6x^3 + \frac F6[x-\tfrac L2]^3 + C_2$$
+
 - A built-in end needs $v'(0) = 0$ and $v(0) = 0$, so $C_1 = C_2 = 0$.
+
 $$v(L) = \frac{1}{EI}\left(\frac{FL^3}{4} - \frac{FL^3}{6} + \frac{FL^3}{48}\right) = \mathbf{\frac{5FL^3}{48EI}}\ ✔$$
 
 The outer half has $M = 0$, so it is **straight**. The tip deflection is $v(L/2) + v'(L/2)\cdot L/2$.
@@ -40,15 +43,20 @@ The outer half has $M = 0$, so it is **straight**. The tip deflection is $v(L/2)
 ## Q2: Supports at $x = 1$ and $x = 3$, UDL 6 kN/m on $2\le x\le4$, $EI = 7$ MN m². Find $v(5)$.
 - **Reactions**: the load resultant (12 kN at $x = 3$) passes through the right support, so $R_a = 0$ and $R_b = 12$ kN.
 - **Macaulay moment**: the UDL stops at $x = 4$, so add an upward UDL from 4.
+
 $$M = 12[x-3] - 3[x-2]^2 + 3[x-4]^2\ \text{kN m}$$
+
   Each UDL term is the resultant $w[x-a]$ times its lever arm $[x-a]/2$.
 - **Integrate** (brackets kept intact):
+
 $$EIv = -2[x-3]^3 + \frac{[x-2]^4}{4} - \frac{[x-4]^4}{4} + C_0x + C_1$$
+
 - **Boundary conditions** (every bracket is zero when negative):
   - $v(1) = 0$ gives $C_0 + C_1 = 0$;
   - $v(3) = 0$ gives $\tfrac14 + 3C_0 + C_1 = 0$;
   - so $C_0 = -\tfrac18$ and $C_1 = \tfrac18$.
 - **Evaluate**:
+
 $$EIv(5) = -16 + \frac{81}{4} - \frac14 - \frac58 + \frac18 = 3.5\ \text{kN m}^3\;\Rightarrow\; v(5) = \frac{3.5\times10^3}{7\times10^6} = \mathbf{0.5}\ \text{mm (down)}\ ✔$$
 
 ![[s1_t5_q2.png|720]]
@@ -59,7 +67,9 @@ Three unknowns ($R_A$, $R_B$, $M_A$), two equilibrium equations:
 - (2) moments about B: $-R_AL + M_A + \dfrac{wL}{2}\cdot\dfrac{3L}{4} = 0$.
 
 Macaulay, with a cancelling UDL from $L/2$:
+
 $$EIv'' = M_A - R_Ax + \frac{wx^2}{2} - \frac{w[x-\tfrac L2]^2}{2}$$
+
 $$EIv = M_A\frac{x^2}{2} - R_A\frac{x^3}{6} + \frac{wx^4}{24} - \frac{w[x-\tfrac L2]^4}{24}\qquad(C_0 = C_1 = 0\ \text{from the built-in end})$$
 
 The extra condition $v(L) = 0$ gives (3) $M_A - R_A\dfrac L3 + \dfrac{15}{192}wL^2 = 0$. Solving (1)–(3):
@@ -90,7 +100,9 @@ The maximum moment is $M = 40.6$ kN m at $x = -6 + \sqrt{84} = 3.17$ m. It sits 
 - $M$ for the cut past E: $M + 2x - 9[x-1] + 3[x-1]^2 - 19[x-4] - 3[x-4]^2 = 0$.
 - $EIv = \dfrac{x^3}{3} - \dfrac32[x-1]^3 + \dfrac{[x-1]^4}{4} - \dfrac{19}{6}[x-4]^3 - \dfrac{[x-4]^4}{4} + C_0x + C_1$.
 - $v(1) = 0$ gives $C_0 + C_1 = -\tfrac13$; $v(4) = 0$ gives $4C_0 + C_1 = -1.0833$. So $C_0 = -0.25$ and $C_1 = -0.0833$.
+
 $$v(5) = \frac{4.917\times10^3}{10^6} = \mathbf{4.92}\ \text{mm (down)}\ ✔$$
+
 The free left end A **rises** by 0.083 mm: the UDL between the supports rotates the overhang upwards.
 
 ![[s1_t5_x2.png|720]]
@@ -101,7 +113,9 @@ The free left end A **rises** by 0.083 mm: the UDL between the supports rotates 
   - (3) $-\tfrac43R_AL^3 + 2M_AL^2 + \tfrac{W L^3}{6} + \tfrac23wL^4 = 0$;
   - (4) $-2R_AL^2 + 2LM_A + \tfrac{WL^2}{2} + \tfrac43wL^3 = 0$.
 - Solving (the sheet stops at setting up the equations):
+
 $$R_A = R_B = \frac W2 + wL,\qquad M_A = M_B = \frac{WL}{4} + \frac{wL^2}{3}$$
+
 This is the textbook fixed-end result $W\ell/8 + w\ell^2/12$ with $\ell = 2L$. The midspan moment is $WL/4 + wL^2/6$ sagging, only half the end moment for the UDL part.
 
 ![[s1_t5_x3.png|720]]

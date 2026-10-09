@@ -17,7 +17,9 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 01 - Measurement Sy
 
 > [!note] Definition
 > Two dissimilar metals joined at a junction develop a temperature-dependent contact potential. With two junctions at different temperatures, the net EMF (Seebeck effect) is
+>
 > $$V\approx S\,(T_{hot} - T_{ref}),\qquad S\sim\text{tens of }\mu\mathrm V/°\mathrm C$$
+>
 > It is an **active**, **differential** sensor.
 
 ## Explanation

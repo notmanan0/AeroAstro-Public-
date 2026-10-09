@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 
 > [!note] Definition
 > The ideal cold-air-standard **Brayton (Joule) cycle** is isentropic compression, isobaric heating, isentropic expansion and isobaric cooling of a perfect gas ($c_p = 1005$, $\gamma = 1.4$):
+>
 > $$\eta_{th} = \frac{w_{net}}{q_{in}} = 1-\frac{1}{r_p^{(\gamma-1)/\gamma}}$$
 
 ## Explanation

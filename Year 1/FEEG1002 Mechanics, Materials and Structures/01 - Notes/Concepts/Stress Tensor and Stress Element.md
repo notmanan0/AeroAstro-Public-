@@ -17,6 +17,7 @@ sources: []
 
 > [!note] Definition
 > The state of stress at a point is fully described by the stresses on three mutually perpendicular faces of a small element: $\sigma_{ij}$ is the stress in direction $j$ on a face with normal $i$. Moment equilibrium makes the tensor **symmetric** ($\sigma_{xy} = \sigma_{yx}$), so 3D has **six** independent components:
+>
 > $$\boldsymbol\sigma = \begin{bmatrix}\sigma_{xx} & \sigma_{xy} & \sigma_{xz}\\ \sigma_{xy} & \sigma_{yy} & \sigma_{yz}\\ \sigma_{xz} & \sigma_{yz} & \sigma_{zz}\end{bmatrix}$$
 
 ## Explanation

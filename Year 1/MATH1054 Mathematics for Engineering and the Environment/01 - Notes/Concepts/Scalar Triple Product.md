@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §4.3.3", "MATH1054 M
 ## Definition
 
 > [!note] Definition
+>
 > $$[\mathbf a,\mathbf b,\mathbf c]=\mathbf a\cdot(\mathbf b\times\mathbf c)=\begin{vmatrix}a_1&a_2&a_3\\b_1&b_2&b_3\\c_1&c_2&c_3\end{vmatrix}$$
 
 ## Explanation

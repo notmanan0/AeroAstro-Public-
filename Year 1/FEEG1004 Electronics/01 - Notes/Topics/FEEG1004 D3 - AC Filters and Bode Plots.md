@@ -35,6 +35,7 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W24 AC Analysis 03 - Filters and Loads
 - A **low-pass** filter attenuates high frequencies (noise) and leaves low frequencies untouched. A **high-pass** does the reverse (blocking DC, as the coupling capacitors of an amplifier do).
 
 ## 2. RC low-pass
+
 $$
 H(\omega) = \frac{\mathbf V_{out}}{\mathbf V_{in}} = \frac{1/j\omega C}{R + 1/j\omega C} = \frac{1}{1 + j\omega RC},\qquad |H| = \frac{1}{\sqrt{1 + (\omega RC)^2}},\qquad \angle H = -\tan^{-1}(\omega RC)
 $$
@@ -52,6 +53,7 @@ $$
 It has the same $\omega_c$. The gain is ~$\omega RC$ (rising) at low frequency and →1 at high frequency.
 
 ## 4. Decibels and Bode plots
+
 $$
 G_{dB} = 10\log_{10}\frac{P_{out}}{P_{in}} = 20\log_{10}\frac{V_{out}}{V_{in}}
 $$

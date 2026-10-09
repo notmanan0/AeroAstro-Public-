@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Chapter 9/2025 Chapter 9 - Communications - Lec
 ## Definition
 
 > [!note] Definition
+>
 > $$\Big(\frac{P_R}{P_T}\Big)_{dB} = 10\log_{10}\frac{P_R}{P_T},\qquad P_{dBW} = 10\log_{10}\frac{P}{1\ \text{W}}$$
 
 ## Explanation

@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > The second moment of area about any axis $z'$ parallel to a **centroidal** axis $z$, a distance $b$ away:
+>
 > $$I_{z'z'} = I_{zz} + Ab^2$$
+>
 > The cross term $2b\iint y\,dA$ vanishes only because $z$ passes through the centroid.
 
 ## Explanation

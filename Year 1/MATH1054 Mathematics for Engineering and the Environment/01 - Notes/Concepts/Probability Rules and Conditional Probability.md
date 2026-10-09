@@ -16,7 +16,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §13.2–13.3", "MATH
 ## Definition
 
 > [!note] Definition
+>
 > $$P(A\cup B)=P(A)+P(B)-P(A\cap B),\qquad P(B\mid A)=\frac{P(A\cap B)}{P(A)},\qquad P(B)=\sum_iP(B\mid A_i)P(A_i)$$
+>
 > $A$ and $B$ are independent iff $P(A\cap B)=P(A)P(B)$.
 
 ## Explanation

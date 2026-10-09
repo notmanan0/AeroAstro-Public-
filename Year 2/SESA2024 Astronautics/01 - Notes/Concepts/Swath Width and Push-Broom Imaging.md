@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_C
 
 > [!note] Definition
 > A **push-broom** imager has a linear detector array across-track. The spacecraft's motion sweeps it along-track.
+>
 > $$d = 2h\tan\frac{\beta}{2} = N_{px}\,p,\qquad n_{min} = \frac{2\pi R_E}{d}$$
+>
 > - $\beta$ = field of view;
 > - $N_{px}$ = pixels (CCD elements) across-track;
 > - $p$ = ground pixel size (spatial resolution) at nadir.

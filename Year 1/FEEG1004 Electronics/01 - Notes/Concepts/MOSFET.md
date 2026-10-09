@@ -17,6 +17,7 @@ sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors
 
 > [!note] Definition
 > A voltage-controlled transistor. In the n-channel **enhancement** type, a gate–source voltage above the threshold (~1–2 V) forms an inversion layer that lets drain current flow. The insulated (oxide) gate draws **almost no current**. Fully ON, it behaves as a resistance $R_{DS(on)}$:
+>
 > $$P = I^2R_{DS(on)}$$
 
 ## Explanation

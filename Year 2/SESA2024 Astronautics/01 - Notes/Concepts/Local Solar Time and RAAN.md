@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_C
 
 > [!note] Definition
 > In a Sun-synchronous orbit, $\phi = \alpha_S-\Omega$ is fixed. $\phi$ sets the **LST at the nodes**: LST = 12:00 at $\phi = 0$, and 15° of $\phi$ is 1 hour. Hence
+>
 > $$\Omega_{launch} = \alpha_{S,launch}-\phi$$
 
 ## Explanation

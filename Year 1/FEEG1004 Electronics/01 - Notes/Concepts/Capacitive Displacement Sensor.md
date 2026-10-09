@@ -17,6 +17,7 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 02 - Displacement S
 
 > [!note] Definition
 > $C = \varepsilon_0\varepsilon_rA/d$ is varied through the overlap area, the gap or the dielectric. With the sensor $C_u$ in the **feedback** path of an inverting amplifier and a reference $C_s$ at the input:
+>
 > $$V_{out} = -\frac{C_s}{C_u}V_{in} = -\frac{C_s\,d}{\varepsilon_0\varepsilon_rA}V_{in}\ \propto\ d$$
 
 ## Explanation

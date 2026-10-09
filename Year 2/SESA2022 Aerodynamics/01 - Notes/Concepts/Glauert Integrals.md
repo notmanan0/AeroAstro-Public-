@@ -17,7 +17,9 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 4 Thin airfoil theory_v3.pdf"]
 
 > [!note] Definition
 > The principal-value integrals that make thin-aerofoil and lifting-line theory solvable in closed form:
+>
 > $$\int_0^\pi\frac{\cos n\theta\,d\theta}{\cos\theta-\cos\theta_0} = \pi\frac{\sin n\theta_0}{\sin\theta_0},\qquad \int_0^\pi\frac{\sin n\theta\sin\theta\,d\theta}{\cos\theta-\cos\theta_0} = -\pi\cos n\theta_0$$
+>
 > together with the orthogonality relations $\int_0^\pi\sin m\theta\sin n\theta\,d\theta = \frac\pi2\delta_{mn}$ and $\int_0^\pi\cos m\theta\cos n\theta\,d\theta = \frac\pi2\delta_{mn}$ ($\pi$ if $m = n = 0$).
 
 ## Explanation

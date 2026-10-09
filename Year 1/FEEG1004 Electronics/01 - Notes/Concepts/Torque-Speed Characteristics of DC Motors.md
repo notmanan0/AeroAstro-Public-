@@ -17,6 +17,7 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 
 > [!note] Definition
 > PM or separately excited motor:
+>
 > $$\omega = \frac{V}{K} - \frac{R_a}{K^2}T,\qquad \omega_{NL} = \frac{V}{K},\qquad T_{stall} = \frac{KV}{R_a}$$
 
 ## Explanation

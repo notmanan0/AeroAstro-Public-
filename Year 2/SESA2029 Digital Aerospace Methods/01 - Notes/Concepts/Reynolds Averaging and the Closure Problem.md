@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9)", "02 - Sources/C
 
 > [!note] Definition
 > Split each flow variable into a time mean and a fluctuation, $\phi = \bar\phi+\phi'$, with
+>
 > $$\bar\phi = \lim_{T\to\infty}\frac1T\int_0^T\phi\,dt$$
+>
 > Averaging the Navier–Stokes equations produces the **RANS** equations. These contain extra unknowns, the **Reynolds stresses** $-\rho\overline{u_i'u_j'}$. There are more unknowns than equations, and this **closure problem** cannot be removed by deriving further equations.
 
 ## Explanation

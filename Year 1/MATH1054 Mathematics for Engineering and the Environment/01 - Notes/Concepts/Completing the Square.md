@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.8", "MATH1054 Mod
 ## Definition
 
 > [!note] Definition
+>
 > $$ax^2+bx+c=a\Big[\Big(x+\frac b{2a}\Big)^2+\frac{4ac-b^2}{4a^2}\Big]$$
 
 ## Explanation

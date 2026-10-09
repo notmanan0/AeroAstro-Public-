@@ -16,6 +16,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-4 Capacitors - Recorded.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$Q = CV,\qquad i = C\frac{dv}{dt},\qquad C = \frac{\varepsilon_0\varepsilon_rA}{d},\qquad E = \tfrac{1}{2}CV^2$$
 
 ## Explanation

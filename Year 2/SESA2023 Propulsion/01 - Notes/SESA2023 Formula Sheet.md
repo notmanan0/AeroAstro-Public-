@@ -77,7 +77,7 @@ $T_0$ is constant across the shock and $p_0$ falls. See [[Converging-Diverging N
 
 ## W5 Combustion ([[SESA2023 W05 - Combustion, Stoichiometry and Chemical Equilibrium]])
 - ★ Air is $\mathrm{O_2+3.762\,N_2^*}$, i.e. 137.9 kg per kmol O₂.
-- ★ $\mathrm{C_xH_y}$ needs $x+y/4$ kmol O₂ per kmol of fuel.
+- ★ $\mathrm{C}_x\mathrm{H}_y$ needs $x+y/4$ kmol O₂ per kmol of fuel.
 - ★ $\phi = f/f_{st}$.
 
 ★ **Burner** (fuel at $T_{ref} = 298$ K):

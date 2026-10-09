@@ -102,6 +102,7 @@ Rearrange the discrete equation to update one unknown at a time. $n$ is the iter
 - **GMRES** (generalised minimum residual; robust and general). These Krylov methods sit inside commercial codes as black-box library calls.
 
 ## 5. Residual vs error (L4)
+
 $$
 R^n = \sqrt{\sum_j\left(T^n_{j-1}-2T^n_j+T^n_{j+1}\right)^2}
 $$

@@ -27,6 +27,7 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 14 - Failure of Materials 3 -
 ---
 
 ## 1. Fatigue loading and life
+
 $$\Delta\sigma=\sigma_{max}-\sigma_{min},\qquad \sigma_a=\frac{\Delta\sigma}{2},\qquad \sigma_m=\frac{\sigma_{max}+\sigma_{min}}2$$
 
 Fatigue has three stages:
@@ -52,9 +53,13 @@ S-N data scatter strongly and smooth laboratory coupons omit real stress concent
 
 ## 3. Damage-tolerant crack growth
 For a known crack under cyclic stress,
+
 $$\Delta K=K_{max}-K_{min}=Y\Delta\sigma\sqrt{\pi a}$$
+
 with compressive $K_{min}$ commonly taken as zero for this introductory treatment. In the stable Region-II regime,
+
 $$\frac{da}{dN}=A(\Delta K)^m$$
+
 where $A,m$ are material/environment constants. Integrating from detected $a_i$ to critical $a_c$ predicts inspection interval or remaining propagation life.
 
 ## 4. Creep
@@ -68,15 +73,20 @@ Stages:
 ![[m9_creep_curve.png|760]]
 
 The steady rate combines stress sensitivity and Arrhenius temperature dependence:
+
 $$\dot\varepsilon_s=K_2\sigma^n\exp\left(-\frac{Q_c}{RT}\right)$$
 
 Mechanisms include lattice/grain-boundary diffusion, dislocation climb and grain-boundary sliding. Therefore stress exponent $n$ and activation energy $Q_c$ help identify the mechanism.
 
 ## 5. Electrochemical corrosion
 At the **anode**, metal oxidises and dissolves:
+
 $$M\rightarrow M^{n+}+ne^-$$
+
 At the **cathode**, a reduction reaction consumes electrons, for example
+
 $$2H^++2e^-\rightarrow H_2$$
+
 The electron path, ion-conducting electrolyte, anode and cathode form a corrosion cell. Standard electrode potentials describe ideal reference conditions; the **galvanic series** ranks actual alloys in a specified environment such as seawater.
 
 Eight lecture categories: uniform, galvanic, crevice, pitting, intergranular, selective leaching, tribocorrosion and stress-corrosion cracking.

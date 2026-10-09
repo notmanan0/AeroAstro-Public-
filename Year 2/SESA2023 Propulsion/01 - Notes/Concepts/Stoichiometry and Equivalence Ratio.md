@@ -16,11 +16,13 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf"]
 
 > [!note] Definition
 > A **stoichiometric** mixture has exactly enough oxidiser for complete combustion. The ratios are
+>
 > $$AFR = \frac{\dot m_a}{\dot m_f} = \frac1f,\qquad \phi = \frac{AFR_{st}}{AFR} = \frac{f}{f_{st}} = \frac{n_{a,st}}{n_a}$$
+>
 > $\phi<1$ is lean (O₂ left in the products), $\phi = 1$ stoichiometric, $\phi>1$ rich (unburned fuel, CO, H₂).
 
 ## Explanation
-**Balancing $\mathrm{C_xH_y+a(O_2+3.762N_2^*)\to x\,CO_2+\tfrac y2H_2O+3.762a\,N_2^*}$**: balance C, then H, then O, which gives $a_{st} = x+y/4$. For a lean mixture, $a = a_{st}/\phi$ and $(a-a_{st})$ O₂ appears in the products. N₂* passes through.
+**Balancing $\mathrm{C}_x\mathrm{H}_y+a(\mathrm{O_2}+3.762\,\mathrm{N_2^*})\to x\,\mathrm{CO_2}+\tfrac y2\mathrm{H_2O}+3.762a\,\mathrm{N_2^*}$**: balance C, then H, then O, which gives $a_{st} = x+y/4$. For a lean mixture, $a = a_{st}/\phi$ and $(a-a_{st})$ O₂ appears in the products. N₂* passes through.
 
 Useful data:
 - Air per kmol O₂: $32+3.762(28.15) = 137.9$ kg.

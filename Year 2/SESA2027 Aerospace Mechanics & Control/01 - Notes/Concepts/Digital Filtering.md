@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture 3.06.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > An algorithm $\hat x[k] = F(y[k],y[k-1],\dots)$ that uses past samples to estimate the true signal from the measurement model $y[k] = x[k]+b[k]+n[k]$ (truth plus bias/drift plus noise). The core low-pass filters are:
+>
 > $$\text{FIR moving average: } y_f[k] = \frac1N\sum_{i=0}^{N-1}y[k-i]\ (\text{delay}\approx\tfrac{N-1}{2}T_s),\qquad \text{IIR: } y_f[k] = \alpha y[k]+(1-\alpha)y_f[k-1],\ \alpha\approx\frac{T_s}{\tau+T_s}$$
 
 ## Explanation

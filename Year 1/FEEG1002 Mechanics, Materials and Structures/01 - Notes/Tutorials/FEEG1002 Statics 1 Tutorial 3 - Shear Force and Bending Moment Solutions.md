@@ -63,7 +63,9 @@ $M_C = +1$ kN m (sagging) and $M_D = -6$ kN m (hogging over the support), which 
 
 ## Q3: Simply supported, $L = 6$ m, $w(x) = \tfrac83x - \tfrac49x^2$ kN/m
 Integrate:
+
 $$Q = -\int w\,dx = \tfrac{4}{27}x^3 - \tfrac43x^2 + C_1,\qquad M = \tfrac{1}{27}x^4 - \tfrac49x^3 + C_1x + C_2$$
+
 - $M(0) = 0$ gives $C_2 = 0$; $M(6) = 0$ gives $C_1 = 8$.
 - So $R_A = Q(0) = 8$ kN, and $R_B = 8$ kN by symmetry.
 - $w$ is symmetric about $x = 3$, so $Q(3) = 0$ and $M_{max} = M(3) = 3 - 12 + 24 = \mathbf{15}$ **kN m**.

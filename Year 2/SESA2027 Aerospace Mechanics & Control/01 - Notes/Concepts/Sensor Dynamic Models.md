@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 3.05.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > Most aerospace sensors are approximated (DAP2) by one of three transfer functions from the physical input $u$ to the reported output $y$:
+>
 > $$\text{0th: } y = Ku,\qquad \text{1st: } \frac{Y}{U} = \frac{K}{\tau s+1},\qquad \text{2nd: } \frac{Y}{U} = \frac{K\omega_n^2}{s^2+2\zeta\omega_ns+\omega_n^2}$$
+>
 > $K$ is the static sensitivity.
 
 ## Explanation

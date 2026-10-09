@@ -63,6 +63,7 @@ Try $x=e^{-4t}$. Then $\dot x=-4e^{-4t}=-4x$ ✔. In fact $x=Ae^{-4t}$ works for
 
 ## Example 10.8: $\ddot x=t-3e^{3t}$
 The right-hand side depends only on $t$, so integrate twice:
+
 $$\dot x=\tfrac12t^2-e^{3t}+A,\qquad \boxed{x=\tfrac16t^3-\tfrac13e^{3t}+At+B}$$
 
 ## Example 10.9: $\dot x=-4x$, $x(0)=2.5$
@@ -80,24 +81,34 @@ $$\boxed{x=\frac3\lambda\sin\lambda t+4\cos\lambda t}$$
 - $\dot x(\pi/\lambda)=\lambda A\cos\pi-\lambda B\sin\pi=-\lambda A=3$, so $A=-3/\lambda$.
 
 $$\boxed{x=-\frac3\lambda\sin\lambda t+4\cos\lambda t}$$
+
 The conditions are applied at two different times, which makes this a **boundary-value problem**. Here it has a unique solution. Compare this with the eigenvalue problems in MATH2048 ([[Boundary Value Problems]]).
 
 ## Example 10.13: $\dot x=4xt$, $x>0$ (separable)
 Separate the variables and integrate:
+
 $$\int\frac{\mathrm dx}{x}=\int4t\,\mathrm dt\ \Rightarrow\ \ln x=2t^2+c$$
+
 $$\boxed{x=Ae^{2t^2}}\quad(A=e^c>0)$$
 
 ## Example 10.34: $\ddot x-9\dot x+6x=0$
 Try $x=e^{mt}$. The auxiliary equation is $m^2-9m+6=0$, so
+
 $$m=\frac{9\pm\sqrt{81-24}}2=\frac{9\pm\sqrt{57}}2.$$
+
 These are real and distinct:
+
 $$\boxed{x=Ae^{\frac{9+\sqrt{57}}2t}+Be^{\frac{9-\sqrt{57}}2t}}\approx Ae^{8.27t}+Be^{0.725t}$$
 
 ## Example 10.35: $2\ddot x-3\dot x+5x=0$
 The auxiliary equation is $2m^2-3m+5=0$, so
+
 $$m=\frac{3\pm\sqrt{9-40}}4=\frac34\pm\mathrm j\frac{\sqrt{31}}4.$$
+
 Complex roots $\alpha\pm\mathrm j\beta$ give $x=e^{\alpha t}(A\cos\beta t+B\sin\beta t)$:
+
 $$\boxed{x=e^{3t/4}\Big(A\cos\tfrac{\sqrt{31}}4t+B\sin\tfrac{\sqrt{31}}4t\Big)}$$
+
 Since $\alpha>0$, this is a growing oscillation.
 
 ## Example 10.36: IVP $\ddot x+6\dot x+9x=0$, $x(0)=1$, $\dot x(0)=2$
@@ -106,6 +117,7 @@ Since $\alpha>0$, this is a growing oscillation.
 - $x(0)=A=1$, and $\dot x(0)=B-3=2$, so $B=5$.
 
 $$\boxed{x=(1+5t)e^{-3t}}$$
+
 This is **critical damping**: a single overshoot hump, then decay without oscillation.
 
 ---
@@ -121,7 +133,9 @@ This is **critical damping**: a single overshoot hump, then decay without oscill
 
 ## Exercise 3 (p.805): General solutions and counting constants
 **(a)** $\dot x=4t^2$. This is first order, so expect **1** constant.
+
 $$x=\tfrac43t^3+A$$
+
 One constant ✔.
 
 **(e)** $\dddot x=\dfrac2{t^3}+\sin5t$. This is third order, so expect **3** constants. Integrate three times:
@@ -130,6 +144,7 @@ One constant ✔.
 - $x=\ln|t|+\tfrac1{125}\cos5t+\tfrac12At^2+Bt+C$
 
 $$\boxed{x=\ln|t|+\tfrac1{125}\cos5t+A't^2+Bt+C}$$
+
 Three constants ✔ (with $A'=A/2$).
 
 ## Exercise 4 (p.805): Constants left after the conditions
@@ -137,6 +152,7 @@ Three constants ✔ (with $A'=A/2$).
 - $x=\tfrac23t^3+At+B$, and $x(0)=B=2$.
 
 $$\boxed{x=\tfrac23t^3+At+2}$$
+
 One arbitrary constant remains ✔.
 
 **(b)** $\ddot x=\sin2t$ with $x(\frac\pi4)=2$ and $x(\frac{3\pi}4)=2$. There are 2 constants and 2 conditions, so expect **0**.
@@ -146,41 +162,59 @@ One arbitrary constant remains ✔.
 - Subtracting: $\tfrac12+\tfrac\pi2A=0$, so $A=-\tfrac1\pi$. Then $B=2+\tfrac14+\tfrac14=\tfrac52$.
 
 $$\boxed{x=\tfrac52-\frac t\pi-\tfrac14\sin2t}$$
+
 There are no arbitrary constants left ✔.
 
 ## Exercise 11(b) (p.811): $\dot x=6xt^2$
+
 $$\int\frac{\mathrm dx}x=\int6t^2\,\mathrm dt\ \Rightarrow\ \ln|x|=2t^3+c\ \Rightarrow\ \boxed{x=Ae^{2t^3}}$$
+
 The solution $x\equiv0$ (lost when dividing by $x$) is recovered by taking $A=0$.
 
 ## Exercise 12(b): $t^2\dot x=1/x$, $x(4)=9$
 Separate and integrate:
+
 $$\int x\,\mathrm dx=\int t^{-2}\,\mathrm dt\ \Rightarrow\ \tfrac12x^2=-\frac1t+C$$
+
 At $t=4$: $\tfrac{81}2=-\tfrac14+C$, so $C=\tfrac{163}4$. Then
+
 $$x^2=\frac{163}2-\frac2t.$$
+
 Take the positive root because $x(4)=9>0$:
+
 $$\boxed{x=\sqrt{\frac{163}2-\frac2t}}$$
 
 ## Exercise 13(a): $\sqrt t\,\dot x=\sqrt x$
+
 $$\int x^{-1/2}\,\mathrm dx=\int t^{-1/2}\,\mathrm dt\ \Rightarrow\ 2\sqrt x=2\sqrt t+2c\ \Rightarrow\ \boxed{x=(\sqrt t+c)^2}$$
+
 Also $x\equiv0$ is a singular solution, lost when dividing by $\sqrt x$.
 
 ## Exercise 14: Initial-value problems
 **(a)** $\dot x=\dfrac{t^2+1}{x+2}$, $x(0)=-2$:
+
 $$\int(x+2)\,\mathrm dx=\int(t^2+1)\,\mathrm dt\ \Rightarrow\ \tfrac12(x+2)^2=\tfrac13t^3+t+C$$
+
 The condition gives $C=0$, so $(x+2)^2=\tfrac23t^3+2t$ and
+
 $$\boxed{x=-2\pm\sqrt{\tfrac23t^3+2t}}\qquad(t\ge0)$$
 
 > [!warning] Two solutions
 > At the initial point $x+2=0$, so $\dot x$ is infinite: the right-hand side is singular. Both signs satisfy the ODE and the condition, so this IVP does **not** have a unique solution. The uniqueness theorem needs the right-hand side to be well behaved at $(t_0,x_0)$.
 
 **(d)** $\dot x=e^{x+t}=e^xe^t$, $x(0)=a$:
+
 $$\int e^{-x}\,\mathrm dx=\int e^t\,\mathrm dt\ \Rightarrow\ -e^{-x}=e^t+C$$
+
 At $t=0$: $-e^{-a}=1+C$, so $C=-1-e^{-a}$. Then $e^{-x}=1+e^{-a}-e^t$, and
+
 $$\boxed{x=-\ln\big(1+e^{-a}-e^t\big)}$$
+
 This is valid only while $e^t<1+e^{-a}$, that is, $t<\ln(1+e^{-a})$. The solution **blows up** ($x\to\infty$) in finite time.
 
 ## Exercise 55(a) (p.856): $2\ddot x-5\dot x+3x=0$
 The auxiliary equation is $2m^2-5m+3=(2m-3)(m-1)=0$, so $m=1,\tfrac32$:
+
 $$\boxed{x=Ae^t+Be^{3t/2}}$$
 
 ## Exercise 56(a): $5\ddot x-3\dot x-2x=0$, $x(0)=-1$, $\dot x(0)=1$
@@ -192,9 +226,11 @@ $$\boxed{x=\tfrac37e^t-\tfrac{10}7e^{-2t/5}}$$
 
 ## Exercise 57
 **(b)** $\ddot x+6\dot x-4x=0$ gives $m^2+6m-4=0$, so $m=-3\pm\sqrt{13}$:
+
 $$\boxed{x=Ae^{(-3+\sqrt{13})t}+Be^{(-3-\sqrt{13})t}}$$
 
 **(d)** $\ddot x-8\dot x+16x=0$ gives $(m-4)^2=0$, a repeated root:
+
 $$\boxed{x=(A+Bt)e^{4t}}$$
 
 ## Exercise 59
@@ -227,22 +263,29 @@ $$\boxed{x=2(t-1)e^{2(t-1)}}$$
 ## Q2: $\ddot x=t+e^{2t}$
 This is second order, so expect **two** arbitrary constants. Integrate twice:
 - $\dot x=\tfrac12t^2+\tfrac12e^{2t}+A$
+
 $$\boxed{x=\tfrac16t^3+\tfrac14e^{2t}+At+B}$$
 
 ## Q3
 **(i)** $xt\,\dot x=1$ is separable:
+
 $$\int x\,\mathrm dx=\int\frac{\mathrm dt}t\ \Rightarrow\ \tfrac12x^2=\ln|t|+C\ \Rightarrow\ \boxed{x^2=2\ln|t|+A}$$
 
 **(ii)** $\dot x=\dfrac{t+1}{x+1}$, $x(0)=1$:
+
 $$\int(x+1)\,\mathrm dx=\int(t+1)\,\mathrm dt\ \Rightarrow\ \tfrac12(x+1)^2=\tfrac12(t+1)^2+C$$
+
 At $t=0$: $2=\tfrac12+C$, so $C=\tfrac32$. Then $(x+1)^2=(t+1)^2+3$. Take the positive root, since $x+1=2>0$ at $t=0$:
+
 $$\boxed{x=\sqrt{t^2+2t+4}-1}$$
 
 ## Q4
 **(i)** $\ddot x-4\dot x+13x=0$ gives $m^2-4m+13=0$, so $m=2\pm3\mathrm j$:
+
 $$\boxed{x=e^{2t}(A\cos3t+B\sin3t)}$$
 
 **(ii)** $y''-2y'+y=0$ gives $(m-1)^2=0$:
+
 $$\boxed{y=(A+Bx)e^{x}}$$
 
 ## Q5: $\ddot x+3\dot x+2x=0$, $x(0)=1$, $\dot x(0)=-1$
@@ -250,6 +293,7 @@ $$\boxed{y=(A+Bx)e^{x}}$$
 - The conditions give $A+B=1$ and $-A-2B=-1$. Adding: $-B=0$, so $B=0$ and $A=1$.
 
 $$\boxed{x=e^{-t}}$$
+
 The initial slope $-1$ exactly matches the slow mode $e^{-t}$, so the fast mode is never excited.
 
 ## Sources

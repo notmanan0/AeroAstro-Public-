@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > A temperature change produces an isotropic, stress-free strain:
+>
 > $$\varepsilon_T = \alpha(T - T_{ref}),\qquad \varepsilon_{xx} = \varepsilon_{yy} = \varepsilon_{zz} = \varepsilon_T,\quad \text{no thermal shear}$$
+>
 > Stress appears only if the expansion is constrained. Total strain = mechanical + thermal.
 
 ## Explanation

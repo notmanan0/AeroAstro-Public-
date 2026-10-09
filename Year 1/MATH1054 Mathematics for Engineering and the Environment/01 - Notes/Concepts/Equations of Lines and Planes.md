@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §4.4", "MATH1054 Mod
 ## Definition
 
 > [!note] Definition
+>
 > $$\text{Line: }\mathbf r=\mathbf a+t\mathbf d\ \Longleftrightarrow\ \frac{x-a_1}{d_1}=\frac{y-a_2}{d_2}=\frac{z-a_3}{d_3};\qquad\text{Plane: }\mathbf r\cdot\mathbf n=\mathbf a\cdot\mathbf n$$
 
 ## Explanation

@@ -17,7 +17,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §9.2", "MATH1054 Mod
 
 > [!note] Definition
 > An integral with an **infinite range**, or with an integrand that is **unbounded** on the range, is defined as a limit:
+>
 > $$\int_a^\infty f\,\mathrm dx=\lim_{R\to\infty}\int_a^Rf\,\mathrm dx,\qquad\int_0^1f\,\mathrm dx=\lim_{\varepsilon\to0^+}\int_\varepsilon^1f\,\mathrm dx$$
+>
 > It **converges** if the limit is finite, and **diverges** otherwise.
 
 ## Explanation

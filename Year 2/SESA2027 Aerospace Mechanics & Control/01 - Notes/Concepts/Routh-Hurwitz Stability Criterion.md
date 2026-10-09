@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.05.pdf"]
 
 > [!note] Definition
 > A test for whether all roots of a polynomial have negative real parts, **without solving for them**. For the longitudinal stability quartic $A\lambda^4+B\lambda^3+C\lambda^2+D\lambda+E = 0$ (with $A>0$), the aircraft is stable if and only if
+>
 > $$A,B,C,D,E>0\quad\text{and}\quad R = D(BC-AD)-B^2E>0$$
+>
 > $R$ is **Routh's discriminant**.
 
 ## Explanation

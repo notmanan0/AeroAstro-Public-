@@ -17,6 +17,7 @@ sources: ["02 - Sources/BL/Topic 2 Boundary layers.pdf"]
 
 > [!note] Definition
 > The **displacement thickness** $\delta^*$ is how far the wall would have to move outward, in an inviscid flow, to carry the same mass-flow deficit as the boundary layer. The **momentum thickness** $\theta$ is the thickness of freestream fluid that carries the momentum lost to the wall.
+>
 > $$\delta^* = \int_0^\infty\left(1-\frac{u}{U_e}\right)dy,\qquad \theta = \int_0^\infty\frac{u}{U_e}\left(1-\frac{u}{U_e}\right)dy,\qquad H = \frac{\delta^*}{\theta}$$
 
 ## Explanation

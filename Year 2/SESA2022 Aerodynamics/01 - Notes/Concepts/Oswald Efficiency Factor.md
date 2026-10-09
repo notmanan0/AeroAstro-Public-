@@ -17,7 +17,9 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf
 
 > [!note] Definition
 > The span efficiency factor $e$ measures how close a wing's induced drag is to the elliptic ideal:
+>
 > $$C_{D_i} = \frac{C_L^2}{\pi eAR},\qquad e = \frac{1}{1+\delta},\qquad \delta = \sum_{n\ge2}n\left(\frac{B_n}{B_1}\right)^2\ge0$$
+>
 > $\tau$ is the corresponding **lift-slope factor**: $a = \dfrac{a_0}{1+\frac{a_0}{\pi AR}(1+\tau)}$.
 
 ## Explanation

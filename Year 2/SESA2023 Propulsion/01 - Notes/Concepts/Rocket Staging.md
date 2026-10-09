@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 10 - Rockets.pdf"]
 
 > [!note] Definition
 > Discarding the empty structure of spent stages. Stage $i$ carries the rest of the vehicle as its payload:
+>
 > $$(m_{pl})_i = (m_0)_{i+1},\qquad\lambda_i = e^{-\Delta V_i/c_{e,i}}-\delta_i,\qquad\lambda_0 = \prod\lambda_i,\qquad\Delta V_0 = \sum\Delta V_i$$
 
 ## Explanation

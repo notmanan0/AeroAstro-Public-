@@ -17,6 +17,7 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 02 - Displacement S
 
 > [!note] Definition
 > A resistive track with a sliding wiper forms a potential divider:
+>
 > $$\frac{V_{out}}{V_{in}} = x\ \text{(unloaded)},\qquad \frac{V_{out}}{V_{in}} = \frac{x}{1 + (R_p/R_{load})\,x(1 - x)}\ \text{(loaded)}$$
 
 ## Explanation

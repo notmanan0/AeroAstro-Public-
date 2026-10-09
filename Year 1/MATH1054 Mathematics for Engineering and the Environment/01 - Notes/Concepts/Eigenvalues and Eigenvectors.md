@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §5.7", "MATH1054 Mod
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf{AX}=\lambda\mathbf X,\ \mathbf X\neq\mathbf0\quad\Longleftrightarrow\quad|\mathbf A-\lambda\mathbf I|=0\ \ (\text{the characteristic equation})$$
 
 ## Explanation

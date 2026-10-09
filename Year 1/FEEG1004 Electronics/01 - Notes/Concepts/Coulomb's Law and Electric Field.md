@@ -16,7 +16,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W02-1ab Electrostatics and Electric C
 ## Definition
 
 > [!note] Definition
+>
 > $$F = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2},\qquad \mathbf E = \frac{\mathbf F}{q}\ \ [\mathrm{N/C} = \mathrm{V/m}],\qquad \varepsilon_0 = 8.85\times10^{-12}\ \mathrm{F/m}$$
+>
 > The field is the force per unit **positive** test charge.
 
 ## Explanation

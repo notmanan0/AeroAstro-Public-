@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/SESA3047
 
 > [!note] Definition
 > For the 3-2-1 (yaw–pitch–roll) Euler angles $\boldsymbol\Phi=[\phi,\theta,\psi]^T$ and body rates $\boldsymbol\omega^{FRD}_{b/r}=[p,q,r]^T$:
+>
 > $$\boldsymbol\omega^{FRD}_{b/r}=\mathbf E(\boldsymbol\Phi)\dot{\boldsymbol\Phi},\qquad\mathbf E=\begin{bmatrix}1&0&-s_\theta\\0&c_\phi&s_\phi c_\theta\\0&-s_\phi&c_\phi c_\theta\end{bmatrix}\quad(3.8\text{–}3.9)$$
+>
 > $$\dot{\boldsymbol\Phi}=\mathbf H(\boldsymbol\Phi)\,\boldsymbol\omega^{FRD}_{b/r},\qquad\mathbf H=\mathbf E^{-1}=\begin{bmatrix}1&s_\phi t_\theta&c_\phi t_\theta\\0&c_\phi&-s_\phi\\0&s_\phi/c_\theta&c_\phi/c_\theta\end{bmatrix}\quad(3.10\text{–}3.11)$$
 
 ## Derivation in three lines

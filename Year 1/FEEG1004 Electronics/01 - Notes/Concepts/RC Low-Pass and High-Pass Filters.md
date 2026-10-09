@@ -16,6 +16,7 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W24 AC Analysis 03 - Filters and Loads
 ## Definition
 
 > [!note] Definition
+>
 > $$H_{LP} = \frac{1}{1 + j\omega RC},\qquad H_{HP} = \frac{j\omega RC}{1 + j\omega RC},\qquad \omega_c = \frac{1}{RC}:\ |H| = \tfrac{1}{\sqrt2}\ (-3\ \mathrm{dB}),\ \angle H = \mp45°$$
 
 ## Explanation

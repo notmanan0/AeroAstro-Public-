@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §10.5.2", "MATH1054 
 
 > [!note] Definition
 > An equation of the form $\dot x=F(x/t)$. The substitution $x=vt$, so $\dot x=v+t\dot v$, makes it separable:
+>
 > $$t\frac{\mathrm dv}{\mathrm dt}=F(v)-v$$
 
 ## Explanation

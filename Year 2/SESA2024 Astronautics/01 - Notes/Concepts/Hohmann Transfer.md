@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Hoh
 
 > [!note] Definition
 > The **minimum-ΔV two-impulse transfer between coplanar circular orbits**, via an ellipse tangent to both ($r_p = r_1$, $r_a = r_2$):
+>
 > $$a_T = \frac{r_1+r_2}{2},\quad\Delta V_1 = \sqrt{\frac{\mu}{r_1}}\left(\sqrt{\frac{2r_2}{r_1+r_2}}-1\right),\quad\Delta V_2 = \sqrt{\frac{\mu}{r_2}}\left(1-\sqrt{\frac{2r_1}{r_1+r_2}}\right),\quad t = \pi\sqrt{\frac{a_T^3}{\mu}}$$
 
 ## Explanation

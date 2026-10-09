@@ -17,6 +17,7 @@ sources: []
 
 > [!note] Definition
 > The point of the body (or its extension) with **zero velocity** at the instant considered. The body momentarily rotates about it:
+>
 > $$\mathbf v_P = \boldsymbol\omega\times\mathbf r_{P/IC},\qquad v_P = \omega r_{P/IC},\qquad KE = \tfrac12I_{IC}\omega^2$$
 
 ## Explanation

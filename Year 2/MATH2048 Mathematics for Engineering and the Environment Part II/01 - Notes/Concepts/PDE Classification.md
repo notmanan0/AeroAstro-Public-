@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture14_Hyperbolic1.pdf
 
 > [!note] Definition
 > A second-order linear PDE has the form
+>
 > $$au_{xx}+2bu_{xy}+cu_{yy}+du_x+eu_y+fu=0 .$$
+>
 > It is **hyperbolic** if $b^2-ac>0$, **parabolic** if $b^2-ac=0$, and **elliptic** if $b^2-ac<0$.
 
 ## Explanation

@@ -40,12 +40,15 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 5
 - **Add and subtract** componentwise. **Multiply** by expanding and using $\mathrm j^2=-1$.
 - **Conjugate**: $z^*=x-\mathrm jy$. Then $zz^*=|z|^2$ is real.
 - **Divide** by multiplying the top and bottom by the conjugate of the denominator:
+
 $$
 \frac{z_1}{z_2}=\frac{z_1z_2^*}{|z_2|^2}
 $$
+
 - Real polynomials have roots in **conjugate pairs**. For example, $x^3+8=(x+2)(x^2-2x+4)$ has roots $-2$ and $1\pm\mathrm j\sqrt3$.
 
 ## 2. The Argand diagram and polar form (James §3.2.6–3.2.7)
+
 $$
 r=|z|=\sqrt{x^2+y^2},\qquad x=r\cos\theta,\quad y=r\sin\theta
 $$
@@ -65,22 +68,28 @@ The **principal argument** is $-\pi<\theta\le\pi$. Let $\alpha=\tan^{-1}|y/x|$ b
 > It only returns values in $(-\frac\pi2,\frac\pi2)$, so it is wrong in quadrants 2 and 3. **Sketch the point first.**
 
 ## 3. Multiplication and division in polar form
+
 $$
 z_1z_2=r_1r_2\angle(\theta_1+\theta_2),\qquad\frac{z_1}{z_2}=\frac{r_1}{r_2}\angle(\theta_1-\theta_2),\qquad z^n=r^n\angle n\theta
 $$
+
 Moduli multiply and arguments **add**. After adding, reduce to $(-\pi,\pi]$ by adding or subtracting $2\pi$ (Ex 3.12: $5.245\to-1.038$ rad).
 
 - **Big products** (Ex 3.14): compute each factor's modulus and argument *once*, then combine with the powers.
 - **Multiplying by $\mathrm j$** rotates by $+90°$ without changing the length. Ex 4.15 uses this to build a square on OP: $\mathrm j(1+2\mathrm j)=-2+\mathrm j$.
 
 ## 4. Euler's formula and exponential form (James §3.2.8)
+
 $$
 e^{\mathrm j\theta}=\cos\theta+\mathrm j\sin\theta\qquad\Longrightarrow\qquad z=re^{\mathrm j\theta},\quad e^{x+\mathrm jy}=e^x(\cos y+\mathrm j\sin y)
 $$
+
 The exponential laws now do the polar rules automatically: $r_1e^{\mathrm j\theta_1}\cdot r_2e^{\mathrm j\theta_2}=r_1r_2e^{\mathrm j(\theta_1+\theta_2)}$. Replacing $\theta$ by $-\theta$ and then adding or subtracting gives the inverse relations:
+
 $$
 \cos\theta=\frac{e^{\mathrm j\theta}+e^{-\mathrm j\theta}}2,\qquad\sin\theta=\frac{e^{\mathrm j\theta}-e^{-\mathrm j\theta}}{2\mathrm j}
 $$
+
 These lead directly to $\cosh$ and $\sinh$ ([[MATH1054 M07 - Functions|M07]]), and to complex trig functions and logs ([[MATH1054 M22 - Complex Numbers II|M22]]).
 
 ## 5. Geometry of $+$ and $-$

@@ -34,9 +34,13 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 08 - Phase Diagrams 1 - Solid
 
 ## 2. Complete solid solubility
 For a point in $\alpha+L$, draw a horizontal tie line. Its endpoints give $C_\alpha$ and $C_L$. Mass conservation,
+
 $$f_\alpha C_\alpha+f_LC_L=C_0,\qquad f_\alpha+f_L=1,$$
+
 gives
+
 $$f_\alpha=\frac{C_L-C_0}{C_L-C_\alpha},\qquad f_L=\frac{C_0-C_\alpha}{C_L-C_\alpha}$$
+
 (equivalent forms with numerator/denominator signs reversed are fine).
 
 > [!tip] The opposite-arm rule
@@ -51,6 +55,7 @@ $$f_\alpha=\frac{C_L-C_0}{C_L-C_\alpha},\qquad f_L=\frac{C_0-C_\alpha}{C_L-C_\al
 
 ## 4. Partial solubility and the eutectic
 Two terminal solid solutions $\alpha$ and $\beta$ meet a eutectic at one composition $C_E$ and temperature $T_E$:
+
 $$L\rightarrow\alpha+\beta$$
 
 - At the eutectic composition the entire liquid transforms isothermally into a fine lamellar two-phase microconstituent.
@@ -65,9 +70,13 @@ These are different questions.
 - **Total $\alpha$ just below $T_E$**: use the tie line between $C_{\alpha E}$ and $C_{\beta E}$.
 
 For Pb-Sn at 35 wt% Sn:
+
 $$f_{primary\ \alpha}=\frac{61.9-35}{61.9-18.3}=61.7\%,$$
+
 while below the eutectic
+
 $$f_{total\ \alpha}=\frac{97.8-35}{97.8-18.3}=79.0\%.$$
+
 The extra $\alpha$ lies inside the eutectic constituent.
 
 ## 6. A reliable exam workflow

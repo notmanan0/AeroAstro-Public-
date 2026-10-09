@@ -17,7 +17,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §9.4", "MATH1054 Mod
 
 > [!note] Definition
 > If $\frac{f(x)}{g(x)}\to\frac00$ (or $\frac\infty\infty$) as $x\to a$, then
+>
 > $$\lim_{x\to a}\frac{f(x)}{g(x)}=\lim_{x\to a}\frac{f'(x)}{g'(x)}$$
+>
 > provided the right-hand limit exists.
 
 ## Explanation

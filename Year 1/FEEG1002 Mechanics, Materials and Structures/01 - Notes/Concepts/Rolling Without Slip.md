@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > The contact point has the ground's velocity (zero), so
+>
 > $$s_G = r\theta,\qquad v_G = r\omega,\qquad a_G = r\alpha,\qquad F_f\le\mu_sN\ \text{(static, does no work)}$$
+>
 > With slip: $a_G\ne r\alpha$ and $F_f = \mu_kN$ opposing the sliding. Kinetic friction does work $-F_k\Delta s_{sl}$.
 
 ## Explanation

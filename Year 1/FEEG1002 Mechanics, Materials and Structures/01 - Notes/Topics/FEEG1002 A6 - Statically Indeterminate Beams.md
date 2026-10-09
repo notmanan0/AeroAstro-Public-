@@ -51,7 +51,9 @@ The missing equations come from **deformation**: known deflections and slopes at
 > - $v'(0) = 0\Rightarrow C_0 = 0$ and $v(0) = 0\Rightarrow C_1 = 0$.
 > - The extra condition $v(L) = 0$ gives $M_1\dfrac{L^2}{2} + \dfrac{wL^4}{24} - R_1\dfrac{L^3}{6} = 0$.
 > - Solving: $R_1 = \tfrac58wL$, $R_2 = \tfrac38wL$, $M_1 = \tfrac18wL^2$ (hogging at the wall).
+>
 > $$v = \frac{1}{EI}\left[\frac{wL^2}{16}x^2 + \frac{w x^4}{24} - \frac{5wL}{48}x^3\right]$$
+>
 > The maximum sagging moment is $\tfrac{9}{128}wL^2$ at $x = \tfrac58L$, where $Q = 0$.
 
 ![[s1_propped_cantilever_udl.png|720]]
@@ -84,6 +86,7 @@ The other reactions then follow from equilibrium: $R_1 = \tfrac58wL$ and $M_1 = 
 There are four unknowns ($R_A$, $M_A$, $R_B$, $M_B$), two equilibrium equations, and four kinematic conditions: $v = v' = 0$ at both ends.
 - Two of the kinematic conditions fix the integration constants; the other two close the system.
 - For a UDL $w$ over the length $2L$ plus $W$ at midspan, symmetry gives $R_A = R_B = W/2 + wL$ and
+
 $$
 M_A = M_B = \frac{W(2L)}{8} + \frac{w(2L)^2}{12} = \frac{WL}{4} + \frac{wL^2}{3}
 $$

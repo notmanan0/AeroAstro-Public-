@@ -17,7 +17,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_10_Modal_Analysis_2_final(1).pdf", 
 
 > [!note] Definition
 > For a linear undamped structure, free vibration $[M]\{\ddot u\}+[K]\{u\} = 0$ with $\{u\} = \{\phi\}\sin(\omega t+\theta)$ gives
+>
 > $$([K]-\omega_i^2[M])\{\phi\}_i = 0,\qquad f_i = \frac{\omega_i}{2\pi}$$
+>
 > The eigenvalues $\omega_i^2$ give the natural frequencies. The eigenvectors $\{\phi\}_i$ are the mode shapes.
 
 ## Explanation

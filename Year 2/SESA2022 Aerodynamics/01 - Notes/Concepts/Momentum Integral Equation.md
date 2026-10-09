@@ -17,7 +17,9 @@ sources: ["02 - Sources/BL/Topic 2 Boundary layers.pdf"]
 
 > [!note] Definition
 > Von Kármán's momentum integral equation relates the streamwise growth of the momentum thickness to the wall shear stress and the pressure gradient:
+>
 > $$\frac{d\theta}{dx}+(2+H)\frac{\theta}{U_e}\frac{dU_e}{dx} = \frac{\tau_w}{\rho U_e^2} = \frac{C_f}{2}$$
+>
 > For a flat plate ($dU_e/dx = 0$) this reduces to $\boxed{C_f = 2\,d\theta/dx}$ and $D'(x) = \rho U_\infty^2\theta(x)$.
 
 ## Explanation

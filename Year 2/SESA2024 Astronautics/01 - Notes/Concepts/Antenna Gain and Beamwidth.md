@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 9/2025 Chapter 9 - Communications - Lec
 ## Definition
 
 > [!note] Definition
+>
 > $$G = \frac{4\pi A_{eff}}{\lambda^2} = \eta\left(\frac{\pi D}{\lambda}\right)^2,\qquad\theta_{3dB}\approx72\frac{\lambda}{D}\ (\text{degrees}),\qquad\lambda = c/f$$
+>
 > Gain is the maximum flux relative to an isotropic radiator (gain 1, 0 dB). $0.4<\eta<0.8$.
 
 ## Explanation

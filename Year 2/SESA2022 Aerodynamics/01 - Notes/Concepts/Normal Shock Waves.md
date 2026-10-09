@@ -19,6 +19,7 @@ sources: ["03 - Exams & Past Papers (2013-14 to 2019-20)"]
 
 > [!note] Definition
 > A thin, irreversible, adiabatic discontinuity normal to the flow. Across it supersonic flow becomes subsonic, $p$, $\rho$ and $T$ rise, $T_0$ stays constant, and **$p_0$ falls** (entropy rises).
+>
 > $$M_2^2 = \frac{1+\frac{\gamma-1}2M_1^2}{\gamma M_1^2-\frac{\gamma-1}2},\qquad \frac{\rho_2}{\rho_1} = \frac{(\gamma+1)M_1^2}{2+(\gamma-1)M_1^2},\qquad \frac{p_2}{p_1} = 1+\frac{2\gamma}{\gamma+1}(M_1^2-1)$$
 
 ## Explanation

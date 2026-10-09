@@ -16,7 +16,9 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$KE = \tfrac12mv_G^2 + \tfrac12I_G\omega^2 = \tfrac12I_{IC}\omega^2$$
+>
 > Translation only: $\tfrac12mv_G^2$. Fixed axis O: $\tfrac12I_O\omega^2$. System: $\sum KE_i$.
 
 ## Explanation

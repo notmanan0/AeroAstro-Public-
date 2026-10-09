@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Week 11 - Rockets.pdf"]
 
 > [!note] Definition
 > The **burning rate** $r$ is the speed at which the grain surface regresses normal to itself (mm/s). Empirically,
+>
 > $$r = aP_c^{\,n}\qquad(\text{Saint-Robert's law})$$
+>
 > Here $a$ is the *temperature coefficient* (depending on composition and initial temperature) and $n$ is the *burning index* (pressure exponent).
 
 ## Explanation

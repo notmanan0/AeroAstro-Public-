@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture27_vect
 
 > [!note] Definition
 > For a surface parametrised as $\mathbf r(s,t)$:
+>
 > $$d\mathbf S=(\mathbf r_s\times\mathbf r_t)\,ds\,dt,\qquad dA=|\mathbf r_s\times\mathbf r_t|\,ds\,dt,\qquad \iint_S\mathbf F\cdot d\mathbf S=\iint\mathbf F(\mathbf r(s,t))\cdot(\mathbf r_s\times\mathbf r_t)\,ds\,dt .$$
 
 ## Explanation

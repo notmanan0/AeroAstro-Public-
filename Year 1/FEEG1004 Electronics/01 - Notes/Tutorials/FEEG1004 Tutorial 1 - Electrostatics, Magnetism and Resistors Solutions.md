@@ -47,10 +47,14 @@ $$
 
 ## Q2: Sam's car battery (13 V, nominally 10 mΩ ESR)
 - **(i)** At 200 A the terminal voltage is 8 V, so the ESR drops $13 - 8 = 5$ V:
+
 $$R_{ESR} = \frac{5}{200} = 25\ \mathrm{m\Omega}\ ✔$$
+
   Do not use 13/200: Ohm's law needs the voltage across the resistor.
 - **(ii)** Jump lead, 2 m long, 20 mΩ, copper:
+
 $$r = \sqrt{\frac{\rho L}{\pi R}} = \sqrt{\frac{1.678\times10^{-8}\times2}{\pi\times0.02}} = 0.731\ \mathrm{mm}\ \Rightarrow\ d = 1.46\ \mathrm{mm}\ ✔$$
+
 - **(iii) Circuit**: each battery is an ideal source with its ESR; they are joined by two 20 mΩ leads (one in each wire).
 - **(iv) Current**:
   - Guess the direction (left to right, from Sam's battery) and apply KVL: $10 - 0.025I - 0.020I - 0.010I - 13 - 0.020I = 0$.
@@ -75,7 +79,9 @@ Work backwards from the known voltage. Voltages are measured relative to the bot
 
 ## Q4: Deriving series and parallel resistance
 - **(a) Parallel**: all three resistors share $V$, so $I_k = V/R_k$. KCL gives $I_{tot} = V(1/R_1 + 1/R_2 + 1/R_3)$, and $R_p = V/I_{tot}$:
+
 $$\frac{1}{R_p} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}\ ✔$$
+
 - **(b) Series**: KCL means the same $I$ flows in all three. KVL gives $V_{tot} = V_1 + V_2 + V_3 = I(R_1 + R_2 + R_3)$, so $R_s = R_1 + R_2 + R_3$ ✔.
 - **(c) What was used**:
   - **Ohm's law** for each resistor;

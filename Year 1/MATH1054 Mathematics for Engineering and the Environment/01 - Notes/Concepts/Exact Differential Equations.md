@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §10.5.3", "MATH1054 
 
 > [!note] Definition
 > $f(x,t)\,\dot x+g(x,t)=0$ is **exact** if there is an $F(x,t)$ with $F_x=f$ and $F_t=g$. Then $\frac{\mathrm d}{\mathrm dt}F(x,t)=0$, so the solution is $F=C$.
+>
 > $$\text{Test: }\frac{\partial f}{\partial t}=\frac{\partial g}{\partial x}$$
 
 ## Explanation

@@ -103,6 +103,7 @@ What matters is the *shape*: first bending, second bending, first torsion. Not t
 Compare frequencies (typically within 5%) and mode shapes (**MAC** > about 0.8), and update the model if they differ ([[Model Updating]]).
 
 ## 4. Participation factor and effective mass (L10)
+
 $$
 \gamma_i = \{\phi\}_i^T[M]\{D\},\qquad M_{\mathrm{eff},i} = \frac{\gamma_i^2}{\{\phi\}_i^T[M]\{\phi\}_i} = \gamma_i^2\quad(\text{mass-normalised})
 $$

@@ -21,7 +21,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-4 Capacitors - Recorded.pdf", "02
 > [!abstract] Summary
 > A capacitor stores energy in the **electric field** between two conductors.
 > - $Q = CV$ **defines** capacitance [F = C/V]. Differentiating gives the circuit law
+>
 > $$i = C\frac{dv}{dt}\qquad\Longleftrightarrow\qquad v = \frac{1}{C}\int i\,dt$$
+>
 > - Consequences:
 >   - capacitor voltage **cannot change instantaneously** (that would need infinite current);
 >   - at DC steady state the current is zero, so a capacitor is an **open circuit**;
@@ -39,6 +41,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-4 Capacitors - Recorded.pdf", "02
 - **Hydraulic analogy**: an **elastic membrane** across the pipe. Water flowing in stretches it and builds a back-pressure, $V = Q/C$ ↔ back-pressure = stored water / compliance.
 
 ## 2. Parallel-plate capacitance
+
 $$
 C = \frac{\varepsilon A}{d} = \frac{\varepsilon_0\varepsilon_rA}{d}
 $$

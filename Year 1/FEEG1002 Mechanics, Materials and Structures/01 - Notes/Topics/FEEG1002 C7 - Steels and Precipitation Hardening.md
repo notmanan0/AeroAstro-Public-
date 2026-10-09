@@ -36,6 +36,7 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 10 - Steels.pdf", "02 - Sourc
 | pearlite | lamellae of $\alpha+Fe_3C$ | **microconstituent**, not a phase |
 
 The eutectoid reaction near 727°C and 0.76 wt% C is
+
 $$\gamma\rightarrow\alpha+Fe_3C$$
 
 ![[m7_steel_eutectoid.png|800]]
@@ -48,9 +49,11 @@ $$\gamma\rightarrow\alpha+Fe_3C$$
 
 > [!example] 0.35 wt% C steel just below 727°C
 > With $C_{\alpha E}=0.022$ and $C_E=0.76$ wt% C:
+>
 > $$f_{proeutectoid\ \alpha}=\frac{0.76-0.35}{0.76-0.022}=0.556,qquad f_P=0.444$$
 
 At 500°C the **total phase** fractions use $C_\alpha=0.015$ and $C_{Fe_3C}=6.70$:
+
 $$f_\alpha=\frac{6.70-0.35}{6.70-0.015}=0.950,qquad f_{Fe_3C}=0.050$$
 
 ## 3. Precipitation-hardening requirements

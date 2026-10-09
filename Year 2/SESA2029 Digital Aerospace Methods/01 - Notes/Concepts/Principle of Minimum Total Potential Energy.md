@@ -17,7 +17,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_5_Mimimum_Potnetial_Energy.pdf", "0
 
 > [!note] Definition
 > Of all displacement fields that satisfy the displacement boundary conditions, the equilibrium one makes the total potential energy stationary (a minimum for stable equilibrium):
+>
 > $$\Pi = U+V,\qquad\delta\Pi = 0\;\Rightarrow\;\frac{\partial\Pi}{\partial d_i} = 0\ \ \forall i\;\Rightarrow\;\{F\} = [K]\{d\}$$
+>
 > $U$ is the strain energy and $V = -W$ is the potential of the applied loads.
 
 ## Explanation

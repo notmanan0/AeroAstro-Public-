@@ -23,7 +23,9 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 4 Thin airfoil theory_v3.pdf", 
 
 > [!abstract] Summary
 > Replace a thin, lightly cambered aerofoil at small $\alpha$ by a **vortex sheet** $\gamma(\xi)$ on its chord line. Enforce **flow tangency** to the camber line and the **Kutta condition** ($\gamma(TE)=0$). Transforming to $\theta$ and writing $\gamma$ as a Fourier series gives closed-form results:
+>
 > $$C_l = 2\pi(\alpha-\alpha_{L=0}) = \pi(2A_0+A_1),\qquad c_{m,c/4} = \frac\pi4(A_2-A_1)$$
+>
 > The lift slope is always $2\pi$, the **quarter chord is the aerodynamic centre**, and camber only shifts $\alpha_{L=0}$ and adds a constant nose-down moment.
 
 ## Key Concepts

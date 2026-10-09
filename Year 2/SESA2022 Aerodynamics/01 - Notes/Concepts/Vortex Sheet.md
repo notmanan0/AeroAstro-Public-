@@ -17,6 +17,7 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 4 Thin airfoil theory_v3.pdf"]
 
 > [!note] Definition
 > A continuous distribution of infinitesimal vortices along a line, with strength $\gamma(s)$ per unit length. Across the sheet the **tangential velocity jumps** by $\gamma$ while the normal velocity is continuous:
+>
 > $$\gamma = u_{upper}-u_{lower},\qquad d\Gamma = \gamma\,ds,\qquad \Gamma = \int\gamma\,ds$$
 
 ## Explanation

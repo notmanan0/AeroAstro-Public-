@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier and Laplace Transform/
 ## Definition
 
 > [!note] Definition
+>
 > $$H(x-a)=\begin{cases}0&x<a\\1&x>a\end{cases},\qquad\mathcal L[H(x-a)]=\frac{e^{-as}}{s}\quad(a\geq0).$$
 
 ## Explanation

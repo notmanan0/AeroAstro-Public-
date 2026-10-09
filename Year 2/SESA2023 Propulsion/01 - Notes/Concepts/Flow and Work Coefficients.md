@@ -15,6 +15,7 @@ sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$\phi = \frac{V_x}{U}\ (\text{flow coefficient}),\qquad\psi = \frac{|\Delta h_0|}{U^2} = \frac{\Delta V_\theta}{U}\ (\text{stage loading / work coefficient})$$
 
 ## Explanation

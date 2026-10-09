@@ -15,8 +15,11 @@ sources: []
 
 ## Definition
 For an ideal brittle central crack,
+
 $$\sigma_f=\sqrt{\frac{2E\gamma}{\pi a}}$$
+
 Engineering LEFM uses
+
 $$K_I=Y\sigma\sqrt{\pi a},\qquad K_I=K_{IC}\ \text{at plane-strain fracture}$$
 
 ## Explanation

@@ -17,7 +17,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W06 Thevenin and Superposition - Inte
 
 > [!note] Definition
 > A current $I$ splitting between two parallel branches:
+>
 > $$I_1 = I\frac{R_2}{R_1 + R_2},\qquad I_2 = I\frac{R_1}{R_1 + R_2}$$
+>
 > The **other** branch's resistance goes on top.
 
 ## Explanation

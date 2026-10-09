@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 
 > [!note] Definition
 > For $\mathbf u=[u_x,u_y,u_z]^T$, the cross product with any vector $\mathbf v$ can be written as a matrix product:
+>
 > $$\mathbf u\times\mathbf v=\tilde{\mathbf u}\,\mathbf v,\qquad \tilde{\mathbf u}=\begin{bmatrix}0&-u_z&u_y\\u_z&0&-u_x\\-u_y&u_x&0\end{bmatrix}\quad(\text{Eq. 2.16}).$$
 
 ## Where it comes from

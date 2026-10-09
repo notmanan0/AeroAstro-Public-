@@ -160,6 +160,7 @@ All of these come from the single shooting result $f''(0) = 0.4696$ ([[Shooting 
 *Write out $\dfrac{\partial u_i}{\partial t}+\dfrac{\partial(u_iu_j)}{\partial x_j}+\dfrac1\rho\dfrac{\partial p}{\partial x_i} = \nu\dfrac{\partial^2u_i}{\partial x_j\partial x_j}$ for $i = 2$ in 3D.*
 
 ### Solution
+
 $$
 \frac{\partial v}{\partial t}+\frac{\partial(vu)}{\partial x}+\frac{\partial(vv)}{\partial y}+\frac{\partial(vw)}{\partial z}+\frac1\rho\frac{\partial p}{\partial y} = \nu\left(\frac{\partial^2v}{\partial x^2}+\frac{\partial^2v}{\partial y^2}+\frac{\partial^2v}{\partial z^2}\right)
 $$

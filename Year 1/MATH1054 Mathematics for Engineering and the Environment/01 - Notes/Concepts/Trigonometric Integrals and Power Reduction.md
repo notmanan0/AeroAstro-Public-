@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.8.5", "MATH1054 M
 
 > [!note] Definition
 > Use identities to turn powers and products of sines and cosines into **sums of single sines and cosines**, which integrate directly:
+>
 > $$\cos^2x=\tfrac12(1+\cos2x),\quad\sin^2x=\tfrac12(1-\cos2x),\quad2\sin A\cos B=\sin(A+B)+\sin(A-B)$$
 
 ## Explanation

@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier Series/Lecture4_Fourie
 
 > [!note] Definition
 > For $f$ with period $2\ell$:
+>
 > $$f(x)=\tfrac12a_0+\sum_{n=1}^\infty\Big[a_n\cos\tfrac{n\pi x}{\ell}+b_n\sin\tfrac{n\pi x}{\ell}\Big],\qquad a_n=\tfrac1\ell\int_{-\ell}^{\ell}f\cos\tfrac{n\pi x}\ell\,dx,\quad b_n=\tfrac1\ell\int_{-\ell}^{\ell}f\sin\tfrac{n\pi x}\ell\,dx .$$
 
 ## Explanation

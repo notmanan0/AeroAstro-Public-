@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > Write the bending moment as a **single** expression valid along the whole beam using switch-on brackets
+>
 > $$[x-a]^n = \begin{cases}0 & x<a\\ (x-a)^n & x\ge a\end{cases}$$
+>
 > Then integrate $EIv'' = -M$ twice, never expanding a bracket: $\int[x-a]^ndx = [x-a]^{n+1}/(n+1)$. Only **two** integration constants appear, whatever the number of loads.
 
 ## Explanation

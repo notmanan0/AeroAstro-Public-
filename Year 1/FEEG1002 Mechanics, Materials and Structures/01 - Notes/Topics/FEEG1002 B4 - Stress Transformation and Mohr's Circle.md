@@ -20,7 +20,9 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 05 - Stresses on Inclined Sec
 
 > [!abstract] Summary
 > One stress state looks different on differently oriented planes. Equilibrium of a wedge gives the **transformation equations**:
+>
 > $$\sigma_{x'x'} = \frac{\sigma_{xx}+\sigma_{yy}}{2} + \frac{\sigma_{xx}-\sigma_{yy}}{2}\cos2\theta + \sigma_{xy}\sin2\theta,\qquad \sigma_{x'y'} = -\frac{\sigma_{xx}-\sigma_{yy}}{2}\sin2\theta + \sigma_{xy}\cos2\theta$$
+>
 > Eliminating $2\theta$ gives a **circle** in the ($\sigma$, $\tau$) plane, **Mohr's circle**, with centre $\sigma_{avg}$ and radius $R$. It shows at a glance:
 > - the **principal stresses** $\sigma_{I,II} = \sigma_{avg}\pm R$, on planes with zero shear, 90° apart;
 > - the **maximum in-plane shear** $R$, at 45° to the principal planes.
@@ -33,7 +35,9 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 05 - Stresses on Inclined Sec
 ## 1. A bar in tension, cut obliquely (L5a)
 - Cut at angle $\theta$: the same force $F$ acts on the larger area $A/\cos\theta$.
 - Split it into normal $F\cos\theta$ and shear $F\sin\theta$:
+
 $$\sigma_{x'x'} = \sigma_{xx}\cos^2\theta,\qquad \sigma_{x'y'} = -\sigma_{xx}\sin\theta\cos\theta$$
+
   The minus sign comes from the positive-shear convention.
 - The normal stress peaks on the cross-section ($\theta = 0$). The **shear peaks at ±45°**, with value $\sigma_{xx}/2$.
 - So even a purely tensile load can fail in **shear**, if the shear strength is less than half the tensile strength:
@@ -82,9 +86,11 @@ $$
 
 ## 4. Principal stresses and maximum shear (L6b)
 - The circle always cuts the horizontal axis twice: two perpendicular orientations with **zero shear**, the **principal directions**.
+
 $$
 \sigma_I = \sigma_{avg} + R,\qquad \sigma_{II} = \sigma_{avg} - R,\qquad \tan2\theta_p = \frac{2\sigma_{xy}}{\sigma_{xx}-\sigma_{yy}}
 $$
+
 - **Maximum in-plane shear** $= R = (\sigma_I - \sigma_{II})/2$. It occurs at the top and bottom of the circle, 45° from the principal axes, where the normal stress is $\sigma_{avg}$ on **both** faces.
 - Special circles:
   - **uniaxial**: the circle passes through the origin, and $\tau_{max} = \sigma/2$ at 45°;

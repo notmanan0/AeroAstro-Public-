@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture 1.07.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > These are time-domain measures of a (normalised) step response. For a standard second-order system:
+>
 > $$t_r\approx\frac{1.8}{\omega_n},\qquad OS = 100\,e^{-\zeta\pi/\sqrt{1-\zeta^2}}\ \%,\qquad t_p = \frac{\pi}{\omega_n\sqrt{1-\zeta^2}},\qquad t_s\approx\frac{4.6}{\zeta\omega_n}\ (1\%)\ \text{or}\ \frac{3}{\zeta\omega_n}\ (5\%)$$
 
 ## Explanation

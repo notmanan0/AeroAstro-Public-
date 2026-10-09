@@ -163,6 +163,7 @@ With FoS = 1.5 on Tresca: $P_{allow} = 3.32/1.5 = 2.21$ MPa.
 *$m_1 = 2$ kg is joined to ground by $k_1 = 1000$ N/m; $m_2 = 1$ kg is joined to ground by $k_2 = 2000$ N/m; $k_3 = 3000$ N/m couples the masses. Find the natural frequencies, mass-normalised modes, participation factors and effective masses for base motion.*
 
 ### Solution
+
 $$
 [M] = \begin{bmatrix}2&0\\0&1\end{bmatrix},\qquad[K] = \begin{bmatrix}4000&-3000\\-3000&5000\end{bmatrix}
 $$

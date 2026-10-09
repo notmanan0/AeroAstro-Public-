@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 3.01.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > The sequence of elements that turns a physical quantity into data a computer can use:
+>
 > $$\text{physical quantity}\to\text{sensor}\to\text{signal conditioning}\to\text{data acquisition (ADC)}\to\text{processing/display}$$
+>
 > The controller only ever sees the chain's output, the **measured** output, never the true one.
 
 ## Explanation

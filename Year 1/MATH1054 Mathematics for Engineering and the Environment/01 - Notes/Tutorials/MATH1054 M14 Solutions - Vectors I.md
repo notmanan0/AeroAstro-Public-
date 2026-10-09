@@ -31,9 +31,13 @@ sources: ["tmp/md/module_14_vectors_i.md", "02 - Sources/Modern Engineering Math
 # Part A: Worked examples
 
 ## Example 4.1: $\mathrm P=(2,-1,3)$
+
 $$|\mathrm{OP}|=\sqrt{4+1+9}=\boxed{\sqrt{14}\approx3.742}$$
+
 The direction cosines are the components of the unit vector:
+
 $$(l,m,n)=\Big(\tfrac2{\sqrt{14}},-\tfrac1{\sqrt{14}},\tfrac3{\sqrt{14}}\Big)\approx(0.535,-0.267,0.802)$$
+
 **Check**: $l^2+m^2+n^2=1$ ✔.
 
 ## Example 4.4: Vectors around Fig. 4.14
@@ -43,23 +47,33 @@ Every side is "end minus start":
 - $\mathbf e=\vec{\mathrm{CD}}=\boxed{\mathbf d-\mathbf c}$
 
 Going round the closed loop A→B→C→D→A gives $\mathbf g+\mathbf f+\mathbf e+\mathbf h=\mathbf0$, so
+
 $$\boxed{\mathbf e=-(\mathbf f+\mathbf g+\mathbf h)}$$
 
 ## Example 4.5: Quadrilateral OACB with $\vec{\mathrm{OC}}=\mathbf b+\tfrac12\mathbf a$
+
 $$\vec{\mathrm{BC}}=\vec{\mathrm{OC}}-\vec{\mathrm{OB}}=\boxed{\tfrac12\mathbf a},\qquad\vec{\mathrm{CA}}=\vec{\mathrm{OA}}-\vec{\mathrm{OC}}=\boxed{\tfrac12\mathbf a-\mathbf b}$$
+
 Since $\vec{\mathrm{BC}}\parallel\vec{\mathrm{OA}}$ and it is half as long, OACB is a **trapezium**.
 
 ## Example 4.6: Resultant of $|\mathbf F|=2$ N and $|\mathbf F'|=1$ N at $60°$
 The cosine rule gives the magnitude. In the parallelogram, the angle between $\mathbf F$ and $\mathbf F'$ is $60°$, so
+
 $$|\mathbf R|^2=2^2+1^2+2(2)(1)\cos60°=7\ \Rightarrow\ |\mathbf R|=\boxed{\sqrt7\approx2.646\ \text{N}}$$
+
 The angle $\alpha$ to $\mathbf F$ comes from the components along and perpendicular to $\mathbf F$:
+
 $$\tan\alpha=\frac{1\cdot\sin60°}{2+1\cdot\cos60°}=\frac{\sqrt3/2}{5/2}=\frac{\sqrt3}{5}\ \Rightarrow\ \alpha=\boxed{19.1°}$$
 
 ## Example 4.7: Aircraft in a north-west wind
 Take $\mathbf i$ east and $\mathbf j$ north. A **NW wind** blows **from** the north-west, towards the south-east, so
+
 $$\mathbf w=\frac{50}{\sqrt2}(\mathbf i-\mathbf j)=35.36\,\mathbf i-35.36\,\mathbf j.$$
+
 The aircraft's air velocity is $\mathbf a$, with $|\mathbf a|=400$, and the ground velocity $\mathbf a+\mathbf w$ must point **due west**. So the northward component of $\mathbf a$ must cancel the wind's southward drift:
+
 $$400\sin\theta=35.36\ \Rightarrow\ \theta=5.07°$$
+
 **Heading**: $5.07°$ **north of west** (a bearing of about $275°$).
 
 **Ground speed**: $400\cos\theta-35.36=398.43-35.36=\boxed{363.1\ \text{knots}}$.
@@ -74,7 +88,9 @@ $$400\sin\theta=35.36\ \Rightarrow\ \theta=5.07°$$
 
 ## Example 4.11
 **(a)**
+
 $$\mathbf d=\mathbf a-2\mathbf b+3\mathbf c=(2,-3,1)-(2,10,-4)+(9,-12,9)=\boxed{(9,-25,14)}$$
+
 **(b)** $|\mathbf d|=\sqrt{81+625+196}=\sqrt{902}\approx30.03$, so $\hat{\mathbf d}=\frac1{\sqrt{902}}(9,-25,14)$.
 **(c)** The direction cosines are $\big(\frac9{\sqrt{902}},\frac{-25}{\sqrt{902}},\frac{14}{\sqrt{902}}\big)\approx(0.300,-0.832,0.466)$.
 
@@ -93,7 +109,9 @@ As the transcription notes, the closing vector must be $\vec{\mathrm{Y''X}}$. Wi
 ## Example 4.13: Resultant of three forces
 - $\mathbf F_2=6\cdot\frac{(1,2,-2)}{3}=(2,4,-4)$
 - $\mathbf F_3=10\cdot\frac{(3,-4,0)}5=(6,-8,0)$
+
 $$\mathbf R=(1,1,1)+(2,4,-4)+(6,-8,0)=\boxed{(9,-3,-3)\ \text{N}},\qquad|\mathbf R|=3\sqrt{11}\approx9.95\ \text{N}$$
+
 The **equilibrant**, which makes the total zero, is $\boxed{(-9,3,3)\ \text{N}}$.
 
 ## Example 4.17: Dot products, with $\mathbf a=(1,-1,2)$, $\mathbf b=(-2,0,2)$, $\mathbf c=(3,2,1)$
@@ -104,6 +122,7 @@ The **equilibrant**, which makes the total zero, is $\boxed{(-9,3,3)\ \text{N}}$
 (e) $(\mathbf a\cdot\mathbf b)\mathbf c=2(3,2,1)=(6,4,2)$. This is a **vector**.
 
 ## Example 4.18: The angle between $(1,2,3)$ and $(2,0,4)$
+
 $$\cos\theta=\frac{2+0+12}{\sqrt{14}\sqrt{20}}=\frac{14}{\sqrt{280}}=0.8367\ \Rightarrow\ \boxed{\theta=33.2°}$$
 
 ## Example 4.19
@@ -114,6 +133,7 @@ $\mathbf a\cdot\mathbf b=3+2-3=2$ and $\mathbf a\cdot\mathbf c=-1+4-1=2$ ✔. Eq
 
 ## Example 4.22: Work done
 $\vec{\mathrm{PQ}}=(-2,3,1)-(1,4,-1)=(-3,-1,2)$, so
+
 $$W=\mathbf F\cdot\vec{\mathrm{PQ}}=-9+2+10=\boxed3$$
 
 ## Example 4.23: Components of $\mathbf F=(2,-1,3)$
@@ -139,7 +159,9 @@ Here $\mathbf a\cdot\mathbf c=1$, $\mathbf b\cdot\mathbf c=0$ and $\mathbf a\cdo
 (b) and (e) differ, so **the cross product is not associative**.
 
 ## Example 4.25: Unit normal to the plane of $\mathbf a=(2,-3,1)$ and $\mathbf b=(1,2,-4)$
+
 $$\mathbf a\times\mathbf b=\big((-3)(-4)-1\cdot2,\ 1\cdot1-2(-4),\ 2\cdot2-(-3)\cdot1\big)=(10,9,7),\qquad|\cdot|=\sqrt{230}$$
+
 $$\boxed{\hat{\mathbf n}=\pm\frac{1}{\sqrt{230}}(10,9,7)}$$
 
 ## Example 4.26: Area of triangle PQR
@@ -154,6 +176,7 @@ $$\text{Area}=\tfrac12|(11,-7,19)|=\tfrac12\sqrt{531}=\boxed{\tfrac{3\sqrt{59}}2
 - $\mathbf r\times(4,5,-2)=\big(1(-2)-(-2)5,\ (-2)4-1(-2),\ 5-4\big)=(8,-6,1)$.
 
 $$\mathbf M_{\mathrm A}=\mathbf r\times\mathbf F=\frac{4}{3\sqrt5}(8,-6,1)\approx\boxed{(4.770,\,-3.578,\,0.596)},\qquad|\mathbf M|=\frac{4\sqrt{101}}{3\sqrt5}\approx5.99$$
+
 The **moments about axes through A** parallel to $x$, $y$ and $z$ are the components: $4.770$, $-3.578$ and $0.596$.
 
 ## Example 4.29: Velocity of a point on a rotating body
@@ -173,6 +196,7 @@ Take $\mathbf i$ east and $\mathbf j$ north, and let the true wind be $\mathbf w
 - At $\mathbf v=(16,0)$, the felt wind $(p-16,q)=(-8,q)$ comes **from the NE**, so it points towards the SW. Its components must be equal, so $q=-8$.
 
 $$\boxed{\mathbf w=(8,-8)\ \text{km/h}:\ 8\sqrt2\approx11.3\ \text{km/h from the north-west}}$$
+
 See the right panel of the relative-velocity figure above.
 
 ## Exercise 11: $\mathbf a=(1,1,0)$, $\mathbf b=(2,2,1)$, $\mathbf c=(0,1,1)$
@@ -188,7 +212,9 @@ See the right panel of the relative-velocity figure above.
 | (h) | $\hat{\mathbf b}$ | $\frac13(2,2,1)$ |
 
 ## Exercise 12: $\vec{\mathrm{PQ}}$
+
 $$\vec{\mathrm{PQ}}=(5,-2,4)-(1,3,-7)=\boxed{(4,-5,11)},\qquad|\mathrm{PQ}|=\sqrt{16+25+121}=\sqrt{162}=\boxed{9\sqrt2\approx12.73}$$
+
 The direction cosines are $\frac1{9\sqrt2}(4,-5,11)\approx(0.314,-0.393,0.864)$.
 
 ## Exercise 19: Collinearity
@@ -204,16 +230,21 @@ $\vec{\mathrm{PQ}}=(1,5,-3)$ and $\vec{\mathrm{QR}}=(1,5,-3)$. These are **equal
 
 ## Exercise 28
 **(a)**
+
 $$\cos\theta=\frac{\mathbf u\cdot\mathbf w}{|\mathbf u||\mathbf w|}=\frac{-4}{\sqrt{20}\sqrt{41}}=-0.1397\ \Rightarrow\ \boxed{\theta=98.0°}$$
+
 **(c)** We need $(\mathbf u+\lambda\mathbf k)\cdot(\mathbf v-\lambda\mathbf i)=0$:
+
 $$(4,0,-2+\lambda)\cdot(3-\lambda,1,-1)=12-4\lambda+2-\lambda=14-5\lambda=0\ \Rightarrow\ \boxed{\lambda=\tfrac{14}5}$$
 
 ## Exercise 31: Work done
 $\vec{\mathrm{PQ}}=(1,-3,4)-(-1,2,3)=(2,-5,1)$, so
+
 $$W=(-2,-1,3)\cdot(2,-5,1)=-4+5+3=\boxed4$$
 
 ## Exercise 32: The resolved part
 $\mathbf F=5\dfrac{(2,-3,1)}{\sqrt{14}}$. Its resolved part along $(3,2,1)$ is
+
 $$\mathbf F\cdot\frac{(3,2,1)}{\sqrt{14}}=\frac{5(6-6+1)}{14}=\boxed{\tfrac5{14}\approx0.357\ \text{units}}$$
 
 ## Exercise 41: $\mathbf p=(1,1,1)$, $\mathbf q=(0,-1,2)$, $\mathbf r=(2,2,1)$
@@ -249,10 +280,13 @@ $$\mathbf M_{\mathrm A}=\frac{4}{\sqrt{21}}(-2,-8,-1)\approx\boxed{(-1.746,\,-6.
 - **(a)** $\vec{\mathrm{AC}}=\boxed{\mathbf a+\mathbf b}$
 - **(b)** $\vec{\mathrm{AD}}=\boxed{\mathbf a+\mathbf b+\mathbf c}$
 - **(c)** E is the midpoint of AB and G is the midpoint of CD, so
+
 $$\vec{\mathrm{EG}}=\vec{\mathrm{EB}}+\vec{\mathrm{BC}}+\vec{\mathrm{CG}}=\boxed{\tfrac12\mathbf a+\mathbf b+\tfrac12\mathbf c}$$
 
 **(ii)** $\mathbf b+\mathbf c=\vec{\mathrm{BD}}$. The angle $\theta$ at C lies between $\vec{\mathrm{CB}}=-\mathbf b$ and $\vec{\mathrm{CD}}=\mathbf c$, so $\mathbf b\cdot\mathbf c=-bc\cos\theta$. Then
+
 $$|\mathbf b+\mathbf c|^2=b^2+c^2+2\mathbf b\cdot\mathbf c\ \Rightarrow\ \boxed{|\mathbf b+\mathbf c|=\sqrt{b^2+c^2-2bc\cos\theta}}$$
+
 This is just the cosine rule in triangle BCD.
 
 ## Q2
@@ -269,28 +303,35 @@ This is just the cosine rule in triangle BCD.
 **(i)** $\mathbf b\cdot\mathbf c=3-6+1=\boxed{-2}$.
 
 **(ii)**
+
 $$\cos\theta=\frac{-2}{\sqrt{11}\sqrt{14}}=-0.1612\ \Rightarrow\ \boxed{\theta=99.3°}$$
 
 ## Q5: Work done
 **(i)** $\mathbf F=6\,\dfrac{(1,2,1)}{\sqrt6}=\boxed{\sqrt6\,(\mathbf i+2\mathbf j+\mathbf k)}$ N
 
 **(ii)** $\vec{\mathrm{AB}}=(1,1,2)$, so
+
 $$W=\mathbf F\cdot\vec{\mathrm{AB}}=\sqrt6(1+2+2)=\boxed{5\sqrt6\approx12.25\ \text{J}}$$
 
 ## Q6: $\mathbf a=(2,0,1)$, $\mathbf b=(-2,4,3)$
 **(i)**
+
 $$\mathbf a\times\mathbf b=(0\cdot3-1\cdot4,\ 1(-2)-2\cdot3,\ 2\cdot4-0)=\boxed{(-4,-8,8)}$$
+
 **(ii)** $|\mathbf a\times\mathbf b|=12$, so the unit perpendicular is $\boxed{\pm\tfrac13(-1,-2,2)}$.
 
 ## Q7: Moment about $(1,1,1)$
 $\mathbf r=(2,6,1)-(1,1,1)=(1,5,0)$, so
+
 $$\mathbf M=\mathbf r\times\mathbf F=(1,5,0)\times(5,0,2)=(10-0,\ 0-2,\ 0-25)=\boxed{(10,-2,-25)\ \text{N m}}$$
 
 ## Q8: Rotating body
 **(i)** The axis direction is $(2,3,2)-(1,0,0)=(1,3,2)$, with $|\cdot|=\sqrt{14}$. So
+
 $$\boldsymbol\omega=\boxed{\tfrac4{\sqrt{14}}(\mathbf i+3\mathbf j+2\mathbf k)}\ \text{rad/s}$$
 
 **(ii)** Use the point A$(1,0,0)$ on the axis, so $\vec{\mathrm{AP}}=(1,1,1)$:
+
 $$\mathbf v=\boldsymbol\omega\times\vec{\mathrm{AP}}=\tfrac4{\sqrt{14}}(1,3,2)\times(1,1,1)=\tfrac4{\sqrt{14}}(1,1,-2)\approx\boxed{(1.069,\,1.069,\,-2.138)}\ \text{m/s}$$
 
 ## Sources

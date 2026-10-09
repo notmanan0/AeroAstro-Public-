@@ -40,7 +40,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture21_vect
   - $\mathbf a\perp\mathbf b\iff\mathbf a\cdot\mathbf b=0$.
   - The projection of $\mathbf a$ onto $\mathbf b$ is $\mathbf a\cdot\hat{\mathbf b}$.
 - **Cross product**: $\mathbf a\times\mathbf b=|\mathbf a||\mathbf b|\sin\theta\,\hat{\mathbf n}$, with $\hat{\mathbf n}$ given by the right-hand rule.
+
 $$\mathbf a\times\mathbf b=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2&a_3\\b_1&b_2&b_3\end{vmatrix}=(a_2b_3-a_3b_2)\mathbf i+(a_3b_1-a_1b_3)\mathbf j+(a_1b_2-a_2b_1)\mathbf k .$$
+
   - It is **anti-commutative**: $\mathbf a\times\mathbf b=-\mathbf b\times\mathbf a$.
   - $\mathbf a\times\mathbf a=\mathbf 0$.
   - $|\mathbf a\times\mathbf b|$ is the area of the parallelogram spanned by $\mathbf a$ and $\mathbf b$. This is why it appears in $dA$ (VC4).
@@ -56,6 +58,7 @@ $$\mathbf a\times\mathbf b=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\a_1&a_2
 **Derivation of the working formula**:
 1. Let $f(t)=\phi(\mathbf r_0+t\mathbf v)$. Then the directional derivative is $f'(0)$.
 2. The chain rule, with $x=r_1+tv_1$ and so on, gives
+
 $$f'(0)=v_1\phi_x+v_2\phi_y+v_3\phi_z=\mathbf v\cdot\nabla\phi .$$
 
 $$\boxed{\nabla\phi=\frac{\partial\phi}{\partial x}\mathbf i+\frac{\partial\phi}{\partial y}\mathbf j+\frac{\partial\phi}{\partial z}\mathbf k,\qquad \text{rate of change in direction }\hat{\mathbf v}=\hat{\mathbf v}\cdot\nabla\phi}$$
@@ -70,7 +73,9 @@ $\hat{\mathbf v}\cdot\nabla\phi=|\nabla\phi|\cos\theta$, which lies between $-|\
 
 ## 5. Normal to level surfaces (Theorem 2)
 Let $\mathbf v$ be tangent to the surface $\phi=c_0$ at $P$. Moving along the surface, $\phi$ does not change, so $\mathbf v\cdot\nabla\phi=0$ for every tangent $\mathbf v$. Therefore
+
 $$\nabla\phi\ \text{is normal to }\phi=\text{const}.$$
+
 This gives the geometric definition $\nabla\phi=\dfrac{\partial\phi}{\partial n}\hat{\mathbf n}$.
 
 ![[m2048_vc_gradient_level_curves.png|520]]

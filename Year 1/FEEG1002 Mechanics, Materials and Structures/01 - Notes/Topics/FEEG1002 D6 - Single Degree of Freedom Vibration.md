@@ -22,7 +22,9 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 06 - SDOF Vibration.pdf"]
 > Vibration needs **stiffness**, which stores PE and provides the restoring force, and **mass**, which stores KE and carries the motion through equilibrium. **Damping** removes energy.
 >
 > A structure is modelled by lumped equivalents: a rigid mass on a massless spring $k$ with a viscous damper $c$. Measured from the **static equilibrium** position:
+>
 > $$m\ddot x + c\dot x + kx = f(t),\qquad \omega_n = \sqrt{k/m},\quad \zeta = \frac{c}{2\sqrt{km}},\quad \omega_d = \omega_n\sqrt{1-\zeta^2}$$
+>
 > - **Free vibration** happens only at the natural frequency and decays as $e^{-\zeta\omega_nt}$. The **log decrement** measures $\zeta$.
 > - **Forced harmonic vibration** is described by the **FRF** $X/F = 1/(k - \omega^2m + j\omega c)$. It is stiffness-, damping- or mass-controlled below, near and above $\omega_n$.
 

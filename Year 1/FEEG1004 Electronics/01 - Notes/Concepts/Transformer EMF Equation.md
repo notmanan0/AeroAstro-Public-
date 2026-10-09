@@ -17,6 +17,7 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf"]
 
 > [!note] Definition
 > For a sinusoidal flux $\Phi = \Phi_m\sin2\pi ft$ linking $N$ turns:
+>
 > $$E_{rms} = \frac{2\pi}{\sqrt2}fN\Phi_m = 4.44\,fN\Phi_m,\qquad B_m = \frac{\Phi_m}{A_{core}}$$
 
 ## Explanation

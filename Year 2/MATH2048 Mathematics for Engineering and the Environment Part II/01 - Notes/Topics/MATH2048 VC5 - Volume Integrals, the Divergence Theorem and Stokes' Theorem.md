@@ -27,7 +27,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vect
 > **Volume integrals in curvilinear coordinates**: $dV=|J|\,ds\,dt\,du$, where $J$ is the Jacobian. In cylindrical coordinates $dV=\rho\,d\rho\,d\phi\,dz$; in spherical coordinates $dV=r^2\sin\theta\,dr\,d\theta\,d\phi$.
 >
 > **The two big theorems.** Each turns an integral of a derivative over a region into an integral over the region's boundary, like $\int_a^bf'=f(b)-f(a)$:
-> $$\underbrace{\iiint_V\nabla\cdot\mathbf F\,dV=\oiint_{\partial V}\mathbf F\cdot d\mathbf S}_{\text{Gauss (divergence)}}\qquad \underbrace{\iint_S(\nabla\times\mathbf F)\cdot d\mathbf S=\oint_{\partial S}\mathbf F\cdot d\mathbf r}_{\text{Stokes}}$$
+>
+> $$\underbrace{\iiint_V\nabla\cdot\mathbf F\,dV=\mathop{\large ∯}_{\partial V}\mathbf F\cdot d\mathbf S}_{\text{Gauss (divergence)}}\qquad \underbrace{\iint_S(\nabla\times\mathbf F)\cdot d\mathbf S=\oint_{\partial S}\mathbf F\cdot d\mathbf r}_{\text{Stokes}}$$
+>
 > Green's theorem is Stokes's theorem in the plane.
 >
 > Examined in 2025/26 B2 (20 marks): Gauss on a hemisphere, the Jacobian for spherical coordinates, and a shifted domain.
@@ -39,18 +41,22 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vect
 
 ## 1. Jacobians and volume elements (L29)
 For new coordinates $(s,t,u)$ with $x=x(s,t,u)$, $y=y(s,t,u)$, $z=z(s,t,u)$:
+
 $$
 dV=\left|\frac{\partial(x,y,z)}{\partial(s,t,u)}\right|ds\,dt\,du,\qquad J=\det\begin{pmatrix}x_s&x_t&x_u\\y_s&y_t&y_u\\z_s&z_t&z_u\end{pmatrix}.
 $$
 
 **Cylindrical**, $x=\rho\cos\phi$, $y=\rho\sin\phi$, $z=z$:
+
 $$J=\begin{vmatrix}\cos\phi&-\rho\sin\phi&0\\\sin\phi&\rho\cos\phi&0\\0&0&1\end{vmatrix}=\rho(\cos^2\phi+\sin^2\phi)=\rho .$$
 
 **Spherical**, $x=r\sin\theta\cos\phi$, $y=r\sin\theta\sin\phi$, $z=r\cos\theta$ (the 2025/26 B2(c) derivation). Expand along the bottom row $(\cos\theta,\ -r\sin\theta,\ 0)$:
+
 $$
 J=\begin{vmatrix}\sin\theta\cos\phi&r\cos\theta\cos\phi&-r\sin\theta\sin\phi\\\sin\theta\sin\phi&r\cos\theta\sin\phi&r\sin\theta\cos\phi\\\cos\theta&-r\sin\theta&0\end{vmatrix}
 =\cos\theta\,\big(r^2\sin\theta\cos\theta\big)+r\sin\theta\,\big(r\sin^2\theta\big)=r^2\sin\theta .
 $$
+
 The two $2\times2$ minors are:
 - $r\cos\theta\cos\phi\cdot r\sin\theta\cos\phi+r\sin\theta\sin\phi\cdot r\cos\theta\sin\phi=r^2\sin\theta\cos\theta$;
 - $\sin\theta\cos\phi\cdot r\sin\theta\cos\phi+r\sin\theta\sin\phi\cdot\sin\theta\sin\phi=r\sin^2\theta$.
@@ -64,7 +70,9 @@ Adding, $J=r^2\sin\theta(\cos^2\theta+\sin^2\theta)$. So $dV=r^2\sin\theta\,dr\,
 
 ## 2. The divergence theorem (L29, Notes §8.3.6)
 Let $V$ be a bounded solid with closed boundary $\partial V$, and let $\hat{\mathbf n}$ point **outward**. Then
-$$\boxed{\iiint_V(\nabla\cdot\mathbf F)\,dV=\oiint_{\partial V}\mathbf F\cdot d\mathbf S}$$
+
+$$\boxed{\iiint_V(\nabla\cdot\mathbf F)\,dV=\mathop{\large ∯}_{\partial V}\mathbf F\cdot d\mathbf S}$$
+
 In words: total source strength inside equals net outflow through the boundary.
 
 > [!example] Notes Ex. 1: $\mathbf F=\mathbf r$ on the closed cylinder (radius $a$, height $h$)
@@ -75,7 +83,7 @@ In words: total source strength inside equals net outflow through the boundary.
 >
 > The total is $3\pi a^2h$.
 >
-> **The easy way**: $\nabla\cdot\mathbf r=3$, so the flux is $3V=3\pi a^2h$ ✔. In general, $\oiint\mathbf r\cdot d\mathbf S=3\times$ the enclosed volume.
+> **The easy way**: $\nabla\cdot\mathbf r=3$, so the flux is $3V=3\pi a^2h$ ✔. In general, $\mathop{\large ∯}\mathbf r\cdot d\mathbf S=3\times$ the enclosed volume.
 
 > [!example] Notes Ex. 2: an open surface, closed off with a disc
 > $\mathbf F=2xy^2\,\mathbf i+z^3\,\mathbf j-x^2y\,\mathbf k$ through the upper hemisphere $S$ of radius $a$.
@@ -97,6 +105,7 @@ In words: total source strength inside equals net outflow through the boundary.
 
 ## 3. Stokes's theorem (L30, Notes §8.3.1)
 Let $S$ be an orientable surface with boundary curve $\partial S$. Then
+
 $$\boxed{\iint_S(\nabla\times\mathbf F)\cdot d\mathbf S=\oint_{\partial S}\mathbf F\cdot d\mathbf r}$$
 
 **Orientation (right-hand rule)**: curl the fingers of your right hand along $\partial S$; your thumb then points along $\hat{\mathbf n}$. For an upward normal, $\partial S$ is traversed **anticlockwise when viewed from above**.
@@ -125,7 +134,9 @@ $$\boxed{\iint_S(\nabla\times\mathbf F)\cdot d\mathbf S=\oint_{\partial S}\mathb
 
 ## 4. Green's theorem (Stokes in the plane)
 Take $\mathbf F=(F_1(x,y),F_2(x,y),0)$ and $d\mathbf S=\mathbf k\,dx\,dy$:
+
 $$\iint_S\Big(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\Big)dx\,dy=\oint_{\partial S}(F_1\,dx+F_2\,dy),$$
+
 with $\partial S$ traversed anticlockwise.
 
 *Proof outline (not examinable)*: split $\partial S$ into an upper curve $y_+(x)$ and a lower curve $y_-(x)$. Then $\oint F_1\,dx=-\iint\partial_yF_1\,dx\,dy$, and the $F_2$ term works the same way.
@@ -141,7 +152,7 @@ If $\nabla\cdot\mathbf G=0$ in a simply connected region, then $\mathbf G=\nabla
 | Fundamental theorem for gradients | $\int_A^B\nabla\phi\cdot d\mathbf r=\phi(B)-\phi(A)$ | curve → endpoints |
 | Green | $\iint(F_{2,x}-F_{1,y})\,dA=\oint F_1dx+F_2dy$ | plane region → boundary curve |
 | Stokes | $\iint(\nabla\times\mathbf F)\cdot d\mathbf S=\oint\mathbf F\cdot d\mathbf r$ | surface → boundary curve |
-| Gauss | $\iiint\nabla\cdot\mathbf F\,dV=\oiint\mathbf F\cdot d\mathbf S$ | volume → boundary surface |
+| Gauss | $\iiint\nabla\cdot\mathbf F\,dV=\mathop{\large ∯}\mathbf F\cdot d\mathbf S$ | volume → boundary surface |
 
 ## Links
 - Parent: [[MATH2048 Mathematics for Engineering and the Environment Part II Hub]] · Previous: [[MATH2048 VC4 - Surfaces, Surface Area and Flux Integrals]]

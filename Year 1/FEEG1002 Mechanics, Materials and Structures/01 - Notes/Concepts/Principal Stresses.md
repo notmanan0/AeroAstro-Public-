@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > The normal stresses on the orientations with **zero shear**:
+>
 > $$\sigma_{I,II} = \frac{\sigma_{xx}+\sigma_{yy}}2 \pm\sqrt{\left(\frac{\sigma_{xx}-\sigma_{yy}}2\right)^2 + \sigma_{xy}^2},\qquad \tan2\theta_p = \frac{2\sigma_{xy}}{\sigma_{xx}-\sigma_{yy}}$$
+>
 > The principal directions are 90° apart. The maximum in-plane shear $(\sigma_I - \sigma_{II})/2$ acts at 45° to them.
 
 ## Explanation

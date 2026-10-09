@@ -49,6 +49,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-3ab Circuits KCL KVL Resistors - 
 - The benefit runs both ways: circuit tools solve fluidic networks (microfluidics, pipe networks).
 
 ## 2. Ohm's law and resistance
+
 $$
 V = IR,\qquad R = \frac{\rho L}{A}
 $$

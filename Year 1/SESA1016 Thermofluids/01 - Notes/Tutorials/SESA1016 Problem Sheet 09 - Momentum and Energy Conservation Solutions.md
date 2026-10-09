@@ -229,7 +229,7 @@ $$\boxed{V_2=\frac{\dot m}{\rho_2A_2}=28.57\ \mathrm{m\,s^{-1}}}.$$
 Retaining outlet kinetic energy,
 
 $$
-700=\dot m\left[\Delta h+rac12
+700=\dot m\left[\Delta h+\frac12
 \left(\frac{\dot m}{\rho_2A_2}\right)^2\right].
 $$
 

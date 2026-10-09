@@ -43,11 +43,13 @@ Suppose walkers on a grid with spacing $\Delta x$ each flip two coins every time
 - one of each: stay put.
 
 Counting who arrives at $x$ gives
+
 $$
 y(x,t+\Delta t)=\tfrac14\big[y(x+\Delta x,t)+y(x-\Delta x,t)+2y(x,t)\big].
 $$
 
 Taylor-expand both sides: the left side is $y+y_t\Delta t$, and on the right $y(x\pm\Delta x)=y\pm y_x\Delta x+\frac12y_{xx}\Delta x^2$. The $y$ terms and the $y_x$ terms cancel, leaving
+
 $$
 y_t\,\Delta t=\tfrac14y_{xx}\,\Delta x^2\quad\Longrightarrow\quad y_t=\kappa^2y_{xx},\qquad \kappa^2=\lim\frac{(\Delta x)^2}{4\Delta t}.
 $$
@@ -63,7 +65,9 @@ Model a rod with conductivity $\kappa$, cross-sectional area $A$ and specific-he
 
 ### Generalised heat equation (§6.3, sets up Sturm–Liouville)
 If the properties vary along the rod, and there is heat loss $-qy$ and a source $F$:
+
 $$r(x)\,y_t=\big(p(x)\,y_x\big)_x-q(x)\,y+F(x,t).$$
+
 Separating $y=XT$ in the homogeneous case gives $\dot T+\lambda T=0$ and $(pX')'-qX+\lambda rX=0$. The second equation is exactly a **Sturm–Liouville problem**. The general theory then guarantees real eigenvalues and orthogonal eigenfunctions (with weight $r$), and says which BCs are allowed.
 
 ### Allowed boundary conditions (§6.4)
@@ -88,19 +92,23 @@ Solve $u_t=\kappa^2u_{xx}$ on $[0,1]$ with $u_x(0,t)=u_x(1,t)=0$ and $u(x,0)=x(1
 - $\lambda_n=-(n\pi)^2$ with $X_n=\cos n\pi x$.
 
 **Step 4.** The $T$ equation is now **first order**: $\dot T_n=-\kappa^2(n\pi)^2T_n$. Separating variables,
+
 $$
 \int\frac{dT_n}{T_n}=-\kappa^2(n\pi)^2\int dt\ \Longrightarrow\ T_n=C_ne^{-\kappa^2(n\pi)^2t},\qquad T_0=\text{const}.
 $$
 
 **Step 5.**
+
 $$
 u=H+\sum_{n\geq1}C_ne^{-\kappa^2(n\pi)^2t}\cos n\pi x .
 $$
 
 **Step 6.** Only $u(x,0)$ is given. It is the same cosine series as the open pipe, so $H=\frac16$ and $C_n=-\frac{2[1+(-1)^n]}{(n\pi)^2}$:
+
 $$
 \boxed{u(x,t)=\frac16-\sum_{n\ \mathrm{even}}\frac{4}{(n\pi)^2}e^{-\kappa^2(n\pi)^2t}\cos n\pi x}
 $$
+
 The slides set $\kappa=1$.
 
 ![[m2048_pde_heat_dirichlet_vs_neumann.png|760]]

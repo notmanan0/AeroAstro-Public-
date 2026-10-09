@@ -44,7 +44,9 @@ Reactions: $H_A = 0$, and moments about A give $24V_E = 8(15) + 16(15)$, so $V_E
 
 - **$F_{DE}$ (joint E)**: $\sum F_V$: $15 + F_{DE}\sin\theta = 0$, so $F_{DE} = \mathbf{-25}$ **kN** ✔
 - **$F_{GF}$ (section through BC, GC, GF; take the right part)**: moments about C remove $F_{BC}$ and $F_{GC}$:
+
 $$\sum M_C:\ 3(-F_{GF}) + 4(-15) + 12(15) = 0 \Rightarrow F_{GF} = \mathbf{+40}\ \text{kN}\ ✔$$
+
 - **$F_{GC}$ (same section)**: $\sum F_V$: $15 - 15 - F_{GC}\sin\theta = 0$, so $F_{GC} = \mathbf{0}$ ✔. The centre panel carries no shear, just as a symmetric beam has $Q = 0$ between its two equal loads.
 
 ![[s1_t2_q2_warren_truss.png|900]]
@@ -74,6 +76,7 @@ $L = 2$ m, $A = 600\times10^{-6}$ m², $E = 70$ GPa. A 200 N load acts at C at 4
 with $\delta = \dfrac{200\sqrt2(2)}{(600\times10^{-6})(70\times10^9)} = 13.47\ \mu$m. Both bars change length by the same magnitude.
 
 **Displacement diagram.** C moves $+\delta$ along AC (to the right) and $-\delta$ along BC, i.e. towards B:
+
 $$u_x = \delta,\qquad \frac{u_x - u_y}{\sqrt2} = -\delta\;\Rightarrow\; u_y = (1+\sqrt2)\,\delta = 2.414\,\delta$$
 
 $$

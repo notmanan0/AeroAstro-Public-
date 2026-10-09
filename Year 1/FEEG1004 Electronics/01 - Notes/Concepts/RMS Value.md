@@ -16,7 +16,9 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W22 AC Analysis 01 - Phasors and Compl
 ## Definition
 
 > [!note] Definition
+>
 > $$V_{rms} = \sqrt{\frac{1}{T}\int_0^Tv^2\,dt},\qquad V_{rms} = \frac{V_p}{\sqrt2}\approx0.707V_p\ \text{(sinusoid)}$$
+>
 > It is the DC value that gives the same average power in a resistor.
 
 ## Explanation

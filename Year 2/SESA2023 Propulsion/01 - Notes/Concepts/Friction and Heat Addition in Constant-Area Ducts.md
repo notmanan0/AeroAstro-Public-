@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 
 > [!note] Definition
 > Steady 1-D flow in a constant-area duct, with a dimensionless friction $f$ and heating $q$:
+>
 > $$\rho_1u_1 = \rho_2u_2,\quad p_1(1+\gamma M_1^2-f) = p_2(1+\gamma M_2^2),\quad h_1\Big(1+\tfrac{\gamma-1}{2}M_1^2+q\Big) = h_2\Big(1+\tfrac{\gamma-1}{2}M_2^2\Big)$$
 
 ## Explanation

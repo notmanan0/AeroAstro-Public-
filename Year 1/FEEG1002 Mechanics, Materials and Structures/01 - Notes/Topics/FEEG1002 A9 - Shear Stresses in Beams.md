@@ -20,7 +20,9 @@ sources: ["02 - Sources/Statics 1/Lectures/Lecture 14 - Shear Stresses in Beams.
 
 > [!abstract] Summary
 > The shear force $Q$ is the resultant of shear stresses $\sigma_{yx}$ acting on the cut face. By moment equilibrium of a small element, equal **complementary** shear stresses $\sigma_{xy}$ must act on horizontal planes. When $M$ varies along the beam, the bending stress differs on the two ends of a longitudinal strip. Only a horizontal shear stress on the strip's inner face can balance the difference, which gives
+>
 > $$\tau = \sigma_{xy} = \frac{Q\,A_s\bar y}{I\,b}$$
+>
 > For a rectangle this is a **parabola**, zero at the surfaces and $\tfrac32\tau_{avg}$ at the neutral axis: exactly where the bending stress is zero.
 
 ## Key Concepts

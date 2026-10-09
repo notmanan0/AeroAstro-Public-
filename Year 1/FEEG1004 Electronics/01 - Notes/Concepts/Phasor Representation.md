@@ -16,6 +16,7 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W22 AC Analysis 01 - Phasors and Compl
 ## Definition
 
 > [!note] Definition
+>
 > $$v(t) = \sqrt2V\cos(\omega t + \theta) = \Re\{\sqrt2\,\mathbf Ve^{j\omega t}\},\qquad \mathbf V = Ve^{j\theta} = V\angle\theta = V\cos\theta + jV\sin\theta$$
 
 ## Explanation

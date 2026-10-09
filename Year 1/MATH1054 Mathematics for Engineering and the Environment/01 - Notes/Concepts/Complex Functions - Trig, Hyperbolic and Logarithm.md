@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §3.2.9–3.2.10", "M
 
 > [!note] Definition
 > For $z=x+\mathrm jy$:
+>
 > $$\sin z=\sin x\cosh y+\mathrm j\cos x\sinh y,\quad\cos z=\cos x\cosh y-\mathrm j\sin x\sinh y,\quad\ln z=\ln|z|+\mathrm j(\operatorname{Arg}z+2k\pi)$$
 
 ## Explanation

@@ -17,8 +17,11 @@ sources: []
 
 > [!note] Definition
 > The transverse shear stress at level $y$ in a beam carrying shear force $Q$:
+>
 > $$\tau = \sigma_{xy} = \frac{Q\,A_s\bar y}{I\,b}$$
+>
 > Here $A_s\bar y$ is the first moment, about the neutral axis, of the area beyond $y$, and $b$ is the width at $y$. For a rectangle:
+>
 > $$\tau = \tfrac32\frac{Q}{A}\left[1-\left(\frac{y}{d/2}\right)^2\right]$$
 
 ## Explanation

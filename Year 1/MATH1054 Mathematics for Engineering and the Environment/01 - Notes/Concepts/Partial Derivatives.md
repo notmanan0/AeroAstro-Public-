@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §9.6", "MATH1054 Mod
 
 > [!note] Definition
 > For $f(x,y)$, $\dfrac{\partial f}{\partial x}$ is the derivative with respect to $x$, holding $y$ **constant**:
+>
 > $$\frac{\partial f}{\partial x}=\lim_{\Delta x\to0}\frac{f(x+\Delta x,y)-f(x,y)}{\Delta x}$$
 
 ## Explanation

@@ -133,6 +133,7 @@ $$
 $$
 
 ## 6. Incompressible Navier–Stokes equations (L8)
+
 $$
 \boxed{\begin{aligned}
 &\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y} = 0\\

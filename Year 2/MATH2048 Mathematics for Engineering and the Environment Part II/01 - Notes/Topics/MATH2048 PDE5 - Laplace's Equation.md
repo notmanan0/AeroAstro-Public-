@@ -91,6 +91,7 @@ This works because Laplace's equation is **linear**.
 - The equation becomes $\frac1r(r\phi_r)_r+\frac{1}{r^2}\phi_{\theta\theta}=0$.
 - $2\pi$-periodicity in $\theta$ gives $\cos n\theta$ and $\sin n\theta$.
 - The radial part is an Euler equation (Block 1), with solutions $r^{\pm n}$. Finiteness at $r=0$ keeps only $r^n$:
+
 $$
 \phi=\tfrac12a_0+\sum r^n(a_n\cos n\theta+b_n\sin n\theta) .
 $$

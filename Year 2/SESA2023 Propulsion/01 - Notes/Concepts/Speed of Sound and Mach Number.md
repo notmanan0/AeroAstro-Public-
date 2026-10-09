@@ -15,6 +15,7 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
 ## Definition
 
 > [!note] Definition
+>
 > $$a^2 = \left(\frac{\partial p}{\partial\rho}\right)_s = \frac{\gamma p}{\rho} = \gamma RT,\qquad M = \frac{V}{a}$$
 
 ## Explanation

@@ -17,6 +17,7 @@ sources: []
 
 > [!note] Definition
 > Axes attached to the particle: $\mathbf u_t$ is tangent to the path (along $\mathbf v$) and $\mathbf u_n$ points to the centre of curvature.
+>
 > $$\mathbf v = v\mathbf u_t,\qquad \mathbf a = \dot v\,\mathbf u_t + \frac{v^2}{\rho}\mathbf u_n,\qquad \rho = \frac{[1 + (dy/dx)^2]^{3/2}}{|d^2y/dx^2|}$$
 
 ## Explanation

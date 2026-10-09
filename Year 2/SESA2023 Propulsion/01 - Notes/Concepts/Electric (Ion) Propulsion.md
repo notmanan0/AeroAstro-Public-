@@ -19,6 +19,7 @@ sources: ["02 - Sources/Lectures/Week 10 - Rockets.pdf", "03 - Exams & Past Pape
 
 > [!note] Definition
 > Ions (e.g. singly charged xenon) are accelerated through a net potential $V_b$ by electrostatic grids:
+>
 > $$v = \sqrt{\frac{2qV_b}{m_i}},\qquad\dot m = \frac{I_bm_i}{q},\qquad F = \dot mv\cos\theta_{div} = I_b\sqrt{\frac{2m_iV_b}{q}}\cos\theta_{div}$$
 
 ## Explanation

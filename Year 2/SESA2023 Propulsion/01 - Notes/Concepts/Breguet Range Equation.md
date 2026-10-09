@@ -15,6 +15,7 @@ sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$s = \frac{L}{D}\frac{V_0}{g_0\,\text{TSFC}}\ln\frac{W_1}{W_2} = \eta_O\frac{LCV}{g_0}\frac{L}{D}\ln\frac{W_1}{W_2}\qquad(W_1\text{ initial},\ W_2\text{ final})$$
 
 ## Explanation

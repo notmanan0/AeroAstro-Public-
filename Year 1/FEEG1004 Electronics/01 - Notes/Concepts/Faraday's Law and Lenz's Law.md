@@ -16,7 +16,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W03-2ab Magnetism and Induction - Rec
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathcal E = -N\frac{d\Phi}{dt}$$
+>
 > A changing flux through an $N$-turn coil induces an EMF. **Lenz**: its direction drives a current whose field opposes the change.
 
 ## Explanation

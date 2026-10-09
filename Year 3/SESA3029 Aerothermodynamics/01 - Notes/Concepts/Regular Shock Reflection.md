@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf"]
 
 > [!note] Definition
 > When an oblique shock (A) meets a solid wall, the flow behind it, which is turned by $\theta$ towards the wall, must be turned back parallel to the wall. A second oblique shock (B) does this, turning the zone-2 flow by the **same** $\theta$, now from $M_2$:
+>
 > $$\beta_B=\beta(\theta,M_2),\qquad \phi=\beta_B-\theta\ne\beta_A.$$
 
 ## How to solve it

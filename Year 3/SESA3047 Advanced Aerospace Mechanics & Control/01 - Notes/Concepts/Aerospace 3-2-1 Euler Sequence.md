@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 
 > [!note] Definition
 > Aircraft attitude is the orientation of body FRD relative to local NED. It is built from yaw $\psi$ about $z$, then pitch $\theta$ about the new $y$, then roll $\phi$ about the new $x$:
+>
 > $$\mathbf C_{FRD/NED}=\mathbf C_x(\phi)\,\mathbf C_y(\theta)\,\mathbf C_z(\psi).$$
 
 ## The matrix

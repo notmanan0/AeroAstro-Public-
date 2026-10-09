@@ -19,6 +19,7 @@ sources: ["03 - Exams & Past Papers (2013-14 to 2019-20)"]
 
 > [!note] Definition
 > Steady, quasi-1D, adiabatic, inviscid (isentropic) duct flow of a perfect gas, governed by
+>
 > $$\frac{dA}{A} = (M^2-1)\frac{dV}{V},\qquad \frac{T_0}{T} = 1+\frac{\gamma-1}{2}M^2,\qquad \frac{p_0}{p} = \left(\frac{T_0}{T}\right)^{\frac{\gamma}{\gamma-1}},\qquad \frac{A}{A^*} = \frac1M\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}M^2\right)\right]^{\frac{\gamma+1}{2(\gamma-1)}}$$
 
 ## Explanation

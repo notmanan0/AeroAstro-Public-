@@ -23,7 +23,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier Series/Lecture4_Fourie
 
 > [!abstract] Summary
 > A periodic function can be written as a sum of sines and cosines:
+>
 > $$f(x)=\tfrac12a_0+\sum_{n=1}^\infty\big[a_n\cos\tfrac{n\pi x}{\ell}+b_n\sin\tfrac{n\pi x}{\ell}\big],\qquad \text{period }2\ell .$$
+>
 > The coefficients come from **orthogonality**: multiply by one basis function and integrate over a period, and every term but one vanishes. This gives the **Euler formulae**. In practice a Fourier series question is 90% integration by parts plus two identities, $\sin n\pi=0$ and $\cos n\pi=(-1)^n$.
 
 ## Key Concepts
@@ -65,17 +67,21 @@ with the exception $\int_{-\ell}^{\ell}\cos^2(0)\,dx=2\ell$ for $m=n=0$. Here $\
 **Proof** (write $k=\pi/\ell$ for brevity).
 
 *Case $m\neq n$*: use the product-to-sum identities.
+
 $$
 2\cos mkx\cos nkx=\cos(m-n)kx+\cos(m+n)kx .
 $$
+
 $m\pm n$ is a non-zero integer, and $\int_{-\ell}^{\ell}\cos pkx\,dx=\Big[\dfrac{\sin pkx}{pk}\Big]_{-\ell}^{\ell}=\dfrac{2\sin p\pi}{pk}=0$ for every integer $p\neq0$. So the integral is $0$. The sine product works the same way using $2\sin A\sin B=\cos(A-B)-\cos(A+B)$.
 
 *Mixed product*: $\cos mkx\,\sin nkx$ is (even) × (odd) = odd, and the integral of an odd function over a symmetric interval is $0$, for **all** $m,n$ including $m=n$.
 
 *Case $m=n\geq1$*: $\cos^2A=\tfrac12(1+\cos2A)$, so
+
 $$
 \int_{-\ell}^{\ell}\cos^2nkx\,dx=\frac12\int_{-\ell}^{\ell}dx+\frac12\underbrace{\int_{-\ell}^{\ell}\cos2nkx\,dx}_{=0}=\ell .
 $$
+
 Likewise $\sin^2A=\tfrac12(1-\cos2A)$ gives $\ell$. ∎
 
 > [!note] Analogy with vectors
@@ -107,10 +113,13 @@ $$
 ### Sawtooth: $f(x)=x$ on $(-\pi,\pi)$, period $2\pi$
 - $a_0=\frac1\pi\int_{-\pi}^\pi x\,dx=\frac1\pi\big[\tfrac{x^2}2\big]_{-\pi}^{\pi}=0$.
 - $a_n$: with $u=x$ and $dv=\cos nx\,dx$,
+
 $$
 a_n=\frac1\pi\Big(\Big[\frac{x\sin nx}{n}\Big]_{-\pi}^{\pi}-\int_{-\pi}^{\pi}\frac{\sin nx}{n}dx\Big)=\frac1\pi\Big(0+\Big[\frac{\cos nx}{n^2}\Big]_{-\pi}^{\pi}\Big)=\frac1\pi\cdot\frac{(-1)^n-(-1)^n}{n^2}=0 .
 $$
+
 - $b_n$: with $u=x$ and $dv=\sin nx\,dx$,
+
 $$
 b_n=\frac1\pi\Big(\Big[-\frac{x\cos nx}{n}\Big]_{-\pi}^{\pi}+\int_{-\pi}^{\pi}\frac{\cos nx}{n}dx\Big)=\frac1\pi\Big(-\frac{\pi(-1)^n+\pi(-1)^n}{n}+0\Big)=\frac{2(-1)^{n+1}}{n}.
 $$
@@ -126,9 +135,11 @@ At the jumps $x=\pm\pi$ the series gives $0$, the average of $\pi$ and $-\pi$ ([
 ### Tent: $f(x)=|x|$ on $(-\pi,\pi)$
 - $a_0=\frac1\pi\Big[\int_{-\pi}^0(-x)dx+\int_0^\pi x\,dx\Big]=\frac1\pi\Big[\frac{\pi^2}2+\frac{\pi^2}2\Big]=\pi$.
 - $a_n=\frac1\pi\Big[\int_{-\pi}^0(-x)\cos nx\,dx+\int_0^\pi x\cos nx\,dx\Big]$. Integrating each by parts, using $\int x\cos nx\,dx=\frac{x\sin nx}n+\frac{\cos nx}{n^2}$:
+
 $$
 a_n=\frac1\pi\Big[-\Big(\frac{1}{n^2}-\frac{(-1)^n}{n^2}\Big)+\Big(\frac{(-1)^n}{n^2}-\frac1{n^2}\Big)\Big]=\frac{2}{\pi n^2}\big[(-1)^n-1\big]=\begin{cases}-\dfrac{4}{\pi n^2}&n\text{ odd}\\[4pt]0&n\text{ even}\end{cases}
 $$
+
 - $b_n=0$. This is quickest by symmetry ([[MATH2048 FS2 - Even and Odd Functions, Half-Range Series and Convergence|FS2]]).
 
 $$
@@ -147,11 +158,13 @@ $$
 Evaluate a known series at a clever point.
 
 Tent at $x=0$: $0=\frac\pi2-\frac4\pi\sum_{n\text{ odd}}\frac1{n^2}$, so
+
 $$
 \sum_{n\text{ odd}}\frac1{n^2}=1+\frac19+\frac1{25}+\dots=\frac{\pi^2}{8}.
 $$
 
 Sawtooth at $x=\frac\pi2$ (Notes §2.3.1): the series gives $2\big(1-\frac13+\frac15-\dots\big)=f(\tfrac\pi2)=\frac\pi2$, so
+
 $$
 1-\frac13+\frac15-\frac17+\dots=\frac\pi4\qquad\text{(Leibniz; SymPy ✔)}.
 $$

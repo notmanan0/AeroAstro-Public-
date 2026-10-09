@@ -17,7 +17,9 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W05-6 Mesh Analysis - Recorded.pdf"]
 
 > [!note] Definition
 > Assign a clockwise loop current to each window of a planar circuit, write KVL per window, and solve
+>
 > $$\mathbf R\,\mathbf I = \mathbf V,\qquad R_{kk} = \sum R\ \text{round mesh }k,\quad R_{jk} = -\!\!\sum R\ \text{shared by }j,k$$
+>
 > Branch currents are then differences of loop currents.
 
 ## Explanation

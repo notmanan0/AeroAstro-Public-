@@ -17,6 +17,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W06-7abc Thevenin Superposition and R
 
 > [!note] Definition
 > A source $(V_{TH}, R_{TH})$ delivers the most power to a resistive load when
+>
 > $$R_L = R_{TH},\qquad P_{max} = \frac{V_{TH}^2}{4R_{TH}},\qquad \eta = 50\ \%$$
 
 ## Explanation

@@ -61,9 +61,11 @@ Concrete is a ceramic composite: aggregate in cement matrix. Steel reinforcement
 Let $V_f+V_m=1$.
 
 **Longitudinal loading: isostrain** ($\varepsilon_f=\varepsilon_m=\varepsilon_c$):
+
 $$E_L=V_fE_f+V_mE_m$$
 
 **Transverse idealisation: isostress** ($\sigma_f=\sigma_m=\sigma_c$):
+
 $$\frac1{E_T}=\frac{V_f}{E_f}+\frac{V_m}{E_m},\qquad E_T=\frac{E_fE_m}{V_fE_m+V_mE_f}$$
 
 ![[m11_composite_moduli.png|760]]
@@ -72,7 +74,9 @@ Therefore $E_L\gg E_T$ when stiff fibres sit in a compliant matrix. Cross-ply or
 
 > [!example] 40% glass / 60% polyester
 > With $E_f=69$ GPa and $E_m=3.4$ GPa:
+>
 > $$E_L=29.64\ \text{GPa},\qquad E_T=5.49\ \text{GPa}$$
+>
 > Under 50 MPa longitudinal composite stress on 250 mm², the total load is 12.5 kN. Isostrain gives fibre stress 116.4 MPa and matrix stress 5.74 MPa; their loads are **11.64 kN** and **0.860 kN**.
 
 > [!warning] Common traps

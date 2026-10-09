@@ -56,6 +56,7 @@ $$
 $$
 
 ### (iii)(b) Thrust as a rocket, ignoring pressure thrust (6)
+
 $$
 V_e = a^* = \sqrt{\gamma RT^*} = \sqrt{1.372(268.8)(843.2)} = 557.6\text{ m/s},\qquad F = \dot mV_e = \boxed{1.46\text{ kN}}
 $$
@@ -93,6 +94,7 @@ T_a = \boxed{216.7\text{ K}},\qquad p_a = \boxed{5.53\text{ kPa}}
 $$
 
 ### (iii) Flight speed (4)
+
 $$
 V = 3.2\sqrt{1.4(287)(216.7)} = \boxed{944\text{ m/s}}
 $$
@@ -154,6 +156,7 @@ For a perfect gas, volume fraction = mole fraction. See [[Stoichiometry and Equi
 5. Stagnation $T_0$ is constant in the intake and nozzle. Draw the static and stagnation points joined by vertical dashed lines.
 
 ### (ii) Propulsive efficiency (16)
+
 $$
 V = 0.8\sqrt{1.4(287)(217)} = 236.2\text{ m/s},\qquad T_{02} = 244.8\text{ K},\qquad p_{02} = 33.08\text{ kPa}
 $$

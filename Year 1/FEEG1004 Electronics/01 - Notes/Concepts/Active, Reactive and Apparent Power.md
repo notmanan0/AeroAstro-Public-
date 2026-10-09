@@ -16,7 +16,9 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W25 AC Analysis 04 - AC Power - Lectur
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf S = \mathbf V\mathbf I^* = P + jQ,\qquad P = VI\cos\phi\ [\mathrm W],\qquad Q = VI\sin\phi\ [\mathrm{VAR}],\qquad |\mathbf S| = VI\ [\mathrm{VA}],\qquad \mathrm{pf} = \cos\phi = \frac{P}{|S|}$$
+>
 > Here $\phi = \theta_v - \theta_i$ and V, I are rms.
 
 ## Explanation

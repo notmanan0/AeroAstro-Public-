@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 3.02.pdf"]
 
 > [!note] Definition
 > A **strain gauge** is a resistive element whose resistance, $R = \rho L/A$, rises when it is stretched: $\Delta R/R = G\varepsilon$, where $G\approx2$ is the gauge factor. The small $\Delta R$ is read with a **Wheatstone bridge**:
+>
 > $$V_G = \left(\frac{R_2}{R_1+R_2}-\frac{R_4}{R_3+R_4}\right)V_s$$
+>
 > For a quarter bridge with a small change: $\dfrac{\Delta R}{R}\approx\dfrac{4V_G}{V_s}$, so $V_G = \dfrac{V_s}{4}G\varepsilon$.
 
 ## Explanation

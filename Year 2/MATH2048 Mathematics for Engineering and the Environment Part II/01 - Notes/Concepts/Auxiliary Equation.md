@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/ODEs/Lecture1_ODE.pdf"]
 
 > [!note] Definition
 > For $ay''+by'+cy=0$ with $a,b,c$ constant, substituting $y=e^{\lambda x}$ gives $(a\lambda^2+b\lambda+c)e^{\lambda x}=0$. Since $e^{\lambda x}\neq0$, $\lambda$ must satisfy
+>
 > $$a\lambda^2+b\lambda+c=0 .$$
 
 ## Explanation

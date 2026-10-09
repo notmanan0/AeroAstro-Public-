@@ -17,7 +17,9 @@ sources: ["02 - Sources/S2 AC Analysis/S2 AC Analysis Lecture Notes 2021 - Niu.p
 
 > [!note] Definition
 > A capacitor in **parallel** with an inductive load supplies the reactive power locally:
+>
 > $$Q_C = -\frac{V^2}{X_C} = -V^2\omega C,\qquad Q_{new} = Q_{load} + Q_C,\qquad \mathrm{pf}_{new} = \frac{P}{\sqrt{P^2 + Q_{new}^2}}$$
+>
 > P is unchanged.
 
 ## Explanation

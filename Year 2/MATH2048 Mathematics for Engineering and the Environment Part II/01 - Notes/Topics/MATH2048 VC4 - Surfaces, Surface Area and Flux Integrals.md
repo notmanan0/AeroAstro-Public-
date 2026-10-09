@@ -58,12 +58,15 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture27_vect
 - **Cone** (PS10 Q1): $\int_0^{2\pi}\int_0^h\frac{a}{h^2}\sqrt{a^2+h^2}\,z\,dz\,d\theta=\pi a\sqrt{a^2+h^2}$ ✔.
 
 ## 3. Flux integrals (L28, Notes §8.2.6)
+
 $$
 \iint_S\mathbf F\cdot d\mathbf S=\iint\mathbf F(\mathbf r(s,t))\cdot(\mathbf r_s\times\mathbf r_t)\,ds\,dt .
 $$
+
 If $\mathbf F$ is a fluid velocity, this is the volume flow rate through $S$. The result does not depend on the parametrisation (a change of variables introduces exactly the Jacobian), **but it does depend on the orientation**.
 
 **For a graph $z=f(x,y)$**:
+
 $$
 \iint_S\mathbf F\cdot d\mathbf S=\iint\mathbf F\cdot(-f_x\,\mathbf i-f_y\,\mathbf j+\mathbf k)\,dx\,dy\quad(\text{upward normal}).
 $$

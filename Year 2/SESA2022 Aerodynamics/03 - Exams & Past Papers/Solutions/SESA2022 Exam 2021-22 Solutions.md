@@ -22,6 +22,7 @@ sources: ["03 - Exams & Past Papers/SESA2022-202122-01-SESA2022.pdf"]
 ## Part B
 
 ### Q1: Modified NACA camber line
+
 $$
 \frac zc = \begin{cases}\frac14\left[\frac xc-2\left(\frac xc\right)^2\right] & 0\le x/c\le0.25\\[1mm] \frac1{36}\left[1+\frac xc-2\left(\frac xc\right)^2\right] & 0.25\le x/c\le1\end{cases}
 $$

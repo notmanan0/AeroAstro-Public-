@@ -17,6 +17,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W02-1ab Electrostatics and Electric C
 
 > [!note] Definition
 > The potential difference between two points is the energy per unit charge needed to move charge between them:
+>
 > $$V = \frac{W}{q}\ \ [\mathrm{J/C} = \mathrm V],\qquad E_x = -\frac{dV}{dx},\qquad V = EL\ \ \text{(uniform field)}$$
 
 ## Explanation

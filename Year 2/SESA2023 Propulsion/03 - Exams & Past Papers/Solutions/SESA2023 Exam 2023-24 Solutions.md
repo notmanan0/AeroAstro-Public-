@@ -28,6 +28,7 @@ Also: heat loss to the walls.
 All of these reduce the jet velocity and thrust, and raise the fuel consumption.
 
 ### (iii) Fuel flow for stoichiometric propane, 50 kg/s of air (10)
+
 $$
 \mathrm{C_3H_8+5\,(O_2+3.762\,N_2^*)\to3\,CO_2+4\,H_2O+18.81\,N_2^*}
 $$
@@ -82,6 +83,7 @@ p_{04} = p_a\left(\frac{T_{04}}{T_4}\right)^{3.5} = 5.532\left(\frac{2200}{950}\
 $$
 
 ### (iv) Thrust against the loss-free engine (8)
+
 $$
 V = 944.2\text{ m/s},\qquad V_e = \sqrt{2c_p(T_{04}-T_4)} = \sqrt{2(1005)(1250)} = 1585\text{ m/s}
 $$
@@ -114,6 +116,7 @@ The losses ($\Gamma_{total} = 0.600\times0.900\times0.708 = 0.382$) cost **17 %*
   - a vertical isentropic expansion from $03$ down to $p_a$ at static state 4, slightly hotter than ambient.
 
 ### (iii) Fan exit stagnation temperature (8)
+
 $$
 T_{01} = T_a+\frac{V^2}{2c_p} = 230+\frac{250^2}{2010} = 261.1\text{ K}
 $$
@@ -129,6 +132,7 @@ $$
 - The net range depends on which effect dominates.
 
 ### (v) Maximum cruise range (3)
+
 $$
 s = \eta_O\frac{LCV}{g}\frac LD\ln\frac{m_1}{m_2} = 0.39\left(\frac{120\times10^6}{9.81}\right)(21)\ln\frac{100}{92} = \boxed{8350\text{ km}}
 $$
@@ -147,6 +151,7 @@ See [[Breguet Range Equation]].
 See [[Velocity Triangles]] and [[Actuator Disk Theory]].
 
 ### (ii) Advance ratio (3)
+
 $$
 J = \frac{V_\infty}{nD}
 $$

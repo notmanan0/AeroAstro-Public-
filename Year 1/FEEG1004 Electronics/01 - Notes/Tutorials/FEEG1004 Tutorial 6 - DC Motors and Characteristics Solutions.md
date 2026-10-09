@@ -25,6 +25,7 @@ sources: ["02 - Sources/Tutorial Sheets/Tutorial Sheet 06 - Electric Machines 2 
 ## Q1: Back-EMF constant from an open-circuit test
 - On open circuit no current flows, so there is no $iR_a$ drop: the terminal voltage **is** the EMF.
 - $\omega = 1000\times2\pi/60$ = 104.7 rad/s:
+
 $$K_E = \frac{E}{\omega} = \frac{10}{104.7} = 0.0955\ \mathrm{V\,s/rad}\ (= K_T = 0.0955\ \mathrm{N\,m/A})$$
 
 ## Q2: Running light as a motor at 1000 rpm: 10.2 V, 1 A

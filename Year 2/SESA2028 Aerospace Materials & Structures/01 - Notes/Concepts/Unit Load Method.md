@@ -17,9 +17,11 @@ parent: ["[[SESA2028 S8 - Virtual Work and Castigliano Theorems]]"]
 1. **Real system**: find the internal moment $M(x)$ (and $N$, $T$ if relevant) from the actual loads.
 2. **Virtual system**: remove all real loads. Apply a **unit force** at the point and in the direction of the wanted displacement, or a **unit moment** for a rotation. Find $m(x)$ (and $n$, $t$).
 3. Integrate over every member:
+
 $$
 \delta=\int\frac{Mm}{EI}dx+\int\frac{Nn}{EA}dx+\int\frac{Tt}{GJ}dx.
 $$
+
 4. A positive result means the displacement is in the direction of the unit load.
 
 ## Worked example

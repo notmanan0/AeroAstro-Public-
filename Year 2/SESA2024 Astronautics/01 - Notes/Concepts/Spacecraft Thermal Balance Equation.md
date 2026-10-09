@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Chapter 10/2025 WEEK 8 - Chapter 10 - Thermal C
 ## Definition
 
 > [!note] Definition
+>
 > $$\underbrace{q_S\alpha_SA_S^{proj}}_{\text{Sun}}+\underbrace{aq_S\alpha_SA_E^{proj}\cos\phi\,\beta F}_{\text{albedo}}+\underbrace{q_E\varepsilon A_E^{proj}F}_{\text{Earth IR}}+\underbrace{P}_{\text{dissipation}} = \underbrace{\varepsilon\sigma T^4A_{surf}}_{\text{emission}},\qquad F = \Big(\frac{R_E}{R_{orb}}\Big)^2$$
 
 ## Explanation

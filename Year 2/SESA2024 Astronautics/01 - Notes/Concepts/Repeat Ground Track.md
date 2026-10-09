@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_C
 
 > [!note] Definition
 > An **Earth-synchronous** orbit's ground track repeats exactly after $n$ orbits in $m$ days: $n\Delta\lambda = m\cdot360^\circ$. If it is also Sun-synchronous:
+>
 > $$\tau = \frac{m}{n}\,86\,400\ \text{s}$$
 
 ## Explanation

@@ -22,6 +22,7 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 02 - Curvilinear Motion.pdf"]
 > On a curved path, position, velocity and acceleration are **vectors**. The velocity is always **tangent** to the path. The acceleration generally is **not**: even at constant speed there is a **centripetal** component $v^2/\rho$ towards the centre of curvature. Two coordinate systems cover the course.
 > - **Cartesian** $x$–$y$: best when the forces have fixed directions, e.g. projectiles, which are just two independent straight-line motions.
 > - **Normal–tangential** $n$–$t$: rides on the particle; best when the **path is known**:
+>
 > $$\mathbf a = \dot v\,\mathbf u_t + \frac{v^2}{\rho}\mathbf u_n,\qquad \sum F_t = m\dot v,\quad \sum F_n = m\frac{v^2}{\rho},\quad \sum F_b = 0$$
 
 ## Key Concepts

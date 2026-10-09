@@ -34,20 +34,26 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 1
 ---
 
 ## 1. Rectangular regions (Booklet §3)
+
 $$
 \int_{y=c}^{d}\Big(\int_{x=a}^{b}f(x,y)\,\mathrm dx\Big)\mathrm dy
 $$
+
 Do the inner integral with the outer variable held **constant**. Then integrate the result. For a rectangle you can swap the order freely, and the limits just swap. If $f=g(x)h(y)$ and the limits are constant, the integral factorises into a product of single integrals (Exercise G).
 
 ## 2. Non-rectangular regions (Booklet §4)
 If $R$ lies between the curves $y=g_1(x)$ and $y=g_2(x)$ for $x_1\le x\le x_2$:
+
 $$
 \iint_Rf\,\mathrm dA=\int_{x_1}^{x_2}\Big(\int_{g_1(x)}^{g_2(x)}f(x,y)\,\mathrm dy\Big)\mathrm dx\qquad\text{(vertical strips)}
 $$
+
 If instead $R$ lies between $x=h_1(y)$ and $x=h_2(y)$ for $y_1\le y\le y_2$:
+
 $$
 \iint_Rf\,\mathrm dA=\int_{y_1}^{y_2}\Big(\int_{h_1(y)}^{h_2(y)}f\,\mathrm dx\Big)\mathrm dy\qquad\text{(horizontal strips)}
 $$
+
 - The **inner limits** may depend on the outer variable.
 - The **outer limits** must be constants.
 
@@ -64,9 +70,11 @@ $$
 
 ## 4. Polar coordinates (Booklet)
 With $x=r\cos\theta$ and $y=r\sin\theta$, the area element is the small polar "rectangle" $r\,\mathrm d\theta\times\mathrm dr$:
+
 $$
 \iint_Rf\,\mathrm dx\,\mathrm dy=\iint_Rf(r\cos\theta,r\sin\theta)\,r\,\mathrm dr\,\mathrm d\theta
 $$
+
 **Don't forget the $r$.** It is the Jacobian $\partial(x,y)/\partial(r,\theta)$. For a curve $r=f(\theta)$, the area it encloses is $\frac12\int f(\theta)^2\,\mathrm d\theta$. For example, the cardioid $r=a(1-\cos\theta)$ encloses $\frac32\pi a^2$.
 
 ## 5. Triple integrals

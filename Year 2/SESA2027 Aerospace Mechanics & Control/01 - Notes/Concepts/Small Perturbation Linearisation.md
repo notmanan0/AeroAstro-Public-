@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.03.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > Write every variable as a **trim value plus a small perturbation**:
+>
 > $$U = U_\infty+u,\quad V = v,\quad W = w,\quad p,q,r\ \text{small}$$
+>
 > Then keep only first-order terms: products of perturbations (e.g. $qw$, $rv$) are dropped. The nonlinear 6-DoF equations become **linear** and **decouple** into longitudinal ($u, w, q, \theta$) and lateral ($v, p, r, \phi, \psi$) sets.
 
 ## Explanation

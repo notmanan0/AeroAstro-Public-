@@ -61,15 +61,19 @@ For example, $m^4-\lambda^4=(m^2-\lambda^2)(m^2+\lambda^2)$ gives $e^{\pm\lambda
 | sum of the above | sum of the trials (superposition) |
 
 **Clash rule**: if the trial already appears in the CF, multiply it by $t^s$, where $s$ is the multiplicity of the root. For exponentials there are shortcuts:
+
 $$
 x_p=\frac{e^{kt}}{P(k)},\qquad x_p=\frac{te^{kt}}{P'(k)}\ \ (\text{simple root}),\qquad x_p=\frac{t^2e^{kt}}{P''(k)}\ \ (\text{double root})
 $$
+
 See [[Method of Undetermined Coefficients]] (MATH2048) for the general version.
 
 ## 4. Damped second-order systems (James §10.10)
+
 $$
 \ddot x+2\zeta\omega\,\dot x+\omega^2x=0,\qquad m=-\zeta\omega\pm\omega\sqrt{\zeta^2-1}
 $$
+
 | $\zeta$ | Behaviour | Solution form |
 |---|---|---|
 | $\zeta=0$ | undamped SHM | $A\cos\omega t+B\sin\omega t$ |

@@ -38,6 +38,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W02-1ab Electrostatics and Electric C
 - **Induced charge**: a charge brought near a neutral insulator polarises it. The near side acquires the opposite sign, so the net force is **always attractive**, whatever the sign of the inducing charge.
 
 ## 2. Coulomb's law and the electric field
+
 $$
 F = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2},\qquad \varepsilon_0 = 8.85\times10^{-12}\ \mathrm{F/m},\qquad \mathbf E = \frac{\mathbf F}{q}\ \ [\mathrm{N/C} = \mathrm{V/m}]
 $$

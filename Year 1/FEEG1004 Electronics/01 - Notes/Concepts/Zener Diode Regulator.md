@@ -17,6 +17,7 @@ sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors
 
 > [!note] Definition
 > A heavily doped diode designed to break down at a precise reverse voltage $V_Z$. Placed across the load with a series resistor:
+>
 > $$R_S = \frac{V_{in} - V_Z}{I_L + I_Z},\qquad V_{out} = V_Z\ \text{while } I_Z > 0$$
 
 ## Explanation

@@ -16,6 +16,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-3ab Circuits KCL KVL Resistors - 
 ## Definition
 
 > [!note] Definition
+>
 > $$V = IR,\qquad R = \frac{\rho L}{A},\qquad P = I^2R = \frac{V^2}{R}$$
 
 ## Explanation

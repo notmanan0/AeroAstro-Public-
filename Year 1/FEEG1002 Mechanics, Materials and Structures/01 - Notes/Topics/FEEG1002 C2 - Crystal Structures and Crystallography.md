@@ -42,6 +42,7 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 03 - Crystals and Crystallogr
 ![[m2_crystal_structures.png|920]]
 
 The atomic packing factor is
+
 $$APF=\frac{\text{volume of atoms assigned to cell}}{\text{unit-cell volume}}$$
 
 For FCC, $a=2\sqrt2R$ and $APF=\pi/(3\sqrt2)=0.740$. For BCC, $a=4R/\sqrt3$ and $APF=\pi\sqrt3/8=0.680$.
@@ -78,6 +79,7 @@ Examples: cube edge $[100]$, face diagonal $[110]$, body diagonal $[111]$. Symme
 
 > [!example] FCC-to-BCC volume change at fixed atomic radius
 > Per-atom volumes are $V_{FCC}/4=4\sqrt2R^3$ and $V_{BCC}/2=32R^3/(3\sqrt3)$. Thus FCC $\rightarrow$ BCC expands by
+>
 > $$\frac{32/(3\sqrt3)}{4\sqrt2}-1=0.0887\approx8.9\%$$
 
 > [!warning] Common traps

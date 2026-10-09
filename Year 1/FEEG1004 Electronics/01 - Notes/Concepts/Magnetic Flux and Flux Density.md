@@ -16,6 +16,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W03-2ab Magnetism and Induction - Rec
 ## Definition
 
 > [!note] Definition
+>
 > $$\Phi = \int\mathbf B\cdot d\mathbf A\ \ [\mathrm{Wb} = \mathrm{T\,m^2} = \mathrm{V\,s}],\qquad \Phi = BA\cos\theta\ \text{(uniform)},\qquad \lambda = N\Phi\ \text{(flux linkage)}$$
 
 ## Explanation

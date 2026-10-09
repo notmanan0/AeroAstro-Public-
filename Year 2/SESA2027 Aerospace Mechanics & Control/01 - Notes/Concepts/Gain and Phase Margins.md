@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 2.05.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > Computed from the **open-loop** frequency response $L(i\omega) = C(i\omega)G(i\omega)$:
+>
 > $$GM = -|L(i\omega_{pc})|_{dB}\quad\text{at}\ \angle L = -180^\circ,\qquad PM = 180^\circ+\angle L(i\omega_{gc})\quad\text{at}\ |L| = 1\ (0\ \text{dB})$$
+>
 > - The GM is the factor by which the gain could increase before the closed loop goes unstable.
 > - The PM is the extra phase lag the loop could tolerate before it goes unstable.
 

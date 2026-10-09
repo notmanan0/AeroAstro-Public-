@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > A structure is **statically determinate** if equilibrium alone fixes all its internal forces and reactions. For a plane pin-jointed frame with $j$ joints, $r$ reaction components and $m$ bars:
+>
 > $$2j = r+m\ \ \text{determinate},\qquad r+m<2j\ \ \text{mechanism},\qquad r+m>2j\ \ \text{indeterminate}$$
+>
 > For beams: two equilibrium equations for vertical loading, compared with the number of unknown support reactions.
 
 ## Explanation

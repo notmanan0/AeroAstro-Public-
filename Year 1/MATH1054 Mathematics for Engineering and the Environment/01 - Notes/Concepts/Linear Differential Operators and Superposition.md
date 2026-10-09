@@ -17,6 +17,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §10.8", "MATH1054 Mo
 
 > [!note] Definition
 > $\mathrm L=a_n(t)\mathrm D^n+\dots+a_0(t)$, with $\mathrm D=\frac{\mathrm d}{\mathrm dt}$, is **linear**:
+>
 > $$\mathrm L[ax_1+bx_2]=a\mathrm L[x_1]+b\mathrm L[x_2]$$
 
 ## Explanation

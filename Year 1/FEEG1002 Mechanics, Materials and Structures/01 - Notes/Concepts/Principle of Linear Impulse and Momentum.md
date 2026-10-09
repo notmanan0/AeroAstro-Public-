@@ -16,7 +16,9 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$m\mathbf v_1 + \sum\int_{t_1}^{t_2}\mathbf F\,dt = m\mathbf v_2,\qquad \mathbf L = m\mathbf v,\quad \mathbf I = \int\mathbf F\,dt\ [\text{N s}]$$
+>
 > For a system, $m\mathbf v_{G1} + \sum\int\mathbf F_{ext}\,dt = m\mathbf v_{G2}$. With no external impulse, total momentum is conserved.
 
 ## Explanation

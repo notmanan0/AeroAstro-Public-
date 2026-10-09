@@ -17,6 +17,7 @@ sources: ["02 - Sources/Stability/Topic 6 Aircraft aerodynamics and static stabi
 
 > [!note] Definition
 > The **manoeuvre point** $h_m$ is the CG position for neutral stability during a steady pull-up (load factor $n>1$, pitch rate $q = V/R$). The **manoeuvre margin** is $H_m = h_m-h$:
+>
 > $$h_m = h_0+K\frac{C_{L_{T,\alpha}}}{C_{L_\alpha}+C_{L_{T,\alpha}}\frac{S_T}{S}},\qquad C_{L_{T,\alpha}} = k\frac{1-\epsilon_\alpha+\Phi C_{L_\alpha}}{1-k\Phi\frac{S_T}{S}},\qquad \Phi = \frac{\rho Sl}{2m}$$
 
 ## Explanation

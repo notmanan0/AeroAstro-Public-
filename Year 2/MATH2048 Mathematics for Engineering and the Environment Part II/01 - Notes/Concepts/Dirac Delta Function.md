@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Fourier and Laplace Transform/
 
 > [!note] Definition
 > $\delta(x-c)$ is the generalised function defined by the **sifting property**:
+>
 > $$\int_a^b\delta(x-c)f(x)\,dx=\begin{cases}f(c)&c\in(a,b)\\0&\text{otherwise}\end{cases}$$
+>
 > Its Laplace transform is $\mathcal L[\delta(x-a)]=e^{-as}$ for $a>0$.
 
 ## Explanation

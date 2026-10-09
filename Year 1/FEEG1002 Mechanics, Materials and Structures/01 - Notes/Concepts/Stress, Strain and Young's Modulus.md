@@ -16,7 +16,9 @@ sources: []
 ## Definition
 
 > [!note] Definition
+>
 > $$\sigma = \frac{F}{A},\quad \tau = \frac{F_s}{A},\quad \varepsilon = \frac{\Delta L}{L_0},\quad \gamma = \frac{\Delta S}{H_0}\approx\varphi$$
+>
 > For a linear elastic material in **uniaxial** stress: $\sigma = E\varepsilon$, $\varepsilon_{lat} = -\nu\varepsilon$ and $\tau = G\gamma$, with $G = \dfrac{E}{2(1+\nu)}$.
 
 ## Explanation

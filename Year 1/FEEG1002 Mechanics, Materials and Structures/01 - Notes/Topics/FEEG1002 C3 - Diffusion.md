@@ -20,6 +20,7 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 04 - Diffusion.pdf"]
 
 > [!abstract] Summary
 > Diffusion is thermally activated atomic transport down a chemical-potential/concentration gradient. Fick's first law gives steady flux; Fick's second law governs changing concentration. The diffusion coefficient is extremely temperature-sensitive:
+>
 > $$J=-D\frac{dC}{dx},\qquad \frac{\partial C}{\partial t}=D\frac{\partial^2C}{\partial x^2},\qquad D=D_0e^{-Q/RT}$$
 
 ## Key Concepts
@@ -35,6 +36,7 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 04 - Diffusion.pdf"]
 Typical comparison at 500°C in $\alpha$-Fe: interstitial carbon diffuses roughly $10^9$ times faster than substitutional iron.
 
 ## 2. Steady-state diffusion: Fick's first law
+
 $$J=-D\frac{dC}{dx}$$
 
 - $J$: atomic or mass flux per unit area per time.
@@ -44,16 +46,20 @@ $$J=-D\frac{dC}{dx}$$
 
 ## 3. Non-steady diffusion: Fick's second law
 Mass conservation applied to the flux gives
+
 $$\frac{\partial C}{\partial t}=D\frac{\partial^2C}{\partial x^2}$$
+
 for constant $D$. A surface treatment such as carburising produces a concentration profile that spreads with a characteristic distance $x\sim\sqrt{Dt}$.
 
 > [!tip] Scaling rule
 > To double the diffusion depth at the same temperature requires roughly four times the time because $x\propto\sqrt t$.
 
 ## 4. Temperature dependence
+
 $$D=D_0\exp\left(-\frac{Q}{RT}\right)$$
 
 Taking logs gives a straight-line plot:
+
 $$\ln D=\ln D_0-\frac{Q}{R}\frac1T$$
 
 - slope $=-Q/R$ on a $\ln D$ versus $1/T$ graph;

@@ -17,7 +17,9 @@ sources: ["02 - Sources/Mechanics of Flight/Calculator for Revision Questions.xl
 
 > [!abstract] Shared approximation
 > These workbook questions neglect lift and aerodynamic drag during the ground roll, giving constant acceleration $a=g(T/W-\mu)$. Hence
+>
 > $$\boxed{s_1=\frac{V_2^2}{2g(T/W-\mu)}}.$$
+>
 > Use the written prompt values. This is a deliberately simpler model than [[Take-off Ground Run]].
 
 ## Question 3 — total thrust for a 1500 m runway

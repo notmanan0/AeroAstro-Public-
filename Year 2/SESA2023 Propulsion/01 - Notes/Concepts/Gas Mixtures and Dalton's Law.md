@@ -15,7 +15,9 @@ sources: ["02 - Sources/Lectures/Week 02 - Thermodynamics.pdf", "02 - Sources/Le
 ## Definition
 
 > [!note] Definition
+>
 > $$x_i = \frac{m_i}{m},\quad y_i = \frac{n_i}{n},\quad x_i = y_i\frac{M_i}{M},\quad M = \sum y_iM_i = \Big(\sum\frac{x_i}{M_i}\Big)^{-1},\quad \frac{p_i}{p} = \frac{V_i}{V} = y_i$$
+>
 > Specific properties are **mass-weighted**: $c_p = \sum x_ic_{p,i}$, $c_v = \sum x_ic_{v,i}$, $h = \sum x_ih_i$. The mixture gas constant is $R = \bar R/M = \sum x_iR_i$.
 
 ## Explanation

@@ -15,6 +15,7 @@ sources: []
 
 ## Definition
 In $\alpha+\beta$, the horizontal tie-line endpoints give $C_\alpha,C_\beta$. For overall $C_0$:
+
 $$f_\alpha=\frac{C_\beta-C_0}{C_\beta-C_\alpha},\qquad f_\beta=\frac{C_0-C_\alpha}{C_\beta-C_\alpha}$$
 
 ## Explanation

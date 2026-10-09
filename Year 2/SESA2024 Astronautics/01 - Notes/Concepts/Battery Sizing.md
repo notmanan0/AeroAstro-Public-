@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - com
 ## Definition
 
 > [!note] Definition
+>
 > $$C = \frac{P_{EOL}\,t_e}{\text{DoD}\cdot V_B}\ (\text{A·h}),\qquad\mathcal E = CV_B\ (\text{W·h}),\qquad M_{batt} = \frac{\mathcal E}{\bar\varepsilon},\qquad R = \frac{\text{DoD}\cdot C}{t_s}\ (\text{A})$$
+>
 > Here $V_B$ = number of cells in series × cell voltage, chosen to match the bus voltage.
 
 ## Explanation

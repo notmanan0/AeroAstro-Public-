@@ -17,6 +17,7 @@ sources: ["02 - Sources/FEM Lectures/Lecture_12_Validation and Verification_fina
 
 > [!note] Definition
 > Adjusting uncertain FE model parameters $x$ (material properties, joint stiffness, BCs) so that the simulated outputs match measurements:
+>
 > $$y_{sim} = M(x),\qquad y_{obs} = M(x)+\varepsilon,\qquad\text{find }x\text{ such that }y_{sim}(x)\approx y_{obs}$$
 
 ## Explanation

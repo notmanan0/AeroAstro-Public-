@@ -17,6 +17,7 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 4 Thin airfoil theory_v3.pdf"]
 
 > [!note] Definition
 > In an inviscid, barotropic flow with conservative body forces, the circulation round a closed **material** curve (one that moves with the fluid) is constant in time:
+>
 > $$\frac{D\Gamma}{Dt} = 0$$
 
 ## Explanation

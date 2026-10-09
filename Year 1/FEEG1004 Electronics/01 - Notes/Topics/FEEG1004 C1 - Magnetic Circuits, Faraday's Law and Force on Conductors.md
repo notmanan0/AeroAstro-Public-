@@ -64,6 +64,7 @@ $$
 ![[ee_c1_motor_generator_effect.png|900]]
 
 ## 3. The force on a conductor
+
 $$
 F = BiL
 $$

@@ -35,9 +35,11 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 1
 ---
 
 ## 1. The inverse (James §5.4)
+
 $$
 \mathbf A^{-1}=\frac{\operatorname{adj}\mathbf A}{|\mathbf A|},\qquad\begin{bmatrix}a&b\\c&d\end{bmatrix}^{-1}=\frac1{ad-bc}\begin{bmatrix}d&-b\\-c&a\end{bmatrix}
 $$
+
 - $(\mathbf{AB})^{-1}=\mathbf B^{-1}\mathbf A^{-1}$ (reversed order).
 - $(\mathbf A^{\mathrm T})^{-1}=(\mathbf A^{-1})^{\mathrm T}$.
 - **Singular** means $|\mathbf A|=0$. Typical signs are a zero row, two equal rows, or one row a combination of the others.

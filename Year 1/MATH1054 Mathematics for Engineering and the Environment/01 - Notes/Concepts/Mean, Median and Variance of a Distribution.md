@@ -16,7 +16,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §13.4, §13.4.x", "M
 ## Definition
 
 > [!note] Definition
+>
 > $$\mu=E[X]=\sum xp_X\ \text{or}\ \int xf_X\,\mathrm dx,\qquad\sigma^2=E[X^2]-\mu^2$$
+>
 > - **Median**: $F(m)=\frac12$.
 > - **Mode**: the most likely value.
 > - **IQR**: $Q_3-Q_1$, where $F(Q_1)=\frac14$ and $F(Q_3)=\frac34$.

@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/CH1-3 Potential Flow.pdf"]
 
 > [!note] Definition
 > $\Phi=-kz^{m+1}$ gives $\psi=-kr^{m+1}\sin[(m+1)\theta]$. The walls $\psi=0$ are at $\theta=\pm\pi/(m+1)$, enclosing a wedge of angle
+>
 > $$\beta\pi=\frac{2m\pi}{m+1},\qquad\beta=\frac{2m}{m+1}.$$
 
 ## The family

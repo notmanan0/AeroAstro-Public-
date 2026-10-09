@@ -189,8 +189,11 @@ For $m>2$ the exponent $1-m/2$ is negative, so the numerator and denominator are
 
 > [!example] Lecturer's worked example (MT2 Q4)
 > Large plate, +120/-30 MPa, $a_i=1$ mm, $K_{Ic}=45\ \mathrm{MPa\sqrt m}$, $A=2\times10^{-12}$, $m=3$, $Q=1$.
+>
 > $$\Delta\sigma=120\ \text{MPa},\qquad a_c=\frac1\pi\left(\frac{45}{120}\right)^2=0.0448\ \text m.$$
+>
 > $$N_f=\frac{0.0448^{-1/2}-0.001^{-1/2}}{(-\tfrac12)(2\times10^{-12})(120\sqrt\pi)^3}=\frac{-26.90}{-9.62\times10^{-6}}\approx\boxed{2.80\times10^6\ \text{cycles}}.$$
+>
 > The lecturer's slide gives 2,801,904; carrying more figures in $a_c$ gives 2,795,265.
 
 ### Why the integral is dominated by the early crack

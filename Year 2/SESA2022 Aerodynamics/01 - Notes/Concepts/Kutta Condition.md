@@ -17,6 +17,7 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 4 Thin airfoil theory_v3.pdf"]
 
 > [!note] Definition
 > Of all the potential-flow solutions round a sharp-trailing-edge aerofoil (one for every value of $\Gamma$), nature picks the one where the **flow leaves the trailing edge smoothly**. For a vortex sheet this means
+>
 > $$\gamma(TE) = V_1-V_2 = 0$$
 
 ## Explanation

@@ -20,7 +20,9 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W22-23 AC Analysis 02 - Impedance and 
 
 > [!abstract] Summary
 > In phasor form, every element obeys a **generalised Ohm's law** $\mathbf V = Z\mathbf I$:
+>
 > $$Z_R = R,\qquad Z_L = j\omega L = jX_L,\qquad Z_C = \frac{1}{j\omega C} = -jX_C$$
+>
 > The whole DC toolkit (series/parallel, dividers, KCL/KVL, mesh, Thévenin, superposition) then works unchanged with complex numbers.
 > - **CIVIL**: in a **C**apacitor **I** leads **V**; in an inductor (**L**) **V** leads **I**.
 > - A load with $\Im(Z) > 0$ is **inductive** (current lags); with $\Im(Z) < 0$ it is **capacitive** (current leads).

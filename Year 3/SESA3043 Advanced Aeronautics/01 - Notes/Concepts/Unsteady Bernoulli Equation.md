@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Ch1_Notes_Unsteady Bernoulli Eqn.pdf"]
 
 > [!note] Definition
 > For incompressible, irrotational flow ($\mathbf u=\nabla\phi$):
+>
 > $$\frac{\partial\phi}{\partial t}+\frac{q^2}{2}+\frac p\rho\ (+gz)=C(t),$$
+>
 > the same constant everywhere in the flow at a given instant.
 
 ## Derivation in brief

@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.08.pdf"]
 
 > [!note] Definition
 > For a stable LTI system driven by $u = A\sin\omega t$, the steady-state output is
+>
 > $$x_{ss}(t) = A|G(i\omega)|\sin[\omega t+\angle G(i\omega)]$$
+>
 > $G(i\omega)$, obtained by substituting $s = i\omega$, is the **frequency response function**. Its magnitude is the amplitude ratio (gain) and its argument is the phase shift.
 
 ## Explanation

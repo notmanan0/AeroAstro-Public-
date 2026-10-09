@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_S
 
 > [!note] Definition
 > The Earth's equatorial bulge (about 21 km) torques an inclined orbit, so its angular momentum vector **precesses** and the node drifts:
+>
 > $$\dot\Omega = -2.0647\times10^{14}\,a^{-3.5}\cos i\quad(^\circ/\text{day},\ a\text{ in km, positive East})$$
+>
 > Equivalently: $\dot\Omega = -\tfrac32J_2\left(\dfrac{R_E}{a}\right)^2\sqrt{\dfrac{\mu}{a^3}}\cos i$, with $J_2 = 1.0826\times10^{-3}$.
 
 ## Explanation

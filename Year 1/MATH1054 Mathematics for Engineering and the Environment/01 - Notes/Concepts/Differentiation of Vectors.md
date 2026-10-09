@@ -23,6 +23,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §9.5", "MATH1054 Mod
 - If $|\mathbf a|$ is constant, then $\mathbf a\perp\dot{\mathbf a}$, because $\frac{\mathrm d}{\mathrm dt}(\mathbf a\cdot\mathbf a)=0$.
 - $|\dot{\mathbf r}|$ (speed) $\neq\frac{\mathrm d}{\mathrm dt}|\mathbf r|$.
 - **Polar components**:
+
 $$\dot{\mathbf r}=\dot r\hat{\mathbf r}+r\dot\theta\hat{\boldsymbol\theta},\qquad\ddot{\mathbf r}=(\ddot r-r\dot\theta^2)\hat{\mathbf r}+(2\dot r\dot\theta+r\ddot\theta)\hat{\boldsymbol\theta}$$
 
 ## Examples

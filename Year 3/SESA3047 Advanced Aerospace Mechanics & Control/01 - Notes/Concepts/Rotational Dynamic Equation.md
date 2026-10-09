@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
 
 > [!note] Definition
 > For a rigid body with inertia matrix $\mathbf J$ about its centre of mass, in body-fixed FRD coordinates:
+>
 > $${}^b\dot{\boldsymbol\omega}^{FRD}_{b/i}=\left(\mathbf J^{FRD}\right)^{-1}\left[\left(\sum\mathbf M_{cm}\right)^{FRD}-\tilde{\boldsymbol\omega}^{FRD}_{b/i}\,\mathbf J^{FRD}\boldsymbol\omega^{FRD}_{b/i}\right]\qquad(3.71)$$
 
 ## Derivation in four lines

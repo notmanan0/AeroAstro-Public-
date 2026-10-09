@@ -23,6 +23,7 @@ sources: ["02 - Sources/Lectures/Chapter 9/2025 Chapter 9 - Communications - Lec
 - EIRP collects all the transmitter-side terms. The link requirement fixes EIRP; the designer splits it between $P_T$ (power subsystem) and $G_T$ (antenna size). This is the **power–gain trade-off**.
 - $G/T$ collects the receiver side. A big dish raises $G$; a cold, low-noise amplifier lowers $T$. Deep-space stations maximise both.
 - Converting back:
+
 $$P_T = 10^{(EIRP-G_T)/10}\ \text{W},\qquad P_{elec} = P_T/\eta_{transponder}$$
 
 ## Examples

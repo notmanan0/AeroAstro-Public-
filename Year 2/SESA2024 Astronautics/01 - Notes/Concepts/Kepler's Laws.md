@@ -19,6 +19,7 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Kep
 > 1. **Ellipse law (1609)**: each orbit is an ellipse with the central body at one **focus**.
 > 2. **Area law (1609)**: the radius vector sweeps **equal areas in equal times**, so $\dot A = h/2$ is constant.
 > 3. **Harmonic law (1619)**: $\tau^2\propto a^3$. Precisely:
+>
 > $$\tau = 2\pi\sqrt{\frac{a^3}{\mu}},\qquad\mu = GM$$
 
 ## Explanation

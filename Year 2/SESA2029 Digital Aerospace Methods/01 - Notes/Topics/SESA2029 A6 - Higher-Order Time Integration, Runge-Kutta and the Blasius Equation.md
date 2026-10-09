@@ -50,6 +50,7 @@ $$
 - It is used in density-based solvers inside **dual time-stepping**: an outer physical-time loop, with inner pseudo-time iterations that converge each implicit step.
 
 ## 2. Predictor–corrector = explicit RK2 (L7)
+
 $$
 \tilde f^{n+1/2} = f^n+\tfrac12\Delta t\,R(f^n)\ \ \text{(half-step predictor)},\qquad f^{n+1} = f^n+\Delta t\,R(\tilde f^{n+1/2})\ \ \text{(midpoint corrector)}
 $$
@@ -65,6 +66,7 @@ These are exactly the first three terms of $e^{\lambda\Delta t}$, so the scheme 
 **General rule**: an order-$n$ RK method recovers exactly $n+1$ Taylor terms (up to $(\lambda\Delta t)^n/n!$) with **no additional terms**. Explicit Euler is RK1.
 
 ## 3. Classical RK4 (L7)
+
 $$
 \begin{aligned}
 f^{*} &= f^n+\tfrac{\Delta t}{2}R(t^n,f^n)\\

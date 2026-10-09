@@ -17,6 +17,7 @@ sources: ["02 - Sources/FEM Lectures/Lecture_7_ FE_Beam_final.pdf", "02 - Source
 
 > [!note] Definition
 > The 2-node bending element with DOF $(v_1,\theta_1,v_2,\theta_2)$, based on engineer's bending theory ($M/I = \sigma/y = E/R$):
+>
 > $$[K] = \frac{EI}{L^3}\begin{bmatrix}12&6L&-12&6L\\6L&4L^2&-6L&2L^2\\-12&-6L&12&-6L\\6L&2L^2&-6L&4L^2\end{bmatrix}$$
 
 ## Explanation

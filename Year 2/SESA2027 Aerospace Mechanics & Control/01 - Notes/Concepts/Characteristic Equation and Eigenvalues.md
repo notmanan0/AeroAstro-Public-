@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.05.pdf"]
 
 > [!note] Definition
 > For $\dot{\mathbf x} = \mathbf A\mathbf x$, try $\mathbf x = \mathbf x_0e^{\lambda t}$. This gives $(\mathbf A-\lambda\mathbf I)\mathbf x_0 = 0$, and a non-trivial solution requires the **characteristic equation**
+>
 > $$\det(\lambda\mathbf I-\mathbf A) = 0$$
+>
 > Its roots $\lambda_i = \sigma_i\pm i\omega_i$ are the **eigenvalues**, and the corresponding eigenvectors are the **mode shapes**.
 
 ## Explanation

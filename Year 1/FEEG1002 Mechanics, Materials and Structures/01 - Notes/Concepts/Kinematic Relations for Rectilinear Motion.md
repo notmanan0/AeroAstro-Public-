@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > For motion along a straight line with position $s(t)$:
+>
 > $$v = \frac{ds}{dt},\qquad a = \frac{dv}{dt} = \frac{d^2s}{dt^2},\qquad a = v\frac{dv}{ds}$$
+>
 > For **constant** acceleration only: $v = v_0 + at$, $s = s_0 + v_0t + \tfrac12at^2$ and $v^2 = v_0^2 + 2a(s - s_0)$.
 
 ## Explanation

@@ -17,8 +17,11 @@ sources: []
 
 > [!note] Definition
 > For a homogeneous, isotropic, linear elastic solid:
+>
 > $$\varepsilon_{xx} = \tfrac1E[\sigma_{xx} - \nu(\sigma_{yy}+\sigma_{zz})]\ \ (\text{and cyclic}),\qquad \varepsilon_{xy} = \frac{1+\nu}{E}\sigma_{xy} = \frac{\sigma_{xy}}{2G}$$
+>
 > Plane-stress inverse:
+>
 > $$\sigma_{xx} = \frac{E}{1-\nu^2}(\varepsilon_{xx}+\nu\varepsilon_{yy}),\quad \sigma_{yy} = \frac{E}{1-\nu^2}(\varepsilon_{yy}+\nu\varepsilon_{xx}),\quad \sigma_{xy} = \frac{E}{1+\nu}\varepsilon_{xy}$$
 
 ## Explanation

@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.04.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > A linear time-invariant (LTI) system written as first-order matrix ODEs:
+>
 > $$\dot{\mathbf x} = \mathbf A\mathbf x+\mathbf B\mathbf u,\qquad \mathbf y = \mathbf C\mathbf x+\mathbf D\mathbf u$$
+>
 > - $\mathbf x$ is the state (the minimum set of variables describing the system);
 > - $\mathbf u$ is the input and $\mathbf y$ the output;
 > - $\mathbf A$ is the system (dynamics) matrix, $\mathbf B$ the input matrix, $\mathbf C$ the output matrix and $\mathbf D$ the feedthrough matrix.

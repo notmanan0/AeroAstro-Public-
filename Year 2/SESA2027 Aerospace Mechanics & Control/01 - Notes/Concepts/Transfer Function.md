@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.07.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > The ratio of the Laplace transforms of output and input, with zero initial conditions:
+>
 > $$G(s) = \frac{Y(s)}{U(s)} = \frac{B(s)}{A(s)} = \mathbf C(s\mathbf I-\mathbf A)^{-1}\mathbf B+\mathbf D$$
+>
 > It describes the input–output behaviour of an LTI system **independently of the input**.
 
 ## Explanation

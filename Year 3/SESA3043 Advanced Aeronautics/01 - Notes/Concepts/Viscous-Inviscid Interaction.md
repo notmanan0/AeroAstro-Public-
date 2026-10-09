@@ -19,6 +19,7 @@ sources: ["02 - Sources/Lectures/CH3-6 Viscous Inviscid Interaction.pdf"]
 > Iterate between an inviscid solver (panel method: $U_e(x)$, $C_L$) and a boundary-layer solver (MIE/Thwaites: $\delta^*(x)$, $C_D$) until $\delta^*$ converges, feeding the layer back to the inviscid flow either by
 > - **SDM:** moving the panels out by $\delta^*$ (re-panelling), or
 > - **STM:** blowing through the original panels at
+>
 > $$v_s=\frac{\mathrm d(U_e\delta^*)}{\mathrm dx}.$$
 
 ## Derivation of v_s

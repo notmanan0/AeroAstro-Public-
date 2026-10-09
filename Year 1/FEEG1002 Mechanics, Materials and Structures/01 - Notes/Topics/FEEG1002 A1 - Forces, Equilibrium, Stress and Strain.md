@@ -59,13 +59,16 @@ $$
 
 > [!example] L1 example 3: portal crane with an off-centre load
 > The load $F_G$ sits at distance $b$ from support A and $c$ from support B. Taking moments about A gives $(b+c)F_B = bF_G$, so
+>
 > $$F_B = \frac{b}{b+c}F_G,\qquad F_A = \frac{c}{b+c}F_G$$
+>
 > The support **nearer** the load carries more of it (the lever rule). With $b = c$, each support carries $F_G/2$.
 
 ![[s1_crane_tipping_fbd.png|820]]
 
 > [!example] Tutorial 1 Q1: crane tipping (see [[FEEG1002 Statics 1 Tutorial 1 - Forces, Equilibrium, Stress and Strain Solutions]])
 > The crane tips when the rear-axle reaction $F_B$ falls to zero, so take moments about the front axle A:
+>
 > $$4F_{g,\text{box}} - 3F_{g,\text{crane}} + 5F_B = 0 \;\Rightarrow\; m_{box,max} = \tfrac34(5000) = 3750\ \text{kg}$$
 
 ## 3. Stress (L2a)

@@ -44,6 +44,7 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9, pp. 113–129; L2
 A turbulent jet shows this clearly: big eddies at the jet width, a lateral spread downstream, and a passive scalar (dye) mixed ever finer.
 
 ## 2. The turbulent boundary layer in wall units (L9, L2)
+
 $$
 u_\tau = \sqrt{\tau_w/\rho},\qquad u^+ = \frac{u}{u_\tau},\qquad y^+ = \frac{yu_\tau}{\nu}
 $$

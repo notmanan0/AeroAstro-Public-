@@ -22,7 +22,9 @@ All principal mechanisms obstruct dislocation motion:
 
 ## Explanation
 Hall-Petch grain strengthening is
+
 $$\sigma_y=\sigma_0+k_yd^{-1/2}$$
+
 Fine grains shorten pile-ups. Cold work raises strength/hardness but lowers ductility; $E$ is nearly unchanged. Coarse grains may be preferred for creep resistance because fewer boundaries slow diffusion/sliding.
 
 ## Related

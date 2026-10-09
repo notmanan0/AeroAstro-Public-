@@ -133,6 +133,7 @@ Family members:
 | Choice | problem-dependent: switch if convergence stalls | |
 
 ### Under-relaxation
+
 $$
 \phi_{new} = \phi_{old}+\alpha\,\Delta\phi,\qquad \alpha<1
 $$

@@ -17,7 +17,9 @@ sources: []
 
 > [!note] Definition
 > For a straight, linear elastic beam in bending where plane sections remain plane:
+>
 > $$\frac{M}{I} = \frac{\sigma}{y} = \frac{E}{R},\qquad \sigma_{xx} = \frac{My}{I},\qquad I = \iint y^2\,dA$$
+>
 > with $y$ measured from the **neutral axis**, which passes through the **centroid** of the section.
 
 ## Explanation

@@ -35,6 +35,7 @@ M_2^2 = \frac{1+0.2M_1^2}{1.4M_1^2-0.2} = \frac{1.7143}{4.8}\;\Rightarrow\;\boxe
 $$
 
 ### (iii)(b) Velocities (7)
+
 $$
 a_1 = \sqrt{1.4(287)(170)} = 261.4\text{ m/s},\qquad \boxed{U_1 = 1.890(261.4) = 494\text{ m/s}}
 $$
@@ -69,6 +70,7 @@ See [[Normal Shock Waves]] and [[Stagnation Properties]].
 **No**, provided the nozzle is choked (always true for a rocket, since $p_c/p_a\gg1.89$). The throat is sonic, so $\dot m = A_tp_c\sqrt{\gamma/RT_c}(\ldots)$ depends only on the chamber state and the throat area. Changes in back pressure cannot propagate upstream through the sonic throat.
 
 ### (ii) Mass flow in vacuum (8)
+
 $$
 \dot m = A_tp_c\sqrt{\frac{\gamma}{RT_c}}\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}} = 0.05(50\times10^5)\sqrt{\frac{1.4}{287(5000)}}(0.5787) = \boxed{142.9\text{ kg/s}}
 $$
@@ -154,6 +156,7 @@ Without the heat loss it would be 0.0447, so the loss needs about 9 % more fuel.
 ## Q4: Axial turbine stage
 
 ### (i) Flow and stage-loading coefficients (4)
+
 $$
 \phi = \frac{V_x}{U},\qquad \psi = \frac{\Delta h_0}{U^2} = \frac{\Delta V_\theta}{U}\ (\text{by Euler})
 $$

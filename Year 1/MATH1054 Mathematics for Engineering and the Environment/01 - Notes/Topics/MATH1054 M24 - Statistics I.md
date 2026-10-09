@@ -62,17 +62,21 @@ For a continuous variable, $P(X=a)=0$, and $f_X=F_X'$.
 ![[m1054_ships_pmf_cdf.png|760]]
 
 ## 3. Centre and spread
+
 $$
 \mu=E[X]=\sum xp_X\ \text{or}\ \int xf_X\,\mathrm dx,\qquad\sigma^2=\operatorname{Var}X=E[X^2]-\mu^2
 $$
+
 - **Median** $m$: $F(m)=\frac12$. For a discrete variable, it is the first $x$ with $F\ge\frac12$.
 - **Mode**: the most probable value, i.e. the peak of $p_X$ or $f_X$.
 - **Quartiles**: $F(Q_1)=\frac14$ and $F(Q_3)=\frac34$. $\text{IQR}=Q_3-Q_1$.
 
 ### The exponential distribution (a key example)
+
 $$
 f_X(x)=\lambda e^{-\lambda x}\ (x\ge0),\quad F_X(x)=1-e^{-\lambda x},\quad\mu=\sigma=\frac1\lambda,\quad\text{median}=\frac{\ln2}{\lambda},\quad\text{IQR}=\frac{\ln3}{\lambda}
 $$
+
 It is right-skewed: mode (0) < median < mean. It models lifetimes and waiting times.
 
 ![[m1054_lifetime_pdf_cdf.png|760]]

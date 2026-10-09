@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vect
 ## Definition
 
 > [!note] Definition
+>
 > $$dV=\left|\frac{\partial(x,y,z)}{\partial(s,t,u)}\right|ds\,dt\,du,\qquad \frac{\partial(x,y,z)}{\partial(s,t,u)}=\det\begin{pmatrix}x_s&x_t&x_u\\y_s&y_t&y_u\\z_s&z_t&z_u\end{pmatrix}.$$
 
 ## Explanation

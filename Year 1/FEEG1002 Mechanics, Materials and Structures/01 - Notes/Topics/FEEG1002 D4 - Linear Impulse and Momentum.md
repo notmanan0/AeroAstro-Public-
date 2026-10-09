@@ -20,7 +20,9 @@ sources: ["02 - Sources/Dynamics/Lectures/Lecture 04 - Linear Impulse and Moment
 
 > [!abstract] Summary
 > Integrating $\sum\mathbf F = m\,d\mathbf v/dt$ **over time** gives
+>
 > $$m\mathbf v_1 + \sum\int_{t_1}^{t_2}\mathbf F\,dt = m\mathbf v_2$$
+>
 > Initial momentum plus impulse equals final momentum. This is the natural tool when a problem involves **force, time and velocity**, especially short, violent **impulsive** forces during impacts.
 > - For a system with no **external** impulse, total momentum is **conserved**.
 > - Collisions need one extra piece of physics, the **coefficient of restitution** $e$: $e = 1$ elastic, $e = 0$ plastic.

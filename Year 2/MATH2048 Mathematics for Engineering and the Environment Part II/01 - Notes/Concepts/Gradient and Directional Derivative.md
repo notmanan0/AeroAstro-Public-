@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture23_vect
 ## Definition
 
 > [!note] Definition
+>
 > $$\nabla\phi=\phi_x\mathbf i+\phi_y\mathbf j+\phi_z\mathbf k,\qquad \nabla_{\hat{\mathbf v}}\phi=\hat{\mathbf v}\cdot\nabla\phi .$$
 
 ## Explanation

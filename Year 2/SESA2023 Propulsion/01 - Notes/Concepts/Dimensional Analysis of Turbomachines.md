@@ -27,7 +27,9 @@ sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf"]
 - **Reynolds number**: above $2\times10^5$ its effect is small (one or two points of $\eta$ per decade), a fact established by **experiment**. Liquids also need a cavitation number.
 - **For one machine on one gas**: drop $D$, $c_p$ and $\gamma$, giving $\dot m\sqrt{T_{01}}/p_{01}$ and $N/\sqrt{T_{01}}$. These are often referred to standard conditions as $\dot m\sqrt{\theta}/\delta$ and $N/\sqrt\theta$.
 - **Scaling recipe** (hold every group equal):
+
   $$\frac{N_2D_2}{\sqrt{T_{01,2}}} = \frac{N_1D_1}{\sqrt{T_{01,1}}},\quad\frac{\dot m_2\sqrt{T_{01,2}}}{D_2^2p_{01,2}} = \frac{\dot m_1\sqrt{T_{01,1}}}{D_1^2p_{01,1}},\quad\frac{\dot W_2}{\dot m_2T_{01,2}} = \frac{\dot W_1}{\dot m_1T_{01,1}}$$
+
   So $\dot W\propto D^2p_{01}\sqrt{T_{01}}$ at the same non-dimensional point.
 
 ## Examples

@@ -16,7 +16,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_10_Modal_Analysis_2_final(1).pdf", 
 ## Definition
 
 > [!note] Definition
+>
 > $$\gamma_i = \{\phi\}_i^T[M]\{D\},\qquad M_{\mathrm{eff},i} = \frac{\gamma_i^2}{\{\phi\}_i^T[M]\{\phi\}_i}\;(= \gamma_i^2\text{ if mass-normalised})$$
+>
 > $\{D\}$ is a unit displacement (or rotation) in one global direction. $\gamma_i$ measures how strongly mode $i$ responds to excitation in that direction.
 
 ## Explanation

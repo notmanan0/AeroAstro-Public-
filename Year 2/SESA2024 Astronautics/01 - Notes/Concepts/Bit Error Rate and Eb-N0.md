@@ -18,6 +18,7 @@ sources: ["02 - Sources/Lectures/Chapter 9/2025 Chapter 9 - Communications - Lec
 > [!note] Definition
 > - **BER** is the probability that a bit is received incorrectly. It measures digital link quality.
 > - For a given modulation, BER is a function of $E_b/N_0$ (energy per bit ÷ noise density):
+>
 > $$\frac{C}{N_0} = \frac{E_b}{N_0}R_b\quad\Longleftrightarrow\quad\Big(\frac{C}{N_0}\Big)_{dB} = \Big(\frac{E_b}{N_0}\Big)_{dB}+10\log R_b$$
 
 ## Explanation

@@ -16,7 +16,9 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §5.2–5.3", "MATH10
 ## Definition
 
 > [!note] Definition
+>
 > $$(\mathbf{AB})_{ij}=\sum_ka_{ik}b_{kj}\qquad\big((m\times n)(n\times p)=m\times p\big)$$
+>
 > The product is defined only when the inner sizes match. Addition requires equal sizes.
 
 ## Explanation

@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
 
 > [!note] Definition
 > For the centre-of-mass position $\mathbf p^{NED}_{cm/Q}=[x,y,z]^T$ (north, east, down from the local origin $Q$) and the Earth-relative velocity in body axes $\mathbf v^{FRD}_{cm/e}=[u,v,w]^T$, on a flat Earth:
+>
 > $${}^e\dot{\mathbf p}^{NED}_{cm/Q}=\mathbf C^T_{FRD/NED}\,\mathbf v^{FRD}_{cm/e}\qquad(3.39)$$
 
 ## Why it has this form

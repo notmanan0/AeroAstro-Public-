@@ -15,6 +15,7 @@ sources: ["02 - Sources/Lectures/Week 10 - Rockets.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$\Delta V_{ideal} = c_e\ln\frac{m_0}{m_{bo}} = c_e\ln\frac{1}{\lambda+\delta},\qquad MR = \frac{m_0}{m_{bo}},\quad\lambda = \frac{m_{pl}}{m_0},\quad\delta = \frac{m_{dw}}{m_0}$$
 
 ## Explanation
@@ -24,13 +25,16 @@ sources: ["02 - Sources/Lectures/Week 10 - Rockets.pdf"]
 3. Separate and integrate from $m_0$ to $m_{bo}$: $\int dV = -c_e\int dm/m$, giving $\Delta V = c_e\ln(m_0/m_{bo})$.
 
 **With losses**:
+
 $$\Delta V = c_e\ln\frac{m_0}{m_{bo}}-\int_0^tg\sin\psi\,dt-\int_0^t\frac{D}{m}dt$$
+
 - Gravity loss is minimised by a short burn and a low flight-path angle.
 - Drag loss is minimised by a slow climb through dense air. These conflict, so a **gravity turn** is used.
 
 **Levers**: raise $c_e$ (propellant chemistry, $P_c$, expansion) and the mass ratio (light structure). Returns are only logarithmic in the mass ratio.
 
 **Inverted**:
+
 $$\lambda = e^{-\Delta V/c_e}-\delta,\quad m_0 = m_{pl}/\lambda,\quad m_p = m_0(1-\lambda-\delta)$$
 
 **SSTO feasibility** (legacy 2016-17, 2017-18, 2018-19):

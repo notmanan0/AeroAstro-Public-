@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Lecture 2.03.pdf", "02 - Sources/Lectures/Lectu
 ## Definition
 
 > [!note] Definition
+>
 > $$u(t) = K_Pe+K_I\int_0^te\,d\tau+K_D\dot e\quad\Longleftrightarrow\quad C(s) = K_P+\frac{K_I}{s}+K_Ds = K_p\left(1+\frac{1}{T_Is}+T_Ds\right)$$
+>
 > Here $T_I = K_p/K_I$ is the integral (reset) time and $T_D = K_D/K_p$ is the derivative (rate) time. P acts on the present error, I on the accumulated error and D on the predicted error.
 
 ## Explanation

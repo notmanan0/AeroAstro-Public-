@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Lecture2-4.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$\nu(M)=\sqrt{\frac{\gamma+1}{\gamma-1}}\,\tan^{-1}\sqrt{\frac{\gamma-1}{\gamma+1}(M^2-1)}-\tan^{-1}\sqrt{M^2-1},$$
+>
 > the angle through which a sonic stream must be turned (expanded) isentropically to reach $M$.
 
 ## Explanation

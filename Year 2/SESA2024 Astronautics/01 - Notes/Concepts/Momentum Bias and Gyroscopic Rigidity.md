@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 6/Chapter 6 - Attitude Control - prerec
 
 > [!note] Definition
 > **Momentum bias** means deliberately storing a large angular momentum $H_0$ along one body axis, by spinning the body or a wheel. A disturbance torque $T$ applied for time $dt$ then only **rotates the direction** of $\mathbf H$ by
+>
 > $$d\psi = \frac{T\,dt}{H_0}\qquad\Rightarrow\qquad\dot\psi = \frac{T}{H_0}\ \text{(precession rate)}$$
 
 ## Explanation

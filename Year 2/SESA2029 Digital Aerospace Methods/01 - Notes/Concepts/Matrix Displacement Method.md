@@ -17,7 +17,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_3_Matrix_displacement_method.pdf", 
 
 > [!note] Definition
 > The structural form of the finite element method. The structure is modelled as an assembly of elements whose force–displacement relations $\{F\}^e = [K]^e\{d\}^e$ are simple algebraic equations. These are assembled into the global equilibrium system
+>
 > $$\{F\} = [K]\{d\}$$
+>
 > which is solved for the nodal displacements once the boundary conditions are applied.
 
 ## Explanation

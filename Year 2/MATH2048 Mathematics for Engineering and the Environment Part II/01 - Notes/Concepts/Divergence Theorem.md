@@ -16,7 +16,8 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vect
 ## Definition
 
 > [!note] Definition
-> $$\iiint_V\nabla\cdot\mathbf F\,dV=\oiint_{\partial V}\mathbf F\cdot d\mathbf S\qquad(\text{closed surface, outward normal}).$$
+>
+> $$\iiint_V\nabla\cdot\mathbf F\,dV=\mathop{\large ∯}_{\partial V}\mathbf F\cdot d\mathbf S\qquad(\text{closed surface, outward normal}).$$
 
 ## Explanation
 **Meaning**: total source strength inside $V$ equals the net outflow through its boundary.
@@ -26,8 +27,8 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vect
 - the flux through an **open** surface: close it off (for example with a disc), apply Gauss, then subtract the flux through the lid.
 
 **Corollaries**:
-- $\oiint\mathbf r\cdot d\mathbf S=3V$.
-- $\oiint(\nabla\times\mathbf G)\cdot d\mathbf S=0$, because $\nabla\cdot(\nabla\times\mathbf G)=0$.
+- $\mathop{\large ∯}\mathbf r\cdot d\mathbf S=3V$.
+- $\mathop{\large ∯}(\nabla\times\mathbf G)\cdot d\mathbf S=0$, because $\nabla\cdot(\nabla\times\mathbf G)=0$.
 
 **Pitfalls**:
 - Every face must use the **outward** normal.

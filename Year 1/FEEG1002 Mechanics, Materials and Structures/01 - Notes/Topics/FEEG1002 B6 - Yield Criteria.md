@@ -40,7 +40,9 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 08 - Yield Criteria.pdf"]
 ## 2. Tresca: maximum shear stress (L8a)
 - **Observation**: ductile metals in tension slip on 45° planes, where $\tau_{max} = \sigma/2$. At yield in tension, $\tau_{max} = \sigma_Y/2$.
 - **Criterion**: yield when the largest shear on **any** plane reaches $\sigma_Y/2$:
+
 $$\tau_{max} = \tfrac12\max\left(|\sigma_I-\sigma_{II}|, |\sigma_I-\sigma_{III}|, |\sigma_{II}-\sigma_{III}|\right) < \frac{\sigma_Y}{2}$$
+
 - **Plane stress** ($\sigma_{III} = 0$), where the out-of-plane shear can govern:
   - same signs: $\max(|\sigma_I|, |\sigma_{II}|) < \sigma_Y$;
   - opposite signs: $|\sigma_I - \sigma_{II}| < \sigma_Y$.
@@ -77,6 +79,7 @@ Linear elasticity means **stress ∝ load**, so one analysis at load $F$ is enou
 
 > [!example] L8: plate with a hole (150 mm wide, 40 mm hole, $t = 10$ mm, $\sigma_Y = 500$ MPa, $F = 150$ kN)
 > The FE model gives a peak $\sigma_{eq} = 299.5$ MPa at the hole edge, so
+>
 > $$SF = \frac{\sigma_Y}{\sigma_{eq}} = \frac{500}{299.5} = 1.67,\qquad F_{max} = SF\cdot F = 250.4\ \text{kN}$$
 
 ![[s2_plate_hole_von_mises.png|560]]

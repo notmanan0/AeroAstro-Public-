@@ -30,7 +30,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/ODEs/Lecture2_ODE.pdf", "02 - 
 **Clash rule**: if the trial overlaps the CF, multiply it by $x^s$ with $s$ the smallest integer that removes the overlap. $s$ is the multiplicity of $k$ (or $k\pm j\omega$) as a root of the auxiliary equation: 0, 1 or 2.
 
 **Why the rule works**: writing $y_p=u\,e^{kx}$ turns the ODE into
+
 $$u''+P'(k)\,u'+P(k)\,u=\tilde r(x),$$
+
 where $P$ is the auxiliary polynomial.
 - If $P(k)=0$, the $u$ term is gone, so $u$ must be one degree higher (a factor $x$).
 - If $P(k)=P'(k)=0$ too, only $u''$ remains (a factor $x^2$).

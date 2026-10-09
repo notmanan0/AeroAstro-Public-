@@ -20,7 +20,9 @@ sources: ["02 - Sources/Lectures/Chapter 10/2025 WEEK 8 - Chapter 10 - Thermal C
 
 ## Explanation
 - **Planck's law**:
+
 $$q_\lambda = \frac{2\pi hc^2}{\lambda^5\left[\exp\left(\dfrac{ch}{k\lambda T}\right)-1\right]}\ (\text{W m}^{-2}\,\mu\text{m}^{-1})$$
+
   with $h$ = 6.625 × 10⁻³⁴ J s, $k$ = 1.380 × 10⁻²³ J/K, $c$ = 3 × 10⁸ m/s.
 - **Wien's displacement law**: $\lambda_{max}T = 2.898\times10^{-3}$ m K.
   - The Sun at 5800 K peaks at 0.5 µm (visible), so we use $\alpha_S$.

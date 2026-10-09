@@ -20,7 +20,9 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 
 > [!abstract] Summary
 > - Eliminate the current from $V = K\omega + iR_a$ and $T = Ki$ to get the **torque–speed line** of a PM or separately excited motor:
+>
 > $$\omega = \frac{V}{K} - \frac{R_a}{K^2}T$$
+>
 >   It has a no-load speed of $V/K$ and a stall torque of $KV/R_a$.
 > - Wound-field machines (shunt, series, compound) have other shapes; the series motor gives huge starting torque.
 > - **Speed control** means changing $V$ (efficiently, with a PWM **chopper**), adding $R$ (wastefully) or weakening the field.

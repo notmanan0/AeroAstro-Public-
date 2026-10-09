@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_S
 
 > [!note] Definition
 > An orbit whose plane keeps a **constant angle to the Earth–Sun line**, $\phi = \alpha_S-\Omega$ = constant. The spacecraft therefore passes each latitude at the **same local solar time** on every pass. It requires
+>
 > $$\dot\Omega = \dot\alpha_S = \frac{360^\circ}{365.25\ \text{d}} = +0.986^\circ/\text{day (East)}\quad\Rightarrow\quad\cos i = \frac{0.986}{-2.0647\times10^{14}a^{-3.5}}$$
 
 ## Explanation

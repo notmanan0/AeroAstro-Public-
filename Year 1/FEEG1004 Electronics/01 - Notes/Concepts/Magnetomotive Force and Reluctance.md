@@ -16,7 +16,9 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathcal F = Ni = \oint H\,dl\approx\sum_kH_kl_k,\qquad \mathcal F = \mathcal R\Phi,\qquad \mathcal R = \frac{l}{\mu_0\mu_rA}$$
+>
 > This is "Ohm's law" for magnetic circuits: mmf drives flux through reluctance.
 
 ## Explanation

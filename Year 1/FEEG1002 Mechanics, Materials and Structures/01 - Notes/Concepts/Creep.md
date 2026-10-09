@@ -15,6 +15,7 @@ sources: []
 
 ## Definition
 Time-dependent strain under sustained stress, important at high homologous temperature.
+
 $$\dot\varepsilon_s=K_2\sigma^n e^{-Q_c/RT}$$
 
 ## Explanation

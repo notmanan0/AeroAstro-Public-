@@ -16,6 +16,7 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §4.3.1", "MATH1054 M
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathbf a\cdot\mathbf b=|\mathbf a||\mathbf b|\cos\theta=a_1b_1+a_2b_2+a_3b_3$$
 
 ## Explanation

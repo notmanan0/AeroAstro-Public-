@@ -20,7 +20,9 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 
 > [!abstract] Summary
 > Feed current into a DC machine and it becomes a motor. The same physics gives the same constant twice:
+>
 > $$T = K_Ti,\qquad E = K_E\omega,\qquad K_T = K_E = \frac{ZN_p\Phi}{2\pi a}\ \text{(SI units)}$$
+>
 > - Steady equivalent circuit: $V = E + iR_a = K_E\omega + iR_a$.
 > - Power flow: electrical input $Vi$ → armature copper loss $i^2R_a$ → electromagnetic power $Ei = T\omega$ → minus friction, windage and core losses → shaft output.
 
@@ -51,6 +53,7 @@ This uses the same flux-per-pole substitution as the EMF. Hence $K_T = K_E$ in S
 ![[ee_c5_dc_machine_circuits.png|900]]
 
 ## 4. Power flow and efficiency
+
 $$
 P_{in} = Vi,\qquad P_{cu} = i^2R_a,\qquad P_{em} = Ei = T\omega,\qquad P_{out} = P_{em} - P_{rot},\qquad \eta = \frac{P_{out}}{P_{in}}
 $$

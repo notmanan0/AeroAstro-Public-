@@ -16,6 +16,7 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W05-5abc Inductors and Resonance - Re
 ## Definition
 
 > [!note] Definition
+>
 > $$N\Phi = Li,\qquad v = L\frac{di}{dt},\qquad E = \tfrac{1}{2}LI^2,\qquad L = \frac{N^2}{\mathcal R} = \frac{N^2\mu_0\mu_rA}{l}$$
 
 ## Explanation

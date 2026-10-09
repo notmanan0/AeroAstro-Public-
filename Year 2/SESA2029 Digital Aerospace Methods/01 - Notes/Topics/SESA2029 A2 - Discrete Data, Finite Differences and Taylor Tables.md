@@ -136,6 +136,7 @@ Its mirror image is the second-order forward scheme $f'_j\approx(-3f_j+4f_{j+1}-
 > 4. **The order is the power of $h$ in $\varepsilon$ after dividing by $h$.**
 
 ## 6. Non-uniform grids
+
 $$
 f'_j\approx\frac{f_{j+1}-f_j}{x_{j+1}-x_j},\qquad f''_j\approx\frac{\dfrac{f_{j+1}-f_j}{x_{j+1}-x_j}-\dfrac{f_j-f_{j-1}}{x_j-x_{j-1}}}{\tfrac12(x_{j+1}-x_{j-1})}
 $$

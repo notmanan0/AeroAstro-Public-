@@ -30,6 +30,7 @@ $$
 The upper half of the full-cylinder flow is exactly the flow over a semicircle on the ground (the ground is the cylinder's symmetry plane).
 
 ### (ii) Pressure coefficients
+
 $$
 V_r = V_\infty\cos\theta\left(1-\frac{R^2}{r^2}\right),\qquad V_\theta = -V_\infty\sin\theta\left(1+\frac{R^2}{r^2}\right)
 $$

@@ -39,15 +39,18 @@ sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 1
 **Test**: replace $x\to\lambda x$ and $t\to\lambda t$. If $\lambda$ cancels, the right-hand side depends only on $x/t$. Equivalently, every term in the numerator and denominator has the same total degree.
 
 **Method**: put $x=vt$, so $\dot x=v+t\dot v$. The equation becomes $t\dot v=F(v)-v$, which is **separable**:
+
 $$
 \int\frac{\mathrm dv}{F(v)-v}=\ln t+C,\quad\text{then substitute }v=x/t.
 $$
 
 ## 2. Exact equations (James §10.5.3)
 $f(x,t)\,\dot x+g(x,t)=0$ is **exact** if there is an $F(x,t)$ with $F_x=f$ and $F_t=g$. Then the ODE says $\frac{\mathrm d}{\mathrm dt}F(x(t),t)=0$, so $F=C$.
+
 $$
 \text{Test:}\quad\frac{\partial f}{\partial t}=\frac{\partial g}{\partial x}\qquad\text{(equality of the mixed partials, }F_{xt}=F_{tx}\text{)}
 $$
+
 1. Integrate $f$ with respect to $x$, adding an unknown function $h(t)$.
 2. Differentiate with respect to $t$, match to $g$, and find $h$.
 3. Write $F(x,t)=C$. This is often left implicit.
@@ -55,9 +58,11 @@ $$
 The idea is identical to finding a potential for a conservative field in MATH2048 ([[Conservative Vector Fields]]).
 
 ## 3. Linear equations and the integrating factor (James §10.5.4)
+
 $$
 \dot x+P(t)x=Q(t)\qquad\xrightarrow{\ \times\,\mu=e^{\int P\,\mathrm dt}\ }\qquad\frac{\mathrm d}{\mathrm dt}(\mu x)=\mu Q\ \Rightarrow\ x=\frac1\mu\Big[\int\mu Q\,\mathrm dt+C\Big]
 $$
+
 - Put the equation in **standard form** first, with the coefficient of $\dot x$ equal to 1. For example, $t\dot x+2x=t\cos t$ becomes $\dot x+\frac2tx=\cos t$.
 - **No constant** is needed in $\int P\,\mathrm dt$. Also, $e^{\pm\ln t}=t^{\pm1}$.
 - The **structure of the solution** is $x=\underbrace{C/\mu}_{\text{transient (CF)}}+\underbrace{\tfrac1\mu\int\mu Q}_{\text{particular}}$. This previews the CF + PI split in [[MATH1054 M13 - Differential Equations III|M13]].

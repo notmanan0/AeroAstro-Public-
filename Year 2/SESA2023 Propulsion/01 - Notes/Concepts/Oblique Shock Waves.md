@@ -16,6 +16,7 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 
 > [!note] Definition
 > A shock inclined at angle $\sigma$ to the flow turns it through $\delta$ towards the shock. The **tangential** velocity is unchanged, so it is a normal shock in the normal component:
+>
 > $$M_{n1} = M_1\sin\sigma,\quad M_{n2} = M_2\sin(\sigma-\delta),\quad \tan\delta = 2\cot\sigma\frac{M_1^2\sin^2\sigma-1}{M_1^2(\gamma+\cos2\sigma)+2}$$
 
 ## Explanation

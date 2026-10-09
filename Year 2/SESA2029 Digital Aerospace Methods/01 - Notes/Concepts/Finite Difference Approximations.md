@@ -17,6 +17,7 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L3)", "02 - Sources/C
 
 > [!note] Definition
 > Approximations to derivatives built from function values at discrete grid points $x_j = jh$. They are obtained by truncating Taylor series:
+>
 > $$f'_j\approx\frac{f_{j+1}-f_j}{h}\ (\text{forward}),\quad\frac{f_j-f_{j-1}}{h}\ (\text{backward}),\quad\frac{f_{j+1}-f_{j-1}}{2h}\ (\text{central}),\qquad f''_j\approx\frac{f_{j-1}-2f_j+f_{j+1}}{h^2}$$
 
 ## Explanation

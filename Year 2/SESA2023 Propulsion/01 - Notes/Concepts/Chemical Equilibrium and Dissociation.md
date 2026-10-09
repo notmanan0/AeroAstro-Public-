@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf"]
 
 > [!note] Definition
 > For $aA+bB\rightleftharpoons cC+dD$ at equilibrium (ideal gases, $p$ in bar, $p^\theta = 1$ bar):
+>
 > $$K^\theta(T) = \frac{(p_C/p^\theta)^c(p_D/p^\theta)^d}{(p_A/p^\theta)^a(p_B/p^\theta)^b},\qquad p_i = \frac{n_i}{n_{tot}}p$$
+>
 > The Data Book Table 5 lists $\ln K^\theta$ against $T$.
 
 ## Explanation

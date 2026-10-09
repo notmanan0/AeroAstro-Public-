@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 
 > [!note] Definition
 > Losses in passive components (no work, adiabatic) appear only as stagnation-pressure drops:
+>
 > $$\Gamma_d = \frac{p_{02}}{p_{01}},\qquad\Gamma_c = \frac{p_{03}}{p_{02}},\qquad\Gamma_n = \frac{p_{04}}{p_{03}}\quad(\le1)$$
+>
 > The combustion efficiency is $\eta_b = LCV_{eff}/LCV$.
 
 ## Explanation
@@ -26,7 +28,9 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
   - combustor: friction, flameholder drag, and the Rayleigh loss of adding heat to a moving flow (a bigger contraction ratio or lower velocity reduces it);
   - nozzle: friction, divergence, shocks.
 - **Real ramjet**:
+
   $$\frac{p_{04}}{p_a} = \Gamma_d\Gamma_c\Gamma_n\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{\frac{\gamma}{\gamma-1}},\qquad V_e = \sqrt{2c_pT_{03}\big[1-(p_a/p_{04})^{(\gamma-1)/\gamma}\big]}$$
+
   Losses reduce the expansion ratio and hence $V_e$ and thrust. The $T$–$s$ picture has each real state to the right of the ideal one.
 - **Recovering $\Gamma$ from measurements** (2023-24 Q2):
   - with negligible KE between the diffuser exit and the nozzle entry, static = stagnation there;

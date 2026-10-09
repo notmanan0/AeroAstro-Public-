@@ -17,7 +17,9 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L4, L12)", "02 - Sour
 
 > [!note] Definition
 > The **residual** measures how far the current iterate is from satisfying the **discrete** equations. For example
+>
 > $$R = \sqrt{\sum_j(T_{j-1}-2T_j+T_{j+1})^2}$$
+>
 > The **solution error** is the distance from the **exact** solution of the PDE. A zero residual means the *iteration* has converged. It says nothing about whether the *grid* is fine enough.
 
 ## Explanation

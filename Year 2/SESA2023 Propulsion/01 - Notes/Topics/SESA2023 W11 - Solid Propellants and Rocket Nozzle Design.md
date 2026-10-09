@@ -104,7 +104,9 @@ Quasi-1D theory only needs $A(x)$. A real nozzle needs the whole axisymmetric pr
 - **Throat**: two circular arcs (radius up to 2–3 × $r_t$) meet tangentially. A tighter upstream curvature gives a **vena contracta**, which reduces the effective $A_t$ and the mass flow.
 - **Divergent section**: the critical part, because the flow is supersonic and a poor contour creates shocks.
   - **Conical**: defined by the half-angle $\alpha$, simple and cheap. The lateral area scales as $1/\sin\alpha$. Only the axial momentum counts, so the thrust is multiplied by the **divergence factor**
+
     $$\lambda = \frac{1+\cos\alpha}{2}\qquad(\alpha = 15^\circ\Rightarrow\lambda = 0.983)$$
+
     Use 12–18°: smaller is too long and heavy, larger loses too much.
   - **Bell (contoured)**: a large initial angle (30–60°) turns gradually to 2–8° at the exit. It is designed with 2-D (method-of-characteristics) models to cancel the expansion waves without creating compression waves. It is **shorter** and has **lower divergence loss** than a 15° cone of the same area ratio. It is **not used on solids**, because two-phase Al₂O₃ particles erode concave walls.
   - **Unconventional** designs reduce launch cost and handle the single-design-altitude problem:

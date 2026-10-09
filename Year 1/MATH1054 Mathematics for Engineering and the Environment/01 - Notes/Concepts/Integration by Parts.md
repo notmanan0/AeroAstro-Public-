@@ -16,14 +16,18 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §8.8.4", "MATH1054 M
 ## Definition
 
 > [!note] Definition
+>
 > $$\int u\frac{\mathrm dv}{\mathrm dx}\,\mathrm dx=uv-\int v\frac{\mathrm du}{\mathrm dx}\,\mathrm dx$$
+>
 > This is the product rule integrated.
 
 ## Explanation
 - **Choosing $u$ (LIATE)**: take the first of Logarithmic, Inverse-trig, Algebraic, Trigonometric, Exponential. The aim is that $u'$ is simpler than $u$.
 - **Repeated parts**: $\int x^n(\text{trig or exp})$ needs $n$ applications, each lowering the power.
 - **The cyclic case**: $\int e^{ax}\sin bx$ returns to itself after two applications. Solve the resulting equation for $I$:
+
 $$\int e^{ax}\cos bx\,\mathrm dx=\frac{e^{ax}(a\cos bx+b\sin bx)}{a^2+b^2},\qquad\int e^{ax}\sin bx\,\mathrm dx=\frac{e^{ax}(a\sin bx-b\cos bx)}{a^2+b^2}$$
+
 - **Definite integrals**: $\big[uv\big]_a^b-\int_a^bvu'\,\mathrm dx$.
 - **The "$u=\ln x$, $\mathrm dv=\mathrm dx$" trick**: $\int\ln x\,\mathrm dx=x\ln x-x$.
 

@@ -27,7 +27,9 @@ sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf", "
 - With $f\ll1$ and $P_j = P_A$: $F = \dot m_a(V_j-V_0)$. The **specific thrust** is $F/\dot m_a = V_j-V_0$.
 - Rocket thrust rises with altitude as $P_A\to0$. In vacuum $F_{vac} = F_{sl}+A_eP_{A,sl}$ if the nozzle flow is unchanged (the nozzle is choked).
 - **Turbofan with two streams**:
+
   $$F = \dot m_c\big[(1+f)V_{jc}-V\big]+\dot m_b(V_{jb}-V)\;\Rightarrow\;\frac{F}{\dot m_c} = (1+f)V_{jc}+BPR\,V_{jb}-(1+BPR)V$$
+
   This is the "ideal turbofan specific thrust" asked for in 2016-17 and 2018-19.
 
 ## Examples

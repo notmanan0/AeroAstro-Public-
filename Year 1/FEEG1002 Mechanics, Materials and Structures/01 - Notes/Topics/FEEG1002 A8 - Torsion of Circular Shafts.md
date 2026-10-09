@@ -20,7 +20,9 @@ sources: ["02 - Sources/Statics 1/Lectures/Lecture 13 - Torsion.pdf"]
 
 > [!abstract] Summary
 > In a circular shaft under torque $T$, cross-sections stay **plane** and radii stay **straight**. Each section simply rotates relative to its neighbours. The material is therefore in **pure shear**, with $\gamma = r\theta/L$, so the shear stress grows linearly from zero on the axis to a maximum at the surface. Integrating $\tau r\,dA$ over the section gives the torsion equation
+>
 > $$\frac{T}{J} = \frac{\tau}{r} = \frac{G\theta}{L}$$
+>
 > where the polar second moment of area is $J = \pi R^4/2 = \pi D^4/32$. It has the same structure as $M/I = \sigma/y = E/R$.
 
 ## Key Concepts

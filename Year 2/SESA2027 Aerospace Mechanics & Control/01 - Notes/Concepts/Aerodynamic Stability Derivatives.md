@@ -17,7 +17,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.04.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > These are the coefficients of the first-order Taylor expansion of the aerodynamic forces and moments in the perturbation variables. For example:
+>
 > $$\Delta M_a = \mathring M_uu+\mathring M_ww+\mathring M_qq+\mathring M_{\dot w}\dot w+\mathring M_\eta\eta$$
+>
 > A ring (°) marks the **dimensional** form. Derivatives with respect to states go in $\mathbf A$; derivatives with respect to controls ($\eta$, $T$) go in $\mathbf B$.
 
 ## Explanation

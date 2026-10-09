@@ -16,6 +16,7 @@ sources: ["03 - Exams & Past Papers/SESA2022-202425-01-SESA2022.pdf"]
 ## Q1: Near-laminar boundary layer, $U/U_\infty = 2\eta-\eta^2$ ($\eta = y/\delta$)
 
 ### (a) Shape factor
+
 $$
 \frac{\delta^*}{\delta} = \int_0^1(1-2\eta+\eta^2)\,d\eta = 1-1+\frac13 = \frac13
 $$
@@ -97,6 +98,7 @@ $$
 No flow crosses a streamline, which is exactly why it can represent the ground. The flow there is purely tangential: $u_r = 4.2797$, $u_\theta = -1.6442$, $|V| = 4.5847$ m/s.
 
 ### (c) Erosion at $(0,1)$?
+
 $$
 u_r = 1.5(2)\cos\frac{3\pi}4+\frac{4}{2\pi} = -2.1213+0.6366 = -1.4847,\qquad u_\theta = -3\sin\frac{3\pi}4 = -2.1213
 $$
@@ -106,6 +108,7 @@ $$
 $$
 
 ### (d) $C_p$ at $(\sqrt2,\pi/4)$, i.e. $(x,z) = (1,1)$
+
 $$
 u_r = 3(2^{1/4})\cos\frac{3\pi}8+\frac{2}{\pi\sqrt2} = 1.3653+0.4502 = 1.8154,\qquad u_\theta = -3(2^{1/4})\sin\frac{3\pi}8 = -3.2961
 $$
@@ -142,6 +145,7 @@ $$
 $B_1 = 0.0152$, so $C_L = \pi(4)(0.0152) = \boxed{0.1910}$.
 
 ### (c) Sectional lift-curve slope ($\alpha = 5^\circ$, $\alpha_{L=0} = -2^\circ$, $\tau = \delta$)
+
 $$
 \delta = \sum_{n\ge2}n\left(\frac{B_n}{B_1}\right)^2 = 3\left(\frac{0.0013}{0.0152}\right)^2 = 0.0219
 $$

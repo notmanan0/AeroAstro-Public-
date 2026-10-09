@@ -38,6 +38,7 @@ Both have the maximum equal-sphere packing fraction 0.740; the different stackin
 
 ## Q3: BCC unit-cell edge in terms of $R$
 Atoms touch along the body diagonal. The diagonal spans corner radius + body-centre diameter + corner radius $=4R$:
+
 $$a\sqrt3=4R\quad\Rightarrow\quad\boxed{a=\frac{4R}{\sqrt3}}$$
 
 ## Q4: Atoms per unit cell
@@ -47,9 +48,11 @@ $$a\sqrt3=4R\quad\Rightarrow\quad\boxed{a=\frac{4R}{\sqrt3}}$$
 ## Q5: Atomic packing factor
 ### FCC
 Atoms touch on a face diagonal: $a\sqrt2=4R$, so $a=2\sqrt2R$.
+
 $$APF_{FCC}=\frac{4(4\pi R^3/3)}{(2\sqrt2R)^3}=\boxed{\frac{\pi}{3\sqrt2}=0.740}$$
 
 ### BCC
+
 $$APF_{BCC}=\frac{2(4\pi R^3/3)}{(4R/\sqrt3)^3}=\boxed{\frac{\pi\sqrt3}{8}=0.680}$$
 
 FCC is higher because it is close packed; BCC contains more interstitial volume.
@@ -58,6 +61,7 @@ FCC is higher because it is close packed; BCC contains more interstitial volume.
 Compare equal numbers of atoms, not equal numbers of cells.
 
 $$v_{atom,FCC}=\frac{(2\sqrt2R)^3}{4}=4\sqrt2R^3$$
+
 $$v_{atom,BCC}=\frac{(4R/\sqrt3)^3}{2}=\frac{32}{3\sqrt3}R^3$$
 
 $$\frac{\Delta V}{V}=\frac{32/(3\sqrt3)}{4\sqrt2}-1=0.08866$$
@@ -81,18 +85,24 @@ Hydrogen through steel is much faster. H is very small and moves interstitially 
 
 ### (b) Does doubling carburising temperature double carbon concentration at depth?
 No. The coefficient follows
+
 $$D=D_0e^{-Q/RT}$$
+
 and the profile follows Fick's second law, with penetration distance scaling roughly as $\sqrt{Dt}$. Temperature must be in kelvin and the dependence is exponential, so the change is not linear and will normally be far greater than a factor of two over a large temperature increase.
 
 ## Q9: Carbon in a BCC face-centre interstitial
 For BCC iron,
+
 $$a=\frac{4R_{Fe}}{\sqrt3}=\frac{4(0.12)}{\sqrt3}=0.2771\ \text{nm}$$
 
 The limiting nearest neighbours are the two body-centred Fe atoms on either side of the face centre, separated by $a/2$ from the interstitial centre:
+
 $$R_{Fe}+r_i=\frac a2$$
+
 $$r_i=\frac{2R_{Fe}}{\sqrt3}-R_{Fe}=0.01856\ \text{nm}$$
 
 Thus the available site diameter is
+
 $$\boxed{2r_i=0.0371\ \text{nm}}$$
 
 Carbon has $r_C=0.08$ nm, far larger than $r_i$. It severely distorts the BCC lattice, so equilibrium carbon solubility in ferrite is low. The distortion also interacts strongly with dislocations, producing interstitial solid-solution strengthening and yield-point behaviour.

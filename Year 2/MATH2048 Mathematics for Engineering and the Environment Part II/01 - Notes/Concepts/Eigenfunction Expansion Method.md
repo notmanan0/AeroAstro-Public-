@@ -17,8 +17,11 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture18_Parabolic2.pdf"
 
 > [!note] Definition
 > Consider $u_t=\kappa^2u_{xx}+F(x,t)$ with homogeneous BCs. Expand
+>
 > $$u=\sum T_n(t)X_n(x),\qquad F=\sum F_n(t)X_n(x),$$
+>
 > where the $X_n$ are the eigenfunctions selected by the BCs. Orthogonality then decouples the modes:
+>
 > $$\dot T_n+\kappa^2k_n^2T_n=F_n(t),\qquad T_n=e^{-\kappa^2k_n^2t}\Big[C_n+\int e^{\kappa^2k_n^2t}F_n\,dt\Big].$$
 
 ## Explanation
@@ -32,7 +35,9 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture18_Parabolic2.pdf"
 
 ## Examples
 - $y_t=y_{xx}+x(1-x)$ with Dirichlet BCs:
+
 $$y=\sum_{\text{odd}}\frac{8}{(n\pi)^5}\big[((n\pi)^2-1)e^{-(n\pi)^2t}+1\big]\sin n\pi x\ \to\ \frac{x-2x^3+x^4}{12}\ \text{as }t\to\infty.$$
+
 - $y(0,t)=\frac12(1-\cos t)$ gives $F_n=-\sin t/(n\pi)$ ([[MATH2048 PDE4 - Inhomogeneous PDEs and Inhomogeneous Boundary Conditions|PDE4]]).
 
 ## Related

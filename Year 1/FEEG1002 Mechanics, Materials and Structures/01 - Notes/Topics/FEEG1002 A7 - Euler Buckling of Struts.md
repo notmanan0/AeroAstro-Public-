@@ -20,7 +20,9 @@ sources: ["02 - Sources/Statics 1/Lectures/Lecture 12 - Buckling.pdf"]
 
 > [!abstract] Summary
 > A short, stocky column fails by crushing or yielding. A **slender** strut fails first by **buckling**: at a critical load it becomes unstable and bows sideways, often while the stress is still well below yield. Writing the moment on the **deflected** shape, $M = Pv$, turns $EIv'' = -M$ into the eigenvalue problem $v'' + (P/EI)v = 0$. The lowest non-trivial solution is the Euler load
+>
 > $$P_{cr} = \frac{\pi^2EI}{L_e^2}$$
+>
 > The **effective length** $L_e$ captures the end conditions, and $I$ is the **smallest** second moment of area.
 
 ## Key Concepts
@@ -33,6 +35,7 @@ sources: ["02 - Sources/Statics 1/Lectures/Lecture 12 - Buckling.pdf"]
 - For a pin-ended strut with compressive load $P$, taking moments at a cut gives $M(x) = Pv(x)$. The more it bends, the larger the moment, so the situation feeds on itself.
 
 ## 2. The governing equation (L12a–b)
+
 $$
 EI\frac{d^2v}{dx^2} = -Pv\quad\Rightarrow\quad \frac{d^2v}{dx^2} + n^2v = 0,\qquad n^2 = \frac{P}{EI}
 $$
@@ -45,6 +48,7 @@ $$
 - $v(L) = 0$ gives $A\sin nL = 0$, which has two ways out:
   1. $A = 0$: the strut stays **straight** (trivial solution, stable).
   2. $\sin nL = 0$, so $nL = \pi, 2\pi, 3\pi, \dots$ The lowest gives
+
 $$
 P_{cr} = \frac{\pi^2EI}{L^2},\qquad v = A\sin\frac{\pi x}{L}
 $$

@@ -17,8 +17,11 @@ sources: ["02 - Sources/Lectures/Lecture 2.07.pdf", "02 - Sources/Lectures/Lectu
 
 > [!note] Definition
 > Sampling at $f_s = 1/T_s$ can represent only frequencies up to the **Nyquist frequency** $f_N = f_s/2$. The Nyquist–Shannon criterion for no aliasing is
+>
 > $$f_s>2f_{max}$$
+>
 > A component at $f>f_N$ appears after sampling at the **alias frequency**
+>
 > $$f_{alias} = |f-mf_s|,\qquad m\in\mathbb Z\ \text{chosen so that}\ 0\le f_{alias}\le f_N$$
 
 ## Explanation

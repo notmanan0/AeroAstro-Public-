@@ -39,6 +39,7 @@ $$
 Parts: bottom flange (1) 100 × 20, web (2) 15 × 40, top flange (3) 60 × 15 (mm).
 
 **(i) $I_{yy}$ (bending about the vertical symmetry axis).** Every part is centred on this axis, so the parallel-axis terms are zero:
+
 $$I_{yy} = \frac{20(100)^3}{12} + \frac{40(15)^3}{12} + \frac{15(60)^3}{12} = (1.667 + 0.011 + 0.270)\times10^{-6} = \mathbf{1.95\times10^{-6}}\ \text{m}^4\ ✔$$
 
 **(ii) $I_{zz}$ (neutral axis not at mid-height).**
@@ -58,6 +59,7 @@ $$I_{zz} = \mathbf{2.29\times10^{-6}}\ \text{m}^4\ ✔$$
 - $I = \left[\tfrac{0.01(0.09)^3}{12} + 9\times10^{-4}(0.0263)^2\right] + \left[\tfrac{0.1(0.01)^3}{12} + 10^{-3}(0.0237)^2\right] = 1.80\times10^{-6}$ m⁴.
 - **Moment**: $Q = F$ and $M = -F(L-x)$, so $|M_{max}| = FL$ at the wall (hogging, tension on top).
 - **Critical fibre**: the **top** is $0.1 - 0.0287 = 0.0713$ m from the neutral axis. That is further than the base (0.0287 m), and it is in tension:
+
 $$M_{max} = \frac{\sigma I}{y_{max}} = \frac{330\times10^6(1.8\times10^{-6})}{0.0713} = 8.33\ \text{kN m}\;\Rightarrow\; F = \mathbf{8.33}\ \text{kN}\ ✔$$
 
 ![[s1_bending_stress_tsection.png|860]]
@@ -70,7 +72,9 @@ $$M_{max} = \frac{\sigma I}{y_{max}} = \frac{330\times10^6(1.8\times10^{-6})}{0.
 ## Extra Q1: Crane boom of three rods, $D = 0.1$ m, triangle height $H = 0.6$ m
 - Centroid: taking moments about the line through rods 2 and 3, $3A\,h = AH$, so $h = H/3$.
 - $I_1 = \dfrac{\pi D^4}{64} + \dfrac{\pi D^2}{4}\left(\dfrac23H\right)^2$ and $I_2 = I_3 = \dfrac{\pi D^4}{64} + \dfrac{\pi D^2}{4}\left(\dfrac13H\right)^2$.
+
 $$I_{zz} = \pi\left(\frac{3D^4}{64} + \frac{D^2H^2}{6}\right) = \mathbf{0.0019}\ \text{m}^4\ ✔$$
+
 The own-axis terms contribute only 0.8%. This is the parallel axis theorem in its purest form.
 
 ## Extra Q2: 60 × 80 mm block with two Ø22 mm holes at ±20 mm
@@ -82,6 +86,7 @@ Subtract the holes:
 - Load: $w = \rho gA = 1000(9.81)(0.394)(0.15) = 579.8$ N/m, a UDL on a simply supported span, so $M_{max} = wL^2/8$.
 - Section: walls 197 × 3 (591 mm² each) and base 400 × 3 (1200 mm²). Centroid $\bar y = 51.12$ mm above the base, and $I = 9.78\times10^{-6}$ m⁴.
 - Critical fibre: the wall tops, $200 - 51.1 = 148.9$ mm from the neutral axis, in compression.
+
 $$\frac{wL^2}{8}\cdot\frac{0.1489}{9.78\times10^{-6}}\le35\times10^6\;\Rightarrow\; L_{max} = \mathbf{5.63}\ \text{m}\ ✔$$
 
 ## Sources

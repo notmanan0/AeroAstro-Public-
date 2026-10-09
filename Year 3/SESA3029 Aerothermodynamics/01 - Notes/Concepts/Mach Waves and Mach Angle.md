@@ -17,6 +17,7 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 
 > [!note] Definition
 > A **Mach wave** is an infinitely weak, isentropic pressure disturbance in a supersonic flow. It lies at the **Mach angle** to the local velocity:
+>
 > $$\boxed{\mu=\sin^{-1}\!\left(\frac1M\right)}.$$
 
 ## Derivation (moving sound source)

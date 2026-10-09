@@ -33,6 +33,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/ODEs/Lecture2_ODE.pdf", "02 - 
 ---
 
 ## 1. Euler equations
+
 $$
 ax^2y''+bxy'+cy=0\qquad(x>0,\ a,b,c\text{ constant})
 $$
@@ -56,16 +57,19 @@ $$
 Let $t=\ln x$, so $x=e^t$ and $\dfrac{dt}{dx}=\dfrac1x$. Write $\dot y=dy/dt$.
 
 **First derivative** (chain rule):
+
 $$
 y'=\frac{dy}{dx}=\frac{dy}{dt}\frac{dt}{dx}=\frac1x\,\dot y\quad\Longrightarrow\quad xy'=\dot y .
 $$
 
 **Second derivative**: apply the product rule to $\tfrac1x\cdot\dot y$, remembering that $\dot y$ depends on $x$ through $t$:
+
 $$
 y''=\frac{d}{dx}\Big(\frac1x\dot y\Big)=-\frac1{x^2}\dot y+\frac1x\frac{d\dot y}{dt}\frac{dt}{dx}=-\frac1{x^2}\dot y+\frac1{x^2}\ddot y\quad\Longrightarrow\quad x^2y''=\ddot y-\dot y .
 $$
 
 **Substitute** into $ax^2y''+bxy'+cy=0$:
+
 $$
 a(\ddot y-\dot y)+b\dot y+cy=0\quad\Longrightarrow\quad \boxed{a\ddot y+(b-a)\dot y+cy=0}
 $$
@@ -77,7 +81,9 @@ This is a constant-coefficient ODE in $t$. Its auxiliary equation $a\lambda^2+(b
 
 > [!example] Pulsating star (L2): $r^2X''+2rX'-\ell(\ell+1)X=0$
 > Here $a=1$, $b=2$, $c=-\ell(\ell+1)$, so $n^2+n-\ell(\ell+1)=0$, which factorises as $(n-\ell)(n+\ell+1)=0$. The roots are distinct:
+>
 > $$X(r)=c_1r^\ell+\frac{c_2}{r^{\ell+1}}.$$
+>
 > The same pair of powers returns for Laplace's equation in polar coordinates (Block 4, PDEs).
 
 > [!example] Complex roots, full working: $x^2y''+xy'+4y=0$
@@ -88,6 +94,7 @@ This is a constant-coefficient ODE in $t$. Its auxiliary equation $a\lambda^2+(b
 
 > [!example] Repeated root (L2): $x^2y''+3xy'+y=0$
 > $n(n-1)+3n+1=(n+1)^2=0$, so $n=-1$ is repeated. In $t$: $\ddot y+2\dot y+y=0$, so $y=(c_1+c_2t)e^{-t}$. Converting back,
+>
 > $$y=\frac{c_1+c_2\ln x}{x}.$$
 
 ## 2. Inhomogeneous ODEs: CF + PI
@@ -97,9 +104,11 @@ For $y''+p y'+q y=r(x)$ (the coefficient of $y''$ must be 1 in standard form):
 3. The general solution is $y=c_1y_1+c_2y_2+y_p$. **Only now** apply initial or boundary conditions.
 
 **Proof that CF + PI is the *general* solution.** Let $L[y]=y''+py'+qy$. $L$ is linear: $L[\alpha u+\beta v]=\alpha L[u]+\beta L[v]$. Take any solution $y$ of $L[y]=r$ and let $\tilde y=y-y_p$. Then
+
 $$
 L[\tilde y]=L[y]-L[y_p]=r-r=0,
 $$
+
 so $\tilde y$ solves the homogeneous equation and must equal $c_1y_1+c_2y_2$. Hence **every** solution has the form $y=c_1y_1+c_2y_2+y_p$, and no solution is missed. It also follows that *which* PI you find doesn't matter: two PIs differ by a CF, which is absorbed into $c_1,c_2$.
 
 ### Method of undetermined coefficients (constant coefficients only)
@@ -120,11 +129,14 @@ so $\tilde y$ solves the homogeneous equation and must equal $c_1y_1+c_2y_2$. He
 > - **Trial**: $y_p=Ax+B+Ce^{3x}$. There is no clash with the CF.
 > - **Substitute**: $y_p''+4y_p'+4y_p=4Ax+(4A+4B)+(9+12+4)Ce^{3x}$.
 > - **Match coefficients**: $4A=4$, $4A+4B=0$, $25C=25$, so $A=1$, $B=-1$, $C=1$.
+>
 > $$y=(c_1+c_2x)e^{-2x}+x-1+e^{3x}$$
 
 > [!tip] Shortcut for exponential trials: $y_p=u(x)e^{kx}$
 > If $y_p=u\,e^{kx}$, then $y_p'=(u'+ku)e^{kx}$ and $y_p''=(u''+2ku'+k^2u)e^{kx}$. Substituting into $y''+by'+cy$ gives
+>
 > $$\big[u''+(2k+b)u'+(k^2+bk+c)u\big]e^{kx}.$$
+>
 > - $k^2+bk+c$ is the auxiliary polynomial at $k$. It **vanishes** when $k$ is a CF root, which is exactly why a plain $Ce^{kx}$ fails.
 > - $2k+b$ is its derivative at $k$. It also vanishes when $k$ is a **repeated** root, which is why you then need $x^2$.
 
@@ -135,6 +147,7 @@ so $\tilde y$ solves the homogeneous equation and must equal $c_1y_1+c_2y_2$. He
 > - $y_p''=C(2-8x+4x^2)e^{-2x}$
 >
 > $$y_p''+4y_p'+4y_p=C\big[(2-8x+4x^2)+(8x-8x^2)+4x^2\big]e^{-2x}=2Ce^{-2x}$$
+>
 > So $2C=1$ and $C=\tfrac12$ ✔.
 
 > [!example] Clashes with $y_c=(c_1+c_2x)e^{-2x}$ (L2 slide 14)
@@ -151,6 +164,7 @@ For $\ddot y+\omega_0^2y=\cos\omega_st$, the CF is $c_1\cos\omega_0t+c_2\sin\ome
   - $\ddot y_p=2\omega_0(-A\sin+B\cos)-t\omega_0^2(A\cos+B\sin)$
 
   The $t$-terms cancel against $\omega_0^2y_p$, leaving $2\omega_0(-A\sin\omega_0t+B\cos\omega_0t)=\cos\omega_0t$. Hence $A=0$ and $B=1/(2\omega_0)$:
+
 $$
 y_p=\frac{t}{2\omega_0}\sin\omega_0t\qquad\text{(the amplitude grows linearly in time)}.
 $$

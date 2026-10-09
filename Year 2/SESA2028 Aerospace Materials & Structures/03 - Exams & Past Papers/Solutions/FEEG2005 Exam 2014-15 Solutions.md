@@ -74,10 +74,13 @@ This is the same geometry as Green Book Tutorial 5 Q3.
 **Hoop stresses at the interface** (from Lamé, with contact pressure $p$):
 
 - Inner tube, external pressure $p$:
+
 $$
 \sigma_{\theta,i}(c)=-p\,\frac{c^2+a^2}{c^2-a^2}=-p\,\frac{2500+625}{2500-625}=-1.667\,p.
 $$
+
 - Outer tube, internal pressure $p$:
+
 $$
 \sigma_{\theta,o}(c)=+p\,\frac{b^2+c^2}{b^2-c^2}=p\,\frac{5625+2500}{5625-2500}=+2.600\,p.
 $$

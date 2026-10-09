@@ -16,7 +16,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.07.pdf"]
 ## Definition
 
 > [!note] Definition
+>
 > $$\mathcal L\{g(t)\} = G(s) = \int_0^\infty g(t)e^{-st}\,dt,\qquad s = \sigma+j\omega$$
+>
 > It turns linear constant-coefficient ODEs into **algebraic** equations in $s$: **differentiation becomes multiplication by $s$** and integration becomes division by $s$. Initial conditions are included automatically.
 
 ## Explanation
