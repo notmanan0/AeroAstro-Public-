@@ -1,0 +1,6 @@
+# Obsidian creates these when the folder is opened as a vault
+.obsidian/
+.trash/
+desktop.ini
+Thumbs.db
+.DS_Store
