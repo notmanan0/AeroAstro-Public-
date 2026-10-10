@@ -8,7 +8,7 @@ tags: [sesa3029, concept, shock-expansion, supersonic-aerofoil]
 status: complete
 parent_lectures: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]"]
 related_concepts: ["[[Theta-Beta-Mach Relation]]", "[[Prandtl-Meyer Function]]", "[[Slip Line]]", "[[Aerodynamic Centre and Centre of Pressure]]"]
-sources: ["02 - Sources/Lectures/Lecture2-5.pdf"]
+sources: ["02 - Sources/Lectures/Lecture2-5.pdf", "02 - Sources/Lectures/Lecture 2-5 (2025-26 version).txt", "02 - Sources/Lectures/Tutorial Lecture #1.txt"]
 ---
 
 # Shock-Expansion Theory
@@ -43,6 +43,10 @@ with $q_\infty=\tfrac12\gamma p_\infty M_\infty^2$. The centre of pressure is at
 | Case | $C_l$ | $C_d$ | $C_{m,LE}$ |
 |---|---:|---:|---:|
 | Lecture 2.5: $M=2$, $\alpha=10^\circ$ | 0.4075 | 0.0719 | $-0.2069$ |
+
+**Why supersonic plates have drag** (L2-5, ll. 149–213): in subsonic flow, leading-edge suction cancels $N\sin\alpha$ (d'Alembert). In supersonic flow nothing wraps round the edge, so $N\sin\alpha$ survives as **wave drag**. The plate's ac (and cp) sits at **mid-chord**, not the subsonic quarter chord: a static-margin problem for aircraft that fly both regimes (ll. 243–257).
+
+**Thick sections** (Tutorial 1, triangular wing): each face's force is normal to **that face**, so inclined faces also push along the chord. Then $D\neq N\sin\alpha$. On the triangular wing the shortcut misses a quarter of the drag. See [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Forces: the chordwise term the shortcut misses|Tutorial 1]]; there $x_{ac}\approx0.49c$.
 
 **Diamond:** the face angles are $\pm\varepsilon\pm\alpha$. Thickness produces wave drag even at zero lift. See [[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|ES1 Q6]].
 

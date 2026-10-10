@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3047 Advanced Aerospace Mechanics & Control"]
 tags: [sesa3047, hub, moc]
 status: in-progress
-coverage: "Chapters 1–3 (Ch3 §3.1 lectured in L7; §§3.2–3.4 written ahead)"
+coverage: "Chapters 1–3 (Ch3 §§3.1–3.2 lectured in L7–L9; §§3.3–3.4 written ahead); Lab 1 filed"
 ---
 
 # SESA3047 Advanced Aerospace Mechanics & Control Hub
@@ -15,7 +15,7 @@ coverage: "Chapters 1–3 (Ch3 §3.1 lectured in L7; §§3.2–3.4 written ahead
 >
 > Chapter 3 turns the toolkit into the first state equations of the 6-DOF model: **Euler-angle rates from body rates** → **velocity and acceleration in moving frames** → **position from body velocity** → **angular momentum and the inertia matrix** → **the rotational dynamic equation**.
 >
-> Current vault coverage: **Chapters 1–3.** Chapters 1–2 are lectured (L2–L6; L7 finished the §2.4.6 example). Chapter 3 §3.1 was lectured in **L7** (Mon 5 Oct, up to the rotational kinematic equation); §§3.1.4–3.4 are **written ahead** from `Chapter-3.pdf`, expected Thu 8 Oct. Quick reference: [[SESA3047 Formula Sheet]].
+> Current vault coverage: **Chapters 1–3.** Chapters 1–2 are lectured (L2–L6; L7 finished the §2.4.6 example). Chapter 3 §3.1 was lectured in **L7** (Mon 5 Oct) and **L8** (Thu 8 Oct); §3.2 in **L8–L9** (Thu 8 Oct, double). §§3.3–3.4 (rotational dynamics) are **written ahead** from `Chapter-3.pdf`; the lecture ran out of time (L9, l. 276), so expect them Mon 12 Oct. **Lab 1** is filed (see [[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
 
 ## Current coverage
 
@@ -32,15 +32,15 @@ coverage: "Chapters 1–3 (Ch3 §3.1 lectured in L7; §§3.2–3.4 written ahead
    - the 3-2-1 NED→FRD sequence multiplied out;
    - Euler-angle extraction, gimbal lock and small-angle rotations;
    - the §2.4.6 worked example (done on the board in L7).
-5. [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates]] (Chapter 3, §3.1; lectured in L7)
+5. [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates]] (Chapter 3, §3.1; lectured in L7–L8)
    - Euler rates vs body rates $p,q,r$; composing the three rotation rates;
    - $\mathbf E(\boldsymbol\Phi)$ multiplied out; $\mathbf H=\mathbf E^{-1}$ derived; $\det\mathbf E=\cos\theta$ and gimbal lock;
-   - small-angle form; flat-Earth interpretation; level-turn and gyro examples.
-6. [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames]] (Chapter 3, §3.2; written ahead)
+   - geometric coupling (L8's $\phi=45^\circ$ example, integrated); small-angle form; flat vs rotating Earth; level-turn and gyro examples.
+6. [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames]] (Chapter 3, §3.2; lectured in L8–L9)
    - transport velocity; the five-term acceleration with Coriolis and centripetal terms;
    - rotating vs flat Earth, apparent forces and their size;
    - body-axis acceleration $[\dot u+qw-rv,\dots]^T$; translational kinematic equation $\dot{\mathbf p}=\mathbf C^T\mathbf v$.
-7. [[SESA3047 3.3 - Rigid-Body Rotational Dynamics]] (Chapter 3, §§3.3–3.4; written ahead)
+7. [[SESA3047 3.3 - Rigid-Body Rotational Dynamics]] (Chapter 3, §§3.3–3.4; written ahead, expected Mon 12 Oct)
    - linear momentum; angular momentum and the inertia matrix derived;
    - rotational dynamic equation, Euler's equations, the $J_{xz}$ aircraft form;
    - gyroscopic coupling, imbalance and the intermediate-axis theorem; how the 6-DOF equations fit together.
@@ -78,11 +78,26 @@ The current sources are Chapters 1–3 of the lecture notes. Chapter 3 ends by s
 |---|---|
 | Chapters 1–2 | **Complete**, lectured (L2–L7) |
 | Chapter 3 §§3.1.1–3.1.3 | **Complete**, lectured in L7 (Mon 5 Oct) |
-| Chapter 3 §§3.1.4–3.4 | **Written ahead** from the notes; expected Thu 8 Oct (L7, l. 118: *"translational kinematics and the rotational dynamics"*) |
+| Chapter 3 §§3.1.4–3.2 | **Complete**, lectured in L8–L9 (Thu 8 Oct); line references, slips and tasks folded in |
+| Chapter 3 §§3.3–3.4 | **Written ahead** from the notes; not reached on Thu 8 Oct (L9, l. 276), expected Mon 12 Oct |
 | Chapter 4 onwards | Awaiting notes |
 
 > [!info] Build policy
-> Covered chapter notes are marked complete. The module hub and formula sheet remain in progress so that later material can be added without restructuring the vault. By request (6 Oct), Chapter 3 was written up in full before all of it was lectured; when the Thursday 8 Oct recording arrives, add its line references to 3.1 §§7–9, 3.2 and 3.3, flag slips and convert suggested tasks to lecturer-set where appropriate.
+> Covered chapter notes are marked complete. The module hub and formula sheet remain in progress so that later material can be added without restructuring the vault. By request (6 Oct), Chapter 3 was written up in full before all of it was lectured. 3.1 and 3.2 have now been backfilled from L8–L9 (10 Oct). When the Monday 12 Oct recording arrives, do the same for 3.3.
+
+## Labs and coursework
+
+> [!important] Lab 1: *Dynamic Analysis via Numerical Simulations* (MATLAB)
+> File: `04 - Labs & Coursework/Lab_1.pdf` (6 pages, Dr Cristiano Martinelli). It feeds the **lab report, worth 20% of the module mark**. No submission date is printed on the sheet: check Blackboard. Aim to finish at least Exercises 1 and 2 in the session; demonstrators will check your plots.
+>
+> | Exercise | Task | Theory in the vault |
+> |---|---|---|
+> | 0 (intro) | MATLAB matrices, element-wise operators, `ode45` with a first-order state vector | [[SESA3047 1.1 - Dynamic Systems and Control Architectures\|1.1]] (state form) |
+> | 1 | Build $\mathbf C_{FRD/NED}=\mathbf C_x\mathbf C_y\mathbf C_z$; transform north for $\psi=\pm30^\circ$; recover $(20^\circ,15^\circ,30^\circ)$ with atan2/arcsin; probe $\theta=89^\circ, 89.9^\circ, 90^\circ$ | [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles\|2.2]] §§6–10, [[Gimbal Lock]] |
+> | 2 | Nonlinear (Duffing) oscillator $m\ddot x+c\dot x+kx+\mu x^3=f\cos\omega t$; linear vs nonlinear, small vs large amplitude, free and forced | [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models\|1.2]], [[Linear, Nonlinear and Time-Varying Models]] |
+> | 3 | Integrate the rotational dynamics with the Euler-angle kinematics (Eqs. 3.10–3.11, 3.63–3.71); interpret geometric and inertial coupling | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)\|3.1 §7]], [[SESA3047 3.3 - Rigid-Body Rotational Dynamics\|3.3]] |
+>
+> The lecturer tied the coupling discussion to the lab: *"we will see how this affects the numerical simulations"* (L8, ll. 67–68). Lab 2 will use Simulink (Lab 1, p. 1).
 
 ## Week 1 exam skills
 
@@ -110,6 +125,8 @@ The current sources are Chapters 1–3 of the lecture notes. Chapter 3 ends by s
 ## Chapter 3 exam skills
 
 - explain why $\dot{\boldsymbol\Phi}\neq\boldsymbol\omega^{FRD}$, and which rotations each Euler rate passes through (L7, ll. 160–194);
+- show the geometric coupling with a reduced case, e.g. $r=0$, $\theta=0$, $\phi=45^\circ$ gives $\dot\theta=\dot\psi=q/\sqrt2$ (L8, ll. 44–55);
+- state the flat-Earth assumptions behind each equation, and what changes on a rotating Earth ($\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/i}-\boldsymbol\omega_{r/i}$; L8 ll. 121–153);
 - multiply out $\boldsymbol\omega=[\dot\phi,0,0]^T+\mathbf C_x(\phi)([0,\dot\theta,0]^T+\mathbf C_y(\theta)[0,0,\dot\psi]^T)$ to get $\mathbf E$, and invert it to $\mathbf H$; state $\det\mathbf E=\cos\theta$ and its link to gimbal lock;
 - state and use the small-angle form, and say when it fails;
 - derive $\mathbf v_{P/a}$ and the five-term $\mathbf a_{P/a}$ with the transport theorem; name every term; explain the factor 2;
@@ -146,8 +163,13 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/L6 - SESA3047.txt` (non-commutativity, Euler angles, extraction, gimbal lock; end of Chapter 2)
 - `02 - Sources/Lectures/Chapter-3.pdf` (15 pages: rotational kinematics, translational kinematics, rigid-body rotational dynamics, appendix)
 - `02 - Sources/Lectures/SESA3047 - L7.txt` (Mon 5 Oct: §2.4.6 worked example; §§3.1.1–3.1.3, ending at the rotational kinematic equation)
+- `02 - Sources/Lectures/L8 - SESA3047.txt` (Thu 8 Oct, first half: coupling, flat vs rotating Earth, velocity and acceleration in moving frames)
+- `02 - Sources/Lectures/L9 - SESA3047.txt` (Thu 8 Oct, second half: transport and Coriolis accelerations, Earth models, position state equation; stopped before the dynamics)
+- `04 - Labs & Coursework/Lab_1.pdf` (Lab 1, MATLAB: DCMs and gimbal lock, nonlinear oscillator, rotational dynamics and kinematics)
 
 > [!warning] Slips found in the Chapter 2 recordings
 > L5 l. 376 drops the $-\sin\theta$ in $\mathbf C_z$; L5 l. 380 says $x$ for $z$; L6 l. 205 drops the minus in $\theta=-\arcsin C_{13}$; L6 l. 208 gives $\psi=\mathrm{atan2}(C_{12},C_{12})$ for $\mathrm{atan2}(C_{12},C_{11})$. All are flagged in [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles|2.2]].
 >
 > L7: the §2.4.6 vector said as "one one zero" (l. 11; it is $[1,0,0]^T$), the rotation order muddled at ll. 163–166, and "acceleration" for rate at l. 180. Flagged in [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles|2.2]] and [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#Transcript slips (L7)|3.1]].
+>
+> L8–L9: "just p" for the reduced Euler-rate set (L8 l. 47; only the first row reduces), "reference frame P" for B in the transport theorem (L8 l. 224), "a" used for both acceleration and frame (L8 ll. 348–413), and $\mathbf C^T$ described as "FRD to NED to NED" (L9 ll. 245–246). Flagged in [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#Transcript slips (L8)|3.1]] and [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#Transcript slips (L8 and L9)|3.2]].

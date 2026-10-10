@@ -8,7 +8,7 @@ tags: [sesa3047, concept, kinematics, euler-angles]
 status: complete
 parent_lectures: ["[[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates]]"]
 related_concepts: ["[[Aerospace 3-2-1 Euler Sequence]]", "[[Angular Velocity Vector]]", "[[Gimbal Lock]]", "[[Translational Kinematic Equation]]", "[[Rotational Dynamic Equation]]"]
-sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/SESA3047 - L7.txt"]
+sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/SESA3047 - L7.txt", "02 - Sources/Lectures/L8 - SESA3047.txt"]
 ---
 
 # Rotational Kinematic Equation
@@ -42,6 +42,7 @@ $$
 
 - **Not a DCM.** $\mathbf E$ maps angle rates to vector components; its columns (the three rotation axes in FRD) are not mutually orthogonal, so $\mathbf E^{-1}\neq\mathbf E^T$.
 - **Purely kinematic:** no force, moment, mass or inertia.
+- **Geometrically coupled** (L8, ll. 39–64): a zero body rate does not freeze its Euler angle. With $r=0$, $\theta=0$, $\phi=45^\circ$, a pure pitch rate gives $\dot\theta=\dot\psi=q/\sqrt2$. See [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)|3.1 §7]].
 - **Singular at $\theta=\pm90^\circ$** ($\det\mathbf E=\cos\theta$): [[Gimbal Lock]].
 - **Small angles:** $\dot\phi\approx p$, $\dot\theta\approx q$, $\dot\psi\approx r$; valid only near zero attitude.
 - **Flat Earth:** $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/i}$, so gyro readings can be used directly.

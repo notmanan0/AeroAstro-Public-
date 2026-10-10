@@ -8,7 +8,7 @@ tags: [sesa3047, concept, kinematics, rotating-frames]
 status: complete
 parent_lectures: ["[[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames]]"]
 related_concepts: ["[[Transport Theorem]]", "[[Angular Velocity Vector]]", "[[Flat-Earth Model]]", "[[Translational Kinematic Equation]]"]
-sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
+sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/L8 - SESA3047.txt", "02 - Sources/Lectures/L9 - SESA3047.txt"]
 ---
 
 # Coriolis and Centripetal Acceleration

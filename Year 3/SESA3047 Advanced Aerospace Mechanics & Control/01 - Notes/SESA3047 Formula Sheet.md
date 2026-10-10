@@ -206,7 +206,7 @@ $$
 \dot\phi=p+(q s_\phi+r c_\phi)\tan\theta,\qquad\dot\theta=qc_\phi-rs_\phi,\qquad\dot\psi=\frac{qs_\phi+rc_\phi}{c_\theta}.
 $$
 
-Small angles: $\dot\phi\approx p$, $\dot\theta\approx q$, $\dot\psi\approx r$. Flat Earth: $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/e}=\boldsymbol\omega_{b/i}$. Level turn: $\dot\psi=g\tan\phi/V$, $q=\dot\psi\sin\phi$, $r=\dot\psi\cos\phi$.
+Small angles: $\dot\phi\approx p$, $\dot\theta\approx q$, $\dot\psi\approx r$. Flat Earth: $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/e}=\boldsymbol\omega_{b/i}$; rotating Earth: $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/i}-\boldsymbol\omega_{r/i}$ (L8). Coupling check (L8): $r=0$, $\theta=0$ gives $\dot\theta=q\cos\phi$, $\dot\psi=q\sin\phi$. Level turn: $\dot\psi=g\tan\phi/V$, $q=\dot\psi\sin\phi$, $r=\dot\psi\cos\phi$.
 
 ## Velocity and acceleration in moving frames (§3.2)
 

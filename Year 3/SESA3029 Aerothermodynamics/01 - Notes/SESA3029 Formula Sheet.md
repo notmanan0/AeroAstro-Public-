@@ -221,6 +221,18 @@ C_{m,LE}=-\frac{\Delta p}{2q_\infty},
 x_{cp}=\frac c2.
 $$
 
+Moment transfer and the two centres (L2-5, ll. 215–242):
+
+$$
+C_{m,x}=C_{m,LE}+\frac xc\,C_l,
+\qquad
+\frac{x_{cp}}{c}=-\frac{C_{m,LE}}{C_l},
+\qquad
+\frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_l}\approx-\frac{\Delta C_{m,LE}}{\Delta C_l}\ \ (\text{two }\alpha\text{, Tutorial 1}).
+$$
+
+Supersonic ac $\approx c/2$; subsonic $\approx c/4$. Thick section: resolve **each face's** force; with normal force $N'$ and chordwise force $A'$, $L'=N'\cos\alpha-A'\sin\alpha$ and $D'=N'\sin\alpha+A'\cos\alpha$.
+
 Linear (Ackeret) limit, previewing Weeks 7–8:
 
 $$

@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3029 Aerothermodynamics"]
 tags: [sesa3029, hub, moc]
 status: in-progress
-coverage: "Week 1; Lectures 2.1–2.7 (2.1–2.4 lectured with transcripts, 2.5–2.7 from slides); Example Sheets 1–3; Test 1"
+coverage: "Week 1; Lectures 2.1–2.7 (2.1–2.5 lectured with transcripts, 2.6–2.7 from slides); Tutorial Lecture 1; Example Sheets 1–3; Test 1"
 ---
 
 # SESA3029 Aerothermodynamics Hub
@@ -17,13 +17,15 @@ coverage: "Week 1; Lectures 2.1–2.7 (2.1–2.4 lectured with transcripts, 2.5�
 >
 > **Current vault coverage:**
 > - Week 1 complete.
-> - Lectures 2.1–2.4 complete, with transcripts (2.3 on Fri 2 Oct, 2.4 on Mon 5 Oct).
-> - Lectures 2.5–2.7 written up in full **from the slides**; awaiting their lectures (2.5 expected Thu 8 Oct).
+> - Lectures 2.1–2.5 complete, with transcripts (2.3 on Fri 2 Oct, 2.4 on Mon 5 Oct, 2.5 on Thu 8 Oct; the 2.5 recording on Blackboard is last year's).
+> - **Tutorial Lecture 1** (Fri 9 Oct): ES1 Q3 and a triangular wing, with the weekend homework solved.
+> - Lectures 2.6–2.7 written up in full **from the slides**; the Laval nozzle starts next (Tutorial 1, ll. 2–3), expected Mon 12 Oct.
 > - Worked solutions to all three example sheets and to Blackboard Test 1.
 >
 > Quick reference: [[SESA3029 Formula Sheet]].
 
 > [!important] Deadlines
+> - **Weekend homework (Tutorial 1, ll. 232–235):** triangular wing at a second $\alpha$, check $x_{ac}\approx c/2$. Solved: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre (ll. 228–235)|Tutorial 1]].
 > - **Blackboard Test 1 released 5 Oct, due Sun 11 Oct, 23:59** (L2-4, ll. 1–3; first announced in L2-2, ll. 243–244 and L2-3, l. 187). Week 1 material only. Worked: [[SESA3029 Test 1 - Solutions]].
 > - Test 2: 25 Oct.
 > - MoC coursework: **15 Nov**.
@@ -43,12 +45,12 @@ coverage: "Week 1; Lectures 2.1–2.7 (2.1–2.4 lectured with transcripts, 2.5�
    - the oblique-shock chart: weak/strong solutions, maximum deflection, detachment;
    - Mach waves, Mach angle and the moving-source picture;
    - **2.2 examples**: chart, interpolation and exact routes; the supersonic intake (normal vs oblique + normal vs isentropic); the bow shock containing every solution.
-3. [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]] (Lectures 2.3–2.4 lectured with transcripts; 2.5 from slides)
+3. [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]] (Lectures 2.3–2.5, all with transcripts)
    - regular and Mach reflection, and the regular-reflection limit; transcript slips flagged (e.g. $\phi$ said as 7.5°, correct 17.5°);
    - shock–shock interaction and slip lines (**last year's exam question**, L2-3, ll. 317–390);
    - entropy across a shock: why shocks compress and weak shocks are isentropic;
    - the Prandtl–Meyer function, derived and integrated; expansion fans;
-   - the shock-expansion method for a flat plate and a diamond.
+   - the shock-expansion method for a flat plate and a diamond; which side gets which wave; leading-edge suction vs wave drag; the ac shift from $c/4$ to $c/2$ and its static-margin consequence (L2-5).
 4. [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]] (Lectures 2.6–2.7, slides only)
    - the area–velocity and area–Mach relations; choked mass flow;
    - back-pressure regimes and locating a normal shock in the nozzle;
@@ -58,6 +60,7 @@ coverage: "Week 1; Lectures 2.1–2.7 (2.1–2.4 lectured with transcripts, 2.5�
 ### Example sheets (worked solutions)
 
 - [[SESA3029 Example Sheet 1 - Solutions]]: normal and oblique shocks, reflection, shock-expansion, nozzle (Weeks 1–4).
+- [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing]]: Fri 9 Oct tutorial. ES1 Q3 with the regular-reflection iteration, and an isosceles triangular wing at $M=1.7$ (drag shortcut corrected; $x_{ac}=0.49c$ homework).
 - [[SESA3029 Example Sheet 2 - Solutions]]: eigenvectors, MoC, Ackeret, Prandtl–Glauert. Sections 3–4 are previewed; the theory is not yet lectured.
 - [[SESA3029 Test 1 - Solutions]]: Blackboard Test 1 (stagnation temperature, Mach number, isentropic density, mass flow, Pitot with the static tapping behind the shock).
 - [[SESA3029 Example Sheet 3 - Solutions]]: heat transfer (Weeks 9–12, previewed). Discrepancies in the answer key are flagged for Q3, Q5 and Q6.
@@ -104,14 +107,14 @@ coverage: "Week 1; Lectures 2.1–2.7 (2.1–2.4 lectured with transcripts, 2.5�
 | Weeks | Block | Planned topics | Vault status |
 |---|---|---|---|
 | 1 | Basic toolkit | Isentropic flow, normal shocks, shock tables, Pitot probes | **Complete** |
-| 2–3 | Oblique shocks and expansions | 2.1 oblique-shock relations; 2.2 chart and examples; 2.3 reflections, slip lines, shock interactions; 2.4 expansion waves and Prandtl–Meyer; 2.5 shock–expansion method | **2.1–2.4 complete** (transcripts; 2.3 on 2 Oct, 2.4 on 5 Oct); **2.5 written from slides**, expected Thu 8 Oct |
-| 4–5 | Nozzles and MoC | 2.6 Laval nozzle and back pressure; 2.7 under/over-expanded nozzles, supersonic wind tunnel; 3.1–3.4 method of characteristics, minimum-length nozzles | **2.6–2.7 written from slides**; MoC awaiting slides (ES2 Q2–Q3 preview it) |
+| 2–3 | Oblique shocks and expansions | 2.1 oblique-shock relations; 2.2 chart and examples; 2.3 reflections, slip lines, shock interactions; 2.4 expansion waves and Prandtl–Meyer; 2.5 shock–expansion method; Tutorial 1 | **Complete** (transcripts; 2.3 on 2 Oct, 2.4 on 5 Oct, 2.5 on 8 Oct, Tutorial 1 on 9 Oct) |
+| 4–5 | Nozzles and MoC | 2.6 Laval nozzle and back pressure; 2.7 under/over-expanded nozzles, supersonic wind tunnel; 3.1–3.4 method of characteristics, minimum-length nozzles | **2.6–2.7 written from slides**, expected from Mon 12 Oct; MoC awaiting slides (ES2 Q2–Q3 preview it) |
 | 6 | Reading week | Consolidation | — |
 | 7–8 | High-speed aerodynamics | Euler equations, wave drag, compressible potential flow, Prandtl–Glauert, Ackeret theory, optimum supersonic aerofoils | Awaiting lectures (ES2 Q4–Q6 preview it) |
 | 9–12 | Heat transfer | Conduction, convection, boundary-layer heat transfer, radiation, numerical methods and heat exchangers | Awaiting lectures (ES3 solved in full) |
 
 > [!info] Build policy
-> By request, the filed decks for 2.3–2.7 were written up in full ahead of their recordings. 2.3 and 2.4 have now been backfilled from `Lecture 2-3.txt` and `Lecture 2-4.txt` (line references, slips, lecturer-set tasks). When the 2.5–2.7 transcripts arrive, do the same for §6 of W03 and for W04.
+> By request, the filed decks for 2.3–2.7 were written up in full ahead of their recordings. 2.3–2.5 have now been backfilled from `Lecture 2-3.txt`, `Lecture 2-4.txt` and `Lecture 2-5 (2025-26 version).txt` (line references, slips, lecturer-set tasks). When the 2.6–2.7 transcripts arrive, do the same for W04.
 
 ## Assessment snapshot
 
@@ -152,7 +155,12 @@ Always check Blackboard for any later change to dates or assessment rules.
 - explain why a "shock" with $M_{n1}<1$ or a pressure drop is impossible, and why near-sonic Mach waves are isentropic (L2-3, ll. 416–442);
 - derive $\Delta s(M_{n1})$, show $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$, and argue that expansion shocks are impossible;
 - derive $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ and use $\nu(M_2)=\nu(M_1)+\theta$ with the isentropic ratios;
-- apply the shock-expansion method to a flat plate or diamond: pressures, then $L$, $D$, $M_{LE}$ and $x_{cp}$.
+- apply the shock-expansion method to a flat plate or diamond: pressures, then $L$, $D$, $M_{LE}$ and $x_{cp}$;
+- explain which surface gets a shock and which a fan from the streamline (duct) picture (L2-5, ll. 15–27);
+- derive $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up convention, and $x_{cp}$ and $x_{ac}$; explain the $c/4\to c/2$ ac shift and why it threatens the static margin (L2-5, ll. 215–257);
+- explain leading-edge suction and why supersonic inviscid flow has wave drag (L2-5, ll. 149–213);
+- for a thick section, resolve each face's force (not $D=N\sin\alpha$), and estimate $x_{ac}$ from two angles of attack (Tutorial 1);
+- find the regular-reflection limit by two guesses and interpolation (Tutorial 1, ll. 63–113).
 
 ## Week 4 exam skills (Lectures 2.6–2.7)
 
@@ -187,7 +195,9 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/Lecture2-2.pdf` and `Lecture 2-2.txt`
 - `02 - Sources/Lectures/Lecture2-3.pdf` and `Lecture 2-3.txt` (Fri 2 Oct)
 - `02 - Sources/Lectures/Lecture2-4.pdf` and `Lecture 2-4.txt` (Mon 5 Oct)
-- Slides only, no transcripts yet: `Lecture2-5.pdf` (shock-expansion method), `Lecture2-6.pdf` (Laval nozzle), `Lecture2-7.pdf` (under/over-expanded nozzles, wind tunnels)
+- `02 - Sources/Lectures/Lecture2-5.pdf` and `Lecture 2-5 (2025-26 version).txt` (lectured Thu 8 Oct; the transcript is last year's recording of the same deck)
+- `02 - Sources/Lectures/Tutorial Lecture #1.txt` (Fri 9 Oct: ES1 Q3, triangular wing)
+- Slides only, no transcripts yet: `Lecture2-6.pdf` (Laval nozzle), `Lecture2-7.pdf` (under/over-expanded nozzles, wind tunnels)
 - Exam data sheets: `Aerothermodynamics Formula Sheet.pdf`, `IFT.pdf`, `NST.pdf`, `OSC.pdf` (summarised in [[SESA3029 Formula Sheet#What the exam formula sheet gives you]])
 - `03 - Exams & Past Papers/aerothermo quiz questions - solved on ipad but write own solutions for completeness.txt` (Test 1 questions)
 - `03 - Exams & Past Papers/ExamplesSheet1.pdf`, `ExamplesSheet2.pdf`, `ExampleSheet3(1).pdf`

@@ -8,7 +8,7 @@ tags: [sesa3047, concept, kinematics, navigation]
 status: complete
 parent_lectures: ["[[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames]]"]
 related_concepts: ["[[Direction Cosine Matrix]]", "[[NED and FRD Coordinates]]", "[[Rotational Kinematic Equation]]", "[[Coriolis and Centripetal Acceleration]]"]
-sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
+sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/L8 - SESA3047.txt", "02 - Sources/Lectures/L9 - SESA3047.txt"]
 ---
 
 # Translational Kinematic Equation

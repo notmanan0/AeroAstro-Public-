@@ -152,6 +152,9 @@ $$
 
 Sheet: 16° ✓. Above this a Mach reflection forms (W03 §2).
 
+> [!tip] Done in Tutorial Lecture 1 (Fri 9 Oct)
+> The lecturer solved this question in class, finding the limit by averaging guesses ($8^\circ\to15.3^\circ\to16.1^\circ$) or by a secant through two guesses ($16.2^\circ$). The iteration table and figure are in [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#(b) The largest ramp angle for regular reflection (ll. 63–113)|Tutorial 1, Part 1]].
+
 ## Q4. Flat plate by shock-expansion theory
 
 $c=6$ cm, $\alpha=10^\circ$, $M_1=2.7$, $T_1=150$ K, $p_1=20$ kN/m².
