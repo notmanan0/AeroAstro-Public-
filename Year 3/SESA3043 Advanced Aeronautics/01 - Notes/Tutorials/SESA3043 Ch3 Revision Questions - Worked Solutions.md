@@ -90,7 +90,7 @@ $$
 
 **Q1.** SDM re-panels each iteration (direct but costly); STM keeps the panels and blows through them (cheap, used by XFOIL). → [[SESA3043 3.6 - Viscous-Inviscid Interaction#SDM against STM (revision Q1)|3.6 §4]]
 
-**Q2.** Mass balance on the tunnel between $x$ and $x+\Delta x$: $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$. → [[SESA3043 3.6 - Viscous-Inviscid Interaction#Deriving v_s (slide 21; revision Q2)|3.6 §4]]
+**Q2.** Mass balance on the tunnel between $x$ and $x+\Delta x$: $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$. → [[SESA3043 3.6 - Viscous-Inviscid Interaction#Deriving vₛ (slide 21; revision Q2)|3.6 §4]]
 
 **Q3. Wind tunnel.** $U_e=U_0a^2/(a-2\delta^*)^2$, $\delta^*=\frac97\theta$, $\theta=0.036L\,Re_L^{-1/5}$:
 

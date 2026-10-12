@@ -31,6 +31,17 @@ Known flow in $\bar z$ (usually the cylinder) → transfer function → transfor
 
 ![[aa_conformal_mapping_family.png|700]]
 
+## In the lectures and the exam
+
+The two hand-calculation cases, both examinable (8–9 Oct):
+
+| Map | Body | Potential | $C_p$ on the body |
+|---|---|---|---|
+| $z=\bar z-a^2/\bar z$ | plate **normal** to the stream, $-2a\le y\le2a$ | $\Phi=\pm U_\infty\sqrt{z^2+4a^2}$ | $1-\dfrac{y^2}{4a^2-y^2}$ |
+| $z=\bar z+a^2/\bar z$ | plate **along** the stream, $-2a\le x\le2a$ | $\Phi=U_\infty z$ | $0$ |
+
+Keep one transfer function per problem: a different map turns the same $\bar z$ solution into a different body (8 Oct, ll. 310–316). Conformal maps also generate orthogonal CFD meshes (ll. 249–256).
+
 ## Related
 
 - [[SESA3043 2.1 - Complex Functions and Conformal Mapping]] · [[Joukowski Transformation]] · [[Kármán–Trefftz Transformation]]

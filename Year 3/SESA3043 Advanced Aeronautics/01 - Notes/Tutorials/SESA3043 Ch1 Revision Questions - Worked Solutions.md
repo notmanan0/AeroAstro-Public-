@@ -32,8 +32,8 @@ sources: ["03 - Exams & Past Papers/Ch1_Revision_Questions.pdf"]
 | mass | $\rho$ | $1$ |
 | momentum | $\rho\mathbf u$ | $\mathbf u$ |
 | internal energy | $\rho e$ | $e$ |
-| kinetic energy | $\tfrac12\rho|\mathbf u|^2$ | $\tfrac12|\mathbf u|^2$ |
-| total energy | $\rho E_T$ | $E_T=e+\tfrac12|\mathbf u|^2$ (+ $gz$ if included) |
+| kinetic energy | $\tfrac12\rho\vert \mathbf u\vert ^2$ | $\tfrac12\vert \mathbf u\vert ^2$ |
+| total energy | $\rho E_T$ | $E_T=e+\tfrac12\vert \mathbf u\vert ^2$ (+ $gz$ if included) |
 | enthalpy | $\rho h$ | $h=e+p/\rho$ |
 | volume | $1$ | $v=1/\rho$ (specific volume) |
 

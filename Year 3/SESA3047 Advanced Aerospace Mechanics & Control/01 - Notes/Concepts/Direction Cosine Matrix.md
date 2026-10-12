@@ -29,7 +29,7 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 | composition | $\mathbf C_{d/a}=\mathbf C_{d/c}\mathbf C_{c/b}\mathbf C_{b/a}$ | chain the transformations; the rightmost acts first |
 | determinant | $\det\mathbf C=+1$ | triple product of a right-handed triad |
 | non-commutative | $\mathbf C_{c/b}\mathbf C_{b/a}\neq\mathbf C_{b/a}\mathbf C_{c/b}$ | later rotations act about already-moved axes |
-| length-preserving | $|\mathbf u^b|=|\mathbf u^a|$ | follows from orthogonality |
+| length-preserving | $\vert \mathbf u^b\vert =\vert \mathbf u^a\vert$ | follows from orthogonality |
 
 ## Elementary rotations
 

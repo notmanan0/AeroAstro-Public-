@@ -24,10 +24,10 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
 
 1. Newton for rotation in the inertial frame: $\sum\mathbf M_{cm}={}^i\dot{\mathbf h}$, with $\mathbf h=\mathbf J\boldsymbol\omega$ ([[Inertia Matrix]]).
 2. [[Transport Theorem]] to body axes: ${}^i\dot{\mathbf h}={}^b\dot{\mathbf h}+\boldsymbol\omega\times\mathbf h$.
-3. In body axes $\dot{\mathbf J}=\mathbf 0$, so ${}^b\dot{\mathbf h}=\mathbf J\dot{\boldsymbol\omega}$; and $\boldsymbol\omega\times\mathbf h=\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$.
+3. In body axes $\dot{\mathbf J}=\mathbf 0$ **because the body is rigid** (constant mass alone is not enough: deploying panels change $\mathbf J$ at fixed $m$), so ${}^b\dot{\mathbf h}=\mathbf J\dot{\boldsymbol\omega}$; and $\boldsymbol\omega\times\mathbf h=\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$.
 4. Solve for $\dot{\boldsymbol\omega}$.
 
-Step-by-step derivation and figure: [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]].
+Step-by-step derivation and figure: [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]. Lectured in L10 (Mon 12 Oct), which ended at the implicit form $\sum\mathbf M_{cm}=\mathbf J\dot{\boldsymbol\omega}+\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ (3.70); the precise reasons for steps 1 and 3 are in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Two facts L10 glossed|3.3]].
 
 ## Special forms
 

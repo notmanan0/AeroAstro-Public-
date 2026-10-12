@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3047 Advanced Aerospace Mechanics & Control"]
 tags: [sesa3047, hub, moc]
 status: in-progress
-coverage: "Chapters 1–3 (Ch3 §§3.1–3.2 lectured in L7–L9; §§3.3–3.4 written ahead); Lab 1 filed"
+coverage: "Chapters 1–3 (Ch3 §§3.1–3.3 lectured in L7–L10; §3.4 from the notes); Lab 1 filed"
 ---
 
 # SESA3047 Advanced Aerospace Mechanics & Control Hub
@@ -15,7 +15,7 @@ coverage: "Chapters 1–3 (Ch3 §§3.1–3.2 lectured in L7–L9; §§3.3–3.4 
 >
 > Chapter 3 turns the toolkit into the first state equations of the 6-DOF model: **Euler-angle rates from body rates** → **velocity and acceleration in moving frames** → **position from body velocity** → **angular momentum and the inertia matrix** → **the rotational dynamic equation**.
 >
-> Current vault coverage: **Chapters 1–3.** Chapters 1–2 are lectured (L2–L6; L7 finished the §2.4.6 example). Chapter 3 §3.1 was lectured in **L7** (Mon 5 Oct) and **L8** (Thu 8 Oct); §3.2 in **L8–L9** (Thu 8 Oct, double). §§3.3–3.4 (rotational dynamics) are **written ahead** from `Chapter-3.pdf`; the lecture ran out of time (L9, l. 276), so expect them Mon 12 Oct. **Lab 1** is filed (see [[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
+> Current vault coverage: **Chapters 1–3.** Chapters 1–2 are lectured (L2–L6; L7 finished the §2.4.6 example). Chapter 3 §3.1 was lectured in **L7** (Mon 5 Oct) and **L8** (Thu 8 Oct); §3.2 in **L8–L9** (Thu 8 Oct, double). §3.3 (rotational dynamics) was lectured in **L10** (Mon 12 Oct) and is backfilled; §3.4 (how kinematics and dynamics connect) is from the notes. **Translational dynamics next week** (L10, ll. 4–6). **Lab 1** is filed (see [[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
 
 ## Current coverage
 
@@ -40,8 +40,9 @@ coverage: "Chapters 1–3 (Ch3 §§3.1–3.2 lectured in L7–L9; §§3.3–3.4 
    - transport velocity; the five-term acceleration with Coriolis and centripetal terms;
    - rotating vs flat Earth, apparent forces and their size;
    - body-axis acceleration $[\dot u+qw-rv,\dots]^T$; translational kinematic equation $\dot{\mathbf p}=\mathbf C^T\mathbf v$.
-7. [[SESA3047 3.3 - Rigid-Body Rotational Dynamics]] (Chapter 3, §§3.3–3.4; written ahead, expected Mon 12 Oct)
+7. [[SESA3047 3.3 - Rigid-Body Rotational Dynamics]] (Chapter 3, §§3.3–3.4; §3.3 lectured in L10)
    - linear momentum; angular momentum and the inertia matrix derived;
+   - why the cm term vanishes (by definition, not symmetry) and why $\dot{\mathbf J}=\mathbf 0$ needs rigidity, not just constant mass;
    - rotational dynamic equation, Euler's equations, the $J_{xz}$ aircraft form;
    - gyroscopic coupling, imbalance and the intermediate-axis theorem; how the 6-DOF equations fit together.
 
@@ -79,11 +80,12 @@ The current sources are Chapters 1–3 of the lecture notes. Chapter 3 ends by s
 | Chapters 1–2 | **Complete**, lectured (L2–L7) |
 | Chapter 3 §§3.1.1–3.1.3 | **Complete**, lectured in L7 (Mon 5 Oct) |
 | Chapter 3 §§3.1.4–3.2 | **Complete**, lectured in L8–L9 (Thu 8 Oct); line references, slips and tasks folded in |
-| Chapter 3 §§3.3–3.4 | **Written ahead** from the notes; not reached on Thu 8 Oct (L9, l. 276), expected Mon 12 Oct |
+| Chapter 3 §3.3 | **Complete**, lectured in L10 (Mon 12 Oct); line references, slips and tasks folded in |
+| Chapter 3 §3.4 | From the notes; not lectured as a separate item (L10 ended at Eq. 3.70) |
 | Chapter 4 onwards | Awaiting notes |
 
 > [!info] Build policy
-> Covered chapter notes are marked complete. The module hub and formula sheet remain in progress so that later material can be added without restructuring the vault. By request (6 Oct), Chapter 3 was written up in full before all of it was lectured. 3.1 and 3.2 have now been backfilled from L8–L9 (10 Oct). When the Monday 12 Oct recording arrives, do the same for 3.3.
+> Covered chapter notes are marked complete. The module hub and formula sheet remain in progress so that later material can be added without restructuring the vault. By request (6 Oct), Chapter 3 was written up in full before all of it was lectured. 3.1 and 3.2 have now been backfilled from L8–L9 (10 Oct), and 3.3 from L10 (12 Oct).
 
 ## Labs and coursework
 
@@ -132,7 +134,7 @@ The current sources are Chapters 1–3 of the lecture notes. Chapter 3 ends by s
 - derive $\mathbf v_{P/a}$ and the five-term $\mathbf a_{P/a}$ with the transport theorem; name every term; explain the factor 2;
 - write Newton's law in a rotating Earth frame and identify centrifugal and Coriolis forces; justify the flat-Earth model;
 - derive $[\dot u+qw-rv,\ \dot v+ru-pw,\ \dot w+pv-qu]^T$ and $\dot{\mathbf p}^{NED}=\mathbf C^T\mathbf v^{FRD}$;
-- derive $\mathbf h=\mathbf J\boldsymbol\omega$ (cm term vanishes, $-\tilde{\mathbf r}^2$), define moments and products of inertia;
+- derive $\mathbf h=\mathbf J\boldsymbol\omega$ (cm term vanishes, $-\tilde{\mathbf r}^2$), define moments and products of inertia (L10, ll. 60–247); say **why** the cm term vanishes (definition of the cm, not symmetry) and why $\dot{\mathbf J}=\mathbf 0$ (a rigid body, not just constant mass);
 - derive $\dot{\boldsymbol\omega}=\mathbf J^{-1}(\mathbf M-\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega)$, reduce it to Euler's equations, and explain the gyroscopic term;
 - list the 6-DOF state equations so far, and which are kinematics and which dynamics.
 
@@ -165,6 +167,7 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/SESA3047 - L7.txt` (Mon 5 Oct: §2.4.6 worked example; §§3.1.1–3.1.3, ending at the rotational kinematic equation)
 - `02 - Sources/Lectures/L8 - SESA3047.txt` (Thu 8 Oct, first half: coupling, flat vs rotating Earth, velocity and acceleration in moving frames)
 - `02 - Sources/Lectures/L9 - SESA3047.txt` (Thu 8 Oct, second half: transport and Coriolis accelerations, Earth models, position state equation; stopped before the dynamics)
+- `02 - Sources/Lectures/L10 - SESA3047.txt` (Mon 12 Oct: §3.3 rotational dynamics, from linear momentum to Eq. 3.70)
 - `04 - Labs & Coursework/Lab_1.pdf` (Lab 1, MATLAB: DCMs and gimbal lock, nonlinear oscillator, rotational dynamics and kinematics)
 
 > [!warning] Slips found in the Chapter 2 recordings
@@ -173,3 +176,5 @@ SORT type ASC, file.name ASC
 > L7: the §2.4.6 vector said as "one one zero" (l. 11; it is $[1,0,0]^T$), the rotation order muddled at ll. 163–166, and "acceleration" for rate at l. 180. Flagged in [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles|2.2]] and [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#Transcript slips (L7)|3.1]].
 >
 > L8–L9: "just p" for the reduced Euler-rate set (L8 l. 47; only the first row reduces), "reference frame P" for B in the transport theorem (L8 l. 224), "a" used for both acceleration and frame (L8 ll. 348–413), and $\mathbf C^T$ described as "FRD to NED to NED" (L9 ll. 245–246). Flagged in [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#Transcript slips (L8)|3.1]] and [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#Transcript slips (L8 and L9)|3.2]].
+>
+> L10: "$J_x$ is the integral of y plus z square" (l. 227; $y^2+z^2$), $\tilde{\mathbf r}^2$ read as "R squared" (l. 212), and two loose justifications: the cm integral vanishing "because of plus and minus" (ll. 161–164), and $\dot{\mathbf J}=\mathbf 0$ "because the mass is fixed" (ll. 283–284; it needs rigidity). Flagged in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Transcript slips (L10)|3.3]].

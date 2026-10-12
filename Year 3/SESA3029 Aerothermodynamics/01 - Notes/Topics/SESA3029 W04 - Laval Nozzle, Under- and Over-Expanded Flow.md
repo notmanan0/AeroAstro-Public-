@@ -8,13 +8,13 @@ tags: [sesa3029, compressible-flow, nozzle, laval, choked-flow, back-pressure, o
 aliases: ["SESA3029 Week 4", "SESA3029 Lecture 2.6", "SESA3029 Lecture 2.7", "Laval Nozzle (SESA3029)"]
 date: 2026-10-01
 status: complete
-coverage: "Lectures 2.6 and 2.7 (from the slides; no transcripts)"
+coverage: "Lecture 2.6 lectured Mon 12 Oct (transcript); Lecture 2.7 from the slides, not yet lectured"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes]]", "[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[Isentropic Nozzle Flow]]"]
 next_topics: []
 key_concepts: ["[[Isentropic Nozzle Flow]]", "[[Critical Conditions and Choked Flow]]", "[[Converging-Diverging Nozzle Operating Regimes]]", "[[Over- and Under-Expanded Jets]]", "[[Supersonic Wind Tunnel]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 1 - Solutions]]"]
-sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture2-7.pdf"]
+sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture2-7.pdf", "02 - Sources/Lectures/Lecture 2-6.txt"]
 ---
 
 # SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow
@@ -48,8 +48,17 @@ sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture
 - Year 2 foundations, extended here: [[Isentropic Nozzle Flow]] (SESA2022) · [[Critical Conditions and Choked Flow]] · [[Converging-Diverging Nozzle Operating Regimes]] (SESA2023) · [[Rocket Nozzle Geometry]]
 - From W03: [[Expansion Fan]] · [[Slip Line]] · [[Regular Shock Reflection]] · [[Mach Reflection]]
 
-> [!info] Scope note
-> These notes are written from the slides `Lecture2-6.pdf` and `Lecture2-7.pdf`; no transcripts exist yet. Every result is derived in full, including the A/A* relation that slide 2.6-5 sets as homework.
+> [!info] Where this was lectured
+> Written ahead from `Lecture2-6.pdf` and `Lecture2-7.pdf` on 1 Oct. **Lecture 2.6 is now backfilled** from the Monday 12 Oct recording (`Lecture 2-6.txt`, Prof. Jae-Wook Kim):
+> - area–velocity relation from a control volume (ll. 12–76): mass by expanding brackets, momentum **with the side-wall pressure force**, isentropic link from $p=C\rho^\gamma$ ([[#The lecture's route: a control volume with side walls|§1, lecture route]]);
+> - reading the result, and why only a throat can be sonic (ll. 77–125);
+> - thrust (ll. 126–146), the throat and the A/A* homework (ll. 147–173);
+> - the ideal Laval nozzle, choking and $p^*/p_0=0.528$ (ll. 174–223);
+> - off-design back pressures and altitude (ll. 224–251);
+> - the worked example $M_e=2.2$: $p_{b6}$, $p_{b3}$, $p_{b5}$ (ll. 252–278);
+> - limits of 1D theory, method of characteristics "on Thursday" (ll. 279–291).
+>
+> **Lecture 2.7 (§§5–7) has not been lectured yet.** The 2.6 recording ended by pointing straight to the method of characteristics (l. 291), so 2.7 may be folded in later or left as reading. Its sections stay as written from the slides. Slips are in [[#Transcript slips (L2-6)]].
 
 ---
 
@@ -110,9 +119,115 @@ At $M=1$ the equation forces $\mathrm dA=0$, so **sonic flow can only occur wher
 > [!tip] Why supersonic flow "behaves backwards"
 > From (c), the fractional density change is $M^2$ times the fractional velocity change. Below $M=1$ the density barely changes, so a wider duct means slower flow, as in incompressible flow. Above $M=1$ the density falls faster than the speed rises, so the gas needs **more** area to carry the same $\dot m$ as it speeds up.
 
+### The lecture's route: a control volume with side walls
+
+![[at_laval_cv_derivation.png|900]]
+
+In the lecture (ll. 12–76) the three ingredients came from a slice of nozzle treated as a control volume, not from Euler's equation. The result is the same, but this route shows where every term comes from.
+
+**Mass, by expanding the brackets** (ll. 29–42). The same $\dot m$ crosses both faces:
+
+$$
+\rho UA=(\rho+\mathrm d\rho)(U+\mathrm dU)(A+\mathrm dA).
+$$
+
+Multiply out the first two brackets:
+
+$$
+(\rho+\mathrm d\rho)(U+\mathrm dU)=\rho U+\rho\,\mathrm dU+U\,\mathrm d\rho+\mathrm d\rho\,\mathrm dU.
+$$
+
+Drop $\mathrm d\rho\,\mathrm dU$, a product of two small quantities. Multiply by $(A+\mathrm dA)$ and drop the products again:
+
+$$
+\rho UA=\rho UA+\rho U\,\mathrm dA+\rho A\,\mathrm dU+UA\,\mathrm d\rho.
+$$
+
+Cancel $\rho UA$ and divide by it:
+
+$$
+\frac{\mathrm d\rho}{\rho}+\frac{\mathrm dU}{U}+\frac{\mathrm dA}{A}=0.
+$$
+
+**Momentum, including the side walls** (ll. 43–53). The $x$-forces on the slice are:
+
+- $pA$ on the upstream face, pushing in $+x$;
+- $(p+\mathrm dp)(A+\mathrm dA)$ on the downstream face, pushing in $-x$;
+- the walls. They carry the mean pressure $p+\tfrac12\mathrm dp$, and their $x$-projection adds up to the area change $\mathrm dA$, so they push with $(p+\tfrac12\mathrm dp)\,\mathrm dA$ in $+x$.
+
+Momentum out minus momentum in equals the net force:
+
+$$
+\dot m(U+\mathrm dU)-\dot mU=pA+\left(p+\tfrac12\mathrm dp\right)\mathrm dA-(p+\mathrm dp)(A+\mathrm dA).
+$$
+
+The left side is $\dot m\,\mathrm dU=\rho UA\,\mathrm dU$. Expand the right side:
+
+$$
+pA+p\,\mathrm dA+\tfrac12\mathrm dp\,\mathrm dA-pA-p\,\mathrm dA-A\,\mathrm dp-\mathrm dp\,\mathrm dA.
+$$
+
+$pA$ and $p\,\mathrm dA$ cancel, and both $\mathrm dp\,\mathrm dA$ terms are second order:
+
+$$
+\rho UA\,\mathrm dU=-A\,\mathrm dp
+\quad\Longrightarrow\quad
+\rho U\,\mathrm dU=-\mathrm dp.
+$$
+
+> [!tip] Why the wall term matters
+> Leave out the wall force and the right side keeps a $-p\,\mathrm dA$ that does not cancel. That term is first order, so the result would be wrong for any duct whose area changes. The walls of a diverging duct push the gas downstream; the walls of a converging duct push it upstream.
+
+**Isentropic link** (ll. 54–70). With no shock in the nozzle the flow is isentropic, $p=C\rho^\gamma$, so
+
+$$
+\mathrm dp=\gamma C\rho^{\gamma-1}\mathrm d\rho=\gamma\,\frac{C\rho^\gamma}{\rho}\,\mathrm d\rho=\gamma\,\frac{p}{\rho}\,\mathrm d\rho=\gamma RT\,\mathrm d\rho=a^2\,\mathrm d\rho.
+$$
+
+From here the algebra is steps (c) and (d) above (ll. 71–76).
+
+> [!warning] Exam advice from the lecture (ll. 65–68)
+> Write $p$ and $\rho$ so that they cannot be confused. The lecturer often cannot tell them apart in exam scripts, and this derivation uses both on every line.
+
+### Only a throat can be sonic
+
+![[at_throat_bulge_choking.png|900]]
+
+$M=1$ forces $\mathrm dA=0$, but $\mathrm dA=0$ does **not** guarantee $M=1$ (ll. 106–124). There are two kinds of section with $\mathrm dA=0$:
+
+- **A throat** (minimum area). Subsonic flow accelerates into it and supersonic flow accelerates out of it, so $M=1$ can sit exactly there.
+- **A bulge** (maximum area). Subsonic flow entering the widening part **slows down**, and supersonic flow entering it **speeds up**. Either way $M$ moves away from 1, so a bulge can never be sonic (panel 1b).
+
+The lecturer added some history (ll. 97–104): engineers raised on low-speed aerodynamics did not believe a supersonic stream could accelerate in a widening duct. The Laval nozzle exists because the equation says it does.
+
+### Why the target is exit velocity: thrust (ll. 126–146)
+
+Put a control volume round the whole engine (panel 3 of the figure). Gas leaves the chamber almost at rest and exits at $u_e$ through area $A_e$ at pressure $p_e$; the surrounding air is at $p_a$.
+
+**Momentum on the gas.** The engine walls push the gas aft with a net force $F_{wall\to gas}$. At the exit plane the outside pushes back with $p_eA_e$. The gas gains momentum flux $\dot m\,u_e$:
+
+$$
+F_{wall\to gas}-p_eA_e=\dot m\,u_e
+\quad\Longrightarrow\quad
+F_{wall\to gas}=\dot m\,u_e+p_eA_e.
+$$
+
+**Forces on the engine.** By Newton's third law the gas pushes the engine forward with $F_{wall\to gas}$. Ambient pressure $p_a$ acts all over the outside except the exit hole. A uniform pressure on a closed surface gives no net force, so the missing hole leaves $p_aA_e$ pushing the engine **aft**. The thrust is
+
+$$
+\boxed{T=\dot m\,u_e+(p_e-p_a)A_e}
+$$
+
+This is the rocket form of the SESA2023 [[Thrust Equation]]. For a given $\dot m$, thrust grows with the exit velocity. At the **design point** ($p_e=p_a$) it is just $\dot m\,u_e$. That is why the aim is a shock-free nozzle with high supersonic exit velocity (ll. 141–145).
+
+> [!note] The lecture's simpler version
+> On the board the control volume was a nozzle segment with equal inlet and exit areas (l. 129, "for convenience"), giving $\dot m(u_e-u_i)=(p_i-p_e)A+\text{(force)}$. The message is the same: for a fixed $\dot m$, the thrust rises with the velocity gain.
+
 ---
 
 ## 2. The area–Mach relation (homework, slide 5; Anderson §10.3)
+
+Set in the lecture as **homework** (l. 153: *"look at the textbook chapter 10.3"*), and only stated there. The lecturer then read the result straight from the IFT's $A/A^*$ column (ll. 160–173).
 
 Mass flow is the same at any section and at the sonic section $A^*$, which may be real (a sonic throat) or fictitious:
 
@@ -160,6 +275,27 @@ For air the exponent is 3. The function has a minimum of 1 at $M=1$, so **each $
 
 ## 3. Mass flow and choking
 
+**The sonic (starred) state** (ll. 198–206). Put $M=1$ into the stagnation relations of [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#4. Stagnation properties|W01 §4]]:
+
+$$
+\frac{T_0}{T^*}=1+\frac{\gamma-1}{2}=\frac{\gamma+1}{2}=1.2,
+$$
+
+$$
+\frac{\rho_0}{\rho^*}=\left(\frac{\gamma+1}{2}\right)^{\frac{1}{\gamma-1}}=1.5774,
+\qquad
+\frac{p_0}{p^*}=\left(\frac{\gamma+1}{2}\right)^{\frac{\gamma}{\gamma-1}}=1.8929.
+$$
+
+$$
+\boxed{\frac{p^*}{p_0}=\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}}=0.5283\ \ (\gamma=1.4)}
+$$
+
+*"52.8 percent is a critical number you should remember"* (l. 223). If the **throat** pressure falls to 52.8 % of $p_0$, the throat is sonic and the flow can go supersonic downstream. If the throat pressure stays above it, the throat is subsonic and so is the whole nozzle (ll. 219–222).
+
+> [!warning] Throat pressure, not back pressure
+> The 0.528 is the pressure **at the throat**. For a converging–diverging nozzle the **back pressure** at which the throat first chokes is much higher, because the diverging part recovers pressure subsonically: $p_{b3}=0.9375\,p_0$ for the $M_e=2.2$ nozzle of §4. Only for a simple converging nozzle, where the throat is the exit, are the two the same (panel 2 of the figure above).
+
 Evaluate $\dot m=\rho^*a^*A^*$ with $\rho^*=\rho_0\left(\tfrac{2}{\gamma+1}\right)^{1/(\gamma-1)}$, $a^*=a_0\sqrt{\tfrac{2}{\gamma+1}}$, $\rho_0=p_0/(RT_0)$ and $a_0=\sqrt{\gamma RT_0}$:
 
 $$
@@ -170,7 +306,7 @@ $$
 \boxed{\dot m=\frac{p_0A^*}{\sqrt{T_0}}\sqrt{\frac{\gamma}{R}}\left(\frac{2}{\gamma+1}\right)^{\frac{\gamma+1}{2(\gamma-1)}}=0.0404\,\frac{p_0A^*}{\sqrt{T_0}}\ \ \text{(air, SI)}}
 $$
 
-- **Choked flow.** For given reservoir conditions, $\dot m$ is greatest when the throat is sonic ($A_t=A^*$). Once that happens, lowering $p_b$ further **cannot** raise $\dot m$: the information cannot travel upstream through the sonic throat. See [[Critical Conditions and Choked Flow]].
+- **Choked flow** (ll. 193–212). For given reservoir conditions, $\dot m$ is greatest when the throat is sonic ($A_t=A^*$). The formula contains only $p_0$, $T_0$ and $A^*$: the reservoir fixes the first two and the nozzle design fixes the third. Once the throat is sonic, lowering $p_b$ further **cannot** raise $\dot m$ (*"no matter how high you push"*, l. 195), because the information cannot travel upstream through the sonic throat. See [[Critical Conditions and Choked Flow]].
 - **Across a shock** $T_0$ is unchanged but $p_0$ falls. Since $\dot m$ is the same, $p_{01}A^*_1=p_{02}A^*_2$, so the effective sonic area **grows** by $p_{01}/p_{02}$:
 
 $$
@@ -199,6 +335,8 @@ Worked throughout for the lecture nozzle, designed for $M_e=2.2$, so $A_e/A_t=A/
 
 ### Computing the three critical back pressures
 
+This is the lecture's worked example (ll. 252–278), done with the IFT and NST exactly as on the board.
+
 **$p_{b6}$ (design).**
 
 $$
@@ -223,7 +361,19 @@ $$
 \frac{p_{b5}}{p_0}=5.480\times0.0935=0.5125.
 $$
 
-Behind the shock, $M=0.5471$.
+Behind the shock, $M_2^2=\dfrac{1+0.2(4.84)}{1.4(4.84)-0.2}=0.2993$, so $M=0.5471$.
+
+> [!check] Against the lecture
+> - $p_{b6}$: "less than 10 percent" (l. 259); exactly 9.35 %.
+> - $p_{b3}$: the board gives 0.9373 and $M=0.3053$ (l. 267). The interpolation gives 0.93737, so 0.9374 when rounded; the exact values are 0.9375 and 0.3051.
+> - $p_{b5}$: $p_2/p_1=5.48$, $M_2^2=0.2993$ and $M_2=0.547$ (ll. 272–275) ✓. The board's "about 0.5" is 0.5125.
+>
+> The range is *"day and night"* (l. 268): 94 % of $p_0$ with a subsonic exit, against 9.4 % for the design.
+
+> [!tip] Why altitude matters, and a scale check (ll. 185–192, 224–251)
+> The design exit pressure is a small fraction of $p_0$. The lecture's point: if the surroundings are at a higher pressure than $p_e$ (low altitude), the flow cannot stay fully expanded, a shock forms, and the thrust falls. *"Everything has to be perfectly matched"* (l. 250).
+>
+> How bad this is depends on $p_0$ as well as on the nozzle. With $p_0=50$ bar this $M_e=2.2$ nozzle has $p_{b6}=4.7$ bar and $p_{b5}=25.6$ bar. Sea-level air (1 bar) is then **below** $p_{b6}$, so the jet is under-expanded, not shocked. Real launchers use much larger area ratios, so they are over-expanded at sea level (lip shocks, §5) rather than carrying a normal shock inside.
 
 ### Where is the shock for a given back pressure?
 
@@ -262,6 +412,9 @@ Lower back pressure pushes the shock downstream, where it is stronger. As $p_b\t
 ## 5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)
 
 ![[at_nozzle_jets.png|900]]
+
+> [!note] §§5–7 are Lecture 2.7: slides only, not yet lectured
+> The 2.6 recording mentioned these regimes only in passing (ll. 237–247). Line references will be added if 2.7 is lectured.
 
 For $p_{b6}<p_b<p_{b5}$ the exit flow is supersonic with $p_e<p_\infty$. It has to be **recompressed**, so:
 
@@ -362,6 +515,8 @@ A long tube of high-pressure gas is separated from a low-pressure dump tank by a
 
 ### Next (slide 14)
 
+The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A/A^*$. Two nozzles with the same $A^*$ and $A_e$ but different lengths should therefore perform identically, *"but that is not true"*: there is an optimum length, and finding it needs a method that resolves the flow across the nozzle height. MoC starts **Thursday 15 Oct**.
+
 1D theory gives uniform properties at each section. The **method of characteristics** resolves both $x$ and $y$ and is the basis for designing shock-free supersonic nozzles (Anderson §13.3). It is also the subject of the **MoC coursework, due 15 Nov**. [[SESA3029 Example Sheet 2 - Solutions]] gives a first look.
 
 ---
@@ -375,11 +530,31 @@ A long tube of high-pressure gas is separated from a low-pressure dump tank by a
 5. **Lip waves:** $p_\infty/p_e$ gives $M_{n1}$ and $\beta$, then $\theta$ (shock); or $\nu(M_j)-\nu(M_e)$ (fan). Then check $\theta_{max}$ for a regular crossing.
 6. **Wind tunnel:** the second-throat ratio is $p_{01}/p_{02}$ at the test Mach number.
 
+## Transcript slips (L2-6)
+
+> [!warning] Slips and garbled passages in `Lecture 2-6.txt`
+> | Line | Said | Correct |
+> |---|---|---|
+> | ll. 33–37 | the bracket expansion, garbled | $\rho UA+\rho U\,\mathrm dA+\rho A\,\mathrm dU+UA\,\mathrm d\rho$ plus higher-order terms ([[#The lecture's route: a control volume with side walls\|§1]]) |
+> | ll. 49–50 | the momentum expansion, garbled | $pA+p\,\mathrm dA+\tfrac12\mathrm dp\,\mathrm dA-pA-p\,\mathrm dA-A\,\mathrm dp-\mathrm dp\,\mathrm dA$ |
+> | ll. 73–76 | "D rho over A equals M squared minus 1 times D rho over U" | $\mathrm dA/A=(M^2-1)\,\mathrm dU/U$ |
+> | l. 84 | "M squared 1 is a negative value" | $M^2-1<0$ |
+> | l. 153 | "a homer for you … chapter 10.3" | homework: derive $A/A^*$ (Anderson §10.3) |
+> | l. 216 | "$p^*/p_0$ is 0.5 to a" | 0.528 |
+> | l. 228 | "pv6" | $p_{b6}$ |
+> | l. 267 | "$p_{b3}/p_0$ is 0.9373" | the interpolation gives 0.93737, i.e. 0.9374 (exact 0.9375) |
+> | l. 273 | "pressure ratio for 5.848" | 5.48 (said correctly at l. 272) |
+> | l. 274 | "about 0.5" | $p_{b5}/p_0=0.5125$ |
+> | l. 277 | "about 9.5 percent of the stagnation pressure" | 9.35 % |
+> | l. 283 | "the lower nozzle" | the Laval nozzle |
+>
+> Simplified rather than wrong: ll. 187–189 say high-speed jets fly high *"because the exit pressure has to be equal to the ambient pressure"*. A fixed nozzle is matched at only one altitude; whether it is over- or under-expanded elsewhere depends on $p_0$ as well (see the scale check in §4).
+
 ## Links
 
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
 - Previous: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]
-- Year 2: [[Isentropic Nozzle Flow]] · [[Critical Conditions and Choked Flow]] · [[Converging-Diverging Nozzle Operating Regimes]] · [[Rocket Nozzle Geometry]] · [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]
+- Year 2: [[Isentropic Nozzle Flow]] · [[Critical Conditions and Choked Flow]] · [[Converging-Diverging Nozzle Operating Regimes]] · [[Rocket Nozzle Geometry]] · [[Thrust Equation]] · [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]
 - New concepts: [[Over- and Under-Expanded Jets]] · [[Supersonic Wind Tunnel]]
 - Worked sheet: [[SESA3029 Example Sheet 1 - Solutions#Q8. Supersonic wind-tunnel nozzle|Example Sheet 1 Q8]]
 - Formulae: [[SESA3029 Formula Sheet]]
@@ -388,25 +563,28 @@ A long tube of high-pressure gas is separated from a low-pressure dump tank by a
 
 - `Lecture2-6.pdf`: 2.6 Laval Nozzle (14 slides)
 - `Lecture2-7.pdf`: 2.7 Under/Over-expanded Nozzles (14 slides; the SR-71 photographs, schlieren image DOI 10.1177/1475472X19834521, and the TU Braunschweig Ludwieg tube)
-- No transcripts yet.
+- `Lecture 2-6.txt`: the Monday 12 Oct recording of 2.6 (291 lines). No recording of 2.7 yet.
 - Anderson, *Fundamentals of Aerodynamics*, §§10.1–10.6 (nozzles and diffusers) and §13.3 (preview of MoC)
-- Figures: `generate_aerothermo_w04_figures.py`
+- Figures: `generate_aerothermo_w04_figures.py` (`at_laval_cv_derivation` and `at_throat_bulge_choking` added for the lecture's route)
 
 ## Self-study tasks
 
 > [!todo] How to use this list
-> No transcripts exist for Lectures 2.6–2.7. Tasks printed on the slides are **slide-set**; the rest are *suggested, not lecturer-set*.
+> Lecture 2.6 was recorded: tasks citing an `L2-6` line were set or worked on the board. Lecture 2.7 has not been lectured; its tasks are **slide-set**. The rest are *suggested, not lecturer-set*. No deadline was announced in 2.6; the MoC coursework (due **15 Nov**, from the slides) is the next one.
 
 ### Derivations
 
-- [ ] **Slide-set (2.6, slide 5, "homework"):** derive $A/A^*(M)$ (Anderson §10.3). → [[#2. The area–Mach relation (homework, slide 5; Anderson §10.3)|§2]]
-- [ ] *(Suggested)* Derive $\mathrm dA/A=(M^2-1)\,\mathrm dU/U$ from mass, Euler and $\mathrm dp=a^2\mathrm d\rho$. → [[#1. The area–velocity relation (Lecture 2.6, slides 2–4)|§1]]
-- [ ] *(Suggested)* Derive the choked mass flow and the constant 0.0404 for air. → [[#3. Mass flow and choking|§3]]
+- [ ] **Lecturer-set homework (L2-6, l. 153; slide 5):** derive $A/A^*(M)$ (Anderson §10.3). → [[#2. The area–Mach relation (homework, slide 5; Anderson §10.3)|§2]]
+- [ ] Derive $\mathrm dA/A=(M^2-1)\,\mathrm dU/U$ the lecture's way: brackets for mass, a control volume **with the wall force** for momentum, and $p=C\rho^\gamma$ (L2-6, ll. 12–76). → [[#The lecture's route: a control volume with side walls|§1]]
+- [ ] Explain why a bulge ($\mathrm dA=0$ at maximum area) can never be sonic (L2-6, ll. 112–120). → [[#Only a throat can be sonic|§1]]
+- [ ] Derive the thrust $T=\dot m\,u_e+(p_e-p_a)A_e$ (L2-6, ll. 126–146, simplified on the board). → [[#Why the target is exit velocity: thrust (ll. 126–146)|§1]]
+- [ ] Derive $p^*/p_0=0.528$ and remember it (L2-6, ll. 213–223). → [[#3. Mass flow and choking|§3]]
+- [ ] Derive the choked mass flow and the constant 0.0404 for air (L2-6, ll. 197–211). → [[#3. Mass flow and choking|§3]]
 - [ ] *(Suggested)* Show $A^*_2/A^*_1=p_{01}/p_{02}$ across a shock. → [[#3. Mass flow and choking|§3]]
 
 ### Calculations
 
-- [ ] $M_e=2.2$ nozzle: $p_{b3}=0.9375$, $p_{b5}=0.5125$, $p_{b6}=0.0935$ (times $p_0$). → [[#Computing the three critical back pressures|§4]]
+- [ ] **Lecture example (L2-6, ll. 252–278):** $M_e=2.2$ nozzle: $p_{b3}=0.9375$, $p_{b5}=0.5125$, $p_{b6}=0.0935$ (times $p_0$), by IFT/NST interpolation. → [[#Computing the three critical back pressures|§4]]
 - [ ] Shock position for $p_b/p_0=0.7$: $A_s/A_t=1.511$. → [[#Where is the shock for a given back pressure?|§4]]
 - [ ] Lip-shock angle for $p_b/p_0=0.2$, and whether the crossing is regular. → [[#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|§5]]
 - [ ] **Slide-set example (2.7, slides 10–11):** $A_{t2}/A_{t1}=3.045$ at $M=3$. → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
@@ -414,7 +592,9 @@ A long tube of high-pressure gas is separated from a low-pressure dump tank by a
 
 ### Concepts
 
-- [ ] Sketch $p(x)$ for $p_{b1}$ to $p_{b6}$ and explain each regime. → [[#4. Flow regimes as the back pressure falls (2.6 slides 6–13; 2.7 slide 2)|§4]]
+- [ ] Explain why 0.528 is a **throat** pressure, and why a C-D nozzle chokes at the much higher back pressure $p_{b3}=0.9375\,p_0$. → [[#3. Mass flow and choking|§3]]
+- [ ] Explain why 1D theory cannot give the nozzle length, which is the motivation for MoC (L2-6, ll. 279–291). → [[#Next (slide 14)|§7]]
+- [ ] Sketch $p(x)$ for $p_{b1}$ to $p_{b6}$ and explain each regime (L2-6, ll. 224–251 for $p_{b3}$ to $p_{b6}$). → [[#4. Flow regimes as the back pressure falls (2.6 slides 6–13; 2.7 slide 2)|§4]]
 - [ ] Explain why a shock reflects from a free (constant-pressure) boundary as a fan, and from a wall as a shock. → [[#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|§5]]
 - [ ] Explain why $A_{t2}<A_{t1}$ can never give supersonic flow. → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
 - [ ] Read Anderson §13.3 before the MoC lectures; MoC coursework due **15 Nov**.

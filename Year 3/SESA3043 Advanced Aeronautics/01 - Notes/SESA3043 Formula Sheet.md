@@ -168,15 +168,17 @@ $v\sim U_e\delta/L$; $\delta/L\sim Re^{-1/2}$; $-\frac1\rho\frac{\mathrm dp}{\ma
 
 $u-iv=\dfrac{\mathrm d\Phi/\mathrm d\bar z}{\mathrm dz/\mathrm d\bar z}$. Joukowski $z=\bar z+b^2/\bar z$:
 
-- plate normal to the stream ($z=\bar z-a^2/\bar z$): $\Phi=\pm U\sqrt{z^2+4a^2}$, $C_p=1-\dfrac{y^2}{4a^2-y^2}$;
+- plate normal to the stream ($z=\bar z-a^2/\bar z$): $\Phi=\pm U\sqrt{z^2+4a^2}$, $C_p=1-\dfrac{y^2}{4a^2-y^2}$ (examinable by hand);
+- plate along the stream ($z=\bar z+a^2/\bar z$, $a=b$): $z=2a\cos\theta$, $\Phi=Uz$, $u=U$, $v=0$, $C_p=0$ (examinable by hand);
+- ellipse ($a>b$): semi-axes $a\pm b^2/a$;
 - aerofoil: $a\cos\beta=b(1+\varepsilon)$, $\bar z_0=-\varepsilon b+ia\sin\beta$, $\dfrac bc=\dfrac{1+2\varepsilon}{4(1+\varepsilon)^2}$;
 - Kutta: $\Gamma=4\pi aU\sin(\alpha+\beta)$, $C_L=\dfrac{8\pi a}{c}\sin(\alpha+\beta)$.
 
-Kármán–Trefftz: $z=2b\dfrac{(\bar z+b)^p+(\bar z-b)^p}{(\bar z+b)^p-(\bar z-b)^p}$, $p=2-\tau/\pi$, $\dfrac bc=\dfrac{(1+\varepsilon)^p-\varepsilon^p}{4(1+\varepsilon)^p}$; far field $z\approx(2/p)\bar z$.
+Kármán–Trefftz: $z=2b\dfrac{(\bar z+b)^p+(\bar z-b)^p}{(\bar z+b)^p-(\bar z-b)^p}$, $p=2-\tau/\pi$, $\dfrac bc=\dfrac{(1+\varepsilon)^p-\varepsilon^p}{4(1+\varepsilon)^p}$; far field $z\approx(2/p)\bar z$. Joukowski and KT are examined as logic, not calculation (9 Oct, ll. 490–495); $C_p=1-|\mathrm d\Phi/\mathrm dz|^2/U^2$; angles in radians in the code.
 
 ## Lumped vortex method
 
-Vortex at $c/4$, control point at $3c/4$: $\Gamma_\infty=\pi U\alpha c$, $C_L=2\pi\alpha$. Downwash from a vortex a distance $d$ upstream: $\Gamma/2\pi d$. $\bar x_{cp}=-C_{M,LE}/C_L$.
+Vortex at $c/4$, control point at $3c/4$: $\Gamma_\infty=\pi U\alpha c$, $C_L=2\pi\alpha$. Downwash from a vortex a distance $d$ upstream: $\Gamma/2\pi d$ (from one downstream it is an upwash: enter it as a negative downwash). $\bar x_{cp}=-C_{M,LE}/C_L$. Tandem at gap $c/2$ (lectured): $\Gamma_1=\tfrac43\Gamma_\infty$, $\Gamma_2=\tfrac23\Gamma_\infty$.
 
 | Case | Result |
 |---|---|

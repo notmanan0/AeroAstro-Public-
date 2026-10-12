@@ -245,11 +245,15 @@ $$
 
 with $J_{xx}=\int(y^2+z^2)\mathrm dm$ (and cyclic) and $J_{xy}=\int xy\,\mathrm dm$ (and cyclic).
 
-Rotational dynamic equation:
+Rotational dynamic equation (lectured form 3.70, then solved, 3.71):
 
 $$
+\sum\mathbf M_{cm}=\mathbf J\,{}^b\dot{\boldsymbol\omega}+\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega,
+\qquad
 {}^b\dot{\boldsymbol\omega}=\mathbf J^{-1}\left(\sum\mathbf M_{cm}-\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega\right).
 $$
+
+Conditions: moments about the **cm** ($\int_B\mathbf r\,\mathrm dm=\mathbf 0$ by definition there); $\mathbf J$ in **body** axes and the body **rigid**, so $\dot{\mathbf J}=\mathbf 0$.
 
 Principal axes (Euler's equations): $J_x\dot p=L+(J_y-J_z)qr$, $J_y\dot q=M+(J_z-J_x)rp$, $J_z\dot r=N+(J_x-J_y)pq$.
 

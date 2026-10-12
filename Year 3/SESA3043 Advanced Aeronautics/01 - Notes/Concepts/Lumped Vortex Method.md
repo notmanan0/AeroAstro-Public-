@@ -39,6 +39,12 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 2-D, no thickness, singular point loads (ill-conditioned with many vortices). Panel methods fix all three.
 
+## In the lectures
+
+- Lectured Fri 9 Oct: the flat plate, the procedure, and the tandem "Red Arrows" example (gap $c/2$: front aircraft carries twice the lift of the rear one). Ground effect and camber come next.
+- Sign rule: write every induced velocity as a downwash, and enter an upward one as a negative downwash.
+- Camber yes, thickness never (it rests on thin-aerofoil theory); the panel method handles both.
+
 ## Related
 
 - [[SESA3043 2.2 - Lumped Vortex Method]] · [[Method of Images]] · [[SESA2022 T4 - Thin Aerofoil Theory]]

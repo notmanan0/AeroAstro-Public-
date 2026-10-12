@@ -245,6 +245,16 @@ $$
 
 ## Quasi-1D nozzle flow (Lecture 2.6)
 
+The three ingredients, as lectured (L2-6, ll. 12–76; the momentum balance includes the side-wall force $(p+\tfrac12\mathrm dp)\,\mathrm dA$):
+
+$$
+\frac{\mathrm d\rho}{\rho}+\frac{\mathrm dU}{U}+\frac{\mathrm dA}{A}=0,
+\qquad
+\rho U\,\mathrm dU=-\mathrm dp,
+\qquad
+\mathrm dp=a^2\,\mathrm d\rho\ \ (p=C\rho^\gamma).
+$$
+
 $$
 \frac{\mathrm dA}{A}=(M^2-1)\frac{\mathrm dU}{U},
 \qquad
@@ -256,6 +266,10 @@ $$
 \qquad
 \frac{p^*}{p_0}=0.5283.
 $$
+
+Sonic state ($\gamma=1.4$): $T_0/T^*=1.2$, $\rho_0/\rho^*=1.5774$, $p_0/p^*=1.8929$. The 0.528 is a **throat** pressure: a C-D nozzle chokes at the much higher back pressure $p_{b3}$.
+
+Thrust (rocket, control volume round the engine): $T=\dot m\,u_e+(p_e-p_a)A_e$; at the design point $T=\dot m\,u_e$.
 
 Across a shock $\dot m$ and $T_0$ are unchanged:
 

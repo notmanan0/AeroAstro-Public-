@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3043 Advanced Aeronautics"]
 tags: [sesa3043, hub, moc]
 status: in-progress
-coverage: "Chapters 1–3 (Ch1 fully lectured, last on 2 Oct; Ch2 and Ch3 written ahead from slides)"
+coverage: "Chapters 1–3 (Ch1 fully lectured; Ch2 §2.1 and §2.2 to the tandem example lectured 8–9 Oct; rest of Ch2 and Ch3 written ahead from slides)"
 ---
 
 # SESA3043 Advanced Aeronautics Hub
@@ -13,7 +13,15 @@ coverage: "Chapters 1–3 (Ch1 fully lectured, last on 2 Oct; Ch2 and Ch3 writte
 > [!abstract] Module at a glance
 > **Conservation laws and governing equations** → **potential flow** (superposition, complex potential, conformal mapping) → **lumped-vortex and panel methods** → **viscous boundary layers** → **rotor aerodynamics** → **environmental impact**.
 >
-> Vault coverage: **all of Chapters 1–3**. **Chapter 1 is fully lectured**: CH1-4 (boundary layers) was given on Fri 2 Oct, followed by the Chapter 1 tutorial. Chapter 2 and the whole of Chapter 3 (methods for boundary layers) were written **ahead of the lectures** from the slides and Blackboard notes; add lecture line references when the transcripts arrive. Quick reference: [[SESA3043 Formula Sheet]].
+> Vault coverage: **all of Chapters 1–3**. **Chapter 1 is fully lectured**: CH1-4 (boundary layers) was given on Fri 2 Oct, followed by the Chapter 1 tutorial.
+>
+> **Chapter 2 is under way** (Dr Zhiwei Hu):
+> - Thu 8 Oct and Fri 9 Oct (first half): all of conformal mapping, §2.1, plus a Blackboard demo recording.
+> - Fri 9 Oct (second half): the lumped vortex method up to the tandem example, §2.2.
+> - Both notes are backfilled with line references.
+> - **Next:** ground effect, LVM with camber, then the panel method (§2.3), the week of 12 Oct.
+>
+> The panel method and all of Chapter 3 were written **ahead of the lectures** from the slides and Blackboard notes; add line references when their transcripts arrive. Quick reference: [[SESA3043 Formula Sheet]].
 
 ## Current coverage
 
@@ -30,10 +38,10 @@ coverage: "Chapters 1–3 (Ch1 fully lectured, last on 2 Oct; Ch2 and Ch3 writte
 5. [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]] (lectured 2 Oct, transcript folded in)
    - order-of-magnitude derivation of the BL equations; $\partial p/\partial y=0$; $\delta/L\sim Re^{-1/2}$; parabolic marching; Blasius check; lecture slips flagged.
 
-**Chapter 2: Exact solutions and methods for potential flow** (written ahead)
+**Chapter 2: Exact solutions and methods for potential flow**
 
-6. [[SESA3043 2.1 - Complex Functions and Conformal Mapping]]: conformal maps, plate normal to a stream, Joukowski and Kármán–Trefftz aerofoils, Kutta condition.
-7. [[SESA3043 2.2 - Lumped Vortex Method]]: flat plate, tandem, ground effect, camber, biplane.
+6. [[SESA3043 2.1 - Complex Functions and Conformal Mapping]] (**lectured 8–9 Oct**, transcripts folded in): conformal maps, plates normal to and along a stream, Joukowski and Kármán–Trefftz aerofoils, Kutta condition, the demo sweep, and what the exam can ask.
+7. [[SESA3043 2.2 - Lumped Vortex Method]] (**§§1–3 lectured 9 Oct**; ground effect and camber written ahead): flat plate, tandem, ground effect, camber, biplane.
 8. [[SESA3043 2.3 - Panel Methods]]: source/vortex/doublet panels, both complete methods, code, validation.
 
 **Chapter 3: Methods for boundary layers** (written ahead, 6 Oct)
@@ -83,8 +91,8 @@ coverage: "Chapters 1–3 (Ch1 fully lectured, last on 2 Oct; Ch2 and Ch3 writte
 | Chapter 1.1–1.2 | Notation, Eulerian/Lagrangian, mass, momentum and energy equations | **Complete** (lectured) |
 | Chapter 1.3 | Potential-flow review, complex potential, general doublet, wedge flows | **Complete** (lectured, last 1 Oct) |
 | Chapter 1.4 | 2-D incompressible boundary layers | **Complete** (lectured Fri 2 Oct, then the Ch1 tutorial on revision Q 1.3.2–1.3.3) |
-| Chapter 2.1 | Conformal mapping, Joukowski, Kármán–Trefftz | **Written ahead** |
-| Chapter 2.2 | Lumped vortex method | **Written ahead** |
+| Chapter 2.1 | Conformal mapping, Joukowski, Kármán–Trefftz | **Complete** (lectured Thu 8 and Fri 9 Oct, transcripts) |
+| Chapter 2.2 | Lumped vortex method | **Partly lectured** (Fri 9 Oct: flat plate, tandem); ground effect and camber written ahead, next lecture |
 | Chapter 2.3 | Panel methods | **Written ahead** |
 | Chapter 3.1–3.6 | Methods for boundary layers: thickness measures, Blasius, Falkner–Skan, Pohlhausen, transition, MIE, VII | **Written ahead from slides** (6 Oct), after Chapter 2 in the lecture order |
 | Later chapters | Rotor aerodynamics, environmental impact (Chapters 4–5) | Awaiting material |
@@ -97,12 +105,12 @@ coverage: "Chapters 1–3 (Ch1 fully lectured, last on 2 Oct; Ch2 and Ch3 writte
 The Week 1 lecture states:
 
 - **80%** two-hour closed-book final exam;
-- **20%** coursework, released around the start of **Week 8** and due before the end of **Week 11**. Ch2 slide 20: *"Part of the CW will be: generate KT aerofoil with given code and perform potential flow calculations"*. Prepare with [[SESA3043 2.1 - Complex Functions and Conformal Mapping#5. The Kármán–Trefftz aerofoil (slides 19–20)|2.1 §5]] and [[SESA3043 2.3 - Panel Methods|2.3]];
+- **20%** coursework, released around the start of **Week 8** and due before the end of **Week 11**. Ch2 slide 20: *"Part of the CW will be: generate KT aerofoil with given code and perform potential flow calculations"*. Confirmed in the 8 Oct lecture (ll. 424–426): the KT generation is *"the first part of your coursework"* (9 Oct, l. 456). The code (MATLAB and Python) is on Blackboard under Chapter 2; use angles in radians. Prepare with [[SESA3043 2.1 - Complex Functions and Conformal Mapping#5. The Kármán–Trefftz aerofoil (slides 19–20)|2.1 §5]] and [[SESA3043 2.3 - Panel Methods|2.3]];
 - marks reward a complete method and clearly stated assumptions, not only the final number.
 
 **Coursework tools** (CH3-6 slide 25): see the *Coursework Code Explainer* on Blackboard; use **XFOIL** or XFLR5. The theory is [[SESA3043 3.6 - Viscous-Inviscid Interaction|3.6]].
 
-**Tutorial format** (L5, ll. 507–510): the second Friday lecture at the end of each chapter (five chapters) is a tutorial; work through the revision questions while the chapter is being taught and bring the ones you cannot do.
+**Tutorial format** (L5, ll. 507–510): the second Friday lecture at the end of each chapter (five chapters) is a tutorial; work through the revision questions while the chapter is being taught and bring the ones you cannot do. For Chapter 2 the tutorial is being **pushed back** at the class's request, to allow time on the revision questions. Their solutions are withheld until then (9 Oct LVM lecture, ll. 436–444).
 
 **Other dates:** study-abroad information session **28 Oct, 10:00–12:30, Building 7 room 309** (L5, ll. 24–25; international placement year and summer schools).
 
@@ -134,9 +142,9 @@ Check Blackboard for authoritative dates and later changes.
 **Chapter 2**
 
 - explain why an analytic map preserves angles and carries potential flows;
-- solve flow onto a finite plate by mapping, including $C_p$;
-- construct Joukowski aerofoils, derive $b/c$, and derive $\Gamma$ from the Kutta condition;
-- set up and solve lumped-vortex problems (tandem, ground effect, camber, biplane) and explain why $c/4$ and $3c/4$;
+- **by hand** (stated as examinable, 9 Oct, ll. 486–495): flow onto a finite plate and flow along a plate by mapping, transforming geometry then solution, to $u$, $v$ and $C_p$;
+- **logic only, no calculation** (same lines): the steps that turn a cylinder into a Joukowski or KT aerofoil (shift left for thickness, up for camber, through $\bar z=b$ for a sharp TE); derive $b/c$ and $\Gamma$ from the Kutta condition;
+- set up and solve lumped-vortex problems (tandem, ground effect, camber, biplane) and explain why $c/4$ and $3c/4$; write every induced velocity as a downwash (9 Oct LVM, ll. 358–369);
 - derive the source, vortex and doublet panel influence formulae and their self-induced limits;
 - describe both complete panel methods, their Kutta conditions, and how to get $C_L$ and $C_p$.
 
@@ -177,11 +185,11 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/Ch2 Exact Solution and methods for potential flow.pdf`
 - `02 - Sources/Lectures/Ch2_Notes_LVM_Tandem Aerofoils.pdf`, `Ch2_Notes_LVM_Ground Effect.pdf`, `Ch2_Notes_LVM_Cambered Aerofoil.pdf`
 - `02 - Sources/Lectures/Ch2_Notes_Panel Method.pdf`, `Ch2_Panel_Method_Explainer.pdf`
-- Transcripts: `L1 - SESA3043.txt`, `L2 - SESA3043.txt`, `L3 - SESA3043.txt` (Week 1); `L4 - SESA3043.txt`; `02 October 2026 at 14_53_48.txt` (**L5**, CH1-4) and `02 October 2026 at 15_51_44.txt` (Ch1 tutorial)
+- Transcripts: `L1 - SESA3043.txt`, `L2 - SESA3043.txt`, `L3 - SESA3043.txt` (Week 1); `L4 - SESA3043.txt`; `02 October 2026 at 14_53_48.txt` (**L5**, CH1-4) and `02 October 2026 at 15_51_44.txt` (Ch1 tutorial); `08 October 2026 at 13_50_19.txt` (Ch2 L1, conformal mapping), `09 October 2026 at 14_57_18.txt` (Ch2 L2, Joukowski and KT), `09 October 2026 at 16_00_58.txt` (Ch2 L3, lumped vortex) and `09 October 2026 at 14_17_51.txt` (Joukowski demo recording)
 - `02 - Sources/Lectures/CH3-1 Introduction(1).pdf`, `CH3-2 Blasius and Falkner-Skan(1).pdf`, `CH3-3 Pohlhausen.pdf`, `CH3-4 Transition to Turbulence(1).pdf`, `CH3-5 Momentum Integral Eqn(1).pdf`, `CH3-6 Viscous Inviscid Interaction.pdf`
 - `02 - Sources/Lectures/Ch3_Notes_Blasius.pdf`, `Ch3_Notes_Falkner-Skan.pdf`, `Ch3_Notes_Pohlhausen.pdf`
 - `03 - Exams & Past Papers/Ch3_Revision_Questions.pdf`
 - `03 - Exams & Past Papers/Ch1_Revision_Questions.pdf`, `Ch2_Revision_Questions.pdf`
 
 > [!warning] Slips found in the sources (all flagged in the notes)
-> CH1-3 slide 23: $\phi$ bracket should be $1+R^2/r^2$. Slides 21/37: vortex row mixes sign conventions. Unsteady-Bernoulli notes Eq. 1: missing $\times\mathbf u$. CH1-4 slide 37: "matching" means marching. Ch2 slide 5: $\varphi$ for $\psi$. Slide 10: missing signs in the circle map. Slide 17: circle centre shift dropped. Slide 28: control point is $x_T$, not $x_L$. LVM camber notes: $\Gamma_2$ distance at $T_2$ is $c/4$, not $3c/4$. Slide 47: $\sigma$ for $\mu$. Slide 51 and explainer p. 25: vortex $w$ sign and the rotation formula. Ch3 notes: Falkner–Skan boxed Eq. 8 has $f'f''$ for $ff''$; Pohlhausen p. 2 bracket has $+\eta^3$ for $-\eta^3$; Blasius $\eta_{99}$ read as 3.5 (exact 3.47, so $\delta_{99}/x=4.91$, not 5.0, $/\sqrt{Re_x}$). L5 (2 Oct): "matching" for marching again, and several spoken slips, flagged in [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Transcript slips (L5)|1.4]].
+> CH1-3 slide 23: $\phi$ bracket should be $1+R^2/r^2$. Slides 21/37: vortex row mixes sign conventions. Unsteady-Bernoulli notes Eq. 1: missing $\times\mathbf u$. CH1-4 slide 37: "matching" means marching. Ch2 slide 5: $\varphi$ for $\psi$. Slide 10: missing signs in the circle map. Slide 17: circle centre shift dropped. Slide 28: control point is $x_T$, not $x_L$. LVM camber notes: $\Gamma_2$ distance at $T_2$ is $c/4$, not $3c/4$. Slide 47: $\sigma$ for $\mu$. Slide 51 and explainer p. 25: vortex $w$ sign and the rotation formula. Ch3 notes: Falkner–Skan boxed Eq. 8 has $f'f''$ for $ff''$; Pohlhausen p. 2 bracket has $+\eta^3$ for $-\eta^3$; Blasius $\eta_{99}$ read as 3.5 (exact 3.47, so $\delta_{99}/x=4.91$, not 5.0, $/\sqrt{Re_x}$). L5 (2 Oct): "matching" for marching again, and several spoken slips, flagged in [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Transcript slips (L5)|1.4]]. Ch2 lectures (8–9 Oct): $\mathrm d\Phi/\mathrm dx$ for $\mathrm d\Phi/\mathrm dz$, "$-2\pi$ to $2\pi$" for $\pm2a$, the dropped square root in $\sqrt{4a^2-y^2}$, the parallel component said as $U_\infty\sin\alpha$, and $L=U_\infty\Gamma$ without $\rho$. Flagged in [[SESA3043 2.1 - Complex Functions and Conformal Mapping#Transcript slips (L-a and L-b)|2.1]] and [[SESA3043 2.2 - Lumped Vortex Method#Transcript slips (LV)|2.2]].
