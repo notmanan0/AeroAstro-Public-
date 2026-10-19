@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3029 formulae", "Aerothermodynamics formula sheet"]
 tags: [sesa3029, formula, exam-prep]
 status: in-progress
-coverage: "Week 1, Lectures 2.1–2.7"
+coverage: "Week 1, Lectures 2.1–2.7, 3.1–3.4"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1 and Lectures 2.1–2.7** (2.1–2.4 lectured; 2.5–2.7 from the slides). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7 and 3.1–3.4** (all lectured up to 3.1; 3.2–3.4 from the slides). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Mach number and gas properties
 
@@ -303,6 +303,51 @@ $$
 
 which is 3.046 at $M=3$.
 
+## Method of characteristics (Lectures 3.1–3.4)
+
+Valid for steady, planar, homentropic, irrotational flow with $M>1$. $\theta$ is the flow **inclination** to $x$.
+
+Governing pair, and the compatibility conditions:
+
+$$
+\frac{\partial\nu}{\partial l}-\tan\mu\frac{\partial\theta}{\partial n}=0,\quad\frac{\partial\theta}{\partial l}-\tan\mu\frac{\partial\nu}{\partial n}=0
+\quad\Longrightarrow\quad
+R^+=\nu-\theta\ \text{on }C^+\ (\theta+\mu),\qquad R^-=\nu+\theta\ \text{on }C^-\ (\theta-\mu).
+$$
+
+Anderson: $K^+=-R^+$, $K^-=R^-$.
+
+Unit process (A below, B above):
+
+$$
+\nu_P=\tfrac12(R^+_A+R^-_B),\qquad\theta_P=\tfrac12(R^-_B-R^+_A),\qquad\mu_P=\sin^{-1}(1/M_P),
+$$
+
+$$
+\alpha_{AP}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_P],\qquad\alpha_{BP}=\tfrac12[(\theta-\mu)_B+(\theta-\mu)_P],
+$$
+
+$$
+x_P=\frac{x_B\tan\alpha_{BP}-x_A\tan\alpha_{AP}-(y_B-y_A)}{\tan\alpha_{BP}-\tan\alpha_{AP}},\qquad y_P=y_A+(x_P-x_A)\tan\alpha_{AP}.
+$$
+
+Boundary conditions:
+
+| Boundary | State | Position |
+|---|---|---|
+| prescribed top wall (reflects) | $\nu_W=R^+_A+\theta_W$, reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
+| designed wall (cancels) | $\theta_W=\theta_A$, $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
+| centreline | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B-\mu_P]$ |
+
+Minimum-length nozzle:
+
+$$
+\theta_{max}=\frac{\nu(M_e)}{2},\qquad\text{fan lines: }\nu=\theta,\ R^-=2\theta,\qquad \frac{y_e}{r_a}\to\frac{A_e}{A^*}.
+$$
+
+$M_e=2.4$: $\theta_{max}=18.373^\circ$, $x_e/r_a=8.069$, $y_e/r_a=2.400$ (four lines).
+
+
 ## What the exam formula sheet gives you
 
 The official `Aerothermodynamics Formula Sheet.pdf` (3 pages, filed on 6 Oct) is provided in the exam together with the isentropic-flow table (`IFT.pdf`, with $\nu$ and $A/A^*$ columns), the normal-shock table (`NST.pdf`, including $p_{02}/p_1$) and the oblique-shock chart (`OSC.pdf`, $M_1=1.5$–$3$ only). Knowing what is **not** on it tells you what to memorise or be able to derive.
@@ -328,5 +373,6 @@ The official `Aerothermodynamics Formula Sheet.pdf` (3 pages, filed on 6 Oct) is
 - [[SESA3029 W02 - Oblique Shock Relations and Mach Waves]]
 - [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]
 - [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]
+- [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]
 - [[SESA3029 Aerothermodynamics Hub]]
 

@@ -5,7 +5,7 @@ type: tutorial
 stream: "Sections 3–4: method of characteristics and linearised supersonic/subsonic theory"
 tags: [sesa3029, tutorial-solutions, example-sheet, method-of-characteristics, riemann-invariant, ackeret, prandtl-glauert]
 sheet: "Example Sheet 2"
-theory_notes: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]"]
+theory_notes: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]", "[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
 status: complete
 sources: ["03 - Exams & Past Papers/ExamplesSheet2.pdf"]
 ---
@@ -13,14 +13,16 @@ sources: ["03 - Exams & Past Papers/ExamplesSheet2.pdf"]
 # SESA3029 Example Sheet 2 - Solutions
 
 > [!abstract] Sheet info
-> Six questions from **Sections 3–4**, which have **not been lectured yet**:
-> - Q1–Q3: the method of characteristics (MoC), in Weeks 4–5;
-> - Q4–Q6: Ackeret and Prandtl–Glauert linear theory, in Weeks 7–8.
+> Six questions from **Sections 3–4**:
+> - **Q1–Q3: the method of characteristics.** The theory began on Fri 16 Oct (Lecture 3.1: compatibility conditions and Riemann invariants). The unit process and boundary conditions (3.2–3.3) are written up ahead of their lectures in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].
+> - **Q4–Q6: Ackeret and Prandtl–Glauert linear theory**, Weeks 7–8, not yet lectured.
 >
-> So that the solutions stand alone, each section first derives the result it needs from Week 3 material (Mach waves and the Prandtl–Meyer relation). Revisit these solutions once the lectures arrive and add transcript references. All numbers are verified in Python. $\gamma=1.4$.
+> Each section first derives the result it needs, so the solutions stand alone. All numbers are verified in Python. $\gamma=1.4$.
 
-> [!warning] Not yet lectured
-> Treat the derivations below as a preview. The lecturer's notation and sign conventions for $C^\pm$ and $K^\pm$ may differ. The conventions here follow Anderson §11.11–11.12 and §13.
+> [!warning] Two sign conventions: lecture vs Anderson
+> These solutions were first written in **Anderson's** notation (§§11.11–11.12, §13): $K^+=\theta-\nu$ along $C^+$ and $K^-=\theta+\nu$ along $C^-$.
+>
+> **The lecture uses** $R^+=\nu-\theta$ along $C^+$ and $R^-=\nu+\theta$ along $C^-$ (3.1 slide 12). So $R^+=-K^+$ and $R^-=K^-$. The characteristic directions ($\theta\pm\mu$) and every number are the same either way. Q2 and Q3 now give the working in both notations; use the lecture's in the exam.
 
 ---
 
@@ -118,6 +120,22 @@ $$
 
 The sheet gives 3.04 and 9.15°; the difference is table rounding ✓.
 
+**(d) In the lecture's notation** (3.2 slide 7, [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#10. The unit process (3.2 slides 7–9)|W05 §10]]). P is above R (role B, its $C^-$ reaches R) and Q is below R (role A, its $C^+$ reaches R):
+
+$$
+R^-_P=\nu_P+\theta_P=49.757+10=59.757^\circ,
+\qquad
+R^+_Q=\nu_Q-\theta_Q=53.470-12=41.470^\circ,
+$$
+
+$$
+\nu_R=\tfrac12(R^+_Q+R^-_P)=\tfrac12(41.470+59.757)=50.614^\circ,
+\qquad
+\theta_R=\tfrac12(R^-_P-R^+_Q)=\tfrac12(59.757-41.470)=9.14^\circ .
+$$
+
+These are the same numbers. The lecture's form needs no negative invariants.
+
 ## Q3. Flow in a symmetric 2D duct
 
 ![[at_es2_moc_net.png|900]]
@@ -163,6 +181,23 @@ $$
 *(Point E on the axis, for completeness:* $\theta_E=0$, so $\nu_E=K^-_B=4.988^\circ$ and $M_E=1.256$.)
 
 The sheet gives 14.34°, 1.558, 1.256 and 1.606 ✓.
+
+**In the lecture's notation.** $R^+_A=\nu_A-\theta_A=-0.722^\circ$, $R^-_A=7.838^\circ$, $R^+_B=2.128^\circ$ and $R^-_B=4.988^\circ$.
+
+- C is a **prescribed-wall** point (BC 1): $\nu_C=R^+_A+\theta_C=-0.722+14.342=13.620^\circ$.
+- D: $\nu_D=\tfrac12(R^+_B+R^-_A)=4.983^\circ$ and $\theta_D=\tfrac12(R^-_A-R^+_B)=2.855^\circ$.
+- F: $R^-_C=27.962^\circ$, so $\theta_F=\tfrac12(27.962-2.128)=12.917^\circ$ and $\nu_F=15.045^\circ$.
+- E: $\nu_E=R^-_B=4.988^\circ$ (BC 3).
+
+> [!check] The sheet uses a straight characteristic to the wall
+> The answer key's C comes from the $C^+$ leaving A at A's own slope, $\theta_A+\mu_A=60.72^\circ$. The lecture's unit process instead averages the slopes at both ends, $\alpha_{AC}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_C]$ (3.2 slide 8). Because $\theta_C$ depends on where the line meets the wall, this needs iterating. It converges in about six passes to:
+>
+> | | $\alpha_{AC}$ | $x_C$ | $\theta_C$ | $M_C$ | $\theta_F$ | $M_F$ |
+> |---|---:|---:|---:|---:|---:|---:|
+> | straight (sheet) | 60.72° | 0.1557 | 14.34° | 1.558 | 12.92° | 1.606 |
+> | averaged (lecture) | 57.50° | 0.1813 | 15.71° | 1.604 | 14.29° | 1.653 |
+>
+> The difference is large because $\mu$ falls from $56.4^\circ$ at A to about $39^\circ$ at C. Near $M=1$ the characteristics curve strongly. D and E are unaffected: interior and centreline **states** never depend on geometry. Match the method the question asks for. If it gives no method, the averaged slope is the lecture's.
 
 ## Q4. Flat plate by Ackeret theory
 

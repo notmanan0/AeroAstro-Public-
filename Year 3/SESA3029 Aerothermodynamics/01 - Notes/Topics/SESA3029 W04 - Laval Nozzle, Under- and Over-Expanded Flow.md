@@ -8,13 +8,13 @@ tags: [sesa3029, compressible-flow, nozzle, laval, choked-flow, back-pressure, o
 aliases: ["SESA3029 Week 4", "SESA3029 Lecture 2.6", "SESA3029 Lecture 2.7", "Laval Nozzle (SESA3029)"]
 date: 2026-10-01
 status: complete
-coverage: "Lecture 2.6 lectured Mon 12 Oct (transcript); Lecture 2.7 from the slides, not yet lectured"
+coverage: "Lecture 2.6 lectured Mon 12 Oct and Lecture 2.7 lectured Thu 15 Oct (both with transcripts)"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes]]", "[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[Isentropic Nozzle Flow]]"]
-next_topics: []
+next_topics: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
 key_concepts: ["[[Isentropic Nozzle Flow]]", "[[Critical Conditions and Choked Flow]]", "[[Converging-Diverging Nozzle Operating Regimes]]", "[[Over- and Under-Expanded Jets]]", "[[Supersonic Wind Tunnel]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 1 - Solutions]]"]
-sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture2-7.pdf", "02 - Sources/Lectures/Lecture 2-6.txt"]
+sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture2-7.pdf", "02 - Sources/Lectures/Lecture 2-6.txt", "02 - Sources/Lectures/Lecture 2-7.txt"]
 ---
 
 # SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow
@@ -58,7 +58,13 @@ sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture
 > - the worked example $M_e=2.2$: $p_{b6}$, $p_{b3}$, $p_{b5}$ (ll. 252–278);
 > - limits of 1D theory, method of characteristics "on Thursday" (ll. 279–291).
 >
-> **Lecture 2.7 (§§5–7) has not been lectured yet.** The 2.6 recording ended by pointing straight to the method of characteristics (l. 291), so 2.7 may be folded in later or left as reading. Its sections stay as written from the slides. Slips are in [[#Transcript slips (L2-6)]].
+> **Lecture 2.7 (§§5–7) was lectured on Thu 15 Oct** and is now backfilled from `Lecture 2-7.txt` (203 lines). The lecturer billed it as *"a very interesting lecture without any equation"* (ll. 1–2):
+> - the regimes recap, $p_{b5}$ to $p_{b6}$ over-expanded and below $p_{b6}$ under-expanded (ll. 10–43);
+> - the over-expanded jet and the shock-diamond cycle (ll. 44–78); the under-expanded jet (ll. 79–82); the schlieren photos and the Mach disc (ll. 85–95);
+> - the supersonic wind tunnel, the second throat and the starting problem (ll. 97–146), the $M=3$ example (ll. 147–173) and the Ludwieg tube (ll. 174–191);
+> - a preview of MoC *"from basically tomorrow"*, Fri 16 Oct (ll. 192–203).
+>
+> Slips are in [[#Transcript slips (L2-6)]] and [[#Transcript slips (L2-7)]].
 
 ---
 
@@ -413,16 +419,23 @@ Lower back pressure pushes the shock downstream, where it is stronger. As $p_b\t
 
 ![[at_nozzle_jets.png|900]]
 
-> [!note] §§5–7 are Lecture 2.7: slides only, not yet lectured
-> The 2.6 recording mentioned these regimes only in passing (ll. 237–247). Line references will be added if 2.7 is lectured.
+> [!note] §§5–7 are Lecture 2.7, lectured Thu 15 Oct
+> Line references below are to `Lecture 2-7.txt` unless marked L2-6. The lecture used the SR-71 take-off photograph as its hook (ll. 3–10): *"at the end of the lecture you can explain to your friends and family how these beautiful things"* appear.
+>
+> **"Over" and "under" are relative to the ambient pressure** (ll. 38–44). Over-expanded means the nozzle has expanded the gas to **below** $p_\infty$ ($p_{b5}>p_b>p_{b6}$). Under-expanded means it has not expanded enough, so $p_e>p_\infty$ ($p_b<p_{b6}$).
 
 For $p_{b6}<p_b<p_{b5}$ the exit flow is supersonic with $p_e<p_\infty$. It has to be **recompressed**, so:
 
-1. **Oblique shocks form at the lips**, with just the turning angle needed to raise the pressure to $p_\infty$. The jet boundary (a [[Slip Line]], whose pressure must equal $p_\infty$) turns inward.
-2. **The two lip shocks cross** on the axis. Behind the crossing, the flow has been compressed twice, so its pressure is now **above** $p_\infty$.
-3. **The shocks reach the jet boundary.** A constant-pressure boundary cannot hold a pressure jump, so each shock **reflects as an expansion fan**. This is the opposite of a solid wall, where a shock reflects as a shock (W03 §1).
-4. **The fans cross**, overshooting: the pressure is now **below** $p_\infty$.
-5. **The fans reflect from the boundary as compression waves.** These coalesce into shocks, and the pattern repeats. These are the **shock diamonds** in an afterburner plume (the SR-71 photograph on slides 1 and 7).
+1. **Oblique shocks form at the lips**, with just the turning angle needed to raise the pressure to $p_\infty$ (ll. 45–55). A full normal shock is not needed, because $p_b<p_{b5}$. The jet boundary is a [[Slip Line]]: velocity jumps across it (fast jet, slow or still ambient air), but pressure and direction match (ll. 56–60). It turns **inward** (ll. 60–63).
+2. **The two lip shocks cross** on the axis. Behind the crossing, the flow has been compressed twice, so its pressure is now **above** $p_\infty$ (ll. 65–67).
+3. **The shocks reach the jet boundary.** A constant-pressure boundary cannot hold a pressure jump, so each shock **reflects as an expansion fan** and the slip line turns outward (ll. 67–70). This is the opposite of a solid wall, where a shock reflects as a shock (W03 §1).
+4. **The fans cross**, overshooting: the pressure is now **below** $p_\infty$ (ll. 71–73), *"back to square one"*.
+5. **The fans reflect from the boundary as compression waves** (ll. 74–76). The lecturer flagged this as the one new fact: *"expansion waves reflected from the slip line turn into compression waves"*. These coalesce into shocks, and the pattern repeats *"over and over"*. These are the **shock diamonds** in an afterburner plume (the SR-71 photograph on slides 1 and 7).
+
+> [!tip] The lecturer's way to read the slip line (ll. 60–63, 77–78)
+> Treat the slip line as a duct wall for the supersonic jet. A supersonic flow that must **compress** needs a **converging** duct, so the boundary pinches in. One that must **expand** needs a diverging duct, so the boundary bulges out. That gives the **barrel** shape.
+>
+> The pressure matches $p_\infty$ only in the small triangles next to the slip line. Inside the diamonds it is alternately too high and too low (l. 78).
 
 **Sizing the lip shock from the pressure ratio.** Invert the oblique-shock pressure jump:
 
@@ -450,13 +463,13 @@ $$
 
 At the crossing each stream must be turned back by $13.67^\circ$, and $\theta_{max}(1.679)=16.5^\circ$. So this is a **regular** crossing.
 
-**Mach disc (slide 7).** At $p_b/p_0=0.30$, the lip shock gives $\theta=21.6^\circ$ but $\theta_{max}(M_2=1.32)=7.2^\circ$. A regular crossing is impossible, so a **Mach disc** forms: the axisymmetric version of the W03 Mach reflection. Panel (c) puts the switch at $p_b/p_0\approx0.216$ for this nozzle. That is a planar estimate; real axisymmetric jets differ in detail.
+**Mach disc (slide 7; ll. 91–95).** *"Sometimes turning angles may be too high to get a regular shock."* The crossing then becomes a normal shock, the Mach disc, with curved shocks joining it near the edge. This is the W03 Mach reflection again. At $p_b/p_0=0.30$, the lip shock gives $\theta=21.6^\circ$ but $\theta_{max}(M_2=1.32)=7.2^\circ$. A regular crossing is impossible, so a **Mach disc** forms: the axisymmetric version of the W03 Mach reflection. Panel (c) puts the switch at $p_b/p_0\approx0.216$ for this nozzle. That is a planar estimate; real axisymmetric jets differ in detail.
 
 ---
 
 ## 6. Under-expanded jets (slides 5–7)
 
-For $p_b<p_{b6}$ the exit pressure is **above** ambient, so the flow must expand further:
+For $p_b<p_{b6}$ the exit pressure is **above** ambient, so the flow must expand further (ll. 79–82, where the recording starts by saying "over expanded"; see the slips). The cycle is the over-expanded one, entered at a different step:
 
 1. **Prandtl–Meyer fans at the lips** expand the flow to $p_\infty$ and turn the jet boundary **outward**.
 2. **The fans cross** and over-expand: the pressure falls below $p_\infty$.
@@ -483,7 +496,9 @@ $$
 
 **Ideal configuration** (slide 8): reservoir → nozzle with first throat $A_{t1}$ → supersonic test section → diffuser with second throat $A_{t2}$ → subsonic exit. The diffuser recovers pressure far better than dumping the test-section flow as an open jet, so the tunnel needs a lower reservoir pressure.
 
-**Why $A_{t2}>A_{t1}$.** If $A_{t2}<A_{t1}$, the second throat would choke first and fix $\dot m$ at a value too small for the first throat ever to go sonic, so there would be **no supersonic flow**. Even $A_{t2}=A_{t1}$ fails during start-up, because a shock with $p_0$ loss is then in the circuit.
+The lecture added two practical points (ll. 103–110). Test sections are **small**, because the facility is very energy-hungry. Closing the loop through a diffuser recycles the high-energy air back into the nozzle, so it does not have to be generated again.
+
+**Why $A_{t2}>A_{t1}$** (ll. 112–118). If $A_{t2}<A_{t1}$, the second throat would choke first and fix $\dot m$ at a value too small for the first throat ever to go sonic, so there would be **no supersonic flow**. Even $A_{t2}=A_{t1}$ fails during start-up, because a shock with $p_0$ loss is then in the circuit.
 
 **Starting** (slide 9). When the tunnel is switched on, a normal shock forms in the diverging nozzle and moves into the test section. With the shock standing in the test section at the test Mach number $M$, the flow reaching the second throat has stagnation pressure $p_{02}<p_{01}$. To pass the same $\dot m$ at its lower $p_0$, the second throat needs, from §3,
 
@@ -493,12 +508,17 @@ $$
 
 If that holds, the shock is pushed through the test section and **swallowed** by the diffuser. $A_{t2}$ can then be reduced towards the ideal running size.
 
-**Worked: $M=3$ (slides 10–11, the slide's route).**
+> [!tip] How the lecture explained the swallowing (ll. 119–146)
+> At start-up the tunnel is full of air at ambient pressure, so a normal shock forms and the test section is subsonic. *"If you don't do anything then it will just settle … like that forever"* (l. 129).
+>
+> The way out uses the **unsteady** start. While the flow develops, the mass flow through the second throat need not equal that through the first (ll. 131–135). Open $A_{t2}$ slightly beyond the steady value and the second throat briefly passes **more** mass than arrives. That is a suction effect: the shock is drawn forward through the test section and swallowed by the second throat (ll. 136–141). So the second throat must be **variable** (ll. 142–144). Open it a little to start, then close it back to the running value once the test section is supersonic (ll. 150–151, 172–173).
+
+**Worked: $M=3$ (slides 10–11; worked in the lecture, ll. 147–173).**
 
 1. IFT at $M=3$: $A_{test}/A_{t1}=A/A^*(3)=4.2346$.
 2. Normal-shock table at $M=3$: $M_2=0.4752$ and $p_{02}/p_{01}=0.3283$.
 3. Behind the shock, the second throat must choke the $M_2=0.4752$ flow. IFT rows 0.46 (1.4246) and 0.48 (1.3801): $\sigma=0.76$, so $A_{test}/A_{t2}=1.3908$ (exact: 1.3904).
-4. $\dfrac{A_{t2}}{A_{t1}}=\dfrac{A_{test}/A_{t1}}{A_{test}/A_{t2}}=\dfrac{4.2346}{1.3908}=3.045.$
+4. $\dfrac{A_{t2}}{A_{t1}}=\dfrac{A_{test}/A_{t1}}{A_{test}/A_{t2}}=\dfrac{4.2346}{1.3908}=3.045.$ The lecture rounded step 3 to "about 1.39" and got "about 3.045" (ll. 169–171).
 
 > [!check] The same answer in one line
 > $1/(p_{02}/p_{01})=1/0.3283=3.046$. Both routes agree, because $A/A^*(M)\big/A/A^*(M_2)$ equals $p_{01}/p_{02}$ for a normal shock. It is the §3 identity in disguise.
@@ -511,13 +531,15 @@ At high $M$ a fixed-geometry second throat becomes impractical. That motivates v
 
 ### Ludwieg tube (slides 12–13)
 
+The lecture (ll. 174–191) stressed the economics. No compressors or turbines run continuously, because only the storage tube has to be pressurised, so it is *"very energy efficient"*. The run lasts *"a fraction of a second"*, but that is many flow-through times of the model, so the data are valid. The slide 12 CFD shows Mach numbers up to about 6 (l. 188).
+
 A long tube of high-pressure gas is separated from a low-pressure dump tank by a diaphragm or fast valve. Bursting it sends a shock and contact discontinuity downstream and an **expansion wave upstream** into the storage tube (the shock-tube CFD on slide 12). A Laval nozzle behind the valve accelerates the gas in the expanded region to supersonic or hypersonic speed. The test lasts until the expansion wave reflects off the closed end and returns, of order **0.1 s**. That is enough for force and pressure measurements, at a fraction of the cost of a continuous tunnel. Slide 13 shows TU Braunschweig's 17 m storage tube and the Mach-number field developing over 30 ms.
 
 ### Next (slide 14)
 
-The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A/A^*$. Two nozzles with the same $A^*$ and $A_e$ but different lengths should therefore perform identically, *"but that is not true"*: there is an optimum length, and finding it needs a method that resolves the flow across the nozzle height. MoC starts **Thursday 15 Oct**.
+The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A/A^*$. Two nozzles with the same $A^*$ and $A_e$ but different lengths should therefore perform identically, *"but that is not true"*: there is an optimum length, and finding it needs a method that resolves the flow across the nozzle height. 2.6 announced MoC for Thursday 15 Oct, but Thursday was spent on 2.7, so MoC started on **Fri 16 Oct** (L2-7, ll. 192–203).
 
-1D theory gives uniform properties at each section. The **method of characteristics** resolves both $x$ and $y$ and is the basis for designing shock-free supersonic nozzles (Anderson §13.3). It is also the subject of the **MoC coursework, due 15 Nov**. [[SESA3029 Example Sheet 2 - Solutions]] gives a first look.
+1D theory gives uniform properties at each section. The **method of characteristics** resolves both $x$ and $y$ and is the basis for designing shock-free supersonic nozzles (Anderson §13.3). It is also the subject of the **MoC coursework**. The module guide says 15 Nov, but L3-1 said the end of week 7; see the [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05 date check]]. Continue with [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].
 
 ---
 
@@ -550,10 +572,26 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 >
 > Simplified rather than wrong: ll. 187–189 say high-speed jets fly high *"because the exit pressure has to be equal to the ambient pressure"*. A fixed nozzle is matched at only one altitude; whether it is over- or under-expanded elsewhere depends on $p_0$ as well (see the scale check in §4).
 
+## Transcript slips (L2-7)
+
+> [!warning] Slips and garbled passages in `Lecture 2-7.txt`
+> | Line | Said | Correct |
+> |---|---|---|
+> | l. 17 | *"the supersonic speed going through a converging part the flow still accelerates"* | a **diverging** part. It was said correctly a moment earlier in the same line |
+> | l. 79 | *"next over expanded case … where pressure at the exit of the nozzle is lower than the ambient pressure"* | the next case is **under**-expanded, $p_e>p_\infty$. Corrected in the same line (*"the other way around"*) |
+> | l. 85 | *"children photograph"* | schlieren photograph (Whisper) |
+> | ll. 94–95, 163 | *"mark disc"*, *"marker number"* | Mach disc, Mach number (Whisper, throughout) |
+> | ll. 148–172 | *"82 over 81"* | $A_{t2}/A_{t1}$ (Whisper) |
+> | l. 162 | *"m2 is our 0.47"* | $M_2=0.4752$, given in full at l. 164 |
+> | l. 175 | *"ludwig … a german scientist"* | Hubert **Ludwieg**, hence the Ludwieg tube |
+>
+> Right, but rounded: l. 171 gives $A_{t2}/A_{t1}$ as *"about 3.045"*. The table route gives 3.045 and the exact value is $1/0.3283=3.046$ (§7).
+
 ## Links
 
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
 - Previous: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]
+- Next: [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]
 - Year 2: [[Isentropic Nozzle Flow]] · [[Critical Conditions and Choked Flow]] · [[Converging-Diverging Nozzle Operating Regimes]] · [[Rocket Nozzle Geometry]] · [[Thrust Equation]] · [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]
 - New concepts: [[Over- and Under-Expanded Jets]] · [[Supersonic Wind Tunnel]]
 - Worked sheet: [[SESA3029 Example Sheet 1 - Solutions#Q8. Supersonic wind-tunnel nozzle|Example Sheet 1 Q8]]
@@ -563,14 +601,15 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 
 - `Lecture2-6.pdf`: 2.6 Laval Nozzle (14 slides)
 - `Lecture2-7.pdf`: 2.7 Under/Over-expanded Nozzles (14 slides; the SR-71 photographs, schlieren image DOI 10.1177/1475472X19834521, and the TU Braunschweig Ludwieg tube)
-- `Lecture 2-6.txt`: the Monday 12 Oct recording of 2.6 (291 lines). No recording of 2.7 yet.
+- `Lecture 2-6.txt`: the Monday 12 Oct recording of 2.6 (291 lines).
+- `Lecture 2-7.txt`: the Thursday 15 Oct recording of 2.7 (203 lines).
 - Anderson, *Fundamentals of Aerodynamics*, §§10.1–10.6 (nozzles and diffusers) and §13.3 (preview of MoC)
 - Figures: `generate_aerothermo_w04_figures.py` (`at_laval_cv_derivation` and `at_throat_bulge_choking` added for the lecture's route)
 
 ## Self-study tasks
 
 > [!todo] How to use this list
-> Lecture 2.6 was recorded: tasks citing an `L2-6` line were set or worked on the board. Lecture 2.7 has not been lectured; its tasks are **slide-set**. The rest are *suggested, not lecturer-set*. No deadline was announced in 2.6; the MoC coursework (due **15 Nov**, from the slides) is the next one.
+> Both lectures were recorded. Tasks citing an `L2-6` or `L2-7` line were set or worked in the lecture; the rest are *suggested, not lecturer-set*. Neither lecture set formal homework beyond the $A/A^*$ derivation (L2-6, l. 153), and 2.7 announced no deadline. The next deadlines are **Test 2 (closes Sun 25 Oct)** and the **MoC coursework** (see [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05]]).
 
 ### Derivations
 
@@ -587,7 +626,7 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 - [ ] **Lecture example (L2-6, ll. 252–278):** $M_e=2.2$ nozzle: $p_{b3}=0.9375$, $p_{b5}=0.5125$, $p_{b6}=0.0935$ (times $p_0$), by IFT/NST interpolation. → [[#Computing the three critical back pressures|§4]]
 - [ ] Shock position for $p_b/p_0=0.7$: $A_s/A_t=1.511$. → [[#Where is the shock for a given back pressure?|§4]]
 - [ ] Lip-shock angle for $p_b/p_0=0.2$, and whether the crossing is regular. → [[#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|§5]]
-- [ ] **Slide-set example (2.7, slides 10–11):** $A_{t2}/A_{t1}=3.045$ at $M=3$. → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
+- [ ] **Lecture example (L2-7, ll. 147–173; slides 10–11):** $A_{t2}/A_{t1}=3.045$ at $M=3$, by IFT, NST and interpolation. → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
 - [ ] Example Sheet 1 Q8 (wind-tunnel nozzle). → [[SESA3029 Example Sheet 1 - Solutions#Q8. Supersonic wind-tunnel nozzle|ES1 Q8]]
 
 ### Concepts
@@ -595,6 +634,9 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 - [ ] Explain why 0.528 is a **throat** pressure, and why a C-D nozzle chokes at the much higher back pressure $p_{b3}=0.9375\,p_0$. → [[#3. Mass flow and choking|§3]]
 - [ ] Explain why 1D theory cannot give the nozzle length, which is the motivation for MoC (L2-6, ll. 279–291). → [[#Next (slide 14)|§7]]
 - [ ] Sketch $p(x)$ for $p_{b1}$ to $p_{b6}$ and explain each regime (L2-6, ll. 224–251 for $p_{b3}$ to $p_{b6}$). → [[#4. Flow regimes as the back pressure falls (2.6 slides 6–13; 2.7 slide 2)|§4]]
-- [ ] Explain why a shock reflects from a free (constant-pressure) boundary as a fan, and from a wall as a shock. → [[#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|§5]]
-- [ ] Explain why $A_{t2}<A_{t1}$ can never give supersonic flow. → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
-- [ ] Read Anderson §13.3 before the MoC lectures; MoC coursework due **15 Nov**.
+- [ ] Explain why a shock reflects from a free (constant-pressure) boundary as a fan, and a fan as compression waves (L2-7, ll. 67–76). → [[#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|§5]]
+- [ ] **(L2-7, ll. 8–10)** Explain the SR-71 shock diamonds to a non-engineer: the barrel-shaped slip line as a converging/diverging duct (ll. 60–78). → [[#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|§5]]
+- [ ] Explain why $A_{t2}<A_{t1}$ can never give supersonic flow (L2-7, ll. 112–118). → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
+- [ ] Explain how a variable second throat swallows the starting shock, using the unsteady mass-flow imbalance (L2-7, ll. 119–151). → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
+- [ ] Explain why a Ludwieg tube gives valid data in a fraction of a second (L2-7, ll. 175–191). → [[#Ludwieg tube (slides 12–13)|§7]]
+- [ ] Continue with MoC in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].

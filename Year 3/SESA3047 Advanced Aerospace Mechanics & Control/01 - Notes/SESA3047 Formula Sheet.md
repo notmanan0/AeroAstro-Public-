@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3047 formulae", "Advanced Mechanics and Control formula sheet"]
 tags: [sesa3047, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–3"
-sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf"]
+coverage: "Chapters 1–4; Chapter 4 to §4.1.2 lectured in L11, remainder from the handout"
+sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt"]
 ---
 
 # SESA3047 Formula Sheet
 
-Current coverage: **Chapter 1 (fundamental concepts) and Chapter 2 (introduction to kinematics)**.
+Current coverage: **Chapters 1–4**. Chapter 4 is lectured through §4.1.2 in L11; the remainder is written from the complete handout, awaiting transcripts.
 
 ## Control-system notation
 
@@ -265,7 +265,102 @@ M=J_y\dot q+(J_x-J_z)pr+J_{xz}(p^2-r^2),\quad
 N=J_z\dot r-J_{xz}\dot p+(J_y-J_x)pq+J_{xz}qr.
 $$
 
-6-DOF so far: $\dot{\boldsymbol\omega}$ (dynamics), $\dot{\boldsymbol\Phi}=\mathbf H\boldsymbol\omega$ and $\dot{\mathbf p}=\mathbf C^T\mathbf v$ (kinematics); $\dot{\mathbf v}$ in Chapter 4.
+These Chapter 3 equations supply nine state derivatives. Chapter 4 adds the velocity dynamics and assembles all twelve below.
+
+## Principal axes, aircraft inverse and rotors (Chapter 4 §4.1)
+
+L11 covers the full-inertia expansion and principal-axis case. Aircraft and rotor extensions below are written from the handout, awaiting matching transcripts.
+
+$$
+\mathbf J\mathbf e_i=\lambda_i\mathbf e_i,\quad
+\mathbf Q=[\mathbf e_1\ \mathbf e_2\ \mathbf e_3],\quad
+\mathbf J_P=\mathbf Q^T\mathbf J_B\mathbf Q=\operatorname{diag}(\lambda_i).
+$$
+
+For aircraft symmetry $J_{xy}=J_{yz}=0$:
+
+$$
+\Gamma=J_{xx}J_{zz}-J_{xz}^2,\qquad
+\mathbf J^{-1}=\frac1\Gamma
+\begin{bmatrix}J_{zz}&0&J_{xz}\\0&\Gamma/J_{yy}&0\\J_{xz}&0&J_{xx}\end{bmatrix}.
+$$
+
+$$
+R_L=L-(J_{zz}-J_{yy})qr+J_{xz}pq,\qquad
+R_N=N-(J_{yy}-J_{xx})pq-J_{xz}qr.
+$$
+
+$$
+\dot p=(J_{zz}R_L+J_{xz}R_N)/\Gamma,\qquad
+\dot r=(J_{xz}R_L+J_{xx}R_N)/\Gamma,
+$$
+
+$$
+\dot q=[M+(J_{zz}-J_{xx})pr-J_{xz}(p^2-r^2)]/J_{yy}.
+$$
+
+Internal rotor momentum, with locked assembly inertia included in $\mathbf J$:
+
+$$
+\mathbf h=\mathbf J\boldsymbol\omega+\mathbf h_R,\qquad
+\dot{\boldsymbol\omega}
+=\mathbf J^{-1}(\mathbf M-\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega
+-\tilde{\boldsymbol\omega}\mathbf h_R-{}^b\dot{\mathbf h}_R).
+$$
+
+Constant body-frame rotor momentum removes only its body derivative.
+
+## Translational dynamics (Chapter 4 §4.2)
+
+Written from the handout, awaiting a matching transcript. $\mathbf F$ excludes gravity:
+
+$$
+\mathbf g=\mathbf G-\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf p),\qquad
+\mathbf a_e=\mathbf F/m+\mathbf g-2\boldsymbol\Omega\times\mathbf v_e.
+$$
+
+Flat Earth: $\boldsymbol\Omega=0$, local NED inertial, $\mathbf g^{NED}=[0,0,g]^T$, $g=9.81$ m/s².
+
+$$
+\boxed{\dot{\mathbf v}
+=\mathbf F^{FRD}/m+\mathbf C_{FRD/NED}\mathbf g^{NED}
+-\tilde{\boldsymbol\omega}\mathbf v.}
+$$
+
+$$
+\begin{aligned}
+\dot u&=F_x/m-g\sin\theta+rv-qw,\\
+\dot v&=F_y/m+g\sin\phi\cos\theta+pw-ru,\\
+\dot w&=F_z/m+g\cos\phi\cos\theta+qu-pv.
+\end{aligned}
+$$
+
+If $[X,Y,Z]^T$ includes weight instead:
+
+$$
+X=m(\dot u+qw-rv),\quad
+Y=m(\dot v+ru-pw),\quad
+Z=m(\dot w+pv-qu).
+$$
+
+Do not add explicit gravity to that second convention.
+
+## Complete flat-Earth model (Chapter 4 §4.3)
+
+$$
+\mathbf x=[x,y,z,\phi,\theta,\psi,u,v,w,p,q,r]^T,
+$$
+
+$$
+\boxed{\begin{aligned}
+\dot{\mathbf p}^{NED}&=\mathbf C^T\mathbf v,\\
+\dot{\boldsymbol\Phi}&=\mathbf H(\boldsymbol\Phi)\boldsymbol\omega,\\
+\dot{\mathbf v}&=\mathbf F/m+\mathbf C\mathbf g^{NED}-\tilde{\boldsymbol\omega}\mathbf v,\\
+\dot{\boldsymbol\omega}&=\mathbf J^{-1}(\mathbf M-\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega).
+\end{aligned}}
+$$
+
+Four groups, twelve states; evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
 
 ## Related
 
@@ -277,3 +372,7 @@ $$
 - [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames]]
 - [[SESA3047 3.3 - Rigid-Body Rotational Dynamics]]
 
+
+- [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]]
+- [[SESA3047 4.2 - Translational Dynamics]]
+- [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]]

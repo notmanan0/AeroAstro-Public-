@@ -8,7 +8,7 @@ tags: [sesa3047, concept, dynamics, angular-momentum]
 status: complete
 parent_lectures: ["[[SESA3047 3.3 - Rigid-Body Rotational Dynamics]]"]
 related_concepts: ["[[Inertia Matrix]]", "[[Transport Theorem]]", "[[Cross-Product Matrix]]", "[[Rotational Kinematic Equation]]"]
-sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
+sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt"]
 ---
 
 # Rotational Dynamic Equation
@@ -28,6 +28,8 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf"]
 4. Solve for $\dot{\boldsymbol\omega}$.
 
 Step-by-step derivation and figure: [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]. Lectured in L10 (Mon 12 Oct), which ended at the implicit form $\sum\mathbf M_{cm}=\mathbf J\dot{\boldsymbol\omega}+\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ (3.70); the precise reasons for steps 1 and 3 are in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Two facts L10 glossed|3.3]].
+
+L11 ll. 35–68 revisits the explicit derivative; ll. 72–228 expand the full-inertia equation and principal-axis case. See [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]] for the full backfill and recording slips.
 
 ## Special forms
 
@@ -50,6 +52,10 @@ $$
 $$
 N=J_z\dot r-J_{xz}\dot p+(J_y-J_x)pq+J_{xz}qr.
 $$
+
+## Internal rotors
+
+With total momentum $\mathbf h=\mathbf J\boldsymbol\omega+\mathbf h_R$, add $-\mathbf J^{-1}(\boldsymbol\omega\times\mathbf h_R+{}^b\dot{\mathbf h}_R)$ to the baseline derivative. See [[Rotor Angular Momentum]]; this is written from Chapter 4 §4.1.4, awaiting a transcript.
 
 ## Physical meaning
 

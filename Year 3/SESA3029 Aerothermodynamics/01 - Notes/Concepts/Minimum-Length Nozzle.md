@@ -1,0 +1,52 @@
+---
+title: "Minimum-Length Nozzle"
+module: "SESA3029 Aerothermodynamics"
+type: concept
+stream: "Block 3: Nozzles and the Method of Characteristics"
+aliases: ["minimum length nozzle", "minimum-length nozzle design", "theta max", "simple region", "uniform flow region"]
+tags: [sesa3029, concept, nozzle-design, method-of-characteristics]
+status: complete
+parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
+related_concepts: ["[[Method of Characteristics]]", "[[Riemann Invariants]]", "[[Prandtl-Meyer Function]]", "[[Isentropic Nozzle Flow]]"]
+sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf"]
+---
+
+# Minimum-Length Nozzle
+
+## Definition
+
+> [!note] Definition
+> The shortest planar supersonic nozzle that delivers **uniform, shock-free** flow at $M_e$. All the expansion happens in a centred Prandtl–Meyer fan at a sharp throat corner. The wall downstream is designed to **cancel** every wave that reaches it, and the corner angle is
+>
+> $$\theta_{max}=\frac{\nu(M_e)}{2}.$$
+
+## Explanation
+
+**Why half.** The sonic throat has $\nu=0$, so the corner fan gives $\nu_C=\theta_{max}$ and the last corner $C^-$ carries $R^-=2\theta_{max}$. That line ends on the centreline at the first uniform-flow point, where $\theta=0$ and $\nu=\nu(M_e)$. Equal invariants give $2\theta_{max}=\nu(M_e)$.
+
+**Regions.**
+
+- **Non-simple kernel**: both families cross, behind the corner.
+- **Simple region**: one family only, next to the designed wall.
+- **Uniform region**: $M=M_e$, $\theta=0$.
+
+**Design recipe.**
+
+1. $\theta_{max}=\nu(M_e)/2$.
+2. Pick $n$ fan lines from a small $\delta$ (not 0) to $\theta_{max}$. On each, $\nu=\theta$ and $R^-=2\theta$.
+3. Apply the unit process, with the centreline as a mirror and the wall cancelling.
+4. Compute the coordinates left to right.
+
+**Numbers for $M_e=2.4$** (3.3 slides 11–21): $\theta_{max}=18.373^\circ$. With four lines from $0.375^\circ$, the exit is at $x_e/r_a=8.069$, $y_e/r_a=2.400$.
+
+> [!check] Built-in check
+> Mass conservation forces $y_e/r_a\to A_e/A^*$, here $2.4031$. MoC gives $2.4003$ with four lines and $2.4028$ with 300. 1D theory gives the exit height but cannot give the length.
+
+**Why use it.** It is the shortest design, so it is likely the lightest. That matters for rockets and launchers. In practice the throat corner is rounded slightly.
+
+![[at_moc_min_length_nozzle.png|760]]
+
+## Related
+
+- [[Method of Characteristics]] · [[Riemann Invariants]] · [[Prandtl-Meyer Function]] · [[Isentropic Nozzle Flow]] · [[Over- and Under-Expanded Jets]]
+- Detail: [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05 §13–14]]
