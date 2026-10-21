@@ -146,7 +146,7 @@ Check Blackboard for authoritative dates and later changes.
 - **by hand** (stated as examinable, 9 Oct, ll. 486–495): flow onto a finite plate and flow along a plate by mapping, transforming geometry then solution, to $u$, $v$ and $C_p$;
 - **logic only, no calculation** (same lines): the steps that turn a cylinder into a Joukowski or KT aerofoil (shift left for thickness, up for camber, through $\bar z=b$ for a sharp TE); derive $b/c$ and $\Gamma$ from the Kutta condition;
 - set up and solve lumped-vortex problems (tandem, ground effect, camber, biplane) and explain why $c/4$ and $3c/4$; write every induced velocity as a downwash (9 Oct LVM, ll. 358–369);
-- in ground effect, take only the image's velocity component **normal to the plate** (15 Oct, ll. 97–116); with camber, resolve the free stream normal to **each segment**, and use small-angle approximations so the equations stay solvable (16 Oct, ll. 77–84);
+- in ground effect, take only the image's velocity component **normal to the plate** (15 Oct, ll. 97–116); with camber, resolve the free stream normal to **each segment**, and use small-angle approximations so the equations stay solvable (16 Oct first lecture, `14_54_40`, ll. 77–84);
 - derive the source, vortex and doublet panel influence formulae and their self-induced limits;
 - describe both complete panel methods, their Kutta conditions, and how to get $C_L$ and $C_p$. The exam asks for the **process and logic**, not panel-by-panel calculation (16 Oct, ll. 376–394).
 

@@ -30,7 +30,7 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Supplem
    $$\frac{\partial p}{\partial\rho}=\gamma C\rho^{\gamma-1}=\gamma\,\frac{p}{\rho}=\gamma RT=a^2 ,$$
    and $\partial p/\partial l=a^2\,\partial\rho/\partial l$ in any direction. This removes $p$ from the momentum equation (W05 §4).
 2. With uniform $T_0$ as well, **Crocco's theorem** makes the flow irrotational. This is the second equation the [[Method of Characteristics]] needs (supplementary note, p. 2).
-3. Stagnation pressure and density are the same throughout. Once $M$ is known at a point, the isentropic ratios give every other property.
+3. With uniform $T_0$ (equivalently uniform $h_0=c_pT_0$) as well, stagnation pressure and density are the same throughout. Uniform $s$ alone is not enough. Each point's stagnation state is reached isentropically, so $p_0=C\rho_0^\gamma$ with the same $C$. The gas law gives $p_0=\rho_0RT_0$. Eliminating $p_0$ gives $\rho_0^{\gamma-1}=RT_0/C$, so $\rho_0$, and then $p_0$, are uniform only if $T_0$ is. In the adiabatic, shock-free nozzle flows of W05 both conditions hold. Once $M$ is known at a point, the isentropic ratios then give every other property.
 
 **Where it fails.** As soon as a shock forms. That is why MoC nozzle design aims for a **shock-free** flow, and why a cancelling wall is used rather than a reflecting one.
 

@@ -451,7 +451,7 @@ Then $\beta=\sin^{-1}(M_{n1}/M_e)$, and $\theta$ follows from the $\theta$–$\b
 
 $$
 \frac{p_\infty}{p_e}=\frac{0.20}{0.0935}=2.139
-\ \Rightarrow\
+\quad\Rightarrow\quad
 M_{n1}=1.406,
 \quad
 \beta=39.71^\circ,
@@ -577,7 +577,7 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 > [!warning] Slips and garbled passages in `Lecture 2-7.txt`
 > | Line | Said | Correct |
 > |---|---|---|
-> | l. 17 | *"the supersonic speed going through a converging part the flow still accelerates"* | a **diverging** part. It was said correctly a moment earlier in the same line |
+> | l. 17 | *"the supersonic speed going through a converging part the flow still accelerates"* | a **diverging** part. It was said correctly a moment earlier, at the end of l. 16 (*"going through a diverging"*) |
 > | l. 79 | *"next over expanded case … where pressure at the exit of the nozzle is lower than the ambient pressure"* | the next case is **under**-expanded, $p_e>p_\infty$. Corrected in the same line (*"the other way around"*) |
 > | l. 85 | *"children photograph"* | schlieren photograph (Whisper) |
 > | ll. 94–95, 163 | *"mark disc"*, *"marker number"* | Mach disc, Mach number (Whisper, throughout) |

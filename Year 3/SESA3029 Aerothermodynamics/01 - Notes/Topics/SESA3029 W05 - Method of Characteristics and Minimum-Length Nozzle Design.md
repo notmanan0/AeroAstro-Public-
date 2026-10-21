@@ -858,7 +858,7 @@ All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives 
 >
 > **The first angle matters.** With four lines starting at $\theta_{max}/4=4.59^\circ$ instead of $0.375^\circ$, the exit drops to $2.328$. A small $\delta$ keeps the first line close to the sonic throat. Use the $y_e$ check to validate the coursework code.
 
-**Refined design** (slide 21; supplementary note Fig. 10). With 20 characteristics the wall becomes a smooth curve. The centreline Mach number rises from 1 to 2.4 over the first $x/r_a\approx2.85$, the kernel, and stays at 2.4 after that (panel 3). As slide 21 puts it, 1D theory gives $y_e/r_a=A_e/A^*=2.4031$ *"but it gives no clue about $x_e/r_a=8.069$ revealed by MoC"*.
+**Refined design** (slide 21; supplementary note Fig. 10). With 20 characteristics the wall becomes a smooth curve. The centreline Mach number rises from 1 to 2.4 over the first $x/r_a\approx2.84$, the kernel, and stays at 2.4 after that (panel 3, lower plot). As slide 21 puts it, 1D theory gives $y_e/r_a=A_e/A^*=2.4031$ *"but it gives no clue about $x_e/r_a=8.069$ revealed by MoC"*.
 
 > [!example] Your turn: $M_e=2.0$ (suggested; answer computed here)
 > $\nu(2)=26.380^\circ$, so $\theta_{max}=13.190^\circ$. With four lines at $0.375$, $4.647$, $8.918$ and $13.190^\circ$, the corner invariants are $R^-=0.750$, $9.293$, $17.837$ and $26.380^\circ$.
@@ -957,7 +957,7 @@ where $\eta$ is distance along the characteristic. The states and the coordinate
 > | ll. 264–279 | the substitution garbled; the lecturer went back a slide | $(M^2-1)\tan\mu=\sqrt{M^2-1}=1/\tan\mu$, then multiply by $\tan\mu$ ([[#6. Rewriting in angles with the Prandtl–Meyer function (3.1 slide 8)\|§6]]) |
 > | l. 303 | *"partial nu by theta by partial L"* | $\partial(\nu+\theta)/\partial l$ |
 > | ll. 338–343 | *"mu over theta doesn't change … mu minus theta is preserved"* | $\nu-\theta$ (nu, not mu) is constant along $C^+$ |
-> | l. 361 | *"C plus line, which is with the slope of tangent mu"* | slope $\tan\mu$ **relative to the streamline**; relative to $x$ it is $\tan(\theta+\mu)$ |
+> | l. 361 | *"C plus line, which is with the slope of tangent mu"* | **Not a slip; clarification only.** $\tan\mu$ is correct as the slope **relative to the streamline** ($\Delta n/\Delta l$). Relative to $x$ the line is inclined at $\theta+\mu$ |
 > | l. 362 | *"along C minus theta is constant"* | $\nu+\theta$ is constant along $C^-$ |
 > | l. 363 | garbled sentence | $R^+$ and $R^-$ are called the Riemann invariants |
 > | l. 367 | *"R plus minus K plus"* | $R^+=-K^+$ and $R^-=K^-$ (Anderson) |

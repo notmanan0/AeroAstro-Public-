@@ -33,6 +33,8 @@ L11 ll. 35–68 revisits the explicit derivative; ll. 72–228 expand the full-i
 
 ## Special forms
 
+Notation: this note and 3.3 use $J_x,J_y,J_z$ for the moments of inertia; 4.1 and the Chapter 4 handout write the same quantities as $J_{xx},J_{yy},J_{zz}$ ($J_x\equiv J_{xx}$, $J_y\equiv J_{yy}$, $J_z\equiv J_{zz}$).
+
 **Principal axes** (Euler's equations):
 
 $$

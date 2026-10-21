@@ -36,7 +36,7 @@ $$
 
 $$
 \det(A-\lambda I)=(2-\lambda)(0-\lambda)-3=\lambda^2-2\lambda-3=(\lambda-3)(\lambda+1)=0
-\ \Rightarrow\
+\quad\Rightarrow\quad
 \boxed{\lambda_1=-1,\ \lambda_2=3}.
 $$
 
@@ -114,7 +114,7 @@ $$
 \theta_R=\tfrac12(59.757-41.470)=\boxed{9.14^\circ},
 \qquad
 \nu_R=\tfrac12(59.757+41.470)=50.614^\circ
-\ \Rightarrow\
+\quad\Rightarrow\quad
 \boxed{M_R=3.045}.
 $$
 
@@ -162,7 +162,7 @@ $$
 \theta_D=2.855^\circ,
 \qquad
 \nu_D=4.983^\circ
-\ \Rightarrow\
+\quad\Rightarrow\quad
 \boxed{M_D=1.256}.
 $$
 
@@ -174,7 +174,7 @@ K^-_C=\theta_C+\nu_C=27.963^\circ,
 \theta_F=12.92^\circ,
 \qquad
 \nu_F=15.046^\circ
-\ \Rightarrow\
+\quad\Rightarrow\quad
 \boxed{M_F=1.606}.
 $$
 
@@ -258,7 +258,7 @@ $M=1.8$ ($\beta=1.4967$, $2/\beta=1.3363$), $p_\infty=50$ kPa, $q_\infty=113.4$ 
 
 $$
 C_l=\frac{4\alpha}{\beta}=0.0933
-\ \Rightarrow\
+\quad\Rightarrow\quad
 L'=\boxed{10.58\ \text{kN/m}}.
 $$
 
@@ -266,7 +266,7 @@ $$
 
 $$
 C_d=\frac{4}{\beta}\left(\alpha^2+\varepsilon^2\right)=\frac{4}{1.4967}(0.001218+0.0025)=0.00994
-\ \Rightarrow\
+\quad\Rightarrow\quad
 D'=\boxed{1.13\ \text{kN/m}}.
 $$
 
@@ -276,7 +276,7 @@ The thickness term $4\varepsilon^2/\beta=4(t/c)^2/\beta$ is supersonic **wave dr
 
 $$
 C_{m,LE}=-\tfrac12C_l=-\frac{2\alpha}{\beta}=-0.0466
-\ \Rightarrow\
+\quad\Rightarrow\quad
 M'_{LE}=C_mq_\infty c^2=\boxed{-5.29\ \text{kN}}.
 $$
 
