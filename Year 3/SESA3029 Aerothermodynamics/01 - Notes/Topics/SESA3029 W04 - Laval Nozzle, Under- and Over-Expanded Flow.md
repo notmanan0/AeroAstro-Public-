@@ -539,7 +539,7 @@ A long tube of high-pressure gas is separated from a low-pressure dump tank by a
 
 The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A/A^*$. Two nozzles with the same $A^*$ and $A_e$ but different lengths should therefore perform identically, *"but that is not true"*: there is an optimum length, and finding it needs a method that resolves the flow across the nozzle height. 2.6 announced MoC for Thursday 15 Oct, but Thursday was spent on 2.7, so MoC started on **Fri 16 Oct** (L2-7, ll. 192–203).
 
-1D theory gives uniform properties at each section. The **method of characteristics** resolves both $x$ and $y$ and is the basis for designing shock-free supersonic nozzles (Anderson §13.3). It is also the subject of the **MoC coursework**. The module guide says 15 Nov, but L3-1 said the end of week 7; see the [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05 date check]]. Continue with [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].
+1D theory gives uniform properties at each section. The **method of characteristics** resolves both $x$ and $y$ and is the basis for designing shock-free supersonic nozzles (Anderson §13.3). It is also the subject of the **MoC coursework**, due **Fri 6 Nov** per L3-2 (the module guide said 15 Nov); see the [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05 date check]]. Continue with [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].
 
 ---
 

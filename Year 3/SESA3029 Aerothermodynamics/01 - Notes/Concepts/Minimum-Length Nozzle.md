@@ -8,7 +8,7 @@ tags: [sesa3029, concept, nozzle-design, method-of-characteristics]
 status: complete
 parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
 related_concepts: ["[[Method of Characteristics]]", "[[Riemann Invariants]]", "[[Prandtl-Meyer Function]]", "[[Isentropic Nozzle Flow]]"]
-sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf"]
+sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-3.txt"]
 ---
 
 # Minimum-Length Nozzle
@@ -43,6 +43,14 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplem
 > Mass conservation forces $y_e/r_a\to A_e/A^*$, here $2.4031$. MoC gives $2.4003$ with four lines and $2.4028$ with 300. 1D theory gives the exit height but cannot give the length.
 
 **Why use it.** It is the shortest design, so it is likely the lightest. That matters for rockets and launchers. In practice the throat corner is rounded slightly.
+
+**The exit Mach number from the throat** (L3-3, ll. 204–214). Measure the corner angle and $\nu(M_e)=2\theta_{max}$ gives the design Mach number, with no wind tunnel needed. For example, $26.74^\circ$ gives $M_e=3.20$.
+
+> [!warning] Two things this $\theta_{max}$ is not
+> - It is **not** the oblique-shock maximum deflection. It is the largest wall slope (L3-3, ll. 137–139).
+> - It does **not** give $M_e$ for a gradual-expansion nozzle. There the flow at the slope maximum has already been expanded by reflected waves, so $\theta_{max}\le\nu(M_e)/2$ ([[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05 §13]]).
+
+![[at_moc_mach_angle_throat_angle.png|760]]
 
 ![[at_moc_min_length_nozzle.png|760]]
 

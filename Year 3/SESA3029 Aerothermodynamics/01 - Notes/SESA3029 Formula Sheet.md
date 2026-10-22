@@ -11,7 +11,7 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1, Lectures 2.1–2.7 and 3.1–3.4** (all lectured up to 3.1; 3.2–3.4 from the slides). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7 and 3.1–3.4** (all lectured up to 3.3; 3.4 from the slides). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Mach number and gas properties
 
@@ -346,6 +346,10 @@ $$
 $$
 
 $M_e=2.4$: $\theta_{max}=18.373^\circ$, $x_e/r_a=8.069$, $y_e/r_a=2.400$ (four lines).
+
+Reading the exit Mach number off a **sharp** throat corner (L3-3, ll. 204–214): $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
+
+Bookkeeping rule (L3-3, ll. 32–36): any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.
 
 
 ## What the exam formula sheet gives you

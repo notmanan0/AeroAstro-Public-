@@ -8,7 +8,7 @@ tags: [sesa3029, concept, method-of-characteristics, supersonic, nozzle-design]
 status: complete
 parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
 related_concepts: ["[[Riemann Invariants]]", "[[Homentropic Flow]]", "[[Minimum-Length Nozzle]]", "[[Prandtl-Meyer Function]]", "[[Mach Waves and Mach Angle]]"]
-sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf"]
+sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt"]
 ---
 
 # Method of Characteristics
@@ -30,7 +30,7 @@ $$
 \nu_P=\tfrac12\left(R^+_A+R^-_B\right),\qquad\theta_P=\tfrac12\left(R^-_B-R^+_A\right),
 $$
 
-then $M_P$ from the tables and $\mu_P=\sin^{-1}(1/M_P)$. The position uses the averaged slopes
+then $M_P$ from the tables and $\mu_P=\sin^{-1}(1/M_P)$. The characteristics **bend** at every crossing, because $\mu$ changes with $M$ (L3-2, ll. 299–318). So the position uses the averaged slopes
 
 $$
 \alpha_{AP}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_P],\qquad\alpha_{BP}=\tfrac12[(\theta-\mu)_B+(\theta-\mu)_P],
@@ -46,7 +46,7 @@ $$
 |---|---|---|
 | prescribed wall (reflects) | $\nu_W=R^+_A+\theta_W$; reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
 | designed wall (cancels) | $\theta_W=\theta_A$, so $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
-| symmetry plane | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
+| symmetry plane (an inviscid wall with $\theta_W=0$, L3-3, l. 93) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
 
 **Zones.** The characteristics through P bound its **zone of dependence** (upstream) and **zone of influence** (downstream).
 

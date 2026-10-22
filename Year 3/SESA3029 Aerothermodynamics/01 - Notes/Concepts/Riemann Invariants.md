@@ -8,7 +8,7 @@ tags: [sesa3029, concept, method-of-characteristics, riemann-invariants]
 status: complete
 parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
 related_concepts: ["[[Method of Characteristics]]", "[[Prandtl-Meyer Function]]", "[[Homentropic Flow]]"]
-sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-1.txt"]
+sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-1.txt", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt"]
 ---
 
 # Riemann Invariants
@@ -36,6 +36,11 @@ The same result comes from diagonalising the $2\times2$ system: $\hat R=\underli
 $$
 \nu=\tfrac12(R^++R^-),\qquad\theta=\tfrac12(R^--R^+).
 $$
+
+More generally, the four numbers $R^+$, $R^-$, $\nu$ and $\theta$ are linked by two equations, so **any two fix the other two** (L3-3, ll. 32–36). At a wall, one invariant comes in along its line and the wall gives $\theta$. On the centreline, $\theta=0$.
+
+> [!warning] No factor of a half in the definitions (L3-3, ll. 28–31)
+> The recording once says *"R plus is nu minus theta over 2"*. The invariants are $R^\pm=\nu\mp\theta$. The $\tfrac12$ appears only when you solve back for $\nu$ and $\theta$.
 
 **Other notation.** Anderson uses $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$. The physics is identical; pick one and stay consistent. The SESA3029 signs follow Liepmann & Roshko.
 
