@@ -25,7 +25,7 @@ coverage: "Chapters 1–4, all lectured; Chapter 4 in L11 (Mon 19 Oct) and L12�
 > Quick reference: [[SESA3047 Formula Sheet]].
 
 > [!important] Deadlines
-> - **Coursework 1: due Thu 29 Oct, 23:00**, on Blackboard (Assessment → Coursework 1, with instructions there). It was uploaded before the L12 break (L12 ll. 352–357). The brief is not in the vault.
+> - **Coursework 1: due Thu 29 Oct, 23:00**, as a single PDF via Blackboard (Assessments → Coursework 1). It is 20 marks (10 % of the module), with a late penalty of 2 marks per day. Announced before the L12 break (L12 ll. 352–357). Brief: `04 - Labs & Coursework/Coursework 1/Coursework_1.pdf`; see [[#Labs and coursework]].
 
 ## Current coverage
 
@@ -137,7 +137,24 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 > The lecturer tied the coupling discussion to the lab: *"we will see how this affects the numerical simulations"* (L8, ll. 67–68). Lab 2 will use Simulink (Lab 1, p. 1).
 
 > [!important] Coursework 1: due Thu 29 Oct, 23:00
-> Announced before the L12 break: *"I have uploaded the coursework … in blackboard you can find the instructions as well. Under assessment, coursework one. And the coursework is due by the 29th of October at 11 p.m."* (L12 ll. 352–357). The lecturer was unsure whether a Blackboard announcement had gone out (l. 353). **The brief is not yet in the vault**: file it in `04 - Labs & Coursework/` so it can be mapped to the notes. Whether this is the Lab 1 report (20% above) or a separate piece is not said in the recording; check Blackboard.
+> Announced before the L12 break: *"I have uploaded the coursework … in blackboard you can find the instructions as well. Under assessment, coursework one. And the coursework is due by the 29th of October at 11 p.m."* (L12 ll. 352–357).
+>
+> File: `04 - Labs & Coursework/Coursework 1/Coursework_1.pdf` (2 pages). It is a **separate piece from the Lab 1 report**: two problems, **20 marks, 10 % of the module**.
+> - **Submission**: a single PDF through *Assessments → Coursework 1*. Photographed handwritten work is fine.
+> - **Rules**: *"show a sufficient number of steps … no credit will be given to correct answers by themselves"*. Late penalty **2 marks per day**. Individual work.
+>
+> | Part | Task | Marks | Theory in the vault |
+> |---|---|---:|---|
+> | 1(a) | Euler angles for 5 s of constant $p$, $q$ ($r=0$) from level flight heading north; integrate with `ode45` or equivalent; final roll, pitch and yaw in degrees | 3 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates\|3.1]] §§5–6 (the kinematic equation); Lab 1 Ex. 3 (`ode45`) |
+> | 1(b) | write the integral explicitly, non-matrix; show what depends on time; coupled or not, and why | 3 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#4. Multiplying it out, one step at a time (Appendix §3.4.1, L7 ll. 200–300)\|3.1 §4]] and §6 |
+> | 1(c) | repeat with $q=0$; what changes, and are the angles coupled | 2 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)\|3.1 §7, coupling example]] |
+> | 1(d) | wind $\mathbf v_w^{NED}=[8,4,0]^T$ into FRD through $\mathbf C_{FRD/NED}$ at the final attitude; interpret the signs | 2 | [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles\|2.2]] §6 (3-2-1 DCM, both directions) |
+> | 2(a) | flat-Earth translational and rotational equations, coordinate systems, assumptions | 2 | [[SESA3047 4.2 - Translational Dynamics\|4.2]] §§2–3, [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model\|4.3]] |
+> | 2(b) | gravity in FRD for $\Phi=\mathbf 0$ | 2 | [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Gravity in body axes (derivation)\|2.2, gravity in body axes]] |
+> | 2(c) | $\dot u,\dot v,\dot w$ with the cross-product matrix; why thrust and weight cancelling does not make $\dot w=0$ | 3 | [[SESA3047 4.2 - Translational Dynamics#3. Derive the body-velocity equation (4.33–4.37)\|4.2 §3]], [[Cross-Product Matrix]] |
+> | 2(d) | $\dot p,\dot q,\dot r$ with principal $\mathbf J$ and $\mathbf M=\mathbf 0$; coupling; the case $J_x=J_y=J_z$ | 3 | [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment (L12 ll. 22–119)\|4.1, inertia coupling]] |
+>
+> **Ambiguity:** 1(d) says *"using the final attitude angles from question B"*, but there is no question B, and part (b) produces equations, not angles. It most likely means the final angles of 1(a); possibly 1(c). Check with Dr Martinelli or on Blackboard, or state your assumption in the answer.
 
 ## Week 1 exam skills
 
@@ -229,6 +246,7 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/L9 - SESA3047.txt` (Thu 8 Oct, second half: transport and Coriolis accelerations, Earth models, position state equation; stopped before the dynamics)
 - `02 - Sources/Lectures/L10 - SESA3047.txt` (Mon 12 Oct: §3.3 rotational dynamics, from linear momentum to Eq. 3.70)
 - `04 - Labs & Coursework/Lab 1/Lab_1.pdf` (Lab 1, MATLAB: DCMs and gimbal lock, nonlinear oscillator, rotational dynamics and kinematics)
+- `04 - Labs & Coursework/Coursework 1/Coursework_1.pdf` (Coursework 1: attitude kinematics and wind components; flat-Earth rigid-body dynamics; due 29 Oct)
 
 > [!warning] Slips found in the Chapter 2 recordings
 > L5 l. 376 drops the $-\sin\theta$ in $\mathbf C_z$; L5 l. 380 says $x$ for $z$; L6 l. 205 drops the minus in $\theta=-\arcsin C_{13}$; L6 l. 208 gives $\psi=\mathrm{atan2}(C_{12},C_{12})$ for $\mathrm{atan2}(C_{12},C_{11})$. All are flagged in [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles|2.2]].

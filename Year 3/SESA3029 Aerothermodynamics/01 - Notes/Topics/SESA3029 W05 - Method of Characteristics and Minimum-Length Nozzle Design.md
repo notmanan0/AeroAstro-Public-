@@ -29,7 +29,7 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 > - **3.1** derives this from a curved streamtube: mass, $l$-momentum, homentropy and zero vorticity give two PDEs in $u$ and $\theta$. Swapping $u$ for $\nu$ and adding/subtracting turns them into the two **compatibility conditions**. $R^\pm$ are the **Riemann invariants**.
 > - **3.2** gets the same result by diagonalising a $2\times2$ matrix (eigenvalues $\pm\tan\mu$), then builds the **unit process**: two known points give a third, $\nu_P=\tfrac12(R^+_A+R^-_B)$, $\theta_P=\tfrac12(R^-_B-R^+_A)$, located with averaged slopes.
 > - **3.3** adds the boundary conditions (reflecting wall, cancelling wall, symmetry plane) and designs the **minimum-length nozzle**: $\theta_{max}=\nu(M_e)/2$, so the throat angle alone gives the exit Mach number. For $M_e=2.4$ with four characteristics, $x_e/r_a=8.069$ and $y_e/r_a=2.400$, against the 1D $A_e/A^*=2.4031$.
-> - **3.4** (Fri 23 Oct) works a channel symbolically, finds that point 3 cannot reflect, and solves the inverse problem: $M_4=2.2$, $M_6=2.4$ give $\theta_w=5.0140^\circ$ and $M_0=1.8340$. The lesson: *"always think about the results, whether it makes sense or not"* (L3-4, ll. 279–281). The lecture ended with the **MoC coursework brief**: a minimum-length nozzle for $M_e=3.X$ with five characteristics, due **15 Nov**.
+> - **3.4** (Fri 23 Oct) works a channel symbolically, finds that point 3 cannot reflect, and solves the inverse problem: $M_4=2.2$, $M_6=2.4$ give $\theta_w=5.0140^\circ$ and $M_0=1.8340$. The lesson: *"always think about the results, whether it makes sense or not"* (L3-4, ll. 279–281). The lecture ended with the **MoC coursework brief**: a minimum-length nozzle for $M_e=3.x$ in **CO₂ ($\gamma=1.289$)** with five characteristics, due **15 Nov**.
 
 ## Key concepts
 
@@ -76,24 +76,44 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 > - **MoC coursework, 10 % of the module mark**: the brief is to be announced this week, and it is due at the *"end of week seven, which is two weeks as of Friday this week"* (L3-2, ll. 9–12). Two weeks from Fri 23 Oct is Fri 6 Nov. ~~This settles the date in favour of 6 Nov.~~ **Superseded by L3-4: due 15 Nov** (next callout).
 > - **What the coursework is**: the lecturer called 3.3 *"a very important lecture"* for the coursework and the final exam (L3-3, ll. 3–6). The nozzle-design table of §14 is *"essentially what you are going to do in the coursework"* (l. 132) and *"the table that you're going to work on in the method of characteristics coursework"* (ll. 221–222).
 
-> [!important] The MoC coursework brief (L3-4, ll. 1–6, 361–425)
-> - **Where**: Blackboard, *Quizzes and coursework* → new folder *Method of Characteristics*, with the instructions (ll. 362–366). File the brief in `04 - Labs & Coursework` (it is not in the vault yet).
-> - **Format**: six main sections, **no more than six A4 pages** (ll. 367–368).
-> - **Task**: a minimum-length nozzle as in L3-3 (l. 370). The design Mach number is **$M_e=3.X$, where $X$ is the last digit of your student ID**, so every student has a slightly different case (ll. 371–372).
-> - **Resolution**: **five characteristics** in the corner fan (ll. 374–383), which gives **20 points** (ll. 392–397). With $n$ lines the net has $n(n+1)/2$ interior and centreline points plus $n$ wall points, $n(n+3)/2$ in all: 14 for $n=4$ (§14), 20 for $n=5$. The wall shape is set by five points plus the given corner (ll. 406–408).
-> - **Method**: by hand, in Excel or in Python (ll. 400–402). If you automate it, you are encouraged to add more lines and see how the result converges (ll. 403–411).
-> - **Due: 15 Nov**, *"three weeks … two weeks after you come back from the consolidation week"* (ll. 415–418). This replaces the 6 Nov of L3-2 and agrees with the module guide. 15 Nov 2026 is a **Sunday**; confirm the time on Blackboard.
-> - **Next week is reading week**, with no teaching (ll. 4–5, 418, 423). *"Make the most of the week for revision and catching up and coursework"* (l. 5).
+> [!important] The MoC coursework (brief: `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`; announced L3-4, ll. 361–425)
+> - **Due 23:59, Sun 15 Nov 2026**, on Blackboard. Worth **10 %** of the module. L3-4 gave the date (ll. 415–418); it replaces the 6 Nov of L3-2 and matches the module guide.
+> - **Design Mach number $M_{des}=3.x$**, where $x$ is the last digit of your student ID (L3-4, ll. 371–372).
+> - **The gas is carbon dioxide at room temperature, $\gamma=1.289$, not air.** The IFT, NST and OSC are all for $\gamma=1.4$, so none of them can be used for your numbers. Every $\nu$, $M$ and $A/A^*$ must come from your own code. The lecture did not mention this; it is only in the brief.
+> - **Part A**: program a spreadsheet or Python function giving $\mu$ and $\nu$ for any $M$ and $\gamma$, and verify both against an alternative method.
+> - **Part B**: a 2D minimum-length nozzle with **five characteristics** from the corner at $(x,y)=(0,1)$, with angles **equally spaced from $0.125^\circ$ to $\theta_{max}$** (not the $0.375^\circ$ start of §14). Keep **at least four significant figures** throughout. Five lines give **20 points** (L3-4, ll. 392–397): $n(n+3)/2$ for $n$ lines, five of them on the wall (ll. 406–408).
+> - **Report**: at most **6 A4 pages** including tables and figures, with no separate title page. Sections and marks:
+>
+> | Part | Content | Marks |
+> |---|---|---:|
+> | i | title, name and ID, $M_{des}$; executive summary of 80–100 words for non-technical readers | 5 |
+> | ii | the MoC method and how it designs a nozzle, 1–1.5 pages, concise but followable | 15 |
+> | iii | $\mu$ and $\nu$ at $M_{des}$ for $\gamma=1.289$, and how the code was verified | 10 |
+> | iv | the completed template (one page; by hand or by program) | 25 |
+> | v | every computation step for points 1, 2 and the **last wall point** | 20 |
+> | vi | plot of the nozzle and characteristics; discussion, comparison with quasi-1D $A/A^*$ for your $\gamma$, limitations (about one page) | 25 |
+>
+> - **Reading week w/c 26 Oct**, no teaching (L3-4, ll. 4–5, 418, 423): *"make the most of the week for revision and catching up and coursework"* (l. 5).
 > - **Test 2 closes on Sunday** (25 Oct) (l. 6). Worked solutions: [[SESA3029 Test 2 - Solutions]].
 
-> [!check] Sanity checks for your coursework case (computed here, not from the brief)
-> The corner angle is $\theta_{max}=\nu(M_e)/2$ (§13). For $M_e=3.0$ to $3.9$ it runs from $24.879^\circ$ to $32.220^\circ$:
+> [!tip] What carries over from the notes, and what changes with $\gamma$
+> Nothing in the procedure of §§10–14 depends on $\gamma$. Only the gas functions do:
 >
-> | $M_e$ | 3.0 | 3.1 | 3.2 | 3.3 | 3.4 | 3.5 | 3.6 | 3.7 | 3.8 | 3.9 |
-> |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-> | $\theta_{max}$ (deg) | 24.879 | 25.825 | 26.735 | 27.611 | 28.454 | 29.265 | 30.046 | 30.798 | 31.522 | 32.220 |
+> $$
+> \nu(M)=\sqrt{\frac{\gamma+1}{\gamma-1}}\,\tan^{-1}\sqrt{\frac{\gamma-1}{\gamma+1}\left(M^2-1\right)}-\tan^{-1}\sqrt{M^2-1},
+> $$
 >
-> The exit half-height must approach $y_e/r_a=A_e/A^*$ from the IFT, as in §14. Validate any code on the $M_e=2.4$, four-line case first (point 14 at $(8.069,\ 2.400)$).
+> $$
+> \frac{A}{A^*}=\frac{1}{M}\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}M^2\right)\right]^{(\gamma+1)/[2(\gamma-1)]}.
+> $$
+>
+> - $\mu=\sin^{-1}(1/M)$ does **not** depend on $\gamma$. $\nu$ and $A/A^*$ do.
+> - **Verifying the code ("an alternative method").** Two independent checks:
+>   - Set $\gamma=1.4$ and compare with the IFT (e.g. $\nu(2.4)=36.7465^\circ$, $A/A^*=2.4031$).
+>   - Integrate $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dM/[M(1+\tfrac{\gamma-1}{2}M^2)]$ numerically from $M=1$ and compare with the closed form at your $\gamma$ ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#5. Expansion waves and the Prandtl–Meyer function|W03 §5]]).
+> - **Inverting $\nu\to M$** at every point needs a root finder (bisection or Newton), because there is no table for $\gamma=1.289$.
+> - **Validate the MoC code** on the lecture case first: $\gamma=1.4$, $M_e=2.4$, four lines from $0.375^\circ$ must give point 14 at $(8.069,\ 2.400)$ (§14). Then switch to your $\gamma$, $M_{des}$, five lines and $0.125^\circ$.
+> - **Section vi check**: $y_e/r_a$ should approach $A_e/A^*$ **at $\gamma=1.289$** as lines are added (L3-4, ll. 403–411 encourage more lines).
 
 ---
 
@@ -1215,6 +1235,7 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 - `Lecture 3-2.txt`: the Mon 19 Oct recording of 3.2 (481 lines; the last 14 are goodbyes).
 - `Lecture 3-3.txt`: the Thu 22 Oct recording of 3.3 (303 lines; cut off mid-sentence at the end of slide 21).
 - `Lecture 3-4.txt`: the Fri 23 Oct recording of 3.4 (425 lines): the generic example (ll. 7–359) and the MoC coursework brief (ll. 361–425).
+- `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`: the one-page coursework brief (due 23:59, Sun 15 Nov; $\gamma=1.289$).
 - Anderson, *Modern Compressible Flow*, Ch. 11; *Fundamentals of Aerodynamics*, §13.3.
 - Figures: `generate_aerothermo_w05_figures.py`. Eight geometry and data figures; the unit-process code reproduces the slide answers. `at_moc_supersonic_source.png` and `at_moc_mach_angle_throat_angle.png` were added from the L3-2 and L3-3 recordings. Derivations are native Obsidian LaTeX.
 
@@ -1237,7 +1258,8 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 - [ ] **(L3-4, ll. 206–281)** Spot the non-physical entry before being told: why point 3 cannot reflect and point 5 does not exist. → [[#15. The generic MoC example (Lecture 3.4)|§15]]
 - [ ] **(L3-4, ll. 298–348)** Recover $\theta_w=5.014^\circ$ and $M_0=1.834$ from $M_4=2.2$ and $M_6=2.4$. → [[#15. The generic MoC example (Lecture 3.4)|§15, the inverse problem]]
 - [ ] **Test 2 on Blackboard**, two attempts, closes Sun 25 Oct (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). → [[SESA3029 Test 2 - Solutions]]
-- [ ] **MoC coursework** (L3-4, ll. 361–418): minimum-length nozzle for $M_e=3.X$ ($X$ = last digit of your student ID), five characteristics, 20 points, six sections, at most six A4 pages. **Due Sun 15 Nov.** File the brief in `04 - Labs & Coursework`. → [[#Announcements and deadlines]] and [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
+- [ ] **MoC coursework** (brief in `04 - Labs & Coursework/MoC Coursework/`; L3-4, ll. 361–418): minimum-length nozzle for $M_{des}=3.x$ ($x$ = last digit of your student ID), **CO₂, $\gamma=1.289$**, five characteristics from $0.125^\circ$, 20 points, four significant figures, sections i–vi, at most six A4 pages. **Due 23:59, Sun 15 Nov.** → [[#Announcements and deadlines]] and [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
+- [ ] **(Brief, part A)** Write and verify a $\mu$, $\nu$ (and $A/A^*$) function for any $\gamma$, with a root finder for $\nu\to M$. → [[#Announcements and deadlines|the γ tip box]]
 - [ ] **(L3-4, ll. 400–411)** *Optional:* automate the table (Excel or Python) and add more lines to see the wall converge. → [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
 
 ### Derivations

@@ -363,6 +363,15 @@ $M_e=2.4$: $\theta_{max}=18.373^\circ$, $x_e/r_a=8.069$, $y_e/r_a=2.400$ (four l
 
 With $n$ lines the net has $n(n+3)/2$ points: 14 for $n=4$, 20 for $n=5$ (the coursework, L3-4, ll. 374–397).
 
+General $\gamma$ (the coursework uses CO₂, $\gamma=1.289$; the IFT is $\gamma=1.4$ only):
+
+$$
+\nu(M)=\sqrt{\frac{\gamma+1}{\gamma-1}}\tan^{-1}\sqrt{\frac{\gamma-1}{\gamma+1}(M^2-1)}-\tan^{-1}\sqrt{M^2-1},\qquad
+\frac{A}{A^*}=\frac{1}{M}\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}M^2\right)\right]^{\frac{\gamma+1}{2(\gamma-1)}}.
+$$
+
+$\mu=\sin^{-1}(1/M)$ is independent of $\gamma$.
+
 Reading the exit Mach number off a **sharp** throat corner (L3-3, ll. 204–214): $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
 
 Bookkeeping rule (L3-3, ll. 32–36): any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.

@@ -47,9 +47,10 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.4 lectured with transcripts (C
 > - **Weekend homework (Tutorial 1, ll. 232–235):** triangular wing at a second $\alpha$, check $x_{ac}\approx c/2$. Solved: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre (ll. 228–235)|Tutorial 1]].
 > - ~~Blackboard Test 1, due Sun 11 Oct, 23:59~~ (closed; L2-4, ll. 1–3). Worked: [[SESA3029 Test 1 - Solutions]].
 > - **Test 2:** open since Mon 19 Oct, two attempts, closes **Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). Done; worked: [[SESA3029 Test 2 - Solutions]].
-> - **MoC coursework (10 %): due Sun 15 Nov** (L3-4, ll. 415–418). This supersedes L3-2's *"end of week seven"* (Fri 6 Nov) and agrees with the module guide.
->   - Brief on Blackboard, *Quizzes and coursework → Method of Characteristics* (L3-4, ll. 362–366). It is not yet in the vault; file it in `04 - Labs & Coursework`.
->   - A minimum-length nozzle for $M_e=3.X$, where $X$ is the last digit of your student ID. Use five characteristics (20 points), in six sections and at most six A4 pages (ll. 367–397).
+> - **MoC coursework (10 %): due 23:59, Sun 15 Nov** on Blackboard (brief; L3-4, ll. 415–418). This supersedes L3-2's *"end of week seven"* (Fri 6 Nov) and agrees with the module guide.
+>   - Brief: `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`.
+>   - A minimum-length nozzle for $M_{des}=3.x$, where $x$ is the last digit of your student ID, for **CO₂ ($\gamma=1.289$), not air**, so the $\gamma=1.4$ tables cannot be used. Use five characteristics from $0.125^\circ$ to $\theta_{max}$ (20 points) and four significant figures.
+>   - The report has sections i–vi (marks 5/15/10/25/20/25) in at most six A4 pages: summary, method, verified $\mu$ and $\nu$ code, template, steps for points 1, 2 and the last wall point, then the plot with an $A/A^*$ comparison and limitations.
 >   - The method is the §14 table in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|W05]] (L3-3, ll. 132, 221–222). The brief and checks are in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05, announcements]].
 > - **Reading week w/c 26 Oct**: no lectures (L3-4, ll. 4–5, 418).
 > - Test 3: 29 Nov. Test 4: 13 Dec.
@@ -88,7 +89,7 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.4 lectured with transcripts (C
    - $\theta_{max}=\nu(M_e)/2$, and reading $M_e$ off the throat angle (sharp-corner nozzles only);
    - the $M_e=2.4$ minimum-length nozzle, all 14 points reproduced, converging to $A_e/A^*$;
    - the 3.4 generic example, the non-reflecting point 3, and the inverse problem; the past-paper hint;
-   - the MoC coursework brief ($M_e=3.X$, five lines, 20 points, due 15 Nov), with corner-angle checks;
+   - the MoC coursework brief ($M_{des}=3.x$, CO₂ with $\gamma=1.289$, five lines from $0.125^\circ$, due 15 Nov), with general-$\gamma$ formulas and code-verification checks;
    - slips tables for L3-1 to L3-4.
 
 ### Example sheets (worked solutions)
@@ -263,7 +264,8 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/Lecture3-1.pdf` and `Lecture 3-1.txt` (Fri 16 Oct: MoC theory, part A)
 - `02 - Sources/Lectures/Lecture3-2.pdf` and `Lecture 3-2.txt` (Mon 19 Oct: MoC theory B, unit process)
 - `02 - Sources/Lectures/Lecture3-3.pdf` and `Lecture 3-3.txt` (Thu 22 Oct: boundary conditions, minimum-length nozzle; recording cut off at the end)
-- `02 - Sources/Lectures/Lecture3-4.pdf` and `Lecture 3-4.txt` (Fri 23 Oct: generic MoC example; MoC coursework brief)
+- `02 - Sources/Lectures/Lecture3-4.pdf` and `Lecture 3-4.txt` (Fri 23 Oct: generic MoC example; MoC coursework announced)
+- `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf` (the coursework brief)
 - `02 - Sources/Lectures/Supplementary Note for MoC.pdf` (12 pages, including the axisymmetric appendix)
 - Exam data sheets: `Aerothermodynamics Formula Sheet.pdf`, `IFT.pdf`, `NST.pdf`, `OSC.pdf` (summarised in [[SESA3029 Formula Sheet#What the exam formula sheet gives you]])
 - `03 - Exams & Past Papers/aerothermo quiz questions - solved on ipad but write own solutions for completeness.txt` (Test 1 questions)
