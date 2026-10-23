@@ -225,7 +225,7 @@ $$
 
 - Theory: [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes]] · [[Compressible Pitot Probe]] · [[Rayleigh Pitot Formula]] · [[Normal-Shock Jump Relations]] · [[Stagnation Properties]]
 - Module: [[SESA3029 Aerothermodynamics Hub]] · [[SESA3029 Formula Sheet]]
-- Other worked sheets: [[SESA3029 Example Sheet 1 - Solutions]]
+- Other worked sheets: [[SESA3029 Example Sheet 1 - Solutions]] · next test: [[SESA3029 Test 2 - Solutions]]
 
 ## Sources
 

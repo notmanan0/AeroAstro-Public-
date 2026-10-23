@@ -5,7 +5,7 @@ type: formula
 aliases: ["SESA3043 formulae", "Advanced Aeronautics formula sheet"]
 tags: [sesa3043, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–3 (Ch 3 from the slides)"
+coverage: "Chapters 1–3 (Ch 3.1–3.2 lectured 22–23 Oct; 3.3–3.6 from the slides)"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
@@ -228,7 +228,8 @@ $$
 
 Blasius: $f''(0)=\theta^*=0.4696$, $\eta^*=1.217$, $\eta_{99}=3.47$ (slides 3.5);
 $\delta_{99}/x=4.91/\sqrt{Re_x}$ (slides 5.0), $\delta^*/x=1.721/\sqrt{Re_x}$, $\theta/x=C_f=0.664/\sqrt{Re_x}$, $H=2.59$.
-Separation: $\beta=-0.19884$. Stagnation ($\beta=1$): $\xi=\sqrt{\nu/c}$, $\eta_{99}\approx2.4$.
+Separation: $\beta=-0.19884$, $m=-0.0904$. Stagnation ($\beta=1$): $\xi=\sqrt{\nu/c}$, $\eta_{99}\approx2.4$.
+$\beta\pi$ is the included angle of a symmetric wedge. A single wall turned away by $\delta_w$ has $\beta=-2\delta_w/\pi$, so separation needs only $\delta_w=17.9^\circ$.
 
 ## Pohlhausen (3.3)
 

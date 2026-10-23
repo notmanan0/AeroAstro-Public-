@@ -8,7 +8,7 @@ tags: [sesa3029, concept, method-of-characteristics, supersonic, nozzle-design]
 status: complete
 parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
 related_concepts: ["[[Riemann Invariants]]", "[[Homentropic Flow]]", "[[Minimum-Length Nozzle]]", "[[Prandtl-Meyer Function]]", "[[Mach Waves and Mach Angle]]"]
-sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt"]
+sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt", "02 - Sources/Lectures/Lecture 3-4.txt"]
 ---
 
 # Method of Characteristics
@@ -47,6 +47,9 @@ $$
 | prescribed wall (reflects) | $\nu_W=R^+_A+\theta_W$; reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
 | designed wall (cancels) | $\theta_W=\theta_A$, so $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
 | symmetry plane (an inviscid wall with $\theta_W=0$, L3-3, l. 93) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
+
+> [!warning] Check the physics, not just the rules (L3-4, ll. 206–281)
+> A prescribed wall reflects only if the arriving flow is **not** already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, blind bookkeeping produces a reflection at point 3 and a point 5 that *"doesn't exist"*. *"Always think about the results, whether it makes sense or not"* ([[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#15. The generic MoC example (Lecture 3.4)|W05 §15]]).
 
 **Zones.** The characteristics through P bound its **zone of dependence** (upstream) and **zone of influence** (downstream).
 

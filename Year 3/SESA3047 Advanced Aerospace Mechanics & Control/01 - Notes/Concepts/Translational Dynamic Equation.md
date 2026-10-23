@@ -6,10 +6,10 @@ stream: "Chapter 4: Dynamic Equations and 6-DOF Model"
 aliases: ["velocity state equation", "body-axis force equations"]
 tags: [sesa3047, concept, dynamics, gravity]
 status: complete
-coverage: "Chapter 4 §4.2; written from the handout, awaiting transcript"
+coverage: "Chapter 4 §4.2; lectured in L13 ll. 88–309 (Thu 22 Oct) except Eqs. 4.31 and 4.38–4.40"
 parent_lectures: ["[[SESA3047 4.2 - Translational Dynamics]]"]
 related_concepts: ["[[Translational Kinematic Equation]]", "[[Transport Theorem]]", "[[Flat-Earth Model]]"]
-sources: ["02 - Sources/Lectures/Chapter_4.pdf"]
+sources: ["02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/L13 - SESA3047.txt"]
 ---
 
 # Translational Dynamic Equation
@@ -22,6 +22,8 @@ sources: ["02 - Sources/Lectures/Chapter_4.pdf"]
 ## Derivation
 
 Newton gives $\mathbf a=\mathbf F/m+\mathbf g$. The [[Transport Theorem]] gives $\mathbf a^{FRD}=\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v$. Equate them, rotate gravity into FRD, and subtract the coordinate-rotation term.
+
+As lectured (L13 ll. 243–278), the derivation is four moves: Newton in the inertial frame; on a rotating Earth this adds centrifugal and Coriolis terms; flat Earth ($\boldsymbol\omega_{e/i}=\mathbf 0$) removes them; and the body-frame derivative adds $\boldsymbol\omega_{b/e}\times\mathbf v$. Do not forget the last step that the lecturer nearly forgot: $[0,0,g]^T$ is valid only in NED, so rotate it with $\mathbf C_{FRD/NED}$ (ll. 289–303).
 
 $$
 \mathbf g^{FRD}=g[-\sin\theta,\ \sin\phi\cos\theta,\ \cos\phi\cos\theta]^T.
@@ -47,4 +49,4 @@ This is **dynamics** for $u,v,w$. The [[Translational Kinematic Equation]] is $\
 
 - Derivation, rotating-Earth extension and numerical check: [[SESA3047 4.2 - Translational Dynamics]].
 - [[Six-Degree-of-Freedom State Model]] · [[Direction Cosine Matrix]]
-- Source: Chapter_4.pdf pp. 7–9, Eqs. (4.26)–(4.40); awaiting transcript.
+- Source: Chapter_4.pdf pp. 7–9, Eqs. (4.26)–(4.40); L13 ll. 88–309.

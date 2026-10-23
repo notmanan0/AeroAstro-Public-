@@ -8,7 +8,7 @@ tags: [sesa3043, concept, boundary-layer]
 status: complete
 parent_lectures: ["[[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions]]"]
 related_concepts: ["[[Shooting Method and the Blasius Solution]]", "[[Wedge and Corner Flows]]", "[[Displacement and Momentum Thickness]]", "[[Pohlhausen Method]]"]
-sources: ["02 - Sources/Lectures/CH3-2 Blasius and Falkner-Skan(1).pdf", "02 - Sources/Lectures/Ch3_Notes_Blasius.pdf", "02 - Sources/Lectures/Ch3_Notes_Falkner-Skan.pdf"]
+sources: ["02 - Sources/Lectures/CH3-2 Blasius and Falkner-Skan(1).pdf", "02 - Sources/Lectures/Ch3_Notes_Blasius.pdf", "02 - Sources/Lectures/Ch3_Notes_Falkner-Skan.pdf", "02 - Sources/Lectures/23 October 2026 at 14_53_16.txt"]
 ---
 
 # Blasius and Falkner-Skan Similarity Solutions
@@ -36,6 +36,10 @@ Flat plate: $\delta_{99}/x=4.91/\sqrt{Re_x}$, $\delta^*/x=1.721/\sqrt{Re_x}$, $\
 ## Why it works
 
 There is no length scale in a semi-infinite plate or a wedge, so the profiles at different $x$ are stretched copies of one another. The scaling $\xi\propto\sqrt{\nu x/U_e}$ is the diffusion length found by order of magnitude in 1.4; with it, $x$ cancels from the equations.
+
+## Physical meaning of β
+
+$\beta$ labels the pressure gradient. $\beta>0$: accelerating outer flow (favourable), fuller profile. $\beta<0$: decelerating (adverse), emptier profile. At $\beta=-0.19884$ ($m=-0.0904$) the wall shear vanishes: separation. $\beta\pi$ is the included angle of a symmetric wedge, so a single wall turned away by $\delta_w$ has $\beta=-2\delta_w/\pi$, and separation needs only $17.9^\circ$. Over a bump, $\beta$ runs positive, through zero at the crest, then negative to separation; this is a local-similarity picture, not an exact solution (lectured 23 Oct; [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#What β means physically: a boundary layer over a bump (slide 97)|3.2]]).
 
 ## Scaling warning
 

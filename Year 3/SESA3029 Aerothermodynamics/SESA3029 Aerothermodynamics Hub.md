@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3029 Aerothermodynamics"]
 tags: [sesa3029, hub, moc]
 status: in-progress
-coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.3 lectured with transcripts; 3.4 written ahead from slides; Tutorial Lecture 1; Example Sheets 1–3; Test 1"
+coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.4 lectured with transcripts (Chapter 3 MoC complete); Tutorial Lecture 1; Example Sheets 1–3; Tests 1–2"
 ---
 
 # SESA3029 Aerothermodynamics Hub
@@ -32,16 +32,26 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.3 lectured with transcripts; 3
 >   - the $M_e=2.4$ table, which is the coursework procedure.
 >
 >   The recording stops at l. 303.
-> - **Lecture 3.4** (generic example) **written ahead from the slides**, awaiting its lecture.
-> - Worked solutions to all three example sheets and to Blackboard Test 1.
+> - **Lecture 3.4** (Fri 23 Oct, `Lecture 3-4.txt`), backfilled into W05 §15:
+>   - the symbolic table, with the past-paper hint (ll. 198–203);
+>   - why point 3 cannot reflect: *"always think about the results, whether it makes sense or not"* (ll. 279–281);
+>   - the inverse problem, $M_0=1.834$ and $\theta_w=5.014^\circ$;
+>   - the **MoC coursework brief**, due **15 Nov** (ll. 361–418).
+>
+>   This completes the MoC block. Next week (w/c 26 Oct) is reading week.
+> - Worked solutions to all three example sheets and to Blackboard Tests 1 and 2.
 >
 > Quick reference: [[SESA3029 Formula Sheet]].
 
 > [!important] Deadlines
 > - **Weekend homework (Tutorial 1, ll. 232–235):** triangular wing at a second $\alpha$, check $x_{ac}\approx c/2$. Solved: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre (ll. 228–235)|Tutorial 1]].
 > - ~~Blackboard Test 1, due Sun 11 Oct, 23:59~~ (closed; L2-4, ll. 1–3). Worked: [[SESA3029 Test 1 - Solutions]].
-> - **Test 2:** open since Mon 19 Oct, two attempts, closes **Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8).
-> - **MoC coursework (10 %):** due **Fri 6 Nov**, *"end of week seven, which is two weeks as of Friday this week"* (L3-2, ll. 9–12; also L3-1, ll. 6–11). This replaces the module guide's 15 Nov. The brief is not yet in the vault; confirm the date from it. The task is the §14 nozzle table in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|W05]] (L3-3, ll. 132, 221–222).
+> - **Test 2:** open since Mon 19 Oct, two attempts, closes **Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). Done; worked: [[SESA3029 Test 2 - Solutions]].
+> - **MoC coursework (10 %): due Sun 15 Nov** (L3-4, ll. 415–418). This supersedes L3-2's *"end of week seven"* (Fri 6 Nov) and agrees with the module guide.
+>   - Brief on Blackboard, *Quizzes and coursework → Method of Characteristics* (L3-4, ll. 362–366). It is not yet in the vault; file it in `04 - Labs & Coursework`.
+>   - A minimum-length nozzle for $M_e=3.X$, where $X$ is the last digit of your student ID. Use five characteristics (20 points), in six sections and at most six A4 pages (ll. 367–397).
+>   - The method is the §14 table in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|W05]] (L3-3, ll. 132, 221–222). The brief and checks are in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05, announcements]].
+> - **Reading week w/c 26 Oct**: no lectures (L3-4, ll. 4–5, 418).
 > - Test 3: 29 Nov. Test 4: 13 Dec.
 
 ## Current coverage
@@ -69,7 +79,7 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.3 lectured with transcripts; 3
    - back-pressure regimes and locating a normal shock in the nozzle;
    - over- and under-expanded jets, shock diamonds and the Mach disc;
    - supersonic wind-tunnel starting (second throat) and the Ludwieg tube.
-5. [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]] (Lectures 3.1–3.3 with transcripts, Fri 16, Mon 19 and Thu 22 Oct; 3.4 from the slides)
+5. [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]] (Lectures 3.1–3.4 with transcripts, Fri 16, Mon 19, Thu 22 and Fri 23 Oct)
    - streamtube derivation: mass, $l$-momentum with homentropy, zero vorticity; the switch to $\nu$ and $\theta$;
    - compatibility conditions and Riemann invariants, and the same result by eigenvalues;
    - zones of dependence and influence, with the lecture's reversed-song aside qualified;
@@ -77,8 +87,9 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.3 lectured with transcripts; 3
    - the three boundary conditions, "any two of $R^+,R^-,\nu,\theta$"; simple and uniform regions;
    - $\theta_{max}=\nu(M_e)/2$, and reading $M_e$ off the throat angle (sharp-corner nozzles only);
    - the $M_e=2.4$ minimum-length nozzle, all 14 points reproduced, converging to $A_e/A^*$;
-   - the 3.4 generic example and its inverse problem (not yet lectured);
-   - slips tables for L3-1, L3-2 and L3-3.
+   - the 3.4 generic example, the non-reflecting point 3, and the inverse problem; the past-paper hint;
+   - the MoC coursework brief ($M_e=3.X$, five lines, 20 points, due 15 Nov), with corner-angle checks;
+   - slips tables for L3-1 to L3-4.
 
 ### Example sheets (worked solutions)
 
@@ -86,6 +97,7 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.3 lectured with transcripts; 3
 - [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing]]: Fri 9 Oct tutorial. ES1 Q3 with the regular-reflection iteration, and an isosceles triangular wing at $M=1.7$ (drag shortcut corrected; $x_{ac}=0.49c$ homework).
 - [[SESA3029 Example Sheet 2 - Solutions]]: eigenvectors, MoC, Ackeret, Prandtl–Glauert. Q2–Q3 are now also in the lecture's $R^\pm$ notation, and Q3 gets an averaged-slope check ($M_C=1.604$ vs the key's 1.558). Q4–Q6 are not yet lectured.
 - [[SESA3029 Test 1 - Solutions]]: Blackboard Test 1 (stagnation temperature, Mach number, isentropic density, mass flow, Pitot with the static tapping behind the shock).
+- [[SESA3029 Test 2 - Solutions]]: Blackboard Test 2 ($M_1$ from a 38.1 % $p_0$ loss, the supersonic Pitot test, reading the OSC backwards, a flat plate's upper surface, and the L2-3 slide 7 interaction at $M_1=3.1$: $\Delta\theta=5.815^\circ$).
 - [[SESA3029 Example Sheet 3 - Solutions]]: heat transfer (Weeks 9–12, previewed). Discrepancies in the answer key are flagged for Q3, Q5 and Q6.
 
 ## Week 1 concept map
@@ -141,13 +153,13 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.3 lectured with transcripts; 3
 |---|---|---|---|
 | 1 | Basic toolkit | Isentropic flow, normal shocks, shock tables, Pitot probes | **Complete** |
 | 2–3 | Oblique shocks and expansions | 2.1 oblique-shock relations; 2.2 chart and examples; 2.3 reflections, slip lines, shock interactions; 2.4 expansion waves and Prandtl–Meyer; 2.5 shock–expansion method; Tutorial 1 | **Complete** (transcripts; 2.3 on 2 Oct, 2.4 on 5 Oct, 2.5 on 8 Oct, Tutorial 1 on 9 Oct) |
-| 4–5 | Nozzles and MoC | 2.6 Laval nozzle and back pressure; 2.7 under/over-expanded nozzles, supersonic wind tunnel; 3.1–3.4 method of characteristics, minimum-length nozzles | **2.6, 2.7, 3.1, 3.2 and 3.3 lectured** (12, 15, 16, 19 and 22 Oct, transcripts). **3.4: slides filed and written up ahead, awaiting lecture** (probably Fri 23 Oct). MoC coursework due Fri 6 Nov |
-| 6 | Reading week | Consolidation | — |
+| 4–5 | Nozzles and MoC | 2.6 Laval nozzle and back pressure; 2.7 under/over-expanded nozzles, supersonic wind tunnel; 3.1–3.4 method of characteristics, minimum-length nozzles | **Complete**: 2.6, 2.7 and 3.1–3.4 lectured (12, 15, 16, 19, 22 and 23 Oct, transcripts). MoC coursework due Sun 15 Nov |
+| 6 | Reading week (w/c 26 Oct) | Consolidation, coursework | — |
 | 7–8 | High-speed aerodynamics | Euler equations, wave drag, compressible potential flow, Prandtl–Glauert, Ackeret theory, optimum supersonic aerofoils | Awaiting lectures (ES2 Q4–Q6 preview it) |
 | 9–12 | Heat transfer | Conduction, convection, boundary-layer heat transfer, radiation, numerical methods and heat exchangers | Awaiting lectures (ES3 solved in full) |
 
 > [!info] Build policy
-> By request, the filed decks for 2.3–2.7 and 3.2–3.4 were written up in full ahead of their recordings. 2.3–2.7 are now backfilled from their transcripts (line references, slips, lecturer-set tasks; 2.7 on 19 Oct), and 3.1 was written from `Lecture 3-1.txt`. 3.2 and 3.3 were backfilled into W05 §§8–14 on 22 Oct. When the 3.4 recording arrives, do the same for W05 §15.
+> By request, the filed decks for 2.3–2.7 and 3.2–3.4 were written up in full ahead of their recordings. 2.3–2.7 are now backfilled from their transcripts (line references, slips, lecturer-set tasks; 2.7 on 19 Oct), and 3.1 was written from `Lecture 3-1.txt`. 3.2 and 3.3 were backfilled into W05 §§8–14 on 22 Oct, and 3.4 into §15 on 23 Oct. Every filed deck is now lectured and backfilled.
 
 ## Assessment snapshot
 
@@ -157,7 +169,7 @@ The Week 1 module guide lists:
 - **10%** Method of Characteristics nozzle-design exercise;
 - **10%** from four Blackboard tests at **2.5% each**, with up to two attempts and the highest mark counting.
 
-Test due dates: **Test 1 11 Oct**, Test 2 25 Oct, Test 3 29 Nov, Test 4 13 Dec. The MoC coursework is due **Fri 6 Nov** per the lecturer (L3-2, ll. 9–12), not the module guide's 15 Nov; check the brief. Exam questions say which method to use: nearest table value, the average of two lines, linear interpolation, or the exact equations (L2-2, ll. 74–80).
+Test due dates: Test 1 11 Oct, **Test 2 25 Oct**, Test 3 29 Nov, Test 4 13 Dec. The MoC coursework is due **Sun 15 Nov** (L3-4, ll. 415–418), as in the module guide; L3-2's "end of week seven" (6 Nov) is superseded. Exam questions say which method to use: nearest table value, the average of two lines, linear interpolation, or the exact equations (L2-2, ll. 74–80).
 
 Always check Blackboard for any later change to dates or assessment rules.
 
@@ -179,6 +191,7 @@ Always check Blackboard for any later change to dates or assessment rules.
 - recover the normal-shock and Mach-wave limits at $\theta=0$;
 - derive $\mu=\sin^{-1}(1/M)$ from the moving-source picture;
 - solve an oblique shock four ways: nearest value, average, interpolation, exact iteration;
+- read the chart **backwards**: given $\theta$ and $\beta$, find $M_1$ by eye or from the closed form $M_1^2=2(\cot\beta+\tan\theta)/[\sin2\beta-\tan\theta(\gamma+\cos2\beta)]$ ([[SESA3029 Test 2 - Solutions#Q3. Mach number from the oblique-shock chart|Test 2 Q3]]);
 - chain $p_0$ ratios through an intake shock system and explain why oblique shocks and isentropic ramps recover more.
 
 ## Week 3 exam skills (Lectures 2.3–2.5)
@@ -216,7 +229,7 @@ Always check Blackboard for any later change to dates or assessment rules.
 - apply the reflecting-wall, cancelling-wall and symmetry conditions, with their coordinate rules; *"R minus is R plus plus two times the wall angle"* (L3-3, ll. 62–63); any two of $R^+,R^-,\nu,\theta$ fix the rest (ll. 32–36);
 - derive $\theta_{max}=\nu(M_e)/2$ (with $\nu(1)=0$) and fill the minimum-length-nozzle template; check $y_e/r_a$ against $A_e/A^*$. This is the coursework (L3-3, ll. 132, 221–222);
 - read $M_e$ off a sharp throat corner's angle, and know that it fails for gradual nozzles; do not confuse this $\theta_{max}$ with the oblique-shock one (L3-3, ll. 133–139, 204–214);
-- work a symbolic MoC table (3.4), spot a non-reflecting wall point, and invert measured Mach numbers for $\theta_w$ and $M_0$.
+- work a symbolic MoC table (3.4) in under a minute (*"one of the questions in the past papers"*, L3-4, ll. 198–203), spot a non-reflecting wall point by checking the physics, not just the rules (ll. 206–281), and invert measured Mach numbers for $\theta_w$ and $M_0$ (ll. 298–348).
 
 ## All notes
 
@@ -250,8 +263,9 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/Lecture3-1.pdf` and `Lecture 3-1.txt` (Fri 16 Oct: MoC theory, part A)
 - `02 - Sources/Lectures/Lecture3-2.pdf` and `Lecture 3-2.txt` (Mon 19 Oct: MoC theory B, unit process)
 - `02 - Sources/Lectures/Lecture3-3.pdf` and `Lecture 3-3.txt` (Thu 22 Oct: boundary conditions, minimum-length nozzle; recording cut off at the end)
-- Slides filed, awaiting lecture: `Lecture3-4.pdf` (generic example), written up in W05 §15.
+- `02 - Sources/Lectures/Lecture3-4.pdf` and `Lecture 3-4.txt` (Fri 23 Oct: generic MoC example; MoC coursework brief)
 - `02 - Sources/Lectures/Supplementary Note for MoC.pdf` (12 pages, including the axisymmetric appendix)
 - Exam data sheets: `Aerothermodynamics Formula Sheet.pdf`, `IFT.pdf`, `NST.pdf`, `OSC.pdf` (summarised in [[SESA3029 Formula Sheet#What the exam formula sheet gives you]])
 - `03 - Exams & Past Papers/aerothermo quiz questions - solved on ipad but write own solutions for completeness.txt` (Test 1 questions)
+- `03 - Exams & Past Papers/aerothermo test 2 questions.txt` (Test 2 questions)
 - `03 - Exams & Past Papers/ExamplesSheet1.pdf`, `ExamplesSheet2.pdf`, `ExampleSheet3(1).pdf`

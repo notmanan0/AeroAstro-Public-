@@ -11,7 +11,7 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1, Lectures 2.1–2.7 and 3.1–3.4** (all lectured up to 3.3; 3.4 from the slides). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7 and 3.1–3.4** (all lectured; 3.4 on Fri 23 Oct). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Mach number and gas properties
 
@@ -91,6 +91,12 @@ $$
 M_2^2=\frac{2+(\gamma-1)M_1^2}{2\gamma M_1^2-(\gamma-1)}.
 $$
 
+Stagnation-pressure ratio (from $p_{02}/p_2\cdot p_2/p_1\cdot p_1/p_{01}$; [[SESA3029 Test 2 - Solutions#Q1. Mach number from the stagnation-pressure loss|Test 2 Q1]]):
+
+$$
+\frac{p_{02}}{p_{01}}=\left[\frac{(\gamma+1)M_1^2}{2+(\gamma-1)M_1^2}\right]^{\gamma/(\gamma-1)}\left[\frac{\gamma+1}{2\gamma M_1^2-(\gamma-1)}\right]^{1/(\gamma-1)}.
+$$
+
 Strong-shock limits:
 
 $$
@@ -161,6 +167,12 @@ $$
 $$
 
 Maximum deflection for air: $\theta_{max}=12.1^\circ,\ 23.0^\circ,\ 34.1^\circ,\ 41.1^\circ,\ 45.6^\circ$ at $M_1=1.5,\ 2,\ 3,\ 5,\ \infty$.
+
+Given $\theta$ and $\beta$, the relation is linear in $M_1^2$ ([[SESA3029 Test 2 - Solutions#Q3. Mach number from the oblique-shock chart|Test 2 Q3]]):
+
+$$
+M_1^2=\frac{2\left(\cot\beta+\tan\theta\right)}{\sin2\beta-\tan\theta\,(\gamma+\cos2\beta)}.
+$$
 
 ## Mach angle
 
@@ -339,6 +351,8 @@ Boundary conditions:
 | designed wall (cancels) | $\theta_W=\theta_A$, $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
 | centreline | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B-\mu_P]$ |
 
+A prescribed wall reflects **only if** $\theta_A\neq\theta_W$. If the arriving flow is already parallel to the wall, nothing leaves, whatever the bookkeeping says (3.4's point 3; L3-4, ll. 238–277).
+
 Minimum-length nozzle:
 
 $$
@@ -346,6 +360,8 @@ $$
 $$
 
 $M_e=2.4$: $\theta_{max}=18.373^\circ$, $x_e/r_a=8.069$, $y_e/r_a=2.400$ (four lines).
+
+With $n$ lines the net has $n(n+3)/2$ points: 14 for $n=4$, 20 for $n=5$ (the coursework, L3-4, ll. 374–397).
 
 Reading the exit Mach number off a **sharp** throat corner (L3-3, ll. 204–214): $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
 

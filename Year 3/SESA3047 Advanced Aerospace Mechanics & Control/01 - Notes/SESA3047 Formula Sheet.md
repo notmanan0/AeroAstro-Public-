@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3047 formulae", "Advanced Mechanics and Control formula sheet"]
 tags: [sesa3047, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–4; Chapter 4 to §4.1.2 lectured in L11, remainder from the handout"
-sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt"]
+coverage: "Chapters 1–4; Chapter 4 lectured in full in L11–L13 (to Thu 22 Oct); Eqs. 4.25, 4.31 and 4.38–4.40 from the handout only"
+sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt"]
 ---
 
 # SESA3047 Formula Sheet
 
-Current coverage: **Chapters 1–4**. Chapter 4 is lectured through §4.1.2 in L11; the remainder is written from the complete handout, awaiting transcripts.
+Current coverage: **Chapters 1–4**. Chapter 4 is lectured in full across L11 (Mon 19 Oct) and L12–L13 (Thu 22 Oct). A few handout-only pieces are marked where they appear.
 
 ## Control-system notation
 
@@ -269,13 +269,23 @@ These Chapter 3 equations supply nine state derivatives. Chapter 4 adds the velo
 
 ## Principal axes, aircraft inverse and rotors (Chapter 4 §4.1)
 
-L11 covers the full-inertia expansion and principal-axis case. Aircraft and rotor extensions below are written from the handout, awaiting matching transcripts.
+L11 covers the full-inertia expansion and principal-axis case; L12 covers inertia coupling, aircraft symmetry and rotors; L13 covers the aircraft rotor terms.
 
 $$
 \mathbf J\mathbf e_i=\lambda_i\mathbf e_i,\quad
 \mathbf Q=[\mathbf e_1\ \mathbf e_2\ \mathbf e_3],\quad
 \mathbf J_P=\mathbf Q^T\mathbf J_B\mathbf Q=\operatorname{diag}(\lambda_i).
 $$
+
+Inertia coupling, principal axes, no external moment (L12):
+
+$$
+\dot p=\frac{(J_{yy}-J_{zz})qr}{J_{xx}},\qquad
+\dot q=\frac{(J_{zz}-J_{xx})pr}{J_{yy}},\qquad
+\dot r=\frac{(J_{xx}-J_{yy})pq}{J_{zz}}.
+$$
+
+Any two non-zero rates make all three change. A single-axis spin stays steady.
 
 For aircraft symmetry $J_{xy}=J_{yz}=0$:
 
@@ -308,11 +318,35 @@ $$
 -\tilde{\boldsymbol\omega}\mathbf h_R-{}^b\dot{\mathbf h}_R).
 $$
 
-Constant body-frame rotor momentum removes only its body derivative.
+Constant body-frame rotor momentum removes only its body derivative (the lectured case, L12). The last term is handout-only (Eq. 4.25). With ${}^b\dot{\mathbf h}_R=\mathbf 0$:
+
+$$
+\dot{\boldsymbol\omega}=\dot{\boldsymbol\omega}_{base}+\dot{\boldsymbol\omega}_{add},\qquad
+\dot{\boldsymbol\omega}_{base}=\mathbf J^{-1}(\mathbf M-\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega),\qquad
+\dot{\boldsymbol\omega}_{add}=-\mathbf J^{-1}\tilde{\boldsymbol\omega}\mathbf h_R.
+$$
+
+Aircraft $\mathbf J$ (Eq. 4.23):
+
+$$
+\begin{aligned}
+\dot p_{add}&=\frac{J_{zz}(rh_y-qh_z)+J_{xz}(qh_x-ph_y)}{\Gamma},\\
+\dot q_{add}&=\frac{ph_z-rh_x}{J_{yy}},\\
+\dot r_{add}&=\frac{J_{xz}(rh_y-qh_z)+J_{xx}(qh_x-ph_y)}{\Gamma}.
+\end{aligned}
+$$
+
+Principal axes ($J_{xz}=0$): $\dot p_{add}=(rh_y-qh_z)/J_{xx}$, $\dot q_{add}=(ph_z-rh_x)/J_{yy}$, $\dot r_{add}=(qh_x-ph_y)/J_{zz}$.
 
 ## Translational dynamics (Chapter 4 §4.2)
 
-Written from the handout, awaiting a matching transcript. $\mathbf F$ excludes gravity:
+Lectured in L13 (Thu 22 Oct), except effective gravity and the scalar/$X,Y,Z$ forms. $\mathbf F$ excludes gravity. Rotating Earth (Eq. 4.30, lectured):
+
+$$
+\mathbf a_e=\mathbf F/m+\mathbf G-\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf p)-2\boldsymbol\Omega\times\mathbf v_e.
+$$
+
+Effective gravity (Eq. 4.31, handout only):
 
 $$
 \mathbf g=\mathbf G-\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf p),\qquad
@@ -335,7 +369,7 @@ $$
 \end{aligned}
 $$
 
-If $[X,Y,Z]^T$ includes weight instead:
+If $[X,Y,Z]^T$ includes weight instead (handout only, Eqs. 4.38–4.40):
 
 $$
 X=m(\dot u+qw-rv),\quad
@@ -360,7 +394,7 @@ $$
 \end{aligned}}
 $$
 
-Four groups, twelve states; evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
+Four groups, twelve states (*"6 states for the dynamics, and 6 states for the kinematics"*, L13 ll. 339–340); evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
 
 ## Related
 

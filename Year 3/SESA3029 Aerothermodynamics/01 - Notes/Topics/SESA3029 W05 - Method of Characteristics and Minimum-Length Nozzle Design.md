@@ -8,13 +8,13 @@ tags: [sesa3029, compressible-flow, method-of-characteristics, riemann-invariant
 aliases: ["SESA3029 Week 5", "SESA3029 Lecture 3.1", "SESA3029 Lecture 3.2", "SESA3029 Lecture 3.3", "SESA3029 Lecture 3.4", "MoC (SESA3029)"]
 date: 2026-10-19
 status: complete
-coverage: "Lectures 3.1–3.3 lectured Fri 16, Mon 19 and Thu 22 Oct (transcripts); Lecture 3.4 written ahead from the slides and the supplementary note, awaiting lecture"
+coverage: "Lectures 3.1–3.4 lectured Fri 16, Mon 19, Thu 22 and Fri 23 Oct (transcripts), plus the MoC coursework brief (L3-4); §16 from the supplementary note"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]", "[[Prandtl-Meyer Function]]", "[[Mach Waves and Mach Angle]]"]
 next_topics: []
 key_concepts: ["[[Method of Characteristics]]", "[[Riemann Invariants]]", "[[Homentropic Flow]]", "[[Minimum-Length Nozzle]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 2 - Solutions]]"]
-sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Lecture3-4.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-1.txt", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt"]
+sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Lecture3-4.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-1.txt", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt", "02 - Sources/Lectures/Lecture 3-4.txt"]
 ---
 
 # SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design
@@ -29,7 +29,7 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 > - **3.1** derives this from a curved streamtube: mass, $l$-momentum, homentropy and zero vorticity give two PDEs in $u$ and $\theta$. Swapping $u$ for $\nu$ and adding/subtracting turns them into the two **compatibility conditions**. $R^\pm$ are the **Riemann invariants**.
 > - **3.2** gets the same result by diagonalising a $2\times2$ matrix (eigenvalues $\pm\tan\mu$), then builds the **unit process**: two known points give a third, $\nu_P=\tfrac12(R^+_A+R^-_B)$, $\theta_P=\tfrac12(R^-_B-R^+_A)$, located with averaged slopes.
 > - **3.3** adds the boundary conditions (reflecting wall, cancelling wall, symmetry plane) and designs the **minimum-length nozzle**: $\theta_{max}=\nu(M_e)/2$, so the throat angle alone gives the exit Mach number. For $M_e=2.4$ with four characteristics, $x_e/r_a=8.069$ and $y_e/r_a=2.400$, against the 1D $A_e/A^*=2.4031$.
-> - **3.4** (written ahead from the slides, not yet lectured) works a channel symbolically, finds that point 3 cannot reflect, and solves the inverse problem: $M_4=2.2$, $M_6=2.4$ give $\theta_w=5.0140^\circ$ and $M_0=1.8340$.
+> - **3.4** (Fri 23 Oct) works a channel symbolically, finds that point 3 cannot reflect, and solves the inverse problem: $M_4=2.2$, $M_6=2.4$ give $\theta_w=5.0140^\circ$ and $M_0=1.8340$. The lesson: *"always think about the results, whether it makes sense or not"* (L3-4, ll. 279–281). The lecture ended with the **MoC coursework brief**: a minimum-length nozzle for $M_e=3.X$ with five characteristics, due **15 Nov**.
 
 ## Key concepts
 
@@ -55,19 +55,45 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 >
 > **Lecture 3.3 was lectured on Thu 22 Oct** (`Lecture 3-3.txt`, 303 lines). It covered the whole 3.3 deck: a recap (ll. 7–43), the three boundary conditions (ll. 44–100), §11; the nozzle with a straightening section (ll. 103–143), §12; the minimum-length nozzle (ll. 144–214), §13; and the $M_e=2.4$ table up to slide 21 (ll. 215–301), §14. **The recording stops mid-sentence** at l. 303, *"And coincidentally…"*.
 >
-> **Lecture 3.4 has not been lectured yet.** §15 is written ahead from the slides, and its tasks are marked **slide-set**. §16 is from the supplementary note and was never on the slides.
+> **Lecture 3.4 was lectured on Fri 23 Oct** (`Lecture 3-4.txt`, 425 lines), the last MoC lecture. It covered the whole 3.4 deck:
+> - admin: reading week next, Test 2 closes Sunday (ll. 1–6);
+> - the symbolic table filled in step by step (ll. 7–200), with an exam hint at ll. 201–203, §15;
+> - the "thorn": why point 3 cannot reflect and point 5 does not exist (ll. 206–297), §15;
+> - the inverse problem, $M_0$ and $\theta_w$ from $M_4$ and $M_6$ (ll. 298–359), §15;
+> - the **MoC coursework brief** on Blackboard (ll. 361–418): see [[#Announcements and deadlines]].
+>
+> §16 is from the supplementary note and was never on the slides.
 
 ## Announcements and deadlines
 
 > [!important] Announcements (L3-1, ll. 3–12)
 > - **Blackboard Test 2** opens on the morning of **Mon 19 Oct** and stays open until **Sunday 25 Oct, midnight** (ll. 3–5).
 > - **MoC coursework:** the brief will be announced *"towards the end of next week"*, i.e. by about Fri 23 Oct (l. 6). It is due *"by end of week seven"*. Week 6 is a reading week, *"and then after that, you have one more week"* (ll. 8–11).
-> - Date check: the Week 1 module guide said **15 Nov**. Counting W04 as the week of 12 Oct, the end of week 7 is about **Fri 6 Nov**. The two do not match. L3-2 settled it in favour of 6 Nov (next callout); still confirm it from the brief.
+> - Date check: the Week 1 module guide said **15 Nov**. Counting W04 as the week of 12 Oct, the end of week 7 is about **Fri 6 Nov**. The two do not match. L3-2 pointed to 6 Nov (next callout), but **L3-4 gave 15 Nov**, the guide's date (last callout).
 
 > [!important] Announcements (L3-2, ll. 1–12; L3-3, ll. 3–6)
 > - **Test 2 is open**: two attempts, and you can look back at the questions and answers afterwards. It closes **Sunday midnight (25 Oct)** (L3-2, ll. 2–8).
-> - **MoC coursework, 10 % of the module mark**: the brief is to be announced this week, and it is due at the *"end of week seven, which is two weeks as of Friday this week"* (L3-2, ll. 9–12). Two weeks from Fri 23 Oct is **Fri 6 Nov**, which settles the date check above in favour of 6 Nov rather than the guide's 15 Nov. Confirm it against the brief, which is not yet in the vault.
+> - **MoC coursework, 10 % of the module mark**: the brief is to be announced this week, and it is due at the *"end of week seven, which is two weeks as of Friday this week"* (L3-2, ll. 9–12). Two weeks from Fri 23 Oct is Fri 6 Nov. ~~This settles the date in favour of 6 Nov.~~ **Superseded by L3-4: due 15 Nov** (next callout).
 > - **What the coursework is**: the lecturer called 3.3 *"a very important lecture"* for the coursework and the final exam (L3-3, ll. 3–6). The nozzle-design table of §14 is *"essentially what you are going to do in the coursework"* (l. 132) and *"the table that you're going to work on in the method of characteristics coursework"* (ll. 221–222).
+
+> [!important] The MoC coursework brief (L3-4, ll. 1–6, 361–425)
+> - **Where**: Blackboard, *Quizzes and coursework* → new folder *Method of Characteristics*, with the instructions (ll. 362–366). File the brief in `04 - Labs & Coursework` (it is not in the vault yet).
+> - **Format**: six main sections, **no more than six A4 pages** (ll. 367–368).
+> - **Task**: a minimum-length nozzle as in L3-3 (l. 370). The design Mach number is **$M_e=3.X$, where $X$ is the last digit of your student ID**, so every student has a slightly different case (ll. 371–372).
+> - **Resolution**: **five characteristics** in the corner fan (ll. 374–383), which gives **20 points** (ll. 392–397). With $n$ lines the net has $n(n+1)/2$ interior and centreline points plus $n$ wall points, $n(n+3)/2$ in all: 14 for $n=4$ (§14), 20 for $n=5$. The wall shape is set by five points plus the given corner (ll. 406–408).
+> - **Method**: by hand, in Excel or in Python (ll. 400–402). If you automate it, you are encouraged to add more lines and see how the result converges (ll. 403–411).
+> - **Due: 15 Nov**, *"three weeks … two weeks after you come back from the consolidation week"* (ll. 415–418). This replaces the 6 Nov of L3-2 and agrees with the module guide. 15 Nov 2026 is a **Sunday**; confirm the time on Blackboard.
+> - **Next week is reading week**, with no teaching (ll. 4–5, 418, 423). *"Make the most of the week for revision and catching up and coursework"* (l. 5).
+> - **Test 2 closes on Sunday** (25 Oct) (l. 6). Worked solutions: [[SESA3029 Test 2 - Solutions]].
+
+> [!check] Sanity checks for your coursework case (computed here, not from the brief)
+> The corner angle is $\theta_{max}=\nu(M_e)/2$ (§13). For $M_e=3.0$ to $3.9$ it runs from $24.879^\circ$ to $32.220^\circ$:
+>
+> | $M_e$ | 3.0 | 3.1 | 3.2 | 3.3 | 3.4 | 3.5 | 3.6 | 3.7 | 3.8 | 3.9 |
+> |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+> | $\theta_{max}$ (deg) | 24.879 | 25.825 | 26.735 | 27.611 | 28.454 | 29.265 | 30.046 | 30.798 | 31.522 | 32.220 |
+>
+> The exit half-height must approach $y_e/r_a=A_e/A^*$ from the IFT, as in §14. Validate any code on the $M_e=2.4$, four-line case first (point 14 at $(8.069,\ 2.400)$).
 
 ---
 
@@ -1004,45 +1030,72 @@ All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives 
 
 ![[at_moc_generic_example.png|900]]
 
-> [!info] Not yet lectured
-> Lecture 3.4 is **written ahead from the slides**. L3-3 ended on 3.3 slide 21, so 3.4 is presumably next (Fri 23 Oct). Add line references and slips when its recording arrives.
+> [!info] Lectured Fri 23 Oct (`Lecture 3-4.txt`)
+> 3.4 was given as *"relatively quite simple and quick"* once 3.1–3.3 are digested (L3-4, ll. 1–2). It was originally written ahead from the slides and has now been backfilled with line references. *"Generic as opposed to numerical"*: only symbols, no numbers (ll. 8–10).
 
-**Set-up** (slide 2). A channel of half-height 1 carries supersonic flow $M_0$ along its centreline. At $(0,1)$ the upper wall turns up by $\theta_w$ and stays straight. The Prandtl–Meyer fan at 0 is represented by two characteristics: "a", the leading wave at the upstream state, and "b", the trailing wave at $\theta_w$. Find $\nu$ and $\theta$ at points 1 to 6 in terms of $\nu_a$ and $\theta_w$.
+**Set-up** (slide 2; L3-4, ll. 11–31). A channel of half-height 1 carries supersonic flow $M_0$ along its centreline. At $(0,1)$ the upper wall turns up by $\theta_w$ and stays straight. The Prandtl–Meyer fan at 0 is represented by two characteristics: "a", the leading wave at the upstream state, and "b", the trailing wave at $\theta_w$. Find $\nu$ and $\theta$ at points 1 to 6 in terms of $\nu_a$ and $\theta_w$.
 
-**What is known beforehand** (slide 3): $\theta=0$ at 0a and on the centreline (1, 4); $\theta=\theta_w$ at 0b and on the wall (3, 6); $\nu_{0a}=\nu_a$.
+> [!tip] "The coarsest mesh that you can imagine" (ll. 14–20)
+> Two lines for a whole fan is deliberately crude: *"this is not an ideal case, but we can still learn a lot from this simplest case."* More lines give more accuracy, *"which is what you are going to do in the coursework"* (ll. 19–20). The centreline acts *"effectively [as] a wall as well"* (l. 26), as in BC 3.
+
+**What is known beforehand** (slide 3; ll. 34–56): $\theta=0$ at 0a and on the centreline (1, 4); $\theta=\theta_w$ at 0b and on the wall (3, 6); $\nu_{0a}=\nu_a$. No $C^+$ passes through 0a or 0b, so $R^+$ is *"not applicable"* there (ll. 36–37). *"That's the first thing that you can do without doing any calculation"* (l. 56).
 
 **Steps** (slides 4–11, one fact at a time):
 
-1. Across the fan, $\Delta\theta=\theta_w=\nu_b-\nu_a$, so $\nu_b=\nu_a+\theta_w$.
-2. Corner invariants: $R^-_{0a}=\nu_a+0=\nu_a$ and $R^-_{0b}=(\nu_a+\theta_w)+\theta_w=\nu_a+2\theta_w$.
-3. Along the $C^-$ lines: $R^-_1=\nu_a$, and $R^-_2=R^-_4=\nu_a+2\theta_w$.
-4. Centreline points, from $\nu=R^--\theta$ and $R^+=\nu-\theta$: point 1 has $\nu_1=\nu_a$, $R^+_1=\nu_a$; point 4 has $\nu_4=\nu_a+2\theta_w$, $R^+_4=\nu_a+2\theta_w$.
-5. Along the $C^+$ lines 1–2–3 and 4–5–6: $R^+_2=R^+_3=\nu_a$, and $R^+_5=R^+_6=\nu_a+2\theta_w$.
-6. Point 2: $\nu_2=\tfrac12(\nu_a+\nu_a+2\theta_w)=\nu_a+\theta_w$ and $\theta_2=\tfrac12(\nu_a+2\theta_w-\nu_a)=\theta_w$.
-7. Wall points, from $\nu=R^++\theta$: point 3 has $\nu_3=\nu_a+\theta_w$, $R^-_3=\nu_a+2\theta_w$; point 6 has $\nu_6=\nu_a+3\theta_w$, $R^-_6=\nu_a+4\theta_w$.
-8. Point 5, if it existed: $R^-_5=R^-_3=\nu_a+2\theta_w$, so $\theta_5=0$ and $\nu_5=\nu_a+2\theta_w$.
+1. Across the fan, $\Delta\theta=\theta_w=\nu_b-\nu_a$, so $\nu_b=\nu_a+\theta_w$ (ll. 63–76).
+2. Corner invariants: $R^-_{0a}=\nu_a+0=\nu_a$ and $R^-_{0b}=(\nu_a+\theta_w)+\theta_w=\nu_a+2\theta_w$ (ll. 59–61, 77–83).
+3. Along the $C^-$ lines: $R^-_1=\nu_a$, and $R^-_2=R^-_4=\nu_a+2\theta_w$ (ll. 86–116; the class answered *"nu A"* at l. 97).
+4. Centreline points, from $\nu=R^--\theta$ and $R^+=\nu-\theta$: point 1 has $\nu_1=\nu_a$, $R^+_1=\nu_a$; point 4 has $\nu_4=\nu_a+2\theta_w$, $R^+_4=\nu_a+2\theta_w$ (ll. 120–151).
+5. Along the $C^+$ lines 1–2–3 and 4–5–6: $R^+_2=R^+_3=\nu_a$, and $R^+_5=R^+_6=\nu_a+2\theta_w$ (ll. 153–163).
+6. Point 2: $\nu_2=\tfrac12(\nu_a+\nu_a+2\theta_w)=\nu_a+\theta_w$ and $\theta_2=\tfrac12(\nu_a+2\theta_w-\nu_a)=\theta_w$ (ll. 164–176).
+7. Wall points, from $\nu=R^++\theta$: point 3 has $\nu_3=\nu_a+\theta_w$, $R^-_3=\nu_a+2\theta_w$; point 6 has $\nu_6=\nu_a+3\theta_w$, $R^-_6=\nu_a+4\theta_w$ (ll. 177–180).
+8. Point 5, if it existed: $R^-_5=R^-_3=\nu_a+2\theta_w$, so $\theta_5=0$ and $\nu_5=\nu_a+2\theta_w$ (ll. 183–197).
 
-**"Do you see a problem? What happens to point 3?"** (slides 12–14). The $C^+$ arriving at 3 comes from point 2, where $\theta_2=\theta_w$. The wall at 3 is also at $\theta_w$. By BC 1, a reflection needs $\theta_A\neq\theta_W$, so **nothing reflects at 3**. Delete $R^-_3$ and the whole of point 5. The $C^+$ from 4 runs straight to 6.
+The rule used at every line is the one from L3-3: *"it's your four variables and four equations … if you knew two of them, then you can work out the other two"* (ll. 120–134, 180).
+
+> [!important] Exam hint (ll. 198–203)
+> *"If you did it on your own, it would have been done in like 30 seconds, maybe 40 seconds."* And: *"this type of question was one of the questions in the past papers. So try and do it on your own … just in case something similar appears in this year's exam."*
+
+**"Do you see a problem? What happens to point 3?"** (slides 12–14; ll. 206–297). The $C^+$ arriving at 3 comes from point 2, where $\theta_2=\theta_w$. The wall at 3 is also at $\theta_w$. By BC 1, a reflection needs $\theta_A\neq\theta_W$, so **nothing reflects at 3**. Delete $R^-_3$ and the whole of point 5. The $C^+$ from 4 runs straight to 6.
+
+The lecturer's route to the same conclusion (ll. 208–277):
+
+- *"Although you did everything correctly according to the rules … you did it without thinking about the physics"* (ll. 211–214).
+- Look at the turning angles: every point has $\theta=0$ or $\theta_w$, *"nothing in between"*, only because there are so few lines (ll. 219–224). The free ones are 2 and 5: $\theta_2=\theta_w$ and $\theta_5=0$ (ll. 229–235).
+- At 2 the flow is already parallel to the wall, so *"between point two and three, the flow doesn't turn"* (ll. 238–242). That is the **non-reflecting** condition of L3-3, which the class recalled at ll. 251–260.
+- *"The nature says, there is no reflection here. This line doesn't exist"* (ll. 269–270). So $R^-_3$ is not applicable and *"0.5 doesn't exist. That is the correct complete table that you should have produced"* (ll. 273–277).
+
+> [!important] "The most important lesson that you should learn from this lecture" (ll. 279–281)
+> *"Please make sure that your calculations, your results comply with the nature. And always think about the results, whether it makes sense or not."* He called the blind version *"one of the very good examples of engineering practices, which you could do just blindedly … routinely, without thinking about the physics"* (ll. 217–218).
+
+**Point 6 survives** (ll. 283–295). Without 5, $R^+_6=R^+_4=\nu_a+2\theta_w$ and $\theta_6=\theta_w$, the same as before: *"fortunately, even though you did something wrong, 0.6 was correct"* (l. 293). He warned that *"those type of fortunate cases don't happen often"* (l. 295).
 
 > [!tip] The physical reason
 > With two lines, wave "a" is only the **head** of the fan: the flow does not change across it, because the whole turn $\theta_w$ is lumped between a and b. Its reflection, the $C^+$ 1–2–3, is the head of the reflected fan and still carries no change, so there is nothing to reflect at 3. The reflected fan's **tail** (4–6) does carry the change. It meets the wall at 6, where the incoming flow has $\theta_4=0\neq\theta_w$, and it reflects there: $R^-_6=R^+_4+2\theta_w=\nu_a+4\theta_w$ (BC 1).
 >
-> The data at 6 are unchanged by removing 5, because states never depend on geometry (§10). The **coordinates** of 6 do change: without 5 the line 4–6 has no kink (slide 14).
+> The data at 6 are unchanged by removing 5, because states never depend on geometry (§10). The **coordinates** of 6 do change: without 5 the line 4–6 has no kink (slide 14). So the lecturer's *"0.6 was correct"* (l. 293) is true of the flow state, not of the point's position.
 
-**The inverse problem** (slide 15). $M_4=2.2$ and $M_6=2.4$ are measured. Find $M_0$ and $\theta_w$.
+**The inverse problem** (slide 15; ll. 298–348). $M_4=2.2$ and $M_6=2.4$ are measured. Find $M_0$ and $\theta_w$. *"You have two conditions given. Therefore, you can work out two variables"* (ll. 303–305).
 
-1. From the table: $\nu_4=\nu_a+2\theta_w$ and $\nu_6=\nu_a+3\theta_w$.
-2. IFT: $\nu_4=\nu(2.2)=31.7325^\circ$ and $\nu_6=\nu(2.4)=36.7465^\circ$.
-3. Subtract: $\theta_w=\nu_6-\nu_4=36.7465-31.7325=5.0140^\circ$.
-4. Back-substitute: $\nu_a=31.7325-2(5.0140)=21.7044^\circ$.
-5. Invert $\nu$: $M_0=1.8340$.
+1. From the table: $\nu_4=\nu_a+2\theta_w$ and $\nu_6=\nu_a+3\theta_w$ (ll. 307–312).
+2. IFT: $\nu_4=\nu(2.2)=31.7325^\circ$ and $\nu_6=\nu(2.4)=36.7465^\circ$ (ll. 313–325).
+3. Subtract: $\theta_w=\nu_6-\nu_4=36.7465-31.7325=5.0140^\circ$ (ll. 330–333).
+4. Back-substitute: $\nu_a=31.7325-2(5.0140)=21.7045^\circ$ with the table values (ll. 336–337); $21.7044^\circ$ from unrounded $\nu$.
+5. Invert $\nu$: the IFT rows $1.82$ ($21.3021^\circ$) and $1.84$ ($21.8768^\circ$) bracket it, *"closer to the lower line"* (l. 345):
+
+$$
+M_0=1.82+0.02\times\frac{21.7045-21.3021}{21.8768-21.3021}=1.82+0.02\times0.700=1.8340\quad(\text{l. 347: }1.834).
+$$
 
 $$
 \boxed{M_0=1.8340\ (\nu_a=21.7044^\circ),\qquad\theta_w=5.0140^\circ}
 $$
 
-> [!check] Against the slide
-> Slide 15 gives $M_0=1.8340$ ($\nu_a=21.7045^\circ$) and $\theta_w=5.0140^\circ$ ✓. The last digit of $\nu_a$ is rounding.
+> [!check] Against the slide and the lecture
+> Slide 15 and L3-4 (ll. 333–347) give $M_0=1.8340$ ($\nu_a=21.7045^\circ$) and $\theta_w=5.0140^\circ$ ✓. The last digit of $\nu_a$ is rounding.
+
+> [!tip] Why do it symbolically? (ll. 349–358)
+> *"The beauty of using this table is … you don't have to recalculate the table all over again"* for a new case. Any other $M_0$ and $\theta_w$ drop straight into the same expressions, and so do measurements, as in the inverse problem: *"the beauty of doing these things using the pure, more pure form as much as possible. And you can use that form again and again."*
 >
 > The figure locates every point with the unit process. Point 3 is a cancelling wall point at $(3.415,\ 1.300)$ and point 6 is a prescribed-wall point at $(4.779,\ 1.419)$. These coordinates are computed here, not on the slides.
 
@@ -1079,7 +1132,7 @@ where $\eta$ is distance along the characteristic. The states and the coordinate
 
 ## Transcript slips
 
-Whisper renders some words consistently wrongly in these recordings: "mark" for Mach, "I-centric"/"isentrific" for isentropic, "oxine" for arcsine, "Pranthal/frontal/planter/quantum mayor" for Prandtl–Meyer, "menstrual characteristics" for method of characteristics, and "0.N" for "point N". These are not listed below.
+Whisper renders some words consistently wrongly in these recordings: "mark" for Mach, "I-centric"/"isentrific" for isentropic, "oxine" for arcsine, "Pranthal/frontal/planter/quantum mayor" for Prandtl–Meyer (and in L3-4 *"quantum wave function"*, l. 68, and *"plant and mayor fat"* for the fan, l. 375), "menstrual characteristics" for method of characteristics, and "0.N" for "point N". These are not listed below.
 
 > [!warning] Slips and garbled passages in `Lecture 3-1.txt`
 > | Line | Said | Correct |
@@ -1130,6 +1183,16 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 > | l. 289 | *"normalized by the throat height, 1"* | by the throat **half**-height $r_a=1$ (slide 21) |
 > | l. 303 | *"And coincidentally…"* | the recording ends here ([[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)\|§14]]) |
 
+> [!warning] Slips and garbled passages in `Lecture 3-4.txt` (Fri 23 Oct)
+> L3-4 is clean: every symbolic entry and every number checks out ($\theta_w=5.014^\circ$, $\nu_a=21.7045^\circ$, $M_0=1.834$; 20 coursework points). Only these need care.
+>
+> | Line | Said | Correct |
+> |---|---|---|
+> | l. 171 | *"theta is R minus R minus R plus"* | $\theta=\tfrac12(R^--R^+)$; the halving is said at l. 172 |
+> | l. 265 | *"calculated the point bar which intersects with this R plus R line"* | garbled: the reflected $C^-$ from 3 meets the $C^+$ from 4 at **point 5** |
+> | l. 268 | *"we calculate 0.6 based on 0.5"* | the **state** at 6 needs only $R^+_4$ and $\theta_w$. Point 5 changed only how 6 was **located** ([[#15. The generic MoC example (Lecture 3.4)\|§15]]) |
+> | ll. 416–417 | *"three weeks … 15th of November"* | three weeks from Fri 23 Oct is Fri 13 Nov; the stated date, **Sun 15 Nov**, is the one to use (it matches the module guide) |
+
 ## Links
 
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
@@ -1146,22 +1209,22 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 - `Lecture3-1.pdf`: 3.1 Method of Characteristics, Theory (Part A), 12 slides. Lectured Fri 16 Oct.
 - `Lecture3-2.pdf`: 3.2 Theory (Part B), 12 slides: eigenvalues, zones, unit process, the slide 9 example. Lectured Mon 19 Oct.
 - `Lecture3-3.pdf`: 3.3 MoC Boundary Conditions & Minimum-length Nozzle Design, 21 slides, with the full $M_e=2.4$ table. Lectured Thu 22 Oct.
-- `Lecture3-4.pdf`: 3.4 Generic MoC Example, 15 slides. Not yet lectured.
+- `Lecture3-4.pdf`: 3.4 Generic MoC Example, 15 slides. Lectured Fri 23 Oct.
 - `Supplementary Note for MoC.pdf`: 12-page note. Derivation in $s$–$n$ coordinates, the eigen-decomposition, the unit process, walls, the minimum-length nozzle, and an axisymmetric appendix. It cites Anderson (2004) and Liepmann & Roshko (1957).
 - `Lecture 3-1.txt`: the Fri 16 Oct recording of 3.1 (372 lines).
 - `Lecture 3-2.txt`: the Mon 19 Oct recording of 3.2 (481 lines; the last 14 are goodbyes).
 - `Lecture 3-3.txt`: the Thu 22 Oct recording of 3.3 (303 lines; cut off mid-sentence at the end of slide 21).
+- `Lecture 3-4.txt`: the Fri 23 Oct recording of 3.4 (425 lines): the generic example (ll. 7–359) and the MoC coursework brief (ll. 361–425).
 - Anderson, *Modern Compressible Flow*, Ch. 11; *Fundamentals of Aerodynamics*, §13.3.
 - Figures: `generate_aerothermo_w05_figures.py`. Eight geometry and data figures; the unit-process code reproduces the slide answers. `at_moc_supersonic_source.png` and `at_moc_mach_angle_throat_angle.png` were added from the L3-2 and L3-3 recordings. Derivations are native Obsidian LaTeX.
 
 ## Self-study tasks
 
 > [!todo] How to use this list
-> - Tasks citing `L3-1`, `L3-2` or `L3-3` were set or worked in the lectures of Fri 16, Mon 19 and Thu 22 Oct. The only formal homework was the point 3 coordinates (L3-2, l. 456), plus two "check in your own time" derivations.
-> - Tasks marked **slide-set** come from the 3.4 deck, which has not been lectured yet.
+> - Tasks citing `L3-1` to `L3-4` were set or worked in the lectures of Fri 16, Mon 19, Thu 22 and Fri 23 Oct. The formal homework was the point 3 coordinates (L3-2, l. 456), plus two "check in your own time" derivations. L3-4 added *"try and do it on your own"* for the symbolic table (ll. 201–203) and the coursework.
 > - The rest are *suggested, not lecturer-set*.
 >
-> Deadlines: **Test 2 closes Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8). The **MoC coursework** (10 %) is due **Fri 6 Nov**, *"two weeks as of Friday this week"* (L3-2, ll. 9–12; see [[#Announcements and deadlines|the date check]]).
+> Deadlines: **Test 2 closes Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). The **MoC coursework** (10 %) is due **Sun 15 Nov** (L3-4, ll. 415–418), not the 6 Nov of L3-2 (see [[#Announcements and deadlines|the announcements]]).
 
 ### Lecturer-set or lecturer-prompted
 
@@ -1170,8 +1233,12 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 - [ ] **(L3-2, l. 349)** *"You can check in your own time"*: solve the two straight-line equations for $x_P$ and $y_P$ and recover the slide 8 formula. → [[#10. The unit process (3.2 slides 7–9)|§10]]
 - [ ] **(L3-2, ll. 453–459) Homework:** confirm that point 3 of the slide 9 example is at $(1.3592,\ 0.2814)$. The class did the flow state; the coordinates were left to you. → [[#Worked example (3.2 slide 9)|§10, steps 5–8]]
 - [ ] **(L3-3, ll. 132, 221–222)** Fill in the $M_e=2.4$ template yourself. This is the coursework procedure. → [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
-- [ ] **Test 2 on Blackboard**, two attempts, closes Sun 25 Oct (L3-1, ll. 3–5; L3-2, ll. 2–8).
-- [ ] **MoC coursework**, due Fri 6 Nov (L3-2, ll. 9–12). File the brief in `04 - Labs & Coursework` when it is released.
+- [ ] **(L3-4, ll. 198–203)** Fill in the symbolic 3.4 table on your own in under a minute: *"this type of question was one of the questions in the past papers"*. → [[#15. The generic MoC example (Lecture 3.4)|§15]]
+- [ ] **(L3-4, ll. 206–281)** Spot the non-physical entry before being told: why point 3 cannot reflect and point 5 does not exist. → [[#15. The generic MoC example (Lecture 3.4)|§15]]
+- [ ] **(L3-4, ll. 298–348)** Recover $\theta_w=5.014^\circ$ and $M_0=1.834$ from $M_4=2.2$ and $M_6=2.4$. → [[#15. The generic MoC example (Lecture 3.4)|§15, the inverse problem]]
+- [ ] **Test 2 on Blackboard**, two attempts, closes Sun 25 Oct (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). → [[SESA3029 Test 2 - Solutions]]
+- [ ] **MoC coursework** (L3-4, ll. 361–418): minimum-length nozzle for $M_e=3.X$ ($X$ = last digit of your student ID), five characteristics, 20 points, six sections, at most six A4 pages. **Due Sun 15 Nov.** File the brief in `04 - Labs & Coursework`. → [[#Announcements and deadlines]] and [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
+- [ ] **(L3-4, ll. 400–411)** *Optional:* automate the table (Excel or Python) and add more lines to see the wall converge. → [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
 
 ### Derivations
 
@@ -1191,7 +1258,7 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 - [ ] **(L3-2, ll. 357–459)** Find $M_3$, $\theta_3$ and $(x_3,y_3)$ for the slide 9 example, with the calculator in degrees. Answer: $1.7039$, $8.9367^\circ$, $(1.3591,\ 0.2814)$. → [[#Worked example (3.2 slide 9)|§10]]
 - [ ] **(L3-3, ll. 215–292)** Fill in the template for points 1–14 of the $M_e=2.4$ nozzle. Point 14 is at $(8.069,\ 2.400)$. → [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
 - [ ] **(L3-3, ll. 206–214)** The lecturer's trick: find $\theta_{max}$ for $M_e=3.2$, then recover $M_e$ from a measured $26.74^\circ$. Answer: $26.735^\circ$, $M_e=3.20$. → [[#13. The minimum-length nozzle (3.3 slide 10)|§13]]
-- [ ] **Slide-set (3.4 slides 2–15):** the symbolic table, the point-3 problem, and $M_0$, $\theta_w$ from $M_4$ and $M_6$. → [[#15. The generic MoC example (Lecture 3.4)|§15]]
+- [ ] *(Suggested, in the spirit of L3-4, ll. 349–358)* Reuse the symbolic table for $M_4=2.0$, $M_6=2.2$. Answer: $\theta_w=5.353^\circ$, $\nu_a=15.674^\circ$, $M_0=1.628$. → [[#15. The generic MoC example (Lecture 3.4)|§15]]
 - [ ] *(Suggested)* The $M_e=2.0$ nozzle with four lines. → [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14, "Your turn"]]
 - [ ] Redo [[SESA3029 Example Sheet 2 - Solutions#Q2. Characteristics and Riemann invariants|ES2 Q2]] and [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|Q3]] in the $R^\pm$ notation.
 - [ ] *(Suggested, coursework preparation)* Program the unit process, as the supplementary note recommends for more than about six lines. Validate it with point 14 and with $y_e/r_a\to A_e/A^*$. → [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14]]
@@ -1205,4 +1272,4 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 - [ ] **(L3-2, ll. 299–318)** Answer the lecturer's question: *"why will they turn?"* → [[#10. The unit process (3.2 slides 7–9)|§10]]
 - [ ] Tell the nozzle's $\theta_{max}$ (wall slope) apart from the oblique-shock $\theta_{max}$ (L3-3, ll. 137–139). → [[#12. Nozzles with a straightening section (3.3 slides 8–9)|§12]]
 - [ ] *(Suggested)* Explain what a listener hears from a supersonic speaker, and where the lecture's "reversed song" needs qualifying (L3-2, ll. 215–239). → [[#9. Zones of dependence and influence (3.2 slides 5–6)|§9]]
-- [ ] Explain why 3.4's point 3 does not reflect, and why 6's state survives while its position changes. → [[#15. The generic MoC example (Lecture 3.4)|§15]]
+- [ ] Explain why 3.4's point 3 does not reflect, and why 6's state survives while its position changes (L3-4, ll. 238–295). → [[#15. The generic MoC example (Lecture 3.4)|§15]]

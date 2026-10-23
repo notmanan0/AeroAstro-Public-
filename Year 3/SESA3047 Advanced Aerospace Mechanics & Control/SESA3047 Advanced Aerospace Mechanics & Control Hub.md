@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3047 Advanced Aerospace Mechanics & Control"]
 tags: [sesa3047, hub, moc]
 status: in-progress
-coverage: "Chapters 1–4; Chapter 4 §§4.1.1–4.1.2 lectured in L11, rest written from the handout; Lab 1 filed"
+coverage: "Chapters 1–4, all lectured; Chapter 4 in L11 (Mon 19 Oct) and L12–L13 (Thu 22 Oct); Lab 1 filed; Coursework 1 due Thu 29 Oct"
 ---
 
 # SESA3047 Advanced Aerospace Mechanics & Control Hub
@@ -15,7 +15,17 @@ coverage: "Chapters 1–4; Chapter 4 §§4.1.1–4.1.2 lectured in L11, rest wri
 >
 > Chapter 3 turns the toolkit into the first state equations of the 6-DOF model: **Euler-angle rates from body rates** → **velocity and acceleration in moving frames** → **position from body velocity** → **angular momentum and the inertia matrix** → **the rotational dynamic equation**.
 >
-> Current vault coverage: **Chapters 1–4**. Chapters 1–2 are lectured (L2–L7); Chapter 3 is backfilled through L10, with the explicit derivative revisited in L11. **L11** continues into Chapter 4: full inertia expansion and principal axes (§§4.1.1–4.1.2). **The complete Chapter 4 handout is now written up**: aircraft symmetry, internal rotors, translational dynamics and the 12-state model. Beyond §4.1.2 is written ahead, awaiting transcripts. **Lab 1** is filed (see [[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
+> Current vault coverage: **Chapters 1–4, all lectured and backfilled.**
+> - Chapters 1–2 are lectured (L2–L7).
+> - Chapter 3 is backfilled through L10, with the explicit derivative revisited in L11.
+> - **L11** (Mon 19 Oct) continues into Chapter 4: full inertia expansion and principal axes (§§4.1.1–4.1.2).
+> - **L12–L13** (the Thu 22 Oct double) **finish Chapter 4**: inertia coupling, aircraft symmetry, internal rotors, translational dynamics, and the 12-state model, which was shown from the lecture notes at the end.
+> - **Lab 1** is filed, and **Coursework 1** is due **Thu 29 Oct** (see [[#Labs and coursework]]).
+>
+> Quick reference: [[SESA3047 Formula Sheet]].
+
+> [!important] Deadlines
+> - **Coursework 1: due Thu 29 Oct, 23:00**, on Blackboard (Assessment → Coursework 1, with instructions there). It was uploaded before the L12 break (L12 ll. 352–357). The brief is not in the vault.
 
 ## Current coverage
 
@@ -46,14 +56,18 @@ coverage: "Chapters 1–4; Chapter 4 §§4.1.1–4.1.2 lectured in L11, rest wri
    - rotational dynamic equation, Euler's equations, the $J_{xz}$ aircraft form;
    - gyroscopic coupling, imbalance and the intermediate-axis theorem; how the 6-DOF equations fit together.
 
-8. [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]] (Chapter 4 §4.1; full matrix and principal axes lectured in L11; aircraft/rotors written ahead)
+8. [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]] (Chapter 4 §4.1; L11, then L12 and the start of L13)
    - full moment expansion, eigenvector interpretation, aircraft block inverse and internal rotor momentum;
-   - symbolic algebra checks and suggested numerical examples; transcript corrections with line references.
-9. [[SESA3047 4.2 - Translational Dynamics]] (Chapter 4 §4.2; written from handout, awaiting transcript)
-   - rotating Earth, effective gravity, flat Earth and transport into body axes;
-   - both force conventions and a checked numerical derivative.
-10. [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]] (Chapter 4 §4.3; written from handout, awaiting transcript)
-   - all twelve states, solver evaluation, full derivative example and an exact ballistic integration check.
+   - **inertia coupling with no external moment**: the three L12 cases, simulated;
+   - the $x$–$z$ symmetry argument, and what L12 said to remember;
+   - $\dot{\boldsymbol\omega}_{base}+\dot{\boldsymbol\omega}_{add}$; the aircraft rotor terms multiplied out; the diagonal (quadcopter) form;
+   - symbolic algebra checks and suggested numerical examples; transcript slips for L11–L13.
+9. [[SESA3047 4.2 - Translational Dynamics]] (Chapter 4 §4.2; L13 ll. 88–309)
+   - rotating Earth, flat Earth and transport into body axes; the gravity rotation the lecturer nearly forgot;
+   - the lecture's four-move derivation; "inertial" terminology flagged;
+   - effective gravity and the $X,Y,Z$ convention (handout only); a checked numerical derivative.
+10. [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]] (Chapter 4 §4.3; end of L13, shown from the notes)
+   - all twelve states and the 6 + 6 split, solver evaluation, full derivative example and an exact ballistic integration check.
 
 ## Week 1 concept map
 
@@ -90,7 +104,7 @@ coverage: "Chapters 1–4; Chapter 4 §§4.1.1–4.1.2 lectured in L11, rest wri
 
 ## Coverage boundary
 
-The current sources are **Chapters 1–4**. L11 reaches the principal-axis case, Chapter 4 §4.1.2. The remaining Chapter 4 material is written from the lecture-note PDF with no matching transcript yet. Later material such as trim, linearisation, stability, controllability, observability and control design remains outside current coverage.
+The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assembled 12-state model, Eq. 4.42, so **Chapter 4 is fully lectured**. A few handout equations were not lectured: Eq. 4.25 (changing rotor momentum), Eq. 4.31 (effective gravity), and Eqs. 4.38–4.40 (the $X,Y,Z$ convention). They are marked "handout only" in the notes. Later material such as trim, linearisation, stability, controllability, observability and control design remains outside current coverage.
 
 | Material | Vault status |
 |---|---|
@@ -99,12 +113,14 @@ The current sources are **Chapters 1–4**. L11 reaches the principal-axis case,
 | Chapter 3 §§3.1.4–3.2 | **Complete**, lectured in L8–L9 (Thu 8 Oct); line references, slips and tasks folded in |
 | Chapter 3 §3.3 | **Complete**, lectured in L10 (Mon 12 Oct); line references, slips and tasks folded in |
 | Chapter 3 §3.4 | From the notes; not lectured as a separate item (L10 ended at Eq. 3.70) |
-| Chapter 4 §§4.1.1–4.1.2 | **Complete**, lectured in L11; expansion, principal axes and slips backfilled |
-| Chapter 4 §§4.1.3–4.3 | **Complete from the handout**, written ahead; aircraft symmetry, rotors, translation and 12-state model |
-| Later chapters | Awaiting material |
+| Chapter 4 §§4.1.1–4.1.2 | **Complete**, lectured in L11 (Mon 19 Oct); expansion, principal axes and slips backfilled |
+| Chapter 4 inertia coupling, §§4.1.3–4.1.4 | **Complete**, lectured in L12 and L13 ll. 1–86 (Thu 22 Oct); Eq. 4.25 handout only |
+| Chapter 4 §4.2 | **Complete**, lectured in L13 ll. 88–309; Eqs. 4.31, 4.38–4.40 handout only |
+| Chapter 4 §4.3 | **Complete**, shown from the notes at the end of L13 (ll. 310–344) |
+| Later chapters | Awaiting material (no Chapter 5 handout filed yet) |
 
 > [!info] Build policy
-> Covered chapter notes are marked complete. The hub and formula sheet remain in progress. Chapter 4 was written in full from the lecture-note handout on 19 Oct; L11 defines the lectured boundary at §4.1.2. Future transcripts should backfill line references, slips and tasks in 4.1–4.3. Any Thursday recording(s) beyond the supplied L11 are **to be picked up next run** when available; no later matching transcript is currently filed.
+> Covered chapter notes are marked complete. The hub and formula sheet remain in progress. Chapter 4 was written in full from the lecture-note handout on 19 Oct and backfilled from L12–L13 on 23 Oct (line references, slips, lecturer-set tasks, and the inertia-coupling figure). Any SESA3047 recording after L13 is **to be picked up next run**.
 
 ## Labs and coursework
 
@@ -119,6 +135,9 @@ The current sources are **Chapters 1–4**. L11 reaches the principal-axis case,
 > | 3 | Integrate the rotational dynamics with the Euler-angle kinematics (Eqs. 3.10–3.11, 3.63–3.71); interpret geometric and inertial coupling | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)\|3.1 §7]], [[SESA3047 3.3 - Rigid-Body Rotational Dynamics\|3.3]] |
 >
 > The lecturer tied the coupling discussion to the lab: *"we will see how this affects the numerical simulations"* (L8, ll. 67–68). Lab 2 will use Simulink (Lab 1, p. 1).
+
+> [!important] Coursework 1: due Thu 29 Oct, 23:00
+> Announced before the L12 break: *"I have uploaded the coursework … in blackboard you can find the instructions as well. Under assessment, coursework one. And the coursework is due by the 29th of October at 11 p.m."* (L12 ll. 352–357). The lecturer was unsure whether a Blackboard announcement had gone out (l. 353). **The brief is not yet in the vault**: file it in `04 - Labs & Coursework/` so it can be mapped to the notes. Whether this is the Lab 1 report (20% above) or a separate piece is not said in the recording; check Blackboard.
 
 ## Week 1 exam skills
 
@@ -159,16 +178,20 @@ The current sources are **Chapters 1–4**. L11 reaches the principal-axis case,
 
 ## Chapter 4 exam skills
 
-The first two topics below are discussed in L11; the remaining topics are practice from the handout, not new lecturer-set exam requirements.
+All of Chapter 4 is now lectured (L11–L13). Items marked *handout only* were not covered in the recordings.
 
 - expand the full inertia equation by finding momentum components first (L11 ll. 81–180);
 - explain the eigenvector definition of principal axes and why FRD axes need not be principal (L11 ll. 181–228);
-- derive the aircraft roll–yaw inverse and check its zero-product limit;
-- include both the gyroscopic and spin-up contributions of rotor momentum;
-- derive rotating-Earth and flat-Earth translational dynamics; distinguish effective gravity from gravitation;
-- translate between gravity-excluding and gravity-including body-force conventions;
-- assemble the twelve states in the handout's order and distinguish all four equation groups;
-- explain solver evaluation order and check it against the yawing ballistic example.
+- explain inertia coupling with no external moment: with two non-zero rates all three change; $J_{xx}=J_{zz}$ removes the $\dot q$ coupling; a single-axis spin is steady (L12 ll. 22–119). *"The case that I would generally remember"* is the diagonal one (L12 ll. 182–187);
+- explain why an $x$–$z$ symmetry plane gives $J_{xy}=J_{yz}=0$, and contrast this with the cm integral, which needs no symmetry (L12 ll. 128–137);
+- derive the aircraft roll–yaw inverse and check its zero-product limit (shown but not multiplied out in L12 ll. 142–171);
+- explain why the matrix form is kept for numerical work (L12 ll. 192–208);
+- derive $\dot{\boldsymbol\omega}=\dot{\boldsymbol\omega}_{base}+\dot{\boldsymbol\omega}_{add}$ for a rotor with constant body-frame momentum, and say why the rigid-body equations still hold for axisymmetric rotors (L12 ll. 222–349);
+- multiply out the rotor terms for the aircraft and diagonal $\mathbf J$ (L13 ll. 9–86); the spin-up term is *handout only*;
+- derive flat-Earth translational dynamics in four moves: Newton, rotating Earth (centrifugal + Coriolis), flat Earth, body-frame derivative. Then rotate $\mathbf g$ into FRD (L13 ll. 104–309);
+- effective gravity vs gravitation, and the gravity-including $X,Y,Z$ convention (*handout only*);
+- assemble the twelve states in the handout's order, explain *"6 states for the dynamics, and 6 for the kinematics"*, and distinguish all four equation groups (L13 ll. 310–340);
+- explain why the model is integrated numerically and check solver evaluation order against the yawing ballistic example (L13 ll. 318–325).
 
 ## All notes
 
@@ -189,7 +212,9 @@ SORT type ASC, file.name ASC
 ## Sources
 
 - Chapter_4.pdf (10 pages: inertia models, rotors, translational dynamics and complete 6-DOF state model).
-- L11 - SESA3047.txt (232 lines: explicit derivative, full inertia expansion and principal axes; stops at §4.1.2).
+- L11 - SESA3047.txt (Mon 19 Oct; 232 lines: explicit derivative, full inertia expansion and principal axes; stops at §4.1.2).
+- L12 - SESA3047.txt (Thu 22 Oct, first half; 360 lines: inertia coupling, aircraft symmetry, rotors to Eq. 4.20; Coursework 1 announced).
+- L13 - SESA3047.txt (Thu 22 Oct, second half; 344 lines: aircraft rotor terms, translational dynamics, the 12-state model; end of Chapter 4).
 
 - `02 - Sources/Lectures/Chapter 1.pdf`
 - `02 - Sources/Lectures/L2 - SESA3047.txt`
@@ -216,3 +241,10 @@ SORT type ASC, file.name ASC
 
 > [!warning] L11 recording slips
 > Repeated acceleration components in ll. 91–92, garbled matrix dimensions in ll. 113–115 and recording artefacts including “11 pm” in ll. 198–201. The corrected algebra and exact scope are in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Transcript slips and source qualifications|4.1]]. No new recoverable deadline is announced.
+
+> [!warning] L12–L13 recording slips
+> - L12: *"L, M, M"* and *"L, M, L"* for $L,M,N$ (ll. 23, 160); *"F, D, and R"* for FRD (l. 125); *"sum of the external momentum"* for moments (ll. 259, 312). The rotor momentum *"doesn't change in time"* (ll. 295–297) means only in the body frame.
+> - Handout Eq. 4.10 reads *"$J_{xz}=J_{xz}$"* for $J_{xy}=J_{yz}=0$.
+> - These are flagged in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Transcript slips and source qualifications|4.1]].
+> - L13: $\mathbf F/m+\mathbf G$ called *"the inertial forces"* (ll. 188–189); the true inertial forces are centrifugal and Coriolis. Flagged in [[SESA3047 4.2 - Translational Dynamics#Transcript slips (L13)|4.2]].
+> - L13: *"on the right side, they have a derivative in time"* (ll. 318–319); the derivatives are on the left. Flagged in [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model#Transcript slips (L13 ll. 310–344)|4.3]].
