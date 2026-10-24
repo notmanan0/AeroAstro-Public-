@@ -7,7 +7,7 @@ order: 2
 tags: [sesa3029, compressible-flow, oblique-shock, mach-wave, theta-beta-m]
 aliases: ["SESA3029 Week 2", "SESA3029 Lecture 2.1", "SESA3029 Lecture 2.2", "Oblique Shock Waves (SESA3029)"]
 date: 2026-09-28
-status: complete
+status: lectured
 coverage: "Week 2 (Lectures 2.1 and 2.2)"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes]]", "[[Normal-Shock Jump Relations]]", "[[Oblique Shock Waves]]"]
@@ -190,7 +190,7 @@ $$
 \frac{U_{n2}}{U_{t2}}=\tan(\beta-\theta).
 $$
 
-### Step 2 — tangential momentum removes $U_t$
+### Step 2 — tangential momentum removes Uₜ
 
 Because $U_{t1}=U_{t2}$, dividing the first ratio by the second cancels $U_t$:
 
@@ -655,6 +655,9 @@ Walk along the bow shock from the axis outwards (ll. 215–242):
 - Next: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]
 - Year 2 foundation: [[Oblique Shock Waves]] and [[Intake Pressure Recovery]] in [[SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and Intakes]] (note the different symbols: SESA2023 used $\sigma$ for the shock angle and $\delta$ for the deflection)
 - Full formula list: [[SESA3029 Formula Sheet]]
+- **Builds on / connects to** (cross-module):
+  - Year 2: [[Oblique Shock Waves]] and [[SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and Intakes]] used the θ–β–M relation for intakes; §5 here derives it.
+  - [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#7. A mystery flow: wedges and corners|SESA3043 1.3 §7]]: the same wedge in incompressible potential flow. Subsonically the flow turns smoothly and accelerates from a stagnation point as $U_e\propto s^m$; supersonically it turns abruptly through an attached oblique shock.
 
 ## Sources
 
@@ -663,29 +666,36 @@ Walk along the bow shock from the axis outwards (ll. 215–242):
 - Anderson, *Fundamentals of Aerodynamics*: Week 2 reading is §§9.1, 9.2 and 9.5 (module schedule, `Lecture1-1.pdf` p. 10)
 - Next: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]] (Lectures 2.3–2.5). Worked solutions to the related sheet: [[SESA3029 Example Sheet 1 - Solutions]]
 
-## Self-study tasks set in lectures
+## Self-study tasks
 
 > [!todo] How to use this list
 > Every task below was set, or explicitly left to you, in Lecture 2.1. Worked solutions are in this note. **Attempt each one closed-book first**, then check against the linked section. Tick the box once you can reproduce it unaided.
 
-### Derivations
+### Core
+
+- [ ] **Why the normal-shock relations apply with $M_n$**: write the oblique and normal equation sets side by side (L2-1, ll. 46–58). → [[#4. It is a normal shock in the normal component|§4]]
+- [ ] **$\theta$–$\beta$–$M$ relation from scratch**: tangents → $U_{n1}/U_{n2}$ → density jump → identity → algebra. *"A bit tedious algebra you could do it in 10 minutes"* (L2-1, ll. 97–178). The transcript's version contains two on-the-fly corrections, so work from the clean version. → [[#5. The θ–β–M relation, step by step|§5]]
+- [ ] **Chart reading**: $\theta=15^\circ$, $M_1=2$ ⇒ $\beta$ (L2-1, ll. 188–191). Target: weak $45.3^\circ$, strong $79.8^\circ$ (not the "42 or 43" in the recording). → [[#8.1 Lecture chart example: M₁ = 2, θ = 15°|§8.1]]
+- [ ] **Example 1 exactly, by iteration**: homework (L2-2, ll. 81–89; slide 6). Target: $\beta=51.34^\circ$, $M_2=1.245$. → [[#10.1 Example 1: M₁ = 1.8, θ = 15°|§10.1]]
+- [ ] **Example 2 intake**: reproduce 0.328, then 0.754 × 0.762 = 0.574 (L2-2, ll. 89–157). Note the corrected 0.754 (ll. 153–155). → [[#10.2 Example 2: a supersonic intake at M₁ = 3|§10.2]]
+
+### Further practice
+
+#### Derivations
 
 - [ ] **Normal-shock jump relations**, if not done last week: *"have you done that as a homework last week… if you haven't please do so, those are some good examples of some derivation questions in the exam"* (L2-1, ll. 51–54). → [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Pressure jump (homework)|W01 §5]]
 - [ ] **Conservation laws across an oblique shock**, including tangential momentum ⇒ $U_{t1}=U_{t2}$, and why $\tfrac12U_t^2$ cancels in the energy equation (L2-1, ll. 30–45). → [[#3. Conservation laws across the oblique shock|§3]]
-- [ ] **Why the normal-shock relations apply with $M_n$**: write the oblique and normal equation sets side by side (L2-1, ll. 46–58). → [[#4. It is a normal shock in the normal component|§4]]
-- [ ] **$\theta$–$\beta$–$M$ relation from scratch**: tangents → $U_{n1}/U_{n2}$ → density jump → identity → algebra. *"A bit tedious algebra you could do it in 10 minutes"* (L2-1, ll. 97–178). The transcript's version contains two on-the-fly corrections, so work from the clean version. → [[#5. The θ–β–M relation, step by step|§5]]
 - [ ] **The two $\theta=0$ solutions**: show that they are $\beta=90^\circ$ and $\beta=\mu$ (L2-1, ll. 204–212). → [[#The two ends of every curve (θ = 0)|§6]]
 - [ ] **Mach angle** $\mu=\sin^{-1}(1/M)$ from the sound-pulse construction (L2-1, ll. 230–235). → [[#Deriving the Mach angle|§7]]
 - [ ] *(Suggested, not lecturer-set)* Show that $p_{02}/p_{01}$ depends only on $M_{n1}$. → [[#Why p₀₂/p₀₁ depends only on Mₙ₁ (derivation)|§4]]
 
-### Calculations
+#### Calculations
 
-- [ ] **Chart reading**: $\theta=15^\circ$, $M_1=2$ ⇒ $\beta$ (L2-1, ll. 188–191). Target: weak $45.3^\circ$, strong $79.8^\circ$ (not the "42 or 43" in the recording). → [[#8.1 Lecture chart example: M₁ = 2, θ = 15°|§8.1]]
-- [ ] Complete the downstream state for that shock: $p_2/p_1=2.19$, $M_2=1.45$, $p_{02}/p_{01}=0.952$. Compare with a normal shock.
+- [ ] Complete the downstream state for the chart-reading shock ($M_1=2$, $\theta=15^\circ$): $p_2/p_1=2.19$, $M_2=1.45$, $p_{02}/p_{01}=0.952$. Compare with a normal shock.
 - [ ] **Solve for $\beta$ numerically** *"by using some iterative methods"* (L2-1, l. 192). → [[#8.2 Solving for β numerically|§8.2]]
 - [ ] Find $\theta_{max}$ for $M_1=2$ from the chart and check it against $22.97^\circ$ (L2-1, ll. 201–204). → [[#Maximum deflection and detachment|§6]]
 
-### Concepts and reading
+#### Concepts and reading
 
 - [ ] Explain **weak versus strong** solutions and which one is normally observed (L2-1, ll. 193–201; slide 9). → [[#Weak and strong solutions|§6]]
 - [ ] Explain **shock detachment** above $\theta_{max}$ and its link to the Pitot bow shock (L2-1, ll. 201–204).
@@ -694,11 +704,9 @@ Walk along the bow shock from the axis outwards (ll. 215–242):
 - [ ] Preview `Lecture2-2.pdf` (*Oblique Shock Examples*) before the Thursday lecture: *"we are going to have a look at some examples of oblique shocks… Thursday"* (L2-1, ll. 236–237).
 - [ ] Blackboard **Test 1 is due Sun 11 Oct**. The quiz is released after Lecture 2.3: *"after that a quiz will be released… deadline is Sunday next week"* (L2-2, ll. 243–244).
 
-### Lecture 2.2 tasks
+#### Lecture 2.2 tasks
 
 - [ ] **Example 1 by linear interpolation**: *"I want you to try this first using a linear interpolation"* (L2-2, ll. 79–80). Target: $M_2=1.259$. → [[#10.1 Example 1: M₁ = 1.8, θ = 15°|§10.1]]
-- [ ] **Example 1 exactly, by iteration**: homework (L2-2, ll. 81–89; slide 6). Target: $\beta=51.34^\circ$, $M_2=1.245$. → [[#10.1 Example 1: M₁ = 1.8, θ = 15°|§10.1]]
-- [ ] **Example 2 intake**: reproduce 0.328, then 0.754 × 0.762 = 0.574 (L2-2, ll. 89–157). Note the corrected 0.754 (ll. 153–155). → [[#10.2 Example 2: a supersonic intake at M₁ = 3|§10.2]]
 - [ ] Explain why the Concorde intake is slanted and has variable ramps (L2-2, ll. 158–194). → [[#10.2 Example 2: a supersonic intake at M₁ = 3|§10.2(c)]]
 - [ ] Walk the points a → e along a bow shock and place each on the chart (L2-2, ll. 215–242). → [[#10.4 Detachment and the bow shock: every solution on one curve|§10.4]]
 - [ ] *(Suggested, not lecturer-set)* Find the optimum ramp angle at $M_1=3$ (22.6°) and the two-ramp optimum (0.744). → [[#10.2 Example 2: a supersonic intake at M₁ = 3|§10.2]]

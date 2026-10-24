@@ -35,7 +35,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22–23 Oct 
 
 1. [[SESA3043 1.1 - Mathematical Tools and Flow Description]]
 2. [[SESA3043 1.2 - Conservation Laws and Governing Equations]]
-3. [[SESA3043 1.3 - Potential-Flow Review]] (Week 1)
+3. [[SESA3043 1.2b - Potential-Flow Review]] (Week 1)
 4. [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]] (lectured 1 Oct)
    - cylinder by superposition (four steps) and the lifting cylinder;
    - complex potential, Cauchy–Riemann, complex potentials of all elementary flows;
@@ -60,6 +60,8 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22–23 Oct 
 14. [[SESA3043 3.6 - Viscous-Inviscid Interaction]]: SDM and STM, $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; XFOIL; wind-tunnel VII example; **coursework** pointer.
 
 **Worked solutions:** [[SESA3043 Ch1 Revision Questions - Worked Solutions]] · [[SESA3043 Ch2 Revision Questions - Worked Solutions]] · [[SESA3043 Ch3 Revision Questions - Worked Solutions]]
+
+**Mock questions:** [[SESA3043 Mock Questions - Chapters 1-3]]: eight self-written, exam-style questions (20 marks each) on everything lectured up to 23 Oct, with full worked solutions checked in Python. They are not lecturer-set.
 
 ## Week 1 concept map
 
@@ -189,6 +191,7 @@ SORT type ASC, file.name ASC
 - **From** [[SESA2022 Aerodynamics Hub]]: [[SESA2022 T3 - Potential Flow]], [[SESA2022 T4 - Thin Aerofoil Theory]], [[SESA2022 T2 - Boundary Layers]].
 - **From** [[SESA2029 Digital Aerospace Methods Hub]]: [[Navier-Stokes Equations]], the computational conservation form, and the Blasius shooting method.
 - **Alongside** [[SESA3029 Aerothermodynamics Hub]]: compressible flow; supersonic aerodynamic centre at $c/2$.
+- **Year 3 bridges (note level):** Reynolds transport theorem ([[SESA3043 1.1 - Mathematical Tools and Flow Description|1.1]]) against the *vector* transport theorem of [[SESA3047 2.1 - Vector Operations and the Transport Theorem|SESA3047 2.1]] (same name, different theorems) · conservation laws ([[SESA3043 1.2 - Conservation Laws and Governing Equations|1.2]]) in integral form across shocks ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes|SESA3029 W01]]) · wedge flow $U_e\propto s^m$ ([[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli|1.3]]) feeding the Falkner–Skan edge velocity ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions|3.2]]) · Cauchy–Riemann ([[SESA3043 2.1 - Complex Functions and Conformal Mapping|2.1]]) against characteristics ([[SESA3029 W05a - Method of Characteristics|SESA3029 W05a]]) · LVM lift ([[SESA3043 2.2 - Lumped Vortex Method|2.2]]) against shock-expansion lift ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|SESA3029 W03]]) and as the force input to [[SESA3047 4.2 - Translational Dynamics|SESA3047 4.2]].
 
 ## Sources
 

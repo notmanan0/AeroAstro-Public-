@@ -6,7 +6,7 @@ stream: "Chapter 1: Conservation Laws"
 aliases: ["incompressible NS equations"]
 tags: [sesa3043, concept, navier-stokes, incompressible-flow]
 status: complete
-parent_lectures: ["[[SESA3043 1.2 - Conservation Laws and Governing Equations]]", "[[SESA3043 1.3 - Potential-Flow Review]]"]
+parent_lectures: ["[[SESA3043 1.2 - Conservation Laws and Governing Equations]]", "[[SESA3043 1.2b - Potential-Flow Review]]"]
 related_concepts: ["[[Continuity Equation in Conservative Form]]", "[[Newtonian Stress Tensor]]", "[[Streamfunction and Velocity Potential]]"]
 sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Sources/Lectures/L3 - SESA3043.txt"]
 ---

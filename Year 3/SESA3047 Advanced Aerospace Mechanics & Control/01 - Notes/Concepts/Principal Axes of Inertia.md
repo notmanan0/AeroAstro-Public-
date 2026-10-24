@@ -36,6 +36,8 @@ Body-fixed coordinates are not automatically principal coordinates. An aircraft'
 
 For $\mathbf J=\begin{bmatrix}4&-1&0\\-1&4&0\\0&0&6\end{bmatrix}$ kg m², the principal moments are $3,5,6$, with directions $[1,1,0]/\sqrt2$, $[-1,1,0]/\sqrt2$ and $[0,0,1]$. The full eigenvalue calculation and Euler-equation derivation are in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#3. Principal axes and diagonal inertia (4.6–4.9)|4.1 §3]].
 
+For the symmetric aircraft with $J_{xz}\neq0$, the principal $x$ axis is tilted about $y$ by $\varepsilon$, where $\tan2\varepsilon=2J_{xz}/(J_{zz}-J_{xx})$. With $J_{xx}=1285$, $J_{zz}=2667$ and $J_{xz}=100$ kg m², $\varepsilon=4.1^\circ$ nose-down, and the principal moments are $1277.8$ and $2674.2$ kg m² ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Worked principal axes of the aircraft inertia (suggested)|4.1 §4]]).
+
 > [!warning] Diagonal inertia still permits coupling
 > For example, $J_{xx}\dot p=L+(J_{yy}-J_{zz})qr$. Principal axes remove products of inertia, not all products of angular rates. With no external moment and $q_0=0$, a body rolling and yawing still gains pitch rate at $\dot q=(J_{zz}-J_{xx})pr/J_{yy}$, and then all three rates change. Only a single-axis spin, or equal inertias, stays put (L12 ll. 22–119; simulated in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment (L12 ll. 22–119)|4.1 §3]]).
 

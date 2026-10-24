@@ -84,6 +84,8 @@ $$
 \nu=\frac\mu\rho.
 $$
 
+Stokes' hypothesis $\lambda=-\tfrac23\mu$ makes the trace vanish, $\tau_{ii}=(2\mu+3\lambda)\nabla\cdot\mathbf u=0$: zero mean viscous normal stress ([[SESA3043 1.2 - Conservation Laws and Governing Equations#What Stokes' hypothesis does|1.2]]).
+
 ## Total energy
 
 $$
@@ -257,6 +259,8 @@ $$
 
 Thwaites (extension): $\theta^2=\dfrac{0.45\nu}{U_e^6}\displaystyle\int_0^xU_e^5\,\mathrm dx$.
 
+Mean skin friction of a flat plate of length $L$ (any regime; ship example, slides 40–44): $\overline{C_f}=\dfrac{2\,\theta(L)}{L}$. Fully rough wall (extension): $\sqrt{2/C_f}=\kappa^{-1}\ln(\delta/k_s)+8.5+2\Pi/\kappa$, independent of $\nu$.
+
 ## Viscous–inviscid interaction (3.6)
 
 $$
@@ -267,7 +271,7 @@ $$
 
 - [[SESA3043 1.1 - Mathematical Tools and Flow Description]]
 - [[SESA3043 1.2 - Conservation Laws and Governing Equations]]
-- [[SESA3043 1.3 - Potential-Flow Review]]
+- [[SESA3043 1.2b - Potential-Flow Review]]
 - [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]]
 - [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]]
 - [[SESA3043 2.1 - Complex Functions and Conformal Mapping]]

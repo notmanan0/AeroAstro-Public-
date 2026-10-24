@@ -55,7 +55,7 @@ $$
 
 ---
 
-## Q2. Local Mach number from $T_0$, $\rho$ and $p$
+## Q2. Local Mach number from T₀, ρ and p
 
 > A point in a flow has $T_0=805$ K, $\rho=0.29$ kg/m³ and $p=27.6$ kPa. Find $M$ to two decimal places.
 

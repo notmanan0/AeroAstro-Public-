@@ -5,7 +5,7 @@ type: tutorial
 stream: "Chapter 1: Conservation Laws"
 tags: [sesa3043, tutorial-solutions, revision-questions, conservation-laws, potential-flow, boundary-layer]
 sheet: "Chapter 1 Revision Questions"
-theory_notes: ["[[SESA3043 1.1 - Mathematical Tools and Flow Description]]", "[[SESA3043 1.2 - Conservation Laws and Governing Equations]]", "[[SESA3043 1.3 - Potential-Flow Review]]", "[[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]]", "[[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]]"]
+theory_notes: ["[[SESA3043 1.1 - Mathematical Tools and Flow Description]]", "[[SESA3043 1.2 - Conservation Laws and Governing Equations]]", "[[SESA3043 1.2b - Potential-Flow Review]]", "[[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]]", "[[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]]"]
 status: complete
 sources: ["03 - Exams & Past Papers/Ch1_Revision_Questions.pdf"]
 ---

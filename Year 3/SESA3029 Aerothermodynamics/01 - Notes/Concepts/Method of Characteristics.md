@@ -6,7 +6,7 @@ stream: "Block 3: Nozzles and the Method of Characteristics"
 aliases: ["MoC", "method of characteristics", "MoC unit process", "unit process"]
 tags: [sesa3029, concept, method-of-characteristics, supersonic, nozzle-design]
 status: complete
-parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
+parent_lectures: ["[[SESA3029 W05a - Method of Characteristics]]", "[[SESA3029 W05b - Minimum-Length Nozzle Design]]"]
 related_concepts: ["[[Riemann Invariants]]", "[[Homentropic Flow]]", "[[Minimum-Length Nozzle]]", "[[Prandtl-Meyer Function]]", "[[Mach Waves and Mach Angle]]"]
 sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt", "02 - Sources/Lectures/Lecture 3-4.txt"]
 ---
@@ -49,18 +49,18 @@ $$
 | symmetry plane (an inviscid wall with $\theta_W=0$, L3-3, l. 93) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
 
 > [!warning] Check the physics, not just the rules (L3-4, ll. 206–281)
-> A prescribed wall reflects only if the arriving flow is **not** already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, blind bookkeeping produces a reflection at point 3 and a point 5 that *"doesn't exist"*. *"Always think about the results, whether it makes sense or not"* ([[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#15. The generic MoC example (Lecture 3.4)|W05 §15]]).
+> A prescribed wall reflects only if the arriving flow is **not** already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, blind bookkeeping produces a reflection at point 3 and a point 5 that *"doesn't exist"*. *"Always think about the results, whether it makes sense or not"* ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example (Lecture 3.4)|W05b §15]]).
 
 **Zones.** The characteristics through P bound its **zone of dependence** (upstream) and **zone of influence** (downstream).
 
 **Limits.** No shocks, so entropy stays uniform, and $M>1$ everywhere. In planar flow the states do not depend on the coordinates. In axisymmetric flow they do, and the invariants change along the lines as $\partial R^\pm/\partial\eta=\sin\mu\sin\theta/r$.
 
-**Worked**: the 3.2 slide 9 example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ and $(1.3591,\ 0.2814)$ ([[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Worked example (3.2 slide 9)|W05 §10]]).
+**Worked**: the 3.2 slide 9 example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ and $(1.3591,\ 0.2814)$ ([[SESA3029 W05a - Method of Characteristics#Worked example (3.2 slide 9)|W05a §10]]).
 
 ![[at_moc_unit_process.png|760]]
 
 ## Related
 
 - [[Riemann Invariants]] · [[Homentropic Flow]] · [[Minimum-Length Nozzle]] · [[Prandtl-Meyer Function]] · [[Mach Waves and Mach Angle]]
-- Detail: [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]] · Practice: [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]]
+- Detail: [[SESA3029 W05a - Method of Characteristics]] (theory, unit process) · [[SESA3029 W05b - Minimum-Length Nozzle Design]] (boundary conditions, nozzle design) · Practice: [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]]
 - Maths: [[Eigenvalues and Eigenvectors]]

@@ -6,7 +6,7 @@ stream: "Block 3: Nozzles and the Method of Characteristics"
 aliases: ["Riemann invariant", "compatibility conditions", "compatibility condition", "R+ and R-", "K+ and K-"]
 tags: [sesa3029, concept, method-of-characteristics, riemann-invariants]
 status: complete
-parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
+parent_lectures: ["[[SESA3029 W05a - Method of Characteristics]]"]
 related_concepts: ["[[Method of Characteristics]]", "[[Prandtl-Meyer Function]]", "[[Homentropic Flow]]"]
 sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture3-2.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-1.txt", "02 - Sources/Lectures/Lecture 3-2.txt", "02 - Sources/Lectures/Lecture 3-3.txt"]
 ---
@@ -22,7 +22,7 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 
 ## Explanation
 
-**Derivation, in outline** (full version in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05 §7]]):
+**Derivation, in outline** (full version in [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]):
 
 1. Mass, $l$-momentum, homentropy and zero vorticity on a streamtube give two PDEs in $\nu$ and $\theta$:
    $$\partial\nu/\partial l-\tan\mu\,\partial\theta/\partial n=0,\qquad\partial\theta/\partial l-\tan\mu\,\partial\nu/\partial n=0.$$

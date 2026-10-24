@@ -7,7 +7,7 @@ order: 3
 tags: [sesa3029, compressible-flow, shock-reflection, mach-reflection, slip-line, entropy, prandtl-meyer, expansion-fan, shock-expansion]
 aliases: ["SESA3029 Week 3", "SESA3029 Lecture 2.3", "SESA3029 Lecture 2.4", "SESA3029 Lecture 2.5"]
 date: 2026-10-01
-status: complete
+status: lectured
 coverage: "Lectures 2.3, 2.4 and 2.5 (lectured 2, 5 and 8 Oct; transcripts L2-3, L2-4 and last year's L2-5 recording)"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W02 - Oblique Shock Relations and Mach Waves]]", "[[Theta-Beta-Mach Relation]]", "[[Mach Waves and Mach Angle]]"]
@@ -772,6 +772,9 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 - Worked sheet: [[SESA3029 Example Sheet 1 - Solutions]] (Q3, Q4, Q6, Q7)
 - Tutorial: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing]] (ES1 Q3 and a triangular wing, Fri 9 Oct)
 - Formulae: [[SESA3029 Formula Sheet]]
+- **Builds on / connects to** (cross-module):
+  - [[SESA3043 2.2 - Lumped Vortex Method#1. Thin-aerofoil review (slides 25–27; revision 2.2 Q1)|SESA3043 2.2 §1]]: the subsonic flat plate has $C_l=2\pi\alpha=1.097$ at $\alpha=10^\circ$, no drag and its aerodynamic centre at $c/4$. The supersonic plate of §6 at $M_1=2$ gives $C_l=0.4075$, wave drag $C_d=0.0719$ and a centre of pressure near $c/2$.
+  - [[SESA3043 2.1 - Complex Functions and Conformal Mapping|SESA3043 2.1]] / [[SESA3043 2.2 - Lumped Vortex Method|2.2]] compute the low-speed loads that the shock-expansion method replaces at $M>1$.
 
 ## Sources
 
@@ -787,25 +790,30 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 > [!todo] How to use this list
 > Tasks marked **Lecturer-set** cite the transcript line where they were set. **Slide-set** tasks are printed on the slides. The rest are *suggested, not lecturer-set*. Lecture 2.5 line references are to last year's recording (`L2-5`). Attempt each one closed-book, then check against the linked section.
 
-### Lecturer-set
+### Core
 
 - [ ] **Lecturer-set (L2-3, ll. 74–76):** solve the θ–β–M equation numerically for $M_1=3.6$, $\theta=10^\circ$ and *"confirm that"* $\beta_A=23.9^\circ$. → [[#Worked example (slides 2–4): M₁ = 3.6, θ = 10°, p₁ = 40 kPa|§1]]
 - [ ] **Lecturer-set, past exam question (L2-3, ll. 317–319, 388–390):** the double shock interaction, $M_1=3$, walls $18^\circ$ and $12^\circ$. Find the slip-line angle by two guesses and interpolation: $\Delta\theta=5.83^\circ$ (lecture: 5.85°). → [[#3. Shock–shock interaction and slip lines|§3]]
+- [ ] **Lecturer-set (L2-5, l. 57):** *"I strongly recommend you to do these calculation[s] yourself"*: the flat plate at $M_1=2$, $\alpha=10^\circ$, upper and lower surfaces, by table interpolation. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
+- [ ] **Slide-set (2.3, slide 9, "show it"):** $s_2-s_1$ depends only on $M_{n1}$, and $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$. The lecture plotted it and drew the conclusions (L2-3, ll. 396–435). → [[#4. Entropy across a shock and why shocks compress|§4]]
+- [ ] *(Suggested; derived in full in L2-4, ll. 71–232)* Derive $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ from tangential momentum across a Mach wave, then convert to $\mathrm dM$. → [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
+
+### Further practice
+
+#### Lecturer-set
+
 - [ ] **Lecturer-set (L2-3, ll. 182–184):** *"if you haven't done proper revision, then probably it's a good time to do that, to catch up"*. Work through [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes|W01]] and [[SESA3029 W02 - Oblique Shock Relations and Mach Waves|W02]].
 - [ ] **Lecturer-set (L2-4, ll. 307–310):** *"If you go through a few example questions then you will be familiar with this process"*: practise $\nu(M_2)=\nu(M_1)+\theta$ with the IFT. → [[#Using it (slides 7–8)|§5]] and [[SESA3029 Example Sheet 1 - Solutions]]
-- [ ] **Lecturer-set (L2-5, l. 57):** *"I strongly recommend you to do these calculation[s] yourself"*: the flat plate at $M_1=2$, $\alpha=10^\circ$, upper and lower surfaces, by table interpolation. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
 - [ ] **Lecturer-set, Tutorial 1 weekend homework (ll. 232–235):** the triangular wing at a second $\alpha$, and $x_{ac}\approx c/2$. → [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre (ll. 228–235)|Tutorial 1]]
 - [ ] **Blackboard Test 1, due Sun 11 Oct, 23:59** (L2-4, ll. 1–3). It covers Week 1 material; expansion waves are not in it (*"the test is always looking backwards a bit"*, ll. 457–459). Own worked solutions: [[SESA3029 Test 1 - Solutions]].
 
-### Derivations
+#### Derivations
 
-- [ ] **Slide-set (2.3, slide 9, "show it"):** $s_2-s_1$ depends only on $M_{n1}$, and $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$. The lecture plotted it and drew the conclusions (L2-3, ll. 396–435). → [[#4. Entropy across a shock and why shocks compress|§4]]
 - [ ] *(Suggested)* Show that $(s_2-s_1)/c_v\approx\tfrac{2\gamma(\gamma-1)}{3(\gamma+1)^2}(M_{n1}^2-1)^3$, and hence that expansion shocks are impossible. → [[#4. Entropy across a shock and why shocks compress|§4]]
-- [ ] *(Suggested; derived in full in L2-4, ll. 71–232)* Derive $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ from tangential momentum across a Mach wave, then convert to $\mathrm dM$. → [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
 - [ ] *(Suggested)* Integrate to the closed-form $\nu(M)$ using $t=\sqrt{M^2-1}$ and partial fractions, and show $\nu_{max}=130.45^\circ$. → [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
 - [ ] Show $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up sign convention, and derive $x_{cp}/c=x_{ac}/c=1/(2\cos\alpha)$ (L2-5, ll. 106–117, 215–242); then explain why it is exactly $0.5$ along the chord. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
 
-### Calculations
+#### Calculations
 
 - [ ] Regular reflection, $M_1=3.6$, $\theta=10^\circ$: $p_3=189.6$ kPa, $\phi=17.5^\circ$. → [[#Worked example (slides 2–4): M₁ = 3.6, θ = 10°, p₁ = 40 kPa|§1]]
 - [ ] Shock–shock interaction: $\Delta\theta=5.83^\circ$ (slide: 5.85°). → [[#3. Shock–shock interaction and slip lines|§3]]
@@ -813,7 +821,7 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 - [ ] Flat plate: $C_l=0.4075$, $C_d=0.0719$, $C_{m,LE}=-0.2069$ (L2-5, ll. 131–137). Find $\beta$ by two trial angles and interpolation (ll. 68–74). → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
 - [ ] Example Sheet 1 Q3 (reflection), Q4 (flat plate), Q6–Q7 (diamond). → [[SESA3029 Example Sheet 1 - Solutions]]
 
-### Concepts
+#### Concepts
 
 - [ ] Explain why reflection is not specular, and when it becomes a Mach reflection. → [[#2. Mach reflection|§2]]
 - [ ] State the two conditions across a slip line and list what may jump. → [[#3. Shock–shock interaction and slip lines|§3]]

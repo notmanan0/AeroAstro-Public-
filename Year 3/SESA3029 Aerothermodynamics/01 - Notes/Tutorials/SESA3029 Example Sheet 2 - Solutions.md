@@ -5,7 +5,7 @@ type: tutorial
 stream: "Sections 3–4: method of characteristics and linearised supersonic/subsonic theory"
 tags: [sesa3029, tutorial-solutions, example-sheet, method-of-characteristics, riemann-invariant, ackeret, prandtl-glauert]
 sheet: "Example Sheet 2"
-theory_notes: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]", "[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
+theory_notes: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]", "[[SESA3029 W05a - Method of Characteristics]]", "[[SESA3029 W05b - Minimum-Length Nozzle Design]]"]
 status: complete
 sources: ["03 - Exams & Past Papers/ExamplesSheet2.pdf"]
 ---
@@ -14,7 +14,7 @@ sources: ["03 - Exams & Past Papers/ExamplesSheet2.pdf"]
 
 > [!abstract] Sheet info
 > Six questions from **Sections 3–4**:
-> - **Q1–Q3: the method of characteristics.** The theory began on Fri 16 Oct (Lecture 3.1: compatibility conditions and Riemann invariants). The unit process and boundary conditions (3.2–3.3) are written up ahead of their lectures in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].
+> - **Q1–Q3: the method of characteristics.** The theory began on Fri 16 Oct (Lecture 3.1: compatibility conditions and Riemann invariants). The unit process (3.2) is in [[SESA3029 W05a - Method of Characteristics]], and the boundary conditions (3.3) are in [[SESA3029 W05b - Minimum-Length Nozzle Design]]; both are now lectured.
 > - **Q4–Q6: Ackeret and Prandtl–Glauert linear theory**, Weeks 7–8, not yet lectured.
 >
 > Each section first derives the result it needs, so the solutions stand alone. All numbers are verified in Python. $\gamma=1.4$.
@@ -120,7 +120,7 @@ $$
 
 The sheet gives 3.04 and 9.15°; the difference is table rounding ✓.
 
-**(d) In the lecture's notation** (3.2 slide 7, [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#10. The unit process (3.2 slides 7–9)|W05 §10]]). P is above R (role B, its $C^-$ reaches R) and Q is below R (role A, its $C^+$ reaches R):
+**(d) In the lecture's notation** (3.2 slide 7, [[SESA3029 W05a - Method of Characteristics#10. The unit process (3.2 slides 7–9)|W05a §10]]). P is above R (role B, its $C^-$ reaches R) and Q is below R (role A, its $C^+$ reaches R):
 
 $$
 R^-_P=\nu_P+\theta_P=49.757+10=59.757^\circ,

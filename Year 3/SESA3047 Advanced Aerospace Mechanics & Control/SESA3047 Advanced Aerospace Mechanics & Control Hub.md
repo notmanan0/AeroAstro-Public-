@@ -156,6 +156,12 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 >
 > **Ambiguity:** 1(d) says *"using the final attitude angles from question B"*, but there is no question B, and part (b) produces equations, not angles. It most likely means the final angles of 1(a); possibly 1(c). Check with Dr Martinelli or on Blackboard, or state your assumption in the answer.
 
+## Tutorials and mock questions
+
+No tutorial or revision questions had been set for SESA3047 by 22 Oct 2026, and `03 - Exams & Past Papers` is empty.
+
+- [[SESA3047 Mock Questions - Chapters 1-4]]: **self-written, not lecturer-set**. Ten exam-style questions (118 marks) with timed full solutions and Python-checked numbers, covering classification and linearisation, frames and flat Earth, the transport theorem, DCMs and gimbal lock, Euler-angle rates, Coriolis acceleration, principal axes, rotor gyroscopics and the 12-state model. Its data deliberately differ from Lab 1 and Coursework 1.
+
 ## Week 1 exam skills
 
 - identify the plant, reference, error, controller, actuator, sensor, feedback and disturbance in a physical system;
@@ -225,6 +231,7 @@ SORT type ASC, file.name ASC
 - **From** [[SESA2022 Aerodynamics Hub]]: static stability and aerodynamic forces/moments.
 - **From** Year 1 vectors and rigid-body dynamics: [[MATH1054 M15 - Vectors II]], [[FEEG1002 D7 - Kinematics of Rigid Bodies]].
 - **Alongside** [[SESA3043 Advanced Aeronautics Hub]]: both modules distinguish a physical system from a deliberately simplified mathematical model. SESA3043's [[Reynolds Transport Theorem]] is a different "transport theorem" (system versus control volume).
+- **Year 3 bridges (note level):** the transport theorem of [[SESA3047 2.1 - Vector Operations and the Transport Theorem|2.1]] against the Reynolds transport theorem of [[SESA3043 1.1 - Mathematical Tools and Flow Description|SESA3043 1.1]] (different theorems, same name) · body-axis force equation ([[SESA3047 4.2 - Translational Dynamics|4.2]]): $\boldsymbol\omega\times\mathbf v$ plays the role of the convective acceleration in [[SESA3043 1.2 - Conservation Laws and Governing Equations|SESA3043 1.2]], and the aerodynamic $X$, $Z$ come from the lift and drag of [[SESA3043 2.2 - Lumped Vortex Method|SESA3043 2.2]].
 
 ## Sources
 

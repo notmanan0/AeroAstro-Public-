@@ -34,7 +34,7 @@ $$
 - $M=1$: all pulses pass through the source together, giving a plane front (the sonic boom) and a **zone of silence** ahead.
 - $M>1$: sound is heard only inside the **Mach cone** of half-angle $\mu$.
 
-**What you hear once the cone passes** (Lecture 3.2 aside). Pulses emitted while the source closes on you faster than $a$ arrive in **reverse** order. Later pulses arrive in normal order, at the same time. See [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#9. Zones of dependence and influence (3.2 slides 5–6)|W05 §9]].
+**What you hear once the cone passes** (Lecture 3.2 aside). Pulses emitted while the source closes on you faster than $a$ arrive in **reverse** order. Later pulses arrive in normal order, at the same time. See [[SESA3029 W05a - Method of Characteristics#9. Zones of dependence and influence (3.2 slides 5–6)|W05a §9]].
 
 In the method of characteristics, $\mu$ also sets the slope of every characteristic, $\theta\pm\mu$. Because $\mu$ changes with $M$, the characteristics bend as the flow accelerates.
 

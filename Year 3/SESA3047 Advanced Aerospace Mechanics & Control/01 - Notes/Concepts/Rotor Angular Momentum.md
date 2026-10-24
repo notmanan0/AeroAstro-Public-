@@ -67,6 +67,8 @@ $$
 
 Apply the full inertia inverse to this vector. Off-diagonal inertia can turn this into acceleration about all three axes.
 
+**A real propeller.** For $I_R=1.6$ kg m² at 2400 rpm (clockwise from the cockpit, so $+x_b$), $h_x=402.1$ kg m²/s. In a 0.2 rad/s pull-up, $-\boldsymbol\omega\times\mathbf h_R=[0,0,+80.4]^T$ N m: the nose yaws right, and raising the tail on take-off ($q<0$) yaws it left. Worked in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Worked engine-rotor gyroscopics in a pull-up (suggested)|4.1]].
+
 ## Related
 
 - Full derivation, aircraft scalar form, quadcopter case and spin-up example: [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#5. Spinning internal rotors (4.15–4.25)|4.1 §5]].

@@ -44,6 +44,8 @@ $$
 - Off-diagonal terms are shear stresses.
 - For incompressible constant-$\mu$ flow, $\nabla\cdot\mathbf u=0$ and $\nabla\cdot\boldsymbol\tau=\mu\nabla^2\mathbf u$.
 - $\nu=\mu/\rho$ is the kinematic viscosity.
+- Stokes' hypothesis $\lambda=-\tfrac23\mu$ makes the trace zero, $\tau_{ii}=0$: no mean viscous normal stress.
+- Worked example (stresses, vorticity and pressure for a linear field; a compressible stretching flow): [[SESA3043 1.2 - Conservation Laws and Governing Equations#9. Worked example: stress and momentum in a linear flow (suggested)|SESA3043 1.2 §9]].
 
 ## Related
 

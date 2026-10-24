@@ -41,7 +41,7 @@ Do not add another gravity term to that convention.
 
 ## Interpretation and checks
 
-Forces change the physical velocity vector; body rotation changes its coordinate components. Level free fall gives $\dot w=g$. Level supported motion with $\mathbf F=[0,0,-mg]^T$ and zero body rates gives zero derivative.
+Forces change the physical velocity vector; body rotation changes its coordinate components. Level free fall gives $\dot w=g$. Level supported motion with $\mathbf F=[0,0,-mg]^T$ and zero body rates gives zero derivative. In a steady level turn, $\dot{\mathbf v}=\mathbf 0$ although the aircraft accelerates towards the centre. The $y$ row then gives $\dot\psi=g\tan\phi/V$, and the $z$ row gives $F_z=-mg/\cos\phi$ ([[SESA3047 4.2 - Translational Dynamics#6. Worked example: forces for a steady level turn (suggested)|4.2 §6]]).
 
 This is **dynamics** for $u,v,w$. The [[Translational Kinematic Equation]] is $\dot{\mathbf p}^{NED}=\mathbf C^T\mathbf v$, which advances position.
 

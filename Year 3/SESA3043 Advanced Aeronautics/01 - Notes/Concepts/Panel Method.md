@@ -18,7 +18,7 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 > [!note] Definition
 > Represent a body surface by $N$ straight panels carrying constant-strength singularities, impose flow tangency at a control point on each, close the system with a Kutta condition, and solve the linear system for the strengths.
 
-## Elementary panels (panel on $x_1\le x_0\le x_2$)
+## Elementary panels (panel on x₁ ≤ x₀ ≤ x₂)
 
 | Panel | Far field | On the panel |
 |---|---|---|

@@ -31,6 +31,8 @@ $$
 
 The [[Material Derivative]] converts an Eulerian field into the rate seen by a Lagrangian particle. The [[Reynolds Transport Theorem]] performs the corresponding conversion for extensive quantities in a finite system and control volume.
 
+Worked numbers (the lecture's river example: bank probe $+1.00$ K/h, drifting buoy $-0.44$ K/h): [[SESA3043 1.1 - Mathematical Tools and Flow Description#9.1 Two thermometers in a river (suggested)|SESA3043 1.1 §9.1]].
+
 ## Related
 
 - [[Material Derivative]] · [[Reynolds Transport Theorem]]

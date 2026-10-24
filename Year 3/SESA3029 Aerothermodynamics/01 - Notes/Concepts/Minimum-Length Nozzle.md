@@ -6,7 +6,7 @@ stream: "Block 3: Nozzles and the Method of Characteristics"
 aliases: ["minimum length nozzle", "minimum-length nozzle design", "theta max", "simple region", "uniform flow region"]
 tags: [sesa3029, concept, nozzle-design, method-of-characteristics]
 status: complete
-parent_lectures: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
+parent_lectures: ["[[SESA3029 W05b - Minimum-Length Nozzle Design]]"]
 related_concepts: ["[[Method of Characteristics]]", "[[Riemann Invariants]]", "[[Prandtl-Meyer Function]]", "[[Isentropic Nozzle Flow]]"]
 sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplementary Note for MoC.pdf", "02 - Sources/Lectures/Lecture 3-3.txt", "02 - Sources/Lectures/Lecture 3-4.txt"]
 ---
@@ -42,7 +42,7 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplem
 > [!check] Built-in check
 > Mass conservation forces $y_e/r_a\to A_e/A^*$, here $2.4031$. MoC gives $2.4003$ with four lines and $2.4028$ with 300. 1D theory gives the exit height but cannot give the length.
 
-**Point count.** With $n$ fan lines the net has $n(n+3)/2$ points, $n$ of them on the wall: 14 for $n=4$, 20 for $n=5$. The MoC coursework uses $n=5$ lines from $0.125^\circ$ and $M_e=3.x$, where $x$ is the last digit of the student ID, for **CO₂ with $\gamma=1.289$**. It is due 23:59, Sun 15 Nov (L3-4, ll. 367–418; [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05]]).
+**Point count.** With $n$ fan lines the net has $n(n+3)/2$ points, $n$ of them on the wall: 14 for $n=4$, 20 for $n=5$. The MoC coursework uses $n=5$ lines from $0.125^\circ$ and $M_e=3.x$, where $x$ is the last digit of the student ID, for **CO₂ with $\gamma=1.289$**. It is due 23:59, Sun 15 Nov (L3-4, ll. 367–418; [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]).
 
 > [!warning] $\theta_{max}=\nu(M_e)/2$ holds for any $\gamma$, but $\nu$ itself depends on $\gamma$
 > With $\gamma=1.289$ the IFT ($\gamma=1.4$) gives the wrong $\nu$, $\theta_{max}$ and $A_e/A^*$. Compute them from the general-$\gamma$ formulas instead. Only $\mu=\sin^{-1}(1/M)$ is the same for every gas.
@@ -53,7 +53,7 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplem
 
 > [!warning] Two things this $\theta_{max}$ is not
 > - It is **not** the oblique-shock maximum deflection. It is the largest wall slope (L3-3, ll. 137–139).
-> - It does **not** give $M_e$ for a gradual-expansion nozzle. There the flow at the slope maximum has already been expanded by reflected waves, so $\theta_{max}\le\nu(M_e)/2$ ([[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05 §13]]).
+> - It does **not** give $M_e$ for a gradual-expansion nozzle. There the flow at the slope maximum has already been expanded by reflected waves, so $\theta_{max}\le\nu(M_e)/2$ ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13]]).
 
 ![[at_moc_mach_angle_throat_angle.png|760]]
 
@@ -62,4 +62,4 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplem
 ## Related
 
 - [[Method of Characteristics]] · [[Riemann Invariants]] · [[Prandtl-Meyer Function]] · [[Isentropic Nozzle Flow]] · [[Over- and Under-Expanded Jets]]
-- Detail: [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05 §13–14]]
+- Detail: [[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13–14]]

@@ -7,7 +7,7 @@ order: 1
 tags: [sesa3029, compressible-flow, normal-shock, pitot-probe]
 aliases: ["SESA3029 Week 1", "Aerothermodynamics Toolkit"]
 date: 2026-09-25
-status: complete
+status: lectured
 coverage: "Week 1"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[Speed of Sound and Mach Number]]", "[[Stagnation Properties]]", "[[Normal Shock Waves]]"]
@@ -713,6 +713,9 @@ with $f'$ taken numerically from $[f(M+h)-f(M-h)]/2h$. Starting from $M^{(0)}=2$
 - Prior knowledge: [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]
 - Aerodynamic review: [[SESA2022 T4 - Thin Aerofoil Theory]]
 - Full formula list: [[SESA3029 Formula Sheet]]
+- **Builds on / connects to** (cross-module):
+  - [[SESA3043 1.2 - Conservation Laws and Governing Equations#1. Integral-to-differential strategy|SESA3043 1.2 §1]]: the jump relations of §5 are the *integral* conservation laws applied to a thin control volume around the shock. SESA3043 then shrinks the control volume to get the differential equations, which assume smooth fields; across a shock (a few mean free paths thick) only the integral form can be used.
+  - [[SESA3043 3.5 - Momentum Integral Equation|SESA3043 3.5]]: the von Kármán momentum integral is the same kind of control-volume momentum balance, taken across a boundary layer instead of across a shock.
 
 ## Sources
 
@@ -721,33 +724,38 @@ with $f'$ taken numerically from $[f(M+h)-f(M-h)]/2h$. Starting from $M^{(0)}=2$
 - `Lecture1-3.pdf` with transcript `Lecture 1-3.txt`
 - Anderson, *Fundamentals of Aerodynamics* (the module's main text): Week 1 reading is §§1.1, 7.1, 7.2, 7.5, 8.3, 8.4, 8.6 (module schedule, `Lecture1-1.pdf` p. 10), plus §8.7 for Pitot measurements.
 
-## Self-study tasks set in lectures
+## Self-study tasks
 
 > [!todo] How to use this list
 > Every task below was set, or explicitly left to you, in the Week 1 lectures. Worked solutions are in this note. **Attempt each one closed-book first**, then check against the linked section. Tick the box once you can reproduce it unaided.
 
-### Derivations
+### Core
+
+- [ ] **Pressure jump** — homework. *"I will leave all the rest to you once again as a homework"* (L1-2, ll. 276–278). → [[#Pressure jump (homework)]]
+- [ ] **$M_2^2$ as a function of $M_1$** — homework, *"slightly more involved"* (L1-2, ll. 317–320). → [[#Downstream Mach number (homework — "slightly more involved")]]
+- [ ] **Rayleigh Pitot formula**: combine the shock pressure jump with downstream isentropic stagnation and eliminate $M_2$ (L1-3, ll. 121–128). → [[#Deriving the Rayleigh Pitot formula]]
+- [ ] Subsonic Pitot example, **by formula and by table**: *"please double check these numbers… during the weekend"* (L1-3, l. 159). Target $M_1=0.9919$, $U_1=329.7$ m/s. → [[#Example 1 in full — subsonic, by formula and by table]]
+- [ ] Supersonic Pitot example, $p_{02}/p_1=5$, by table interpolation: *"I will leave it as your homework for the weekend"* (L1-3, l. 205). Target $M_1=1.8705$, $U_1=621.8$ m/s. → [[#Example 2 in full — supersonic, by table (weekend homework)]]
+
+### Further practice
+
+#### Derivations
 
 - [ ] **Isentropic density–temperature relation** $\rho_2/\rho_1=(T_2/T_1)^{1/(\gamma-1)}$ from $p_2/p_1=(T_2/T_1)^{\gamma/(\gamma-1)}$ and $p=\rho RT$. *"I will leave it to you to have a practice on that"* (L1-2, ll. 30–33). → [[#3. Perfect-gas thermodynamics]]
 - [ ] **Stagnation relation** $T_0/T=1+\tfrac{\gamma-1}{2}M^2$ from $h+U^2/2=h_0$ (derived in lecture; reproduce it). → [[#4. Stagnation properties]]
 - [ ] **Prandtl relation** $U_1U_2=2a_0^2/(\gamma+1)$ from mass, momentum and energy (derived in lecture; reproduce it). → [[#Energy and the Prandtl relation]]
 - [ ] **Density jump** (shown in lecture). → [[#Density jump (shown in lecture)]]
-- [ ] **Pressure jump** — homework. *"I will leave all the rest to you once again as a homework"* (L1-2, ll. 276–278). → [[#Pressure jump (homework)]]
 - [ ] **Temperature jump** — homework. → [[#Temperature jump (homework)]]
-- [ ] **$M_2^2$ as a function of $M_1$** — homework, *"slightly more involved"* (L1-2, ll. 317–320). → [[#Downstream Mach number (homework — "slightly more involved")]]
 - [ ] **Strong-shock limits** $M_1\to\infty$ for $M_2$, $\rho_2/\rho_1$, $p_2/p_1$, $T_2/T_1$: *"You will find them"* (L1-2, ll. 354–379). → [[#Strong-shock limits]]
 - [ ] **Low-Mach Pitot check**: show that the compressible subsonic relation reduces to Bernoulli as $M_1\to0$ by binomial expansion (L1-3, ll. 58–95; the transcript is garbled, so redo it cleanly). → [[#Low-Mach consistency check]]
-- [ ] **Rayleigh Pitot formula**: combine the shock pressure jump with downstream isentropic stagnation and eliminate $M_2$ (L1-3, ll. 121–128). → [[#Deriving the Rayleigh Pitot formula]]
 
-### Calculations
+#### Calculations
 
 - [ ] Nozzle exit Mach from $T_0=1000$ K, $T_e=600$ K, both **exactly** and by interpolation. Target $M_e=1.8257$. → [[#Nozzle example]]
 - [ ] Normal shock with $p_2/p_1=1.25$, $T_1=15^\circ$C. Target $M_2=0.9103$, $T_2=307.2$ K, $U_2=319.8$ m/s. → [[#Normal-shock example]]
-- [ ] Subsonic Pitot example, **by formula and by table**: *"please double check these numbers… during the weekend"* (L1-3, l. 159). Target $M_1=0.9919$, $U_1=329.7$ m/s. → [[#Example 1 in full — subsonic, by formula and by table]]
-- [ ] Supersonic Pitot example, $p_{02}/p_1=5$, by table interpolation: *"I will leave it as your homework for the weekend"* (L1-3, l. 205). Target $M_1=1.8705$, $U_1=621.8$ m/s. → [[#Example 2 in full — supersonic, by table (weekend homework)]]
-- [ ] *(Optional)* Solve the same case with Newton–Raphson. → [[#Optional — Newton–Raphson for the Rayleigh relation]]
+- [ ] *(Optional)* Solve the supersonic Pitot case ($p_{02}/p_1=5$) with Newton–Raphson. → [[#Optional — Newton–Raphson for the Rayleigh relation]]
 
-### Concepts and reading
+#### Concepts and reading
 
 - [ ] Revisit **leading-edge suction** from SESA2022: why an inviscid thin aerofoil gives pure lift and not a force normal to the plate (L1-1, ll. 256–300). → [[#2. Aerodynamic review and the low-speed baseline]]
 - [ ] Memorise the sonic Pitot discriminator $p_0/p\,|_{M=1}=1.8929$ (L1-3, ll. 142–148).

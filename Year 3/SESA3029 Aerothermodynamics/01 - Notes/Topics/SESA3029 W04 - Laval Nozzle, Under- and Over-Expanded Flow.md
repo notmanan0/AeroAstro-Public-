@@ -7,11 +7,11 @@ order: 4
 tags: [sesa3029, compressible-flow, nozzle, laval, choked-flow, back-pressure, over-expanded, under-expanded, wind-tunnel]
 aliases: ["SESA3029 Week 4", "SESA3029 Lecture 2.6", "SESA3029 Lecture 2.7", "Laval Nozzle (SESA3029)"]
 date: 2026-10-01
-status: complete
+status: lectured
 coverage: "Lecture 2.6 lectured Mon 12 Oct and Lecture 2.7 lectured Thu 15 Oct (both with transcripts)"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes]]", "[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[Isentropic Nozzle Flow]]"]
-next_topics: ["[[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]"]
+next_topics: ["[[SESA3029 W05a - Method of Characteristics]]"]
 key_concepts: ["[[Isentropic Nozzle Flow]]", "[[Critical Conditions and Choked Flow]]", "[[Converging-Diverging Nozzle Operating Regimes]]", "[[Over- and Under-Expanded Jets]]", "[[Supersonic Wind Tunnel]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 1 - Solutions]]"]
 sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture2-7.pdf", "02 - Sources/Lectures/Lecture 2-6.txt", "02 - Sources/Lectures/Lecture 2-7.txt"]
@@ -539,7 +539,7 @@ A long tube of high-pressure gas is separated from a low-pressure dump tank by a
 
 The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A/A^*$. Two nozzles with the same $A^*$ and $A_e$ but different lengths should therefore perform identically, *"but that is not true"*: there is an optimum length, and finding it needs a method that resolves the flow across the nozzle height. 2.6 announced MoC for Thursday 15 Oct, but Thursday was spent on 2.7, so MoC started on **Fri 16 Oct** (L2-7, ll. 192–203).
 
-1D theory gives uniform properties at each section. The **method of characteristics** resolves both $x$ and $y$ and is the basis for designing shock-free supersonic nozzles (Anderson §13.3). It is also the subject of the **MoC coursework**, due **Fri 6 Nov** per L3-2 (the module guide said 15 Nov); see the [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05 date check]]. Continue with [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].
+1D theory gives uniform properties at each section. The **method of characteristics** resolves both $x$ and $y$ and is the basis for designing shock-free supersonic nozzles (Anderson §13.3). It is also the subject of the **MoC coursework**, due **Sun 15 Nov** per L3-4 and the module guide (L3-2 had said Fri 6 Nov); see the [[SESA3029 W05a - Method of Characteristics#Announcements and deadlines|W05a date check]] and the brief in [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]. Continue with [[SESA3029 W05a - Method of Characteristics]], then [[SESA3029 W05b - Minimum-Length Nozzle Design]].
 
 ---
 
@@ -591,11 +591,13 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
 - Previous: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]
-- Next: [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]
+- Next: [[SESA3029 W05a - Method of Characteristics]]
 - Year 2: [[Isentropic Nozzle Flow]] · [[Critical Conditions and Choked Flow]] · [[Converging-Diverging Nozzle Operating Regimes]] · [[Rocket Nozzle Geometry]] · [[Thrust Equation]] · [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]
 - New concepts: [[Over- and Under-Expanded Jets]] · [[Supersonic Wind Tunnel]]
 - Worked sheet: [[SESA3029 Example Sheet 1 - Solutions#Q8. Supersonic wind-tunnel nozzle|Example Sheet 1 Q8]]
 - Formulae: [[SESA3029 Formula Sheet]]
+- **Builds on / connects to** (cross-module):
+  - [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures|SESA3043 3.1]] (displacement thickness) and [[SESA3043 3.6 - Viscous-Inviscid Interaction#3. Surface displacement method (slides 10–13)|SESA3043 3.6 §3]]: the area ratios here are inviscid. In a real nozzle the wall boundary layer blocks a thickness $\delta^*$, so the effective area is smaller than the geometric one. (Bridging remark; not lectured in SESA3029.)
 
 ## Sources
 
@@ -609,27 +611,32 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 ## Self-study tasks
 
 > [!todo] How to use this list
-> Both lectures were recorded. Tasks citing an `L2-6` or `L2-7` line were set or worked in the lecture; the rest are *suggested, not lecturer-set*. Neither lecture set formal homework beyond the $A/A^*$ derivation (L2-6, l. 153), and 2.7 announced no deadline. The next deadlines are **Test 2 (closes Sun 25 Oct)** and the **MoC coursework** (see [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design#Announcements and deadlines|W05]]).
+> Both lectures were recorded. Tasks citing an `L2-6` or `L2-7` line were set or worked in the lecture; the rest are *suggested, not lecturer-set*. Neither lecture set formal homework beyond the $A/A^*$ derivation (L2-6, l. 153), and 2.7 announced no deadline. The next deadlines are **Test 2 (closes Sun 25 Oct)** and the **MoC coursework** (see [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]).
 
-### Derivations
+### Core
 
 - [ ] **Lecturer-set homework (L2-6, l. 153; slide 5):** derive $A/A^*(M)$ (Anderson §10.3). → [[#2. The area–Mach relation (homework, slide 5; Anderson §10.3)|§2]]
 - [ ] Derive $\mathrm dA/A=(M^2-1)\,\mathrm dU/U$ the lecture's way: brackets for mass, a control volume **with the wall force** for momentum, and $p=C\rho^\gamma$ (L2-6, ll. 12–76). → [[#The lecture's route: a control volume with side walls|§1]]
+- [ ] **Lecture example (L2-6, ll. 252–278):** $M_e=2.2$ nozzle: $p_{b3}=0.9375$, $p_{b5}=0.5125$, $p_{b6}=0.0935$ (times $p_0$), by IFT/NST interpolation. → [[#Computing the three critical back pressures|§4]]
+- [ ] Shock position for $p_b/p_0=0.7$: $A_s/A_t=1.511$. → [[#Where is the shock for a given back pressure?|§4]]
+- [ ] **Lecture example (L2-7, ll. 147–173; slides 10–11):** $A_{t2}/A_{t1}=3.045$ at $M=3$, by IFT, NST and interpolation. → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
+
+### Further practice
+
+#### Derivations
+
 - [ ] Explain why a bulge ($\mathrm dA=0$ at maximum area) can never be sonic (L2-6, ll. 112–120). → [[#Only a throat can be sonic|§1]]
 - [ ] Derive the thrust $T=\dot m\,u_e+(p_e-p_a)A_e$ (L2-6, ll. 126–146, simplified on the board). → [[#Why the target is exit velocity: thrust (ll. 126–146)|§1]]
 - [ ] Derive $p^*/p_0=0.528$ and remember it (L2-6, ll. 213–223). → [[#3. Mass flow and choking|§3]]
 - [ ] Derive the choked mass flow and the constant 0.0404 for air (L2-6, ll. 197–211). → [[#3. Mass flow and choking|§3]]
 - [ ] *(Suggested)* Show $A^*_2/A^*_1=p_{01}/p_{02}$ across a shock. → [[#3. Mass flow and choking|§3]]
 
-### Calculations
+#### Calculations
 
-- [ ] **Lecture example (L2-6, ll. 252–278):** $M_e=2.2$ nozzle: $p_{b3}=0.9375$, $p_{b5}=0.5125$, $p_{b6}=0.0935$ (times $p_0$), by IFT/NST interpolation. → [[#Computing the three critical back pressures|§4]]
-- [ ] Shock position for $p_b/p_0=0.7$: $A_s/A_t=1.511$. → [[#Where is the shock for a given back pressure?|§4]]
 - [ ] Lip-shock angle for $p_b/p_0=0.2$, and whether the crossing is regular. → [[#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|§5]]
-- [ ] **Lecture example (L2-7, ll. 147–173; slides 10–11):** $A_{t2}/A_{t1}=3.045$ at $M=3$, by IFT, NST and interpolation. → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
 - [ ] Example Sheet 1 Q8 (wind-tunnel nozzle). → [[SESA3029 Example Sheet 1 - Solutions#Q8. Supersonic wind-tunnel nozzle|ES1 Q8]]
 
-### Concepts
+#### Concepts
 
 - [ ] Explain why 0.528 is a **throat** pressure, and why a C-D nozzle chokes at the much higher back pressure $p_{b3}=0.9375\,p_0$. → [[#3. Mass flow and choking|§3]]
 - [ ] Explain why 1D theory cannot give the nozzle length, which is the motivation for MoC (L2-6, ll. 279–291). → [[#Next (slide 14)|§7]]
@@ -639,4 +646,4 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 - [ ] Explain why $A_{t2}<A_{t1}$ can never give supersonic flow (L2-7, ll. 112–118). → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
 - [ ] Explain how a variable second throat swallows the starting shock, using the unsteady mass-flow imbalance (L2-7, ll. 119–151). → [[#7. The supersonic wind tunnel (slides 8–11)|§7]]
 - [ ] Explain why a Ludwieg tube gives valid data in a fraction of a second (L2-7, ll. 175–191). → [[#Ludwieg tube (slides 12–13)|§7]]
-- [ ] Continue with MoC in [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]].
+- [ ] Continue with MoC in [[SESA3029 W05a - Method of Characteristics]].

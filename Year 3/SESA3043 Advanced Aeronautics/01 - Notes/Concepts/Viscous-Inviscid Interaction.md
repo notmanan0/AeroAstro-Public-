@@ -22,7 +22,7 @@ sources: ["02 - Sources/Lectures/CH3-6 Viscous Inviscid Interaction.pdf"]
 >
 > $$v_s=\frac{\mathrm d(U_e\delta^*)}{\mathrm dx}.$$
 
-## Derivation of $v_s$
+## Derivation of the surface transpiration velocity vₛ
 
 Mass balance on the strip between the wall and the displacement surface, from $x$ to $x+\Delta x$: $U_e\delta^*|_x+v_s\Delta x=U_e\delta^*|_{x+\Delta x}$; let $\Delta x\to0$.
 

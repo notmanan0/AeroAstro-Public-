@@ -402,6 +402,7 @@ The official `Aerothermodynamics Formula Sheet.pdf` (3 pages, filed on 6 Oct) is
 - [[SESA3029 W02 - Oblique Shock Relations and Mach Waves]]
 - [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]
 - [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]
-- [[SESA3029 W05 - Method of Characteristics and Minimum-Length Nozzle Design]]
+- [[SESA3029 W05a - Method of Characteristics]]
+- [[SESA3029 W05b - Minimum-Length Nozzle Design]]
 - [[SESA3029 Aerothermodynamics Hub]]
 
