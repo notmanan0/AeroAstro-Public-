@@ -79,13 +79,13 @@ $$
 $$
 
 $$
-[\mathbf v]^c=\text{components of }\mathbf v\text{ in coordinates }c.
+\mathbf v^c=\text{components of }\mathbf v\text{ in coordinates }c,\qquad {}^b\dot{\mathbf v}=\text{derivative observed from }F_b.
 $$
 
 ## Flat-Earth assumptions
 
 $$
-\boldsymbol\Omega_E\approx\mathbf 0,
+\boldsymbol\omega_{e/i}=\mathbf 0,
 \qquad
 \text{Earth curvature neglected},
 \qquad
@@ -95,7 +95,7 @@ $$
 In local NED coordinates,
 
 $$
-[\mathbf g]^{NED}=\begin{bmatrix}0\\0\\g\end{bmatrix}.
+\mathbf g^{NED}=\begin{bmatrix}0\\0\\g\end{bmatrix}.
 $$
 
 ## Coordinate axes
@@ -113,7 +113,7 @@ $$
 \mathbf u\times\mathbf v=|\mathbf u||\mathbf v|\sin\alpha\,\mathbf n=\begin{bmatrix}u_yv_z-u_zv_y\\u_zv_x-u_xv_z\\u_xv_y-u_yv_x\end{bmatrix}.
 $$
 
-Cross-product matrix:
+Cross-product matrix (skew matrix, the tilde notation):
 
 $$
 \mathbf u\times\mathbf v=\tilde{\mathbf u}\mathbf v,\qquad
@@ -175,7 +175,7 @@ $$
 $$
 \mathbf u^{FRD}=\mathbf C_{FRD/NED}\mathbf u^{NED},\qquad
 \mathbf u^{NED}=\mathbf C_{FRD/NED}^T\mathbf u^{FRD},\qquad
-[\mathbf g]^{FRD}=g\begin{bmatrix}-s_\theta\\s_\phi c_\theta\\c_\phi c_\theta\end{bmatrix}.
+\mathbf g^{FRD}=g\begin{bmatrix}-s_\theta\\s_\phi c_\theta\\c_\phi c_\theta\end{bmatrix}.
 $$
 
 Extraction (singular at $\theta=\pm90^\circ$):
@@ -186,19 +186,19 @@ $$
 
 $\mathrm{atan2}(y,x)\in(-\pi,\pi]$ uses the signs of both arguments; $\arctan(y/x)\in(-\pi/2,\pi/2)$ cannot tell $(y,x)$ from $(-y,-x)$. At $\theta=\pm90^\circ$ both atan2 calls become $\mathrm{atan2}(0,0)$ ([[Gimbal Lock]]); libraries return 0 silently.
 
-Notation: $\mathbf p_{A/B}$ (of $A$ relative to $B$), $[\,\cdot\,]^c$ (components in coordinates $c$), ${}^b\dot{(\cdot)}$ (derivative observed from $F_b$).
+Notation: $\mathbf p_{A/B}$ (of $A$ relative to $B$), $(\cdot)^c$ (components in coordinates $c$), ${}^b\dot{(\cdot)}$ (derivative observed from $F_b$).
 
 ## Rotational kinematics (Chapter 3, §3.1)
 
 Body rates $\boldsymbol\omega^{FRD}_{b/r}=[p,q,r]^T$; Euler angles $\boldsymbol\Phi=[\phi,\theta,\psi]^T$.
 
 $$
-\boldsymbol\omega^{FRD}_{b/r}=\begin{bmatrix}\dot\phi\\0\\0\end{bmatrix}+\mathbf C_x(\phi)\left(\begin{bmatrix}0\\\dot\theta\\0\end{bmatrix}+\mathbf C_y(\theta)\begin{bmatrix}0\\0\\\dot\psi\end{bmatrix}\right)=\mathbf E(\boldsymbol\Phi)\dot{\boldsymbol\Phi},\qquad
+\boldsymbol\omega^{FRD}_{b/r}=\begin{bmatrix}\dot\phi\\0\\0\end{bmatrix}+\mathbf C_x(\phi)\left(\begin{bmatrix}0\\\dot\theta\\0\end{bmatrix}+\mathbf C_y(\theta)\begin{bmatrix}0\\0\\\dot\psi\end{bmatrix}\right)=\mathbf E(\boldsymbol\Phi)\dot{\boldsymbol\Phi}\ \ (\text{kinematic transformation matrix}),\qquad
 \mathbf E=\begin{bmatrix}1&0&-s_\theta\\0&c_\phi&s_\phi c_\theta\\0&-s_\phi&c_\phi c_\theta\end{bmatrix}.
 $$
 
 $$
-\dot{\boldsymbol\Phi}=\mathbf H(\boldsymbol\Phi)\,\boldsymbol\omega^{FRD}_{b/r},\qquad
+\dot{\boldsymbol\Phi}=\mathbf H(\boldsymbol\Phi)\,\boldsymbol\omega^{FRD}_{b/r}\ \ (\text{transform matrix}),\qquad
 \mathbf H=\begin{bmatrix}1&s_\phi\tan\theta&c_\phi\tan\theta\\0&c_\phi&-s_\phi\\0&s_\phi/c_\theta&c_\phi/c_\theta\end{bmatrix},\qquad\det\mathbf E=\cos\theta.
 $$
 
@@ -255,7 +255,7 @@ $$
 
 Conditions: moments about the **cm** ($\int_B\mathbf r\,\mathrm dm=\mathbf 0$ by definition there); $\mathbf J$ in **body** axes and the body **rigid**, so $\dot{\mathbf J}=\mathbf 0$.
 
-Principal axes (Euler's equations): $J_x\dot p=L+(J_y-J_z)qr$, $J_y\dot q=M+(J_z-J_x)rp$, $J_z\dot r=N+(J_x-J_y)pq$.
+Principal axes (Euler's equations; $J_x\equiv J_{xx}$ etc., the Lab 1 and Coursework 1 notation): $J_x\dot p=L+(J_y-J_z)qr$, $J_y\dot q=M+(J_z-J_x)rp$, $J_z\dot r=N+(J_x-J_y)pq$.
 
 Aircraft ($J_{xy}=J_{yz}=0$):
 
@@ -343,17 +343,17 @@ Principal axes ($J_{xz}=0$): $\dot p_{add}=(rh_y-qh_z)/J_{xx}$, $\dot q_{add}=(p
 Lectured in L13 (Thu 22 Oct), except effective gravity and the scalar/$X,Y,Z$ forms. $\mathbf F$ excludes gravity. Rotating Earth (Eq. 4.30, lectured):
 
 $$
-\mathbf a_e=\mathbf F/m+\mathbf G-\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf p)-2\boldsymbol\Omega\times\mathbf v_e.
+\mathbf a_{cm/e}=\mathbf F/m+\mathbf G-\boldsymbol\omega_{e/i}\times(\boldsymbol\omega_{e/i}\times\mathbf p)-2\boldsymbol\omega_{e/i}\times\mathbf v_{cm/e}.
 $$
 
 Effective gravity (Eq. 4.31, handout only):
 
 $$
-\mathbf g=\mathbf G-\boldsymbol\Omega\times(\boldsymbol\Omega\times\mathbf p),\qquad
-\mathbf a_e=\mathbf F/m+\mathbf g-2\boldsymbol\Omega\times\mathbf v_e.
+\mathbf g=\mathbf G-\boldsymbol\omega_{e/i}\times(\boldsymbol\omega_{e/i}\times\mathbf p),\qquad
+\mathbf a_{cm/e}=\mathbf F/m+\mathbf g-2\boldsymbol\omega_{e/i}\times\mathbf v_{cm/e}.
 $$
 
-Flat Earth: $\boldsymbol\Omega=0$, local NED inertial, $\mathbf g^{NED}=[0,0,g]^T$, $g=9.81$ m/s².
+Flat Earth: $\boldsymbol\omega_{e/i}=\mathbf 0$, local NED inertial, $\mathbf g^{NED}=[0,0,g]^T$, $g=9.81$ m/s².
 
 $$
 \boxed{\dot{\mathbf v}

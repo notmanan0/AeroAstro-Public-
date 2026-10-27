@@ -3,7 +3,7 @@ title: "Cross-Product Matrix"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 2: Introduction to Kinematics"
-aliases: ["skew-symmetric matrix", "skew matrix", "tilde matrix", "u tilde"]
+aliases: ["skew-symmetric matrix", "skew matrix", "tilde matrix", "u tilde", "omega tilde", "hat map", "[u]x", "u cross matrix"]
 tags: [sesa3047, concept, kinematics, vectors]
 status: complete
 parent_lectures: ["[[SESA3047 2.1 - Vector Operations and the Transport Theorem]]"]

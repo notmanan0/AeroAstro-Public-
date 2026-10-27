@@ -3,7 +3,7 @@ title: "Kármán–Trefftz Transformation"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 2: Exact Solutions and Methods for Potential Flow"
-aliases: ["Karman-Trefftz transformation", "KT aerofoil", "Karman-Trefftz aerofoil"]
+aliases: ["Karman-Trefftz transformation", "KT aerofoil", "Karman-Trefftz aerofoil", "Karman Treffetz transformation", "KT transformation", "trailing-edge included angle"]
 tags: [sesa3043, concept, potential-flow, conformal-mapping, aerofoil]
 status: complete
 parent_lectures: ["[[SESA3043 2.1 - Complex Functions and Conformal Mapping]]"]

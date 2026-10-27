@@ -3,7 +3,7 @@ title: "Blasius and Falkner-Skan Similarity Solutions"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 3: Methods for Boundary Layers"
-aliases: ["Blasius solution", "Blasius equation", "Falkner-Skan equation", "similarity solution", "wedge boundary layer"]
+aliases: ["Blasius solution", "Blasius equation", "Falkner-Skan equation", "similarity solution", "wedge boundary layer", "guess-and-shooting method", "shooting method", "similarity variables", "integral type A", "integral type B", "reduced BL equation", "Hartree parameter", "generalised laminar BLs"]
 tags: [sesa3043, concept, boundary-layer]
 status: complete
 parent_lectures: ["[[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions]]"]
@@ -47,7 +47,7 @@ SESA2029 and 1.4 use $\eta_o=y\sqrt{U/\nu x}$ and $f_o'''+\frac12f_of_o''=0$, $f
 
 ## Solving
 
-Guess-and-shoot on $f''(0)$ until $f'(\infty)=1$. See [[Shooting Method and the Blasius Solution]].
+Guess-and-shooting method: adjust $f''(0)$ until $f'(\infty)=1$. See [[Shooting Method and the Blasius Solution]].
 
 ## Related
 

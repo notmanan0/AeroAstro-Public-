@@ -3,7 +3,7 @@ title: "General Doublet"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["doublet at angle nu", "general doublet"]
+aliases: ["doublet at angle nu", "general doublet", "inclined doublet", "dipole"]
 tags: [sesa3043, concept, potential-flow, doublet]
 status: complete
 parent_lectures: ["[[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]]"]

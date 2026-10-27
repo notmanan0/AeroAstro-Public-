@@ -3,7 +3,7 @@ title: "Reference Frames and Coordinate Systems"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 1: Fundamental Concepts"
-aliases: ["frame versus coordinates", "inertial frame"]
+aliases: ["frame versus coordinates", "inertial frame", "frame of reference", "axis system", "Newtonian frame"]
 tags: [sesa3047, concept, reference-frames]
 status: complete
 parent_lectures: ["[[SESA3047 1.2 - Dynamic Models, Frames and Earth Models]]"]
@@ -22,10 +22,10 @@ sources: ["02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/L3 - SES
 A vector is a physical geometrical quantity. Its component array depends on the chosen coordinates:
 
 $$
-\mathbf v\ne[\mathbf v]^c,
+\mathbf v\ne\mathbf v^c,
 $$
 
-where the left denotes the vector and the right its components in coordinates $c$.
+where the left denotes the vector and the right its components in coordinates $c$ (the course puts the coordinate label as a right superscript, Chapter 1 Eqs. 1.8 and 1.10).
 
 Earth-fixed and body-fixed frames are generally non-inertial. The [[Flat-Earth Model]] deliberately approximates a local Earth frame as inertial.
 

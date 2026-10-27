@@ -3,7 +3,7 @@ title: "Transport Theorem"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 2: Introduction to Kinematics"
-aliases: ["transport equation", "rotating-frame derivative", "Coriolis theorem", "basic kinematic equation"]
+aliases: ["transport equation", "rotating-frame derivative", "Coriolis theorem", "basic kinematic equation", "BKE", "equation of Coriolis"]
 tags: [sesa3047, concept, kinematics]
 status: complete
 parent_lectures: ["[[SESA3047 2.1 - Vector Operations and the Transport Theorem]]"]

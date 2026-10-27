@@ -3,7 +3,7 @@ title: "Flat-Earth Model"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 1: Fundamental Concepts"
-aliases: ["flat Earth approximation"]
+aliases: ["flat Earth approximation", "flat non-rotating Earth", "tangent-plane approximation"]
 tags: [sesa3047, concept, earth-model]
 status: complete
 parent_lectures: ["[[SESA3047 1.2 - Dynamic Models, Frames and Earth Models]]"]

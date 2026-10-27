@@ -3,7 +3,7 @@ title: "Linear, Nonlinear and Time-Varying Models"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 1: Fundamental Concepts"
-aliases: ["model classifications", "LTI and LTV models"]
+aliases: ["model classifications", "LTI and LTV models", "Duffing oscillator", "constant-coefficient model", "distributed-parameter model"]
 tags: [sesa3047, concept, linearisation, time-varying]
 status: complete
 parent_lectures: ["[[SESA3047 1.2 - Dynamic Models, Frames and Earth Models]]"]

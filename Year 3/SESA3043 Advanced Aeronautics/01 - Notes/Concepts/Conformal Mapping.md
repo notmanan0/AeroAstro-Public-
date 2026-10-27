@@ -3,7 +3,7 @@ title: "Conformal Mapping"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 2: Exact Solutions and Methods for Potential Flow"
-aliases: ["conformal transformation", "conformal map"]
+aliases: ["conformal transformation", "conformal map", "transfer function", "mapping function", "circle plane", "z-bar plane"]
 tags: [sesa3043, concept, potential-flow, conformal-mapping]
 status: complete
 parent_lectures: ["[[SESA3043 2.1 - Complex Functions and Conformal Mapping]]"]
@@ -37,8 +37,8 @@ The two hand-calculation cases, both examinable (8–9 Oct):
 
 | Map | Body | Potential | $C_p$ on the body |
 |---|---|---|---|
-| $z=\bar z-a^2/\bar z$ | plate **normal** to the stream, $-2a\le y\le2a$ | $\Phi=\pm U_\infty\sqrt{z^2+4a^2}$ | $1-\dfrac{y^2}{4a^2-y^2}$ |
-| $z=\bar z+a^2/\bar z$ | plate **along** the stream, $-2a\le x\le2a$ | $\Phi=U_\infty z$ | $0$ |
+| $z=\bar z-a^2/\bar z$ | flow impinging on a finite plate (plate **normal** to the stream), $-2a\le y\le2a$ | $\Phi=\pm U_\infty\sqrt{z^2+4a^2}$ | $1-\dfrac{y^2}{4a^2-y^2}$ |
+| $z=\bar z+a^2/\bar z$ | flow over a finite plate (plate **along** the stream), $-2a\le x\le2a$ | $\Phi=U_\infty z$ | $0$ |
 
 Keep one transfer function per problem: a different map turns the same $\bar z$ solution into a different body (8 Oct, ll. 310–316). Conformal maps also generate orthogonal CFD meshes (ll. 249–256).
 

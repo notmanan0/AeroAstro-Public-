@@ -3,7 +3,7 @@ title: "Method of Characteristics"
 module: "SESA3029 Aerothermodynamics"
 type: concept
 stream: "Block 3: Nozzles and the Method of Characteristics"
-aliases: ["MoC", "method of characteristics", "MoC unit process", "unit process"]
+aliases: ["MoC", "method of characteristics", "MoC unit process", "unit process", "characteristic lines", "left-running characteristic", "right-running characteristic", "zone of dependence", "zone of influence", "domain of dependence", "domain of influence", "Template for MoC Calculation", "MoC table", "non-reflecting wall", "cancelling wall", "wave cancellation", "reflecting wall"]
 tags: [sesa3029, concept, method-of-characteristics, supersonic, nozzle-design]
 status: complete
 parent_lectures: ["[[SESA3029 W05a - Method of Characteristics]]", "[[SESA3029 W05b - Minimum-Length Nozzle Design]]"]
@@ -44,8 +44,8 @@ $$
 
 | Boundary | State rule | Position rule |
 |---|---|---|
-| prescribed wall (reflects) | $\nu_W=R^+_A+\theta_W$; reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
-| designed wall (cancels) | $\theta_W=\theta_A$, so $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
+| prescribed wall (reflecting) | $\nu_W=R^+_A+\theta_W$; reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
+| designed wall (non-reflecting: wave cancellation) | $\theta_W=\theta_A$, so $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
 | symmetry plane (an inviscid wall with $\theta_W=0$, L3-3, l. 93) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
 
 > [!warning] Check the physics, not just the rules (L3-4, ll. 206–281)

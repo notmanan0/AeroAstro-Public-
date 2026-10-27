@@ -427,7 +427,7 @@ The lines at $\pm\mu$ to the flow are the **Mach lines**, called the **character
 >
 > $$\nu_2=\nu_1+\theta_w ,$$
 >
-> exactly the W03 result. A region where one invariant is the same everywhere is called a **simple** region (§12).
+> exactly the W03 result. A region where one invariant is the same everywhere is called a **simple flow region** ([[SESA3029 W05b - Minimum-Length Nozzle Design#12. Nozzles with a straightening section (3.3 slides 8–9)|W05b §12]]).
 
 ---
 
@@ -745,6 +745,22 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 > | l. 429 | *"half of r plus 2 plus r minus 1 divided by 2"* | halve **once**: $\nu_3=\tfrac12(R^+_2+R^-_1)=17.9237^\circ$ (the number at l. 435 is right) |
 > | l. 436 | *"theta 3, which is r1 minus minus r2 plus divided by 2, which is 26.8604"* | $\theta_3=\tfrac12(26.8604-8.9870)=8.9367^\circ$. $26.8604^\circ$ is $R^-_1$, read out before the subtraction |
 
+## Terminology and alternative names
+
+This note uses the course's own words. Textbooks (Anderson in particular), other universities and CFD software often use other names for the same ideas. Use the course term in the coursework and the exam, and treat the others as search terms.
+
+| Course term | Also called | Where the course uses it | Note |
+|---|---|---|---|
+| compatibility conditions | compatibility relations; compatibility equations; characteristic (compatibility) equations | L3.1 slide 12 and L3.2 slide 4 (*"Compatibility conditions"*); Supplementary Note pp. 3, 5; L3-1, l. 361 | "Characteristic equation" also means the eigenvalue polynomial $\det(\underline A-\lambda\underline I)=0$ of §8, so avoid it for $R^\pm$ |
+| Riemann invariants $R^+=\nu-\theta$ (along $C^+$), $R^-=\nu+\theta$ (along $C^-$) | $K^+$, $K^-$ (Anderson), with $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$; characteristic invariants | L3.1 slide 12, which also gives Anderson's $R^+=-K^+$, $R^-=K^-$; Supplementary Note p. 5 | Same physics, different sign of $K^+$. ES2 was first written in Anderson's form |
+| characteristics $C^+$, $C^-$ (characteristic lines) | left-running and right-running characteristics; Mach lines; Mach waves | L3.1 slides 11–12; Supplementary Note p. 2 ("left-running" $C^+$, "right-running" $C^-$) | Both names are in the course material; $C^\pm$ is what the slides and the template use |
+| zone of influence; zone of dependence | domain of influence; domain of dependence; range of influence | L3.2 slide 6 (zones); Supplementary Note p. 3 (domains) | |
+| homentropic flow | uniform-entropy (isentropic everywhere) flow | L3.1 slide 2; Supplementary Note p. 1 | Stronger than isentropic: the same entropy on every streamline |
+| flow angle $\theta$; flow inclination angle | flow direction; streamline angle | L3.1 slide 3 ("relative to the $x$-axis"); L3-1, l. 53 (*"flow inclination angle rather than flow deflection angle"*); L3-4, ll. 43–52; Supplementary Note p. 1 | Measured from the $x$-axis, not a deflection as in W02–W03 |
+| Prandtl–Meyer (PM) function $\nu$ | Prandtl–Meyer angle | L3.4 slide 2 ("PM function"); Supplementary Note p. 5 ("Prandtl-Meyer function") and pp. 2, 11 ("Prandtl-Meyer angle") | Both are used in the course material |
+| unit process | interior-point unit process; MoC step | L3.2 slides 7–10 ("Repeat Unit Process Downstream"); Supplementary Note §3 | |
+| simple flow region | simple-wave region; simple region | L3.3 slides 8 and 10; Supplementary Note p. 9 | Introduced in W05b §12; a Prandtl–Meyer fan fed by uniform flow is one (§7) |
+
 ## Links
 
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
@@ -809,6 +825,6 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 
 - [ ] Explain the new meaning of $\theta$ (inclination, not deflection) (L3-1, ll. 37–55). → [[#1. Why a two-dimensional method (3.1 slide 2)|§1]]
 - [ ] Explain why the flow must be homentropic **and** irrotational, and why MoC fails for $M<1$. → [[#8. The eigenvalue route (3.2 slides 2–4)|§8]]
-- [ ] Show that a Prandtl–Meyer fan is a simple region with $R^+$ uniform. → [[#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|§7]]
+- [ ] Show that a Prandtl–Meyer fan is a simple flow region with $R^+$ uniform. → [[#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|§7]]
 - [ ] **(L3-2, ll. 299–318)** Answer the lecturer's question: *"why will they turn?"* → [[#10. The unit process (3.2 slides 7–9)|§10]]
 - [ ] *(Suggested)* Explain what a listener hears from a supersonic speaker, and where the lecture's "reversed song" needs qualifying (L3-2, ll. 215–239). → [[#9. Zones of dependence and influence (3.2 slides 5–6)|§9]]

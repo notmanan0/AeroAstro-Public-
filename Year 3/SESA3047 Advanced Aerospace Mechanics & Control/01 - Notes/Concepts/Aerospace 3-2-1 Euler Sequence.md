@@ -3,7 +3,7 @@ title: "Aerospace 3-2-1 Euler Sequence"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 2: Introduction to Kinematics"
-aliases: ["z-y-x sequence", "yaw-pitch-roll", "C_FRD/NED", "gimbal lock", "Euler angle extraction"]
+aliases: ["z-y-x sequence", "yaw-pitch-roll", "C_FRD/NED", "gimbal lock", "Euler angle extraction", "Tait-Bryan angles", "Cardan angles", "intrinsic ZYX sequence", "roll pitch yaw angles", "bank angle"]
 tags: [sesa3047, concept, kinematics, euler-angles]
 status: complete
 parent_lectures: ["[[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles]]"]
@@ -47,11 +47,15 @@ with $-\pi<\phi,\psi\le\pi$ and $-\pi/2\le\theta\le\pi/2$.
 
 ## Gimbal lock
 
-At $\theta=\pm90^\circ$, $C_{11}=C_{12}=C_{23}=C_{33}=0$. The matrix then depends only on $\phi\mp\psi$, so yaw and roll act about the same line and cannot be separated. Use quaternions for vehicles that approach vertical.
+At $\theta=\pm90^\circ$, $C_{11}=C_{12}=C_{23}=C_{33}=0$. The matrix then depends only on $\phi\mp\psi$, so yaw and roll act about the same line and cannot be separated. The handout calls this the Euler-angle singularity. Use quaternions for vehicles that approach vertical.
+
+## Other names
+
+The course calls all such angle sets **Euler angles** and the angles roll, pitch and yaw. Textbooks call three-different-axis sets Tait–Bryan or Cardan angles, and pilots call $\phi$ the bank angle. MATLAB's `angle2dcm(psi, theta, phi, 'ZYX')` returns $\mathbf C_{FRD/NED}$; `eul2rotm` and SciPy's `from_euler('ZYX', ...)` return its transpose. Full list: [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Terminology and alternative names|2.2, terminology]].
 
 ## Example
 
-$\psi=30^\circ$, $\phi=\theta=0$: north $[1,0,0]^T_{NED}$ becomes $[0.866,-0.500,0]^T_{FRD}$, i.e. north lies ahead-left of the aircraft.
+$\psi=30^\circ$, $\phi=\theta=0$: north, $\mathbf u^{NED}=[1,0,0]^T$, becomes $\mathbf u^{FRD}=[0.866,-0.500,0]^T$, i.e. north lies ahead-left of the aircraft.
 
 ## Related
 

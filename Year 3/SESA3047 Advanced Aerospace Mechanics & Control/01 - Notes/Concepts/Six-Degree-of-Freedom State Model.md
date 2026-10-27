@@ -3,7 +3,7 @@ title: "Six-Degree-of-Freedom State Model"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 4: Dynamic Equations and 6-DOF Model"
-aliases: ["12-state rigid-body model", "complete flat-Earth model"]
+aliases: ["12-state rigid-body model", "complete flat-Earth model", "6-DOF model", "six-degree-of-freedom equations of motion", "twelve-state model"]
 tags: [sesa3047, concept, 6dof, state-equations]
 status: complete
 coverage: "Chapter 4 §4.3; shown from the lecture notes at the end of L13 (ll. 310–344, Thu 22 Oct)"

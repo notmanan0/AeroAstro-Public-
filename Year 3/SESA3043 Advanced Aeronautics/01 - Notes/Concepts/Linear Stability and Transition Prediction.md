@@ -3,7 +3,7 @@ title: "Linear Stability and Transition Prediction"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 3: Methods for Boundary Layers"
-aliases: ["Orr-Sommerfeld equation", "e^n method", "en method", "thumb plot", "Tollmien-Schlichting waves", "TS waves", "neutral stability curve", "transition prediction"]
+aliases: ["Orr-Sommerfeld equation", "e^n method", "en method", "e^N method", "thumb plot", "Tollmien-Schlichting waves", "TS waves", "neutral stability curve", "neutral curve", "stability diagram", "instability diagram", "n factor", "N-factor", "amplification factor", "critical Reynolds number", "roadmap to transition", "transition prediction"]
 tags: [sesa3043, concept, transition, stability]
 status: complete
 parent_lectures: ["[[SESA3043 3.4 - Transition to Turbulence]]"]

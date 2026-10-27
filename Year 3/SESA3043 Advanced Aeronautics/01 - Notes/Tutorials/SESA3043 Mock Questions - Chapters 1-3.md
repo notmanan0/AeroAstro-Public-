@@ -46,7 +46,7 @@ sources: ["01 - Notes/Topics", "03 - Exams & Past Papers/Ch1_Revision_Questions.
 
 **[20 marks; target 30 min]**
 
-(a) State the Reynolds transport theorem for a fixed control volume and explain the physical meaning of each term. Use it, with the divergence theorem, to derive the differential continuity equation, and show where the incompressibility assumption enters. **[6]**
+(a) State the Reynolds transport theorem (the textbook name; the lectures apply the same balance to a fixed CV without naming it) for a fixed control volume and explain the physical meaning of each term. Use it, with the divergence theorem, to derive the differential continuity equation, and show where the incompressibility assumption enters. **[6]**
 
 (b) Water ($\rho=1000$ kg/m³, $\mu=1.0\times10^{-3}$ Pa s) flows steadily between two horizontal parallel plates at $y=0$ and $y=h=2$ mm. The velocity field is
 
@@ -543,7 +543,7 @@ $$
 
 ### Solution
 
-**(a)** On the circle, $\bar z=ae^{i\theta}$ ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#Flow along a plate, and an ellipse (slides 13–14)|2.1 §3]]):
+**(a)** On the circle, $\bar z=ae^{i\theta}$ ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#Flow over a finite plate, and an ellipse (slides 13–14)|2.1 §3]]):
 
 $$
 z=ae^{i\theta}+\frac{b^2}{a}e^{-i\theta}.

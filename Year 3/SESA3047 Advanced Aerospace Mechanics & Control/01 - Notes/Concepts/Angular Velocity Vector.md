@@ -3,7 +3,7 @@ title: "Angular Velocity Vector"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 2: Introduction to Kinematics"
-aliases: ["angular velocity", "omega_b/a", "relative angular velocity"]
+aliases: ["angular velocity", "omega_b/a", "relative angular velocity", "body rates", "angular rates", "p q r"]
 tags: [sesa3047, concept, kinematics]
 status: complete
 parent_lectures: ["[[SESA3047 2.1 - Vector Operations and the Transport Theorem]]"]
@@ -30,11 +30,11 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 >
 > $${}^a\dot{\boldsymbol\omega}_{c/a}={}^b\dot{\boldsymbol\omega}_{c/b}+\boldsymbol\omega_{b/a}\times\boldsymbol\omega_{c/b}+{}^a\dot{\boldsymbol\omega}_{b/a}.$$
 >
-> The cross term is the source of gyroscopic effects.
+> The cross term is the source of what textbooks call gyroscopic effects.
 
 ## Not the rate of the Euler angles
 
-$\boldsymbol\omega$ is a true vector. The Euler angles $(\phi,\theta,\psi)$ are not, and in general $[p,q,r]^T\neq[\dot\phi,\dot\theta,\dot\psi]^T$. Each Euler rate acts about a different, partly rotated axis. The two coincide only near wings-level flight, where $\phi$ and $\theta$ are small (see [[Aerospace 3-2-1 Euler Sequence]]). The exact relation comes with the equations of motion in later chapters.
+$\boldsymbol\omega$ is a true vector. The Euler angles $(\phi,\theta,\psi)$ are not, and in general $[p,q,r]^T\neq[\dot\phi,\dot\theta,\dot\psi]^T$. Each Euler rate acts about a different, partly rotated axis. The two coincide only near wings-level flight, where $\phi$ and $\theta$ are small (see [[Aerospace 3-2-1 Euler Sequence]]). The exact relation is the [[Rotational Kinematic Equation]].
 
 ## Related
 

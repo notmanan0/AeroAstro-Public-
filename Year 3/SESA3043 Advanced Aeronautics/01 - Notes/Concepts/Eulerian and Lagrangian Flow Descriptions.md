@@ -3,7 +3,7 @@ title: "Eulerian and Lagrangian Flow Descriptions"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["Eulerian framework", "Lagrangian framework"]
+aliases: ["Eulerian framework", "Lagrangian framework", "Eulerian description", "Lagrangian description", "Eulerian specification", "Lagrangian specification"]
 tags: [sesa3043, concept, fluid-kinematics]
 status: complete
 parent_lectures: ["[[SESA3043 1.1 - Mathematical Tools and Flow Description]]"]

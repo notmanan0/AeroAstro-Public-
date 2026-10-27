@@ -3,7 +3,7 @@ title: "Newtonian Stress Tensor"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["Newtonian viscous stress", "Stokes stress tensor"]
+aliases: ["Newtonian viscous stress", "Stokes stress tensor", "stress tensor", "viscous stress tensor", "Stokes' hypothesis", "Stokes relation"]
 tags: [sesa3043, concept, stress-tensor, viscosity]
 status: complete
 parent_lectures: ["[[SESA3043 1.2 - Conservation Laws and Governing Equations]]"]

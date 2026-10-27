@@ -3,7 +3,7 @@ title: "Lumped Vortex Method"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 2: Exact Solutions and Methods for Potential Flow"
-aliases: ["LV method", "lumped vortex", "LVM"]
+aliases: ["LV method", "lumped vortex", "LVM", "lumped-vortex element", "discrete vortex method", "N-LV method", "mirror image method", "method of images", "loading point", "three-quarter-chord point"]
 tags: [sesa3043, concept, potential-flow, lumped-vortex]
 status: complete
 parent_lectures: ["[[SESA3043 2.2 - Lumped Vortex Method]]"]
@@ -16,7 +16,7 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 ## Definition
 
 > [!note] Definition
-> Model each thin lifting element by a point vortex $\Gamma$ at its $1/4$-chord and impose flow tangency at its $3/4$-chord control point. For one flat plate: $U_\infty\alpha=\dfrac{\Gamma}{2\pi(c/2)}$, so $\Gamma=\pi U_\infty\alpha c$ and $C_L=2\pi\alpha$.
+> Model each thin lifting element by a point vortex $\Gamma$ at its $1/4$-chord **loading point** $x_L$ and impose the flow tangency condition at its $3/4$-chord **control point** $x_T$ (the slides' terms). For one flat plate: $U_\infty\alpha=\dfrac{\Gamma}{2\pi(c/2)}$, so $\Gamma=\pi U_\infty\alpha c$ and $C_L=2\pi\alpha$.
 
 ## Procedure
 
@@ -47,4 +47,4 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 ## Related
 
-- [[SESA3043 2.2 - Lumped Vortex Method]] · [[Method of Images]] · [[SESA2022 T4 - Thin Aerofoil Theory]]
+- [[SESA3043 2.2 - Lumped Vortex Method]] · [[Method of Images|Mirror image method]] · [[SESA2022 T4 - Thin Aerofoil Theory]]

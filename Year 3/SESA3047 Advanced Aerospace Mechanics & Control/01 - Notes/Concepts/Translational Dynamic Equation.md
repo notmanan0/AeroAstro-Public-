@@ -3,7 +3,7 @@ title: "Translational Dynamic Equation"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 4: Dynamic Equations and 6-DOF Model"
-aliases: ["velocity state equation", "body-axis force equations"]
+aliases: ["velocity state equation", "body-axis force equations", "force equations", "Newton's equations in body axes"]
 tags: [sesa3047, concept, dynamics, gravity]
 status: complete
 coverage: "Chapter 4 §4.2; lectured in L13 ll. 88–309 (Thu 22 Oct) except Eqs. 4.31 and 4.38–4.40"

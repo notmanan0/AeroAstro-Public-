@@ -3,7 +3,7 @@ title: "Order-of-Magnitude Analysis"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["scale analysis", "scaling analysis"]
+aliases: ["scale analysis", "scaling analysis", "order of magnitude analysis", "big-O estimates"]
 tags: [sesa3043, concept, boundary-layer, scaling]
 status: complete
 parent_lectures: ["[[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]]"]

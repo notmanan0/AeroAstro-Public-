@@ -54,7 +54,7 @@ coverage: "Chapters 1–4, all lectured; Chapter 4 in L11 (Mon 19 Oct) and L12�
    - linear momentum; angular momentum and the inertia matrix derived;
    - why the cm term vanishes (by definition, not symmetry) and why $\dot{\mathbf J}=\mathbf 0$ needs rigidity, not just constant mass;
    - rotational dynamic equation, Euler's equations, the $J_{xz}$ aircraft form;
-   - gyroscopic coupling, imbalance and the intermediate-axis theorem; how the 6-DOF equations fit together.
+   - inertia coupling, imbalance and the intermediate-axis theorem; how the 6-DOF equations fit together.
 
 8. [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]] (Chapter 4 §4.1; L11, then L12 and the start of L13)
    - full moment expansion, eigenvector interpretation, aircraft block inverse and internal rotor momentum;
@@ -131,7 +131,7 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 > |---|---|---|
 > | 0 (intro) | MATLAB matrices, element-wise operators, `ode45` with a first-order state vector | [[SESA3047 1.1 - Dynamic Systems and Control Architectures\|1.1]] (state form) |
 > | 1 | Build $\mathbf C_{FRD/NED}=\mathbf C_x\mathbf C_y\mathbf C_z$; transform north for $\psi=\pm30^\circ$; recover $(20^\circ,15^\circ,30^\circ)$ with atan2/arcsin; probe $\theta=89^\circ, 89.9^\circ, 90^\circ$ | [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles\|2.2]] §§6–10, [[Gimbal Lock]] |
-> | 2 | Nonlinear (Duffing) oscillator $m\ddot x+c\dot x+kx+\mu x^3=f\cos\omega t$; linear vs nonlinear, small vs large amplitude, free and forced | [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models\|1.2]], [[Linear, Nonlinear and Time-Varying Models]] |
+> | 2 | Nonlinear oscillator (textbooks: Duffing oscillator) $m\ddot x+c\dot x+kx+\mu x^3=f\cos\omega t$; linear vs nonlinear, small vs large amplitude, free and forced | [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models\|1.2]], [[Linear, Nonlinear and Time-Varying Models]] |
 > | 3 | Integrate the rotational dynamics with the Euler-angle kinematics (Eqs. 3.10–3.11, 3.63–3.71); interpret geometric and inertial coupling | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)\|3.1 §7]], [[SESA3047 3.3 - Rigid-Body Rotational Dynamics\|3.3]] |
 >
 > The lecturer tied the coupling discussion to the lab: *"we will see how this affects the numerical simulations"* (L8, ll. 67–68). Lab 2 will use Simulink (Lab 1, p. 1).
@@ -142,6 +142,7 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 > File: `04 - Labs & Coursework/Coursework 1/Coursework_1.pdf` (2 pages). It is a **separate piece from the Lab 1 report**: two problems, **20 marks, 10 % of the module**.
 > - **Submission**: a single PDF through *Assessments → Coursework 1*. Photographed handwritten work is fine.
 > - **Rules**: *"show a sufficient number of steps … no credit will be given to correct answers by themselves"*. Late penalty **2 marks per day**. Individual work.
+> - **Templates**: `Coursework 1/SESA3047 Coursework 1 Report Template.docx` (8 pages, one box per part, figure slots and results tables) and `SESA3047 Coursework 1 Guide.docx` (not submitted: inputs, page plan, guidance, equations, checks).
 >
 > | Part | Task | Marks | Theory in the vault |
 > |---|---|---:|---|
@@ -160,7 +161,7 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 
 No tutorial or revision questions had been set for SESA3047 by 22 Oct 2026, and `03 - Exams & Past Papers` is empty.
 
-- [[SESA3047 Mock Questions - Chapters 1-4]]: **self-written, not lecturer-set**. Ten exam-style questions (118 marks) with timed full solutions and Python-checked numbers, covering classification and linearisation, frames and flat Earth, the transport theorem, DCMs and gimbal lock, Euler-angle rates, Coriolis acceleration, principal axes, rotor gyroscopics and the 12-state model. Its data deliberately differ from Lab 1 and Coursework 1.
+- [[SESA3047 Mock Questions - Chapters 1-4]]: **self-written, not lecturer-set**. Ten exam-style questions (118 marks) with timed full solutions and Python-checked numbers, covering classification and linearisation, frames and flat Earth, the transport theorem, DCMs and gimbal lock, Euler-angle rates, Coriolis acceleration, principal axes, rotor angular momentum and the 12-state model. Its data deliberately differ from Lab 1 and Coursework 1.
 
 ## Week 1 exam skills
 
@@ -196,7 +197,7 @@ No tutorial or revision questions had been set for SESA3047 by 22 Oct 2026, and 
 - write Newton's law in a rotating Earth frame and identify centrifugal and Coriolis forces; justify the flat-Earth model;
 - derive $[\dot u+qw-rv,\ \dot v+ru-pw,\ \dot w+pv-qu]^T$ and $\dot{\mathbf p}^{NED}=\mathbf C^T\mathbf v^{FRD}$;
 - derive $\mathbf h=\mathbf J\boldsymbol\omega$ (cm term vanishes, $-\tilde{\mathbf r}^2$), define moments and products of inertia (L10, ll. 60–247); say **why** the cm term vanishes (definition of the cm, not symmetry) and why $\dot{\mathbf J}=\mathbf 0$ (a rigid body, not just constant mass);
-- derive $\dot{\boldsymbol\omega}=\mathbf J^{-1}(\mathbf M-\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega)$, reduce it to Euler's equations, and explain the gyroscopic term;
+- derive $\dot{\boldsymbol\omega}=\mathbf J^{-1}(\mathbf M-\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega)$, reduce it to Euler's equations, and explain the $\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ term and the inertia coupling it causes;
 - list the 6-DOF state equations so far, and which are kinematics and which dynamics.
 
 ## Chapter 4 exam skills

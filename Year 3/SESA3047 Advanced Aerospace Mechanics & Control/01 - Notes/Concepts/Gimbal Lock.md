@@ -3,7 +3,7 @@ title: "Gimbal Lock"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 2: Introduction to Kinematics"
-aliases: ["Euler-angle singularity", "gimbal lock", "singularity of the Euler angles"]
+aliases: ["Euler-angle singularity", "gimbal lock", "singularity of the Euler angles", "kinematic singularity"]
 tags: [sesa3047, concept, kinematics, euler-angles, singularity]
 status: complete
 parent_lectures: ["[[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles]]"]

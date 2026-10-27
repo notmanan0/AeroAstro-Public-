@@ -60,7 +60,7 @@ $$
 
 **Q1.** At separation $\partial u/\partial y|_0=0$, so $\tau_w=0$ and $C_f=0$; downstream the near-wall flow reverses and $C_f<0$.
 
-**Q2.** At the wall $u=v=0$, so $0=U_eU_e'+\nu\,\partial^2u/\partial y^2|_0=U_eU_e'+\frac{\nu U_e}{\delta^2}\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}|_0$; divide by $U_e$. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#Step 3: the wall compatibility condition (slide 18)|3.3 §2]]
+**Q2.** At the wall $u=v=0$, so $0=U_eU_e'+\nu\,\partial^2u/\partial y^2|_0=U_eU_e'+\frac{\nu U_e}{\delta^2}\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}|_0$; divide by $U_e$. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#Step 3: the BL equation at the wall (slide 18)|3.3 §2]]
 
 **Q3.** $\lambda=\frac{\delta^2}{\nu}U_e'=Re_\delta\frac{\delta}{U_e}U_e'=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$: dimensionless, and the ratio of pressure-gradient force to viscous shear. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#4. What λ means (revision Q3; slides 28–31)|3.3 §4]]
 
@@ -88,7 +88,7 @@ $$
 
 ## 3.6 Viscous–inviscid interaction
 
-**Q1.** SDM re-panels each iteration (direct but costly); STM keeps the panels and blows through them (cheap, used by XFOIL). → [[SESA3043 3.6 - Viscous-Inviscid Interaction#SDM against STM (revision Q1)|3.6 §4]]
+**Q1.** SDM repanels each iteration (direct but costly); STM keeps the panels and blows through them (cheap, used by XFOIL). → [[SESA3043 3.6 - Viscous-Inviscid Interaction#SDM against STM (revision Q1)|3.6 §4]]
 
 **Q2.** Mass balance on the tunnel between $x$ and $x+\Delta x$: $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$. → [[SESA3043 3.6 - Viscous-Inviscid Interaction#Deriving vₛ (slide 21; revision Q2)|3.6 §4]]
 

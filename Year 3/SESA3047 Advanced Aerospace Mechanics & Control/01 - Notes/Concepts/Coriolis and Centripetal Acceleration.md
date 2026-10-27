@@ -3,7 +3,7 @@ title: "Coriolis and Centripetal Acceleration"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 3: Kinematic Equations and Introduction to Dynamics"
-aliases: ["Coriolis acceleration", "centripetal acceleration", "transport acceleration", "transport velocity", "five-term acceleration", "apparent forces", "centrifugal force", "Coriolis force"]
+aliases: ["Coriolis acceleration", "centripetal acceleration", "transport acceleration", "transport velocity", "five-term acceleration", "apparent forces", "centrifugal force", "Coriolis force", "tangential acceleration", "Euler acceleration", "fictitious forces", "velocity of the coincident point", "compound centripetal acceleration"]
 tags: [sesa3047, concept, kinematics, rotating-frames]
 status: complete
 parent_lectures: ["[[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames]]"]
@@ -25,7 +25,7 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/L8 - SES
 ## The terms
 
 - **Centripetal**, $\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf p)=-\omega^2\mathbf p_\perp$: points at the rotation axis. A point fixed in a rotating frame moves on a circle and needs it.
-- **Tangential (Euler)**, $\boldsymbol\alpha\times\mathbf p$: only if the spin rate changes.
+- **Angular-acceleration contribution** (textbooks: tangential or Euler acceleration), $\boldsymbol\alpha\times\mathbf p$: only if the spin rate changes.
 - **Coriolis**, $2\boldsymbol\omega\times\mathbf v_{P/b}$: only if P moves **within** the rotating frame. It is perpendicular to both $\boldsymbol\omega$ and the relative velocity.
 
 ## Where the factor 2 comes from

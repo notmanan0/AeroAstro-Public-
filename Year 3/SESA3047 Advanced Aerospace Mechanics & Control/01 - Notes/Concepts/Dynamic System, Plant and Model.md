@@ -3,7 +3,7 @@ title: "Dynamic System, Plant and Model"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 1: Fundamental Concepts"
-aliases: ["plant versus model", "dynamic system"]
+aliases: ["plant versus model", "dynamic system", "process", "controlled system"]
 tags: [sesa3047, concept, dynamic-systems]
 status: complete
 parent_lectures: ["[[SESA3047 1.1 - Dynamic Systems and Control Architectures]]", "[[SESA3047 1.2 - Dynamic Models, Frames and Earth Models]]"]

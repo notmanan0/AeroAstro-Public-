@@ -3,7 +3,7 @@ title: "Unsteady Bernoulli Equation"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["unsteady Bernoulli", "Bernoulli for potential flow"]
+aliases: ["unsteady Bernoulli", "Bernoulli for potential flow", "Bernoulli-Euler equation", "Cauchy-Lagrange integral"]
 tags: [sesa3043, concept, potential-flow, bernoulli]
 status: complete
 parent_lectures: ["[[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]]"]

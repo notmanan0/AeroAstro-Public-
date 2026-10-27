@@ -3,7 +3,7 @@ title: "Panel Method"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 2: Exact Solutions and Methods for Potential Flow"
-aliases: ["panel methods", "source panel method", "doublet panel method", "Hess-Smith method"]
+aliases: ["panel methods", "source panel method", "doublet panel method", "Hess-Smith method", "boundary element method", "surface singularity method", "influence coefficient", "collocation point", "self-induced velocity"]
 tags: [sesa3043, concept, potential-flow, panel-method, cfd]
 status: complete
 parent_lectures: ["[[SESA3043 2.3 - Panel Methods]]"]

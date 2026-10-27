@@ -3,7 +3,7 @@ title: "Fluid Flow Rate, Flux and Specific Quantity"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["flow rate and flux", "specific transported quantity"]
+aliases: ["flow rate and flux", "specific transported quantity", "specific property", "intensive property per unit mass"]
 tags: [sesa3043, concept, flux]
 status: complete
 parent_lectures: ["[[SESA3043 1.1 - Mathematical Tools and Flow Description]]"]
@@ -29,7 +29,7 @@ $$
 |---|---|---|
 | Mass | $1$ | $\rho u_n$ |
 | Momentum | $\mathbf u$ | $\rho\mathbf u u_n$ |
-| Total energy | $e_t$ | $\rho e_tu_n$ |
+| Total energy | $E_T$ | $\rho E_Tu_n$ |
 
 The sign comes from $u_n=\mathbf u\cdot\mathbf n$: positive is outward through the oriented surface.
 

@@ -3,7 +3,7 @@ title: "Direction Cosine Matrix"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 2: Introduction to Kinematics"
-aliases: ["DCM", "rotation matrix", "coordinate transformation matrix", "C_b/a"]
+aliases: ["DCM", "rotation matrix", "coordinate transformation matrix", "C_b/a", "attitude matrix", "transformation matrix", "C_FRD/NED", "R_BE", "L_BE", "angle2dcm"]
 tags: [sesa3047, concept, kinematics, dcm]
 status: complete
 parent_lectures: ["[[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles]]"]
@@ -46,4 +46,5 @@ Sign rule: for rotation about $k$ with $(i,j,k)$ cyclic, $C_{ij}=+\sin$ and $C_{
 ## Related
 
 - [[Aerospace 3-2-1 Euler Sequence]] · [[Cross-Product Matrix]] · [[Euler Angles and Rotation Matrices]] (SESA2027 notation $\mathbf R_{BE}$)
+- Other names and library conventions (attitude matrix, $\mathbf L_{BE}$, `angle2dcm` versus `eul2rotm`): [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Terminology and alternative names|2.2, terminology]]
 - Derivations: [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#3. Properties of a DCM (§2.3.2), with the reasons|2.2 §3]]

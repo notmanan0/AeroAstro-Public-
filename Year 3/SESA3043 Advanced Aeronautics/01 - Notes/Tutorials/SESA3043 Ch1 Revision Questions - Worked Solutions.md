@@ -68,7 +68,7 @@ A specific quantity is what you integrate against $\rho\,\mathrm dV$: any extens
 
 **Q2. Net x-momentum flow rate into the CV.** For a cube $\delta x\,\delta y\,\delta z$, the $x$-momentum carried through the faces normal to $x_j$ is $\rho u u_j$ per unit area. Taylor-expanding to the opposite faces and summing over the three pairs gives a net inflow of $-\dfrac{\partial(\rho uu_j)}{\partial x_j}\delta x\,\delta y\,\delta z$. → [[SESA3043 1.2 - Conservation Laws and Governing Equations#Where each local momentum term comes from|1.2 §3]]
 
-**Q3. Conservative → non-conservative.** Expand $\dfrac{\partial(\rho u_i)}{\partial t}+\dfrac{\partial(\rho u_iu_j)}{\partial x_j}=u_i\left[\dfrac{\partial\rho}{\partial t}+\dfrac{\partial(\rho u_j)}{\partial x_j}\right]+\rho\left[\dfrac{\partial u_i}{\partial t}+u_j\dfrac{\partial u_i}{\partial x_j}\right]$. The first bracket is zero by continuity, leaving $\rho\,\mathrm Du_i/\mathrm Dt$. → [[SESA3043 1.2 - Conservation Laws and Governing Equations#Material form|1.2 §3]]
+**Q3. Conservation → non-conservation form.** Expand $\dfrac{\partial(\rho u_i)}{\partial t}+\dfrac{\partial(\rho u_iu_j)}{\partial x_j}=u_i\left[\dfrac{\partial\rho}{\partial t}+\dfrac{\partial(\rho u_j)}{\partial x_j}\right]+\rho\left[\dfrac{\partial u_i}{\partial t}+u_j\dfrac{\partial u_i}{\partial x_j}\right]$. The first bracket is zero by continuity, leaving $\rho\,\mathrm Du_i/\mathrm Dt$. → [[SESA3043 1.2 - Conservation Laws and Governing Equations#Material form|1.2 §3]]
 
 **Q4. Viscous term for incompressible flow** (derivation). Newtonian stress with $\nabla\cdot\mathbf u=0$ (the bulk term drops):
 

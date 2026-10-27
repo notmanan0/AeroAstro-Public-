@@ -3,7 +3,7 @@ title: "Principal Axes of Inertia"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 4: Dynamic Equations and 6-DOF Model"
-aliases: ["principal moments of inertia", "principal inertia axes"]
+aliases: ["principal moments of inertia", "principal inertia axes", "eigen-axes of inertia"]
 tags: [sesa3047, concept, inertia, eigenvectors]
 status: complete
 parent_lectures: ["[[SESA3047 4.1 - Inertia Models and Rotor Dynamics]]"]

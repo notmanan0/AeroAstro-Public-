@@ -16,13 +16,13 @@ sources: ["02 - Sources/Lectures/Lecture2-4.pdf"]
 ## Definition
 
 > [!note] Definition
-> A **centred expansion fan** is the continuous, isentropic turning of a supersonic stream round a convex corner. It is made of infinitely many Mach waves radiating from the corner, between a forward Mach line at $\mu_1$ and a rearward one at $\mu_2-\theta$ to the original flow direction.
+> A **Prandtl–Meyer (PM) expansion fan** (a *centred expansion fan* in Anderson's wording) is the continuous, isentropic turning of a supersonic stream round a convex corner. It is made of infinitely many Mach waves radiating from the corner, between a forward Mach line at $\mu_1$ and a rearward one at $\mu_2-\theta$ to the original flow direction.
 
 ## Explanation
 
 - **Why a fan and not a shock?** The Mach waves diverge, because $M$ rises and $\mu$ falls downstream and the flow turns away. They never coalesce. Expansion shocks are also forbidden by the second law ([[Entropy Change Across a Shock]]).
 - Through the fan $p$, $T$ and $\rho$ fall, $M$ rises, and $p_0$ and $T_0$ are constant.
-- Along each ray inside a centred fan the Mach number is constant.
+- Along each ray (each line of the expansion fan) the Mach number is constant.
 - Fan angle: $\phi=\mu_1-\mu_2+\theta$.
 - **Example** (Lecture 2.4): $M_1=3$, $\theta=13^\circ$ gives $M_2=3.78$, $p_2/p_1=0.326$ (a 67.4% drop) and $\phi=17.1^\circ$.
 

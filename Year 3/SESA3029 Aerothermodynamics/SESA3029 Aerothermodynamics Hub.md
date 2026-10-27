@@ -49,6 +49,7 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.4 lectured with transcripts (C
 > - **Test 2:** open since Mon 19 Oct, two attempts, closes **Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). Done; worked: [[SESA3029 Test 2 - Solutions]].
 > - **MoC coursework (10 %): due 23:59, Sun 15 Nov** on Blackboard (brief; L3-4, ll. 415–418). This supersedes L3-2's *"end of week seven"* (Fri 6 Nov) and agrees with the module guide.
 >   - Brief: `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`.
+>   - Report files (self-made; no template was issued), in `04 - Labs & Coursework/MoC Coursework/`: `SESA3029 MoC Coursework Report (M3.4).docx` (working copy, $M_{des}=3.4$, all computed numbers filled), `SESA3029 MoC Coursework Report Template.docx` (blank) and `SESA3029 MoC Coursework Guide.docx` (marks, page plan, equations, checklist).
 >   - A minimum-length nozzle for $M_{des}=3.x$, where $x$ is the last digit of your student ID, for **CO₂ ($\gamma=1.289$), not air**, so the $\gamma=1.4$ tables cannot be used. Use five characteristics from $0.125^\circ$ to $\theta_{max}$ (20 points) and four significant figures.
 >   - The report has sections i–vi (marks 5/15/10/25/20/25) in at most six A4 pages: summary, method, verified $\mu$ and $\nu$ code, template, steps for points 1, 2 and the last wall point, then the plot with an $A/A^*$ comparison and limitations.
 >   - The method is the §14 table in [[SESA3029 W05b - Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|W05b]] (L3-3, ll. 132, 221–222). The brief and checks are in [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b, announcements]].
@@ -87,8 +88,9 @@ coverage: "Week 1; Lectures 2.1–2.7 and 3.1–3.4 lectured with transcripts (C
    - the unit process with averaged slopes, why the lines bend, and the slide 9 example (the coordinates were homework);
    - slips tables for L3-1 and L3-2.
 6. [[SESA3029 W05b - Minimum-Length Nozzle Design]] (Lectures 3.3–3.4 with transcripts, Thu 22 and Fri 23 Oct, plus the coursework brief; §§11–17)
-   - the three boundary conditions, "any two of $R^+,R^-,\nu,\theta$"; simple and uniform regions;
-   - $\theta_{max}=\nu(M_e)/2$, and reading $M_e$ off the throat angle (sharp-corner nozzles only);
+   - the three boundary conditions, "any two of $R^+,R^-,\nu,\theta$"; complex, simple flow and uniform flow regions;
+   - $\theta_{max}=\nu(M_e)/2$, and reading $M_e$ off the wall's maximum slope at the throat (sharp-corner nozzles only);
+   - a "Terminology and alternative names" table mapping the course's terms to the textbook names (Anderson's $K^\pm$ among them), also in W05a;
    - the $M_e=2.4$ minimum-length nozzle, all 14 points reproduced, converging to $A_e/A^*$;
    - the 3.4 generic example, the non-reflecting point 3, and the inverse problem; the past-paper hint;
    - the MoC coursework brief ($M_{des}=3.x$, CO₂ with $\gamma=1.289$, five lines from $0.125^\circ$, due 15 Nov), with general-$\gamma$ formulas and code-verification checks;
@@ -232,9 +234,9 @@ Always check Blackboard for any later change to dates or assessment rules.
 - explain why the eigenvector route is the general method, and why $\underline E^{-1}$ goes on the left (L3-2, ll. 16–19, 115–166);
 - run the unit process with averaged slopes; reproduce $M_3=1.7039$, $(1.3591,\ 0.2814)$ (the coordinates were L3-2 homework); keep the calculator in degrees;
 - explain why the characteristics bend: $\mu=\sin^{-1}(1/M)$ changes from point to point (L3-2, ll. 299–318);
-- apply the reflecting-wall, cancelling-wall and symmetry conditions, with their coordinate rules; *"R minus is R plus plus two times the wall angle"* (L3-3, ll. 62–63); any two of $R^+,R^-,\nu,\theta$ fix the rest (ll. 32–36);
+- apply the reflecting-wall, non-reflecting-wall and symmetry conditions, with their coordinate rules; *"R minus is R plus plus two times the wall angle"* (L3-3, ll. 62–63); any two of $R^+,R^-,\nu,\theta$ fix the rest (ll. 32–36);
 - derive $\theta_{max}=\nu(M_e)/2$ (with $\nu(1)=0$) and fill the minimum-length-nozzle template; check $y_e/r_a$ against $A_e/A^*$. This is the coursework (L3-3, ll. 132, 221–222);
-- read $M_e$ off a sharp throat corner's angle, and know that it fails for gradual nozzles; do not confuse this $\theta_{max}$ with the oblique-shock one (L3-3, ll. 133–139, 204–214);
+- read $M_e$ off the maximum slope $\theta_{max}$ at a sharp expansion corner, and know that it fails for gradual nozzles; do not confuse this $\theta_{max}$ with the oblique-shock one (L3-3, ll. 133–139, 204–214);
 - work a symbolic MoC table (3.4) in under a minute (*"one of the questions in the past papers"*, L3-4, ll. 198–203), spot a non-reflecting wall point by checking the physics, not just the rules (ll. 206–281), and invert measured Mach numbers for $\theta_w$ and $M_0$ (ll. 298–348).
 
 ## All notes

@@ -3,7 +3,7 @@ title: "Prandtl Boundary-Layer Equations"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["boundary-layer equations", "BL equations", "Prandtl BL equations"]
+aliases: ["boundary-layer equations", "BL equations", "Prandtl BL equations", "2-D BL equation", "reduced BL equation", "Prandtl's thin boundary layer theory", "boundary-layer approximation"]
 tags: [sesa3043, concept, boundary-layer]
 status: complete
 parent_lectures: ["[[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]]"]

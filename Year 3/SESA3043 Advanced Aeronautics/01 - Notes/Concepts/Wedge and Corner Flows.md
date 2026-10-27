@@ -3,7 +3,7 @@ title: "Wedge and Corner Flows"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["flow over a wedge", "Phi = -k z^(m+1)", "Falkner-Skan edge velocity"]
+aliases: ["flow over a wedge", "Phi = -k z^(m+1)", "Falkner-Skan edge velocity", "mystery flow", "wedge flow", "corner flow", "stagnation-point flow", "Hiemenz flow", "Hartree parameter"]
 tags: [sesa3043, concept, potential-flow, wedge]
 status: complete
 parent_lectures: ["[[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]]"]

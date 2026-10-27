@@ -3,11 +3,11 @@ title: "Incompressible Navier-Stokes Equations"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["incompressible NS equations"]
+aliases: ["incompressible NS equations", "incompressible N-S equations", "divergence-free flow", "solenoidal velocity field"]
 tags: [sesa3043, concept, navier-stokes, incompressible-flow]
 status: complete
 parent_lectures: ["[[SESA3043 1.2 - Conservation Laws and Governing Equations]]", "[[SESA3043 1.2b - Potential-Flow Review]]"]
-related_concepts: ["[[Continuity Equation in Conservative Form]]", "[[Newtonian Stress Tensor]]", "[[Streamfunction and Velocity Potential]]"]
+related_concepts: ["[[Continuity Equation in Conservation Form]]", "[[Newtonian Stress Tensor]]", "[[Streamfunction and Velocity Potential]]"]
 sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Sources/Lectures/L3 - SESA3043.txt"]
 ---
 

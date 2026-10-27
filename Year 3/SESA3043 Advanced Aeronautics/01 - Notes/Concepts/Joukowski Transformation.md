@@ -3,7 +3,7 @@ title: "Joukowski Transformation"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 2: Exact Solutions and Methods for Potential Flow"
-aliases: ["Joukowski aerofoil", "Joukowsky transformation"]
+aliases: ["Joukowski aerofoil", "Joukowsky transformation", "Zhukovsky transformation", "Joukowski airfoil", "transfer constant"]
 tags: [sesa3043, concept, potential-flow, conformal-mapping, aerofoil]
 status: complete
 parent_lectures: ["[[SESA3043 2.1 - Complex Functions and Conformal Mapping]]"]

@@ -3,7 +3,7 @@ title: "Complex Velocity Potential"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["complex potential", "Phi = phi + i psi"]
+aliases: ["complex potential", "Phi = phi + i psi", "complex velocity", "w(z)", "F(z)", "Cauchy-Riemann equations"]
 tags: [sesa3043, concept, potential-flow, complex-analysis]
 status: complete
 parent_lectures: ["[[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli]]"]

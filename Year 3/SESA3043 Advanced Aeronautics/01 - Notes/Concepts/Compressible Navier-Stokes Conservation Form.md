@@ -3,11 +3,11 @@ title: "Compressible Navier-Stokes Conservation Form"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["compressible conservation variables", "Navier-Stokes conservative form"]
+aliases: ["compressible conservation variables", "Navier-Stokes conservative form", "conservative form", "conserved variables", "state vector", "flux vector form"]
 tags: [sesa3043, concept, navier-stokes, conservation-form]
 status: complete
 parent_lectures: ["[[SESA3043 1.2 - Conservation Laws and Governing Equations]]"]
-related_concepts: ["[[Navier-Stokes Equations]]", "[[Continuity Equation in Conservative Form]]", "[[Newtonian Stress Tensor]]"]
+related_concepts: ["[[Navier-Stokes Equations]]", "[[Continuity Equation in Conservation Form]]", "[[Newtonian Stress Tensor]]"]
 sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Sources/Lectures/L3 - SESA3043.txt"]
 ---
 
@@ -22,10 +22,10 @@ $$
 }.
 $$
 
-The conserved state is
+The **conservation variables** (CH1-2 slide 75; often called conserved variables or the state vector) are
 
 $$
-\mathbf Q=[\rho,\rho u,\rho v,\rho w,\rho e_t]^T.
+\mathbf Q=[\rho,\rho u,\rho v,\rho w,\rho E_T]^T.
 $$
 
 The fluxes contain advection, pressure work, viscous stresses and heat conduction. Sources contain body-force contributions.
@@ -34,7 +34,7 @@ The fluxes contain advection, pressure work, viscous stresses and heat conductio
 
 The five conservation equations determine mass, three momentum components and total energy. Primitive variables include $\rho,u,v,w,p$ and a thermal variable. An equation of state and a caloric relation close the system.
 
-## Why conservative form matters
+## Why the conservation form matters
 
 - it preserves the integral conservation law under discretisation;
 - it gives the correct weak solution across discontinuities such as shocks;

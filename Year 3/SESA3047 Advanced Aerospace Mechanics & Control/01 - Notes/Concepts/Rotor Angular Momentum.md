@@ -3,7 +3,7 @@ title: "Rotor Angular Momentum"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 4: Dynamic Equations and 6-DOF Model"
-aliases: ["internal rotor dynamics", "propeller gyroscopic contribution"]
+aliases: ["internal rotor dynamics", "propeller gyroscopic contribution", "spinning internal rotors", "gyroscopic moment", "engine angular momentum"]
 tags: [sesa3047, concept, rotor, angular-momentum]
 status: complete
 coverage: "Chapter 4 §4.1.4; lectured in L12 ll. 222–350 and L13 ll. 1–86 (Thu 22 Oct); Eq. 4.25 from the handout only"
@@ -35,7 +35,7 @@ $$
 (\boldsymbol\omega\times\mathbf h_R+{}^b\dot{\mathbf h}_R).}
 $$
 
-Constant body-frame momentum removes its body derivative, but not the gyroscopic term. Spin-up changes momentum magnitude and produces the second reaction contribution. Moving rotor axes requires retaining the derivative and checking whether the constant-inertia approximation still applies.
+Constant body-frame momentum removes its body derivative, but not the $\boldsymbol\omega\times\mathbf h_R$ term (textbooks: the gyroscopic moment). Spin-up changes momentum magnitude and produces the second reaction contribution. Moving rotor axes requires retaining the derivative and checking whether the constant-inertia approximation still applies.
 
 ## Base plus additional (as lectured)
 
@@ -67,7 +67,7 @@ $$
 
 Apply the full inertia inverse to this vector. Off-diagonal inertia can turn this into acceleration about all three axes.
 
-**A real propeller.** For $I_R=1.6$ kg m² at 2400 rpm (clockwise from the cockpit, so $+x_b$), $h_x=402.1$ kg m²/s. In a 0.2 rad/s pull-up, $-\boldsymbol\omega\times\mathbf h_R=[0,0,+80.4]^T$ N m: the nose yaws right, and raising the tail on take-off ($q<0$) yaws it left. Worked in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Worked engine-rotor gyroscopics in a pull-up (suggested)|4.1]].
+**A real propeller.** For $I_R=1.6$ kg m² at 2400 rpm (clockwise from the cockpit, so $+x_b$), $h_x=402.1$ kg m²/s. In a 0.2 rad/s pull-up, $-\boldsymbol\omega\times\mathbf h_R=[0,0,+80.4]^T$ N m: the nose yaws right, and raising the tail on take-off ($q<0$) yaws it left. Worked in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Worked engine-rotor contribution in a pull-up (suggested)|4.1]].
 
 ## Related
 

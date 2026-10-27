@@ -54,7 +54,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22–23 Oct 
 
 9. [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures]] (**lectured Thu 22 Oct**, transcript folded in): $\delta_{99}$, $\delta^*$, $\theta$ (control-volume derivation of $D=\rho U_e^2\theta$), $C_f$, $H$. Also the laminar and turbulent profiles compared, the effective body as the answer to a Chapter 1 question, and slips flagged.
 10. [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions]] (**lectured Thu 22 and Fri 23 Oct, up to slide 99**): both derived in full, plus the lecture's tidy-up route and its series argument for integral B. Integrals A and B; the special cases and what "wedge angle $\beta\pi$" measures; the Falkner–Skan table recomputed; the bump picture (new figure); wedge $\beta=0.3$. The cylinder stagnation example (slides 100–106) is still written ahead.
-11. [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients]]: the quartic and $\lambda$; separation at $\lambda=-12$; laminar vs turbulent separation (sphere, golf ball, cricket ball).
+11. [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients]]: the Pohlhausen solution (a 4th-order polynomial) and $\lambda$; separation at $\lambda=-12$; laminar vs turbulent separation (sphere, golf ball, cricket ball).
 12. [[SESA3043 3.4 - Transition to Turbulence]]: roadmap, Orr–Sommerfeld derived, thumb plot, $e^n$ method.
 13. [[SESA3043 3.5 - Momentum Integral Equation]]: the MIE derived in six steps (matches the new Blackboard handout equation for equation); closures (Pohlhausen, Thwaites); ship-fouling example.
 14. [[SESA3043 3.6 - Viscous-Inviscid Interaction]]: SDM and STM, $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; XFOIL; wind-tunnel VII example; **coursework** pointer.
@@ -68,7 +68,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22–23 Oct 
 | Flow description | Conservation and constitutive laws | Reduced models |
 |---|---|---|
 | [[Eulerian and Lagrangian Flow Descriptions]] | [[Reynolds Transport Theorem]] | [[Incompressible Navier-Stokes Equations]] |
-| [[Material Derivative]] | [[Continuity Equation in Conservative Form]] | [[Streamfunction and Velocity Potential]] |
+| [[Material Derivative]] | [[Continuity Equation in Conservation Form]] | [[Streamfunction and Velocity Potential]] |
 | [[Fluid Flow Rate, Flux and Specific Quantity]] | [[Newtonian Stress Tensor]] | [[Elementary Potential Flows]] |
 | [[Flux Integrals]] | [[Compressible Navier-Stokes Conservation Form]] | [[Bernoulli Equation]] |
 
@@ -81,7 +81,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22–23 Oct 
 | [[Wedge and Corner Flows]] | [[Displacement and Momentum Thickness]] (SESA2022) | [[Kármán–Trefftz Transformation]] |
 | [[Unsteady Bernoulli Equation]] | [[Boundary Layer Separation]] (SESA2022) | [[Lumped Vortex Method]] |
 | [[Flow Past a Cylinder]] (SESA2022) | | [[Panel Method]] |
-| [[Kutta-Joukowski Theorem]] (SESA2022) | | [[Kutta Condition]] · [[Method of Images]] (SESA2022) |
+| [[Kutta-Joukowski Theorem]] (SESA2022) | | [[Kutta Condition]] · [[Method of Images|Mirror image method]] (SESA2022) |
 
 ## Chapter 3 concept map
 
@@ -137,10 +137,10 @@ Check Blackboard for authoritative dates and later changes.
 - translate between vector, tensor/index and component notation;
 - distinguish Eulerian and Lagrangian descriptions and connect them with the material derivative;
 - derive local conservation equations from a control-volume statement;
-- convert conservative to non-conservative form;
+- convert the conservation form to the non-conservation form;
 - identify every force and flux in the momentum and energy equations;
 - state the assumptions that reduce the compressible equations to incompressible Navier–Stokes, Euler, potential flow and Bernoulli;
-- interpret $\phi$ and $\psi$, including why $\Delta\psi$ equals volume flow per unit span.
+- interpret $\phi$ and $\psi$, including why $\Delta\psi$ equals the volumetric flow rate per unit span.
 
 **Chapter 1 (second half)**
 
@@ -166,7 +166,7 @@ Check Blackboard for authoritative dates and later changes.
 - define $\delta_{99}$, $\delta^*$, $\theta$, $H$, $C_f$ with their mathematical **and** physical meanings, and derive $D=\rho U_e^2\theta$ and $\mathrm d\theta/\mathrm dx=C_f/2$ by control volume. The lecture's memory aid: $\delta^*$ → effective body, $\theta$ → drag (BL1, ll. 230–233). $\mathrm d\theta/\mathrm dx=C_f/2$ holds for a flat plate only (ll. 284–288);
 - explain from normalised profiles why a turbulent layer is fuller and has more friction drag (BL1, ll. 82–88);
 - evaluate them for an assumed profile (linear, Pohlhausen);
-- derive the Blasius and Falkner–Skan equations from the stream-function BL equation; explain similarity and guess-and-shoot. Understand the route rather than memorising it (BL2, ll. 210–211): two PDEs → $\psi$ → one PDE → similarity variables → one nonlinear ODE;
+- derive the Blasius and Falkner–Skan equations from the stream-function BL equation; explain similarity and the guess-and-shooting method. Understand the route rather than memorising it (BL2, ll. 210–211): two PDEs → $\psi$ → one PDE → similarity variables → one nonlinear ODE;
 - get $\delta^*$, $\theta$, $C_f$, $H$ from $\eta^*$, $\theta^*$, $f''(0)$, including $\theta^*=f''(0)$ by parts, with $f(1-f')\to0$ by the series argument; use the Falkner–Skan table for a wedge or a stagnation point;
 - say where $\delta_{99}/x=5.0/\sqrt{Re_x}$, $\delta^*/x=1.721/\sqrt{Re_x}$, $\theta/x=C_f=0.664/\sqrt{Re_x}$ come from, and their limits: laminar, zero pressure gradient (BL2, ll. 319–326);
 - explain the sign of $\beta$ along a bump up to separation, and the effective body for a wedge (revision 3.2 Q4; BL2, ll. 636–673);

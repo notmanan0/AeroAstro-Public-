@@ -3,7 +3,7 @@ title: "Rotational Dynamic Equation"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 3: Kinematic Equations and Introduction to Dynamics"
-aliases: ["angular-velocity state equation", "Euler's equations", "Euler's rotational equations", "gyroscopic term", "moment equations"]
+aliases: ["angular-velocity state equation", "Euler's equations", "Euler's rotational equations", "gyroscopic term", "moment equations", "Euler's moment equations", "inertia coupling", "inertial coupling", "roll coupling"]
 tags: [sesa3047, concept, dynamics, angular-momentum]
 status: complete
 parent_lectures: ["[[SESA3047 3.3 - Rigid-Body Rotational Dynamics]]"]
@@ -57,12 +57,12 @@ $$
 
 ## Internal rotors
 
-With total momentum $\mathbf h=\mathbf J\boldsymbol\omega+\mathbf h_R$, add $-\mathbf J^{-1}(\boldsymbol\omega\times\mathbf h_R+{}^b\dot{\mathbf h}_R)$ to the baseline derivative. See [[Rotor Angular Momentum]]; this is written from Chapter 4 §4.1.4, awaiting a transcript.
+With total momentum $\mathbf h=\mathbf J\boldsymbol\omega+\mathbf h_R$, add $-\mathbf J^{-1}(\boldsymbol\omega\times\mathbf h_R+{}^b\dot{\mathbf h}_R)$ to the baseline derivative. See [[Rotor Angular Momentum]]; Chapter 4 §4.1.4, lectured in L12–L13 (the ${}^b\dot{\mathbf h}_R$ term is handout only).
 
 ## Physical meaning
 
 - $\mathbf M$: applied moments (aerodynamic, thrust, controls).
-- $\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$: the **gyroscopic** term. It exists with no applied moment, because $\mathbf h$ is generally not parallel to $\boldsymbol\omega$. It causes inertia (roll) coupling, the need to balance rotors, and the instability of spin about the intermediate principal axis.
+- $\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$: the change of angular momentum associated with the rotating body frame (Chapter 3, p. 14; textbooks call it the gyroscopic term). It exists with no applied moment, because $\mathbf h$ is generally not parallel to $\boldsymbol\omega$. It causes **inertia coupling** (Chapter 4, p. 4; L12; Lab 1 says *inertial coupling*), the need to balance rotors, and the instability of spin about the intermediate principal axis.
 - Torque-free motion conserves $|\mathbf h|$ and the kinetic energy $\tfrac12\boldsymbol\omega^T\mathbf J\boldsymbol\omega$.
 
 ## Related

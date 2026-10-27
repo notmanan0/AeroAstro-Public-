@@ -3,7 +3,7 @@ title: "Open-Loop, Feedback and Feedforward Control"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 1: Fundamental Concepts"
-aliases: ["control arrangements", "feedback and feedforward"]
+aliases: ["control arrangements", "feedback and feedforward", "closed-loop control", "predetermined control", "programmed control", "preview control", "summing junction", "setpoint"]
 tags: [sesa3047, concept, feedback, feedforward]
 status: complete
 parent_lectures: ["[[SESA3047 1.1 - Dynamic Systems and Control Architectures]]"]

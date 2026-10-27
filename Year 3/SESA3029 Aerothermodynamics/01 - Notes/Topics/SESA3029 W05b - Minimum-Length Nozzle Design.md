@@ -24,14 +24,14 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Lecture
 > [!abstract] Summary
 > Lectures 3.3–3.4 turn the unit process of [[SESA3029 W05a - Method of Characteristics|W05a]] into a design tool. The states still come from $R^+=\nu-\theta$ along $C^+$ and $R^-=\nu+\theta$ along $C^-$. What is new is what happens where a characteristic meets a wall or the centreline, and how to shape a wall so that nothing comes back.
 >
-> - **3.3** adds the boundary conditions (reflecting wall, cancelling wall, symmetry plane) and designs the **minimum-length nozzle**: $\theta_{max}=\nu(M_e)/2$, so the throat angle alone gives the exit Mach number. For $M_e=2.4$ with four characteristics, $x_e/r_a=8.069$ and $y_e/r_a=2.400$, against the 1D $A_e/A^*=2.4031$.
+> - **3.3** adds the boundary conditions (reflecting wall, non-reflecting wall, symmetry plane) and designs the **minimum-length nozzle**: $\theta_{max}=\nu(M_e)/2$, so the throat angle alone gives the exit Mach number. For $M_e=2.4$ with four characteristics, $x_e/r_a=8.069$ and $y_e/r_a=2.400$, against the 1D $A_e/A^*=2.4031$.
 > - **3.4** (Fri 23 Oct) works a channel symbolically, finds that point 3 cannot reflect, and solves the inverse problem: $M_4=2.2$, $M_6=2.4$ give $\theta_w=5.0140^\circ$ and $M_0=1.8340$. The lesson: *"always think about the results, whether it makes sense or not"* (L3-4, ll. 279–281). The lecture ended with the **MoC coursework brief**: a minimum-length nozzle for $M_e=3.x$ in **CO₂ ($\gamma=1.289$)** with five characteristics, due **15 Nov**.
 
 ## Key concepts
 
 - New: [[Minimum-Length Nozzle]]
 - From W05a: [[Method of Characteristics]] · [[Riemann Invariants]] · [[Homentropic Flow]] (the unit process and $R^\pm$ are used at every point)
-- From W03: [[Prandtl-Meyer Function]] · [[Expansion Fan]] (the centred fan at the throat corner)
+- From W03: [[Prandtl-Meyer Function]] · [[Expansion Fan]] (the Prandtl–Meyer expansion fan at the throat)
 - From W04: [[Isentropic Nozzle Flow]] (SESA2022) and $A/A^*$, which checks the exit height · [[Supersonic Wind Tunnel]]
 
 > [!info] Where this was lectured
@@ -56,7 +56,7 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Lecture
 > - **Design Mach number $M_{des}=3.x$**, where $x$ is the last digit of your student ID (L3-4, ll. 371–372).
 > - **The gas is carbon dioxide at room temperature, $\gamma=1.289$, not air.** The IFT, NST and OSC are all for $\gamma=1.4$, so none of them can be used for your numbers. Every $\nu$, $M$ and $A/A^*$ must come from your own code. The lecture did not mention this; it is only in the brief.
 > - **Part A**: program a spreadsheet or Python function giving $\mu$ and $\nu$ for any $M$ and $\gamma$, and verify both against an alternative method.
-> - **Part B**: a 2D minimum-length nozzle with **five characteristics** from the corner at $(x,y)=(0,1)$, with angles **equally spaced from $0.125^\circ$ to $\theta_{max}$** (not the $0.375^\circ$ start of §14). Keep **at least four significant figures** throughout. Five lines give **20 points** (L3-4, ll. 392–397): $n(n+3)/2$ for $n$ lines, five of them on the wall (ll. 406–408).
+> - **Part B**: a 2D minimum-length nozzle with **five characteristics** from the expansion corner at $(x,y)=(0,1)$, with angles **equally spaced from $0.125^\circ$ to $\theta_{max}$** (not the $0.375^\circ$ start of §14). Keep **at least four significant figures** throughout. Five lines give **20 points** (L3-4, ll. 392–397): $n(n+3)/2$ for $n$ lines, five of them on the wall (ll. 406–408).
 > - **Report**: at most **6 A4 pages** including tables and figures, with no separate title page. Sections and marks:
 >
 > | Part | Content | Marks |
@@ -100,7 +100,7 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Lecture
 2. A boundary point has only **one** incoming line. The wall or the centreline supplies the missing number, the flow angle $\theta$: *"all you need … is to obtain two of them"* (L3-3, ll. 27–36).
 3. Walls and the centreline decide what happens when a line arrives. A **prescribed** wall reflects it (a new line leaves). A **designed** wall is shaped to absorb it (nothing leaves). The centreline is a mirror.
 4. Design a nozzle wall that absorbs every wave arriving at it and the exit flow is **uniform and shock-free**. Put all the expansion into a sharp corner at the throat and that nozzle is also the **shortest** possible.
-5. In that minimum-length nozzle the throat corner angle alone fixes the exit Mach number, $\theta_{max}=\nu(M_e)/2$. The 1D area ratio checks the exit height, but only MoC gives the **length**.
+5. In that minimum-length nozzle the wall's maximum slope at the throat alone fixes the exit Mach number, $\theta_{max}=\nu(M_e)/2$. The 1D area ratio checks the exit height, but only MoC gives the **length**.
 6. Blind bookkeeping can invent waves that do not exist. A wall reflects only if the arriving flow has to turn to follow it, so always check that the table makes physical sense (Lecture 3.4).
 
 ---
@@ -147,7 +147,7 @@ At a **bottom** wall the roles swap: $\nu_W=R^-_B-\theta_W$, and the reflected $
 
 The slides give no coordinate formula for BC 1. Intersect the $C^+$ line from A with the known wall curve. $\theta_W$ depends on where the line lands, so iterate if you use averaged slopes. [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]] is a worked case.
 
-### BC 2: a designed wall cancels (slide 6)
+### BC 2: a designed wall is non-reflecting (slide 6)
 
 L3-3, ll. 65–87. Here the wall angle is **chosen**: set $\theta_W=\theta_A$, so the flow does not turn between A and W. A wave reflects only when the flow has to turn to follow the wall (ll. 65–70). Then
 
@@ -211,16 +211,18 @@ Both give $y_P=0$ and the $x_P$ above.
 
 A practical supersonic nozzle downstream of the throat has two parts (Anderson's figure in 3.1 slide 2, 3.2 slide 12 and 3.3 slide 4; the ANSYS sketch in 3.3 slide 8):
 
-- an **expansion section** of **prescribed** geometry. Characteristics from the walls reflect (BC 1) and cross each other, so the region is **non-simple**. The wall slope rises to $\theta_{max}$ at the end of this section (slide 9);
+- an **expansion section** of **prescribed** geometry. Characteristics from the walls reflect (BC 1) and cross each other, so this is a **complex region**. The wall slope rises to $\theta_{max}$ at the end of this section (slide 9);
 - a **straightening section** of **designed** geometry. Each arriving characteristic is cancelled (BC 2), and the wall slope falls back to zero.
 
 The regions that result:
 
 | Region | Characteristics | Example in the figures |
 |---|---|---|
-| non-simple | both families cross | the expansion section, the kernel behind the throat corner |
-| **simple** | one family only, no crossings; one invariant is the same everywhere | the amber triangles next to the designed walls |
-| **uniform** | none: constant $M_e$, $\theta=0$ | the blue exit core |
+| **complex region** | both families cross | the expansion section; in the minimum-length nozzle, the region behind the expansion corner |
+| **simple flow region** | one family only, no crossings (*"characteristics from one direction only"*, slide 10); one invariant is the same everywhere | the amber triangles next to the designed walls |
+| **uniform flow region** | none: constant $M_e$, $\theta=0$ | the blue exit core |
+
+The names are the course's: "simple flow region" and "uniform flow region" are on slides 8 and 10, and the supplementary note (p. 10) calls the crossing zones "complex zones". Other names are in [[#Terminology and alternative names]].
 
 The start line cannot be the throat itself. At $M=1$, $\mu=90^\circ$, so the characteristics stand at right angles to the flow (supplementary note p. 9). The calculation starts just downstream.
 
@@ -240,11 +242,11 @@ The start line cannot be the throat itself. At $M=1$, $\mu=90^\circ$, so the cha
 
 ![[at_moc_min_length_nozzle.png|900]]
 
-To make the nozzle as short as possible, remove the prescribed section entirely. All the expansion then happens in a **centred Prandtl–Meyer fan at a sharp corner C** at the throat, and the wall downstream is designed to cancel every wave. See [[Minimum-Length Nozzle]].
+To make the nozzle as short as possible, remove the prescribed section entirely. All the expansion then happens in a **Prandtl–Meyer expansion fan at point C**, a sharp expansion corner at the throat, and the wall downstream is designed to be non-reflecting, so every wave that reaches it is cancelled. See [[Minimum-Length Nozzle]].
 
 **In the lecture** (L3-3, ll. 144–200). The nozzle length runs from the throat to the exit. A real nozzle should be as short as possible, because extra length means extra weight and bulk (ll. 144–148). So drop the prescribed section and let *"nature"* design the whole wall (ll. 148–153). The wall slope then jumps from about $0$ to $\theta_{max}$ at the throat. *"What do you expect?"* An expansion fan, whose lines are Mach waves and therefore exactly the characteristics (ll. 156–163). Every downstream wall point is made non-reflecting, so straightening starts at once (ll. 164–167).
 
-**Derivation of the corner angle.**
+**Derivation of the maximum slope.**
 
 1. The throat is sonic: $M=1$, so $\nu(1)=0$ and $\theta=0$. **Why $\nu(1)=0$** (ll. 176–187): the Prandtl–Meyer function is defined as an integral from $M=1$,
 
@@ -282,7 +284,7 @@ $$
 For $M_e=2.4$: $\nu(2.4)=36.7465^\circ$, so $\theta_{max}=18.373^\circ$ (the slides round this to $18.375^\circ$).
 
 > [!tip] Why half?
-> The corner fan supplies only **half** the expansion: it raises $\nu$ from $0$ to $\theta_{max}$ and turns the wall flow up by $\theta_{max}$. The fan then reflects off the centreline as $C^+$ waves. Crossing those waves expands the flow by another $\theta_{max}$ while turning it back to $\theta=0$.
+> The expansion fan at C supplies only **half** the expansion: it raises $\nu$ from $0$ to $\theta_{max}$ and turns the wall flow up by $\theta_{max}$. The fan then reflects off the centreline as $C^+$ waves. Crossing those waves expands the flow by another $\theta_{max}$ while turning it back to $\theta=0$.
 >
 > The designed wall absorbs each reflected wave as it arrives, so it turns back from $\theta_{max}$ to $0$. Along the wall $\nu+\theta$ stays at $2\theta_{max}=36.747^\circ$: the flow keeps accelerating as the wall straightens.
 
@@ -293,13 +295,13 @@ For $M_e=2.4$: $\nu(2.4)=36.7465^\circ$, so $\theta_{max}=18.373^\circ$ (the sli
 >
 > $$\theta_{max}=\frac{53.470^\circ}{2}=26.735^\circ .$$
 >
-> **Inverse.** You measure $26.74^\circ$ at the throat corner. Double it:
+> **Inverse.** You measure a maximum slope of $26.74^\circ$ at the throat. Double it:
 >
 > $$\nu(M_e)=2\times26.74^\circ=53.48^\circ .$$
 >
 > Invert in the IFT: $M_e=3.20$.
 >
-> For comparison, a corner of $18.375^\circ$ gives $M_e=2.400$ and $13.19^\circ$ gives $2.000$.
+> For comparison, a maximum slope of $18.375^\circ$ gives $M_e=2.400$ and $13.19^\circ$ gives $2.000$.
 
 > [!warning] Only for a sharp-corner (minimum-length) nozzle
 > In a nozzle with a gradual expansion section, the largest slope $\theta_{max}$ is reached at the junction point E (§12). The flow at E has already been expanded by its own wall turning ($\theta_{max}$) **and** by reflected waves from the centreline, so $\nu_E\ge\theta_{max}$. The last $C^-$ from E reaches the start of the uniform region, so
@@ -312,7 +314,7 @@ For $M_e=2.4$: $\nu(2.4)=36.7465^\circ$, so $\theta_{max}=18.373^\circ$ (the sli
 
 1. $\theta_{max}=\nu(M_e)/2$.
 2. Choose the number of characteristics and their angles in the fan, from a **small** $\delta$ up to $\theta_{max}$. $\delta=0$ would give a line bouncing back and forth across the throat, which is useless.
-3. In the fan $\nu=\theta$, because $R^+=0$ from the sonic throat. So each corner line carries $R^-=2\theta$.
+3. In the fan $\nu=\theta$, because $R^+=0$ from the sonic throat. So each line of the expansion fan carries $R^-=2\theta$.
 4. Apply the unit process to all the points downstream.
 5. Work left to right and compute the coordinates: interior points by §10, centreline points by BC 3, designed wall points by BC 2.
 
@@ -320,30 +322,30 @@ For $M_e=2.4$: $\nu(2.4)=36.7465^\circ$, so $\theta_{max}=18.373^\circ$ (the sli
 
 ## 14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)
 
-**Set-up** (slide 11; L3-3, ll. 215–222). Design a nozzle for $M_e=2.4$ using four characteristics a to d from the throat corner 0 at $(0,1)$, with $\theta_{0a}=0.375^\circ$. Find points 1 to 14. Lengths are scaled by the throat half-height $r_a=1$ (slide 21). More fan lines give more points and more resolution, but four lines and 14 points are *"something manageable"* (ll. 219–221).
+**Set-up** (slide 11; L3-3, ll. 215–222). Design a nozzle for $M_e=2.4$ using four characteristics a to d from point 0 at $(0,1)$, the expansion corner at the throat, with $\theta_{0a}=0.375^\circ$. Find points 1 to 14. Lengths are scaled by $r_a$, *"the nozzle throat's half-width"*, with $r_a=1$ (slide 21). More lines in the expansion fan give more points and more resolution, but four lines and 14 points are *"something manageable"* (ll. 219–221).
 
 **The columns** (ll. 226–231): $R^+$, $R^-$, $\theta$ and $\nu$ are the essential four. $M$ comes from $\nu$, $\mu$ from $M$, and $\theta\pm\mu$ are needed only for the slopes that place $x$ and $y$.
 
-**Start from the exit** (ll. 232–239). Point 14 must have $M=2.4$, so $\nu_{14}=\nu(2.4)=36.7465^\circ$, rounded to $36.75^\circ$. Point 13 is the same, since nothing changes between 13 and 14. Halving gives $\theta_{max}=18.375^\circ$, which is $\nu=\theta$ on the last fan line 0d.
+**Start from the exit** (ll. 232–239). Point 14 must have $M=2.4$, so $\nu_{14}=\nu(2.4)=36.7465^\circ$, rounded to $36.75^\circ$. Point 13 is the same, since nothing changes between 13 and 14. Halving gives $\theta_{max}=18.375^\circ$, which is $\nu=\theta$ on 0d, *"the last line of the expansion fan"* (l. 239).
 
 **Why $0.375^\circ$** (ll. 240–243). Spread the four lines evenly: $0.375$, $6.375$, $12.375$, $18.375^\circ$, adding $6^\circ$ each time. The first value is chosen *"for numerical convenience"*, so that the steps end exactly on $18.375^\circ$. It also keeps line 0a off $M=1$, where $\mu=90^\circ$ (§13 recipe, step 2).
 
-**Step 1: the fan lines** (slides 13–15; ll. 244–250). Equal steps from $0.375^\circ$ to $\theta_{max}$. The fan lines carry only $R^-=\nu+\theta=2\theta$; $R^+$ is "not applicable" there (ll. 245–247):
+**Step 1: the lines of the expansion fan** (slides 13–15; ll. 244–250). Equal steps from $0.375^\circ$ to $\theta_{max}$. These lines carry only $R^-=\nu+\theta=2\theta$; $R^+$ is "not applicable" there (ll. 245–247). The rows 0a–0d of the lecturer's *Template for MoC Calculation* (slides 12–14), in its column order:
 
-| Line | $\theta=\nu$ | $R^-=2\theta$ | $M$ | $\mu$ | $\theta+\mu$ | $\theta-\mu$ |
-|---|---:|---:|---:|---:|---:|---:|
-| 0a | 0.375 | 0.750 | 1.0418 | 73.708 | 74.083 | −73.333 |
-| 0b | 6.374 | 12.749 | 1.3074 | 49.894 | 56.268 | −43.519 |
-| 0c | 12.374 | 24.748 | 1.5159 | 41.275 | 53.649 | −28.901 |
-| 0d | 18.373 | 36.747 | 1.7192 | 35.568 | 53.941 | −17.194 |
+| Point | $R^+$ | $R^-$ | $\theta$ | $\nu$ | $M$ | $\mu$ | $\theta+\mu$ | $\theta-\mu$ | $x$ | $y$ |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 0a | N/A | 0.750 | 0.375 | 0.375 | 1.0418 | 73.708 | 74.083 | −73.333 | 0 | 1 |
+| 0b | N/A | 12.749 | 6.374 | 6.374 | 1.3074 | 49.894 | 56.268 | −43.519 | 0 | 1 |
+| 0c | N/A | 24.748 | 12.374 | 12.374 | 1.5159 | 41.275 | 53.649 | −28.901 | 0 | 1 |
+| 0d | N/A | 36.747 | 18.373 | 18.373 | 1.7192 | 35.568 | 53.941 | −17.194 | 0 | 1 |
 
-All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives there.
+All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives there. Slide 14 writes $R^-=0.75$, $12.75$, $24.75$, $36.75$, from the rounded $\theta_{max}=18.375^\circ$.
 
 **Step 2: the invariants** (slides 16–18; ll. 250–275, *"fairly straightforward and mechanical"*, l. 259). Fill in the invariants line by line before anything else:
 
-- each $C^-$ keeps its corner value: points 2 and 6 have $R^-=12.75$; points 3, 7 and 10 have $24.75$; points 4, 8, 11 and 13 have $36.75$;
+- each $C^-$ keeps the value it leaves the expansion fan with: points 2 and 6 have $R^-=12.75$; points 3, 7 and 10 have $24.75$; points 4, 8, 11 and 13 have $36.75$;
 - each centreline point turns $R^-$ into an equal $R^+$ (BC 3), which then runs up its $C^+$: 1–5 carry $0.75$, 6–9 carry $12.75$, 10–12 carry $24.75$, 13–14 carry $36.75$;
-- the wall points 5, 9, 12 and 14 are cancelling, so no $C^-$ leaves them ("N/A").
+- the wall points 5, 9, 12 and 14 are non-reflecting, so no $C^-$ leaves them ("N/A").
 
 **Step 3: the states** (slide 19; ll. 275–283). $\nu=\tfrac12(R^++R^-)$ and $\theta=\tfrac12(R^--R^+)$, then $M$ and $\mu$. Wall points copy the state of the point below them: point 5 has the $\theta$ and $\nu$ of point 4 (ll. 277–280).
 
@@ -353,32 +355,36 @@ All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives 
 - **Point 2** (interior; A = 1, B = 0b): $\theta_2=\tfrac12(12.749-0.750)=5.999^\circ$, $\nu_2=6.749^\circ$, $M_2=1.3210$, $\mu_2=49.200^\circ$. Then $\alpha_{12}=\tfrac12(69.570+55.199)=62.385^\circ$ and $\alpha_{0b,2}=\tfrac12(-43.519-43.201)=-43.360^\circ$. The formula gives $(0.5747,\ 0.4573)$.
 - **Point 5** (BC 2; A = 4, previous wall point 0): $\theta_5=\theta_4=17.998^\circ$ and $M_5=M_4=1.7320$. Then $\alpha_{45}=(\theta+\mu)_4=53.263^\circ$ and $\alpha_{05}=\tfrac12(18.373+17.998)=18.186^\circ$, giving $(1.2947,\ 1.4253)$.
 
-**The completed table** (computed here; slide 20 values in the last column):
+**The completed table** (computed here), in the column order of the lecturer's *Template for MoC Calculation* (slides 12–14). The point type and the slide 20 coordinates are added after the template's columns:
 
-| Pt | Type | $R^+$ | $R^-$ | $\theta$ | $\nu$ | $M$ | $\mu$ | $x$ | $y$ | slide $(x,y)$ |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| 1 | centre | 0.750 | 0.750 | 0 | 0.750 | 1.0671 | 69.570 | 0.3355 | 0 | 0.335, 0 |
-| 2 | interior | 0.750 | 12.749 | 5.999 | 6.749 | 1.3210 | 49.200 | 0.5747 | 0.4573 | 0.574, 0.458 |
-| 3 | interior | 0.750 | 24.748 | 11.999 | 12.749 | 1.5286 | 40.858 | 0.6917 | 0.6184 | 0.691, 0.619 |
-| 4 | interior | 0.750 | 36.747 | 17.998 | 18.748 | 1.7320 | 35.265 | 0.7936 | 0.7539 | 0.793, 0.754 |
-| 5 | wall | 0.750 | N/A | 17.998 | 18.748 | 1.7320 | 35.265 | 1.2947 | 1.4253 | 1.293, 1.425 |
-| 6 | centre | 12.749 | 12.749 | 0 | 12.749 | 1.5286 | 40.858 | 1.0820 | 0 | 1.082, 0 |
-| 7 | interior | 12.749 | 24.748 | 5.999 | 18.748 | 1.7320 | 35.265 | 1.3635 | 0.2452 | 1.363, 0.245 |
-| 8 | interior | 12.749 | 36.747 | 11.999 | 24.748 | 1.9413 | 31.006 | 1.6248 | 0.4816 | 1.625, 0.482 |
-| 9 | wall | 12.749 | N/A | 11.999 | 24.748 | 1.9413 | 31.006 | 3.1775 | 1.9298 | 3.177, 1.93 |
-| 10 | centre | 24.748 | 24.748 | 0 | 24.748 | 1.9413 | 31.006 | 1.7858 | 0 | 1.786, 0 |
-| 11 | interior | 24.748 | 36.747 | 5.999 | 30.747 | 2.1622 | 27.548 | 2.2074 | 0.2663 | 2.207, 0.266 |
-| 12 | wall | 24.748 | N/A | 5.999 | 30.747 | 2.1622 | 27.548 | 5.1989 | 2.2499 | 5.199, 2.25 |
-| 13 | centre | 36.747 | 36.747 | 0 | 36.747 | 2.4000 | 24.624 | 2.8323 | 0 | 2.832, 0 |
-| 14 | wall | 36.747 | N/A | 0 | 36.747 | 2.4000 | 24.624 | **8.0691** | **2.4003** | **8.069, 2.4** |
+| Point | $R^+$ | $R^-$ | $\theta$ | $\nu$ | $M$ | $\mu$ | $\theta+\mu$ | $\theta-\mu$ | $x$ | $y$ | Type | slide $(x,y)$ |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|---|
+| 0a | N/A | 0.750 | 0.375 | 0.375 | 1.0418 | 73.708 | 74.083 | −73.333 | 0 | 1 | expansion fan | 0, 1 |
+| 0b | N/A | 12.749 | 6.374 | 6.374 | 1.3074 | 49.894 | 56.268 | −43.519 | 0 | 1 | expansion fan | 0, 1 |
+| 0c | N/A | 24.748 | 12.374 | 12.374 | 1.5159 | 41.275 | 53.649 | −28.901 | 0 | 1 | expansion fan | 0, 1 |
+| 0d | N/A | 36.747 | 18.373 | 18.373 | 1.7192 | 35.568 | 53.941 | −17.194 | 0 | 1 | expansion fan | 0, 1 |
+| 1 | 0.750 | 0.750 | 0 | 0.750 | 1.0671 | 69.570 | 69.570 | −69.570 | 0.3355 | 0 | centre | 0.335, 0 |
+| 2 | 0.750 | 12.749 | 5.999 | 6.749 | 1.3210 | 49.200 | 55.199 | −43.201 | 0.5747 | 0.4573 | interior | 0.574, 0.458 |
+| 3 | 0.750 | 24.748 | 11.999 | 12.749 | 1.5286 | 40.858 | 52.857 | −28.860 | 0.6917 | 0.6184 | interior | 0.691, 0.619 |
+| 4 | 0.750 | 36.747 | 17.998 | 18.748 | 1.7320 | 35.265 | 53.263 | −17.267 | 0.7936 | 0.7539 | interior | 0.793, 0.754 |
+| 5 | 0.750 | N/A | 17.998 | 18.748 | 1.7320 | 35.265 | 53.263 | −17.267 | 1.2947 | 1.4253 | wall | 1.293, 1.425 |
+| 6 | 12.749 | 12.749 | 0 | 12.749 | 1.5286 | 40.858 | 40.858 | −40.858 | 1.0820 | 0 | centre | 1.082, 0 |
+| 7 | 12.749 | 24.748 | 5.999 | 18.748 | 1.7320 | 35.265 | 41.264 | −29.266 | 1.3635 | 0.2452 | interior | 1.363, 0.245 |
+| 8 | 12.749 | 36.747 | 11.999 | 24.748 | 1.9413 | 31.006 | 43.005 | −19.007 | 1.6248 | 0.4816 | interior | 1.625, 0.482 |
+| 9 | 12.749 | N/A | 11.999 | 24.748 | 1.9413 | 31.006 | 43.005 | −19.007 | 3.1775 | 1.9298 | wall | 3.177, 1.93 |
+| 10 | 24.748 | 24.748 | 0 | 24.748 | 1.9413 | 31.006 | 31.006 | −31.006 | 1.7858 | 0 | centre | 1.786, 0 |
+| 11 | 24.748 | 36.747 | 5.999 | 30.747 | 2.1622 | 27.548 | 33.547 | −21.548 | 2.2074 | 0.2663 | interior | 2.207, 0.266 |
+| 12 | 24.748 | N/A | 5.999 | 30.747 | 2.1622 | 27.548 | 33.547 | −21.548 | 5.1989 | 2.2499 | wall | 5.199, 2.25 |
+| 13 | 36.747 | 36.747 | 0 | 36.747 | 2.4000 | 24.624 | 24.624 | −24.624 | 2.8323 | 0 | centre | 2.832, 0 |
+| 14 | 36.747 | N/A | 0 | 36.747 | 2.4000 | 24.624 | 24.624 | −24.624 | **8.0691** | **2.4003** | wall | **8.069, 2.4** |
 
 > [!check] Reproducing the slides
 > Every point agrees with slide 20 to within $0.002$. The slides round $\nu(2.4)$ to $36.75^\circ$ and $M$ to three decimals before taking $\mu$. Repeating the calculation with $M$ rounded the same way gives point 14 at exactly $(8.069,\ 2.400)$.
 
-**Reading the result.** The wall is the polyline 0–5–9–12–14, the non-reflecting wall points (ll. 286–287). The lecturer read point 14 as $x=8.069$, $y=2.4$, normalised by the throat half-height (ll. 288–289), so the exit area is 2.4 times the throat area (l. 291). Its segment slopes are $18.19^\circ$, $15.00^\circ$, $9.00^\circ$ and $3.00^\circ$, falling back to $0$. At 13 the centreline reaches $M_e=2.4$, and the triangle 13–14–centreline is the uniform region.
+**Reading the result.** The wall is the polyline 0–5–9–12–14, the non-reflecting wall points (ll. 286–287). The lecturer read point 14 as $x=8.069$, $y=2.4$, normalised by the throat half-width $r_a$ (slide 21; he said *"throat height"*, ll. 288–289), so the exit area is 2.4 times the throat area (l. 291). Its segment slopes are $18.19^\circ$, $15.00^\circ$, $9.00^\circ$ and $3.00^\circ$, falling back to $0$. At 13 the centreline reaches $M_e=2.4$, and the triangle 13–14–centreline is the uniform region.
 
 > [!check] Mass conservation checks the whole calculation
-> The exit flow is uniform at $M_e$ and the throat flow is uniform at $M=1$, so the exit half-height must equal the 1D area ratio:
+> The exit flow is uniform at $M_e$ and the throat flow is uniform at $M=1$, so the exit half-width must equal the 1D area ratio:
 >
 > $$\frac{y_e}{r_a}=\frac{A_e}{A^*}(2.4)=2.4031 .$$
 >
@@ -391,13 +397,13 @@ All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives 
 >
 > **The first angle matters.** With four lines starting at $\theta_{max}/4=4.59^\circ$ instead of $0.375^\circ$, the exit drops to $2.328$. A small $\delta$ keeps the first line close to the sonic throat. Use the $y_e$ check to validate the coursework code.
 
-**Refined design** (slide 21; supplementary note Fig. 10; ll. 293–301). With 20 characteristics the wall becomes a smooth curve. The centreline Mach number rises from 1 to 2.4 over the first $x/r_a\approx2.84$, the kernel, and stays at 2.4 after that (panel 3, lower plot). As slide 21 puts it, 1D theory gives $y_e/r_a=A_e/A^*=2.4031$ *"but it gives no clue about $x_e/r_a=8.069$ revealed by MoC"*. The lecturer read $2.403$ from the last IFT column, *"very well matched"* with MoC, and stressed that 1D theory *"didn't know what the length of the nozzle should be"* (ll. 297–301).
+**Refined design** (slide 21; supplementary note Fig. 10; ll. 293–301). With 20 characteristics the wall becomes a smooth curve. The centreline Mach number rises from 1 to 2.4 over the first $x/r_a\approx2.84$, where the centreline borders the complex region, and stays at 2.4 after that (panel 3, lower plot). As slide 21 puts it, 1D theory gives $y_e/r_a=A_e/A^*=2.4031$ *"but it gives no clue about $x_e/r_a=8.069$ revealed by MoC"*. The lecturer read $2.403$ from the last IFT column, *"very well matched"* with MoC, and stressed that 1D theory *"didn't know what the length of the nozzle should be"* (ll. 297–301).
 
 > [!info] Where the recording stops (l. 303)
 > `Lecture 3-3.txt` ends mid-sentence: *"And coincidentally…"*. The rest is not recorded. The most likely point, given the slide, is that $y_e/r_a\approx2.40$ happens to equal the design Mach number $2.4$. That really is a coincidence. For $\gamma=1.4$, $A/A^*=M$ only at $M=2.397$; at $M_e=2$ the ratio is $1.6875$, and at $M_e=3$ it is $4.2346$. So $y_e/r_a=M_e$ is **not** a rule. This reading is an inference, not something the lecturer said.
 
 > [!example] Your turn: $M_e=2.0$ (suggested; answer computed here)
-> $\nu(2)=26.380^\circ$, so $\theta_{max}=13.190^\circ$. With four lines at $0.375$, $4.647$, $8.918$ and $13.190^\circ$, the corner invariants are $R^-=0.750$, $9.293$, $17.837$ and $26.380^\circ$.
+> $\nu(2)=26.380^\circ$, so $\theta_{max}=13.190^\circ$. With four lines at $0.375$, $4.647$, $8.918$ and $13.190^\circ$, the lines of the expansion fan carry $R^-=0.750$, $9.293$, $17.837$ and $26.380^\circ$.
 >
 > The results are $M_1=1.0671$ at $x_1=0.3355$, and the uniform region starts at 13, $x=1.905$. The exit is at $(x_e,y_e)=(4.815,\ 1.681)$, against $A_e/A^*=1.6875$. A lower design Mach number gives a much shorter nozzle.
 
@@ -410,7 +416,7 @@ All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives 
 > [!info] Lectured Fri 23 Oct (`Lecture 3-4.txt`)
 > 3.4 was given as *"relatively quite simple and quick"* once 3.1–3.3 are digested (L3-4, ll. 1–2). It was originally written ahead from the slides and has now been backfilled with line references. *"Generic as opposed to numerical"*: only symbols, no numbers (ll. 8–10).
 
-**Set-up** (slide 2; L3-4, ll. 11–31). A channel of half-height 1 carries supersonic flow $M_0$ along its centreline. At $(0,1)$ the upper wall turns up by $\theta_w$ and stays straight. The Prandtl–Meyer fan at 0 is represented by two characteristics: "a", the leading wave at the upstream state, and "b", the trailing wave at $\theta_w$. Find $\nu$ and $\theta$ at points 1 to 6 in terms of $\nu_a$ and $\theta_w$.
+**Set-up** (slide 2; L3-4, ll. 11–31). An expanding channel of half-width 1 carries supersonic flow $M_0$ along its centreline. At $(0,1)$ the upper wall turns up by $\theta_w$ and stays straight. The Prandtl–Meyer fan at 0 is represented by two characteristics: "a", the leading wave at the upstream state, and "b", the trailing wave at $\theta_w$. Find $\nu$ and $\theta$ at points 1 to 6 in terms of $\nu_a$ and $\theta_w$.
 
 > [!tip] "The coarsest mesh that you can imagine" (ll. 14–20)
 > Two lines for a whole fan is deliberately crude: *"this is not an ideal case, but we can still learn a lot from this simplest case."* More lines give more accuracy, *"which is what you are going to do in the coursework"* (ll. 19–20). The centreline acts *"effectively [as] a wall as well"* (l. 26), as in BC 3.
@@ -420,7 +426,7 @@ All angles are in degrees. $R^+$ is "N/A" at the corner, since no $C^+$ arrives 
 **Steps** (slides 4–11, one fact at a time):
 
 1. Across the fan, $\Delta\theta=\theta_w=\nu_b-\nu_a$, so $\nu_b=\nu_a+\theta_w$ (ll. 63–76).
-2. Corner invariants: $R^-_{0a}=\nu_a+0=\nu_a$ and $R^-_{0b}=(\nu_a+\theta_w)+\theta_w=\nu_a+2\theta_w$ (ll. 59–61, 77–83).
+2. Invariants on the two lines of the expansion fan: $R^-_{0a}=\nu_a+0=\nu_a$ and $R^-_{0b}=(\nu_a+\theta_w)+\theta_w=\nu_a+2\theta_w$ (ll. 59–61, 77–83).
 3. Along the $C^-$ lines: $R^-_1=\nu_a$, and $R^-_2=R^-_4=\nu_a+2\theta_w$ (ll. 86–116; the class answered *"nu A"* at l. 97).
 4. Centreline points, from $\nu=R^--\theta$ and $R^+=\nu-\theta$: point 1 has $\nu_1=\nu_a$, $R^+_1=\nu_a$; point 4 has $\nu_4=\nu_a+2\theta_w$, $R^+_4=\nu_a+2\theta_w$ (ll. 120–151).
 5. Along the $C^+$ lines 1–2–3 and 4–5–6: $R^+_2=R^+_3=\nu_a$, and $R^+_5=R^+_6=\nu_a+2\theta_w$ (ll. 153–163).
@@ -474,7 +480,7 @@ $$
 > [!tip] Why do it symbolically? (ll. 349–358)
 > *"The beauty of using this table is … you don't have to recalculate the table all over again"* for a new case. Any other $M_0$ and $\theta_w$ drop straight into the same expressions, and so do measurements, as in the inverse problem: *"the beauty of doing these things using the pure, more pure form as much as possible. And you can use that form again and again."*
 >
-> The figure locates every point with the unit process. Point 3 is a cancelling wall point at $(3.415,\ 1.300)$ and point 6 is a prescribed-wall point at $(4.779,\ 1.419)$. These coordinates are computed here, not on the slides.
+> The figure locates every point with the unit process. Point 3 is a non-reflecting wall point at $(3.415,\ 1.300)$ and point 6 is a prescribed-wall point at $(4.779,\ 1.419)$. These coordinates are computed here, not on the slides.
 
 ---
 
@@ -493,14 +499,14 @@ where $\eta$ is distance along the characteristic. The states and the coordinate
 ## 17. Problem-solving workflow
 
 1. **Draw the net.** Number the points. Mark which lines are $C^+$ (up-and-right for flow to the right) and which are $C^-$.
-2. **Fill in the invariants.** Each line keeps its value. At the centreline $R^+=R^-$. A cancelling wall sends nothing back. A prescribed wall sends $R^-_W=R^+_A+2\theta_W$ (top) or $R^+_W=R^-_B-2\theta_W$ (bottom).
+2. **Fill in the invariants.** Each line keeps its value. At the centreline $R^+=R^-$. A non-reflecting wall sends nothing back. A prescribed wall sends $R^-_W=R^+_A+2\theta_W$ (top) or $R^+_W=R^-_B-2\theta_W$ (bottom).
 3. **States**: $\nu=\tfrac12(R^++R^-)$ and $\theta=\tfrac12(R^--R^+)$. Wall and centreline points use their known $\theta$.
 4. $M$ from $\nu$ (IFT, interpolating), then $\mu=\sin^{-1}(1/M)$; then the $\theta\pm\mu$ columns.
 5. **Coordinates last**, left to right:
    - interior: averaged $\alpha$, then the $x_P$ formula;
    - centreline: $x_P=x_B-y_B/\tan\alpha_{BP}$;
    - designed wall: $\alpha_{AW}=(\theta+\mu)_A$ and $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$.
-6. **Check**: the exit height against $A_e/A^*$, and the corner angle against $\nu(M_e)/2$.
+6. **Check**: the exit half-width $y_e/r_a$ against $A_e/A^*$, and the maximum slope $\theta_{max}$ against $\nu(M_e)/2$.
 
 > [!info] What the exam gives you
 > The official `Aerothermodynamics Formula Sheet.pdf` already lists $R^\pm=\nu\mp\theta$ and the intersection formulae for $\alpha_{AP}$, $\alpha_{BP}$, $x_P$ and $y_P$ ([[SESA3029 Formula Sheet#What the exam formula sheet gives you|formula sheet]]). What you must bring is the **procedure**: which invariant runs along which line, the three boundary conditions, and $\theta_{max}=\nu(M_e)/2$. The IFT has a $\nu$ column, so you can invert $\nu\to M$ by interpolation.
@@ -519,8 +525,8 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 > | l. 97 | *"use the a e p triangle to calculate point b"* | use the triangle A–B–P (A the image of B) to find point **P** |
 > | l. 257 | *"0.8 is same as 0.11. So 36.75"* | $R^-_8=R^-_4=36.75^\circ$, carried on to $R^-_{11}=R^-_8$ |
 > | l. 266 | *"0.789 share the same r plus"* | points 7, 8 and 9 share $R^+=12.75^\circ$ |
-> | l. 279 | *"theta and mu are the same as 0.4"* | $\theta$ and $\nu$ (nu) at the cancelling wall point 5 equal those at point 4 |
-> | l. 289 | *"normalized by the throat height, 1"* | by the throat **half**-height $r_a=1$ (slide 21) |
+> | l. 279 | *"theta and mu are the same as 0.4"* | $\theta$ and $\nu$ (nu) at the non-reflecting wall point 5 equal those at point 4 |
+> | l. 289 | *"normalized by the throat height, 1"* | by the throat **half**-width $r_a=1$: *"the nozzle throat's half-width"* (slide 21) |
 > | l. 303 | *"And coincidentally…"* | the recording ends here ([[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)\|§14]]) |
 
 > [!warning] Slips and garbled passages in `Lecture 3-4.txt` (Fri 23 Oct)
@@ -532,6 +538,27 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 > | l. 265 | *"calculated the point bar which intersects with this R plus R line"* | garbled: the reflected $C^-$ from 3 meets the $C^+$ from 4 at **point 5** |
 > | l. 268 | *"we calculate 0.6 based on 0.5"* | the **state** at 6 needs only $R^+_4$ and $\theta_w$. Point 5 changed only how 6 was **located** ([[#15. The generic MoC example (Lecture 3.4)\|§15]]) |
 > | ll. 416–417 | *"three weeks … 15th of November"* | three weeks from Fri 23 Oct is Fri 13 Nov; the stated date, **Sun 15 Nov**, is the one to use (it matches the module guide) |
+
+## Terminology and alternative names
+
+This note uses the course's own words. Textbooks (Anderson in particular), other universities and CFD software often use other names for the same ideas. Use the course term in the coursework and the exam, and treat the others as search terms.
+
+| Course term | Also called | Where the course uses it | Note |
+|---|---|---|---|
+| complex region (crossing characteristics) | kernel; non-simple region; non-simple wave region | Supplementary Note p. 10: *"complex zones (with crossing characteristics)"* | "Kernel" is the usual textbook name for the crossing region behind the expansion corner of a minimum-length nozzle. The slides draw it but do not label it |
+| simple flow region (characteristics from one direction only) | simple-wave region; simple region; simple wave | L3.3 slides 8 and 10; Supplementary Note p. 9 ("'simple' regions") | One family of characteristics only, so one Riemann invariant is the same everywhere |
+| uniform flow region | uniform region; exit core flow | L3.3 slides 8 and 10; L3-3, l. 196 | No characteristics cross it: $M=M_e$, $\theta=0$ |
+| non-reflecting wall; wave cancellation (no reflection); designed geometry | cancelling wall; wave-cancelling wall; contoured wall | L3.3 slides 6 and 8; L3-3, ll. 46, 65–87, 115–142, 277–287 | The lecturer says "non-reflecting" throughout. The Supplementary Note (pp. 8–9) says the line is "cancelled" at the wall and calls it "the cancelling approach" |
+| reflecting wall; prescribed geometry | solid wall; wall point (Anderson) | L3.3 slides 5 and 8 | BC 1. A reflection occurs only when $\theta_A\neq\theta_W$ |
+| symmetry plane; centreline | axis of symmetry; symmetry boundary (CFD) | L3.3 slide 7; Supplementary Note p. 9 | The lecturer's *"mirror or image effect"* (L3-3, ll. 88–93) |
+| $r_a$, the nozzle throat's half-width | throat half-height; throat radius (axisymmetric); $y^*$ | L3.3 slide 21 | Slide 9 marks the same length as $y^*$. The lecturer said *"throat height"* (L3-3, l. 289) |
+| exit half-width $y_e/r_a$ | exit half-height; exit area ratio | L3.3 slide 21 | Equals $A_e/A^*$ for a planar nozzle |
+| maximum slope $\theta_{max}$ (of the wall) | maximum wall angle; throat wall angle; $\theta_{w,max}$ (Anderson) | L3.3 slide 9, *"Maximum Slope ($\theta$max)"*; L3-3, ll. 137–142 | Not the oblique-shock $\theta_{max}$ of W02 |
+| Prandtl–Meyer (PM) expansion fan; lines of the expansion fan | centred expansion fan; Prandtl–Meyer fan; expansion wave; fan rays | L3.3 slide 10 ("PM expansion fan at C"); L3.4 slide 2; L3-3, ll. 160–175, 216, 239 | 0a–0d are *"the last line of the expansion fan"* and the ones before it (L3-3, l. 239) |
+| expansion corner (point C on slide 10, point 0 in the examples) | sharp corner; throat corner; sharp throat | Coursework brief ("the expansion corner (x=0, y=1)"); L3.3 slides 10–11 | The lecturer describes it as a *"discontinuity of the slope"* (L3-3, l. 158) |
+| Template for MoC Calculation | MoC table; characteristic table; MoC spreadsheet | L3.3 slides 12–14 | Columns Point, $R^+$, $R^-$, $\theta$, $\nu$, $M$, $\mu$, $\theta+\mu$, $\theta-\mu$, $x$, $y$; "N/A" where no line arrives or leaves |
+| Riemann invariants $R^+=\nu-\theta$, $R^-=\nu+\theta$ | $K^+$, $K^-$ (Anderson), with $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$ | L3.1 slide 12; Supplementary Note p. 5 | Same physics, different sign of $K^+$; do not mix the two in one table |
+| minimum-length nozzle | sharp-corner nozzle; MLN | L3.3 slide 10 | |
 
 ## Links
 
@@ -597,6 +624,6 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 
 #### Concepts
 
-- [ ] Distinguish non-simple, simple and uniform regions, and prescribed from designed walls. Explain why non-reflecting points 12 and 13 make 11–13 uniform (L3-3, ll. 103–131). → [[#12. Nozzles with a straightening section (3.3 slides 8–9)|§12]]
+- [ ] Distinguish the complex, simple flow and uniform flow regions, and prescribed (reflecting) from designed (non-reflecting) walls. Explain why non-reflecting points 12 and 13 make 11–13 uniform (L3-3, ll. 103–131). → [[#12. Nozzles with a straightening section (3.3 slides 8–9)|§12]]
 - [ ] Tell the nozzle's $\theta_{max}$ (wall slope) apart from the oblique-shock $\theta_{max}$ (L3-3, ll. 137–139). → [[#12. Nozzles with a straightening section (3.3 slides 8–9)|§12]]
 - [ ] Explain why 3.4's point 3 does not reflect, and why 6's state survives while its position changes (L3-4, ll. 238–295). → [[#15. The generic MoC example (Lecture 3.4)|§15]]

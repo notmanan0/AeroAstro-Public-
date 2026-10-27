@@ -3,7 +3,7 @@ title: "Viscous-Inviscid Interaction"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 3: Methods for Boundary Layers"
-aliases: ["VII", "surface transpiration method", "STM", "surface displacement method", "SDM", "blowing velocity"]
+aliases: ["VII", "surface transpiration method", "STM", "surface displacement method", "SDM", "blowing velocity", "blowing/suction velocity", "transpiration velocity", "displacement body", "apparent body", "effective body", "repanelling", "viscous-inviscid coupling", "interactive boundary-layer method"]
 tags: [sesa3043, concept, boundary-layer, panel-method]
 status: complete
 parent_lectures: ["[[SESA3043 3.6 - Viscous-Inviscid Interaction]]"]
@@ -17,7 +17,7 @@ sources: ["02 - Sources/Lectures/CH3-6 Viscous Inviscid Interaction.pdf"]
 
 > [!note] Definition
 > Iterate between an inviscid solver (panel method: $U_e(x)$, $C_L$) and a boundary-layer solver (MIE/Thwaites: $\delta^*(x)$, $C_D$) until $\delta^*$ converges, feeding the layer back to the inviscid flow either by
-> - **SDM:** moving the panels out by $\delta^*$ (re-panelling), or
+> - **SDM:** moving the panels out by $\delta^*$ (repanelling), or
 > - **STM:** blowing through the original panels at
 >
 > $$v_s=\frac{\mathrm d(U_e\delta^*)}{\mathrm dx}.$$

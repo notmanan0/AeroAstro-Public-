@@ -3,7 +3,7 @@ title: "Riemann Invariants"
 module: "SESA3029 Aerothermodynamics"
 type: concept
 stream: "Block 3: Nozzles and the Method of Characteristics"
-aliases: ["Riemann invariant", "compatibility conditions", "compatibility condition", "R+ and R-", "K+ and K-"]
+aliases: ["Riemann invariant", "compatibility conditions", "compatibility condition", "compatibility relations", "compatibility equations", "characteristic invariants", "R+ and R-", "K+ and K-"]
 tags: [sesa3029, concept, method-of-characteristics, riemann-invariants]
 status: complete
 parent_lectures: ["[[SESA3029 W05a - Method of Characteristics]]"]
@@ -44,7 +44,7 @@ More generally, the four numbers $R^+$, $R^-$, $\nu$ and $\theta$ are linked by 
 
 **Other notation.** Anderson uses $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$. The physics is identical; pick one and stay consistent. The SESA3029 signs follow Liepmann & Roshko.
 
-**Simple regions.** Where one invariant is the same everywhere, for example $R^+$ through a Prandtl–Meyer fan fed by uniform flow, the region is **simple**. Then $\nu-\theta=\nu_1$ reproduces $\nu_2=\nu_1+\theta$ from W03.
+**Simple flow regions.** Where one invariant is the same everywhere, for example $R^+$ through a Prandtl–Meyer fan fed by uniform flow, the region is a **simple flow region** (L3.3 slides 8 and 10; textbooks say *simple-wave region*). Then $\nu-\theta=\nu_1$ reproduces $\nu_2=\nu_1+\theta$ from W03.
 
 > [!warning] Transcript slip (L3-1, ll. 338–343)
 > The recording says *"mu minus theta is preserved"*. It is **nu** minus theta.

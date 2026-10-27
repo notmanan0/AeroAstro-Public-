@@ -37,9 +37,9 @@ $$
 |---|---|
 | $1$ | mass |
 | $\mathbf u$ | linear momentum |
-| $e_t$ | total energy |
+| $E_T$ | total energy |
 
 ## Related
 
-- [[Eulerian and Lagrangian Flow Descriptions]] · [[Continuity Equation in Conservative Form]]
+- [[Eulerian and Lagrangian Flow Descriptions]] · [[Continuity Equation in Conservation Form]]
 

@@ -3,7 +3,7 @@ title: "Passive and Active Control"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 1: Fundamental Concepts"
-aliases: ["passive control", "active control"]
+aliases: ["passive control", "active control", "inherent characteristics", "natural characteristics"]
 tags: [sesa3047, concept, control-systems]
 status: complete
 parent_lectures: ["[[SESA3047 1.1 - Dynamic Systems and Control Architectures]]"]

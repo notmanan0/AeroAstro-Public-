@@ -1,9 +1,9 @@
 ---
-title: "Continuity Equation in Conservative Form"
+title: "Continuity Equation in Conservation Form"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 1: Conservation Laws"
-aliases: ["differential mass conservation", "conservative continuity equation"]
+aliases: ["Continuity Equation in Conservative Form", "conservative form of continuity", "divergence form of continuity", "differential mass conservation", "conservative continuity equation"]
 tags: [sesa3043, concept, continuity]
 status: complete
 parent_lectures: ["[[SESA3043 1.2 - Conservation Laws and Governing Equations]]"]
@@ -11,7 +11,10 @@ related_concepts: ["[[Reynolds Transport Theorem]]", "[[Material Derivative]]", 
 sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Sources/Lectures/L2 - SESA3043.txt"]
 ---
 
-# Continuity Equation in Conservative Form
+# Continuity Equation in Conservation Form
+
+> [!note] Course wording
+> CH1-2 and the lecture (L2, l. 418) say **conservation form** and **non-conservation form**. "Conservative form" and "divergence form" are the same thing in other texts.
 
 ## Equation
 
@@ -29,7 +32,7 @@ $$
 
 It states that local mass accumulation plus net outward mass flux is zero.
 
-## Material form
+## Material (non-conservation) form
 
 Use the product rule:
 

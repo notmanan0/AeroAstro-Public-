@@ -801,12 +801,12 @@ A reflection exists because the arriving flow ($\theta_P=8.68^\circ$) is not par
 
 **[20 marks; target 36 min]**
 
-Design the upper half of a planar minimum-length nozzle for $M_e=2.6$, $\gamma=1.4$, by the method of characteristics. The sharp throat corner 0 is at $(0,\ 1)$, lengths are scaled by the throat half-height $r_a$, and the centreline is $y=0$. Represent the corner fan by **three** characteristics 0a, 0b and 0c, with $\theta_{0a}=\theta_{max}-20^\circ$, $\theta_{0b}=\theta_{max}-10^\circ$ and $\theta_{0c}=\theta_{max}$.
+Design the upper half of a planar minimum-length nozzle for $M_e=2.6$, $\gamma=1.4$, by the method of characteristics. The expansion corner 0 at the throat is at $(0,\ 1)$, lengths are scaled by the throat half-width $r_a$, and the centreline is $y=0$. Represent the Prandtl–Meyer expansion fan at 0 by **three** characteristics 0a, 0b and 0c, with $\theta_{0a}=\theta_{max}-20^\circ$, $\theta_{0b}=\theta_{max}-10^\circ$ and $\theta_{0c}=\theta_{max}$.
 
 Number the points as in Lecture 3.3: 0a reaches the centreline at 1, then 2 and 3 are interior points on the $C^+$ from 1, and 4 is the wall point it reaches. Then 5 (centreline), 6 (interior) and 7 (wall); then 8 (centreline) and 9 (wall, the exit).
 
 - **(a)** Show that $\theta_{max}=\nu(M_e)/2$ and evaluate it. **[3]**
-- **(b)** Tabulate $\theta$, $\nu$, $R^-$, $M$ and $\mu$ on the three fan lines. **[3]**
+- **(b)** Tabulate $\theta$, $\nu$, $R^-$, $M$ and $\mu$ on the three lines of the expansion fan. **[3]**
 - **(c)** Find $R^+$, $R^-$, $\theta$, $\nu$ and $M$ at points 1 to 9. **[6]**
 - **(d)** Find the coordinates of points 1 and 2, and, given that point 3 is at $(0.9365,\ 0.7812)$, of wall point 4. **[5]**
 - **(e)** The full net puts the exit, point 9, at $(10.473,\ 2.946)$. Check this against one-dimensional theory and comment. **[3]**
@@ -815,10 +815,10 @@ Number the points as in Lecture 3.3: 0a reaches the centreline at 1, then 2 and 
 
 ![[at_mock_mln_net.png|900]]
 
-**(a) Corner angle** ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13]]).
+**(a) Maximum slope** ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13]]).
 
 1. The throat is sonic: $\theta=0$ and $\nu(1)=0$, because $\nu(M)$ is an integral that starts at $M=1$.
-2. The corner fan turns the wall flow through $\theta_{max}$. Every $C^+$ crossing the fan comes from the throat, where $R^+=0$, so $\nu=\theta$ in the fan. On the last fan line, $\nu_C=\theta_{max}$.
+2. The expansion fan at the corner turns the wall flow through $\theta_{max}$. Every $C^+$ crossing the fan comes from the throat, where $R^+=0$, so $\nu=\theta$ in the fan. On the last line of the fan, $\nu_C=\theta_{max}$.
 3. That line's invariant is $R^-_C=\nu_C+\theta_C=2\theta_{max}$.
 4. It reaches the centreline at the first point of the uniform exit flow, where $\theta=0$ and $\nu=\nu(M_e)$, so $R^-=\nu(M_e)$ there.
 5. Same $C^-$, same invariant:
@@ -837,7 +837,7 @@ $$
 
 The lines are therefore at $0.707^\circ$, $10.707^\circ$ and $20.707^\circ$: the "numerical convenience" choice of L3-3, ll. 240–243, with a small first angle that keeps line 0a off $M=1$.
 
-**(b) Fan lines.** $\nu=\theta$ and $R^-=2\theta$:
+**(b) Lines of the expansion fan.** $\nu=\theta$ and $R^-=2\theta$:
 
 | Line | $\theta=\nu$ | $R^-$ | $M$ | $\mu$ | $\theta-\mu$ |
 |---|---:|---:|---:|---:|---:|
@@ -852,7 +852,7 @@ All angles are in degrees.
 - **$R^-$ along each $C^-$:** 1 has 1.4147 (from 0a); 2 and 5 have 21.4147 (from 0b); 3, 6 and 8 have 41.4147 (from 0c).
 - **Centreline points** (BC 3) turn $R^-$ into an equal $R^+$: $R^+=1.4147$ on 1–2–3–4, $21.4147$ on 5–6–7, $41.4147$ on 8–9.
 - **Interior points:** $\nu=\tfrac12(R^++R^-)$ and $\theta=\tfrac12(R^--R^+)$.
-- **Wall points** (BC 2, cancelling) copy the state of the point below them; no $C^-$ leaves them.
+- **Wall points** (BC 2, non-reflecting) copy the state of the point below them; no $C^-$ leaves them.
 
 | Pt | Type | $R^+$ | $R^-$ | $\theta$ | $\nu$ | $M$ |
 |---|---|---:|---:|---:|---:|---:|
@@ -928,7 +928,7 @@ $$
 y_4=0.7812+(1.5214-0.9365)\times1.33909=\boxed{1.5644}
 $$
 
-**(e) Mass-conservation check.** The exit flow is uniform at $M_e$ and the throat is uniform at $M=1$, so the exit half-height must equal the 1D area ratio:
+**(e) Mass-conservation check.** The exit flow is uniform at $M_e$ and the throat is uniform at $M=1$, so the exit half-width must equal the 1D area ratio:
 
 $$
 \frac{y_e}{r_a}=\frac{A_e}{A^*}(2.6)=2.8960.
@@ -940,7 +940,7 @@ The three-line net gives $2.946$, **1.7 % high**. Three lines with $10^\circ$ st
 > $\nu(2.6)=41.41467^\circ$, $\theta_{max}=20.70734^\circ$. States as tabulated (e.g. $M_2=1.48325$, $M_6=2.18780$). Coordinates: 1 $(0.42270,\ 0)$; 2 $(0.74356,\ 0.52683)$; 3 $(0.93649,\ 0.78118)$; 4 $(1.52137,\ 1.56441)$; 5 $(1.5605,\ 0)$; 6 $(2.1855,\ 0.4413)$; 7 $(4.8349,\ 2.4522)$; 8 $(3.4039,\ 0)$; 9 $(10.4731,\ 2.9455)$. Wall segment slopes $20.354^\circ$, $15.000^\circ$, $5.000^\circ$. $A_e/A^*(2.6)=2.89598$. The figure's script (`generate_aerothermo_mock_figures.py`) uses the W05 unit-process functions and reproduces every value.
 
 > [!tip] Why point 4 has the state of point 3
-> Between 3 and 4 no other characteristic crosses, so the $C^+$ segment 3–4 runs through uniform flow. The designed wall is set parallel to that flow ($\theta_4=\theta_3$), so nothing reflects and the wave from 0c is cancelled. That is what makes the region next to the wall **simple** and the exit **uniform**.
+> Between 3 and 4 no other characteristic crosses, so the $C^+$ segment 3–4 runs through uniform flow. The designed wall is set parallel to that flow ($\theta_4=\theta_3$), so nothing reflects and the wave from 0c is cancelled. That is what makes the region next to the wall a **simple flow region** and the exit a **uniform flow region**.
 
 ---
 

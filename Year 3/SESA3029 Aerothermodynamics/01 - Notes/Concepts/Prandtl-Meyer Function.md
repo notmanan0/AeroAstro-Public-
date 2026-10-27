@@ -45,7 +45,7 @@ for an expansion through $\theta$. Then get $p$, $T$ and $\rho$ from the isentro
 
 $\nu_{max}=130.45^\circ$ as $M\to\infty$.
 
-In the [[Method of Characteristics]], $R^\pm=\nu\mp\theta$ are the **[[Riemann Invariants]]**: $\nu-\theta$ is constant along $C^+$ and $\nu+\theta$ along $C^-$ (Lecture 3.1; [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]; Anderson writes $K^\pm=\theta\mp\nu$). A Prandtl–Meyer fan is a simple region with one invariant uniform, which is how $\nu(M_2)=\nu(M_1)+\theta$ falls out. Practice: [[SESA3029 Example Sheet 2 - Solutions#Q2. Characteristics and Riemann invariants|ES2 Q2]].
+In the [[Method of Characteristics]], $R^\pm=\nu\mp\theta$ are the **[[Riemann Invariants]]**: $\nu-\theta$ is constant along $C^+$ and $\nu+\theta$ along $C^-$ (Lecture 3.1; [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]; Anderson writes $K^\pm=\theta\mp\nu$). A Prandtl–Meyer fan is a simple flow region with one invariant uniform, which is how $\nu(M_2)=\nu(M_1)+\theta$ falls out. Practice: [[SESA3029 Example Sheet 2 - Solutions#Q2. Characteristics and Riemann invariants|ES2 Q2]].
 
 ![[at_prandtl_meyer_derivation.png|760]]
 

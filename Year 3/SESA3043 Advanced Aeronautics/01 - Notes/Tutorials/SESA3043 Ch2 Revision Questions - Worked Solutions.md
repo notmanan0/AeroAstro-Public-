@@ -58,7 +58,7 @@ $$
 v=q_r\sin\theta+q_\theta\cos\theta=-\frac{\mu}{2\pi r^2}(2\sin\theta\cos\theta)=-\frac{\mu\sin2\theta}{2\pi r^2}.
 $$
 
-The streamfunction follows the same way from $\psi=\frac{m}{2\pi}(\theta_s-\theta)$: $\psi=-\dfrac{\mu\sin\theta}{2\pi r}$.
+The stream function follows the same way from $\psi=\frac{m}{2\pi}(\theta_s-\theta)$: $\psi=-\dfrac{\mu\sin\theta}{2\pi r}$.
 
 ### Q2. General doublet by complex potential, compared with Q1
 

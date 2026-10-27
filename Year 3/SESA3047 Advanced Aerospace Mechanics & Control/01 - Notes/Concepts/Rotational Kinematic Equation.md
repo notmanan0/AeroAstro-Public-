@@ -3,7 +3,7 @@ title: "Rotational Kinematic Equation"
 module: "SESA3047 Advanced Aerospace Mechanics & Control"
 type: concept
 stream: "Chapter 3: Kinematic Equations and Introduction to Dynamics"
-aliases: ["Euler kinematical equation", "Euler-angle rates", "H matrix", "E matrix", "body rates to Euler rates"]
+aliases: ["Euler kinematical equation", "Euler-angle rates", "H matrix", "E matrix", "body rates to Euler rates", "transform matrix", "kinematic transformation matrix", "Euler-angle kinematic equations", "attitude kinematics", "geometric coupling", "kinematic coupling"]
 tags: [sesa3047, concept, kinematics, euler-angles]
 status: complete
 parent_lectures: ["[[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates]]"]
@@ -26,7 +26,7 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/SESA3047
 
 1. Each Euler rate spins about its own axis: $\boldsymbol\omega=\dot\phi\,\mathbf x_b+\dot\theta\,\mathbf y_1+\dot\psi\,\mathbf z_{NED}$.
 2. Resolve each into FRD through only the rotations that come **after** it: $\boldsymbol\omega^{FRD}=[\dot\phi,0,0]^T+\mathbf C_x(\phi)\left([0,\dot\theta,0]^T+\mathbf C_y(\theta)[0,0,\dot\psi]^T\right)$.
-3. Multiply out and collect $\dot\phi,\dot\theta,\dot\psi$ to get $\mathbf E$; invert ($\det\mathbf E=\cos\theta$) to get $\mathbf H$.
+3. Multiply out and collect $\dot\phi,\dot\theta,\dot\psi$ to get $\mathbf E$, the **kinematic transformation matrix**; invert ($\det\mathbf E=\cos\theta$) to get $\mathbf H$, the **transform matrix** (the handout's names, Eqs. 3.9–3.11).
 
 Full step-by-step derivation and figure: [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#3. Composing the three rotation rates (§3.1.2, L7 ll. 160–194)|3.1 §§3–6]].
 

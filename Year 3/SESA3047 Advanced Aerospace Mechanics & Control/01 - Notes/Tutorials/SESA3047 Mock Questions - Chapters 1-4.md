@@ -40,8 +40,8 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA3047 Formula Sheet.md", "02 - Sou
 | 5 | Gimbal lock | 8 | 14 min |
 | 6 | Euler-angle rates from gyro rates | 10 | 18 min |
 | 7 | Coriolis and transport acceleration in a spinning station | 12 | 22 min |
-| 8 | Inertia tensor, principal axes and Euler's equations | 14 | 25 min |
-| 9 | Propeller gyroscopic coupling | 12 | 22 min |
+| 8 | Inertia matrix, principal axes and Euler's equations | 14 | 25 min |
+| 9 | Propeller rotor contribution | 12 | 22 min |
 | 10 | Body-axis translational dynamics and the 12-state model | 15 | 27 min |
 
 ---
@@ -150,7 +150,7 @@ The linear model over-predicts by 44 %. A 0.5 N step is not a small perturbation
 
 **(d)** ([[SESA3047 1.1 - Dynamic Systems and Control Architectures#4. Anatomy of an active aerospace control system|1.1 §4]], [[SESA3047 1.1 - Dynamic Systems and Control Architectures#7. Feedforward control|§7]])
 
-- **Feedback loop:** $r=30$ m → summing junction → $e=r-y_m$ → controller (flight computer) → actuators (motors/rotors) → thrust $T$ → plant (drone) → $y=h$ → altimeter → $y_m$ back to the junction.
+- **Feedback loop:** $r=30$ m → comparison point $\Sigma$ → $e=r-y_m$ → controller (flight computer) → actuators (motors/rotors) → thrust $T$ → plant (drone) → $y=h$ → altimeter → $y_m$ (the feedback signal) back to the comparison point.
 - **Disturbance $d$:** gusts enter at the plant. Rising terrain changes the measured height above ground directly.
 - **Feedforward path:** the radar measures the terrain ahead, and a model converts it into a climb (thrust) command that is added to the controller output **before** a height error develops.
 - **Why not feedforward alone:** it relies on the model ($m$ falls as the tank drains, $d$ is uncertain) and cannot see unmeasured gusts. Only feedback corrects the residual error. The combined arrangement anticipates the terrain and then cleans up the remaining error.
@@ -164,7 +164,7 @@ The linear model over-predicts by 44 %. A 0.5 N step is not a small perturbation
 
 **[10 marks, ≈18 min]** (mostly explanation)
 
-**(a)** Explain the difference between a reference frame and a coordinate system. State in words what ${}^{e}[\dot{\mathbf p}_{cm/Q}]^{NED}$ means, label by label. **[2]**
+**(a)** Explain the difference between a reference frame and a coordinate system. State in words what ${}^{e}\dot{\mathbf p}^{NED}_{cm/Q}$ means, label by label. **[2]**
 
 **(b)** State the three flat-Earth assumptions. For each, give one consequence for the equations of motion. **[3]**
 
@@ -176,7 +176,7 @@ The linear model over-predicts by 44 %. A 0.5 N step is not a small perturbation
 
 **(a)** A **reference frame** is an observer: an origin, plus axes with a given motion. Velocities, accelerations and time derivatives are defined relative to a frame. A **coordinate system** is a way of writing a vector's components (Cartesian NED, FRD, spherical, …). The same physical vector has different components in different coordinate systems ([[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#9. Reference frame, coordinate system and vector|1.2 §9]]).
 
-${}^{e}[\dot{\mathbf p}_{cm/Q}]^{NED}$ reads as follows ([[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#Where each label goes (L4, ll. 44–117)|1.2, where each label goes]]):
+${}^{e}\dot{\mathbf p}^{NED}_{cm/Q}$ reads as follows ([[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#Where each label goes (L4, ll. 44–117)|1.2, where each label goes]]):
 
 - right subscript $cm/Q$: position **of** the centre of mass **relative to** the point $Q$ (the NED origin);
 - left superscript $e$: the time derivative is taken by an observer fixed in the Earth frame $F_e$;
@@ -190,7 +190,7 @@ So it is the Earth-relative velocity of the cm in north, east, down components, 
 |---|---|
 | Earth rotation neglected, $\boldsymbol\omega_{e/i}=\mathbf 0$ | the Earth frame is inertial: $\mathbf a_{P/i}=\mathbf a_{P/e}$, no centrifugal or Coriolis terms, and $\boldsymbol\omega_{b/e}=\boldsymbol\omega_{b/i}$ |
 | Curvature neglected (tangent plane) | NED axes keep the same directions everywhere; position is integrated as $\dot{\mathbf p}^{NED}=\mathbf C^T\mathbf v$ with a fixed origin |
-| Gravity constant in size and direction | $[\mathbf g]^{NED}=[0,0,g]^T$ for all positions and heights |
+| Gravity constant in size and direction | $\mathbf g^{NED}=[0,0,g]^T$ for all positions and heights |
 
 **(c)(i)** Horizontal flight: the Coriolis size is $2\Omega V\sin\lambda$:
 
@@ -570,7 +570,7 @@ $$
 \dot\phi=0.15+(0.1765)(-0.3640)=0.15-0.0642=0.0858\ \text{rad/s}=4.91^\circ/\text{s}.
 $$
 
-**(c)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#7. Physical interpretation and the small-angle form (§3.1.4)|3.1 §7]]) The small-angle form $\dot{\boldsymbol\Phi}\approx[p,q,r]^T=[8.59,-4.58,14.32]^\circ$/s is badly wrong here. It is 75 % high in roll rate, 59 % low in pitch rate and 33 % high in yaw rate. At $30^\circ$ of bank, yaw and pitch rates are shared between $q$ and $r$.
+**(c)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#7. Physical interpretation and the small-angle form (§3.1.4)|3.1 §7]]) The small-angle form $\dot{\boldsymbol\Phi}\approx[p,q,r]^T=[8.59,-4.58,14.32]^\circ$/s is badly wrong here. It is 75 % high in roll rate, 59 % low in pitch rate and 33 % high in yaw rate. At a $30^\circ$ roll angle, yaw and pitch rates are shared between $q$ and $r$.
 
 One Euler step of 0.2 s:
 
@@ -635,7 +635,7 @@ $$
 \boxed{\mathbf a_{P/a}=\underbrace{\mathbf a_{P/b}}_{\text{relative}}+\underbrace{\mathbf a_{Q/a}+\boldsymbol\alpha\times\mathbf p+\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf p)}_{\text{transport}}+\underbrace{2\boldsymbol\omega\times\mathbf v_{P/b}}_{\text{Coriolis}}}
 $$
 
-The **transport** acceleration is the acceleration a point fixed in $F_b$ at P would have: the origin's acceleration, the tangential (Euler) term and the centripetal term. The **Coriolis** term exists only when P moves within $F_b$. Its factor 2 comes from two equal contributions: one from the rotation of $\mathbf v_{P/b}$, the other from P moving to where the transport velocity is different.
+The **transport** acceleration is the acceleration a point fixed in $F_b$ at P would have: the origin's acceleration, the angular-acceleration term $\boldsymbol\alpha\times\mathbf p$ and the centripetal term. The **Coriolis** term exists only when P moves within $F_b$. Its factor 2 comes from two equal contributions: one from the rotation of $\mathbf v_{P/b}$, the other from P moving to where the transport velocity is different.
 
 **(b)** Data in $F_b$: $\boldsymbol\omega=[0,0,0.2]^T$, $\mathbf p=[40,0,0]^T$, $\mathbf v_{P/b}=[-1.5,0,0]^T$, $\mathbf a_{P/b}=[+0.1,0,0]^T$ (slowing an inward motion means an outward acceleration), $\mathbf a_{Q/a}=\mathbf 0$, $\boldsymbol\alpha=\mathbf 0$.
 
@@ -675,7 +675,7 @@ $$
 
 The ladder pulls her **120 N towards the hub**. That is less than the 128 N she would need standing still, because she is braking her climb. It also pushes her **48 N against the spin direction**. She moves to a smaller radius where the ladder's tangential speed $\omega r$ is lower, but she still carries her old tangential speed. Without the sideways push she would drift ahead of the ladder, in the spin direction, i.e. the apparent Coriolis force $-2m\boldsymbol\omega\times\mathbf v_{P/b}=+48$ N $\mathbf y_b$. Here the Coriolis term is 37.5 % of the centripetal term.
 
-**(c)** Spin-up adds the tangential term:
+**(c)** Spin-up adds the angular-acceleration term $\boldsymbol\alpha\times\mathbf p$:
 
 $$
 \boldsymbol\alpha\times\mathbf p=[0,0,0.01]^T\times[40,0,0]^T=[0,\ 0.4,\ 0]^T\ \text{m/s}^2,
@@ -694,7 +694,7 @@ The flat-Earth model sets exactly these frame terms to zero for the Earth ([[SES
 
 ---
 
-## Q8. Inertia tensor, principal axes and Euler's equations
+## Q8. Inertia matrix, principal axes and Euler's equations
 
 **[14 marks, ≈25 min]**
 
@@ -781,7 +781,7 @@ Angular momentum: $\mathbf h_P=[6.25,\ 1.5,\ 15]^T$ and $\mathbf h_B=[6.404,\ -0
 
 ---
 
-## Q9. Propeller gyroscopic coupling
+## Q9. Propeller rotor contribution
 
 **[12 marks, ≈22 min]**
 
@@ -865,7 +865,7 @@ $$
 \dot r=\frac{J_{xz}(0)+J_{xx}(201.06)}{\Gamma}=\frac{12\,000(201.06)}{4.0575\times10^8}=5.95\times10^{-3}\ \text{rad/s}^2=0.341^\circ/\text{s}^2 .
 $$
 
-$\dot r>0$: the nose swings to the **right** in a pull-up. This is the classic gyroscopic precession of a clockwise propeller. The small $\dot p$ appears only through $J_{xz}$.
+$\dot r>0$: the nose swings to the **right** in a pull-up. This is the rotor contribution $\dot{\boldsymbol\omega}_{add}$ (textbooks: the gyroscopic precession of a clockwise propeller). The small $\dot p$ appears only through $J_{xz}$.
 
 **(c)** Held for 2 s at constant rates:
 
@@ -936,7 +936,7 @@ $$
 \mathbf g^{FRD}=g\begin{bmatrix}-s_\theta\\s_\phi c_\theta\\c_\phi c_\theta\end{bmatrix}=9.81\begin{bmatrix}-0.08716\\0.25783\\0.96225\end{bmatrix}=\begin{bmatrix}-0.8550\\2.5294\\9.4397\end{bmatrix}\ \text{m/s}^2 .
 $$
 
-**(c)** ([[SESA3047 4.2 - Translational Dynamics#3. Derive the body-velocity equation (4.33–4.37)|4.2 §3]]) Specific force:
+**(c)** ([[SESA3047 4.2 - Translational Dynamics#3. Derive the body-velocity equation (4.33–4.37)|4.2 §3]]) Non-gravitational force per unit mass:
 
 $$
 \mathbf F/m=[-20,\ -5,\ -230]^T/25=[-0.8,\ -0.2,\ -9.2]^T\ \text{m/s}^2 .
@@ -1027,6 +1027,6 @@ $$
 > These tasks are **suggested, not lecturer-set**. No tutorial or revision questions had been issued for SESA3047 by 22 Oct 2026.
 
 - [ ] *(Suggested)* Q4, Q6 and Q10 closed-book under timed conditions (≈70 min). → [[#Q4. Building and inverting a 3-2-1 DCM]] · [[#Q6. Euler-angle rates from gyro rates]] · [[#Q10. Body-axis translational dynamics and the 12-state model]]
-- [ ] *(Suggested)* Q3(a), Q7(a) and Q9(a) as derivation-only practice, one move per line. → [[#Q3. The transport theorem]] · [[#Q7. Coriolis and transport acceleration in a spinning station]] · [[#Q9. Propeller gyroscopic coupling]]
+- [ ] *(Suggested)* Q3(a), Q7(a) and Q9(a) as derivation-only practice, one move per line. → [[#Q3. The transport theorem]] · [[#Q7. Coriolis and transport acceleration in a spinning station]] · [[#Q9. Propeller rotor contribution]]
 - [ ] *(Suggested)* Q1, Q2 and Q5 as written explanations, then compare wording. → [[#Q1. Classifying and linearising a drone altitude model]] · [[#Q2. Frames, notation and the flat-Earth model]] · [[#Q5. Gimbal lock]]
-- [ ] *(Suggested)* Q8, then rework (c) with $\mathbf M=\mathbf 0$ and explain the sign of each $\dot\omega$. → [[#Q8. Inertia tensor, principal axes and Euler's equations]]
+- [ ] *(Suggested)* Q8, then rework (c) with $\mathbf M=\mathbf 0$ and explain the sign of each $\dot\omega$. → [[#Q8. Inertia matrix, principal axes and Euler's equations]]

@@ -41,6 +41,8 @@ $$
 
 ## Continuity
 
+Conservation form, then non-conservation form (CH1-2 slides 27–34):
+
 $$
 \frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf u)=0,
 $$
@@ -48,7 +50,7 @@ $$
 $$
 \frac{D\rho}{Dt}+\rho\nabla\cdot\mathbf u=0,
 \qquad
-\nabla\cdot\mathbf u=-\frac1\rho\frac{D\rho}{Dt}.
+\Delta=-\frac1\rho\frac{D\rho}{Dt}=\nabla\cdot\mathbf u\ \text{(dilatation rate)}.
 $$
 
 Incompressible:
@@ -89,12 +91,12 @@ Stokes' hypothesis $\lambda=-\tfrac23\mu$ makes the trace vanish, $\tau_{ii}=(2\
 ## Total energy
 
 $$
-e_t=e+\frac12u_i u_i,
+E_T=e+\frac12u_i u_i,
 $$
 
 $$
-\frac{\partial(\rho e_t)}{\partial t}
-+\nabla\cdot[(\rho e_t+p)\mathbf u]
+\frac{\partial(\rho E_T)}{\partial t}
++\nabla\cdot[(\rho E_T+p)\mathbf u]
 =\rho\mathbf f\cdot\mathbf u
 +\nabla\cdot(\boldsymbol\tau\cdot\mathbf u)
 -\nabla\cdot\mathbf q.
@@ -130,7 +132,7 @@ $$
 u=\frac{\partial\psi}{\partial y},\qquad
 v=-\frac{\partial\psi}{\partial x},\qquad
 \nabla^2\psi=0,\qquad
-q'=\psi_2-\psi_1.
+Q=\psi_2-\psi_1\ \text{(volumetric flow rate)}.
 $$
 
 ## Superposition and the cylinder

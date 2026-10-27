@@ -347,8 +347,8 @@ Boundary conditions:
 
 | Boundary | State | Position |
 |---|---|---|
-| prescribed top wall (reflects) | $\nu_W=R^+_A+\theta_W$, reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
-| designed wall (cancels) | $\theta_W=\theta_A$, $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
+| prescribed top wall (reflecting) | $\nu_W=R^+_A+\theta_W$, reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
+| designed wall (non-reflecting) | $\theta_W=\theta_A$, $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
 | centreline | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B-\mu_P]$ |
 
 A prescribed wall reflects **only if** $\theta_A\neq\theta_W$. If the arriving flow is already parallel to the wall, nothing leaves, whatever the bookkeeping says (3.4's point 3; L3-4, ll. 238–277).
@@ -356,8 +356,10 @@ A prescribed wall reflects **only if** $\theta_A\neq\theta_W$. If the arriving f
 Minimum-length nozzle:
 
 $$
-\theta_{max}=\frac{\nu(M_e)}{2},\qquad\text{fan lines: }\nu=\theta,\ R^-=2\theta,\qquad \frac{y_e}{r_a}\to\frac{A_e}{A^*}.
+\theta_{max}=\frac{\nu(M_e)}{2},\qquad\text{expansion-fan lines: }\nu=\theta,\ R^-=2\theta,\qquad \frac{y_e}{r_a}\to\frac{A_e}{A^*}.
 $$
+
+$\theta_{max}$ is the wall's maximum slope; $r_a$ is the throat half-width and $y_e$ the exit half-width (3.3 slides 9, 21).
 
 $M_e=2.4$: $\theta_{max}=18.373^\circ$, $x_e/r_a=8.069$, $y_e/r_a=2.400$ (four lines).
 
@@ -372,7 +374,7 @@ $$
 
 $\mu=\sin^{-1}(1/M)$ is independent of $\gamma$.
 
-Reading the exit Mach number off a **sharp** throat corner (L3-3, ll. 204–214): $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
+Reading the exit Mach number off the maximum slope at a **sharp** expansion corner (L3-3, ll. 204–214): $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
 
 Bookkeeping rule (L3-3, ll. 32–36): any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.
 
