@@ -22,6 +22,13 @@ sources: ["02 - Sources/Lectures/Lecture1-1.pdf", "02 - Sources/Lectures/Lecture
 > [!abstract] Summary
 > Week 1 establishes the toolkit used throughout aerothermodynamics. The local Mach number $M=U/a$ decides whether compressibility matters. Away from shocks, adiabatic and reversible flow may be treated as isentropic, giving direct relations between static and stagnation properties. A normal shock is adiabatic but **not isentropic**, so mass, momentum and energy remain conserved while stagnation pressure falls. A Pitot probe therefore needs one of three models: Bernoulli for an incompressible flow, an isentropic stagnation relation for compressible subsonic flow, or a normal shock followed by isentropic deceleration for supersonic flow.
 
+> [!summary]- Exam use: quick path
+> - **Use it when:** you are given $p$, $T$, $\rho$, $M$ or stagnation values in a duct or stream, a normal shock, or a Pitot reading.
+> - **Assumptions:** perfect gas, steady, adiabatic; $\gamma=1.4$ for the IFT and NST. Isentropic only away from shocks: across a normal shock $T_0$ is constant but $p_0$ falls.
+> - **Method:** 1. Find $M$ (for a Pitot probe, first compare $p_{02}/p_1$ with 1.893 to decide the regime). 2. Isentropic ratios $T_0/T$, $p_0/p$, $\rho_0/\rho$ from $M$. 3. Across a shock, the NST with $M_1$ gives $M_2$, $p_2/p_1$, $p_{02}/p_{01}$. 4. Pitot: Bernoulli ($M\lesssim0.3$), isentropic $p_0/p$ (subsonic) or the Rayleigh Pitot formula (supersonic). 5. Check $M_2<1$, $T_{02}=T_{01}$, $p_{02}<p_{01}$.
+> - **Common mistakes:** using isentropic $p_0/p$ straight across a shock; using the subsonic Pitot formula when $p_{02}/p_1>1.893$.
+> - **Practise:** [[#Worked Pitot examples]] · [[SESA3029 Test 1 - Solutions#Q5. Supersonic Pitot probe with the static tapping moved behind the shock|Test 1 Q5]]
+
 ## Key concepts
 
 - [[Speed of Sound and Mach Number]] · [[Stagnation Properties]] · [[Isentropic Ideal-gas Relations]]
@@ -82,20 +89,40 @@ $$
 
 For a two-dimensional section, replace $L,D,M$ by the per-unit-span values $L',D',M'$ and use $c$ or $c^2$ as appropriate.
 
-Moving a pitching moment from the leading edge to a point $x$ gives
+Moving a pitching moment from the leading edge to a point $x$ gives, in the lecture's form:
 
 $$
 M_x'=M_{LE}'+xL',\qquad
-C_{m,x}=C_{m,LE}+\frac{x}{c}C_l.
+C_{m,x}=C_{m,LE}+\frac{x}{c}C_l\quad(\text{lecture; approximate}).
 $$
 
-Hence
+**Exact form for a point on the chord.** Let the new reference point sit a distance $x$ aft of the LE **along the chord**. Split the resultant into $F_n'$ (normal to the chord) and $F_t'$ (along it).
+
+- Shifting the reference point along the chord is a shift **parallel** to $F_t'$, so the moment of $F_t'$ does not change.
+- $F_n'$ is perpendicular to the shift, so its moment changes by $x F_n'$ (nose-up positive, $x$ aft, $F_n'$ up):
 
 $$
-\frac{x_{CP}}{c}=-\frac{C_{m,LE}}{C_l},
+M_x'=M_{LE}'+xF_n'.
+$$
+
+Divide by $q_\infty c^2$, with $C_n=F_n'/(q_\infty c)$:
+
+$$
+C_{m,x}=C_{m,LE}+\frac{x}{c}C_n.
+$$
+
+Set $C_{m,x}=0$ for the centre of pressure, and $\mathrm dC_{m,x}/\mathrm d\alpha=0$ for the aerodynamic centre:
+
+$$
+\frac{x_{CP}}{c}=-\frac{C_{m,LE}}{C_n},
 \qquad
-\frac{x_{AC}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_l}.
+\frac{x_{AC}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_n}.
 $$
+
+> [!warning] When the lecture's $C_l$ form is good enough
+> $C_n=C_l\cos\alpha+C_d\sin\alpha$, so $C_n\approx C_l$ only when $\alpha$ is small **and** $C_d\sin\alpha\ll C_l$. That is the subsonic thin-aerofoil setting (SESA2022), where the forms are interchangeable. In supersonic flow at $10^\circ$ the difference shows: for the W03 flat plate, the chord-based centre of pressure is exactly $0.5c$ while the lift-based formula gives $0.508c$, and $-\mathrm dC_{m,LE}/\mathrm dC_l$ gives $0.523c$ ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]]). Quote the lecture's form when an exam asks for it, but say it assumes small $\alpha$.
+
+The lift-based versions, $x_{CP}/c\approx-C_{m,LE}/C_l$ and $x_{AC}/c\approx-\mathrm dC_{m,LE}/\mathrm dC_l$, are the lecture's (and the official sheet's) approximations.
 
 > [!question] Lecture puzzle: is an inviscid flat plate's force normal to the plate?
 > Intuition says yes. With no friction, only pressure acts, and pressure acts normal to the surface, so the resultant should be $F_n$. The lecture's answer is **no**. Thin-aerofoil theory gives $C_l=2\pi\alpha$ for **lift**, perpendicular to the freestream, with zero drag (d'Alembert). The resultant is therefore $L$, not $F_n$.

@@ -32,6 +32,13 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 > - **3.2** gets the same result by diagonalising a $2\times2$ matrix (eigenvalues $\pm\tan\mu$), then builds the **unit process**: two known points give a third, $\nu_P=\tfrac12(R^+_A+R^-_B)$, $\theta_P=\tfrac12(R^-_B-R^+_A)$, located with averaged slopes.
 > - **3.3–3.4** (boundary conditions, the minimum-length nozzle, the generic example and the MoC coursework) continue in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]].
 
+> [!summary]- Exam use: quick path
+> - **Use it when:** a 2-D supersonic flow has non-uniform inclination and you know the state at two neighbouring points.
+> - **Assumptions:** steady, **planar**, homentropic, irrotational, $M>1$; $\theta$ is the flow inclination to $x$; IFT values are $\gamma=1.4$ only.
+> - **Method:** 1. Tabulate $R^+=\nu-\theta$ and $R^-=\nu+\theta$ at A (below) and B (above). 2. $\nu_P=\tfrac12(R^+_A+R^-_B)$, $\theta_P=\tfrac12(R^-_B-R^+_A)$. 3. $M_P$ and $\mu_P$ from $\nu_P$. 4. Averaged slopes $\alpha_{AP}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_P]$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B+(\theta-\mu)_P]$. 5. Intersect for $x_P$, $y_P$, then recompute $R^\pm$ at P as a check.
+> - **Common mistakes:** swapping the families (the $C^+$ from the point **below** carries $R^+$); using only the start-point slope instead of the average.
+> - **Practise:** [[#Worked example (3.2 slide 9)]] · [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]]
+
 ## Key concepts
 
 - New: [[Method of Characteristics]] · [[Riemann Invariants]] · [[Homentropic Flow]]

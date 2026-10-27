@@ -22,6 +22,13 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 > [!abstract] Summary
 > When a supersonic stream is turned **abruptly** through an angle $\theta$, it does so across an **oblique shock** inclined at the shock angle $\beta$. Both angles are measured from the upstream velocity. There is no pressure difference *along* the shock, so the tangential velocity passes through unchanged. Only the normal component jumps. An oblique shock is therefore a normal shock in $M_{n1}=M_1\sin\beta$, and every Week 1 jump relation carries over with $M_1\to M_{n1}$ and $M_2\to M_{n2}$. Combining tangential momentum, mass conservation and the density jump gives the $\theta$–$\beta$–$M$ relation. For each $M_1$ it has a maximum deflection $\theta_{max}$. Below $\theta_{max}$ there are two solutions: a **weak** one, which is normally observed and usually leaves $M_2>1$, and a **strong** one, which leaves $M_2<1$. Above $\theta_{max}$ the shock **detaches**. At $\theta=0$ the relation gives back the normal shock ($\beta=90^\circ$) and the **Mach wave** ($\beta=\mu=\sin^{-1}(1/M_1)$). The sound-pulse picture of a moving source reaches the same Mach angle independently.
 
+> [!summary]- Exam use: quick path
+> - **Use it when:** a wall, wedge or ramp turns a supersonic stream **into** itself through $\theta$.
+> - **Assumptions:** steady, inviscid, 2-D; $\theta$ and $\beta$ measured from the upstream velocity; $\gamma=1.4$ for the chart; attached shock ($\theta\le\theta_{max}(M_1)$); weak solution unless told otherwise.
+> - **Method:** 1. Check $\theta\le\theta_{max}(M_1)$, else the shock detaches. 2. $\beta$ from the chart or the $\theta$–$\beta$–$M$ relation. 3. $M_{n1}=M_1\sin\beta$. 4. Normal-shock relations in $M_{n1}$: $M_{n2}$, $p_2/p_1$, $\rho_2/\rho_1$, $p_{02}/p_{01}$. 5. $M_2=M_{n2}/\sin(\beta-\theta)$.
+> - **Common mistakes:** entering $M_1$ instead of $M_{n1}$ in the NST; dividing by $\sin\beta$ instead of $\sin(\beta-\theta)$ for $M_2$.
+> - **Practise:** [[#8.1 Lecture chart example: M₁ = 2, θ = 15°]] · [[SESA3029 Mock Questions - Weeks 1-5#Q2. Oblique shock on a supersonic intake ramp|Mock Q2]]
+
 ## Key concepts
 
 - [[Oblique-Shock Jump Relations]] · [[Theta-Beta-Mach Relation]]
@@ -288,7 +295,7 @@ The chart plots $\beta$ against $\theta$ for several $M_1$ (slides 9–10; L2-1,
 
 ### Weak and strong solutions
 
-A horizontal line $\theta=\text{const}<\theta_{max}$ cuts each $M_1$ curve **twice**, because the relation is nonlinear in $\beta$ (L2-1, ll. 193–197):
+A vertical line $\theta=\text{const}<\theta_{max}$ (θ is on the horizontal axis) cuts each $M_1$ curve **twice**, because the relation is nonlinear in $\beta$ (L2-1, ll. 193–197):
 
 - **Weak solution (lower $\beta$):** the shock leans closer to the wall. Its normal Mach number $M_1\sin\beta$ is smaller, so the jumps are smaller. $M_2$ is **usually still supersonic** (L2-1, ll. 199–201).
 - **Strong solution (higher $\beta$):** the shock is closer to normal and gives larger jumps. $M_2$ is **always subsonic**.

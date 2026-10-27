@@ -11,7 +11,21 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 
 # SESA3043 Formula Sheet
 
-Current coverage: **Week 1**.
+Current coverage: **Chapters 1–3**. Chapters 1–2 and 3.1–3.2 are lectured; 3.3–3.6 are written from the slides, ahead of the lectures.
+
+## Which method? Given → method → predicts → main limitation
+
+| Given / asked for | Method | Predicts | Main limitation |
+|---|---|---|---|
+| A shape that maps from a circle (plate, ellipse, Joukowski, Kármán–Trefftz aerofoil) | Conformal mapping + Kutta ([[SESA3043 2.1 - Complex Functions and Conformal Mapping\|2.1]]) | Exact inviscid $C_p$, $\Gamma$, $C_L$ | Only mappable shapes; inviscid, so no drag |
+| Thin lifting surfaces, interference (tandem, biplane, ground effect, flap) | Lumped vortex: vortex at $c/4$, control point at $3c/4$ ([[SESA3043 2.2 - Lumped Vortex Method\|2.2]]) | $\Gamma$ of each element, lift ratios | One vortex per element: no load distribution; thin, small $\alpha$; 2-D |
+| An arbitrary aerofoil from coordinates | Panel method: source + vortex, or doublet ([[SESA3043 2.3 - Panel Methods\|2.3]]) | $C_p(x)$, $C_L$ | Inviscid; needs a Kutta row; zero drag |
+| Laminar layer, zero pressure gradient | Blasius ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions\|3.2]]) | $\delta_{99}$, $\delta^*$, $\theta$, $C_f$ | Flat plate, laminar, $Re_x$ below transition |
+| Laminar layer, $U_e=cx^m$ | Falkner–Skan (3.2) | Similar profiles; separation at $\beta=-0.199$ | Power-law edge velocity only |
+| Laminar layer, arbitrary $U_e(x)$ | Pohlhausen or Thwaites with the MIE ([[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients\|3.3]], [[SESA3043 3.5 - Momentum Integral Equation\|3.5]]) | $\theta(x)$, $\lambda$, separation | Approximate profile; Pohlhausen predicts separation late |
+| Turbulent layer | MIE with power-law correlations (3.5) | $\theta$, $\delta^*$, drag | Empirical, zero-pressure-gradient correlations |
+| Where transition happens | Linear stability (Orr–Sommerfeld) + $e^N$ ([[SESA3043 3.4 - Transition to Turbulence\|3.4]]) | Neutral curve, $Re_{crit}$, $N$-factor | Misses receptivity, nonlinear and bypass routes |
+| Boundary-layer effect on the outer flow | Viscous–inviscid interaction: displacement body or STM ([[SESA3043 3.6 - Viscous-Inviscid Interaction\|3.6]]) | Corrected $U_e$, pressure | Iterative; approximate closures; fails with separation |
 
 ## Operators and material derivative
 
@@ -116,11 +130,19 @@ $$
 
 ## Potential flow
 
+Irrotational, so a potential exists:
+
 $$
-\nabla\times\mathbf u=0,\qquad
-\mathbf u=\nabla\phi,\qquad
-\nabla^2\phi=0.
+\nabla\times\mathbf u=0\quad\Longrightarrow\quad\mathbf u=\nabla\phi.
 $$
+
+**And** incompressible, $\nabla\cdot\mathbf u=0$, gives Laplace's equation (irrotationality alone does not):
+
+$$
+\nabla\cdot\nabla\phi=\nabla^2\phi=0.
+$$
+
+Unsteady Bernoulli (irrotational, incompressible, inviscid, gravity as the only body force):
 
 $$
 \frac{\partial\phi}{\partial t}+\frac12|\mathbf u|^2+\frac p\rho+gz=C(t).
@@ -131,9 +153,10 @@ For two-dimensional incompressible flow:
 $$
 u=\frac{\partial\psi}{\partial y},\qquad
 v=-\frac{\partial\psi}{\partial x},\qquad
-\nabla^2\psi=0,\qquad
-Q=\psi_2-\psi_1\ \text{(volumetric flow rate)}.
+Q=\psi_2-\psi_1\ \text{(volume flow rate per unit span, m}^2\text{/s)}.
 $$
+
+$\psi$ exists for any 2-D incompressible flow; $\nabla^2\psi=0$ needs irrotational flow as well ($\nabla^2\psi=-\omega_z$).
 
 ## Superposition and the cylinder
 
@@ -186,7 +209,7 @@ Vortex at $c/4$, control point at $3c/4$: $\Gamma_\infty=\pi U\alpha c$, $C_L=2\
 
 | Case | Result |
 |---|---|
-| tandem, gap $\varepsilon c$ | $L_1/L_2=(2\varepsilon+3)/(2\varepsilon+1)$ (2 at $\varepsilon=\tfrac12$); $\Gamma_1+\Gamma_2=2\Gamma_\infty$ |
+| tandem, gap $\varepsilon c$ | $L_1/L_2=(2\varepsilon+3)/(2\varepsilon+1)$ (2 at $\varepsilon=\tfrac12$); $\Gamma_1+\Gamma_2=2\Gamma_\infty$ in this equal-chord, equal-incidence model only |
 | ground effect | $\Gamma/\Gamma_\infty=1+1/(4h/c)^2$ |
 | camber $0.24\bar x(1-\bar x)$ | $C_L=2\pi(\alpha+0.12)$ |
 | biplane, gap $c/2$ | $\Gamma=\tfrac23\Gamma_\infty$ each |
@@ -198,6 +221,8 @@ Vortex at $c/4$, control point at $3c/4$: $\Gamma_\infty=\pi U\alpha c$, $C_L=2\
 | source | $u=\frac{\sigma}{2\pi}\ln\frac{r_1}{r_2}$, $w=\frac{\sigma}{2\pi}(\theta_2-\theta_1)$ | $w_\pm=\pm\sigma/2$ |
 | vortex | $u=\frac{\gamma}{2\pi}(\theta_2-\theta_1)$, $w=\frac{\gamma}{2\pi}\ln\frac{r_2}{r_1}$ | $u_\pm=\pm\gamma/2$ |
 | doublet | $\phi=\frac{\mu}{2\pi}(\theta_1-\theta_2)$ | $\phi_\pm=\mp\mu/2$ |
+
+Source + vortex method: tangency $\sum_ja_{ij}\sigma_j+\hat a_i\gamma=U\sin(\beta_i-\alpha)$; Kutta either by equal TE **speeds**, which in signed panel-tangent components is $q_{t,1}=-q_{t,N}$ (panels numbered TE → LE → TE), or by a zero-normal-velocity point on the TE bisector (the course code).
 
 Doublet method: $\sum_ja_{ij}\mu_j+a_{i,w}\mu_w=-U(x_i\cos\alpha+y_i\sin\alpha)$; Kutta $\mu_1-\mu_N-\mu_w=0$; $C_L=2\mu_w/(Uc)$; $q_{t,i}=-\dfrac{\mu_i-\mu_{i-1}}{(l_i+l_{i-1})/2}$; $C_p=1-(q_t/U)^2$.
 
@@ -211,8 +236,10 @@ $$
 
 $$
 \tau_w=\mu\left.\frac{\partial u}{\partial y}\right|_0,\qquad C_f=\frac{\tau_w}{\tfrac12\rho U_e^2},\qquad
-D=\rho U_e^2\theta\ \text{(flat plate)},\qquad\frac{\mathrm d\theta}{\mathrm dx}=\frac{C_f}{2}.
+D'=\rho U_e^2\theta,\qquad\frac{\mathrm d\theta}{\mathrm dx}=\frac{C_f}{2}.
 $$
+
+The last two hold for a **flat plate with zero pressure gradient** ($U_e$ constant), $D'$ per unit span on one side; with a gradient use the full MIE (3.5).
 
 Linear profile: $\delta^*=\delta/2$, $\theta=\delta/6$, $H=3$, $C_f=2/Re_\delta$.
 
@@ -241,7 +268,7 @@ $$
 \frac u{U_e}=2\eta-2\eta^3+\eta^4+\frac\lambda6\eta(1-\eta)^3,\qquad\eta=\frac y\delta,\qquad\lambda=\frac{\delta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}=-\left.\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}\right|_0.
 $$
 
-$\delta^*/\delta=\frac{3}{10}-\frac{\lambda}{120}$, $\theta/\delta=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072}$, $\tau_w\delta/(\mu U_e)=2+\lambda/6$; separation $\lambda=-12$; valid $|\lambda|\le12$.
+$\delta^*/\delta=\frac{3}{10}-\frac{\lambda}{120}$, $\theta/\delta=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072}$, $\tau_w\delta/(\mu U_e)=2+\lambda/6$; separation $\lambda=-12$; valid $|\lambda|\le12$. For geometrically similar laminar flow, $\delta^2\propto\nu L/U_\infty$ cancels the $1/\nu$, so $\lambda(x/L)$ and the laminar separation point do not depend on $Re$; $Re$ matters through transition.
 
 ## Transition (3.4)
 
@@ -261,7 +288,7 @@ $$
 
 Thwaites (extension): $\theta^2=\dfrac{0.45\nu}{U_e^6}\displaystyle\int_0^xU_e^5\,\mathrm dx$.
 
-Mean skin friction of a flat plate of length $L$ (any regime; ship example, slides 40–44): $\overline{C_f}=\dfrac{2\,\theta(L)}{L}$. Fully rough wall (extension): $\sqrt{2/C_f}=\kappa^{-1}\ln(\delta/k_s)+8.5+2\Pi/\kappa$, independent of $\nu$.
+Mean skin friction of a flat plate of length $L$ (laminar or turbulent, but **zero pressure gradient**; ship example, slides 40–44): $\overline{C_f}=\dfrac{2\,\theta(L)}{L}$. Fully rough wall (extension): $\sqrt{2/C_f}=\kappa^{-1}\ln(\delta/k_s)+8.5+2\Pi/\kappa$, independent of $\nu$.
 
 ## Viscous–inviscid interaction (3.6)
 

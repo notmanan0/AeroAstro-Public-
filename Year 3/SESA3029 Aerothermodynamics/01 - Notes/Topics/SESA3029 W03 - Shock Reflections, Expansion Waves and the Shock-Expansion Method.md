@@ -33,6 +33,13 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf", "02 - Sources/Lectures/Lecture
 >
 > **2.5 Shock-expansion method.** Shocks at compression corners and fans at expansion corners give exact, uniform surface pressures on flat-faced 2D bodies. Integrate them for lift, wave drag and moment.
 
+> [!summary]- Exam use: quick path
+> - **Use it when:** a shock meets a wall or another shock, a flow turns round a convex corner, or a flat-faced aerofoil sits in a supersonic stream.
+> - **Assumptions:** steady, inviscid, 2-D, $\gamma=1.4$ (IFT); fans are isentropic ($p_0$ constant); shock-expansion needs sharp edges, attached shocks and flat faces (uniform pressure on each).
+> - **Method:** 1. At each corner: turned into the flow → oblique shock; away → fan, $\nu_2=\nu_1+\theta$. 2. Wall reflection: the same $\theta$ again from $M_2$; if $\theta>\theta_{max}(M_2)$ it is a Mach reflection. 3. Shock crossings and trailing edges: match $p$ and flow direction across the slip line. 4. Aerofoil: face pressures → chord-normal $N'$ and chordwise $A'$ → $L'$, $D'$. 5. Moment about the LE; centre of pressure along the chord with $C_n$.
+> - **Common mistakes:** $D'=N'\sin\alpha$ on a thick section (misses $A'$); moving the moment with $C_l$ instead of $C_n$ at large $\alpha$.
+> - **Practise:** [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6 flat plate]] · [[SESA3029 Mock Questions - Weeks 1-5#Q4. Diamond aerofoil by shock-expansion theory|Mock Q4]]
+
 ## Key concepts
 
 - [[Regular Shock Reflection]] · [[Mach Reflection]] · [[Slip Line]] · [[Entropy Change Across a Shock]]
@@ -660,10 +667,12 @@ $L/D=\cot\alpha=5.67$ exactly: an inviscid flat plate's force is normal to it. T
 > [!question] Lecture Q&A: why is there drag here but none in subsonic thin-aerofoil theory? (L2-5, ll. 149–213)
 > The force on an inviscid flat plate is normal to it, so it always has a downstream component $N\sin\alpha$. In subsonic theory that component is cancelled by **leading-edge suction**. The stagnation point sits on the lower surface, and the flow wraps $180^\circ$ round the sharp edge (ll. 186–192). There $\Delta p\to\infty$ (the $1/\sqrt{x}$ singularity), and *"infinite multiply by zero"* thickness leaves a **finite** forward suction force (ll. 194–206). The result is pure lift, zero drag: d'Alembert's paradox. In supersonic flow the leading edge is where the flow splits cleanly into a shock below and a fan above. Nothing wraps round, so there is no suction and the full $N\sin\alpha$ survives as drag (ll. 208–213). This is **wave drag** (ll. 258–261).
 
-**Centre of pressure and aerodynamic centre (L2-5, ll. 215–242).** Move the moment reference from the LE to a point $x$ on the chord. The lift acts upward, so its moment about $x$ changes by $+x\,L'$ (l. 222):
+**Centre of pressure and aerodynamic centre (L2-5, ll. 215–242).** Move the moment reference from the LE to a point $x$ on the chord.
+
+*The lecture's version.* The lift acts upward, so its moment about $x$ changes by $+x\,L'$ (l. 222):
 
 $$
-C_{m,x}=C_{m,LE}+\frac{x}{c}\,C_l.
+C_{m,x}=C_{m,LE}+\frac{x}{c}\,C_l\quad(\text{lecture}).
 $$
 
 - **Centre of pressure:** the point where $C_{m,x}=0$, so $x_{cp}/c=-C_{m,LE}/C_l$.
@@ -676,20 +685,47 @@ C_{m,LE}=-\frac{\Delta p}{2q_\infty}=-\frac{C_l}{2\cos\alpha},
 $$
 
 $$
-\frac{x_{cp}}{c}=\frac{x_{ac}}{c}=\frac{1}{2\cos\alpha}=0.5077\quad(\alpha=10^\circ).
+\frac{x_{cp}}{c}=-\frac{C_{m,LE}}{C_l}=\frac{1}{2\cos\alpha}=0.5077\quad(\alpha=10^\circ,\ \text{lecture}).
 $$
 
-They coincide because $C_{m,LE}$ is exactly proportional to $C_l$: a flat plate has no zero-lift moment.
+The slide also sets $x_{ac}/c=1/(2\cos\alpha)$, by treating $C_{m,LE}$ as proportional to $C_l$. It is not quite: the factor $1/(2\cos\alpha)$ itself changes with $\alpha$.
+
+*The exact version.* Moving the reference along the chord is a shift parallel to the chordwise force, so only the **chord-normal** force $F_n'$ changes the moment ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]]):
+
+$$
+C_{m,x}=C_{m,LE}+\frac{x}{c}\,C_n.
+$$
+
+For the plate, the uniform pressures give $C_n=\Delta p/q_\infty$, so
+
+$$
+C_{m,LE}=-\frac{\Delta p}{2q_\infty}=-\frac{C_n}{2}\quad\text{exactly, at every }\alpha.
+$$
+
+Hence
+
+$$
+\frac{x_{cp}}{c}=-\frac{C_{m,LE}}{C_n}=\frac12,
+\qquad
+\frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_n}=\frac12.
+$$
+
+They coincide because $C_{m,LE}$ is **exactly** proportional to $C_n$, with a constant factor: a flat plate has no zero-lift moment.
+
+> [!check] Lift-based vs chord-based, computed (shock-expansion, $M_1=2$)
+> | | $9^\circ$ | $10^\circ$ | $11^\circ$ |
+> |---|---|---|---|
+> | $C_n$ | 0.3705 | 0.4138 | 0.4578 |
+> | $C_l$ | 0.3660 | 0.4075 | 0.4494 |
+> | $C_{m,LE}$ | −0.1853 | −0.2069 | −0.2289 |
+>
+> Chord-based: $-C_{m,LE}/C_n=0.5000$ at every angle, and $-\Delta C_m/\Delta C_n=0.5000$. Lift-based: $-C_{m,LE}/C_l=0.5077$ at $10^\circ$, but the central difference $-\Delta C_m/\Delta C_l$ over $9^\circ\to11^\circ$ is **0.523**, not 0.5077. So the lecture's "$x_{ac}=1/(2\cos\alpha)$" is off by a further 3% beyond the $\cos\alpha$ factor. Exam advice: quote the lecture's numbers if asked for them, then add "measured along the chord, both are exactly $c/2$".
 
 > [!important] The ac jumps from c/4 to c/2 (L2-5, ll. 243–257)
 > Subsonic aerofoils have their aerodynamic centre near the **quarter chord**, supersonic ones near **half chord**. A supersonic aircraft is designed with a positive static margin about the half-chord ac. It must still take off and land subsonically, and then the ac moves forward to the quarter chord. *"Can you guarantee that the cg margin is still positive? Maybe not"* (ll. 256–257). The aircraft can be stable in cruise and unstable at landing, or the reverse. This is a key design issue for any transonic or supersonic aircraft. (Extension: Concorde pumped fuel aft for supersonic cruise and forward again for landing, to move the cg with the ac.)
 
 > [!warning] Centre of pressure on slide 16
-> The slide writes $x_{cp}/c=-C_{m,LE}/C_l=1/(2\cos\alpha)=0.5077$. That formula attributes the whole moment to the lift, ignoring the drag's moment arm, so it gives where $L'$ alone would have to act **along the free-stream direction**. Measured along the **chord**, the centre of pressure is exactly mid-chord:
->
-> $$x_{cp}/c=-C_{m,LE}/C_n=0.5,$$
->
-> because both surface pressures are uniform (see [[Aerodynamic Centre and Centre of Pressure]]). The difference ($\cos10^\circ=0.985$) is small, but quote 0.5 with "along the chord".
+> The slide writes $x_{cp}/c=-C_{m,LE}/C_l=1/(2\cos\alpha)=0.5077$. That formula attributes the whole moment to the lift, ignoring the drag's moment arm, so it gives where $L'$ alone would have to act **along the free-stream direction**. Measured along the **chord**, the centre of pressure is exactly mid-chord, $x_{cp}/c=-C_{m,LE}/C_n=0.5$ (derived above), because both surface pressures are uniform (see [[Aerodynamic Centre and Centre of Pressure]]). Quote 0.5 with "along the chord".
 
 **Trailing edge.** The two streams leave at $-\alpha$ with different pressures (16.4 and 51.2 kPa). They must end parallel at a common pressure across a [[Slip Line]], exactly as in §3. The upper flow turns up through a **shock** and the lower flow turns up through a **fan**. Solving for the slip-line angle gives $\delta=0.03^\circ$ and $p_3=30.03$ kPa, essentially the free stream. The leftover is the small entropy difference. These trailing-edge waves **cannot affect the surface pressures**, because nothing travels upstream in supersonic flow.
 
@@ -811,7 +847,7 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 
 - [ ] *(Suggested)* Show that $(s_2-s_1)/c_v\approx\tfrac{2\gamma(\gamma-1)}{3(\gamma+1)^2}(M_{n1}^2-1)^3$, and hence that expansion shocks are impossible. → [[#4. Entropy across a shock and why shocks compress|§4]]
 - [ ] *(Suggested)* Integrate to the closed-form $\nu(M)$ using $t=\sqrt{M^2-1}$ and partial fractions, and show $\nu_{max}=130.45^\circ$. → [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
-- [ ] Show $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up sign convention, and derive $x_{cp}/c=x_{ac}/c=1/(2\cos\alpha)$ (L2-5, ll. 106–117, 215–242); then explain why it is exactly $0.5$ along the chord. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
+- [ ] Show $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up sign convention, and derive the lecture's $x_{cp}/c=1/(2\cos\alpha)$ (L2-5, ll. 106–117, 215–242); then derive $C_{m,x}=C_{m,LE}+(x/c)C_n$ and show $x_{cp}=x_{ac}=c/2$ exactly along the chord, and why $-\mathrm dC_{m,LE}/\mathrm dC_l\neq1/(2\cos\alpha)$. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
 
 #### Calculations
 

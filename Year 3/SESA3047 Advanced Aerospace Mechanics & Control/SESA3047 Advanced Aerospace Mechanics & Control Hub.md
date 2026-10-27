@@ -136,6 +136,20 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 >
 > The lecturer tied the coupling discussion to the lab: *"we will see how this affects the numerical simulations"* (L8, ll. 67–68). Lab 2 will use Simulink (Lab 1, p. 1).
 
+> [!warning] Lab 1 Exercise 2: three wording traps on the sheet
+> - **Equilibrium (p. 5).** *"The origin $(x,\dot x)=(0,0)$ is an equilibrium for both the linear and nonlinear models"* is true only of the **unforced** models ($f=0$). With $f\cos\omega t\neq0$, $\ddot x(0)=f/m\neq0$ at the origin, so it is not a fixed point of the forced system. Linearising about the origin (as in [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#5. Linear and nonlinear models|1.2 §5]]) is a statement about the unforced dynamics; see the trim-condition warning there.
+> - **Forcing hint.** The hint says to add *"f/m\*cos(omega\*t))/m"* to a line that already ends in `/m`. Read literally, that divides by $m$ twice. From $m\ddot x+c\dot x+kx+\mu x^3=f\cos\omega t$, the acceleration is $\ddot x=(f\cos\omega t-c\dot x-kx-\mu x^3)/m$: **one** division. `exercise2_2.m` (ll. 13–14) does this correctly. With $m=1$ kg the two readings give the same numbers, which is exactly why the slip would go unnoticed in the lab and then break with any other mass.
+> - **Units in Table 1** are shifted down a row in the PDF: they should read $k$ in N/m, $\mu$ in N/m³ and $f$ in N.
+
+> [!todo] Lab 1 report checklist
+> - [ ] **Ex. 1, DCM round trip:** build $\mathbf C_{FRD/NED}$, extract $(\phi,\theta,\psi)$, check $\mathbf C\mathbf C^T=\mathbf I$ and $\det\mathbf C=1$, rebuild $\mathbf C$ from the extracted angles. → [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles|2.2]]
+> - [ ] **Ex. 1, singularity:** run `exercise1_3.m` at $89^\circ$, $89.9^\circ$, $90^\circ$; explain why MATLAB returns $\phi=\psi=0$ at exactly $90^\circ$ and why only $\phi-\psi$ is recoverable. → [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock (§2.4.5)|2.2 §8]]
+> - [ ] **Ex. 2, free response:** small vs large amplitude, linear vs nonlinear, $f=0$ (`exercise2_1.m`); relate the frequency shift to $k_{\text{eff}}=k+3\mu x_0^2$. → [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models|1.2 §5]]
+> - [ ] **Ex. 2, forced response:** same models with $f\cos\omega t$ (`exercise2_2.m`), single division by $m$; say explicitly that the origin is no longer an equilibrium.
+> - [ ] **Ex. 2, restoring force:** plot $kx$ and $kx+\mu x^3$ on $|x|\le0.12$ m (`exercise2_3.m`); $\mu x^3$ reaches 10% of $kx$ at $|x|=\sqrt{0.1k/\mu}=0.1$ m.
+> - [ ] **Ex. 3, coupling:** separate **geometric** coupling (Euler-angle kinematics, $\mathbf H(\boldsymbol\Phi)$) from **inertial** coupling ($\boldsymbol\omega\times\mathbf J\boldsymbol\omega$) in `exercise3_1.m`. → [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates|3.1 §7]], [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment (L12 ll. 22–119)|4.1]]
+> - [ ] **Ex. 3, feedback vs none:** `exercise3_2.m` runs $\mathbf M=-\mathbf K_P(\boldsymbol\Phi-\boldsymbol\Phi_{ref})-\mathbf K_D\boldsymbol\omega$ and then $\mathbf M=\mathbf 0$ from the same start, as the sheet asks. Interpret with care: the controller feeds back **Euler angles** but applies **body** moments. That is a fair PD attitude loop only near small angles, where $\dot{\boldsymbol\Phi}\approx\boldsymbol\omega$; at large angles $\mathbf H(\boldsymbol\Phi)$ mixes the axes, and near $\theta=\pm90^\circ$ the feedback inherits the singularity.
+
 > [!important] Coursework 1: due Thu 29 Oct, 23:00
 > Announced before the L12 break: *"I have uploaded the coursework … in blackboard you can find the instructions as well. Under assessment, coursework one. And the coursework is due by the 29th of October at 11 p.m."* (L12 ll. 352–357).
 >
@@ -206,7 +220,7 @@ All of Chapter 4 is now lectured (L11–L13). Items marked *handout only* were n
 
 - expand the full inertia equation by finding momentum components first (L11 ll. 81–180);
 - explain the eigenvector definition of principal axes and why FRD axes need not be principal (L11 ll. 181–228);
-- explain inertia coupling with no external moment: with two non-zero rates all three change; $J_{xx}=J_{zz}$ removes the $\dot q$ coupling; a single-axis spin is steady (L12 ll. 22–119). *"The case that I would generally remember"* is the diagonal one (L12 ll. 182–187);
+- explain inertia coupling with no external moment: two non-zero rates first drive only the third, then generically all three change; $J_{xx}=J_{zz}$ removes the $\dot q$ coupling (a counterexample to "always"); a single-axis spin is steady (L12 ll. 22–119). *"The case that I would generally remember"* is the diagonal one (L12 ll. 182–187);
 - explain why an $x$–$z$ symmetry plane gives $J_{xy}=J_{yz}=0$, and contrast this with the cm integral, which needs no symmetry (L12 ll. 128–137);
 - derive the aircraft roll–yaw inverse and check its zero-product limit (shown but not multiplied out in L12 ll. 142–171);
 - explain why the matrix form is kept for numerical work (L12 ll. 192–208);

@@ -241,7 +241,10 @@ LMTD check: $(80-50.98)/\ln(80/50.98)=64.40$ K, and $UA\times\text{LMTD}=20.85$ 
 
 $D=20$ mm, $\dot m=0.1$ kg/s, inside properties $k=0.686$ W/m K, $c_p=4239$ J/kg K, $\mu=2.37\times10^{-4}$ N s/m², $Pr=1.47$. Outside: air at $20^\circ$C with $h_c=12\,000$ W/m² K. The fluid enters at 140°C and must reach 60°C. Wall conduction is neglected.
 
-**Model.** Sensible cooling of the internal flow to $60^\circ$C, with no latent heat (as the data imply), and a constant outside temperature.
+> [!warning] This is a conditional answer, not the condenser problem as stated
+> The sheet says *"the water vapour enters at 140°C and is assumed to condensate at 60°C"* and asks for the length *"to function as a condenser"*. Condensing releases latent heat, which the data do not give, while the listed $k$, $c_p$, $\mu$ and $Pr$ are **liquid-water** values. The question is therefore under-specified. Steps 1–3 solve one reading: sensible cooling of a single-phase fluid. The [[#Model B: including the latent heat|latent-heat model]] below solves the other, and it lands on the printed key.
+
+**Model A.** Sensible cooling of the internal flow to $60^\circ$C, with no latent heat, and a constant outside temperature.
 
 **Step 1. Internal convection.**
 
@@ -271,8 +274,30 @@ $$
 
 With $Pr^{0.4}$ (the heating form): $L=2.92$ m.
 
+### Model B: including the latent heat
+
+Now treat the fluid as condensing at a constant $60^\circ$C, with $h_{fg}(60^\circ\text{C})=2358$ kJ/kg from steam tables (not given on the sheet). The heat to remove is
+
+$$
+\dot Q=\dot m\,h_{fg}=0.1\times2.358\times10^6=235.8\ \text{kW},
+$$
+
+about seven times the sensible load of Model A ($\dot mc_p\Delta T=33.9$ kW). The fluid temperature is constant, so the driving difference is a constant $60-20=40$ K, and $\dot Q=U'\pi DL\,\Delta T$ gives
+
+$$
+L=\frac{\dot m\,h_{fg}}{U'\pi D\,\Delta T}.
+$$
+
+| Coefficient used for $U'$ | $L$ (m) |
+|---|---|
+| $U=2460$ W/m² K (both resistances) | 38.1 |
+| $h_i=3094$ W/m² K only (outside resistance dropped) | **30.3** |
+| $h_i$ with $Pr^{0.4}$ | 29.2 |
+
+(Python-checked. Adding the desuperheating from 140°C to Model B with $U$ gives 39.5 m.)
+
 > [!warning] Printed answer 30.2 m
-> 30.2 m is ten times this result. The key would need $U\approx245$ W/m² K, which none of the stated data give. It looks like a decimal slip in the key. **3.0 m** follows from the data as given. Raise this in the tutorial.
+> The key's 30.2 m is **not** consistent with Model A, and calling it a decimal slip is not justified. It **is** consistent, to 0.4%, with Model B using the latent heat and $h_i$ alone at a 40 K difference. That is a plausible reconstruction of the key, not a confirmed one: it drops the 12 000 W/m² K outside coefficient that the question supplies, and a condensing film coefficient would differ from the single-phase Dittus–Boelter $h_i$ anyway. In an exam, **state the model** before solving: sensible cooling (3.0 m) or condensation with $h_{fg}$ (30–38 m depending on $U$). Ask in the tutorial which one Prof. Kim intends.
 
 ## Links
 

@@ -31,7 +31,7 @@ sources: ["02 - Sources/Lectures/CH3-4 Transition to Turbulence(1).pdf"]
 
 ## Pressure gradients
 
-Adverse: larger unstable region, lower $Re_{crit}$, and inflectional (Rayleigh) instability that persists as $Re\to\infty$. Favourable: stabilising, the basis of natural-laminar-flow aerofoils.
+Adverse: larger unstable region, lower $Re_{crit}$, and an inflection point in the profile. That permits inviscid (Rayleigh) instability, which stability calculations confirm for typical adverse-gradient profiles and which then persists as $Re\to\infty$ (slide 46). An inflection point is a **necessary**, not sufficient, condition, so the instability is a computed result, not automatic. Favourable: stabilising, the basis of natural-laminar-flow aerofoils.
 
 ## Related
 

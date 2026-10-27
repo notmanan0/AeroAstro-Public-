@@ -823,8 +823,8 @@ Zero lift when $\alpha=-\delta/2=\boxed{-5^\circ}$. The flap carries 29 % of the
 - **No lift from sources.** A source distribution carries no circulation: the velocity goes *through* it (PM2, ll. 100–109). By Kutta–Joukowski $L'=\rho U_\infty\Gamma$, so zero circulation means zero lift. The explainer's source-panel cylinder gives the symmetric $C_p=1-4\sin^2\theta$ and no lift.
 - **Unknowns.** A source strength $\sigma_j$ on each panel plus **one** vortex strength $\gamma$ shared by all panels: $N+1$.
 - **Equations.** Tangency (zero total normal velocity) at the $N$ panel control points gives $N$ equations. One more is needed.
-- **Kutta condition**, either form:
-  1. equal tangential speeds on the two TE panels, $q_{t,1}=q_{t,N}$, so by Bernoulli $p_1=p_N$ and the TE carries no load;
+- **Kutta condition**, either discrete form (they agree only as $N\to\infty$):
+  1. equal tangential **speeds** on the two TE panels. With panels numbered TE → LE → TE, the two panel tangents point in opposite directions, so in signed components $q_{t,1}=-q_{t,N}$ (state the tangent convention). By Bernoulli $p_1=p_N$ and the TE carries no load;
   2. an extra control point just behind the TE, on the bisector of the TE angle, with zero velocity normal to the bisector, so the flow leaves along it.
 - **Solve** the $(N+1)\times(N+1)$ linear system once.
 - **Outputs.**

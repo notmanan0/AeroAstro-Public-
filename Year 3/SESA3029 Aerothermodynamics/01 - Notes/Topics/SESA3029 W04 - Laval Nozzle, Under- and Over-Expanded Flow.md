@@ -42,6 +42,13 @@ sources: ["02 - Sources/Lectures/Lecture2-6.pdf", "02 - Sources/Lectures/Lecture
 >
 > **Supersonic wind tunnel.** A second throat recovers pressure, but it must be at least $p_{01}/p_{02}$ times the first throat to swallow the starting shock: 3.05 at $M=3$.
 
+> [!summary]- Exam use: quick path
+> - **Use it when:** a duct or nozzle has a given area ratio and back pressure, or a jet or wind tunnel is involved.
+> - **Assumptions:** quasi-1D, steady, isentropic except across normal shocks, perfect gas with $\gamma=1.4$ (IFT); $p_0$, $T_0$ constant upstream of any shock.
+> - **Method:** 1. From $A_e/A_t$, the subsonic and supersonic roots give $p_{b3}$ and $p_{b6}$; $p_{b5}=p_{b6}\times(p_2/p_1)_{NS}(M_e)$. 2. Place $p_b$ among them to name the regime. 3. Shock inside: solve $\frac{p_e}{p_{0e}}\frac{A_e}{A_e^*}=\frac{p_bA_e}{p_{01}A_t}$ for $M_e$, then $p_{0e}/p_{01}$ → $M_s$ → $A_s$. 4. Choked flow $\dot m=0.0404\,p_0A^*/\sqrt{T_0}$. 5. Jet: $p_e<p_\infty$ lip shocks, $p_e>p_\infty$ lip fans.
+> - **Common mistakes:** treating $0.528p_0$ as the back pressure that chokes the nozzle (it is the **throat** pressure; choking happens at $p_{b3}$); keeping $A^*$ unchanged across a shock ($A_2^*/A_1^*=p_{01}/p_{02}$).
+> - **Practise:** [[#Computing the three critical back pressures]] · [[SESA3029 Mock Questions - Weeks 1-5#Q5. Laval nozzle at design and off-design back pressures|Mock Q5]]
+
 ## Key concepts
 
 - New: [[Over- and Under-Expanded Jets]] · [[Supersonic Wind Tunnel]]

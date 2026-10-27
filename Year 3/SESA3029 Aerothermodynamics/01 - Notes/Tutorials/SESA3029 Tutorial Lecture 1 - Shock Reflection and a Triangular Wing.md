@@ -339,11 +339,26 @@ $$
 
 One-sided differences give 0.484 ($9\to10^\circ$) and 0.490 ($10\to11^\circ$).
 
+**Along the chord (exact moment transfer).** The lecture's derivative uses $C_l$. Moving the reference point **along the chord** changes the moment only through the chord-normal force, so the exact aerodynamic centre is $x_{ac}/c=-\mathrm dC_{m,LE}/\mathrm dC_n$ ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]]). Here $C_n=N'/(q_\infty c)=\big(p_L-\tfrac12p_{UF}-\tfrac12p_{UR}\big)/q_\infty$, which is exact because each upper face projects onto exactly $c/2$ of the chord:
+
+| $\alpha$ | $C_n$ | $C_{m,LE}$ (exact) | $x_{cp}/c=-C_{m,LE}/C_n$ |
+|---|---|---|---|
+| $9^\circ$ | 0.4313 | −0.2585 | 0.599 |
+| $10^\circ$ | 0.4889 | −0.2854 | 0.584 |
+| $11^\circ$ | 0.5481 | −0.3133 | 0.572 |
+
+$$
+\frac{x_{ac}}{c}=-\frac{\Delta C_{m,LE}}{\Delta C_n}=-\frac{-0.3133-(-0.2585)}{0.5481-0.4313}=\frac{0.0548}{0.1168}=\boxed{0.468}.
+$$
+
+> [!check] Which number to quote
+> All values recomputed in Python from the oblique-shock and Prandtl–Meyer relations ($M_1=1.7$, $p_1=20$ kPa, $\varepsilon=10^\circ$). The lecture's homework asks for $-\Delta C_m/\Delta C_l$, so **0.487** (shortcut) or **0.491** (exact forces) answers the question as set. As a position measured **along the chord**, the aerodynamic centre is at **0.468c**. The 4% gap is the $\cos\alpha$ and drag terms in $C_l=C_n\cos\alpha-C_a\sin\alpha$, which the lift-based formula folds into the "ac". Ackeret theory's exact $c/2$ is a small-$\alpha$ result, where $C_n\approx C_l$.
+
 > [!check] Is "half" right?
-> Close, as the lecturer expected (l. 235). Linearised supersonic (Ackeret) theory, Weeks 7–8, puts the aerodynamic centre of **any** thin aerofoil at exactly $c/2$. Shock-expansion theory is the exact, nonlinear version, so a $10^\circ$-thick section with finite turning angles lands at about $0.49c$. The 2% shortfall is a nonlinear effect. Compare the flat plate in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]], where $C_{m,LE}\propto C_l$ exactly.
+> Close, as the lecturer expected (l. 235). Linearised supersonic (Ackeret) theory, Weeks 7–8, puts the aerodynamic centre of **any** thin aerofoil at exactly $c/2$. Shock-expansion theory is the exact, nonlinear version, so a $10^\circ$-thick section with finite turning angles lands at about $0.49c$. The 2% shortfall is a nonlinear effect. Compare the flat plate in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]], where $C_{m,LE}=-C_n/2$ exactly.
 
 > [!tip] Centre of pressure is not the aerodynamic centre here
-> At $10^\circ$, $x_{cp}/c=-M'_{LE}/(N'c)=0.261/(2.967\times0.15)=0.587$: the cp sits **behind** the ac. For the flat plate the two coincided, because $C_{m,LE}$ was exactly proportional to $C_l$ (no zero-lift moment). The triangular wing is cambered in effect (flat bottom, peaked top), so it has a nose-down moment at zero lift. The cp then moves with $\alpha$ while the ac stays put.
+> At $10^\circ$, $x_{cp}/c=-M'_{LE}/(N'c)=0.261/(2.967\times0.15)=0.587$ with the lecture's shortcut moment (0.584 exact): the cp sits **behind** the ac. For the flat plate the two coincided, because $C_{m,LE}$ was exactly proportional to $C_n$ (no zero-lift moment). The triangular wing is cambered in effect (flat bottom, peaked top), so it has a nose-down moment at zero lift. The cp then moves with $\alpha$ while the ac stays put.
 
 ### Why look at sharp, mid-chord-thickness shapes? (ll. 141–153)
 
@@ -395,7 +410,7 @@ Subsonic aerofoils have round leading edges and maximum thickness near the quart
 ### Lecturer-set
 
 - [ ] **Lecturer-set (l. 117):** *"You need to put in your work to get to find the answers yourself… it's your homework"*: do ES1 Q3 (a) and (b) in full, with the tables. → [[#Part 1. Example Sheet 1 Q3: ramp shock reflected from a wall (ll. 7–117)]]
-- [ ] **Lecturer-set, weekend homework (ll. 232–235):** repeat the triangular wing at $\alpha=9^\circ$ or $11^\circ$, form $-\Delta C_m/\Delta C_l$ and check that $x_{ac}\approx c/2$. Answer: 0.487. → [[#Weekend homework: the aerodynamic centre (ll. 228–235)]]
+- [ ] **Lecturer-set, weekend homework (ll. 232–235):** repeat the triangular wing at $\alpha=9^\circ$ or $11^\circ$, form $-\Delta C_m/\Delta C_l$ and check that $x_{ac}\approx c/2$. Answer: 0.487 by the lecture's $C_l$ method; 0.468 measured along the chord. → [[#Weekend homework: the aerodynamic centre (ll. 228–235)]]
 - [ ] **Lecturer-set (ll. 35, 114–115):** practise the oblique-shock and fan "unit calculations" until they are automatic. → [[#The unit calculation (ll. 35–46)]], [[#Upper rear face: one fan unit (ll. 165–179)]]
 
 ### Calculations

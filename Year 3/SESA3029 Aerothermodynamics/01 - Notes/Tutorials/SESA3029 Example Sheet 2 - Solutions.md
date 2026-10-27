@@ -280,7 +280,7 @@ C_{m,LE}=-\tfrac12C_l=-\frac{2\alpha}{\beta}=-0.0466
 M'_{LE}=C_mq_\infty c^2=\boxed{-5.29\ \text{kN}}.
 $$
 
-**(c)** $x_{cp}=-C_{m,LE}/C_l=\boxed{0.50}$.
+**(c)** $x_{cp}=-C_{m,LE}/C_l=\boxed{0.50}$. (Linear theory takes $C_n=C_l$ at small $\alpha$, so this is also the chordwise position.)
 
 The sheet gives 52.3, 37.1, 62.9 and 47.7 kPa; 10.5 kN/m; 1.13 kN/m; −5.29 kN; 0.50 ✓.
 

@@ -53,7 +53,7 @@ $$
 
 ## Local linearisation
 
-For $\dot{\mathbf x}=\mathbf f(\mathbf x,\mathbf u)$ around $(\mathbf x_0,\mathbf u_0)$,
+For $\dot{\mathbf x}=\mathbf f(\mathbf x,\mathbf u)$ around a **trim (equilibrium) point** $(\mathbf x_0,\mathbf u_0)$ with $\mathbf f(\mathbf x_0,\mathbf u_0)=\mathbf 0$, $\delta\mathbf x=\mathbf x-\mathbf x_0$, $\delta\mathbf u=\mathbf u-\mathbf u_0$. (About a time-varying reference, require $\dot{\mathbf x}_0(t)=\mathbf f(\mathbf x_0,\mathbf u_0)$ instead; otherwise a constant residual $\mathbf f(\mathbf x_0,\mathbf u_0)$ is left over.)
 
 $$
 \delta\dot{\mathbf x}
@@ -285,7 +285,7 @@ $$
 \dot r=\frac{(J_{xx}-J_{yy})pq}{J_{zz}}.
 $$
 
-Any two non-zero rates make all three change. A single-axis spin stays steady.
+Each rate's derivative needs **both other rates** non-zero **and** its inertia difference non-zero. With two non-zero rates, initially only the third rate changes (unless its inertia difference is zero, e.g. $J_{xx}=J_{zz}$ kills $\dot q$); the others can change later, once the third rate has grown. A single-axis spin stays steady (L12, ll. 22–119).
 
 For aircraft symmetry $J_{xy}=J_{yz}=0$:
 

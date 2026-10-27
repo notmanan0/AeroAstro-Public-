@@ -43,7 +43,7 @@ for an expansion through $\theta$. Then get $p$, $T$ and $\rho$ from the isentro
 |---|---:|---:|---:|---:|---:|---:|---:|
 | $\nu$ | $3.56^\circ$ | $20.73^\circ$ | $26.38^\circ$ | $31.73^\circ$ | $39.12^\circ$ | $49.76^\circ$ | $62.76^\circ$ |
 
-$\nu_{max}=130.45^\circ$ as $M\to\infty$.
+$\nu_{max}=90^\circ\left(\sqrt{(\gamma+1)/(\gamma-1)}-1\right)$ as $M\to\infty$: $130.45^\circ$ for $\gamma=1.4$, but $163.3^\circ$ for the MoC coursework's CO₂ ($\gamma=1.289$).
 
 In the [[Method of Characteristics]], $R^\pm=\nu\mp\theta$ are the **[[Riemann Invariants]]**: $\nu-\theta$ is constant along $C^+$ and $\nu+\theta$ along $C^-$ (Lecture 3.1; [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]; Anderson writes $K^\pm=\theta\mp\nu$). A Prandtl–Meyer fan is a simple flow region with one invariant uniform, which is how $\nu(M_2)=\nu(M_1)+\theta$ falls out. Practice: [[SESA3029 Example Sheet 2 - Solutions#Q2. Characteristics and Riemann invariants|ES2 Q2]].
 

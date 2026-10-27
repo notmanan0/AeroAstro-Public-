@@ -13,6 +13,22 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 
 Current coverage: **Week 1, Lectures 2.1–2.7 and 3.1–3.4** (all lectured; 3.4 on Fri 23 Oct). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
+## Which relation? Given → choose → check
+
+The official sheet gives equations, not the decisions between them. These are the recurring forks.
+
+| Given | Choose | Check |
+|---|---|---|
+| Pitot pressure $p_{02}$ and a static pressure from a tapping **ahead of** the probe ($p_1$) | Form $p_{02}/p_1$. If $\le1.893$ the flow is subsonic: isentropic $p_0/p$ gives $M_1$. If $>1.893$: supersonic, so use the Rayleigh Pitot formula (NST $p_{02}/p_1$ column) | 1.893 is $p_0/p$ at $M=1$. A supersonic answer must give $M_1>1$ ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#7. Pitot probe: three regimes|W01 §7]]) |
+| Pitot pressure and a static tapping **on the probe, behind** the bow shock ($p_2$) | Isentropic $p_{02}/p_2$ gives $M_2$; then the normal-shock relations backwards give $M_1$ | $M_2<1$; $M_1>1$; $p_2>p_1$ ([[SESA3029 Test 1 - Solutions#Q5. Supersonic Pitot probe with the static tapping moved behind the shock|Test 1 Q5]]) |
+| A wall turns **into** the flow (concave corner, wedge, ramp) | Oblique shock: $\theta$–$\beta$–$M$, weak solution, then normal-shock relations with $M_{n1}$ | $\theta\le\theta_{max}(M_1)$, else detached (bow) shock; $p$ and $s$ rise; $M_2<M_1$ |
+| A wall turns **away from** the flow (convex corner) | Prandtl–Meyer fan: $\nu_2=\nu_1+\theta$, isentropic ratios | $p$ falls; $p_0$ unchanged; $\nu_2\le\nu_{max}$ |
+| Shock normal to the stream (duct, nose of a blunt body on the stagnation line, starting shock) | Normal shock: NST with $M_1$ | $M_1>1$; $T_0$ and $\dot m$ unchanged, $p_0$ falls |
+| An area ratio $A/A^*$ in a nozzle | **Subsonic root** upstream of the throat, or anywhere if the throat is unchoked or downstream of a shock; **supersonic root** downstream of a choked throat with no shock upstream | Compare $p_b$ with $p_{b3}$, $p_{b5}$, $p_{b6}$; the 0.528 is a **throat** pressure, not a back pressure ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow|W04]]) |
+| Nozzle exit pressure $p_e$ vs ambient $p_\infty$ (supersonic exit) | $p_e<p_\infty$: over-expanded, oblique lip shocks. $p_e>p_\infty$: under-expanded, lip fans. Equal: design | Lip-shock $M_{n1}$ relation; lip-fan $\nu(M_j)-\nu(M_e)$ |
+| MoC point P from A (below) and B (above) | Along the $C^+$ from A carry $R^+_A=\nu-\theta$; along the $C^-$ from B carry $R^-_B=\nu+\theta$ | Recompute $R^\pm$ from $\nu_P,\theta_P$; slopes use **averaged** $\theta\pm\mu$ |
+| MoC point on a wall or the centreline | Wall: the one arriving invariant plus $\theta_W$. Centreline: $\theta_P=0$ plus the arriving $R^-$ | A wall reflects only if $\theta_A\neq\theta_W$ |
+
 ## Mach number and gas properties
 
 $$
@@ -39,11 +55,15 @@ L=F_n\cos\alpha-F_t\sin\alpha,\qquad
 D=F_t\cos\alpha+F_n\sin\alpha.
 $$
 
+Exact, for a point $x$ aft of the LE **along the chord** ($C_n=F_n'/q_\infty c$, nose-up positive):
+
 $$
-C_{m,x}=C_{m,LE}+\frac{x}{c}C_l,\qquad
-\frac{x_{CP}}{c}=-\frac{C_{m,LE}}{C_l},\qquad
-\frac{x_{AC}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_l}.
+C_{m,x}=C_{m,LE}+\frac{x}{c}C_n,\qquad
+\frac{x_{CP}}{c}=-\frac{C_{m,LE}}{C_n},\qquad
+\frac{x_{AC}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_n}.
 $$
+
+Lecture form (small $\alpha$, $C_n\approx C_l$): $C_{m,x}\approx C_{m,LE}+(x/c)C_l$, $x_{CP}/c\approx-C_{m,LE}/C_l$, $x_{AC}/c\approx-\mathrm dC_{m,LE}/\mathrm dC_l$. At $10^\circ$ supersonic these differ by 1–5% ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]]).
 
 ## Isentropic and stagnation relations
 
@@ -212,12 +232,12 @@ $$
 $$
 \nu(M_2)=\nu(M_1)+\theta,
 \qquad
-\phi_{fan}=\mu_1-\mu_2+\theta,
-\qquad
-\nu_{max}=130.45^\circ.
+\phi_{fan}=\mu_1-\mu_2+\theta.
 $$
 
-Across a fan, $p_0$ and $T_0$ are constant: use the isentropic ratios.
+As $M\to\infty$, $\nu_{max}=90^\circ\left(\sqrt{\tfrac{\gamma+1}{\gamma-1}}-1\right)$: **130.45° for $\gamma=1.4$** (air, the IFT), but 163.3° for the coursework's CO₂ ($\gamma=1.289$).
+
+Across a fan, $p_0$ and $T_0$ are constant: use the isentropic ratios. Assumes a steady, planar, isentropic turn of a supersonic stream ($M_1>1$); $\nu$ and $\theta$ in degrees with the IFT, radians in any calculus.
 
 ## Shock-expansion method (Lecture 2.5)
 
@@ -233,19 +253,21 @@ C_{m,LE}=-\frac{\Delta p}{2q_\infty},
 x_{cp}=\frac c2.
 $$
 
-Moment transfer and the two centres (L2-5, ll. 215–242):
+Moment transfer and the two centres (L2-5, ll. 215–242). Exact along the chord, with $C_n=\Delta p/q_\infty$ for the plate:
 
 $$
-C_{m,x}=C_{m,LE}+\frac xc\,C_l,
+C_{m,x}=C_{m,LE}+\frac xc\,C_n,
 \qquad
-\frac{x_{cp}}{c}=-\frac{C_{m,LE}}{C_l},
+\frac{x_{cp}}{c}=-\frac{C_{m,LE}}{C_n},
 \qquad
-\frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_l}\approx-\frac{\Delta C_{m,LE}}{\Delta C_l}\ \ (\text{two }\alpha\text{, Tutorial 1}).
+\frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_n}\approx-\frac{\Delta C_{m,LE}}{\Delta C_n}.
 $$
+
+The lecture uses $C_l$ in place of $C_n$ (small-$\alpha$ form): flat plate $x_{cp}/c=1/(2\cos\alpha)=0.508$ at $10^\circ$ against exactly 0.5 along the chord; triangular wing (Tutorial 1) $-\Delta C_m/\Delta C_l=0.487$ against $-\Delta C_m/\Delta C_n=0.468$.
 
 Supersonic ac $\approx c/2$; subsonic $\approx c/4$. Thick section: resolve **each face's** force; with normal force $N'$ and chordwise force $A'$, $L'=N'\cos\alpha-A'\sin\alpha$ and $D'=N'\sin\alpha+A'\cos\alpha$.
 
-Linear (Ackeret) limit, previewing Weeks 7–8:
+Linear (Ackeret) limit, previewing Weeks 7–8. Thin aerofoil, small angles, $M$ supersonic but not close to 1 or hypersonic; $\theta$, $\alpha$, $\varepsilon$ in **radians**:
 
 $$
 C_p=\frac{2\theta}{\sqrt{M^2-1}},
@@ -317,7 +339,7 @@ which is 3.046 at $M=3$.
 
 ## Method of characteristics (Lectures 3.1–3.4)
 
-Valid for steady, planar, homentropic, irrotational flow with $M>1$. $\theta$ is the flow **inclination** to $x$.
+Valid for steady, **planar** (2-D), homentropic, irrotational flow with $M>1$. $\theta$ is the flow **inclination** to $x$. The invariants below are exact only under these assumptions: in an axisymmetric nozzle the compatibility relations gain a $1/r$ term, so $\nu\mp\theta$ are no longer constant along characteristics (the Supplementary Note for MoC, p. 1, treats only the planar case and points elsewhere for the axisymmetric extension). The IFT values are $\gamma=1.4$ only; the CO₂ coursework needs the general-$\gamma$ forms at the end of this section.
 
 Governing pair, and the compatibility conditions:
 

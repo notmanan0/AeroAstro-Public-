@@ -34,7 +34,7 @@ Every pair $(\phi,\psi)$ with the same difference gives the same matrix, so infi
 
 - It is a property of the **representation**, not of the aircraft. Nothing physical goes wrong at vertical pitch; only the three-angle description fails.
 - Every three-angle sequence has a singular attitude somewhere. Changing the sequence moves the singularity; it cannot remove it.
-- Software fails **silently**: `atan2(0, 0)` returns 0 in Python, NumPy and MATLAB (L6, l. 213). Near the singularity the extracted angles are numerically noisy.
+- Software fails **silently**: `atan2(0, 0)` returns 0 in Python, NumPy and MATLAB (L6, l. 213). Near the singularity the extracted angles are numerically noisy, so the output is unreliable rather than predictably zero. Robust code checks $|\cos\theta|$ against a tolerance, uses a documented singular branch that keeps $\phi\mp\psi$, and verifies by rebuilding the DCM ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock (§2.4.5)|2.2 §8]]).
 - The name comes from mechanical gyroscope gimbals: at $90^\circ$ pitch, two gimbal rings line up and the platform loses a free axis.
 - Remedy: propagate attitude with a non-singular representation (the DCM itself, or **quaternions**, L6 l. 227) and convert to Euler angles only for display.
 - For conventional aircraft $|\theta|$ rarely approaches $90^\circ$, so Euler angles remain standard (L6, ll. 224–226).

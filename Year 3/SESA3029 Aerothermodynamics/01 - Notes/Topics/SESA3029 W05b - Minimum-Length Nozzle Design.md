@@ -27,6 +27,13 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Lecture
 > - **3.3** adds the boundary conditions (reflecting wall, non-reflecting wall, symmetry plane) and designs the **minimum-length nozzle**: $\theta_{max}=\nu(M_e)/2$, so the throat angle alone gives the exit Mach number. For $M_e=2.4$ with four characteristics, $x_e/r_a=8.069$ and $y_e/r_a=2.400$, against the 1D $A_e/A^*=2.4031$.
 > - **3.4** (Fri 23 Oct) works a channel symbolically, finds that point 3 cannot reflect, and solves the inverse problem: $M_4=2.2$, $M_6=2.4$ give $\theta_w=5.0140^\circ$ and $M_0=1.8340$. The lesson: *"always think about the results, whether it makes sense or not"* (L3-4, ll. 279–281). The lecture ended with the **MoC coursework brief**: a minimum-length nozzle for $M_e=3.x$ in **CO₂ ($\gamma=1.289$)** with five characteristics, due **15 Nov**.
 
+> [!summary]- Exam use: quick path
+> - **Use it when:** a characteristic reaches a wall or the centreline, or you design a minimum-length nozzle (including the coursework).
+> - **Assumptions:** as W05a, and planar (an axisymmetric nozzle needs the §16 extension); $\gamma=1.4$ for the IFT but $\gamma=1.289$ for the CO₂ coursework.
+> - **Method:** 1. $\theta_{max}=\nu(M_e)/2$; split the expansion fan into $n$ lines with $\nu=\theta$, $R^-=2\theta$. 2. Interior points by the unit process. 3. Centreline: $\theta_P=0$, $\nu_P=R^-$ arriving. 4. Non-reflecting wall: $\theta_W=\theta_A$, $M_W=M_A$, position by averaged slopes. 5. Check $y_e/r_a$ against $A_e/A^*$.
+> - **Common mistakes:** using the $\gamma=1.4$ IFT for CO₂; letting a designed (non-reflecting) wall send a reflected wave back.
+> - **Practise:** [[#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|§14 worked nozzle]] · [[SESA3029 Mock Questions - Weeks 1-5#Q7. Minimum-length nozzle with three characteristics|Mock Q7]]
+
 ## Key concepts
 
 - New: [[Minimum-Length Nozzle]]
