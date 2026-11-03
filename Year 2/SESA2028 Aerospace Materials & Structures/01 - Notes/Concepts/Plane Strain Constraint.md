@@ -3,28 +3,27 @@ title: "Plane Strain Constraint"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Constraint", "Crack-tip constraint"]
 tags: [sesa2028, materials, fracture-mechanics, constraint]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics]]"]
 related: ["[[Fracture Toughness and LEFM Validity]]", "[[Plane Stress and Plane Strain]]"]
 ---
 
 # Plane Strain Constraint
 
-Near a crack tip in a **thick** section, the material in the middle cannot contract through the thickness, because the surrounding elastic material stops it. So $\varepsilon_{33}\approx0$ and a tensile $\sigma_{33}$ develops: a **triaxial** stress state.
+Plane strain constraint is the triaxial tension that builds up near a crack tip in the middle of a thick section, because the surrounding material stops the crack-tip region contracting through the thickness.
 
-| | Plane stress (thin, or near free surfaces) | Plane strain (thick section centre) |
-|---|---|---|
-| Through-thickness | $\sigma_{33}=0$ | $\varepsilon_{33}=0$, $\sigma_{33}=\nu(\sigma_{11}+\sigma_{22})$ |
-| Maximum shear | large, on $45^\circ$ planes, so easy yielding | reduced by triaxiality, so yielding is suppressed |
-| Plastic zone | large | small (about 1/3 of the plane-stress size) |
-| Fracture surface | **slant**: $45^\circ$ shear lips | **flat (square)** |
-| Measured toughness | higher, thickness dependent | lowest, constant: $K_{Ic}$ |
+Pulled in the opening direction, the material at the tip wants to contract sideways by the Poisson effect. In thin sheet nothing stops it, and nothing carries stress through the thickness either: $\sigma_{33}\approx0$, a plane-stress state. The largest shear stress then acts on planes at 45° to the load, the tip yields easily, and the fracture surface is slanted. In a thick section the material around the tip does not contract with it, so the through-thickness strain is prevented. Setting $\varepsilon_{33}=0$ in Hooke's law gives $\sigma_{33}=\nu(\sigma_{11}+\sigma_{22})$, a tensile reaction stress. With all three principal stresses tensile, the differences between them are smaller, yielding is suppressed and the opening stress stays high. The lecture calls this the most severe stress condition.
 
-## Consequences
+That is why the critical stress intensity measured on thin specimens is higher than on thick ones, and why it falls to a plateau as the thickness grows. Only the plateau, the plane-strain value $K_{Ic}$, is a material constant, and it is the lowest value, so it is the one to design with; using it for thin sheet is conservative. The fracture surface of a thick part records the two states side by side: a flat, square centre under plane strain and small shear lips at the free surfaces, where plane stress returns. The same reading identifies the final-fracture zone on a fatigue surface ([[Fatigue Fracture Surface Features]]).
 
-- A thick fracture surface has a **flat centre and shear lips at the edges**. This is how you identify the final-fracture zone in fatigue ([[Fatigue Fracture Surface Features]]).
-- **Design with $K_{Ic}$** (plane strain) because it is the most severe condition and the only thickness-independent value. It is conservative for thin sheet.
-- Thin sheets are "tougher" only because of geometry, not because the material changed.
+![[materials_thickness_effect_kcrit.png|800]]
 
-See [[Plane Stress and Plane Strain]] (SESA2029) for the constitutive definitions.
+The constitutive definitions of plane stress and plane strain are in [[Plane Stress and Plane Strain]].
+
+## Related
+
+- Topic: [[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|M1]]
+- Concepts: [[Fracture Toughness and LEFM Validity]] · [[Fatigue Fracture Surface Features]]
+- Elsewhere: [[Plane Stress and Plane Strain]]

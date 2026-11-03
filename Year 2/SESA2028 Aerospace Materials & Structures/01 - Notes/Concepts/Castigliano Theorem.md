@@ -3,7 +3,7 @@ title: "Castigliano Theorem"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, castigliano]
-status: complete
+status: lectured
 ---
 
 # Castigliano Theorem
@@ -25,5 +25,6 @@ $$
 
 This is mathematically the same core integral as the unit-load method. Castigliano is often faster when one real load parameter already appears cleanly in $M(x)$; virtual work is often clearer when many real loads act but only one displacement is wanted.
 
-See [[SESA2028 S8 - Virtual Work and Castigliano Theorems]].
+## Related
 
+- Topic: [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]

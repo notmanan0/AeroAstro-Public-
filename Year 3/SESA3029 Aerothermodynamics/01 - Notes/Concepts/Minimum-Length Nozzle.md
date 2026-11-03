@@ -13,49 +13,44 @@ sources: ["02 - Sources/Lectures/Lecture3-3.pdf", "02 - Sources/Lectures/Supplem
 
 # Minimum-Length Nozzle
 
-## Definition
+A **minimum-length nozzle** is the shortest planar supersonic nozzle that delivers uniform, shock-free flow at $M_e$. All of the expansion happens in a Prandtl–Meyer fan at a sharp expansion corner at the throat, and the wall downstream is shaped to be non-reflecting, so every wave that reaches it is cancelled. Its maximum slope, at the corner, is
 
-> [!note] Definition
-> The shortest planar supersonic nozzle that delivers **uniform, shock-free** flow at $M_e$. All the expansion happens in a Prandtl–Meyer expansion fan at a sharp expansion corner at the throat. The wall downstream is designed to be **non-reflecting**, so every wave that reaches it is cancelled, and the wall's maximum slope is
->
-> $$\theta_{max}=\frac{\nu(M_e)}{2}.$$
+$$
+\theta_{max}=\frac{\nu(M_e)}{2}.
+$$
 
-## Explanation
+The factor of a half comes from the invariants. The throat is sonic, so $\nu=0$ there, and the fan at the corner C takes the flow to $\nu_C=\theta_{max}$. The last line of the fan is a $C^-$ carrying $R^-=\nu+\theta=2\theta_{max}$. It ends on the centreline at the first point of uniform flow, where $\theta=0$ and $\nu=\nu(M_e)$, so $2\theta_{max}=\nu(M_e)$.
 
-**Why half.** The sonic throat has $\nu=0$, so the expansion fan at the corner C gives $\nu_C=\theta_{max}$, and the last line of the fan, a $C^-$, carries $R^-=2\theta_{max}$. That line ends on the centreline at the first uniform-flow point, where $\theta=0$ and $\nu=\nu(M_e)$. Equal invariants give $2\theta_{max}=\nu(M_e)$.
+Because it is the shortest design it is also likely the lightest, which matters for rockets and launchers. Real nozzles round the expansion corner slightly.
 
-**Regions** (course names; L3.3 slides 8 and 10, Supplementary Note p. 10).
+## Regions
 
-- **Complex region**: both families cross, behind the expansion corner (textbooks call it the *kernel* or a *non-simple region*).
-- **Simple flow region**: *"characteristics from one direction only"*, next to the designed wall (textbooks: *simple-wave region*).
-- **Uniform flow region**: $M=M_e$, $\theta=0$.
+The course names three regions (L3.3 slides 8 and 10, Supplementary Note p. 10). The **complex region** sits behind the expansion corner, where both families of characteristics cross; textbooks call it the kernel or a non-simple region. The **simple flow region** lies next to the designed wall and has *"characteristics from one direction only"* (a simple-wave region in textbooks). Beyond both is the **uniform flow region**, with $M=M_e$ and $\theta=0$.
 
-**Design recipe.**
+## Designing one
 
-1. $\theta_{max}=\nu(M_e)/2$.
-2. Pick $n$ lines of the expansion fan, from a small $\delta$ (not 0) to $\theta_{max}$. On each, $\nu=\theta$ and $R^-=2\theta$.
-3. Apply the unit process, with the centreline as a mirror and the wall non-reflecting.
-4. Compute the coordinates left to right.
+1. Set $\theta_{max}=\nu(M_e)/2$.
+2. Choose $n$ lines of the expansion fan, from a small $\delta$ (not zero) up to $\theta_{max}$. On each one $\nu=\theta$, so $R^-=2\theta$.
+3. Apply the unit process, treating the centreline as a mirror and the wall as non-reflecting.
+4. Compute the coordinates from left to right.
 
-**Numbers for $M_e=2.4$** (3.3 slides 11–21): $\theta_{max}=18.373^\circ$. With four lines from $0.375^\circ$, the exit is at $x_e/r_a=8.069$, $y_e/r_a=2.400$.
+With $n$ lines the net has $n(n+3)/2$ points, $n$ of them on the wall: 14 for $n=4$ and 20 for $n=5$.
+
+For $M_e=2.4$ (3.3 slides 11–21), $\theta_{max}=18.373^\circ$. Four lines starting at $0.375^\circ$ put the exit at $x_e/r_a=8.069$, $y_e/r_a=2.400$. Lengths are scaled by $r_a$, *"the nozzle throat's half-width"* (slide 21), so $y_e/r_a$ is the exit half-width.
 
 > [!check] Built-in check
-> Mass conservation forces $y_e/r_a\to A_e/A^*$, here $2.4031$. MoC gives $2.4003$ with four lines and $2.4028$ with 300. 1D theory gives the exit half-width but cannot give the length.
+> Mass conservation requires $y_e/r_a\to A_e/A^*$, here $2.4031$. MoC gives $2.4003$ with four lines and $2.4028$ with 300. 1D theory gives the exit half-width but not the length; that is what MoC adds.
 
-Lengths are scaled by $r_a$, *"the nozzle throat's half-width"* (slide 21), so $y_e/r_a$ is the exit half-width.
+The MoC coursework uses $n=5$ lines from $0.125^\circ$, with $M_e=3.x$ where $x$ is the last digit of your student ID, for CO₂ with $\gamma=1.289$. It is due 23:59 on Sunday 15 November (L3-4, ll. 367–418; [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]).
 
-**Point count.** With $n$ lines in the expansion fan the net has $n(n+3)/2$ points, $n$ of them on the wall: 14 for $n=4$, 20 for $n=5$. The MoC coursework uses $n=5$ lines from $0.125^\circ$ and $M_e=3.x$, where $x$ is the last digit of the student ID, for **CO₂ with $\gamma=1.289$**. It is due 23:59, Sun 15 Nov (L3-4, ll. 367–418; [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]).
+> [!warning] $\theta_{max}=\nu(M_e)/2$ holds for any γ, but ν depends on γ
+> At $\gamma=1.289$ the IFT (built for $\gamma=1.4$) gives the wrong $\nu$, $\theta_{max}$ and $A_e/A^*$. Use the general-$\gamma$ formulas. Only $\mu=\sin^{-1}(1/M)$ is the same for every gas.
 
-> [!warning] $\theta_{max}=\nu(M_e)/2$ holds for any $\gamma$, but $\nu$ itself depends on $\gamma$
-> With $\gamma=1.289$ the IFT ($\gamma=1.4$) gives the wrong $\nu$, $\theta_{max}$ and $A_e/A^*$. Compute them from the general-$\gamma$ formulas instead. Only $\mu=\sin^{-1}(1/M)$ is the same for every gas.
+## Reading the exit Mach number off the throat
 
-**Why use it.** It is the shortest design, so it is likely the lightest. That matters for rockets and launchers. In practice the expansion corner is rounded slightly.
+Measure the wall's maximum slope at the throat and $\nu(M_e)=2\theta_{max}$ gives the design Mach number without a wind tunnel (L3-3, ll. 204–214). A slope of $26.74^\circ$, for example, means $M_e=3.20$.
 
-**The exit Mach number from the throat** (L3-3, ll. 204–214). Measure the wall's maximum slope at the throat and $\nu(M_e)=2\theta_{max}$ gives the design Mach number, with no wind tunnel needed. For example, $26.74^\circ$ gives $M_e=3.20$.
-
-> [!warning] Two things this $\theta_{max}$ is not
-> - It is **not** the oblique-shock maximum deflection. It is the largest wall slope (L3-3, ll. 137–139).
-> - It does **not** give $M_e$ for a gradual-expansion nozzle. There the flow at the slope maximum has already been expanded by reflected waves, so $\theta_{max}\le\nu(M_e)/2$ ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13]]).
+This $\theta_{max}$ is the largest wall slope, not the oblique-shock maximum deflection (L3-3, ll. 137–139). It also only works for a sharp-corner design. In a gradual-expansion nozzle the flow at the slope maximum has already been expanded by reflected waves, so $\theta_{max}\le\nu(M_e)/2$ and the trick underestimates $M_e$ ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13]]).
 
 ![[at_moc_mach_angle_throat_angle.png|760]]
 

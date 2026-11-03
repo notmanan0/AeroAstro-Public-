@@ -79,7 +79,7 @@ $$
 **Choosing $u$ (LIATE)**: take $u$ from whichever comes first in **L**ogs, **I**nverse trig, **A**lgebraic, **T**rig, **E**xponential. The aim is to make $u$ simpler when differentiated.
 - $\int x^3\ln x$: take $u=\ln x$, because the log disappears on differentiation.
 - $\int x^2\cos x$: take $u=x^2$, and apply parts twice to reduce the power to zero.
-- $\int e^{ax}\sin bx$: apply parts twice until the **original integral returns**, then solve the equation for $I$. This is the Fourier-coefficient workhorse.
+- $\int e^{ax}\sin bx$: apply parts twice until the **original integral returns**, then solve the equation for $I$. This is the integral that comes up most often when computing Fourier coefficients.
 
 $$
 \int e^{ax}\cos bx\,\mathrm dx=\frac{e^{ax}(a\cos bx+b\sin bx)}{a^2+b^2},\qquad\int e^{ax}\sin bx\,\mathrm dx=\frac{e^{ax}(a\sin bx-b\cos bx)}{a^2+b^2}

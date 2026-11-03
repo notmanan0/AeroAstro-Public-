@@ -7,7 +7,7 @@ tags: [sesa2029, tutorial-solutions, cfd]
 sheet: "Lecture worked examples and exam-style practice (CFD)"
 theory_notes: ["[[SESA2029 A2 - Discrete Data, Finite Differences and Taylor Tables]]", "[[SESA2029 A3 - Iterative Solution of the Steady Heat Equation]]", "[[SESA2029 A4 - Time Marching - Explicit and Implicit Methods]]", "[[SESA2029 A5 - Numerical Stability - Von Neumann Analysis, Fourier and CFL Numbers]]", "[[SESA2029 A6 - Higher-Order Time Integration, Runge-Kutta and the Blasius Equation]]", "[[SESA2029 A7 - Governing Equations - Euler and Navier-Stokes]]", "[[SESA2029 A9 - Finite Volume Method]]", "[[SESA2029 A11 - CFD Errors, Verification, Validation and Mesh Quality]]"]
 key_concepts: ["[[Taylor Table Method]]", "[[Jacobi, Gauss-Seidel and SOR Iteration]]", "[[Von Neumann Stability Analysis]]", "[[Runge-Kutta Methods]]", "[[Convective Interpolation Schemes]]"]
-status: complete
+status: lectured
 sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf", "02 - Sources/CFD/CFD.txt"]
 ---
 
@@ -41,7 +41,7 @@ $$
 f'_j = \frac{f_{j+1}-f_j}{h}-\frac h2f''_j\qquad\Rightarrow\qquad\textbf{first order}
 $$
 
-**Trap**: keep the signs consistent between the scheme and the table. A sign slip gives $b = -a$; that is harmless only if you then carry the sign through.
+Trap: keep the signs consistent between the scheme and the table. A sign slip gives $b = -a$; that is harmless only if you then carry the sign through.
 
 ## Q2: Three-point one-sided schemes
 
@@ -62,14 +62,14 @@ $$
 f'_j = \frac{-3f_j+4f_{j+1}-f_{j+2}}{2h}-\frac{h^2}{3}f'''_j
 $$
 
-**Check with a quadratic**: take $f = x^2$ at $x_j = 0$ with $h = 1$. Then $f_{j-2} = 4$, $f_{j-1} = 1$, $f_j = 0$, and $(4-4+0)/2 = 0 = f'(0)$. ✓ (The scheme is exact for quadratics, since the error involves $f'''$.)
+Check with a quadratic: take $f = x^2$ at $x_j = 0$ with $h = 1$. Then $f_{j-2} = 4$, $f_{j-1} = 1$, $f_j = 0$, and $(4-4+0)/2 = 0 = f'(0)$. ✓ (The scheme is exact for quadratics, since the error involves $f'''$.)
 
 ## Q3: Convergence rate from data
 
 *A scheme gives errors 0.0180 and 0.00453 on grids of 32 and 64 points. What is its order? What error would 256 points give?*
 
 ### Solution
-- Ratio $0.0180/0.00453 = 3.97\approx2^2$, so $p = \log_2(3.97) = 1.99$: **second order**.
+- Ratio $0.0180/0.00453 = 3.97\approx2^2$, so $p = \log_2(3.97) = 1.99$: second order.
 - 256 points is two more doublings: $0.00453/16 = 2.8\times10^{-4}$. This matches the lecture table.
 
 ## Q4: Steady heat equation: set-up and first iterations
@@ -113,7 +113,7 @@ $$
 G = 1-\frac C2\left(e^{ikh}-e^{-ikh}\right) = 1-iC\sin kh,\qquad|G|^2 = 1+C^2\sin^2kh\ \ge1
 $$
 
-$|G|>1$ for every $kh\neq0,\pi$ and every $C>0$. The scheme is **unconditionally unstable**. That is why convection needs upwinding (stable for $C\le1$), Lax–Wendroff, or an RK3/RK4 time integrator, which enclose part of the imaginary axis.
+$|G|>1$ for every $kh\neq0,\pi$ and every $C>0$. The scheme is unconditionally unstable. That is why convection needs upwinding (stable for $C\le1$), Lax–Wendroff, or an RK3/RK4 time integrator, which enclose part of the imaginary axis.
 
 ## Q7: Time-step limits
 
@@ -124,7 +124,7 @@ $|G|>1$ for every $kh\neq0,\pi$ and every $C>0$. The scheme is **unconditionally
 
 (b) $\nu\Delta t/h^2\le\tfrac12$ gives $\Delta t\le h^2/(2\nu) = (10^{-5})^2/(3\times10^{-5}) = 3.3\times10^{-6}$ s.
 
-(c) The convective limit halves, but the diffusive limit **quarters**. Fine near-wall grids therefore make explicit viscous solvers impractical, which is why steady solvers are implicit.
+(c) The convective limit halves, but the diffusive limit quarters. Fine near-wall grids therefore make explicit viscous solvers impractical, which is why steady solvers are implicit.
 
 ## Q8: RK2 characteristic polynomial
 
@@ -134,7 +134,7 @@ $|G|>1$ for every $kh\neq0,\pi$ and every $C>0$. The scheme is **unconditionally
 - Predictor: $\tilde f = f^n(1+\tfrac12\lambda\Delta t)$.
 - Corrector: $f^{n+1} = f^n+\Delta t\lambda\tilde f = f^n\left(1+\lambda\Delta t+\tfrac12(\lambda\Delta t)^2\right)$.
 
-This matches $e^{\lambda\Delta t}$ up to $(\lambda\Delta t)^2/2!$, and the first wrong term is cubic. The local error is $O(\Delta t^3)$, so the global error is $O(\Delta t^2)$: **second order**.
+This matches $e^{\lambda\Delta t}$ up to $(\lambda\Delta t)^2/2!$, and the first wrong term is cubic. The local error is $O(\Delta t^3)$, so the global error is $O(\Delta t^2)$: second order.
 
 Stability: $|1+z+z^2/2|\le1$ gives the real-axis limit $z = -2$.
 
@@ -182,7 +182,7 @@ $$
 \phi_e = \phi_P+\tfrac38(\phi_E-\phi_P)+\tfrac18(\phi_P-\phi_W) = \tfrac68\phi_P+\tfrac38\phi_E-\tfrac18\phi_W
 $$
 
-**Check**: the coefficients sum to 1, so a uniform field is reproduced exactly. A parabola through W, P, E is also reproduced exactly.
+Check: the coefficients sum to 1, so a uniform field is reproduced exactly. A parabola through W, P, E is also reproduced exactly.
 
 ## Q12: Midpoint-rule surface integral error
 
@@ -195,7 +195,7 @@ $$
 \int f\,dy = f_e\Delta y+f''_e\frac{\Delta y^3}{24}+\dots
 $$
 
-The error per face is $O(\Delta y^3)$. Summed over $O(1/\Delta y)$ faces, or per unit area, this is $O(\Delta y^2)$: **second order**.
+The error per face is $O(\Delta y^3)$. Summed over $O(1/\Delta y)$ faces, or per unit area, this is $O(\Delta y^2)$: second order.
 
 ## Q13: Cost of DNS
 
@@ -208,14 +208,14 @@ The error per face is $O(\Delta y^3)$. Summed over $O(1/\Delta y)$ faces, or per
 At constant computing growth this delays full DNS of flight Reynolds numbers by decades. That is why RANS, and increasingly DES/LES, are used ([[DNS, LES and Scale-Resolving Simulation]]).
 
 ## Q14: Short explain-questions (model answers)
-- **Residual vs error?** The residual is how well the *discrete* equations are satisfied (the iteration measure). The error is the difference from the *exact* solution, and includes discretisation and modelling error. A zero residual on a coarse grid is still wrong.
-- **Why no density-based solver for incompressible flow?** $D\rho/Dt = 0$ leaves no evolution equation for $\rho$. Continuity is a constraint, so pressure must be found by a pressure (Poisson) equation.
-- **Why do Euler results lack drag rise and stall?** Euler has no viscosity: no no-slip, no boundary layers, no viscous separation.
-- **What is the closure problem?** RANS averaging creates 6 Reynolds stresses (in 3D) with no equations. Equations for them need higher correlations without end, so a model is required.
-- **Wall functions vs resolved walls?** Resolved: $y_1^+\lesssim1$–5, cells in the sublayer, used with SA or SST. Wall function: $30<y_1^+\lesssim200$, log law assumed, used with $k$–$\varepsilon$. Avoid $8<y_1^+<30$.
-- **Structured vs unstructured?** Structured is accurate, efficient and hard to build. Unstructured is automatic and flexible, but less accurate and slower. Hybrid (inflation + tets) is the practical compromise.
-- **SIMPLE in one sentence?** Guess the pressure, solve momentum, solve a pressure correction that enforces continuity, correct the velocities, and repeat with under-relaxation.
-- **Three error types?** Modelling (equations ≠ reality), discretisation (grid and time step), iteration (unconverged).
+- Residual vs error? The residual is how well the *discrete* equations are satisfied (the iteration measure). The error is the difference from the *exact* solution, and includes discretisation and modelling error. A zero residual on a coarse grid is still wrong.
+- Why no density-based solver for incompressible flow? $D\rho/Dt = 0$ leaves no evolution equation for $\rho$. Continuity is a constraint, so pressure must be found by a pressure (Poisson) equation.
+- Why do Euler results lack drag rise and stall? Euler has no viscosity: no no-slip, no boundary layers, no viscous separation.
+- What is the closure problem? RANS averaging creates 6 Reynolds stresses (in 3D) with no equations. Equations for them need higher correlations without end, so a model is required.
+- Wall functions vs resolved walls? Resolved: $y_1^+\lesssim1$–5, cells in the sublayer, used with SA or SST. Wall function: $30<y_1^+\lesssim200$, log law assumed, used with $k$–$\varepsilon$. Avoid $8<y_1^+<30$.
+- Structured vs unstructured? Structured is accurate, efficient and hard to build. Unstructured is automatic and flexible, but less accurate and slower. Hybrid (inflation + tets) is the practical compromise.
+- SIMPLE in one sentence? Guess the pressure, solve momentum, solve a pressure correction that enforces continuity, correct the velocities, and repeat with under-relaxation.
+- Three error types? Modelling (equations ≠ reality), discretisation (grid and time step), iteration (unconverged).
 
 ## Sources
 - Source: CFD lectures L3–L12 worked examples and the in-lecture example-sheet walk-through, `02 - Sources/CFD/All_lectures_as_delivered.pdf`; transcript `CFD.txt`

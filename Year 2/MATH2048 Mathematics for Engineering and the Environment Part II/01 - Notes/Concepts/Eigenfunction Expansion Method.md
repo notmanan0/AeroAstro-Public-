@@ -8,40 +8,18 @@ tags: [math2048, concept, pdes]
 status: complete
 parent_lectures: ["[[MATH2048 PDE4 - Inhomogeneous PDEs and Inhomogeneous Boundary Conditions]]"]
 related_concepts: ["[[Separation of Variables]]", "[[Heat Equation]]", "[[Orthogonality of Trigonometric Functions]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture18_Parabolic2.pdf", "02 - Sources/Lectures & Problem Sheets/PDEs/Lecture19_Parabolic3.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture18_Parabolic2.pdf", "02 - Sources/Lectures & Problem Sheets/PDEs/Lecture19_Parabolic3.pdf", "02 - Sources/Lectures/MATH2048 Lecture 18.txt", "02 - Sources/Lectures/MATH2048 Lecture 19.txt"]
 ---
 
 # Eigenfunction Expansion Method
 
-## Definition
+The **eigenfunction expansion** solves a linear PDE with a source, such as $y_t=\kappa^2y_{xx}+F(x,t)$, by writing both the solution and the source as series in the eigenfunctions of the homogeneous problem, $y=\sum T_n(t)X_n(x)$ and $F=\sum F_n(t)X_n(x)$.
 
-> [!note] Definition
-> Consider $u_t=\kappa^2u_{xx}+F(x,t)$ with homogeneous BCs. Expand
->
-> $$u=\sum T_n(t)X_n(x),\qquad F=\sum F_n(t)X_n(x),$$
->
-> where the $X_n$ are the eigenfunctions selected by the BCs. Orthogonality then decouples the modes:
->
-> $$\dot T_n+\kappa^2k_n^2T_n=F_n(t),\qquad T_n=e^{-\kappa^2k_n^2t}\Big[C_n+\int e^{\kappa^2k_n^2t}F_n\,dt\Big].$$
+Plain separation fails with a source, because $F/(XT)$ depends on both variables. The eigenfunctions still satisfy the homogeneous boundary conditions, though, so any sum of them does too. Substituting both series and using uniqueness of the Fourier series gives one ODE per mode, $\dot T_n+(n\pi\kappa)^2T_n=F_n(t)$ on $[0,1]$, solved by an integrating factor or undetermined coefficients. The solution typically has a part that balances the source and transients that decay; for a steady source the balancing part is the steady state.
 
-## Explanation
-**Why it works**: $\sum_n[\dots]_nX_n=0$ for all $x$ forces every bracket to be zero, because the $X_n$ are orthogonal.
-
-**Inhomogeneous BCs**: first subtract $y_P=f_0(t)+[f_1(t)-f_0(t)]x$. The new variable $v$ then has homogeneous BCs and picks up an extra source $-\partial_ty_P$.
-
-**Other variants**:
-- For Neumann-type BCs, subtract a function that matches them. For example, $u(0)=0$ with $u_x(1)=C$ uses $y_P=Cx$.
-- A decay term $-ku$ is removed with $u=e^{-kt}v$.
-
-## Examples
-- $y_t=y_{xx}+x(1-x)$ with Dirichlet BCs:
-
-$$y=\sum_{\text{odd}}\frac{8}{(n\pi)^5}\big[((n\pi)^2-1)e^{-(n\pi)^2t}+1\big]\sin n\pi x\ \to\ \frac{x-2x^3+x^4}{12}\ \text{as }t\to\infty.$$
-
-- $y(0,t)=\frac12(1-\cos t)$ gives $F_n=-\sin t/(n\pi)$ ([[MATH2048 PDE4 - Inhomogeneous PDEs and Inhomogeneous Boundary Conditions|PDE4]]).
+Non-zero boundary values are removed first. Subtract any function $y_p$ that satisfies them, usually the straight line between the end values. Then $v=y-y_p$ has homogeneous boundary conditions, initial data $y(x,0)-y_p(x,0)$, and a source $-\partial_ty_p$ (plus $\kappa^2\partial_x^2y_p$ if $y_p$ is not linear). For constant end values $y_p$ is the steady state and no source appears; for time-dependent ones a source does, and the solution is forced for ever.
 
 ## Related
-- [[Separation of Variables]] · [[Heat Equation]] · [[Method of Undetermined Coefficients]] (the ODE analogue)
 
-## Sources
-- Lectures 18–19; PS7 Q3–4
+- [[MATH2048 PDE4 - Inhomogeneous PDEs and Inhomogeneous Boundary Conditions]]
+- [[Separation of Variables]] · [[Heat Equation]] · [[Method of Undetermined Coefficients]]

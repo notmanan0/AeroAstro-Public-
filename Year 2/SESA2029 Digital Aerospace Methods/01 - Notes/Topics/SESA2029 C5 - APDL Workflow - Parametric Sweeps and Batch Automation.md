@@ -11,32 +11,28 @@ tags:
   - parametric-study
   - workflow
 aliases: ["APDL automation", "APDL sweeps", "APDL macros", "Mesh convergence automation"]
-date: 2026-09-24
-status: complete
+date: 2026-10-30
+status: lectured
 parent: ["[[SESA2029 Digital Aerospace Methods Hub]]"]
 prerequisites: ["[[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)]]", "[[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]]"]
 next_topics: ["[[SESA2029 C6 - APDL Workflow - FE Model Verification Checks]]"]
 key_concepts: ["[[Mesh Convergence and Grid Independence]]", "[[Stress Concentration Factor and Factor of Safety]]"]
 tutorial_sheets: []
-sources: ["Own APDL automation scripts (master .inp + case .mac pattern)", "ANSYS Command Reference: *DO, *USE, *CFOPEN, *VWRITE"]
+sources: ["Own APDL automation scripts (master .inp + case .mac pattern)", "ANSYS Command Reference: *DO, *USE, *CFOPEN, *VWRITE", "02 - Sources/Lectures/SESA2029 Lecture 2026-02-20 - 0959.txt (APDL demonstration)", "02 - Sources/Lectures/SESA2029 Lecture Software_Intro.txt (batch mode)"]
 ---
 
 # SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation
 
 > [!abstract] Summary
-> Mesh-convergence and design-sensitivity studies need the same model rebuilt many times. Automate it with two files:
-> - a **master** `.inp` that holds the parameter lists and the loops;
-> - a **case macro** `.mac` that builds, solves and post-processes **one** case from its arguments `ARG1…ARG9` and appends one row to a results file.
->
-> Results go to plain text through `*CFOPEN`/`*VWRITE`, ready for Python or Excel. Typical studies:
-> - mesh size × element order (convergence);
-> - hole radius and position ($K_t$, FoS);
-> - skin thickness × material (FoS, mass, frequencies, minimum thickness to meet a FoS target).
+> Mesh-convergence and design-sensitivity studies rebuild the same model many times, which is what scripting is for. Two files do it: a master `.inp` holding the parameter lists and loops, and a case macro `.mac` that builds, solves and post-processes one case from its arguments and appends one row to a text file through `*CFOPEN` and `*VWRITE`, ready for Python or Excel. Typical studies are mesh size against element order, hole size and position for $K_t$ and FoS, and skin thickness against material for FoS, mass and frequency.
 
-## Key Concepts
-- [[Mesh Convergence and Grid Independence]] · [[Stress Concentration Factor and Factor of Safety]] · [[h- and p-Refinement]]
+> [!summary]- Exam use: quick path
+> - **Use it when:** a lab study needs more than a handful of runs.
+> - **Assumptions:** a working single-case script (C2 to C4).
+> - **Method:** 1. Turn the case script into a macro with `ARG1`… inputs. 2. Reset the model inside the macro rather than with `/CLEAR`. 3. Master: `*DIM` the lists, open the results file, `*DO` over cases with `*USE`. 4. `*VWRITE` one row per case. 5. Plot the text file in Python.
+> - **Common mistakes:** `/CLEAR` inside the loop wiping the loop parameters; forgetting `ALLSEL` before `SOLVE`.
+> - **Practise:** [[#3. Master: mesh convergence × element order, then geometry sweeps (plate_master.inp)]]
 
----
 
 ## 1. Architecture
 ```mermaid
@@ -47,12 +43,12 @@ flowchart LR
   W -->|"next case"| M
 ```
 
-**How to run**:
-1. Put `master.inp` and `case.mac` in the **working directory** (*File → Change Directory*).
+How to run:
+1. Put `master.inp` and `case.mac` in the working directory (*File → Change Directory*).
 2. Run *File → Read Input From… → master.inp*, or type `/INPUT,master,inp`.
 3. Open the results `.txt` in Python. Keep the GUI plots for spot checks only.
 
-## 2. Case macro: plate with a hole (`plate_case.mac`)
+## 2. Case macro: plate with a hole (plate_case.mac)
 `ARG1` = local mesh size at the hole, `ARG2` = radius, `ARG3` = hole $x$, `ARG4` = hole $y$, `ARG5` = element type (182/183).
 
 ```apdl
@@ -108,7 +104,7 @@ fos = sig_y/s_max
 FINISH
 ```
 
-## 3. Master: mesh convergence × element order, then geometry sweeps (`plate_master.inp`)
+## 3. Master: mesh convergence × element order, then geometry sweeps (plate_master.inp)
 ```apdl
 FINISH
 /CLEAR,ALL
@@ -144,15 +140,15 @@ y_list(1) = 200,170,140,120,100                ! towards the lower edge (radius 
 ```
 
 > [!warning] APDL automation gotchas
-> - **`/CLEAR` inside a loop wipes the loop's parameters.** Reset the *model* instead (`LSCLEAR`, `ACLEAR`, `ADELE,ALL,,,1`, `NUMSTR,DEFA`). If you must clear, bracket it with `PARSAV,ALL,keep,parm` … `PARRES,CHANGE,keep,parm`.
-> - Booleans renumber entities, so select by **location or radius**, never by a remembered number.
-> - The `*VWRITE` format line **must** follow immediately. Array arguments pass by value (`h_list(ih)` is fine).
+> - `/CLEAR` inside a loop wipes the loop's parameters. Reset the *model* instead (`LSCLEAR`, `ACLEAR`, `ADELE,ALL,,,1`, `NUMSTR,DEFA`). If you must clear, bracket it with `PARSAV,ALL,keep,parm` … `PARRES,CHANGE,keep,parm`.
+> - Booleans renumber entities, so select by location or radius, never by a remembered number.
+> - The `*VWRITE` format line must follow immediately. Array arguments pass by value (`h_list(ih)` is fine).
 > - Guard against failed solves (non-converged or singular). Test a returned value and write a sentinel (e.g. −1) so the table keeps its shape.
 > - Keep each study's output in its own file, or add a study-ID column.
 > - Save one representative contour per study as an image (`/SHOW,PNG` … `PLNSOL` … `/SHOW,CLOSE`) rather than hundreds.
 
 ## 4. Wing study: thickness × material with a minimum-thickness search
-The case macro `wing_case.mac` follows [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]] with `ARG1` = element type, `ARG2` = mesh size, `ARG3` = skin thickness, `ARG4` = material index. It writes the element, mesh, $t$, material, mass, tip deflection, $\sigma_{max}$, FoS and $f_1$–$f_3$, and **stores `fos` and `mass` as parameters** for the master to use.
+The case macro `wing_case.mac` follows [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]] with `ARG1` = element type, `ARG2` = mesh size, `ARG3` = skin thickness, `ARG4` = material index. It writes the element, mesh, $t$, material, mass, tip deflection, $\sigma_{max}$, FoS and $f_1$–$f_3$, and stores `fos` and `mass` as parameters for the master to use.
 
 ```apdl
 ! ---------- wing_master.inp (outline) ----------
@@ -182,8 +178,8 @@ t_list(1)  = 0.005,0.01,0.02,0.03,0.05,0.10
 *CFCLOS
 ```
 
-**Reading the results**:
-- **Mass at the minimum thickness** is the real comparison between materials. It scales roughly as $\rho/\sigma_Y$ for a strength-limited design.
+Reading the results:
+- Mass at the minimum thickness is the real comparison between materials. It scales roughly as $\rho/\sigma_Y$ for a strength-limited design.
 - Frequencies scale as $\sqrt{E/\rho}$ and hardly change with uniform skin thickening ([[Natural Frequencies and Mode Shapes]]).
 - Mass (and weight = 9.81 × mass) and FoS both rise with thickness: the design trade-off.
 
@@ -199,6 +195,10 @@ for elem in (182, 183):
     fig.savefig(f"kt_convergence_{int(elem)}.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 ```
 
+## What the lectures show
+
+Between the two lectures of 2026-02-20 (ll. 386–470), Dr Yuan demonstrated the idea on the lab 2 plate, which needs about seven geometries for its parametric study. The Session Editor records every operation, including mistakes and view changes; cleaned up, the script defines the plate's parameters, element type, real constants, material, geometry, mesh, solution with boundary conditions and the 120 MPa load, and post-processing. Pasting it into the command window stage by stage (geometry, mesh, solve, post) checks each step, and changing one value, such as the hole dimension, and pasting again gives the new result directly. The same session showed reading the bulk stress at the right-hand boundary: select the edge nodes, then list the nodal von Mises stress (`SEQV` column) at a node there, 120 MPa. `HELP,ET` opens the documentation for any command, like a MATLAB function's arguments. Understanding every command is not expected, but scripting is valuable for later design optimisation. The software video adds batch mode: set the Product Launcher's simulation environment to ANSYS Batch, give the input file, and results go to an output file without opening the interface, which is how large sweeps are run (Software_Intro, ll. 31–60, 151–157).
+
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]] · Next: [[SESA2029 C6 - APDL Workflow - FE Model Verification Checks]]
 - What the sweeps are for: [[SESA2029 B7 - Meshing, Convergence and Mesh Checks]] · [[Mesh Convergence and Grid Independence]]
@@ -206,3 +206,12 @@ for elem in (182, 183):
 ## Sources
 - Own APDL automation scripts (master `.inp` + case `.mac` pattern), generalised and rewritten to avoid `/CLEAR` inside loops
 - ANSYS Command Reference (*DO, *USE, *CFOPEN, *VWRITE, PARSAV/PARRES, NUMSTR)
+
+## Self-study tasks
+
+No sweep was set as an exercise; scripting is optional in this module (briefing, 2026-01-30 10:49).
+
+### Further practice
+
+- [ ] Script the lab 2 hole-position study from the code Dr Yuan provided on Blackboard (2026-02-20 09:59, ll. 401–440). → [[#2. Case macro: plate with a hole (plate_case.mac)]]
+- [ ] Automate the lab 3 thickness sweep and find the minimum thickness for FoS 1.5 (suggested, not lecturer-set). → [[#4. Wing study: thickness × material with a minimum-thickness search]]

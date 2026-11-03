@@ -3,7 +3,7 @@ title: "Strain Energy"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, energy-methods]
-status: complete
+status: lectured
 ---
 
 # Strain Energy
@@ -21,11 +21,18 @@ In slender beams, bending energy usually dominates, but axial energy can matter 
 
 Energy is scalar and positive. That makes it excellent for displacement magnitude, but the sign of a displacement still comes from the direction of the dummy load or generalised force.
 
-![Bending energy density](../Figures/structures_bending_strain_energy_density.png)
+![[structures_bending_strain_energy_density.png|700]]
 
 See [[SESA2028 S7 - Strain Energy and Conservation of Energy]].
 
-**Related (SESA2028 materials):** [[Griffith Energy Balance]] (strain energy released by crack growth)
+Related (SESA2028 materials): [[Griffith Energy Balance]] (strain energy released by crack growth)
 
 ## Year 1 foundation
 - Spring energy and the work–energy principle: [[FEEG1002 D3 - Work, Energy and Power]].
+
+## Related
+
+- Topic: [[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|M1]]
+- Topic: [[SESA2028 S7 - Strain Energy and Conservation of Energy|S7]]
+- Concepts: [[Griffith Energy Balance]]
+- Elsewhere: [[FEEG1002 D3 - Work, Energy and Power]]

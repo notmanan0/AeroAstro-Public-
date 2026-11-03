@@ -13,14 +13,11 @@ sources: ["02 - Sources/Lectures/CH1-3 Potential Flow.pdf"]
 
 # Wedge and Corner Flows
 
-## Definition
+The complex potential $\Phi=-kz^{m+1}$ has streamfunction $\psi=-kr^{m+1}\sin[(m+1)\theta]$. Its zero streamlines, which can be taken as walls, lie at $\theta=\pm\pi/(m+1)$, so the flow passes a wedge of included angle
 
-> [!note] Definition
-> $\Phi=-kz^{m+1}$ gives $\psi=-kr^{m+1}\sin[(m+1)\theta]$. The walls $\psi=0$ are at $\theta=\pm\pi/(m+1)$, enclosing a wedge of angle
->
-> $$\beta\pi=\frac{2m\pi}{m+1},\qquad\beta=\frac{2m}{m+1}.$$
+$$\beta\pi=\frac{2m\pi}{m+1},\qquad\beta=\frac{2m}{m+1}.$$
 
-## The family
+Varying $m$ gives a whole family:
 
 | $m$ | Flow |
 |---|---|
@@ -30,9 +27,7 @@ sources: ["02 - Sources/Lectures/CH1-3 Potential Flow.pdf"]
 | $m>1$ | flow into a concave corner of angle $(2-\beta)\pi$ |
 | $m<0$ | flow round a convex corner (one half used) |
 
-## Wall velocity
-
-$U_e(s)=k(m+1)s^m$, $\mathrm dU_e/\mathrm ds=mU_e/s$, $\mathrm dp/\mathrm ds=-\rho mU_e^2/s$: favourable for wedges ($m>0$), adverse for convex corners ($m<0$). This is the **Falkner–Skan** edge velocity for similar boundary layers.
+Along the wall the speed is $U_e(s)=k(m+1)s^m$, so $\mathrm dU_e/\mathrm ds=mU_e/s$ and $\mathrm dp/\mathrm ds=-\rho mU_e^2/s$. The pressure gradient is favourable on wedges ($m>0$) and adverse round convex corners ($m<0$). This power-law edge velocity is exactly the one the Falkner–Skan similar boundary layers need.
 
 ![[aa_wedge_flow_family.png|700]]
 

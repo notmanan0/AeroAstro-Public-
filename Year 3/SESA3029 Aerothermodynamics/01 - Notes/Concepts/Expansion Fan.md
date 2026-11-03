@@ -13,18 +13,17 @@ sources: ["02 - Sources/Lectures/Lecture2-4.pdf"]
 
 # Expansion Fan
 
-## Definition
+A **Prandtl–Meyer (PM) expansion fan** is how a supersonic stream turns round a convex corner: continuously and isentropically, through a fan of Mach waves radiating from the corner. The fan is bounded by a forward Mach line at $\mu_1$ and a rearward one at $\mu_2-\theta$, both measured from the original flow direction. Anderson calls it a centred expansion fan.
 
-> [!note] Definition
-> A **Prandtl–Meyer (PM) expansion fan** (a *centred expansion fan* in Anderson's wording) is the continuous, isentropic turning of a supersonic stream round a convex corner. It is made of infinitely many Mach waves radiating from the corner, between a forward Mach line at $\mu_1$ and a rearward one at $\mu_2-\theta$ to the original flow direction.
+It is a fan rather than a shock because the waves spread apart. As the flow turns away from the oncoming waves, $M$ rises and $\mu$ falls, so each successive wave is swept further back and they never coalesce. A shock is ruled out anyway, since an expansion shock would reduce entropy ([[Entropy Change Across a Shock]]).
 
-## Explanation
+Through the fan $p$, $T$ and $\rho$ fall and $M$ rises, while $p_0$ and $T_0$ stay constant. The Mach number is constant along each ray (each line of the expansion fan), and the fan spans an angle
 
-- **Why a fan and not a shock?** The Mach waves diverge, because $M$ rises and $\mu$ falls downstream and the flow turns away. They never coalesce. Expansion shocks are also forbidden by the second law ([[Entropy Change Across a Shock]]).
-- Through the fan $p$, $T$ and $\rho$ fall, $M$ rises, and $p_0$ and $T_0$ are constant.
-- Along each ray (each line of the expansion fan) the Mach number is constant.
-- Fan angle: $\phi=\mu_1-\mu_2+\theta$.
-- **Example** (Lecture 2.4): $M_1=3$, $\theta=13^\circ$ gives $M_2=3.78$, $p_2/p_1=0.326$ (a 67.4% drop) and $\phi=17.1^\circ$.
+$$
+\phi=\mu_1-\mu_2+\theta.
+$$
+
+In the Lecture 2.4 example, $M_1=3$ turned through $\theta=13^\circ$ gives $M_2=3.78$, $p_2/p_1=0.326$ (a 67.4% drop) and a fan angle of $17.1^\circ$.
 
 ![[at_expansion_fan.png|760]]
 

@@ -3,38 +3,24 @@ title: "Gamma Prime Strengthening"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Gamma prime", "Ni3Al", "Nickel superalloy", "Rafting"]
 tags: [sesa2028, materials, superalloys, nickel, creep, precipitation]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys]]"]
 related: ["[[Precipitation Hardening]]", "[[Creep Curve and Mechanisms]]", "[[Single Crystal Casting]]"]
 ---
 
 # Gamma Prime Strengthening
 
-Ni-base superalloys are a **$\gamma$** matrix (FCC Ni in solid solution with Co, Cr, Mo, W, Re) containing a high volume fraction (up to about 70 %) of **$\gamma'$ = $\mathrm{Ni_3(Al,Ti)}$**.
+Gamma prime ($\gamma'$) is the ordered intermetallic $\mathrm{Ni_3(Al,Ti)}$ that precipitates as coherent cubes at a high volume fraction in the FCC $\gamma$ matrix of nickel superalloys, giving them strength that lasts to very high temperature.
 
-## Why $\gamma'$ is so effective
+Nickel superalloys evolved from austenitic stainless steel by raising the nickel until no iron was left. The $\gamma$ matrix is solid-solution strengthened by cobalt, molybdenum and tungsten, with tungsten also raising the melting point and slowing self-diffusion; chromium (and aluminium) give a protective oxide. Aluminium and titanium set how much $\gamma'$ forms. Etched, the precipitates look like the Giant's Causeway: a dense array of cubes with finer $\gamma'$ between them.
 
-- **Ordered $L1_2$ (FCC-based)** structure. A dislocation cutting it creates an antiphase boundary, so dislocations must travel in pairs (superdislocations), which is hard.
-- **Coherent** with $\gamma$ (small lattice misfit, cube-on-cube). The low interfacial energy means **little driving force to coarsen**, so it stays fine for thousands of hours.
-- Its solvus is close to the melting point, so it does not dissolve in service.
-- **Anomalous yield**: the strength of $\gamma'$ *rises* with temperature up to about 700-800 °C (cross-slip locking).
-- The Al + Ti content sets the $\gamma'$ fraction. Microstructure: large primary cuboids ("Giant's Causeway") with fine secondary $\gamma'$ in the $\gamma$ channels.
+Three properties make $\gamma'$ exceptional at temperature, where ordinary precipitates coarsen or dissolve. Its solvus lies close to the alloy's melting point, so it does not dissolve in service. It is coherent with the matrix, so the interface energy is low and there is little drive to coarsen. And its strength rises with temperature, so dislocations are confined to the softer $\gamma$ channels. Over long times under stress the cubes can merge into plates aligned with the stress, called rafting, leaving continuous soft channels for creep and cracking, a degradation mechanism in long service.
 
-## Roles of the other elements
+The principle is the same as aluminium age hardening ([[Precipitation Hardening]]), adapted to survive near the melting point. Combined with single-crystal casting, which removes grain boundaries, and with coatings, it is what lets turbine blades run in gas hotter than their own melting point.
 
-| Element | Role |
-|---|---|
-| Cr | $\mathrm{Cr_2O_3}$: oxidation and hot-corrosion resistance |
-| Al | forms $\gamma'$; $\mathrm{Al_2O_3}$ scale |
-| Ti, Ta, Nb | strengthen $\gamma'$ |
-| Co, Mo, **W**, **Re** | solid-solution strengthen $\gamma$; W and Re **slow diffusion**, so better creep |
-| C, B, Zr, Hf | grain-boundary carbides and borides in polycrystalline and DS alloys; removed in single crystals |
+## Related
 
-## Compared with stainless steel (2021-22 MQ1(b))
-
-Both rely on an FCC matrix (no DBT) and Cr for oxidation resistance. Stainless loses strength above about 500-600 °C and its carbides sensitise. Ni alloys add stable coherent $\gamma'$ and slow-diffusing refractory elements, so they keep their strength to about 1000 °C and above.
-
-## Degradation
-
-**Rafting**: under stress and temperature, $\gamma'$ coarsens directionally into plates. Dislocations then run through the continuous $\gamma$ channels, giving faster creep and an easy crack path.
+- Topic: [[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys|M8]]
+- Concepts: [[Precipitation Hardening]] · [[Creep Curve and Mechanisms]] · [[Single Crystal Casting]] · [[Oxidation Rate Laws]]

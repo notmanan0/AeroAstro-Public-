@@ -3,35 +3,24 @@ title: "Evans Diagram and Passivation"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
-tags: [sesa2028, materials, corrosion, polarisation, passivation]
-status: complete
+aliases: ["Evans diagram", "Polarisation", "Passivation", "Passive film", "Transpassive"]
+tags: [sesa2028, materials, corrosion, electrochemistry, kinetics]
+status: lectured
 parent: ["[[SESA2028 M3 - Corrosion, Wear and Surface Engineering]]"]
-related: ["[[Nernst Equation and Galvanic Series]]", "[[Localised Corrosion]]", "[[Stainless Steel Classes]]"]
+related: ["[[Nernst Equation and Galvanic Series]]", "[[Stainless Steel Classes]]", "[[Localised Corrosion]]"]
 ---
 
 # Evans Diagram and Passivation
 
-## Polarisation and the Evans diagram
+An Evans diagram plots electrode potential against the logarithm of current for the anodic and cathodic half-reactions of a corrosion cell; where the two lines cross gives the corrosion potential and the corrosion current, which sets the rate.
 
-![[Figures/materials_evans_diagram.png]]
+The lines slope because of polarisation. As current flows, the reacting species are used up next to each electrode and a depletion zone forms, so the cathode's potential moves more negative and the anode's more positive; the shifts are the overpotentials. Shallow lines cross at a large current, steep lines at a small one, so strong polarisation slows corrosion. An aluminium–iron couple in 3 % salt water shows its current density falling with time as polarisation builds up. Often the cathodic line is limited by how fast dissolved oxygen can reach the surface, which is why oxygen supply controls so many corrosion rates.
 
-When current flows, ion depletion or build-up next to each electrode shifts its potential. The **anodic** reaction becomes more positive and the **cathodic** reaction more negative as the current rises. On a plot of $E$ against $\log i$ (an Evans diagram) the two polarisation lines cross at the **corrosion potential $E_{corr}$** and **corrosion current density $i_{corr}$**.
+![[materials_polarisation_passivation.png|800]]
 
-- A large $i_{corr}$ means fast corrosion. By Faraday, the rate is proportional to $i$.
-- **Polarisation is beneficial**: steeper lines give a lower $i_{corr}$.
-- The rate is often **cathode-limited**, by the supply of $\mathrm O_2$ or $\mathrm H^+$.
-- Lowering temperature can *reduce* polarisation, so some couples corrode faster in the cold (the lecture's baked-bean tin in the fridge).
+Passivating metals (stainless steels, aluminium, titanium) have an anodic curve with a nose: current first rises with potential, then drops sharply when a protective oxide forms and stays very low across the passive range, then rises again in the transpassive region. Where the cathodic line cuts decides the outcome. A weakly oxidising environment crosses in the active region and the metal corrodes fast. A moderately oxidising one crosses in the passive region: the film forms and a scratch heals at once. A very strongly oxidising one crosses in the transpassive region, where a damaged film is not repaired. In reducing conditions, such as an oxygen-starved crevice, the film cannot reform at all and the surface goes active, which is how stainless steel fails by crevice corrosion and pitting.
 
-## Passivation
+## Related
 
-![[Figures/materials_passivation_curve.png]]
-
-Metals such as stainless steel (> 12 % Cr), Al, Ti and Ni form a thin, protective oxide once their potential passes a critical value. Their anodic curve has an **active nose**, then a **passive** region (current drops by orders of magnitude), then a **transpassive** region (the film breaks down).
-
-| Cathodic line crosses | Behaviour |
-|---|---|
-| Active region | corrodes rapidly |
-| Passive region | **stable**: the film forms and **re-forms instantly if scratched** |
-| Transpassive region | film unstable, not repaired, so pitting and general attack |
-
-In **reducing** or oxygen-starved conditions (crevices, under deposits) the cathodic line falls into the active region, so stainless steel can corrode. Why $\mathrm{Cr_2O_3}$ protects: it is coherent, adherent and almost defect-free, and blocks both ions and electrons.
+- Topic: [[SESA2028 M3 - Corrosion, Wear and Surface Engineering|M3]]
+- Concepts: [[Nernst Equation and Galvanic Series]] · [[Localised Corrosion]] · [[Stainless Steel Classes]] · [[Sensitisation and Weld Decay]]

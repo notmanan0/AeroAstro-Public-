@@ -4,18 +4,18 @@ module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Structures"
 tags: [sesa2028, structures, virtual-work]
-status: complete
+status: lectured
 parent: ["[[SESA2028 S8 - Virtual Work and Castigliano Theorems]]"]
 ---
 
 # Unit Load Method
 
-**What it is:** the virtual-force form of the [[Principle of Virtual Work]], used to find **one displacement** in a linear elastic structure.
+The virtual-force form of the [[Principle of Virtual Work]], used to find one displacement in a linear elastic structure.
 
 ## Recipe
 
-1. **Real system**: find the internal moment $M(x)$ (and $N$, $T$ if relevant) from the actual loads.
-2. **Virtual system**: remove all real loads. Apply a **unit force** at the point and in the direction of the wanted displacement, or a **unit moment** for a rotation. Find $m(x)$ (and $n$, $t$).
+1. Real system: find the internal moment $M(x)$ (and $N$, $T$ if relevant) from the actual loads.
+2. Virtual system: remove all real loads. Apply a unit force at the point and in the direction of the wanted displacement, or a unit moment for a rotation. Find $m(x)$ (and $n$, $t$).
 3. Integrate over every member:
 
 $$
@@ -34,9 +34,14 @@ $$
 
 ## Bookkeeping rules
 
-- Use the **same coordinate $x$ and sign convention** for $M$ and $m$ in each segment.
+- Use the same coordinate $x$ and sign convention for $M$ and $m$ in each segment.
 - Split the integral wherever $M$, $m$ or $EI$ changes form: at loads, supports, hinges, frame corners and section changes.
 - For frames, include axial terms only if asked (they are usually small).
 - Product integrals of standard shapes (e.g. triangle × triangle $=\tfrac13$ length × heights) save time.
 
 It is mathematically identical to Castigliano: $\partial M/\partial P=m$. See [[Castigliano Theorem]].
+
+## Related
+
+- Topic: [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]
+- Concepts: [[Principle of Virtual Work]] · [[Castigliano Theorem]]

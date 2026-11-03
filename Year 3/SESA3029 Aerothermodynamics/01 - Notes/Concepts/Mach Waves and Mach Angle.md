@@ -13,16 +13,13 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 
 # Mach Waves and Mach Angle
 
-## Definition
+A **Mach wave** is an infinitely weak, isentropic pressure disturbance in a supersonic flow. It sits at the **Mach angle** to the local velocity:
 
-> [!note] Definition
-> A **Mach wave** is an infinitely weak, isentropic pressure disturbance in a supersonic flow. It lies at the **Mach angle** to the local velocity:
->
-> $$\boxed{\mu=\sin^{-1}\!\left(\frac1M\right)}.$$
+$$\boxed{\mu=\sin^{-1}\!\left(\frac1M\right)}.$$
 
-## Derivation (moving sound source)
+## From a moving sound source
 
-A source moving at $U=Ma$ emits a pulse. After time $t$, the pulse is a circle of radius $at$ centred on the point where it was emitted, which is now $Ut$ behind the source. The envelope of all such circles is tangent to each one, so
+A source moving at $U=Ma$ emits a pulse. After time $t$ the pulse is a circle of radius $at$, centred on the point where it was emitted, which is now $Ut$ behind the source. The envelope of all these circles touches each one, so
 
 $$
 \sin\mu=\frac{at}{Ut}=\frac1M.
@@ -30,17 +27,15 @@ $$
 
 ![[at_mach_waves.png|760]]
 
-- $M<1$: the pulses stay ahead of the source. There is no envelope and sound reaches everywhere (with a Doppler shift).
-- $M=1$: all pulses pass through the source together, giving a plane front (the sonic boom) and a **zone of silence** ahead.
-- $M>1$: sound is heard only inside the **Mach cone** of half-angle $\mu$.
+Below $M=1$ the pulses stay ahead of the source, there is no envelope and the sound reaches everywhere, Doppler-shifted. At $M=1$ every pulse passes through the source together, forming a plane front (the sonic boom) with a **zone of silence** ahead of it. Above $M=1$ the sound is heard only inside the **Mach cone** of half-angle $\mu$.
 
-**What you hear once the cone passes** (Lecture 3.2 aside). Pulses emitted while the source closes on you faster than $a$ arrive in **reverse** order. Later pulses arrive in normal order, at the same time. See [[SESA3029 W05a - Method of Characteristics#9. Zones of dependence and influence (3.2 slides 5–6)|W05a §9]].
+Once the cone has passed you, the pulses emitted while the source was closing on you faster than $a$ arrive in reverse order, and the later ones arrive in the normal order at the same time (Lecture 3.2 aside; [[SESA3029 W05a - Method of Characteristics#9. Zones of dependence and influence (3.2 slides 5–6)|W05a §9]]).
 
-In the method of characteristics, $\mu$ also sets the slope of every characteristic, $\theta\pm\mu$. Because $\mu$ changes with $M$, the characteristics bend as the flow accelerates.
+In the method of characteristics, $\mu$ sets the slope of every characteristic, $\theta\pm\mu$. Since $\mu$ changes with $M$, the characteristics bend as the flow accelerates.
 
 ## Link to oblique shocks
 
-Setting $\theta=0$ in the [[Theta-Beta-Mach Relation]] makes $M_1^2\sin^2\beta=1$, so $\beta=\mu$. A Mach wave is an oblique shock of vanishing strength, with $M_{n1}=M_1\sin\mu=1$ exactly. Abrupt turning produces shocks. **Gradual** turning produces a continuous family of Mach waves, the basis of expansion fans and the method of characteristics.
+Setting $\theta=0$ in the [[Theta-Beta-Mach Relation]] gives $M_1^2\sin^2\beta=1$, so $\beta=\mu$. A Mach wave is an oblique shock of vanishing strength, with $M_{n1}=M_1\sin\mu=1$. Turning a supersonic stream abruptly produces a shock; turning it gradually produces a continuous family of Mach waves, which is what expansion fans and the method of characteristics are built on.
 
 | $M$ | 1.1 | 1.5 | 2 | 3 | 5 |
 |---|---:|---:|---:|---:|---:|

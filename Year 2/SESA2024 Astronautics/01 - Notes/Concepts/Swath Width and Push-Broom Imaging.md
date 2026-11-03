@@ -3,44 +3,29 @@ title: "Swath Width and Push-Broom Imaging"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Remote Sensing Case Study"
-aliases: ["swath width", "push-broom", "pushbroom", "field of view", "CCD imager", "global coverage", "spatial resolution"]
-tags: [sesa2024, concept, remote-sensing, payload]
-status: complete
+aliases: ["push-broom", "pushbroom", "whisk-broom", "whiskbroom", "swath width", "field of view", "ground resolution"]
+tags: [sesa2024, concept, remote-sensing]
+status: lectured
 parent_lectures: ["[[SESA2024 11 - Payload and Orbit Selection]]", "[[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]]"]
 related_concepts: ["[[Repeat Ground Track]]", "[[Payload Data Rate]]"]
-sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_Calculating Orbital Elements_V1.pdf"]
+sources: ["02 - Sources/Lectures/SESA2024 Lecture 2025-12-04.txt", "02 - Sources/Lectures/SESA2024 Lecture 2025-10-07.txt"]
 ---
 
 # Swath Width and Push-Broom Imaging
 
-## Definition
+A push-broom imager is a line of detectors across the ground track that records one strip of the Earth for each pixel the spacecraft advances, building an image from its own forward motion; the width of ground it covers is the swath width.
 
-> [!note] Definition
-> A **push-broom** imager has a linear detector array across-track. The spacecraft's motion sweeps it along-track.
->
-> $$d = 2h\tan\frac{\beta}{2} = N_{px}\,p,\qquad n_{min} = \frac{2\pi R_E}{d}$$
->
-> - $\beta$ = field of view;
-> - $N_{px}$ = pixels (CCD elements) across-track;
-> - $p$ = ground pixel size (spatial resolution) at nadir.
+For a nadir-pointing instrument with field of view $\beta$ at altitude $h$,
 
-## Explanation
-- **Advantage over whisk-broom or scanning**: no moving parts, and a long dwell time per pixel (the whole line time), which gives better SNR and geometric fidelity.
-- **Coverage**: swaths must touch or overlap at the equator, where tracks are furthest apart. Hence $n\ge2\pi R_E/d$. Coverage fraction $= nd/2\pi R_E$.
-- The design is coupled:
-  - fixed $\beta$: higher $h$ means a wider swath (better coverage) but coarser pixels;
-  - fixed $N_{px}$ and $p$: the swath is fixed, so $h = d/[2\tan(\beta/2)]$.
-- Earth curvature is ignored in the course formulas.
-- Multi-band instruments have one detector per band. "Paired sampling" (two elements per pixel word) halves the effective pixel count.
+$$
+d=2h\tan\frac\beta2,
+$$
 
-## Examples
-- Lecture: $\beta$ = 28.96°, $h$ = 800 km, giving $d$ = 413.2 km and $n$ = 96.99.
-- Workbook civil: 19 500 px × 20 m = 390 km, so $h$ = 460 km for the 45.95° FOV. Final 619 km, 524.8 km swath, 26.9 m pixels.
-- 2017/18 Q4: 8000 elements × 10 m = **80 km**; global coverage every 31 days.
-- 2019/20 B3(iv): 8 km swath at 2 m gives **4000 elements** per detector; at 700 km the FOV is $2\tan^{-1}(4/700)$ = **0.65°**.
+or $d=N_{pix}\,p$ from the number of pixels and the ground pixel size. The swath grows with altitude while the resolution coarsens, which is part of the first-pass trade between resolution and drag: a $28.96^\circ$ instrument covers 362 km at 700 km and 465 km at 900 km.
+
+A whisk-broom imager instead sweeps a few detectors across the track with a mechanism, or, on a spinner such as Meteosat, with the spin. Push-broom has no moving parts and a longer dwell per pixel, so it gives better signal-to-noise and geometry, and modern Earth observers use it. In the case study, the swath sets the number of distinct ground tracks needed for full coverage, $N\approx2\pi R_E/d$, and the pixel size and ground speed set the data rate.
 
 ## Related
-- [[Repeat Ground Track]] · [[Payload Data Rate]]
 
-## Sources
-- Chapter 11 first pass and calculating orbital elements; workbook 11B
+- [[SESA2024 11 - Payload and Orbit Selection#2. The push-broom imager|Push-broom imager in the lecture note]] · [[SESA2024 06 - Attitude Control#Type 1: spinner|Whisk-broom on a spinner]]
+- [[Repeat Ground Track]] · [[Payload Data Rate]]

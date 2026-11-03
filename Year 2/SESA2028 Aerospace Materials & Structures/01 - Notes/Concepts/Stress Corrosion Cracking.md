@@ -3,29 +3,22 @@ title: "Stress Corrosion Cracking"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["SCC", "KISCC", "Environment-assisted cracking"]
 tags: [sesa2028, materials, corrosion, scc, fracture]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M3 - Corrosion, Wear and Surface Engineering]]"]
 related: ["[[Localised Corrosion]]", "[[Fracture Toughness and LEFM Validity]]", "[[Shot Peening]]"]
 ---
 
 # Stress Corrosion Cracking
 
-**Stress corrosion cracking (SCC)** is crack growth that needs **all three** of:
+Stress corrosion cracking is the slow growth of branched, usually intergranular cracks under a steady tensile stress in a specific corrosive environment, at stress intensities far below the fracture toughness.
 
-1. a **susceptible material** (e.g. austenitic stainless, some Al alloys, brass, high-strength steels);
-2. a **specific environment** (chlorides for stainless, ammonia for brass, aqueous NaCl for 7xxx Al);
-3. a **sustained tensile stress**, applied or **residual** (welds, cold work). It is not cyclic loading.
+It needs three things at the same time: a susceptible material, an environment that attacks that material, and a tensile stress, which may be applied or residual. Remove any one and it does not happen. The cracks branch like tree roots and grow at constant load, not under cycling, so SCC is not fatigue, and it gives little warning: cracks can grow at as little as 1 % of the stress that the $K_{Ic}$ calculation would predict for fast fracture.
 
-## Features
+At the crack tip three effects interact. The environment sets how the protective film forms and what chemistry develops inside the crack; the stress sets how often the film ruptures and exposes fresh metal; the microstructure decides where the attack runs, typically along grain boundaries. Where a material–environment pair is known to be susceptible, a threshold stress intensity $K_{ISCC}$ can be measured, and keeping $K$ below it prevents cracking. In design that means choosing a resistant alloy for the environment, keeping tensile stresses low, and removing tensile residual stress or replacing it with compression ([[Shot Peening]]). In exam answers SCC belongs among the "other service problems" of humid, salty or chemical environments, alongside pitting and corrosion fatigue (2013-14 B1(iii)).
 
-- Cracks are often **intergranular** and **branched** like tree roots. Growth is slow and hard to detect, then failure is sudden: little warning.
-- Cracks grow at stress intensities **far below $K_{Ic}$**, as low as about 1 % of it.
-- There is a threshold $K_{ISCC}$: below it, SCC does not occur. For design, replace $K_{Ic}$ with $K_{ISCC}$ in the fracture criterion when SCC is possible.
-- Mechanism: crack-tip chemistry and stress work together. The passive film at the tip **ruptures** under strain, bare metal dissolves, the film re-forms, and the cycle repeats.
+## Related
 
-## Prevention
-
-Remove any one of the three: change the material (ferritic and duplex stainless resist chloride SCC far better than austenitic); control the environment (chlorides, temperature, inhibitors); reduce tensile stress (stress-relieve welds, shot peen to put the surface into compression, design out stress concentrations).
-
-**Exam use:** as one of the "other service problems" in humid, salty or chemical environments, alongside pitting and corrosion fatigue (2013-14 B1(iii)).
+- Topic: [[SESA2028 M3 - Corrosion, Wear and Surface Engineering|M3]]
+- Concepts: [[Localised Corrosion]] · [[Fracture Toughness and LEFM Validity]] · [[Stress Intensity Factor]] · [[Shot Peening]]

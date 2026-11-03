@@ -8,48 +8,20 @@ tags: [math2048, concept, pdes]
 status: complete
 parent_lectures: ["[[MATH2048 PDE5 - Laplace's Equation]]"]
 related_concepts: ["[[Separation of Variables]]", "[[Streamfunction and Velocity Potential]]", "[[Divergence, Curl and the Laplacian]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture20_LaplaceEquation1.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture20_LaplaceEquation1.pdf", "02 - Sources/Lectures/MATH2048 Lecture 20.txt"]
 ---
 
 # Laplace's Equation
 
-## Definition
+**Laplace's equation** $\nabla^2u=0$, in two-dimensional Cartesian coordinates $u_{xx}+u_{yy}=0$, is the prototype elliptic PDE. With a source, $\nabla^2u=f$, it is Poisson's equation.
 
-> [!note] Definition
->
-> $$\nabla^2u=u_{xx}+u_{yy}(+u_{zz})=0 .$$
->
-> This is elliptic. Its solutions are called **harmonic** functions.
+It is the static limit of both the wave and heat equations, $u_{tt}=c^2\nabla^2u$ and $u_t=\kappa^2\nabla^2u$, with the time derivatives set to zero. The Laplacian $\nabla^2=\nabla\cdot\nabla$ is coordinate-free, so the equation holds in any coordinates even though its Cartesian form does not. All its conditions are boundary conditions, one on each part of the boundary, and they cannot all be Neumann.
 
-## Explanation
-**Maximum principle**: the maximum and minimum values of $u$ occur on the boundary. So if every BC is zero, $u\equiv0$.
-
-**Separation on a rectangle**: substituting $X''Y+XY''=0$ gives the **opposite-sign** pair $X''=\lambda X$ and $Y''=-\lambda Y$.
-- The direction with homogeneous BCs gives sines/cosines, e.g. $X_n=\sin n\pi x$.
-- The other direction then gives $\cosh$ and $\sinh$.
-
-**Several non-zero sides**:
-1. Subtract a corner-fixing function $\alpha_1+\alpha_2x+\alpha_3y+\alpha_4xy$.
-2. Split the problem so that each piece has one non-zero side.
-3. Solve each piece and superpose.
-
-**Disk (polar coordinates)**: $\phi=\frac12a_0+\sum r^n(a_n\cos n\theta+b_n\sin n\theta)$.
-
-**Links**:
-- Potential flow: $\nabla^2\phi=\nabla^2\psi=0$ ([[Streamfunction and Velocity Potential]]).
-- Steady heat conduction.
-- Gravitational and electrostatic potentials.
-- In vector calculus, $\nabla^2=\nabla\cdot\nabla$ ([[Divergence, Curl and the Laplacian]]).
-
-## Examples
-- With $u=x(1-x)$ on $y=1$ and $u=0$ on the other sides:
-
-$$u=\sum_{n\ \text{odd}}\frac{8\sin n\pi x\sinh n\pi y}{(n\pi)^3\sinh n\pi}.$$
+On a rectangle, separation gives trig functions in the direction with homogeneous conditions on both sides and $\cosh$ and $\sinh$ in the other, so on the unit square with $u=x(1-x)$ on $y=1$ and zero elsewhere, $u=\sum\frac{4(1-(-1)^n)}{(n\pi)^3\sinh n\pi}\sin n\pi x\,\sinh n\pi y$. The maximum principle says that without a source a solution takes its maximum and minimum on the boundary, so zero boundary values force $u\equiv0$, and a value inside larger than any on the boundary means there is a source.
 
 ![[m2048_pde_laplace_square.png|480]]
 
 ## Related
-- [[Separation of Variables]] · [[Heat Equation]] · [[PDE Classification]]
 
-## Sources
-- Lecture 20; Lecture Notes Ch. 7
+- [[MATH2048 PDE5 - Laplace's Equation]] · [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities]]
+- [[PDE Classification]] · [[Separation of Variables]] · [[Divergence, Curl and the Laplacian]]

@@ -3,7 +3,7 @@ title: "SESA2024 Formula Sheet"
 module: "SESA2024 Astronautics"
 type: formula
 tags: [sesa2024, formula-sheet, revision]
-status: complete
+status: lectured
 sources: ["02 - Sources/Lectures", "03 - Exams & Past Papers"]
 ---
 
@@ -27,6 +27,7 @@ sources: ["02 - Sources/Lectures", "03 - Exams & Past Papers"]
 | Kepler 3 | $\tau = 2\pi\sqrt{a^3/\mu}$, $a = [\mu(\tau/2\pi)^2]^{1/3}$ |
 | **Energy (vis-viva)** | $\dfrac{V^2}{2}-\dfrac{\mu}{r} = -\dfrac{\mu}{2a}$ |
 | Circular / escape | $V_c = \sqrt{\mu/r}$, $V_{esc} = \sqrt{2\mu/r}$ |
+| Mean motion | $n = 2\pi/\tau = \sqrt{\mu/a^3}$ |
 | True anomaly | $\cos\theta = \dfrac1e\left[\dfrac{a(1-e^2)}{r}-1\right]$ |
 | Acceleration (polar) | $a_r = \ddot r-r\dot\theta^2$, $a_\theta = 2\dot r\dot\theta+r\ddot\theta$ |
 
@@ -64,6 +65,7 @@ sources: ["02 - Sources/Lectures", "03 - Exams & Past Papers"]
 | Battery | $C = \dfrac{Pt_e}{\text{DoD}\,V_B}$, $\mathcal E = CV_B$, $M = \mathcal E/\bar\varepsilon$ |
 | Charging | $R = \dfrac{\text{DoD}\,C}{t_s}$, $P_{EOL} = P+RV_A$ |
 | Array | $A = \dfrac{P_{EOL}}{S\cos\theta\,\eta\,\eta_p(1-D_0)}$ |
+| Solar flux | $S = 1370/d^2$ W/m² ($d$ in AU) |
 
 ## Communications ([[SESA2024 09 - Communications|Ch 9]])
 | | |
@@ -90,12 +92,13 @@ $$q_S\alpha_SA_S^{proj}+aq_S\alpha_SA_E^{proj}\cos\phi\,\beta F+q_E\varepsilon A
 | | |
 |---|---|
 | **SSO** | $\dot\Omega = -2.0647\times10^{14}a^{-3.5}\cos i = 0.986^\circ$/day ($a$ in km) |
-| **Repeat** | $\tau = \dfrac{m}{n}86\,400$ s; $n = 2\pi R_E/d$; $m = n\tau/86400$ |
+| **Repeat** | $\tau = \dfrac{m}{n}86\,400$ s; $n = 2\pi R_E/d$; $m = n\tau/86400$; $n$ and $m$ must share no factor |
 | Swath | $d = 2h\tan(\beta/2) = N_{px}\,p$ |
 | Track shift | $\Delta\lambda = 360^\circ(\tau/\tau_E-\tau/\tau_Y)$ per orbit (West) |
 | LST ↔ RAAN | $\phi = \alpha_S-\Omega$; 15° = 1 h; the nodes are 12 h apart |
 | Drag | $\delta a = -2\pi\rho\dfrac{SC_D}{m}a^2$, $\delta\tau = \dfrac{3\pi}{V}\delta a$ |
 | Control | $\delta\lambda = \dfrac{2E_0}{R_E}\dfrac{180}{\pi}$, $\Delta t_0 = \delta\lambda/\omega_E$ ($\omega_E$ = 0.004178°/s), $k = \sqrt{2\Delta t_0/\lvert\delta\tau\rvert}$, cycle $2k\tau$, $\Delta a = 2k\lvert\delta a\rvert$ |
+| Disposal | $\Delta V = \sqrt{\mu/r_0}-\sqrt{\mu(2/r_0-2/(r_0+r_p))}$ (lower perigee to $r_p$) |
 | Data rate | $V_{gd} = V\,R_E/a$, $t_s = p/V_{gd}$, $R_b = N_{px}\cdot\text{bits}\cdot\text{bands}/t_s$ |
 
 ## Links

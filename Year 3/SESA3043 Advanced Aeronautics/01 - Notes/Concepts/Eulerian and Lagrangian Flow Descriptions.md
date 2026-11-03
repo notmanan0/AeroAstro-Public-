@@ -13,27 +13,18 @@ sources: ["02 - Sources/Lectures/L1 - SESA3043.txt"]
 
 # Eulerian and Lagrangian Flow Descriptions
 
-## Definition
+A **Lagrangian** description follows the same material particle, or system, as it moves and deforms. An **Eulerian** description watches fields such as $\rho(\mathbf x,t)$ and $\mathbf u(\mathbf x,t)$ at fixed positions, or inside a fixed control volume.
 
-> [!note] Lagrangian
-> Follow the same material particle or system as it moves and deforms.
-
-> [!note] Eulerian
-> Observe fields such as $\rho(\mathbf x,t)$ and $\mathbf u(\mathbf x,t)$ at fixed positions or within a fixed control volume.
-
-## Connection
-
-For any scalar $\phi$ carried by the flow,
+The two are linked by the [[Material Derivative]]. For any scalar $\phi$ carried by the flow,
 
 $$
-\frac{D\phi}{Dt}=\frac{\partial\phi}{\partial t}+\mathbf u\cdot\nabla\phi.
+\frac{D\phi}{Dt}=\frac{\partial\phi}{\partial t}+\mathbf u\cdot\nabla\phi,
 $$
 
-The [[Material Derivative]] converts an Eulerian field into the rate seen by a Lagrangian particle. The [[Reynolds Transport Theorem]] performs the corresponding conversion for extensive quantities in a finite system and control volume.
+which turns an Eulerian field into the rate of change a Lagrangian particle would see. The [[Reynolds Transport Theorem]] does the same job for extensive quantities in a finite system and control volume.
 
-Worked numbers (the lecture's river example: bank probe $+1.00$ K/h, drifting buoy $-0.44$ K/h): [[SESA3043 1.1 - Mathematical Tools and Flow Description#9.1 Two thermometers in a river (suggested)|SESA3043 1.1 §9.1]].
+The lecture's river example puts numbers on it: a probe fixed to the bank reads $+1.00$ K/h while a drifting buoy reads $-0.44$ K/h in the same water ([[SESA3043 1.1 - Mathematical Tools and Flow Description#9.1 Two thermometers in a river (suggested)|SESA3043 1.1 §9.1]]).
 
 ## Related
 
 - [[Material Derivative]] · [[Reynolds Transport Theorem]]
-

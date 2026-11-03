@@ -3,39 +3,26 @@ title: "Ductile-Brittle Transition"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["DBT", "DBTT", "Ductile to brittle transition"]
 tags: [sesa2028, materials, fracture, toughness, charpy]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics]]"]
 related: ["[[Fracture Toughness and LEFM Validity]]", "[[Hall-Petch Relation]]", "[[Stainless Steel Classes]]"]
 ---
 
 # Ductile-Brittle Transition
 
-![[Figures/materials_ductile_brittle_transition.png]]
+The ductile-brittle transition is the temperature range over which a material's impact toughness drops from an upper shelf, where it fails by ductile tearing, to a lower shelf, where it fails by brittle cleavage.
 
-The ductile-brittle transition (DBT) is the temperature range over which a material's impact toughness drops from an upper shelf (ductile, high energy) to a lower shelf (brittle cleavage, low energy).
+It comes from a competition. Plastic flow needs the yield stress $\sigma_y$, cleavage needs the fracture stress $\sigma_f$, and whichever is reached first decides the failure. The fracture stress barely changes with temperature. In body-centred cubic metals such as ferritic steel there are no close-packed slip planes, slip is thermally activated, and the yield stress rises steeply as the temperature falls. Above the temperature where $\sigma_y$ crosses $\sigma_f$ the metal yields first and is ductile; below it, it cleaves. Hexagonal close-packed metals (Mg, Ti) have too few easy slip systems and can show the same behaviour. Face-centred cubic metals (aluminium alloys, austenitic stainless steel, nickel) slip easily on many close-packed planes without thermal activation, so their yield stress stays low and flat and they are ductile at every temperature, which is why austenitic stainless steel is used for cryogenic tanks.
 
-## Mechanism: yield vs cleavage
+![[materials_dbt_yield_vs_cleavage.png|800]]
 
-- Cleavage fracture stress $\sigma_f$: roughly independent of $T$.
-- Yield stress $\sigma_y(T)$: in **BCC** (and HCP) metals slip is thermally activated, so $\sigma_y$ **rises steeply as $T$ falls**.
-- Above the crossover, the material yields first (ductile). Below it, $\sigma_f$ is reached first (brittle).
-- **FCC** metals (Al, Cu, Ni, austenitic stainless) have many close-packed slip systems that need no thermal activation. $\sigma_y$ stays flat and they **never** show a DBT. That is why austenitic stainless is used for cryogenic tanks.
+Anything that raises the yield stress at a given temperature moves the crossing to a higher temperature. More carbon in steel does this and also lowers the upper-shelf energy, so a stronger steel is less tough and turns brittle at higher temperatures. Grain-boundary segregation of sulphur and phosphorus raises the transition, while a fine grain size, manganese (which ties sulphur up as MnS) and nickel lower it. The Charpy 27 J transition temperatures quoted in the steels lectures make the point: about 42 °C (longitudinal) and 61 °C (transverse) for the Titanic's hull plate, about 23 °C for Liberty-ship steels, and about −18 °C for modern A36 ship plate ([[SESA2028 M7 - Steels - Phase Transformations, Heat Treatment and Alloying|M7]]).
 
-## What moves the DBT
+The Charpy test is the natural way to find the transition and to check batch consistency, but it gives an energy, not a design stress; design uses $K_{Ic}$ measured on the lower side of the transition if the part can get that cold.
 
-| Factor | Effect on transition temperature |
-|---|---|
-| More carbon | raises it (and lowers the upper shelf) |
-| Finer grain size | lowers it (Hall-Petch toughening) |
-| S, P segregated to grain boundaries | raises it |
-| Mn (ties up S as MnS), Ni | lowers it |
-| Higher strain rate, thicker section, sharper notch | raise it |
+## Related
 
-## Examples
-
-Charpy 27 J transition temperatures: Titanic plate +42 °C (longitudinal) and +61 °C (transverse); Liberty ships about +23 °C; modern A36 ship steel about -18 °C.
-
-Mg (HCP) also has a DBT, which is why it is worked hot ([[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium|M6]]).
-
-Charpy testing is ideal for **finding** the transition (ranking and QA), but it gives no design stress.
+- Topic: [[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|M1]] · [[SESA2028 M7 - Steels - Phase Transformations, Heat Treatment and Alloying|M7]] · [[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium|M6]]
+- Concepts: [[Fracture Toughness and LEFM Validity]] · [[Hall-Petch Relation]] · [[Stainless Steel Classes]]

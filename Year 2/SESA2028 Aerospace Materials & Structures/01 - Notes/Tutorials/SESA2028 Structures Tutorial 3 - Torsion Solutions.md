@@ -5,7 +5,7 @@ type: tutorial-solution
 stream: "Structures"
 order: 3
 tags: [sesa2028, structures, tutorial, torsion]
-status: complete
+status: lectured
 parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 topics: ["[[SESA2028 S3 - Shear Flow and Shear Centre]]", "[[SESA2028 S4 - Torsion of Thin-Walled Sections]]"]
 sources: ["02 - Sources/SESA2028 green coursework book.pdf, pp. 45-47"]

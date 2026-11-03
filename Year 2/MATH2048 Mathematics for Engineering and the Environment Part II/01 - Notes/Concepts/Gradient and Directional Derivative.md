@@ -8,34 +8,20 @@ tags: [math2048, concept, vector-calculus]
 status: complete
 parent_lectures: ["[[MATH2048 VC1 - Scalar and Vector Fields, Gradient and Directional Derivatives]]"]
 related_concepts: ["[[Divergence, Curl and the Laplacian]]", "[[Conservative Vector Fields]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture23_vector03.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture23_vector03.pdf", "02 - Sources/Lectures/MATH2048 Lecture 23.txt"]
 ---
 
 # Gradient and Directional Derivative
 
-## Definition
+The **gradient** of a scalar field is the vector field $\nabla f=\frac{\partial f}{\partial x}\mathbf i+\frac{\partial f}{\partial y}\mathbf j+\frac{\partial f}{\partial z}\mathbf k$. The **directional derivative** in the direction of a unit vector $\hat{\mathbf n}$ is the rate of change of $f$ per unit distance that way, $\frac{\partial f}{\partial n}=\hat{\mathbf n}\cdot\nabla f$.
 
-> [!note] Definition
->
-> $$\nabla\phi=\phi_x\mathbf i+\phi_y\mathbf j+\phi_z\mathbf k,\qquad \nabla_{\hat{\mathbf v}}\phi=\hat{\mathbf v}\cdot\nabla\phi .$$
+The second formula follows from the chain rule applied to $f(\mathbf x_0+h\hat{\mathbf n})$, and it is why $\hat{\mathbf n}$ must be a unit vector: along $\mathbf i$ it has to give $\partial f/\partial x$, not a multiple of it. Since $\hat{\mathbf n}\cdot\nabla f=|\nabla f|\cos\theta$, the rate of change is at most $|\nabla f|$, reached along $\nabla f$, the direction of steepest ascent; $-\nabla f$ is steepest descent. Along a level surface $f$ doesn't change, so $\nabla f$ is perpendicular to every tangent direction: it is the normal to the surface $f=c$, which is how tangent planes and angles between surfaces are found.
 
-## Explanation
-- **Directional derivative**: it follows from the chain rule applied to $f(t)=\phi(\mathbf r_0+t\mathbf v)$. Always use a **unit** direction vector $\hat{\mathbf v}$.
-- **Steepest ascent**: $\phi$ increases fastest along $\nabla\phi$, at rate $|\nabla\phi|$. It decreases fastest along $-\nabla\phi$.
-- **Normal to level surfaces**: $\nabla\phi$ is normal to $\phi=c$. This gives:
-  - the tangent plane $\nabla\phi(P)\cdot(\mathbf r-\mathbf r_P)=0$;
-  - the angle between two surfaces, $\cos\theta=\dfrac{\mathbf n_1\cdot\mathbf n_2}{|\mathbf n_1||\mathbf n_2|}$.
-- **Radial fields**: $\nabla f(r)=f'(r)\,\hat{\mathbf r}$. In particular $\nabla r=\hat{\mathbf r}$ and $\nabla(1/r)=-\hat{\mathbf r}/r^2$.
-- **Rules**: $\nabla$ is linear, and it obeys the product rule $\nabla(\phi\psi)=\phi\nabla\psi+\psi\nabla\phi$.
-
-## Examples
-- $f=2x+3y^2+2xyz$ at $(1,2,1)$ in the direction $(2,2,1)$: the rate is $44/3$ (PS8 Q2b).
-- The surfaces $x^2+y^2+z^2=9$ and $z=x^2+y^2-3$ meet at $(2,-1,2)$ at $\theta\approx54.4^\circ$.
+The gradient is linear and obeys the product rule $\nabla(fg)=f\nabla g+g\nabla f$, both checked component by component. For a field depending only on $r=|\mathbf r|$, $\nabla f(r)=f'(r)\hat{\mathbf r}$. The gradient is also the building block of the other derivatives of vector calculus: the [[Divergence, Curl and the Laplacian|divergence and curl]] are made from it with a dot or cross product.
 
 ![[m2048_vc_gradient_level_curves.png|440]]
 
 ## Related
-- [[Divergence, Curl and the Laplacian]] · [[Conservative Vector Fields]] · [[Line Integrals]]
 
-## Sources
-- Lecture 23; Lecture Notes §8.1.4–8.1.7
+- Derivation: [[MATH2048 VC1 - Scalar and Vector Fields, Gradient and Directional Derivatives]]
+- [[Divergence, Curl and the Laplacian]] · [[Conservative Vector Fields]]

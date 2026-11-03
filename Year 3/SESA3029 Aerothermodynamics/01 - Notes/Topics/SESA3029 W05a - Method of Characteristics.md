@@ -22,40 +22,24 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 > [!note] This note holds §§1–10 (Lectures 3.1–3.2). Boundary conditions, nozzle design, the 3.4 example, the axisymmetric note and the workflow (§§11–17) continue in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]].
 
 > [!abstract] Summary
-> **Steady, homentropic, irrotational, two-dimensional supersonic flow** reduces to two statements along the Mach lines:
->
-> $$R^+=\nu-\theta=\text{const along }C^+\ (\text{inclined at }\theta+\mu),\qquad R^-=\nu+\theta=\text{const along }C^-\ (\text{inclined at }\theta-\mu).$$
->
-> Here $\theta$ is the **flow inclination** to the $x$-axis (no longer a deflection), $\nu$ the Prandtl–Meyer function and $\mu$ the Mach angle.
->
-> - **3.1** derives this from a curved streamtube: mass, $l$-momentum, homentropy and zero vorticity give two PDEs in $u$ and $\theta$. Swapping $u$ for $\nu$ and adding/subtracting turns them into the two **compatibility conditions**. $R^\pm$ are the **Riemann invariants**.
-> - **3.2** gets the same result by diagonalising a $2\times2$ matrix (eigenvalues $\pm\tan\mu$), then builds the **unit process**: two known points give a third, $\nu_P=\tfrac12(R^+_A+R^-_B)$, $\theta_P=\tfrac12(R^-_B-R^+_A)$, located with averaged slopes.
-> - **3.3–3.4** (boundary conditions, the minimum-length nozzle, the generic example and the MoC coursework) continue in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]].
+> Steady, homentropic, irrotational, planar supersonic flow reduces to two statements along the Mach lines: $R^+=\nu-\theta$ is constant along $C^+$ (inclined at $\theta+\mu$) and $R^-=\nu+\theta$ along $C^-$ (inclined at $\theta-\mu$), where $\theta$ is now the flow inclination to the $x$-axis. Lecture 3.1 derives these compatibility conditions from a curved streamtube; Lecture 3.2 gets them again by diagonalising a $2\times2$ system and builds the unit process, which finds a new point from two known ones. Boundary conditions and nozzle design (3.3–3.4) are in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]].
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a 2-D supersonic flow has non-uniform inclination and you know the state at two neighbouring points.
 > - **Assumptions:** steady, **planar**, homentropic, irrotational, $M>1$; $\theta$ is the flow inclination to $x$; IFT values are $\gamma=1.4$ only.
 > - **Method:** 1. Tabulate $R^+=\nu-\theta$ and $R^-=\nu+\theta$ at A (below) and B (above). 2. $\nu_P=\tfrac12(R^+_A+R^-_B)$, $\theta_P=\tfrac12(R^-_B-R^+_A)$. 3. $M_P$ and $\mu_P$ from $\nu_P$. 4. Averaged slopes $\alpha_{AP}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_P]$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B+(\theta-\mu)_P]$. 5. Intersect for $x_P$, $y_P$, then recompute $R^\pm$ at P as a check.
-> - **Common mistakes:** swapping the families (the $C^+$ from the point **below** carries $R^+$); using only the start-point slope instead of the average.
+> - **Common mistakes:** swapping the families (the $C^+$ from the point below carries $R^+$); using only the start-point slope instead of the average.
 > - **Practise:** [[#Worked example (3.2 slide 9)]] · [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]]
 
-## Key concepts
-
-- New: [[Method of Characteristics]] · [[Riemann Invariants]] · [[Homentropic Flow]]
-- From W03: [[Prandtl-Meyer Function]] · [[Mach Waves and Mach Angle]] · [[Expansion Fan]]
-- From W04: [[Isentropic Nozzle Flow]] (SESA2022) and the area–velocity relation, which reappears here in streamtube form
-- Maths: [[Eigenvalues and Eigenvectors]] (MATH1054) · [[Characteristic Equation and Eigenvalues]] (SESA2027)
-- Continues in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]]: [[Minimum-Length Nozzle]]
-
 > [!info] Where this was lectured
-> **Lecture 3.1 was lectured on Fri 16 Oct** (`Lecture 3-1.txt`, Prof. Jae-Wook Kim, 372 lines). 2.6 had announced MoC for Thursday, but Thursday 15 Oct was spent on 2.7 instead (L2-7, ll. 192–203). The lecture covered the whole 3.1 deck:
+> Lecture 3.1 was given on Fri 16 Oct (`Lecture 3-1.txt`, Prof. Jae-Wook Kim, 372 lines). 2.6 had announced MoC for Thursday, but Thursday 15 Oct was spent on 2.7 instead (L2-7, ll. 192–203). The lecture covered the whole 3.1 deck:
 > - admin: Test 2 and the MoC coursework (ll. 3–12, see below);
 > - why a 2D method, and the new meaning of $\theta$ (ll. 13–55);
 > - streamtube geometry (ll. 56–85), mass (ll. 86–123), momentum with homentropy (ll. 124–204), zero vorticity (ll. 205–241);
 > - the switch to $\nu$, the two angle equations (ll. 242–293), adding/subtracting (ll. 294–303);
 > - the directional-derivative argument and the Riemann invariants (ll. 304–368). It ended with *"next week, I'm going to show you how to actually use that one"* (l. 370).
 >
-> **Lecture 3.2 was lectured on Mon 19 Oct** (`Lecture 3-2.txt`, 481 lines, ll. 468–481 are only "bye-bye"). It covered the whole 3.2 deck:
+> Lecture 3.2 was given on Mon 19 Oct (`Lecture 3-2.txt`, 481 lines, ll. 468–481 are only "bye-bye"). It covered the whole 3.2 deck:
 > - admin: Test 2 and the coursework deadline (ll. 1–12);
 > - the eigenvalue route (ll. 13–184), §8;
 > - Mach waves, the zone of silence and the zones of dependence and influence (ll. 185–246), §9;
@@ -66,39 +50,30 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 
 ## Announcements and deadlines
 
-> [!important] Announcements (L3-1, ll. 3–12)
-> - **Blackboard Test 2** opens on the morning of **Mon 19 Oct** and stays open until **Sunday 25 Oct, midnight** (ll. 3–5).
-> - **MoC coursework:** the brief will be announced *"towards the end of next week"*, i.e. by about Fri 23 Oct (l. 6). It is due *"by end of week seven"*. Week 6 is a reading week, *"and then after that, you have one more week"* (ll. 8–11).
-> - Date check: the Week 1 module guide said **15 Nov**. Counting W04 as the week of 12 Oct, the end of week 7 is about **Fri 6 Nov**. The two do not match. L3-2 pointed to 6 Nov (next callout), but **L3-4 gave 15 Nov**, the guide's date ([[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b, announcements]]).
-
-> [!important] Announcements (L3-2, ll. 1–12)
-> - **Test 2 is open**: two attempts, and you can look back at the questions and answers afterwards. It closes **Sunday midnight (25 Oct)** (L3-2, ll. 2–8).
-> - **MoC coursework, 10 % of the module mark**: the brief is to be announced this week, and it is due at the *"end of week seven, which is two weeks as of Friday this week"* (L3-2, ll. 9–12). Two weeks from Fri 23 Oct is Fri 6 Nov. ~~This settles the date in favour of 6 Nov.~~ **Superseded by L3-4: due 15 Nov** (the full brief is in [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]).
+> [!important] Test 2 and the MoC coursework (L3-1, ll. 3–12; L3-2, ll. 1–12)
+> Blackboard Test 2 opened on Monday 19 October and closes at midnight on Sunday 25 October. You get two attempts and can look back at the questions and answers afterwards.
+>
+> The MoC coursework is worth 10% of the module. L3-1 said the brief would come *"towards the end of next week"* and be due *"by end of week seven"*, and L3-2 put that at *"two weeks as of Friday this week"*, which is Friday 6 November. That conflicted with the 15 November in the Week 1 module guide. L3-4 settled it: the deadline is 15 November (full brief in [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]).
 
 ---
 
-## The topic in one physical picture
+Picture supersonic flow as a mesh of Mach lines. Through every point pass two of them, one at $+\mu$ to the local flow ($C^+$, the left-running line) and one at $-\mu$ ($C^-$, the right-running line), and information travels only along these lines, never upstream. A $C^+$ line carries the number $\nu-\theta$ unchanged, and a $C^-$ line carries $\nu+\theta$. Where two lines cross, the two numbers fix both $\nu$ (and so $M$) and $\theta$, so solving the flow is bookkeeping rather than integrating a PDE.
 
-Think of supersonic flow as a mesh of **Mach lines**. Each line carries one number from upstream and never changes it.
-
-1. Through every point pass two Mach lines, one at $+\mu$ to the local flow ($C^+$, the left-running line) and one at $-\mu$ ($C^-$, the right-running line). Information travels only along them; nothing travels upstream.
-2. A $C^+$ line carries $\nu-\theta$ unchanged and a $C^-$ line carries $\nu+\theta$ unchanged. Where two lines cross, the two numbers fix both $\nu$ (hence $M$) and $\theta$. **Solving the flow is bookkeeping**: no PDE has to be integrated.
-3. Two known points therefore give a third, the **unit process**, and the solution marches downstream point by point. What happens where the lines reach walls and the centreline, and how that designs a nozzle, is [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]].
-4. All of this needs $M>1$. Only then do real Mach lines exist to march along; for $M<1$ every point talks to every other.
+Two known points therefore give a third, which is the unit process, and the solution marches downstream point by point. What happens when the lines reach walls and the centreline, and how that is used to design a nozzle, is in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]]. None of this works below $M=1$: only supersonic flow has real Mach lines to march along, and in subsonic flow every point influences every other.
 
 ---
 
 ## 1. Why a two-dimensional method (3.1 slide 2)
 
-The 1D theory of W04 assumes properties are uniform across each section. That is exact only on the centreline. At the wall the velocity must be **tangential to the wall**, so it has a vertical component that 1D theory cannot see (ll. 18–24). Both the direction and the magnitude of the velocity vary across a section, and a rapidly expanding part drops the pressure locally (ll. 24–26). 1D theory also gives the exit area but **no length** (W04 §7, L2-6 ll. 279–291). MoC resolves both $x$ and $y$.
+The 1D theory of W04 assumes properties are uniform across each section. That is exact only on the centreline. At the wall the velocity must be tangential to the wall, so it has a vertical component that 1D theory cannot see (ll. 18–24). Both the direction and the magnitude of the velocity vary across a section, and a rapidly expanding part drops the pressure locally (ll. 24–26). 1D theory also gives the exit area but no length (W04 §7, L2-6 ll. 279–291). MoC resolves both $x$ and $y$.
 
 > [!warning] $\theta$ changes meaning in this chapter (slide 3; ll. 37–55, 85)
-> In Lectures 2.1–2.7, $\theta$ was the **deflection**: how far the flow turned relative to the incoming velocity. In MoC, $\theta$ is the **inclination** of the local velocity to the fixed $x$-axis. A turn through a small angle is now $\Delta\theta$. The lecturer stressed this twice.
+> In Lectures 2.1–2.7, $\theta$ was the deflection: how far the flow turned relative to the incoming velocity. In MoC, $\theta$ is the inclination of the local velocity to the fixed $x$-axis. A turn through a small angle is now $\Delta\theta$. The lecturer stressed this twice.
 
 **Assumptions** (slide 2 and ll. 150–157, 212–216):
 
 - steady and planar (infinite in $z$);
-- inviscid and adiabatic, with **no shocks**, so entropy is constant **everywhere**, not just along each streamline. This is [[Homentropic Flow]];
+- inviscid and adiabatic, with no shocks, so entropy is constant everywhere, not just along each streamline. This is [[Homentropic Flow]];
 - irrotational. The lecture assumes it. The supplementary note (p. 2) justifies it: by Crocco's theorem a steady flow with uniform $s$ and $T_0$ has zero vorticity. The lecturer called the result *"compressible potential flow"* (l. 216).
 
 ---
@@ -139,8 +114,7 @@ $$
 \boxed{\frac{\partial\theta}{\partial n}=\frac{1}{\Delta n}\,\frac{\partial\,\Delta n}{\partial l}}
 $$
 
-> [!tip] What it says
-> If the streamlines fan apart in the $n$-direction ($\partial\theta/\partial n>0$), the streamtube widens along the flow. $\partial\theta/\partial n$ plays the part of $\mathrm dA/A$ per unit length in the 1D nozzle.
+If the streamlines fan apart in the $n$-direction ($\partial\theta/\partial n>0$), the streamtube widens along the flow, so $\partial\theta/\partial n$ plays the part that $\mathrm dA/A$ per unit length played in the 1D nozzle.
 
 ---
 
@@ -182,8 +156,7 @@ $$
 \boxed{\frac{1}{u}\frac{\partial u}{\partial l}+\frac{1}{\rho}\frac{\partial\rho}{\partial l}+\frac{\partial\theta}{\partial n}=0}
 $$
 
-> [!tip] You have done this before
-> This is the bracket expansion of the Laval-nozzle mass balance, $\mathrm d\rho/\rho+\mathrm dU/U+\mathrm dA/A=0$ ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#The lecture's route: a control volume with side walls|W04 §1]]), with the local streamtube height in place of the duct area. The lecturer pointed back to it but named the wrong lecture (see the slips table).
+This is the same bracket expansion as the Laval-nozzle mass balance, $\mathrm d\rho/\rho+\mathrm dU/U+\mathrm dA/A=0$ ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#The lecture's route: a control volume with side walls|W04 §1]]), with the local streamtube height in place of the duct area. The lecturer pointed back to it but named the wrong lecture (see the slips table).
 
 ---
 
@@ -296,8 +269,7 @@ $$
 \boxed{\frac{\partial\theta}{\partial l}-\frac{1}{u}\frac{\partial u}{\partial n}=0}
 $$
 
-> [!note] Why the story does not stop here (ll. 240–248)
-> Two equations, two unknowns, *"so that's very good"*. But both contain the nonlinear $\frac1u\,\partial u/\partial(\cdot)$, and nobody could find a general solution. The way forward came from looking back at Lecture 2.4.
+That gives two equations in two unknowns, *"so that's very good"* (ll. 240–248). But both contain the nonlinear $\frac1u\,\partial u/\partial(\cdot)$, and there is no general solution. The way forward comes from looking back at Lecture 2.4.
 
 ---
 
@@ -383,7 +355,7 @@ $$
 \tag{B}
 $$
 
-Each equation now has **one** unknown combination.
+Each equation now has one unknown combination.
 
 **The bracket is a derivative along a line** (slides 9–10; ll. 306–330). For any function $f(l,n)$,
 
@@ -422,19 +394,18 @@ The lines at $\pm\mu$ to the flow are the **Mach lines**, called the **character
 > [!important] The compatibility conditions (slide 12; ll. 361–367)
 > $$\boxed{R^+=\nu-\theta\ \text{is constant along }C^+,\qquad R^-=\nu+\theta\ \text{is constant along }C^-}$$
 >
-> $R^+$ and $R^-$ are the **[[Riemann Invariants]]**. $C^+$ runs **left** of the flow (upwards for flow to the right), $C^-$ runs **right** of it.
+> $R^+$ and $R^-$ are the [[Riemann Invariants]]. $C^+$ runs left of the flow (upwards for flow to the right), $C^-$ runs right of it.
 >
 > **Anderson's notation** is $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$. The physics is the same; just be consistent. [[SESA3029 Example Sheet 2 - Solutions]] was first written in Anderson's form and now gives both.
 
-> [!tip] Why the lecturer was so pleased (ll. 341–360)
-> Know $\nu-\theta$ at **one** point of an infinitely long $C^+$ line and you know it everywhere on that line. *"You don't have to solve it."* Two crossing lines give both $\nu$ and $\theta$ at the crossing. The PDE has become an initial-value problem marched downstream. Many numerical methods, CFD included, still use characteristics for this reason.
+The lecturer was clearly pleased with this (ll. 341–360). Know $\nu-\theta$ at one point of an infinitely long $C^+$ line and you know it everywhere on that line: *"You don't have to solve it."* Two crossing lines give both $\nu$ and $\theta$ at the crossing, so the PDE has become an initial-value problem marched downstream. Many numerical methods, CFD included, still use characteristics for this reason.
 
 > [!check] The Prandtl–Meyer fan is a special case
-> Uniform flow ($\theta=0$, $\nu=\nu_1$) passes a convex corner on an **upper** wall that turns it up by $\theta_w$. The corner sends out $C^-$ waves. Every $C^+$ line crossing the fan comes from the uniform stream, so $R^+=\nu_1-0$ throughout. After the fan, $\theta=\theta_w$, so $\nu_2-\theta_w=\nu_1$:
+> Uniform flow ($\theta=0$, $\nu=\nu_1$) passes a convex corner on an upper wall that turns it up by $\theta_w$. The corner sends out $C^-$ waves. Every $C^+$ line crossing the fan comes from the uniform stream, so $R^+=\nu_1-0$ throughout. After the fan, $\theta=\theta_w$, so $\nu_2-\theta_w=\nu_1$:
 >
 > $$\nu_2=\nu_1+\theta_w ,$$
 >
-> exactly the W03 result. A region where one invariant is the same everywhere is called a **simple flow region** ([[SESA3029 W05b - Minimum-Length Nozzle Design#12. Nozzles with a straightening section (3.3 slides 8–9)|W05b §12]]).
+> which is the W03 result. A region where one invariant is the same everywhere is called a simple flow region ([[SESA3029 W05b - Minimum-Length Nozzle Design#12. Nozzles with a straightening section (3.3 slides 8–9)|W05b §12]]).
 
 ---
 
@@ -530,11 +501,9 @@ These are (A) and (B) of §7: *"we came to the same conclusions"* (l. 182).
 > - matrix products do not commute, so $\underline E^{-1}$ must go on the **left** of every term (*"you need to be very careful"*, ll. 118–119);
 > - the matrix after the premultiplication is $\underline\Lambda$, not $\underline A$, because $\underline E^{-1}\underline A=\underline\Lambda\,\underline E^{-1}$. A student asked exactly this, and the answer was *"Lambda"* (ll. 156–166).
 
-> [!tip] What the eigenvalues mean
-> - The eigenvalues **are** the characteristic slopes $\Delta n/\Delta l=\pm\tan\mu$ relative to the streamline.
-> - The eigenvectors are just "take the difference" and "take the sum" of $\nu$ and $\theta$.
-> - Real, distinct eigenvalues make the system **hyperbolic**, which needs $M>1$. For $M<1$, $\mu=\sin^{-1}(1/M)$ does not exist. The system is then elliptic, every point influences every other, and marching fails. That is why MoC is a supersonic method.
-> - The supplementary note warns that eigenvectors are defined only up to a scale factor, so a computer package may scale them differently. Any scaling with $\underline E\,\underline E^{-1}=\underline I$ works. Practise on [[SESA3029 Example Sheet 2 - Solutions#Q1. Eigenvalues and left eigenvectors|ES2 Q1]].
+The eigenvalues are the characteristic slopes, $\Delta n/\Delta l=\pm\tan\mu$ relative to the streamline, and the eigenvectors just say "take the difference" and "take the sum" of $\nu$ and $\theta$. Real, distinct eigenvalues make the system hyperbolic, which needs $M>1$. Below $M=1$, $\mu=\sin^{-1}(1/M)$ doesn't exist, the system is elliptic, every point influences every other and marching fails, which is why MoC is a supersonic method.
+
+The supplementary note warns that eigenvectors are only defined up to a scale factor, so a computer package may scale them differently; any scaling with $\underline E\,\underline E^{-1}=\underline I$ works. Practise on [[SESA3029 Example Sheet 2 - Solutions#Q1. Eigenvalues and left eigenvectors|ES2 Q1]].
 
 ---
 
@@ -554,27 +523,22 @@ $$
 
 **Zones** (slide 6, panel 1 of the figure; ll. 232–246). The two characteristics through a point P divide the plane:
 
-- **zone of influence**: the wedge **downstream** between the $C^+$ and $C^-$ leaving P. P can affect only events there;
-- **zone of dependence**: the wedge **upstream** between the $C^+$ and $C^-$ arriving at P. The state at P depends only on events there. *"Nothing in here or there do anything for P"* (l. 246).
+- **zone of influence**: the wedge downstream between the $C^+$ and $C^-$ leaving P. P can affect only events there;
+- **zone of dependence**: the wedge upstream between the $C^+$ and $C^-$ arriving at P. The state at P depends only on events there. *"Nothing in here or there do anything for P"* (l. 246).
 
 This is the Mach-cone idea from W02 applied to every point of the flow. The lecturer started from the listener (ll. 232–239). Ahead of the cone, a supersonic source heading towards you is *"absolute silence"* until the cone sweeps over you. That region is the **zone of silence**, and the inside of the cone is the zone of influence.
 
 ![[at_moc_supersonic_source.png|900]]
 
-> [!tip] The reversed Taylor Swift song (ll. 215–224), and what else you would hear
-> The lecturer's aside: a supersonic speaker playing a song passes you, and *"you are going to hear a Taylor Swift song in reverse order"*, because the latest pulse reaches you first.
->
-> That is right for part of the song. The arrival time of a pulse emitted at $t_e$ is $t_a=t_e+r(t_e)/a$, where $r$ is its distance to you. While the source closes on you along your line of sight faster than $a$, a later pulse arrives **earlier**. Those pulses are heard backwards.
->
-> The order flips at the emission point E, where that closing speed equals $a$. That is where the line from the source to you makes $\cos^{-1}(1/M)=90^\circ-\mu$ with the flight path. E's pulse arrives first, and that is the boom.
->
-> After the boom, $t_a(t_e)$ has two branches (panel 2). So you hear the earlier part of the song **backwards and the later part forwards, at the same time**. For $M=2$ at miss distance $d$, the boom arrives $0.866\,d/a$ after the source passes overhead, which matches the cone geometry: $d/\tan30^\circ$ divided by $U=2a$. A source flying straight at you closes faster than $a$ throughout its approach, so that case is reversed for the whole approach.
+The lecturer's aside (ll. 215–224) was that if a supersonic speaker playing a song passes you, *"you are going to hear a Taylor Swift song in reverse order"*, because the latest pulse reaches you first. That's right for part of the song. A pulse emitted at $t_e$ arrives at $t_a=t_e+r(t_e)/a$, where $r$ is its distance from you, so while the source is closing on you along your line of sight faster than $a$, a later pulse arrives earlier and you hear those pulses backwards.
+
+The order flips at the emission point E where that closing speed equals $a$, which is where the line from the source to you makes $\cos^{-1}(1/M)=90^\circ-\mu$ with the flight path. E's pulse arrives first, and that's the boom. After it, $t_a(t_e)$ has two branches (panel 2), so you hear the earlier part of the song backwards and the later part forwards, at the same time. For $M=2$ at miss distance $d$, the boom arrives $0.866\,d/a$ after the source passes overhead, which matches the cone geometry: $d/\tan30^\circ$ divided by $U=2a$. A source flying straight at you closes faster than $a$ the whole way in, so in that case the entire approach is heard in reverse.
 
 ---
 
 ## 10. The unit process (3.2 slides 7–9)
 
-**Flow state** (slide 7; L3-2, ll. 263–277). Let A and B be known points, with A **below** (its $C^+$ reaches P) and B **above** (its $C^-$ reaches P). The invariants carry over unchanged:
+**Flow state** (slide 7; L3-2, ll. 263–277). Let A and B be known points, with A below (its $C^+$ reaches P) and B above (its $C^-$ reaches P). The invariants carry over unchanged:
 
 $$
 \nu_P-\theta_P=R^+_A=\nu_A-\theta_A,
@@ -598,7 +562,7 @@ $$
 \boxed{\theta_P=\frac{R^-_B-R^+_A}{2}}
 $$
 
-Then $M_P$ comes from $\nu_P$ (IFT), and $\mu_P=\sin^{-1}(1/M_P)$. The solution has been **marched downstream**: *"simple as that"* (l. 277).
+Then $M_P$ comes from $\nu_P$ (IFT), and $\mu_P=\sin^{-1}(1/M_P)$. The solution has been marched downstream: *"simple as that"* (l. 277).
 
 **Two numbers fix everything** (ll. 249–261, 278–287). The IFT row found from $\nu_P$ gives $M_P$, and with it $p/p_0$, $\rho/\rho_0$ and $T/T_0$. $\theta_P$ then splits the velocity into $u=V\cos\theta$ and $v=V\sin\theta$. The lecturer's illustration was $\nu_P\approx8.4^\circ\Rightarrow M\approx1.38$ (ll. 283–284).
 
@@ -611,10 +575,9 @@ Then $M_P$ comes from $\nu_P$ (IFT), and $\mu_P=\sin^{-1}(1/M_P)$. The solution 
 
 In the slide 9 example (panel 1), $\mu$ falls from $45.58^\circ$ at point 2 to $35.94^\circ$ at point 3. So $\theta+\mu$ on the $C^+$ falls from $45.58^\circ$ to $44.87^\circ$, even though $\theta$ rises by $8.94^\circ$. That is why the location step averages the two ends.
 
-> [!tip] In planar flow the states do not need the geometry
-> $\nu_P$ and $\theta_P$ depend only on $R^\pm$, never on $x$ or $y$. You can fill in the whole flow-state table first and find the coordinates afterwards. Lecture 3.4 does the entire example symbolically without a single coordinate. This decoupling fails for axisymmetric nozzles (§16).
+In planar flow $\nu_P$ and $\theta_P$ depend only on $R^\pm$, never on $x$ or $y$, so you can fill in the whole flow-state table first and find the coordinates afterwards. Lecture 3.4 does its entire example without a single coordinate. This decoupling fails for axisymmetric nozzles (§16).
 
-**Location** (slide 8; supplementary note eqs. 14–16; L3-2, ll. 320–351). The characteristics are curved, so use the **average** of their slopes at the two ends:
+**Location** (slide 8; supplementary note eqs. 14–16; L3-2, ll. 320–351). The characteristics are curved, so use the average of their slopes at the two ends:
 
 $$
 \alpha_{AP}=\tfrac12\left[(\theta+\mu)_A+(\theta+\mu)_P\right],
@@ -692,7 +655,7 @@ $$
 > - $\mu_2=45.5847^\circ$ (l. 421) and $\mu_1=38.6821^\circ$ (l. 427; $38.6822^\circ$ to four decimals);
 > - $\nu_3=17.9237^\circ$ (l. 435), then $M_3$ *"about 1.7 something"* from the nearest table row (ll. 441–449). The IFT has $\nu(1.70)=17.81^\circ$ and $\nu(1.71)=18.10^\circ$, and interpolating gives the slide's $1.7039$.
 >
-> $\theta_3$ was never finished aloud (l. 436, see the slips). **The coordinates were set as homework**: *"So this is your whole mark. See if the coordinate of 0.3 is this value … search this one and confirm it"* (ll. 453–459). "Whole mark" is Whisper's rendering of "homework", and "0.3" of "point 3". Steps 5–8 above are the solution.
+> $\theta_3$ was never finished aloud (l. 436, see the slips). The coordinates were set as homework: *"So this is your whole mark. See if the coordinate of 0.3 is this value … search this one and confirm it"* (ll. 453–459). "Whole mark" is Whisper's rendering of "homework", and "0.3" of "point 3". Steps 5–8 above are the solution.
 
 > [!warning] Set the calculator to degrees (ll. 411–421)
 > The first answer for $\mu_2=\sin^{-1}(1/1.4)$ from the class was $0.795$. That is the angle in **radians** ($0.7956$ rad $=45.58^\circ$). Every MoC angle, including the IFT's $\nu$ column, is in degrees, so one radian value poisons the whole table.
@@ -704,10 +667,9 @@ $$
 3. March downstream to the crossing points and get $\nu$ and $\theta$ there.
 4. Get $M$ from $\nu$, then $\mu=\sin^{-1}(1/M)$.
 5. Get the angles $\alpha$, then the coordinates of the new points.
-6. Repeat, applying the wall and symmetry **boundary conditions** where the lines reach a boundary (§11).
+6. Repeat, applying the wall and symmetry boundary conditions where the lines reach a boundary (§11).
 
-> [!info] Putting it all together
-> The complete hand-calculation procedure, with the boundary conditions and the final checks, is the problem-solving workflow in [[SESA3029 W05b - Minimum-Length Nozzle Design#17. Problem-solving workflow|W05b §17]].
+The complete hand-calculation procedure, with the boundary conditions and the final checks, is the problem-solving workflow in [[SESA3029 W05b - Minimum-Length Nozzle Design#17. Problem-solving workflow|W05b §17]].
 
 ---
 
@@ -779,7 +741,7 @@ This note uses the course's own words. Textbooks (Anderson in particular), other
 - Maths: [[Eigenvalues and Eigenvectors]] · [[Characteristic Equation and Eigenvalues]]
 - Worked sheet: [[SESA3029 Example Sheet 2 - Solutions]] (Q1–Q2; Q3 also needs the boundary conditions of W05b)
 - Formulae: [[SESA3029 Formula Sheet#Method of characteristics (Lectures 3.1–3.4)|Formula sheet: MoC]]
-- **Builds on / connects to** (cross-module):
+- Other modules:
   - [[SESA3043 2.1 - Complex Functions and Conformal Mapping|SESA3043 2.1]] and [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Why the derivative is u − iv (derivation)|SESA3043 1.3 §3]]: steady 2-D irrotational flow is a pair of first-order PDEs in both modules. Subsonically (incompressible in SESA3043) the pair is the Cauchy–Riemann equations: the system is elliptic, has no real characteristics, and its general solution is any analytic $\Phi(z)$. Supersonically (here) the eigenvalues $\pm\tan\mu$ of [[#8. The eigenvalue route (3.2 slides 2–4)|§8]] are real, the system is hyperbolic, and the compatibility conditions $\mathrm d(\nu\mp\theta)=0$ along $C^\pm$ take the place of Cauchy–Riemann. The two modules ask the same question and get opposite answers.
   - [[SESA3043 1.2b - Potential-Flow Review|SESA3043 1.2b]]: Laplace's equation, the incompressible limit, where every point influences every other (contrast the zones of dependence of [[#9. Zones of dependence and influence (3.2 slides 5–6)|§9]]).
 
@@ -795,11 +757,10 @@ This note uses the course's own words. Textbooks (Anderson in particular), other
 
 ## Self-study tasks
 
-> [!todo] How to use this list
-> - Tasks citing `L3-1` or `L3-2` were set or worked in the lectures of Fri 16 and Mon 19 Oct. The formal homework was the point 3 coordinates (L3-2, l. 456), plus two "check in your own time" derivations (L3-1, l. 114; L3-2, l. 349).
-> - The rest are *suggested, not lecturer-set*. Tasks on the boundary conditions, nozzle design, the 3.4 example and the coursework are in [[SESA3029 W05b - Minimum-Length Nozzle Design#Self-study tasks|W05b]].
->
-> Deadlines: **Test 2 closes Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). The **MoC coursework** (10 %) is due **Sun 15 Nov** (L3-4, ll. 415–418), not the 6 Nov of L3-2 (see [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|the W05b announcements]]).
+- Tasks citing `L3-1` or `L3-2` were set or worked in the lectures of Fri 16 and Mon 19 Oct. The formal homework was the point 3 coordinates (L3-2, l. 456), plus two "check in your own time" derivations (L3-1, l. 114; L3-2, l. 349).
+- The rest are *suggested, not lecturer-set*. Tasks on the boundary conditions, nozzle design, the 3.4 example and the coursework are in [[SESA3029 W05b - Minimum-Length Nozzle Design#Self-study tasks|W05b]].
+
+Deadlines: Test 2 closes Sun 25 Oct, midnight (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). The MoC coursework (10 %) is due Sun 15 Nov (L3-4, ll. 415–418), not the 6 Nov of L3-2 (see [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|the W05b announcements]]).
 
 ### Core
 

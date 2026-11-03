@@ -13,37 +13,13 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf", "02 - Sources/Lectures/Lecture
 
 # Slip Line
 
-## Definition
+A **slip line** (contact discontinuity) is a streamline across which pressure and flow direction are continuous, but velocity, temperature, density and entropy can jump. No mass crosses it.
 
-> [!note] Definition
-> A **slip line** (contact discontinuity) is a streamline across which **pressure and flow direction are continuous** but velocity, temperature, density and entropy may jump. No mass crosses it.
+The two continuity conditions come from force balance and kinematics. A pressure difference across a massless interface would accelerate it without limit, so the pressures must match. If the flow directions differed, the two streams would either overlap or pull apart, so they must be parallel. Nothing forces the speeds to be equal in inviscid flow; in a real flow viscosity smears the jump into a shear layer.
 
-## Explanation
+Slip lines turn up behind the triple point of a [[Mach Reflection]], downstream of two crossing shocks (in the Lecture 2.3 example at $M=3$ with $18^\circ$ and $12^\circ$ walls, the slip line is inclined at $\Delta\theta=5.83^\circ$), behind the trailing edge of an aerofoil in [[Shock-Expansion Theory]], and at the edge of a free jet, where $p=p_\infty$ ([[Over- and Under-Expanded Jets]]).
 
-The two conditions come from force balance and kinematics:
-
-- a pressure difference across a massless interface would accelerate it without limit, so the pressures must match;
-- if the directions differed, the streams would overlap or separate, so they must be parallel.
-
-Nothing requires equal speeds in inviscid flow. Physically, viscosity smears the jump into a shear layer.
-
-**Where slip lines appear:**
-
-- behind the triple point of a [[Mach Reflection]];
-- after two shocks cross, at the shock–shock interaction ($\Delta\theta=5.83^\circ$ for the Lecture 2.3 example at $M=3$, $18^\circ$ and $12^\circ$);
-- behind the trailing edge of an aerofoil in the [[Shock-Expansion Theory]];
-- at the edge of a free jet, where $p=p_\infty$ ([[Over- and Under-Expanded Jets]]).
-
-**Wave reflection.**
-
-| Boundary | Incident wave | Reflected wave |
-|---|---|---|
-| solid wall | shock | shock |
-| solid wall | fan | fan |
-| **constant-pressure** slip line (free jet edge) | shock | **fan** |
-| **constant-pressure** slip line (free jet edge) | fan | **compression** |
-
-The last two rows are the origin of shock diamonds.
+A constant-pressure slip line such as a jet edge reflects waves the opposite way to a solid wall. A wall reflects a shock as a shock and a fan as a fan, because it fixes the flow direction. A free boundary fixes the pressure instead, so it reflects a shock as a fan and a fan as a compression. That swap is what produces shock diamonds in a jet.
 
 ## Related
 

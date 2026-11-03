@@ -3,43 +3,29 @@ title: "Kepler's Laws"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Mission Analysis"
-aliases: ["Kepler's laws of planetary motion", "Kepler 1", "Kepler 2", "Kepler 3", "orbital period"]
+aliases: ["Kepler's laws of planetary motion", "Kepler 1", "Kepler 2", "Kepler 3", "orbital period", "mean motion"]
 tags: [sesa2024, concept, orbital-mechanics]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 02 - Kepler's Laws and the Orbit Equation]]"]
 related_concepts: ["[[Orbit Equation and Conic Sections]]", "[[Orbital Angular Momentum]]", "[[Vis-Viva Equation]]"]
-sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Keplers Laws and the ellipse equation_2025-26_V5.pdf"]
+sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Keplers Laws and the ellipse equation_2025-26_V5.pdf", "Fortescue, Stark and Swinerd, Spacecraft Systems Engineering, Ch. 4"]
 ---
 
 # Kepler's Laws
 
-## Definition
+Kepler's three laws say that an orbit is an ellipse with the central body at one focus, that the radius line sweeps out equal areas in equal times, and that the square of the period is proportional to the cube of the semi-major axis.
 
-> [!note] Definition
-> 1. **Ellipse law (1609)**: each orbit is an ellipse with the central body at one **focus**.
-> 2. **Area law (1609)**: the radius vector sweeps **equal areas in equal times**, so $\dot A = h/2$ is constant.
-> 3. **Harmonic law (1619)**: $\tau^2\propto a^3$. Precisely:
->
-> $$\tau = 2\pi\sqrt{\frac{a^3}{\mu}},\qquad\mu = GM$$
+Kepler fitted them to Tycho Brahe's naked-eye planetary data between 1609 and 1619 without any physical explanation. Newton later derived all three from $F=ma$ and inverse-square gravity, and they hold for any two-body orbit, a satellite around the Earth as much as a planet around the Sun.
 
-## Explanation
-- They are empirical (from Tycho Brahe's data). Newton (1687) showed they follow from an **inverse-square** central force.
-- Law 1 comes from the radial equation of motion, $u''+u = \mu/h^2$.
-- Law 2 comes from conservation of angular momentum (a central force exerts no torque).
-- Law 3 comes from area ÷ area rate: $\tau = \pi ab/(h/2)$ with $h^2 = \mu a(1-e^2)$.
-- **$\tau$ depends only on $a$**. Orbits with the same $a$ have the same period whatever $e$ is.
-- Consequence of law 2: fastest at periapsis, slowest at apoapsis ($r_pV_p = r_aV_a$).
-- Constants: $\mu_E$ = 398 600 km³/s²; $\mu_{Sun}$ = 1.327 × 10¹¹ km³/s².
+Each law corresponds to one result of the derivation. The first is the orbit equation $r=(h^2/\mu)/(1+e\cos\theta)$, which matches the polar ellipse $r=a(1-e^2)/(1+e\cos\theta)$ when $a(1-e^2)=h^2/\mu$. The second is conservation of angular momentum: the area rate is $\dot A=\tfrac12r^2\dot\theta=h/2$, a constant, so a body moves fastest near periapsis. The third comes from dividing the ellipse area $\pi ab$ by $h/2$:
 
-## Examples
-- GEO: $\tau$ = 86 164 s gives $a$ = 42 164 km.
-- ISS at 6780 km: 15.55 orbits/day.
-- 700 / 800 / 900 km: $\tau$ = 5926 / 6052 / 6179 s.
-- Ratio form (2024/25 B1): 6 asteroid orbits per 5 Earth orbits gives $a = (5/6)^{2/3}$ AU = 0.886 AU.
-- A smaller orbit is faster in angular terms: RemoveDebris pulls ahead of the ISS.
+$$
+\tau=2\pi\sqrt{\frac{a^3}{\mu}},\qquad n=\frac{2\pi}{\tau}=\sqrt{\frac{\mu}{a^3}}.
+$$
+
+The period depends only on $a$ and $\mu$, not on $e$. That makes the third law the most used result in the module: the GEO radius from the sidereal day (42 164 km), orbits per day for a LEO satellite (about 15 to 16), a planet's year, and the transfer time of a Hohmann ellipse. Used as a ratio between two bodies orbiting the same centre, $a_2/a_1=(\tau_2/\tau_1)^{2/3}$, it needs no $\mu$ at all.
 
 ## Related
-- [[Orbit Equation and Conic Sections]] · [[Orbital Angular Momentum]] · [[Vis-Viva Equation]]
 
-## Sources
-- Chapter 5 Lectures 1–3
+- [[SESA2024 02 - Kepler's Laws and the Orbit Equation#6. Kepler's third law and the period|Derivation of the third law]] · [[SESA2024 02 - Kepler's Laws and the Orbit Equation#Worked examples|Worked examples]]
+- [[Orbit Equation and Conic Sections]] · [[Orbital Angular Momentum]] · [[Vis-Viva Equation]]

@@ -13,34 +13,27 @@ sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Source
 
 # Compressible Navier-Stokes Conservation Form
 
-## Compact form
+The compressible Navier–Stokes equations can be packed into one vector equation,
 
 $$
 \boxed{
 \frac{\partial\mathbf Q}{\partial t}
 +\frac{\partial\mathbf F_j}{\partial x_j}=\mathbf S
-}.
+},
 $$
 
-The **conservation variables** (CH1-2 slide 75; often called conserved variables or the state vector) are
+where the **conservation variables** (CH1-2 slide 75; elsewhere called conserved variables or the state vector) are
 
 $$
 \mathbf Q=[\rho,\rho u,\rho v,\rho w,\rho E_T]^T.
 $$
 
-The fluxes contain advection, pressure work, viscous stresses and heat conduction. Sources contain body-force contributions.
+The fluxes $\mathbf F_j$ carry advection, pressure work, viscous stresses and heat conduction, and the source $\mathbf S$ holds the body-force terms.
 
-## Closure
+The five equations govern mass, the three momentum components and total energy. The primitive variables are $\rho,u,v,w,p$ and a thermal variable, so an equation of state and a caloric relation are needed to close the system.
 
-The five conservation equations determine mass, three momentum components and total energy. Primitive variables include $\rho,u,v,w,p$ and a thermal variable. An equation of state and a caloric relation close the system.
-
-## Why the conservation form matters
-
-- it preserves the integral conservation law under discretisation;
-- it gives the correct weak solution across discontinuities such as shocks;
-- it is the standard starting point for finite-volume CFD.
+Writing the equations this way matters numerically. Discretising the conservation form keeps the integral conservation law exact, gives the correct weak solution across discontinuities such as shocks, and is the usual starting point for finite-volume CFD.
 
 ## Related
 
 - [[Navier-Stokes Equations]] · [[Incompressible Navier-Stokes Equations]]
-

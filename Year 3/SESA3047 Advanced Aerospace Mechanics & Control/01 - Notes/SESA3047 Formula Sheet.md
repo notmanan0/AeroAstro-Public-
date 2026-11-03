@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3047 formulae", "Advanced Mechanics and Control formula sheet"]
 tags: [sesa3047, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–4; Chapter 4 lectured in full in L11–L13 (to Thu 22 Oct); Eqs. 4.25, 4.31 and 4.38–4.40 from the handout only"
-sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt"]
+coverage: "Chapters 1–5; Chapter 4 lectured in full in L11–L13; Chapter 5 §§5.1–5.2 and the gravity terms of §5.3 lectured in L14 (Mon 2 Nov), the rest of Chapter 5 from the handout ahead of lectures"
+sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt"]
 ---
 
 # SESA3047 Formula Sheet
 
-Current coverage: **Chapters 1–4**. Chapter 4 is lectured in full across L11 (Mon 19 Oct) and L12–L13 (Thu 22 Oct). A few handout-only pieces are marked where they appear.
+Current coverage: **Chapters 1–5**. Chapter 4 is lectured in full across L11 (Mon 19 Oct) and L12–L13 (Thu 22 Oct). Chapter 5 is partly lectured (L14, Mon 2 Nov); its later sections are written ahead from the handout and marked. A few handout-only pieces are marked where they appear. The lecturer will put the official exam formula sheet on Blackboard in mid-November (L14 ll. 11–16).
 
 ## Control-system notation
 
@@ -396,6 +396,103 @@ $$
 
 Four groups, twelve states (*"6 states for the dynamics, and 6 states for the kinematics"*, L13 ll. 339–340); evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
 
+## State-space form and linearisation (Chapter 5 §§5.1–5.2)
+
+Lectured in L14 (Mon 2 Nov).
+
+$$
+\dot{\mathbf x}=\mathbf A\mathbf x+\mathbf B\mathbf u,\qquad\mathbf y=\mathbf C\mathbf x+\mathbf D\mathbf u,
+$$
+
+with $\mathbf x$: $n\times1$, $\mathbf u$: $m\times1$, $\mathbf y$: $p\times1$; state matrix $\mathbf A$: $n\times n$, control matrix $\mathbf B$: $n\times m$, output matrix $\mathbf C$: $p\times n$, feedforward matrix $\mathbf D$: $p\times m$. In this module $\mathbf C=\mathbf I$ unless stated and $\mathbf D$ is not used (L14 ll. 157–161).
+
+Linearising: $x=x_0+\epsilon x_1$ about an equilibrium; keep $\epsilon^1$, drop $\epsilon^2$; the $\epsilon^0$ terms must be the equilibrium and cancel. Example: $\sin(x_0+\epsilon x_1)\approx\epsilon x_1\cos x_0$ when $\sin x_0=0$ ($y=x$ about 0, $y=-(x-\pi)$ about $\pi$).
+
+About $(U,V,W)=(U_\infty,0,0)$, $(p,q,r)=(0,0,0)$, constant $m$, rigid symmetric aircraft ($J_{xy}=J_{yz}=0$), no internal rotors:
+
+$$
+X_1=m\dot u_1,\qquad Y_1=m(\dot v_1+r_1U_\infty),\qquad Z_1=m(\dot w_1-q_1U_\infty),\qquad(5.7)
+$$
+
+$$
+L_1=J_{xx}\dot p_1-J_{xz}\dot r_1,\qquad M_1=J_{yy}\dot q_1,\qquad N_1=-J_{xz}\dot p_1+J_{zz}\dot r_1.\qquad(5.8)
+$$
+
+A product survives at first order only if one factor has a non-zero equilibrium value. An internal rotor $\mathbf h_r$ adds first-order $\boldsymbol\omega_1\times\mathbf h_r$ terms to Eq. 5.8.
+
+## Longitudinal state-space model (Chapter 5 §5.3)
+
+Gravity (lectured L14), trim climb angle $\gamma_0$, pitch perturbation $\theta_1$, $x$ along $U_\infty$ at trim, radians:
+
+$$
+X_{g1}=-mg\,\theta_1\cos\gamma_0,\qquad Z_{g1}=-mg\,\theta_1\sin\gamma_0.\qquad(5.15)
+$$
+
+Aerodynamics (handout; not yet lectured), ring = dimensional, $\mathring X_q=\mathring X_{\dot w}=0$, no control terms:
+
+$$
+\Delta X_a=\mathring X_uu+\mathring X_ww,\quad\Delta Z_a=\mathring Z_uu+\mathring Z_ww+\mathring Z_qq+\mathring Z_{\dot w}\dot w,\quad\Delta M_a=\mathring M_uu+\mathring M_ww+\mathring M_qq+\mathring M_{\dot w}\dot w.\qquad(5.16)
+$$
+
+With $\dot\theta=q$ and $\mathbf x=[u,w,q,\theta]^T$:
+
+$$
+\begin{bmatrix}m&0&0&0\\0&m-\mathring Z_{\dot w}&0&0\\0&-\mathring M_{\dot w}&J_{yy}&0\\0&0&0&1\end{bmatrix}\dot{\mathbf x}
+=\begin{bmatrix}\mathring X_u&\mathring X_w&0&-mg\cos\gamma_0\\\mathring Z_u&\mathring Z_w&\mathring Z_q+mU_\infty&-mg\sin\gamma_0\\\mathring M_u&\mathring M_w&\mathring M_q&0\\0&0&1&0\end{bmatrix}\mathbf x,\qquad(5.18)
+$$
+
+i.e. $\mathbf E\dot{\mathbf x}=\mathbf A'\mathbf x$, so $\mathbf A=\mathbf E^{-1}\mathbf A'$.
+
+Dimensional derivatives (appendix): force $\times\tfrac12\rho U_\infty^2S$, moment $\times\tfrac12\rho U_\infty^2Sc$, then divide by $U_\infty$ ($u,w$), $U_\infty/c$ ($q$) or $U_\infty^2/c$ ($\dot w$):
+
+$$
+\mathring Z_u=Z_u\tfrac12\rho U_\infty S,\quad\mathring Z_q=Z_q\tfrac12\rho U_\infty Sc,\quad\mathring Z_{\dot w}=Z_{\dot w}\tfrac12\rho Sc,
+$$
+
+$$
+\mathring M_u=M_u\tfrac12\rho U_\infty Sc,\quad\mathring M_q=M_q\tfrac12\rho U_\infty Sc^2,\quad\mathring M_{\dot w}=M_{\dot w}\tfrac12\rho Sc^2.\qquad(5.51\text{–}5.56)
+$$
+
+Lateral (Practice problem 3, level trim): $\mathbf x=[v,p,r,\phi]^T$, $m\dot v=\mathring Y_vv+\mathring Y_pp+(\mathring Y_r-mU_\infty)r+mg\phi$, $\dot\phi=p$, and the $L$, $N$ rows of Eq. 5.8 equal to $\mathring L_vv+\mathring L_pp+\mathring L_rr$ and $\mathring N_vv+\mathring N_pp+\mathring N_rr$.
+
+## Building state-space models (Chapter 5 §§5.4–5.6)
+
+Handout; not yet lectured.
+
+- **Second-order ODEs:** each variable and its rate are states. Satellite (Lab 2), $\mathbf x=[\theta_2,\dot\theta_2,\theta_1,\dot\theta_1]^T$, $u=T_c$, $y=\theta_2$:
+
+$$
+\mathbf A=\begin{bmatrix}0&1&0&0\\-k/J_2&-b/J_2&k/J_2&b/J_2\\0&0&0&1\\k/J_1&b/J_1&-k/J_1&-b/J_1\end{bmatrix},\quad\mathbf B=\begin{bmatrix}0\\0\\0\\1/J_1\end{bmatrix},\quad\mathbf C=\begin{bmatrix}1&0&0&0\end{bmatrix},
+$$
+
+$$
+\frac{\Theta_2}{T_c}=\frac{bs+k}{s^2\big[J_1J_2s^2+(J_1+J_2)(bs+k)\big]}.
+$$
+
+- **Transfer function** $N(s)/D(s)$, strictly proper, $D=s^n+a_{n-1}s^{n-1}+\dots+a_0$, $N=b_{n-1}s^{n-1}+\dots+b_0$: states $v,\dot v,\dots$ with $D(s)V=U$;
+
+$$
+\mathbf A=\begin{bmatrix}0&1&\cdots&0\\\vdots&&\ddots&\vdots\\0&0&\cdots&1\\-a_0&-a_1&\cdots&-a_{n-1}\end{bmatrix},\quad\mathbf B=\begin{bmatrix}0\\\vdots\\0\\1\end{bmatrix},\quad\mathbf C=\begin{bmatrix}b_0&b_1&\cdots&b_{n-1}\end{bmatrix}.
+$$
+
+- **Block diagram:** one state per first-order block, $b/(s+a)\Rightarrow\dot x=-ax+b\,(\text{block input})$; replace internal signals ($u_1=K_1(r_1-y_1)$, $y_1=x_1+x_2$) by states and references.
+
+## Time-domain solution and stability (Chapter 5 §5.7)
+
+Handout; not yet lectured.
+
+$$
+\mathbf x(t)=e^{\mathbf At}\mathbf x_0,\qquad e^{\mathbf At}=\mathbf I+\mathbf At+\frac{(\mathbf At)^2}{2!}+\cdots\quad(\text{not element-wise}).
+$$
+
+If $\mathbf A=\mathbf V\boldsymbol\Lambda\mathbf V^{-1}$ (diagonalisable, e.g. distinct eigenvalues):
+
+$$
+\mathbf x(t)=\mathbf Ve^{\boldsymbol\Lambda t}\mathbf V^{-1}\mathbf x_0=\sum_ic_ie^{\lambda_it}\mathbf v_i.\qquad(5.47)
+$$
+
+Asymptotically stable $\iff$ all $\operatorname{Re}\lambda_i<0$; unstable if any $\operatorname{Re}\lambda_i>0$; simple eigenvalues on the imaginary axis are marginal, repeated defective ones (e.g. the satellite's double zero) unstable. For $2\times2$: $\lambda^2-(\operatorname{tr}\mathbf A)\lambda+\det\mathbf A=0$; stable $\iff\operatorname{tr}\mathbf A<0$ and $\det\mathbf A>0$. Poles of $\mathbf C(s\mathbf I-\mathbf A)^{-1}\mathbf B$ are eigenvalues of $\mathbf A$.
+
 ## Related
 
 - [[SESA3047 1.1 - Dynamic Systems and Control Architectures]]
@@ -406,7 +503,11 @@ Four groups, twelve states (*"6 states for the dynamics, and 6 states for the ki
 - [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames]]
 - [[SESA3047 3.3 - Rigid-Body Rotational Dynamics]]
 
-
 - [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]]
 - [[SESA3047 4.2 - Translational Dynamics]]
 - [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]]
+
+- [[SESA3047 5.1 - State-Space Form and Linearisation]]
+- [[SESA3047 5.2 - Longitudinal State-Space Model]]
+- [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams]]
+- [[SESA3047 5.4 - Time-Domain Solution and Stability]]

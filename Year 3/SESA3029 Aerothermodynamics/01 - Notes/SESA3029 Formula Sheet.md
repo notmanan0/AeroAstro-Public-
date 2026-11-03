@@ -5,17 +5,17 @@ type: formula
 aliases: ["SESA3029 formulae", "Aerothermodynamics formula sheet"]
 tags: [sesa3029, formula, exam-prep]
 status: in-progress
-coverage: "Week 1, Lectures 2.1–2.7, 3.1–3.4"
+coverage: "Week 1, Lectures 2.1–2.7, 3.1–3.4, 4.1 (4.2–4.6 written ahead)"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1, Lectures 2.1–2.7 and 3.1–3.4** (all lectured; 3.4 on Fri 23 Oct). This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1** (all lectured; 4.1 on Mon 2 Nov), plus **4.2–4.6 written ahead** from the slides. This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Which relation? Given → choose → check
 
-The official sheet gives equations, not the decisions between them. These are the recurring forks.
+The official sheet gives equations, not the decisions between them. This table lists the choices that come up repeatedly.
 
 | Given | Choose | Check |
 |---|---|---|
@@ -28,6 +28,8 @@ The official sheet gives equations, not the decisions between them. These are th
 | Nozzle exit pressure $p_e$ vs ambient $p_\infty$ (supersonic exit) | $p_e<p_\infty$: over-expanded, oblique lip shocks. $p_e>p_\infty$: under-expanded, lip fans. Equal: design | Lip-shock $M_{n1}$ relation; lip-fan $\nu(M_j)-\nu(M_e)$ |
 | MoC point P from A (below) and B (above) | Along the $C^+$ from A carry $R^+_A=\nu-\theta$; along the $C^-$ from B carry $R^-_B=\nu+\theta$ | Recompute $R^\pm$ from $\nu_P,\theta_P$; slopes use **averaged** $\theta\pm\mu$ |
 | MoC point on a wall or the centreline | Wall: the one arriving invariant plus $\theta_W$. Centreline: $\theta_P=0$ plus the arriving $R^-$ | A wall reflects only if $\theta_A\neq\theta_W$ |
+| Thin aerofoil, subsonic $M_\infty$, incompressible $C_{p0}$ or $C_{l0}$ known | Prandtl–Glauert: divide by $\sqrt{1-M_\infty^2}$ (Kármán–Tsien if asked) | $M_\infty$ below about 0.8 and below $M_{crit}$ ([[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation\|W07b]]) |
+| Thin aerofoil, supersonic, small angles, "linear" or "Ackeret" | $C_p=2\theta/\lambda$ face by face; $C_l=4\alpha/\lambda$ | Radians; $\theta$ from $\vec U_\infty$, + for compression. "Exact" means shock-expansion instead ([[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]]) |
 
 ## Mach number and gas properties
 
@@ -400,6 +402,66 @@ Reading the exit Mach number off the maximum slope at a **sharp** expansion corn
 
 Bookkeeping rule (L3-3, ll. 32–36): any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.
 
+## Euler equations and compressible aerofoils (Lectures 4.1–4.6)
+
+4.1 lectured (Mon 2 Nov); 4.2–4.6 written ahead from the slides ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|W07a]], [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]], [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]]).
+
+2D Euler equations (inviscid, no heat conduction, unit span; perfect gas):
+
+$$
+\frac{\partial\mathbf Q}{\partial t}+\frac{\partial\mathbf F}{\partial x}+\frac{\partial\mathbf G}{\partial y}=\mathbf 0,\quad
+\mathbf Q=\begin{bmatrix}\rho\\ \rho u\\ \rho v\\ \rho e_t\end{bmatrix},\
+\mathbf F=\begin{bmatrix}\rho u\\ \rho u^2+p\\ \rho uv\\ (\rho e_t+p)u\end{bmatrix},\
+\mathbf G=\begin{bmatrix}\rho v\\ \rho uv\\ \rho v^2+p\\ (\rho e_t+p)v\end{bmatrix},\quad
+e_t=c_vT+\tfrac12(u^2+v^2).
+$$
+
+The letters $\mathbf Q,\mathbf F,\mathbf G$ are shorthand, not the slides'. Slide 12 prints the energy flux as $\rho u(e_t+p)$, a slip for $(\rho e_t+p)u$.
+
+Linearised compressible potential equation and pressure coefficient (steady, isentropic, irrotational, thin body, $u',v'\ll U_\infty$; not near $M_\infty=1$, not hypersonic; $\phi$ is the **perturbation** potential, $u'=\phi_x$, $v'=\phi_y$):
+
+$$
+(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0,\qquad C_p=-\frac{2u'}{U_\infty},\qquad a^2=a_\infty^2-(\gamma-1)u'U_\infty .
+$$
+
+Prandtl–Glauert (subsonic; the course says $M_\infty<0.8$; same aerofoil, $\beta=\sqrt{1-M_\infty^2}$, $\phi_0=\beta\phi$, $y_0=\beta y$):
+
+$$
+C_p=\frac{C_{p0}}{\sqrt{1-M_\infty^2}},\qquad C_l=\frac{C_{l0}}{\sqrt{1-M_\infty^2}},\qquad C_m=\frac{C_{m0}}{\sqrt{1-M_\infty^2}}\quad(\text{flat plate: }C_{l0}=2\pi\alpha).
+$$
+
+Kármán–Tsien:
+
+$$
+C_p=\frac{C_{p0}}{\sqrt{1-M_\infty^2}+\dfrac{M_\infty^2}{1+\sqrt{1-M_\infty^2}}\dfrac{C_{p0}}{2}} .
+$$
+
+Critical Mach number (isentropic flow to the surface; the sonic point taken at $C_{p0,min}$):
+
+$$
+\frac{C_{p0,min}}{\sqrt{1-M_{crit}^2}}=C_{p,cr}=\frac{2}{\gamma M_{crit}^2}\left[\left(\frac{1+\frac{\gamma-1}{2}M_{crit}^2}{1+\frac{\gamma-1}{2}}\right)^{\gamma/(\gamma-1)}-1\right].
+$$
+
+$C_{p0,min}=-0.4$, $\gamma=1.4$: $M_{crit}=0.747$ (P–G), $0.733$ (K–T). $-1.0$: 0.606, 0.585. $-2.5$ (ES2 Q6): 0.448 (P–G).
+
+Ackeret (supersonic; the course says $M_\infty>1.2$; $\lambda=\sqrt{M_\infty^2-1}$; angles in **radians**; $\theta$ from $\vec U_\infty$, + for compression):
+
+$$
+u'=-\frac{v'}{\lambda}\ (\text{upper}),\qquad C_p=\frac{2\theta}{\sqrt{M_\infty^2-1}} .
+$$
+
+Thin aerofoil $y_{u,l}=\pm h+y_c-\alpha x$, with $\theta_u=y_u'$, $\theta_l=-y_l'$, and $h=y_c=0$ at LE and TE:
+
+$$
+C_l=\frac{4\alpha}{\sqrt{M_\infty^2-1}},\qquad
+C_d=\frac{4}{\sqrt{M_\infty^2-1}}\left[\alpha^2+\frac1c\int_0^c h'^2\,\mathrm dx+\frac1c\int_0^c y_c'^2\,\mathrm dx\right].
+$$
+
+Flat plate: $C_d=4\alpha^2/\lambda$, $x_{cp}=c/2$. Diamond (thickest at $c/2$, the minimum-drag symmetric section): $C_d=\frac4\lambda[\alpha^2+(t/c)^2]$; $(L/D)_{max}=c/(2t)$ at $\alpha=t/c$, for any $M_\infty$. Biconvex: thickness term $\tfrac43(t/c)^2$.
+
+$M_\infty=2$, $\alpha=10^\circ$ flat plate: Ackeret $C_l=0.4031$, $C_d=0.0703$; shock-expansion $0.4075$, $0.0719$.
+
+Wing sweep (simple sweep theory): the section sees $M_\infty\cos\Lambda$, with $\Lambda$ the leading-edge sweep (the slide writes $\beta$).
 
 ## What the exam formula sheet gives you
 
@@ -428,5 +490,8 @@ The official `Aerothermodynamics Formula Sheet.pdf` (3 pages, filed on 6 Oct) is
 - [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]
 - [[SESA3029 W05a - Method of Characteristics]]
 - [[SESA3029 W05b - Minimum-Length Nozzle Design]]
+- [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils]]
+- [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]]
+- [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]]
 - [[SESA3029 Aerothermodynamics Hub]]
 

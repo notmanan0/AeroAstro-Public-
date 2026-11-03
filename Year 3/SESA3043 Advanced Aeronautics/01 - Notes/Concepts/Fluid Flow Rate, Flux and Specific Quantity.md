@@ -13,17 +13,13 @@ sources: ["02 - Sources/Lectures/L1 - SESA3043.txt"]
 
 # Fluid Flow Rate, Flux and Specific Quantity
 
-## Definitions
-
-- **Specific quantity** $b$: amount of an extensive property $B$ per unit mass, $b=B/m$.
-- **Flux**: transport rate per unit area.
-- **Flow rate**: flux integrated over a finite surface.
-
-For surface normal $\mathbf n$,
+A **specific quantity** $b$ is the amount of an extensive property $B$ per unit mass, $b=B/m$. A **flux** is a transport rate per unit area, and a **flow rate** is a flux integrated over a finite surface. For a surface with unit normal $\mathbf n$,
 
 $$
-\dot B=\int_A\rho b(\mathbf u\cdot\mathbf n)\,\mathrm dA.
+\dot B=\int_A\rho b(\mathbf u\cdot\mathbf n)\,\mathrm dA,
 $$
+
+and the sign comes from $u_n=\mathbf u\cdot\mathbf n$, positive outward through the oriented surface.
 
 | Property | $b$ | Advective flux |
 |---|---|---|
@@ -31,9 +27,6 @@ $$
 | Momentum | $\mathbf u$ | $\rho\mathbf u u_n$ |
 | Total energy | $E_T$ | $\rho E_Tu_n$ |
 
-The sign comes from $u_n=\mathbf u\cdot\mathbf n$: positive is outward through the oriented surface.
-
 ## Related
 
 - [[Mass Flow Rate]] · [[Momentum Flux]] · [[Reynolds Transport Theorem]]
-

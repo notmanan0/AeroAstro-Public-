@@ -3,7 +3,7 @@ title: "Shrink Fit Superposition"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, shrink-fit]
-status: complete
+status: lectured
 ---
 
 # Shrink Fit Superposition
@@ -19,9 +19,10 @@ The resulting hoop stress jumps at the interface because the two materials occup
 
 Service pressure can then be superposed while the response remains elastic and the interface remains in contact.
 
-![Shrink-fit residual stress](../Figures/structures_shrink_fit_residual_stress.png)
+![[structures_shrink_fit_residual_stress.png|700]]
 
 The design purpose is to replace dangerous tensile bore stress with beneficial residual compression.
 
-See [[SESA2028 S10 - Thick Cylinders and Shrink Fits]].
+## Related
 
+- Topic: [[SESA2028 S10 - Thick Cylinders and Shrink Fits|S10]]

@@ -8,34 +8,18 @@ tags: [math2048, concept, pdes]
 status: complete
 parent_lectures: ["[[MATH2048 PDE1 - Classification of PDEs and the Wave Equation]]", "[[MATH2048 PDE2 - Separation of Variables for the Wave Equation]]"]
 related_concepts: ["[[Separation of Variables]]", "[[PDE Classification]]", "[[Natural Frequencies and Mode Shapes]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture14_Hyperbolic1.pdf", "02 - Sources/Lectures & Problem Sheets/PDEs/Lecture16_Hyperbolic3.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture14_Hyperbolic1.pdf", "02 - Sources/Lectures & Problem Sheets/PDEs/Lecture16_Hyperbolic3.pdf", "02 - Sources/Lectures/MATH2048 Lecture 14.txt", "02 - Sources/Lectures/MATH2048 Lecture 15.txt", "02 - Sources/Lectures/MATH2048 Lecture 16.txt"]
 ---
 
 # Wave Equation
 
-## Definition
+The one-dimensional **wave equation** $y_{tt}=c^2y_{xx}$ is the prototype hyperbolic PDE. For a string of tension $T$ and mass per unit length $\rho$, Newton's second law on a short piece gives $c=\sqrt{T/\rho}$, the speed at which waves travel along it.
 
-> [!note] Definition
->
-> $$y_{tt}=c^2y_{xx},\qquad c=\sqrt{T/\rho}\ \text{(string under tension }T\text{, with mass per unit length }\rho).$$
+Dimensionally $c$ must be a speed, and a pulse splits into two halves moving left and right at that speed. On a finite string, separation of variables gives standing waves. With fixed ends the modes are $\sin\frac{n\pi x}L$, each oscillating at $\frac{n\pi c}L$, so the frequencies are integer multiples of a fundamental; with free (Neumann) ends they are $\cos\frac{n\pi x}L$, plus a constant mode whose time part $Gt+H$ lets the whole string drift. Each standing mode is two equal travelling waves, since $\sin kx\cos kct=\frac12[\sin k(x-ct)+\sin k(x+ct)]$.
 
-## Explanation
-- **Derivation**: apply Newton's second law to a string element. For small slopes the net vertical force is $T[y_x]_x^{x+\Delta x}$, which gives the equation above ([[MATH2048 PDE1 - Classification of PDEs and the Wave Equation|PDE1]]).
-- **Infinite string**: d'Alembert's solution $y=f(x+ct)+g(x-ct)$ is a pair of travelling waves.
-- **Fixed ends** at $x=0$ and $L$:
-
-$$y=\sum_{n\ge1}\big[C_n\cos\omega_nt+D_n\sin\omega_nt\big]\sin\frac{n\pi x}{L},\qquad\omega_n=\frac{n\pi c}{L}.$$
-
-  The frequencies are harmonics, $\omega_n=n\omega_1$.
-- **Initial data**: $C_n$ are the sine coefficients of $y(x,0)$. $D_n$ are the sine coefficients of $y_t(x,0)$, divided by $\omega_n$.
-- **Damped version** (2025/26 exam): $u_{tt}+2\kappa u_t=u_{xx}$. The time ODE becomes $\ddot T+2\kappa\dot T+n^2T=0$, which is under-damped for $n>\kappa$. Its solution is $e^{-\kappa t}\big[\cos\big(\sqrt{n^2-\kappa^2}\,t\big)+\dots\big]$.
-
-## Examples
-- Plucked string: $C_n=\dfrac{8h}{n^2\pi^2}\sin\dfrac{n\pi}2$ (PS6 Q1).
-- The mode shapes $\sin\frac{n\pi x}L$ are the continuous analogue of structural mode shapes in SESA2029: [[Natural Frequencies and Mode Shapes]].
+The equation needs two initial conditions, the displacement and the velocity, which fix the cosine and sine coefficients of each mode through half-range Fourier series. Nothing damps the modes, so the motion goes on for ever. Adding damping, $u_{tt}+2\gamma u_t=u_{xx}$ (the 2025/26 exam), changes only the time equation, and each mode then decays as $e^{-\gamma t}$ while oscillating at $\sqrt{n^2-\gamma^2}$.
 
 ## Related
-- [[Separation of Variables]] · [[PDE Classification]] · [[ODE Eigenvalue Problems]]
 
-## Sources
-- Lectures 14–16; PS6
+- [[MATH2048 PDE1 - Classification of PDEs and the Wave Equation]] · [[MATH2048 PDE2 - Separation of Variables for the Wave Equation]]
+- [[Separation of Variables]] · [[PDE Classification]] · [[Half-Range Expansions]]

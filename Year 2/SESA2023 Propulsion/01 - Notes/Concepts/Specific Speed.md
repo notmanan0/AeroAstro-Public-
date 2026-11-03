@@ -10,35 +10,25 @@ parent_lectures: ["[[SESA2023 W09 - Turbomachinery Characteristics - Coefficient
 related_concepts: ["[[Dimensional Analysis of Turbomachines]]", "[[Flow and Work Coefficients]]"]
 sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf"]
 ---
+
 # Specific Speed
 
-## Definition
+The **specific speed** is a combination of $\phi$ and $\psi$ that eliminates the size $D$, so it can be worked out from the duty ($Q$, $\Delta p$, $\Omega$) before the machine is designed:
 
-> [!note] Definition
-> A combination of $\phi$ and $\psi$ that **eliminates the size $D$**, so it can be evaluated from the duty ($Q$, $\Delta p$, $\Omega$) before the machine is designed:
->
-> $$N_s = \frac{\phi^{1/2}}{\psi^{3/4}} = \frac{Q^{1/2}\,\Omega}{(\Delta p/\rho)^{3/4}}\quad(\Omega\text{ in rad/s, SI units})$$
+$$
+N_s = \frac{\phi^{1/2}}{\psi^{3/4}} = \frac{Q^{1/2}\,\Omega}{(\Delta p/\rho)^{3/4}}\quad(\Omega\text{ in rad/s, SI units}).
+$$
 
-## Explanation
-- It is better called a **shape factor**: each machine type has its best efficiency at a particular $N_s$.
-- **Low $N_s$**: low flow and high head (low $\phi$, high $\psi$), which needs positive-displacement or **centrifugal/radial** machines with short blades and a large radius ratio. Example: a vacuum-cleaner fan.
-- **High $N_s$**: high flow and low head (high $\phi$, low $\psi$), which needs **axial** machines and propellers with few, long, widely spaced blades. Example: a windmill or propeller.
-- **Rough bands**:
+It is better thought of as a shape factor, because each type of machine has its best efficiency at a particular $N_s$. A low specific speed means low flow and high head (low $\phi$, high $\psi$), which calls for positive-displacement or centrifugal machines with short blades and a large radius ratio, such as a vacuum-cleaner fan. A high specific speed means high flow and low head, which calls for axial machines and propellers with a few long, widely spaced blades, such as a windmill. For compressible machines use the inlet volume flow, since $Q$ changes through the machine.
 
-  | $N_s$ | Machine |
-  |---|---|
-  | < 0.4 | centrifugal |
-  | ~0.4–2 | mixed flow |
-  | > 2 | axial |
+| $N_s$ | Machine |
+|---|---|
+| < 0.4 | centrifugal |
+| ~0.4–2 | mixed flow |
+| > 2 | axial |
 
-- **Compressible machines**: use the **inlet** volume flow, since $Q$ changes through the machine.
-- **Why aero engines are axial**: best efficiency at high mass flow per frontal area, and stages can be stacked to reach high pressure ratio at acceptable weight. Small helicopter engines use centrifugal stages (lower $N_s$), at the cost of losses between stages.
-- **Legacy question** (2015-16 Q1(i)), radial vs axial compressors:
-  - Radial: about 10:1 per stage, robust, short, tolerant of damage, but a large diameter and inter-stage losses.
-  - Axial: under 2:1 per stage but stackable, small frontal area, higher efficiency at high flow, but fragile and more costly.
+Aero engines are axial because axial machines give the best efficiency at high mass flow per frontal area, and their stages can be stacked to reach a high pressure ratio at an acceptable weight; small helicopter engines use centrifugal stages instead, at a lower $N_s$, accepting the losses between stages. The legacy question comparing the two (2015-16 Q1(i)) expects the radial compressor's roughly 10:1 per stage, robustness, short length and damage tolerance against its large diameter and inter-stage losses, and the axial compressor's under 2:1 per stage, stackability, small frontal area and higher efficiency at high flow against its fragility and cost.
 
 ## Related
-- [[Dimensional Analysis of Turbomachines]] · [[Flow and Work Coefficients]]
 
-## Sources
-- Week 9 handout §9.4; Lectures 25–26
+- [[Dimensional Analysis of Turbomachines]] · [[Flow and Work Coefficients]]

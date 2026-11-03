@@ -11,36 +11,28 @@ tags:
   - modal-analysis
   - workflow
 aliases: ["APDL wing shell model", "SHELL181 wing", "Wing modal APDL"]
-date: 2026-09-24
-status: complete
+date: 2026-10-30
+status: lectured
 parent: ["[[SESA2029 Digital Aerospace Methods Hub]]"]
 prerequisites: ["[[SESA2029 C1 - ANSYS Mechanical APDL Scripting Fundamentals]]", "[[SESA2029 B6 - 2D and 3D Elements]]", "[[SESA2029 B8 - Modal Analysis]]"]
 next_topics: ["[[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]"]
 key_concepts: ["[[Plate, Shell and Membrane Elements]]", "[[Natural Frequencies and Mode Shapes]]", "[[Stress Concentration Factor and Factor of Safety]]"]
 tutorial_sheets: []
-sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: SHELL181, SHELL281"]
+sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: SHELL181, SHELL281", "02 - Sources/Lectures/SESA2029 Lecture Computer lab3_Wing_Analysis Video.txt", "02 - Sources/Lectures/SESA2029 Lecture 2026-02-27 - 0959.txt (lab 3 briefing)", "02 - Sources/Lectures/SESA2029 Lecture 2026-03-06 - 0958.txt (lab 3 questions)"]
 ---
 
 # SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)
 
 > [!abstract] Summary
-> A uniform, untapered wing is modelled as a thin **shell skin**:
-> - an aerofoil section of splines at the root is extruded along the span;
-> - it is meshed with **SHELL181** (4-node linear) or **SHELL281** (8-node quadratic);
-> - it is clamped at the root and loaded with different upper and lower surface pressures (net lift).
->
-> The **static** run gives the tip deflection and the von Mises stress on the TOP and BOT shell surfaces, and hence the **FoS**. `ASUM` gives the skin area, and area × thickness × density gives the **mass**. The **modal** run (Block Lanczos) gives the first natural frequencies and mode shapes: bending, then torsion.
->
-> Two geometry routes:
-> - **A**: area → copy → skin (`AL`, `AGEN`, `ASKIN`);
-> - **B**: drag the section lines along a spanwise path (`ADRAG`). This one is automation-friendly because it tags upper and lower skins as components.
->
-> Units: **SI (m, N, Pa, kg/m³)**. Values are illustrative.
+> Lab 3 models a uniform, untapered wing as a thin shell: an aerofoil section is copied or dragged along the span, skinned, meshed with SHELL181 (four-node, linear) or SHELL281 (eight-node, quadratic), clamped at the root and loaded with a lower pressure on the upper surface than on the lower one. The static run gives the tip deflection, the von Mises stress on the top and bottom shell surfaces and the factor of safety, and the skin area times thickness times density gives the mass; the modal run (Block Lanczos) gives the first natural frequencies and mode shapes. The coursework compares the two shell elements, varies the skin thickness and finds the minimum thickness for other materials. Units here are SI; values are illustrative.
 
-## Key Concepts
-- [[Plate, Shell and Membrane Elements]] · [[Natural Frequencies and Mode Shapes]] · [[Stress Concentration Factor and Factor of Safety]] · [[Stress Singularities]]
+> [!summary]- Exam use: quick path
+> - **Use it when:** setting up lab 3 or interpreting its static and modal results.
+> - **Assumptions:** linear elastic, thin skin ($t\ll$ chord), clamped root.
+> - **Method:** 1. Section splines, copy or drag, skin. 2. SHELL181 or SHELL281 with a shell section thickness; define density. 3. Clamp all nodes at $z=0$. 4. `SFA` pressures on upper and lower areas; check their direction. 5. Static: deflection, stress, FoS, mass; modal: `MODOPT,LANB`, frequencies and shapes.
+> - **Common mistakes:** pressures acting the wrong way; reading convergence at the singular root corner.
+> - **Practise:** [[#6. Studies and what to expect]]
 
----
 
 ## 1. Parameters and common set-up
 ```apdl
@@ -86,7 +78,7 @@ ASKIN,1,6               ! skin patches between matching root/tip lines -> areas 
 ASKIN,2,7
 ASKIN,3,8
 ASKIN,4,9
-ASKIN,5,10              ! areas 3-6 = upper skin, area 7 = lower skin
+ASKIN,5,10              ! as in the lab video: areas 4-6 = upper skin, areas 3 and 7 = lower skin
 ! ADELE,1,2             ! optional: delete root/tip caps for an open skin (keep them as end ribs otherwise)
 ESIZE,mesh_size
 AMESH,ALL
@@ -125,7 +117,7 @@ ANTYPE,STATIC
 NSEL,S,LOC,Z,0
 D,ALL,ALL,0                     ! clamped root
 ALLSEL,ALL
-! method A:  ASEL,S,AREA,,3,6 $ SFA,ALL,1,PRES,p_top $ ASEL,S,AREA,,7 $ SFA,ALL,1,PRES,p_bot
+! method A:  ASEL,S,AREA,,4,6 $ SFA,ALL,1,PRES,p_top $ ASEL,S,AREA,,3 $ ASEL,A,AREA,,7 $ SFA,ALL,1,PRES,p_bot
 CMSEL,S,UPPER_AREAS             ! method B
 SFA,ALL,1,PRES,p_top
 CMSEL,S,LOWER_AREAS
@@ -194,9 +186,9 @@ SET,LIST                        ! table of natural frequencies
 FINISH
 ```
 
-**Interpreting the modes**:
-- mode 1 is usually **first flap-wise bending**;
-- then in-plane (chord-wise) bending and/or **first torsion**;
+Interpreting the modes:
+- mode 1 is usually first flap-wise bending;
+- then in-plane (chord-wise) bending and/or first torsion;
 - then second bending.
 
 The mode-shape amplitudes and modal "stresses" are relative only ([[Natural Frequencies and Mode Shapes]]).
@@ -204,16 +196,24 @@ The mode-shape amplitudes and modal "stresses" are relative only ([[Natural Freq
 ## 6. Studies and what to expect
 | Study | Change | Expected trend |
 |---|---|---|
-| Element type × mesh | SHELL181 vs 281, `mesh_size` halved each run | 281 converges faster for bending and curvature; linear shells need finer meshes; stresses at the clamped root corners may **not** converge (singularity) |
+| Element type × mesh | SHELL181 vs 281, `mesh_size` halved each run | 281 converges faster for bending and curvature; linear shells need finer meshes; stresses at the clamped root corners may not converge (singularity) |
 | Skin thickness | `skin_t` sweep | stress ∝ ≈1/t (bending: $\sigma\sim M/t$ per unit width), so FoS rises and mass rises ∝ t: the weight–safety trade-off |
-| Material | $E$, $\rho$, $\sigma_Y$ for aluminium, steel, CFRP | find the **minimum thickness** meeting a FoS target (e.g. 1.5), then compare masses: specific strength $\sigma_Y/\rho$ decides |
+| Material | $E$, $\rho$, $\sigma_Y$ for aluminium, steel, CFRP | find the minimum thickness meeting a FoS target (e.g. 1.5), then compare masses: specific strength $\sigma_Y/\rho$ decides |
 | Frequencies | thickness, material | $f\propto\sqrt{K/M}$. For uniform skin thickening, $K$ and $M$ both scale with $t$, so the bending frequency stays nearly constant; $E/\rho$ (specific stiffness) sets $f$ |
 
 > [!warning] Four wing-specific traps
-> 1. **Pressure direction**: `SFA` pressure acts along the area's normal. If the wing deflects the wrong way, flip the signs of `p_top`/`p_bot` or reverse the normals. Turn on pressure symbols (*PlotCtrls → Symbols*) to see the arrows.
-> 2. **Root stress singularity**: the clamped edge meets a sharp change at the root. Peak stress there **rises with refinement**, so assess convergence and FoS slightly outboard ([[Stress Singularities]]).
-> 3. **Trailing-edge elements**: the thin, sharp trailing edge creates high-aspect-ratio or warped elements. Check the element shapes, or switch to SHELL281 ([[FE Element Quality Checks]]).
-> 4. **No density, no modes**: `MP,DENS` is mandatory for modal analysis.
+> 1. Pressure direction: `SFA` pressure acts along the area's normal. If the wing deflects the wrong way, flip the signs of `p_top`/`p_bot` or reverse the normals. Turn on pressure symbols (*PlotCtrls → Symbols*) to see the arrows.
+> 2. Root stress singularity: the clamped edge meets a sharp change at the root. Peak stress there rises with refinement, so assess convergence and FoS slightly outboard ([[Stress Singularities]]).
+> 3. Trailing-edge elements: the thin, sharp trailing edge creates high-aspect-ratio or warped elements. Check the element shapes, or switch to SHELL281 ([[FE Element Quality Checks]]).
+> 4. No density, no modes: `MP,DENS` is mandatory for modal analysis.
+
+## What the lab 3 video does
+
+The video's wing is a model-aeroplane wing in imperial units (ll. 1–82): low-density polyethylene with $E=38\times10^3$ psi, $\nu=0.3$ and density $8.3\times10^{-5}$ (needed for the modal analysis), read in from `wing.inp`. The element is SHELL181 with a single-layer shell section of thickness 0.1 (the layup menu exists because the element also handles composites). The root area is copied 10 in along $z$, and the skin is built by skinning between matching lines (1–8, 2–9, 3–10, 4–6, 5–7). A global element size of 0.25 is meshed and saved as a `.db`, all nodes at $z=0$ are fixed, and the pressures are 0.02 psi on the upper areas 4, 5 and 6 and 0.07 psi on the lower areas 3 and 7. The plot labels DMX and SMX give the maximum deflection and von Mises stress; repeating with smaller elements gives the stress convergence study. For the modal analysis the saved mesh is resumed, the root re-fixed, Block Lanczos selected and five modes extracted, read one at a time from the results summary and animated, with a mesh convergence study on the first five frequencies.
+
+The coursework version differs: its aerofoil file is in SI units, unlike the millimetre units of labs 1 and 2, and its span comes from the student ID (2026-02-27 09:59, ll. 355–370). The area for the mass can be estimated as two rectangular plates or found exactly with Preprocessor → Modeling → Operate → Calculate Geometry Items (ll. 366–395).
+
+Questions raised in the final week (2026-03-06 09:58, ll. 301–360) are covered in the traps below: stress rising with refinement at the sharp root corner, crashes from too many DOF or distorted trailing-edge elements, pressures acting the wrong way, jobs that will not reopen (start with a new job name and resume the `.db`), and modal runs with no frequencies because the density is missing. Method A below uses the video's area numbering: areas 4–6 upper, 3 and 7 lower.
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)]] · Next: [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]
@@ -223,3 +223,16 @@ The mode-shape amplitudes and modal "stresses" are relative only ([[Natural Freq
 ## Sources
 - Own APDL wing scripts, generalised (span, thickness and file names made generic)
 - ANSYS Element Reference (SHELL181, SHELL281); Command Reference (ADRAG, ASKIN, MODOPT, MXPAND)
+
+## Self-study tasks
+
+### Core
+
+- [ ] Coursework task 1: SHELL181 against SHELL281, accuracy and cost (2026-02-27 09:59, ll. 341–405). → [[#6. Studies and what to expect]]
+- [ ] Task 2: skin thickness against FoS, stress and weight. → [[#4. Post-processing: deflection, stress, FoS, mass]]
+- [ ] Task 3: minimum skin thickness for the same FoS with another material, and its weight. → [[#6. Studies and what to expect]]
+- [ ] Modal: first five modes and their convergence (lab 3 video, ll. 61–82). → [[#5. Modal solution]]
+
+### Further practice
+
+- [ ] Run a free–free modal check on the wing before trusting it. → [[SESA2029 C6 - APDL Workflow - FE Model Verification Checks]]

@@ -4,7 +4,7 @@ module: "SESA2028 Aerospace Materials & Structures"
 type: tutorial-solution
 stream: "Materials"
 tags: [sesa2028, materials, tutorial, fatigue, paris-law, miners-rule]
-status: complete
+status: lectured
 parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 topics: ["[[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing]]", "[[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics]]"]
 sources: ["02 - Sources/SESA2028 green coursework book.pdf (MT2, p.27)"]
@@ -31,15 +31,15 @@ $$
 - Start from S-N (HCF, Basquin) or $\varepsilon$-N (LCF, Coffin-Manson) curves measured on smooth specimens. They give $N_i$, the life at each stress or strain level.
 - Break the service history into blocks (rainflow counting). Block $i$ has $n_i$ cycles and uses the fraction $n_i/N_i$ of the life.
 - Failure is predicted when $\sum n_i/N_i=1$.
-- It predicts **initiation + growth** in a nominally defect-free component, and is dominated by initiation. So it is very sensitive to surface finish, mean stress (Goodman) and environment, and effectively **designs against crack initiation**.
+- It predicts initiation + growth in a nominally defect-free component, and is dominated by initiation. So it is very sensitive to surface finish, mean stress (Goodman) and environment, and effectively designs against crack initiation.
 - Assumes linear, sequence-independent damage.
 
 **Damage-tolerant approach using the Paris law**
 
-- **Assumes a crack already exists** (found by NDT, or the largest that could be missed) and calculates how many cycles it takes to grow to the critical size.
+- Assumes a crack already exists (found by NDT, or the largest that could be missed) and calculates how many cycles it takes to grow to the critical size.
 - $da/dN=A(\Delta K)^m$ with $\Delta K=Q\Delta\sigma\sqrt{\pi a}$, integrated from $a_i$ to $a_c$ (from $K_{Ic}$).
 - Needs $a_i$ (size and position), $\Delta\sigma$, $\sigma_{max}$, $K_{Ic}$, $A$, $m$ and $Q$.
-- **Designs against growth**, and sets **inspection intervals** (typically at half the predicted life).
+- Designs against growth, and sets inspection intervals (typically at half the predicted life).
 
 **Contrast:** Miner/S-N suits parts that must not crack, or cannot be inspected. Paris suits inspectable structures that tolerate defects (airframes, pressure vessels, discs). See [[Total Life vs Damage Tolerance]].
 
@@ -81,7 +81,7 @@ $$
 - Miner assumes each cycle type uses up life independently and linearly, and that order does not matter.
 - Here high-strain LCF came first, which is usually *more* damaging than Miner predicts.
 - The LCF and HCF laws are empirical fits, and flutter amplitude is uncertain.
-- So apply a safety factor of 2: allow about **250 further stop-starts**, then inspect the blade root (NDT) or retire it.
+- So apply a safety factor of 2: allow about 250 further stop-starts, then inspect the blade root (NDT) or retire it.
 
 ![[Figures/materials_fatigue_miner_budget.png]]
 
@@ -113,7 +113,7 @@ $$
 N_f=\frac{10.87-62.87}{(-0.75)(1.58\times10^{-10})(4.556\times10^8)}=\frac{-52.00}{-0.05399}=\boxed{963\ \text{cycles}}.
 $$
 
-**Recommendation.** With a safety factor of 2, allow about **480 pressurisation cycles**, then re-inspect. Crack growth is fastest near $a_c$, so re-inspect well before the end of life.
+**Recommendation.** With a safety factor of 2, allow about 480 pressurisation cycles, then re-inspect. Crack growth is fastest near $a_c$, so re-inspect well before the end of life.
 
 **Assumptions to state:** $Q$ is constant as the crack deepens (in reality it changes as the crack approaches the back face; the plate thickness is not given, and $a_c=41.5$ mm may exceed it, so a leak or net-section yield could come first). $A$ and $m$ are from lab data. There is no environmental or temperature effect, and no Stage I growth.
 
@@ -147,7 +147,7 @@ $$
 =\boxed{2.80\times10^6\ \text{cycles}}.
 $$
 
-The lecturer quotes 2,801,904 cycles, from $a_c$ rounded to 0.0448 m. Carrying full precision gives 2,795,265; both are fine. **Recommend** re-inspection at about $1.4\times10^6$ cycles (SF 2).
+The lecturer quotes 2,801,904 cycles, from rounding the denominator to $9.6\times10^{-6}$. Carrying full precision gives 2,795,265; both are fine. Recommend re-inspection at about $1.4\times10^6$ cycles (SF 2).
 
 ---
 
@@ -172,9 +172,9 @@ $$
 
 | $A$ | Denominator $(-0.25)A(9.862\times10^6)$ | $N_f$ | With SF 2 |
 |---|---:|---:|---:|
-| $2.67\times10^{-11}$ (Green Book) | $-6.583\times10^{-5}$ | **25,450 revolutions** | ~12,700 |
-| $2.67\times10^{-10}$ (2016-17 exam) | $-6.583\times10^{-4}$ | **2,545 revolutions** | ~1,270 |
+| $2.67\times10^{-11}$ (Green Book) | $-6.583\times10^{-5}$ | 25,450 revolutions | ~12,700 |
+| $2.67\times10^{-10}$ (2016-17 exam) | $-6.583\times10^{-4}$ | 2,545 revolutions | ~1,270 |
 
-**Reasoning.** One major cycle per revolution, so the life in revolutions equals $N_f$. For a mixer running at, say, 60 rpm, 2,545 revolutions is only about 42 minutes. So in practice this shaft should be **replaced immediately**, and the cause fixed: the unbalanced blades (the source of the rotating-bending cycle), and the surface condition at the crack origin.
+**Reasoning.** One major cycle per revolution, so the life in revolutions equals $N_f$. For a mixer running at, say, 60 rpm, 2,545 revolutions is only about 42 minutes. So in practice this shaft should be replaced immediately, and the cause fixed: the unbalanced blades (the source of the rotating-bending cycle), and the surface condition at the crack origin.
 
 A factor of 10 in $A$ gives a factor of 10 in life, which shows how sensitive the prediction is to the measured Paris constants.

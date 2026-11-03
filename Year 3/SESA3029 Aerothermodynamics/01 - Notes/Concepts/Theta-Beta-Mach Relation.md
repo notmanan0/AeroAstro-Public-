@@ -13,33 +13,25 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 
 # Theta-Beta-Mach Relation
 
-## Formula
+The $\theta$–$\beta$–$M$ relation links the flow deflection $\theta$ and the shock angle $\beta$, both measured from $\mathbf V_1$, for an oblique shock at upstream Mach number $M_1$:
 
 $$
 \boxed{\tan\theta=2\cot\beta\left[\frac{M_1^2\sin^2\beta-1}{M_1^2\left(\gamma+\cos2\beta\right)+2}\right]}
 $$
 
-$\theta$ is the flow deflection and $\beta$ the shock angle, both measured from $\mathbf V_1$.
+## Where it comes from
 
-## Derivation route
+The tangential velocity is the same on both sides, so the velocity triangles give $\tan\beta=U_{n1}/U_t$ and $\tan(\beta-\theta)=U_{n2}/U_t$. Dividing, $U_{n1}/U_{n2}=\tan\beta/\tan(\beta-\theta)$. Mass conservation says $U_{n1}/U_{n2}=\rho_2/\rho_1$, and the density jump at $M_{n1}=M_1\sin\beta$ then gives
 
-1. From the velocity triangles: $\tan\beta=U_{n1}/U_t$ and $\tan(\beta-\theta)=U_{n2}/U_t$, using $U_{t1}=U_{t2}$.
-2. Divide: $U_{n1}/U_{n2}=\tan\beta/\tan(\beta-\theta)$.
-3. Mass: $U_{n1}/U_{n2}=\rho_2/\rho_1$. Insert the density jump at $M_{n1}=M_1\sin\beta$:
+$$\frac{\tan\beta}{\tan(\beta-\theta)}=\frac{(\gamma+1)M_1^2\sin^2\beta}{2+(\gamma-1)M_1^2\sin^2\beta}.$$
 
-   $$\frac{\tan\beta}{\tan(\beta-\theta)}=\frac{(\gamma+1)M_1^2\sin^2\beta}{2+(\gamma-1)M_1^2\sin^2\beta}.$$
+Expanding $\tan(\beta-\theta)=(\tan\beta-\tan\theta)/(1+\tan\beta\tan\theta)$, collecting the $\tan\theta$ terms and using $(\gamma-1)\sin^2\beta+(\gamma+1)\cos^2\beta=\gamma+\cos2\beta$ gives the boxed form. The step-by-step algebra is in [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#5. The θ–β–M relation, step by step|W02 §5]].
 
-4. Expand $\tan(\beta-\theta)=(\tan\beta-\tan\theta)/(1+\tan\beta\tan\theta)$, collect the $\tan\theta$ terms, and use $(\gamma-1)\sin^2\beta+(\gamma+1)\cos^2\beta=\gamma+\cos2\beta$.
+## Reading it
 
-Step-by-step algebra and figure: [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#5. The θ–β–M relation, step by step|W02 §5]].
+The relation is explicit in $\theta$ but not in $\beta$, so in practice you get $\beta(\theta,M_1)$ from the chart or a root finder. For $0<\theta<\theta_{max}$ there are two roots, a weak one at lower $\beta$ and a strong one at higher $\beta$ ([[Weak and Strong Oblique Shocks]]). Above $\theta_{max}$ there is no attached solution and the shock detaches. $\theta_{max}$ is 12.1° at $M_1=1.5$, 23.0° at 2, 34.1° at 3, 41.1° at 5, and tends to 45.6° as $M_1\to\infty$.
 
-## Key features
-
-- **Explicit in $\theta$, implicit in $\beta$.** Use the chart or a root finder to get $\beta(\theta,M_1)$.
-- **Two roots** for $0<\theta<\theta_{max}$: weak (lower $\beta$) and strong (higher $\beta$).
-- **$\theta_{max}(M_1)$:** 12.1° at $M_1=1.5$, 23.0° at 2, 34.1° at 3, 41.1° at 5, and 45.6° as $M_1\to\infty$. Beyond it the shock detaches.
-- **$\theta=0$:** $\beta=90^\circ$ (normal shock) or $\beta=\mu=\sin^{-1}(1/M_1)$ (Mach wave). Hence $\mu\le\beta\le90^\circ$.
-- **$M_1\to\infty$:** $\tan\theta\to\sin2\beta/(\gamma+\cos2\beta)$, independent of $M_1$.
+At $\theta=0$ the two roots are $\beta=90^\circ$, the normal shock, and $\beta=\mu=\sin^{-1}(1/M_1)$, the Mach wave, so every oblique shock has $\mu\le\beta\le90^\circ$. As $M_1\to\infty$ the relation becomes $\tan\theta\to\sin2\beta/(\gamma+\cos2\beta)$, independent of $M_1$.
 
 ![[at_theta_beta_m_chart.png|700]]
 

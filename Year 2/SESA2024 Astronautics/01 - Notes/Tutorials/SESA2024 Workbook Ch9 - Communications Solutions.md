@@ -11,7 +11,7 @@ tags:
 sheet: "Problem Sheet Workbook 2025-26, Chapter 9 (pp. 113-122)"
 theory_notes: ["[[SESA2024 09 - Communications]]"]
 key_concepts: ["[[Link Budget Equation]]", "[[Antenna Gain and Beamwidth]]", "[[EIRP and G-T]]", "[[Bit Error Rate and Eb-N0]]", "[[Decibels]]"]
-status: complete
+status: lectured
 sources: ["02 - Sources/Lectures/SESA2024 Astronautics PROBLEM SHEET WORKBOOK 2025-26 V1.1.pdf"]
 ---
 
@@ -26,12 +26,12 @@ sources: ["02 - Sources/Lectures/SESA2024 Astronautics PROBLEM SHEET WORKBOOK 20
 
 ---
 
-## Q1: The atmospheric window (about 1–30 GHz)
-- **Below about 500 MHz**: the signal is absorbed or reflected by free electrons in the **ionosphere**.
-- **Above about 10 GHz**: there is absorption by **water vapour and O₂**, and above all by **rain** in the troposphere, which can exceed 10 dB above about 10 GHz.
-- **Higher end**: ✔ wider bandwidth, so a higher data rate (Shannon), and smaller antennas for the same gain. ✘ rain fade: a downpour at the ground station can seriously attenuate the link.
+## Q1. The atmospheric window (about 1–30 GHz)
+- Below about 500 MHz: the signal is absorbed or reflected by free electrons in the ionosphere.
+- Above about 10 GHz: there is absorption by water vapour and O₂, and above all by rain in the troposphere, which can exceed 10 dB above about 10 GHz.
+- Higher end: ✔ wider bandwidth, so a higher data rate (Shannon), and smaller antennas for the same gain. ✘ rain fade: a downpour at the ground station can seriously attenuate the link.
 
-## Q2 and Q3: Wavelength, gain and beamwidth of a 3 m dish ($\eta = 0.5$)
+## Q2 and Q3. Wavelength, gain and beamwidth of a 3 m dish with efficiency 0.5
 
 $$
 \lambda = \frac{c}{f},\qquad G = \eta\left(\frac{\pi D}{\lambda}\right)^2,\qquad \theta_{3dB}\approx72\frac{\lambda}{D}\ \text{(degrees)}
@@ -51,14 +51,14 @@ Example (L-band): $G = 0.5(3\pi/0.2)^2\approx1110$, which is 30.45 dB.
 
 ![[ast_antenna_gain_beamwidth.png|700]]
 
-## Q4: Digital modulation
-- **ASK**: carrier *amplitude* switched between two levels (for example zero for "0").
-- **FSK**: carrier *frequency* switched.
-- **PSK**: carrier *phase* switched (for example by 180°) at boundaries between dissimilar bits. **PSK is the most widely used.**
+## Q4. Digital modulation
+- ASK: carrier *amplitude* switched between two levels (for example zero for "0").
+- FSK: carrier *frequency* switched.
+- PSK: carrier *phase* switched (for example by 180°) at boundaries between dissimilar bits. PSK is the most widely used.
 
 (PCM is an *encoding* scheme, not modulation. Telephone example: $f_s = 2\times3.4$ kHz rounded to 8 kHz; 8 kHz × 8 bits = 64 kbps.)
 
-## Q5: Link budget; the meaning of EIRP and $G_R/T_R$
+## Q5. Link budget, and the meaning of EIRP and G over T
 
 $$
 10\log\frac{C}{N_0} = 10\log(P_TG_T)+10\log\frac{G_R}{T_R}-20\log\frac{4\pi\rho}{\lambda}-10\log L_A-10\log k
@@ -66,21 +66,21 @@ $$
 
 Derivation: see [[Link Budget Equation]]. The key step is replacing the received power $P_R$ by the carrier $C$ and introducing the noise density $N_0 = kT_R$. The receiver collects noise as well as signal.
 
-- **EIRP** = $P_TG_T$: the power an imaginary **isotropic** radiator at the spacecraft would need to transmit to create the same power flux (W/m²) at the receiver.
-- **$G_R/T_R$**: the receiver's figure of merit (sensitivity). It is directly proportional to the received $C/N_0$.
+- EIRP = $P_TG_T$: the power an imaginary isotropic radiator at the spacecraft would need to transmit to create the same power flux (W/m²) at the receiver.
+- $G_R/T_R$: the receiver's figure of merit (sensitivity). It is directly proportional to the received $C/N_0$.
 
-## Q6: Large spacecraft antennas and the power–gain trade-off
+## Q6. Large spacecraft antennas and the power–gain trade-off
 | ✔ Large dish | ✘ Large dish |
 |---|---|
 | High gain | Hard to accommodate on the spacecraft and in the launcher fairing (may need deployment) |
 | Lower transmitter power needed for a given EIRP | Can shadow arrays or obscure payload fields of view |
 | | Narrow $\theta_{3dB}$, so tighter pointing (ACS) requirements |
 
-**Power–gain trade-off**: the link needs a given EIRP $= P_TG_T$ (for example 65 dBW for an interplanetary link).
+Power–gain trade-off: the link needs a given EIRP $= P_TG_T$ (for example 65 dBW for an interplanetary link).
 - In dB, $(P_T)_{dB}+(G_T)_{dB} = 65$.
 - How to split it between transmitter power (the power subsystem: arrays, RTG, thermal) and antenna gain (dish size: mass, accommodation, pointing) is a system-level trade-off.
 
-## Q7: GEO global-coverage antenna at 1.5 GHz
+## Q7. GEO global-coverage antenna at 1.5 GHz
 Geometry: $\sin\alpha = R_E/R_{GEO} = 1/6.611$, so $\alpha = 8.7^\circ$. The Earth subtends $2\alpha$:
 
 $$
@@ -94,7 +94,7 @@ $$
 > [!tip] This exact geometry recurs
 > 2022/23 B2 (orbit radius 18 000 km, $\alpha = 20.7^\circ$), 2023/24 B2 (C-band Northern hemisphere) and 2024/25 B2 (12 h GPS orbit) all size the dish so that $\theta_{3dB}$ equals the angle the Earth subtends, $2\sin^{-1}(R_E/r)$.
 
-## Q8: BER
+## Q8. BER
 - The BER is the probability that a bit is received wrongly: BER = $10^{-1}$ means one bit in ten is wrong.
 - It depends on the energy per bit relative to the noise density, $E_b/N_0$.
 - For PSK, BER = $10^{-6}$ needs $E_b/N_0\approx10.5$ dB.
@@ -107,8 +107,8 @@ $$
 
 ![[ast_ber_psk.png|520]]
 
-## Q9: Pluto/Charon fly-by downlink, 2 Gbit at 40 AU
-**Data**: $f = 8.44$ GHz, EIRP = 65 dBW, DSN 70 m dish, $T_R = 28$ K, $E_b/N_0 = 10$ dB, $L_A = 0$, $\eta = 0.5$.
+## Q9. Pluto/Charon fly-by downlink, 2 Gbit at 40 AU
+Data: $f = 8.44$ GHz, EIRP = 65 dBW, DSN 70 m dish, $T_R = 28$ K, $E_b/N_0 = 10$ dB, $L_A = 0$, $\eta = 0.5$.
 
 | Term | Working | dB |
 |---|---|---|
@@ -128,7 +128,7 @@ $$
 
 ![[ast_link_budget_pluto.png|650]]
 
-**Power against dish size**:
+Power against dish size:
 
 $$
 P_TG_T = 10^{6.5}\ \Rightarrow\ P_T\eta\Big(\frac{\pi D}{\lambda}\Big)^2 = 10^{6.5}\ \Rightarrow\ P_TD^2 = \frac{10^{6.5}\lambda^2}{\eta\pi^2}\approx\mathbf{810}
@@ -138,7 +138,7 @@ $$
 |---|---|---|---|---|
 | $D$ (m) | 1 | 2 | 3 | 4 |
 
-**Choice**: far from the Sun, power is scarce (RTG), so favour a large dish and low $P_T$. **About 3–4 m** is a sensible compromise against accommodation and pointing penalties. (New Horizons flew a 2.1 m dish with about 12 W. The real mission had a lower EIRP and took about 15 months to downlink.)
+Choice: far from the Sun, power is scarce (RTG), so favour a large dish and low $P_T$. About 3–4 m is a sensible compromise against accommodation and pointing penalties. (New Horizons flew a 2.1 m dish with about 12 W. The real mission had a lower EIRP and took about 15 months to downlink.)
 
 ## Sources
 - Workbook 2025-26 Chapter 9 questions (p. 113–114) and solutions (p. 117–122)

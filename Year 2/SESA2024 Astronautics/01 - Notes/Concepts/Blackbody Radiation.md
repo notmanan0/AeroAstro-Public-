@@ -3,40 +3,27 @@ title: "Blackbody Radiation"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["blackbody", "Planck's law", "Wien's law", "Stefan-Boltzmann"]
+aliases: ["black body", "blackbody", "Planck's law", "Wien's displacement law", "Stefan-Boltzmann law", "grey body"]
 tags: [sesa2024, concept, thermal-control]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 10 - Thermal Control]]"]
 related_concepts: ["[[Absorptance and Emittance]]", "[[Spacecraft Thermal Balance Equation]]"]
-sources: ["02 - Sources/Lectures/Chapter 10/2025 WEEK 8 - Chapter 10 - Thermal Control - Lecture slides - complete.pdf"]
+sources: ["02 - Sources/Lectures/SESA2024 Lecture 2025-11-25.txt"]
 ---
 
 # Blackbody Radiation
 
-## Definition
+A black body absorbs all radiation falling on it, at every wavelength, and emits the maximum possible thermal radiation at its temperature; its emission spectrum depends on temperature alone.
 
-> [!note] Definition
-> A **blackbody** absorbs **all** radiation incident on it ($\alpha_\lambda = 1$, $\rho_\lambda = 0$ at every $\lambda$), and at any temperature emits the **maximum possible** thermal radiation. It is a useful theoretical ideal.
+Planck's law gives that spectrum. As temperature rises, the emission grows and its peak moves to shorter wavelengths, following Wien's displacement law $\lambda_{max}T=2898\ \mu$m K: the Sun, near 6000 K, peaks in the visible, while the Earth's peak near 10 μm corresponds to about 290 K. Integrating over all wavelengths gives the Stefan–Boltzmann law for the total emitted flux,
 
-## Explanation
-- **Planck's law**:
+$$
+Q_{BB}=\sigma T^4,\qquad\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}.
+$$
 
-$$q_\lambda = \frac{2\pi hc^2}{\lambda^5\left[\exp\left(\dfrac{ch}{k\lambda T}\right)-1\right]}\ (\text{W m}^{-2}\,\mu\text{m}^{-1})$$
-
-  with $h$ = 6.625 × 10⁻³⁴ J s, $k$ = 1.380 × 10⁻²³ J/K, $c$ = 3 × 10⁸ m/s.
-- **Wien's displacement law**: $\lambda_{max}T = 2.898\times10^{-3}$ m K.
-  - The Sun at 5800 K peaks at 0.5 µm (visible), so we use $\alpha_S$.
-  - The Earth and spacecraft at about 290 K peak at about **10 µm** (IR), so we use $\varepsilon$.
-- **Stefan–Boltzmann**: $q_{BB} = \int_0^\infty q_\lambda\,d\lambda = \sigma T^4$, with $\sigma$ = 5.669 × 10⁻⁸ W m⁻² K⁻⁴.
-- Real surfaces: $q = \varepsilon\sigma T^4$.
-- Because solar and thermal spectra barely overlap, a surface can have independent $\alpha_S$ and $\varepsilon$. That is what makes passive thermal control possible.
-
-## Examples
-- 2016/17 Q3(i): "Explain what is meant by a blackbody" (3 marks).
-- A sphere with $\alpha_S = \varepsilon$ at 1 AU: $T = (1370/4\sigma)^{1/4}$ = 278 K ≈ 5 °C.
+A grey body absorbs and emits a constant fraction of the black-body value at all wavelengths. Real surfaces vary with wavelength, which is what gives them colour, and is described by their absorptance and emittance. Because a spacecraft receives sunlight at short wavelengths but radiates its own heat in the infrared, the two properties can be chosen almost independently, and that is the basis of passive thermal control.
 
 ## Related
-- [[Absorptance and Emittance]] · [[Spacecraft Thermal Balance Equation]]
 
-## Sources
-- Chapter 10 slides 10–18 (equations 10.1–10.6)
+- [[SESA2024 10 - Thermal Control#2. Emission|Emission in the lecture note]]
+- [[Absorptance and Emittance]] · [[Spacecraft Thermal Balance Equation]]

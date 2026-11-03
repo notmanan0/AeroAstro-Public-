@@ -96,7 +96,7 @@ Rearrange: $\omega = (V - iR_{tot})/K$. There are three levers:
 ## 4. Direction control and brushless machines
 - **H-bridge** (four-quadrant): T1 + T4 on drive one direction; T3 + T2 on reverse the polarity. Never switch both transistors of one leg on together: that is a shoot-through short.
 - **Brushless DC and steppers**: commutators arc, wear and need brush replacement. **Semiconductor switches** do the commutation electronically instead, which needs a controller circuit.
-- **Induction motors** (AC) are the rugged industrial workhorse. They are mentioned only for context.
+- **Induction motors** (AC) are the standard rugged industrial motor. They are mentioned only for context.
 
 ## Year 2 bridge
 - **Servo actuators** (control-surface actuators, gimbals) are DC or brushless motors in a speed/position loop. The chopper is the "plant input" of the controller ([[SESA2027 B1 - Control System Fundamentals and PID Control]], [[PID Controller]]).

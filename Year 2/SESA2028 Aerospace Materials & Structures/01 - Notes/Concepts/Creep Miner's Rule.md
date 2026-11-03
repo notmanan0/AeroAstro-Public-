@@ -3,47 +3,24 @@ title: "Creep Miner's Rule"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Robinson's rule", "Creep life fraction rule", "Creep damage summation"]
 tags: [sesa2028, materials, creep, lifing, cumulative-damage]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys]]"]
 related: ["[[Larson-Miller Parameter]]", "[[Miner's Rule]]", "[[Creep Curve and Mechanisms]]"]
 ---
 
 # Creep Miner's Rule
 
-![[Figures/materials_creep_miner_budgets.png]]
+The creep form of Miner's rule says that time $t_i$ spent at a stress and temperature whose rupture life is $t_{r,i}$ uses the fraction $t_i/t_{r,i}$ of the creep life, and that rupture is expected when $\sum t_i/t_{r,i}=1$.
 
-Assume each (stress, temperature) condition uses up life in proportion to the time spent there:
+It is the same damage-summation assumption as in fatigue, applied to time fractions instead of cycle fractions; the lecturer stresses that the rule belongs to neither mechanism but is a general assumption about adding damage. Each condition's rupture life is read or interpolated from stress–rupture data. Because rupture life is exponential in temperature and a power law in stress, interpolation must be done on logarithmic axes, in $\log t_r$, never linearly in $t_r$. Once the fractions used so far are added, the remaining life at a new condition is $(1-\sum)\,t_{r,\text{new}}$, which should then be reduced by a safety factor.
 
-$$
-\sum_i\frac{t_i}{t_{r,i}}=1\quad\text{at rupture}.
-$$
+![[materials_creep_miner_budgets.png|800]]
 
-## Procedure
+The past papers ask for it almost every year: 2013-14 B3(iv) leaves 155 h at 1000 °C after 22 % of an SRR99 blade's life is used; 2021-22 MQ1(d) leaves 70 h at 475 MPa for CM247LC. When the stress–rupture data are exact power laws, a fitted $t_r=B\sigma^{-n}$ can extrapolate beyond the data, but the answer should say it is extrapolating. The rule ignores the order of loading and interactions between conditions, and real creep damage is not strictly linear.
 
-1. **Find $t_r$ at each condition.** Rupture life is exponential in $T$ and a power law in $\sigma$, so **interpolate linearly in $\log t_r$** (against $T$, or against $\log\sigma$). The lecturer uses a log-log plot. Never interpolate $t_r$ itself linearly.
-2. Fraction used $=\sum t_i/t_{r,i}$.
-3. Remaining time at the new condition $=(1-\sum)\,t_{r,new}$.
-4. Apply a safety factor and state the assumptions.
+## Related
 
-## Lecture example: SRR99 at 400 MPa
-
-Data: 700 °C 100,000 h; 800 °C 10,000 h; 900 °C 1,050 h; 1000 °C 200 h; 1100 °C 15 h.
-
-$$
-\frac{500}{3163}+\frac{2100}{31623}=0.158+0.066=0.224
-$$
-
-$$
-t_{remaining}=(1-0.224)\times200\approx155\ \text{h at }1000\ ^\circ\text{C}.
-$$
-
-## Stress-varying data and power-law fits
-
-When the data are at a fixed temperature and varying stress, fit $t_r=B\sigma^{-n}$ on log-log axes (2017-18 asks for this "by graphical means"). The exam data sets turn out to be exact power laws ($n=6$ or $n=4$), so extrapolating to stresses outside the data (650 MPa, 825 MPa) is possible. Say that it is an extrapolation.
-
-## Assumptions and limitations
-
-- Damage is linear and **order-independent** (a hot-then-cool sequence may not equal cool-then-hot).
-- It ignores microstructural history (precipitate coarsening, rafting), oxidation and environment, and creep-fatigue interaction.
-- The interpolation method affects the answer (e.g. 3,240 h vs the lecturer's 3,163 h).
+- Topic: [[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys|M8]] · [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]]
+- Concepts: [[Larson-Miller Parameter]] · [[Miner's Rule]] · [[Creep Curve and Mechanisms]]

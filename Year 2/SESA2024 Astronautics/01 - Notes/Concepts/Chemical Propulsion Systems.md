@@ -3,51 +3,25 @@ title: "Chemical Propulsion Systems"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["monopropellant", "bipropellant", "hydrazine thruster", "hypergolic", "solid rocket motor", "cold gas thruster", "hybrid rocket"]
+aliases: ["monopropellant", "bipropellant", "hydrazine", "solid rocket motor", "hybrid rocket", "cold gas thruster", "hypergolic"]
 tags: [sesa2024, concept, propulsion]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 07 - Spacecraft Propulsion]]"]
 related_concepts: ["[[Electric Propulsion Sizing]]", "[[Tsiolkovsky Rocket Equation]]", "[[Rocket Performance Parameters]]"]
-sources: ["02 - Sources/Lectures/Chapter 7/Chapter 7 - Propulsion - original slides(1)(1).pdf"]
+sources: ["02 - Sources/Lectures/Chapter 7/Chapter 7 - Propulsion - original slides(1)(1).pdf", "02 - Sources/Lectures/SESA2024 Lecture Chapter 7 - Propulsion - prerecorded material.txt"]
 ---
 
 # Chemical Propulsion Systems
 
-## Definition
+Chemical propulsion releases energy stored in the propellant by a chemical reaction and expands the hot products through a nozzle; it gives high thrust at specific impulses of roughly 200–450 s.
 
-> [!note] Definition
-> Chemical systems are **energy-limited**: the exhaust energy comes from the chemical energy stored in the propellants.
-> - $I_{sp}\propto\sqrt{T_c/\mathcal M}$: a high combustion temperature and a light exhaust are best.
-> - Types: liquid (mono- or bi-propellant), solid, hybrid, and cold gas (not combustion).
+Liquid monopropellants decompose one liquid on a catalyst bed. Hydrazine, giving ammonia, nitrogen and hydrogen, is the standard, at 1–10 N and 240 s (about 290 s with an electric heater); it is used for attitude control thrusters, and needs only one feed line per thruster, but it is carcinogenic. Bipropellants burn a fuel with an oxidiser. Hydrogen with oxygen or fluorine performs best (fluorine about 410 s) but needs cryogenic storage; monomethylhydrazine with nitrogen tetroxide is hypergolic (ignites on contact) and storable, and is the usual spacecraft choice at 1–400 N and a little over 300 s, at the cost of two feed lines to every thruster and a pressurant system.
 
-## Explanation
-| Type | $I_{sp}$ (s) | ✔ | ✘ |
-|---|---|---|---|
-| Cold gas (N₂, Ar) | ~50 | simple; tiny impulse bits (~20 mN); clean plume | very low $I_{sp}$ and total impulse |
-| Monoprop N₂H₄ | 230–240 (290 augmented) | simple; small minimum impulse; restartable | toxic handling; low $I_{sp}$ |
-| Solid | ~260 | simple; storable; high thrust | one-shot; not throttleable |
-| Biprop MMH/N₂O₄ | ~310 | hypergolic; restartable; throttleable | complex feed; hazardous; worse dry/wet ratio |
-| Biprop LOX/LH₂ | ~450 | highest chemical $I_{sp}$ | cryogenic, boil-off |
-| Fluorine oxidiser | ~410 | very hot | corrosive; cryogenic |
-| Hybrid | – | can shut down and throttle | still in development |
+Solid motors cannot be stopped once lit. The grain geometry sets the thrust curve, the mass flow rate gives high thrust, and they suit launcher first stages or one-shot apogee motors (the lecture's example gives 60 kN at just under 300 s), but not attitude control. Hybrids keep one component solid to ease storage while keeping some throttle and restart capability. Cold-gas thrusters release stored inert gas: low thrust and limited, but clean near sensitive optics.
 
-- **Hydrazine thruster**:
-  1. a valve opens (needs power);
-  2. N₂H₄ is injected onto a **Pt/Ir catalyst on alumina**;
-  3. exothermic decomposition gives N₂ + NH₃ + H₂;
-  4. the gas expands through a nozzle.
-  Thrust 1–10 N.
-- **Hypergolic**: ignites on contact, so no igniter is needed. N₂O₄ boils at 294 K, which makes it storable.
-- **Solid motors**: the grain geometry sets the thrust history. Used for launchers and GEO apogee motors. Not used for ACS, except gimballed launcher nozzles.
-- **Unified bipropellant systems** (for example Eurostar) share tanks between the apogee engine (400 N) and the RCS thrusters (10 N).
-
-## Examples
-- Workbook Ch7 Q2, Q4, Q6–Q9.
-- 2015/16 Q1(iii): "list three types of chemical propulsion" (3 marks).
-- Exam 2021/22 B1: Apollo CM RCS, 410 N, $I_{sp}$ = 336 s. An 8.5 min burn uses $\dot m = T/g_0I_{sp}$ = 0.124 kg/s, so about 63 kg.
+For a GEO spacecraft the choice is between a monopropellant system with a solid apogee motor (simpler, easier handling, better structure ratio, lower $I_{sp}$, no restart) and a unified bipropellant system (higher $I_{sp}$, throttle and restart, but more complex and hazardous).
 
 ## Related
-- [[Electric Propulsion Sizing]] · [[Tsiolkovsky Rocket Equation]] · [[Rocket Performance Parameters]] · [[Thrust Equation]]
 
-## Sources
-- Chapter 7 lecture slides 16–30
+- [[SESA2024 07 - Spacecraft Propulsion#3. Chemical propulsion|Chemical propulsion in the lecture note]]
+- [[Electric Propulsion Sizing]] · [[Tsiolkovsky Rocket Equation]] · [[Rocket Performance Parameters]]

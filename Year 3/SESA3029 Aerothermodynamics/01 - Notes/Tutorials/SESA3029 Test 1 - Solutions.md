@@ -235,8 +235,7 @@ $$
 
 ## Self-study tasks
 
-> [!todo] Not lecturer-set beyond the test itself
-> The test was set on Blackboard (L2-4, ll. 1–3). The extra tasks below are *suggested, not lecturer-set*.
+The test was set on Blackboard (L2-4, ll. 1–3). The extra tasks below are *suggested, not lecturer-set*.
 
 - [ ] **Submit Test 1 by Sun 11 Oct, 23:59** (L2-4, l. 3); two attempts, highest mark counts.
 - [ ] Redo Q5 with the tapping **ahead** of the probe and readings of 80 and 150 kPa (Lecture 1-3 Example 1). → [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Example 1 in full — subsonic, by formula and by table|W01 §7]]

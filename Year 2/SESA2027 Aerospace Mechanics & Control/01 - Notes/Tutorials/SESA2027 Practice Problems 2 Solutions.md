@@ -117,6 +117,9 @@ $$
 \mathbf A = \begin{bmatrix}-0.2956&178\\-0.1045&-0.4490\end{bmatrix},\quad\mathbf B = \begin{bmatrix}-6.300\\-4.888\end{bmatrix},\quad\mathbf C = [0\ \ 1]
 $$
 
+> [!warning] Probable typo on the sheet
+> The diagonal entries are the F-4C SPO values from L1.06 ($\mathring Z_w/m=-0.2956$, $(\mathring M_q+U_\infty\mathring M_{\dot w})/I_{yy}=-0.4490$, $U_\infty=178$ m/s). For the F-4C the $(2,1)$ entry would be $-1.045\times10^{-2}$, not $-1.045\times10^{-1}$; with it the denominator is $s^2+0.7446s+1.992$ ($\omega_n=1.41$ rad/s, $\zeta=0.264$, the A3 result). The solution below answers the sheet as printed. Details: [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Worked example: SPO state space to transfer function (PS2 Q3)|A2]].
+
 ### (i) $G(s) = \mathbf C(s\mathbf I-\mathbf A)^{-1}\mathbf B$
 
 $$

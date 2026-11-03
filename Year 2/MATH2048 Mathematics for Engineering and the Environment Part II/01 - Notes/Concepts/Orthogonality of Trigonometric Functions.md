@@ -8,37 +8,24 @@ tags: [math2048, concept, fourier-series]
 status: complete
 parent_lectures: ["[[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae]]"]
 related_concepts: ["[[Fourier Series]]", "[[ODE Eigenvalue Problems]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/Fourier Series/Lecture4_FourierSeries1.pdf", "02 - Sources/Lectures & Problem Sheets/Problem Sheets/Problem Sheet 2.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/Fourier Series/Lecture4_FourierSeries1.pdf", "02 - Sources/Lectures & Problem Sheets/Problem Sheets/Problem Sheet 2.pdf", "02 - Sources/Lectures/MATH2048 Lecture 4.txt"]
 ---
 
 # Orthogonality of Trigonometric Functions
 
-## Definition
+Sines and cosines of different integer frequencies are **orthogonal** over a period: with $k=\pi/\ell$ and integers $m,n\geq1$,
 
-> [!note] Definition
-> For integers $m,n\geq1$ and $k=\pi/\ell$:
->
-> $$\int_{-\ell}^{\ell}\cos mkx\cos nkx\,dx=\ell\delta_{mn},\quad\int_{-\ell}^{\ell}\sin mkx\sin nkx\,dx=\ell\delta_{mn},\quad\int_{-\ell}^{\ell}\cos mkx\sin nkx\,dx=0 .$$
->
-> The exception is $\int_{-\ell}^{\ell}1\,dx=2\ell$.
+$$
+\int_{-\ell}^{\ell}\cos mkx\cos nkx\,dx=\ell\delta_{mn},\quad\int_{-\ell}^{\ell}\sin mkx\sin nkx\,dx=\ell\delta_{mn},\quad\int_{-\ell}^{\ell}\cos mkx\sin nkx\,dx=0,
+$$
 
-## Explanation
-**The proof uses four facts**:
-1. The product-to-sum identities: $2\cos A\cos B=\cos(A-B)+\cos(A+B)$, $2\sin A\sin B=\cos(A-B)-\cos(A+B)$ and $2\sin A\cos B=\sin(A-B)+\sin(A+B)$.
-2. $\int_{-\ell}^{\ell}\cos pkx\,dx=0$ for any integer $p\neq0$.
-3. When $m=n$: $\cos^2A=\frac12(1+\cos2A)$ and $\sin^2A=\frac12(1-\cos2A)$.
-4. Mixed products are odd × even, which is odd, so they integrate to zero.
+with $\int_{-\ell}^{\ell}1\,dx=2\ell$ for the constant.
 
-**Interpretation**: with the inner product $\langle f,g\rangle=\int fg$, the functions $\{1,\cos nkx,\sin nkx\}$ form an orthogonal basis. The Fourier coefficients are the projections of $f$ onto this basis.
+The proof uses the product-to-sum identities, such as $2\sin A\sin B=\cos(A-B)-\cos(A+B)$, which turn each product into single cosines of $(m\pm n)kx$; these integrate to sines of integer multiples of $\pi$, which vanish. The case $m=n$ has to be done separately because that step divides by $m-n$, using $\sin^2A=\frac12(1-\cos2A)$. Mixed sine–cosine products are odd and integrate to zero over the symmetric interval.
 
-**Why it holds**: these functions are the eigenfunctions of $y''+\lambda y=0$ with periodic BCs. Eigenfunctions with distinct eigenvalues are orthogonal ([[ODE Eigenvalue Problems]]).
-
-**Complex form**: $\int_{-\ell}^{\ell}e^{jmkx}e^{-jnkx}dx=2\ell\delta_{mn}$.
-
-**Half-range form**: $\int_0^L\sin\frac{m\pi x}L\sin\frac{n\pi x}Ldx=\frac L2\delta_{mn}$. This is the one used to fit initial conditions in PDEs.
+In the lecturer's analogy, the functions $1$, $\cos nkx$ and $\sin nkx$ behave like an orthogonal basis of vectors, with the integral $\int fg\,dx$ playing the part of the dot product, and the Fourier coefficients are the projections of $f$ onto that basis. They are orthogonal because they are the eigenfunctions of $y''+\lambda y=0$ with periodic conditions, and eigenfunctions with different eigenvalues are always orthogonal ([[ODE Eigenvalue Problems]]). Two variants come up constantly: the complex form $\int_{-\ell}^{\ell}e^{jmkx}e^{-jnkx}dx=2\ell\delta_{mn}$, and the half-range form $\int_0^L\sin\frac{m\pi x}L\sin\frac{n\pi x}L\,dx=\frac L2\delta_{mn}$, which is the one used to fit initial conditions in PDEs.
 
 ## Related
-- [[Fourier Series]] · [[ODE Eigenvalue Problems]]
 
-## Sources
-- Lectures 4–5; PS2 (FS) Q1
+- Derivation: [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae#2. Orthogonality (L4)|FS1 §2]]
+- [[Fourier Series]] · [[ODE Eigenvalue Problems]]

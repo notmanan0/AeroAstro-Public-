@@ -10,34 +10,21 @@ parent_lectures: ["[[SESA2023 W09 - Turbomachinery Characteristics - Coefficient
 related_concepts: ["[[Euler Work Equation]]", "[[Velocity Triangles]]", "[[Dimensional Analysis of Turbomachines]]", "[[Specific Speed]]"]
 sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf"]
 ---
+
 # Flow and Work Coefficients
 
-## Definition
+The **flow coefficient** and the **stage loading** (work coefficient) are the two numbers that describe a turbomachine stage's velocity triangles:
 
-> [!note] Definition
->
-> $$\phi = \frac{V_x}{U}\ (\text{flow coefficient}),\qquad\psi = \frac{|\Delta h_0|}{U^2} = \frac{\Delta V_\theta}{U}\ (\text{stage loading / work coefficient})$$
+$$
+\phi = \frac{V_x}{U},\qquad\psi = \frac{|\Delta h_0|}{U^2} = \frac{\Delta V_\theta}{U} .
+$$
 
-## Explanation
-- **$\phi$ and incidence**: $\phi$ fixes the relative inlet angle.
-  - At the *design* stage, low $\phi$ means highly staggered blades and high $\phi$ means low stagger.
-  - For a *built* blade, $\phi$ below design means positive incidence (towards stall/surge), and above design means negative incidence (towards choke).
-  - A machine therefore runs efficiently only in a **narrow $\phi$ band**. Multistage compressors keep $V_x$ about constant by shrinking the blade height as density rises.
-- **$\psi$ and turning**:
-  - High $\psi$ means more flow turning, so fewer stages (lower cost, weight and complexity) but lower efficiency.
-  - Compressor limit $\psi\le0.65$ (typically 0.35–0.5), set by boundary-layer separation and stall.
-  - Turbine limit $\psi\le2.5$, set by high Mach numbers and shock losses.
-- **Number of stages**: $n\ge\Delta h_{0,overall}/(\psi_{max}U^2)$. **Round up.**
-- **Smith chart** (turbines): $\eta$ contours on $(\phi,\psi)$. The peak $\eta$ is around $\phi\approx0.6$, $\psi\approx1$. Increasing $\psi$ roughly halves the stage count, at a few points of efficiency.
-- **Blade speed**: set $U$ from $\phi$ and the axial Mach number, e.g. with the data-book flow function $V/\sqrt{c_pT_0}$. Fan tips are held below relative M 1.6 (noise, bird strike, blade-out).
+$\phi$ fixes the relative inlet angle. At the design stage a low $\phi$ means highly staggered blades and a high $\phi$ low stagger. For a blade that has already been built, running below the design $\phi$ means positive incidence, towards stall and surge, and above it negative incidence, towards choke, so a machine is efficient only in a narrow band of $\phi$. Multistage compressors keep $V_x$ roughly constant by shrinking the blade height as the density rises.
 
-## Examples
-- Sea level, M 0.8, M 0.6 into the rotor, $\phi = 0.55$: $U = 380.8$ m/s. With a pressure ratio of 10 and $\psi\le0.4$, $n = 5.24$, so **6 stages**.
-- HPC, $r_m = 0.267$ m at 185.6 rev/s, $U = 311$ m/s, $\Delta h_0 = 469$ kJ/kg, $\psi\le0.45$: **11 stages** at $\psi = 0.440$ ([[SESA2023 Problem Sheet 9 Solutions]]).
-- LPT at fan speed ($U = 96$ m/s), $\psi = 2.5$: 23 stages. Geared ×3: 3 stages ([[SESA2023 Exam 2020-21 Solutions]] Q4).
+$\psi$ measures how much the flow is turned. A high $\psi$ means fewer stages, with lower cost, weight and complexity, but lower efficiency. Compressors are limited to $\psi\le0.65$, typically 0.35–0.5, by boundary-layer separation and stall; turbines to $\psi\le2.5$, by high Mach numbers and shock losses. The number of stages follows as $n\ge\Delta h_{0,overall}/(\psi_{max}U^2)$, rounded up. For turbines the Smith chart plots efficiency contours on $(\phi,\psi)$, with a peak around $\phi\approx0.6$, $\psi\approx1$; raising $\psi$ roughly halves the stage count at the cost of a few points of efficiency. The blade speed $U$ is set from $\phi$ and the axial Mach number, for example with the Data Book flow function $V/\sqrt{c_pT_0}$, and fan tips are held below a relative Mach number of about 1.6 for noise, bird strike and blade-off reasons.
+
+Worked values: at sea level and M 0.8, with M 0.6 into the rotor and $\phi = 0.55$, $U = 380.8$ m/s; a pressure ratio of 10 with $\psi\le0.4$ needs $n = 5.24$, so 6 stages. An HPC with $r_m = 0.267$ m at 185.6 rev/s ($U = 311$ m/s) and $\Delta h_0 = 469$ kJ/kg, with $\psi\le0.45$, needs 11 stages at $\psi = 0.440$ ([[SESA2023 Problem Sheet 9 Solutions]]). An LPT at fan speed ($U = 96$ m/s) and $\psi = 2.5$ needs 23 stages, and gearing it ×3 brings that down to 3 ([[SESA2023 Exam 2020-21 Solutions]] Q4).
 
 ## Related
-- [[Euler Work Equation]] · [[Velocity Triangles]] · [[Dimensional Analysis of Turbomachines]] · [[Specific Speed]]
 
-## Sources
-- Week 9 handout §9.2; Lectures 25–26
+- [[Euler Work Equation]] · [[Velocity Triangles]] · [[Dimensional Analysis of Turbomachines]] · [[Specific Speed]]

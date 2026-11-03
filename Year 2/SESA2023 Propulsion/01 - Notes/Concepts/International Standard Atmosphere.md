@@ -10,29 +10,16 @@ parent_lectures: ["[[SESA2023 W01 - Thrust, Efficiency, Range and the ISA]]"]
 related_concepts: ["[[Stagnation Properties]]"]
 sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf"]
 ---
+
 # International Standard Atmosphere
 
-## Definition
+The International Standard Atmosphere is a standard model of temperature, pressure and density against altitude. At sea level $p = 101.325$ kPa, $T = 288.15$ K, $\rho = 1.225$ kg/m³ and $a = 340$ m/s. The temperature falls at 6.5 K/km up to 11 km, is constant at 216.65 K from 11 to 20 km, and rises at 1 K/km above 20 km.
 
-> [!note] Definition
-> A standard model of the atmosphere: $T$, $p$ and $\rho$ as functions of altitude. Sea level is $p = 101.325$ kPa, $T = 288.15$ K, $\rho = 1.225$ kg/m³ and $a = 340$ m/s.
-> - Up to 11 km the temperature falls at $-6.5$ K/km.
-> - From 11 to 20 km it is constant at 216.65 K.
-> - Above 20 km it rises at +1 K/km.
+Tables give the ratios $\delta = p/p_{sl}$, $\theta = T/T_{sl}$ and $\sigma = \rho/\rho_{sl}$ (Data Book Tables 24–25; Mattingly App. A also gives cold, hot and tropical days). In the troposphere $p = p_{sl}(T/T_{sl})^{g_0/(RL)}$ with $g_0/(RL) = 5.256$, and in the isothermal layer $p = p_{11}\exp[-g_0(h-h_{11})/(RT)]$. The speed of sound is $a = a_{sl}\sqrt\theta$, and viscosity comes from Sutherland's law. Use the static ambient values, then convert to stagnation conditions with the flight Mach number.
 
-## Explanation
-- Tables give ratios $\delta = p/p_{sl}$, $\theta = T/T_{sl}$ and $\sigma = \rho/\rho_{sl}$ (Data Book Tables 24–25; Mattingly App. A, which also gives cold, hot and tropical days).
-- Troposphere: $p = p_{sl}(T/T_{sl})^{g_0/(RL)}$ with $g_0/(RL) = 5.256$. Isothermal layer: $p = p_{11}\exp[-g_0(h-h_{11})/(RT)]$.
-- Speed of sound $a = a_{sl}\sqrt\theta$. Viscosity comes from Sutherland's law.
-- **Engine relevance**:
-  - thrust falls with altitude because $\dot m\propto\rho$;
-  - $T_{02}$ falls, so $T_{04}/T_{02}$ rises, which helps efficiency;
-  - hot days cut take-off power (PS7 Q7.3b: +20 K at the inlet gives −10 % specific work).
-- Use the **static** ambient values, then convert to stagnation with the flight Mach number.
+For engines, thrust falls with altitude because $\dot m\propto\rho$, while the falling $T_{02}$ raises $T_{04}/T_{02}$, which helps efficiency. Hot days cut take-off power: in PS7 Q7.3b, 20 K more at the inlet costs 10 % of the specific work.
 
 ![[prop_isa.png|600]]
-
-## Examples
 
 | Altitude | $T$ (K) | $p$ (kPa) |
 |---|---|---|
@@ -47,7 +34,5 @@ sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf"]
 | 51,000 ft | 216.65 | 11.1 |
 
 ## Related
-- [[Stagnation Properties]] · [[SESA2023 W01 - Thrust, Efficiency, Range and the ISA]]
 
-## Sources
-- Week 1 notes §1.5; Data Book Tables 24–25; Mattingly App. A
+- [[Stagnation Properties]] · [[SESA2023 W01 - Thrust, Efficiency, Range and the ISA]]

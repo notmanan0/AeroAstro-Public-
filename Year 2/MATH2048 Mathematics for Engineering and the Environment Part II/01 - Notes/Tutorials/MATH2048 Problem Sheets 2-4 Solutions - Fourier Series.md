@@ -37,7 +37,7 @@ $$
 # PS2 (Fourier Series page)
 
 ## Q1: Orthogonality relations on $[-L,L]$
-This is proved in full in [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae#2. Orthogonality (L4–5, PS2 FS Q1)|FS1 §2]]. In outline, with $k=\pi/L$:
+This is proved in full in [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae#2. Orthogonality (L4)|FS1 §2]]. In outline, with $k=\pi/L$:
 
 **$m\neq n$.**
 

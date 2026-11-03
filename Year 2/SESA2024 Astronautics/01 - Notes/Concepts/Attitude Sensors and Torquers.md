@@ -3,58 +3,23 @@ title: "Attitude Sensors and Torquers"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["attitude sensors", "external torques", "internal torques", "disturbance torques", "magnetorquer", "star tracker", "Sun sensor", "gyroscope"]
+aliases: ["star tracker", "Sun sensor", "Earth sensor", "magnetometer", "gyroscope", "magnetorquer", "thrusters for attitude control", "disturbance torques", "gravity gradient"]
 tags: [sesa2024, concept, attitude-control]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 06 - Attitude Control]]"]
 related_concepts: ["[[Reaction Wheels and Momentum Dumping]]", "[[Spacecraft Stabilisation Types]]"]
-sources: ["02 - Sources/Lectures/Chapter 6/2025 WEEK 3 Lecture 1 - Chapter 6 - Attitude Control - complete.pdf", "02 - Sources/Lectures/Chapter 6/2025 Lecture 2 - Chapter 6 - Attitude Control - complete.pdf"]
+sources: ["02 - Sources/Lectures/SESA2024 Lecture 2025-10-09.txt", "02 - Sources/Lectures/SESA2024 Lecture 2025-10-14.txt", "02 - Sources/Lectures/SESA2024 Lecture 2025-10-16.txt"]
 ---
 
 # Attitude Sensors and Torquers
 
-## Definition
+The ACS measures attitude with reference and inertial sensors and corrects it with torquers, against a background of disturbance torques; torques and torquers are classed as external, which change the spacecraft's total angular momentum, or internal, which only move it around.
 
-> [!note] Definition
-> - **External torques** come from interaction with the environment and **change** the total $\mathbf H$.
-> - **Internal torques** act between parts of the spacecraft and **conserve** $\mathbf H$.
-> - **Sensors** come in two categories: **reference** sensors (attitude relative to an external source) and **inertial** sensors (changes in attitude).
+The external disturbances are aerodynamic drag (below about 500 km), gravity gradient and magnetic torques (up to about 30 000–40 000 km), solar radiation pressure (all altitudes, about $5\times10^{-6}\ \mathrm{N/m^2}$) and thrust misalignment (1 kN offset 1 mm gives 1 N m). Gravity gradient pulls a long, thin body towards the local vertical and can be used for passive stabilisation. The external torquers are thrusters (any torque, but propellant-limited; twelve to sixteen for pure couples about three axes), magnetorquers (no propellant or moving parts, but slow, small, needing a field model, and with no torque about the field line) and adjustable geometry such as solar trim tabs. Every spacecraft needs at least one, because only an external torque can remove accumulated momentum. Internal disturbances are mechanisms, propellant slosh and crew movement; the internal torquers are wheels and control moment gyros.
 
-## Explanation
-**External disturbances** (altitude ranges are approximate):
-
-| Disturbance | Where it matters |
-|---|---|
-| Aerodynamic | < 500 km |
-| Gravity gradient | < 30 000–40 000 km |
-| Magnetic | < 30 000–40 000 km |
-| Solar radiation pressure | all altitudes |
-| Thrust misalignment | all altitudes |
-
-**Controllable external torquers**:
-- **Thrusters (gas jets)**: any torque size; on/off; need propellant; plumes can contaminate.
-- **Magnetorquers**: $\mathbf T = \mathbf m\times\mathbf B$. Need power and an on-board field model. **No torque about the field line.** Weak at high altitude.
-- Adjustable geometry (trim tabs, flaps) using aerodynamic or solar pressure: low torque, no propellant.
-
-**Internal disturbances**: mechanisms (array deployment), fuel slosh, astronaut motion.
-
-**Controllable internal torquers**: dual-spin mechanisms; reaction wheels; momentum wheels; CMGs.
-
-**Sensors**:
-- **Reference**:
-  - Sun sensors (coarse, safe mode);
-  - Earth (horizon) sensors;
-  - **star sensors or trackers** (arcsecond);
-  - magnetometers.
-- **Inertial**: gyroscopes and accelerometers. They drift, so they are recalibrated from reference sensors.
-
-## Examples
-- Why must external torquers be carried? Disturbances accumulate momentum, and only an external torque can remove it (2016/17 Q1(iii)).
-- Seasat was the lecture's example of an aerodynamic-torque-sensitive LEO spacecraft.
-- A GEO telescope (1 arcsec) needs star sensors (guide telescopes), gyros for slewing, and Sun sensors for array pointing and safe mode.
+Attitude can only be controlled as accurately as it is measured. Reference sensors give the direction to an object in body axes, with accuracy set by the object: star trackers to arcseconds, Sun and Earth-horizon sensors to arcminutes, magnetometers to around a degree. Inertial sensors such as gyroscopes measure changes in attitude, keep working when the reference is hidden, but drift and need recalibrating. Spacecraft carry both.
 
 ## Related
-- [[Reaction Wheels and Momentum Dumping]] · [[Spacecraft Stabilisation Types]]
 
-## Sources
-- Chapter 6 lecture slides 37–47
+- [[SESA2024 06 - Attitude Control#5. Torques and torquers|Torques and torquers in the lecture note]] · [[SESA2024 06 - Attitude Control#7. Attitude sensors|Sensors]]
+- [[Reaction Wheels and Momentum Dumping]] · [[Spacecraft Stabilisation Types]]

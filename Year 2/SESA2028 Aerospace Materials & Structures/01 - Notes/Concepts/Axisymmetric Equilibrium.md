@@ -4,13 +4,13 @@ module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Structures"
 tags: [sesa2028, structures, continuum-mechanics]
-status: complete
+status: lectured
 parent: ["[[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates]]"]
 ---
 
 # Axisymmetric Equilibrium
 
-**What it is:** radial force balance on a small element of an axisymmetric body (a cylinder or disc) whose stresses depend only on $r$.
+Radial force balance on a small element of an axisymmetric body (a cylinder or disc) whose stresses depend only on $r$.
 
 ## Derivation
 
@@ -36,6 +36,12 @@ $$
 
 ## Why it is not enough on its own
 
-One equation, two unknown stresses ($\sigma_r,\sigma_\theta$): the problem is **statically indeterminate**. Close it with [[Strain Compatibility]] ($\varepsilon_r=du/dr$, $\varepsilon_\theta=u/r$) and Hooke's law. That combination produces the Lamé and spinning-disc solutions.
+One equation, two unknown stresses ($\sigma_r,\sigma_\theta$): the problem is statically indeterminate. Close it with [[Strain Compatibility]] ($\varepsilon_r=du/dr$, $\varepsilon_\theta=u/r$) and Hooke's law. That combination produces the Lamé and spinning-disc solutions.
 
 The $(\sigma_r-\sigma_\theta)/r$ term is purely geometric: because the side faces are not parallel, the hoop stress has a radial component. This is why radial and hoop stresses cannot generally be equal through a thick wall (except at the centre of a solid disc).
+
+## Related
+
+- Topic: [[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates|S9]]
+- Topic: [[SESA2028 S11 - Spinning Discs|S11]]
+- Concepts: [[Lame Thick-Cylinder Solution]] · [[Spinning Disc Stress]] · [[Strain Compatibility]]

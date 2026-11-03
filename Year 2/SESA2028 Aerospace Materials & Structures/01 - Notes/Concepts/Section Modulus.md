@@ -3,7 +3,7 @@ title: "Section Modulus"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, bending-design]
-status: complete
+status: lectured
 ---
 
 # Section Modulus
@@ -18,5 +18,6 @@ Use separate positive- and negative-side moduli when the extreme distances diffe
 
 Section modulus measures strength efficiency, whereas $EI$ measures bending stiffness. A section can be strong enough but too flexible.
 
-See [[SESA2028 S2 - Beam Deflection and Bending Design]].
+## Related
 
+- Topic: [[SESA2028 S2 - Beam Deflection and Bending Design|S2]]

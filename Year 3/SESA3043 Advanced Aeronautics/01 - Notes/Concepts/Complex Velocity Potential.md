@@ -13,18 +13,13 @@ sources: ["02 - Sources/Lectures/CH1-3 Potential Flow.pdf"]
 
 # Complex Velocity Potential
 
-## Definition
+In two-dimensional incompressible irrotational flow, the potential and streamfunction combine into one analytic function of $z=x+iy$, the complex velocity potential $\Phi(z)=\phi+i\psi$. Its derivative gives the velocity directly:
 
-> [!note] Definition
-> In 2-D incompressible irrotational flow, $\Phi(z)=\phi+i\psi$ with $z=x+iy$, and
->
-> $$\frac{\mathrm d\Phi}{\mathrm dz}=u-iv,\qquad q=\left|\frac{\mathrm d\Phi}{\mathrm dz}\right|.$$
+$$\frac{\mathrm d\Phi}{\mathrm dz}=u-iv,\qquad q=\left|\frac{\mathrm d\Phi}{\mathrm dz}\right|.$$
 
-## Why it works
+Note the minus sign: the imaginary part of $\mathrm d\Phi/\mathrm dz$ is $-v$.
 
-The derivative of an analytic function is direction-independent only if the **Cauchy–Riemann** equations hold, $\phi_x=\psi_y$ and $\phi_y=-\psi_x$. These are exactly $u=\phi_x=\psi_y$ and $v=\phi_y=-\psi_x$. Consequences: $\phi$ and $\psi$ are both harmonic, their contours are orthogonal, and **every analytic function is a potential flow**.
-
-## Elementary flows
+The derivative of a complex function only exists, independent of direction, if the Cauchy–Riemann equations hold: $\phi_x=\psi_y$ and $\phi_y=-\psi_x$. Those are just $u=\phi_x=\psi_y$ and $v=\phi_y=-\psi_x$. So $\phi$ and $\psi$ are both harmonic, their contours cross at right angles, and every analytic function is some potential flow. The main message of the 1 October lecture was that one ordinary derivative replaces two sets of partial derivatives.
 
 | Flow | $\Phi(z)$ |
 |---|---|
@@ -35,11 +30,7 @@ The derivative of an analytic function is direction-independent only if the **Ca
 | cylinder | $U(z+R^2/z)$ |
 | wedge/corner | $-kz^{m+1}$ |
 
-## Key points
-
-- One ordinary derivative replaces two sets of partial derivatives (the 1 Oct lecture's main message).
-- Watch the minus sign: the imaginary part of $\mathrm d\Phi/\mathrm dz$ is $-v$.
-- The slide tables mix vortex sign conventions; state yours.
+The slide tables mix vortex sign conventions, so state yours when you use one.
 
 ## Related
 

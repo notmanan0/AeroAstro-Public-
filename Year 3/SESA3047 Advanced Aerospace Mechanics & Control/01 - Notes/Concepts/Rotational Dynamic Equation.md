@@ -13,35 +13,25 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_
 
 # Rotational Dynamic Equation
 
-## Statement
+For a rigid body with inertia matrix $\mathbf J$ about its centre of mass, in body-fixed FRD coordinates,
 
-> [!note] Definition
-> For a rigid body with inertia matrix $\mathbf J$ about its centre of mass, in body-fixed FRD coordinates:
->
-> $${}^b\dot{\boldsymbol\omega}^{FRD}_{b/i}=\left(\mathbf J^{FRD}\right)^{-1}\left[\left(\sum\mathbf M_{cm}\right)^{FRD}-\tilde{\boldsymbol\omega}^{FRD}_{b/i}\,\mathbf J^{FRD}\boldsymbol\omega^{FRD}_{b/i}\right]\qquad(3.71)$$
+$${}^b\dot{\boldsymbol\omega}^{FRD}_{b/i}=\left(\mathbf J^{FRD}\right)^{-1}\left[\left(\sum\mathbf M_{cm}\right)^{FRD}-\tilde{\boldsymbol\omega}^{FRD}_{b/i}\,\mathbf J^{FRD}\boldsymbol\omega^{FRD}_{b/i}\right]\qquad(3.71)$$
 
-## Derivation in four lines
+It starts from Newton's law for rotation in the inertial frame, $\sum\mathbf M_{cm}={}^i\dot{\mathbf h}$ with $\mathbf h=\mathbf J\boldsymbol\omega$ ([[Inertia Matrix]]). The [[Transport Theorem]] moves the derivative to body axes, ${}^i\dot{\mathbf h}={}^b\dot{\mathbf h}+\boldsymbol\omega\times\mathbf h$. In body axes $\dot{\mathbf J}=\mathbf 0$ because the body is rigid (constant mass alone isn't enough: deploying panels change $\mathbf J$ at fixed $m$), so ${}^b\dot{\mathbf h}=\mathbf J\dot{\boldsymbol\omega}$, and $\boldsymbol\omega\times\mathbf h=\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$. Solving for $\dot{\boldsymbol\omega}$ gives (3.71).
 
-1. Newton for rotation in the inertial frame: $\sum\mathbf M_{cm}={}^i\dot{\mathbf h}$, with $\mathbf h=\mathbf J\boldsymbol\omega$ ([[Inertia Matrix]]).
-2. [[Transport Theorem]] to body axes: ${}^i\dot{\mathbf h}={}^b\dot{\mathbf h}+\boldsymbol\omega\times\mathbf h$.
-3. In body axes $\dot{\mathbf J}=\mathbf 0$ **because the body is rigid** (constant mass alone is not enough: deploying panels change $\mathbf J$ at fixed $m$), so ${}^b\dot{\mathbf h}=\mathbf J\dot{\boldsymbol\omega}$; and $\boldsymbol\omega\times\mathbf h=\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$.
-4. Solve for $\dot{\boldsymbol\omega}$.
-
-Step-by-step derivation and figure: [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]. Lectured in L10 (Mon 12 Oct), which ended at the implicit form $\sum\mathbf M_{cm}=\mathbf J\dot{\boldsymbol\omega}+\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ (3.70); the precise reasons for steps 1 and 3 are in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Two facts L10 glossed|3.3]].
-
-L11 ll. 35–68 revisits the explicit derivative; ll. 72–228 expand the full-inertia equation and principal-axis case. See [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]] for the full backfill and recording slips.
+The step-by-step derivation and figure are in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]. L10 (Mon 12 Oct) ended at the implicit form $\sum\mathbf M_{cm}=\mathbf J\dot{\boldsymbol\omega}+\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ (3.70), and [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Two facts L10 glossed|3.3]] fills in the two steps it skipped over. L11 ll. 35–68 revisits the explicit derivative and ll. 72–228 expand the full-inertia equation and the principal-axis case; see [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]].
 
 ## Special forms
 
-Notation: this note and 3.3 use $J_x,J_y,J_z$ for the moments of inertia; 4.1 and the Chapter 4 handout write the same quantities as $J_{xx},J_{yy},J_{zz}$ ($J_x\equiv J_{xx}$, $J_y\equiv J_{yy}$, $J_z\equiv J_{zz}$).
+This note and 3.3 write the moments of inertia as $J_x,J_y,J_z$; 4.1 and the Chapter 4 handout write $J_{xx},J_{yy},J_{zz}$ for the same things.
 
-**Principal axes** (Euler's equations):
+On principal axes the equation becomes Euler's equations:
 
 $$
 J_x\dot p=L+(J_y-J_z)qr,\qquad J_y\dot q=M+(J_z-J_x)rp,\qquad J_z\dot r=N+(J_x-J_y)pq.
 $$
 
-**Aircraft with $x$–$z$ symmetry** ($J_{xz}\neq0$):
+For an aircraft with $x$–$z$ symmetry ($J_{xz}\neq0$):
 
 $$
 L=J_x\dot p-J_{xz}\dot r+(J_z-J_y)qr-J_{xz}pq,
@@ -55,15 +45,11 @@ $$
 N=J_z\dot r-J_{xz}\dot p+(J_y-J_x)pq+J_{xz}qr.
 $$
 
-## Internal rotors
-
-With total momentum $\mathbf h=\mathbf J\boldsymbol\omega+\mathbf h_R$, add $-\mathbf J^{-1}(\boldsymbol\omega\times\mathbf h_R+{}^b\dot{\mathbf h}_R)$ to the baseline derivative. See [[Rotor Angular Momentum]]; Chapter 4 §4.1.4, lectured in L12–L13 (the ${}^b\dot{\mathbf h}_R$ term is handout only).
+With an internal rotor, the total momentum is $\mathbf h=\mathbf J\boldsymbol\omega+\mathbf h_R$ and $-\mathbf J^{-1}(\boldsymbol\omega\times\mathbf h_R+{}^b\dot{\mathbf h}_R)$ is added to the baseline derivative ([[Rotor Angular Momentum]]; Chapter 4 §4.1.4, lectured in L12–L13, with the ${}^b\dot{\mathbf h}_R$ term in the handout only).
 
 ## Physical meaning
 
-- $\mathbf M$: applied moments (aerodynamic, thrust, controls).
-- $\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$: the change of angular momentum associated with the rotating body frame (Chapter 3, p. 14; textbooks call it the gyroscopic term). It exists with no applied moment, because $\mathbf h$ is generally not parallel to $\boldsymbol\omega$. It causes **inertia coupling** (Chapter 4, p. 4; L12; Lab 1 says *inertial coupling*), the need to balance rotors, and the instability of spin about the intermediate principal axis.
-- Torque-free motion conserves $|\mathbf h|$ and the kinetic energy $\tfrac12\boldsymbol\omega^T\mathbf J\boldsymbol\omega$.
+$\mathbf M$ is the applied moment: aerodynamic, thrust, controls. The $\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ term is the change of angular momentum due to the rotating body frame (Chapter 3, p. 14; the gyroscopic term in textbooks). It exists even with no applied moment, because $\mathbf h$ is generally not parallel to $\boldsymbol\omega$. It is behind inertia coupling (Chapter 4, p. 4; L12; Lab 1 says "inertial coupling"), the need to balance rotors, and the instability of spin about the intermediate principal axis. Torque-free motion conserves $|\mathbf h|$ and the kinetic energy $\tfrac12\boldsymbol\omega^T\mathbf J\boldsymbol\omega$.
 
 ## Related
 

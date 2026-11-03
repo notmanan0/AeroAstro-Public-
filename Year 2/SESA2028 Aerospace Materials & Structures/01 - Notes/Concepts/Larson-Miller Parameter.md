@@ -3,47 +3,24 @@ title: "Larson-Miller Parameter"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["LMP", "Larson-Miller", "Time-temperature parameter"]
 tags: [sesa2028, materials, creep, lifing]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys]]"]
 related: ["[[Creep Curve and Mechanisms]]", "[[Creep Miner's Rule]]"]
 ---
 
 # Larson-Miller Parameter
 
-![[Figures/materials_lmp_rupture_time_map.png]]
+The Larson–Miller parameter $\mathrm{LMP}=T(C+\log_{10}t_r)$, with $T$ in kelvin, $t_r$ in hours and $C\approx20$, combines time and temperature so that one curve of stress against LMP describes an alloy's creep rupture at every temperature.
 
-## Derivation
+It comes from the Arrhenius form of the rupture time at constant stress, $t_r=A'\exp(Q/RT)$. Taking logarithms gives $\ln t_r=\ln A'+Q/RT$, and rearranging gives $T(\ln t_r-\ln A')=Q/R$, a constant; in base-10 form with the constant renamed $C$ this is the parameter. It assumes secondary creep controls the life and applies at a fixed stress, so the stress dependence is carried by plotting stress against LMP. The time can be the rupture time or the time to a set strain such as 1 %. For titanium, carbon, chromium–molybdenum and stainless steels the values lie roughly between 20 and 28 thousand.
 
-At fixed stress, $t_r=A'\exp(Q/RT)$. Take logs:
+To find a life, read the LMP at the service stress from the master curve and rearrange: $\log_{10}t_r=\mathrm{LMP}/T-C$. For the lecture's S-590 alloy at 140 MPa and 800 °C, an LMP of 24,000 at 1073 K gives $10^{2.367}=233$ h. The same equivalence justifies accelerated tests: a short test at a higher temperature with the same LMP represents a long life at a lower one, which matters because tests longer than $10^5$ h (11 years) are rare.
 
-$$
-\ln t_r=\ln A'+\frac Q{RT}\;\Rightarrow\;T(\ln t_r-\ln A')=\frac QR=\text{constant at that stress}.
-$$
+Because the life is exponential in LMP, small read-off errors matter: ±200 at 973 K changes the life by a factor of 1.6. An answer should state that uncertainty and apply a safety factor, and should use kelvin, since the parameter is meaningless in °C.
 
-In base 10:
+## Related
 
-$$
-\mathrm{LMP}=T\,(C+\log_{10}t_r),
-$$
-
-where $T$ is in **K**, $t_r$ in **h**, and $C\approx20$ (empirical). $t$ can also be the time to a set strain.
-
-A single master curve of $\log\sigma$ against LMP collapses rupture data from all temperatures. That lets short, hot tests be converted to long, cooler service lives.
-
-## Method
-
-1. Read the LMP at the service stress from the curve (note the axis units, e.g. ×10³).
-2. $\log_{10}t_r=\mathrm{LMP}/T-C$, with $T$ **in kelvin**.
-3. Apply a **safety factor** (the lecturer deducts a mark without one) and comment on read-off sensitivity.
-
-## Worked examples
-
-- Lecture, S-590 iron, 140 MPa at 800 °C: LMP = 24.0×10³, so $\log t_r=24000/1073-20=2.367$, giving $t_r=233$ h.
-- 2014-15 B1(iv), 500 MPa at 700 °C: $\log\sigma=2.699$ gives LMP 26.4×10³, so $\log t_r=7.13$, giving $1.35\times10^7$ h.
-- 2015-16 B3(iv), Alloy 738, 300 MPa at 785 °C: LMP 25.0×10³, so $\log t_r=3.629$, giving **4,261 h** (then SF 2: about 2,100 h).
-- 2020-21 G92 uses $C=35.28$. Always use the constant the question gives.
-
-## Sensitivity
-
-An error $\delta$ in the LMP read-off changes $\log t_r$ by $\delta/T$. At 700 °C, ±200 changes $t_r$ by a factor of about 1.6. Extrapolating the master curve beyond the test data is risky (mechanisms may change).
+- Topic: [[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys|M8]]
+- Concepts: [[Creep Curve and Mechanisms]] · [[Creep Miner's Rule]]

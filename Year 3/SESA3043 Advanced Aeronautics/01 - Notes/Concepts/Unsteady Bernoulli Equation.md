@@ -13,25 +13,15 @@ sources: ["02 - Sources/Lectures/Ch1_Notes_Unsteady Bernoulli Eqn.pdf"]
 
 # Unsteady Bernoulli Equation
 
-## Definition
+For incompressible, irrotational flow, $\mathbf u=\nabla\phi$, the momentum equation integrates to
 
-> [!note] Definition
-> For incompressible, irrotational flow ($\mathbf u=\nabla\phi$):
->
-> $$\frac{\partial\phi}{\partial t}+\frac{q^2}{2}+\frac p\rho\ (+gz)=C(t),$$
->
-> the same constant everywhere in the flow at a given instant.
+$$\frac{\partial\phi}{\partial t}+\frac{q^2}{2}+\frac p\rho\ (+gz)=C(t),$$
 
-## Derivation in brief
+where $C(t)$ is the same everywhere in the flow at a given instant. Because the flow is irrotational, it holds between any two points, not just along a streamline.
 
-$(\mathbf u\cdot\nabla)\mathbf u=\nabla(q^2/2)+(\nabla\times\mathbf u)\times\mathbf u=\nabla(q^2/2)$; $\nabla^2\mathbf u=\nabla(\nabla\cdot\mathbf u)-\nabla\times(\nabla\times\mathbf u)=\mathbf 0$; $\partial_t\nabla\phi=\nabla\partial_t\phi$. Every term of Navier–Stokes is then a gradient, so the bracket is a function of time only.
+It comes from turning every term of Navier–Stokes into a gradient. The convective term is $(\mathbf u\cdot\nabla)\mathbf u=\nabla(q^2/2)+(\nabla\times\mathbf u)\times\mathbf u=\nabla(q^2/2)$. The viscous term vanishes identically, since $\nabla^2\mathbf u=\nabla(\nabla\cdot\mathbf u)-\nabla\times(\nabla\times\mathbf u)=\mathbf 0$. And $\partial_t\nabla\phi=\nabla\partial_t\phi$. With everything a gradient, the bracket can only depend on time. (The Blackboard notes' Eq. (1) leaves out the "$\times\mathbf u$" in the vorticity term.)
 
-## Key points
-
-- Valid between **any** two points (not just along a streamline), because the flow is irrotational.
-- The viscous term is identically zero, but no-slip cannot be satisfied: hence boundary layers.
-- The $\partial\phi/\partial t$ term is fluid inertia: start-up transients in pipes, and **added mass** ($\pi\rho R^2$ for a cylinder; total force $2\pi\rho R^2\dot U$ in an accelerating stream).
-- The Blackboard notes' Eq. (1) omits "$\times\mathbf u$" from the vorticity term.
+The viscous term being zero doesn't mean viscosity is irrelevant: potential flow can't satisfy no-slip, which is why boundary layers are needed. The $\partial\phi/\partial t$ term is the inertia of the fluid itself. It drives start-up transients in pipes and gives the added mass of an accelerating body, $\pi\rho R^2$ per unit length for a cylinder, with a total force of $2\pi\rho R^2\dot U$ on a cylinder held in an accelerating stream.
 
 ![[aa_unsteady_bernoulli.png|700]]
 

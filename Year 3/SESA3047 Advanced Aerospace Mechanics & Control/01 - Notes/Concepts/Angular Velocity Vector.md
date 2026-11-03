@@ -13,12 +13,9 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 
 # Angular Velocity Vector
 
-## Definition
+$\boldsymbol\omega_{b/a}$ is the rate at which frame $F_b$ rotates relative to frame $F_a$. Its magnitude is the rotation rate and its direction is the instantaneous rotation axis, by the right-hand rule. In body FRD components it is $[p,\ q,\ r]^T$, the roll, pitch and yaw rates.
 
-> [!note] Definition
-> $\boldsymbol\omega_{b/a}$ is the rate at which frame $F_b$ rotates relative to frame $F_a$. Its magnitude is the rotation rate. Its direction is the instantaneous rotation axis, with the right-hand rule. In body FRD components it is $[p,\ q,\ r]^T$ (roll, pitch and yaw rates).
-
-## Properties (§2.2.1)
+Its properties (§2.2.1):
 
 | Property | Formula | Why |
 |---|---|---|
@@ -32,9 +29,7 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 >
 > The cross term is the source of what textbooks call gyroscopic effects.
 
-## Not the rate of the Euler angles
-
-$\boldsymbol\omega$ is a true vector. The Euler angles $(\phi,\theta,\psi)$ are not, and in general $[p,q,r]^T\neq[\dot\phi,\dot\theta,\dot\psi]^T$. Each Euler rate acts about a different, partly rotated axis. The two coincide only near wings-level flight, where $\phi$ and $\theta$ are small (see [[Aerospace 3-2-1 Euler Sequence]]). The exact relation is the [[Rotational Kinematic Equation]].
+Angular velocity is a true vector; the Euler angles $(\phi,\theta,\psi)$ are not, and in general $[p,q,r]^T\neq[\dot\phi,\dot\theta,\dot\psi]^T$, because each Euler rate acts about a different, partly rotated axis. The two only coincide near wings-level flight, where $\phi$ and $\theta$ are small ([[Aerospace 3-2-1 Euler Sequence]]). The exact relation is the [[Rotational Kinematic Equation]].
 
 ## Related
 

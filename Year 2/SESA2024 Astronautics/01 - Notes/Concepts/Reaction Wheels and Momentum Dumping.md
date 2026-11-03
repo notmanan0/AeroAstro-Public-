@@ -3,42 +3,25 @@ title: "Reaction Wheels and Momentum Dumping"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["reaction wheel", "momentum wheel", "wheel desaturation", "momentum dumping", "control moment gyro", "CMG"]
+aliases: ["reaction wheel", "momentum wheel", "control moment gyro", "CMG", "wheel desaturation", "momentum dumping", "momentum storage"]
 tags: [sesa2024, concept, attitude-control]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 06 - Attitude Control]]"]
-related_concepts: ["[[Attitude Sensors and Torquers]]", "[[Momentum Bias and Gyroscopic Rigidity]]", "[[Spacecraft Stabilisation Types]]"]
-sources: ["02 - Sources/Lectures/Chapter 6/2025 WEEK 3 Lecture 1 - Chapter 6 - Attitude Control - complete.pdf"]
+related_concepts: ["[[Attitude Sensors and Torquers]]", "[[Momentum Bias and Gyroscopic Rigidity]]"]
+sources: ["02 - Sources/Lectures/SESA2024 Lecture 2025-10-14.txt"]
 ---
 
 # Reaction Wheels and Momentum Dumping
 
-## Definition
+Reaction wheels, momentum wheels and control moment gyros are internal torquers: flywheels whose motors move angular momentum between the wheel and the spacecraft body without changing the total. Momentum dumping is the use of an external torquer to remove momentum that has built up in them.
 
-> [!note] Definition
-> - A **reaction wheel** is an *internal* torquer. Its motor spins the wheel, and by conservation of $\mathbf H$ the spacecraft counter-rotates: $I_{sc}\omega_{sc} = -I_w\omega_w$.
-> - **Momentum dumping** (Europe), or **wheel desaturation** (USA), removes the stored momentum using *external* torquers once the wheel nears its maximum speed.
+A reaction wheel runs at low speed in either direction, nominally near zero, and is used for control: speed it up one way and the body turns the other. A momentum wheel runs fast (about 6500 rpm) in one direction, varied by about ±10 %, to provide bias. A control moment gyro spins at constant speed and is gimballed; tilting it produces large torques through gyroscopic precession, so the ISS uses four of them, but they are heavy and complex.
 
-## Explanation
-- **Reaction wheels**: nominally near 0 rpm, used for fine pointing and large slews on 3-axis (zero-bias) spacecraft.
-- **Momentum wheels**: nominally about 6500 rpm, used to create bias (hybrid spacecraft).
-- **CMGs**: gimballed momentum wheels. Tilting the $\mathbf H$ vector gives large torques (used on ISS-class vehicles).
-- **Periodic** momentum (the before and after momenta are equal, for example Earth-pointing in an elliptic orbit) is stored and returned by the wheels **without fuel**. Size the wheel capacity for it.
-- **Secular** momentum from external disturbances (aerodynamic, solar pressure, gravity gradient, magnetic) makes the wheel speed creep upward.
-- **Dump procedure**:
-  1. At the maximum wheel speed, hand pointing control to thrusters or magnetorquers.
-  2. Brake the wheel. The internal braking torque would de-point the spacecraft, so the external torquers hold attitude while the wheel slows.
-- Only **external** torques can change the total $\mathbf H$, so every spacecraft must carry external torquers.
+Wheels can absorb periodic momentum changes indefinitely, without any dumping. An Earth-pointing spacecraft on an elliptical orbit has to turn faster near perigee than near apogee; the wheel absorbs the difference and gives it back each orbit. Secular changes are different. A disturbance torque that acts the same way every orbit, such as drag on a deployed array, makes the wheel spin a little faster each time until it saturates. Before then, an external torquer (thrusters, magnetorquers or trim tabs) holds the attitude while the wheel is slowed down. Europe calls this momentum dumping; the USA calls it wheel desaturation. Wheels cannot dump momentum on their own, because they are internal.
 
-![[ast_momentum_dumping.png|520]]
-
-## Examples
-- Hubble: reaction wheels for slewing; magnetorquers for dumping.
-- GEO observatory (workbook Ch6 Q12): 3 orthogonal wheels plus 1 skewed for redundancy. **Magnetorquers** avoid contaminating the optics, but at GEO their effect is weak.
-- Exam 2017/18 Q1(iii): "What are internal torquers and how are they used?" (4 marks).
+![[ast_wheel_momentum_elliptic.png|600]]
 
 ## Related
-- [[Attitude Sensors and Torquers]] · [[Momentum Bias and Gyroscopic Rigidity]] · [[Spacecraft Stabilisation Types]]
 
-## Sources
-- Chapter 6 lecture slides 41–46; workbook Ch6 Q6, Q8
+- [[SESA2024 06 - Attitude Control#6. Momentum storage and dumping|Momentum storage in the lecture note]] · [[SESA2024 06 - Attitude Control#Internal disturbances and torquers|Wheel types]]
+- [[Attitude Sensors and Torquers]] · [[Momentum Bias and Gyroscopic Rigidity]]

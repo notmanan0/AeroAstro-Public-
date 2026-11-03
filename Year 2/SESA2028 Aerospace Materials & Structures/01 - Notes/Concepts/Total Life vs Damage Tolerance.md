@@ -3,34 +3,24 @@ title: "Total Life vs Damage Tolerance"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Total life approach", "Damage-tolerant design", "Safe life"]
 tags: [sesa2028, materials, fatigue, lifing, design-philosophy]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing]]"]
 related: ["[[Miner's Rule]]", "[[Paris Law]]", "[[S-N Curve and Basquin Law]]"]
 ---
 
 # Total Life vs Damage Tolerance
 
-Two philosophies for lifing against fatigue.
+The total-life approach predicts the cycles to initiate a crack and grow it to failure from S-N data, while the damage-tolerant approach assumes a crack of known size is already present and predicts how long it takes to grow to the critical size.
 
-## Total life (safe life)
+A total-life prediction counts $N_i+N_g$ from S-N or strain-life curves, combined over a load spectrum with [[Miner's Rule]] and corrected for mean stress with the [[Goodman Relation]]. Because S-N data are normally measured on well-finished specimens, initiation dominates the result, so the approach in effect designs against initiation. Its weakness is the same fact: the curves depend heavily on surface finish, and a scratch, dent or corrosion pit removes much of the initiation life the curve assumed. It suits smooth parts, or parts that must not crack at all or cannot be inspected.
 
-- Predicts the cycles to **initiate** a crack in a nominally defect-free part **plus** to grow it to failure: $N_f=N_i+N_g$.
-- Uses S-N (HCF) or $\varepsilon$-N (LCF) curves, Goodman mean-stress correction and **Miner's rule** for spectra.
-- Because $N_i$ usually dominates and depends heavily on **surface finish**, this approach effectively **designs against initiation**.
-- **Data needed**: S-N or $\varepsilon$-N curves for the right material, surface condition, environment and mean stress; the service load spectrum (rainflow counted); stress-concentration factors or FEA hot-spot stresses.
-- **Suited to**: parts that must not crack, or cannot be inspected in service. Rotating shafts, springs, gears, bolts, some engine components; the lecturer's example is steam-turbine blade roots.
+The damage-tolerant approach accepts the almost inevitable presence of defects. It needs the initial defect size and position from non-destructive testing (dye penetrant, optical, X-ray or ultrasound), the final crack size (usually $a_c$ from $K_{Ic}$ at the peak stress, though a deflection limit or net-section yield could set it), the stress range, and the Paris constants. Integrating the [[Paris Law]] gives the remaining life and so a safe inspection interval. It suits inspectable structures that can tolerate a crack for a while: airframes, pressure vessels, welded offshore structures, turbine discs managed by inspection.
 
-## Damage tolerance
+The choice is the first part of most past-paper lifing questions, and the data list is often worth marks on its own.
 
-- **Assumes a crack already exists**: the largest found by NDT, or the largest that could be *missed*.
-- Uses fracture mechanics: $\Delta K$, the Paris law to grow the crack from $a_i$ to $a_c$, and $K_{Ic}$ for $a_c$.
-- Designs against **growth**; sets **inspection intervals** so a crack is found before it reaches $a_c$.
-- **Data needed**: $a_i$ (size **and** position, from dye penetrant, magnetic particle, eddy current, ultrasound or X-ray); $\Delta\sigma$ and $\sigma_{max}$; $K_{Ic}$; $A$, $m$ in the service environment; the geometry factor $Q$.
-- **Suited to**: inspectable, redundant structures. Airframes (wings, fuselage), pressure vessels, offshore welds, turbine discs (retirement-for-cause).
+## Related
 
-## Contrast in one line
-
-Total life asks "how long until a crack appears and grows?"; damage tolerance asks "given this crack, how long until it is dangerous, and when must I look again?"
-
-See [[Miner's Rule]] and [[Paris Law]].
+- Topic: [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]]
+- Concepts: [[Miner's Rule]] · [[Paris Law]] · [[S-N Curve and Basquin Law]] · [[Goodman Relation]]

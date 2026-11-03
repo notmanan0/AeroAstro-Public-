@@ -5,7 +5,7 @@ type: concept
 stream: "Part A: Computational Fluid Dynamics"
 aliases: ["eddy viscosity", "Spalart-Allmaras", "k-epsilon", "k-omega", "SST", "Reynolds stress model", "turbulence models"]
 tags: [sesa2029, concept, turbulence, rans]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2029 A8 - Turbulence, RANS and Turbulence Models]]"]
 related_concepts: ["[[Reynolds Averaging and the Closure Problem]]", "[[First-Cell Height and y-plus]]", "[[Newtonian Fluid and Strain-Rate Tensor]]"]
 sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9)", "02 - Sources/CFD/CFD.txt", "NASA Langley Turbulence Modeling Resource"]
@@ -13,16 +13,11 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9)", "02 - Sources/C
 
 # Eddy-Viscosity Turbulence Models
 
-## Definition
+Models that close RANS by relating the Reynolds stresses to the mean strain rate through a turbulent (eddy) viscosity $\nu_t$. For a boundary layer:
 
-> [!note] Definition
-> Models that close RANS by relating the Reynolds stresses to the mean strain rate through a **turbulent (eddy) viscosity** $\nu_t$. For a boundary layer:
->
-> $$-\overline{u'v'} = \nu_t\frac{\partial\bar u}{\partial y}$$
->
-> The model then supplies $\nu_t$ from one or two extra transport equations.
+$$-\overline{u'v'} = \nu_t\frac{\partial\bar u}{\partial y}$$
 
-## Explanation
+The model then supplies $\nu_t$ from one or two extra transport equations.
 
 | Model | Extra equations | $\nu_t$ | Use | Near-wall $y_1^+$ |
 |---|---|---|---|---|
@@ -33,10 +28,8 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9)", "02 - Sources/C
 | Reynolds stress | 7 | none (stresses solved directly) | swirl, strong curvature; expensive, can be unstable | wall-resolved |
 
 - $k = \tfrac12\overline{u_i'u_i'}$ is the turbulence kinetic energy, $\varepsilon$ is its dissipation rate, and $\omega\propto\varepsilon/k$.
-- **Never retune the constants**: they are calibrated as a set against canonical flows.
+- Never retune the constants: they are calibrated as a set against canonical flows.
 - Different models give different answers for the same flow. Turbulence and transition modelling are the largest physical uncertainties in aerodynamic CFD.
-
-## Examples
 
 - For a wing at cruise, choose SA or $k$–$\omega$ SST with a wall-resolved grid ($y_1^+\approx1$). For a quick industrial estimate on a coarse wall grid, use $k$–$\varepsilon$ with wall functions ($y_1^+>30$).
 
@@ -44,9 +37,3 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9)", "02 - Sources/C
 
 - Parent lectures: [[SESA2029 A8 - Turbulence, RANS and Turbulence Models]]
 - Related concepts: [[Reynolds Averaging and the Closure Problem]] · [[First-Cell Height and y-plus]] · [[Newtonian Fluid and Strain-Rate Tensor]]
-
-## Sources
-
-- 02 - Sources/CFD/All_lectures_as_delivered.pdf (L9)
-- 02 - Sources/CFD/CFD.txt
-- NASA Langley Turbulence Modeling Resource

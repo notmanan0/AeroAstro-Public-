@@ -26,7 +26,7 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA3047 Formula Sheet.md", "02 - Sou
 > - `04 - Labs & Coursework`: **Lab 1** (MATLAB exercises feeding the 20 % lab report) and **Coursework 1** (20 marks, 10 % of the module, due Thu 29 Oct, 23:00; L12 ll. 352–357). Both are **assessed**, so neither is solved here. The numbers below deliberately differ from both. Where a question practises the same skill (Q4, Q10), it uses its own data and its own attitude, so nothing here is a coursework answer.
 
 > [!info] How to use this sheet
-> - **Timing:** marks are converted at **≈1.8 min per mark** (about a 2-hour paper of 65–70 marks). The SESA3047 exam format had not been announced by 22 Oct, so treat this rate as an assumption. The whole sheet is 118 marks, about 3.5 hours: do two or three questions per sitting.
+> - **Timing:** marks are converted at ≈1.8 min per mark (about a 2-hour paper of 65–70 marks). The SESA3047 exam format had not been announced by 22 Oct, so treat this rate as an assumption. The whole sheet is 118 marks, about 3.5 hours: do two or three questions per sitting.
 > - Attempt each question closed-book, then compare. Each solution links back to the section of the topic note it tests.
 > - Conventions follow the lectures: $\mathbf C=\mathbf C_{FRD/NED}=\mathbf C_x(\phi)\mathbf C_y(\theta)\mathbf C_z(\psi)$, $\mathbf u^{FRD}=\mathbf C\mathbf u^{NED}$, $\boldsymbol\omega^{FRD}=[p,q,r]^T$, $\mathbf v^{FRD}=[u,v,w]^T$, $g=9.81$ m/s², angles in radians inside trigonometric functions.
 > - Every number in a `[!check]` callout was recomputed in Python (numpy/scipy).
@@ -1018,13 +1018,12 @@ $$
 ## Sources
 
 - Lectured content of `Chapter 1.pdf` to `Chapter_4.pdf` and transcripts L2–L13, through the topic notes linked in each solution.
-- Checked for set questions: `02 - Sources/Lectures` (no tutorial or revision sheet), `03 - Exams & Past Papers` (empty), `04 - Labs & Coursework/Lab 1/Lab_1.pdf` and `Coursework 1/Coursework_1.pdf` (assessed; not solved here).
+- Checked for set questions: `02 - Sources/Lectures` (no tutorial or revision sheet), `03 - Exams & Past Papers` (empty), `04 - Labs & Coursework/Lab 1/Lab_1.pdf` and `Coursework 1/Brief/Coursework_1.pdf` (assessed; not solved here).
 - All numbers: numpy/scipy checks run on 24 Oct 2026.
 
 ## Self-study tasks
 
-> [!info] Nothing here was lecturer-set
-> These tasks are **suggested, not lecturer-set**. No tutorial or revision questions had been issued for SESA3047 by 22 Oct 2026.
+None of these tasks was lecturer-set; no tutorial or revision questions had been issued for SESA3047 by 22 October 2026.
 
 - [ ] *(Suggested)* Q4, Q6 and Q10 closed-book under timed conditions (≈70 min). → [[#Q4. Building and inverting a 3-2-1 DCM]] · [[#Q6. Euler-angle rates from gyro rates]] · [[#Q10. Body-axis translational dynamics and the 12-state model]]
 - [ ] *(Suggested)* Q3(a), Q7(a) and Q9(a) as derivation-only practice, one move per line. → [[#Q3. The transport theorem]] · [[#Q7. Coriolis and transport acceleration in a spinning station]] · [[#Q9. Propeller rotor contribution]]

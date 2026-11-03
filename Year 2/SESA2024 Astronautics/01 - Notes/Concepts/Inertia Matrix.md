@@ -3,47 +3,28 @@ title: "Inertia Matrix"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["inertia tensor", "products of inertia", "moments of inertia", "principal axes"]
+aliases: ["inertia tensor", "moments of inertia", "products of inertia", "principal axes"]
 tags: [sesa2024, concept, attitude-control]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 06 - Attitude Control]]"]
-related_concepts: ["[[Spacecraft Stabilisation Types]]", "[[Momentum Bias and Gyroscopic Rigidity]]"]
-sources: ["02 - Sources/Lectures/Chapter 6/Chapter 6 - Attitude Control - prerecorded material.pdf"]
+related_concepts: ["[[Momentum Bias and Gyroscopic Rigidity]]", "[[Spacecraft Stabilisation Types]]"]
+sources: ["02 - Sources/Lectures/Chapter 6/Chapter 6 - Attitude Control - prerecorded material.pdf", "Fortescue, Stark and Swinerd, Spacecraft Systems Engineering, Ch. 9"]
 ---
 
 # Inertia Matrix
 
-## Definition
+The inertia matrix $[\mathbf I]$ relates a rigid body's angular velocity to its angular momentum, $\mathbf H=[\mathbf I]\boldsymbol\omega$, and so describes how the body's mass is distributed about its centre of mass.
 
-> [!note] Definition
->
-> $$\mathbf H = [\mathbf I]\boldsymbol\omega,\qquad[\mathbf I] = \begin{bmatrix}I_{xx}&-I_{xy}&-I_{xz}\\-I_{xy}&I_{yy}&-I_{yz}\\-I_{xz}&-I_{yz}&I_{zz}\end{bmatrix}$$
->
-> - **Moments of inertia**: $I_{xx} = \int(y^2+z^2)\,dm$.
-> - **Products of inertia**: $I_{xy} = \int xy\,dm$.
-> Both are taken about the centre of mass.
+$$
+[\mathbf I]=\begin{bmatrix}I_{xx}&-I_{xy}&-I_{xz}\\-I_{xy}&I_{yy}&-I_{yz}\\-I_{xz}&-I_{yz}&I_{zz}\end{bmatrix},
+\qquad I_{xx}=\int(y^2+z^2)\,dm,\quad I_{xy}=\int xy\,dm.
+$$
 
-## Explanation
-- **Diagonal terms** are always positive and measure resistance to angular acceleration (a tennis ball against a flywheel).
-- **Off-diagonal terms** measure **unbalance**. They cause **cross-coupling**: a torque or rate about one axis produces angular momentum about another.
-  - A symmetric cylinder has $I_{xy} = 0$, because mass at $(x,y)$ cancels mass at $(-x,y)$.
-  - An asymmetric mass gives $I_{xy}\neq0$.
-- **Principal axes**: the axes in which $[\mathbf I]$ is diagonal (its eigenvectors). Only about a principal axis are $\mathbf H$ and $\boldsymbol\omega$ parallel.
-- It is important because $d([\mathbf I]\boldsymbol\omega)/dt = \mathbf T$: torquer sizing and control response depend on it directly.
-- **Ideal spinner** (spin about $z$): diagonal, with equal transverse moments ($I_{xx} = I_{yy}$) and $I_{zz}$ the **maximum**.
-- **Gravity-gradient**: a long thin body (one small moment, two large).
+The diagonal terms, the moments of inertia, are the body's resistance to angular acceleration about each axis; they play the part that mass plays in $\mathbf p=m\mathbf v$. The off-diagonal products of inertia measure imbalance and cause cross-coupling: a torque or spin about one axis produces rotation about the others, as a drum with a small mass stuck to its rim starts to wobble. Because a matrix can rotate a vector, $\mathbf H$ is not in general parallel to $\boldsymbol\omega$; it is when the body spins about a principal axis, along which the products of inertia vanish.
 
-## Examples
-- 2024/25 A4: $[\mathbf I]$ with products of −550, −125 and −650 kg m² is not a spinner or dual-spinner design, so it is **3-axis stabilised**. (Its eigenvalues are 556, 1698 and 2996 kg m².)
-- Workbook Ch6 Q3 and Q11.
-- Exam 2014/15 and 2019/20: "what are the product of inertia terms?" (2 marks).
+The matrix sizes the torquers, sets the response to every control and disturbance torque, and decides whether a design can be spin-stabilised. A spinner needs zero products of inertia, its maximum moment about the spin axis, and equal transverse moments. A matrix with large products of inertia, like the one in 2024/25 A4, belongs to a three-axis-stabilised spacecraft. The principal moments are the eigenvalues of $[\mathbf I]$.
 
 ## Related
-- [[Spacecraft Stabilisation Types]] · [[Momentum Bias and Gyroscopic Rigidity]]
-- Rotation matrices and body axes: [[Euler Angles and Rotation Matrices]] (SESA2027)
 
-## Year 1 foundation
-- Planar mass moment of inertia, radius of gyration and the parallel axis theorem: [[FEEG1002 D8 - Kinetics of Rigid Bodies]].
-
-## Sources
-- Chapter 6 pre-recorded material, slides 6–13
+- [[SESA2024 06 - Attitude Control#The inertia matrix|Inertia matrix in the lecture note]] · [[SESA2024 06 - Attitude Control#Inertia matrix from the 2024/25 paper|2024/25 A4 example]]
+- [[Momentum Bias and Gyroscopic Rigidity]] · [[Spacecraft Stabilisation Types]]

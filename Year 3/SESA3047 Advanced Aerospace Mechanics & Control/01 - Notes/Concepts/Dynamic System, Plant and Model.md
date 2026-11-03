@@ -13,20 +13,10 @@ sources: ["02 - Sources/Lectures/Chapter 1.pdf"]
 
 # Dynamic System, Plant and Model
 
-## Definitions
+A **dynamic system** is one whose condition and motion evolve with time in response to initial conditions, control inputs, forces, moments and disturbances. The **plant** is the physical system you want to analyse or control, and a **model** is a mathematical representation of selected parts of the plant's behaviour, built for a purpose and under stated assumptions.
 
-> [!note] Dynamic system
-> A system whose condition and motion evolve with time in response to initial conditions, control inputs, forces, moments and disturbances.
-
-> [!note] Plant
-> The physical system whose behaviour is to be analysed or controlled.
-
-> [!note] Model
-> A purposeful mathematical representation of selected plant behaviour under stated assumptions.
-
-The plant and model are not interchangeable. One plant can require several models, each suited to a different engineering question.
+The plant and the model aren't interchangeable. One plant can need several models, each suited to a different engineering question.
 
 ## Related
 
 - [[Model Fidelity and Validity]] · [[State, Input, Output and Parameter]]
-

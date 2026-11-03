@@ -389,8 +389,7 @@ $$
 > [!check] Python
 > $\beta=0.6667$; walls at $120.0^\circ$; $k=16.000$; on the wall at $s=0.25$: $|\mathrm d\Phi/\mathrm dz|=12.000$ and the flow direction is $120.0^\circ$ (along the wall ✓); $\phi=2.000=ks^{3/2}$ ✓. $\mathrm dp/\mathrm ds=-352.80$ Pa/m at both $s=0.05$ and $0.25$. $p_{apex}-p(0.25)=88.200+6.125=94.325$ Pa; $p(0.05)-p(0.25)=70.560+5.577=76.137$ Pa.
 
-> [!tip] Link forward
-> The wall speed $U_e\propto s^{1/2}$ is a Falkner–Skan edge velocity with $m=\tfrac12$, $\beta=\tfrac23$: an accelerating, favourable-gradient layer, thinner and fuller than Blasius ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Special cases and the wedge angle (slide 77)|3.2]]).
+Looking ahead, the wall speed $U_e\propto s^{1/2}$ is a Falkner–Skan edge velocity with $m=\tfrac12$, $\beta=\tfrac23$: an accelerating, favourable-gradient layer, thinner and fuller than Blasius ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Special cases and the wedge angle (slide 77)|3.2]]).
 
 > [!warning] Common slip
 > Do not drop $\partial\phi/\partial t$ just because the apex is a stagnation point. It is zero **at the apex** because $\phi(0)=0$ there for every $k$, but it is not zero along the wall.
@@ -1124,7 +1123,7 @@ $$
 C_f=\frac{\tau_w}{\tfrac12\rho U_e^2}=\frac{\pi\nu}{U_e\delta}=\boxed{\frac{\pi}{Re_\delta}.}
 $$
 
-**(b) Origin.** For a flat plate (zero pressure gradient) a control volume gives $D=\rho U_e^2\theta$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#4. Momentum thickness θ: the control-volume derivation (slides 19–29)|3.1 §4]]). The drag is also $\int_0^x\tau_w\,\mathrm dx$. Differentiating both in $x$ gives $\rho U_e^2\,\mathrm d\theta/\mathrm dx=\tau_w$, i.e. $\mathrm d\theta/\mathrm dx=C_f/2$. It holds **for a flat plate only** (BL1, ll. 284–288).
+**(b) Origin.** For a flat plate (zero pressure gradient) a control volume gives $D=\rho U_e^2\theta$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#4. Momentum thickness θ: the control-volume derivation (slides 19–29)|3.1 §4]]). The drag is also $\int_0^x\tau_w\,\mathrm dx$. Differentiating both in $x$ gives $\rho U_e^2\,\mathrm d\theta/\mathrm dx=\tau_w$, i.e. $\mathrm d\theta/\mathrm dx=C_f/2$. It holds **for a flat plate only** (BL1, ll. 285–289).
 
 Substitute the profile results:
 

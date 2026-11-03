@@ -5,12 +5,12 @@ type: formula
 aliases: ["MATH2048 formulae"]
 tags: [math2048, formula, exam-prep]
 status: complete
-sources: ["01 - Notes/Topics", "02 - Sources/Lectures & Problem Sheets"]
+sources: ["01 - Notes/Topics", "02 - Sources/Lectures", "02 - Sources/Lectures & Problem Sheets"]
 ---
 
 # MATH2048 Formula Sheet
 
-Methods and results by block. Each section links to its topic note, which has the derivations.
+Methods and results by block, as lectured in 2024-25. Each section links to its topic note, which has the derivations. The official sheet FS/MATH2048 is allowed in the exam; this one is for revision.
 
 ## Block 1: ODEs
 
@@ -61,7 +61,7 @@ $$
 | D–N | $\big(\frac{(2n-1)\pi}{2L}\big)^2$ | $\sin\frac{(2n-1)\pi x}{2L}$ |
 | N–D | $\big(\frac{(2n-1)\pi}{2L}\big)^2$ | $\cos\frac{(2n-1)\pi x}{2L}$ |
 
-Orthogonality: $\int_0^Ly_my_n\,dx=0$ for $m\neq n$.
+Orthogonality: $\int_0^Ly_my_n\,dx=0$ for $m\neq n$. In the PDE block the same problem is written $X''-\lambda X=0$, so the eigenvalues there are $\lambda_n=-(n\pi/L)^2$.
 
 ## Block 2: Fourier Series
 
@@ -127,6 +127,7 @@ $$
 | $\sinh ax$, $\cosh ax$ | $\frac a{s^2-a^2}$, $\frac s{s^2-a^2}$ | | multiply by $x$ | $\mathcal L[xf]=-\tilde f'(s)$ |
 | $H(x-a)$ | $\frac{e^{-as}}s$ | | integral | $\mathcal L[\int_0^xf]=\tilde f/s$ |
 | $\delta(x-a)$, $a>0$ | $e^{-as}$ | | products | $\mathcal L[fg]\neq\tilde f\tilde g$ |
+| $\delta(x-a)f(x)$ | $f(a)e^{-as}$ | | parameter | $\mathcal L[\partial_af]=\partial_a\tilde f$ |
 
 **Partial fractions**:
 - $\frac{A}{s-r}$ inverts to $Ae^{rx}$.
@@ -141,7 +142,7 @@ For $au_{xx}+2bu_{xy}+cu_{yy}+\dots=0$:
 - $b^2-ac=0$: parabolic;
 - $b^2-ac<0$: elliptic.
 
-D'Alembert: $y=f(x+ct)+g(x-ct)$, with $c=\sqrt{T/\rho}$.
+String: $y_{tt}=c^2y_{xx}$ with $c=\sqrt{T/\rho}$. Conditions: hyperbolic needs $u$ and $u_t$ initially plus one condition per end; parabolic needs $u$ initially plus one per end; elliptic needs one on every side, not all Neumann.
 
 ### Separated solutions on $[0,L]$ with $k_n=n\pi/L$ ([[MATH2048 PDE2 - Separation of Variables for the Wave Equation]], [[MATH2048 PDE3 - The Heat Equation]])
 | PDE | Dirichlet ends | Neumann ends |
@@ -161,12 +162,12 @@ Standard integral: $2\int_0^1x(1-x)\sin n\pi x\,dx=\frac{4[1-(-1)^n]}{(n\pi)^3}$
 
 $$\dot T_n+\kappa^2k_n^2T_n=F_n,\qquad T_n=e^{-\kappa^2k_n^2t}\Big[C_n+\int e^{\kappa^2k_n^2t}F_n\,dt\Big].$$
 
-- **Inhomogeneous BCs**: subtract $y_P=f_0+(f_1-f_0)x$. The new unknown then satisfies $v_t=\kappa^2v_{xx}-\partial_ty_P$.
+- **Inhomogeneous BCs**: subtract $y_P=f_0+(f_1-f_0)x$. The new unknown $v=y-y_P$ has zero boundary values, initial data $y(x,0)-y_P(x,0)$, and satisfies $v_t=\kappa^2v_{xx}-\partial_ty_P$. For constant $f_0$, $f_1$, $y_P$ is the steady state and no source appears.
 
 ### Laplace's equation ([[MATH2048 PDE5 - Laplace's Equation]])
 With $X_n=\sin n\pi x$, the other direction gives $Y_n=\sinh n\pi y$ (or $\cosh$). The maximum principle holds.
 
-On a disk: $\phi=\frac12a_0+\sum r^n(a_n\cos n\theta+b_n\sin n\theta)$.
+Unit square, $u=g(x)$ on $y=1$, zero on the other sides: $u=\sum\frac{\hat D_n}{\sinh n\pi}\sin n\pi x\,\sinh n\pi y$ with $\hat D_n$ the sine coefficients of $g$.
 
 ## Block 5: Vector Calculus
 
@@ -180,19 +181,21 @@ $$
 - $\nabla\phi$ is normal to the surfaces $\phi=c$.
 - Always zero: $\nabla\times\nabla\phi=\mathbf 0$ and $\nabla\cdot\nabla\times\mathbf F=0$.
 - Double curl: $\nabla\times\nabla\times\mathbf F=\nabla(\nabla\cdot\mathbf F)-\nabla^2\mathbf F$.
+- Product rules: $\nabla(fg)=f\nabla g+g\nabla f$, $\nabla\cdot(g\mathbf F)=\nabla g\cdot\mathbf F+g\nabla\cdot\mathbf F$, $\nabla\times(g\mathbf F)=g\nabla\times\mathbf F+\nabla g\times\mathbf F$.
+- Laplacian: $\nabla^2f=f_{xx}+f_{yy}+f_{zz}$; on a vector field, componentwise.
 
 ### Integrals ([[MATH2048 VC3 - Line Integrals and Conservative Fields]], [[MATH2048 VC4 - Surfaces, Surface Area and Flux Integrals]])
 
 $$
-\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F(\mathbf r(t))\cdot\dot{\mathbf r}\,dt,\qquad \int_A^B\nabla\phi\cdot d\mathbf r=\phi(B)-\phi(A),\qquad d\mathbf S=(\mathbf r_s\times\mathbf r_t)\,ds\,dt,\qquad dA=|\mathbf r_s\times\mathbf r_t|\,ds\,dt
+\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F(\mathbf r(t))\cdot\dot{\mathbf r}\,dt,\qquad \int_A^B(-\nabla\phi)\cdot d\mathbf r=\phi(A)-\phi(B),\qquad d\mathbf S=(\mathbf r_s\times\mathbf r_t)\,ds\,dt,\qquad dA=|\mathbf r_s\times\mathbf r_t|\,ds\,dt
 $$
 
-In a simply connected region, $\mathbf F$ is conservative $\iff\nabla\times\mathbf F=\mathbf 0\iff\oint\mathbf F\cdot d\mathbf r=0\iff\mathbf F=\nabla\phi$.
+The course writes conservative fields as $\mathbf F=-\nabla\phi$ (potential energy). In a region without holes, $\mathbf F$ is conservative $\iff\nabla\times\mathbf F=\mathbf 0\iff\oint\mathbf F\cdot d\mathbf r=0$. Find $\phi$ by integrating one component and matching the others.
 
 | Surface | $d\mathbf S$ |
 |---|---|
-| Sphere of radius $a$ | $\hat{\mathbf r}\,a^2\sin\theta\,d\theta\,d\phi$ |
-| Cylinder of radius $a$ | $\hat{\boldsymbol\rho}\,a\,d\phi\,dz$ |
+| Sphere of radius $a$ (outward) | $\hat{\mathbf r}\,a^2\sin\theta\,d\theta\,d\phi$ |
+| Cylinder of radius $a$ (outward) | $\hat{\boldsymbol\rho}\,a\,d\phi\,dz$ |
 | Graph $z=f(x,y)$ | $(-f_x,-f_y,1)\,dx\,dy$ |
 
 ### Volumes and theorems ([[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem]])

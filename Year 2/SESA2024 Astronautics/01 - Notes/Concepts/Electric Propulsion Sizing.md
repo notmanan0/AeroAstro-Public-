@@ -3,54 +3,37 @@ title: "Electric Propulsion Sizing"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["electric propulsion", "characteristic velocity", "ion thruster", "resistojet", "arcjet", "specific power", "EP optimisation"]
+aliases: ["electric propulsion", "EP", "characteristic velocity", "ion thruster", "resistojet", "arcjet", "specific power", "EP optimisation"]
 tags: [sesa2024, concept, propulsion, electric-propulsion]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 07 - Spacecraft Propulsion]]"]
 related_concepts: ["[[Chemical Propulsion Systems]]", "[[Tsiolkovsky Rocket Equation]]", "[[Spacecraft Power Sources]]"]
-sources: ["02 - Sources/Lectures/Chapter 7/Chapter 7 - Propulsion - original slides(1)(1).pdf"]
+sources: ["02 - Sources/Lectures/SESA2024 Lecture Chapter 7 - Propulsion - prerecorded material.txt", "02 - Sources/Lectures/SESA2024 Lecture 2025-10-16.txt"]
 ---
 
 # Electric Propulsion Sizing
 
-## Definition
+Electric propulsion (EP) accelerates propellant with electrical power, reaching specific impulses of thousands of seconds at very low thrust; because its power plant mass grows with the square of the exhaust velocity, the exhaust velocity has an optimum rather than "the higher the better".
 
-> [!note] Definition
-> EP is **power-limited**. With $M_0 = M_p+M_W+M_e$, jet power $\tfrac12\sigma V_{ex}^2 = \eta W$, specific power $\beta = W/M_W$ and $\sigma = M_e/t_b$:
->
-> $$V_c = \sqrt{2\eta\beta t_b},\qquad M_e = \frac{M_0-M_p}{1+(V_{ex}/V_c)^2},\qquad \frac{\Delta V}{V_c} = x\ln\frac{1+x^2}{M_p/M_0+x^2},\ \ x = \frac{V_{ex}}{V_c}$$
+The thruster families are electrothermal (resistojets, up to about 700 s at an efficiency of 0.9; arcjets, 450–1500 s at about 0.3), electromagnetic (Lorentz-force plasma accelerators, short-lived) and electrostatic (gridded ion thrusters, the most efficient, limited by grid erosion and the neutraliser). The electrical power for thrust $T$ is $W=TV_{ex}/(2\eta)$, so at fixed thrust the power rises with $I_{sp}$.
 
-## Explanation
-- The power plant mass grows with $V_{ex}^2$, so ΔV has a **maximum** in $V_{ex}$. Operate near the optimum:
+To size a spacecraft, split it into propellant $M_e$, power plant $M_W$ and payload $M_p$. With specific power $\beta=W/M_W$, efficiency $\eta$, burn time $t_b$ and constant mass flow, the jet-power balance gives $M_W=M_e(V_{ex}/V_c)^2$ with the characteristic velocity
 
-| $M_p/M_0$ | $x^*$ | $(\Delta V/V_c)_{max}$ |
-|---|---|---|
-| 0.1 | 0.63 (≈ 0.65) | 0.65 |
-| 0.25 | 0.74 | 0.49 |
-| 0.5 | 0.85 | 0.29 |
+$$
+V_c=\sqrt{2\eta\beta t_b}.
+$$
 
-- **Design rule**: for maximum payload, $V_{ex}\approx V_c = \sqrt{2\eta\beta t_b}$. This needs a **long burn time** and **high specific power**.
-- **Thruster power**: $W = TV_{ex}/(2\eta)$. At 50 mN:
+Putting $x=V_{ex}/V_c$ and $p=M_p/M_0$ into the rocket equation,
 
-| Thruster | $I_{sp}$ | $\eta$ | Power |
-|---|---|---|---|
-| Resistojet | 700 s | 0.9 | 190 W |
-| Arcjet | 1500 s | 0.3 | 1230 W |
-| Ion | 5000 s | 0.75 | 1640 W |
+$$
+\frac{\Delta V}{V_c}=x\ln\frac{1+x^2}{x^2+p},\qquad M_e=\frac{M_0-M_p}{1+x^2},\qquad M_W=x^2M_e.
+$$
 
-- **Categories**: electrothermal (resistojet, arcjet), electromagnetic (MPD, Hall; Lorentz force; kiloamps; Xe), electrostatic (ion).
+Each curve peaks: at $p=0.1$ the optimum is $x=0.633$ with $\Delta V/V_c=0.651$, at $p=0.5$ it is $x=0.849$ with 0.291. Since $\eta\le1$ and $\beta$ is physically limited, a large $V_c$ comes from a long burn, which is why EP missions thrust for months or years. The course example, a 3000 kg Pluto orbiter needing 17 km/s, comes out at about 1700 s, 1.9 t of propellant, a 4.2 kW RTG power plant of about 770 kg, and 0.5 N of thrust for two years.
 
 ![[ast_ep_optimisation.png|560]]
 
-## Examples
-- **Pluto orbiter** (workbook Ch7 Q12): 17 km/s, $M_p/M_0$ = 0.1, 2 years, 3000 kg.
-  - $V_c$ = 26.2 km/s; $V_{ex}$ = 17 km/s ($I_{sp}$ = 1733 s → ion);
-  - $\beta$ = 5.4 W/kg (RTG);
-  - $M_e$ = 1900 kg, $M_W$ = 800 kg, $W$ = 4.3 kW, $T$ = 0.5 N.
-- **2024/25 A2**: optimised, $M_p/M_0$ = 0.1, $I_{sp}$ = 1200 s. $V_{ex}$ = 11.77 km/s, so $V_c = V_{ex}/0.65$ = 18.1 km/s and **ΔV ≈ 0.65 $V_c$ ≈ 11.8 km/s**.
-
 ## Related
-- [[Chemical Propulsion Systems]] · [[Tsiolkovsky Rocket Equation]] · [[Spacecraft Power Sources]]
 
-## Sources
-- Chapter 7 lecture slides 31–47, equations 7.7–7.16
+- [[SESA2024 07 - Spacecraft Propulsion#4. Electric propulsion|Electric propulsion in the lecture note]] · [[SESA2024 07 - Spacecraft Propulsion#Pluto orbiter by electric propulsion|Pluto worked example]]
+- [[Chemical Propulsion Systems]] · [[Tsiolkovsky Rocket Equation]] · [[Spacecraft Power Sources]]

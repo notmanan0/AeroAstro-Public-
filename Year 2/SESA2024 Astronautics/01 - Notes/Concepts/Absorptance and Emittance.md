@@ -3,48 +3,27 @@ title: "Absorptance and Emittance"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["solar absorptance", "emittance", "emissivity", "alpha/epsilon", "surface finishes", "Kirchhoff's law"]
+aliases: ["absorptance", "emittance", "solar absorptance", "alpha over epsilon", "Kirchhoff's law", "reflectance", "transmittance", "surface finish"]
 tags: [sesa2024, concept, thermal-control]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 10 - Thermal Control]]"]
 related_concepts: ["[[Blackbody Radiation]]", "[[Spacecraft Thermal Balance Equation]]", "[[Passive vs Active Thermal Control]]"]
-sources: ["02 - Sources/Lectures/Chapter 10/2025 WEEK 8 - Chapter 10 - Thermal Control - Lecture slides - complete.pdf"]
+sources: ["02 - Sources/Lectures/SESA2024 Lecture 2025-11-20.txt", "02 - Sources/Lectures/SESA2024 Lecture 2025-11-25.txt"]
 ---
 
 # Absorptance and Emittance
 
-## Definition
+Absorptance is the fraction of incident radiation a surface absorbs, and emittance the ratio of what it emits to what a black body at the same temperature would emit; both lie between 0 and 1.
 
-> [!note] Definition
-> - Spectral **absorptance**: $\alpha_\lambda = q_a(\lambda)/q_i(\lambda)$. With reflectance $\rho$ and transmittance $\tau$, $\alpha+\rho+\tau = 1$; for opaque surfaces $\alpha+\rho = 1$.
-> - **Solar absorptance**: $\alpha_S = \int\alpha_\lambda q_S\,d\lambda/\int q_S\,d\lambda$, about the 0.3–2.0 µm band (97 % of solar energy).
-> - **Emittance**: $\varepsilon = q(T)/q_{BB}(T)\le1$, so $q = \varepsilon\sigma T^4$.
+Incident radiation is absorbed, reflected or transmitted, so $\alpha+\rho+\tau=1$, and for opaque spacecraft surfaces $\alpha+\rho\approx1$. Absorptance depends on wavelength, so the useful number is the total absorptance weighted by the source's spectrum; for sunlight this is the solar absorptance $\alpha_S$, which can be integrated over 0.2–3 μm, where 97 % of the Sun's energy lies. Emittance $\varepsilon$ gives the emission of a real surface as $\varepsilon\sigma T^4$.
 
-## Explanation
-- $\alpha$ depends on **both the material and the source spectrum**. White paint absorbs little visible sunlight ($\alpha_S\approx0.2$) but is nearly black in the IR ($\varepsilon\approx0.9$).
-- **Kirchhoff's law**: $\alpha_\lambda = \varepsilon_\lambda$ at each wavelength. So for IR from the ~290 K Earth, the IR absorptance equals $\varepsilon$.
-- When sunlight dominates, **$T\propto(\alpha_S/\varepsilon)^{1/4}$**.
+Kirchhoff's law says absorptance equals emittance at the same wavelength. A spacecraft near 290 K emits in the same infrared band as the Earth, so its absorptance for Earth infrared can be taken as $\varepsilon$; that is why the Earth term in the balance uses $\varepsilon$, and why an unpowered body's eclipse temperature is independent of its finish.
 
-| Finish | $\alpha_S$ | $\varepsilon$ | $\alpha_S/\varepsilon$ | Effect |
-|---|---|---|---|---|
-| Second-surface mirror (SSM, OSR) | ~0.08 | ~0.8 | 0.1 | very cold (radiators) |
-| White paint | 0.1–0.2 | 0.9 | ~0.2 | cold |
-| Black paint | 0.9 | 0.9 | 1 | medium |
-| Polished aluminium / gold | 0.1–0.3 | 0.03–0.05 | 3–6 | hot |
-| SiO-Al "dark mirror" (exam table) | 0.90 | 0.03 | 30 | very hot |
-| MLI outer layer (exam table) | 0.09 | 0.03 | 3 | warm; decoupled |
+Sunlight dominates a lit spacecraft's heat input, so its temperature is governed by $\alpha_S/\varepsilon$. White paint (about 0.2/0.9) and optical solar reflectors run cold; black paint (about 0.9/0.9) runs near the black-body value; polished aluminium (about 0.15/0.05) runs hot. Ultraviolet and atomic oxygen degrade finishes over a mission, usually raising $\alpha_S$.
 
-- UV and atomic oxygen raise $\alpha_S$ over the mission, so spacecraft **warm with age**.
-- The ratio matters most for sunlit, low-dissipation bodies. In eclipse with $P = 0$, $\varepsilon$ cancels.
-
-## Examples
-- A spacecraft at L1 facing the Sun (2021/22 A5): use a low $\alpha_S/\varepsilon$ finish on the Sun face (white paint, OSR/SSM) to reject heat.
-- Why $\alpha_S/\varepsilon$ matters for passive control (2022/23 A5, 3 marks).
-
-![[ast_thermal_alpha_eps.png|540]]
+![[ast_thermal_alpha_eps.png|560]]
 
 ## Related
-- [[Blackbody Radiation]] · [[Spacecraft Thermal Balance Equation]] · [[Passive vs Active Thermal Control]]
 
-## Sources
-- Chapter 10 slides 9–14, 19, 25–26
+- [[SESA2024 10 - Thermal Control#1. Absorption, reflection and transmission|Absorptance in the lecture note]] · [[SESA2024 10 - Thermal Control#4. What the equation tells you|Why the ratio matters]]
+- [[Blackbody Radiation]] · [[Spacecraft Thermal Balance Equation]] · [[Passive vs Active Thermal Control]]

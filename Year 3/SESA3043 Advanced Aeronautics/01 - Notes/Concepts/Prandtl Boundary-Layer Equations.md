@@ -13,26 +13,15 @@ sources: ["02 - Sources/Lectures/CH1-4 2D Incompressible BL(1).pdf"]
 
 # Prandtl Boundary-Layer Equations
 
-## Definition
+For steady, two-dimensional, incompressible flow in a thin layer ($\delta\ll L$), the Navier–Stokes equations reduce to
 
-> [!note] Definition
-> Steady, 2-D, incompressible, thin layer ($\delta\ll L$):
->
-> $$\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0,\qquad u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}=U_e\frac{\mathrm dU_e}{\mathrm dx}+\nu\frac{\partial^2u}{\partial y^2},\qquad\frac{\partial p}{\partial y}=0.$$
->
-> Boundary conditions: $u=v=0$ at $y=0$; $u\to U_e(x)$ at the edge.
+$$\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0,\qquad u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}=U_e\frac{\mathrm dU_e}{\mathrm dx}+\nu\frac{\partial^2u}{\partial y^2},\qquad\frac{\partial p}{\partial y}=0,$$
 
-## What was dropped, and why
+with $u=v=0$ at $y=0$ and $u\to U_e(x)$ at the edge of the layer.
 
-- $\nu\,\partial^2u/\partial x^2$: smaller than $\nu\,\partial^2u/\partial y^2$ by $(\delta/L)^2=Re^{-1}$.
-- the whole $y$-momentum equation except $\partial p/\partial y$: every term is $O(Re^{-1})$, so $\Delta p$ across the layer $\sim\rho U_e^2Re^{-1}$.
+Two things are thrown away. The streamwise diffusion $\nu\,\partial^2u/\partial x^2$ is smaller than $\nu\,\partial^2u/\partial y^2$ by $(\delta/L)^2=Re^{-1}$. And every term in the $y$-momentum equation is $O(Re^{-1})$ apart from $\partial p/\partial y$, so the pressure change across the layer is only of order $\rho U_e^2Re^{-1}$. The pressure is therefore imposed from outside by the potential flow, $-\frac1\rho\frac{\mathrm dp}{\mathrm dx}=U_e\frac{\mathrm dU_e}{\mathrm dx}$, and the layer thickness scales as $\delta/L\sim Re^{-1/2}$ (Blasius gives $\delta_{99}=4.91\,x\,Re_x^{-1/2}$).
 
-## Key points
-
-- $\delta/L\sim Re^{-1/2}$; Blasius gives $\delta_{99}=4.91\,x\,Re_x^{-1/2}$.
-- The pressure is imposed by the outer potential flow: $-\frac1\rho\frac{\mathrm dp}{\mathrm dx}=U_e\frac{\mathrm dU_e}{\mathrm dx}$.
-- **Parabolic**: march downstream from an inflow profile; far cheaper than elliptic N–S.
-- Fails at low $Re$, at the leading-edge tip, and at separation.
+The equations are parabolic, so you can march downstream from an inflow profile, which is far cheaper than solving the elliptic Navier–Stokes equations. They break down at low Reynolds number, at the very tip of the leading edge, and at separation.
 
 ![[aa_bl_order_of_magnitude_derivation.png|700]]
 

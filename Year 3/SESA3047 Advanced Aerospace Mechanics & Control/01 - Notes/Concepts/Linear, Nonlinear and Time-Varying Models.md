@@ -13,34 +13,28 @@ sources: ["02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/L3 - SES
 
 # Linear, Nonlinear and Time-Varying Models
 
-## Nonlinear and linear
+The oscillator
 
 $$
 m\ddot x+c\dot x+kx+\mu x^3=0
 $$
 
-is nonlinear. Near $x=0$, neglecting $\mu x^3$ gives
+is nonlinear because of the cubic term. Close to $x=0$ that term is negligible, leaving the linear model
 
 $$
-m\ddot x+c\dot x+kx=0.
+m\ddot x+c\dot x+kx=0,
 $$
 
-The linear model satisfies superposition but is only a local approximation of the nonlinear plant.
+which satisfies superposition but is only a local approximation to the nonlinear plant.
 
-## Time invariant and time varying
-
-- time invariant: coefficients and relationships do not change explicitly with time;
-- time varying: at least one coefficient or relationship changes explicitly with time.
-
-Example:
+Separately, a model is time-invariant if its coefficients and relationships don't change explicitly with time, and time-varying if at least one does. For example,
 
 $$
 m\ddot x+c\dot x+k(t)x=0
 $$
 
-is linear in $x$ but time varying when $k(t)$ changes.
+is linear in $x$ but time-varying whenever $k(t)$ changes.
 
 ## Related
 
 - [[Small Perturbation Linearisation]] · [[Model Fidelity and Validity]]
-

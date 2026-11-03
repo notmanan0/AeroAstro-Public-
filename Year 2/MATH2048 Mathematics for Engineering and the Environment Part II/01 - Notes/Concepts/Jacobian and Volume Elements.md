@@ -8,37 +8,18 @@ tags: [math2048, concept, vector-calculus, exam-prep]
 status: complete
 parent_lectures: ["[[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem]]"]
 related_concepts: ["[[Divergence Theorem]]", "[[Flux Integrals]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vector09.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vector09.pdf", "02 - Sources/Lectures/MATH2048 Lecture 29.txt"]
 ---
 
 # Jacobian and Volume Elements
 
-## Definition
+When a volume is described by parameters $(s,t,u)$, the volume element is $dV=|\det J|\,ds\,dt\,du$, where the **Jacobian** matrix $J$ holds the partial derivatives of $x$, $y$, $z$ with respect to the parameters.
 
-> [!note] Definition
->
-> $$dV=\left|\frac{\partial(x,y,z)}{\partial(s,t,u)}\right|ds\,dt\,du,\qquad \frac{\partial(x,y,z)}{\partial(s,t,u)}=\det\begin{pmatrix}x_s&x_t&x_u\\y_s&y_t&y_u\\z_s&z_t&z_u\end{pmatrix}.$$
+The columns of $J$ are the edge vectors $\mathbf r_s$, $\mathbf r_t$, $\mathbf r_u$ of the small parallelepiped that a parameter box maps onto, and the determinant is that parallelepiped's volume. In cylindrical coordinates $(\rho,\phi,z)$, $\det J=\rho$, so $dV=\rho\,d\rho\,d\phi\,dz$. In spherical coordinates $(r,\theta,\phi)$ with $\theta$ measured from the north pole, $\det J=r^2\sin\theta$, so $dV=r^2\sin\theta\,dr\,d\theta\,d\phi$; deriving this is a recurring exam part. The two-dimensional analogue is the surface element $|\mathbf r_s\times\mathbf r_t|\,ds\,dt$ of [[Flux Integrals]].
 
-## Explanation
-| System | Map | $\lvert J\rvert$ | $dV$ |
-|---|---|---|---|
-| Cylindrical $(\rho,\phi,z)$ | $(\rho\cos\phi,\ \rho\sin\phi,\ z)$ | $\rho$ | $\rho\,d\rho\,d\phi\,dz$ |
-| Spherical $(r,\theta,\phi)$ | $(r\sin\theta\cos\phi,\ r\sin\theta\sin\phi,\ r\cos\theta)$ | $r^2\sin\theta$ | $r^2\sin\theta\,dr\,d\theta\,d\phi$ |
-| Polar (2D) | $(r\cos\theta,\ r\sin\theta)$ | $r$ | $r\,dr\,d\theta$ |
-
-**Spherical derivation** (2025/26 B2c): expand along the $z$ row, $(\cos\theta,\ -r\sin\theta,\ 0)$. The result is $r^2\sin\theta\cos^2\theta+r^2\sin^3\theta=r^2\sin\theta$. The full working is in [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem|VC5]].
-
-**Useful results**:
-- The volume of a sphere is $\frac43\pi a^3$.
-- Over a hemisphere, $\iiint z\,dV=\frac{\pi a^4}{4}$.
-- **Shifting the origin** (e.g. $z=z'+1$) has Jacobian $1$. It is a quick way to handle offset domains, as in 2025/26 B2(e).
-
-## Examples
-- Shell $1\leq r\leq2$ with a $\pi/3$ wedge removed: volume $70\pi/9$.
-- Solid under $z=x^2+y^2$ inside $r=a$: volume $\pi a^4/2$.
+The point of changing variables is to make the limits simple: a ball, a cone or a wedge becomes a box in the new coordinates, and the integral often separates into a product of single integrals, as in $V=\frac{R^3\beta}3(1-\cos\alpha)$ for the spherical wedge $0\leq\theta\leq\alpha$, $0\leq\phi\leq\beta$ (2024/25 B2). Finite-element solvers use the same idea to map each element onto a reference element.
 
 ## Related
-- [[Divergence Theorem]] · [[Flux Integrals]]
 
-## Sources
-- Lecture 29; PS11
+- Derivation: [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem#1. Volume integrals and the Jacobian (L29)|VC5 §1]]
+- [[Flux Integrals]] · [[Divergence Theorem]]

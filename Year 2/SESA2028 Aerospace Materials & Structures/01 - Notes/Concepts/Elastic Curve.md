@@ -3,7 +3,7 @@ title: "Elastic Curve"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, beam-deflection]
-status: complete
+status: lectured
 ---
 
 # Elastic Curve
@@ -18,5 +18,7 @@ twice and determine constants from support and continuity conditions. At a fixed
 
 Macaulay functions or piecewise integration are both valid if every load and stiffness discontinuity is handled.
 
-See [[Moment Curvature Relation]].
+## Related
 
+- Topic: [[SESA2028 S2 - Beam Deflection and Bending Design|S2]]
+- Concepts: [[Moment Curvature Relation]]

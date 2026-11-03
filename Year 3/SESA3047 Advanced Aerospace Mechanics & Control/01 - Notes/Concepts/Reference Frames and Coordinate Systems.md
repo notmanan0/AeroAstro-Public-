@@ -13,23 +13,18 @@ sources: ["02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/L3 - SES
 
 # Reference Frames and Coordinate Systems
 
-## Definitions
+A **reference frame** is the observer: an origin, an orientation and a state of motion. A **coordinate system** is the convention used to assign numbers, coordinates and vector components, within a frame. An **inertial frame** is one that neither accelerates nor rotates, so Newton's laws hold in it without apparent forces.
 
-- **Reference frame:** the observer, including origin, orientation and motion.
-- **Coordinate system:** the convention used to assign numerical coordinates and vector components in a frame.
-- **Inertial frame:** a non-accelerating, non-rotating frame in which Newton's laws apply without apparent forces.
-
-A vector is a physical geometrical quantity. Its component array depends on the chosen coordinates:
+A vector is a physical, geometric quantity, and its array of components depends on the coordinates chosen:
 
 $$
 \mathbf v\ne\mathbf v^c,
 $$
 
-where the left denotes the vector and the right its components in coordinates $c$ (the course puts the coordinate label as a right superscript, Chapter 1 Eqs. 1.8 and 1.10).
+where the left side is the vector and the right its components in coordinates $c$. The course puts the coordinate label as a right superscript (Chapter 1, Eqs. 1.8 and 1.10).
 
-Earth-fixed and body-fixed frames are generally non-inertial. The [[Flat-Earth Model]] deliberately approximates a local Earth frame as inertial.
+Earth-fixed and body-fixed frames are generally not inertial. The [[Flat-Earth Model]] deliberately approximates a local Earth frame as inertial.
 
 ## Related
 
 - [[Flat-Earth Model]] · [[NED and FRD Coordinates]]
-

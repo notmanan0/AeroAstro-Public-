@@ -13,26 +13,23 @@ sources: ["02 - Sources/Lectures/Lecture1-2.pdf", "02 - Sources/Lectures/Lecture
 
 # Normal-Shock Jump Relations
 
-## Definition
+The normal-shock jump relations connect the upstream state 1 and downstream state 2 of a steady, one-dimensional normal shock in a calorically perfect gas. They come from conservation of mass, momentum and total enthalpy across the shock. Nothing about them assumes isentropic flow, which is why they can describe the entropy rise.
 
-> [!note] Definition
-> Relations between the upstream state 1 and downstream state 2 of a steady, one-dimensional normal shock in a calorically perfect gas. They follow from conservation of mass, momentum and total enthalpy, not from an isentropic assumption.
-
-## Conservation basis
+The starting point is
 
 $$
 \rho_1U_1=\rho_2U_2,\qquad
 p_1+\rho_1U_1^2=p_2+\rho_2U_2^2,\qquad
-h_1+\frac{U_1^2}{2}=h_2+\frac{U_2^2}{2}.
+h_1+\frac{U_1^2}{2}=h_2+\frac{U_2^2}{2},
 $$
 
-The intermediate Prandtl relation is
+and the Prandtl relation falls out along the way:
 
 $$
 U_1U_2=\frac{2a_0^2}{\gamma+1}.
 $$
 
-## Final relations
+The jumps in terms of $M_1$ are
 
 $$
 \frac{\rho_2}{\rho_1}=\frac{(\gamma+1)M_1^2}{2+(\gamma-1)M_1^2},
@@ -47,17 +44,10 @@ $$
 M_2^2=\frac{2+(\gamma-1)M_1^2}{2\gamma M_1^2-(\gamma-1)}.
 $$
 
-> [!note] Derivations
-> Full step-by-step derivations of all four jumps and the strong-shock limits are in [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Density jump (shown in lecture)|W01 §5]]. Shortcut worth remembering: $M_2^2=M_1^2\big/\left[(\rho_2/\rho_1)(p_2/p_1)\right]$.
+A useful shortcut for $M_2$ is $M_2^2=M_1^2\big/\left[(\rho_2/\rho_1)(p_2/p_1)\right]$. The full derivations of all four jumps and the strong-shock limits are in [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Density jump (shown in lecture)|W01 §5]].
 
-## Physical interpretation
-
-- $M_1>1$ and $M_2<1$ for a physical compression shock.
-- Static pressure, temperature, density and entropy rise.
-- Velocity and stagnation pressure fall.
-- Stagnation temperature remains constant for an adiabatic shock.
+A physical (compression) shock takes supersonic flow to subsonic. Static pressure, temperature, density and entropy rise; velocity and stagnation pressure fall. Stagnation temperature is unchanged, since the shock is adiabatic.
 
 ## Related
 
 - [[Normal Shock Waves]] · [[Shock-Table Interpolation]] · [[Rayleigh Pitot Formula]]
-

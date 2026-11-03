@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Source
 
 # Newtonian Stress Tensor
 
-## Constitutive law
+In a Newtonian fluid the viscous stress is linear in the velocity gradients:
 
 $$
 \tau_{ij}
@@ -24,7 +24,7 @@ $$
 +\lambda\delta_{ij}\nabla\cdot\mathbf u.
 $$
 
-With Stokes' hypothesis $\lambda=-2\mu/3$,
+Stokes' hypothesis, $\lambda=-2\mu/3$, makes the trace zero ($\tau_{ii}=0$, no mean viscous normal stress) and gives
 
 $$
 \boxed{
@@ -37,17 +37,10 @@ $$
 }.
 $$
 
-## Properties
+The tensor is symmetric, $\tau_{ij}=\tau_{ji}$, because of angular-momentum conservation. Its diagonal terms are viscous normal stresses and its off-diagonal terms shear stresses. In incompressible flow with constant $\mu$, $\nabla\cdot\mathbf u=0$ and the stress divergence reduces to $\nabla\cdot\boldsymbol\tau=\mu\nabla^2\mathbf u$, with kinematic viscosity $\nu=\mu/\rho$.
 
-- $\tau_{ij}=\tau_{ji}$ from angular-momentum conservation.
-- Diagonal terms are viscous normal stresses.
-- Off-diagonal terms are shear stresses.
-- For incompressible constant-$\mu$ flow, $\nabla\cdot\mathbf u=0$ and $\nabla\cdot\boldsymbol\tau=\mu\nabla^2\mathbf u$.
-- $\nu=\mu/\rho$ is the kinematic viscosity.
-- Stokes' hypothesis $\lambda=-\tfrac23\mu$ makes the trace zero, $\tau_{ii}=0$: no mean viscous normal stress.
-- Worked example (stresses, vorticity and pressure for a linear field; a compressible stretching flow): [[SESA3043 1.2 - Conservation Laws and Governing Equations#9. Worked example: stress and momentum in a linear flow (suggested)|SESA3043 1.2 §9]].
+There is a worked example, with stresses, vorticity and pressure for a linear velocity field and a compressible stretching flow, in [[SESA3043 1.2 - Conservation Laws and Governing Equations#9. Worked example: stress and momentum in a linear flow (suggested)|SESA3043 1.2 §9]].
 
 ## Related
 
 - [[Newtonian Fluid and Strain-Rate Tensor]] · [[Incompressible Navier-Stokes Equations]]
-

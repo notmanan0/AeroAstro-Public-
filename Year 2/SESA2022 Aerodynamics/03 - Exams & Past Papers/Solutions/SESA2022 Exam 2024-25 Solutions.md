@@ -13,6 +13,12 @@ sources: ["03 - Exams & Past Papers/SESA2022-202425-01-SESA2022.pdf"]
 
 > [!info] Paper: 2 hours, closed book (back to in-person), 4 × 25 marks, answers to **4 d.p.** A full formula sheet is attached as the rubric, so this is the most representative paper for current exams. The turbulent correlations come from the rubric table: $\theta/x = 0.037Re_x^{-1/5}$ and $C_f = 0.059Re_x^{-1/5}$.
 
+> [!tip] What the lecturers said about this paper (Jan 2026 revision lectures)
+> - **Q1** (Revision 1, ll. 209–363): (a) is a formula-sheet lookup plus two integrals, so show the substitution $\eta = y/\delta$; (b) is worth 12 marks: equate $c_f = 2\,d\theta/dx$ with $c_f$ from the wall gradient, and correct equations alone earn about 3 marks; (c) transition means the virtual origin, which the formula sheet describes only in words. Drag is per unit span for **one side** here because the question says so.
+> - **Q2** (Revision 1, ll. 368–455): the polar conversions and $u_r$, $u_\theta$ are on the Topic 1 formula page; (b) is a five-mark "giveaway" (zero normal velocity on a streamline) that many students spent pages deriving; (c) needs an explicit yes/no; not using the given $n$, $U_\infty$, $Q$ costs marks.
+> - **Q3** (7 Jan revision, ll. 136–234): the lecture gets $\epsilon = 0.0894$ from the rounded $\alpha = 0.0349$ rad; unrounded it is $0.0893$. With $A_2 = 0$, $c_{m,c/4} = -\pi\epsilon/4 = -0.07$.
+> - **Q4** (7 Jan revision, ll. 370–450): (a) is *"a rare example of a derivation"*; the $\delta$ step in (c) was missing from the official solution.
+
 ## Q1: Near-laminar boundary layer, $U/U_\infty = 2\eta-\eta^2$ ($\eta = y/\delta$)
 
 ### (a) Shape factor

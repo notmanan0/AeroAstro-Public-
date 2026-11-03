@@ -76,7 +76,7 @@ The plates compress, so for the same nut rotation the bolt stretches **less** an
 - **Counterweight for a 50 t deck**, perfectly balanced:
   - the deck's centre of gravity is 5 m from its pivot and the cable acts at 10 m, so the cable tension is $W_{deck}/2$;
   - on the upper arm the cable pulls at 10 m and the counterweight hangs at 5 m, so the counterweight is $2\times W_{deck}/2$.
-  - Counterweight = **50 t**. The whole mechanism is a seesaw.
+  - Counterweight = **50 t**, equal to the deck weight, because the two lever-arm ratios (5/10 and 10/5) cancel.
 
 ## Extra Q2: Hole punch, $D = 12$ mm, $H = 2$ mm, $\tau_{max} = 200$ MPa
 The slug is sheared out around its cylindrical surface, of area $A = \pi DH$:

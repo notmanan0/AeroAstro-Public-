@@ -46,7 +46,7 @@ Don't edit the files in place if you want painless updates. Copy a note elsewher
 | SESA2023 Propulsion | [Hub](<Year 2/SESA2023 Propulsion/SESA2023 Propulsion Hub.md>) |
 | SESA2024 Astronautics | [Hub](<Year 2/SESA2024 Astronautics/SESA2024 Astronautics Hub.md>) |
 | SESA2027 Aerospace Mechanics & Control | [Hub](<Year 2/SESA2027 Aerospace Mechanics & Control/SESA2027 Aerospace Mechanics & Control Hub.md>) |
-| SESA2028 Aerospace Materials & Structures | [Hub](<Year 2/SESA2028 Aerospace Materials & Structures/01 - Notes/SESA2028 Aerospace Materials & Structures Hub.md>) |
+| SESA2028 Aerospace Materials & Structures | [Hub](<Year 2/SESA2028 Aerospace Materials & Structures/SESA2028 Aerospace Materials & Structures Hub.md>) |
 | SESA2029 Digital Aerospace Methods | [Hub](<Year 2/SESA2029 Digital Aerospace Methods/SESA2029 Digital Aerospace Methods Hub.md>) |
 
 ### Year 1

@@ -13,17 +13,10 @@ sources: ["02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/L3 - SES
 
 # Kinematics and Dynamics
 
-## Distinction
+**Kinematics** describes motion without asking what causes it. **Dynamics** relates the motion to the forces and moments acting on the system.
 
-> [!note] Kinematics
-> Describes motion without considering the forces and moments that cause it.
-
-> [!note] Dynamics
-> Relates motion to the forces and moments acting on the system.
-
-Kinematics evolves position and attitude from translational and angular velocities. Dynamics evolves those velocities from applied force and moment. A complete six-degree-of-freedom vehicle model needs both.
+In a vehicle model, the kinematic equations evolve position and attitude from the translational and angular velocities, and the dynamic equations evolve those velocities from the applied forces and moments. A complete six-degree-of-freedom model needs both.
 
 ## Related
 
 - [[Reference Frames and Coordinate Systems]]
-

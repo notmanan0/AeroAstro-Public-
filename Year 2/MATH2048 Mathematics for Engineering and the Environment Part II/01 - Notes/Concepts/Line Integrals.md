@@ -8,45 +8,18 @@ tags: [math2048, concept, vector-calculus]
 status: complete
 parent_lectures: ["[[MATH2048 VC3 - Line Integrals and Conservative Fields]]"]
 related_concepts: ["[[Conservative Vector Fields]]", "[[Stokes' Theorem]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture22_vector02.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture22_vector02.pdf", "02 - Sources/Lectures/MATH2048 Lecture 21.txt", "02 - Sources/Lectures/MATH2048 Lecture 22.txt"]
 ---
 
 # Line Integrals
 
-## Definition
+The **line integral** of a vector field along a curve $C$ given by $\mathbf r(t)$, $a\leq t\leq b$, is $\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F(\mathbf r(t))\cdot\frac{d\mathbf r}{dt}\,dt$. For a force field it is the work done moving along $C$.
 
-> [!note] Definition
->
-> $$\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F(\mathbf r(t))\cdot\frac{d\mathbf r}{dt}\,dt .$$
->
-> This is the work done by $\mathbf F$ along $C$. Around a closed loop, $\oint_C\mathbf F\cdot d\mathbf r$ is the **circulation**.
+It comes from splitting the curve into short segments, treating the force as constant on each, and adding $\mathbf F\cdot\Delta\mathbf r$; in the limit the sum becomes an ordinary integral in the parameter. The recipe is always the same: read $x(t)$, $y(t)$, $z(t)$ off the curve, substitute into $\mathbf F$, differentiate $\mathbf r(t)$, dot the two, integrate. A straight line from $\mathbf a$ to $\mathbf b$ is $\mathbf a+(\mathbf b-\mathbf a)t$, with a constant tangent.
 
-## Explanation
-**Recipe**:
-1. Parametrise the curve, making sure it runs in the right direction.
-2. Substitute $\mathbf r(t)$ into $\mathbf F$.
-3. Dot with $\dot{\mathbf r}$.
-4. Integrate over $t$.
-
-**Properties**:
-- The value does not depend on how the curve is parametrised.
-- It **changes sign** if the direction is reversed.
-- In general it depends on the path. It depends only on the endpoints iff $\mathbf F$ is conservative, in which case $\int\nabla\phi\cdot d\mathbf r=\phi(B)-\phi(A)$.
-
-**Shortcuts**:
-- If $\nabla\times\mathbf F=\mathbf 0$, find the potential $\phi$ and just evaluate it at the endpoints.
-- For a closed loop, Stokes's theorem may be easier: $\oint=\iint(\nabla\times\mathbf F)\cdot d\mathbf S$.
-
-## Examples
-- $\mathbf F=(2xy,\ x^2-z^2,\ -3xz^2)$ from $(0,0,0)$ to $(2,1,3)$:
-  - along $(2t,t^3,3t^2)$ the integral is $-323/7$;
-  - along the straight line it is $-79/2$.
-
-  The two paths give different answers, so $\mathbf F$ is not conservative.
-- PS8 Q7c, a helix: $4\pi+16\pi^2/3$.
+The value doesn't depend on how the curve is parametrised, and reversing the direction flips its sign. In general it does depend on the path: in Lecture 22, $\mathbf F=2xy\,\mathbf i+(x^2-z^2)\,\mathbf j-3xz^2\,\mathbf k$ gives $-\frac{323}7$ along a curve and $-\frac{79}2$ along the straight line between the same points. For a [[Conservative Vector Fields|conservative field]] it depends only on the endpoints, and round any closed loop it is zero. Round a closed loop, $\oint\mathbf F\cdot d\mathbf r$ is called the circulation, which [[Stokes' Theorem]] relates to the curl.
 
 ## Related
-- [[Conservative Vector Fields]] · [[Stokes' Theorem]] · [[Kelvin's Circulation Theorem]]
 
-## Sources
-- Lectures 21–22; Lecture Notes §8.2.1
+- Derivation and examples: [[MATH2048 VC3 - Line Integrals and Conservative Fields]]
+- [[Conservative Vector Fields]] · [[Stokes' Theorem]] · [[Flux Integrals]]

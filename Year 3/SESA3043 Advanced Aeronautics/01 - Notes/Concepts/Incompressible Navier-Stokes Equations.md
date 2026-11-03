@@ -13,15 +13,11 @@ sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Source
 
 # Incompressible Navier-Stokes Equations
 
-## Equations
-
-For constant $\rho$ and $\mu$,
+For constant density and viscosity the Navier–Stokes equations become
 
 $$
 \boxed{\nabla\cdot\mathbf u=0},
-$$
-
-$$
+\qquad
 \boxed{
 \frac{\partial\mathbf u}{\partial t}
 +(\mathbf u\cdot\nabla)\mathbf u
@@ -29,22 +25,10 @@ $$
 }.
 $$
 
-## Derivation points
+Getting there from the general equations takes a few steps. Constant density reduces continuity to zero velocity divergence, which removes the product-rule term proportional to $\nabla\cdot\mathbf u$ from the momentum equation and kills the dilatational part of the Newtonian stress. With constant viscosity the stress divergence becomes $\mu\nabla^2\mathbf u$, and dividing by $\rho$ with $\nu=\mu/\rho$ gives the form above.
 
-1. Constant density reduces continuity to zero velocity divergence.
-2. The product-rule term proportional to $\nabla\cdot\mathbf u$ drops from momentum.
-3. The dilatational part of the Newtonian stress vanishes.
-4. For constant viscosity, stress divergence becomes $\mu\nabla^2\mathbf u$.
-5. Divide momentum by $\rho$ and use $\nu=\mu/\rho$.
-
-## Further reductions
-
-- steady: remove $\partial\mathbf u/\partial t$;
-- two-dimensional: $w=0$ and $\partial/\partial z=0$;
-- inviscid: set $\nu=0$ to obtain Euler;
-- irrotational: introduce $\mathbf u=\nabla\phi$ and obtain potential flow.
+From here the usual reductions are steady flow (drop $\partial\mathbf u/\partial t$), two-dimensional flow ($w=0$, $\partial/\partial z=0$), inviscid flow ($\nu=0$, giving Euler), and irrotational flow ($\mathbf u=\nabla\phi$, giving potential flow).
 
 ## Related
 
 - [[Newtonian Stress Tensor]] · [[Streamfunction and Velocity Potential]]
-

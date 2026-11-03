@@ -366,8 +366,7 @@ $$
 
 ## Self-study tasks
 
-> [!todo] Not lecturer-set beyond the test itself
-> The test was set on Blackboard (L3-1, ll. 3–5; L3-2, ll. 2–8). Q5 also answers the L2-3 *"basically your homework"* (ll. 317–319) at a new Mach number. The other tasks are *suggested, not lecturer-set*.
+The test was set on Blackboard (L3-1, ll. 3–5; L3-2, ll. 2–8). Q5 also answers the L2-3 *"basically your homework"* (ll. 317–319) at a new Mach number. The other tasks are *suggested, not lecturer-set*.
 
 - [ ] **Submit Test 2 by Sun 25 Oct, midnight** (L3-2, ll. 2–8; L3-4, l. 6); two attempts, highest mark counts.
 - [ ] **(L2-3, ll. 317–319, 379–382)** Redo Q5 the exam way: take zones 2A and 2B as given, make a second guess from $5^\circ$, and interpolate. → [[#Q5. Shock–shock interaction at M₁ = 3.1]]

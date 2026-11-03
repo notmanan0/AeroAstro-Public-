@@ -8,49 +8,26 @@ tags: [math2048, concept, pdes, exam-prep]
 status: complete
 parent_lectures: ["[[MATH2048 PDE2 - Separation of Variables for the Wave Equation]]", "[[MATH2048 PDE3 - The Heat Equation]]", "[[MATH2048 PDE5 - Laplace's Equation]]"]
 related_concepts: ["[[ODE Eigenvalue Problems]]", "[[Half-Range Expansions]]", "[[Wave Equation]]", "[[Heat Equation]]", "[[Laplace's Equation]]", "[[Eigenfunction Expansion Method]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture15_Hyperbolic2.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture15_Hyperbolic2.pdf", "02 - Sources/Lectures/MATH2048 Lecture 15.txt", "02 - Sources/Lectures/MATH2048 Lecture 16.txt"]
 ---
 
 # Separation of Variables
 
-## Definition
+**Separation of variables** solves a linear homogeneous PDE by looking for product solutions such as $u=X(x)T(t)$, finding which products work, and adding them all up.
 
-> [!note] Definition
-> Look for solutions of a linear homogeneous PDE with homogeneous BCs in the product form $u=X(x)T(t)$ (or $X(x)Y(y)$). The PDE then splits into ODEs linked by a **separation constant** $\lambda$.
+Substituting the product and dividing by it leaves a function of one variable equal to a function of another. Fixing either variable shows both must equal the same constant $\lambda$, so the PDE splits into ODEs coupled only through $\lambda$. The boundary conditions on $u$ become conditions on $X$, because the alternative is $T\equiv0$, and the spatial ODE with those conditions is an eigenvalue problem: non-zero solutions exist only for special $\lambda_n$. Each of the cases $\lambda=0$, $\lambda>0$ and $\lambda<0$ must be checked, since which ones survive depends on the boundary conditions.
 
-## Explanation
-**The six steps**, the same every time (25 marks in every exam):
-1. Substitute $u=XT$, divide by $XT$, and set each side equal to $\lambda$. This gives two ODEs.
-2. Turn the BCs on $u$ into BCs on $X$. $T$ gets **no** BCs.
-3. Solve the eigenproblem for $X$ in the three cases $\lambda<0$, $\lambda=0$, $\lambda>0$. This gives $\lambda_n$ and $X_n$.
-4. Solve the $T_n$ ODE:
-   - wave equation: $\cos$ and $\sin$;
-   - heat equation: $e^{-\kappa^2k_n^2t}$;
-   - Laplace's equation: $\cosh$ and $\sinh$ in the second coordinate.
-5. Superpose: $u=\sum X_nT_n$.
-6. Fit the initial data (or the last BC) with a half-range Fourier series, or by inspection using orthogonality.
+The lecture's six steps are: separate; turn the boundary conditions into conditions on $X$; solve the eigenvalue problem; solve for $T_n$ with each $\lambda_n$; superpose $\sum X_nT_n$; and fit the initial data, which is a Fourier series problem. Step 1 depends only on the PDE and step 2 only on the boundary conditions, so changing one leaves the other alone.
 
-**Which series to use**:
+| Boundary conditions on $[0,L]$ | $\lambda_n$ | $X_n$ |
+|---|---|---|
+| $u=0$ at both ends | $-(n\pi/L)^2$, $n\geq1$ | $\sin\frac{n\pi x}L$ |
+| $u_x=0$ at both ends | $-(n\pi/L)^2$, $n\geq0$ | $\cos\frac{n\pi x}L$ (constant for $n=0$) |
+| $u=0$ at $0$, $u_x=0$ at $L$ | $-\big((n-\frac12)\pi/L\big)^2$, $n\geq1$ | $\sin\frac{(n-\frac12)\pi x}L$ |
 
-| BCs | $X_n$ |
-|---|---|
-| D–D | $\sin\frac{n\pi x}{L}$ |
-| N–N | $1$ and $\cos\frac{n\pi x}{L}$ |
-| D–N | $\sin\frac{(2n-1)\pi x}{2L}$ |
-
-**Why the constant exists**: one side of the equation depends only on $t$ and the other only on $x$. Two functions of different variables can only be equal everywhere if both are the same constant.
-
-**When the method fails**: a source term in the PDE, or inhomogeneous BCs. Use the [[Eigenfunction Expansion Method]] or subtract a particular solution.
-
-**Watch the sign convention**: $X''=\lambda X$ versus $X''+\lambda X=0$ swaps which sign of $\lambda$ oscillates.
-
-## Examples
-- Guitar string: $y=\sum_{\text{odd}}\frac{8}{(n\pi)^3}\cos n\pi ct\,\sin n\pi x$.
-- Insulated rod: $u=\frac16-\sum_{\text{even}}\frac{4}{(n\pi)^2}e^{-(n\pi)^2t}\cos n\pi x$.
-- Laplace on a square: $u=\sum_{\text{odd}}\frac{8\sin n\pi x\sinh n\pi y}{(n\pi)^3\sinh n\pi}$.
+The time part distinguishes the PDEs: $\cos$ and $\sin$ for the wave equation, a decaying exponential for the heat equation, and $\cosh$ and $\sinh$ in the second space direction for Laplace's equation. The method needs a linear PDE and one pair of homogeneous boundary conditions; sources and non-zero boundary values are handled by the [[Eigenfunction Expansion Method]].
 
 ## Related
-- [[ODE Eigenvalue Problems]] · [[Half-Range Expansions]] · [[Wave Equation]] · [[Heat Equation]] · [[Laplace's Equation]]
 
-## Sources
-- Lectures 15–20
+- [[MATH2048 PDE2 - Separation of Variables for the Wave Equation]] · [[MATH2048 PDE3 - The Heat Equation]] · [[MATH2048 PDE5 - Laplace's Equation]]
+- [[ODE Eigenvalue Problems]] · [[Half-Range Expansions]] · [[Eigenfunction Expansion Method]]

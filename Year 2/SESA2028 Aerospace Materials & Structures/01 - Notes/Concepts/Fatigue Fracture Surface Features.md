@@ -3,34 +3,24 @@ title: "Fatigue Fracture Surface Features"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Beach marks", "Ratchet marks", "Striations", "Fractography"]
 tags: [sesa2028, materials, fatigue, fractography]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing]]"]
 related: ["[[Paris Law]]", "[[Plane Strain Constraint]]", "[[Localised Corrosion]]"]
 ---
 
 # Fatigue Fracture Surface Features
 
-Read the surface **backwards**, from final failure to origin:
+A fatigue fracture surface carries a record of how the part failed: origins where cracks started, a smooth fatigue region crossed by beach marks and separated by ratchet marks, and a rough final-fracture region edged by shear lips.
 
-| Feature | Scale | Meaning |
-|---|---|---|
-| **Shear lips** | by eye | $45^\circ$ rim in plane stress, marking **final overload**. Easiest to find first |
-| **Final fracture zone** | by eye | rough, fibrous or granular. **Area fraction ≈ $\sigma_{max}/\sigma_{UTS}$** (first-order), so a small zone means low nominal stress |
-| **Fatigue zone** | by eye | smooth, flat, at $90^\circ$ to the opening stress; looks brittle but formed by local plasticity |
-| **Beach marks** | by eye / low magnification | crack-front positions at **changes in loading** (stop-start, amplitude change, oxidation during pauses). Concentric and point back to the origin |
-| **Ratchet marks** | by eye | steps between **multiple origins** on slightly different planes. Many ratchets mean high local stress or a severe stress concentration |
-| **Striations** | **SEM only** | one per cycle; local spacing = $da/dN$. Clear in Al and stainless, often absent in mild steel, and hidden by corrosion. **Absence does not disprove fatigue** |
-| **Origin(s)** | | at a stress concentration: fillet, keyway, spline root, weld toe, corrosion pit, scratch, inclusion |
+The way to read one is backwards. The shear lips are usually the easiest thing to find; they are the last ligament, torn under plane stress at about 45° to the load, and they mark the end of fast fracture. Next to the rough final-fracture region lies the smooth, flat fatigue region, which grew perpendicular to the maximum opening stress and looks brittle to the eye even though each increment of growth was a local plastic event. Beach marks within it are earlier positions of the crack front, left when the loading changed or paused and the surface roughened or oxidised; they curve round the origin, so they lead back to it. Where several cracks started at slightly different levels and joined, the steps between them are ratchet marks, and many of them mean a severe stress concentration. At high magnification there may be striations, one per cycle, whose spacing gives the local $da/dN$. Striations show well in aluminium alloys and stainless steels but poorly in mild steel, and corrosion products can hide them, so their absence does not rule out fatigue.
 
-**Beach marks vs striations** (a common exam part): beach marks are macroscopic, each covers many cycles, and they record changes in the loading history. Striations are microscopic and record **individual cycles**, so they need high-magnification electron microscopy.
+![[materials_fatigue_surface_features.png|800]]
 
-## Loading mode from the pattern (Metals Handbook chart)
+The surface also tells you about the loading. The fraction of the section taken by final fracture is roughly the peak nominal stress as a fraction of the UTS, so a small final zone means a low stress and a long life. One origin means a mild stress concentration, many origins a severe one. Tension and unidirectional bending give similar single-sided patterns; reversed bending gives fatigue regions on opposite faces with the final fracture as a band between them; rotating bending gives a lopsided, swirled pattern or origins all round; torsion gives 45° helical cracks, which with many origins form a stepped spiral. The aluminium dinghy mast in the M2 video shows the reversed-bending pattern, with thumbnail cracks starting at corrosion pits ([[Localised Corrosion]]).
 
-- **Tension / unidirectional bending**: origin(s) on one side and a crack front sweeping across. Bending looks like tension, so check the load path.
-- **Reversed bending**: **two** opposed fatigue zones; final fracture a central band.
-- **Rotating bending**: origins all round; final fracture **offset** (rotated) and lopsided or swirly; central under severe stress concentration.
-- **Torsion**: $45^\circ$ helical growth; multiple origins give a stepped "spiral staircase" or star pattern.
-- Higher nominal stress gives a larger final zone. More severe stress concentration gives more origins and ratchets.
+## Related
 
-Lecture example: an aluminium dinghy mast. Two opposed zones (reversed bending from rocking), multiple origins at corrosion pits, ratchets, beach marks, and a central final fracture with shear lips.
+- Topic: [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]] · [[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|M1]]
+- Concepts: [[Paris Law]] · [[Plane Strain Constraint]] · [[Localised Corrosion]]

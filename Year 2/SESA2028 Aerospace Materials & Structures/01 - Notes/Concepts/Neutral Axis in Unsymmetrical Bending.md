@@ -3,7 +3,7 @@ title: "Neutral Axis in Unsymmetrical Bending"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, bending]
-status: complete
+status: lectured
 ---
 
 # Neutral Axis in Unsymmetrical Bending
@@ -26,7 +26,8 @@ $$
 
 That simple result is a useful test of whether coupling has been retained. Maximum tensile or compressive stress occurs at a boundary vertex of a polygonal section because $\sigma_x$ is linear in $y,z$. Check every vertex rather than guessing the furthest point from a geometric axis.
 
-![Unsymmetrical stress field](../Figures/structures_unsymmetric_bending_stress.png)
+![[structures_unsymmetric_bending_stress.png|700]]
 
-See [[SESA2028 S1 - Section Properties and Unsymmetrical Bending]].
+## Related
 
+- Topic: [[SESA2028 S1 - Section Properties and Unsymmetrical Bending|S1]]

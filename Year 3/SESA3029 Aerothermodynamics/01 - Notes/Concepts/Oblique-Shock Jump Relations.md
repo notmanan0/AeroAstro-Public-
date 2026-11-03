@@ -13,14 +13,11 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 
 # Oblique-Shock Jump Relations
 
-## Definition
+Across an oblique shock inclined at $\beta$ to the upstream velocity, the tangential velocity passes through unchanged and the normal component obeys the normal-shock equations. So every static jump, and $p_{02}/p_{01}$, is the [[Normal-Shock Jump Relations|normal-shock relation]] evaluated at
 
-> [!note] Definition
-> Across an oblique shock at angle $\beta$ to the upstream velocity, the tangential velocity is unchanged ($U_{t1}=U_{t2}$). The normal component obeys exactly the normal-shock equations. All static jumps, and $p_{02}/p_{01}$, are therefore the [[Normal-Shock Jump Relations]] evaluated at
->
-> $$M_{n1}=M_1\sin\beta.$$
+$$M_{n1}=M_1\sin\beta.$$
 
-## Relations
+Written out:
 
 $$
 \frac{\rho_2}{\rho_1}=\frac{(\gamma+1)M_{n1}^2}{2+(\gamma-1)M_{n1}^2}=\frac{\tan\beta}{\tan(\beta-\theta)},
@@ -36,24 +33,19 @@ M_{n2}^2=\frac{2+(\gamma-1)M_{n1}^2}{2\gamma M_{n1}^2-(\gamma-1)},
 M_2=\frac{M_{n2}}{\sin(\beta-\theta)}.
 $$
 
-## Why it works
+## Why the normal-shock results carry over
 
-- **Tangential momentum:** there is no pressure difference along the shock, so $\dot m(U_{t2}-U_{t1})=0$.
-- **Energy:** $\tfrac12U_t^2$ appears on both sides of $h+\tfrac12(U_n^2+U_t^2)=\text{const}$ and cancels.
-- The remaining mass, normal-momentum and energy equations are the normal-shock set with $U\to U_n$.
-- $p_{02}/p_{01}=e^{-\Delta s/R}$, and $\Delta s$ depends only on the static ratios. So the table's $p_{02}/p_{01}$ at $M_{n1}$ is correct.
+There is no pressure difference along the shock, so tangential momentum gives $\dot m(U_{t2}-U_{t1})=0$ and $U_t$ is the same on both sides. In the energy equation $h+\tfrac12(U_n^2+U_t^2)=\text{const}$, the $\tfrac12U_t^2$ term then appears on both sides and cancels. What is left (mass, normal momentum and energy) is the normal-shock set with $U$ replaced by $U_n$.
 
-Full derivation: [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#3. Conservation laws across the oblique shock|W02 §§3–4]].
+The stagnation-pressure ratio also carries over, which is less obvious because $p_0$ includes the tangential kinetic energy. But $p_{02}/p_{01}=e^{-\Delta s/R}$, and $\Delta s$ depends only on the static ratios, so the table's $p_{02}/p_{01}$ at $M_{n1}$ is correct. Full derivation: [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#3. Conservation laws across the oblique shock|W02 §§3–4]].
 
 ## Pitfalls
 
-- The table's "$M_2$" is $M_{n2}$. Always divide by $\sin(\beta-\theta)$.
-- $T_0/T$ and $p_0/p$ at a station use the **full** $M$, not $M_n$.
-- A shock needs $M_{n1}>1$, i.e. $\beta>\mu=\sin^{-1}(1/M_1)$.
+The table's "$M_2$" column gives $M_{n2}$; you still have to divide by $\sin(\beta-\theta)$ to get $M_2$. The isentropic ratios $T_0/T$ and $p_0/p$ at a station use the full $M$ there, not $M_n$. And a shock only exists if $M_{n1}>1$, which means $\beta>\mu=\sin^{-1}(1/M_1)$.
 
 ## Example
 
-$M_1=2$, $\theta=15^\circ$, weak $\beta=45.34^\circ$: $M_{n1}=1.423$, $p_2/p_1=2.19$, $\rho_2/\rho_1=1.73$, $M_{n2}=0.730$, $M_2=1.45$, $p_{02}/p_{01}=0.952$.
+$M_1=2$, $\theta=15^\circ$, weak solution $\beta=45.34^\circ$: $M_{n1}=1.423$, $p_2/p_1=2.19$, $\rho_2/\rho_1=1.73$, $M_{n2}=0.730$, $M_2=1.45$, $p_{02}/p_{01}=0.952$.
 
 ## Related
 

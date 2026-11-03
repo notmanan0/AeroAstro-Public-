@@ -3,7 +3,7 @@ title: "Strain Compatibility"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, continuum-mechanics]
-status: complete
+status: lectured
 ---
 
 # Strain Compatibility
@@ -23,5 +23,6 @@ $$
 
 Equilibrium alone does not determine a physically admissible elastic solution; compatibility and constitutive relations are also required. At a bonded or contacting interface, displacement compatibility links the solutions in neighbouring bodies.
 
-See [[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates]].
+## Related
 
+- Topic: [[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates|S9]]

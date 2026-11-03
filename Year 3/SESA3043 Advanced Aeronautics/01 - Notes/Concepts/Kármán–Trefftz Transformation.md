@@ -13,21 +13,17 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 # Kármán–Trefftz Transformation
 
-## Definition
+The Kármán–Trefftz transformation generalises Joukowski to give a trailing edge with a finite angle $\tau$:
 
-> [!note] Definition
->
-> $$z=2b\,\frac{(\bar z+b)^p+(\bar z-b)^p}{(\bar z+b)^p-(\bar z-b)^p},\qquad p=2-\frac\tau\pi,$$
->
-> where $\tau$ is the trailing-edge included angle. $p=2$ recovers Joukowski.
+$$z=2b\,\frac{(\bar z+b)^p+(\bar z-b)^p}{(\bar z+b)^p-(\bar z-b)^p},\qquad p=2-\frac\tau\pi.$$
 
-## Key points
+With $p=2$ it reduces to Joukowski. Near $\bar z=b$ the map behaves like $(\bar z-b)^p$, which turns the smooth circle into a wedge of included angle $\tau$. The chord follows from
 
-- Near $\bar z=b$ the map behaves like $(\bar z-b)^p$, turning the smooth circle into a wedge of angle $\tau$.
-- Chord: $\dfrac bc=\dfrac{(1+\varepsilon)^p-\varepsilon^p}{4(1+\varepsilon)^p}$.
-- With the slide's $2b$ prefactor, $z\approx(2/p)\bar z$ far away, so the circle-plane stream must be $(2/p)U_\infty$.
-- **Coursework:** generate a KT aerofoil with the given code and perform potential-flow calculations on it.
-- A finite TE angle makes it a good test case for panel methods (cusped Joukowski sections are not).
+$$\frac bc=\frac{(1+\varepsilon)^p-\varepsilon^p}{4(1+\varepsilon)^p}.$$
+
+With the slide's $2b$ prefactor, $z\approx(2/p)\bar z$ far from the body, so the stream in the circle plane has to be $(2/p)U_\infty$ to give $U_\infty$ in the physical plane.
+
+The finite trailing-edge angle makes it a good test case for panel methods, which cusped Joukowski sections are not. The coursework generates a KT aerofoil with the code provided and runs potential-flow calculations on it.
 
 ## Related
 

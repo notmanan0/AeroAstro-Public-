@@ -13,23 +13,17 @@ sources: ["02 - Sources/Lectures/CH3-3 Pohlhausen.pdf", "02 - Sources/Lectures/C
 
 # Pohlhausen Method
 
-## Statement
+The Pohlhausen method assumes a quartic velocity profile in $\eta=y/\delta$ and fixes its coefficients with no slip at the wall, the matched edge velocity, zero slope and curvature at the edge, and the boundary-layer momentum equation applied at the wall. The result is
 
-> [!note] Definition
-> Assume a 4th-order polynomial (quartic) profile in $\eta=y/\delta$ and fix its coefficients with no slip, matched edge velocity, zero slope and curvature at the edge, and the BL momentum equation at the wall. Result:
->
-> $$\frac{u}{U_e}=\underbrace{2\eta-2\eta^3+\eta^4}_{F(\eta)}+\lambda\underbrace{\tfrac16\eta(1-\eta)^3}_{G(\eta)},\qquad\lambda=\frac{\delta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}.$$
+$$\frac{u}{U_e}=\underbrace{2\eta-2\eta^3+\eta^4}_{F(\eta)}+\lambda\underbrace{\tfrac16\eta(1-\eta)^3}_{G(\eta)},\qquad\lambda=\frac{\delta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}.$$
 
-## Key results
+The shape parameter $\lambda=Re_\delta\frac{\delta}{U_e}U_e'$ measures pressure force against viscous force: positive is favourable, negative adverse. From the profile,
 
-- $\delta^*/\delta=\frac{3}{10}-\frac{\lambda}{120}$, $\theta/\delta=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072}$, $\tau_w\delta/\mu U_e=2+\lambda/6$.
-- **Separation at $\lambda=-12$** ($\tau_w=0$, $H=3.5$); valid for $-12\le\lambda\le12$ (overshoot above 12).
-- $\lambda>0$ favourable, $\lambda<0$ adverse. $\lambda=Re_\delta\frac{\delta}{U_e}U_e'$: pressure force over viscous force.
-- With the flat-plate MIE: $\theta/x=0.685/\sqrt{Re_x}$ (Blasius 0.664).
+$$\frac{\delta^*}{\delta}=\frac{3}{10}-\frac{\lambda}{120},\qquad\frac{\theta}{\delta}=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072},\qquad\frac{\tau_w\delta}{\mu U_e}=2+\frac{\lambda}{6}.$$
 
-## Why the wall condition matters
+The wall shear vanishes at $\lambda=-12$ (with $H=3.5$), which is the method's separation point. It is valid for $-12\le\lambda\le12$; above 12 the profile overshoots $U_e$. On a flat plate, combined with the momentum integral equation, it gives $\theta/x=0.685/\sqrt{Re_x}$, against Blasius's 0.664.
 
-At the wall $u=v=0$, so $\nu\,\partial^2u/\partial y^2|_0=-U_eU_e'$: the pressure gradient fixes the profile's curvature at the wall. In an adverse gradient that curvature is positive, so the profile has an inflection point, which links separation ([[Boundary Layer Separation]]) and instability ([[Linear Stability and Transition Prediction]]).
+The wall condition is the important one. At the wall $u=v=0$, so the momentum equation reduces to $\nu\,\partial^2u/\partial y^2|_0=-U_eU_e'$: the pressure gradient sets the curvature of the profile at the wall. In an adverse gradient that curvature is positive, so the profile must have an inflection point, which ties together separation ([[Boundary Layer Separation]]) and instability ([[Linear Stability and Transition Prediction]]).
 
 ## Related
 

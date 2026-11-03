@@ -3,41 +3,24 @@ title: "Miner's Rule"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Palmgren-Miner rule", "Miner's law of cumulative damage", "Linear damage rule"]
 tags: [sesa2028, materials, fatigue, cumulative-damage, total-life]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing]]"]
 related: ["[[S-N Curve and Basquin Law]]", "[[Creep Miner's Rule]]", "[[Total Life vs Damage Tolerance]]"]
 ---
 
 # Miner's Rule
 
-Miner's (Palmgren-Miner) rule adds up fatigue damage from blocks of different severity. Block $i$ applies $n_i$ cycles at a level whose life is $N_i$, so it uses up the fraction $n_i/N_i$:
+Miner's rule says that $n_i$ cycles at a stress level whose fatigue life is $N_i$ use up the fraction $n_i/N_i$ of the life, and that failure is expected when the fractions add up to one, $\sum n_i/N_i=1$.
 
-$$
-\sum_i\frac{n_i}{N_i}=1\quad\text{at failure}.
-$$
+It exists because laboratory S-N curves are measured at one amplitude and one mean stress, while a real structure sees a mixed schedule; the lecturer's example is an offshore platform loaded by the weather. The service history is first broken into blocks of cycles at each amplitude and mean stress by rainflow counting. Each block's life $N_i$ comes from the fitted S-N law (stress for high-cycle fatigue, strain for low-cycle), and the fractions are added. If the sum so far is $D$, the remaining life at a new level with life $N$ is $(1-D)N$, which should then be reduced by a safety factor.
 
-## Procedure
+In the MT2 blade example, 550 start-stops at $\Delta\varepsilon=0.23$ (life 1360) and $2.53\times10^6$ vibration cycles at 320 MPa (life $7.39\times10^6$) have used $0.404+0.342=0.747$ of the life, leaving $0.253\times1964\approx498$ start-stops at $\Delta\varepsilon=0.18$, or about 250 with a safety factor of 2 ([[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing#Combined low- and high-cycle fatigue on a blade|M2]]).
 
-1. Reduce the service history to blocks. **Rainflow counting** turns an irregular signal (e.g. storm loading on an offshore platform) into counted cycles.
-2. Find each $N_i$ from the S-N (stress) or $\varepsilon$-N (strain) curve.
-3. Add up the fractions already used. Remaining life at a new level = $(1-\sum)\,N_{new}$.
-4. Apply a safety factor.
+The rule assumes damage builds up linearly and that the order of the blocks does not matter. Neither is quite true: a high-then-low sequence is usually more damaging than low-then-high, and overloads can slow later growth. Mean stress is included only if each $N_i$ is read from the right curve or corrected with the [[Goodman Relation]]. The same bookkeeping, with time fractions instead of cycle fractions, is used for creep ([[Creep Miner's Rule]]).
 
-## Worked example (MT2 Q2 / 2018-19 A2(i))
+## Related
 
-$$
-\frac{550}{150(0.23)^{-1.5}}+\frac{2.53\times10^6}{7.5\times10^9(320)^{-1.2}}=0.404+0.342=0.747,
-$$
-
-$$
-N_{remaining}=(1-0.747)\times150(0.18)^{-1.5}=0.253\times1964\approx498\ \text{stop-starts}\ (\approx250\ \text{with SF 2}).
-$$
-
-## Limitations
-
-- Assumes damage accumulates **linearly** and **sequence does not matter**. High-then-low loading is usually more damaging than low-then-high.
-- Ignores load interaction (overload retardation) and mean-stress effects, unless each $N_i$ is Goodman-corrected.
-- Real failure sums range from about 0.3 to 3.
-
-The same idea is used for creep, with time fractions ([[Creep Miner's Rule]]).
+- Topic: [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]] · [[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys|M8]]
+- Concepts: [[S-N Curve and Basquin Law]] · [[Goodman Relation]] · [[Total Life vs Damage Tolerance]] · [[Creep Miner's Rule]]

@@ -10,35 +10,28 @@ parent_lectures: ["[[SESA2023 W01 - Thrust, Efficiency, Range and the ISA]]", "[
 related_concepts: ["[[Thermal and Overall Efficiency]]", "[[Breguet Range Equation]]"]
 sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf", "02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf", "02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 ---
+
 # Thrust Specific Fuel Consumption
 
-## Definition
+**Thrust specific fuel consumption** is the fuel mass flow per unit thrust,
 
-> [!note] Definition
->
-> $$\text{TSFC} = \frac{\dot m_f}{F} = \frac{f}{F/\dot m_a}\quad[\text{kg s}^{-1}\text{N}^{-1},\text{ usually quoted in g s}^{-1}\text{kN}^{-1}\text{ or mg N}^{-1}\text{s}^{-1}]$$
+$$
+\text{TSFC} = \frac{\dot m_f}{F} = \frac{f}{F/\dot m_a},
+$$
 
-## Explanation
-- It is fuel mass flow per unit thrust. Lower is better, and it sets the range directly (see [[Breguet Range Equation]]).
-- $\text{TSFC} = V_0/(\eta_O\,LCV)$. At a *fixed* flight speed, TSFC is inversely proportional to overall efficiency, not to thermal efficiency alone.
-- **Unit trap**: $1.614\times10^{-5}$ kg s⁻¹ N⁻¹ = 16.14 g s⁻¹ kN⁻¹ = 16.14 mg N⁻¹ s⁻¹.
-- It is not a pure "engine" number: it rises with flight speed even at constant $\eta_O$.
-- Typical values:
+in kg s⁻¹ N⁻¹, usually quoted in g s⁻¹ kN⁻¹ or mg N⁻¹ s⁻¹. Lower is better, and it sets the range directly through the [[Breguet Range Equation]].
 
-  | Engine | TSFC (g s⁻¹ kN⁻¹) |
-  |---|---|
-  | High-bpr turbofan at cruise | ≈ 12–16 |
-  | Turbojet | ≈ 22–33 |
-  | Afterburning | 38+ |
-  | Ramjet at M 3 | ≈ 45 |
+Since $\text{TSFC} = V_0/(\eta_O\,LCV)$, at a fixed flight speed TSFC is inversely proportional to the overall efficiency, not to the thermal efficiency alone. It isn't a pure engine number, because it rises with flight speed even at constant $\eta_O$. The units are a common trap: $1.614\times10^{-5}$ kg s⁻¹ N⁻¹ is 16.14 g s⁻¹ kN⁻¹, which is also 16.14 mg N⁻¹ s⁻¹.
 
-## Examples
-- PS1 Q1.2: TSFC = 17 mg N⁻¹ s⁻¹ and $F = 140$ kN give $\dot m_f = 2.38$ kg/s.
-- Turbojet worked example: 32.55 g s⁻¹ kN⁻¹. Turbofan fpr 1.5: 12.47 bare, 13.63 installed.
-- Reheat (2020-21 Q3): 30.5 dry and 37.7 with the afterburner.
+| Engine | TSFC (g s⁻¹ kN⁻¹) |
+|---|---|
+| High-bpr turbofan at cruise | ≈ 12–16 |
+| Turbojet | ≈ 22–33 |
+| Afterburning | 38+ |
+| Ramjet at M 3 | ≈ 45 |
+
+Worked values: in PS1 Q1.2, a TSFC of 17 mg N⁻¹ s⁻¹ at $F = 140$ kN gives $\dot m_f = 2.38$ kg/s. The turbojet worked example has 32.55 g s⁻¹ kN⁻¹, and the fpr 1.5 turbofan 12.47 bare and 13.63 installed. In 2020-21 Q3, reheat raises it from 30.5 dry to 37.7.
 
 ## Related
-- [[Thermal and Overall Efficiency]] · [[Breguet Range Equation]]
 
-## Sources
-- Week 1 notes eq. 1.13; Weeks 6–7 handout
+- [[Thermal and Overall Efficiency]] · [[Breguet Range Equation]]

@@ -3,7 +3,7 @@ title: "Euler Buckling"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, buckling]
-status: complete
+status: lectured
 ---
 
 # Euler Buckling
@@ -18,11 +18,18 @@ Use the least relevant second moment or solve about the principal axes for an un
 
 Euler theory assumes a straight, slender, elastic member; a centric load; ideal end conditions; and negligible shear deformation. Always compare $P_E$ with crushing/yielding and with any prescribed design factor.
 
-![Euler end conditions](../Figures/structures_euler_buckling_end_conditions.png)
+![[structures_euler_buckling_end_conditions.png|700]]
 
 See [[SESA2028 S5 - Euler Buckling and Effective Length]].
 
-**Related (SESA2028 materials):** [[Specific Stiffness and Strength]] (the $E^{1/2}/\rho$ strut index) · [[SESA2028 Materials Tutorial MT3 - Lightweighting Solutions|MT3 Q5]]
+Related (SESA2028 materials): [[Specific Stiffness and Strength]] (the $E^{1/2}/\rho$ strut index) · [[SESA2028 Materials Tutorial MT3 - Lightweighting Solutions|MT3 Q5]]
 
 ## Year 1 foundation
 - Pin-ended strut derivation and effective lengths: [[FEEG1002 A7 - Euler Buckling of Struts]].
+
+## Related
+
+- Topic: [[SESA2028 M4 - Polymer Matrix Composites|M4]]
+- Topic: [[SESA2028 S5 - Euler Buckling and Effective Length|S5]]
+- Concepts: [[Specific Stiffness and Strength]]
+- Elsewhere: [[FEEG1002 A7 - Euler Buckling of Struts]]

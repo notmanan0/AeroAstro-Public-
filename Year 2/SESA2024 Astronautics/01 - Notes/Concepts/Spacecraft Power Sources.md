@@ -3,43 +3,25 @@ title: "Spacecraft Power Sources"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["RTG", "fuel cell", "solar dynamic", "primary power", "secondary power"]
+aliases: ["RTG", "radioisotope thermoelectric generator", "fuel cell", "solar dynamic", "primary and secondary power"]
 tags: [sesa2024, concept, power]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 08 - Electrical Power Subsystem]]"]
-related_concepts: ["[[Solar Cells and Arrays]]", "[[Battery Sizing]]", "[[Electric Propulsion Sizing]]"]
-sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - complete.pdf"]
+related_concepts: ["[[Solar Cells and Arrays]]", "[[Battery Sizing]]"]
+sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - complete.pdf", "Fortescue, Stark and Swinerd, Spacecraft Systems Engineering, Ch. 10"]
 ---
 
 # Spacecraft Power Sources
 
-## Definition
+A spacecraft's primary power source supplies its electrical energy over the mission, and a secondary source stores energy for when the primary is unavailable; the options are solar arrays, batteries, fuel cells, solar dynamic systems, RTGs and nuclear reactors.
 
-> [!note] Definition
-> - **Primary power** is the main energy source (solar array, RTG, fuel cell, primary battery).
-> - **Secondary power** is energy storage for peaks and eclipse (rechargeable batteries).
-> - The requirement is **reliable, continuous** operation, because a power interruption can be catastrophic.
+Solar arrays are the primary source for almost every Earth-orbiting spacecraft, with batteries as the secondary source through eclipse. Arrays convert 10–20 % of the 1370 W/m² solar flux, and the flux falls with the square of the distance from the Sun, to about 5.5 W/m² of electrical output at Jupiter and 1.4 W/m² at Saturn for a 10 % cell, so beyond about 5 AU other sources take over.
 
-## Explanation
-| Source | Principle | Use |
-|---|---|---|
-| Solar arrays | photovoltaic | Earth orbit to about 5 AU; the default |
-| Primary battery | non-rechargeable chemistry | minutes to hours (launchers, probes) |
-| Fuel cell | H₂ + O₂ → electricity + **water** | crewed missions of days to weeks (Shuttle, Apollo) |
-| Solar dynamic | concentrator heats a fluid, which drives a turbine | more efficient than PV but heavy; rarely used |
-| RTG | Pu-238 decay heat → thermocouples (**Seebeck**) | outer planets: Ulysses, Voyager, Galileo, Cassini (~40 kg for ~200 W) |
-| Nuclear reactor | fission | very high power |
+An RTG converts the heat of decaying plutonium-238 into electricity through thermocouples (the Seebeck effect): about 200 W from a unit roughly 1 m long and 40 kg, for decades, which is why the Voyagers still work. It emits heat continuously from integration to orbit and is tightly regulated. Fuel cells react hydrogen and oxygen for kilowatts over short missions and produce drinking water, which suits crewed flight. Primary (non-rechargeable) batteries suit short, low-power missions such as launchers. Solar dynamic systems heat a working fluid to drive a turbine: efficient but heavy and complex. Nuclear reactors are the only option for very high power over very long missions, but are currently not used.
 
-- **Mission-duration map**: batteries for hours, fuel cells for days to weeks, solar or RTG for years, reactors for high power over years.
-- **RTG drawbacks**: heat and radiation affect the launcher and payload; public ("Green lobby") concern about a launch failure dispersing the isotope.
-
-## Examples
-- 2018/19 Q3(ii): power sources other than batteries and arrays (4 marks).
-- 2015/16 Q1(i): the space environment. RTG choice is driven by distance from the Sun.
-- The Pluto EP orbiter's $\beta$ = 5.4 W/kg points to RTGs.
+The selection chart plots power against mission duration, and the Sun distance then decides between arrays and RTGs for long missions.
 
 ## Related
-- [[Solar Cells and Arrays]] · [[Battery Sizing]] · [[Electric Propulsion Sizing]]
 
-## Sources
-- Chapter 8 slides 3–8; workbook Ch8 Q1–Q3
+- [[SESA2024 08 - Electrical Power Subsystem#1. Power sources|Power sources in the lecture note]]
+- [[Solar Cells and Arrays]] · [[Battery Sizing]]

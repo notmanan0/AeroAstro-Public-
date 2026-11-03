@@ -5,7 +5,7 @@ type: tutorial
 stream: "Sections 3–4: method of characteristics and linearised supersonic/subsonic theory"
 tags: [sesa3029, tutorial-solutions, example-sheet, method-of-characteristics, riemann-invariant, ackeret, prandtl-glauert]
 sheet: "Example Sheet 2"
-theory_notes: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]", "[[SESA3029 W05a - Method of Characteristics]]", "[[SESA3029 W05b - Minimum-Length Nozzle Design]]"]
+theory_notes: ["[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]", "[[SESA3029 W05a - Method of Characteristics]]", "[[SESA3029 W05b - Minimum-Length Nozzle Design]]", "[[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]]", "[[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]]"]
 status: complete
 sources: ["03 - Exams & Past Papers/ExamplesSheet2.pdf"]
 ---
@@ -15,7 +15,9 @@ sources: ["03 - Exams & Past Papers/ExamplesSheet2.pdf"]
 > [!abstract] Sheet info
 > Six questions from **Sections 3–4**:
 > - **Q1–Q3: the method of characteristics.** The theory began on Fri 16 Oct (Lecture 3.1: compatibility conditions and Riemann invariants). The unit process (3.2) is in [[SESA3029 W05a - Method of Characteristics]], and the boundary conditions (3.3) are in [[SESA3029 W05b - Minimum-Length Nozzle Design]]; both are now lectured.
-> - **Q4–Q6: Ackeret and Prandtl–Glauert linear theory**, Weeks 7–8, not yet lectured.
+> - **Q4–Q6: Ackeret and Prandtl–Glauert linear theory.** The theory is in [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]] (Q6) and [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] (Q4–Q5), written ahead from the 4.3–4.6 slides; not yet lectured.
+>
+> Notation: Q4–Q5 below write $\beta=\sqrt{M^2-1}$, as Anderson does. The course writes $\lambda=\sqrt{M_\infty^2-1}$ for Ackeret theory and keeps $\beta=\sqrt{1-M_\infty^2}$ for Prandtl–Glauert (4.4 slide 2, 4.5 slide 2). Use $\lambda$ in the exam.
 >
 > Each section first derives the result it needs, so the solutions stand alone. All numbers are verified in Python. $\gamma=1.4$.
 
@@ -321,5 +323,5 @@ The two cross at $\boxed{M_{cr}=0.448}$ (sheet: 0.45 ✓). Above it a supersonic
 ## Links
 
 - Previous sheet: [[SESA3029 Example Sheet 1 - Solutions]] · Next: [[SESA3029 Example Sheet 3 - Solutions]]
-- Theory: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]] · [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]] · [[Eigenvalues and Eigenvectors]]
+- Theory: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]] · [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]] · [[Eigenvalues and Eigenvectors]] · [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]] (Q6) · [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] (Q4–Q5)
 - Hub: [[SESA3029 Aerothermodynamics Hub]]

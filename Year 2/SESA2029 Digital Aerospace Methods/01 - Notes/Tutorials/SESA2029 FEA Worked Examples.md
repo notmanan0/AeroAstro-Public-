@@ -7,14 +7,14 @@ tags: [sesa2029, tutorial-solutions, fea]
 sheet: "Lecture worked examples and exam-style practice (FEA)"
 theory_notes: ["[[SESA2029 B1 - Introduction to FEA and the Matrix Displacement Method]]", "[[SESA2029 B2 - Linear Elastic FE Analysis - Procedure, Boundary Conditions and Yield]]", "[[SESA2029 B3 - Principle of Minimum Total Potential Energy]]", "[[SESA2029 B4 - Rayleigh-Ritz Method and Shape Functions]]", "[[SESA2029 B5 - Euler-Bernoulli Beam Element]]", "[[SESA2029 B8 - Modal Analysis]]", "[[SESA2029 B9 - Nonlinear FE Analysis]]"]
 key_concepts: ["[[Matrix Displacement Method]]", "[[Principle of Minimum Total Potential Energy]]", "[[Shape Functions]]", "[[Euler-Bernoulli Beam Element]]", "[[Participation Factor and Effective Mass]]", "[[Direct Substitution and Newton-Raphson]]"]
-status: complete
+status: lectured
 sources: ["02 - Sources/FEM Lectures/", "02 - Sources/FEM Lectures/FEA.txt"]
 ---
 
 # SESA2029 FEA Worked Examples
 
 > [!abstract] Sheet Info
-> These are exam-style problems taken from the lecture examples, including the Example Sheet 1 and 2 questions worked in lectures. Every number was checked in Python. The element stiffness matrices are **given** in the exam; the marks are for assembly, boundary conditions, algebra and interpretation.
+> These are exam-style problems taken from the lecture examples, including the Example Sheet 1 and 2 questions worked in lectures. Every number was checked in Python. The element stiffness matrices are given in the exam; the marks are for assembly, boundary conditions, algebra and interpretation.
 
 ## Theory Links
 - Theory notes: [[SESA2029 B1 - Introduction to FEA and the Matrix Displacement Method]] · [[SESA2029 B3 - Principle of Minimum Total Potential Energy]] · [[SESA2029 B4 - Rayleigh-Ritz Method and Shape Functions]] · [[SESA2029 B5 - Euler-Bernoulli Beam Element]] · [[SESA2029 B8 - Modal Analysis]]
@@ -77,7 +77,7 @@ $$
 
 6. So $F_{xi} = ku_{xi}-ku_{xj}$ and $F_{xj} = -ku_{xi}+ku_{xj}$, which in matrix form is the result. ∎
 
-**Marks go for**: the explicit $U$ and $V$, differentiating with respect to **each** DOF, and stating that the stationary point is the equilibrium (a minimum).
+Marks go for: the explicit $U$ and $V$, differentiating with respect to each DOF, and stating that the stationary point is the equilibrium (a minimum).
 
 ## Q4: Quadratic bar shape functions (L6 exercise)
 
@@ -99,7 +99,7 @@ $$
 u = \underbrace{\left(\frac{2x^2}{L^2}-\frac xL\right)}_{N_1}u_1+\underbrace{\left(1-\frac{4x^2}{L^2}\right)}_{N_2}u_2+\underbrace{\left(\frac{2x^2}{L^2}+\frac xL\right)}_{N_3}u_3
 $$
 
-**Check**:
+Check:
 - $N_1(-L/2) = \tfrac12+\tfrac12 = 1$, $N_1(0) = 0$, $N_1(L/2) = \tfrac12-\tfrac12 = 0$ ✓;
 - $N_1+N_2+N_3 = 1$ ✓.
 
@@ -127,7 +127,7 @@ $$
 
 Reactions from rows 1–3: $F_1 = -7.5$ kN, $M_1 = -5.0$ kN m, $F_2 = +17.5$ kN.
 
-**Statics check**:
+Statics check:
 - vertical: $-7.5+17.5-10 = 0$ ✓;
 - moments about the clamp: $-5+17.5\times2-10\times3 = 0$ ✓.
 
@@ -177,8 +177,8 @@ $$
 $\lambda = 901.9$ and $6098.1$, so $\omega = 30.03$ and $78.09$ rad/s: **$f_1 = 4.78$ Hz and $f_2 = 12.43$ Hz**.
 
 Modes:
-- Mode 1: $(4000-1803.8)\phi_1 = 3000\phi_2$ gives $\phi_2/\phi_1 = 0.732$. Mass-normalising, $2\phi_1^2+\phi_2^2 = 1$, gives $\{0.6280,\ 0.4597\}$ (**in phase**).
-- Mode 2: $\phi_2/\phi_1 = -2.732$, giving $\{-0.3251,\ 0.8881\}$ (**out of phase**).
+- Mode 1: $(4000-1803.8)\phi_1 = 3000\phi_2$ gives $\phi_2/\phi_1 = 0.732$. Mass-normalising, $2\phi_1^2+\phi_2^2 = 1$, gives $\{0.6280,\ 0.4597\}$ (in phase).
+- Mode 2: $\phi_2/\phi_1 = -2.732$, giving $\{-0.3251,\ 0.8881\}$ (out of phase).
 
 Participation, with $\{D\} = \{1,1\}$:
 - $\gamma_1 = 2(0.6280)+0.4597 = 1.7157$;
@@ -195,14 +195,14 @@ Effective masses: $M_{\mathrm{eff}} = \gamma^2 = 2.9436$ and $0.0566$ kg. The su
 ### Solution
 Exact: $50u^2-100u+40 = 0$, so $u = 0.552786$.
 
-**Direct substitution**, $u_{i+1} = P/k(u_i)$:
+Direct substitution, $u_{i+1} = P/k(u_i)$:
 - $u_1 = 40/100 = 0.4000$;
 - $u_2 = 40/80 = 0.5000$;
 - $u_3 = 40/75 = 0.5333$.
 
 It converges linearly (0.5528 after about 10 iterations).
 
-**Newton–Raphson**, with $R = (100-50u)u-40$ and $K_T = 100-100u$:
+Newton–Raphson, with $R = (100-50u)u-40$ and $K_T = 100-100u$:
 - $u_1 = 0+40/100 = 0.4000$;
 - $R(0.4) = -8$, $K_T = 60$, so $u_2 = 0.4+8/60 = 0.5333$;
 - $R = -0.889$, $K_T = 46.67$, so $u_3 = 0.55238$.
@@ -214,21 +214,21 @@ Then $u_4 = 0.5527862$: quadratic convergence. See [[Direct Substitution and New
 *A 2D block rests on the ground under a downward pressure on top. Critique the supports: (a) $u_y = 0$ on all bottom nodes; (b) $u_x = u_y = 0$ on all bottom nodes; (c) propose a correct set.*
 
 ### Solution
-(a) This removes $y$-translation and rotation, but **not** $x$-sliding. The model has a rigid-body mode, so $[K]$ is singular (zero pivot).
+(a) This removes $y$-translation and rotation, but not $x$-sliding. The model has a rigid-body mode, so $[K]$ is singular (zero pivot).
 
-(b) There is no rigid-body motion, but it is **over-constrained**. The base cannot expand laterally (Poisson), giving spurious corner stresses instead of the uniform $\sigma_y = -p$.
+(b) There is no rigid-body motion, but it is over-constrained. The base cannot expand laterally (Poisson), giving spurious corner stresses instead of the uniform $\sigma_y = -p$.
 
-(c) Use $u_y = 0$ on the bottom and $u_x = 0$ at **one** bottom node. Or model half the block with a symmetry condition ($u_x = 0$ on the centreline). Three rigid-body modes are removed with nothing extra.
+(c) Use $u_y = 0$ on the bottom and $u_x = 0$ at one bottom node. Or model half the block with a symmetry condition ($u_x = 0$ on the centreline). Three rigid-body modes are removed with nothing extra.
 
 ## Q11: Short explain-questions (model answers)
-- **What is interpolation / a shape function?** Shape functions define the displacement anywhere in an element from the nodal DOF, $u = [N]\{d\}$. Each $N_i$ is 1 at its node and 0 at the others. This reduces infinitely many DOF to a finite number.
-- **h vs p refinement?** h makes the elements smaller; p raises the polynomial order (linear → quadratic). Both add DOF.
-- **Why shells for wing skins, not solids?** $t\ll L$. Shells capture bending and membrane action with few DOF. Solids need at least 3 linear (or 2 quadratic) layers through the thickness to bend correctly.
-- **Stress keeps rising with refinement: why?** A singularity (sharp corner, point load or constraint). Converge away from it, add fillets, or distribute the loads.
-- **Modal analysis gives no frequencies: why?** No density, so $[M] = 0$.
-- **Three sources of nonlinearity?** Geometric (large deflection, follower loads); material (plasticity, creep, viscoelasticity); boundary/contact (friction, gaps, deformation-dependent loads).
-- **Free–free check?** Run a modal solve with no constraints. Expect exactly 6 zero-frequency modes; more means a part is disconnected.
-- **Verification vs validation?** Verification: is the model solved correctly (units, mesh, BCs, maths checks)? Validation: does it match reality (tests), updated if necessary?
+- What is interpolation / a shape function? Shape functions define the displacement anywhere in an element from the nodal DOF, $u = [N]\{d\}$. Each $N_i$ is 1 at its node and 0 at the others. This reduces infinitely many DOF to a finite number.
+- h vs p refinement? h makes the elements smaller; p raises the polynomial order (linear → quadratic). Both add DOF.
+- Why shells for wing skins, not solids? $t\ll L$. Shells capture bending and membrane action with few DOF. Solids need at least 3 linear (or 2 quadratic) layers through the thickness to bend correctly.
+- Stress keeps rising with refinement: why? A singularity (sharp corner, point load or constraint). Converge away from it, add fillets, or distribute the loads.
+- Modal analysis gives no frequencies: why? No density, so $[M] = 0$.
+- Three sources of nonlinearity? Geometric (large deflection, follower loads); material (plasticity, creep, viscoelasticity); boundary/contact (friction, gaps, deformation-dependent loads).
+- Free–free check? Run a modal solve with no constraints. Expect exactly 6 zero-frequency modes; more means a part is disconnected.
+- Verification vs validation? Verification: is the model solved correctly (units, mesh, BCs, maths checks)? Validation: does it match reality (tests), updated if necessary?
 
 ## Sources
 - Source: FEA lectures L3–L12 worked examples (including Example Sheet 1 and 2 questions worked in lecture), `02 - Sources/FEM Lectures/`; transcript `FEA.txt`

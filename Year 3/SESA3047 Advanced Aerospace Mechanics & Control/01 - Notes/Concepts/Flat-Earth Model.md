@@ -13,19 +13,10 @@ sources: ["02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/L3 - SES
 
 # Flat-Earth Model
 
-## Assumptions
+The flat-Earth model treats the Earth as a non-rotating flat plane. It makes three assumptions: Earth's rotation is neglected, so the local Earth frame counts as inertial; curvature is neglected, so position is measured on a tangent plane; and gravity has constant magnitude and points normal to that plane.
 
-1. Earth rotation is neglected, so the local Earth frame is treated as inertial.
-2. Curvature is neglected and position is measured on a tangent plane.
-3. Gravity has constant magnitude and points normal to the plane.
-
-## Use
-
-The model gives a useful balance of simplicity and accuracy for many aircraft dynamics and control problems over limited distance and duration.
-
-It becomes inadequate for long-range navigation, high-accuracy trajectory prediction and spacecraft motion, where curvature, rotation and gravity variation matter.
+That's a good balance of simplicity and accuracy for most aircraft dynamics and control problems over limited distances and times. It stops being adequate for long-range navigation, high-accuracy trajectory prediction and spacecraft, where curvature, rotation and the variation of gravity all matter.
 
 ## Related
 
 - [[Reference Frames and Coordinate Systems]] · [[NED and FRD Coordinates]]
-

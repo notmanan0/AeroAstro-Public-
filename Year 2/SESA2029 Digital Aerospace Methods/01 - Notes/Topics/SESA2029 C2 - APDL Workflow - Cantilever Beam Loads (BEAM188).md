@@ -10,32 +10,28 @@ tags:
   - beam-element
   - workflow
 aliases: ["APDL cantilever beam", "BEAM188 workflow", "Elliptical load APDL"]
-date: 2026-09-24
-status: complete
+date: 2026-10-30
+status: lectured
 parent: ["[[SESA2029 Digital Aerospace Methods Hub]]"]
 prerequisites: ["[[SESA2029 C1 - ANSYS Mechanical APDL Scripting Fundamentals]]", "[[SESA2029 B5 - Euler-Bernoulli Beam Element]]"]
 next_topics: ["[[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)]]"]
 key_concepts: ["[[Euler-Bernoulli Beam Element]]", "[[Mesh Convergence and Grid Independence]]", "[[Elliptic Lift Distribution]]"]
 tutorial_sheets: []
-sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: BEAM188, SECTYPE/SECDATA, SFBEAM"]
+sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: BEAM188, SECTYPE/SECDATA, SFBEAM", "02 - Sources/Lectures/SESA2029 Lecture Computer lab1_Spring Analysis Video.txt", "02 - Sources/Lectures/SESA2029 Lecture Computer lab1_Cantilever_Beam.txt"]
 ---
 
 # SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)
 
 > [!abstract] Summary
-> This workflow models a wing-like cantilever as a line of **BEAM188** elements with an I/H cross-section, under three load cases:
-> 1. a **tip point load**;
-> 2. a **uniform line load** (UDL);
-> 3. an **elliptical line load** $q(x) = q_0\sqrt{1-(x/L)^2}$, the lift shape of an elliptically loaded wing.
->
-> Every run reports the tip deflection for a hand check against beam theory. The elliptical load is applied either as nodal forces (quick) or as element-wise linearly varying `SFBEAM` pressures, scaled so the discrete total is exact (recommended).
->
-> Units: **mm, N, MPa**. The numbers below are illustrative; change the parameter block.
+> Lab 1 models a wing spar as a cantilever of BEAM188 elements with an H (I) section, clamped at the root, first under a tip point load, then, for the coursework, under a uniform and an elliptical line load of the same total. Each run is checked against beam theory: tip deflections $WL^3/3EI$, $WL^3/8EI$ and $0.0967\,WL^3/EI$. The elliptical load, closest to a real lift distribution, can be applied as scaled nodal forces or, better, as element-wise linear `SFBEAM` pressures whose discrete total is exact. Units are mm, N and MPa; the parameter values below are illustrative.
 
-## Key Concepts
-- [[Euler-Bernoulli Beam Element]] · [[Mesh Convergence and Grid Independence]] · [[Elliptic Lift Distribution]]
+> [!summary]- Exam use: quick path
+> - **Use it when:** setting up the lab 1 beam, its load cases or its convergence study.
+> - **Assumptions:** linear elastic steel, clamped root, BEAM188 (Timoshenko) elements.
+> - **Method:** 1. `ET,1,188`, `SECTYPE,BEAM,I`, `SECDATA`. 2. Two key points, a line, `LESIZE` divisions, `LMESH`. 3. Clamp all DOF at the root node. 4. Tip `F`, or `SFBEAM` line loads. 5. Read the tip `UY` and max `S,EQV`; compare with beam theory.
+> - **Common mistakes:** wrong `SFBEAM` face key or sign (check `PLDISP` and the reactions); judging stress without `/ESHAPE,1`.
+> - **Practise:** [[#1. Model and hand checks]]
 
----
 
 ## 1. Model and hand checks
 - Length $L = 250$ mm, steel ($E = 210$ GPa $= 2.1\times10^5$ MPa, $\nu = 0.3$), total load $W = 1000$ N.
@@ -51,7 +47,7 @@ sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: BEAM188, S
 
 For the I-section, $I = \dfrac{W_1H^3-(W_1-t_w)(H-2t_f)^3}{12}$. The elliptical coefficient comes from integrating the point-load influence $a^2(3L-a)/6EI$ against $q(a)$.
 
-BEAM188 is a **Timoshenko** beam (it includes shear deformation), so it is slightly more flexible than Euler–Bernoulli for stubby sections. It converges with `LESIZE` divisions: sweep 20 → 200 → 2000.
+BEAM188 is a Timoshenko beam (it includes shear deformation), so it is slightly more flexible than Euler–Bernoulli for stubby sections. It converges with `LESIZE` divisions: sweep 20 → 200 → 2000.
 
 ## 2. Workflow 1: tip point load
 ```apdl
@@ -159,8 +155,8 @@ SOLVE
 
 This is simple, but it lumps the load at nodes. The end nodes should really carry half-weights (trapezoid rule), so it converges only as the mesh refines.
 
-## 5. Workflow 3b: elliptical load as `SFBEAM` pressures (recommended)
-A linear pressure varies over each element, and $q_0$ is chosen so the **trapezoidal integral over the actual mesh** equals $W$ exactly:
+## 5. Workflow 3b: elliptical load as SFBEAM pressures (recommended)
+A linear pressure varies over each element, and $q_0$ is chosen so the trapezoidal integral over the actual mesh equals $W$ exactly:
 
 ```apdl
 beam_len = 250 $ num_div = 100 $ w_total = 1000
@@ -204,15 +200,30 @@ SET,LAST
 ('TIP DEFLECTION UY (mm) = ',E16.8,/,'PEAK LINE LOAD q0 (N/mm) = ',E16.8)
 ```
 
-**Check**: the continuous ellipse has $q_0 = 4W/(\pi L) = 5.093$ N/mm. The mesh-exact $q_0$ approaches this as `num_div` increases, and the tip deflection approaches $0.0967\,WL^3/EI$.
+Check: the continuous ellipse has $q_0 = 4W/(\pi L) = 5.093$ N/mm. The mesh-exact $q_0$ approaches this as `num_div` increases, and the tip deflection approaches $0.0967\,WL^3/EI$.
 
 > [!tip] Why this matters aerodynamically
-> An elliptical spanwise lift distribution minimises induced drag ([[Elliptic Lift Distribution]]). Compared with a UDL of the same total, the elliptical load puts less force near the tip. That gives a smaller **root bending moment** ($4WL/3\pi\approx0.424WL$ vs $0.5WL$) and a smaller tip deflection (9.0 vs 11.7 mm here).
+> An elliptical spanwise lift distribution minimises induced drag ([[Elliptic Lift Distribution]]). Compared with a UDL of the same total, the elliptical load puts less force near the tip. That gives a smaller root bending moment ($4WL/3\pi\approx0.424WL$ vs $0.5WL$) and a smaller tip deflection (9.0 vs 11.7 mm here).
 
 ## 6. Mesh convergence
 Wrap the model in a `*DO` over `num_div` (e.g. 20, 200, 1000, 2000) and write the tip deflection and max `S,EQV` to a file ([[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]).
-- **Displacement** converges very fast for beams: cubic shape functions are exact for nodal loads.
-- The **root von Mises** stress also converges quickly, because a beam model has no geometric singularity.
+- Displacement converges quickly, but not in one element: BEAM188 uses linear (Timoshenko) interpolation by default, unlike the cubic Euler–Bernoulli element of [[SESA2029 B5 - Euler-Bernoulli Beam Element|B5]], which is exact for nodal loads. Hence the 20, 200, 2000 sweep.
+- The root von Mises stress also converges quickly, because a beam model has no geometric singularity.
+
+## What the lab 1 videos do
+
+The spring video works two warm-up problems with COMBIN14 spring–damper elements, whose stiffness is a real constant (ll. 1–206). In the first, three springs (spring 1 is 100 kN/m) join four nodes 1 m apart, fully fixed at nodes 1 and 4, with 50 kN in $+x$ at node 3; the nodes and elements are created directly, each element given its real-constant set, and the reactions are checked against the load and hand calculation before repeating with 6 and 12 springs. In the second, three springs and a rigid bar carry 4000 lb in $-x$: a 1000 lb/in spring between nodes 1 and 2 and two 500 lb/in springs from node 2 to nodes 3 and 4, which are coincident, with nodes 1, 3 and 4 fixed. The hand solution is a useful check on the run: the three springs act in parallel on node 2, so
+
+$$
+u_2=\frac{-4000}{1000+500+500}=-2\text{ in},
+$$
+
+with reactions of 2000 lb at node 1 and 1000 lb at each of nodes 3 and 4, summing to the applied 4000 lb.
+
+The cantilever video builds the coursework spar (ll. 1–161): BEAM188 (two nodes; BEAM189 has three and quadratic interpolation), an H section with 10 mm flanges and depth and 2 mm walls, linear elastic isotropic steel with $\nu=0.3$, key points at 0 and 200 mm (the coursework uses 2xx mm from the student ID), 20 divisions, all DOF fixed at the root node and 2000 N in $y$ at the tip. Listing the nodal solution gives $u_x$, $u_y$ and the rotation at every node. The von Mises stress needs the cross-section displayed (PlotCtrls → Style → Size and Shape) to show its distribution; it peaks at the root at 5780 MPa, far above yield, so the coursework's first task is to resize the section until it does not yield. The second task applies the uniform and elliptical loads, the third finds how many elements are needed for convergence.
+
+> [!warning] Elastic modulus in the cantilever video (l. 46)
+> The transcript reads the steel modulus as "1.1 E5" MPa. Steel is about $2.1\times10^5$ MPa, the value used below; check the figure given on your lab sheet.
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C1 - ANSYS Mechanical APDL Scripting Fundamentals]] · Next: [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)]]
@@ -221,3 +232,15 @@ Wrap the model in a `*DO` over `num_div` (e.g. 20, 200, 1000, 2000) and write th
 ## Sources
 - Own APDL beam scripts, generalised (dimensions changed to round illustrative values)
 - ANSYS Element Reference (BEAM188), Command Reference (SECDATA, SFBEAM)
+
+## Self-study tasks
+
+### Core
+
+- [ ] Lab 1 coursework task 1: size the H section so the root stress stays below yield (cantilever video, ll. 150–161). → [[#2. Workflow 1: tip point load]]
+- [ ] Task 2: compare tip, uniform and elliptical loads of the same total (briefing, 2026-01-30 10:49). → [[#3. Workflow 2: uniform line load]] · [[#5. Workflow 3b: elliptical load as SFBEAM pressures (recommended)]]
+- [ ] Task 3: element convergence study (cantilever video, ll. 91–100). → [[#6. Mesh convergence]]
+
+### Further practice
+
+- [ ] Check the spring examples by hand, including the reactions (spring video). → [[#What the lab 1 videos do]]

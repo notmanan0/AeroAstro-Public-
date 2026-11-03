@@ -3,7 +3,7 @@ title: "Shear Flow"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, shear-flow]
-status: complete
+status: lectured
 ---
 
 # Shear Flow
@@ -30,7 +30,8 @@ For unsymmetrical sections use both running first moments and $\Delta=I_yI_z-I_{
 
 The flow can be continuous across a corner while stress jumps because $\tau=q/t$ and thickness may change.
 
-![Open-section shear flow](../Figures/structures_open_section_shear_flow.png)
+![[structures_open_section_shear_flow.png|700]]
 
-See [[SESA2028 S3 - Shear Flow and Shear Centre]].
+## Related
 
+- Topic: [[SESA2028 S3 - Shear Flow and Shear Centre|S3]]

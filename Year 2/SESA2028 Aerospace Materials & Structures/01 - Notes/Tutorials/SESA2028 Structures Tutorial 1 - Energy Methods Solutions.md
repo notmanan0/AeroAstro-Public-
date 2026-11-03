@@ -5,7 +5,7 @@ type: tutorial-solution
 stream: "Structures"
 order: 1
 tags: [sesa2028, structures, tutorial, energy-methods]
-status: complete
+status: lectured
 parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 topics: ["[[SESA2028 S7 - Strain Energy and Conservation of Energy]]", "[[SESA2028 S8 - Virtual Work and Castigliano Theorems]]"]
 sources: ["02 - Sources/SESA2028 green coursework book.pdf, pp. 41-42"]

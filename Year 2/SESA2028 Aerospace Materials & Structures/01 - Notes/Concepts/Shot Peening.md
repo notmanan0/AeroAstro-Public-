@@ -3,36 +3,24 @@ title: "Shot Peening"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Peening", "Compressive residual stress"]
 tags: [sesa2028, materials, fatigue, residual-stress, surface-engineering]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing]]"]
 related: ["[[Goodman Relation]]", "[[S-N Curve and Basquin Law]]", "[[Shrink Fit]]"]
 ---
 
 # Shot Peening
 
-![[Figures/materials_shot_peening_residual_stress.png]]
+Shot peening bombards a surface with small shot or glass beads to leave a thin layer in compressive residual stress, which raises the fatigue strength of the part.
 
-Shot peening fires small hard balls (steel, ceramic or glass) at a surface.
+Each impact makes a small dimple and plastically stretches the material immediately beneath it, while the material around it is loaded only elastically. When the shot rebounds, the surrounding material springs back and squeezes the stretched layer into compression. Equilibrium needs a balancing tension further in. On a shot-peened low-pressure steam-turbine blade in tempered martensitic steel, X-ray diffraction gave about −600 MPa at the surface and nearly −800 MPa, close to yield, at about 100 µm, with balancing tension at around 400 µm.
 
-## Mechanism
+![[materials_shot_peening_residual_stress.png|700]]
 
-Each impact makes a dimple whose surface layer is plastically **stretched**. On unloading, the elastic material underneath resists the stretched layer and pushes back, leaving the surface in **residual compression** balanced by tension deeper down.
+The compression sits where fatigue cracks start, and it lowers the mean stress of every cycle without changing the range, so by the [[Goodman Relation]] the allowable amplitude rises; the fatigue limit and high-cycle strength go up markedly. The impacts also work-harden the surface. The cost is a rougher, dimpled finish, which on its own would shorten initiation, so peening is a trade that pays off at designed-in stress concentrations such as blade fir-tree roots, fillets and spline roots. The same idea, putting the critical region into residual compression before service, underlies the shrink-fit and autofrettage of thick cylinders in the structures half of the module ([[Shrink Fit]]).
 
-Lecture X-ray diffraction data for a peened tempered-martensite blade steel: about $-600$ MPa at the surface, about $-800$ MPa at about 100 µm (near yield), crossing into balancing tension at about 400 µm.
+## Related
 
-## Effects
-
-| Effect | Fatigue consequence |
-|---|---|
-| Compressive residual stress | lowers the **mean** stress ([[Goodman Relation]]); stops shallow cracks opening, so a large HCF and fatigue-limit gain |
-| Work-hardened surface | resists slip-band initiation |
-| **Rougher surface** | an unwanted side effect: micro-notches. Often followed by light polishing |
-
-It does not change the stress **range**. It helps most in **HCF**, where initiation dominates, and less in high-stress LCF, where plasticity can relax the residual stress.
-
-## Where to use it
-
-At stress concentrations: fillets, spline and keyway roots, fir-tree roots, weld toes, landing-gear components. Laser shock peening and deep rolling are deeper-acting alternatives.
-
-The mechanism is the same as the residual stress left by an autofrettaged or shrink-fitted cylinder ([[Shrink Fit]], [[Lame Thick-Cylinder Solution]]): plasticity locks in a self-equilibrating stress field.
+- Topic: [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]] · [[SESA2028 M3 - Corrosion, Wear and Surface Engineering|M3]]
+- Concepts: [[Goodman Relation]] · [[S-N Curve and Basquin Law]] · [[Shrink Fit]]

@@ -3,42 +3,27 @@ title: "Momentum Bias and Gyroscopic Rigidity"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["momentum bias", "gyroscopic precession", "gyroscopic rigidity", "nutation"]
+aliases: ["momentum bias", "gyroscopic rigidity", "gyroscopic precession", "nutation", "spin stability"]
 tags: [sesa2024, concept, attitude-control]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 06 - Attitude Control]]"]
-related_concepts: ["[[Spacecraft Stabilisation Types]]", "[[Reaction Wheels and Momentum Dumping]]", "[[Inertia Matrix]]"]
+related_concepts: ["[[Inertia Matrix]]", "[[Spacecraft Stabilisation Types]]", "[[Reaction Wheels and Momentum Dumping]]"]
 sources: ["02 - Sources/Lectures/Chapter 6/Chapter 6 - Attitude Control - prerecorded material.pdf"]
 ---
 
 # Momentum Bias and Gyroscopic Rigidity
 
-## Definition
+Momentum bias is a large angular momentum $H_0$ stored deliberately about one axis of a spacecraft, by spinning the body or a wheel; gyroscopic rigidity is the resulting resistance of that axis to being turned by a torque.
 
-> [!note] Definition
-> **Momentum bias** means deliberately storing a large angular momentum $H_0$ along one body axis, by spinning the body or a wheel. A disturbance torque $T$ applied for time $dt$ then only **rotates the direction** of $\mathbf H$ by
->
-> $$d\psi = \frac{T\,dt}{H_0}\qquad\Rightarrow\qquad\dot\psi = \frac{T}{H_0}\ \text{(precession rate)}$$
+A torque $\mathbf T$ perpendicular to $\mathbf H_0$ acting for $\Delta t$ adds $\mathbf T\Delta t$ at right angles to it, so the momentum vector turns through $\psi\approx T\Delta t/H_0$ rather than tipping in the direction of the torque: it precesses at $\dot\psi=T/H_0$, the displacement appearing $90^\circ$ later in the direction of rotation. The larger the bias, the smaller the deflection from the same disturbance, which is why a bicycle is easier to balance at speed.
 
-## Explanation
-- $d\mathbf H = \mathbf T\,dt$. When $\mathbf T\perp\mathbf H$, the change is sideways, so $\mathbf H$ **precesses**. The response appears 90° "later" in the direction of rotation.
-- Large $H_0$ means a small $d\psi$: the spacecraft is **less sensitive to external disturbance torques** (gyroscopic rigidity). Without bias, the same impulse produces an angular *rate* ($\Delta\omega = T\,dt/I$) that grows without limit.
-- Sketch for the exam (2022/23 A2): $\mathbf H_0$ with a small $\mathbf T\,dt$ added. Show a low-, mid- and high-bias triangle, where the angle between $\mathbf H_0$ and $\mathbf H_1$ shrinks as $H_0$ grows.
-- **Costs**:
-  - one axis must stay invariantly pointing (usually the orbit normal);
-  - an oscillatory **nutation** mode appears (the spin axis cones around $\mathbf H$) and must be damped;
-  - the torque response differs from an unbiased body;
-  - external torquers are still needed, because disturbances build up momentum.
-- Momentum bias is used by Type 1–3 stabilisation. Type 4 (3-axis) has **zero bias**.
+Bias is only worth having about an axis that should stay fixed for the whole mission, usually the orbit normal, because turning it needs a sustained torque and propellant. It also brings a nutation mode, a coning wobble excited by any impulsive torque that would last indefinitely in space, so dampers must be carried; and it changes the torque response, since a biased body precesses at a steady rate under a steady torque instead of coasting after a pulse. Disturbances still build up momentum secularly, so external torquers are needed whatever the bias.
 
-## Examples
-- Hybrid comsats: a 6500 rpm momentum wheel normal to the orbit plane gives the pitch-axis bias.
-- Spin during solid-motor burns (the OMOTENASHI retro-motor; the GEO observatory transfer phase at about 60 rpm) keeps the thrust axis stiff and averages out misalignment.
+The three biased stabilisation types differ only in how the bias is stored: a spinner uses a large inertia at 10–60 rpm, a dual spinner the same with a despun platform, and a hybrid a small wheel at thousands of rpm.
 
-![[ast_momentum_dumping.png|480]]
+![[ast_gyroscopic_rigidity.png|560]]
 
 ## Related
-- [[Spacecraft Stabilisation Types]] · [[Reaction Wheels and Momentum Dumping]] · [[Inertia Matrix]]
 
-## Sources
-- Chapter 6 pre-recorded slides 14–20
+- [[SESA2024 06 - Attitude Control#3. Gyroscopic precession and momentum bias|Precession and bias in the lecture note]]
+- [[Inertia Matrix]] · [[Spacecraft Stabilisation Types]] · [[Reaction Wheels and Momentum Dumping]]

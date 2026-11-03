@@ -13,26 +13,17 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf"]
 
 # Regular Shock Reflection
 
-## Definition
+When an oblique shock A hits a solid wall, the flow behind it has been turned through $\theta$ towards the wall and has to be turned back parallel to it. A second oblique shock B does this. It turns the zone-2 flow through the same $\theta$, but starting from $M_2$:
 
-> [!note] Definition
-> When an oblique shock (A) meets a solid wall, the flow behind it, which is turned by $\theta$ towards the wall, must be turned back parallel to the wall. A second oblique shock (B) does this, turning the zone-2 flow by the **same** $\theta$, now from $M_2$:
->
-> $$\beta_B=\beta(\theta,M_2),\qquad \phi=\beta_B-\theta\ne\beta_A.$$
+$$\beta_B=\beta(\theta,M_2),\qquad \phi=\beta_B-\theta\ne\beta_A.$$
 
-## How to solve it
+To solve one, use the $\theta$–$\beta$–$M$ relation at $M_1$ for shock A, which gives $\beta_A$, $M_{n1}$, $p_2/p_1$ and $M_2$. Then use it again with the same $\theta$ at $M_2$, measured from $\mathbf V_2$, for shock B, which gives $\beta_B$, $p_3/p_2$ and $M_3$. Chain the ratios, $p_3/p_1=(p_3/p_2)(p_2/p_1)$.
 
-1. Shock A: $\theta$–$\beta$–$M$ at $M_1$ gives $\beta_A$, $M_{n1}$, $p_2/p_1$ and $M_2$.
-2. Shock B: the same $\theta$ at $M_2$, measured from $\mathbf V_2$, gives $\beta_B$, $p_3/p_2$ and $M_3$.
-3. Chain the ratios: $p_3/p_1=(p_3/p_2)(p_2/p_1)$.
+In the lecture example, $M_1=3.6$, $\theta=10^\circ$, $p_1=40$ kPa gives $\beta_A=23.90^\circ$, $M_2=2.982$, $\beta_B=27.51^\circ$, $M_3=2.490$, $p_3=189.6$ kPa and $\phi=17.5^\circ$.
 
-Lecture example: $M_1=3.6$, $\theta=10^\circ$, $p_1=40$ kPa gives $\beta_A=23.90^\circ$, $M_2=2.982$, $\beta_B=27.51^\circ$, $M_3=2.490$, $p_3=189.6$ kPa and $\phi=17.5^\circ$.
+The reflection is not mirror-like. Because $M_2<M_1$, turning through the same $\theta$ needs a steeper shock relative to $\mathbf V_2$, and once you subtract $\theta$ the reflected shock ends up leaning closer to the wall ($\phi<\beta_A$).
 
-## Key points
-
-- **Not specular.** $M_2<M_1$, so the same $\theta$ needs a steeper shock relative to $\mathbf V_2$, and the reflected shock leans closer to the wall ($\phi<\beta_A$).
-- **Possible only while $\theta\le\theta_{max}(M_2)$.** Beyond that limit ($16.1^\circ$ at $M_1=2.3$, $24.3^\circ$ at $M_1=3.6$) the pattern becomes a [[Mach Reflection]].
-- **Cancellation.** Turning the wall back by $\theta$ where B lands absorbs it.
+It only works while $\theta\le\theta_{max}(M_2)$. Beyond that limit ($16.1^\circ$ at $M_1=2.3$, $24.3^\circ$ at $M_1=3.6$) the pattern becomes a [[Mach Reflection]]. If instead the wall turns back by $\theta$ exactly where B would land, there is nothing to turn and the reflection is cancelled.
 
 ## Related
 

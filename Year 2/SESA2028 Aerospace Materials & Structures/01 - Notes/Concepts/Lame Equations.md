@@ -4,19 +4,19 @@ module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Structures"
 tags: [sesa2028, structures, thick-cylinders]
-status: complete
+status: lectured
 parent: ["[[SESA2028 S10 - Thick Cylinders and Shrink Fits]]"]
 ---
 
 # Lame Equations
 
-**What it is:** the general solution of the axisymmetric elasticity problem with no body force. It is the starting point for every thick-cylinder and shrink-fit question. For how to *use* the result, see [[Lame Thick-Cylinder Solution]].
+The general solution of the axisymmetric elasticity problem with no body force. It is the starting point for every thick-cylinder and shrink-fit question. For how to *use* the result, see [[Lame Thick-Cylinder Solution]].
 
 ## Derivation (plane stress, $\sigma_z=0$)
 
-1. **Equilibrium** ([[Axisymmetric Equilibrium]]): $\dfrac{d\sigma_r}{dr}+\dfrac{\sigma_r-\sigma_\theta}{r}=0$.
-2. **Compatibility** ([[Polar Strain-Displacement Relations]]): $\varepsilon_r=\dfrac{du}{dr}$, $\varepsilon_\theta=\dfrac ur$.
-3. **Hooke's law:**
+1. Equilibrium ([[Axisymmetric Equilibrium]]): $\dfrac{d\sigma_r}{dr}+\dfrac{\sigma_r-\sigma_\theta}{r}=0$.
+2. Compatibility ([[Polar Strain-Displacement Relations]]): $\varepsilon_r=\dfrac{du}{dr}$, $\varepsilon_\theta=\dfrac ur$.
+3. Hooke's law:
 
 $$
 \sigma_r=\frac{E}{1-\nu^2}(\varepsilon_r+\nu\varepsilon_\theta),\qquad
@@ -40,7 +40,13 @@ $$
 
 ## Properties worth remembering
 
-- $\sigma_r+\sigma_\theta=2A$ is **constant** through the wall, so the axial strain is uniform and plane sections stay plane.
+- $\sigma_r+\sigma_\theta=2A$ is constant through the wall, so the axial strain is uniform and plane sections stay plane.
 - The two constants come from two boundary conditions: $\sigma_r=-p$ on each loaded surface (pressure is compressive), or $\sigma_r=0$ on a free surface.
-- For a **solid** body the $B/r^2$ term must vanish (finite stress at $r=0$).
+- For a solid body the $B/r^2$ term must vanish (finite stress at $r=0$).
 - With closed ends, the axial stress from end thrust is $\sigma_z=\dfrac{p_ia^2-p_ob^2}{b^2-a^2}=A$.
+
+## Related
+
+- Topic: [[SESA2028 S10 - Thick Cylinders and Shrink Fits|S10]]
+- Topic: [[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates|S9]]
+- Concepts: [[Lame Thick-Cylinder Solution]] · [[Axisymmetric Equilibrium]] · [[Polar Strain-Displacement Relations]]

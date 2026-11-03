@@ -4,13 +4,13 @@ module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Structures"
 tags: [sesa2028, structures, torsion]
-status: complete
+status: lectured
 parent: ["[[SESA2028 S4 - Torsion of Thin-Walled Sections]]"]
 ---
 
 # Bredt-Batho Theory
 
-**What it is:** the theory of torsion of **thin-walled closed** sections (single cell). This note derives it; [[Bredt-Batho Torsion]] shows how to use it.
+The theory of torsion of thin-walled closed sections (single cell). This note derives it; [[Bredt-Batho Torsion]] shows how to use it.
 
 ## 1. Shear flow is constant round the cell
 
@@ -20,7 +20,7 @@ $$
 q=\tau t=\text{constant around the cell},
 $$
 
-even when the thickness varies. **Stress is highest where the wall is thinnest.**
+even when the thickness varies. Stress is highest where the wall is thinnest.
 
 ## 2. Torque from the shear flow
 
@@ -30,7 +30,7 @@ $$
 T=\oint qp\,ds=2qA_m\quad\Longrightarrow\quad\boxed{q=\frac{T}{2A_m}},
 $$
 
-where $A_m$ is the area enclosed by the **median line** of the wall, not the material area.
+where $A_m$ is the area enclosed by the median line of the wall, not the material area.
 
 ## 3. Twist rate from energy
 
@@ -43,7 +43,12 @@ $$
 
 ## Consequences
 
-- Stiffness ∝ $A_m^2$: **enclosed area is everything**. A closed tube is typically hundreds of times stiffer in torsion than the same wall slit open ([[Open-Section Torsion]]).
+- Stiffness ∝ $A_m^2$: enclosed area is everything. A closed tube is typically hundreds of times stiffer in torsion than the same wall slit open ([[Open-Section Torsion]]).
 - Assumptions: thin walls, closed cell, no restraint of warping, shape of cross-section maintained (diaphragms), linear elastic.
 
-![Open versus closed torsion](../Figures/structures_open_vs_closed_torsion.png)
+![[structures_open_vs_closed_torsion.png|700]]
+
+## Related
+
+- Topic: [[SESA2028 S4 - Torsion of Thin-Walled Sections|S4]]
+- Concepts: [[Bredt-Batho Torsion]] · [[Open-Section Torsion]]

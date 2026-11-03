@@ -20,7 +20,7 @@ sources: ["02 - Sources/Lectures/Lecture1-1.pdf", "02 - Sources/Lectures/Lecture
 # SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes
 
 > [!abstract] Summary
-> Week 1 establishes the toolkit used throughout aerothermodynamics. The local Mach number $M=U/a$ decides whether compressibility matters. Away from shocks, adiabatic and reversible flow may be treated as isentropic, giving direct relations between static and stagnation properties. A normal shock is adiabatic but **not isentropic**, so mass, momentum and energy remain conserved while stagnation pressure falls. A Pitot probe therefore needs one of three models: Bernoulli for an incompressible flow, an isentropic stagnation relation for compressible subsonic flow, or a normal shock followed by isentropic deceleration for supersonic flow.
+> Week 1 sets up the toolkit for the rest of the module: Mach number, the isentropic relations between static and stagnation properties, and the normal shock, which conserves mass, momentum and energy but loses stagnation pressure. A Pitot probe then needs one of three models depending on the flow: Bernoulli, an isentropic stagnation relation, or a normal shock followed by isentropic deceleration.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** you are given $p$, $T$, $\rho$, $M$ or stagnation values in a duct or stream, a normal shock, or a Pitot reading.
@@ -29,24 +29,11 @@ sources: ["02 - Sources/Lectures/Lecture1-1.pdf", "02 - Sources/Lectures/Lecture
 > - **Common mistakes:** using isentropic $p_0/p$ straight across a shock; using the subsonic Pitot formula when $p_{02}/p_1>1.893$.
 > - **Practise:** [[#Worked Pitot examples]] · [[SESA3029 Test 1 - Solutions#Q5. Supersonic Pitot probe with the static tapping moved behind the shock|Test 1 Q5]]
 
-## Key concepts
+Follow one small parcel of air through the week's ideas. Its Mach number says whether it can send a pressure signal ahead of itself: below $M=1$ sound outruns the flow and the air upstream can adjust, above it the signal can't get out ahead, so a compression may pile up into a shock.
 
-- [[Speed of Sound and Mach Number]] · [[Stagnation Properties]] · [[Isentropic Ideal-gas Relations]]
-- [[Normal-Shock Jump Relations]] · [[Shock-Table Interpolation]]
-- [[Compressible Pitot Probe]] · [[Rayleigh Pitot Formula]]
+Stagnation properties describe what the parcel would become if it were brought to rest. In adiabatic deceleration its kinetic energy turns into enthalpy, so $T_0$ follows from energy conservation alone. Getting $p_0$ as well needs the deceleration to be reversible too.
 
----
-
-## The whole week in one physical picture
-
-Imagine following one small parcel of air.
-
-1. **Mach number asks whether the parcel can warn the flow ahead.** If $U<a$, sound can travel upstream. If $U>a$, the information cannot escape upstream, so a compression may have to collect itself into a shock.
-2. **Stagnation asks what the parcel would become if we brought it to rest.** Its kinetic energy does not disappear; in adiabatic deceleration it becomes enthalpy. That is why $T_0$ follows from energy alone.
-3. **A shock is a very thin accounting surface.** Mass cannot vanish, momentum must balance pressure force, and total enthalpy is conserved. Reversibility is the one thing lost, so entropy rises and stagnation pressure falls.
-4. **A Pitot probe performs the same “bring it to rest” experiment.** The only question is the route: smooth isentropic deceleration when subsonic, or shock first and smooth deceleration second when supersonic.
-
-Once that picture is fixed, the formula choice becomes a description of the path rather than a memory test.
+A shock is a very thin layer across which mass, momentum and total enthalpy are all still conserved. What it gives up is reversibility, so entropy rises and stagnation pressure falls. A Pitot probe does the bring-it-to-rest experiment for real, and choosing the right formula is a matter of describing the route the gas takes into the probe: smooth isentropic deceleration if the flow is subsonic, or a shock first and smooth deceleration after it if it is supersonic.
 
 ## 1. Mach number and flow regimes
 
@@ -66,8 +53,7 @@ For standard air, $R=287\ \mathrm{J\,kg^{-1}K^{-1}}$ and $\gamma\approx1.4$. At 
 | Supersonic | $M>1$ | Shocks and expansion waves become possible |
 | Hypersonic | approximately $M>5$ | High-temperature and strong-interaction effects become important |
 
-> [!warning] Local quantity
-> Mach number uses the **local** velocity and temperature. A vehicle can encounter different local Mach numbers across its flow field even when its flight Mach number is fixed.
+Mach number uses the local velocity and temperature, so a vehicle flying at a fixed flight Mach number sees a range of local Mach numbers across its flow field.
 
 ## 2. Aerodynamic review and the low-speed baseline
 
@@ -96,10 +82,7 @@ M_x'=M_{LE}'+xL',\qquad
 C_{m,x}=C_{m,LE}+\frac{x}{c}C_l\quad(\text{lecture; approximate}).
 $$
 
-**Exact form for a point on the chord.** Let the new reference point sit a distance $x$ aft of the LE **along the chord**. Split the resultant into $F_n'$ (normal to the chord) and $F_t'$ (along it).
-
-- Shifting the reference point along the chord is a shift **parallel** to $F_t'$, so the moment of $F_t'$ does not change.
-- $F_n'$ is perpendicular to the shift, so its moment changes by $x F_n'$ (nose-up positive, $x$ aft, $F_n'$ up):
+The exact version is worth having. Put the new reference point a distance $x$ aft of the LE along the chord, and split the resultant into $F_n'$ (normal to the chord) and $F_t'$ (along it). Moving the reference point along the chord is a shift parallel to $F_t'$, so the moment of $F_t'$ doesn't change. $F_n'$ is perpendicular to the shift, so its moment changes by $x F_n'$ (nose-up positive, $x$ aft, $F_n'$ up):
 
 $$
 M_x'=M_{LE}'+xF_n'.
@@ -120,16 +103,16 @@ $$
 $$
 
 > [!warning] When the lecture's $C_l$ form is good enough
-> $C_n=C_l\cos\alpha+C_d\sin\alpha$, so $C_n\approx C_l$ only when $\alpha$ is small **and** $C_d\sin\alpha\ll C_l$. That is the subsonic thin-aerofoil setting (SESA2022), where the forms are interchangeable. In supersonic flow at $10^\circ$ the difference shows: for the W03 flat plate, the chord-based centre of pressure is exactly $0.5c$ while the lift-based formula gives $0.508c$, and $-\mathrm dC_{m,LE}/\mathrm dC_l$ gives $0.523c$ ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]]). Quote the lecture's form when an exam asks for it, but say it assumes small $\alpha$.
+> $C_n=C_l\cos\alpha+C_d\sin\alpha$, so $C_n\approx C_l$ only when $\alpha$ is small and $C_d\sin\alpha\ll C_l$. That is the subsonic thin-aerofoil setting (SESA2022), where the forms are interchangeable. In supersonic flow at $10^\circ$ the difference shows: for the W03 flat plate, the chord-based centre of pressure is exactly $0.5c$ while the lift-based formula gives $0.508c$, and $-\mathrm dC_{m,LE}/\mathrm dC_l$ gives $0.523c$ ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]]). Quote the lecture's form when an exam asks for it, but say it assumes small $\alpha$.
 
 The lift-based versions, $x_{CP}/c\approx-C_{m,LE}/C_l$ and $x_{AC}/c\approx-\mathrm dC_{m,LE}/\mathrm dC_l$, are the lecture's (and the official sheet's) approximations.
 
 > [!question] Lecture puzzle: is an inviscid flat plate's force normal to the plate?
-> Intuition says yes. With no friction, only pressure acts, and pressure acts normal to the surface, so the resultant should be $F_n$. The lecture's answer is **no**. Thin-aerofoil theory gives $C_l=2\pi\alpha$ for **lift**, perpendicular to the freestream, with zero drag (d'Alembert). The resultant is therefore $L$, not $F_n$.
+> You'd expect yes: with no friction only pressure acts, and pressure acts normal to the surface. The lecture's answer is no. Thin-aerofoil theory gives $C_l=2\pi\alpha$ for lift, perpendicular to the freestream, with zero drag (d'Alembert), so the resultant is $L$, not $F_n$.
 >
-> The difference comes from the sharp leading edge. Flow turning around a zero-thickness edge needs infinite velocity, so pressure $\to-\infty$ at a point of zero area. The product "$\infty\times0$" is a finite **leading-edge suction force** pointing upstream along the plate. It is a negative tangential force $F_t$, and it exactly cancels the rearward component $F_n\sin\alpha$. Resolving: $D=F_t\cos\alpha+F_n\sin\alpha=0$ requires $F_t=-F_n\tan\alpha$.
+> The sharp leading edge accounts for the difference. Flow turning round a zero-thickness edge needs infinite velocity, so the pressure goes to $-\infty$ on a point of zero area, and the product is a finite leading-edge suction force pointing upstream along the plate. That negative tangential force $F_t$ cancels the rearward component $F_n\sin\alpha$: $D=F_t\cos\alpha+F_n\sin\alpha=0$ requires $F_t=-F_n\tan\alpha$.
 >
-> The lecture asks you to "revisit and consolidate" this from [[SESA2022 T4 - Thin Aerofoil Theory]] (Lecture 1-1, lines 256–300). It matters here because supersonic flat plates have **no** leading-edge suction: the force really is normal to the plate, and wave drag appears.
+> The lecture asks you to *"revisit and consolidate"* this from [[SESA2022 T4 - Thin Aerofoil Theory]] (Lecture 1-1, lines 256–300). It matters here because a supersonic flat plate has no leading-edge suction. Its force really is normal to the plate, and the rearward component is wave drag.
 
 The low-speed thin-aerofoil results $\mathrm dC_l/\mathrm d\alpha=2\pi$ and $x_{AC}/c=1/4$ provide a reference point. Later high-speed theory shows why these results change in supersonic flow.
 
@@ -209,8 +192,7 @@ These relations require an isentropic path. They cannot be applied from one side
 
 ## 4. Stagnation properties
 
-> [!tip] Intuition: an energy ledger
-> Static temperature measures the parcel's thermal state while it is moving. Stagnation temperature adds the kinetic-energy credit that would appear as enthalpy if the parcel were stopped adiabatically. The stopping process need not be reversible for $T_0$ to be conserved; reversibility matters when turning that temperature result into a stagnation **pressure** relation.
+Static temperature describes the gas as it moves. Stagnation temperature adds on the kinetic energy that would turn into enthalpy if the parcel were stopped adiabatically. The stopping doesn't have to be reversible for $T_0$ to work; reversibility only matters when you go on to a stagnation pressure.
 
 For steady, adiabatic flow with no shaft work and negligible potential-energy change,
 
@@ -238,7 +220,7 @@ $$
 \boxed{\frac{a_0^2}{a^2}=1+\frac{\gamma-1}{2}M^2}.
 $$
 
-If the fluid is brought to rest **isentropically**, then
+If the fluid is brought to rest isentropically, then
 
 $$
 \boxed{
@@ -254,8 +236,7 @@ $$
 
 ![[at_stagnation_relations.png|760]]
 
-> [!important] What survives a shock?
-> In an adiabatic normal shock, $h_0$ and $T_0$ remain constant. Entropy increases and $p_0$ decreases, so $p_{01}\ne p_{02}$.
+Across an adiabatic normal shock $h_0$ and $T_0$ stay the same, but entropy rises, so $p_0$ falls and $p_{02}<p_{01}$.
 
 ### Nozzle example
 
@@ -275,10 +256,7 @@ The same result follows from the isentropic-flow table by linear interpolation.
 
 ## 5. Normal shock from conservation laws
 
-> [!tip] Intuition: make the shock as thin as possible
-> The internal molecular process is complicated, but the shock layer can be wrapped in a control volume so thin that its details no longer matter to the external balance. What enters and leaves must satisfy mass, momentum and energy. This is why the jump relations can be derived without modelling the internal shock structure.
-
-Take a thin, steady, one-dimensional control volume around a stationary normal shock of constant area $A$.
+What happens inside a shock at the molecular level is complicated, but none of it matters for the jump relations. Wrap the shock in a control volume thin enough that only what goes in and what comes out counts, and mass, momentum and energy conservation do the rest. Take a thin, steady, one-dimensional control volume around a stationary normal shock of constant area $A$.
 
 ![[at_normal_shock_control_volume.png|760]]
 
@@ -337,8 +315,7 @@ $$
 \boxed{U_1U_2=\frac{2a_0^2}{\gamma+1}}.
 $$
 
-> [!tip] What the Prandtl relation is telling you
-> $U_1U_2$ is the same constant for **every** normal shock in a given stagnation state, weak or strong. A faster upstream flow must therefore leave slower. The shock strength decides how the fixed product is shared between $U_1$ and $U_2$, not its value.
+So $U_1U_2$ is the same for every normal shock with a given stagnation state, weak or strong, and a faster flow into the shock means a slower flow out of it. The shock strength only decides how that fixed product is split between $U_1$ and $U_2$.
 
 Substitution back into the conservation equations yields the [[Normal-Shock Jump Relations]]. The lecture derived the density jump in full and set the rest as homework (Lecture 1-2, lines 276–320). All four derivations are written out below.
 
@@ -401,9 +378,9 @@ $$
 =\frac{\left[2\gamma M_1^2-(\gamma-1)\right]\left[2+(\gamma-1)M_1^2\right]}{(\gamma+1)^2M_1^2}}.
 $$
 
-### Downstream Mach number (homework — "slightly more involved")
+### Downstream Mach number (homework)
 
-The lecture warned that $M_2$ takes more algebra. Using the two jumps you already have avoids most of it. Write $M_2^2=U_2^2/a_2^2$ and $a^2\propto T$:
+The lecture called this one *"slightly more involved"*, but using the two jumps you already have avoids most of it. Write $M_2^2=U_2^2/a_2^2$ and $a^2\propto T$:
 
 $$
 \frac{M_2^2}{M_1^2}=\left(\frac{U_2}{U_1}\right)^2\frac{T_1}{T_2}
@@ -426,8 +403,7 @@ $$
 > [!check] Numerical check
 > At $M_1=2$, $\gamma=1.4$: $\rho_2/\rho_1=9.6/3.6=2.667$ and $p_2/p_1=4.5$. Then $M_1^2/[(\rho_2/\rho_1)(p_2/p_1)]=4/12=0.3333$, and the boxed formula gives $3.6/10.8=0.3333$. $M_2=0.5774$, matching the normal-shock table.
 
-> [!warning] Sonic check
-> Put $M_1=1$ into every jump: $\rho_2/\rho_1=p_2/p_1=T_2/T_1=M_2=1$. A "shock" at $M_1=1$ is no shock at all. Use this to catch algebra slips in the exam.
+A quick way to catch algebra slips in the exam is to put $M_1=1$ into every jump. Each ratio, and $M_2$, should come out as 1, because a shock at $M_1=1$ is no shock at all.
 
 For a physical shock with $M_1>1$: $M_2<1$, $p_2>p_1$, $T_2>T_1$, $\rho_2>\rho_1$, $U_2<U_1$, $s_2>s_1$ and $p_{02}<p_{01}$.
 
@@ -445,7 +421,7 @@ $$
 
 For air, $M_2\to0.378$ and $\rho_2/\rho_1\to6$. Pressure and temperature ratios grow without bound in the calorically perfect-gas model, which eventually becomes physically inadequate at very high temperature.
 
-**Deriving the limits.** Divide the numerator and denominator of each jump by $M_1^2$, then let $1/M_1^2\to0$:
+To get the limits, divide the numerator and denominator of each jump by $M_1^2$, then let $1/M_1^2\to0$:
 
 $$
 M_2^2=\frac{2/M_1^2+(\gamma-1)}{2\gamma-(\gamma-1)/M_1^2}\;\to\;\frac{\gamma-1}{2\gamma}
@@ -475,7 +451,7 @@ $$
 \sigma=\frac{x_t-x_a}{x_b-x_a}.
 $$
 
-Any other tabulated quantity $y$ is interpolated with the **same** fraction:
+Any other tabulated quantity $y$ is interpolated with the same fraction:
 
 $$
 y_t=y_a+\sigma(y_b-y_a).
@@ -510,10 +486,7 @@ $$
 
 ## 7. Pitot probe: three regimes
 
-> [!tip] Intuition: the probe only knows the endpoint
-> The tube reports the pressure of air at rest. It does not tell you how the air reached rest. The measured pressure ratio therefore selects the story: Bernoulli at very low Mach number, smooth isentropic compression below Mach 1, or an irreversible shock followed by smooth subsonic compression above Mach 1.
-
-The static tapping measures the upstream static pressure $p_1$. The forward-facing tube brings the local flow to rest and measures a stagnation pressure. The correct interpretation depends on the regime.
+The static tapping measures the upstream static pressure $p_1$, and the forward-facing tube brings the flow to rest and measures a stagnation pressure. The tube can't tell you how the air got to rest, so you have to pick the route from the measured ratio: Bernoulli at very low Mach number, isentropic compression below Mach 1, or a shock followed by isentropic compression above it.
 
 ![[at_pitot_regimes.png|760]]
 
@@ -658,7 +631,7 @@ The lecture uses $T_1=275\ \mathrm K$, so $a_1=\sqrt{1.4\times287\times275}=332.
 
 #### Example 1 in full — subsonic, by formula and by table
 
-*Formula route* (the lecture asked you to "double check these numbers… during the weekend"):
+*Formula route* (the lecture asked you to *"double check these numbers… during the weekend"*):
 
 $$
 M_1^2=\frac{2}{0.4}\left[1.875^{0.2857}-1\right]=5(1.1967-1)=0.9835,
@@ -710,7 +683,7 @@ $$
 Solving the Rayleigh relation exactly with a root finder gives $M_1=1.8706$. Linear interpolation is fine here because the table spacing is small.
 
 > [!warning] Transcript slip
-> In Lecture 1-3 (line 156) the lecturer says $1.875<1.893$ means the aircraft is "flying at supersonic speed". This is a slip of the tongue. A ratio **below** the sonic value means **subsonic**, which is why the subsonic formula is used next. The lecture also quotes the sonic value as $1.8934$; the exact value is $(1.2)^{3.5}=1.8929$.
+> In Lecture 1-3 (line 156) the lecturer says $1.875<1.893$ means the aircraft is *"flying at supersonic speed"*. That's a slip of the tongue: a ratio below the sonic value means subsonic, which is why the subsonic formula is used next. The lecture also quotes the sonic value as $1.8934$; the exact value is $(1.2)^{3.5}=1.8929$.
 
 #### Optional — Newton–Raphson for the Rayleigh relation
 
@@ -730,7 +703,7 @@ with $f'$ taken numerically from $[f(M+h)-f(M-h)]/2h$. Starting from $M^{(0)}=2$
 4. Use the $M=1$ ratio to choose subsonic or supersonic Pitot analysis.
 5. If using a table, check whether it lists a ratio or its reciprocal.
 6. Interpolate once, then reuse the same $\sigma$ for every required column.
-7. Recover velocity from $U=M\sqrt{\gamma RT}$ using the **local static temperature**.
+7. Recover velocity from $U=M\sqrt{\gamma RT}$ using the local static temperature.
 8. Sanity-check directions: a normal shock raises $p,T,\rho$ and lowers $U,M,p_0$.
 
 ## Links
@@ -740,9 +713,7 @@ with $f'$ taken numerically from $[f(M+h)-f(M-h)]/2h$. Starting from $M^{(0)}=2$
 - Prior knowledge: [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]
 - Aerodynamic review: [[SESA2022 T4 - Thin Aerofoil Theory]]
 - Full formula list: [[SESA3029 Formula Sheet]]
-- **Builds on / connects to** (cross-module):
-  - [[SESA3043 1.2 - Conservation Laws and Governing Equations#1. Integral-to-differential strategy|SESA3043 1.2 §1]]: the jump relations of §5 are the *integral* conservation laws applied to a thin control volume around the shock. SESA3043 then shrinks the control volume to get the differential equations, which assume smooth fields; across a shock (a few mean free paths thick) only the integral form can be used.
-  - [[SESA3043 3.5 - Momentum Integral Equation|SESA3043 3.5]]: the von Kármán momentum integral is the same kind of control-volume momentum balance, taken across a boundary layer instead of across a shock.
+- Other modules: the jump relations of §5 are the integral conservation laws applied to a thin control volume round the shock. [[SESA3043 1.2 - Conservation Laws and Governing Equations#1. Integral-to-differential strategy|SESA3043 1.2 §1]] shrinks the control volume further to get the differential equations, which need smooth fields, so across a shock (a few mean free paths thick) only the integral form works. The von Kármán momentum integral in [[SESA3043 3.5 - Momentum Integral Equation|SESA3043 3.5]] is the same kind of momentum balance, taken across a boundary layer instead.
 
 ## Sources
 
@@ -753,39 +724,27 @@ with $f'$ taken numerically from $[f(M+h)-f(M-h)]/2h$. Starting from $M^{(0)}=2$
 
 ## Self-study tasks
 
-> [!todo] How to use this list
-> Every task below was set, or explicitly left to you, in the Week 1 lectures. Worked solutions are in this note. **Attempt each one closed-book first**, then check against the linked section. Tick the box once you can reproduce it unaided.
+Everything here was set, or explicitly left to you, in the Week 1 lectures, and the worked solutions are in this note. Try each one closed-book before checking the linked section.
 
 ### Core
 
-- [ ] **Pressure jump** — homework. *"I will leave all the rest to you once again as a homework"* (L1-2, ll. 276–278). → [[#Pressure jump (homework)]]
-- [ ] **$M_2^2$ as a function of $M_1$** — homework, *"slightly more involved"* (L1-2, ll. 317–320). → [[#Downstream Mach number (homework — "slightly more involved")]]
-- [ ] **Rayleigh Pitot formula**: combine the shock pressure jump with downstream isentropic stagnation and eliminate $M_2$ (L1-3, ll. 121–128). → [[#Deriving the Rayleigh Pitot formula]]
-- [ ] Subsonic Pitot example, **by formula and by table**: *"please double check these numbers… during the weekend"* (L1-3, l. 159). Target $M_1=0.9919$, $U_1=329.7$ m/s. → [[#Example 1 in full — subsonic, by formula and by table]]
-- [ ] Supersonic Pitot example, $p_{02}/p_1=5$, by table interpolation: *"I will leave it as your homework for the weekend"* (L1-3, l. 205). Target $M_1=1.8705$, $U_1=621.8$ m/s. → [[#Example 2 in full — supersonic, by table (weekend homework)]]
+- [ ] Pressure jump. *"I will leave all the rest to you once again as a homework"* (L1-2, ll. 276–278). → [[#Pressure jump (homework)]]
+- [ ] $M_2^2$ as a function of $M_1$, *"slightly more involved"* (L1-2, ll. 317–320). → [[#Downstream Mach number (homework)]]
+- [ ] The Rayleigh Pitot formula: combine the shock pressure jump with isentropic stagnation downstream and eliminate $M_2$ (L1-3, ll. 121–128). → [[#Deriving the Rayleigh Pitot formula]]
+- [ ] The subsonic Pitot example by formula and by table: *"please double check these numbers… during the weekend"* (L1-3, l. 159). Target $M_1=0.9919$, $U_1=329.7$ m/s. → [[#Example 1 in full — subsonic, by formula and by table]]
+- [ ] The supersonic Pitot example, $p_{02}/p_1=5$, by table interpolation: *"I will leave it as your homework for the weekend"* (L1-3, l. 205). Target $M_1=1.8705$, $U_1=621.8$ m/s. → [[#Example 2 in full — supersonic, by table (weekend homework)]]
 
 ### Further practice
 
-#### Derivations
-
-- [ ] **Isentropic density–temperature relation** $\rho_2/\rho_1=(T_2/T_1)^{1/(\gamma-1)}$ from $p_2/p_1=(T_2/T_1)^{\gamma/(\gamma-1)}$ and $p=\rho RT$. *"I will leave it to you to have a practice on that"* (L1-2, ll. 30–33). → [[#3. Perfect-gas thermodynamics]]
-- [ ] **Stagnation relation** $T_0/T=1+\tfrac{\gamma-1}{2}M^2$ from $h+U^2/2=h_0$ (derived in lecture; reproduce it). → [[#4. Stagnation properties]]
-- [ ] **Prandtl relation** $U_1U_2=2a_0^2/(\gamma+1)$ from mass, momentum and energy (derived in lecture; reproduce it). → [[#Energy and the Prandtl relation]]
-- [ ] **Density jump** (shown in lecture). → [[#Density jump (shown in lecture)]]
-- [ ] **Temperature jump** — homework. → [[#Temperature jump (homework)]]
-- [ ] **Strong-shock limits** $M_1\to\infty$ for $M_2$, $\rho_2/\rho_1$, $p_2/p_1$, $T_2/T_1$: *"You will find them"* (L1-2, ll. 354–379). → [[#Strong-shock limits]]
-- [ ] **Low-Mach Pitot check**: show that the compressible subsonic relation reduces to Bernoulli as $M_1\to0$ by binomial expansion (L1-3, ll. 58–95; the transcript is garbled, so redo it cleanly). → [[#Low-Mach consistency check]]
-
-#### Calculations
-
-- [ ] Nozzle exit Mach from $T_0=1000$ K, $T_e=600$ K, both **exactly** and by interpolation. Target $M_e=1.8257$. → [[#Nozzle example]]
+- [ ] The isentropic density–temperature relation $\rho_2/\rho_1=(T_2/T_1)^{1/(\gamma-1)}$, from $p_2/p_1=(T_2/T_1)^{\gamma/(\gamma-1)}$ and $p=\rho RT$. *"I will leave it to you to have a practice on that"* (L1-2, ll. 30–33). → [[#3. Perfect-gas thermodynamics]]
+- [ ] Reproduce the lecture's derivations of $T_0/T=1+\tfrac{\gamma-1}{2}M^2$, the Prandtl relation and the density jump. → [[#4. Stagnation properties]] · [[#Energy and the Prandtl relation]] · [[#Density jump (shown in lecture)]]
+- [ ] Temperature jump (homework). → [[#Temperature jump (homework)]]
+- [ ] Strong-shock limits as $M_1\to\infty$ for $M_2$, $\rho_2/\rho_1$, $p_2/p_1$ and $T_2/T_1$: *"You will find them"* (L1-2, ll. 354–379). → [[#Strong-shock limits]]
+- [ ] Show that the compressible subsonic Pitot relation reduces to Bernoulli as $M_1\to0$ (L1-3, ll. 58–95; the transcript is garbled here, so redo it cleanly). → [[#Low-Mach consistency check]]
+- [ ] Nozzle exit Mach number from $T_0=1000$ K and $T_e=600$ K, exactly and by interpolation. Target $M_e=1.8257$. → [[#Nozzle example]]
 - [ ] Normal shock with $p_2/p_1=1.25$, $T_1=15^\circ$C. Target $M_2=0.9103$, $T_2=307.2$ K, $U_2=319.8$ m/s. → [[#Normal-shock example]]
-- [ ] *(Optional)* Solve the supersonic Pitot case ($p_{02}/p_1=5$) with Newton–Raphson. → [[#Optional — Newton–Raphson for the Rayleigh relation]]
-
-#### Concepts and reading
-
-- [ ] Revisit **leading-edge suction** from SESA2022: why an inviscid thin aerofoil gives pure lift and not a force normal to the plate (L1-1, ll. 256–300). → [[#2. Aerodynamic review and the low-speed baseline]]
-- [ ] Memorise the sonic Pitot discriminator $p_0/p\,|_{M=1}=1.8929$ (L1-3, ll. 142–148).
-- [ ] Read the Anderson chapters listed in the Blackboard module schedule for Week 1 (the lecturer repeats this at L1-1, ll. 163–173 and L1-3, l. 205). *"It is up to you to grasp these details by reading the textbooks."*
-- [ ] Work the Anderson end-of-chapter examples. Worked solutions are in the Blackboard "Example questions" folder. **There are no tutorials in this module** (L1-1, ll. 144–155).
+- [ ] Optional: solve the supersonic Pitot case with Newton–Raphson. → [[#Optional — Newton–Raphson for the Rayleigh relation]]
+- [ ] Revisit leading-edge suction from SESA2022: why an inviscid thin aerofoil gives pure lift rather than a force normal to the plate (L1-1, ll. 256–300). → [[#2. Aerodynamic review and the low-speed baseline]]
+- [ ] Learn the sonic Pitot discriminator, $p_0/p\,|_{M=1}=1.8929$ (L1-3, ll. 142–148).
+- [ ] Read the Anderson sections in the Week 1 module schedule (L1-1, ll. 163–173 and L1-3, l. 205: *"It is up to you to grasp these details by reading the textbooks"*) and work the end-of-chapter examples. Solutions are in the Blackboard "Example questions" folder; there are no tutorials in this module (L1-1, ll. 144–155).
 - [ ] Download the Week 1 past-paper questions on normal shocks and Pitot probes from Blackboard.

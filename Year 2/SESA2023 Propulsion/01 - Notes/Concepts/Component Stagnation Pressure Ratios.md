@@ -10,34 +10,27 @@ parent_lectures: ["[[SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and 
 related_concepts: ["[[Intake Pressure Recovery]]", "[[Ramjet]]", "[[Isentropic Efficiency]]", "[[Entropy Change of a Perfect Gas]]"]
 sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Transfer, Oblique Shocks and Intakes.pdf", "02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 ---
+
 # Component Stagnation Pressure Ratios
 
-## Definition
+Losses in passive components, which do no work and are adiabatic, appear only as drops in stagnation pressure, measured by the stagnation pressure ratios
 
-> [!note] Definition
-> Losses in passive components (no work, adiabatic) appear only as stagnation-pressure drops:
->
-> $$\Gamma_d = \frac{p_{02}}{p_{01}},\qquad\Gamma_c = \frac{p_{03}}{p_{02}},\qquad\Gamma_n = \frac{p_{04}}{p_{03}}\quad(\le1)$$
->
-> The combustion efficiency is $\eta_b = LCV_{eff}/LCV$.
+$$
+\Gamma_d = \frac{p_{02}}{p_{01}},\qquad\Gamma_c = \frac{p_{03}}{p_{02}},\qquad\Gamma_n = \frac{p_{04}}{p_{03}}\quad(\le1),
+$$
 
-## Explanation
-- In an adiabatic component $T_0$ is constant, so $\Delta s = -R\ln\Gamma$. $\Gamma$ is a direct entropy measure.
-- **Causes**:
-  - diffuser: shocks, friction, separation;
-  - combustor: friction, flameholder drag, and the Rayleigh loss of adding heat to a moving flow (a bigger contraction ratio or lower velocity reduces it);
-  - nozzle: friction, divergence, shocks.
-- **Real ramjet**:
+for the diffuser, combustor and nozzle. Incomplete combustion is counted separately through $\eta_b = LCV_{eff}/LCV$.
 
-  $$\frac{p_{04}}{p_a} = \Gamma_d\Gamma_c\Gamma_n\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{\frac{\gamma}{\gamma-1}},\qquad V_e = \sqrt{2c_pT_{03}\big[1-(p_a/p_{04})^{(\gamma-1)/\gamma}\big]}$$
+In an adiabatic component $T_0$ is constant, so $\Delta s = -R\ln\Gamma$ and each $\Gamma$ is a direct measure of entropy generation. The diffuser loses stagnation pressure through shocks, friction and separation; the combustor through friction, flameholder drag and the Rayleigh loss of adding heat to a moving flow, which a larger contraction ratio or lower velocity reduces; the nozzle through friction, divergence and shocks. In a real ramjet they multiply together,
 
-  Losses reduce the expansion ratio and hence $V_e$ and thrust. The $T$–$s$ picture has each real state to the right of the ideal one.
-- **Recovering $\Gamma$ from measurements** (2023-24 Q2):
-  - with negligible KE between the diffuser exit and the nozzle entry, static = stagnation there;
-  - so $\Gamma_d = p_2/p_{01}$ and $\Gamma_c = p_3/p_2$;
-  - a measured exit $T_4$ with full expansion gives $p_{04} = p_a(T_{03}/T_4)^{\gamma/(\gamma-1)}$.
+$$
+\frac{p_{04}}{p_a} = \Gamma_d\Gamma_c\Gamma_n\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{\frac{\gamma}{\gamma-1}},\qquad V_e = \sqrt{2c_pT_{03}\big[1-(p_a/p_{04})^{(\gamma-1)/\gamma}\big]},
+$$
 
-## Examples
+so losses reduce the expansion ratio, and with it $V_e$ and the thrust. On a $T$–$s$ diagram each real state sits to the right of the ideal one.
+
+The ratios can be recovered from measurements, as in 2023-24 Q2. With negligible kinetic energy between the diffuser exit and the nozzle entry, static equals stagnation pressure there, so $\Gamma_d = p_2/p_{01}$ and $\Gamma_c = p_3/p_2$, and a measured exit temperature $T_4$ with full expansion gives $p_{04} = p_a(T_{03}/T_4)^{\gamma/(\gamma-1)}$.
+
 | Case | $\Gamma_d$ | $\Gamma_c$ | $\Gamma_n$ | Result |
 |---|---|---|---|---|
 | PS4 Q4.2 (M 3.5) | 0.75 | 0.90 | 0.80 | $p_{04}/p_a = 41.2$ (ideal 76.3); $F/\dot m = 877$ |
@@ -48,7 +41,5 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 ![[prop_e2324_q2_ramjet_Ts.png|600]]
 
 ## Related
-- [[Intake Pressure Recovery]] · [[Ramjet]] · [[Isentropic Efficiency]] · [[Entropy Change of a Perfect Gas]]
 
-## Sources
-- Weeks 6–7 handout §6.4; Lecture 18; Week 4 intake notes
+- [[Intake Pressure Recovery]] · [[Ramjet]] · [[Isentropic Efficiency]] · [[Entropy Change of a Perfect Gas]]

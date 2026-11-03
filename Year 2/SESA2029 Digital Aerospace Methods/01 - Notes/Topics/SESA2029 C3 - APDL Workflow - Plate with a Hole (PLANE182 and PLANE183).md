@@ -11,46 +11,38 @@ tags:
   - stress-concentration
   - workflow
 aliases: ["APDL plate with hole", "PLANE182 workflow", "Stress concentration APDL"]
-date: 2026-09-24
-status: complete
+date: 2026-10-30
+status: lectured
 parent: ["[[SESA2029 Digital Aerospace Methods Hub]]"]
 prerequisites: ["[[SESA2029 C1 - ANSYS Mechanical APDL Scripting Fundamentals]]", "[[SESA2029 B6 - 2D and 3D Elements]]"]
 next_topics: ["[[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]]"]
 key_concepts: ["[[Stress Concentration Factor and Factor of Safety]]", "[[Plane Stress and Plane Strain]]", "[[Mesh Convergence and Grid Independence]]"]
 tutorial_sheets: []
-sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: PLANE182, PLANE183"]
+sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: PLANE182, PLANE183", "02 - Sources/Lectures/SESA2029 Lecture Computer lab2_Plane Stress Video.txt", "02 - Sources/Lectures/SESA2029 Lecture 2026-02-20 - 0959.txt (bulk-stress correction)"]
 ---
 
 # SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)
 
 > [!abstract] Summary
-> A rectangular plate with a circular hole in uniaxial tension: the classic **stress-concentration** problem, standing in for cut-outs in fuselage skins and spar webs.
->
-> The workflow:
-> - models it in **plane stress with thickness** (`KEYOPT(3)=3`);
-> - builds the geometry with `RECTNG`, `CYL4` and the Boolean `ASBA`;
-> - free-meshes with quads, refined locally at the hole;
-> - applies tension as a negative edge pressure;
-> - reads $\sigma_{max}$ (von Mises), the nominal stress, $K_t$ and the factor of safety.
->
-> Running it with linear **PLANE182** and quadratic **PLANE183** at the same size shows the accuracy gain from p-refinement.
->
-> Units: **mm, N, MPa**.
+> Lab 2 models a thin aluminium plate with a circular hole in tension, the classic stress-concentration problem standing in for a window in a fuselage panel or a hole in a wing rib. It is meshed in plane stress with thickness (PLANE182, `KEYOPT(3)=3`), built from a rectangle minus a circle, loaded by a negative edge pressure, and post-processed for the peak von Mises stress, the stress concentration factor $K_t=\sigma_{max}/\sigma_{bulk}$ and the factor of safety. Repeating it with PLANE183 and refining at the hole gives the convergence study; moving the hole gives the coursework sensitivity study. Units here are mm, N and MPa.
 
-## Key Concepts
-- [[Stress Concentration Factor and Factor of Safety]] · [[Plane Stress and Plane Strain]] · [[Mesh Convergence and Grid Independence]] · [[Stress Singularities]]
+> [!summary]- Exam use: quick path
+> - **Use it when:** setting up lab 2, computing $K_t$ and FoS, or checking an FE peak stress by hand.
+> - **Assumptions:** plane stress, linear elastic, hole far from the loaded edges.
+> - **Method:** 1. PLANE182 with thickness as a real constant. 2. `RECTNG`, `CYL4`, `ASBA`. 3. Mesh, refined on the hole edge. 4. Restrain the left edge without over-constraint; tension as negative pressure on the right edge. 5. $K_t$ with the far-field (bulk) stress, FoS $=\sigma_Y/\sigma_{max}$.
+> - **Common mistakes:** dividing by the minimum stress in the plate instead of the bulk stress; using the coarse-mesh peak.
+> - **Practise:** [[#1. Model]]
 
----
 
 ## 1. Model
 - Aluminium plate, $1000\times400$ mm, thickness 10 mm ($E = 70$ GPa, $\nu = 0.33$).
 - Hole of radius 80 mm, centre $(x_h, y_h)$. Moving the hole off-centre is a parameter change.
 - Left edge restrained; right edge pulled with $\sigma = 120$ MPa.
 
-**Hand check (centred hole)**, with hole diameter $d = 160$ mm and plate width $W = 400$ mm, so $d/W = 0.4$:
+Hand check (centred hole), with hole diameter $d = 160$ mm and plate width $W = 400$ mm, so $d/W = 0.4$:
 - Infinite plate: $K_t = 3$ (Kirsch; [[Stress Concentration Factor and Factor of Safety]]).
-- Finite width, **net-section** value (Heywood's approximation): $K_{t,net}\approx2+(1-d/W)^3 = 2.22$.
-- **Gross** value: $K_{t,gross} = K_{t,net}/(1-d/W)\approx3.7$.
+- Finite width, net-section value (Heywood's approximation): $K_{t,net}\approx2+(1-d/W)^3 = 2.22$.
+- Gross value: $K_{t,gross} = K_{t,net}/(1-d/W)\approx3.7$.
 
 So expect $\sigma_{max}\approx3.7\times120\approx440$ MPa.
 
@@ -124,14 +116,14 @@ FINISH
 ```
 
 ## 3. Things that go wrong (and why)
-- **The fixed-edge variant** `D,ALL,ALL,0` on the whole left edge is simpler, but it stops that edge contracting laterally (Poisson). The result is spurious stress peaks at the two left corners ([[Boundary Conditions and Rigid Body Modes]]). They are far from the hole, but don't mistake them for $\sigma_{max}$. The script above avoids them.
-- **Nominal stress.** Use the **far-field** value at the loaded edge. By equilibrium it equals the applied 120 MPa. Never use the minimum stress in the plate: the low-stress "shadow" beside the hole would inflate $K_t$. If you want the **net-section** $K_t$, divide by $\sigma\,W/(W-d)$ instead, and state which one you used.
-- **Peak location.** For tension in $x$, the peak sits at the top and bottom of the hole (90° from the load axis), where $\sigma_{xx}\approx3\sigma$ locally. Probe there when refining.
-- **A hole near an edge** raises $K_t$ sharply as the ligament thins. This case is only accessible by FE, not by the infinite-plate formula.
-- **Element order**: at the same `h_hole`, PLANE183 captures the curved hole edge and the quadratic stress gradient better. Compare 182 and 183 in the convergence study.
+- The fixed-edge variant `D,ALL,ALL,0` on the whole left edge is simpler, but it stops that edge contracting laterally (Poisson). The result is spurious stress peaks at the two left corners ([[Boundary Conditions and Rigid Body Modes]]). They are far from the hole, but don't mistake them for $\sigma_{max}$. The script above avoids them.
+- Nominal stress. Use the far-field value at the loaded edge. By equilibrium it equals the applied 120 MPa. Never use the minimum stress in the plate: the low-stress "shadow" beside the hole would inflate $K_t$. If you want the net-section $K_t$, divide by $\sigma\,W/(W-d)$ instead, and state which one you used.
+- Peak location. For tension in $x$, the peak sits at the top and bottom of the hole (90° from the load axis), where $\sigma_{xx}\approx3\sigma$ locally. Probe there when refining.
+- A hole near an edge raises $K_t$ sharply as the ligament thins. This case is only accessible by FE, not by the infinite-plate formula.
+- Element order: at the same `h_hole`, PLANE183 captures the curved hole edge and the quadratic stress gradient better. Compare 182 and 183 in the convergence study.
 
 ## 4. Convergence and sensitivity studies
-Loop over `h_hole` (e.g. 8, 4, 2, 1, 0.5 mm) and both element types. Log `s_max`, `kt` and the number of nodes ([[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]). $K_t$ should flatten, because a round hole is **not** a singularity. Then sweep `radius`, `x_hole` and `y_hole` to map $K_t$ and FoS against the geometry.
+Loop over `h_hole` (e.g. 8, 4, 2, 1, 0.5 mm) and both element types. Log `s_max`, `kt` and the number of nodes ([[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]). $K_t$ should flatten, because a round hole is not a singularity. Then sweep `radius`, `x_hole` and `y_hole` to map $K_t$ and FoS against the geometry.
 
 > [!tip] Quarter model
 > With a centred hole, the problem is symmetric about both centre lines. Model one quarter:
@@ -140,6 +132,15 @@ Loop over `h_hole` (e.g. 8, 4, 2, 1, 0.5 mm) and both element types. Log `s_max`
 >
 > This gives 4× fewer DOF and no rigid-body modes. Symmetry BCs are exactly the "no over-constraint" support.
 
+## What the lab 2 video does
+
+The video's plate (ll. 1–170) is 1 m by 0.4 m, 0.01 m thick, aluminium with $E=70$ GPa, $\nu=0.33$ and yield strength 460 MPa, with a hole of radius 0.08 m centred at (0.5, 0.21), slightly above centre, in SI units. PLANE182 is set to plane stress with thickness and the thickness given as a real constant. A free mesh with element size 0.02 m (961 elements) triggers a warning that triangles may be too stiff in bending, harmless here because nothing bends. The left edge is fixed in all DOF (the simple, slightly over-constrained version; see section 3) and $-1\times10^8$ Pa pressure on the right edge pulls with 100 MPa.
+
+The element solution gives a maximum $\sigma_x$ of 377 MPa at the top of the hole. The nodal von Mises maximum is 359 MPa, the element value 360 MPa: nodal solutions are averaged and continuous, element solutions are extrapolated from the integration points and jump between elements. That 377 MPa agrees with the finite-width hand check of section 1, $K_{t,gross}\approx3.7$ times 100 MPa, so the coarse mesh is already close. A path from (0.5, 0.29) at the top of the hole to (0.5, 0.4) at the plate edge, 100 divisions, maps $\sigma_x$ along the ligament for plotting or export to Excel; sorted nodal listings give the extremes. Global refinement takes the mesh to 3842 elements, and local refinement at the hole uses the nodes attached to the hole's lines. In the video's convergence study, a 20 mm element gives about 97 % of the largest peak found and 10 mm about 99.6 %, a trade against computing cost. The coursework then moves the hole towards the edge until the plate yields.
+
+> [!warning] Coursework correction (2026-02-20 09:59, ll. 386–400)
+> The coursework load is 120 MPa, and the bulk stress for $K_t$ is therefore 120 MPa, as force equilibrium and the nodal stress on the loaded edge confirm. An earlier value of 83 MPa, read at the lower boundary, was wrong.
+
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)]] · Next: [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]]
 - Theory: [[SESA2029 B3 - Principle of Minimum Total Potential Energy]] (SCF section) · [[SESA2029 B6 - 2D and 3D Elements]] · [[SESA2029 B7 - Meshing, Convergence and Mesh Checks]]
@@ -147,3 +148,14 @@ Loop over `h_hole` (e.g. 8, 4, 2, 1, 0.5 mm) and both element types. Log `s_max`
 ## Sources
 - Own APDL plate scripts, generalised (dimensions and loads made round and illustrative; BC improved to avoid over-constraint)
 - Heywood's finite-width approximation; Pilkey, *Peterson's Stress Concentration Factors*
+
+## Self-study tasks
+
+### Core
+
+- [ ] Lab 2 convergence study with global and local refinement (video, ll. 136–166). → [[#4. Convergence and sensitivity studies]]
+- [ ] Coursework: $K_t$ and FoS against hole size and position, using a bulk stress of 120 MPa (2026-02-20 09:59, ll. 386–400). → [[#3. Things that go wrong (and why)]]
+
+### Further practice
+
+- [ ] Compare the FE peak with the Heywood finite-width estimate for your own plate. → [[#1. Model]]

@@ -4,7 +4,7 @@ module: "SESA2029 Digital Aerospace Methods"
 type: formula
 aliases: ["SESA2029 formulae", "Digital Aerospace Methods formula sheet"]
 tags: [sesa2029, formula, exam-prep]
-status: complete
+status: lectured
 sources: ["01 - Notes/Topics", "02 - Sources/CFD/All_lectures_as_delivered.pdf", "02 - Sources/FEM Lectures/"]
 ---
 
@@ -111,7 +111,7 @@ $$
 u_\tau = \sqrt{\tau_w/\rho},\quad u^+ = \frac{u}{u_\tau},\quad y^+ = \frac{yu_\tau}{\nu},\quad u^+ = y^+\ (y^+\lesssim5),\quad u^+ = 2.5\ln y^++5.24\ (\text{log law})
 $$
 
-First-cell sizing: $\tau_w = \tfrac12C_f\rho U^2$, then $y_1 = y_1^+\nu/u_\tau$. Resolved: $y_1^+\lesssim1$–5. Wall function: $30<y_1^+\lesssim200$. Never $8<y_1^+<30$.
+First-cell sizing: $\tau_w = \tfrac12C_f\rho U^2$, then $y_1 = y_1^+\nu/u_\tau$. Resolved: $y_1^+\lesssim1$–5. Wall function: $30<y_1^+\lesssim200$. Never in the buffer layer, $5<y_1^+<30$. In the log layer the eddy viscosity that reproduces the log law is $\nu_t=\kappa u_\tau y$, so $\nu_t/\nu=\kappa y^+$.
 
 ### Finite volumes ([[SESA2029 A9 - Finite Volume Method]])
 
@@ -158,7 +158,7 @@ $$
 \text{Tresca: }\max|\sigma_i-\sigma_j| = \sigma_Y,\qquad\text{von Mises: }\frac1{\sqrt2}\sqrt{(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2} = \sigma_Y,\qquad P_Y = P\frac{\sigma_Y}{\sigma_{e,max}}
 $$
 
-Rigid-body modes: 6 in 3D, 3 in 2D.
+Rigid-body modes: 6 in 3D, 3 in 2D. The Tresca stress lies between 1 and $2/\sqrt3$ times the von Mises stress, so Tresca is the more conservative.
 
 ### Energy methods ([[SESA2029 B3 - Principle of Minimum Total Potential Energy]])
 

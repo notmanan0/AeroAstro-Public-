@@ -13,9 +13,7 @@ sources: ["02 - Sources/Lectures/L1 - SESA3043.txt", "02 - Sources/Lectures/CH1-
 
 # Reynolds Transport Theorem
 
-## Theorem
-
-For an extensive system property $B$ with specific value $b=B/m$, and a fixed control volume,
+The Reynolds transport theorem links the rate of change of a property of a material system to what happens in a fixed control volume. For an extensive property $B$ with specific value $b=B/m$,
 
 $$
 \boxed{
@@ -25,21 +23,8 @@ $$
 }.
 $$
 
-## Meaning
-
-- left: Lagrangian rate of change of the material system;
-- first term: accumulation inside the Eulerian control volume;
-- second term: net outward transport through its boundary.
-
-## Choices
-
-| $b$ | Balance generated |
-|---|---|
-| $1$ | mass |
-| $\mathbf u$ | linear momentum |
-| $E_T$ | total energy |
+The left side is the Lagrangian rate of change for the system. On the right, the first term is the accumulation inside the Eulerian control volume and the second is the net outward transport through its boundary. Choosing $b=1$ gives the mass balance, $b=\mathbf u$ linear momentum, and $b=E_T$ total energy.
 
 ## Related
 
 - [[Eulerian and Lagrangian Flow Descriptions]] · [[Continuity Equation in Conservation Form]]
-

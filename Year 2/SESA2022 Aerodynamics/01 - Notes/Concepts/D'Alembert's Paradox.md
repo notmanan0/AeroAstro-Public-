@@ -8,29 +8,18 @@ tags: [sesa2022, concept, potential-flow]
 status: complete
 parent_lectures: ["[[SESA2022 T3 - Potential Flow]]", "[[SESA2022 T2 - Boundary Layers]]"]
 related_concepts: ["[[Flow Past a Cylinder]]", "[[Boundary Layer Separation]]", "[[Kutta-Joukowski Theorem]]"]
-sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf"]
+sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf", "02 - Sources/Lectures/SESA2022 Lecture 11.txt … Lecture 16.txt (2025-26 transcripts)"]
 ---
 
 # D'Alembert's Paradox
 
-## Definition
+In steady, inviscid, incompressible, irrotational two-dimensional flow, a closed body feels **zero drag**: its fore–aft symmetric pressure distribution integrates to no net streamwise force, which contradicts every real observation.
 
-> [!note] Definition
-> In steady, inviscid, incompressible, irrotational 2D flow, a closed body experiences **zero drag**. The fore–aft symmetric pressure distribution integrates to no net streamwise force, which contradicts every real observation.
+For the cylinder, $C_p = 1-4\sin^2\theta$ is symmetric about $\theta = 90^\circ$, so the pressure at the front stagnation point is exactly balanced by the pressure at the rear one and $D' = -\oint p\cos\theta\,R\,d\theta = 0$ ([[SESA2022 Exam 2016-17 Solutions]] Q1(ii) does the integration). Adding circulation produces lift, $L' = \rho V_\infty\Gamma$, but still no drag.
 
-## Explanation
-- For the cylinder, $C_p = 1-4\sin^2\theta$ is symmetric about $\theta = 90^\circ$. The front stagnation pressure is exactly balanced by the rear stagnation pressure, so $D' = -\oint p\cos\theta\,R\,d\theta = 0$.
-- Adding circulation creates **lift** ($L' = \rho V_\infty\Gamma$) but still **no drag**.
-- **Resolution (Prandtl, 1904)**: viscosity is confined to a thin boundary layer, but that layer **separates** under the rear adverse pressure gradient. The rear pressure never recovers, so the pressure imbalance gives **form drag**, and wall shear adds **skin-friction drag**.
-- **Lesson**: potential flow predicts lift and forward-facing pressures well, but not drag or the leeward side of bluff bodies.
-
-## Examples
-- Cylinder pressure integration: [[SESA2022 Exam 2016-17 Solutions]] Q1(ii).
-- Hangar and dune validity comments: [[SESA2022 Exam 2018-19 Solutions]] and [[SESA2022 Exam 2023-24 Solutions]].
+Prandtl resolved the paradox in 1904. Viscosity is confined to a thin boundary layer, but that layer separates under the adverse pressure gradient at the rear, so the rear pressure never recovers. The resulting pressure imbalance is form drag, and the wall shear adds skin-friction drag. The lesson for using potential flow is that it predicts lift and the pressures on forward-facing surfaces well, but not drag or the leeward side of a bluff body, which is the point of the validity comments in the hangar and dune questions ([[SESA2022 Exam 2018-19 Solutions]], [[SESA2022 Exam 2023-24 Solutions]]).
 
 ## Related
-- Parent lectures: [[SESA2022 T3 - Potential Flow]], [[SESA2022 T2 - Boundary Layers]]
-- Related concepts: [[Flow Past a Cylinder]], [[Boundary Layer Separation]], [[Kutta-Joukowski Theorem]]
 
-## Sources
-- `02 - Sources/PF/Topic 3 Potential Flow.pdf`
+- Full derivation and worked examples: [[SESA2022 T3 - Potential Flow#10. D'Alembert's paradox and the Kutta–Joukowski theorem|T3 §10]]; the viscous resolution in [[SESA2022 T2 - Boundary Layers]]
+- [[Flow Past a Cylinder]] · [[Boundary Layer Separation]] · [[Kutta-Joukowski Theorem]]

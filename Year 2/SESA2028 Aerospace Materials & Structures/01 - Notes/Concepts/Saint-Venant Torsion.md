@@ -3,7 +3,7 @@ title: "Saint-Venant Torsion"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, torsion]
-status: complete
+status: lectured
 ---
 
 # Saint-Venant Torsion
@@ -22,3 +22,9 @@ See [[Open-Section Torsion]] and [[Bredt-Batho Torsion]].
 
 ## Year 1 foundation
 - Circular-shaft torsion, $T/J = G\theta/L$: [[FEEG1002 A8 - Torsion of Circular Shafts]].
+
+## Related
+
+- Topic: [[SESA2028 S4 - Torsion of Thin-Walled Sections|S4]]
+- Concepts: [[Open-Section Torsion]] · [[Bredt-Batho Torsion]]
+- Elsewhere: [[FEEG1002 A8 - Torsion of Circular Shafts]]

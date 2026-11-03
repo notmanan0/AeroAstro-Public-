@@ -13,19 +13,9 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 # Lumped Vortex Method
 
-## Definition
+The lumped vortex method models each thin lifting element as a single point vortex $\Gamma$ at its quarter-chord **loading point** $x_L$, and imposes flow tangency at its three-quarter-chord **control point** $x_T$ (the slides' terms). For one flat plate, tangency at the control point gives $U_\infty\alpha=\Gamma/[2\pi(c/2)]$, so $\Gamma=\pi U_\infty\alpha c$ and $C_L=2\pi\alpha$, the thin-aerofoil result.
 
-> [!note] Definition
-> Model each thin lifting element by a point vortex $\Gamma$ at its $1/4$-chord **loading point** $x_L$ and impose the flow tangency condition at its $3/4$-chord **control point** $x_T$ (the slides' terms). For one flat plate: $U_\infty\alpha=\dfrac{\Gamma}{2\pi(c/2)}$, so $\Gamma=\pi U_\infty\alpha c$ and $C_L=2\pi\alpha$.
-
-## Procedure
-
-1. Vortex at $\bar x=1/4$, control point at $\bar x=3/4$ of each element.
-2. Downwash at every control point from every vortex (and images).
-3. Tangency: upwash $U_\infty(\alpha-\mathrm dz_c/\mathrm dx)$ = total downwash.
-4. Solve the linear system; $L_i=\rho U_\infty\Gamma_i$.
-
-## Standard results
+With several elements, put a vortex at $\bar x=1/4$ and a control point at $\bar x=3/4$ on each, work out the downwash at every control point from every vortex (and any images), set the required upwash $U_\infty(\alpha-\mathrm dz_c/\mathrm dx)$ equal to the total downwash, and solve the linear system; each element's lift is $L_i=\rho U_\infty\Gamma_i$. Write every induced velocity as a downwash and enter an upward one as a negative downwash, to keep the signs straight.
 
 | Case | Result |
 |---|---|
@@ -35,15 +25,9 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 | biplane, gap $c/2$ | each wing $\tfrac23\Gamma_\infty$ |
 | parabolic camber $0.24\bar x(1-\bar x)$ | $C_L=2\pi(\alpha+0.12)$ for any $N$ |
 
-## Limitations
+Friday 9 October covered the flat plate, the procedure and the tandem "Red Arrows" example, where with a gap of $c/2$ the front aircraft carries twice the lift of the rear one.
 
-2-D, no thickness, singular point loads (ill-conditioned with many vortices). Panel methods fix all three.
-
-## In the lectures
-
-- Lectured Fri 9 Oct: the flat plate, the procedure, and the tandem "Red Arrows" example (gap $c/2$: front aircraft carries twice the lift of the rear one). Ground effect and camber come next.
-- Sign rule: write every induced velocity as a downwash, and enter an upward one as a negative downwash.
-- Camber yes, thickness never (it rests on thin-aerofoil theory); the panel method handles both.
+The method is two-dimensional, can represent camber but never thickness (it rests on thin-aerofoil theory), and its point loads are singular, which makes the system ill-conditioned with many vortices. Panel methods fix all three.
 
 ## Related
 

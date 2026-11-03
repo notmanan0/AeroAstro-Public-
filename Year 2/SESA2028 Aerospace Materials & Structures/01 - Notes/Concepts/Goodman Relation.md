@@ -3,31 +3,24 @@ title: "Goodman Relation"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Goodman equation", "Goodman line", "Mean stress correction"]
 tags: [sesa2028, materials, fatigue, mean-stress]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing]]"]
 related: ["[[S-N Curve and Basquin Law]]", "[[Shot Peening]]"]
 ---
 
 # Goodman Relation
 
-![[Figures/materials_goodman_diagram.png]]
+The Goodman relation $\sigma_a=\sigma_{a0}(1-\sigma_m/\sigma_{ts})$ gives the stress amplitude a material can carry for a chosen life when the cycle has a mean stress $\sigma_m$, by assuming a straight line between the fully reversed fatigue strength $\sigma_{a0}$ and the tensile strength $\sigma_{ts}$.
 
-A tensile mean stress reduces the stress amplitude a component can tolerate for a given life. **Goodman** assumes a straight line between two anchor points:
+At the same amplitude a higher mean stress shortens the life, so fatigue data form a family of S-N curves, one per mean stress. Goodman collapses the family into one line on a plot of amplitude against mean stress: at $\sigma_m=0$ the allowable amplitude is $\sigma_{a0}$, and with no amplitude at all the mean stress can rise to $\sigma_{ts}$ before the part fails statically. Points below the line are safe for that life.
 
-- $\sigma_m=0$: allowable amplitude = fully reversed fatigue strength $\sigma_{a0}$;
-- $\sigma_a=0$: failure at the tensile strength $\sigma_{TS}$.
+![[materials_goodman_mean_stress.png|800]]
 
-$$
-\sigma_a=\sigma_{a0}\left(1-\frac{\sigma_m}{\sigma_{TS}}\right).
-$$
+The relation explains why residual stresses matter even though they do not change the stress range. A compressive residual stress lowers the effective mean stress and moves the operating point down and to the left, which is how [[Shot Peening]] raises the fatigue limit; a tensile residual stress, such as a weld leaves, does the opposite. As a quick number: with $\sigma_{a0}=300$ MPa and $\sigma_{ts}=600$ MPa, a mean stress of 150 MPa cuts the allowable amplitude to 225 MPa.
 
-A design point $(\sigma_m,\sigma_a)$ **below the line** is safe for the chosen life.
+## Related
 
-## Where it matters
-
-- **Residual stress** adds to the mean stress. Shot-peening compression lowers $\sigma_m$ and moves the point down and left, a big HCF gain even though $\Delta\sigma$ is unchanged ([[Shot Peening]]).
-- **Weld tensile residual stress** raises $\sigma_m$, so welds have lower fatigue strength.
-- Compressive mean stress is generally beneficial, but the Goodman line is not extended into compression.
-
-Variants: Gerber (parabolic, less conservative) and Soderberg (uses $\sigma_y$, more conservative). SESA2028 uses Goodman.
+- Topic: [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]]
+- Concepts: [[S-N Curve and Basquin Law]] · [[Shot Peening]] · [[Miner's Rule]]

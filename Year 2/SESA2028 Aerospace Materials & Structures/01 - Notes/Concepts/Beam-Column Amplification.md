@@ -3,7 +3,7 @@ title: "Beam-Column Amplification"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, buckling, imperfections]
-status: complete
+status: lectured
 ---
 
 # Beam-Column Amplification
@@ -24,7 +24,8 @@ As $P\to P_E$, the ideal linear model predicts unbounded amplification. Real mem
 
 The design lesson is important: raising strength alone may do almost nothing if elastic stiffness controls $P_E$.
 
-![Beam-column amplification](../Figures/structures_beam_column_amplification.png)
+![[structures_beam_column_amplification.png|700]]
 
-See [[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling]].
+## Related
 
+- Topic: [[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]]

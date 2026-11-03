@@ -10,27 +10,12 @@ parent_lectures: ["[[SESA2023 W06 - Jet Engine Cycle Analysis - Brayton, Ramjet,
 related_concepts: ["[[Brayton Cycle]]", "[[Turbojet]]"]
 sources: ["02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 ---
+
 # Turbine Entry Temperature and Blade Cooling
 
-## Definition
+The **turbine entry temperature** $T_{04}$, the combustor outlet temperature, is the peak temperature of the cycle. Raising $T_{04}/T_{02}$ increases both the efficiency and the specific work, but turbine materials limit it, and cooling air is what lets it exceed the metal's own temperature limit.
 
-> [!note] Definition
-> The **turbine entry temperature** $T_{04}$ (the combustor outlet temperature) is the peak cycle temperature. Raising $T_{04}/T_{02}$ increases both efficiency and specific work, but turbine materials limit it. Cooling air lets TET exceed the metal temperature limit.
-
-## Explanation
-**Benefits**:
-- higher cycle efficiency (for an irreversible cycle);
-- much higher specific work, so a smaller and lighter core for the same thrust;
-- a higher optimum pressure ratio.
-
-**Costs**:
-- materials: creep, oxidation, thermal fatigue;
-- cooling air and its losses;
-- NOₓ, which rises steeply with temperature;
-- shorter life and higher maintenance;
-- cost.
-
-**Typical values**:
+A higher turbine entry temperature improves the efficiency of the irreversible cycle, raises the specific work considerably, so the core can be smaller and lighter for the same thrust, and raises the optimum pressure ratio. Against that come creep, oxidation and thermal fatigue in the materials, the cooling air and its losses, NOₓ, which rises steeply with temperature, shorter life with more maintenance, and cost. Single-crystal nickel superalloys melt at about 1500 K.
 
 | Condition | $T_{02}$ (K) | $T_{04}$ (K) | $T_{04}/T_{02}$ |
 |---|---|---|---|
@@ -38,28 +23,11 @@ sources: ["02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 | Top of climb | 245 | 1600 | 6.52 (highest rpm) |
 | Cruise | 245 | 1500 | 6.11 (dominates life) |
 
-Single-crystal Ni superalloys melt at about 1500 K.
+Blades are cooled convectively through internal passages, by film cooling from holes and slots that lay down a protective cool layer, and with low-conductivity ceramic thermal barrier coatings worth about 100 K; ceramic matrix composites may follow once their toughness improves. Cooling has a cost, though. It takes 15–25 % of the compressor air, at 800–900 K, which has been compressed but bypasses the combustor, loses pressure in the passages and mixes irreversibly, so there is an optimum turbine entry temperature for efficiency. GasTurb models the cooling as a bypass flow mixing back in part-way through the turbine. In Table 2, 10 % cooling air costs 2.1 efficiency points (57.8 % to 55.7 %), while in PS7 raising the turbine entry temperature from 1500 K to 1600 K at a 245 K inlet raises $w_{net}$ from 361 to 411 kJ/kg.
 
-**Cooling technologies**:
-- **Convective**: internal passages.
-- **Film**: holes and slots lay a protective cool layer.
-- **Thermal barrier coatings** (low-conductivity ceramic): about 100 K of benefit.
-- Future ceramic matrix composites (toughness is still an issue).
-
-**Trade-off**: 15–25 % of compressor air (800–900 K) is used. It is compressed but bypasses the combustor, it loses pressure in the passages, and it mixes irreversibly. So there is an optimum TET for efficiency. GasTurb models cooling as a bypass flow mixing back in part-way through the turbine.
-
-**Effect on pressure ratios** (2024-25 Q3(ii)), with a fixed compressor work and OPR:
-- a higher TET needs a **smaller turbine pressure ratio** to supply the same work;
-- that leaves a **larger nozzle pressure ratio**, so a higher $V_j$ and more thrust.
-
-## Examples
-- Table 2: 10 % cooling air costs 2.1 efficiency points (57.8 % → 55.7 %).
-- PS7: raising TET from 1500 K to 1600 K at 245 K inlet raises $w_{net}$ from 361 to 411 kJ/kg.
+With the compressor work and overall pressure ratio fixed (2024-25 Q3(ii)), a higher turbine entry temperature needs a smaller turbine pressure ratio to supply the same work, which leaves a larger nozzle pressure ratio, a higher $V_j$ and more thrust.
 
 ## Related
+
 - [[Brayton Cycle]] · [[Turbojet]]
-
-**Related (SESA2028 materials):** [[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys|SESA2028 M8 high-temperature materials]] · [[Thermal Barrier Coatings]] · [[Single Crystal Casting]] · [[Gamma Prime Strengthening]]
-
-## Sources
-- Weeks 6–7 handout §6.7; Lecture 17
+- SESA2028 materials: [[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys|SESA2028 M8 high-temperature materials]] · [[Thermal Barrier Coatings]] · [[Single Crystal Casting]] · [[Gamma Prime Strengthening]]

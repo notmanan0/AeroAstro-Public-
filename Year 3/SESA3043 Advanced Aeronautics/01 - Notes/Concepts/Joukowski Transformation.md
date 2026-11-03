@@ -13,13 +13,11 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 # Joukowski Transformation
 
-## Definition
+The Joukowski transformation is the conformal map
 
-> [!note] Definition
->
-> $$z=\bar z+\frac{b^2}{\bar z},\qquad\frac{\mathrm dz}{\mathrm d\bar z}=1-\frac{b^2}{\bar z^2}\ (=0\text{ at }\bar z=\pm b).$$
+$$z=\bar z+\frac{b^2}{\bar z},\qquad\frac{\mathrm dz}{\mathrm d\bar z}=1-\frac{b^2}{\bar z^2},$$
 
-## Shapes from a circle of radius a, centre z̄₀
+whose critical points are at $\bar z=\pm b$. Applied to a circle of radius $a$ centred at $\bar z_0$, it gives a family of shapes:
 
 | Circle | Body |
 |---|---|
@@ -28,20 +26,17 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 | through $b$, centre $-\varepsilon b$ | symmetric aerofoil (thickness $\approx1.3\varepsilon$ for small $\varepsilon$) |
 | centre $-\varepsilon b+ia\sin\beta$, $a\cos\beta=b(1+\varepsilon)$ | cambered aerofoil (camber $\approx\beta/2$) |
 
-## Results
+The lecture on 9 October built the aerofoil in three moves: an ellipse ($b<a$), then a shift of the circle to the left by $\varepsilon b$ so that it passes through $\bar z=b$, giving a sharp trailing edge and blunt leading edge (thickness), then a shift upward by $\beta$ (camber).
 
-- Chord: $b/c=(1+2\varepsilon)/[4(1+\varepsilon)^2]$, $c\approx4b$.
-- Kutta: $\Gamma=4\pi aU_\infty\sin(\alpha+\beta)$; $C_L=\dfrac{8\pi a}{c}\sin(\alpha+\beta)$, $\alpha_{L=0}=-\beta$.
-- The trailing edge is **cusped** (zero angle).
+The chord is $c\approx4b$, more precisely $b/c=(1+2\varepsilon)/[4(1+\varepsilon)^2]$. Applying the Kutta condition gives $\Gamma=4\pi aU_\infty\sin(\alpha+\beta)$, so
+
+$$C_L=\frac{8\pi a}{c}\sin(\alpha+\beta),\qquad\alpha_{L=0}=-\beta.$$
+
+The trailing edge is cusped, with zero included angle, which is why the coursework uses the [[Kármán–Trefftz Transformation|Kármán–Trefftz]] map instead. In the demo sweep at $\alpha=3^\circ$, raising $\varepsilon$ from 0 to 0.1 takes $C_L$ from 0.329 to 0.359, while raising $\beta$ from 0 to 0.1 rad takes it to 1.045 ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#The demo recording reproduced|2.1]]).
+
+In the exam this is examined as logic rather than calculation: know the steps from cylinder to aerofoil, but you won't be asked to compute a Joukowski or KT flow by hand (9 Oct, ll. 490–495).
 
 ![[aa_joukowski_aerofoil.png|700]]
-
-## In the lectures and the exam
-
-- Built in three moves (9 Oct): an ellipse ($b<a$), then a **left** shift $\varepsilon b$ (sharp TE through $\bar z=b$, blunt LE) for thickness, then an **upward** shift $\beta$ for camber.
-- **Examined as logic, not calculation:** know the steps from cylinder to aerofoil; you will not be asked to compute a Joukowski or KT flow by hand (9 Oct, ll. 490–495).
-- The cusped TE (zero angle) is why the coursework uses [[Kármán–Trefftz Transformation|Kármán–Trefftz]] instead.
-- Demo sweep at $\alpha=3^\circ$: $\varepsilon$ 0→0.1 takes $C_L$ from 0.329 to 0.359; $\beta$ 0→0.1 rad takes it to 1.045 ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#The demo recording reproduced|2.1]]).
 
 ## Related
 

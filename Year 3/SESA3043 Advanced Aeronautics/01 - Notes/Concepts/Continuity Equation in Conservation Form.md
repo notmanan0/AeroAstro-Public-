@@ -13,42 +13,32 @@ sources: ["02 - Sources/Lectures/CH1-2 Governing Equations(1).pdf", "02 - Source
 
 # Continuity Equation in Conservation Form
 
-> [!note] Course wording
-> CH1-2 and the lecture (L2, l. 418) say **conservation form** and **non-conservation form**. "Conservative form" and "divergence form" are the same thing in other texts.
-
-## Equation
+In conservation form, the continuity equation says that the local rate of mass accumulation plus the net outward mass flux is zero:
 
 $$
 \boxed{
 \frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf u)=0
 }
-$$
-
-or
-
-$$
+\qquad\text{or}\qquad
 \frac{\partial\rho}{\partial t}+\frac{\partial(\rho u_i)}{\partial x_i}=0.
 $$
 
-It states that local mass accumulation plus net outward mass flux is zero.
-
-## Material (non-conservation) form
-
-Use the product rule:
+Expanding the divergence with the product rule gives the material (non-conservation) form,
 
 $$
 \boxed{
 \frac{D\rho}{Dt}+\rho\nabla\cdot\mathbf u=0
-}.
+},
 $$
 
-For constant density,
+and for constant density this reduces to
 
 $$
 \boxed{\nabla\cdot\mathbf u=0}.
 $$
 
+CH1-2 and the lecture (L2, l. 418) say "conservation form" and "non-conservation form". Other texts call the first one the conservative or divergence form.
+
 ## Related
 
 - [[Material Derivative]] · [[Incompressible Navier-Stokes Equations]]
-

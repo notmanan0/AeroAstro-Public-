@@ -13,34 +13,28 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 # Conformal Mapping
 
-## Definition
+A conformal mapping is a map $z=f(\bar z)$ by an analytic function with $f'(\bar z)\neq0$. Locally it rotates and stretches every small line element at a point by the same factor $f'$, so it preserves angles, and it carries a potential flow in the $\bar z$-plane into a potential flow in the $z$-plane.
 
-> [!note] Definition
-> A mapping $z=f(\bar z)$ by an analytic function with $f'(\bar z)\neq0$. It preserves angles locally (it rotates and stretches every small line element at a point by the same $f'$), so it carries a potential flow in the $\bar z$-plane into a potential flow in the $z$-plane.
+Streamlines map to streamlines, so a body surface stays a streamline, and circulation and source strengths are unchanged. The velocity in the new plane is
 
-## Rules
+$$u-iv=\frac{\mathrm d\Phi/\mathrm d\bar z}{\mathrm dz/\mathrm d\bar z}.$$
 
-- **Streamlines → streamlines**; a body surface stays a streamline.
-- **Velocity:** $u-iv=\dfrac{\mathrm d\Phi/\mathrm d\bar z}{\mathrm dz/\mathrm d\bar z}$.
-- **Circulation and source strengths** are unchanged.
-- **Critical points** ($f'=0$) are where sharp corners are created; the flow there has infinite speed unless it stagnates in the $\bar z$-plane (Kutta condition).
+Sharp corners are created at the critical points, where $f'=0$. The flow there has infinite speed unless it stagnates at the matching point in the $\bar z$-plane, which is the Kutta condition.
 
-## Recipe
-
-Known flow in $\bar z$ (usually the cylinder) → transfer function → transform geometry → transform potential → $u-iv$ and Bernoulli.
+The recipe is always the same: start from a known flow in $\bar z$ (usually the cylinder), pick the transfer function, transform the geometry and the potential, then get $u-iv$ and the pressure from Bernoulli.
 
 ![[aa_conformal_mapping_family.png|700]]
 
-## In the lectures and the exam
+## The two exam cases
 
-The two hand-calculation cases, both examinable (8–9 Oct):
+Both hand-calculation cases were lectured on 8–9 October and are examinable:
 
 | Map | Body | Potential | $C_p$ on the body |
 |---|---|---|---|
-| $z=\bar z-a^2/\bar z$ | flow impinging on a finite plate (plate **normal** to the stream), $-2a\le y\le2a$ | $\Phi=\pm U_\infty\sqrt{z^2+4a^2}$ | $1-\dfrac{y^2}{4a^2-y^2}$ |
-| $z=\bar z+a^2/\bar z$ | flow over a finite plate (plate **along** the stream), $-2a\le x\le2a$ | $\Phi=U_\infty z$ | $0$ |
+| $z=\bar z-a^2/\bar z$ | flow impinging on a finite plate (plate normal to the stream), $-2a\le y\le2a$ | $\Phi=\pm U_\infty\sqrt{z^2+4a^2}$ | $1-\dfrac{y^2}{4a^2-y^2}$ |
+| $z=\bar z+a^2/\bar z$ | flow over a finite plate (plate along the stream), $-2a\le x\le2a$ | $\Phi=U_\infty z$ | $0$ |
 
-Keep one transfer function per problem: a different map turns the same $\bar z$ solution into a different body (8 Oct, ll. 310–316). Conformal maps also generate orthogonal CFD meshes (ll. 249–256).
+Stick to one transfer function per problem: a different map turns the same $\bar z$ solution into a different body (8 Oct, ll. 310–316). Conformal maps are also used to generate orthogonal CFD meshes (ll. 249–256).
 
 ## Related
 

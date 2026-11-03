@@ -19,30 +19,16 @@ sources: ["02 - Sources/Lectures/Tutorial Lecture #1.txt"]
 # SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing
 
 > [!abstract] Summary
-> The first example-question lecture (Fri 9 Oct, `Tutorial Lecture #1.txt`, 240 lines). Prof. Kim meant to start the Laval nozzle, then remembered the slot was a tutorial (ll. 1–3). Two problems:
->
-> 1. **Example Sheet 1 Q3**, a ramp shock reflected from a wall ($M_1=2.3$, $\theta=8^\circ$). Two oblique-shock "unit calculations" give $p_3=50.1$ kPa and $M_3=1.70$. Then a fixed-point search for the largest ramp angle that still reflects regularly: guess, check, interpolate, giving $\theta_{RR}\approx16.1^\circ$ (lecture 16.2°).
-> 2. An **isosceles triangular wing** (flat bottom, apex at mid-chord, $10^\circ$ base angles) at $M_1=1.7$, $\alpha=10^\circ$, solved by shock-expansion theory. The upper front face is parallel to the stream and carries free-stream pressure; the lower surface takes a $10^\circ$ shock; the rear face a $20^\circ$ fan. Lift is $\approx2.9$ kN/m and $C_{m,LE}\approx-0.29$.
->
-> This note adds two things the lecture skipped. First, the lecture's $D=N\sin\alpha$ is a flat-plate shortcut: the inclined upper faces also push **along** the chord, and including that raises the drag by 35% (515 → 694 N/m; $L/D$ 5.7 → 4.2). Second, the **weekend homework** (ll. 228–235), the aerodynamic centre from a second angle of attack, is solved: $x_{ac}/c=0.49$, "very close to half" as predicted.
-
-## Key concepts
-
-- [[Regular Shock Reflection]] · [[Mach Reflection]] · [[Theta-Beta-Mach Relation]] · [[Oblique-Shock Jump Relations]]
-- [[Shock-Expansion Theory]] · [[Prandtl-Meyer Function]] · [[Expansion Fan]] · [[Slip Line]]
-- [[Aerodynamic Centre and Centre of Pressure]] · [[Shock-Table Interpolation]]
+> The first example-question lecture (Fri 9 Oct, `Tutorial Lecture #1.txt`, 240 lines) worked two problems. Example Sheet 1 Q3 reflects a ramp shock off a wall ($M_1=2.3$, $\theta=8^\circ$, giving $p_3=50.1$ kPa) and then searches for the largest ramp angle that still reflects regularly ($\theta_{RR}\approx16.1^\circ$). An isosceles triangular wing at $M_1=1.7$, $\alpha=10^\circ$ is then solved by shock-expansion theory, giving a lift of about 2.9 kN/m. This note also fixes the lecture's flat-plate drag shortcut, which misses about a quarter of the drag on this wing, and solves the weekend homework, $x_{ac}/c=0.49$.
 
 > [!info] Where this sits
-> The theory is [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]] §§1–2 (reflection) and §6 (shock-expansion method, Lecture 2.5). The question source is the Blackboard folder *Example questions and solutions → Example sheets and solutions* (ll. 4–7). The triangular wing is from the same folder; its sheet is **not filed in the vault**, so its data are taken from the transcript (ll. 118–189): $c=0.15$ m, $M_1=1.7$, $p_1=20$ kPa, $\alpha=10^\circ$, base angles $10^\circ$.
+> The theory is [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]] §§1–2 (reflection) and §6 (shock-expansion method, Lecture 2.5). The question source is the Blackboard folder *Example questions and solutions → Example sheets and solutions* (ll. 4–7). The triangular wing is from the same folder; its sheet is not filed in the vault, so its data are taken from the transcript (ll. 118–189): $c=0.15$ m, $M_1=1.7$, $p_1=20$ kPa, $\alpha=10^\circ$, base angles $10^\circ$.
 
 ---
 
-## The whole tutorial in one physical picture
+Every problem in Block 2 is built from two standard calculations: an oblique shock where the flow is turned into itself, and a Prandtl–Meyer fan where it is turned away. The lecturer's message was to make each one automatic, *"a standard procedure that you can just memorize… do mechanically"* (l. 35), *"four steps… a kind of unit you can always do without thinking"* (l. 46).
 
-Every problem in Block 2 is built from two Lego bricks. When the flow is turned **into** itself, use an oblique-shock brick. When it is turned **away**, use a Prandtl–Meyer-fan brick. The lecturer's message was to make each brick automatic: *"a standard procedure that you can just memorize… do mechanically"* (l. 35), *"four steps… a kind of unit you can always do without thinking"* (l. 46).
-
-- A **reflection** is two shock bricks in series. The interesting question is when the second brick fails: when the flow behind the first shock is too slow to turn back by $\theta$.
-- An **aerofoil made of flat faces** is one brick per corner. Each face then carries one uniform pressure, and the forces follow from pressure × area, face by face.
+A reflection is two shock calculations in series, and the interesting question is when the second one fails, which is when the flow behind the first shock is too slow to be turned back by $\theta$. An aerofoil made of flat faces needs one calculation per corner; each face then carries one uniform pressure, and the forces follow face by face from pressure times area.
 
 ---
 
@@ -133,11 +119,10 @@ $$
 \boxed{\theta\approx16.2^\circ}\qquad(\text{exact fixed point }16.13^\circ;\ \text{sheet }16^\circ).
 $$
 
-> [!tip] Why averaging and interpolating both work
-> The curve $\theta_{max}(M_2(\theta))$ is smooth and nearly straight over $8^\circ$–$17^\circ$ (figure, panel b), so a secant through two guesses lands almost on the crossing. Averaging is bisection on the bracket $[\theta,\theta_{max}]$; the secant converges faster. This is the same "two guesses and interpolate" pattern as the slip-line problem in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#3. Shock–shock interaction and slip lines|W03 §3]] and the $\beta$ search in Lecture 2.5.
+Both averaging and interpolating work because $\theta_{max}(M_2(\theta))$ is smooth and nearly straight over $8^\circ$–$17^\circ$ (figure, panel b), so a secant through two guesses lands almost on the crossing. Averaging amounts to bisection on the bracket $[\theta,\theta_{max}]$; the secant converges faster. It's the same two-guesses-and-interpolate pattern as the slip-line problem in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#3. Shock–shock interaction and slip lines|W03 §3]] and the $\beta$ search in Lecture 2.5.
 
 > [!warning] "16.2 gives 16.2" is not quite right (ll. 108–109)
-> Exactly, $\theta=16.2^\circ$ gives $\theta_{max}(M_2)=16.07^\circ<16.2^\circ$, so it is just past the limit. The true limit is $16.13^\circ$. The discrepancy comes from the chart readings (22.6 for 22.79). Quote **16.1°**, or 16° to the sheet's precision.
+> Exactly, $\theta=16.2^\circ$ gives $\theta_{max}(M_2)=16.07^\circ<16.2^\circ$, so it is just past the limit. The true limit is $16.13^\circ$; the discrepancy comes from the chart readings (22.6 for 22.79). Quote 16.1°, or 16° to the sheet's precision.
 
 ---
 
@@ -203,8 +188,7 @@ $$
 p_{UR}=\frac{0.0638}{0.2026}\times20=6.30\ \text{kPa}\quad(\text{lecture: }6.4).
 $$
 
-> [!tip] Unit calculation for a fan
-> $\nu_{down}=\nu_{up}+\theta$; read $M$ and $p/p_0$ at the new $\nu$; divide by the upstream $p/p_0$, because $p_0$ is unchanged through the isentropic fan. *"The exam question will specify which method to use"*: nearest value or interpolation (l. 176).
+The fan calculation is always the same: $\nu_{down}=\nu_{up}+\theta$, read $M$ and $p/p_0$ at the new $\nu$, and divide by the upstream $p/p_0$, since $p_0$ is unchanged through the isentropic fan. *"The exam question will specify which method to use"*, nearest value or interpolation (l. 176).
 
 ### Forces: what the lecture did (ll. 184–195)
 
@@ -357,8 +341,7 @@ $$
 > [!check] Is "half" right?
 > Close, as the lecturer expected (l. 235). Linearised supersonic (Ackeret) theory, Weeks 7–8, puts the aerodynamic centre of **any** thin aerofoil at exactly $c/2$. Shock-expansion theory is the exact, nonlinear version, so a $10^\circ$-thick section with finite turning angles lands at about $0.49c$. The 2% shortfall is a nonlinear effect. Compare the flat plate in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]], where $C_{m,LE}=-C_n/2$ exactly.
 
-> [!tip] Centre of pressure is not the aerodynamic centre here
-> At $10^\circ$, $x_{cp}/c=-M'_{LE}/(N'c)=0.261/(2.967\times0.15)=0.587$ with the lecture's shortcut moment (0.584 exact): the cp sits **behind** the ac. For the flat plate the two coincided, because $C_{m,LE}$ was exactly proportional to $C_n$ (no zero-lift moment). The triangular wing is cambered in effect (flat bottom, peaked top), so it has a nose-down moment at zero lift. The cp then moves with $\alpha$ while the ac stays put.
+Unlike the flat plate, this wing's centre of pressure is not at its aerodynamic centre. At $10^\circ$, $x_{cp}/c=-M'_{LE}/(N'c)=0.261/(2.967\times0.15)=0.587$ with the lecture's shortcut moment (0.584 exact), so the cp sits behind the ac. On the flat plate the two coincided because $C_{m,LE}$ was exactly proportional to $C_n$, with no zero-lift moment. The triangular wing is effectively cambered (flat bottom, peaked top), so it has a nose-down moment at zero lift, and its cp moves with $\alpha$ while the ac stays put.
 
 ### Why look at sharp, mid-chord-thickness shapes? (ll. 141–153)
 
@@ -404,8 +387,7 @@ Subsonic aerofoils have round leading edges and maximum thickness near the quart
 
 ## Self-study tasks
 
-> [!todo] What the tutorial set
-> Two explicit pieces of homework (ll. 117 and 232–235), both solved here. The rest are *suggested, not lecturer-set*. Attempt each closed-book, then check against the linked section.
+Two explicit pieces of homework (ll. 117 and 232–235), both solved here. The rest are *suggested, not lecturer-set*. Attempt each closed-book, then check against the linked section.
 
 ### Lecturer-set
 

@@ -13,16 +13,15 @@ sources: ["02 - Sources/Lectures/Lecture 1.07.pdf"]
 
 # Laplace Transform
 
-## Definition
+The Laplace transform
 
-> [!note] Definition
->
-> $$\mathcal L\{g(t)\} = G(s) = \int_0^\infty g(t)e^{-st}\,dt,\qquad s = \sigma+j\omega$$
->
-> It turns linear constant-coefficient ODEs into **algebraic** equations in $s$: **differentiation becomes multiplication by $s$** and integration becomes division by $s$. Initial conditions are included automatically.
+$$
+\mathcal L\{g(t)\} = G(s) = \int_0^\infty g(t)e^{-st}\,dt,\qquad s = \sigma+j\omega,
+$$
 
-## Explanation
-**Route**: ODE → transform → solve the algebra → partial fractions → inverse transform with a table.
+turns linear constant-coefficient ODEs into algebraic equations in $s$: differentiation becomes multiplication by $s$, integration becomes division by $s$, and the initial conditions come along automatically.
+
+The route through a problem is always the same: transform the ODE, solve the algebra for the output, split it into partial fractions and invert term by term from a table. Compared with the classical complementary-function-plus-particular-integral method, it handles piecewise inputs such as steps and pulses easily, and it leads straight to transfer functions. The SPO step response in A4 is a typical case: $X(s) = K/[s(s^2+0.744s+1.992)]$ inverts to $x(t) = r_1+r_2e^{\sigma t}\cos\omega t+r_3e^{\sigma t}\sin\omega t$ with $\sigma = -0.372$ and $\omega = 1.362$ ([[SESA2027 A4 - Laplace Transforms, Transfer Functions and Step Response]]).
 
 | $g(t)$ | $G(s)$ |
 |---|---|
@@ -37,15 +36,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.07.pdf"]
 | $\ddot g$ | $s^2G-sg(0)-\dot g(0)$ |
 | $g(t-a)u(t-a)$ | $e^{-as}G(s)$ (a pure delay) |
 
-- **Final value theorem**: $\lim_{t\to\infty}g(t) = \lim_{s\to0}sG(s)$, valid if the limit exists (a stable system).
-- **Why use it**: piecewise inputs (steps, pulses) are easy, the classical method (complementary function plus particular integral) is avoided, and it leads naturally to transfer functions.
-- A **time delay** $T_d$ transforms to $e^{-sT_d}$. It has unit magnitude and phase $-\omega T_d$, which is how sensor and digital latency erodes the phase margin ([[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]]).
-
-## Examples
-- SPO step: $X(s) = \dfrac{K}{s(s^2+0.744s+1.992)}$ gives $x(t) = r_1+r_2e^{\sigma t}\cos\omega t+r_3e^{\sigma t}\sin\omega t$ with $\sigma = -0.372$ and $\omega = 1.362$ ([[SESA2027 A4 - Laplace Transforms, Transfer Functions and Step Response]]).
+The final value theorem, $\lim_{t\to\infty}g(t) = \lim_{s\to0}sG(s)$, gives the steady state directly, provided the limit exists, which in practice means the system is stable. The delay entry matters later in the module: $e^{-sT_d}$ has unit magnitude and phase $-\omega T_d$, which is how sensor and digital latency erode the phase margin ([[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]]). MATH2048 Lectures 11–13 cover the transform itself.
 
 ## Related
-- [[Transfer Function]] · [[Poles and Zeros]] · [[Step Response Specifications]]
 
-## Sources
-- Lecture 1.07; MATH2048 Lectures 11–13
+- [[Transfer Function]] · [[Poles and Zeros]] · [[Step Response Specifications]]
+- MATH2048: [[MATH2048 TR2 - Laplace Transforms - Definition, Properties and Solving IVPs]]

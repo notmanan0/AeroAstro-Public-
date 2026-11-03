@@ -67,7 +67,7 @@ The test is the **Knudsen number** $Kn = \lambda/L$. For $Kn \ll 1$ (a wing, a p
 - **Lagrangian**: ride along with a fluid particle, like a weather balloon.
 - **Eulerian**: stand still and watch the flow go past, like a weather station.
 
-CFD grids are fixed in space, so they are Eulerian. Newton's law applies to *particles*, so it is Lagrangian. The bridge is the chain rule. Let a particle follow $\mathbf{x}(t)$ with $\dot{\mathbf{x}} = \mathbf{u}$, and carry any property $\phi(\mathbf{x},t)$:
+CFD grids are fixed in space, so they are Eulerian. Newton's law applies to *particles*, so it is Lagrangian. The chain rule links the two descriptions. Let a particle follow $\mathbf{x}(t)$ with $\dot{\mathbf{x}} = \mathbf{u}$, and carry any property $\phi(\mathbf{x},t)$:
 
 $$
 \frac{D\phi}{Dt} \equiv \frac{d}{dt}\,\phi\big(\mathbf{x}(t),t\big) = \frac{\partial \phi}{\partial t} + \frac{\partial \phi}{\partial x}\frac{dx}{dt} + \frac{\partial \phi}{\partial y}\frac{dy}{dt} + \frac{\partial \phi}{\partial z}\frac{dz}{dt}
@@ -496,7 +496,7 @@ There are two classic cures:
 ![[dam_ns_mac_grid.png|640]]
 
 ## 17. The complete discrete equations on a MAC grid
-Everything now fits together. Grid indices: $p_{i,j}$ at centres, $u_{i+\frac12,j}$ on vertical faces, $v_{i,j+\frac12}$ on horizontal faces.
+Grid indices: $p_{i,j}$ at centres, $u_{i+\frac12,j}$ on vertical faces, $v_{i,j+\frac12}$ on horizontal faces.
 
 **u-momentum predictor** at face $(i+\tfrac12, j)$, using explicit Euler, central conservative convection and a 5-point Laplacian:
 

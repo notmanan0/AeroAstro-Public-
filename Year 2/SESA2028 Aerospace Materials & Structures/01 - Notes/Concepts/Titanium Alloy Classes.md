@@ -3,37 +3,26 @@ title: "Titanium Alloy Classes"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Alpha titanium", "Alpha-beta titanium", "Beta titanium", "Ti-6Al-4V", "Ti-6-4"]
 tags: [sesa2028, materials, titanium, alloy-design, phase-transformations]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium]]"]
 related: ["[[Precipitation Hardening]]", "[[Martensite]]", "[[Specific Stiffness and Strength]]"]
 ---
 
 # Titanium Alloy Classes
 
-Ti is HCP ($\alpha$) at low temperature and BCC ($\beta$) above the $\beta$-transus (about 882 °C for pure Ti). Alloying moves the transus:
+Titanium alloys are classed as $\alpha$ (and near-$\alpha$), $\alpha+\beta$, or $\beta$ according to how much of the low-temperature HCP $\alpha$ phase and the high-temperature BCC $\beta$ phase their alloying elements stabilise at room temperature.
 
-- **$\alpha$ stabilisers** (raise it): **Al**, **O**, N, C, Ga, Ge.
-- **$\beta$ stabilisers** (lower it): **V**, **Mo**, Nb, Ta, Fe, Cr, Mn, Co, Ni, Cu, Si.
+Alloying elements are grouped by the phase they favour: aluminium (and interstitial oxygen) stabilise $\alpha$, while elements such as vanadium, molybdenum and iron stabilise $\beta$. On a generic diagram against $\beta$-stabiliser content the fields run $\alpha$, $\alpha+\beta$, $\beta$, and a fast quench from $\beta$ can produce $\alpha'$, a martensite formed by shear without diffusion. Unlike steel martensite, which is hard because of trapped carbon, $\alpha'$ is only moderately harder than $\alpha$; its use is as a fine metastable structure that later heat treatment can refine.
 
-Rapid cooling from $\beta$ can give **$\alpha'$ martensite**: diffusionless shear to a metastable HCP phase supersaturated in $\beta$ stabilisers. It is much less hard than steel martensite because it is not strengthened by trapped interstitial carbon. It is a fine metastable structure that is later aged or decomposed.
+![[materials_ti_phase_diagram.png|750]]
 
-## The classes
+The $\alpha$ and near-$\alpha$ alloys rely on solid solution, so they are only moderately strong, but with no precipitates to coarsen they are thermally stable and creep-resistant, for engine casings, rings and forged compressor discs; being HCP they are hard to form. Commercially pure titanium, strengthened only by dissolved oxygen, is weak but very ductile and highly corrosion resistant. The $\alpha+\beta$ alloys, led by Ti-6Al-4V, are the most widely used alloys for implants, blades, discs and airframes, and their properties depend on heat treatment: slow cooling from $\beta$ gives a tough basket-weave of $\alpha$ laths that deflects cracks, while annealing in the $\alpha+\beta$ field gives fine equiaxed $\alpha$ that resists fatigue crack initiation. The $\beta$ alloys are solution treated, quenched and aged like aluminium, reaching the highest strengths and formable before ageing, but they are 7–10 % denser, segregate when cast, and lose strength at high temperature as their precipitates coarsen.
 
-| Class | Example | Phases and strengthening | Heat treatment | Key properties | Uses |
-|---|---|---|---|---|---|
-| CP Ti | Grade 1-4 (Ti-O) | $\alpha$; interstitial O solid solution | anneal | ductile, best corrosion, low strength (~414 MPa yield) | chemical and marine plant, shrouds, airframe skins |
-| $\alpha$ | Ti-5Al-2.5Sn | $\alpha$; substitutional solid solution (Al, Sn) | anneal | **thermally stable (no precipitates), good creep**, weldable, poor formability | engine casings and rings to ~480 °C |
-| Near-$\alpha$ | Ti-6242 | $\alpha$ + a little $\beta$ | thermomechanical + age | creep + strength | forged compressor discs and blades |
-| $\alpha+\beta$ | **Ti-6Al-4V** | $\alpha$ + $\beta$ (+ $\alpha'$); microstructure set by heat treatment | anneal or STA | best all-round; tailorable fatigue | fan blades, airframe, implants |
-| Metastable $\beta$ | Ti-10V-2Fe-3Al | $\beta$ + fine $\alpha$ precipitates | **solution treat + quench + age** | **highest strength** (~1150 MPa yield), formable in the solution-treated BCC state; 7-10 % denser, segregation-prone, not thermally stable | high-strength airframe forgings, landing gear |
+Across the classes the usual trade-off holds: alloying and ageing raise strength at the expense of toughness, and $\beta$-annealed microstructures buy toughness with some strength. Past papers ask for this as a comparison table (2022-23 MQ2(i)) and for which class has the best fatigue resistance, usually the $\alpha+\beta$ alloys with a tailored microstructure (MT4 Q2).
 
-## Ti-6Al-4V microstructures and fatigue
+## Related
 
-- **Slow cool from $\beta$**: $\alpha$ laths in a **basket-weave** pattern. The crack path is tortuous, so it **resists crack growth** and is tough and damage tolerant.
-- **Anneal in the $\alpha+\beta$ field**: **equiaxed $\alpha$** + transformed $\beta$. Fine grains confine slip, so it **resists initiation** (best HCF).
-- A bimodal structure combines both. That is why $\alpha+\beta$ alloys offer the **best fatigue resistance**: the microstructure can be tuned for both initiation and propagation.
-
-## Choosing a matrix for a 550 °C MMC blade (2022-23 MQ2(ii))
-
-**Ti-5Al-2.5Sn** or near-$\alpha$ ($\alpha$ alloys are thermally stable, with good creep and oxidation resistance at 550 °C). The fibres supply the strength, so the matrix mainly needs temperature stability and compatibility. Ti-6Al-4V is the practical alternative but loses creep strength above about 400-450 °C. $\beta$ alloys are unstable at temperature (their precipitates coarsen).
+- Topic: [[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium|M6]] · [[SESA2028 M7 - Steels - Phase Transformations, Heat Treatment and Alloying|M7]]
+- Concepts: [[Precipitation Hardening]] · [[Martensite]] · [[Specific Stiffness and Strength]]

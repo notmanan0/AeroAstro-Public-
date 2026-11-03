@@ -3,7 +3,7 @@ title: "Spinning Disc Stress"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, spinning-discs]
-status: complete
+status: lectured
 ---
 
 # Spinning Disc Stress
@@ -24,10 +24,18 @@ $$
 
 and combine them with the appropriate plane-stress constitutive law. For a solid disc, reject any (1/r) displacement term because the centre must remain finite. At a free outer radius, impose $\sigma_r=0$.
 
-![Spinning-disc stress](../Figures/structures_spinning_disc_stress.png)
+![[structures_spinning_disc_stress.png|700]]
 
 The hoop stress is tensile throughout a uniform solid disc and is commonly largest near the centre.
 
 See [[SESA2028 S11 - Spinning Discs]].
 
-**Related (SESA2028 materials):** [[FEEG2005 Exam 2022-23 Solutions|2022-23 MQ1]] (disc bore vs rim crack sites) · [[Paris Law]]
+Related (SESA2028 materials): [[FEEG2005 Exam 2022-23 Solutions|2022-23 MQ1]] (disc bore vs rim crack sites) · [[Paris Law]]
+
+## Related
+
+- Topic: [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]]
+- Topic: [[SESA2028 M8 - High Temperature Materials - Creep, Oxidation and Superalloys|M8]]
+- Topic: [[SESA2028 S11 - Spinning Discs|S11]]
+- Concepts: [[Paris Law]]
+- Elsewhere: [[FEEG2005 Exam 2022-23 Solutions]]

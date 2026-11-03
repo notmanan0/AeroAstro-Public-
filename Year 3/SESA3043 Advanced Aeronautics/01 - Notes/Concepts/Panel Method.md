@@ -13,12 +13,9 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 # Panel Method
 
-## Definition
+A panel method represents a body surface by $N$ straight panels, each carrying a constant-strength singularity. Flow tangency is imposed at a control point on each panel, a Kutta condition closes the system, and the resulting linear system is solved for the strengths.
 
-> [!note] Definition
-> Represent a body surface by $N$ straight panels carrying constant-strength singularities, impose flow tangency at a control point on each, close the system with a Kutta condition, and solve the linear system for the strengths.
-
-## Elementary panels (panel on x₁ ≤ x₀ ≤ x₂)
+For a panel lying on $x_1\le x_0\le x_2$, the elementary singularities are:
 
 | Panel | Far field | On the panel |
 |---|---|---|
@@ -26,10 +23,7 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 | vortex $\gamma$ | $u=\frac{\gamma}{2\pi}(\theta_2-\theta_1)$, $w=\frac{\gamma}{2\pi}\ln\frac{r_2}{r_1}$ | $u_\pm=\pm\gamma/2$ |
 | doublet $\mu$ | $\phi=\frac{\mu}{2\pi}(\theta_1-\theta_2)$ | $\phi_\pm=\mp\mu/2$ |
 
-## Two complete methods
-
-- **Source + vortex (Neumann):** unknowns $\sigma_1\ldots\sigma_N,\gamma$; tangency $\sum a_{ij}\sigma_j+\hat a_i\gamma=U_\infty\sin(\beta_i-\alpha)$; Kutta by an extra control point on the TE bisector, or $q_{t,1}=q_{t,N}$.
-- **Doublet (Dirichlet):** unknowns $\mu_1\ldots\mu_N,\mu_w$; total potential zero inside the body; Kutta $\mu_1-\mu_N-\mu_w=0$; $C_L=2\mu_w/(U_\infty c)$; $q_t=-\mathrm d\mu/\mathrm ds$.
+The course builds two complete methods from these. The source + vortex method is a Neumann method: the unknowns are $\sigma_1\ldots\sigma_N$ and one vortex strength $\gamma$, tangency reads $\sum a_{ij}\sigma_j+\hat a_i\gamma=U_\infty\sin(\beta_i-\alpha)$, and the Kutta condition comes either from an extra control point on the trailing-edge bisector or from requiring equal speeds on the two trailing-edge panels, $q_{t,1}=-q_{t,N}$. The minus sign matters: the signed components are opposite, and writing $q_{t,1}=q_{t,N}$ makes the system singular. The doublet method is a Dirichlet method: the unknowns are $\mu_1\ldots\mu_N$ and a wake doublet $\mu_w$, the condition is zero total potential inside the body, the Kutta condition is $\mu_1-\mu_N-\mu_w=0$, and then $C_L=2\mu_w/(U_\infty c)$ and $q_t=-\mathrm d\mu/\mathrm ds$.
 
 ![[aa_panel_method_validation.png|700]]
 

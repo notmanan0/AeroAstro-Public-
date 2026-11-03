@@ -5,7 +5,7 @@ type: tutorial-solution
 stream: "Structures"
 order: 4
 tags: [sesa2028, structures, tutorial, buckling, beam-column]
-status: complete
+status: lectured
 parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 topics: ["[[SESA2028 S5 - Euler Buckling and Effective Length]]", "[[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling]]"]
 sources: ["02 - Sources/SESA2028 green coursework book.pdf, pp. 48-50"]

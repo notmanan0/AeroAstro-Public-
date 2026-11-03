@@ -13,25 +13,17 @@ sources: ["02 - Sources/Lectures/CH3-4 Transition to Turbulence(1).pdf"]
 
 # Linear Stability and Transition Prediction
 
-## Statement
+Linear stability theory asks whether a small disturbance to a laminar boundary layer grows. Perturb a parallel flow $\bar u(y)$ with a small wave $v'=\hat v(y)e^{i(\alpha x-\omega t)}$ and linearise Navier–Stokes; the amplitude then obeys the **Orr–Sommerfeld equation**
 
-> [!note] Definition
-> Perturb a parallel laminar flow $\bar u(y)$ with a small wave $v'=\hat v(y)e^{i(\alpha x-\omega t)}$ and linearise Navier–Stokes. The amplitude obeys the **Orr–Sommerfeld equation**
->
-> $$(\bar u-c_{ph})(\hat v''-\alpha^2\hat v)-\bar u''\hat v=-\frac{i\nu}{\alpha}\left(\hat v''''-2\alpha^2\hat v''+\alpha^4\hat v\right),\qquad c_{ph}=\frac\omega\alpha.$$
->
-> With real $\omega$ and $\alpha=\alpha_r+i\alpha_i$, the wave grows downstream where $\alpha_i<0$.
+$$(\bar u-c_{ph})(\hat v''-\alpha^2\hat v)-\bar u''\hat v=-\frac{i\nu}{\alpha}\left(\hat v''''-2\alpha^2\hat v''+\alpha^4\hat v\right),\qquad c_{ph}=\frac\omega\alpha.$$
 
-## The chain of ideas
+Taking $\omega$ real and $\alpha=\alpha_r+i\alpha_i$, the wave grows downstream wherever $\alpha_i<0$.
 
-1. **Thumb plot:** the $\alpha_i=0$ contour in $(\log Re_{\delta^*},\,F=\omega\nu/U_e^2)$ encloses the unstable region; its tip is $Re_{crit}$ (Blasius: $Re_{\delta^*}\approx520$).
-2. **Amplification:** $n=\ln(A/A_0)=-\int_{x_0}^x\alpha_i\,\mathrm dx$ for each frequency.
-3. **$e^n$ method:** transition where the envelope of $n$ over all frequencies reaches $n_{crit}\approx9$ ($A/A_0\approx8100$); lower $n_{crit}$ in noisy flow.
-4. **Limitations:** ignores receptivity and nonlinear stages; partial non-parallel effects; cannot predict bypass transition.
+The $\alpha_i=0$ contour, plotted against $\log Re_{\delta^*}$ and the frequency parameter $F=\omega\nu/U_e^2$, is the thumb-shaped neutral curve. It encloses the unstable region, and its tip is the critical Reynolds number, $Re_{\delta^*}\approx520$ for Blasius. Following one frequency downstream, its amplification is $n=\ln(A/A_0)=-\int_{x_0}^x\alpha_i\,\mathrm dx$. The $e^n$ method then predicts transition where the envelope of $n$ over all frequencies reaches $n_{crit}\approx9$ ($A/A_0\approx8100$), with a lower $n_{crit}$ in noisier flows.
 
-## Pressure gradients
+The method ignores receptivity and the nonlinear stages, handles non-parallel effects only partly, and can't predict bypass transition.
 
-Adverse: larger unstable region, lower $Re_{crit}$, and an inflection point in the profile. That permits inviscid (Rayleigh) instability, which stability calculations confirm for typical adverse-gradient profiles and which then persists as $Re\to\infty$ (slide 46). An inflection point is a **necessary**, not sufficient, condition, so the instability is a computed result, not automatic. Favourable: stabilising, the basis of natural-laminar-flow aerofoils.
+Pressure gradient has a strong effect. An adverse gradient enlarges the unstable region, lowers $Re_{crit}$ and puts an inflection point in the profile. That allows inviscid (Rayleigh) instability, which stability calculations confirm for typical adverse-gradient profiles and which persists as $Re\to\infty$ (slide 46). An inflection point is necessary but not sufficient, so the instability is a computed result rather than automatic. A favourable gradient is stabilising, which is what natural-laminar-flow aerofoils exploit.
 
 ## Related
 

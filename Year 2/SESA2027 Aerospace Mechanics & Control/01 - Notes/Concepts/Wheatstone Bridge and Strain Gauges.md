@@ -8,35 +8,23 @@ tags: [sesa2027, concept, sensors, structures]
 status: complete
 parent_lectures: ["[[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion]]"]
 related_concepts: ["[[Measurement Chain]]", "[[Sensor Dynamic Models]]"]
-sources: ["02 - Sources/Lectures/Lecture 3.02.pdf"]
+sources: ["02 - Sources/Lectures/Lecture 3.02.pdf", "Bentley, Ch. 8–9"]
 ---
 
 # Wheatstone Bridge and Strain Gauges
 
-## Definition
+A **strain gauge** is a resistive element whose resistance $R = \rho L/A$ rises when it is stretched, $\Delta R/R = G\varepsilon$ with gauge factor $G\approx2$. The change is tiny, so it is read with a **Wheatstone bridge**:
 
-> [!note] Definition
-> A **strain gauge** is a resistive element whose resistance, $R = \rho L/A$, rises when it is stretched: $\Delta R/R = G\varepsilon$, where $G\approx2$ is the gauge factor. The small $\Delta R$ is read with a **Wheatstone bridge**:
->
-> $$V_G = \left(\frac{R_2}{R_1+R_2}-\frac{R_4}{R_3+R_4}\right)V_s$$
->
-> For a quarter bridge with a small change: $\dfrac{\Delta R}{R}\approx\dfrac{4V_G}{V_s}$, so $V_G = \dfrac{V_s}{4}G\varepsilon$.
+$$
+V_G = \left(\frac{R_2}{R_1+R_2}-\frac{R_4}{R_3+R_4}\right)V_s .
+$$
 
-## Explanation
-- **Balanced bridge** (all resistances equal): $V_G = 0$. The bridge measures *changes* very sensitively.
-- **Quarter bridge** exact form: $R_2 = \dfrac{V_s-2V_G}{V_s+2V_G}R_1$ when $R_3 = R_4$.
-- **We measure resistance, not strain**; the strain is inferred. A zeroth-order sensor: instantaneous, with no smoothing.
-- **Temperature sensitivity**: $\rho(T)$ and differential expansion produce false strain.
-- **Half bridge**: a second gauge in the adjacent arm. Temperature changes cancel in the ratio. With the second gauge in compression on a bending beam, the strain signals add, giving $V_G\approx\frac{V_s}{2}G\varepsilon$ (double the sensitivity).
-- **Full bridge**: four active gauges give four times the quarter-bridge sensitivity, with full compensation.
+With all four resistances equal the bridge is balanced and $V_G = 0$, which is what makes it so sensitive to changes. For a quarter bridge (one active gauge) and a small change, $\Delta R/R\approx4V_G/V_s$, so $V_G = \tfrac{V_s}{4}G\varepsilon$; the exact form with $R_3 = R_4$ is $R_2 = R_1(V_s-2V_G)/(V_s+2V_G)$. In PS C Q2, $V_s = 5$ V, $V_G = 3$ mV and $G = 2.1$ give $\Delta R/R = 2.40\times10^{-3}$ ($\Delta R = 0.288$ Ω on 120 Ω) and $\varepsilon = 1.14\times10^{-3}$ ([[SESA2027 Part C Problem Sheet Solutions]]).
 
-## Examples
-- PS C Q2: $V_s = 5$ V, $V_G = 3$ mV, $G = 2.1$ gives $\Delta R/R = 2.40\times10^{-3}$ ($\Delta R = 0.288$ Ω on 120 Ω) and $\varepsilon = 1.14\times10^{-3}$ ([[SESA2027 Part C Problem Sheet Solutions]]).
-- Wing-root strain monitoring and load measurement during manoeuvres.
+What the gauge actually measures is resistance; the strain is inferred. It is a zeroth-order sensor, instantaneous and with no smoothing. It is also sensitive to temperature, since $\rho(T)$ and differential expansion produce false strain. A half bridge, with a second gauge in the adjacent arm, cancels the temperature change in the ratio, and if that second gauge is in compression on a bending beam the two strain signals add, doubling the sensitivity to $V_G\approx\tfrac{V_s}{2}G\varepsilon$. A full bridge with four active gauges gives four times the quarter-bridge sensitivity with full compensation. Typical aircraft uses are wing-root strain monitoring and load measurement during manoeuvres.
 
 ## Related
+
+- Quarter and half bridges derived, with worked numbers: [[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion#4.1 Resistive: strain gauges and the Wheatstone bridge|C1 §4.1]]
 - [[Measurement Chain]] · [[Sensor Dynamic Models]]
 - Year 1: [[Gauge Factor]] · [[Strain Gauge Bridge Configurations]] · [[FEEG1004 E3 - Strain Gauges, Bridges, Pressure and Flow Sensors]]
-
-## Sources
-- Lecture 3.02; Bentley, Ch. 8–9

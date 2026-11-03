@@ -4,19 +4,19 @@ module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Structures"
 tags: [sesa2028, structures, buckling, beam-column]
-status: complete
+status: lectured
 parent: ["[[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling]]"]
 ---
 
 # Beam-Column
 
-**What it is:** a member carrying axial compression $P$ **and** bending (transverse load, end moments or eccentricity). The axial load acts through the lateral deflection $v$, adding a **second-order moment** $Pv$ (the "P-delta" effect):
+A member carrying axial compression $P$ and bending (transverse load, end moments or eccentricity). The axial load acts through the lateral deflection $v$, adding a second-order moment $Pv$ (the "P-delta" effect):
 
 $$
 M_{total}(x)=M_0(x)+Pv(x).
 $$
 
-Deflection increases the moment, which increases the deflection. Ordinary superposition of "column" and "beam" answers **underestimates** both.
+Deflection increases the moment, which increases the deflection. Ordinary superposition of "column" and "beam" answers underestimates both.
 
 ## Governing equation
 
@@ -54,3 +54,8 @@ $$
 - Always compare $P$ with $P_E$ first. If $P\ge P_E$ the member is unstable, whatever the bending (2024-25 SQ2).
 - Stress check: $\sigma_{max}=\dfrac PA+\dfrac{M_{max}c}{I}$ at the compression face.
 - Use the correct plane: bending and buckling must be in the same plane for the amplification to apply.
+
+## Related
+
+- Topic: [[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]]
+- Concepts: [[Secant Formula]] · [[Beam-Column Amplification]]

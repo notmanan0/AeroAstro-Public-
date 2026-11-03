@@ -13,26 +13,17 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf", "02 - Sources/Lectures/Lecture
 
 # Mach Reflection
 
-## Definition
+A **Mach reflection** replaces a regular reflection when the wall angle lies in the range $\theta_{max}(M_2)<\theta<\theta_{max}(M_1)$. The incident shock can still attach, but the slower flow behind it cannot be turned back parallel to the wall by an attached reflected shock.
 
-> [!note] Definition
-> A **Mach reflection** forms when the wall angle satisfies $\theta_{max}(M_2)<\theta<\theta_{max}(M_1)$. The incident shock is attached, but no attached reflected shock could turn the flow back. Its structure:
-> - the incident shock ends at a **triple point** T;
-> - a near-normal **Mach stem** runs from T to the wall;
-> - a curved reflected shock leaves T;
-> - a [[Slip Line]] trails from T.
+Instead, the incident shock ends at a **triple point** T. A near-normal **Mach stem** runs from T down to the wall, a curved reflected shock leaves T, and a [[Slip Line]] trails downstream from it. The stem is normal where it meets the wall, so it turns the flow by zero and keeps it parallel to the wall; the flow behind it is subsonic. Across the slip line the pressure and flow direction match, but the entropy does not, because the gas below has been through one strong shock and the gas above through two weaker ones.
 
-## Explanation
-
-- The Mach stem is normal at the wall, so it turns the flow by zero and keeps it parallel to the wall. Behind it the flow is subsonic.
-- Above and below the slip line the pressure and direction match, but the entropy differs: the stem is strong, while the incident-plus-reflected pair is two weaker shocks.
-- Regular-reflection limit, from solving $\theta=\theta_{max}(M_2(\theta))$:
+The regular-reflection limit comes from solving $\theta=\theta_{max}(M_2(\theta))$:
 
 | $M_1$ | 1.6 | 2.0 | 2.3 | 3.0 | 3.6 | 5.0 |
 |---|---:|---:|---:|---:|---:|---:|
 | $\theta_{RR}$ | $7.6^\circ$ | $12.9^\circ$ | $16.1^\circ$ | $21.5^\circ$ | $24.3^\circ$ | $27.8^\circ$ |
 
-- In axisymmetric over-expanded jets, the same failure of a regular shock crossing produces a **Mach disc** (Lecture 2.7, slide 7).
+The same failure of a regular shock crossing on the axis of an over-expanded axisymmetric jet produces a **Mach disc** (Lecture 2.7, slide 7).
 
 ![[at_mach_reflection.png|760]]
 

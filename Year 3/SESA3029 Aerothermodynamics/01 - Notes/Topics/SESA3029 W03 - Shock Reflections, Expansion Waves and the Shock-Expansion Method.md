@@ -20,18 +20,7 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf", "02 - Sources/Lectures/Lecture
 # SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method
 
 > [!abstract] Summary
-> Three decks built entirely on the [[Theta-Beta-Mach Relation]] plus one new tool.
->
-> **2.3 Reflections and interactions.**
-> - When an oblique shock hits a wall, the wall demands that the flow turn back parallel to itself. That needs a second, **reflected** shock: two $\theta$–$\beta$–$M$ solves with the same $\theta$.
-> - Because $M_2<M_1$, the reflected shock is steeper, so reflection is **not specular**.
-> - If $\theta$ exceeds $\theta_{max}(M_2)$, the regular pattern is impossible and a **Mach reflection** forms: a triple point, a near-normal Mach stem and a **slip line**.
-> - Two shocks that cross produce two transmitted shocks and a slip line. Find its angle by matching pressure and flow direction.
-> - The entropy jump depends only on $M_{n1}$, grows like $(M_{n1}^2-1)^3$, and is negative for $M_{n1}<1$. **Expansion shocks are impossible, and weak shocks are almost isentropic.**
->
-> **2.4 Expansion waves.** A convex corner turns the flow through a centred fan of Mach waves. The fan is continuous and isentropic, and described by the **Prandtl–Meyer function**: $\nu(M_2)=\nu(M_1)+\theta$.
->
-> **2.5 Shock-expansion method.** Shocks at compression corners and fans at expansion corners give exact, uniform surface pressures on flat-faced 2D bodies. Integrate them for lift, wave drag and moment.
+> Lecture 2.3 reflects oblique shocks off walls (regular reflection, and Mach reflection when that fails) and crosses them into each other, which brings in the slip line; it also shows that the entropy jump grows like $(M_{n1}^2-1)^3$, so expansion shocks are impossible and weak shocks are nearly isentropic. Lecture 2.4 handles convex corners with the Prandtl–Meyer fan, $\nu(M_2)=\nu(M_1)+\theta$. Lecture 2.5 combines shocks and fans into the shock-expansion method for lift, wave drag and moment on flat-faced aerofoils.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a shock meets a wall or another shock, a flow turns round a convex corner, or a flat-faced aerofoil sits in a supersonic stream.
@@ -39,12 +28,6 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf", "02 - Sources/Lectures/Lecture
 > - **Method:** 1. At each corner: turned into the flow → oblique shock; away → fan, $\nu_2=\nu_1+\theta$. 2. Wall reflection: the same $\theta$ again from $M_2$; if $\theta>\theta_{max}(M_2)$ it is a Mach reflection. 3. Shock crossings and trailing edges: match $p$ and flow direction across the slip line. 4. Aerofoil: face pressures → chord-normal $N'$ and chordwise $A'$ → $L'$, $D'$. 5. Moment about the LE; centre of pressure along the chord with $C_n$.
 > - **Common mistakes:** $D'=N'\sin\alpha$ on a thick section (misses $A'$); moving the moment with $C_l$ instead of $C_n$ at large $\alpha$.
 > - **Practise:** [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6 flat plate]] · [[SESA3029 Mock Questions - Weeks 1-5#Q4. Diamond aerofoil by shock-expansion theory|Mock Q4]]
-
-## Key concepts
-
-- [[Regular Shock Reflection]] · [[Mach Reflection]] · [[Slip Line]] · [[Entropy Change Across a Shock]]
-- [[Prandtl-Meyer Function]] · [[Expansion Fan]] · [[Shock-Expansion Theory]]
-- Foundations: [[Theta-Beta-Mach Relation]] · [[Oblique-Shock Jump Relations]] · [[Mach Waves and Mach Angle]] · [[Aerodynamic Centre and Centre of Pressure]]
 
 > [!info] Scope note
 > - **Lecture 2.3** was given on Fri 2 Oct (`Lecture 2-3.txt`, 447 lines). It covered the whole deck: the regular-reflection example (ll. 15–176), Mach reflection (ll. 205–293), the double shock interaction set as homework (ll. 312–390) and the entropy argument (ll. 394–447).
@@ -56,19 +39,9 @@ sources: ["02 - Sources/Lectures/Lecture2-3.pdf", "02 - Sources/Lectures/Lecture
 
 ---
 
-## The whole week in one physical picture
+At a corner, a supersonic stream can only be turned into itself or away from itself. Turned into itself, at a concave corner or a wall in the way, it gets no warning upstream and has to turn abruptly through an oblique shock, which compresses and slows it and costs stagnation pressure. Turned away from itself, at a convex corner, the Mach waves from successive parts of the turn spread apart instead of piling up, so the turn happens smoothly through a fan that expands and speeds up the flow at no cost in stagnation pressure.
 
-A supersonic stream only ever does two things at a corner.
-
-1. **It is turned *into* itself** (concave corner, or a wall in the way). Information cannot travel upstream, so the turn has to happen abruptly through an oblique **shock**. The shock compresses the flow, costs stagnation pressure and slows it down.
-2. **It is turned *away* from itself** (convex corner). Now the Mach waves from successive bits of the turn **diverge**, so they never pile up. The turn happens through a fan of infinitely many Mach waves. The fan expands the flow, speeds it up and costs nothing in stagnation pressure.
-
-Everything else follows from these two rules and from two matching conditions:
-
-- **Walls:** the flow must be parallel to the wall. This produces reflections.
-- **Slip lines:** pressure and flow direction must be the same on both sides. This governs interactions and trailing edges.
-
-The shock-expansion method then simply walks round a body corner by corner.
+Two matching conditions do the rest. At a wall the flow has to end up parallel to the wall, which is where reflections come from. Across a slip line the pressure and flow direction have to match, which settles shock interactions and trailing edges. The shock-expansion method then just walks round a body corner by corner.
 
 ---
 
@@ -76,10 +49,7 @@ The shock-expansion method then simply walks round a body corner by corner.
 
 ### Why a reflected shock must exist
 
-A ramp of angle $\theta$ makes an oblique shock A (slides 2–3). Behind A, zone 2 flows parallel to the ramp, tilted up by $\theta$. When A meets the upper wall, the zone-2 flow is aimed into that wall. That is impossible: the wall imposes zero normal velocity. Something must turn the flow **back down by $\theta$**. A compression corner of $\theta$ seen by the zone-2 flow is exactly what an oblique shock provides, so a **reflected shock** B leaves the wall.
-
-> [!tip] Intuition
-> From the point of view of the zone-2 flow, the upper wall *is* a compression ramp of angle $\theta$. So step B is the same problem as step A, with $M_1$ replaced by $M_2$. The deflection is the same, but measured from $\mathbf V_2$ ([[SESA3029 W02 - Oblique Shock Relations and Mach Waves#1. Where oblique shocks come from|W02 §1]]).
+A ramp of angle $\theta$ makes an oblique shock A (slides 2–3). Behind A, zone 2 flows parallel to the ramp, tilted up by $\theta$. When A meets the upper wall, the zone-2 flow is aimed into that wall. That can't happen, because the wall allows no normal velocity, so something has to turn the flow back down by $\theta$. To the zone-2 flow the upper wall looks like a compression ramp of angle $\theta$, and an oblique shock is what turns a flow at a compression ramp, so a **reflected shock** B leaves the wall. Step B is the same problem as step A with $M_1$ replaced by $M_2$, and the same deflection measured from $\mathbf V_2$ ([[SESA3029 W02 - Oblique Shock Relations and Mach Waves#1. Where oblique shocks come from|W02 §1]]).
 
 ### Worked example (slides 2–4): M₁ = 3.6, θ = 10°, p₁ = 40 kPa
 
@@ -137,18 +107,14 @@ $$
 > - Check A through the density: $\tan\beta_A/\tan(\beta_A-\theta)=0.4431/0.2475=1.790=\rho_2/\rho_1$ at $M_{n1}=1.4584$ ✓.
 > - The slide's intermediate value uses the rounded $M_2=2.98$, giving $M_{n2B}=1.376$; the unrounded $M_2$ gives 1.3775.
 
-> [!tip] How the lecturer chose each tool (L2-3, ll. 61–160)
-> - **Step A cannot use the chart.** The oblique-shock chart stops at $M_1=3$, so for $M_1=3.6$ you must solve the θ–β–M equation for $\beta$ with a root-finding method (ll. 65–75). He asks you to *"confirm that this is the correct answer"* (l. 76): that is the first self-study task below.
-> - **The normal-shock table needs $M_{n}$, not $M$.** *"What does n mean? Normal."* (ll. 81–91). Interpolate between rows for $M_{n1}=1.459$ (ll. 99–108).
-> - **Step B can use the chart.** $M_2=2.98$ is just below 3, so follow the $M=3$ curve to $\theta=10^\circ$ on the weak branch (ll. 126–135).
-> - **Pressures multiply** along the chain: $p_3=(p_3/p_2)(p_2/p_1)\,p_1$ (l. 156).
+The lecturer's choice of tool at each step is worth copying (L2-3, ll. 61–160). Step A can't use the chart, which stops at $M_1=3$, so $\beta$ has to come from the θ–β–M equation with a root finder (ll. 65–75); he asks you to *"confirm that this is the correct answer"* (l. 76). The normal-shock table is entered with $M_n$, not $M$ (*"What does n mean? Normal."*, ll. 81–91), interpolating between rows for $M_{n1}=1.459$ (ll. 99–108). Step B can use the chart, because $M_2=2.98$ is just below 3 (ll. 126–135). And the pressure ratios multiply along the chain (l. 156).
 
 > [!warning] Reflection is not mirror-like
-> The angle of reflection $\phi$ is **smaller** than the angle of incidence $\beta_A$, so the reflected shock leans closer to the wall. The cause is that $M_2<M_1$, and on the chart (panel e of the figure) a lower Mach number needs a *larger* $\beta$ for the same $\theta$. So $\beta_B>\beta_A$, but $\beta_B$ is measured from the tilted $\mathbf V_2$, and $\phi=\beta_B-\theta$ comes out smaller.
+> The angle of reflection $\phi$ is smaller than the angle of incidence $\beta_A$, so the reflected shock leans closer to the wall. The cause is that $M_2<M_1$, and on the chart (panel e of the figure) a lower Mach number needs a larger $\beta$ for the same $\theta$. So $\beta_B>\beta_A$, but $\beta_B$ is measured from the tilted $\mathbf V_2$, and $\phi=\beta_B-\theta$ comes out smaller.
 >
 > In the lecture: *"shock reflection is not like optical reflection. It's not specular"* (L2-3, ll. 172–175). Note that he quotes $\phi=7.5^\circ$ there (ll. 166, 171); the correct value is $27.5^\circ-10^\circ=17.5^\circ$. See [[#Transcript slips (Lectures 2.3 and 2.4)]].
 
-**Cancelling the reflection.** If the lower wall turns back by $\theta$ exactly where B lands, B is absorbed and zone 3 stays uniform. This is how wind-tunnel and intake designers stop shocks bouncing down a duct (see the W02 intake, [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#10.2 Example 2: a supersonic intake at M₁ = 3|W02 §10.2]]).
+The reflection can be cancelled: if the lower wall turns back by $\theta$ exactly where B lands, B is absorbed and zone 3 stays uniform. This is how wind-tunnel and intake designers stop shocks bouncing down a duct (see the W02 intake, [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#10.2 Example 2: a supersonic intake at M₁ = 3|W02 §10.2]]).
 
 ---
 
@@ -156,7 +122,7 @@ $$
 
 ### When regular reflection fails (slides 5–6)
 
-Step B needs $\theta\le\theta_{max}(M_2)$. But $M_2<M_1$, so $\theta_{max}(M_2)<\theta_{max}(M_1)$. There is therefore a band of wall angles where the **incident** shock is attached, $\theta<\theta_{max}(M_1)$, but no attached **reflected** shock can turn zone 2 back, $\theta>\theta_{max}(M_2)$.
+Step B needs $\theta\le\theta_{max}(M_2)$. But $M_2<M_1$, so $\theta_{max}(M_2)<\theta_{max}(M_1)$. There is therefore a band of wall angles where the incident shock is attached, $\theta<\theta_{max}(M_1)$, but no attached reflected shock can turn zone 2 back, $\theta>\theta_{max}(M_2)$.
 
 > [!check] The lecturer's chart readings (L2-3, ll. 210–228), checked
 > - $\theta_{max}(3)\approx34^\circ$ (l. 215): exact $34.07^\circ$ ✓.
@@ -166,15 +132,9 @@ Step B needs $\theta\le\theta_{max}(M_2)$. But $M_2<M_1$, so $\theta_{max}(M_2)<
 
 ![[at_mach_reflection.png|900]]
 
-**What forms instead** (panel b):
+What forms instead is shown in panel b. The incident shock stops short of the wall at a **triple point** T, and from T a nearly normal **Mach stem** runs down to the wall. The stem is normal where it meets the wall, so it turns the flow by zero and keeps it parallel to the wall. A curved reflected shock also leaves T, and a [[Slip Line]] trails downstream from it. Gas on the wall side of the slip line has been through the strong, near-normal stem and is subsonic with high entropy; gas on the other side has been through two weaker shocks and is still supersonic with less entropy loss. The two streams share pressure and direction but differ in velocity, temperature, density and entropy.
 
-- The incident shock stops short of the wall at a **triple point** T.
-- From T a nearly **normal Mach stem** runs to the wall. It is locally normal at the wall, so it can turn the flow by zero and keep it parallel to the wall.
-- A curved reflected shock also leaves T.
-- A **[[Slip Line]]** trails from T. Above it the flow has passed through the strong, near-normal stem, so it is subsonic with high entropy. Below it the flow has passed through two weaker shocks, so it is supersonic with less entropy loss. The two streams have the **same pressure and direction** but different velocity, temperature, density and entropy.
-
-> [!tip] Why nature chooses a Mach stem (L2-3, ll. 241–293)
-> A normal shock *"doesn't deflect the flow. Only slow down the flow"* (l. 248). So near the wall the flow can keep going horizontally, and the collision never happens; the price is that it becomes subsonic (l. 255). The reflected branch behaves like part of a **bow shock**: its deflection varies along its length, small near the stem and larger further out (ll. 263–291, *"just like the bow shock case that we looked at yesterday"*). That variation is what lets the two streams match direction along the slip line.
+A normal shock *"doesn't deflect the flow. Only slow down the flow"* (L2-3, l. 248), which is why nature uses one here: near the wall the flow can carry on horizontally and the collision never happens, at the cost of going subsonic (l. 255). The reflected branch behaves like part of a bow shock, with a deflection that varies along its length, small near the stem and larger further out (ll. 263–291, *"just like the bow shock case that we looked at yesterday"*). That variation is what lets the two streams match direction along the slip line.
 
 > [!question] Lecture Q&A: must the pressure be equal across a slip line? (L2-3, ll. 299–309)
 > *"Yes, it has to be the same. Otherwise, there will be momentum generated normal to the slip line."* A pressure difference would push fluid across the line, which contradicts the line being a streamline. Density and temperature, however, can differ (l. 307).
@@ -196,8 +156,7 @@ This is one equation in one unknown. Solve it numerically by scanning $\theta$ a
 
 The lecture example ($M_1=3.6$, $\theta=10^\circ$) is well inside the regular region. [[SESA3029 Example Sheet 1 - Solutions#Q3. Ramp shock reflected from a wall|Example Sheet 1 Q3]] asks for this limit at $M_1=2.3$. The answer is $16.1^\circ$ (sheet: 16°).
 
-> [!note] Real flows
-> This "detachment criterion" is the classical von Neumann limit for the transition from regular to Mach reflection with weak solutions. In experiments the transition can show hysteresis between this limit and the slightly lower "mechanical-equilibrium" criterion. That is beyond the module, but it explains why measured values scatter.
+This detachment criterion is the classical von Neumann limit for the transition from regular to Mach reflection. Experiments show hysteresis between it and the slightly lower mechanical-equilibrium criterion, which is beyond the module but explains why measured values scatter.
 
 ---
 
@@ -205,7 +164,7 @@ The lecture example ($M_1=3.6$, $\theta=10^\circ$) is well inside the regular re
 
 ### Set-up (slide 7)
 
-The lower wall turns up by $\theta_A=18^\circ$ and the upper wall turns down by $\theta_B=12^\circ$, with $M_1=3$. The two incident shocks cross. After the crossing, each stream has to be turned again so that both end up **parallel** to each other at the **same pressure**. The final direction is not known in advance; call it $\Delta\theta$, measured from the free stream. Turning the two streams by different amounts leaves different entropy on each side, so a slip line separates zones 3A and 3B.
+The lower wall turns up by $\theta_A=18^\circ$ and the upper wall turns down by $\theta_B=12^\circ$, with $M_1=3$. The two incident shocks cross. After the crossing, each stream has to be turned again so that both end up parallel to each other at the same pressure. The final direction is not known in advance; call it $\Delta\theta$, measured from the free stream. Turning the two streams by different amounts leaves different entropy on each side, so a slip line separates zones 3A and 3B.
 
 ![[at_shock_interaction.png|900]]
 
@@ -224,7 +183,7 @@ Velocity, temperature, density and entropy may all jump. No mass crosses, so the
 1. Incident shocks, one per wall:
    - zone 2A: $\theta_A=18^\circ$ gives $M_{2A}=2.100$, $p_{2A}/p_1=3.368$, flow at $+18^\circ$;
    - zone 2B: $\theta_B=12^\circ$ gives $M_{2B}=2.406$, $p_{2B}/p_1=2.340$, flow at $-12^\circ$.
-2. Guess $\Delta\theta$. Zone 2A must turn **down** by $\theta_A-\Delta\theta$ and zone 2B **up** by $\theta_B+\Delta\theta$. Each is a compression, so each is an oblique shock.
+2. Guess $\Delta\theta$. Zone 2A must turn down by $\theta_A-\Delta\theta$ and zone 2B up by $\theta_B+\Delta\theta$. Each is a compression, so each is an oblique shock.
 3. Compute $p_{3A}/p_1=(p_{2A}/p_1)(p_{3A}/p_{2A})$ and $p_{3B}/p_1$ in the same way.
 4. Adjust $\Delta\theta$ until the two agree (panel b). Raising $\Delta\theta$ weakens 3A and strengthens 3B, so the curves cross exactly once:
 
@@ -240,7 +199,7 @@ The slide gives $\approx5.85^\circ$. The difference is chart-reading precision.
 
 > [!important] This was last year's exam question (L2-3, ll. 317–390)
 > *"If you have the chance to have a look at past exam papers, … this was exactly one of the questions last year. So this is basically your homework."* (ll. 317–319).
-> - In the exam it was **simplified**: zones 2A and 2B were given, and so was the result of the **first guess** of $\Delta\theta$. You had to make the **second guess**, compute $p_{3A}$ and $p_{3B}$, then **interpolate or extrapolate** linearly to equal pressure (ll. 379–382).
+> - In the exam it was simplified: zones 2A and 2B were given, and so was the result of the first guess of $\Delta\theta$. You had to make the second guess, compute $p_{3A}$ and $p_{3B}$, then interpolate or extrapolate linearly to equal pressure (ll. 379–382).
 > - He calls it *"the best example question to work on, to sum up everything that you have learned last week and this week"* (ll. 389–390).
 >
 > The two-guess method in numbers: with guesses $\Delta\theta=4^\circ$ (difference $+1.23$) and $8^\circ$ (difference $-1.46$), linear interpolation gives $\Delta\theta=4+4\times1.23/2.69=5.83^\circ$, the same as the full iteration, because the difference is nearly linear in $\Delta\theta$.
@@ -253,10 +212,7 @@ On either side of the slip line the flow differs:
 | $T_3/T_1$ | 1.813 | 1.794 |
 | $p_{03}/p_{01}$ | 0.814 | 0.844 |
 
-So the slip line is real.
-
-> [!tip] Why the slip line tilts towards the weaker wall
-> The stronger incident shock (A) leaves zone 2A at higher pressure. To equalise, zone 2A must be compressed less and zone 2B more, so the common direction ends up tilted towards A's original turning (upwards).
+So the slip line is real. It tilts upwards, towards A's original turning, because the stronger incident shock A leaves zone 2A at the higher pressure; to equalise, zone 2A has to be compressed less and zone 2B more.
 
 ---
 
@@ -311,7 +267,7 @@ $$
 f'(m)=\frac{a}{1+am}-\frac{\gamma}{1+m}+\frac{\gamma b}{1+bm}.
 $$
 
-At $m=0$: $a-\gamma+\gamma b=\dfrac{2\gamma-\gamma(\gamma+1)+\gamma(\gamma-1)}{\gamma+1}=0$. **The first derivative vanishes at $M_{n1}=1$.**
+At $m=0$: $a-\gamma+\gamma b=\dfrac{2\gamma-\gamma(\gamma+1)+\gamma(\gamma-1)}{\gamma+1}=0$, so the first derivative vanishes at $M_{n1}=1$.
 
 **Step 6. Common denominator.** Write $1+am=P/(\gamma+1)$ with $P=\gamma+1+2\gamma m$, and $1+bm=Q/(\gamma+1)$ with $Q=\gamma+1+(\gamma-1)m$. Then
 
@@ -346,14 +302,14 @@ $$
 **Step 7. Consequences.**
 
 - $\mathrm ds/\mathrm dM_{n1}=f'(m)\cdot2M_{n1}=0$ at $M_{n1}=1$. This is the slide's "show it" ✓.
-- $f'>0$ for every $m\ne0$, so $f$ is increasing. With $f(0)=0$ this gives $f>0$ for $M_{n1}>1$ and $f<0$ for $M_{n1}<1$. A shock with $M_{n1}<1$ would be an **expansion shock** that *destroys* entropy in an adiabatic process, which the second law forbids. **Shocks are always compressive.**
+- $f'>0$ for every $m\ne0$, so $f$ is increasing. With $f(0)=0$ this gives $f>0$ for $M_{n1}>1$ and $f<0$ for $M_{n1}<1$. A shock with $M_{n1}<1$ would be an expansion shock that destroys entropy in an adiabatic process, which the second law forbids, so shocks are always compressive.
 - Near $m=0$, $f'\approx2\gamma(\gamma-1)m^2/(\gamma+1)^2$. Integrate from 0:
 
 $$
 \boxed{\frac{s_2-s_1}{c_v}\approx\frac{2\gamma(\gamma-1)}{3(\gamma+1)^2}\left(M_{n1}^2-1\right)^3}.
 $$
 
-**Weak shocks are nearly isentropic**: halve the strength and the loss falls eightfold.
+So weak shocks are nearly isentropic: halve the strength and the loss falls eightfold.
 
 > [!check] Numbers ($\gamma=1.4$, $c_v=717.5$ J/kg K)
 >
@@ -367,15 +323,12 @@ $$
 
 > [!important] The lecture's three "fake news" tests (L2-3, ll. 416–447)
 > 1. A "shock" with upstream normal Mach number below 1: *"that's a fake news, that doesn't happen"* (ll. 419–421), because $s_2<s_1$.
-> 2. A "shock" after which the pressure has **dropped** (his example: 90 Pa after, 100 Pa before) is fake too. A shock is always a **compression** wave (ll. 432–435).
-> 3. Near $M_{n1}=1$ the entropy rise is almost zero, so Mach-wave processes may be treated as **isentropic** even in supersonic flow (ll. 424–442). This is what makes the expansion fan of §5 isentropic. The "$M<0.3$" rule for isentropic flow from earlier modules is not the relevant test here.
+> 2. A "shock" after which the pressure has dropped (his example: 90 Pa after, 100 Pa before) is fake too. A shock is always a compression wave (ll. 432–435).
+> 3. Near $M_{n1}=1$ the entropy rise is almost zero, so Mach-wave processes may be treated as isentropic even in supersonic flow (ll. 424–442). This is what makes the expansion fan of §5 isentropic. The "$M<0.3$" rule for isentropic flow from earlier modules is not the relevant test here.
 >
-> Because a shock is **irreversible**, $p_0$ falls across it, and relations derived for isentropic flow (such as $p_0/p$ from Bernoulli-type arguments) cannot be applied across it (ll. 443–447).
+> Because a shock is irreversible, $p_0$ falls across it, and relations derived for isentropic flow (such as $p_0/p$ from Bernoulli-type arguments) cannot be applied across it (ll. 443–447).
 
-> [!tip] Where this pays off
-> - It is the reason intakes split compression into many weak shocks ([[SESA3029 W02 - Oblique Shock Relations and Mach Waves#10.2 Example 2: a supersonic intake at M₁ = 3|W02 §10.2]]).
-> - Mach waves (strength → 0) are isentropic, which is the basis of §5 and of the method of characteristics.
-> - Expansions can never be shocks; they must be fans.
+This result gets used a lot. It is why intakes split their compression into several weak shocks ([[SESA3029 W02 - Oblique Shock Relations and Mach Waves#10.2 Example 2: a supersonic intake at M₁ = 3|W02 §10.2]]), why an expansion has to be a fan rather than a shock, and why Mach waves can be treated as isentropic, which §5 and the method of characteristics depend on.
 
 ---
 
@@ -383,20 +336,19 @@ $$
 
 ### Physical picture (Lecture 2.4, slides 1–2)
 
-At a convex corner of angle $\theta$ the wall turns **away** from the flow. The first Mach wave sits at $\mu_1$ to the incoming flow. Each subsequent bit of turning accelerates the flow, so $M$ rises and $\mu$ **falls**, and each wave also points in a flow direction already turned downward. The waves therefore **fan out** from the corner and never coalesce. That is the opposite of a concave corner, where they converge into a shock. The result is a **centred expansion fan** (a [[Expansion Fan]]): continuous, isentropic, with $p_0$ and $T_0$ constant.
+At a convex corner of angle $\theta$ the wall turns away from the flow. The first Mach wave sits at $\mu_1$ to the incoming flow. Each further bit of turning accelerates the flow, so $M$ rises and $\mu$ falls, and each wave is also measured from a flow direction that has already turned down. The waves therefore fan out from the corner and never coalesce, the opposite of a concave corner where they converge into a shock. The result is a centred [[Expansion Fan]]: continuous and isentropic, with $p_0$ and $T_0$ constant.
 
 ![[at_expansion_fan.png|900]]
 
 In panel (a) the rays and streamlines are computed, not sketched. Along each ray $M$ is constant. Each streamline bends smoothly through the fan and leaves parallel to the downstream wall.
 
-> [!tip] The lecturer's duct analogy (L2-4, ll. 16–34)
-> Draw a streamline well above the wall. It stays roughly horizontal, while the streamline on the wall turns away. The two streamlines form a **diverging duct**. From propulsion (SESA2023), a supersonic flow in a diverging duct **accelerates** and its pressure falls: that is the expansion fan. At a concave corner the streamlines form a **converging duct**, so the supersonic flow must decelerate and its pressure rise; that deceleration is achieved by the oblique shock. See [[Converging-Diverging Nozzle Operating Regimes]].
+The lecturer explains the same thing with a duct (L2-4, ll. 16–34). Draw a streamline well above the wall; it stays roughly horizontal while the streamline on the wall turns away, so the two form a diverging duct. A supersonic flow in a diverging duct accelerates and its pressure falls (SESA2023 propulsion), and that is the expansion fan. At a concave corner the streamlines form a converging duct instead, the supersonic flow has to slow down and its pressure rise, and the oblique shock is how it does that. See [[Converging-Diverging Nozzle Operating Regimes]].
 
 ### Deriving the Prandtl–Meyer function (slides 3–6)
 
 ![[at_prandtl_meyer_derivation.png|900]]
 
-**Kinematics across one Mach wave.** Turn the flow by an infinitesimal $\mathrm d\nu$ across a Mach wave inclined at $\mu$ to the upstream velocity $U$. Pressure acts normal to the wave, so the **tangential velocity is unchanged**, exactly as for an oblique shock. Downstream, the speed is $U+\mathrm dU$ and the angle to the wave is $\mu+\mathrm d\nu$:
+**Kinematics across one Mach wave.** Turn the flow by an infinitesimal $\mathrm d\nu$ across a Mach wave inclined at $\mu$ to the upstream velocity $U$. Pressure acts normal to the wave, so the tangential velocity is unchanged, as for an oblique shock. Downstream, the speed is $U+\mathrm dU$ and the angle to the wave is $\mu+\mathrm d\nu$:
 
 $$
 U\cos\mu=(U+\mathrm dU)\cos(\mu+\mathrm d\nu).
@@ -415,7 +367,7 @@ U\cos\mu=U\cos\mu+\mathrm dU\cos\mu-U\,\mathrm d\nu\sin\mu-\mathrm dU\,\mathrm d
 $$
 
 > [!question] Lecture Q&A: why say $\mathrm d\nu\to0$ but not set it to zero? (L2-4, ll. 144–175)
-> We look at **one** of infinitely many Mach waves, across which the change is infinitesimal. So $\mathrm d\nu$ is small enough to use $\cos\mathrm d\nu\to1$, $\sin\mathrm d\nu\to\mathrm d\nu$ and to drop products of differentials, but it is not zero: *"if you set it to 0, then there's no progress at all"* (l. 153). Integrating $\mathrm d\nu$ across the whole fan gives the finite turn, *"like a calculus"* (ll. 172–174).
+> We look at one of infinitely many Mach waves, across which the change is infinitesimal. So $\mathrm d\nu$ is small enough to use $\cos\mathrm d\nu\to1$, $\sin\mathrm d\nu\to\mathrm d\nu$ and to drop products of differentials, but it is not zero: *"if you set it to 0, then there's no progress at all"* (l. 153). Integrating $\mathrm d\nu$ across the whole fan gives the finite turn, *"like a calculus"* (ll. 172–174).
 
 Cancel $U\cos\mu$ and drop the second-order product $\mathrm dU\,\mathrm d\nu$:
 
@@ -491,13 +443,9 @@ The recipe:
 1. Read $\nu(M_1)$ from the IFT.
 2. Add $\theta$.
 3. Find $M_2$ by interpolation or by inverting numerically.
-4. Get $p$, $T$ and $\rho$ from the **isentropic** ratios, since $p_0$ and $T_0$ are constant.
+4. Get $p$, $T$ and $\rho$ from the isentropic ratios, since $p_0$ and $T_0$ are constant.
 
-Fan geometry:
-
-- the forward Mach line sits at $\mu_1$ to the incoming flow;
-- the rearward line sits at $\mu_2$ to the turned flow, i.e. at $\mu_2-\theta$ to the original direction;
-- so the fan angle is
+The forward Mach line of the fan sits at $\mu_1$ to the incoming flow, and the rearward one at $\mu_2$ to the turned flow, which is $\mu_2-\theta$ to the original direction. So the fan angle is
 
 $$
 \phi=\mu_1-(\mu_2-\theta)=\mu_1-\mu_2+\theta.
@@ -513,7 +461,7 @@ $$
 \frac{p_2}{p_1}=\frac{(p/p_0)_{3.78}}{(p/p_0)_{3}}=\frac{0.0089}{0.0272}=0.327\quad(\text{exact }0.3258).
 $$
 
-The pressure drops by **67.4%**.
+The pressure drops by 67.4%.
 
 4. Temperature and density: $T_2/T_1=\dfrac{1+0.2\times9}{1+0.2\times3.78^2}=0.7258$ and $\rho_2/\rho_1=0.7258^{2.5}=0.4489$.
 5. Fan: $\mu_1=19.47^\circ$ and $\mu_2=15.34^\circ$, so $\phi=19.47^\circ-15.34^\circ+13^\circ=17.13^\circ$.
@@ -521,14 +469,9 @@ The pressure drops by **67.4%**.
 > [!warning] Table precision
 > Four-figure $p/p_0$ entries near 0.009 carry only two significant figures. That is why the table route gives 67.3% and the exact result 67.4%. If the question allows it, use the formula for $p/p_0$.
 
-> [!tip] The lecturer's take-aways (L2-4, ll. 424–449)
-> - He uses the **nearest table row**, $M_2=3.78$, and gets a 67.3% drop (l. 442), noting that interpolation or the exact equation is more precise (l. 435).
-> - *"The flow turned only 13 degrees … and the pressure dropped by 67.3%"* (ll. 444–445): 1 bar becomes about 0.33 bar. Small turns at high Mach number cause large pressure changes.
-> - The fan angle, $17.2^\circ$, is **not** the deflection angle (ll. 448–449, and earlier ll. 67–68).
-> - The $\nu$ column of the IFT is blank for $M<1$ and starts at $\nu=0$ at $M=1$ (ll. 328–348).
+In the lecture Jae uses the nearest table row, $M_2=3.78$, and gets a 67.3% drop (l. 442), noting that interpolation or the exact equation would be more precise (l. 435). His point is how much a small turn does at high Mach number: *"The flow turned only 13 degrees … and the pressure dropped by 67.3%"* (ll. 444–445), so 1 bar becomes about 0.33 bar. He also stresses that the fan angle, $17.2^\circ$, is not the deflection angle (ll. 448–449, and earlier ll. 67–68), and that the IFT's $\nu$ column is blank below $M=1$ and starts at $\nu=0$ at $M=1$ (ll. 328–348).
 
-> [!tip] Compression through Mach waves
-> Run the same construction on a **smooth concave** wall. Now the Mach waves converge, and where they cross they coalesce into a shock away from the wall. Close to the wall the compression is isentropic and obeys the same $\nu$ relation with the sign of $\theta$ reversed. This is the Concorde intake idea of [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#10.2 Example 2: a supersonic intake at M₁ = 3|W02 §10.2]].
+Run the same construction on a smooth concave wall and the Mach waves converge instead, coalescing into a shock some distance from the wall. Close to the wall the compression is isentropic and follows the same $\nu$ relation with the sign of $\theta$ reversed. This is the Concorde intake idea from [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#10.2 Example 2: a supersonic intake at M₁ = 3|W02 §10.2]].
 
 ---
 
@@ -539,16 +482,16 @@ The pressure drops by **67.4%**.
 
 ### The rule (Lecture 2.5, slides 2–6)
 
-For a two-dimensional body made of **flat faces** in supersonic flow:
+For a two-dimensional body made of flat faces in supersonic flow:
 
-1. At each **compression corner** (flow turned into itself) put an **oblique shock**. Use the $\theta$–$\beta$–$M$ relation and the jump relations.
-2. At each **expansion corner** put a **Prandtl–Meyer fan**. Use $\nu$ and the isentropic relations.
-3. Between corners the flow is **uniform**, so each face carries **one constant pressure**.
+1. At each compression corner (flow turned into itself) put an oblique shock, using the $\theta$–$\beta$–$M$ relation and the jump relations.
+2. At each expansion corner put a Prandtl–Meyer fan, using $\nu$ and the isentropic relations.
+3. Between corners the flow is uniform, so each face carries one constant pressure.
 4. Integrate the pressures for the force and moment.
 
-**Which side gets which wave (L2-5, ll. 15–27).** Draw a straight streamline far above the plate and one far below. Above, the channel between the far streamline and the surface **widens** downstream; a supersonic flow in a widening channel accelerates and its pressure drops, so an expansion fan sits at the upper leading edge. Below, the channel **narrows**, so the flow is compressed through an oblique shock. At the trailing edge the roles swap: the low-pressure upper stream must be compressed back towards $p_1$ (a shock) and the high-pressure lower stream expanded (a fan). The final direction is fixed by the slip line (ll. 24–27). This is the duct analogy of Lecture 2.4 (L2-4, ll. 16–34) applied to a body.
+To see which side gets which wave (L2-5, ll. 15–27), draw a straight streamline far above the plate and one far below. Above, the channel between the far streamline and the surface widens downstream; a supersonic flow in a widening channel accelerates and its pressure drops, so an expansion fan sits at the upper leading edge. Below, the channel narrows, so the flow is compressed through an oblique shock. At the trailing edge the roles swap: the low-pressure upper stream must be compressed back towards $p_1$ (a shock) and the high-pressure lower stream expanded (a fan). The final direction is fixed by the slip line (ll. 24–27). This is the duct analogy of Lecture 2.4 (L2-4, ll. 16–34) applied to a body.
 
-As long as no wave reflected from elsewhere lands back on the body, this is **exact** within inviscid theory, not linearised. It gives the wave drag that subsonic inviscid flow (d'Alembert) cannot.
+As long as no wave reflected from elsewhere lands back on the body, this is exact within inviscid theory, not linearised. It gives the wave drag that subsonic inviscid flow (d'Alembert) cannot.
 
 ### Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m
 
@@ -624,7 +567,7 @@ L'=F_n'\cos\alpha=34.23\ \text{kN/m},
 D'=F_n'\sin\alpha=6.04\ \text{kN/m}.
 $$
 
-**Moment about the leading edge, with its sign (ll. 106–117).** Nose-up is positive. A strip $\mathrm dx$ at distance $x$ from the LE carries a net upward force $\Delta p\,\mathrm dx$, which pitches the nose **down**. So its moment is $-\Delta p\,x\,\mathrm dx$ (*"the force component here has to be $p_{2U}-p_{2L}$, which is negative of $\Delta p$"*, l. 114):
+**Moment about the leading edge (ll. 106–117).** Nose-up is positive. A strip $\mathrm dx$ at distance $x$ from the LE carries a net upward force $\Delta p\,\mathrm dx$, which pitches the nose down. So its moment is $-\Delta p\,x\,\mathrm dx$ (*"the force component here has to be $p_{2U}-p_{2L}$, which is negative of $\Delta p$"*, l. 114):
 
 $$
 M'_{LE}=-\int_0^c\Delta p\,x\,\mathrm dx=-\Delta p\,\frac{c^2}{2}.
@@ -662,10 +605,10 @@ $$
 $L/D=\cot\alpha=5.67$ exactly: an inviscid flat plate's force is normal to it. The lecture rounds these to $C_l\approx0.4$, $C_d\approx0.07$, $C_{m,LE}\approx-0.2$ (l. 137).
 
 > [!warning] "Nose-down, so it's stable"? (L2-5, ll. 138–148)
-> The lecture reads $C_{m,LE}<0$ as *"a kind of stable one… a favourable situation"*. Be careful in an exam. The **sign** of the moment about the leading edge says only that a free plate pitches nose-down, so a tail is needed to **trim** it (the lecture's next point, ll. 146–149). **Static stability** is about the **slope**: $\mathrm dC_{m,cg}/\mathrm d\alpha<0$, which holds when the centre of gravity is ahead of the aerodynamic centre. That is the margin that the ac shift below threatens.
+> The lecture reads $C_{m,LE}<0$ as *"a kind of stable one… a favourable situation"*. Be careful with this in an exam. The sign of the moment about the leading edge only says that a free plate pitches nose-down, so a tail is needed to trim it (the lecture's next point, ll. 146–149). Static stability is about the slope, $\mathrm dC_{m,cg}/\mathrm d\alpha<0$, which holds when the centre of gravity is ahead of the aerodynamic centre. That is the margin that the ac shift below threatens.
 
 > [!question] Lecture Q&A: why is there drag here but none in subsonic thin-aerofoil theory? (L2-5, ll. 149–213)
-> The force on an inviscid flat plate is normal to it, so it always has a downstream component $N\sin\alpha$. In subsonic theory that component is cancelled by **leading-edge suction**. The stagnation point sits on the lower surface, and the flow wraps $180^\circ$ round the sharp edge (ll. 186–192). There $\Delta p\to\infty$ (the $1/\sqrt{x}$ singularity), and *"infinite multiply by zero"* thickness leaves a **finite** forward suction force (ll. 194–206). The result is pure lift, zero drag: d'Alembert's paradox. In supersonic flow the leading edge is where the flow splits cleanly into a shock below and a fan above. Nothing wraps round, so there is no suction and the full $N\sin\alpha$ survives as drag (ll. 208–213). This is **wave drag** (ll. 258–261).
+> The force on an inviscid flat plate is normal to it, so it always has a downstream component $N\sin\alpha$. In subsonic theory that component is cancelled by leading-edge suction. The stagnation point sits on the lower surface, and the flow wraps $180^\circ$ round the sharp edge (ll. 186–192). There $\Delta p\to\infty$ (the $1/\sqrt{x}$ singularity), and *"infinite multiply by zero"* thickness leaves a finite forward suction force (ll. 194–206). The result is pure lift, zero drag: d'Alembert's paradox. In supersonic flow the leading edge is where the flow splits cleanly into a shock below and a fan above. Nothing wraps round, so there is no suction and the full $N\sin\alpha$ survives as drag (ll. 208–213). This is wave drag (ll. 258–261).
 
 **Centre of pressure and aerodynamic centre (L2-5, ll. 215–242).** Move the moment reference from the LE to a point $x$ on the chord.
 
@@ -675,8 +618,7 @@ $$
 C_{m,x}=C_{m,LE}+\frac{x}{c}\,C_l\quad(\text{lecture}).
 $$
 
-- **Centre of pressure:** the point where $C_{m,x}=0$, so $x_{cp}/c=-C_{m,LE}/C_l$.
-- **Aerodynamic centre:** the point where $C_{m,x}$ does not change with $C_l$. Set $\mathrm dC_{m,x}/\mathrm dC_l=0$: $x_{ac}/c=-\mathrm dC_{m,LE}/\mathrm dC_l$.
+The centre of pressure is where $C_{m,x}=0$, so $x_{cp}/c=-C_{m,LE}/C_l$. The aerodynamic centre is where $C_{m,x}$ doesn't change with $C_l$; setting $\mathrm dC_{m,x}/\mathrm dC_l=0$ gives $x_{ac}/c=-\mathrm dC_{m,LE}/\mathrm dC_l$.
 
 For the plate, $C_l=\Delta p\cos\alpha/q_\infty$ gives $\Delta p/q_\infty=C_l/\cos\alpha$ (l. 233). Then:
 
@@ -690,7 +632,7 @@ $$
 
 The slide also sets $x_{ac}/c=1/(2\cos\alpha)$, by treating $C_{m,LE}$ as proportional to $C_l$. It is not quite: the factor $1/(2\cos\alpha)$ itself changes with $\alpha$.
 
-*The exact version.* Moving the reference along the chord is a shift parallel to the chordwise force, so only the **chord-normal** force $F_n'$ changes the moment ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]]):
+*The exact version.* Moving the reference along the chord is a shift parallel to the chordwise force, so only the chord-normal force $F_n'$ changes the moment ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]]):
 
 $$
 C_{m,x}=C_{m,LE}+\frac{x}{c}\,C_n.
@@ -710,7 +652,7 @@ $$
 \frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_n}=\frac12.
 $$
 
-They coincide because $C_{m,LE}$ is **exactly** proportional to $C_n$, with a constant factor: a flat plate has no zero-lift moment.
+They coincide because $C_{m,LE}$ is exactly proportional to $C_n$, with a constant factor: a flat plate has no zero-lift moment.
 
 > [!check] Lift-based vs chord-based, computed (shock-expansion, $M_1=2$)
 > | | $9^\circ$ | $10^\circ$ | $11^\circ$ |
@@ -719,15 +661,15 @@ They coincide because $C_{m,LE}$ is **exactly** proportional to $C_n$, with a co
 > | $C_l$ | 0.3660 | 0.4075 | 0.4494 |
 > | $C_{m,LE}$ | −0.1853 | −0.2069 | −0.2289 |
 >
-> Chord-based: $-C_{m,LE}/C_n=0.5000$ at every angle, and $-\Delta C_m/\Delta C_n=0.5000$. Lift-based: $-C_{m,LE}/C_l=0.5077$ at $10^\circ$, but the central difference $-\Delta C_m/\Delta C_l$ over $9^\circ\to11^\circ$ is **0.523**, not 0.5077. So the lecture's "$x_{ac}=1/(2\cos\alpha)$" is off by a further 3% beyond the $\cos\alpha$ factor. Exam advice: quote the lecture's numbers if asked for them, then add "measured along the chord, both are exactly $c/2$".
+> Chord-based: $-C_{m,LE}/C_n=0.5000$ at every angle, and $-\Delta C_m/\Delta C_n=0.5000$. Lift-based: $-C_{m,LE}/C_l=0.5077$ at $10^\circ$, but the central difference $-\Delta C_m/\Delta C_l$ over $9^\circ\to11^\circ$ is 0.523, not 0.5077. So the lecture's "$x_{ac}=1/(2\cos\alpha)$" is off by a further 3% beyond the $\cos\alpha$ factor. Exam advice: quote the lecture's numbers if asked for them, then add "measured along the chord, both are exactly $c/2$".
 
 > [!important] The ac jumps from c/4 to c/2 (L2-5, ll. 243–257)
-> Subsonic aerofoils have their aerodynamic centre near the **quarter chord**, supersonic ones near **half chord**. A supersonic aircraft is designed with a positive static margin about the half-chord ac. It must still take off and land subsonically, and then the ac moves forward to the quarter chord. *"Can you guarantee that the cg margin is still positive? Maybe not"* (ll. 256–257). The aircraft can be stable in cruise and unstable at landing, or the reverse. This is a key design issue for any transonic or supersonic aircraft. (Extension: Concorde pumped fuel aft for supersonic cruise and forward again for landing, to move the cg with the ac.)
+> Subsonic aerofoils have their aerodynamic centre near the quarter chord, supersonic ones near half chord. A supersonic aircraft is designed with a positive static margin about the half-chord ac. It must still take off and land subsonically, and then the ac moves forward to the quarter chord. *"Can you guarantee that the cg margin is still positive? Maybe not"* (ll. 256–257). The aircraft can be stable in cruise and unstable at landing, or the reverse. This is a key design issue for any transonic or supersonic aircraft. (Extension: Concorde pumped fuel aft for supersonic cruise and forward again for landing, to move the cg with the ac.)
 
 > [!warning] Centre of pressure on slide 16
-> The slide writes $x_{cp}/c=-C_{m,LE}/C_l=1/(2\cos\alpha)=0.5077$. That formula attributes the whole moment to the lift, ignoring the drag's moment arm, so it gives where $L'$ alone would have to act **along the free-stream direction**. Measured along the **chord**, the centre of pressure is exactly mid-chord, $x_{cp}/c=-C_{m,LE}/C_n=0.5$ (derived above), because both surface pressures are uniform (see [[Aerodynamic Centre and Centre of Pressure]]). Quote 0.5 with "along the chord".
+> The slide writes $x_{cp}/c=-C_{m,LE}/C_l=1/(2\cos\alpha)=0.5077$. That formula attributes the whole moment to the lift, ignoring the drag's moment arm, so it gives where $L'$ alone would have to act along the free-stream direction. Measured along the chord, the centre of pressure is exactly mid-chord, $x_{cp}/c=-C_{m,LE}/C_n=0.5$ (derived above), because both surface pressures are uniform (see [[Aerodynamic Centre and Centre of Pressure]]). Quote 0.5 with "along the chord".
 
-**Trailing edge.** The two streams leave at $-\alpha$ with different pressures (16.4 and 51.2 kPa). They must end parallel at a common pressure across a [[Slip Line]], exactly as in §3. The upper flow turns up through a **shock** and the lower flow turns up through a **fan**. Solving for the slip-line angle gives $\delta=0.03^\circ$ and $p_3=30.03$ kPa, essentially the free stream. The leftover is the small entropy difference. These trailing-edge waves **cannot affect the surface pressures**, because nothing travels upstream in supersonic flow.
+**Trailing edge.** The two streams leave at $-\alpha$ with different pressures (16.4 and 51.2 kPa) and have to end up parallel at a common pressure across a [[Slip Line]], as in §3. The upper flow turns up through a shock and the lower flow through a fan. Solving for the slip-line angle gives $\delta=0.03^\circ$ and $p_3=30.03$ kPa, essentially the free stream; what's left over is the small entropy difference. None of this changes the surface pressures, because nothing travels upstream in supersonic flow.
 
 ![[at_flat_plate_coefficients.png|900]]
 
@@ -756,7 +698,7 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 >
 > | Where | Said | Correct |
 > |---|---|---|
-> | L2-3, ll. 115, 120, 125 | "$M_{n2}$ is 2.98" | $M_2=2.98$. The **normal** component is $M_{n2}=0.716$; 2.98 is the full Mach number. |
+> | L2-3, ll. 115, 120, 125 | "$M_{n2}$ is 2.98" | $M_2=2.98$. The normal component is $M_{n2}=0.716$; 2.98 is the full Mach number. |
 > | L2-3, ll. 133–135 | "about 27.08 ish … so $\beta_B$ is 27.5" | $\beta_B=27.51^\circ$ (exact); the 27.08 was a misread. |
 > | L2-3, l. 152 | "$M_{n3}$ is $M_{n3}$ divided by $\sin(\beta_B-\theta)$" | $M_3=M_{n3}/\sin(\beta_B-\theta)$ |
 > | L2-3, l. 154 | "Beta is 10" | $\theta=10^\circ$ |
@@ -793,12 +735,12 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 
 ## 7. Problem-solving workflow
 
-1. **Sketch** every corner and mark whether the flow turns **into** itself (shock) or **away** (fan). Measure each turn from the **local** upstream flow direction.
-2. **Shock:** check $\theta<\theta_{max}(M)$, find the weak $\beta$, take the jumps at $M_n=M\sin\beta$, then $M_{down}=M_{n,down}/\sin(\beta-\theta)$.
-3. **Fan:** $\nu_{down}=\nu_{up}+\theta$, then $M_{down}$, then isentropic ratios with $p_0$ unchanged.
-4. **Wall reflection:** the same $\theta$ again from the new $M$. If $\theta>\theta_{max}$, expect a Mach reflection.
-5. **Interaction or trailing edge:** guess the slip-line angle, iterate until the pressures match, and expect jumps in $T$ and $M$ across it.
-6. **Forces:** $p\times$ face length, normal to each face, then resolve into $L$ and $D$. Take moments about the leading edge with the force at each face's midpoint. $D=N\sin\alpha$ holds **only** for a flat plate; on a thick section the faces also push along the chord (see [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Forces: the chordwise term the shortcut misses|Tutorial 1]]).
+1. Sketch every corner and mark whether the flow turns into itself (shock) or away (fan), measuring each turn from the local upstream flow direction.
+2. At a shock, check $\theta<\theta_{max}(M)$, find the weak $\beta$, take the jumps at $M_n=M\sin\beta$, then $M_{down}=M_{n,down}/\sin(\beta-\theta)$.
+3. At a fan, $\nu_{down}=\nu_{up}+\theta$ gives $M_{down}$, and the isentropic ratios with $p_0$ unchanged give the rest.
+4. At a wall reflection, apply the same $\theta$ again from the new $M$. If $\theta>\theta_{max}$, expect a Mach reflection.
+5. At an interaction or a trailing edge, guess the slip-line angle and iterate until the pressures match. Expect $T$ and $M$ to jump across it.
+6. For forces, take $p\times$ face length normal to each face, then resolve into $L$ and $D$, with moments about the leading edge using each face's midpoint. $D=N\sin\alpha$ only holds for a flat plate; on a thick section the faces also push along the chord (see [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Forces: the chordwise term the shortcut misses|Tutorial 1]]).
 
 ## Links
 
@@ -808,9 +750,7 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 - Worked sheet: [[SESA3029 Example Sheet 1 - Solutions]] (Q3, Q4, Q6, Q7)
 - Tutorial: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing]] (ES1 Q3 and a triangular wing, Fri 9 Oct)
 - Formulae: [[SESA3029 Formula Sheet]]
-- **Builds on / connects to** (cross-module):
-  - [[SESA3043 2.2 - Lumped Vortex Method#1. Thin-aerofoil review (slides 25–27; revision 2.2 Q1)|SESA3043 2.2 §1]]: the subsonic flat plate has $C_l=2\pi\alpha=1.097$ at $\alpha=10^\circ$, no drag and its aerodynamic centre at $c/4$. The supersonic plate of §6 at $M_1=2$ gives $C_l=0.4075$, wave drag $C_d=0.0719$ and a centre of pressure near $c/2$.
-  - [[SESA3043 2.1 - Complex Functions and Conformal Mapping|SESA3043 2.1]] / [[SESA3043 2.2 - Lumped Vortex Method|2.2]] compute the low-speed loads that the shock-expansion method replaces at $M>1$.
+- Other modules: [[SESA3043 2.1 - Complex Functions and Conformal Mapping|SESA3043 2.1]] and [[SESA3043 2.2 - Lumped Vortex Method|2.2]] compute the low-speed loads that the shock-expansion method replaces at $M>1$. The subsonic flat plate in [[SESA3043 2.2 - Lumped Vortex Method#1. Thin-aerofoil review (slides 25–27; revision 2.2 Q1)|SESA3043 2.2 §1]] has $C_l=2\pi\alpha=1.097$ at $\alpha=10^\circ$, no drag and its aerodynamic centre at $c/4$; the supersonic plate of §6 at $M_1=2$ gives $C_l=0.4075$, wave drag $C_d=0.0719$ and a centre of pressure near $c/2$.
 
 ## Sources
 
@@ -823,47 +763,24 @@ Each face's pressure acts normal to that face, so thickness gives drag even at z
 
 ## Self-study tasks
 
-> [!todo] How to use this list
-> Tasks marked **Lecturer-set** cite the transcript line where they were set. **Slide-set** tasks are printed on the slides. The rest are *suggested, not lecturer-set*. Lecture 2.5 line references are to last year's recording (`L2-5`). Attempt each one closed-book, then check against the linked section.
+Each task cites where it was set: a transcript line, or the slide for slide-set tasks. Anything else is marked as suggested, not lecturer-set. Lecture 2.5 line references are to last year's recording (`L2-5`). Try each one closed-book, then check against the linked section.
 
 ### Core
 
-- [ ] **Lecturer-set (L2-3, ll. 74–76):** solve the θ–β–M equation numerically for $M_1=3.6$, $\theta=10^\circ$ and *"confirm that"* $\beta_A=23.9^\circ$. → [[#Worked example (slides 2–4): M₁ = 3.6, θ = 10°, p₁ = 40 kPa|§1]]
-- [ ] **Lecturer-set, past exam question (L2-3, ll. 317–319, 388–390):** the double shock interaction, $M_1=3$, walls $18^\circ$ and $12^\circ$. Find the slip-line angle by two guesses and interpolation: $\Delta\theta=5.83^\circ$ (lecture: 5.85°). → [[#3. Shock–shock interaction and slip lines|§3]]
-- [ ] **Lecturer-set (L2-5, l. 57):** *"I strongly recommend you to do these calculation[s] yourself"*: the flat plate at $M_1=2$, $\alpha=10^\circ$, upper and lower surfaces, by table interpolation. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
-- [ ] **Slide-set (2.3, slide 9, "show it"):** $s_2-s_1$ depends only on $M_{n1}$, and $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$. The lecture plotted it and drew the conclusions (L2-3, ll. 396–435). → [[#4. Entropy across a shock and why shocks compress|§4]]
-- [ ] *(Suggested; derived in full in L2-4, ll. 71–232)* Derive $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ from tangential momentum across a Mach wave, then convert to $\mathrm dM$. → [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
+- [ ] Solve the θ–β–M equation numerically for $M_1=3.6$, $\theta=10^\circ$ and *"confirm that"* $\beta_A=23.9^\circ$ (L2-3, ll. 74–76). → [[#Worked example (slides 2–4): M₁ = 3.6, θ = 10°, p₁ = 40 kPa|§1]]
+- [ ] Last year's exam question (L2-3, ll. 317–319, 388–390): the double shock interaction at $M_1=3$ with $18^\circ$ and $12^\circ$ walls. Find the slip-line angle by two guesses and interpolation: $\Delta\theta=5.83^\circ$ (lecture: 5.85°). → [[#3. Shock–shock interaction and slip lines|§3]]
+- [ ] *"I strongly recommend you to do these calculation[s] yourself"* (L2-5, l. 57): the flat plate at $M_1=2$, $\alpha=10^\circ$, both surfaces, by table interpolation. Target $C_l=0.4075$, $C_d=0.0719$, $C_{m,LE}=-0.2069$. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
+- [ ] Slide 9 of 2.3, "show it": $s_2-s_1$ depends only on $M_{n1}$, and $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$ (L2-3, ll. 396–435). → [[#4. Entropy across a shock and why shocks compress|§4]]
+- [ ] Derive $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ from tangential momentum across a Mach wave and convert it to $\mathrm dM$ (derived in full in L2-4, ll. 71–232). → [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
 
 ### Further practice
 
-#### Lecturer-set
-
-- [ ] **Lecturer-set (L2-3, ll. 182–184):** *"if you haven't done proper revision, then probably it's a good time to do that, to catch up"*. Work through [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes|W01]] and [[SESA3029 W02 - Oblique Shock Relations and Mach Waves|W02]].
-- [ ] **Lecturer-set (L2-4, ll. 307–310):** *"If you go through a few example questions then you will be familiar with this process"*: practise $\nu(M_2)=\nu(M_1)+\theta$ with the IFT. → [[#Using it (slides 7–8)|§5]] and [[SESA3029 Example Sheet 1 - Solutions]]
-- [ ] **Lecturer-set, Tutorial 1 weekend homework (ll. 232–235):** the triangular wing at a second $\alpha$, and $x_{ac}\approx c/2$. → [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre (ll. 228–235)|Tutorial 1]]
-- [ ] **Blackboard Test 1, due Sun 11 Oct, 23:59** (L2-4, ll. 1–3). It covers Week 1 material; expansion waves are not in it (*"the test is always looking backwards a bit"*, ll. 457–459). Own worked solutions: [[SESA3029 Test 1 - Solutions]].
-
-#### Derivations
-
-- [ ] *(Suggested)* Show that $(s_2-s_1)/c_v\approx\tfrac{2\gamma(\gamma-1)}{3(\gamma+1)^2}(M_{n1}^2-1)^3$, and hence that expansion shocks are impossible. → [[#4. Entropy across a shock and why shocks compress|§4]]
-- [ ] *(Suggested)* Integrate to the closed-form $\nu(M)$ using $t=\sqrt{M^2-1}$ and partial fractions, and show $\nu_{max}=130.45^\circ$. → [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
-- [ ] Show $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up sign convention, and derive the lecture's $x_{cp}/c=1/(2\cos\alpha)$ (L2-5, ll. 106–117, 215–242); then derive $C_{m,x}=C_{m,LE}+(x/c)C_n$ and show $x_{cp}=x_{ac}=c/2$ exactly along the chord, and why $-\mathrm dC_{m,LE}/\mathrm dC_l\neq1/(2\cos\alpha)$. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
-
-#### Calculations
-
-- [ ] Regular reflection, $M_1=3.6$, $\theta=10^\circ$: $p_3=189.6$ kPa, $\phi=17.5^\circ$. → [[#Worked example (slides 2–4): M₁ = 3.6, θ = 10°, p₁ = 40 kPa|§1]]
-- [ ] Shock–shock interaction: $\Delta\theta=5.83^\circ$ (slide: 5.85°). → [[#3. Shock–shock interaction and slip lines|§3]]
-- [ ] Expansion fan, $M_1=3$, $\theta=13^\circ$: $M_2=3.78$, 67.4% pressure drop, $\phi=17.1^\circ$. → [[#Worked example (slides 9–11): M₁ = 3, θ = 13°|§5]]
-- [ ] Flat plate: $C_l=0.4075$, $C_d=0.0719$, $C_{m,LE}=-0.2069$ (L2-5, ll. 131–137). Find $\beta$ by two trial angles and interpolation (ll. 68–74). → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
-- [ ] Example Sheet 1 Q3 (reflection), Q4 (flat plate), Q6–Q7 (diamond). → [[SESA3029 Example Sheet 1 - Solutions]]
-
-#### Concepts
-
-- [ ] Explain why reflection is not specular, and when it becomes a Mach reflection. → [[#2. Mach reflection|§2]]
-- [ ] State the two conditions across a slip line and list what may jump. → [[#3. Shock–shock interaction and slip lines|§3]]
-- [ ] Explain why convex corners give fans and concave corners give shocks, using the diverging/converging duct analogy (L2-4, ll. 16–34). → [[#Physical picture (Lecture 2.4, slides 1–2)|§5]]
-- [ ] Explain why a "shock" with $M_{n1}<1$ or with a pressure drop is impossible (L2-3, ll. 416–435). → [[#4. Entropy across a shock and why shocks compress|§4]]
-- [ ] Explain, with streamlines, why the upper leading edge gets a fan and the lower a shock, and what happens at the trailing edge (L2-5, ll. 15–27). → [[#The rule (Lecture 2.5, slides 2–6)|§6]]
-- [ ] Explain why a subsonic inviscid flat plate has zero drag (leading-edge suction) but a supersonic one has wave drag (L2-5, ll. 149–213). → [[#6. The shock-expansion method|§6]]
-- [ ] Explain why the ac moves from $c/4$ to $c/2$ and why that matters for static margin (L2-5, ll. 243–257). → [[#6. The shock-expansion method|§6]]
-- [ ] Distinguish the **sign** of $C_{m,LE}$ (trim) from the **slope** $\mathrm dC_m/\mathrm d\alpha$ (stability) (L2-5, ll. 138–148). → [[#6. The shock-expansion method|§6]]
+- [ ] *"If you haven't done proper revision, then probably it's a good time to do that, to catch up"* (L2-3, ll. 182–184): work back through [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes|W01]] and [[SESA3029 W02 - Oblique Shock Relations and Mach Waves|W02]].
+- [ ] *"If you go through a few example questions then you will be familiar with this process"* (L2-4, ll. 307–310): practise $\nu(M_2)=\nu(M_1)+\theta$ with the IFT, including the $M_1=3$, $\theta=13^\circ$ fan ($M_2=3.78$, 67.4% drop, $\phi=17.1^\circ$). → [[#Using it (slides 7–8)|§5]] · [[#Worked example (slides 9–11): M₁ = 3, θ = 13°|§5 example]]
+- [ ] Tutorial 1 weekend homework (ll. 232–235): the triangular wing at a second $\alpha$, and $x_{ac}\approx c/2$. → [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre (ll. 228–235)|Tutorial 1]]
+- [ ] Example Sheet 1 Q3 (reflection), Q4 (flat plate) and Q6–Q7 (diamond). → [[SESA3029 Example Sheet 1 - Solutions]]
+- [ ] Show $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up sign convention and derive the lecture's $x_{cp}/c=1/(2\cos\alpha)$ (L2-5, ll. 106–117, 215–242). Then show that along the chord $x_{cp}=x_{ac}=c/2$ exactly. → [[#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|§6]]
+- [ ] Explain why a supersonic inviscid flat plate has wave drag when a subsonic one has none (L2-5, ll. 149–213), why the ac moves from $c/4$ to $c/2$ and why that matters for static margin (ll. 243–257), and the difference between the sign of $C_{m,LE}$ and the slope $\mathrm dC_m/\mathrm d\alpha$ (ll. 138–148). → [[#6. The shock-expansion method|§6]]
+- [ ] Explain why a "shock" with $M_{n1}<1$ or with a pressure drop is impossible (L2-3, ll. 416–435), and why convex corners give fans and concave corners shocks (L2-4, ll. 16–34). → [[#4. Entropy across a shock and why shocks compress|§4]] · [[#Physical picture (Lecture 2.4, slides 1–2)|§5]]
+- [ ] Suggested, not lecturer-set: derive the cubic entropy estimate and the closed-form $\nu(M)$, including $\nu_{max}=130.45^\circ$. → [[#4. Entropy across a shock and why shocks compress|§4]] · [[#Deriving the Prandtl–Meyer function (slides 3–6)|§5]]
+- [ ] Blackboard Test 1, due Sunday 11 October, 23:59 (L2-4, ll. 1–3). It covers Week 1; expansion waves are not in it (*"the test is always looking backwards a bit"*, ll. 457–459). → [[SESA3029 Test 1 - Solutions]]

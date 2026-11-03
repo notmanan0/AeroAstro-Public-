@@ -1033,8 +1033,7 @@ $$
 
 ## Self-study tasks
 
-> [!todo] All suggested, not lecturer-set
-> These are self-set practice tasks for this mock; none was set in a lecture. Each links to its worked solution.
+These are self-set practice tasks for this mock; none was set in a lecture. Each links to its worked solution.
 
 - [ ] Sit Q1, Q4 and Q5 under exam conditions (about 95 min), then mark against the solutions. → [[#Q1. Normal shock and Pitot probe on a supersonic aircraft]] · [[#Q4. Diamond aerofoil by shock-expansion theory]] · [[#Q5. Laval nozzle at design and off-design back pressures]]
 - [ ] Redo Q2 (a) and Q3 using the OSC by eye and the NST, and see how far the table answers drift from the exact ones. → [[#Q2. Oblique shock on a supersonic intake ramp]] · [[#Q3. Regular reflection of a ramp shock from a wall]]

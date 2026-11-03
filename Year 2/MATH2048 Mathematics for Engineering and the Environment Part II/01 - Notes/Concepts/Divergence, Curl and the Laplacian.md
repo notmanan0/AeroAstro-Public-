@@ -8,41 +8,20 @@ tags: [math2048, concept, vector-calculus]
 status: complete
 parent_lectures: ["[[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities]]"]
 related_concepts: ["[[Gradient and Directional Derivative]]", "[[Divergence Theorem]]", "[[Stokes' Theorem]]", "[[Laplace's Equation]]"]
-sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture24_vector04.pdf", "02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture25_vector05.pdf"]
+sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture24_vector04.pdf", "02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture25_vector05.pdf", "02 - Sources/Lectures/MATH2048 Lecture 24.txt", "02 - Sources/Lectures/MATH2048 Lecture 25.txt"]
 ---
 
 # Divergence, Curl and the Laplacian
 
-## Definition
+The **divergence** $\nabla\cdot\mathbf F=\partial_xF_1+\partial_yF_2+\partial_zF_3$ turns a vector field into a scalar field, the **curl** $\nabla\times\mathbf F$, the determinant with rows $(\mathbf i,\mathbf j,\mathbf k)$, $(\partial_x,\partial_y,\partial_z)$ and $(F_1,F_2,F_3)$, turns it into another vector field, and the **Laplacian** $\nabla^2f=\nabla\cdot\nabla f=f_{xx}+f_{yy}+f_{zz}$ is a second derivative.
 
-> [!note] Definition
->
-> $$\nabla\cdot\mathbf F=\partial_xF_1+\partial_yF_2+\partial_zF_3,\qquad \nabla\times\mathbf F=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\partial_x&\partial_y&\partial_z\\F_1&F_2&F_3\end{vmatrix},\qquad \nabla^2\phi=\nabla\cdot\nabla\phi .$$
+MATH2048 builds the first two from the gradient by requiring linearity and the product rule $\nabla\cdot(f\mathbf c)=\nabla f\cdot\mathbf c$ or $\nabla\times(f\mathbf c)=\nabla f\times\mathbf c$ for constant vectors; the constant Cartesian basis then forces the formulas. The divergence measures expansion: positive at a source, negative at a sink, and by the continuity equation $\frac{D\rho}{Dt}=-\rho\nabla\cdot\mathbf v$ it is the rate at which a fluid element's volume grows. A field with zero divergence is solenoidal, which does not make it constant, for example $y^2z\,\mathbf i+xz\,\mathbf j-y^2\,\mathbf k$. The curl measures local rotation; for a velocity field it is the vorticity, and a shear flow such as $y\,\mathbf i$ has curl even though its streamlines are straight.
 
-## Explanation
-- **Divergence** measures net outflow per unit volume, i.e. sources and sinks. By Gauss's theorem it is the flux through a small closed surface divided by its volume. A field with $\nabla\cdot\mathbf F=0$ is **solenoidal** (incompressible).
-- **Curl** measures local rotation, and equals twice the angular velocity of a small paddle wheel. By Stokes's theorem, $\hat{\mathbf n}\cdot(\nabla\times\mathbf F)$ is the circulation per unit area. A field with $\nabla\times\mathbf F=\mathbf 0$ is **irrotational**, and in a simply connected region it is conservative.
-- **Middle component of the curl**: $(\nabla\times\mathbf F)_y=\partial_zF_1-\partial_xF_3$.
-- **Always zero** (for $C^2$ fields): $\nabla\times\nabla\phi=\mathbf 0$ and $\nabla\cdot(\nabla\times\mathbf F)=0$. Both follow because mixed partial derivatives commute.
-
-**Identities**:
-- $\nabla\cdot(\phi\mathbf F)=\nabla\phi\cdot\mathbf F+\phi\nabla\cdot\mathbf F$
-- $\nabla\times(\phi\mathbf F)=\nabla\phi\times\mathbf F+\phi\nabla\times\mathbf F$
-- $\nabla\cdot(\mathbf F\times\mathbf G)=\mathbf G\cdot\nabla\times\mathbf F-\mathbf F\cdot\nabla\times\mathbf G$
-- $\nabla\times(\nabla\times\mathbf F)=\nabla(\nabla\cdot\mathbf F)-\nabla^2\mathbf F$
-
-**Standard results**:
-- $\nabla\cdot\mathbf r=3$ and $\nabla\times\mathbf r=\mathbf 0$.
-- $\nabla\cdot(-y,x,0)=0$ and $\nabla\times(-y,x,0)=2\mathbf k$.
-
-## Examples
-- $\nabla^2(e^xy^3\sin z)=6e^xy\sin z$.
-- $\nabla\times\nabla\times(x^2,\,xy,\,xz)=2\mathbf i$ (PS9 Q5c).
+Because mixed partial derivatives commute, $\nabla\times\nabla f=\mathbf 0$ and $\nabla\cdot(\nabla\times\mathbf F)=0$; the first is the test for [[Conservative Vector Fields]]. Other identities on the formula sheet include $\nabla\times(\nabla\times\mathbf F)=\nabla(\nabla\cdot\mathbf F)-\nabla^2\mathbf F$, where the Laplacian of a vector field acts on each component. The Laplacian appears in the wave, heat and Laplace equations and as the viscous term of Navier–Stokes.
 
 ![[m2048_vc_div_curl_fields.png|640]]
 
 ## Related
-- [[Gradient and Directional Derivative]] · [[Divergence Theorem]] · [[Stokes' Theorem]] · [[Laplace's Equation]] · SESA2022 vorticity and [[Streamfunction and Velocity Potential]]
 
-## Sources
-- Lectures 24–25; PS9
+- Derivation: [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities]]
+- [[Gradient and Directional Derivative]] · [[Divergence Theorem]] · [[Stokes' Theorem]] · [[Laplace's Equation]]

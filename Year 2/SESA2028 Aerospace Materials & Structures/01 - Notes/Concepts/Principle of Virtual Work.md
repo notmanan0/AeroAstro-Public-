@@ -3,7 +3,7 @@ title: "Principle of Virtual Work"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, virtual-work]
-status: complete
+status: lectured
 ---
 
 # Principle of Virtual Work
@@ -20,7 +20,8 @@ Uppercase quantities belong to the real system; lowercase quantities belong to t
 
 The most common failure is not calculus but bookkeeping. Split the integral at every discontinuity in load, internal force, stiffness, member direction or support condition.
 
-![Real and virtual moment fields](../Figures/structures_virtual_work_moment_fields.png)
+![[structures_virtual_work_moment_fields.png|700]]
 
-See [[SESA2028 S8 - Virtual Work and Castigliano Theorems]].
+## Related
 
+- Topic: [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]

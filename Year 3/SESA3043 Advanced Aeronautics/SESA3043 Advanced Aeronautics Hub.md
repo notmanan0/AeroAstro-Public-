@@ -11,23 +11,13 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22–23 Oct 
 # SESA3043 Advanced Aeronautics Hub
 
 > [!abstract] Module at a glance
-> **Conservation laws and governing equations** → **potential flow** (superposition, complex potential, conformal mapping) → **lumped-vortex and panel methods** → **viscous boundary layers** → **rotor aerodynamics** → **environmental impact**.
+> Conservation laws and governing equations → potential flow (superposition, complex potential, conformal mapping) → lumped-vortex and panel methods → viscous boundary layers → rotor aerodynamics → environmental impact.
 >
-> Vault coverage: **all of Chapters 1–3**. **Chapter 1 is fully lectured**: CH1-4 (boundary layers) was given on Fri 2 Oct, followed by the Chapter 1 tutorial.
+> Chapters 1 and 2 are fully lectured and written up with transcript line references (Chapter 2 by Dr Zhiwei Hu). Chapter 3 (Dr Dea Wangsawijaya) was written ahead from the slides and Blackboard notes; 3.1 and 3.2 up to slide 99 have now been lectured (22–23 Oct) and updated, while the CH3-2 worked problem and CH3-3 to CH3-6 are still to come.
 >
-> **Chapter 2 is complete** (Dr Zhiwei Hu), and every note is backfilled with line references:
-> - Thu 8 Oct and Fri 9 Oct (first half): all of conformal mapping, §2.1, plus a Blackboard demo recording.
-> - Fri 9 Oct (second half): the lumped vortex method up to the tandem example, §2.2.
-> - **Thu 15 Oct:** ground effect by mirror images, racing-car front wings, and the camber extension (§2.2).
-> - **Fri 16 Oct:** the camber example finished, $C_L=2\pi(\alpha+0.12)$; then the whole panel method, both lectures (§2.3).
-> - **The coursework code** (`dpan`, `ktreff`) was posted on 16 Oct and is tested in [[SESA3043 2.3 - Panel Methods#10. The Blackboard coursework code (dpan and ktreff)|2.3 §10]]. The Python `dpan.py` **crashes on NumPy 2**, and `ktreff.py` gives a bad point count for some $n$. Fixed copies are in `04 - Labs & Coursework/Panel Method Coursework/`.
+> The coursework code (`dpan`, `ktreff`) was posted on 16 October and is tested in [[SESA3043 2.3 - Panel Methods#10. The Blackboard coursework code (dpan and ktreff)|2.3 §10]]. The Python `dpan.py` crashes on NumPy 2 and `ktreff.py` gives a bad point count for some $n$; fixed copies are in `04 - Labs & Coursework/Panel Method Coursework/`.
 >
-> **Chapter 3 has started** (Dr Dea Wangsawijaya). All of it was written ahead from the slides and Blackboard notes, including the MIE handout. 3.1 and most of 3.2 are now backfilled with line references:
-> - **Thu 22 Oct** (`22 October 2026 at 13_51_55.txt`, **BL1**): all of CH3-1, i.e. $\delta_{99}$, $\delta^*$, $\theta$ by control volume, $H$, $C_f$ and $\mathrm d\theta/\mathrm dx=C_f/2$ (§3.1). The last ten minutes started CH3-2: the reduced equations and similarity.
-> - **Fri 23 Oct, double** (`23 October 2026 at 14_53_16.txt`, **BL2**): Blasius in full (variables, equation, shooting, integrals A and B, $\delta^*$, $\theta$, $H$, $C_f$); then Falkner–Skan up to the bump picture and the effective body, **slide 99** (§3.2).
-> - **Not yet lectured:** the CH3-2 worked problem (slides 100–106) and CH3-3 to CH3-6. They stay written ahead.
->
-> **Next:** reading week (w/c 26 Oct, no lectures). The worked-problem session for Blasius and Falkner–Skan is *"in two weeks"* (BL2, ll. 680–683). Quick reference: [[SESA3043 Formula Sheet]].
+> Reading week is w/c 26 October. The Blasius and Falkner–Skan worked-problem session is *"in two weeks"* (BL2, ll. 680–683). Quick reference: [[SESA3043 Formula Sheet]].
 
 ## Current coverage
 
@@ -122,7 +112,7 @@ The Week 1 lecture states:
 
 **Tutorial format** (L5, ll. 507–510): the second Friday lecture at the end of each chapter (five chapters) is a tutorial; work through the revision questions while the chapter is being taught and bring the ones you cannot do. For Chapter 2 the tutorial is being **pushed back** at the class's request, to allow time on the revision questions. Their solutions are withheld until then (9 Oct LVM lecture, ll. 436–444).
 
-**Chapter 3 (BL2, 23 Oct):** no lectures next week (reading week; ll. 359–361). The **worked-problem session** for Blasius and Falkner–Skan is *"in two weeks"*: *"go through the lecture notes, let it marinate"* first (ll. 680–683). In BL1 the lecture also ran ahead to leave time for tutorials (ll. 295–297). The **mid-module survey** QR code was put up at the break (BL2, ll. 355–357).
+**Chapter 3 (BL2, 23 Oct):** no lectures next week (reading week; ll. 359–361). The **worked-problem session** for Blasius and Falkner–Skan is *"in two weeks"*: *"go through the lecture notes, let it marinate"* first (ll. 680–683). In BL1 the lecture also ran ahead to leave time for tutorials (ll. 297–298). The **mid-module survey** QR code was put up at the break (BL2, ll. 355–357).
 
 **Other dates:** study-abroad information session **28 Oct, 10:00–12:30, Building 7 room 309** (L5, ll. 24–25; international placement year and summer schools).
 
@@ -163,7 +153,7 @@ Check Blackboard for authoritative dates and later changes.
 
 **Chapter 3**
 
-- define $\delta_{99}$, $\delta^*$, $\theta$, $H$, $C_f$ with their mathematical **and** physical meanings, and derive $D=\rho U_e^2\theta$ and $\mathrm d\theta/\mathrm dx=C_f/2$ by control volume. The lecture's memory aid: $\delta^*$ → effective body, $\theta$ → drag (BL1, ll. 230–233). $\mathrm d\theta/\mathrm dx=C_f/2$ holds for a flat plate only (ll. 284–288);
+- define $\delta_{99}$, $\delta^*$, $\theta$, $H$, $C_f$ with their mathematical **and** physical meanings, and derive $D=\rho U_e^2\theta$ and $\mathrm d\theta/\mathrm dx=C_f/2$ by control volume. The lecture's memory aid: $\delta^*$ → effective body, $\theta$ → drag (BL1, ll. 230–233). $\mathrm d\theta/\mathrm dx=C_f/2$ holds for a flat plate only (ll. 285–289);
 - explain from normalised profiles why a turbulent layer is fuller and has more friction drag (BL1, ll. 82–88);
 - evaluate them for an assumed profile (linear, Pohlhausen);
 - derive the Blasius and Falkner–Skan equations from the stream-function BL equation; explain similarity and the guess-and-shooting method. Understand the route rather than memorising it (BL2, ll. 210–211): two PDEs → $\psi$ → one PDE → similarity variables → one nonlinear ODE;

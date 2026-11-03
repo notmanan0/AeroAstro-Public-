@@ -3,7 +3,7 @@ title: "First Moment of Area"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, shear-flow]
-status: complete
+status: lectured
 ---
 
 # First Moment of Area
@@ -18,5 +18,7 @@ In thin walls $dA=t\,ds$. The important word is *accumulated*: begin at a free e
 
 At the end of a complete open contour, the centroidal first moments return to zero, so $q$ returns to zero at the second free edge.
 
-See [[Shear Flow]].
+## Related
 
+- Topic: [[SESA2028 S3 - Shear Flow and Shear Centre|S3]]
+- Concepts: [[Shear Flow]]

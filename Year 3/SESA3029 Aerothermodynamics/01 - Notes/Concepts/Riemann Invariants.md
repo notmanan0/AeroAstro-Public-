@@ -13,41 +13,36 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 
 # Riemann Invariants
 
-## Definition
+In SESA3029's convention the Riemann invariants are
 
-> [!note] Definition (SESA3029 convention)
-> $$R^+=\nu-\theta\quad\text{is constant along a }C^+\text{ characteristic},\qquad R^-=\nu+\theta\quad\text{is constant along a }C^-\text{ characteristic}.$$
->
-> $\nu$ is the [[Prandtl-Meyer Function|Prandtl–Meyer angle]] and $\theta$ the flow inclination to the $x$-axis. These two statements are the **compatibility conditions**.
+$$R^+=\nu-\theta\quad\text{constant along a }C^+\text{ characteristic},\qquad R^-=\nu+\theta\quad\text{constant along a }C^-\text{ characteristic},$$
 
-## Explanation
+where $\nu$ is the [[Prandtl-Meyer Function|Prandtl–Meyer angle]] and $\theta$ is the flow inclination to the $x$-axis. The two statements together are the **compatibility conditions**.
 
-**Derivation, in outline** (full version in [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]):
+## Where they come from
 
-1. Mass, $l$-momentum, homentropy and zero vorticity on a streamtube give two PDEs in $\nu$ and $\theta$:
-   $$\partial\nu/\partial l-\tan\mu\,\partial\theta/\partial n=0,\qquad\partial\theta/\partial l-\tan\mu\,\partial\nu/\partial n=0.$$
-2. Subtracting and adding them gives $\partial(\nu\mp\theta)/\partial l\pm\tan\mu\,\partial(\nu\mp\theta)/\partial n=0$.
-3. The bracket is the rate of change along a line at $\pm\mu$ to the flow, i.e. along a Mach line.
+The full derivation is in [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]. Applying mass, $l$-momentum, homentropy and zero vorticity to a streamtube gives two PDEs in $\nu$ and $\theta$:
 
-The same result comes from diagonalising the $2\times2$ system: $\hat R=\underline E^{-1}[\nu,\theta]^T=[\nu-\theta,\ \nu+\theta]^T$.
+$$\partial\nu/\partial l-\tan\mu\,\partial\theta/\partial n=0,\qquad\partial\theta/\partial l-\tan\mu\,\partial\nu/\partial n=0.$$
 
-**Using them.** Two crossing lines give the state at the crossing:
+Subtracting and adding them gives $\partial(\nu\mp\theta)/\partial l\pm\tan\mu\,\partial(\nu\mp\theta)/\partial n=0$. The left-hand side is the rate of change along a line at $\pm\mu$ to the flow, which is a Mach line, so $\nu\mp\theta$ does not change along it. Diagonalising the $2\times2$ system gives the same thing: $\hat R=\underline E^{-1}[\nu,\theta]^T=[\nu-\theta,\ \nu+\theta]^T$.
+
+> [!warning] No factor of a half in the definitions (L3-3, ll. 28–31)
+> The recording once says *"R plus is nu minus theta over 2"*. The invariants are $R^\pm=\nu\mp\theta$; the $\tfrac12$ only appears when you solve back for $\nu$ and $\theta$. Elsewhere (L3-1, ll. 338–343) it says *"mu minus theta is preserved"*, which should be nu minus theta.
+
+## Using them
+
+Where two characteristics cross, their invariants fix the state:
 
 $$
 \nu=\tfrac12(R^++R^-),\qquad\theta=\tfrac12(R^--R^+).
 $$
 
-More generally, the four numbers $R^+$, $R^-$, $\nu$ and $\theta$ are linked by two equations, so **any two fix the other two** (L3-3, ll. 32–36). At a wall, one invariant comes in along its line and the wall gives $\theta$. On the centreline, $\theta=0$.
+More generally, $R^+$, $R^-$, $\nu$ and $\theta$ are linked by two equations, so any two of them fix the other two (L3-3, ll. 32–36). At a wall, one invariant arrives along its line and the wall supplies $\theta$. On the centreline, $\theta=0$.
 
-> [!warning] No factor of a half in the definitions (L3-3, ll. 28–31)
-> The recording once says *"R plus is nu minus theta over 2"*. The invariants are $R^\pm=\nu\mp\theta$. The $\tfrac12$ appears only when you solve back for $\nu$ and $\theta$.
+Where one invariant is the same everywhere, for example $R^+$ throughout a Prandtl–Meyer fan fed by uniform flow, the region is a **simple flow region** (L3.3 slides 8 and 10; textbooks say simple-wave region). Then $\nu-\theta=\nu_1$, which is just $\nu_2=\nu_1+\theta$ from W03.
 
-**Other notation.** Anderson uses $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$. The physics is identical; pick one and stay consistent. The SESA3029 signs follow Liepmann & Roshko.
-
-**Simple flow regions.** Where one invariant is the same everywhere, for example $R^+$ through a Prandtl–Meyer fan fed by uniform flow, the region is a **simple flow region** (L3.3 slides 8 and 10; textbooks say *simple-wave region*). Then $\nu-\theta=\nu_1$ reproduces $\nu_2=\nu_1+\theta$ from W03.
-
-> [!warning] Transcript slip (L3-1, ll. 338–343)
-> The recording says *"mu minus theta is preserved"*. It is **nu** minus theta.
+Anderson uses $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$. The physics is the same; the SESA3029 signs follow Liepmann & Roshko. Pick one and stick to it.
 
 ![[at_moc_characteristic_geometry.png|760]]
 

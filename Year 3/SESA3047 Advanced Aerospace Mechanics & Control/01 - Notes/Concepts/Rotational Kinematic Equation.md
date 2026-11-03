@@ -13,24 +13,13 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/SESA3047
 
 # Rotational Kinematic Equation
 
-## Statement
+The rotational kinematic equation links the rates of the 3-2-1 (yaw–pitch–roll) Euler angles $\boldsymbol\Phi=[\phi,\theta,\psi]^T$ to the body rates $\boldsymbol\omega^{FRD}_{b/r}=[p,q,r]^T$:
 
-> [!note] Definition
-> For the 3-2-1 (yaw–pitch–roll) Euler angles $\boldsymbol\Phi=[\phi,\theta,\psi]^T$ and body rates $\boldsymbol\omega^{FRD}_{b/r}=[p,q,r]^T$:
->
-> $$\boldsymbol\omega^{FRD}_{b/r}=\mathbf E(\boldsymbol\Phi)\dot{\boldsymbol\Phi},\qquad\mathbf E=\begin{bmatrix}1&0&-s_\theta\\0&c_\phi&s_\phi c_\theta\\0&-s_\phi&c_\phi c_\theta\end{bmatrix}\quad(3.8\text{–}3.9)$$
->
-> $$\dot{\boldsymbol\Phi}=\mathbf H(\boldsymbol\Phi)\,\boldsymbol\omega^{FRD}_{b/r},\qquad\mathbf H=\mathbf E^{-1}=\begin{bmatrix}1&s_\phi t_\theta&c_\phi t_\theta\\0&c_\phi&-s_\phi\\0&s_\phi/c_\theta&c_\phi/c_\theta\end{bmatrix}\quad(3.10\text{–}3.11)$$
+$$\boldsymbol\omega^{FRD}_{b/r}=\mathbf E(\boldsymbol\Phi)\dot{\boldsymbol\Phi},\qquad\mathbf E=\begin{bmatrix}1&0&-s_\theta\\0&c_\phi&s_\phi c_\theta\\0&-s_\phi&c_\phi c_\theta\end{bmatrix}\quad(3.8\text{–}3.9)$$
 
-## Derivation in three lines
+$$\dot{\boldsymbol\Phi}=\mathbf H(\boldsymbol\Phi)\,\boldsymbol\omega^{FRD}_{b/r},\qquad\mathbf H=\mathbf E^{-1}=\begin{bmatrix}1&s_\phi t_\theta&c_\phi t_\theta\\0&c_\phi&-s_\phi\\0&s_\phi/c_\theta&c_\phi/c_\theta\end{bmatrix}\quad(3.10\text{–}3.11)$$
 
-1. Each Euler rate spins about its own axis: $\boldsymbol\omega=\dot\phi\,\mathbf x_b+\dot\theta\,\mathbf y_1+\dot\psi\,\mathbf z_{NED}$.
-2. Resolve each into FRD through only the rotations that come **after** it: $\boldsymbol\omega^{FRD}=[\dot\phi,0,0]^T+\mathbf C_x(\phi)\left([0,\dot\theta,0]^T+\mathbf C_y(\theta)[0,0,\dot\psi]^T\right)$.
-3. Multiply out and collect $\dot\phi,\dot\theta,\dot\psi$ to get $\mathbf E$, the **kinematic transformation matrix**; invert ($\det\mathbf E=\cos\theta$) to get $\mathbf H$, the **transform matrix** (the handout's names, Eqs. 3.9–3.11).
-
-Full step-by-step derivation and figure: [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#3. Composing the three rotation rates (§3.1.2, L7 ll. 160–194)|3.1 §§3–6]].
-
-## Scalar form
+In scalar form,
 
 $$
 \dot\phi=p+(q\sin\phi+r\cos\phi)\tan\theta,\qquad
@@ -38,18 +27,11 @@ $$
 \dot\psi=\frac{q\sin\phi+r\cos\phi}{\cos\theta}.
 $$
 
-## Key properties
+Each Euler rate spins about its own axis, $\boldsymbol\omega=\dot\phi\,\mathbf x_b+\dot\theta\,\mathbf y_1+\dot\psi\,\mathbf z_{NED}$. Resolving each into FRD through only the rotations that come after it gives $\boldsymbol\omega^{FRD}=[\dot\phi,0,0]^T+\mathbf C_x(\phi)\left([0,\dot\theta,0]^T+\mathbf C_y(\theta)[0,0,\dot\psi]^T\right)$, and collecting $\dot\phi,\dot\theta,\dot\psi$ gives $\mathbf E$, which the handout calls the kinematic transformation matrix. Inverting it ($\det\mathbf E=\cos\theta$) gives $\mathbf H$, the transform matrix (Eqs. 3.9–3.11). The full derivation and figure are in [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#3. Composing the three rotation rates (§3.1.2, L7 ll. 160–194)|3.1 §§3–6]].
 
-- **Not a DCM.** $\mathbf E$ maps angle rates to vector components; its columns (the three rotation axes in FRD) are not mutually orthogonal, so $\mathbf E^{-1}\neq\mathbf E^T$.
-- **Purely kinematic:** no force, moment, mass or inertia.
-- **Geometrically coupled** (L8, ll. 39–64): a zero body rate does not freeze its Euler angle. With $r=0$, $\theta=0$, $\phi=45^\circ$, a pure pitch rate gives $\dot\theta=\dot\psi=q/\sqrt2$. See [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)|3.1 §7]].
-- **Singular at $\theta=\pm90^\circ$** ($\det\mathbf E=\cos\theta$): [[Gimbal Lock]].
-- **Small angles:** $\dot\phi\approx p$, $\dot\theta\approx q$, $\dot\psi\approx r$; valid only near zero attitude.
-- **Flat Earth:** $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/i}$, so gyro readings can be used directly.
+$\mathbf E$ is not a DCM. It maps angle rates to vector components, and its columns, the three rotation axes in FRD, aren't mutually orthogonal, so $\mathbf E^{-1}\neq\mathbf E^T$. The equation is purely kinematic, with no force, moment, mass or inertia in it. It is also geometrically coupled, so a zero body rate doesn't freeze the matching Euler angle (L8, ll. 39–64): with $r=0$, $\theta=0$ and $\phi=45^\circ$, a pure pitch rate gives $\dot\theta=\dot\psi=q/\sqrt2$ ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)|3.1 §7]]). It is singular at $\theta=\pm90^\circ$, where $\det\mathbf E=\cos\theta=0$ ([[Gimbal Lock]]). For small angles $\dot\phi\approx p$, $\dot\theta\approx q$ and $\dot\psi\approx r$, but only near zero attitude. On a flat Earth $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/i}$, so gyro readings can be used directly.
 
-## Example
-
-Level turn, $\phi=30^\circ$, $\dot\psi=3.25^\circ$/s: $p=0$, $q=\dot\psi\sin\phi=1.62^\circ$/s, $r=\dot\psi\cos\phi=2.81^\circ$/s. A constant heading rate shows up as a body **pitch** rate.
+In a level turn at $\phi=30^\circ$ with $\dot\psi=3.25^\circ$/s, $p=0$, $q=\dot\psi\sin\phi=1.62^\circ$/s and $r=\dot\psi\cos\phi=2.81^\circ$/s: a constant heading rate shows up partly as a body pitch rate.
 
 ## Related
 

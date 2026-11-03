@@ -13,24 +13,23 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 
 # Method of Characteristics
 
-## Definition
+The method of characteristics (MoC) solves steady, two-dimensional, [[Homentropic Flow|homentropic]], irrotational supersonic flow by marching along the Mach lines. Along each Mach line one [[Riemann Invariants|Riemann invariant]] stays constant:
 
-> [!note] Definition
-> A way of solving steady, two-dimensional, [[Homentropic Flow|homentropic]], irrotational **supersonic** flow by marching along the Mach lines. Along each Mach line one [[Riemann Invariants|Riemann invariant]] is constant:
->
-> $$R^+=\nu-\theta\ \text{along }C^+\ (\text{inclined at }\theta+\mu),\qquad R^-=\nu+\theta\ \text{along }C^-\ (\text{inclined at }\theta-\mu).$$
+$$R^+=\nu-\theta\ \text{along }C^+\ (\text{inclined at }\theta+\mu),\qquad R^-=\nu+\theta\ \text{along }C^-\ (\text{inclined at }\theta-\mu).$$
 
-## Explanation
+It works because, for $M>1$ only, the governing PDEs in $\nu$ and $\theta$ form a hyperbolic system with eigenvalues $\pm\tan\mu$. Diagonalising them leaves one unknown per equation, and each equation then says that something does not change along a particular direction. Solving the flow becomes bookkeeping rather than integration.
 
-**Why it works.** The governing PDEs in $\nu$ and $\theta$ form a **hyperbolic** system, with eigenvalues $\pm\tan\mu$, only when $M>1$. Diagonalising them leaves one unknown per equation, and each one says "no change along this direction". So the flow is found by bookkeeping, not integration.
+## The unit process
 
-**The unit process.** A below P (its $C^+$ reaches P), B above P (its $C^-$ reaches P):
+Take point A below P, whose $C^+$ reaches P, and point B above P, whose $C^-$ reaches P. The two invariants meeting at P fix its state:
 
 $$
 \nu_P=\tfrac12\left(R^+_A+R^-_B\right),\qquad\theta_P=\tfrac12\left(R^-_B-R^+_A\right),
 $$
 
-then $M_P$ from the tables and $\mu_P=\sin^{-1}(1/M_P)$. The characteristics **bend** at every crossing, because $\mu$ changes with $M$ (L3-2, ll. 299–318). So the position uses the averaged slopes
+then $M_P$ comes from the tables and $\mu_P=\sin^{-1}(1/M_P)$.
+
+The characteristics bend at every crossing because $\mu$ changes with $M$ (L3-2, ll. 299–318), so P is located using slopes averaged between the two ends of each segment:
 
 $$
 \alpha_{AP}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_P],\qquad\alpha_{BP}=\tfrac12[(\theta-\mu)_B+(\theta-\mu)_P],
@@ -40,7 +39,11 @@ $$
 x_P=\frac{x_B\tan\alpha_{BP}-x_A\tan\alpha_{AP}-(y_B-y_A)}{\tan\alpha_{BP}-\tan\alpha_{AP}},\qquad y_P=y_A+(x_P-x_A)\tan\alpha_{AP}.
 $$
 
-**Boundary conditions.**
+The 3.2 slide 9 example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ at $(1.3591,\ 0.2814)$ ([[SESA3029 W05a - Method of Characteristics#Worked example (3.2 slide 9)|W05a §10]]).
+
+![[at_moc_unit_process.png|760]]
+
+## Boundaries
 
 | Boundary | State rule | Position rule |
 |---|---|---|
@@ -49,15 +52,13 @@ $$
 | symmetry plane (an inviscid wall with $\theta_W=0$, L3-3, l. 93) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
 
 > [!warning] Check the physics, not just the rules (L3-4, ll. 206–281)
-> A prescribed wall reflects only if the arriving flow is **not** already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, blind bookkeeping produces a reflection at point 3 and a point 5 that *"doesn't exist"*. *"Always think about the results, whether it makes sense or not"* ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example (Lecture 3.4)|W05b §15]]).
+> A prescribed wall only reflects if the arriving flow is not already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, applying the rules blindly produces a reflection at point 3 and a point 5 that *"doesn't exist"*. In Jae's words, *"Always think about the results, whether it makes sense or not"* ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example (Lecture 3.4)|W05b §15]]).
 
-**Zones.** The characteristics through P bound its **zone of dependence** (upstream) and **zone of influence** (downstream).
+## Zones and limits
 
-**Limits.** No shocks, so entropy stays uniform, and $M>1$ everywhere. In planar flow the states do not depend on the coordinates. In axisymmetric flow they do, and the invariants change along the lines as $\partial R^\pm/\partial\eta=\sin\mu\sin\theta/r$.
+The two characteristics through P bound its **zone of dependence** upstream and its **zone of influence** downstream.
 
-**Worked**: the 3.2 slide 9 example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ and $(1.3591,\ 0.2814)$ ([[SESA3029 W05a - Method of Characteristics#Worked example (3.2 slide 9)|W05a §10]]).
-
-![[at_moc_unit_process.png|760]]
+The method needs $M>1$ everywhere and no shocks, so that entropy stays uniform. In planar flow the invariants are independent of position. In axisymmetric flow they are not: they change along the lines as $\partial R^\pm/\partial\eta=\sin\mu\sin\theta/r$.
 
 ## Related
 

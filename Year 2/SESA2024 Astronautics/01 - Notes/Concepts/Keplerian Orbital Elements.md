@@ -3,9 +3,9 @@ title: "Keplerian Orbital Elements"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Mission Analysis"
-aliases: ["orbital elements", "classical orbital elements", "RAAN", "argument of perigee", "inclination", "true anomaly"]
+aliases: ["orbital elements", "classical orbital elements", "ephemerides", "RAAN", "right ascension of the ascending node", "argument of perigee", "inclination", "true anomaly", "First Point of Aries"]
 tags: [sesa2024, concept, orbital-mechanics]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 03 - Orbital Elements and Conic Sections]]"]
 related_concepts: ["[[Orbit Equation and Conic Sections]]", "[[Local Solar Time and RAAN]]", "[[Sun-Synchronous Orbit]]"]
 sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_orbital elements and conic sections_2025-26_V2.pdf"]
@@ -13,32 +13,15 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_orb
 
 # Keplerian Orbital Elements
 
-## Definition
+The six Keplerian elements are the numbers that fix a two-body orbit and the spacecraft's position on it: semi-major axis $a$, eccentricity $e$, inclination $i$, right ascension of the ascending node $\Omega$, argument of perigee $\omega$ and true anomaly $\theta$.
 
-> [!note] Definition
-> Six numbers fix an orbit and the body's position on it:
-> - $a$ (size) and $e$ (shape), both in plane;
-> - $i$ (plane tilt from the equator, 0–180°), $\Omega$ (RAAN, measured from ♈ to the ascending node) and $\omega$ (argument of perigee, from the node to perigee), which give the orientation;
-> - $\theta$ (true anomaly, from perigee), the position.
+Two describe the size and shape of the orbit in its own plane ($a$ and $e$), three orient it in space ($i$, $\Omega$, $\omega$) and one locates the spacecraft ($\theta$). In unperturbed motion only $\theta$ changes. The inclination is the angle between the orbit plane and the equator, measured at the ascending node, the point where the spacecraft crosses the equator heading north; $i>90^\circ$ means a retrograde orbit. $\Omega$ is measured in the equatorial plane from the First Point of Aries ♈, the direction of the Sun from the Earth at the March equinox, which lies along the intersection of the equator and the ecliptic. $\omega$ is measured in the orbit plane, in the direction of motion, from the ascending node to periapsis, and $\theta$ from periapsis to the spacecraft.
 
-## Explanation
-- **♈, the First Point of Aries**: the Sun direction at the spring equinox, lying in the equatorial plane. It is the inertial datum for $\Omega$.
-- **Ascending node**: where the orbit crosses the equator going South → North. $i$ is measured there.
-- **Prograde** $i<90^\circ$; **retrograde** $i>90^\circ$ (Sun-synchronous orbits).
-- **Undefined**: $\Omega$ when $i = 0$; $\omega$ when $e = 0$.
-- In the two-body problem **only $\theta$ changes**. Perturbations ($J_2$, drag, the Sun and Moon) slowly change $\Omega$, $\omega$, $a$ and $e$.
-- In mission design **the payload selects the elements**: $i$ for coverage, $e$ for constant range, $a$ for resolution against lifetime, $\Omega$ for the LST.
+Some elements are undefined in common cases. An equatorial orbit ($i=0$) has no node, so $\Omega$ is undefined, and a circular orbit ($e=0$) has no periapsis, so $\omega$ is undefined; GEO is both. Real orbits are perturbed, and the Earth's oblateness in particular turns $\Omega$, which Sun-synchronous orbits exploit.
 
-![[ast_orbital_elements_3d.png|520]]
-
-## Examples
-- ISS: 6780 km, $e$ = 0.0005, $i$ = 51°.
-- QZSS: 42 164 km, $e$ = 0.075, $i$ = 43°, $\omega$ = 270° (apogee dwell over Japan).
-- Molniya (heavens-above activity): high $e$, $i\approx63.4^\circ$, $\omega$ = 270°.
-- Exams: estimate $a$, $e$, $i$, $\Omega$ (and $\omega$, $\theta$) from a schematic at the spring equinox (2023/24 A3, 2024/25 A3).
+Mission analysis consists of choosing these six values from the payload's needs, with $\Omega$ usually fixed through the local solar time of the node (see [[Local Solar Time and RAAN]]).
 
 ## Related
-- [[Orbit Equation and Conic Sections]] · [[Local Solar Time and RAAN]] · [[Sun-Synchronous Orbit]]
 
-## Sources
-- Chapter 5 Lectures 3–4
+- [[SESA2024 03 - Orbital Elements and Conic Sections#2. The orientation elements: i, Ω and ω|Orientation elements in the lecture note]] · [[SESA2024 03 - Orbital Elements and Conic Sections#When elements are undefined|Undefined cases]]
+- [[Orbit Equation and Conic Sections]] · [[Local Solar Time and RAAN]] · [[Sun-Synchronous Orbit]]

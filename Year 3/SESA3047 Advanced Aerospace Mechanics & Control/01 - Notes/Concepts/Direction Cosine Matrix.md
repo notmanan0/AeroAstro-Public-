@@ -13,15 +13,11 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 
 # Direction Cosine Matrix
 
-## Definition
+A direction cosine matrix (DCM) converts the components of one physical vector from coordinates $a$ to coordinates $b$:
 
-> [!note] Definition
->
-> $$\mathbf u^b=\mathbf C_{b/a}\,\mathbf u^a,\qquad C_{ij}=\mathbf b_i\cdot\mathbf a_j=\cos(\angle\,\mathbf b_i,\mathbf a_j).$$
->
-> It converts the **components** of the same physical vector from coordinates $a$ to coordinates $b$. Row $i$ is the new axis $\mathbf b_i$ in old components.
+$$\mathbf u^b=\mathbf C_{b/a}\,\mathbf u^a,\qquad C_{ij}=\mathbf b_i\cdot\mathbf a_j=\cos(\angle\,\mathbf b_i,\mathbf a_j).$$
 
-## Properties
+Row $i$ is the new axis $\mathbf b_i$ written in the old components.
 
 | Property | Statement | Reason |
 |---|---|---|
@@ -31,7 +27,7 @@ sources: ["02 - Sources/Lectures/Chapter 2.pdf"]
 | non-commutative | $\mathbf C_{c/b}\mathbf C_{b/a}\neq\mathbf C_{b/a}\mathbf C_{c/b}$ | later rotations act about already-moved axes |
 | length-preserving | $\vert \mathbf u^b\vert =\vert \mathbf u^a\vert$ | follows from orthogonality |
 
-## Elementary rotations
+The elementary rotations about each axis are
 
 $$
 \mathbf C_z(\theta)=\begin{bmatrix}c&s&0\\-s&c&0\\0&0&1\end{bmatrix},\ 
@@ -39,7 +35,7 @@ $$
 \mathbf C_x(\theta)=\begin{bmatrix}1&0&0\\0&c&s\\0&-s&c\end{bmatrix}.
 $$
 
-Sign rule: for rotation about $k$ with $(i,j,k)$ cyclic, $C_{ij}=+\sin$ and $C_{ji}=-\sin$.
+To get the signs right: for a rotation about axis $k$ with $(i,j,k)$ cyclic, $C_{ij}=+\sin$ and $C_{ji}=-\sin$.
 
 ![[amc_dcm_derivation.png|700]]
 

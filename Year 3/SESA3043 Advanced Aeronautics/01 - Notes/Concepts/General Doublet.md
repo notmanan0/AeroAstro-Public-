@@ -13,22 +13,13 @@ sources: ["02 - Sources/Lectures/CH1-3 Potential Flow.pdf"]
 
 # General Doublet
 
-## Definition
+A general doublet is the limit of a sink $-m$ at the origin and a source $+m$ at $le^{i\nu}$ as $l\to0$ with $\mu=ml$ held fixed:
 
-> [!note] Definition
-> The limit of a sink $-m$ at the origin and a source $+m$ at $le^{i\nu}$ as $l\to0$ with $\mu=ml$ fixed:
->
-> $$\Phi=-\frac{\mu}{2\pi}\frac{e^{i\nu}}{z},\qquad u=\frac{\mu\cos(2\theta-\nu)}{2\pi r^2},\quad v=\frac{\mu\sin(2\theta-\nu)}{2\pi r^2}.$$
+$$\Phi=-\frac{\mu}{2\pi}\frac{e^{i\nu}}{z},\qquad u=\frac{\mu\cos(2\theta-\nu)}{2\pi r^2},\quad v=\frac{\mu\sin(2\theta-\nu)}{2\pi r^2}.$$
 
-## Derivation in four lines
+The derivation takes a couple of lines. The pair has $\Phi=\frac{m}{2\pi}\ln\left(1-\frac{le^{i\nu}}{z}\right)$, and for small $l$, $\ln(1-\varepsilon)\approx-\varepsilon$ gives $\Phi\approx-\frac{ml}{2\pi}\frac{e^{i\nu}}{z}$. Differentiating, $\mathrm d\Phi/\mathrm dz=\frac{\mu}{2\pi}e^{i\nu}z^{-2}=\frac{\mu}{2\pi r^2}e^{-i(2\theta-\nu)}$.
 
-$\Phi=\frac{m}{2\pi}\ln\left(1-\frac{le^{i\nu}}{z}\right)\approx-\frac{ml}{2\pi}\frac{e^{i\nu}}{z}$, using $\ln(1-\varepsilon)\approx-\varepsilon$. Then $\mathrm d\Phi/\mathrm dz=\frac{\mu}{2\pi}e^{i\nu}z^{-2}=\frac{\mu}{2\pi r^2}e^{-i(2\theta-\nu)}$.
-
-## Key points
-
-- $\nu=\pi$ (source upstream) gives the table doublet $\Phi=\mu/(2\pi z)$, $\phi=\mu\cos\theta/(2\pi r)$.
-- $\nu=\pi/2$ (pointing in $+z$) is the element of a **doublet panel**.
-- A doublet plus a uniform stream aligned with it gives a cylinder of radius $\sqrt{\mu/2\pi U}$.
+With $\nu=\pi$ (source upstream) this is the doublet in the standard tables, $\Phi=\mu/(2\pi z)$ and $\phi=\mu\cos\theta/(2\pi r)$. With $\nu=\pi/2$, pointing in $+z$, it is the element used in a doublet panel. Adding a uniform stream aligned with the doublet gives flow past a cylinder of radius $\sqrt{\mu/2\pi U}$.
 
 ![[aa_general_doublet_derivation.png|700]]
 

@@ -10,47 +10,20 @@ parent_lectures: ["[[SESA2023 W11 - Solid Propellants and Rocket Nozzle Design]]
 related_concepts: ["[[Converging-Diverging Nozzle Operating Regimes]]", "[[Rocket Performance Parameters]]", "[[Solid Propellant Burning Rate]]"]
 sources: ["02 - Sources/Lectures/Week 11 - Rockets.pdf"]
 ---
+
 # Rocket Nozzle Geometry
 
-## Definition
+A rocket nozzle's geometry is its full axisymmetric profile, a convergent section, a throat and a divergent section. One-dimensional theory only cares about the area, but the profile controls the losses, the length and the weight.
 
-> [!note] Definition
-> The full axisymmetric profile of a rocket nozzle: a convergent section, a throat, and a divergent section. Only the area matters in 1-D theory, but the **profile** controls losses, length and weight.
+The convergent section is subsonic with a favourable pressure gradient, so any smooth shape works; a contraction ratio of 1.5–4 keeps the chamber Mach number, and so the loss of $p_0$ during heat addition, low, and a half-angle of 30–45° keeps it short. The throat is formed from two tangent circular arcs, with radius up to 2–3 $r_t$. Too tight an upstream curvature causes a vena contracta that reduces the effective throat area and the mass flow, which the throat sets.
 
-## Explanation
-- **Convergent section**: subsonic with a favourable pressure gradient, so any smooth shape works.
-  - Contraction ratio 1.5–4: a lower chamber Mach number means less $p_0$ loss during heat addition.
-  - Half-angle 30–45° keeps it short.
-- **Throat**: two tangent circular arcs (radius up to 2–3 $r_t$). A tight upstream curvature causes a vena contracta, which reduces the effective $A_t$ and $\dot m$. The throat sets the mass flow.
-- **Conical divergent section**:
-  - One parameter, the half-angle $\alpha$. Easy to make and reliable.
-  - The wall area scales as $1/\sin\alpha$.
-  - Divergence factor $\lambda = \dfrac{1+\cos\alpha}{2}$, from assuming radial (spherical-source) exit flow; exact calculations agree well.
-  - $\alpha = 12$–18°. At 15°, $\lambda = 0.983$, a 1.7 % thrust loss.
-- **Bell (contoured, e.g. Rao) nozzle**:
-  - A 30–60° start that turns to 2–8° at the exit.
-  - The contour is designed (method of characteristics, 2-D) so wall reflections cancel the expansion waves without creating compressions (shocks).
-  - **Shorter and lighter, with lower divergence loss** than a 15° cone of the same area ratio.
-  - **Not for solids**: two-phase Al₂O₃ particles erode the concave wall.
-- **Altitude compensation**: a conventional nozzle has one design altitude.
-  - Over-expansion with separation at sea level is unstable, so it is avoided.
-  - **Plug/aerospike** and **expansion–deflection** nozzles let the ambient air set the effective area ratio.
-  - **Dual-bell** and **dual-mode** nozzles have two design points.
-  - **Extendible cones** and **separation control** are other options.
-- **Real-nozzle losses**:
-  - divergence;
-  - contraction and $p_0$ loss;
-  - boundary layer (0.5–1.5 %);
-  - two-phase flow (up to 5 %);
-  - chemical kinetics (frozen vs shifting equilibrium);
-  - combustion instability, transients, and cooling (regenerative, film, ablative).
+A conical divergent section has one parameter, its half-angle $\alpha$, and is easy to make and reliable. Its wall area scales as $1/\sin\alpha$, and assuming radial (spherical-source) exit flow gives the divergence factor $\lambda = (1+\cos\alpha)/2$, which agrees well with exact calculations. Half-angles of 12–18° are typical; at 15°, $\lambda = 0.983$, a 1.7 % thrust loss. A bell (contoured, for example Rao) nozzle starts at 30–60° and turns to 2–8° at the exit, with the contour designed by the method of characteristics so that wall reflections cancel the expansion waves without forming compressions. It is shorter and lighter than a 15° cone of the same area ratio and has a lower divergence loss, but it isn't used for solid motors, because two-phase Al₂O₃ particles erode the concave wall.
+
+A conventional nozzle has a single design altitude, and over-expansion with separation at sea level is unstable, so it is avoided. Plug (aerospike) and expansion–deflection nozzles let the ambient air set the effective area ratio, dual-bell and dual-mode nozzles have two design points, and extendible cones and separation control are other options. The losses in a real nozzle come from divergence, contraction and $p_0$ loss, the boundary layer (0.5–1.5 %), two-phase flow (up to 5 %), chemical kinetics (frozen against shifting equilibrium), and combustion instability, transients and cooling (regenerative, film or ablative).
 
 ![[prop_rocket_nozzle.png|700]]
 
 ## Related
+
 - [[Converging-Diverging Nozzle Operating Regimes]] · [[Rocket Performance Parameters]] · [[Solid Propellant Burning Rate]]
-
-**Related (SESA2028 materials):** [[MMC vs CMC]] (C/C and C/SiC nozzle materials) · [[FEEG2005 Exam 2024-25 Solutions|2024-25 MQ2]]
-
-## Sources
-- Week 11 notes §11.4; Lecture 33
+- SESA2028 materials: [[MMC vs CMC]] (C/C and C/SiC nozzle materials) · [[FEEG2005 Exam 2024-25 Solutions|2024-25 MQ2]]

@@ -3,7 +3,7 @@ title: "SESA2024 Astronautics Hub"
 module: "SESA2024 Astronautics"
 type: hub
 tags: [sesa2024, hub, moc]
-status: complete
+status: lectured
 ---
 
 # SESA2024 Astronautics Hub
@@ -17,12 +17,16 @@ status: complete
 >
 > One thread runs through the module: **the payload selects the orbit, and the orbit sizes the spacecraft.**
 >
-> Quick reference: [[SESA2024 Formula Sheet]] · Exam guide: [[SESA2024 Past Paper Trend Analysis]]
+> Quick reference: [[SESA2024 Formula Sheet]] · Exam guide: [[SESA2024 Past Paper Trend Analysis]] · Memorisation site (facts, numbers, lists, equations, derivations, with a recall mode): [Astronautics Memory Bank](05%20-%20Revision%20Site/index.html)
+
+## Coverage
+
+All fifteen topic notes were rebuilt from the 2025-26 lecture transcripts on 30 Oct 2026 and are at `status: lectured`. The lectures ran in this order: introduction (30 Sep), Ch 1 (2 Oct), Ch 6 (7–16 Oct), Ch 7 (16 Oct plus pre-recording), Ch 5 Kepler and elements (21–30 Oct), sustainability and NewSpace (Dr Vaidya, weeks 5–6, not recorded), Ch 8 (11 Nov; the 13 Nov recording is silent), Ch 9 (18–20 Nov), Ch 10 and Ch 4 (20–25 Nov), Ch 5 energy and Hohmann (27 Nov, 2 Dec), Ch 11 (4–11 Dec), revision (6 Jan). Prof Lewis's 2020 recordings fill the steps the 2025 lectures skipped. Three notes rest on slides or the workbook rather than a recording: [[SESA2024 08 - Electrical Power Subsystem|08]] for battery and array sizing, [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate|14]] (not lectured in 2025-26) and [[SESA2024 15 - Space Sustainability, Debris and NewSpace|15]]. The full mapping is in [[SESA2024 Transcript Index]].
 
 ## Topic map
 
 ### Systems (Dr C. Ryan, Dr H. Sykulska-Lawrence)
-1. [[SESA2024 01 - Systems Engineering and Spacecraft Design]]: subsystems; objectives → payload → TLRs → DRs; ECSS phases 0–F; trade-offs; payload impact (Ch 4)
+1. [[SESA2024 01 - Systems Engineering and Spacecraft Design]]: subsystems; objectives → payload → TLRs → DRs; ECSS phases 0–F; trade-offs; Ulysses and Starlink; payload impact (Ch 4); Planet's agile development
 
 ### Mission analysis: Chapter 5 (Dr C. Ryan, after Prof H. Lewis)
 2. [[SESA2024 02 - Kepler's Laws and the Orbit Equation]]: polar ellipse, $a_r$ and $a_\theta$, $h = r^2\dot\theta$, $u''+u = \mu/h^2$, $\tau = 2\pi\sqrt{a^3/\mu}$
@@ -57,6 +61,7 @@ status: complete
 | [[Keplerian Orbital Elements]] | [[Chemical Propulsion Systems]] | [[Antenna Gain and Beamwidth]] | [[Orbit Control Cycle]] |
 | [[Systems Engineering Design Phases]] | [[Electric Propulsion Sizing]] | [[Link Budget Equation]] | [[Payload Data Rate]] |
 | [[Spacecraft Subsystems]] | [[Tsiolkovsky Rocket Equation]] (SESA2023) | [[EIRP and G-T]] | [[Space Debris Mitigation]] |
+| [[Agile Aerospace]] | | | |
 | | [[Rocket Performance Parameters]] (SESA2023) | [[Bit Error Rate and Eb-N0]] | |
 | | [[Thrust Equation]] (SESA2023) | [[Spacecraft Thermal Balance Equation]] | |
 | | | [[Absorptance and Emittance]] · [[Blackbody Radiation]] · [[Passive vs Active Thermal Control]] | |
@@ -100,10 +105,10 @@ status: complete
 > 6. Section A staples: LST at the nodes; eclipse $T$ independent of $\varepsilon$; $[\mathbf I]$ → 3-axis; spinner vs 3-axis; fragment motion; systems-engineering steps; EP curve.
 
 ## Figures
-All generated in Python (300 dpi) and stored in `01 - Notes/Figures/`:
-- orbits and transfers: `ast_conic_sections`, `ast_orbital_elements_3d`, `ast_visviva_speed`, `ast_hohmann_leo_geo`, `ast_hohmann_dv_ratio`;
-- propulsion and ACS: `ast_rocket_equation`, `ast_ep_optimisation`, `ast_momentum_dumping`;
-- power, comms and thermal: `ast_eclipse_vs_altitude`, `ast_antenna_gain_beamwidth`, `ast_ber_psk`, `ast_link_budget_pluto`, `ast_thermal_alpha_eps`, `ast_array_temperature_profile`;
+All generated in Python (300 dpi) and stored in `01 - Notes/Figures/`. The figures added in the October 2026 rebuild have generator scripts there (`generate_ast_ch5_kepler_figures.py`, `generate_ast_ch5_transfer_figures.py`, `generate_ast_ch6_attitude_figures.py`, `generate_ast_ch8_power_figures.py`), which import `Year 3/_shared/year3_style.py`:
+- orbits and transfers: `ast_ellipse_polar_geometry`, `ast_radial_transverse_axes`, `ast_kepler_equal_areas`, `ast_conic_sections`, `ast_orbital_elements_3d`, `ast_visviva_speed`, `ast_hohmann_leo_geo`, `ast_hohmann_dv_ratio`, `ast_removedebris_relative_motion`;
+- propulsion and ACS: `ast_rocket_equation`, `ast_ep_optimisation`, `ast_gyroscopic_rigidity`, `ast_wheel_momentum_elliptic`, `ast_momentum_dumping`;
+- power, comms and thermal: `ast_solar_cell_iv`, `ast_eclipse_vs_altitude`, `ast_antenna_gain_beamwidth`, `ast_ber_psk`, `ast_link_budget_pluto`, `ast_thermal_alpha_eps`, `ast_array_temperature_profile`;
 - remote sensing: `ast_sso_inclination`, `ast_repeat_groundtrack_solutions`, `ast_sso_ground_track`, `ast_orbit_control_cycle`, `ast_lst_orbit_planes`;
 - past papers: `ast_2021_ground_track` (2020/21 Q2(iv)).
 
@@ -133,5 +138,6 @@ SORT type ASC, file.name ASC
 
 ## Sources
 - `02 - Sources/Lectures`: Chapters 1, 4–11 and two guest lectures (2025-26); Problem Sheet Workbook 2025-26 V1.1
+- 35 transcripts in `02 - Sources/Lectures` (2025-26 live lectures, pre-recordings, the two quiz walk-throughs, the Planet Labs guest lecture and Prof Lewis's 2020 Chapter 5 and 11 recordings), mapped in [[SESA2024 Transcript Index]]
 - `03 - Exams & Past Papers`: 12 papers, 2013/14–2024/25
 - Fortescue, Stark & Swinerd, *Spacecraft Systems Engineering* (4th ed.), Wiley. The course textbook.

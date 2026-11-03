@@ -3,34 +3,24 @@ title: "Critical Fibre Length"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
+aliases: ["Shear-lag model", "Load transfer length", "Short-fibre composites"]
 tags: [sesa2028, materials, composites, short-fibre, shear-lag]
-status: complete
+status: lectured
 parent: ["[[SESA2028 M4 - Polymer Matrix Composites]]"]
 related: ["[[Rule of Mixtures]]", "[[Composite Manufacturing Routes]]"]
 ---
 
 # Critical Fibre Length
 
-![[Figures/materials_short_fibre_stress.png]]
+The critical fibre length $l_c=\sigma_f^*d/2\tau$ is the shortest fibre that can be loaded to its breaking stress $\sigma_f^*$ at its midpoint by shear transfer from the matrix, for a fibre of diameter $d$ and interface shear strength $\tau$.
 
-Load enters a discontinuous (or broken) fibre by **interfacial shear** through the matrix (the **shear-lag** model). The fibre's tensile stress is zero at its ends and builds up linearly over the **transfer (ineffective) length**.
+At the end of a fibre there is nothing to carry stress, so the fibre stress there is zero. Load is fed in from the surrounding matrix by shear along the fibre surface, the shear-lag picture, so the fibre stress builds up linearly from each end at the rate $4\tau/d$, set by balancing the shear force on the surface against the tensile force in the fibre. A fibre reaches $\sigma_f^*$ at its middle only if half its length is at least $l_c/2$.
 
-A force balance on half a fibre of diameter $d$, with interfacial shear strength $\tau$, gives the length needed to reach the fibre strength $\sigma_f^*$ at mid-length:
+![[materials_critical_fibre_length.png|800]]
 
-$$
-l_c=\frac{\sigma_f^*\,d}{2\tau}.
-$$
+At exactly $l_c$ the stress profile is a triangle and the average stress is only half the peak. A shorter fibre can never be broken: it pulls out of the matrix instead. A longer fibre carries $\sigma_f^*$ over its middle, with an average of $\sigma_f^*(1-l_c/2l)$, and once it is about fifteen times $l_c$ the end losses are only a few per cent and the [[Rule of Mixtures]] can be used. For a 7 μm carbon fibre of strength 3.5 GPa with an interface carrying 50 MPa, $l_c$ is about 0.25 mm. The practical catch is alignment: chopped fibres are cheap and flow easily into moulds, but they cannot be aligned as well as continuous ones, so short-fibre composites fall short of the rule-of-mixtures prediction even when the fibres are long enough.
 
-## Regimes
+## Related
 
-| Fibre length | Behaviour |
-|---|---|
-| $l<l_c$ | the fibre **cannot be broken**: peak stress below $\sigma_f^*$, so it pulls out; poor reinforcement |
-| $l=l_c$ | the fibre just breaks at mid-length; triangular stress profile, so the **average is only 50 %** of the peak |
-| $l\gtrsim15\,l_c$ | end effects negligible; behaves like a continuous fibre (rule of mixtures) |
-
-## Practical points
-
-- Short fibres are cheaper and much easier to mould (injection moulding, chopped-strand mat), **but alignment cannot be controlled**, so properties are lower and less predictable.
-- A better interface (sizing) raises $\tau$ and shortens $l_c$.
-- The same shear-lag load transfer lets a continuous composite survive individual fibre breaks: load is shed onto neighbouring fibres over the ineffective length.
+- Topic: [[SESA2028 M4 - Polymer Matrix Composites|M4]]
+- Concepts: [[Rule of Mixtures]] · [[Composite Manufacturing Routes]]

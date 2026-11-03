@@ -4,7 +4,7 @@ module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Structures"
 tags: [sesa2028, structures, section-properties]
-status: complete
+status: lectured
 parent: ["[[SESA2028 S1 - Section Properties and Unsymmetrical Bending]]"]
 ---
 
@@ -14,7 +14,7 @@ $$
 I_y=\int_Az^2\,dA,\qquad I_z=\int_Ay^2\,dA,\qquad I_{yz}=\int_Ayz\,dA
 $$
 
-about **centroidal** axes. $I_y$ and $I_z$ are always positive. $I_{yz}$ can have either sign and changes sign if either axis is reversed.
+about centroidal axes. $I_y$ and $I_z$ are always positive. $I_{yz}$ can have either sign and changes sign if either axis is reversed.
 
 ## Standard results (about the element's own centroid)
 
@@ -34,11 +34,11 @@ I_z=\sum\left(I_{z,c}+A\,\Delta y^2\right),\qquad
 I_{yz}=\sum\left(I_{yz,c}+A\,\Delta y\,\Delta z\right),
 $$
 
-where $\Delta y$ and $\Delta z$ are the **signed** offsets of each part's centroid from the section centroid. Getting the signs right in the $I_{yz}$ term is the most common error.
+where $\Delta y$ and $\Delta z$ are the signed offsets of each part's centroid from the section centroid. Getting the signs right in the $I_{yz}$ term is the most common error.
 
 ## Thin-walled approximation
 
-For $t\ll b$, drop the $t^3$ terms (e.g. a horizontal flange contributes $A\Delta z^2$ to $I_y$ and essentially nothing of its own). Use **median-line** dimensions.
+For $t\ll b$, drop the $t^3$ terms (e.g. a horizontal flange contributes $A\Delta z^2$ to $I_y$ and essentially nothing of its own). Use median-line dimensions.
 
 ## Worked check
 
@@ -48,3 +48,9 @@ See [[Principal Second Moments of Area]] and [[SESA2028 S1 - Section Properties 
 
 ## Year 1 foundation
 - $I$ for symmetric sections and the parallel axis theorem: [[FEEG1002 A4 - Engineer's Bending Theory and Second Moment of Area]].
+
+## Related
+
+- Topic: [[SESA2028 S1 - Section Properties and Unsymmetrical Bending|S1]]
+- Concepts: [[Principal Second Moments of Area]]
+- Elsewhere: [[FEEG1002 A4 - Engineer's Bending Theory and Second Moment of Area]]

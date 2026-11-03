@@ -3,7 +3,7 @@ title: "Shear Centre"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, shear-centre]
-status: complete
+status: lectured
 ---
 
 # Shear Centre
@@ -26,5 +26,7 @@ For open channels, S often lies outside the material. That is a physical result,
 
 If a force acts a distance $e$ away from S, analyse it as a force through S plus a torque $T=Ve$.
 
-See [[SESA2028 S3 - Shear Flow and Shear Centre]].
+## Related
 
+- Topic: [[SESA2028 S3 - Shear Flow and Shear Centre|S3]]
+- Topic: [[SESA2028 S2 - Beam Deflection and Bending Design|S2]]

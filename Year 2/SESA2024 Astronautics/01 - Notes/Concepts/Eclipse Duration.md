@@ -3,9 +3,9 @@ title: "Eclipse Duration"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["eclipse period", "worst-case eclipse", "time in shadow", "eclipse fraction"]
+aliases: ["eclipse time", "eclipse period", "worst-case eclipse", "time in sunlight", "eclipse fraction"]
 tags: [sesa2024, concept, power, orbital-mechanics]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 08 - Electrical Power Subsystem]]", "[[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]]"]
 related_concepts: ["[[Battery Sizing]]", "[[Local Solar Time and RAAN]]", "[[Spacecraft Thermal Balance Equation]]"]
 sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - complete.pdf"]
@@ -13,34 +13,28 @@ sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - com
 
 # Eclipse Duration
 
-## Definition
+The eclipse duration is the time a spacecraft spends in the Earth's shadow on each orbit; for a circular orbit with the Sun in the orbit plane (the worst case) and a cylindrical shadow of radius $R_E$,
 
-> [!note] Definition
-> For a circular orbit of radius $a$, the **worst-case** eclipse (Earth–Sun vector in the orbit plane, cylindrical shadow) is
->
-> $$t_e = \frac{180^\circ-2\rho}{360^\circ}\,\tau,\qquad \cos\rho = \frac{R_E}{a}\ \ (\text{the lecture's }\alpha),\qquad t_s = \tau-t_e$$
+$$
+t_e=\tau\,\frac{180^\circ-2\alpha}{360^\circ},\qquad\cos\alpha=\frac{R_E}{R_E+h},\qquad t_s=\tau-t_e.
+$$
 
-## Explanation
-- The shadow is a cylinder of radius $R_E$ behind the Earth. The orbit arc inside it subtends $\theta = 180^\circ-2\rho$ at the Earth's centre.
-- Eclipse **fraction** falls with altitude (about 40 % in LEO, 4.8 % at GEO). Eclipse **duration** is at a minimum of about 35 min near 1000–1500 km, then rises to about 69 min at GEO.
-- **Is there an eclipse?** If the Sun is $\beta$ out of the orbit plane, the closest approach of the orbit to the shadow axis is $R_0 = a\sin\beta$. **No eclipse if $R_0>R_E$.** (Workbook Ch10 Q7 at solstice: $R_0 = 18\,000\sin23.5^\circ = 7177$ km > $R_E$.)
-- **Reverse problem** (2022/23 A3): if the eclipse is 1/3 of the orbit, then $180-2\rho = 120^\circ$, so $\rho = 30^\circ$, $a = R_E/\cos30^\circ$ = 7365 km, and $h$ = **987 km**.
-- A GEO satellite sees eclipses only in about 45-day seasons around the equinoxes, but sizing uses the worst case.
-- In SSOs the LST sets the eclipse: dawn–dusk has little or none; noon–midnight and 10:30 have eclipses on every orbit.
+The orbit enters and leaves the shadow where its radius makes the angle $\alpha$ with the Earth–Sun line, so the shadowed arc subtends $180^\circ-2\alpha$. The eclipse fraction falls with altitude, from about 40 % at 350 km to 4.8 % at GEO, but the period rises, so the duration has a broad minimum of about 35 minutes for LEO altitudes of roughly 700–1500 km and climbs to 69 minutes at GEO.
 
-![[ast_eclipse_vs_altitude.png|620]]
-
-## Examples
-| Orbit | $\tau$ | $t_e$ | $t_s$ |
+| Altitude | Period | Worst-case eclipse | Sunlight |
 |---|---|---|---|
-| 350 km (ISS, 2014/15) | 91.5 min | 36.3 min | 55.2 min |
-| 694 km (2023/24 A4) | 98.6 min | **35.3 min** | – |
-| 800 km (lecture) | 1.68 h | 0.59 h | 1.09 h |
-| 900 km (2018/19) | 103.0 min | 35.0 min | 1.13 h |
-| GEO | 23.93 h | **1.157 h** | 22.78 h |
+| 350 km | 91.5 min | 36.3 min | 55.2 min |
+| 800 km (lecture example) | 100.9 min (1.68 h) | 35.1 min (0.59 h) | 65.7 min (1.09 h) |
+| 900 km | 103.0 min | 35.0 min | 68.0 min |
+| GEO | 1436 min | 69.4 min | 1367 min |
+
+The worst case need not occur. If the Sun is an angle $\beta$ out of the orbit plane, the orbit's closest approach to the shadow axis is $a\sin\beta$, and there is no eclipse at all if that exceeds $R_E$ (Workbook Ch10 Q7: $18\,000\sin23.5^\circ=7177$ km). GEO satellites see eclipses only in seasons of about 45 days around the equinoxes, and a dawn–dusk Sun-synchronous orbit has little or none, while a 10:30 orbit has one every orbit. Run backwards, an eclipse of a third of the orbit means $\alpha=30^\circ$ and an altitude of 987 km (2022/23 A3).
+
+The eclipse sets the battery capacity, the array's recharge power and the thermal cold case.
+
+![[ast_eclipse_vs_altitude.png|560]]
 
 ## Related
-- [[Battery Sizing]] · [[Local Solar Time and RAAN]] · [[Spacecraft Thermal Balance Equation]]
 
-## Sources
-- Chapter 8 equations 8.2–8.3; workbook Ch8 Q10
+- [[SESA2024 08 - Electrical Power Subsystem#Worst-case eclipse|Derivation in the lecture note]]
+- [[Battery Sizing]] · [[Local Solar Time and RAAN]] · [[Spacecraft Thermal Balance Equation]]

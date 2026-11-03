@@ -13,33 +13,23 @@ sources: ["02 - Sources/Lectures/Lecture1-2.pdf", "02 - Sources/Lectures/Lecture
 
 # Shock-Table Interpolation
 
-## Method
-
-For a target value $x_t$ between table rows $a$ and $b$,
+When the value you know falls between two rows of a shock or isentropic table, find how far between them it sits,
 
 $$
-\sigma=\frac{x_t-x_a}{x_b-x_a}.
+\sigma=\frac{x_t-x_a}{x_b-x_a},
 $$
 
-Use that same fractional position for every other column:
+and use that same fraction for every other column:
 
 $$
 y_t=y_a+\sigma(y_b-y_a).
 $$
 
-## Workflow
-
-1. Identify the table and the column that contains the known quantity.
-2. Convert ratios to the table convention. If the table lists $p/p_0$ but the question gives $p_0/p$, invert first.
-3. Bracket the target with the nearest upper and lower rows.
-4. Compute $\sigma$ once.
-5. Apply it to $M$, $T_2/T_1$, $p_{02}/p_1$, or any other requested column.
-6. Check that each interpolated value lies between its two tabulated values.
+Before bracketing, make sure the known quantity is in the form the table uses. If the table lists $p/p_0$ and the question gives $p_0/p$, invert it first. Then pick the rows either side, compute $\sigma$ once, and apply it to $M$, $T_2/T_1$, $p_{02}/p_1$ or whatever else you need. Each answer should land between its two tabulated values, which is a quick check that you used the right rows.
 
 > [!warning] Common error
-> Do not round $\sigma$ prematurely and do not recompute a different interpolation fraction for each output column.
+> Don't round $\sigma$ early, and don't work out a fresh fraction for each output column. One $\sigma$ per row pair.
 
 ## Related
 
 - [[Normal-Shock Jump Relations]] · [[Compressible Pitot Probe]]
-

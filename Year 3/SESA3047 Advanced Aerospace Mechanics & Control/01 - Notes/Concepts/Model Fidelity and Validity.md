@@ -13,24 +13,14 @@ sources: ["02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/L3 - SES
 
 # Model Fidelity and Validity
 
-## Definition
-
-Fidelity describes how much relevant physical detail a model represents. Validity describes whether its assumptions make its predictions credible for a particular purpose and operating range.
-
-## Principle
+**Fidelity** is how much relevant physical detail a model represents. **Validity** is whether its assumptions make its predictions credible for a particular purpose and operating range. The working rule is
 
 $$
 \boxed{\text{Use the simplest credible model for the stated purpose and range}.}
 $$
 
-More detail raises data and computational demands. It does not guarantee accuracy if parameters are poor or the model answers the wrong question.
-
-## Example
-
-- rigid-body model: suitable when structural deformation has negligible influence;
-- flexible multibody model: needed when bending, vibration or rigid–flexible coupling materially changes the response.
+More detail means more data and more computation, and it doesn't guarantee accuracy if the parameters are poor or the model answers the wrong question. A rigid-body model is fine when structural deformation has negligible effect; a flexible multibody model is needed when bending, vibration or rigid–flexible coupling materially changes the response.
 
 ## Related
 
 - [[Dynamic System, Plant and Model]] · [[Linear, Nonlinear and Time-Varying Models]]
-

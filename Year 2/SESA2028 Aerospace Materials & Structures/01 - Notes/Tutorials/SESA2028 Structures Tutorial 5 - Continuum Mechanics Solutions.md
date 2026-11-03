@@ -5,7 +5,7 @@ type: tutorial-solution
 stream: "Structures"
 order: 5
 tags: [sesa2028, structures, tutorial, continuum-mechanics, thick-cylinder]
-status: complete
+status: lectured
 parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 topics: ["[[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates]]", "[[SESA2028 S10 - Thick Cylinders and Shrink Fits]]"]
 sources: ["02 - Sources/SESA2028 green coursework book.pdf, pp. 51-52"]

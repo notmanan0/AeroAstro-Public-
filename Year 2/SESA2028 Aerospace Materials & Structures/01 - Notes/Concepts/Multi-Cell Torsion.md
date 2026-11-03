@@ -3,7 +3,7 @@ title: "Multi-Cell Torsion"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, torsion]
-status: complete
+status: lectured
 ---
 
 # Multi-Cell Torsion
@@ -24,5 +24,6 @@ $$
 
 Solve the simultaneous system before converting any wall flow to stress.
 
-See [[SESA2028 S4 - Torsion of Thin-Walled Sections]].
+## Related
 
+- Topic: [[SESA2028 S4 - Torsion of Thin-Walled Sections|S4]]

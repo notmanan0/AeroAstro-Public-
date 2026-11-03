@@ -13,12 +13,7 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 
 # Weak and Strong Oblique Shocks
 
-## Definition
-
-> [!note] Definition
-> For a given $M_1$ and deflection $0<\theta<\theta_{max}(M_1)$, the [[Theta-Beta-Mach Relation]] has two solutions. The **weak** solution has the smaller $\beta$. The **strong** solution has the larger $\beta$, closer to a normal shock.
-
-## Comparison
+For a given $M_1$ and a deflection $0<\theta<\theta_{max}(M_1)$, the [[Theta-Beta-Mach Relation]] has two solutions. The **weak** one has the smaller shock angle $\beta$; the **strong** one has the larger, closer to a normal shock.
 
 | | Weak | Strong |
 |---|---|---|
@@ -28,13 +23,13 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 | $M_2$ | usually $>1$ (subsonic only just below $\theta_{max}$) | always $<1$ |
 | occurrence | the normal outcome on wedges and corners | only if forced by back pressure or geometry |
 
-At $M_1=2$, $\theta=15^\circ$: weak $\beta=45.3^\circ$, $M_2=1.45$, $p_{02}/p_{01}=0.952$; strong $\beta=79.8^\circ$, $M_2=0.64$, $p_{02}/p_{01}=0.736$.
+At $M_1=2$ and $\theta=15^\circ$, the weak shock has $\beta=45.3^\circ$, $M_2=1.45$ and $p_{02}/p_{01}=0.952$. The strong one has $\beta=79.8^\circ$, $M_2=0.64$ and $p_{02}/p_{01}=0.736$.
 
 ![[at_oblique_shock_strength.png|760]]
 
 ## Maximum deflection and detachment
 
-The two branches meet at $\theta_{max}$, where $\mathrm d\theta/\mathrm d\beta=0$. If the wall turns the flow by more than $\theta_{max}$, no attached oblique shock satisfies the conservation laws. A curved, **detached** bow shock forms ahead of the body. It is normal on the axis and weakens further out. A blunt body, including a Pitot probe, is the limiting case.
+The two branches meet at $\theta_{max}$, where $\mathrm d\theta/\mathrm d\beta=0$. If the wall turns the flow through more than that, no attached oblique shock can satisfy the conservation laws, and a curved bow shock stands off ahead of the body instead. It is normal on the axis and weakens further out. A blunt body, including a Pitot probe, is the limiting case.
 
 | $M_1$ | 1.5 | 2 | 3 | 5 | $\infty$ |
 |---|---:|---:|---:|---:|---:|

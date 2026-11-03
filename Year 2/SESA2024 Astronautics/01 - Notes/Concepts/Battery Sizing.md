@@ -3,52 +3,33 @@ title: "Battery Sizing"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["depth of discharge", "DoD", "battery capacity", "energy density", "NiCd", "NiH2", "Li-ion", "charge rate"]
+aliases: ["depth of discharge", "DoD", "battery capacity", "energy density", "charge rate", "NiCd", "NiH2", "lithium-ion"]
 tags: [sesa2024, concept, power]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 08 - Electrical Power Subsystem]]"]
-related_concepts: ["[[Eclipse Duration]]", "[[Solar Cells and Arrays]]", "[[Spacecraft Power Sources]]"]
+related_concepts: ["[[Eclipse Duration]]", "[[Solar Cells and Arrays]]"]
 sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - complete.pdf"]
 ---
 
 # Battery Sizing
 
-## Definition
+Battery sizing finds the capacity and mass of the rechargeable battery that must carry a spacecraft's load through the worst-case eclipse, at a depth of discharge low enough for the battery to survive the mission's number of charge cycles.
 
-> [!note] Definition
->
-> $$C = \frac{P_{EOL}\,t_e}{\text{DoD}\cdot V_B}\ (\text{A·h}),\qquad\mathcal E = CV_B\ (\text{W·h}),\qquad M_{batt} = \frac{\mathcal E}{\bar\varepsilon},\qquad R = \frac{\text{DoD}\cdot C}{t_s}\ (\text{A})$$
->
-> Here $V_B$ = number of cells in series × cell voltage, chosen to match the bus voltage.
+The cycle count is the mission lifetime divided by the orbital period, about 10 000 for two years in LEO. Cycle life falls steeply with depth of discharge (on the NiCd curve, 20 % DoD gives tens of thousands of cycles and 60 % about a thousand), so LEO batteries are run shallow and most of their charge is never used. The cells in series set the voltage, $V_B=N_cV_c$ with 1.25 V per NiCd cell, 1.3 V per NiH₂ cell and 4.1 V per lithium-ion cell. Then
 
-## Explanation
-- **DoD** is the fraction of capacity used per discharge. The **cycle life falls as DoD rises**, so the number of eclipses (cycles) sets the allowable DoD. This is the key parameter for battery life.
-- Number of cycles = lifetime ÷ orbit period (worst case: an eclipse every orbit).
-- Cell counts: a 28 V bus needs **22 NiCd cells** (1.25 V, giving 27.5 V) or **7 Li-ion cells** (4.1 V, giving 28.7 V).
+$$
+C=\frac{P_{EOL}\,t_e}{\mathrm{DoD}\cdot V_B},
+\qquad
+E=CV_B,
+\qquad
+M=\frac{E}{\varepsilon},
+$$
 
-| | NiCd | NiH₂ | Li-ion |
-|---|---|---|---|
-| $\bar\varepsilon$ (W·h/kg) | 25–30 | 50–80 | 120–150 |
-| Cell $V$ | 1.25 | 1.30 | 4.1 |
-| Notes | obsolete; compact rectangular cells | deeper DoD for the same life; bulky pressure vessels | today's choice |
+and the array must replace the discharged capacity during sunlight at the charge rate $R=\mathrm{DoD}\cdot C/t_s$, adding $RV_A$ to the array power. For the course example (1 kW, 0.6 h eclipse, 30 % DoD, 27.5 V NiCd at 30 W h/kg) this gives 72.7 A h, 2000 W h and 67 kg.
 
-- The charge rate $R$ feeds the array sizing: $P_{array} = P_{load}+RV_A$.
-
-## Examples
-| Case | $t_e$ | DoD | $C$ | Mass |
-|---|---|---|---|---|
-| Lecture 800 km, 1 kW, NiCd | 0.6 h | 30 % | 72.7 A·h | 67 kg |
-| Workbook GEO, 8 kW, NiCd | 1.157 h | 40 % | 841 A·h | 771 kg |
-| 2018/19, 900 km, 350 W, Li-ion (7 cells) | 0.584 h | 20 % | 35.6 A·h | 7.9 kg |
-| 2018/19, same, NiCd (22 cells) | 0.584 h | 20 % | 37.1 A·h | 34 kg |
-| 2023/24, GEO, 10 kW, NiCd / NiH₂ | 1.157 h | 40 / 60 % | 1052 / 701 A·h | 964 / 386 kg |
-| 2014/15, ISS 200 kW, NiCd / NiH₂ | 0.605 h | 10 / 30 % | 43 250 / 14 420 A·h | 40.4 / 8.1 t |
-
-- Li-ion wins on mass by about 4×.
-- NiH₂ is about 2.5× lighter than NiCd but about 1.5× bulkier per W·h (2023/24 B2).
+Lithium-ion has the highest energy density and is now standard; NiH₂ tolerates deeper discharge than NiCd for the same cycle life but is bulky; NiCd is obsolete. All must be kept within their operating temperature range (roughly 0–40 °C), which ties the battery to the thermal subsystem.
 
 ## Related
-- [[Eclipse Duration]] · [[Solar Cells and Arrays]] · [[Spacecraft Power Sources]]
 
-## Sources
-- Chapter 8 equations 8.4–8.9; workbook Ch8 Q8–Q10
+- [[SESA2024 08 - Electrical Power Subsystem#3. Batteries|Batteries in the lecture note]] · [[SESA2024 08 - Electrical Power Subsystem#800 km LEO spacecraft, 1 kW for two years|Worked example]]
+- [[Eclipse Duration]] · [[Solar Cells and Arrays]]

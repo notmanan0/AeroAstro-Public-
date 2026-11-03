@@ -86,7 +86,7 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 01 - Measurement Sy
 ## Year 2 bridge
 - SESA2027 Part C revisits the same vocabulary, then adds **dynamic** characteristics: sensor order, time constant and bandwidth ([[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion]], [[SESA2027 C2 - Sensor Characteristics, Dynamics and Design]], [[Accuracy and Precision]], [[Measurement Chain]]).
 - **ADC resolution vs noise** and scaling/offsetting into the ADC range are covered in [[ADC Quantisation and Resolution]] and [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]].
-- **Thermocouples** are the workhorse of engine test beds, measuring exhaust gas and turbine entry temperatures ([[Turbine Entry Temperature and Blade Cooling]], [[SESA2023 W06 - Jet Engine Cycle Analysis - Brayton, Ramjet, Turbojet and Reheat]]). Spacecraft thermal control uses thermistors and PRTs ([[SESA2024 10 - Thermal Control]]).
+- **Thermocouples** are the standard temperature sensor on engine test beds, measuring exhaust gas and turbine entry temperatures ([[Turbine Entry Temperature and Blade Cooling]], [[SESA2023 W06 - Jet Engine Cycle Analysis - Brayton, Ramjet, Turbojet and Reheat]]). Spacecraft thermal control uses thermistors and PRTs ([[SESA2024 10 - Thermal Control]]).
 
 ## Links
 - Next: [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]

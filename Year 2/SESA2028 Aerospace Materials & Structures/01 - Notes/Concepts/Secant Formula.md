@@ -3,7 +3,7 @@ title: "Secant Formula"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, buckling, eccentric-load]
-status: complete
+status: lectured
 ---
 
 # Secant Formula
@@ -21,5 +21,7 @@ The secant term is a moment-amplification factor. As $P$ approaches the Euler lo
 
 For other boundary conditions derive the corresponding differential-equation solution or use the appropriate effective configuration; do not change only $L$ blindly when the load application differs.
 
-See [[Beam-Column Amplification]].
+## Related
 
+- Topic: [[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]]
+- Concepts: [[Beam-Column Amplification]]

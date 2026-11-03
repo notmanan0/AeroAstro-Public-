@@ -4,7 +4,8 @@ aliases: ["SESA2028 Materials Formula Sheet", "SESA2028 Structures Formula Sheet
 module: "SESA2028 Aerospace Materials & Structures"
 type: formula-sheet
 tags: [sesa2028, materials, structures, formula-sheet, revision]
-status: complete
+status: lectured
+date: 2026-10-30
 parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 ---
 
@@ -14,7 +15,7 @@ The structural and materials equations are collected here because exam design qu
 
 ## Structural analysis
 
-This sheet is deliberately compact. The topic notes explain assumptions and derivations.
+Notation follows the structures lectures: $x$ along the beam, $\sigma_{xx}$ the bending stress, $Q_y$ and $Q_z$ the shear forces, and a positive $M_z$ giving tension at positive $y$ ([[SESA2028 S1 - Section Properties and Unsymmetrical Bending|S1]]). The topic notes hold the assumptions and derivations.
 
 ### Section properties
 
@@ -24,234 +25,166 @@ $$
 $$
 
 $$
-I_y=\int z^2dA,\qquad I_z=\int y^2dA,\qquad I_{yz}=\int yz\,dA
+I_z=\int y^2dA,\qquad I_y=\int z^2dA,\qquad I_{yz}=\int yz\,dA
 $$
 
-$$
-I_y=I_{y,c}+A(\Delta z)^2,\quad
-I_z=I_{z,c}+A(\Delta y)^2,\quad
-I_{yz}=I_{yz,c}+A\Delta y\Delta z
-$$
+Parallel axes, with $\Delta y$, $\Delta z$ the offsets of each part's centroid from the section centroid:
 
 $$
-I_{1,2}=\frac{I_y+I_z}{2}
-\pm\sqrt{\left(\frac{I_y-I_z}{2}\right)^2+I_{yz}^2}
+I_z=\sum\left(I_{z,c}+A\,\Delta y^2\right),\quad
+I_y=\sum\left(I_{y,c}+A\,\Delta z^2\right),\quad
+I_{yz}=\sum\left(I_{yz,c}+A\,\Delta y\,\Delta z\right)
 $$
 
+Principal axes ($\theta$ measured from $y$ towards $z$, as in S1):
+
 $$
-\tan2\theta_p=\frac{2I_{yz}}{I_y-I_z}
+\tan2\theta_1=\frac{2I_{yz}}{I_z-I_y},\qquad
+I_{1,2}=\frac{I_y+I_z}{2}\pm\sqrt{\left(\frac{I_z-I_y}{2}\right)^2+I_{yz}^2}
 $$
+
+Substitute $\theta_1$ back and confirm $I_{y'z'}=0$ before using the principal values.
 
 ### Unsymmetrical bending
 
-Let $\Delta=I_yI_z-I_{yz}^2$. Then
-
 $$
-\sigma_x=-\frac{M_zI_y+M_yI_{yz}}{\Delta}y
-+\frac{M_yI_z+M_zI_{yz}}{\Delta}z
+\sigma_{xx}=\frac{\left(M_zI_y-M_yI_{yz}\right)y+\left(M_yI_z-M_zI_{yz}\right)z}{I_yI_z-I_{yz}^2}
 $$
 
-Neutral axis: set $\sigma_x=0$. Always evaluate the resulting linear field at every boundary vertex.
+The neutral axis is the line $\sigma_{xx}=0$ through the centroid; evaluate $\sigma_{xx}$ at every corner of the section, because the extreme values sit at the points furthest from that line. With $I_{yz}=0$ it reduces to $\sigma_{xx}=M_zy/I_z+M_yz/I_y$.
 
 ### Beam curvature and standard deflections
 
 $$
-EI\frac{d^2v}{dx^2}=M(x)
+EI\frac{d^2v}{dx^2}=M(x)\quad\text{(sign of }M\text{ fixed by the axis convention of the question)}
 $$
 
-Cantilever, tip force:
-
-$$
-v_L=\frac{PL^3}{3EI},\qquad \theta_L=\frac{PL^2}{2EI}
-$$
-
-Cantilever, full UDL:
-
-$$
-v_L=\frac{wL^4}{8EI},\qquad \theta_L=\frac{wL^3}{6EI}
-$$
-
-Simply supported, centre load:
-
-$$
-v_{max}=\frac{PL^3}{48EI}
-$$
+| Case | Maximum deflection | End slope |
+|---|---|---|
+| Cantilever, tip load $P$ | $PL^3/3EI$ | $PL^2/2EI$ |
+| Cantilever, UDL $w$ | $wL^4/8EI$ | $wL^3/6EI$ |
+| Simply supported, central $P$ | $PL^3/48EI$ | $PL^2/16EI$ |
+| Simply supported, UDL $w$ | $5wL^4/384EI$ | $wL^3/24EI$ |
 
 ### Shear flow
 
-Symmetric uncoupled case:
+General thin-walled open section, $s$ measured from where the flow is $q_{out}$ (zero at a free edge):
 
 $$
-q=\frac{VQ}{I},\qquad \tau=\frac qt
+q(s)=q_{out}-\frac{Q_yI_y-Q_zI_{yz}}{I_yI_z-I_{yz}^2}\int_0^sty\,ds-\frac{Q_zI_z-Q_yI_{yz}}{I_yI_z-I_{yz}^2}\int_0^stz\,ds,\qquad \tau=\frac qt
 $$
 
-General open-section form:
-
-$$
-q(s)=\frac{(V_yI_y-V_zI_{yz})Q_y(s)
-+(V_zI_z-V_yI_{yz})Q_z(s)}{\Delta}
-$$
-
-Free edge: $q=0$. At a branch junction: algebraic inflow equals algebraic outflow.
-
-Shear centre from torque balance:
-
-$$
-Ve=\int_{wall} q(s)\,[y\,dz-z\,dy]
-$$
+With $I_{yz}=0$ and $Q_z=0$ this is $q=Q_y\,\bar yA/I_z$ in magnitude. At a junction, flow in equals flow out. A closed cell is cut, analysed as open, and given a constant $q_0$ fixed by moment equilibrium. The shear centre is the point about which the wall forces have no net moment ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]).
 
 ### Torsion
 
 Circular shaft:
 
 $$
-\tau=\frac{Tr}{J},\qquad \frac{d\phi}{dx}=\frac{T}{GJ}
+\tau=\frac{Tr}{J},\qquad \frac{d\phi}{dx}=\frac{T}{GJ},\qquad J=\frac\pi2\left(R_e^4-R_i^4\right)
+$$
+
+Closed thin wall (Bredt–Batho):
+
+$$
+q=\frac{T}{2A_m},\qquad \tau=\frac{q}{t},\qquad J=\frac{4A_m^2}{\oint ds/t}
 $$
 
 Open thin wall:
 
 $$
-J\simeq\frac13\sum b_it_i^3,\qquad
-\tau_{max,i}\simeq\frac{Tt_i}{J}
+J=\frac13\sum b_it_i^3,\qquad \tau_{max}=\frac{Tt_{max}}{J}
 $$
 
-Single closed cell:
-
-$$
-q=\frac{T}{2A_m},\qquad \tau=\frac qt
-$$
-
-$$
-\frac{d\phi}{dx}=
-\frac{T}{4A_m^2}\oint\frac{ds}{Gt}
-$$
-
-Multi-cell:
-
-$$
-T=2\sum A_iq_i,
-$$
-
-with equal twist rate in every cell and $q_{common}=q_i-q_j$.
+$A_m$ is the area enclosed by the wall midline. Multi-cell sections ($T=2\sum A_iq_i$, equal twist rate in every cell) are on the slides but were not lectured in 2025–26.
 
 ### Euler buckling
 
 $$
-P_E=\frac{\pi^2EI}{(KL)^2}
+P_{cr}=\frac{\pi^2EI}{L_e^2},\qquad
+\sigma_{cr}=\frac{\pi^2E}{\left(L_e/r\right)^2},\qquad r=\sqrt{I/A}
 $$
 
-| Ends | K |
+| Ends | $L_e/L$ |
 |---|---:|
-| pin-pin | 1.0 |
-| fixed-free | 2.0 |
-| fixed-pin | about 0.699 |
-| fixed-fixed | 0.5 |
+| pinned–pinned | 1 |
+| fixed–free | 2 |
+| fixed–pinned | 0.699 |
+| fixed–fixed | 0.5 |
+
+Use the smaller $I$ unless the end conditions differ about the two axes; then check both.
+
+### Imperfect columns and beam-columns
+
+Initial sine crookedness $a_0$, pin ends:
 
 $$
-\lambda=\frac{KL}{r_g},\qquad r_g=\sqrt{I/A},\qquad
-\sigma_E=\frac{\pi^2E}{\lambda^2}
+a=\frac{a_0}{1-P/P_{cr}},\qquad \sigma_{max}=\frac PA+\frac{Pac}{I}
 $$
 
-Initial sine imperfection:
+Eccentric load $e$, pin ends (secant formula):
 
 $$
-a=\frac{a_0}{1-P/P_E}
+\sigma_{max}=\frac PA\left[1+\frac{ec}{r^2}
+\sec\left(\frac{L_e}{2r}\sqrt{\frac{P}{EA}}\right)\right]
 $$
 
-Eccentric pin-ended column:
+Plate buckling, $\sigma_{cr}=k\pi^2E(t/b)^2/12(1-\nu^2)$, is on the slides but was not lectured in 2025–26.
 
-$$
-\sigma_{max}=\frac PA\left[1+\frac{ec}{r_g^2}
-\sec\left(\frac{L}{2r_g}\sqrt{\frac{P}{EA}}\right)\right]
-$$
-
-### Plate buckling
-
-$$
-\sigma_{cr}=k\frac{\pi^2E}{12(1-\nu^2)}\left(\frac tb\right)^2
-$$
-
-For a simply supported rectangular plate in uniaxial compression,
-
-$$
-k=\frac{(m^2+n^2a^2/b^2)^2}{m^2a^2/b^2}
-$$
-
-and choose the admissible integers $m,n$ that minimise $\sigma_{cr}$.
-
-### Strain energy
+### Strain energy and energy methods
 
 $$
 U=\int\left(
 \frac{N^2}{2EA}+\frac{M^2}{2EI}
-+\frac{T^2}{2GJ}+\frac{\kappa V^2}{2GA}
-\right)dx
++\frac{T^2}{2GJ}\right)dx\quad(+\text{ a shear term, usually negligible for slender members})
 $$
 
-Castigliano:
+Castigliano's second theorem and the unit load method:
 
 $$
-\delta_i=\frac{\partial U}{\partial P_i},\qquad
-\theta_i=\frac{\partial U}{\partial M_i}
-$$
-
-Unit-load/virtual work:
-
-$$
+u_j=\frac{\partial U}{\partial F_j},\qquad
 \delta=\int\left(
 \frac{Nn}{EA}+\frac{Mm}{EI}+\frac{Tt}{GJ}
 \right)dx
 $$
 
-### Axisymmetric cylinders
+where $n$, $m$, $t$ are the internal actions from a unit load at the point and in the direction of $\delta$ ([[SESA2028 S7 - Strain Energy and Conservation of Energy|S7]], [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]).
 
-Equilibrium:
+### Thick cylinders and shrink fits
 
-$$
-\frac{d\sigma_r}{dr}+\frac{\sigma_r-\sigma_\theta}{r}=0
-$$
-
-Lamé solution:
+Axisymmetric equilibrium (no body force) and the Lamé solution:
 
 $$
-\sigma_r=A-\frac{B}{r^2},\qquad
-\sigma_\theta=A+\frac{B}{r^2}
+\frac{d\sigma_{rr}}{dr}+\frac{\sigma_{rr}-\sigma_{\theta\theta}}{r}=0,\qquad
+\sigma_{rr}=A-\frac{B}{r^2},\qquad
+\sigma_{\theta\theta}=A+\frac{B}{r^2}
 $$
 
-For $\sigma_r(a)=-p_i, \sigma_r(b)=-p_o$:
+With $\sigma_{rr}(r_i)=-p_i$ and $\sigma_{rr}(r_o)=-p_o$:
 
 $$
-A=\frac{p_ia^2-p_ob^2}{b^2-a^2},\qquad
-B=\frac{(p_i-p_o)a^2b^2}{b^2-a^2}
+A=\frac{p_ir_i^2-p_or_o^2}{r_o^2-r_i^2},\qquad
+B=\frac{(p_i-p_o)r_i^2r_o^2}{r_o^2-r_i^2}
 $$
 
-General radial displacement:
+Axial stress: open ends $\sigma_{zz}=0$; closed ends $\sigma_{zz}=A$ (internal pressure only); fixed between rigid supports $\sigma_{zz}=\nu(\sigma_{rr}+\sigma_{\theta\theta})=2\nu A$. Radial displacement $u_r=r\varepsilon_{\theta\theta}$ with $\varepsilon_{\theta\theta}=[\sigma_{\theta\theta}-\nu(\sigma_{rr}+\sigma_{zz})]/E$.
+
+Shrink fit at interface radius $r_m$ (radial interference $\delta$, contact pressure $p$ common to both parts):
 
 $$
-u(r)=\frac1E\left(
-[(1-\nu)A-\nu\sigma_z]r+(1+\nu)\frac Br
-\right)
+\delta=u^{o}_r(r_m)-u^{i}_r(r_m)=r_m\left(\varepsilon^{o}_{\theta\theta}-\varepsilon^{i}_{\theta\theta}\right)
 $$
 
-Open ends: $\sigma_z=0$. Closed ends carrying the end thrust: $\sigma_z=A$ (the Lamé constant).
+Check whether a question gives radial or diametral interference. Tresca at the bore uses $(\sigma_{\theta\theta}-\sigma_{rr})/2$ because $\sigma_{zz}$ is the intermediate stress ([[SESA2028 S10 - Thick Cylinders and Shrink Fits|S10]]).
 
-Shrink-fit compatibility at $r=c$:
-
-$$
-\delta=u_{outer\ surface\ of\ inner}(c)
--u_{inner\ surface\ of\ outer}(c)
-$$
-
-### Spinning discs
-
-Radial equilibrium with body force:
+### Spinning discs (not lectured in 2025–26)
 
 $$
-\frac{d\sigma_r}{dr}+\frac{\sigma_r-\sigma_\theta}{r}
-+\rho\omega^2r=0
+\sigma_{rr}=A-\frac{B}{r^2}-\frac{3+\nu}{8}\rho\omega^2r^2,\qquad
+\sigma_{\theta\theta}=A+\frac{B}{r^2}-\frac{1+3\nu}{8}\rho\omega^2r^2
 $$
 
-Use the displacement constitutive relation, solve for $u(r)$, then impose finite displacement at $r=0$ for a solid disc and radial-traction conditions at free radii.
+Solid disc $B=0$; a central hole doubles the peak hoop stress ([[SESA2028 S11 - Spinning Discs|S11]]).
 
 ### Linked notes
 
@@ -277,7 +210,21 @@ $$
 $$
 
 $$
-K_t=1+\frac{2a}{b}\ (\text{elliptical hole}),\quad K_t=3\ (\text{circular hole})
+K_t=1+2\sqrt{\frac{b}{r}}\ (\text{notch depth }b,\ \text{root radius }r),\quad K_t=3\ (\text{circular hole})
+$$
+
+$$
+\text{Griffith (centre crack }2a\text{, plane stress): }U_e=\frac{\pi a^2\sigma^2}{E},\ U_s=4a\gamma,\quad G=\frac{\pi a\sigma^2}{E}
+$$
+
+$$
+\text{plane strain: }\varepsilon_{33}=0\Rightarrow\sigma_{33}=\nu\left(\sigma_{11}+\sigma_{22}\right)
+\qquad
+\text{Charpy: IE}=mg\left(h_0-h_1\right)
+$$
+
+$$
+\text{torsion (pure shear }\tau\text{): }\sigma_n(\theta)=\tau\sin2\theta,\ \text{maximum opening at }45^\circ
 $$
 
 LEFM is valid if the plastic zone ≲ 1/50 of the crack length, the ligament and the thickness.
@@ -294,11 +241,15 @@ $$
 $$
 
 $$
-\text{Goodman: }\sigma_a=\sigma_{a0}\left(1-\frac{\sigma_m}{\sigma_{TS}}\right)\qquad
+\text{Basquin inverted: }N_f=\frac12\left(\frac{\sigma_a}{\sigma_f'}\right)^{1/b}
+$$
+
+$$
+\text{Goodman: }\sigma_a=\sigma_{a0}\left(1-\frac{\sigma_m}{\sigma_{ts}}\right)\qquad
 \text{Miner: }\sum\frac{n_i}{N_i}=1
 $$
 
-**Paris lifing:**
+Paris lifing:
 
 $$
 \frac{da}{dN}=A(\Delta K)^m,\quad\Delta K=Q\Delta\sigma\sqrt{\pi a},\quad\Delta\sigma=\sigma_{max}-\max(\sigma_{min},0)
@@ -308,7 +259,7 @@ $$
 \boxed{N_f=\frac{a_c^{\,1-m/2}-a_i^{\,1-m/2}}{\left(1-\frac m2\right)A\left(Q\Delta\sigma\sqrt\pi\right)^m}}\quad(m\ne2)
 $$
 
-For $m=2$: $N_f=\dfrac{\ln(a_c/a_i)}{A(Q\Delta\sigma)^2\pi}$. **Apply SF 2** on life (inspect at $N_f/2$).
+For $m=2$: $N_f=\dfrac{\ln(a_c/a_i)}{A(Q\Delta\sigma)^2\pi}$. Apply SF 2 on life (inspect at $N_f/2$).
 
 Rule of thumb: the final-fracture area fraction ≈ $\sigma_{max}/\sigma_{UTS}$.
 
@@ -319,11 +270,11 @@ $$
 $$
 
 $$
-\text{Nernst: }E=E^0+\frac{0.0592}{n}\log_{10}[\mathrm{M^{n+}}]
+\text{Nernst: }E=E^0+\frac{0.0592}{n}\log_{10}[\mathrm{M^{n+}}]\quad(25^\circ\text{C; the slide's }0.592\text{ and minus sign are slips})
 $$
 
 $$
-\text{Faraday: }w=\frac{MIt}{nF},\quad\text{rate}\propto\frac IA
+\text{Faraday: }w=\frac{MIt}{nF},\quad\text{rate}\propto\frac IA,\quad\frac{dx}{dt}=\frac{Mi}{nF\rho},\quad\text{penetration}\propto\frac{A_{cathode}}{A_{anode}}
 $$
 
 $$
@@ -331,7 +282,7 @@ $$
 \mathrm{CR\,[g\,m^{-2}day^{-1}]}=8.95\frac{MI}{nA}\quad(I\ \text{mA},\ A\ \text{cm}^2)
 $$
 
-Zn-Cu cell: $|{-0.76}-0.34|=1.10$ V. **The more negative metal is the anode.** Stainless needs Cr > 12 %.
+Zn-Cu cell: $E_{cell}=E_{cathode}-E_{anode}=0.34-(-0.76)=+1.10$ V (the lecture writes −1.1 V, "most negative minus least negative"). The more negative metal is the anode. Stainless needs Cr > 12 %.
 
 ### Composites and lightweighting ([[SESA2028 M4 - Polymer Matrix Composites|M4]], [[SESA2028 M5 - Metal and Ceramic Matrix Composites and Hybrid Laminates|M5]])
 
@@ -344,7 +295,8 @@ $$
 $$
 
 $$
-l_c=\frac{\sigma_f^*d}{2\tau};\quad l\ge15l_c\approx\text{continuous}
+\frac{P_f}{P_m}=\frac{V_fE_f}{V_mE_m}\qquad
+l_c=\frac{\sigma_f^*d}{2\tau},\quad\bar\sigma_f=\sigma_f^*\left(1-\frac{l_c}{2l}\right)\ (l\ge l_c);\quad l\ge15l_c\approx\text{continuous}
 $$
 
 | Index to maximise | Tie | Beam / strut (buckling) | Panel |
@@ -360,7 +312,15 @@ $$
 \text{Hall-Petch: }\sigma_y=\sigma_0+k_yd^{-1/2}
 $$
 
-Densities (g/cm³): Mg 1.74, Be 1.85, Al 2.70, Ti 4.51, Fe 7.87.
+$$
+\text{precipitate interface area (volume }V\text{, radius }r\text{): }A=\frac{3V}{r}\quad(\text{coarsening lowers it: over-ageing})
+$$
+
+$$
+\text{lever rule, pro-eutectoid ferrite: }W_\alpha=\frac{0.76-C_0}{0.76-0.022}
+$$
+
+Densities (g/cm³): Mg 1.74, Be 1.85, Al 2.70, Ti 4.51, Fe 7.87. Specific stiffness about 26 GPa·cm³/g for steel, Al, Mg and Ti; about 160 for Be.
 
 Eutectoid: 0.76 % C at 727 °C. TTT nose ≈ 540-550 °C at ≈ 1 s. Critical rate from 700 °C ≈ 150-200 °C/s.
 
@@ -388,12 +348,16 @@ $$
 \text{Oxidation: }w=k_Lt\ (\text{linear}),\quad w^2=k_pt+C\ (\text{parabolic}),\quad w=k_e\log(Ct+A)\ (\text{logarithmic})
 $$
 
+$$
+\text{parabolic from diffusion control: }\frac{dx}{dt}=\frac kx\ \Rightarrow\ x^2=2kt+x_0^2
+$$
+
 Creep matters above about $0.4T_m$. $10^5$ h = 11.4 years.
 
 ### Units and traps
 
-- $a$ in **metres** in every $K$ and Paris calculation; $K$ in $\mathrm{MPa\sqrt m}$.
-- Temperature in **kelvin** in LMP and Arrhenius (add 273).
+- $a$ in metres in every $K$ and Paris calculation; $K$ in $\mathrm{MPa\sqrt m}$.
+- Temperature in kelvin in LMP and Arrhenius (add 273).
 - Compressive part of the cycle: ignore it in $\Delta\sigma$.
-- Ceramic "UTS" in tables is often **compressive**.
+- Ceramic "UTS" in tables is often compressive.
 - The rule of mixtures on specific properties is only approximate.

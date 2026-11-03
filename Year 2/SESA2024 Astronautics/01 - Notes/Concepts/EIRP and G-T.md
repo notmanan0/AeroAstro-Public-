@@ -3,39 +3,23 @@ title: "EIRP and G-T"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["EIRP", "equivalent isotropic radiated power", "G/T", "figure of merit", "receiver sensitivity"]
+aliases: ["EIRP", "equivalent isotropic radiated power", "G/T", "figure of merit", "ground station figure of merit", "power-gain trade-off"]
 tags: [sesa2024, concept, communications]
-status: complete
+status: lectured
 parent_lectures: ["[[SESA2024 09 - Communications]]"]
 related_concepts: ["[[Link Budget Equation]]", "[[Antenna Gain and Beamwidth]]"]
-sources: ["02 - Sources/Lectures/Chapter 9/2025 Chapter 9 - Communications - Lecture slides.pdf"]
+sources: ["02 - Sources/Lectures/SESA2024 Lecture Chapter 9 - Communications - prerecord - week 8.txt", "02 - Sources/Lectures/SESA2024 Lecture 2026-01-06.txt"]
 ---
 
-# EIRP and G/T
+# EIRP and G-T
 
-## Definition
+The equivalent isotropic radiated power (EIRP) is the product $P_TG_T$ of a transmitter's power and antenna gain, the power an isotropic radiator would need to produce the same flux at the receiver; $G_R/T_R$, the receiving antenna's gain over its system noise temperature, is the receiver's figure of merit or sensitivity.
 
-> [!note] Definition
-> - **EIRP** $= P_TG_T$ (W or dBW): the power an **isotropic** radiator at the transmitter would need to radiate to produce the same power flux (W/m²) at the receiver as the real directional transmitter.
-> - **$G_R/T_R$** (dB/K): the receiving system's **figure of merit** (sensitivity). $C/N_0\propto G_R/T_R$.
+In the link budget the EIRP is the term the spacecraft designer controls, and it is a design parameter that must be large enough to reach the required link quality. The same EIRP can come from high power and modest gain, which loads the power and thermal subsystems, or from low power and high gain, which needs a larger dish with more mass, perhaps a deployment mechanism, possible shadowing of arrays or payload, and a narrower beam that tightens ACS pointing. That is the power–gain trade-off asked about in 2017/18 B3 and Workbook Ch9 Q6.
 
-## Explanation
-- EIRP collects all the transmitter-side terms. The link requirement fixes EIRP; the designer splits it between $P_T$ (power subsystem) and $G_T$ (antenna size). This is the **power–gain trade-off**.
-- $G/T$ collects the receiver side. A big dish raises $G$; a cold, low-noise amplifier lowers $T$. Deep-space stations maximise both.
-- Converting back:
-
-$$P_T = 10^{(EIRP-G_T)/10}\ \text{W},\qquad P_{elec} = P_T/\eta_{transponder}$$
-
-## Examples
-- 2024/25 B2(iii), GPS global beam:
-  - $\theta_{3dB}$ = 27.7°, so $D = 72(0.190)/27.7$ = 0.49 m, giving $G_T$ = 16.4 dB ($\eta$ = 0.65);
-  - $P_T$ = 38.2 − 16.4 = 21.8 dBW = 151 W;
-  - at 50 % efficiency, **≈ 303 W**. The paper asks you to show "≈ 310 W".
-- 2022/23 B2(ii), 18 000 km, 240 kbps: EIRP = 34.6 dBW. With $\eta$ = 0.65, $P_{elec}$ ≈ **271 W** (the paper quotes ≈ 272 W).
-- "Explain the physical significance of EIRP" appears in 2015/16, 2018/19, 2023/24 and 2024/25 (3–5 marks).
+$G_R/T_R$ belongs to the ground segment: a large, cold receiver (the 70 m Deep Space Network dishes at 25 K give about 59 dB/K) is what makes deep-space links possible. Raising it is cheaper than raising the spacecraft's EIRP, which is why missions rely on large ground antennas.
 
 ## Related
-- [[Link Budget Equation]] · [[Antenna Gain and Beamwidth]]
 
-## Sources
-- Chapter 9 slide 27 (equation 9.7); workbook Ch9 Q5, Q6
+- [[SESA2024 09 - Communications#6. The link budget equation|Link budget in the lecture note]]
+- [[Link Budget Equation]] · [[Antenna Gain and Beamwidth]]

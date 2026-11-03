@@ -8,41 +8,30 @@ tags: [sesa2022, concept, finite-wing-theory]
 status: complete
 parent_lectures: ["[[SESA2022 T5 - Finite Wing Theory]]", "[[SESA2022 T6 - Aircraft Aerodynamics and Static Stability]]"]
 related_concepts: ["[[Biot-Savart Law and Helmholtz Theorems]]", "[[Elliptic Lift Distribution]]", "[[Oswald Efficiency Factor]]"]
-sources: ["02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf"]
+sources: ["02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf", "02 - Sources/Lectures/SESA2022 Lecture 2025-11-06.txt … 2025-11-13.txt (2025-26 transcripts)"]
 ---
 
 # Downwash and Induced Drag
 
-## Definition
-
-> [!note] Definition
-> The trailing vortices of a finite wing induce a downward velocity $w$ at the wing. This tilts the local relative wind down by the **induced angle** $\alpha_i = -w/V_\infty$. The section's lift, perpendicular to the *local* wind, therefore has a rearward component: the **induced drag**.
->
-> $$\alpha_{eff} = \alpha-\alpha_i,\qquad D_i' = L'\alpha_i,\qquad C_{D_i} = \frac{C_L^2}{\pi AR}(1+\delta) = \frac{C_L^2}{\pi eAR}$$
-
-## Explanation
-- Induced drag is the price of producing lift with a finite span. The energy goes into the kinetic energy of the trailing vortex wake. It is **not** caused by viscosity.
-- From the Fourier series:
+The trailing vortices of a finite wing induce a downward velocity $w$ at the wing, which tilts the local relative wind down by the **induced angle** $\alpha_i = -w/V_\infty$. Each section's lift is perpendicular to that local wind, so it has a rearward component, the **induced drag**:
 
 $$
-\alpha_i(\theta) = \sum nB_n\frac{\sin n\theta}{\sin\theta},\qquad C_{D_i} = \pi AR\sum nB_n^2
+\alpha_{eff} = \alpha-\alpha_i,\qquad D_i' = L'\alpha_i,\qquad C_{D_i} = \frac{C_L^2}{\pi AR}(1+\delta) = \frac{C_L^2}{\pi eAR}.
 $$
 
-- $C_{D_i}\propto C_L^2$, so it dominates at **low speed / high $C_L$** (take-off, climb, loiter), whereas profile drag dominates at high speed.
-- For fixed lift, $D_i = \dfrac{L^2}{\pi qb^2e}$. It depends on **span**, not area, so span loading $L/b$ is what matters.
-- **Reducing it**: larger span or $AR$, near-elliptic loading, winglets, and formation flight (flying in another aircraft's upwash).
-- **Downwash on the tail**: $\epsilon = \dfrac{C_L}{\pi Ae}$, so $\partial\epsilon/\partial\alpha = \epsilon_\alpha$ reduces the tail's effective incidence (see [[Neutral Point and Static Margin]]).
+Induced drag is the price of producing lift with a finite span. Its energy goes into the kinetic energy of the trailing-vortex wake, and viscosity plays no part. With the circulation written as a Fourier series,
+
+$$
+\alpha_i(\theta) = \sum nB_n\frac{\sin n\theta}{\sin\theta},\qquad C_{D_i} = \pi AR\sum nB_n^2 .
+$$
+
+Because $C_{D_i}\propto C_L^2$, induced drag dominates at low speed and high $C_L$ (take-off, climb, loiter), while profile drag dominates at high speed. For a fixed lift, $D_i = L^2/(\pi qb^2e)$, which depends on the span rather than the area, so it is the span loading $L/b$ that matters. Induced drag is reduced by a larger span or aspect ratio, near-elliptic loading, winglets, and formation flight in another aircraft's upwash. The same downwash reaches the tailplane as $\epsilon = C_L/(\pi Ae)$, and its slope $\partial\epsilon/\partial\alpha$ reduces the tail's effective incidence ([[Neutral Point and Static Margin]]).
 
 ![[fwt_circulation.png|520]]
 
-## Examples
-- Power to overcome induced drag: [[SESA2022 Exam 2017-18 Solutions]] Q3, [[SESA2022 Exam 2021-22 Solutions]] B Q2 and [[SESA2022 Exam 2024-25 Solutions]] Q4.
-- Ratio of induced to total drag: [[SESA2022 Exam 2022-23 Solutions]] B Q2.
-- [[SESA2022 Examples Sheet 5 - Finite Wing Theory Solutions]].
+Past-paper uses: the power needed to overcome induced drag ([[SESA2022 Exam 2017-18 Solutions]] Q3, [[SESA2022 Exam 2021-22 Solutions]] B Q2, [[SESA2022 Exam 2024-25 Solutions]] Q4); the ratio of induced to total drag ([[SESA2022 Exam 2022-23 Solutions]] B Q2); and [[SESA2022 Examples Sheet 5 - Finite Wing Theory Solutions]].
 
 ## Related
-- Parent lectures: [[SESA2022 T5 - Finite Wing Theory]], [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability]]
-- Related concepts: [[Biot-Savart Law and Helmholtz Theorems]], [[Elliptic Lift Distribution]], [[Oswald Efficiency Factor]], [[Maximum Lift-to-Drag Ratio]]
 
-## Sources
-- `02 - Sources/Airfoils and Wings/Topic 5 Finite wing theory_v3_pdf.pdf`
+- Full derivation and worked examples: [[SESA2022 T5 - Finite Wing Theory#2. Downwash, induced angle and induced drag (7 Nov lecture)|T5 §2]]
+- [[Biot-Savart Law and Helmholtz Theorems]] · [[Elliptic Lift Distribution]] · [[Oswald Efficiency Factor]] · [[Maximum Lift-to-Drag Ratio]]

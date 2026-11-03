@@ -5,7 +5,7 @@ type: tutorial-solution
 stream: "Structures"
 order: 2
 tags: [sesa2028, structures, tutorial, bending, shear-flow]
-status: complete
+status: lectured
 parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 topics: ["[[SESA2028 S1 - Section Properties and Unsymmetrical Bending]]", "[[SESA2028 S2 - Beam Deflection and Bending Design]]", "[[SESA2028 S3 - Shear Flow and Shear Centre]]"]
 sources: ["02 - Sources/SESA2028 green coursework book.pdf, pp. 43-44"]

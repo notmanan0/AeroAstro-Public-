@@ -3,32 +3,24 @@ title: "Fibre Metal Laminates"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 stream: "Materials"
-tags: [sesa2028, materials, composites, glare, damage-tolerance, fatigue]
-status: complete
+aliases: ["FML", "GLARE", "ARALL", "Hybrid laminate", "Crack bridging"]
+tags: [sesa2028, materials, composites, fatigue, damage-tolerance]
+status: lectured
 parent: ["[[SESA2028 M5 - Metal and Ceramic Matrix Composites and Hybrid Laminates]]"]
-related: ["[[Paris Law]]", "[[MMC vs CMC]]", "[[Total Life vs Damage Tolerance]]"]
+related: ["[[MMC vs CMC]]", "[[Paris Law]]", "[[Total Life vs Damage Tolerance]]"]
 ---
 
 # Fibre Metal Laminates
 
-**Fibre metal laminates (FMLs)** stack thin aluminium-alloy sheets with bonded fibre-reinforced epoxy plies.
+A fibre metal laminate is a stack of thin aluminium sheets bonded with fibre-reinforced epoxy plies, glass in GLARE and aramid in ARALL, designed so that intact fibres bridge any fatigue crack in the metal.
 
-- **GLARE**: GLAss REinforced aluminium. 2024-T3 sheets with glass/epoxy prepreg; used in A380 upper-fuselage skin.
-- **ARALL**: ARamid ALuminium Laminate.
+The laminate is laid up like a club sandwich, 2000-series aluminium sheet alternating with prepreg, and cured. A fatigue crack starts and grows in an aluminium layer exactly as it would in a solid sheet, but when it reaches a composite ply the interface delaminates locally while the fibres stay whole and attached. They hold the crack faces together behind the tip. In a monolithic sheet the driving force $\Delta K=Q\Delta\sigma\sqrt{\pi a}$ keeps rising as the crack lengthens, which is why Paris-law growth accelerates; in the laminate, the longer the crack, the more load the bridging fibres take, so the stress at the tip falls and the crack can slow to a near-arrest.
 
-## Why they are damage tolerant
+![[materials_fibre_bridging.png|800]]
 
-1. A fatigue crack initiates and grows in an **Al layer**, for example at a rivet hole.
-2. When it reaches the fibre ply, the Al/prepreg interface **delaminates** locally around the crack.
-3. The **intact fibres bridge** the crack wake and hold the faces together ("stitching it closed").
-4. The crack-tip driving force therefore **falls** as the crack lengthens, instead of rising as $\sqrt a$ in monolithic Al. Growth is **severely retarded** and can arrest.
+That behaviour is what damage-tolerant design wants: a crack that is found grows slowly and predictably enough to be inspected and repaired. The laminates were developed for exactly that market, aircraft fuselage and wing skins, and keep the metal's familiar behaviour on the outside. The same bridging idea, intact fibres carrying load across a cracked matrix, is what makes [[MMC vs CMC|ceramic matrix composites]] tough.
 
-## Other benefits
+## Related
 
-Good impact and burn-through resistance; inspectable and repairable like metal; the composite plies do not corrode; lower density than monolithic Al.
-
-## Costs
-
-More expensive to make and hard to form into doubly curved shapes. Galvanic compatibility matters (glass, not carbon, is used next to Al).
-
-Compare with a monolithic metal, where $\Delta K=Q\Delta\sigma\sqrt{\pi a}$ grows with $a$ and the Paris law gives accelerating growth ([[Paris Law]]).
+- Topic: [[SESA2028 M5 - Metal and Ceramic Matrix Composites and Hybrid Laminates|M5]] · [[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing|M2]]
+- Concepts: [[MMC vs CMC]] · [[Paris Law]] · [[Total Life vs Damage Tolerance]]

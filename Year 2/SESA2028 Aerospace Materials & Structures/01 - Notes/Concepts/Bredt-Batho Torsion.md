@@ -3,7 +3,7 @@ title: "Bredt-Batho Torsion"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, torsion, thin-walled]
-status: complete
+status: lectured
 ---
 
 # Bredt-Batho Torsion
@@ -30,7 +30,8 @@ For multiple cells assign one constant circulation $q_i$ per cell. A common wall
 
 The enclosed area appears squared in torsional stiffness. That is why closing an open section is normally far more effective than modestly increasing its wall thickness.
 
-![Open versus closed torsion](../Figures/structures_open_vs_closed_torsion.png)
+![[structures_open_vs_closed_torsion.png|700]]
 
-See [[SESA2028 S4 - Torsion of Thin-Walled Sections]].
+## Related
 
+- Topic: [[SESA2028 S4 - Torsion of Thin-Walled Sections|S4]]

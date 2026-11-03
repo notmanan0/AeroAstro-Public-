@@ -13,38 +13,19 @@ sources: ["02 - Sources/Lectures/Lecture2-7.pdf"]
 
 # Over- and Under-Expanded Jets
 
-## Definition
+A supersonic nozzle is **over-expanded** when its exit pressure is below ambient ($p_{b6}<p_b<p_{b5}$, so $p_e<p_\infty$) and **under-expanded** when it is above ($p_b<p_{b6}$, so $p_e>p_\infty$). Either way the jet has to adjust to $p_\infty$, and it does so through waves at the nozzle lip. These reflect back and forth off the constant-pressure jet boundary and give the familiar **shock diamonds**.
 
-> [!note] Definition
-> A supersonic nozzle is
-> - **over-expanded** if its exit pressure is below ambient ($p_{b6}<p_b<p_{b5}$, so $p_e<p_\infty$);
-> - **under-expanded** if it is above ambient ($p_b<p_{b6}$, so $p_e>p_\infty$).
->
-> The jet adjusts to $p_\infty$ through waves at the nozzle lip, which then reflect from the constant-pressure jet boundary, giving **shock diamonds**.
+In the over-expanded case (Lecture 2.7, slides 3–4), oblique shocks at the lip recompress the jet to $p_\infty$ and turn the boundary inward. Where the two lip shocks cross, the pressure overshoots above $p_\infty$. The shocks then reflect off the boundary as expansion fans, the fans cross and push the pressure below $p_\infty$, the fans reflect as compressions, and the cycle repeats. The under-expanded jet (slides 5–6) runs through the same cycle, starting with fans at the lip instead of shocks.
 
-## Explanation
-
-**Over-expanded** cycle (Lecture 2.7, slides 3–4):
-
-1. Lip **oblique shocks** recompress the jet to $p_\infty$, and the boundary turns inward.
-2. The shocks cross, and the pressure rises above $p_\infty$.
-3. They reflect from the boundary as **fans**.
-4. The fans cross, and the pressure falls below $p_\infty$.
-5. The fans reflect as compressions, and the cycle repeats.
-
-**Under-expanded** (slides 5–6): the same cycle, starting with lip **fans**.
-
-**Sizing the lip shock:**
+The lip shock is sized from the pressure ratio it has to produce:
 
 $$
 M_{n1}=\sqrt{1+\frac{\gamma+1}{2\gamma}\left(\frac{p_\infty}{p_e}-1\right)}.
 $$
 
-For $M_e=2.2$ and $p_b/p_0=0.2$: $\beta=39.7^\circ$, $\theta=13.7^\circ$, a regular crossing.
+For $M_e=2.2$ and $p_b/p_0=0.2$ this gives $\beta=39.7^\circ$ and $\theta=13.7^\circ$, and the shocks cross regularly. A lip fan turns the flow through $\nu(M_j)-\nu(M_e)$, where $M_j$ is set by $p_\infty/p_0$; for $p_b/p_0=0.05$ that is $9.7^\circ$.
 
-**Sizing the lip fan:** $\nu(M_j)-\nu(M_e)$, with $M_j$ set by $p_\infty/p_0$. For $p_b/p_0=0.05$ the turn is $9.7^\circ$.
-
-**Mach disc:** if the lip-shock turn exceeds $\theta_{max}$ behind it, a Mach disc appears (planar estimate: $p_b/p_0>0.216$ for $M_e=2.2$). See [[Mach Reflection]].
+If the lip shock's turn is more than the flow behind it can take ($\theta_{max}$ at that Mach number), the crossing cannot be regular and a Mach disc forms. The planar estimate for $M_e=2.2$ is $p_b/p_0>0.216$. See [[Mach Reflection]].
 
 ![[at_nozzle_jets.png|760]]
 
