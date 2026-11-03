@@ -57,7 +57,7 @@ The area ratio fixes the exit pressure the nozzle would deliver on its own, and 
 
 ## 1. The area–velocity relation (Lecture 2.6, slides 2–4)
 
-![[at_area_mach_derivation.png|900]]
+![[at_area_velocity_regimes.png|900]]
 
 **Assumptions** (quasi-one-dimensional): the area varies slowly, properties are uniform across each section, and the flow is steady, adiabatic and inviscid, hence isentropic.
 
@@ -102,7 +102,7 @@ Step (c) shows why supersonic flow seems to behave backwards: the fractional den
 
 ### The lecture's route: a control volume with side walls
 
-![[at_laval_cv_derivation.png|900]]
+![[at_laval_control_volume.png|600]]
 
 In the lecture (ll. 12–76) the three ingredients came from a slice of nozzle treated as a control volume, not from Euler's equation. The result is the same, but this route shows where every term comes from.
 
@@ -556,7 +556,7 @@ The 2.6 lecture ended on the same point (ll. 279–291). 1D theory knows only $A
 - `Lecture 2-6.txt`: the Monday 12 Oct recording of 2.6 (291 lines).
 - `Lecture 2-7.txt`: the Thursday 15 Oct recording of 2.7 (203 lines).
 - Anderson, *Fundamentals of Aerodynamics*, §§10.1–10.6 (nozzles and diffusers) and §13.3 (preview of MoC)
-- Figures: `generate_aerothermo_w04_figures.py` (`at_laval_cv_derivation` and `at_throat_bulge_choking` added for the lecture's route)
+- Figures: `generate_aerothermo_w04_figures.py` (`at_laval_control_volume` and `at_throat_bulge_choking` added for the lecture's route)
 
 ## Self-study tasks
 

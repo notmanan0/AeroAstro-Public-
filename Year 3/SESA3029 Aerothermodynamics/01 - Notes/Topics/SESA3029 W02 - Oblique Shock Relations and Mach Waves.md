@@ -170,7 +170,7 @@ The right-hand side contains only $T_2/T_1$ and $p_2/p_1$, and both depend on $M
 
 Once $\beta$ is known, everything else follows. What's left is how $\theta$ and $M_1$ set $\beta$ (slide 7; L2-1, ll. 59–97).
 
-![[at_theta_beta_m_derivation.png|900]]
+![[at_theta_beta_m_geometry.png|900]]
 
 ### Two tangents from the velocity triangles
 
@@ -190,7 +190,7 @@ $$
 \frac{U_{n1}}{U_{n2}}=\frac{\tan\beta}{\tan(\beta-\theta)}.
 $$
 
-Geometrically, this is two right triangles sharing the same $U_t$ leg (panel 3 of the figure).
+Geometrically, this is two right triangles sharing the same $U_t$ leg (panel 2 of the figure).
 
 ### Mass conservation brings in the density jump
 

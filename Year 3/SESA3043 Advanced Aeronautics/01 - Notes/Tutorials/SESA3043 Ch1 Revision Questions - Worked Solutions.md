@@ -101,7 +101,7 @@ $$
 - **Q1** Complex potentials of uniform flow, source/sink and point vortex (doublet done in lecture). → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#4. Complex potentials of the elementary flows (revision 1.3 Q1)]]
 - **Q2** Cylinder from uniform flow + doublet, velocity field and $C_p=1-4\sin^2\theta$. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#6. The cylinder again, in one line (revision 1.3 Q2)]]
 - **Q3** Wall velocity $U_e=k(m+1)s^m$ and gradient $mU_e/s$ for wedge flow. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Velocity and its gradient along the wall (revision 1.3 Q3)]]
-- **Q4** (extended) Plot $\phi$ and $\psi$ contours: see the generator function `cylinder_flow_derivation` in `generate_aero_ch1b_figures.py`. → ![[aa_cylinder_flow_derivation.png|500]]
+- **Q4** (extended) Plot $\phi$ and $\psi$ contours: see the generator function `cylinder_flow` in `generate_aero_ch1b_figures.py`. → ![[aa_cylinder_flow.png|500]]
 - **Q5** (extended) Lifting cylinder: $\Phi=U(z+R^2/z)-\dfrac{i\Gamma}{2\pi}\ln z$, $\sin\theta_s=\Gamma/4\pi UR$, $L'=\rho U|\Gamma|$. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Lifting cylinder: uniform flow plus doublet plus point vortex (revision 1.3 Q5)]]
 
 ## 1.4 Two-dimensional incompressible boundary layers

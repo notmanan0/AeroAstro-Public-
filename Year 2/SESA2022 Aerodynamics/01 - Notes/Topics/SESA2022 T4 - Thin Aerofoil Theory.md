@@ -638,7 +638,7 @@ Cover both surfaces with panels, each carrying a constant-strength vortex (and, 
 - Revision lecture 2 (`SESA2022 Lecture 2026-01-07.txt`, Part B), read in full and cited as "7 Jan revision". Slip there: l. 88 *"There isn't an epsilon. There's a psi term"* means the dummy variable $\xi$ (xi), as l. 95 says.
 - Earlier-year recording `02 - Sources/Airfoils and Wings/TAT.txt`.
 - Anderson, *Fundamentals of Aerodynamics*, Ch. 4.
-- Figures: `generate_aero_t4_figures.py` (`tat_vortex_sheet_model`, `tat_theta_transform`, `tat_flap_effectiveness`); older figures (`tat_lift_curve`, `tat_loading`) predate the script. Worked-example numbers recomputed in Python (NumPy).
+- Figures: `generate_aero_t4_figures.py` (`tat_vortex_sheet_model`, `tat_theta_transform`, `tat_flap_effectiveness`, `tat_lift_curve`, `tat_loading`). Worked-example numbers recomputed in Python (NumPy).
 
 ## Self-study tasks
 

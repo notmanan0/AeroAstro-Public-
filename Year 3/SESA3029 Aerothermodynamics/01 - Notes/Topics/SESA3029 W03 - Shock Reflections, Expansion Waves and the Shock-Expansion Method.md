@@ -346,7 +346,7 @@ The lecturer explains the same thing with a duct (L2-4, ll. 16–34). Draw a str
 
 ### Deriving the Prandtl–Meyer function (slides 3–6)
 
-![[at_prandtl_meyer_derivation.png|900]]
+![[at_prandtl_meyer_function.png|900]]
 
 **Kinematics across one Mach wave.** Turn the flow by an infinitesimal $\mathrm d\nu$ across a Mach wave inclined at $\mu$ to the upstream velocity $U$. Pressure acts normal to the wave, so the tangential velocity is unchanged, as for an oblique shock. Downstream, the speed is $U+\mathrm dU$ and the angle to the wave is $\mu+\mathrm d\nu$:
 

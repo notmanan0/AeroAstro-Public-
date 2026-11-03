@@ -21,7 +21,7 @@ The derivation takes a couple of lines. The pair has $\Phi=\frac{m}{2\pi}\ln\lef
 
 With $\nu=\pi$ (source upstream) this is the doublet in the standard tables, $\Phi=\mu/(2\pi z)$ and $\phi=\mu\cos\theta/(2\pi r)$. With $\nu=\pi/2$, pointing in $+z$, it is the element used in a doublet panel. Adding a uniform stream aligned with the doublet gives flow past a cylinder of radius $\sqrt{\mu/2\pi U}$.
 
-![[aa_general_doublet_derivation.png|700]]
+![[aa_general_doublet.png|700]]
 
 ## Related
 

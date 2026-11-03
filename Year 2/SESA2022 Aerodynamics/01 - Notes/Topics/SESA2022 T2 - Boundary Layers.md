@@ -756,7 +756,7 @@ This note uses the course's own words and symbols. Use the course term in the co
 - Revision lecture 1 (`SESA2022 Lecture 1 - Revision.txt`, Part A, Jan 2026), read in full and cited as "Revision 1": it works through [[SESA2022 Exam 2024-25 Solutions|2024-25]] Q1.
 - Earlier-year recording `02 - Sources/BL/BLs.txt` (same slides).
 - Anderson, *Fundamentals of Aerodynamics*, Ch. 17–19.
-- Figures: `generate_aero_t2_figures.py` (`bl_mie_control_volume`, `bl_thickness_meanings`, `bl_profile_family`); older figures (`bl_profiles`, `bl_cf_transition`, `bl_law_of_wall`, `bl_virtual_origin`) predate the script. Worked-example numbers recomputed in Python (NumPy, SymPy, SciPy).
+- Figures: `generate_aero_t2_figures.py` (`bl_mie_control_volume`, `bl_thickness_meanings`, `bl_profile_family`, `bl_profiles`); older figures (`bl_cf_transition`, `bl_law_of_wall`, `bl_virtual_origin`) predate the script. Worked-example numbers recomputed in Python (NumPy, SymPy, SciPy).
 
 ## Self-study tasks
 

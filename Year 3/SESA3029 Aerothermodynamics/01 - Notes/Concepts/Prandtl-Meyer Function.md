@@ -35,7 +35,7 @@ As $M\to\infty$, $\nu\to\nu_{max}=90^\circ\left(\sqrt{(\gamma+1)/(\gamma-1)}-1\r
 
 In the [[Method of Characteristics]], $\nu$ is half of each [[Riemann Invariants|Riemann invariant]]: $R^+=\nu-\theta$ is constant along $C^+$ and $R^-=\nu+\theta$ along $C^-$ (Lecture 3.1; [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]; Anderson writes $K^\pm=\theta\mp\nu$). A Prandtl–Meyer fan is a simple flow region with one invariant uniform throughout, and $\nu(M_2)=\nu(M_1)+\theta$ is just that statement. Practice: [[SESA3029 Example Sheet 2 - Solutions#Q2. Characteristics and Riemann invariants|ES2 Q2]].
 
-![[at_prandtl_meyer_derivation.png|760]]
+![[at_prandtl_meyer_function.png|760]]
 
 ## Related
 

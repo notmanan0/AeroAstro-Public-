@@ -23,7 +23,7 @@ Two things are thrown away. The streamwise diffusion $\nu\,\partial^2u/\partial 
 
 The equations are parabolic, so you can march downstream from an inflow profile, which is far cheaper than solving the elliptic Navier–Stokes equations. They break down at low Reynolds number, at the very tip of the leading edge, and at separation.
 
-![[aa_bl_order_of_magnitude_derivation.png|700]]
+![[aa_bl_scales.png|700]]
 
 ## Related
 

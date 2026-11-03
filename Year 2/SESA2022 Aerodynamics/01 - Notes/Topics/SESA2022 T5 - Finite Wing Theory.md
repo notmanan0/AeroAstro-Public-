@@ -530,7 +530,7 @@ Untwisted, $AR=8$, $\lambda = 0.8$, thin symmetric section ($\alpha_{L=0} = 0$, 
 - Revision lecture 2 (`SESA2022 Lecture 2026-01-07.txt`, Part B), read in full and cited as "7 Jan revision".
 - Earlier-year recording `02 - Sources/Airfoils and Wings/FWT.txt`.
 - Anderson, *Fundamentals of Aerodynamics*, Ch. 5; MIT 16.01 lecture notes F5–F9.
-- Figures: `generate_aero_t5_figures.py` (`fwt_biot_savart_segment`, `fwt_lifting_line_sheet`, `fwt_induced_drag_tilt`, `fwt_twist_distribution`); older figures (`fwt_circulation`, `fwt_lift_slope`, `fwt_drag_polar`) predate the script. Numbers and the $\delta$, $\tau$ table recomputed in Python (NumPy, 40-term lifting line).
+- Figures: `generate_aero_t5_figures.py` (`fwt_biot_savart_segment`, `fwt_lifting_line_sheet`, `fwt_induced_drag_tilt`, `fwt_twist_distribution`, `fwt_circulation`, `fwt_lift_slope`); older figure (`fwt_drag_polar`) predates the script. Numbers and the $\delta$, $\tau$ table recomputed in Python (NumPy, 40-term lifting line).
 
 ## Self-study tasks
 
