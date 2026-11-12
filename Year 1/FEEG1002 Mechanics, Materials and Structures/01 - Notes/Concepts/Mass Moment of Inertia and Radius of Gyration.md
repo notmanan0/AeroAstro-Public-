@@ -3,50 +3,31 @@ title: "Mass Moment of Inertia and Radius of Gyration"
 module: "FEEG1002 Mechanics, Materials and Structures"
 type: concept
 stream: "Part D: Dynamics"
-aliases: ["mass moment of inertia", "MMI", "radius of gyration", "I = mk^2", "rotational inertia"]
+aliases: ["mass moment of inertia", "MMI", "radius of gyration", "I = mk^2", "rotational inertia", "moment of inertia", "second moment of mass"]
 tags: [feeg1002, concept, dynamics, rigid-body, inertia]
 status: complete
+date: 2026-11-05
 parent_lectures: ["[[FEEG1002 D8 - Kinetics of Rigid Bodies]]", "[[FEEG1002 D9 - Work and Energy for Rigid Bodies]]"]
 related_concepts: ["[[Parallel Axis Theorem]]", "[[Planar Rigid-Body Equations of Motion]]", "[[Kinetic Energy of a Rigid Body]]"]
-sources: []
+sources: ["02 - Sources/Dynamics/Lectures/Lecture 08 - Kinetics of Rigid Bodies.pdf"]
 ---
 
 # Mass Moment of Inertia and Radius of Gyration
 
-## Definition
+The mass moment of inertia $I_O=\int r_O^2\,dm$ (kg m²) of a body about an axis is its resistance to angular acceleration about that axis, the rotational counterpart of mass in $\sum M_O=I_O\alpha$. The radius of gyration $k=\sqrt{I/m}$ is the radius at which all the mass could be concentrated without changing $I$.
 
-> [!note] Definition
->
-> $$I_O = \int r_O^2\,dm\ \ [\text{kg m}^2],\qquad I_O = I_G + md^2,\qquad I = mk^2$$
->
-> Standard values about G: rod $\tfrac1{12}mL^2$ ($\tfrac13mL^2$ about an end), disc/cylinder $\tfrac12mr^2$, hoop $mr^2$, sphere $\tfrac25mr^2$, plate $\tfrac1{12}m(a^2 + b^2)$.
+The definition comes straight from Newton's law for the elements. An element $dm$ at distance $r_O$ from a fixed axis has tangential acceleration $r_O\alpha$, needs a tangential force $\alpha r_O\,dm$, and so a moment $\alpha r_O^2\,dm$ about the axis. Summing over the body, with the same $\alpha$ for every element and the internal forces cancelling in pairs, gives $\sum M_O=\alpha\int r_O^2\,dm$.
 
-## Explanation
+Integration gives the standard values about G: a thin disc or solid cylinder about its axis $\tfrac12mR^2$, a slender rod about a perpendicular axis $\tfrac1{12}mL^2$, a thin hoop $mR^2$, a solid sphere $\tfrac25mR^2$, and a thin plate $a\times b$ about its normal $\tfrac1{12}m(a^2+b^2)$. The parallel-axis theorem $I_O=I_G+md^2$ moves these to any parallel axis, so the rod about its end has $\tfrac13mL^2$ and $I_G$ is the smallest value over all parallel axes. For a composite body, find its G, move each part's $I_{Gi}$ to that G and add; moments of inertia add only when taken about the same axis.
 
-- $I$ resists angular acceleration, as $m$ resists linear acceleration ($\sum M = I\alpha$ vs $\sum F = ma$).
-- $I_G$ is the **smallest** over all parallel axes.
-- **Composite bodies**:
-  1. locate G;
-  2. find each part's $I_{Gi}$;
-  3. shift each to G with $m_id_i^2$;
-  4. add.
-- The radius of gyration $k$ is where all the mass could sit for the same $I$. It measures how spread out the mass is (disc $r/\sqrt2$, hoop $r$).
-- Do not confuse it with the **area** moment $\int r^2\,dA$ (m⁴) of bending and torsion. The maths is identical, but the units and meaning differ.
-- In 3D, $I$ becomes the inertia tensor ([[Inertia Matrix]]).
+The radius of gyration describes how far out the mass sits: $k_G=R/\sqrt2$ for a disc and $R$ for a hoop. Since a rolling body's acceleration and speed depend only on $k/r$, the hoop always loses a race against the disc, whatever their masses and sizes. Likewise a rod pivoted at its foot falls with $\alpha=(l_G/k_A^2)\,g\sin\theta$, independent of its mass, and a point mass fixed at $2L/3$ from the pivot leaves the ratio, and so the fall, unchanged.
 
-## Examples
-
-- **Tutorial 8 Q1**: bar plus disc gives $l_G = 0.743$ m and $I_G = 1.55$ kg m².
-- **Tutorial 8 Q3**: a point mass at $2l/3$ leaves $l_G/k_A^2$ unchanged (centre of percussion).
+For a uniform plate the mass moment of inertia is the density times the polar second moment of area used in torsion. The geometry is the same, but the area quantity is in m⁴ and belongs to stiffness, while $I$ here is in kg m² and belongs to inertia; confusing them is a units error.
 
 ![[d_mass_moment_of_inertia.png|760]]
 
 ## Related
 
-- Topic notes: [[FEEG1002 D8 - Kinetics of Rigid Bodies]] · [[FEEG1002 D9 - Work and Energy for Rigid Bodies]]
-- Concepts: [[Parallel Axis Theorem]] · [[Planar Rigid-Body Equations of Motion]] · [[Kinetic Energy of a Rigid Body]]
-- Year 2: [[Inertia Matrix]] and principal axes in [[SESA2024 06 - Attitude Control]] · the $I_{yy}$ pitch inertia in [[SESA2027 A1 - Dynamic Systems and Aircraft Equations of Motion]] · the area analogue in [[Parallel Axis Theorem]] and [[SESA2028 S1 - Section Properties and Unsymmetrical Bending]]
-
-## Sources
-
-- Dynamics Lecture 8.1
+- [[FEEG1002 D8 - Kinetics of Rigid Bodies#2. Mass moment of inertia|D8 §2]] · [[FEEG1002 D8 - Kinetics of Rigid Bodies#Disc and slender rod|disc and rod]] · [[FEEG1002 D8 - Kinetics of Rigid Bodies#Parallel-axis theorem|parallel-axis theorem]] · [[FEEG1002 D8 - Kinetics of Rigid Bodies#Radius of gyration|radius of gyration]] · [[FEEG1002 D8 - Kinetics of Rigid Bodies#Falling rods with and without a point mass|falling rods]] · [[FEEG1002 D9 - Work and Energy for Rigid Bodies#Rolling race down a slope|rolling race]]
+- [[Parallel Axis Theorem]] · [[Planar Rigid-Body Equations of Motion]] · [[Kinetic Energy of a Rigid Body]] · [[Torsion of Circular Shafts]]
+- Year 2: the 3D [[Inertia Matrix]] in [[SESA2024 06 - Attitude Control]] · aircraft inertias in [[SESA2027 A1 - Dynamic Systems and Aircraft Equations of Motion]] · the area analogue in [[SESA2028 S1 - Section Properties and Unsymmetrical Bending]]

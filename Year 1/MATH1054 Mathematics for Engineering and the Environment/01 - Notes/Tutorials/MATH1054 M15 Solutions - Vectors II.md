@@ -12,7 +12,7 @@ sheet: "Specimen Test 15 (booklet) + Module 15 work scheme: Examples 4.31–4.48
 theory_notes: ["[[MATH1054 M15 - Vectors II]]"]
 key_concepts: ["[[Scalar Triple Product]]", "[[Equations of Lines and Planes]]", "[[Differentiation of Vectors]]"]
 status: complete
-sources: ["tmp/md/module_15_vectors_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§4.3.3–4.4, §9.5)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§4.2.12–4.3.4, §9.5)"]
 ---
 
 # MATH1054 M15 Solutions - Vectors II
@@ -291,5 +291,5 @@ $$\boxed{\mathbf r=\Big(\tfrac t2-\tfrac14\sin2t,\ 2t+\cos t-1,\ \tfrac1{12}t^4+
 $$\frac{\mathrm d}{\mathrm dt}(\mathbf r\times\dot{\mathbf r})=\underbrace{\dot{\mathbf r}\times\dot{\mathbf r}}_{=\mathbf0}+\mathbf r\times\ddot{\mathbf r}=\frac{\mathrm d}{\mathrm dt}(t^2\mathbf i)\ \Rightarrow\ \boxed{\mathbf r\times\ddot{\mathbf r}=2t\,\mathbf i}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_15_vectors_ii.md`
-- James, *Modern Engineering Mathematics* (6th ed.) §4.3.3–4.4, §9.5; MATH1054 Module Booklet, Module 15
+- Problem statements: Module 15 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
+- James, *Modern Engineering Mathematics* (6th ed.) §4.2.12–4.3.4, §9.5; MATH1054 Module Booklet, Module 15

@@ -44,7 +44,7 @@ $$
 M_2^2=\frac{2+(\gamma-1)M_1^2}{2\gamma M_1^2-(\gamma-1)}.
 $$
 
-A useful shortcut for $M_2$ is $M_2^2=M_1^2\big/\left[(\rho_2/\rho_1)(p_2/p_1)\right]$. The full derivations of all four jumps and the strong-shock limits are in [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Density jump (shown in lecture)|W01 §5]].
+A useful shortcut for $M_2$ is $M_2^2=M_1^2\big/\left[(\rho_2/\rho_1)(p_2/p_1)\right]$. The full derivations of all four jumps and the strong-shock limits are in [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Density jump|W01 §5]].
 
 A physical (compression) shock takes supersonic flow to subsonic. Static pressure, temperature, density and entropy rise; velocity and stagnation pressure fall. Stagnation temperature is unchanged, since the shock is adiabatic.
 

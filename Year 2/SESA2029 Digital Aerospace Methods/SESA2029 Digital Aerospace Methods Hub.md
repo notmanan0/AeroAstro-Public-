@@ -16,13 +16,14 @@ date: 2026-10-30
 
 ## Coverage
 
-Every topic note was rebuilt from the lecture transcripts on 30 October 2026 and is at status `lectured`.
+Every topic note was rebuilt from the lecture transcripts on 30 October 2026 and brought to the Year 3 note standard (full derivations, computed worked examples, numerical checks, generated figures) on 5 November 2026. The 27 notes A1–A11, B1–B10 and C1–C6 are at status `lectured`, as are the 48 concept notes and the two worked-example notes. The Navier–Stokes deep dive is an optional extension built on the lectured CFD material, not a lecture of its own; it carries `status: lectured` because it is complete and draws only on lectured content.
 
 | Part | Notes | Lectured | Transcripts |
 |---|---|---|---|
 | A, CFD | A1–A11 | 2 Oct – 7 Nov 2025 (Thursdays and Fridays, weeks 1–6) | `SESA2029 Lecture 2025-10-02` to `2025-11-07`, plus the CW1 and CW4–6 coursework videos |
 | B, FEA | B1–B10 | 30 Jan – 6 Mar 2026 (Fridays, two lectures each) | `SESA2029 Lecture 2026-01-30` to `2026-03-06` |
 | C, labs | C1–C6 | lab videos and the 30 Jan briefing | `Software_Intro`, `Computer lab1` (spring, cantilever), `lab2` (plane stress), `lab3` (wing) |
+| Deep dive | Navier–Stokes solver | not lectured; draws on CFD L2–L12 | none (own cavity solver, checked against Ghia et al.) |
 | Revision | — | 12 and 13 May 2026 | `2026-05-12` (CFD), `2026-05-13` (FEA) |
 
 ## Topic map
@@ -79,7 +80,9 @@ Linked from other modules: [[Law of the Wall]] · [[Displacement and Momentum Th
 
 ## Figures
 
-The 25 figures in `01 - Notes/Figures` (`dam_*.png`) are generated from first principles by `04 - Labs & Coursework/scripts/make_figures.py` and `ns_cavity_solver.py` (a 2D MAC-grid Navier–Stokes solver for the deep dive); none is digitised. No new figures were needed in the rebuild.
+The figures in `01 - Notes/Figures` (`dam_*.png`) are generated from first principles by one script per note, `generate_dam_<note>_figures.py` (A1–A11, B1–B9, C3, the deep dive and `generate_dam_ns_cavity_figures.py`, a 2D MAC-grid Navier–Stokes solver), all using the shared style in `Year 3/_shared/year3_style.py`; none is digitised. Several are small computations in their own right: an own Q4 plane-stress solver for the over-constrained block (B2), solid-element bending stiffness (B6) and the L-plate singularity (B7); the Jacobi, Gauss–Seidel and 2D Laplace iterations (A3); explicit against implicit heating (A4); RK and three-point-backward convergence orders (A6); and h-refinement of a bar under distributed load (B4). The old `04 - Labs & Coursework/scripts/make_figures.py` and `ns_cavity_solver.py` are now forwarding stubs: the first runs every `generate_dam_*.py`, the cavity solver included, and the second runs `generate_dam_ns_cavity_figures.py`, which is the deep dive's solver.
+
+The 5 November 2026 upgrade filled in every derivation step by step, recomputed each worked example in Python, added numerical checks and moved transcript and slide slips to the end of each note. Source problems it found are recorded in each note's slips section; the main ones are the explicit three-point backward scheme presented as second order (A6, it is first order), the central difference printed over $h$ instead of $2h$ (A2), the implicit-scheme index typo (A4), the "$G<1$ for $\sigma<1$" stability statement (A5), the Spalart–Allmaras and $k$–$\omega$ variable definitions (A8), and the slide and lecture disagreeing on mesh limits (A11).
 
 ## Assessment and exam
 
@@ -88,6 +91,8 @@ The module is 40 % exam, 30 % CFD coursework and 30 % FEA coursework (2026-01-30
 The CFD questions to practise are: deriving a finite-difference scheme with a Taylor table and stating its order; discretising the heat or convection equation explicitly and implicitly; a von Neumann analysis for a stability limit; residuals and Jacobi, Gauss–Seidel and SOR updates; Euler against Navier–Stokes, incompressibility, the Newtonian fluid and index notation; Reynolds stresses, closure, eddy viscosity, model choice and $y^+$; the finite volume method's midpoint rule, interpolation and boundary conditions; grids, SIMPLE, error types, V&V, mesh metrics and DNS cost.
 
 The FEA questions to practise are: matrix-displacement assembly with boundary conditions, displacements and reactions; the bar matrix by minimum potential energy; shape functions from generalised boundary conditions; beam assembly with the given matrix; element choice, plane stress and strain and shell rules; meshing, convergence and singularities; the modal eigenproblem, participation factors and effective mass; sources of nonlinearity, solution methods, V&V checks and model updating.
+
+- [[SESA2029 Cambridge Part IIA Practice]]: third-year Cambridge questions (Part IIA) that revise this module, listed under each topic note.
 
 ## Sources
 

@@ -12,7 +12,7 @@ sheet: "Specimen Test 13 (booklet) + Module 13 work scheme: Examples 10.23–10.
 theory_notes: ["[[MATH1054 M13 - Differential Equations III]]"]
 key_concepts: ["[[Linear Differential Operators and Superposition]]", "[[Auxiliary Equation]]", "[[Method of Undetermined Coefficients]]", "[[Damping Ratio and Natural Frequency]]"]
 status: complete
-sources: ["tmp/md/module_13_differential_equations_iii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§10.8–10.10)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§10.8–10.10)"]
 ---
 
 # MATH1054 M13 Solutions - Differential Equations III
@@ -280,5 +280,5 @@ $$\boxed{x=\tfrac12e^{-3t}-\tfrac14e^{-2t}+te^{-2t}}$$
 **(iii)** In general, the **complementary function** (which decays when $\zeta>0$) is the **transient**, and the **particular integral** is the **steady state**. This equation is unforced, so there is no PI: the whole solution is transient, and the steady state is $x=0$.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_13_differential_equations_iii.md`
+- Problem statements: Module 13 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §10.8–10.10; MATH1054 Module Booklet, Module 13

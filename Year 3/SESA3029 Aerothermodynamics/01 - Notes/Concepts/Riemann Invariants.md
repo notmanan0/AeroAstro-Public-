@@ -21,14 +21,14 @@ where $\nu$ is the [[Prandtl-Meyer Function|Prandtl–Meyer angle]] and $\theta$
 
 ## Where they come from
 
-The full derivation is in [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]. Applying mass, $l$-momentum, homentropy and zero vorticity to a streamtube gives two PDEs in $\nu$ and $\theta$:
+The full derivation is in [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]], and every step is written out in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]]. Applying mass, $l$-momentum, homentropy and zero vorticity to a streamtube gives two PDEs in $\nu$ and $\theta$:
 
 $$\partial\nu/\partial l-\tan\mu\,\partial\theta/\partial n=0,\qquad\partial\theta/\partial l-\tan\mu\,\partial\nu/\partial n=0.$$
 
 Subtracting and adding them gives $\partial(\nu\mp\theta)/\partial l\pm\tan\mu\,\partial(\nu\mp\theta)/\partial n=0$. The left-hand side is the rate of change along a line at $\pm\mu$ to the flow, which is a Mach line, so $\nu\mp\theta$ does not change along it. Diagonalising the $2\times2$ system gives the same thing: $\hat R=\underline E^{-1}[\nu,\theta]^T=[\nu-\theta,\ \nu+\theta]^T$.
 
-> [!warning] No factor of a half in the definitions (L3-3, ll. 28–31)
-> The recording once says *"R plus is nu minus theta over 2"*. The invariants are $R^\pm=\nu\mp\theta$; the $\tfrac12$ only appears when you solve back for $\nu$ and $\theta$. Elsewhere (L3-1, ll. 338–343) it says *"mu minus theta is preserved"*, which should be nu minus theta.
+> [!warning] No factor of a half in the definitions
+> The invariants are $R^\pm=\nu\mp\theta$; the $\tfrac12$ only appears when you solve back for $\nu$ and $\theta$.
 
 ## Using them
 

@@ -18,7 +18,7 @@ sources: ["02 - Sources/Stability/Past_paper_questions_static_stability.pdf"]
 # SESA2022 Static Stability Past Paper Questions Solutions
 
 > [!abstract] Sheet Info
-> These are the static-stability questions from SESA2025 *Mechanics of Flight* papers, provided with the Topic 6 material. The lecturer's answer keys are included in the PDF, and every value below reproduces them unless flagged ⚠.
+> These are the static-stability questions from SESA2025 *Mechanics of Flight* papers, provided with the Topic 6 material. The answer keys are included in the PDF, and every value below reproduces them unless flagged ⚠.
 
 Common definitions (see [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability]]):
 

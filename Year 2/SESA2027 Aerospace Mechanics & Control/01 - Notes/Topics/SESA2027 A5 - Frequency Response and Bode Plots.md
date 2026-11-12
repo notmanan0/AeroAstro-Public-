@@ -30,9 +30,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.08.pdf", "02 - Sources/Lectures/Lectu
 > - **Assumptions:** linear, time-invariant and stable (otherwise there is no steady state); sinusoidal input; phase from `atan2` so it can pass −90°; dB formulas are given on the question sheet (L1.09, l. 123).
 > - **Method:** 1. Substitute $s=i\omega$. 2. $\lvert G\rvert=\lvert\text{num}\rvert/\lvert\text{den}\rvert$, $\angle G=\angle\text{num}-\angle\text{den}$. 3. Convert: $\lvert G\rvert_{dB}=20\log_{10}\lvert G\rvert$. 4. Sketch factor by factor: flat at the DC gain, then $-20$ dB/dec per pole and $+20$ per zero after each corner. 5. Read $\omega_{gc}$ (0 dB), $\omega_{pc}$ (−180°), −3 dB bandwidth, any peak.
 > - **Common mistakes:** quoting $-10$ or $-20$ dB/decade for first and second order (the L1.09 slip; it is $-20$ and $-40$); taking $\arctan$ without the quadrant, which stops the phase at $-90°$.
-> - **Practise:** [[#Five-step recipe (SPO example)]] · [[SESA2027 Mock Questions#Q5. Bode magnitude and phase|Mock Q5]] · [[SESA2027 Practice Problems 2 Solutions]]
+> - **Practise:** [[#Five-step method (SPO example)]] · [[SESA2027 Mock Questions#Q5. Bode magnitude and phase|Mock Q5]] · [[SESA2027 Practice Problems 2 Solutions]]
 
-Instead of a step, waggle the elevator back and forth sinusoidally and wait for the transients to die. The aircraft ends up oscillating at exactly the waggling frequency, with no new frequencies created, because it is linear. Only two things change: the size of the response and how far it lags behind the input. Waggle slowly and the aircraft follows faithfully. Waggle near its natural frequency and it over-responds, a quarter-cycle late. Waggle fast and its inertia wins: the response is tiny and almost in anti-phase.
+Driven sinusoidally by the elevator, instead of by a step, the aircraft ends up oscillating at exactly the driving frequency once the transients have died, with no new frequencies created, because it is linear. Only two things change: the size of the response and how far it lags behind the input. At low frequency the aircraft follows faithfully; near its natural frequency it over-responds, a quarter-cycle late; at high frequency its inertia wins, and the response is tiny and almost in anti-phase.
 
 Those two numbers, gain and lag, at every frequency, are the frequency response $G(i\omega)$. The Bode plot draws them on log axes, where the multiplying factors of $G(s)$ become added straight lines. That makes Bode plots quick to sketch by hand and, in Part B, the natural tool for designing controllers with safety margins.
 
@@ -44,13 +44,13 @@ $$
 G(s) = \frac{X(s)}{U(s)} = \frac{(s-z_1)(s-z_2)\cdots(s-z_{n-1})}{(s-p_1)(s-p_2)\cdots(s-p_n)}
 $$
 
-- An $n$th-order system has $n$ poles. For a physical (causal) system the numerator order cannot exceed the denominator order, so there are at most $n$ zeros. The lecture assumes $n-1$ zeros (strictly proper), the usual case for the aircraft transfer functions here (L1.08, ll. 43–67).
+- An $n$th-order system has $n$ poles. For a physical (causal) system the numerator order cannot exceed the denominator order, so there are at most $n$ zeros. The convention here is $n-1$ zeros (strictly proper), the usual case for the aircraft transfer functions here (L1.08, ll. 43–67).
 - On the complex plane, poles are plotted as × and zeros as ○.
 
-A pole–zero map is read like this (L1.08, ll. 84–181). The system is stable if every pole is in the left half-plane, and it is physical only if complex poles and zeros come in conjugate pairs, mirror images about the real axis. The real part sets decay (negative) or growth (positive), the imaginary part sets the oscillation frequency, and real roots give no oscillation. A pure sinusoid has its poles on the imaginary axis, which is why the frequency response is described as "motion along the imaginary axis", $s = i\omega$.
+On a pole–zero map (L1.08, ll. 84–181) the system is stable if every pole is in the left half-plane, and it is physical only if complex poles and zeros come in conjugate pairs, mirror images about the real axis. The real part sets decay (negative) or growth (positive), the imaginary part sets the oscillation frequency, and real roots give no oscillation. A pure sinusoid has its poles on the imaginary axis, which is why the frequency response amounts to motion along the imaginary axis, $s = i\omega$.
 
 > [!info] Stated exam/quiz question (L1.08, ll. 107–112)
-> "Determine whether this system is stable or not, just by looking at the representation of the poles and zeros in the complex plane." For a map with right-half-plane poles that are not conjugate pairs: "this system is not stable, but then, that is not physical. And if you put those two, you get full marks."
+> A typical question asks whether a system is stable from its pole–zero map alone. For a map with right-half-plane poles that are not conjugate pairs, the full-marks answer is that the system is unstable and also not physical.
 
 ## 2. Response to a sinusoidal input
 Neglect $B(s)$ for simplicity, and apply $u(t) = A\sin\omega t$, so $U(s) = A\omega/(s^2+\omega^2)$. Partial fractions give
@@ -63,8 +63,7 @@ $$
 x(t) = \underbrace{r_1e^{p_1t}+\dots+r_ne^{p_nt}}_{\text{transient}}+\underbrace{r_{n+1}\cos\omega t+r_{n+2}\sin\omega t}_{\text{steady state}}
 $$
 
-- **Transient response**: the system's natural response to initial conditions. If the system is stable (all $\mathrm{Re}(p_i)<0$), it decays to zero.
-- **Steady-state response**: the forced response to the periodic input.
+The **transient response** is the system's natural response to initial conditions; if the system is stable (all $\mathrm{Re}(p_i)<0$), it decays to zero. The **steady-state response** is the forced response to the periodic input.
 
 Using $\alpha\cos\omega t+\beta\sin\omega t = \sqrt{\alpha^2+\beta^2}\sin(\omega t+\phi)$:
 
@@ -78,7 +77,7 @@ $$
 
 This is the frequency response function.
 
-**Combining the two steady-state terms, line by line.** Write $\alpha = r_{n+1}$, $\beta = r_{n+2}$, and define $B_0 = \sqrt{\alpha^2+\beta^2}$ and $\phi$ by $\cos\phi = \beta/B_0$, $\sin\phi = \alpha/B_0$:
+The two steady-state terms combine into a single sinusoid. Write $\alpha = r_{n+1}$, $\beta = r_{n+2}$, and define $B_0 = \sqrt{\alpha^2+\beta^2}$ and $\phi$ by $\cos\phi = \beta/B_0$, $\sin\phi = \alpha/B_0$:
 
 $$
 \alpha\cos\omega t+\beta\sin\omega t = B_0\left(\frac{\alpha}{B_0}\cos\omega t+\frac{\beta}{B_0}\sin\omega t\right)
@@ -94,7 +93,7 @@ $$
 
 So the steady state is a single sinusoid at the input frequency, scaled and shifted (L1.08, ll. 848–936).
 
-Why the scale is $\lvert G(i\omega)\rvert$ and the shift is $\angle G(i\omega)$ (the step the slides state without proof; not examined, L1.08, ll. 316–321). Factor the input term as $s^2+\omega^2=(s-i\omega)(s+i\omega)$ and use complex partial fractions for the two steady-state poles:
+The scale is $\lvert G(i\omega)\rvert$ and the shift is $\angle G(i\omega)$, which follows from complex partial fractions (not examined, L1.08, ll. 316–321). Factor the input term as $s^2+\omega^2=(s-i\omega)(s+i\omega)$ and use complex partial fractions for the two steady-state poles:
 
 $$
 X(s)=G(s)\frac{A\omega}{(s-i\omega)(s+i\omega)}=\ldots+\frac{c}{s-i\omega}+\frac{\bar c}{s+i\omega}
@@ -120,13 +119,13 @@ since $\mathrm{Re}(-ie^{i\psi})=\sin\psi$. The system poles only add the transie
 
 ![[amc_sine_in_out_three_freqs.png|820]]
 
-> [!info] Lecturer intuition on the steady state (L1.08)
-> - The transfer function belongs to the system, not the input. In L1.07 the $1/s$ was the step input, not part of $G(s)$; to get $G(s)$ from a forced ODE, "you would need to remove the input first" (ll. 245–300).
+> [!tip] Intuition for the steady state (L1.08)
+> - The transfer function belongs to the system, not the input. In L1.07 the $1/s$ was the step input, not part of $G(s)$; to get $G(s)$ from a forced ODE, remove the input first (ll. 245–300).
 > - The transient stops mattering after about the settling time, $4.6/(\zeta\omega_n)$, after which the total response is the steady-state sinusoid (ll. 660–705).
-> - Causal systems lag. A phase lead in the steady state would mean "predicting time", so physical systems show a phase lag (ll. 1199–1215; L1.09, ll. 29–32).
+> - The SPO transfer function, with poles and no zeros, lags at every frequency (ll. 1199–1215; L1.09, ll. 29–32). A steady-state phase lead is not prediction of the future, though: each zero adds up to +90° ([[#4. Building a Bode plot from factors]]), and the D term of a PID uses that lead.
 > - Only the step is used for transient analysis in this module (ll. 36–38).
 
-### Five-step recipe (SPO example)
+### Five-step method (SPO example)
 For $G(s) = \dfrac{1.992}{s^2+0.744s+1.992}$, where the input amplitude $A = mI_{yy}\omega_n^2$ normalises the numerator:
 1. Substitute $s = i\omega$: $G(i\omega) = \dfrac{1.992}{(1.992-\omega^2)+0.744\omega i}$.
 2. Separate real and imaginary parts.
@@ -143,10 +142,7 @@ For $G(s) = \dfrac{1.992}{s^2+0.744s+1.992}$, where the input amplitude $A = mI_
 - Near $\omega_n$ the output is amplified (resonance) and lags by 90°.
 - At high frequency the output is strongly attenuated and in anti-phase.
 
-The input amplitude $A = mI_{yy}\omega_n^2$ is chosen only to make the numerator equal to $\omega_n^2$, so $|G(0)| = 1$ (0 dB). The lecturer calls this "cheating" to make the analysis easier (L1.08, ll. 1340–1390; L1.09, ll. 285–292). Without it the whole magnitude curve shifts down by a constant number of dB.
-
-> [!warning] When is there a peak at $\omega_n$?
-> The lecture says the magnitude at $\omega_n$ exceeds 1 "for a system with a damping ratio less than one" (L1.08, ll. 2202–2213). That is too loose. At $\omega = \omega_n$, $|G| = 1/(2\zeta)$, which exceeds 1 only if $\zeta<0.5$. A resonant peak above the low-frequency gain exists only if $\zeta<1/\sqrt2\approx0.707$, and it sits at $\omega_r = \omega_n\sqrt{1-2\zeta^2}$, slightly below $\omega_n$ (as L1.09, ll. 228–232 says). Here $\zeta = 0.264$, so $|G(i\omega_n)| = 1.90$ and the peak is at $\omega_r = 1.31$ rad/s.
+The input amplitude $A = mI_{yy}\omega_n^2$ is chosen only to make the numerator equal to $\omega_n^2$, so $|G(0)| = 1$ (0 dB). Without it the whole magnitude curve shifts down by a constant number of dB.
 
 Deriving the resonant peak (assumptions: $G=\omega_n^2/(s^2+2\zeta\omega_ns+\omega_n^2)$, unit DC gain). The magnitude is
 
@@ -184,7 +180,7 @@ $$
 
 ![[amc_bode_second_order_family.png|600]]
 
-**Frequency-domain specifications**:
+The frequency-domain specifications are:
 
 | Spec | Definition |
 |---|---|
@@ -196,7 +192,7 @@ $$
 | Phase crossover $\omega_{pc}$ | Phase reaches −180° |
 | Gain slope | Rate of change of magnitude (dB/decade) |
 
-The lecturers read a Bode plot in three ways. A second-order system is a low-pass filter with its cut-off near $\omega_n$, so as a ballpark anything above the natural frequency is already being attenuated, and quickly (L1.09, ll. 59–65). Overshoot in time means peaking in frequency: "when you see an overshoot on the time response, you are going to see peaking on the frequency response" (L2.09, ll. 69–70), and both come from a small $\zeta$. And a change of slope reveals a hidden pole, since each pole adds another −20 dB/decade to the high-frequency roll-off; if the plot falls 40 dB over one decade and 60 dB over the next, another pole sits near the decade boundary (L2.05, ll. 133–149).
+A Bode plot can be read in three ways. A second-order system is a low-pass filter with its cut-off near $\omega_n$, so as a ballpark anything above the natural frequency is already being attenuated, and quickly (L1.09, ll. 59–65). Overshoot in time means peaking in frequency, and both come from a small $\zeta$. And a change of slope reveals a hidden pole, since each pole adds another −20 dB/decade to the high-frequency roll-off; if the plot falls 40 dB over one decade and 60 dB over the next, another pole sits near the decade boundary (L2.05, ll. 133–149).
 
 > [!example] Reading the SPO Bode plot (L1.09, ll. 160–249; values computed)
 > For $G(s) = 1.992/(s^2+0.744s+1.992)$:
@@ -212,7 +208,7 @@ The lecturers read a Bode plot in three ways. A second-order system is a low-pas
 > | −60 dB (×0.001) | 44.65 rad/s | 44.65 rad/s, −179.0° |
 > | High-frequency slope | — | −40 dB/decade (second order) |
 >
-> Exam/quiz form: "tell me what is the value of frequency where the system attenuates the signal at a thousandth of its value". Read it off the plot; a range is acceptable (ll. 175–177).
+> A stated exam/quiz question asks for the frequency at which the system attenuates the signal to a thousandth of its value. Read it off the plot; a range is acceptable (ll. 175–177).
 
 **Why −3 dB, and the bandwidth formula.** Power goes as amplitude squared, so half power is amplitude $1/\sqrt2$: $20\log_{10}(1/\sqrt2)=-10\log_{10}2=-3.01$ dB. For the unit-DC-gain second-order system set $\lvert G\rvert^2=1/2$, i.e. $D(\omega_b)=2\omega_n^4$. With $v=\omega_b^2/\omega_n^2$:
 
@@ -232,13 +228,10 @@ $$
 
 For the SPO, $\zeta=0.2638$: $1-2\zeta^2=0.8608$, $\sqrt{4\zeta^4-4\zeta^2+2}=1.3195$, so $\omega_b=1.4115\sqrt{2.180}=2.084$ rad/s, the 2.08 in the table.
 
-> [!warning] Gain-slope slip in L1.09
-> The lecture said "for a first-order system, it will be 10 dBs per decade. For a second-order system, it will be 20 dBs per decade" (L1.09, ll. 245–249). The correct high-frequency slopes are −20 dB/decade per pole: −20 for first order, −40 for second order, −60 for third. The same lecture's own example drops "almost minus 40 dBs" in one decade (ll. 107–108), and L2.05 states the correct values (ll. 133–137).
-
 > [!info] dB conversions in the exam (L1.09, ll. 116–124)
-> "I'm going to give you the equations in the question sheet if a question regarding this comes in the exam." Remember the pattern: every −20 dB divides the amplitude by 10, so −20, −40, −60 dB are 0.1, 0.01, 0.001 (ll. 145–147). A negative dB value is attenuation, not a negative magnitude.
+> The dB equations are given on the question sheet. Every −20 dB divides the amplitude by 10, so −20, −40, −60 dB are 0.1, 0.01, 0.001 (ll. 145–147). A negative dB value is attenuation, not a negative magnitude.
 
-The Bode plot matters in practice because it shows where the input still has authority (L1.09, ll. 74–100). If you must deflect the elevator ever more to move the aircraft a fraction of a degree, "that's not a good operating point", and above the bandwidth the system barely responds.
+The Bode plot matters in practice because it shows where the input still has authority (L1.09, ll. 74–100). A system that needs ever more elevator deflection to move the aircraft a fraction of a degree is at a poor operating point, and above the bandwidth it barely responds.
 
 ## 4. Building a Bode plot from factors
 Write $G(s)$ in ZPK form, $G(s) = \dfrac{k(s-z_1)(s-z_2)}{\prod(s-p_i)}$. Since $\log(xy) = \log x+\log y$, magnitudes in dB add and phases add.
@@ -268,7 +261,7 @@ $$
 
 A second-order pair behaves the same way with twice the slope ($\pm40$ dB/dec), plus a correction near $\omega_n$ that depends on $\zeta$ (the resonant peak above).
 
-**Example**: the elevator-to-pitch-angle TF (Blakelock),
+The elevator-to-pitch-angle TF (Blakelock) shows several factors at once:
 
 $$
 \frac{\theta(s)}{\delta_e(s)} = \frac{-1.31(s+0.016)(s+0.3)}{(s^2+0.00466s+0.0053)(s^2+0.806s+1.311)}
@@ -278,9 +271,9 @@ $$
 - The SPO pair at $1.14$ rad/s gives a smaller peak.
 - The negative gain shifts the phase by −180°.
 
-**Application**: the Bell XV-15 tiltrotor. Frequency sweeps in flight identified the SPO ($\approx0.467$ Hz) and phugoid ($\approx0.029$ Hz) modes, as well as aeroelastic wing modes (NASA TP-3330 / TM-2013-217976).
+On the Bell XV-15 tiltrotor, frequency sweeps in flight identified the SPO ($\approx0.467$ Hz) and phugoid ($\approx0.029$ Hz) modes, as well as aeroelastic wing modes (NASA TP-3330 / TM-2013-217976).
 
-The XV-15's antisymmetric wing beam mode peaks at about 5–6 Hz, roughly ten times the SPO frequency. Keeping structural modes well above the rigid-body modes matters, in the lecturer's words, because "otherwise the interaction between the structural modes and the longitudinal modes could be very dangerous" (L1.09, ll. 364–372).
+The XV-15's antisymmetric wing beam mode peaks at about 5–6 Hz, roughly ten times the SPO frequency. Keeping structural modes well above the rigid-body modes matters because interaction between the structural modes and the longitudinal modes could be very dangerous.
 
 > [!example] PS2 Q1: $G(s) = 5/(s^2+4s+25)$, so $\omega_n=5$, $\zeta = 0.4$, DC gain $0.2$ (−13.98 dB)
 >
@@ -294,46 +287,13 @@ The XV-15's antisymmetric wing beam mode peaks at about 5–6 Hz, roughly ten ti
 
 ![[amc_ps2_q1_bode.png|600]]
 
-## Lecturer emphasis and exam hints (transcripts)
+## Exam scope
 
-> [!info] Exam and quiz signals
-> - Pole–zero map → stable/unstable and physical/non-physical (L1.08, ll. 107–112).
-> - The full partial-fraction derivation for a sinusoidal input is not expected: "I'm not going to expect you to do all of the derivation" (L1.08, ll. 316–321).
-> - "The output amplitude is scaled and phase shifted. Please bear this in mind when you're answering your quiz" (L1.08, ll. 2245–2254).
-> - Read frequencies for a given attenuation off a Bode plot (L1.09, ll. 175–177). dB formulas will be on the question sheet (l. 123).
-> - In the labs Python produces the Bode plot in dB (L1.09, l. 124).
-
-## Transcript slips
-
-> [!warning] Speech-to-text and spoken slips, with the correct version
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L1.08, l. 1 | "LAT-plus transform", "La Trasse transform" (l. 206) | Laplace transform |
-> | L1.08, l. 32 | "the polynomial l" | the polynomial $A(s)$ |
-> | L1.08, l. 67 | "for the system to be causal, at least the order of the numerator and the denominator has to be the same" | the numerator order must be at most the denominator order |
-> | L1.08, l. 84 | "a knot, or a zero" | a nought (○) |
-> | L1.08, l. 95 | conjugates are "a mirror image on the imaginary axis" | mirror images about the real axis |
-> | L1.08, ll. 115–117 | (answering a student) instability "can happen as well if the zeros are on the positive side of the complex plane" | open-loop stability depends only on the poles. Right-half-plane zeros matter once the loop is closed: the closed-loop poles are the roots of $A(s)+KB(s)$, so the zeros in $B(s)$ move them and can push them into the right half-plane at high gain (L2.03, ll. 268–272; [[SESA2027 B2 - Root Locus Method\|B2]]) |
-> | L1.08, ll. 396–398 | "the geolentical multiply by the geolentical" | $G(s)$ multiplied by $U(s)$ |
-> | L1.08, l. 755 | roots "halal of negative part" | have a negative real part |
-> | L1.08, ll. 829–835 | "the denominator order is greater, or at least equal to the denominator" | at least equal to the numerator order |
-> | L1.08, ll. 855–860 | "cosine and psi functions", "psi function" | cosine and sine; a single sine |
-> | L1.08, ll. 1281–1286 | "real part A and the imaginary part B, that should be B" | real part $a$, imaginary part $b$ |
-> | L1.08, ll. 2121–2134 | at "a thousand … 0.002 … minus one hundred and seventy nine point fifty" | at $\omega = 100$: $1.99\times10^{-4}$, −179.6°; at 1000: $1.99\times10^{-6}$, −179.96° |
-> | L1.08, ll. 2202–2213 | peak above 1 "for a system with a damping ratio less than one" | $\vert G(i\omega_n)\vert>1$ needs $\zeta<0.5$; a peak exists for $\zeta<0.707$ |
-> | L1.09, ll. 8, 69 | "body plots" | Bode plots (throughout Parts A and B) |
-> | L1.09, l. 23 | "the friction response function" | frequency response function |
-> | L1.09, l. 61 | "the cutter frequency" | the cut-off frequency |
-> | L1.09, l. 146 | "minus 40 is 1 times to the minus 3, sorry, minus 2" | −40 dB is $10^{-2}$ (self-corrected) |
-> | L1.09, ll. 154, 263 | "logarithmic loss" | laws of logarithms |
-> | L1.09, l. 174 | "minus, sorry, 44.65" | 44.65 rad/s |
-> | L1.09, ll. 245–249 | "first-order … 10 dBs per decade, second-order … 20 dBs per decade" | −20 and −40 dB/decade |
-> | L1.09, l. 266 | "the buy and conquer" | divide and conquer |
-> | L1.09, l. 314 | "about 20 degrees per decade" | +20 dB per decade for $G = s$ |
-> | L1.09, ll. 318–319 | "for every pole every zero that you add" | each zero at the origin adds +90°; each pole −90° |
-> | L1.09, l. 354 | "40 45 degrees per decade" | about 45° per decade |
-> | L1.09, l. 360 | "set set line" | the $\zeta$ term |
-> | L1.09, l. 364 | "the xb15" | the XV-15 |
+- Pole–zero map → stable/unstable and physical/non-physical (L1.08, ll. 107–112).
+- The full partial-fraction derivation for a sinusoidal input is not expected (L1.08, ll. 316–321).
+- Quiz point: the steady-state output is the input scaled in amplitude and shifted in phase (L1.08, ll. 2245–2254).
+- Read frequencies for a given attenuation off a Bode plot (L1.09, ll. 175–177). dB formulas will be on the question sheet (l. 123).
+- In the labs Python produces the Bode plot in dB (L1.09, l. 124).
 
 ## Terminology and alternative names
 
@@ -370,7 +330,7 @@ One exercise was set in L1.08 (marked lecturer-set). The pole–zero stability/p
 
 ### Core
 
-- [ ] Lecturer-set (L1.08, ll. 1910–2088, an in-class exercise; for ω = 100, "I will let you do that on your own time", l. 2088): evaluate $\vert G(i\omega)\vert$ and $\angle G(i\omega)$ for the SPO TF at $\omega = 0, 0.1, 10, 100, \infty$, then guess and check the value at $\omega_n$ (ll. 2170–2182). → [[#Five-step recipe (SPO example)]]
+- [ ] Lecturer-set (L1.08, ll. 1910–2088, an in-class exercise; ω = 100 left for independent work, l. 2088): evaluate $\vert G(i\omega)\vert$ and $\angle G(i\omega)$ for the SPO TF at $\omega = 0, 0.1, 10, 100, \infty$, then guess and check the value at $\omega_n$ (ll. 2170–2182). → [[#Five-step method (SPO example)]]
 - [ ] Decide whether a given pole–zero map is stable and physical (stated exam question). → [[#1. Poles, zeros and the complex plane (L1.08)]]
 - [ ] Find the bandwidth, peaking and the −60 dB frequency of the SPO TF from its Bode plot. → [[#3. Bode plot (L1.09)]]
 - [ ] PS2 Q1. → [[SESA2027 Practice Problems 2 Solutions]]
@@ -381,3 +341,48 @@ One exercise was set in L1.08 (marked lecturer-set). The pole–zero stability/p
 - [ ] Sketch the asymptotic Bode plot of the Blakelock $\theta/\delta_e$ TF factor by factor (suggested). → [[#4. Building a Bode plot from factors]]
 - [ ] Derive $\omega_r=\omega_n\sqrt{1-2\zeta^2}$ and $\lvert G\rvert_{\max}=1/(2\zeta\sqrt{1-\zeta^2})$ (suggested). → [[#2. Response to a sinusoidal input]]
 - [ ] Show that the steady-state output is $A\lvert G(i\omega)\rvert\sin(\omega t+\angle G)$ by complex partial fractions (suggested). → [[#2. Response to a sinusoidal input]]
+
+## Transcript and slide slips
+
+> [!warning] Gain-slope slip in L1.09
+> Where: [[#3. Bode plot (L1.09)]].
+>
+> The lecture said "for a first-order system, it will be 10 dBs per decade. For a second-order system, it will be 20 dBs per decade" (L1.09, ll. 245–249). The correct high-frequency slopes are −20 dB/decade per pole: −20 for first order, −40 for second order, −60 for third. The same lecture's own example drops "almost minus 40 dBs" in one decade (ll. 107–108), and L2.05 states the correct values (ll. 133–137).
+
+### Transcript slips
+
+> [!warning] Speech-to-text and spoken slips, with the correct version
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L1.08, l. 1 | "LAT-plus transform", "La Trasse transform" (l. 206) | Laplace transform |
+> | L1.08, l. 32 | "the polynomial l" | the polynomial $A(s)$ |
+> | L1.08, l. 67 | "for the system to be causal, at least the order of the numerator and the denominator has to be the same" | the numerator order must be at most the denominator order |
+> | L1.08, l. 84 | "a knot, or a zero" | a nought (○) |
+> | L1.08, l. 95 | conjugates are "a mirror image on the imaginary axis" | mirror images about the real axis |
+> | L1.08, ll. 115–117 | (answering a student) instability "can happen as well if the zeros are on the positive side of the complex plane" | open-loop stability depends only on the poles. Right-half-plane zeros matter once the loop is closed: the closed-loop poles are the roots of $A(s)+KB(s)$, so the zeros in $B(s)$ move them and can push them into the right half-plane at high gain (L2.03, ll. 268–272; [[SESA2027 B2 - Root Locus Method\|B2]]) |
+> | L1.08, ll. 396–398 | "the geolentical multiply by the geolentical" | $G(s)$ multiplied by $U(s)$ |
+> | L1.08, l. 755 | roots "halal of negative part" | have a negative real part |
+> | L1.08, ll. 829–835 | "the denominator order is greater, or at least equal to the denominator" | at least equal to the numerator order |
+> | L1.08, ll. 855–860 | "cosine and psi functions", "psi function" | cosine and sine; a single sine |
+> | L1.08, ll. 1199–1215; L1.09, ll. 29–32 | a phase lead "would be basically predicting time", so physical systems lag | a steady-state phase lead is a shift of a periodic signal, not prediction; a causal system with zeros (a PD controller, a lead network) can lead over a band of frequencies. The SPO transfer function, with no zeros, lags at every frequency |
+> | L1.08, ll. 1281–1286 | "real part A and the imaginary part B, that should be B" | real part $a$, imaginary part $b$ |
+> | L1.08, ll. 2121–2134 | at "a thousand … 0.002 … minus one hundred and seventy nine point fifty" | at $\omega = 100$: $1.99\times10^{-4}$, −179.6°; at 1000: $1.99\times10^{-6}$, −179.96° |
+> | L1.08, ll. 2202–2213 | peak above 1 "for a system with a damping ratio less than one" | $\vert G(i\omega_n)\vert>1$ needs $\zeta<0.5$; a peak exists for $\zeta<0.707$ |
+> | L1.09, ll. 8, 69 | "body plots" | Bode plots (throughout Parts A and B) |
+> | L1.09, l. 23 | "the friction response function" | frequency response function |
+> | L1.09, l. 61 | "the cutter frequency" | the cut-off frequency |
+> | L1.09, l. 146 | "minus 40 is 1 times to the minus 3, sorry, minus 2" | −40 dB is $10^{-2}$ (self-corrected) |
+> | L1.09, ll. 154, 263 | "logarithmic loss" | laws of logarithms |
+> | L1.09, l. 174 | "minus, sorry, 44.65" | 44.65 rad/s |
+> | L1.09, ll. 245–249 | "first-order … 10 dBs per decade, second-order … 20 dBs per decade" | −20 and −40 dB/decade |
+> | L1.09, l. 266 | "the buy and conquer" | divide and conquer |
+> | L1.09, l. 314 | "about 20 degrees per decade" | +20 dB per decade for $G = s$ |
+> | L1.09, ll. 318–319 | "for every pole every zero that you add" | each zero at the origin adds +90°; each pole −90° |
+> | L1.09, l. 354 | "40 45 degrees per decade" | about 45° per decade |
+> | L1.09, l. 360 | "set set line" | the $\zeta$ term |
+> | L1.09, l. 364 | "the xb15" | the XV-15 |
+
+> [!warning] Transcript slip: when is there a peak at $\omega_n$? (L1.08, ll. 2202–2213)
+> Where: [[#Five-step method (SPO example)]].
+>
+> The lecture says the magnitude at $\omega_n$ exceeds 1 "for a system with a damping ratio less than one" (L1.08, ll. 2202–2213). That is too loose. At $\omega = \omega_n$, $|G| = 1/(2\zeta)$, which exceeds 1 only if $\zeta<0.5$. A resonant peak above the low-frequency gain exists only if $\zeta<1/\sqrt2\approx0.707$, and it sits at $\omega_r = \omega_n\sqrt{1-2\zeta^2}$, slightly below $\omega_n$ (as L1.09, ll. 228–232 says). Here $\zeta = 0.264$, so $|G(i\omega_n)| = 1.90$ and the peak is at $\omega_r = 1.31$ rad/s.

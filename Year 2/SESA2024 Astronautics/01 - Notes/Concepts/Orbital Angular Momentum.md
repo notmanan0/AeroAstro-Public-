@@ -29,5 +29,5 @@ with $p$ the semi-latus rectum. For a circular orbit this reduces to $h=\sqrt{\m
 
 ## Related
 
-- [[SESA2024 02 - Kepler's Laws and the Orbit Equation#Transverse equation: angular momentum is conserved|Derivation in the lecture note]]
+- [[SESA2024 02 - Kepler's Laws and the Orbit Equation#Transverse equation: angular momentum is conserved|Derivation in the topic note]]
 - [[Kepler's Laws]] · [[Vis-Viva Equation]] · [[Orbit Equation and Conic Sections]]

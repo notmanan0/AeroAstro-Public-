@@ -27,7 +27,7 @@ $\{D\}$ is a unit displacement (or rotation) in one global direction. $\gamma_i$
   - change the geometry, BCs or mass distribution accordingly.
 - ANSYS prints a participation-factor table per direction (frequency, factor, effective mass, cumulative ratio).
 
-- 2-DOF ($m_1 = 2$ kg, $m_2 = 1$ kg): $\gamma = \{1.7157,\,-0.2379\}$, so $M_{\mathrm{eff}} = \{2.9436,\,0.0566\}$ kg, summing to 3 kg. Mode 1 carries 98% ([[SESA2029 FEA Worked Examples]]).
+- 2-DOF ($m_1 = 2$ kg, $m_2 = 1$ kg): $\gamma = \{1.7157,\,0.2380\}$ (the second sign depends on the sign chosen for mode 2), so $M_{\mathrm{eff}} = \{2.9434,\,0.0566\}$ kg, summing to 3 kg. Mode 1 carries 98% ([[SESA2029 FEA Worked Examples]]).
 
 ## Related
 

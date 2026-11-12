@@ -17,7 +17,7 @@ sources: ["02 - Sources/PF/Tutorial3.pdf", "02 - Sources/PF/Tutorial_3_Solutions
 # SESA2022 Tutorial 3 - Potential Flow Solutions
 
 > [!abstract] Sheet Info
-> Sheet: Tutorial 3 (Potential flow). Lecturer's key results reproduced: Q3 $C_p(2,2) = 0.872$ (the coarse notebook grid wrongly gives $-10.5$).
+> Sheet: Tutorial 3 (Potential flow). Key results reproduced: Q3 $C_p(2,2) = 0.872$ (the coarse notebook grid wrongly gives $-10.5$).
 
 ## Theory Links
 - [[SESA2022 T3 - Potential Flow]] · [[Flow Past a Cylinder]] · [[Method of Images]] · [[Rankine Oval]]

@@ -8,26 +8,25 @@ tags: [feeg1004, concept, transducers]
 status: complete
 parent_lectures: ["[[FEEG1004 E1 - Measurement Systems and Temperature Sensors]]"]
 related_concepts: ["[[Transducer Static Characteristics]]", "[[RTDs and Thermistors]]", "[[Thermocouples and Cold-Junction Compensation]]"]
-sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 01 - Measurement Systems - Lecture Slides.pdf"]
+sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 01 - Measurement Systems - Lecture Slides.pdf", "Transducers lecture 1"]
 ---
 
 # Passive and Active Transducers
 
-## Definition
+A **passive** transducer responds to the measurand by changing a circuit parameter, and needs an external **excitation** supply to turn that change into a signal. An **active** transducer uses a material effect (thermoelectric, piezoelectric or electromagnetic) to generate a voltage or current without external power.
 
-> [!note] Definition
-> - **Passive**: a change in a circuit parameter ($R = \rho L/A$, $C = \varepsilon A/d$, $L = N^2/\mathcal R$) that needs an external **excitation** supply to produce a signal.
-> - **Active**: a material effect (thermoelectric, piezoelectric, electromagnetic) generates a voltage or current **without** external power.
+The parameter a passive transducer changes is a resistance, a capacitance or an inductance:
 
-## Explanation
-- Passive examples: RTD, thermistor, potentiometer, strain gauge, capacitive sensor, LVDT (AC-excited).
-- Active examples: thermocouple, piezoelectric accelerometer, tachogenerator, photovoltaic cell.
-- Optical sensors (fibre, laser) form a third family.
-- Passive sensors put the excitation stability directly into the output (e.g. the bridge $V = NEG\varepsilon/4$ is ∝ $E$).
+$$
+R = \frac{\rho L}{A},\qquad C = \frac{\varepsilon A}{d},\qquad L = \frac{N^2}{\mathcal R}
+$$
+
+The RTD, thermistor, potentiometer, strain gauge, capacitive sensor and LVDT (which is AC-excited) are all passive. The thermocouple, piezoelectric accelerometer, tachogenerator and photovoltaic cell are active. Optical sensors, fibre and laser, form a third family.
+
+Because a passive sensor's output scales with its excitation, any drift in the supply appears directly in the reading. The strain-gauge bridge output $V = NEG\varepsilon/4$, for example, is proportional to the excitation voltage $E$.
 
 ## Related
-- Topic notes: [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]] · [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
-- Concepts: [[RTDs and Thermistors]] · [[Thermocouples and Cold-Junction Compensation]] · [[Gauge Factor]]
 
-## Sources
-- Transducers lecture 1
+- [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]] · [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
+- [[Transducer Static Characteristics]] · [[RTDs and Thermistors]] · [[Thermocouples and Cold-Junction Compensation]] · [[Gauge Factor]]
+- Sources: Transducers lecture 1

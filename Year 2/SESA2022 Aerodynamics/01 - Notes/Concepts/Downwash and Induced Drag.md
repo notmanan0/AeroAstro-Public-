@@ -19,7 +19,7 @@ $$
 \alpha_{eff} = \alpha-\alpha_i,\qquad D_i' = L'\alpha_i,\qquad C_{D_i} = \frac{C_L^2}{\pi AR}(1+\delta) = \frac{C_L^2}{\pi eAR}.
 $$
 
-Induced drag is the price of producing lift with a finite span. Its energy goes into the kinetic energy of the trailing-vortex wake, and viscosity plays no part. With the circulation written as a Fourier series,
+Induced drag is the drag that accompanies lift on a finite span. Its energy goes into the kinetic energy of the trailing-vortex wake, and viscosity plays no part. With the circulation written as a Fourier series,
 
 $$
 \alpha_i(\theta) = \sum nB_n\frac{\sin n\theta}{\sin\theta},\qquad C_{D_i} = \pi AR\sum nB_n^2 .
@@ -33,5 +33,5 @@ Past-paper uses: the power needed to overcome induced drag ([[SESA2022 Exam 2017
 
 ## Related
 
-- Full derivation and worked examples: [[SESA2022 T5 - Finite Wing Theory#2. Downwash, induced angle and induced drag (7 Nov lecture)|T5 §2]]
+- Full derivation and worked examples: [[SESA2022 T5 - Finite Wing Theory#2. Downwash, induced angle and induced drag|T5 §2]]
 - [[Biot-Savart Law and Helmholtz Theorems]] · [[Elliptic Lift Distribution]] · [[Oswald Efficiency Factor]] · [[Maximum Lift-to-Drag Ratio]]

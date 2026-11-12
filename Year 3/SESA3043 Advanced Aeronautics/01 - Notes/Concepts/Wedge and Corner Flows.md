@@ -33,4 +33,4 @@ Along the wall the speed is $U_e(s)=k(m+1)s^m$, so $\mathrm dU_e/\mathrm ds=mU_e
 
 ## Related
 
-- [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#7. A mystery flow: wedges and corners]] · [[Prandtl Boundary-Layer Equations]]
+- [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#7. Wedge and corner flows]] · [[Prandtl Boundary-Layer Equations]]

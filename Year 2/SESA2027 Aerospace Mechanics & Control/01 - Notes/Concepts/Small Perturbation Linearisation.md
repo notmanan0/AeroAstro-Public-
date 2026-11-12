@@ -29,7 +29,7 @@ $$
 
 for the longitudinal set and $\Delta Y = m(\dot v+rU_\infty)$, $\Delta L = I_{xx}\dot p-I_{xz}\dot r$, $\Delta N = -I_{xz}\dot p+I_{zz}\dot r$ for the lateral set. The clean split relies on the aircraft being symmetric about its $xz$-plane, so that $I_{xy} = I_{yz} = 0$. Angles are small too ($\sin\theta\approx\theta$, $\cos\theta\approx1$, $\alpha\approx w/U_\infty$), and expanding the forces and moments as first-order Taylor series in the perturbations gives the [[Aerodynamic Stability Derivatives]].
 
-The course takes the approximation as good for perturbations up to about ±10 % of trim. A linearised model is valid only near its own trim point, which is why gain scheduling re-linearises across the flight envelope ([[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]).
+The approximation is taken as good for perturbations up to about ±10 % of trim. A linearised model is valid only near its own trim point, which is why gain scheduling re-linearises across the flight envelope ([[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]).
 
 ## Related
 

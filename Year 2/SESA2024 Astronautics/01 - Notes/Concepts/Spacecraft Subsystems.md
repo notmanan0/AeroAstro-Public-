@@ -25,5 +25,5 @@ Past-paper use: 2020/21 Q9 (subsystem interactions in a design), 2014/15 Q1(ix) 
 
 ## Related
 
-- [[SESA2024 01 - Systems Engineering and Spacecraft Design#1. Payload and bus|Payload and bus in the lecture note]] · [[SESA2024 01 - Systems Engineering and Spacecraft Design#7. How the payload drives the design (Chapter 4)|Payload impact table]]
+- [[SESA2024 01 - Systems Engineering and Spacecraft Design#1. Payload and bus|Payload and bus in the topic note]] · [[SESA2024 01 - Systems Engineering and Spacecraft Design#7. How the payload drives the design (Chapter 4)|Payload impact table]]
 - [[Systems Engineering Design Phases]]

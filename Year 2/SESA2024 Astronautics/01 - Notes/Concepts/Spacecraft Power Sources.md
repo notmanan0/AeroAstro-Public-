@@ -17,11 +17,11 @@ A spacecraft's primary power source supplies its electrical energy over the miss
 
 Solar arrays are the primary source for almost every Earth-orbiting spacecraft, with batteries as the secondary source through eclipse. Arrays convert 10–20 % of the 1370 W/m² solar flux, and the flux falls with the square of the distance from the Sun, to about 5.5 W/m² of electrical output at Jupiter and 1.4 W/m² at Saturn for a 10 % cell, so beyond about 5 AU other sources take over.
 
-An RTG converts the heat of decaying plutonium-238 into electricity through thermocouples (the Seebeck effect): about 200 W from a unit roughly 1 m long and 40 kg, for decades, which is why the Voyagers still work. It emits heat continuously from integration to orbit and is tightly regulated. Fuel cells react hydrogen and oxygen for kilowatts over short missions and produce drinking water, which suits crewed flight. Primary (non-rechargeable) batteries suit short, low-power missions such as launchers. Solar dynamic systems heat a working fluid to drive a turbine: efficient but heavy and complex. Nuclear reactors are the only option for very high power over very long missions, but are currently not used.
+An RTG converts the heat of decaying plutonium-238 into electricity through thermocouples (the Seebeck effect): about 200 W from a unit roughly 1 m long and 40 kg, for decades, which is why the Voyagers still work. It emits heat continuously from integration to orbit and is tightly regulated. Fuel cells react hydrogen and oxygen for kilowatts over short missions and produce drinking water, which suits crewed flight. Primary (non-rechargeable) batteries suit short, low-power missions such as launchers. Solar dynamic systems heat a working fluid to drive a turbine: efficient but heavy and complex. Nuclear reactors are the only option for very high power over very long missions, but regulation rules them out.
 
 The selection chart plots power against mission duration, and the Sun distance then decides between arrays and RTGs for long missions.
 
 ## Related
 
-- [[SESA2024 08 - Electrical Power Subsystem#1. Power sources|Power sources in the lecture note]]
+- [[SESA2024 08 - Electrical Power Subsystem#1. Power sources|Power sources in the topic note]]
 - [[Solar Cells and Arrays]] · [[Battery Sizing]]

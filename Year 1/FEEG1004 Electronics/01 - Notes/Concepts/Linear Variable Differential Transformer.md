@@ -13,26 +13,22 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 02 - Displacement S
 
 # Linear Variable Differential Transformer
 
-## Definition
+A linear variable differential transformer (LVDT) is a displacement sensor made of an AC-excited primary coil, two symmetric secondary coils connected in series opposition, and a movable ferromagnetic core. Its output is proportional to the displacement of the core from the centre.
 
-> [!note] Definition
-> An AC-excited primary coil with two symmetric secondaries in **series opposition** and a movable ferromagnetic core:
->
-> $$V_{out} = V_a - V_b\ \propto\ \text{core displacement}$$
->
-> It is zero at the centre (null) and changes phase by 180° across it.
-
-## Explanation
-- Moving the core changes the mutual coupling to each secondary (the reluctance of the magnetic path).
-- Excitation is at several kHz. The output is amplitude-modulated, so **phase-sensitive demodulation** recovers a signed DC signal.
-- The core is NiFe, slotted to reduce eddy currents, and mounted on a non-ferromagnetic rod.
-- **Advantages**: no friction, good accuracy and linearity, high sensitivity, infinite resolution.
+$$
+V_{out} = V_a - V_b\ \propto\ \text{core displacement}
+$$
 
 ![[ee_e2_lvdt.png|640]]
 
-## Related
-- Topic notes: [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
-- Concepts: [[Ideal Transformer]] · [[Inductance]] · [[Faraday's Law and Lenz's Law]]
+Moving the core changes the reluctance of the magnetic path, and with it the mutual coupling between the primary and each secondary. At the centre (the null position) the two secondary voltages are equal and cancel, so the output is zero. Moving the core one way raises $V_a$ and lowers $V_b$; moving it the other way does the opposite, so the output phase changes by $180^\circ$ across the null.
 
-## Sources
-- Transducers lecture 2
+The primary is excited at several kilohertz, so the output is an amplitude-modulated carrier rather than a DC level. Phase-sensitive demodulation recovers a signed DC signal that indicates both the size and the direction of the displacement. The core is nickel–iron, slotted to reduce eddy currents, and mounted on a non-ferromagnetic rod.
+
+Because the core does not touch the coils, the LVDT has no friction. It also offers good accuracy and linearity, high sensitivity and, in principle, infinite resolution.
+
+## Related
+
+- [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
+- [[Ideal Transformer]] · [[Inductance]] · [[Faraday's Law and Lenz's Law]]
+- Sources: Transducers lecture 2

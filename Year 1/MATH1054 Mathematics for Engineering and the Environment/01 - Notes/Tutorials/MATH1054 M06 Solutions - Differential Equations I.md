@@ -11,7 +11,7 @@ sheet: "Module 06 work scheme: Examples 10.1–10.13, 10.34–10.36; Exercises 2
 theory_notes: ["[[MATH1054 M06 - Differential Equations I]]"]
 key_concepts: ["[[Classification of Differential Equations]]", "[[Separable First-Order ODEs]]", "[[Auxiliary Equation]]"]
 status: complete
-sources: ["tmp/md/module_06_differential_equations_i.md", "02 - Sources/Modern Engineering Mathematics.pdf (§10.2–10.5, §10.9)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 6)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§10.2–10.5, §10.9)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 6)"]
 ---
 
 # MATH1054 M06 Solutions - Differential Equations I
@@ -50,7 +50,7 @@ These four examples define the terms. Here they are applied to each equation.
 |---|---|---|
 | (10.3) $m\ddot s-(\mu\alpha-\beta)\dot s^{\,2}=T-\mu mg$ | vehicle with drag | 2nd order, **nonlinear** ($\dot s^2$); $s$ dependent, $t$ independent |
 | (10.6) $V\dot T_w+AU_aT_w=AU_aT_{\text{in}}$ | water-heater temperature | 1st order, **linear, nonhomogeneous** (forced by $T_{\text{in}}$); $T_w$ dependent, $t$ independent |
-| (10.7) $\frac{\rho d}{A}\dot Q+(\alpha+\beta+\gamma)\frac{\rho}{2A^2}Q^2=\rho gh$ | pipe flow with losses | 1st order, **nonlinear** ($Q^2$); $Q$ dependent, $t$ independent |
+| (10.7) $\frac{\rho d}{A}\dot Q+\big(\frac1\alpha+\beta+\gamma\big)Q=\rho gh$ | hydro-electric conduit flow with losses | 1st order, **linear, nonhomogeneous** (forced by $\rho gh$; every pressure loss is proportional to $Q$); $Q$ dependent, $t$ independent |
 | (10.9) $L\ddot i+R\dot i+\frac1Ci=0$ | LRC circuit | 2nd order, **linear, homogeneous**, constant coefficients; $i$ dependent, $t$ independent |
 
 ## Example 10.6: $\dot x=-4x$
@@ -297,5 +297,5 @@ $$\boxed{x=e^{-t}}$$
 The initial slope $-1$ exactly matches the slow mode $e^{-t}$, so the fast mode is never excited.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_06_differential_equations_i.md`
+- Problem statements: Module 06 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §10.2–10.5, §10.9; MATH1054 Module Booklet, Module 6

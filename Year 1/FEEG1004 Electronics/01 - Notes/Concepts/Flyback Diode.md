@@ -13,25 +13,18 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W06-7abc Thevenin Superposition and R
 
 # Flyback Diode
 
-## Definition
-
-> [!note] Definition
-> A diode placed across an inductive load (relay coil, solenoid, motor), **reverse-biased in normal operation**. When the drive switch opens, it gives the inductor current a loop to circulate and decay through, clamping the voltage to about supply + 0.7 V.
-
-## Explanation
-- The inductor current cannot stop instantly. Without a path, $v = L\,di/dt$ climbs until the switch arcs or the transistor breaks down (hundreds of volts).
-- With the diode, the stored $\tfrac{1}{2}LI^2$ dissipates in the coil resistance with $\tau = L/R$.
-- In a **DC chopper** the same diode is the **freewheeling diode**: it keeps the motor current continuous while the transistor is off (answer b in DC Machines 08).
+A flyback diode is a diode connected across an inductive load such as a relay coil, solenoid or motor, oriented so that it is reverse-biased in normal operation. When the drive switch opens, it gives the inductor current a loop to circulate and decay through, clamping the switch voltage to about the supply plus $0.7\ \mathrm V$.
 
 ![[ee_a7_flyback.png|640]]
 
-## Examples
-- Relay coil 5 V, 101 Ω: $i(0^-)$ = 49.6 mA. Without a diode, a 10 kΩ gap leakage path would see ~500 V.
-- The Mills BJT heater circuit and the MOSFET motor switch both need it.
+The diode is needed because inductor current cannot stop instantly. If the switch opens with no other path available, $v = L\,di/dt$ rises until something gives way: the switch contacts arc or the transistor breaks down, typically at hundreds of volts. A $101\ \Omega$ relay coil on a $5\ \mathrm V$ supply carries $i(0^-)=5/101=49.5\ \mathrm{mA}$; forced through a $10\ \mathrm{k\Omega}$ leakage path across the open gap, that current would produce about $500\ \mathrm V$.
+
+With the diode in place, the coil current flows round the coil–diode loop instead, and the stored energy $\tfrac{1}{2}LI^2$ is dissipated in the coil resistance with time constant $\tau = L/R$. The BJT heater switch and the MOSFET motor switch in B3 both need one.
+
+In a DC chopper the same component is called the **freewheeling diode**. It keeps the motor armature current continuous during the intervals when the transistor is off (DC Machines 08 question, answer (b)).
 
 ## Related
-- Topic notes: [[FEEG1004 A7 - Thevenin, Superposition and Relays]] · [[FEEG1004 B3 - Transistors - BJT and MOSFET Switches and Amplifiers]] · [[FEEG1004 C6 - DC Motor Characteristics and Speed Control]]
-- Concepts: [[Inductance]] · [[Transistor as a Switch]] · [[DC Motor Speed Control]]
 
-## Sources
-- Recorded lecture 7c; Mills notes §1.6.7; DC Machines 08 slides
+- [[FEEG1004 A7 - Thevenin, Superposition and Relays]] · [[FEEG1004 B3 - Transistors - BJT and MOSFET Switches and Amplifiers]] · [[FEEG1004 C6 - DC Motor Characteristics and Speed Control]]
+- [[Inductance]] · [[Transistor as a Switch]] · [[DC Motor Speed Control]]
+- Sources: Recorded lecture 7c; Mills notes §1.6.7; DC Machines 08 slides

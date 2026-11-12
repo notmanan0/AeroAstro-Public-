@@ -58,7 +58,7 @@ Read-offs from Fig. MQ1b (±200): standard G92: 250 MPa gives 31,000, 150 MPa gi
 | **Optimised**, 250 MPa | 86,700 | 5,210 | 221 | |
 | **Optimised**, 150 MPa | | | 188,600 | 22,210 |
 
-![[Figures/materials_g92_rupture_times.png]]
+![[materials_g92_rupture_times.png]]
 
 #### (b)(ii) Flight cycles to failure (creep Miner) [8]
 

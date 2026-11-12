@@ -17,7 +17,7 @@ A **homentropic** flow has the same entropy everywhere, $\nabla s=0$. That is st
 
 You get it when uniform flow from a single reservoir passes through a region with no shocks. A curved shock breaks it, because different streamlines cross the shock at different angles and pick up different entropy jumps ([[Entropy Change Across a Shock]]). Behind such a shock the flow is still isentropic along each streamline, but no longer homentropic.
 
-The payoff is that pressure and density are tied together by one relation, $p=C\rho^\gamma$, with the same constant $C$ everywhere. Then
+Pressure and density are then tied together by one relation, $p=C\rho^\gamma$, with the same constant $C$ everywhere. Then
 
 $$\frac{\partial p}{\partial\rho}=\gamma C\rho^{\gamma-1}=\gamma\,\frac{p}{\rho}=\gamma RT=a^2 ,$$
 

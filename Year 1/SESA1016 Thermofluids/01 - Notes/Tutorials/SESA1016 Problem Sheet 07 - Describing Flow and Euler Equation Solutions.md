@@ -145,7 +145,7 @@ $$\boxed{Ma=250/299.3=0.835}.$$
 
 At sea level, $T=15^\circ\mathrm C=288.15$ K:
 
-$$c=340.3\ \mathrm{m\,s^{-1}},qquad
+$$c=340.3\ \mathrm{m\,s^{-1}},\qquad
 \boxed{Ma=250/340.3=0.735}.$$
 
 The same flight speed has a lower Mach number in warmer air because the speed of sound rises as $\sqrt T$. At $10\,000$ m, supersonic flight requires

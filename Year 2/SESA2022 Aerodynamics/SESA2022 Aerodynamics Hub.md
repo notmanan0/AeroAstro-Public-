@@ -27,6 +27,8 @@ All topic notes were brought to the Year 3 standard on 28 Oct 2026 (exam quick p
 | 5 Finite wing theory | 6–13 Nov | [[SESA2022 T5 - Finite Wing Theory]] | lectured | `generate_aero_t5_figures.py` |
 | 6 Aircraft aerodynamics and static stability | 14–25 Nov | [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability]] | lectured | `generate_aero_t6_figures.py` |
 
+The folders hold five topic notes (all five `lectured`, none `written-ahead`, since every topic has a 2025-26 transcript), 30 concept notes (28 for Topics 2–6 and two legacy compressible-flow notes, all linked under [[#Concept map]]), six problem-sheet solution notes and twelve past-paper solution notes. The [[SESA2022 Formula Sheet]] follows the same topic order and marks with ★ every result that is not on the exam's formula pages (the 2024-25 rubric for Topics 2–5, the 21 Nov list for Topic 6).
+
 Status is `lectured` (fully written up, not yet revised). Promote a note to `revised` once you have worked its Core self-study tasks, and to `exam-ready` after the further practice and timed past-paper questions.
 
 ## Concept map
@@ -63,9 +65,9 @@ In-person exam 60%, Blackboard quizzes 20% (one each for Topic 2, Topic 3 and To
 ## Exam skills
 
 Exam technique (both revision lectures):
-- Know the formula sheet before the exam; read the question fully and list what is given and what is asked: *"Half the battle is won if you read the question properly"* (Revision 1, ll. 53–78).
+- Know the formula sheet before the exam; read the question fully and list what is given and what is asked; reading the question properly is half the battle (Revision 1, ll. 53–78).
 - Give units (a 98/100 script lost a mark for them), sanity-check magnitudes, and show each substitution: for a "show that", the final line alone earns nothing (Revision 1, ll. 81–113, 288–299).
-- *"There will be at least one question where you have to sketch something"*: label the axes and add legends (Revision 1, ll. 126–142).
+- At least one question will ask for a sketch: label the axes and add legends (Revision 1, ll. 126–142).
 - Substitute every value given; do not assume quantities; if an earlier part failed, carry its result as a variable (Revision 1, ll. 143–174, 398–402).
 - Marks come for correct equations even if unsolved. A single arithmetic slip costs little; an answer that is wrong only in the 4th decimal place gets full credit (Revision 1, ll. 186–193, 252–255; 7 Jan revision, ll. 251–264).
 - Degrees to radians is the commonest error (7 Jan revision, l. 175).
@@ -99,6 +101,8 @@ T6 Static stability
 - neutral points and static margins, stick fixed and free; manoeuvre margin with $\Phi$;
 - short proofs ($\bar a_1$, $C_{L_{T,\alpha}} = k(1-\epsilon_\alpha)$, $h_n$); flight-test extrapolation; lateral/directional stability qualitatively.
 
+- [[SESA2022 Cambridge Part IIA Practice]]: third-year Cambridge questions (Part IIA) that revise this module, listed under each topic note.
+
 ## Problem sheets (full worked solutions)
 - [[SESA2022 Tutorial 2 - Viscous Flow Solutions]]
 - [[SESA2022 Tutorial 3 - Potential Flow Solutions]]
@@ -107,7 +111,7 @@ T6 Static stability
 - [[SESA2022 Examples Sheet 6 - Static Stability Solutions]]
 - [[SESA2022 Static Stability Past Paper Questions Solutions]]
 
-*"The example sheets for sections 3, 4, 5 are pretty much what you're going to get on the exam"*, except the NACA 2412 thin-aerofoil question, which is longer than an exam question (25 Nov, ll. 407–414). Static stability was part A of the former flight-mechanics module SESA2025; its past papers are relevant (25 Nov, ll. 415–419).
+The example sheets for sections 3, 4 and 5 are close to what the exam asks, except the NACA 2412 thin-aerofoil question, which is longer than an exam question (25 Nov, ll. 407–414). Static stability was part A of the former flight-mechanics module SESA2025; its past papers are relevant (25 Nov, ll. 415–419).
 
 ## Past papers (all 12 solved)
 
@@ -149,9 +153,12 @@ SORT type ASC, file.name ASC
 
 ## Sources
 
-- Slides, examples sheets and notebooks in `02 - Sources/BL`, `PF`, `Airfoils and Wings`, `Stability`.
-- 2025-26 lecture transcripts in `02 - Sources/Lectures/`, mapped to topics in [[SESA2022 Transcript Index]]. Earlier-year topic recordings: `BLs.txt`, `PFs.txt`, `TAT.txt`, `FWT.txt`, `Static Stability.txt`.
+- Slides, tutorial and examples sheets (with the official Tutorial 2 and 3 solutions), notebooks and the example laminar and turbulent `.csv` profiles in `02 - Sources/BL`, `PF`, `Airfoils and Wings`, `Stability`; the static-stability past-paper questions are in `Stability`.
+- Past papers 2013-14 to 2024-25 in `03 - Exams & Past Papers/`; the 2024-25 paper (pp. 9–18) carries the formula rubric the [[SESA2022 Formula Sheet]] is checked against.
+- 2025-26 lecture transcripts in `02 - Sources/Lectures/`, mapped to topics in [[SESA2022 Transcript Index]]. Earlier-year topic recordings: `BLs.txt`, `PFs.txt`, `TAT.txt`, `FWT.txt`, `Static Stability.txt`, and the 2020 XFOIL and XFLR5 tutorial recordings (`SESA2022 Lecture 2020-09-08 - …`) in `02 - Sources/Lectures/`.
 - Revision lectures: `SESA2022 Lecture 1 - Revision.txt` (first half) and `SESA2022 Lecture 2026-01-07.txt` (second half), read in full (28 Oct 2026); their advice is in [[#Assessment]], [[#Exam skills]], each topic note's quick-path box and [[SESA2022 Exam 2024-25 Solutions]]. Lab-report briefing: `SESA2022 Lecture 34a.txt`, summarised in [[SESA2022 Wind Tunnel Lab Summary#Report brief (26 Nov lecture)]].
+
+## Transcript and slide slips
 
 > [!warning] Slips found in the transcripts (all flagged in the topic notes)
 > The most consequential: Lecture 7 attributes $0.664/\sqrt{Re}$ and $H = 2.59$ to the parabolic profile (they are Blasius; the parabola gives $0.730$ and $2.5$) ([[SESA2022 T2 - Boundary Layers#Transcript slips (Lectures 5–10)|T2]]); the maths revision uses anticlockwise-positive vorticity while the aerodynamics uses clockwise-positive $\Gamma$ ([[SESA2022 T3 - Potential Flow#Transcript slips (Lectures 3–16)|T3]]); the NACA 6500 zero-lift angle is said as $-0.02$ rad instead of $-0.12$ rad ([[SESA2022 T4 - Thin Aerofoil Theory#Transcript slips (28 Oct – 5 Nov)|T4]]); the aspect-ratio example quotes $C_L = 0.464$ for $0.466$ ([[SESA2022 T5 - Finite Wing Theory#Transcript slips (6–13 Nov)|T5]]); and the pull-up is described with $V = $ pitch rate × $q$ instead of $V = qR$ ([[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#Transcript slips (14–25 Nov)|T6]]).

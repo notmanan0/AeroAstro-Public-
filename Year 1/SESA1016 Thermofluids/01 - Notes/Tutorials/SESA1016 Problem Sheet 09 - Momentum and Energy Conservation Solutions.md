@@ -138,20 +138,26 @@ $$
 
 At inlet,
 
-$$A_i=\frac{\pi(0.25)^2}{4},qquad
-\dot m=\rho A_i(10).$$
+$$A_i=\frac{\pi(0.25)^2}{4}=0.0491\ \mathrm{m^2},\qquad
+\dot m=\rho A_iV_i=1000\times0.0491\times10=490.9\ \mathrm{kg\,s^{-1}}.$$
 
-The water leaves as an axisymmetric sheet along the $45^\circ$ cone faces. Continuity through the annular sheet supplies its exit speed; symmetry cancels transverse momentum. The axial balance is therefore
+The water leaves as an axisymmetric sheet along the $45^\circ$ faces of the cone. The whole flow is at atmospheric pressure, so there is no pressure force, and symmetry cancels the transverse momentum. The axial momentum balance on a control volume round the cone and its sheet gives the force on the fluid, and the cone must be held with the opposite force:
 
 $$
 F=\dot m\left(V_i-V_o\cos45^\circ\right).
 $$
 
-Using the $40$ cm cone diameter and $4$ cm sheet thickness with the annular-area convention of the sheet gives
+Bernoulli is not to be used for $V_o$ (the impinging flow is viscous), so $V_o$ comes from continuity through the sheet, $V_o=\dot m/(\rho A_o)$, and the answer depends on how the sheet area $A_o$ is taken:
 
-$$\boxed{F=1.62\ \mathrm{kN}}$$
+- thin sheet at the cone edge, $A_o=\pi D_{cone}t=\pi\times0.40\times0.04=0.0503$ m²: $V_o=9.77$ m/s and $F=1.52$ kN;
+- annular frustum strip of thickness $t$ normal to the $45^\circ$ face, $A_o=\pi(2\times0.20+t\cos45^\circ)t=0.0538$ m²: $V_o=9.12$ m/s and $F=1.74$ kN.
 
-to hold the cone. The force is opposite to the incoming jet's force on the cone.
+$$\boxed{F\approx1.5\text{--}1.7\ \mathrm{kN}}$$
+
+holding the cone against the jet.
+
+> [!warning] Printed answer not reproduced (re-checked in Python, 2026-11-05)
+> The sheet prints 1616.67 N. It lies between the two area conventions above but neither reproduces it, and no other reading of the 4 cm thickness tried (horizontal thickness, outer annulus $\pi(r_2^2-r_1^2)$, unchanged speed $V_o=V_i$, which gives 1.44 kN) gives it exactly. Quote 1.5–1.7 kN with the area assumption stated. The earlier version of this answer gave 1.62 kN by an unstated "annular-area convention".
 
 ## Q9.7 Air-water heat exchanger
 
@@ -200,6 +206,9 @@ $$
 
 The strong pressure and area change makes the outlet much slower despite heat addition.
 
+> [!note] Sensitivity to $c_p$ (re-checked in Python, 2026-11-05)
+> The answer comes from the small difference $q-c_p\Delta T=275\,000-301\,350=-26\,350$ J/kg (the air is slowed down: some enthalpy rise is paid for by kinetic energy). The printed values use $c_p=\gamma R/(\gamma-1)=1004.5$ J/(kg K). With $c_p=1005$ J/(kg K) the difference becomes $-26\,500$ J/kg and $V_2=9.22$ m/s, $V_1=230.4$ m/s.
+
 ## Q9.9 Hair dryer
 
 At $p=1$ bar, ideal-gas density gives
@@ -239,38 +248,40 @@ Solving gives $\boxed{\dot m=0.0215\ \mathrm{kg\,s^{-1}}}$. The change is below 
 
 At compressor exit, $p_2=12.56$ bar, $T_2=668.15$ K:
 
-$$\rho_2=\frac{p_2}{RT_2}=6.55\ \mathrm{kg\,m^{-3}},$$
+$$\rho_2=\frac{p_2}{RT_2}=6.55\ \mathrm{kg\,m^{-3}},\qquad
+\boxed{V_2=\frac{316}{\rho_2(0.4)}=120.6\ \mathrm{m\,s^{-1}}}.$$
 
-$$\boxed{V_2=\frac{316}{\rho_2(0.4)}=120.6\ \mathrm{m\,s^{-1}}}.$$
-
-The compressor shaft power, positive when delivered **by** the control volume, is
-
-$$
-\dot W_c=\dot m\left[c_p(T_1-T_2)-\frac{V_2^2}{2}\right]
-=\boxed{-123.6\ \mathrm{MW}}.
-$$
-
-The negative sign identifies shaft power input. Modelling combustion as heat addition to the air,
+Compressor (adiabatic, inlet KE negligible, exit KE kept). With $\dot W_x$ positive when done **by** the fluid,
 
 $$
-\boxed{\dot Q_{in}=\dot m c_p(T_3-T_2)=242.5\ \mathrm{MW}}.
+\dot W_x=-\dot m\left[c_p(T_2-T_1)+\frac{V_2^2}{2}\right].
 $$
 
-For turbine exit temperature $522^\circ$C,
+Combustor (no work; inlet KE $V_2^2/2=7273$ J/kg kept, exit KE neglected as instructed):
 
 $$
-\boxed{\dot W_t=\dot m c_p(T_3-T_4)=204.3\ \mathrm{MW}}.
+\dot Q_{in}=\dot m\left[c_p(T_3-T_2)-\frac{V_2^2}{2}\right].
 $$
 
-Hence
+Turbine (KE negligible at both ends): $\dot W_t=\dot mc_p(T_3-T_4)$.
+
+The printed answers are reproduced with $c_p=1010$ J/(kg K), a mean value for air over 288–1435 K:
 
 $$
-\boxed{\dot W_{electric}=\dot W_t-|\dot W_c|=80.7\ \mathrm{MW}},
+\boxed{\dot W_x=-123.6\ \mathrm{MW}},\qquad
+\boxed{\dot Q_{in}=242.5\ \mathrm{MW}},\qquad
+\boxed{\dot W_t=204.3\ \mathrm{MW}},
 $$
 
 $$
+\boxed{\dot W_{electric}=\dot W_t-|\dot W_x|=80.7\ \mathrm{MW}},\qquad
 \boxed{\eta=\frac{80.7}{242.5}=33.3\%}.
 $$
+
+With $c_p=1005$ J/(kg K) the same method gives $-123.0$, $241.3$, $203.3$ and $80.3$ MW and $33.3\%$. Check on the whole plant: $\dot Q_{in}-\dot W_{electric}=161.8$ MW must equal the exhaust enthalpy excess $\dot mc_p(T_4-T_1)=316\times1010\times507=161.8$ MW.
+
+> [!note] Correction (2026-11-05)
+> The earlier version quoted the printed numbers but its formulas, with the module's usual $c_p=1005$ J/(kg K), give the slightly different values above; it also omitted the inlet kinetic energy in the combustor balance. The printed answers use $c_p=1010$ J/(kg K) and keep $V_2^2/2$ at combustor entry, as set out here.
 
 ## Q9.11 Isentropic propulsion nozzle
 
@@ -289,7 +300,7 @@ $$c_pT_1+\frac{V_1^2}{2}=c_pT_2+\frac{V_2^2}{2}.$$
 
 With $D_1=0.8$ m and $D_2=0.2$ m, the simultaneous solution is
 
-$$V_1=24.1\ \mathrm{m\,s^{-1}},qquad
+$$V_1=24.1\ \mathrm{m\,s^{-1}},\qquad
 V_2=489.9\ \mathrm{m\,s^{-1}},$$
 
 $$\boxed{\dot m=\rho_2A_2V_2=4.541\ \mathrm{kg\,s^{-1}}}.$$

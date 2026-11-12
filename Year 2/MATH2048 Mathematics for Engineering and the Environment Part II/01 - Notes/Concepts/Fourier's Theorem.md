@@ -21,6 +21,10 @@ The theorem also decides what calculus is allowed. Integrating a series term by 
 
 ![[m2048_fs_sawtooth_gibbs.png|560]]
 
+Smoothness also sets the convergence rate. A jump in the periodic extension (sawtooth, square wave, $e^x$) gives coefficients falling as $1/n$; a corner with no jump (tent, $x^2$) gives $1/n^2$. Integrating moves a series one step down this scale (faster decay) and differentiating one step up, which is why the tent's series can be differentiated once and the sawtooth's not at all.
+
+![[m2048_fs_coefficient_decay.png|560]]
+
 ## Related
 
 - [[MATH2048 FS2 - Even and Odd Functions, Half-Range Series and Convergence#4. When does a Fourier series converge? (L6)|FS2 §4]] · [[MATH2048 FS3 - Calculus with Fourier Series and Complex Fourier Series#2. Differentiating a Fourier series (L7)|FS3 §2]]

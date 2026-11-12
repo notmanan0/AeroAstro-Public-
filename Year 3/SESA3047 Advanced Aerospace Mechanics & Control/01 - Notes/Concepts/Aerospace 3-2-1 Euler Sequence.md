@@ -28,7 +28,7 @@ s_\phi s_\psi+c_\phi s_\theta c_\psi & -s_\phi c_\psi+c_\phi s_\theta s_\psi & c
 \end{bmatrix}.
 $$
 
-Two parts of it are worth recognising. Row 1 is the nose direction in NED, and column 3 times $g$ is gravity in body axes, $g[-s_\theta,\ s_\phi c_\theta,\ c_\phi c_\theta]^T$. Going the other way, $\mathbf u^{NED}=\mathbf C^T\mathbf u^{FRD}$. For example, with $\psi=30^\circ$ and $\phi=\theta=0$, north, $\mathbf u^{NED}=[1,0,0]^T$, becomes $\mathbf u^{FRD}=[0.866,-0.500,0]^T$: north lies ahead and to the left.
+Row 1 is the nose direction in NED, and column 3 times $g$ is gravity in body axes, $g[-s_\theta,\ s_\phi c_\theta,\ c_\phi c_\theta]^T$. Going the other way, $\mathbf u^{NED}=\mathbf C^T\mathbf u^{FRD}$. For example, with $\psi=30^\circ$ and $\phi=\theta=0$, north, $\mathbf u^{NED}=[1,0,0]^T$, becomes $\mathbf u^{FRD}=[0.866,-0.500,0]^T$: north lies ahead and to the left.
 
 ![[amc_euler_321_sequence.png|760]]
 
@@ -40,9 +40,9 @@ $$
 
 with $-\pi<\phi,\psi\le\pi$ and $-\pi/2\le\theta\le\pi/2$.
 
-At $\theta=\pm90^\circ$ this breaks down. $C_{11}$, $C_{12}$, $C_{23}$ and $C_{33}$ are all zero, the matrix depends only on $\phi\mp\psi$, and yaw and roll act about the same line and can't be separated. The handout calls this the Euler-angle singularity ([[Gimbal Lock]]); vehicles that approach vertical use quaternions instead.
+At $\theta=\pm90^\circ$ this breaks down. $C_{11}$, $C_{12}$, $C_{23}$ and $C_{33}$ are all zero, the matrix depends only on $\phi\mp\psi$, and yaw and roll act about the same line and can't be separated. This is the Euler-angle singularity ([[Gimbal Lock]]); vehicles that approach vertical use quaternions instead.
 
-The course calls all such angle sets Euler angles and the angles roll, pitch and yaw. Textbooks call three-different-axis sets Tait–Bryan or Cardan angles, and pilots call $\phi$ the bank angle. MATLAB's `angle2dcm(psi, theta, phi, 'ZYX')` returns $\mathbf C_{FRD/NED}$, while `eul2rotm` and SciPy's `from_euler('ZYX', ...)` return its transpose. The full list is in [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Terminology and alternative names|2.2, terminology]].
+All such angle sets count as Euler angles here, and the three angles are roll, pitch and yaw. Textbooks call three-different-axis sets Tait–Bryan or Cardan angles, and pilots call $\phi$ the bank angle. MATLAB's `angle2dcm(psi, theta, phi, 'ZYX')` returns $\mathbf C_{FRD/NED}$, while `eul2rotm` and SciPy's `from_euler('ZYX', ...)` return its transpose. The full list is in [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Terminology and alternative names|2.2, terminology]].
 
 ## Related
 

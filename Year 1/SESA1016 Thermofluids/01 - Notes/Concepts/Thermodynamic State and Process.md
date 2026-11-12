@@ -7,26 +7,23 @@ aliases: ["state", "process", "quasi-equilibrium"]
 tags: [sesa1016, concept, thermodynamics]
 status: complete
 parent_lectures: ["[[SESA1016 T1 - Thermodynamic Systems, Properties and State]]"]
-related_concepts: ["[[Ideal-gas Law]]", "[[Boundary Work]]"]
+related_concepts: ["[[Ideal-gas Law]]", "[[Boundary Work]]", "[[Closed System vs Control Volume]]"]
 sources: ["02 - Sources/Lectures/Chapter 1.pdf"]
 ---
 
 # Thermodynamic State and Process
 
-## Definition
+The state of a system is its condition as described by its properties (pressure, temperature, specific volume, internal energy and so on); a process is any change from one equilibrium state to another, and the path is the sequence of states it passes through.
 
-> [!note] Definition
-> A **state** is the condition fixed by a sufficient set of independent properties. A **process** is a path between states. A quasi-equilibrium process remains close enough to equilibrium that properties are defined throughout the path.
+The state postulate says that the state of a simple compressible substance is fixed by two independent intensive properties. For an ideal gas any two of $p$, $v$ and $T$ fix the third through $pv=RT$, and with it $u$, $h$ and $s$. Properties depend only on the state, so their changes between two states are independent of the path; work and heat are not properties, and depend on the path taken.
 
-## Explanation
+Properties are well defined only in equilibrium, when they are uniform through the system. A quasi-equilibrium (quasi-static) process is one carried out slowly enough that the system passes through a continuous sequence of equilibrium states, which is what allows it to be drawn as a line on a $p$–$v$ or $T$–$s$ diagram and its work to be computed as $\int p\,dV$. Real processes are faster, but the idealisation is accurate when the process is slow compared with the time the gas takes to even out, which is short for a gas.
 
-Properties such as $p,T,V,U$ depend only on state. Heat and work depend on the path. Two paths with the same endpoints have the same $\Delta U$ but may have different $Q$ and $W$.
+Processes are named by what is held constant: isothermal ($T$), isobaric ($p$), isochoric ($v$), adiabatic (no heat transfer) and isentropic ($s$). A cycle is a sequence of processes that returns the system to its initial state, so every property change over a cycle is zero.
 
-## Example
-
-Constant-pressure and isothermal expansions can connect the same volumes but enclose different areas on the $p$-$V$ plane, so they perform different work.
+![[tf_state_paths.png|760]]
 
 ## Related
 
-- [[Boundary Work]] · [[Ideal-gas Law]]
-
+- [[SESA1016 T1 - Thermodynamic Systems, Properties and State#4. State, equilibrium and the state postulate|T1 §4]] · [[SESA1016 T1 - Thermodynamic Systems, Properties and State#6. Processes and state diagrams|processes and diagrams]] · [[SESA1016 T2 - Work, Heat and the First Law#4. Summary of the four processes|four processes]]
+- [[Ideal-gas Law]] · [[Boundary Work]] · [[Closed System vs Control Volume]]

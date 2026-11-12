@@ -53,10 +53,18 @@ $$
 
 The neutral axis is the line $\sigma_{xx}=0$ through the centroid; evaluate $\sigma_{xx}$ at every corner of the section, because the extreme values sit at the points furthest from that line. With $I_{yz}=0$ it reduces to $\sigma_{xx}=M_zy/I_z+M_yz/I_y$.
 
+$$
+\tan\phi=-\frac{M_yI_z-M_zI_{yz}}{M_zI_y-M_yI_{yz}}\ \left(=\frac{I_{yz}}{I_y}\text{ for }M_y=0\right),\qquad
+v''=-\frac{M_zI_y-M_yI_{yz}}{E\left(I_yI_z-I_{yz}^2\right)},\qquad
+w''=-\frac{M_yI_z-M_zI_{yz}}{E\left(I_yI_z-I_{yz}^2\right)}
+$$
+
+The beam deflects perpendicular to its neutral axis. A tilted rectangle's tip deflection traces a circle as the section is rotated, which is what the structures lab measures ([[SESA2028 S2 - Beam Deflection and Bending Design#Bending test: a circle of compliances|S2]]).
+
 ### Beam curvature and standard deflections
 
 $$
-EI\frac{d^2v}{dx^2}=M(x)\quad\text{(sign of }M\text{ fixed by the axis convention of the question)}
+EI\frac{d^2v}{dx^2}=-M(x)\quad(y\text{ and }v\text{ downward, sagging }M\text{ positive; with }y\text{ upward the sign flips})
 $$
 
 | Case | Maximum deflection | End slope |
@@ -74,7 +82,7 @@ $$
 q(s)=q_{out}-\frac{Q_yI_y-Q_zI_{yz}}{I_yI_z-I_{yz}^2}\int_0^sty\,ds-\frac{Q_zI_z-Q_yI_{yz}}{I_yI_z-I_{yz}^2}\int_0^stz\,ds,\qquad \tau=\frac qt
 $$
 
-With $I_{yz}=0$ and $Q_z=0$ this is $q=Q_y\,\bar yA/I_z$ in magnitude. At a junction, flow in equals flow out. A closed cell is cut, analysed as open, and given a constant $q_0$ fixed by moment equilibrium. The shear centre is the point about which the wall forces have no net moment ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]).
+With $I_{yz}=0$ and $Q_z=0$ this is $q=Q_y\,\bar yA/I_z$ in magnitude; in a solid rectangle $\tau=Q\bar yA/I_zt$ is parabolic with $\tau_{max}=\tfrac32Q/A$ at the neutral axis, and $\tau_{max}/\sigma_{max}=h/4L$ for a tip-loaded cantilever. In an unsymmetrical section $q$ peaks where the wall crosses the neutral axis. Channel (web $h$, flanges $b$, uniform $t$): $e=3b^2/(h+6b)$ from the web, outside the section. At a junction, flow in equals flow out. A closed cell is cut, analysed as open, and given a constant $q_0$ fixed by moment equilibrium. The shear centre is the point about which the wall forces have no net moment ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]).
 
 ### Torsion
 
@@ -96,7 +104,7 @@ $$
 J=\frac13\sum b_it_i^3,\qquad \tau_{max}=\frac{Tt_{max}}{J}
 $$
 
-$A_m$ is the area enclosed by the wall midline. Multi-cell sections ($T=2\sum A_iq_i$, equal twist rate in every cell) are on the slides but were not lectured in 2025–26.
+$A_m$ is the area enclosed by the wall midline. Slitting a thin tube of radius $R$: $\phi_{open}/\phi_{closed}=3(R/t)^2$ and $\tau_{open}/\tau_{closed}=3R/t$. Multi-cell sections ($T=2\sum A_iq_i$, equal twist rate in every cell) are on the slides but were not lectured in 2025–26 ([[SESA2028 S4 - Torsion of Thin-Walled Sections|S4]]).
 
 ### Euler buckling
 
@@ -112,7 +120,7 @@ $$
 | fixed–pinned | 0.699 |
 | fixed–fixed | 0.5 |
 
-Use the smaller $I$ unless the end conditions differ about the two axes; then check both.
+Use the smaller $I$ unless the end conditions differ about the two axes; then check both. The fixed–pinned factor comes from the lowest root of $\tan\mu L=\mu L$, $\mu L=4.493$. Buckling governs over yield when $L_e/r>\pi\sqrt{E/\sigma_Y}$ (89 for steel with $\sigma_Y=250$ MPa). Rigid bar on a spring: $F_{cr}=kL$ ([[SESA2028 S5 - Euler Buckling and Effective Length|S5]]).
 
 ### Imperfect columns and beam-columns
 
@@ -128,6 +136,16 @@ $$
 \sigma_{max}=\frac PA\left[1+\frac{ec}{r^2}
 \sec\left(\frac{L_e}{2r}\sqrt{\frac{P}{EA}}\right)\right]
 $$
+
+Eccentric load on a fixed–free column of length $L$, $\mu^2=P/EI$: tip deflection $a=e(\sec\mu L-1)$, $\sigma_{max}=\frac PA[1+\frac{ec}{\kappa^2}\sec\mu L]$.
+
+Pinned beam-column with uniform lateral load $w$:
+
+$$
+M_{max}=\frac{w}{\mu^2}\left[\sec\frac{\mu L}{2}-1\right]\approx\frac{wL^2/8}{1-P/P_{cr}},\qquad\sigma_{max}=\frac PA+\frac{M_{max}c}{I}
+$$
+
+Check Euler buckling about the weak axis too. Sizing problems (the section inside $\sec\mu L$) are solved by plotting or bisection ([[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]]).
 
 Plate buckling, $\sigma_{cr}=k\pi^2E(t/b)^2/12(1-\nu^2)$, is on the slides but was not lectured in 2025–26.
 
@@ -148,19 +166,49 @@ u_j=\frac{\partial U}{\partial F_j},\qquad
 \right)dx
 $$
 
+$$
+F_j=\frac{\partial U}{\partial u_j}\ (\text{first theorem}),\qquad u_j=\frac{\partial C}{\partial F_j},\qquad U+C=P\Delta,\qquad U=C\text{ only if linear}
+$$
+
+Truss: $u=\sum p_iP_iL_i/E_iA_i$. Dummy load $Q$ where the displacement is wanted: $u=\partial U/\partial Q|_{Q=0}$. Redundant $R$: $\partial U/\partial R=0$. Shear deflection of a rectangular cantilever: $v_s=6FL/5bhG$. Proving ring: $u=(\pi/4-2/\pi)FR^3/EI$, $K=6.72\,EI/R^3$, $M_0=\tfrac{FR}{2}(1-\tfrac2\pi)$. Propped cantilever under $w$: prop $3wL/8$, midspan $wL^4/192EI$.
+
 where $n$, $m$, $t$ are the internal actions from a unit load at the point and in the direction of $\delta$ ([[SESA2028 S7 - Strain Energy and Conservation of Energy|S7]], [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]).
+
+### Continuum mechanics in cylindrical coordinates
+
+Isotropic Hooke's law (and cyclically), tension positive, tensor shear strain half the engineering one:
+
+$$
+\varepsilon_{xx}=\frac1E\left[\sigma_{xx}-\nu\left(\sigma_{yy}+\sigma_{zz}\right)\right],\qquad
+\varepsilon_{xy}=\frac{\sigma_{xy}}{2G},\qquad
+\gamma_{xy}=2\varepsilon_{xy},\qquad
+G=\frac{E}{2(1+\nu)}
+$$
+
+Plane stress (thin plate or disc): $\sigma_{zz}=0$, $\varepsilon_{zz}\neq0$. Plane strain (long body restrained along $z$): $\varepsilon_{zz}=0$, $\sigma_{zz}=\nu(\sigma_{rr}+\sigma_{\theta\theta})$.
+
+Axial symmetry ($\partial/\partial\theta=0$, $\sigma_{r\theta}=0$, $u_\theta=0$), body force $f_r$ per unit volume:
+
+$$
+\frac{d\sigma_{rr}}{dr}+\frac{\sigma_{rr}-\sigma_{\theta\theta}}{r}+f_r=0,\qquad
+\varepsilon_{rr}=\frac{du_r}{dr},\qquad
+\varepsilon_{\theta\theta}=\frac{u_r}{r},\qquad
+\varepsilon_{rr}=\frac{d}{dr}\left(r\varepsilon_{\theta\theta}\right)
+$$
+
+Lamé solution ($f_r=0$, linear elastic, plane stress or plane strain; $\nu$ cancels, so $\sigma_{rr}+\sigma_{\theta\theta}=2A$ is constant through the wall):
+
+$$
+\sigma_{rr}=A-\frac{B}{r^2},\qquad
+\sigma_{\theta\theta}=A+\frac{B}{r^2},\qquad
+u_r=r\varepsilon_{\theta\theta}
+$$
+
+Boundary conditions: a pressure $p$ on a surface gives $\sigma_{rr}=-p$ there, a free surface $\sigma_{rr}=0$. A solid body (material at $r=0$) needs $B=0$, so $\sigma_{rr}=\sigma_{\theta\theta}=A$ throughout; a solid shaft under external pressure $p$ has $\sigma_{rr}=\sigma_{\theta\theta}=-p$ ([[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates|S9]]).
 
 ### Thick cylinders and shrink fits
 
-Axisymmetric equilibrium (no body force) and the Lamé solution:
-
-$$
-\frac{d\sigma_{rr}}{dr}+\frac{\sigma_{rr}-\sigma_{\theta\theta}}{r}=0,\qquad
-\sigma_{rr}=A-\frac{B}{r^2},\qquad
-\sigma_{\theta\theta}=A+\frac{B}{r^2}
-$$
-
-With $\sigma_{rr}(r_i)=-p_i$ and $\sigma_{rr}(r_o)=-p_o$:
+Lamé constants for a tube with $\sigma_{rr}(r_i)=-p_i$ and $\sigma_{rr}(r_o)=-p_o$:
 
 $$
 A=\frac{p_ir_i^2-p_or_o^2}{r_o^2-r_i^2},\qquad
@@ -175,16 +223,22 @@ $$
 \delta=u^{o}_r(r_m)-u^{i}_r(r_m)=r_m\left(\varepsilon^{o}_{\theta\theta}-\varepsilon^{i}_{\theta\theta}\right)
 $$
 
-Check whether a question gives radial or diametral interference. Tresca at the bore uses $(\sigma_{\theta\theta}-\sigma_{rr})/2$ because $\sigma_{zz}$ is the intermediate stress ([[SESA2028 S10 - Thick Cylinders and Shrink Fits|S10]]).
+Same material for both tubes ($\nu$ cancels):
 
-### Spinning discs (not lectured in 2025–26)
+$$
+p_c=\frac{E\,\delta\left(r_m^2-r_i^2\right)\left(r_o^2-r_m^2\right)}{2r_m^3\left(r_o^2-r_i^2\right)}
+$$
+
+Internal pressure only, $k=r_o/r_i$: bore hoop $p_i(k^2+1)/(k^2-1)$, Tresca limit $p_{i,max}=\tfrac{\sigma_Y}{2}(1-1/k^2)$, wall-average hoop $p_ir_i/t$. Check whether a question gives radial or diametral interference. Tresca at the bore uses $(\sigma_{\theta\theta}-\sigma_{rr})/2$ because $\sigma_{zz}$ is the intermediate stress ([[SESA2028 S10 - Thick Cylinders and Shrink Fits|S10]]).
+
+### Spinning discs (written from the slides; not lectured in 2025–26)
 
 $$
 \sigma_{rr}=A-\frac{B}{r^2}-\frac{3+\nu}{8}\rho\omega^2r^2,\qquad
 \sigma_{\theta\theta}=A+\frac{B}{r^2}-\frac{1+3\nu}{8}\rho\omega^2r^2
 $$
 
-Solid disc $B=0$; a central hole doubles the peak hoop stress ([[SESA2028 S11 - Spinning Discs|S11]]).
+Solid disc $B=0$, peak $\frac{3+\nu}{8}\rho\omega^2r_o^2$ at the centre. With a free hole: bore hoop $\frac{\rho\omega^2}{4}[(3+\nu)r_o^2+(1-\nu)r_i^2]$, so a central hole doubles the peak hoop stress ([[SESA2028 S11 - Spinning Discs|S11]]).
 
 ### Linked notes
 
@@ -282,7 +336,7 @@ $$
 \mathrm{CR\,[g\,m^{-2}day^{-1}]}=8.95\frac{MI}{nA}\quad(I\ \text{mA},\ A\ \text{cm}^2)
 $$
 
-Zn-Cu cell: $E_{cell}=E_{cathode}-E_{anode}=0.34-(-0.76)=+1.10$ V (the lecture writes −1.1 V, "most negative minus least negative"). The more negative metal is the anode. Stainless needs Cr > 12 %.
+Zn-Cu cell: $E_{cell}=E_{cathode}-E_{anode}=0.34-(-0.76)=+1.10$ V (the course writes −1.1 V, "most negative minus least negative"). The more negative metal is the anode. Stainless needs Cr > 12 %.
 
 ### Composites and lightweighting ([[SESA2028 M4 - Polymer Matrix Composites|M4]], [[SESA2028 M5 - Metal and Ceramic Matrix Composites and Hybrid Laminates|M5]])
 

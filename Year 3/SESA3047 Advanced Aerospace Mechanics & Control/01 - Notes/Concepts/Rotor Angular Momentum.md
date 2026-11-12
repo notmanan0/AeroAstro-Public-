@@ -36,9 +36,9 @@ $$
 
 If the rotor's momentum is constant in the body frame, its body derivative drops out, but the $\boldsymbol\omega\times\mathbf h_R$ term (the gyroscopic moment, in textbook terms) does not. Spinning the rotor up changes the momentum's magnitude and adds the second term. If the rotor axis moves, the derivative has to be kept and the constant-inertia approximation checked.
 
-## As lectured
+## Constant rotor momentum (Eq. 4.20)
 
-L12 assumed constant rotor momentum (ll. 295–297) and split the result into a base part and an additional part (ll. 336–349; Eq. 4.20):
+For rotor momentum constant in the body frame (L12 ll. 295–297), the result splits into a base part and an additional part (ll. 336–349):
 
 $$
 \dot{\boldsymbol\omega}

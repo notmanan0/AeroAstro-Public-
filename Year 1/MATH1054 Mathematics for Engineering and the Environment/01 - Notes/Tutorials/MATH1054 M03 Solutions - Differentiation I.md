@@ -11,7 +11,7 @@ sheet: "Specimen Test 3 (booklet) + Module 03 work scheme: Examples 8.1–8.27, 
 theory_notes: ["[[MATH1054 M03 - Differentiation I]]"]
 key_concepts: ["[[Derivative from First Principles]]", "[[Product, Quotient and Chain Rules]]", "[[Direct Substitution and Newton-Raphson]]", "[[Partial Derivatives]]"]
 status: complete
-sources: ["tmp/md/module_03_differentiation_i.md", "02 - Sources/Modern Engineering Mathematics.pdf (§8.2–8.4, §9.4.8, §9.6)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 3)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§8.2–8.4, §9.4.8, §9.6)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 3)"]
 ---
 
 # MATH1054 M03 Solutions - Differentiation I
@@ -421,5 +421,5 @@ $$f_x=2xy^2+y-2x-5,\qquad f_y=2x^2y+x+2y$$
 $$f_x=\frac1x,\qquad f_y=\frac1y$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_03_differentiation_i.md`
+- Problem statements: Module 03 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §8.2–8.4, §9.4.8, §9.6; MATH1054 Module Booklet, Module 3

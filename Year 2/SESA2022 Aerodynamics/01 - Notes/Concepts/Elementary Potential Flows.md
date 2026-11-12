@@ -13,7 +13,7 @@ sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf", "02 - Sources/Lectures/S
 
 # Elementary Potential Flows
 
-The elementary potential flows are the building blocks, the lecture's "LEGO bricks", of two-dimensional potential flow. Each satisfies Laplace's equation, so any sum of them is also a valid flow.
+The elementary potential flows are the building blocks of two-dimensional potential flow. Each satisfies Laplace's equation, so any sum of them is also a valid flow.
 
 | Element | $\psi$ | $\phi$ | Velocity |
 |---|---|---|---|

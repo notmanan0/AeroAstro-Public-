@@ -24,7 +24,7 @@ sources: ["02 - Sources/Lectures/Lecture 3.01.pdf", "02 - Sources/Lectures/Lectu
 # SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion
 
 > [!abstract] Summary
-> A feedback controller never sees the true output, only the measured output of a sensing system: physical quantity → sensor → signal conditioning → data acquisition → processing. Every measurement carries noise, bias and drift, and each sensing element exploits one physical effect (resistive, capacitive, inductive, thermoelectric or piezoelectric). Because no sensor is perfect, an IMU fuses a gyroscope (good at high frequency, drifts) with an accelerometer (good at low frequency, noisy), most simply with a complementary filter.
+> A feedback controller never sees the true output, only the measured output of a sensing system: physical quantity → sensor → signal conditioning → data acquisition → processing. Every measurement carries noise, bias and drift, and each sensing element exploits one physical effect (resistive, capacitive, inductive, thermoelectric or piezoelectric). Because no sensor is perfect, an IMU fuses a gyroscope (good at high frequency, drifts) with an accelerometer (good at low frequency, noisy), the simplest method being a complementary filter.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a question gives a bridge configuration and a voltage (or a strain) and asks for $\Delta R/R$, strain or output voltage; asks which sensing principle suits a measurement and why; or asks why an IMU needs fusion and how a complementary filter works.
@@ -35,21 +35,14 @@ sources: ["02 - Sources/Lectures/Lecture 3.01.pdf", "02 - Sources/Lectures/Lectu
 
 A controller cannot see the aircraft; it sees numbers that a chain of hardware has produced from the aircraft. Each sensor works by letting the physical quantity change something electrical: strain changes a wire's resistance, displacement changes a capacitor's gap or a magnetic circuit's air gap, a temperature difference drives a thermoelectric voltage, a dynamic force squeezes charge out of a crystal. Each of these is imperfect in its own way: noise, bias, drift, limited resolution, and sometimes blindness to slow signals (piezo) or to fast ones (big thermocouples).
 
-So we combine sensors whose weaknesses lie at different frequencies. A gyro measures rotation rate cleanly, but integrating it to get an angle also integrates its small bias, so the angle wanders off. An accelerometer finds "down" from gravity with no drift, but every vibration and manoeuvre corrupts it. A complementary filter takes the slow part of the accelerometer angle and the fast part of the gyro angle. Because the two filters add up to exactly 1, the true angle passes straight through, and each sensor's error is suppressed where that sensor is weak.
+The remedy is to combine sensors whose weaknesses lie at different frequencies. A gyro measures rotation rate cleanly, but integrating it to get an angle also integrates its small bias, so the angle wanders off. An accelerometer finds "down" from gravity with no drift, but every vibration and manoeuvre corrupts it. A complementary filter takes the slow part of the accelerometer angle and the fast part of the gyro angle. Because the two filters add up to exactly 1, the true angle passes straight through, and each sensor's error is suppressed where that sensor is weak.
 
 ---
 
-## 1. Why sensing matters for control (L3.01)
-> [!note] No transcript for L3.01
-> There is no recording for L3.01, so this section is from the slides only. L3.02–3.03 were recorded together in one session.
+## 1. Sensing in the control loop (L3.01)
+In the B-part block diagram the feedback path contains a sensor $H(s)$ and measurement noise $X_N$ (see [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]). The controller acts on the *measured* output, so sensor errors become control errors. The flight control computer cannot see the aircraft moving; it relies entirely on electrical representations of that motion. Pitch control, for example, needs $\theta$, $q$ and $a_z$, which are measured with gyroscopes, accelerometers and IMUs.
 
-In the B-part block diagram the feedback path contains a sensor $H(s)$ and measurement noise $X_N$. See [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]].
-
-- The controller acts on the *measured* output, so sensor errors become control errors.
-- Pitch control, for example, needs $\theta$, $q$ and $a_z$. These are measured with gyroscopes, accelerometers and IMUs.
-- "The flight control computer cannot *see* the aircraft moving. It relies entirely on electrical representations of that motion."
-
-**Sensing system**: a system that measures a physical quantity and converts it into a usable signal for monitoring, analysis or control. It is usually several elements working together, not a single device.
+A **sensing system** measures a physical quantity and converts it into a usable signal for monitoring, analysis or control. It is usually several elements working together, not a single device.
 
 | Class of measured quantity | Examples |
 |---|---|
@@ -68,9 +61,7 @@ See [[Measurement Chain]].
 | Data acquisition (DAQ) | Sampling, analogue-to-digital conversion (ADC), transmission |
 | Processing / display | Estimation, control, storage, visualisation |
 
-**Sensor vs transducer**:
-- A sensor *detects* the quantity. Examples: an accelerometer sensing acceleration, a pressure diaphragm.
-- A transducer *converts energy* from one form to another, usually into an electrical signal. Examples: a strain gauge (strain → resistance), a thermocouple (temperature difference → voltage).
+A **sensor** *detects* the quantity, as an accelerometer senses acceleration or a pressure diaphragm senses pressure. A **transducer** *converts energy* from one form to another, usually into an electrical signal, as a strain gauge converts strain to resistance or a thermocouple converts a temperature difference to a voltage.
 
 ## 3. Measurement imperfections
 
@@ -81,9 +72,9 @@ See [[Measurement Chain]].
 | Drift | Slow change over time | Temperature, ageing, component variation | Error grows; the rate hints at the cause |
 | Limited resolution | Smallest detectable change | ADC bits, sensor physics | Quantisation steps |
 
-**Filtering trade-off**: a low-pass filter removes high-frequency noise, but it adds lag, slows the response and reduces bandwidth. If filtering is too strong, the controller works from stale information. This theme runs through all of Part C.
+Filtering trades noise against lag. A low-pass filter removes high-frequency noise, but it adds lag, slows the response and reduces bandwidth; if filtering is too strong, the controller works from stale information. The trade-off recurs in [[SESA2027 C2 - Sensor Characteristics, Dynamics and Design|C2]] and [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering|C3]].
 
-**Design considerations**: range, accuracy, sensitivity, bandwidth, environment (temperature, vibration), reliability and robustness, and integration with the electronics.
+The design considerations for a sensing system are range, accuracy, sensitivity, bandwidth, environment (temperature, vibration), reliability and robustness, and integration with the electronics.
 
 ## 4. Sensing principles (L3.02)
 Transduction is the conversion of energy from one form to another. The sensing element interacts with the measured variable, and the transduction process turns that interaction into an electrical signal.
@@ -96,9 +87,9 @@ Transduction is the conversion of energy from one form to another. The sensing e
 | Thermoelectric | $V = \alpha_T(T_h-T_c)$ (Seebeck) | Temperature |
 | Piezoelectric | $q = dF$ | Dynamic force, vibration |
 
-The lecture groups operating principles into three families (L3.02–3.03, ll. 10–25): electrical-property variation (resistive, capacitive, inductive), energy conversion (thermoelectric, piezoelectric) and field interaction (optical or electromagnetic). The module covers the first two; the third is mentioned only.
+Operating principles fall into three families: electrical-property variation (resistive, capacitive, inductive), energy conversion (thermoelectric, piezoelectric) and field interaction (optical or electromagnetic). The module covers the first two; the third is mentioned only.
 
-These physical relations matter for control because, in the second computer lab, the controller is fed the state "as if you could measure the state perfectly" (L3.02–3.03, ll. 46–54, 1057–1060). In reality a sensing block sits in front of the controller and changes the signal, and the relations in this section are what C2 uses to write the sensors' transfer functions (Bentley, Ch. 8).
+These physical relations matter for control because, in the second computer lab, the controller is fed the state as if it could be measured perfectly (L3.02–3.03, ll. 46–54, 1057–1060). In reality a sensing block sits in front of the controller and changes the signal, and the relations in this section are what C2 uses to write the sensors' transfer functions (Bentley, Ch. 8).
 
 ### 4.1 Resistive: strain gauges and the Wheatstone bridge
 Stretching a conductor lengthens it and narrows its cross-section, so $R$ rises. The bridge output is
@@ -107,33 +98,33 @@ $$
 V_G = \left(\frac{R_2}{R_1+R_2}-\frac{R_4}{R_3+R_4}\right)V_s
 $$
 
-- The bridge is balanced ($V_G = 0$) when all four resistances are equal.
-- **Quarter bridge**: the gauge is $R_2 = R+\Delta R$, with all others equal to $R$. Then
+The bridge is balanced ($V_G = 0$) when all four resistances are equal. In a **quarter bridge** the gauge is $R_2 = R+\Delta R$, with all others equal to $R$. Then
 
 $$
 V_G = \left(\frac{R+\Delta R}{2R+\Delta R}-\frac12\right)V_s\;\xrightarrow{\ \Delta R\ll R\ }\;\boxed{\frac{\Delta R}{R}\approx\frac{4V_G}{V_s}},\qquad \frac{\Delta R}{R} = G\varepsilon\;\Rightarrow\;V_G = \frac{V_s}{4}G\varepsilon
 $$
 
-  $G$ is the gauge factor, about 2 for metal foil.
-- Why $G\approx2$: the Poisson effect doubles the change (L3.02–3.03, ll. 77–82). Stretching lengthens the wire and narrows it (metals have $\nu\approx0.3$), so both effects raise $R$. Assumptions: a uniform wire of diameter $D$, axial strain $\varepsilon = dL/L$, lateral strain $dD/D = -\nu\varepsilon$. Start from
+where $G$ is the **gauge factor**, about 2 for metal foil.
+
+Metal foil gets most of its $G\approx2$ from geometry (L3.02–3.03, ll. 77–82). Stretching lengthens the wire and, through the Poisson effect, narrows it (metals have $\nu\approx0.3$), so both effects raise $R$. Assumptions: a uniform wire of diameter $D$, axial strain $\varepsilon = dL/L$, lateral strain $dD/D = -\nu\varepsilon$. Start from
 
 $$
 R = \frac{\rho L}{A}
 $$
 
-  Take logarithms:
+Take logarithms:
 
 $$
 \ln R = \ln\rho+\ln L-\ln A
 $$
 
-  Differentiate:
+Differentiate:
 
 $$
 \frac{dR}{R} = \frac{d\rho}{\rho}+\frac{dL}{L}-\frac{dA}{A}
 $$
 
-  With $A = \pi D^2/4$, $dA/A = 2\,dD/D = -2\nu\varepsilon$:
+With $A = \pi D^2/4$, $dA/A = 2\,dD/D = -2\nu\varepsilon$:
 
 $$
 \frac{dR}{R} = \frac{d\rho}{\rho}+\varepsilon+2\nu\varepsilon
@@ -143,20 +134,17 @@ $$
 \frac{dR}{R} = \varepsilon(1+2\nu)+\frac{d\rho}{\rho}
 $$
 
-  Divide by $\varepsilon$:
+Divide by $\varepsilon$:
 
 $$
 G = \frac{dR/R}{\varepsilon} = 1+2\nu+\frac{d\rho/\rho}{\varepsilon}
 $$
 
-  For $\nu = 0.3$ the geometric part alone is $1+0.6 = 1.6$; the small change in resistivity under strain (piezoresistance) supplies the rest of a metal's $G\approx2$. In semiconductor gauges the piezoresistive term dominates, giving $G$ of order 100.
-- Sensor or transducer? (ll. 96–110) Both. The wire is the sensor, the part that interacts with the strain. The bridge and its other resistors are the transducer that turns the resistance change into a voltage.
-- **We measure resistance, not strain.** The strain is inferred.
-- Temperature also changes $\rho$, so a temperature change looks like strain.
-- **Half bridge**: put a second, identical gauge in the adjacent arm ($R_1$). Temperature changes both gauges equally and cancels in the ratio.
-- On a bending cantilever with one gauge in tension and one in compression, the two strain signals add. That doubles the sensitivity while temperature still cancels.
+For $\nu = 0.3$ the geometric part alone is $1+0.6 = 1.6$; the small change in resistivity under strain (piezoresistance) supplies the rest of a metal's $G\approx2$. In semiconductor gauges the piezoresistive term dominates, giving $G$ of order 100.
 
-**Quarter-bridge result, line by line.** Set $R_1 = R_3 = R_4 = R$ and $R_2 = R+\Delta R$:
+The strain gauge is both a sensor and a transducer (ll. 96–110). The wire is the sensor, the part that interacts with the strain; the bridge and its other resistors are the transducer that turns the resistance change into a voltage. What is measured is resistance, not strain: the strain is inferred. Temperature also changes $\rho$, so a temperature change looks like strain. A **half bridge** deals with this by putting a second, identical gauge in the adjacent arm ($R_1$): temperature changes both gauges equally and cancels in the ratio. On a bending cantilever with one gauge in tension and one in compression, the two strain signals add, which doubles the sensitivity while temperature still cancels.
+
+To derive the quarter-bridge result, set $R_1 = R_3 = R_4 = R$ and $R_2 = R+\Delta R$:
 
 $$
 \frac{V_G}{V_s} = \frac{R+\Delta R}{2R+\Delta R}-\frac12
@@ -188,13 +176,13 @@ $$
 V_G=\frac{V_s}{2}\frac{\Delta R}{R}=\frac{V_s}{2}G\varepsilon
 $$
 
-Twice the quarter-bridge output, and exactly linear: the $\Delta R$ terms cancel in the denominator. Now add a temperature change that raises both gauges by $\Delta R_T$:
+Twice the quarter-bridge output, and exactly linear: the $\Delta R$ terms cancel in the denominator. A temperature change that raises both gauges by $\Delta R_T$ adds:
 
 $$
 \frac{V_G}{V_s}=\frac{R+\Delta R+\Delta R_T}{2(R+\Delta R_T)}-\frac12=\frac{\Delta R}{2(R+\Delta R_T)}\approx\frac{\Delta R}{2R}
 $$
 
-The temperature term has dropped out of the numerator; it survives only as a tiny change of scale. That is the "self-balancing under temperature" the lecturer described (l. 171).
+The temperature term has dropped out of the numerator; it survives only as a tiny change of scale. That is why the half bridge almost balances itself against temperature changes (l. 171).
 
 ### Worked example: strain from bridge voltages
 
@@ -209,20 +197,10 @@ The temperature term has dropped out of the numerator; it survives only as a tin
 > [!check] Why amplification is needed
 > Millivolt outputs from a 5 V supply are why every bridge is followed by an instrumentation amplifier in the conditioning stage ([[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering#2. Range transformation: scaling and offsetting|C3 §2]]). A 12-bit ADC on a 0–5 V range resolves 1.22 mV, about the whole quarter-bridge signal.
 
-> [!info] Lecturer's practical notes on resistive and thermal sensors (L3.02)
-> - Ohm's law with a fixed $\rho$ holds only at constant temperature, because resistivity depends on temperature (ll. 57–68). It holds for metals (conductors), but not necessarily for semiconductors such as silicon, which "sometimes does very, very weird stuff" (ll. 69–76).
-> - A resistive sensor adds no phase. With a purely resistive load the current and voltage are in phase, because $R$ is a real number; only the amplitude changes. It behaves "like the proportional gain in the controller" (ll. 207–218).
-> - Off-the-shelf strain gauges are usually 120 Ω or 350 Ω (ll. 180–183).
-> - The half bridge is "almost a self-balancing bridge under the action of temperature" (l. 171).
-> - Small thermocouples respond faster. Large ones lag because they must reach equilibrium with their surroundings, and that lag matters for control, e.g. spacecraft battery thermal management, where "you might have already lost a battery before you can sense" it (ll. 331–346). Tiny thermocouples can be put in series to amplify the signal (ll. 317–318).
-> - The Seebeck coefficient depends on the materials, the temperature and the junction geometry (ll. 287–303).
-
-See [[Wheatstone Bridge and Strain Gauges]].
+Ohm's law with a fixed $\rho$ holds only at constant temperature, because resistivity depends on temperature (L3.02, ll. 57–68). It holds for metals (conductors), but not necessarily for semiconductors such as silicon, whose behaviour can be strongly nonlinear (ll. 69–76). A resistive sensor adds no phase: with a purely resistive load the current and voltage are in phase, because $R$ is a real number, and only the amplitude changes, so the sensor behaves like a proportional gain in a controller (ll. 207–218). Off-the-shelf strain gauges are usually 120 Ω or 350 Ω (ll. 180–183). See [[Wheatstone Bridge and Strain Gauges]].
 
 ### 4.2 Thermoelectric: thermocouples
-- The Seebeck effect: two dissimilar conductors joined across a temperature difference generate $V = \alpha_T(T_h-T_c)$.
-- Carriers at the hot junction diffuse towards the cold one, and different materials create a net charge imbalance.
-- **Self-powered**: no external supply is needed.
+In the **Seebeck effect**, two dissimilar conductors joined across a temperature difference generate $V = \alpha_T(T_h-T_c)$. Carriers at the hot junction diffuse towards the cold one, and different materials create a net charge imbalance. The Seebeck coefficient depends on the materials, the temperature and the junction geometry (ll. 287–303). A thermocouple is self-powered, needing no external supply, and tiny thermocouples can be put in series to amplify the signal (ll. 317–318).
 
 Typical figures:
 - Range −200 to 1700 °C (types K, R, S).
@@ -230,6 +208,8 @@ Typical figures:
 - Accuracy ±1–2 °C.
 
 Uses include gas-turbine temperatures (500–1500 °C), exhaust gas temperature (EGT, about 400–900 °C) and spacecraft thermal monitoring.
+
+Small thermocouples respond faster. Large ones lag because they must reach equilibrium with their surroundings, and that lag matters for control: in spacecraft battery thermal management, a battery might already be lost before the sensor registers the change (ll. 331–346).
 
 ### 4.3 Capacitive
 $C = \varepsilon_0\varepsilon A/d$, with $\varepsilon_0 = 8.85$ pF/m.
@@ -240,9 +220,9 @@ $C = \varepsilon_0\varepsilon A/d$, with $\varepsilon_0 = 8.85$ pF/m.
 | Area change (relative position) | $C = \dfrac{\varepsilon_0\varepsilon}{d}(A-wx)$ |
 | Diaphragm pressure sensor | $\dfrac{\Delta C}{C} = \dfrac{(1-\nu^2)a^4}{16Edt^3}P$ |
 
-Other examples from the lecture (ll. 380–395): a humidity sensor, with one plate resting on a gel that swells as it absorbs water, so the gap tracks the humidity; and a water-level gauge, with coaxial cylinders whose capacitance changes as water (higher permittivity) replaces air between them.
+Other examples: a humidity sensor, with one plate resting on a gel that swells as it absorbs water, so the gap tracks the humidity; and a water-level gauge, with coaxial cylinders whose capacitance changes as water (higher permittivity) replaces air between them.
 
-**Gap sensitivity is nonlinear.** For the gap configuration with $C_0=\varepsilon_0\varepsilon A/d$:
+The gap sensitivity is nonlinear. For the gap configuration with $C_0=\varepsilon_0\varepsilon A/d$:
 
 $$
 \frac{dC}{dx}=-\frac{\varepsilon_0\varepsilon A}{(d+x)^2}\quad\Rightarrow\quad\left.\frac{dC}{dx}\right|_{x=0}=-\frac{C_0}{d}
@@ -254,10 +234,7 @@ $$
 
 so the sensor is linear only for displacements much smaller than the gap. The area configuration, $C=\varepsilon_0\varepsilon(A-wx)/d$, is linear in $x$ by construction. Small gaps give high sensitivity, which is why MEMS accelerometers use micrometre gaps.
 
-**Capacitive (MEMS) accelerometer**:
-- A proof mass on flexures moves under acceleration, which changes the plate gap.
-- Range ±1 g to ±100 g.
-- Capacitance changes of fF to pF; resolution down to µg.
+In a capacitive (MEMS) accelerometer a proof mass on flexures moves under acceleration, which changes the plate gap. Ranges run from ±1 g to ±100 g, with capacitance changes of fF to pF and resolution down to µg.
 
 ### 4.4 Inductive
 A magnetic circuit is analogous to an electric one: m.m.f. $= ni = \phi\mathfrak R$.
@@ -281,12 +258,9 @@ $$
 The iron parts have $\mu\gg1$, so their reluctance $\mathfrak R_0$ is small and constant. The gap dominates, which makes the inductance very sensitive to $d$, and nonlinear in it, like the capacitive gap sensor.
 
 ### 4.5 Piezoelectric
-- **Mechanics**: $x = F/k$.
-- **Direct piezoelectric effect**: $q = Kx = dF$, where $d = K/k$ is the charge sensitivity in C/N.
-- Electrically, the crystal is a charge source in parallel with a capacitance $C = \varepsilon_0\varepsilon A/t$.
-- The charge leaks away, so there is no output for a static force. Piezoelectric sensors are for dynamic measurement only: vibration and shock.
+Mechanically, a force $F$ deflects the crystal by $x = F/k$. The **direct piezoelectric effect** turns that deflection into charge, $q = Kx = dF$, where $d = K/k$ is the charge sensitivity in C/N. Electrically, the crystal is a charge source in parallel with a capacitance $C = \varepsilon_0\varepsilon A/t$. The charge leaks away, so there is no output for a static force: piezoelectric sensors are for dynamic measurement only, such as vibration and shock.
 
-Why the static output decays: the piezo as a high-pass filter (assumptions: the crystal capacitance $C$ in parallel with a leakage/amplifier resistance $R$). The generated charge is $q=dF$, so the source current is $i=\dot q=d\dot F$. Current balance at the output node:
+The static output decays because the piezo acts as a high-pass filter (assumptions: the crystal capacitance $C$ in parallel with a leakage/amplifier resistance $R$). The generated charge is $q=dF$, so the source current is $i=\dot q=d\dot F$. Current balance at the output node:
 
 $$
 d\,\dot F=C\dot V+\frac VR
@@ -307,11 +281,9 @@ This is a first-order high-pass filter. Its DC gain is zero, so a constant force
 A gas-hob igniter is a piezo element (L3.02, ll. 975–1051): the click delivers an impact that produces a high voltage and a spark. Electrically the crystal gives a high voltage at very low current and looks like a capacitor, so it can be read as a voltage, a current or a capacitance. Under a constant load the lattice settles into a new equilibrium and the output decays, which is why a piezoelectric accelerometer can't measure gravity, a constant 1 g.
 
 ## 5. Sensor fusion and the IMU (L3.03)
-Real measurements are imperfect (noise, bias, limited bandwidth), and no single sensor gives complete information. Combining sensors improves accuracy and robustness and extends what can be measured. The design trade-off is between precision, reliability and cost.
+Real measurements are imperfect (noise, bias, limited bandwidth), and no single sensor gives complete information. Combining sensors improves accuracy and robustness and extends what can be measured. The design trade-off is between precision, reliability and cost: more sensors give redundancy but cost more (ll. 1099–1111).
 
-**IMU**: measures motion without external references.
-- 3-axis accelerometer plus 3-axis gyroscope gives 6 DoF. Adding a magnetometer gives 9 DoF.
-- Outputs are linear acceleration and angular velocity in the body frame. Integration gives orientation, velocity and position.
+An **IMU** measures motion without external references. A 3-axis accelerometer plus a 3-axis gyroscope gives 6 DoF, and adding a magnetometer gives 9 DoF. The outputs are linear acceleration and angular velocity in the body frame, and integration gives orientation, velocity and position.
 
 | | Accelerometer | Gyroscope |
 |---|---|---|
@@ -320,6 +292,8 @@ Real measurements are imperfect (noise, bias, limited bandwidth), and no single 
 | Strength | Good long-term reference (gravity) | Accurate short-term dynamics |
 | Weakness | Noisy; affected by manoeuvres; cannot separate acceleration from gravity | Bias integrates into drift; errors accumulate |
 
+A MEMS gyro is a vibrating proof mass on springs. A rotation produces a Coriolis force across the drive direction, which is sensed capacitively (ll. 1192–1220). The gyro is accurate in the short term and poor in the long term, because integration drifts. Integrating means summing, and the noise is summed too, every sample; over time the summed noise (plus numerical error) becomes a signal of its own (ll. 1113–1143). The integration constant (the initial position) is also unknown without an external reference (ll. 1117–1126).
+
 ### Complementary filter
 See [[Complementary Filter]].
 
@@ -327,18 +301,13 @@ $$
 \boxed{\hat\theta = \alpha\,\theta_{gyro}+(1-\alpha)\,\theta_{acc}}
 $$
 
-- The gyro path is effectively high-pass filtered: it is trusted for fast changes.
-- The accelerometer path is effectively low-pass filtered: it is trusted for the slow, steady value.
-- The two filters sum to 1, so the true signal passes through undistorted. Each sensor's *error* is removed in the band where that sensor is weak.
+The gyro path is effectively high-pass filtered, so it is trusted for fast changes; the accelerometer path is effectively low-pass filtered, so it is trusted for the slow, steady value. The two filters sum to 1, so the true signal passes through undistorted, and each sensor's *error* is removed in the band where that sensor is weak.
 
 ![[amc_complementary_filter.png|650]]
 
-The figure shows three things:
-- The integrated gyro (red) follows the shape of the motion but wanders off because of bias.
-- The accelerometer (orange) has no drift but is buried in noise.
-- The complementary estimate with $\alpha = 0.98$ (blue) tracks the truth.
+In the figure the integrated gyro (red) follows the shape of the motion but wanders off because of bias, the accelerometer (orange) has no drift but is buried in noise, and the complementary estimate with $\alpha = 0.98$ (blue) tracks the truth.
 
-The complementary filter as transfer functions (the slide states the weighted sum; this is why it works). Let the gyro measure $\omega_g=\dot\theta+b$, with a constant bias $b$, and the accelerometer give $\theta_a=\theta+n$, with noise $n$. In continuous time, low-pass the accelerometer angle and high-pass the integrated gyro rate with the same time constant $\tau$:
+The weighted sum works because of its transfer functions. Let the gyro measure $\omega_g=\dot\theta+b$, with a constant bias $b$, and the accelerometer give $\theta_a=\theta+n$, with noise $n$. In continuous time, low-pass the accelerometer angle and high-pass the integrated gyro rate with the same time constant $\tau$:
 
 $$
 \hat\theta=\frac{1}{\tau s+1}\theta_a+\frac{\tau s}{\tau s+1}\cdot\frac{\omega_g}{s}=\frac{\theta_a+\tau\,\omega_g}{\tau s+1}
@@ -350,13 +319,11 @@ $$
 \hat\theta=\frac{\theta+n+\tau s\theta+\tau b}{\tau s+1}=\theta+\frac{n}{\tau s+1}+\frac{\tau\,b}{\tau s+1}
 $$
 
-- The true angle passes through with gain exactly 1: the two filters sum to 1.
-- Accelerometer noise is low-pass filtered: only its slow part survives.
-- A constant gyro bias settles to a bounded angle error $\tau b$ (the step response of $\tau/(\tau s+1)$). Integrating the gyro alone gives $bt$, which grows forever.
+The true angle passes through with gain exactly 1, because the two filters sum to 1. Accelerometer noise is low-pass filtered, so only its slow part survives. A constant gyro bias settles to a bounded angle error $\tau b$ (the step response of $\tau/(\tau s+1)$), whereas integrating the gyro alone gives $bt$, which grows forever.
 
 ![[amc_complementary_filter_bode.png|760]]
 
-**Discrete form.** Discretise $(\tau s+1)\hat\theta=\theta_a+\tau\omega_g$ with a backward difference, $s\hat\theta\to(\hat\theta_k-\hat\theta_{k-1})/\Delta t$:
+For the discrete form, discretise $(\tau s+1)\hat\theta=\theta_a+\tau\omega_g$ with a backward difference, $s\hat\theta\to(\hat\theta_k-\hat\theta_{k-1})/\Delta t$:
 
 $$
 \tau\frac{\hat\theta_k-\hat\theta_{k-1}}{\Delta t}+\hat\theta_k=\theta_{a,k}+\tau\,\omega_{g,k}
@@ -372,44 +339,20 @@ $$
 \boxed{\hat\theta_k=\alpha\left(\hat\theta_{k-1}+\omega_{g,k}\Delta t\right)+(1-\alpha)\theta_{a,k},\qquad\alpha=\frac{\tau}{\tau+\Delta t}}
 $$
 
-The bracket is the gyro's prediction of the new angle, which is what "$\theta_{gyro}$" means in the slide formula.
+The bracket is the gyro's prediction of the new angle, which is what $\theta_{gyro}$ means in the weighted-sum formula.
 
 > [!example] Numbers: bias bound
 > $\Delta t=10$ ms and $\alpha=0.98$ give $\tau=\alpha\Delta t/(1-\alpha)=0.49$ s. A gyro bias of $0.5\ °/\text{s}$ then leaves a steady error of $\tau b=0.25°$. Integrating the same gyro alone for 60 s gives $30°$ of drift. Check from the recursion: at steady state $e=\alpha(e+b\Delta t)$, so $e=\alpha b\Delta t/(1-\alpha)=0.98\times0.5\times0.01/0.02=0.245°$. ✓
 
 The complementary filter is not averaging. An average weights both sensors equally at every frequency, so it would inherit both the gyro drift and the accelerometer noise; the complementary filter gives each sensor a frequency role, the gyro at high frequency and the accelerometer at low frequency.
 
-> [!info] Lecturer intuition on the IMU (L3.03 part of the recording)
-> - Integration drifts because integrating means summing, and you sum the noise too, every sample. Over time the summed noise (plus numerical error) becomes a signal of its own (ll. 1113–1143). The integration constant (initial position) is also unknown without an external reference (ll. 1117–1126).
-> - Fusion is a trade-off between precision, reliability and cost: more sensors give redundancy but cost more (ll. 1099–1111).
-> - A MEMS gyro is a vibrating proof mass on springs. A rotation produces a Coriolis force across the drive direction, which is sensed capacitively (ll. 1192–1220). Accurate short-term, poor long-term.
-> - The Kalman filter "is not a filter": it is an estimator that combines several measurements using their noise statistics. It is not taught in this module this year (ll. 1148–1191); it appears in Year 3.
+The Kalman filter, despite its name, is not a filter but an estimator that combines several measurements using their noise statistics. It is not covered in this module (ll. 1148–1191); it appears in Year 3.
 
-## Lecturer emphasis and exam hints (transcripts)
+## Exam scope
 
-> [!info] Scope
-> - Admin: Part C lab report (ll. 607–619). Six pages, with guiding questions for structure. In effect a summary and critical assessment of the Jupyter notebooks and what you observed in them.
-> - L3.02–3.03 contain no explicit exam statements. The lecturer flagged the physical relations as needed for the sensor transfer functions in C2 (ll. 1057–1058).
-> - Further reading: Bentley Ch. 8 (sensing elements, l. 1060); Groves, *Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems*, for the IMU (ll. 1253–1254).
-
-## Transcript slips
-
-> [!warning] Speech-to-text and spoken slips, with the correct version
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L3.02–3.03, l. 77 | "resistive conduct, of resistive capacity" | resistive sensors |
-> | L3.02–3.03, l. 87 | "an expert in Wisdom Bridge" | Wheatstone bridge |
-> | L3.02–3.03, l. 177 | "R2 as Vs minus 2Vg, Vs plus 2Vg" | $R_2 = R(V_s+2V_G)/(V_s-2V_G)$ for the quarter bridge, exactly |
-> | L3.02–3.03, ll. 184–185 | gauges "in the region of micro ohm … sorry … kilo ohm" | kΩ (self-corrected) |
-> | L3.02–3.03, l. 286 | "B equal alpha delta T" | $V = \alpha\,\Delta T$ |
-> | L3.02–3.03, ll. 306–312 | the two thermocouple junction materials "normally are semiconductors" | the standard types (K, R, S) are metal alloys; the slide's "excess electrons / vacancies" picture is an analogy borrowed from semiconductors. Semiconductor thermoelectric elements exist (Peltier devices) but are not the usual thermocouple |
-> | L3.02–3.03, l. 405 | "you have done statics last year" | plate bending (the diaphragm formula) |
-> | L3.02–3.03, ll. 979–987 | "gas fobs … to enlighten" | gas-hob igniters, to light them |
-> | L3.02–3.03, l. 1044 | "a new way of reassessing the cell" | a new equilibrium of the crystal cell |
-> | L3.02–3.03, l. 1049 | "most accelerometers have a piezoelectric material in it" | many vibration accelerometers do; the MEMS accelerometers in IMUs are mostly capacitive (§4.3), which is why they can measure gravity |
-> | L3.02–3.03, ll. 1063, 1074 | "the MIU", "a magnometer" | IMU, magnetometer |
-> | L3.02–3.03, l. 1164 | "impartial information" | partial information |
-> | L3.02–3.03, l. 1227 | a capacitive accelerometer cannot tell acceleration from gravity | true of any accelerometer: it measures specific force |
+- Part C lab report (ll. 607–619): six pages, with guiding questions for structure; in effect a summary and critical assessment of the Jupyter notebooks and the observations made in them.
+- L3.02–L3.03 give no explicit exam guidance. The physical relations are needed for the sensor transfer functions in C2 (ll. 1057–1058).
+- Further reading: Bentley Ch. 8 (sensing elements, l. 1060); Groves, *Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems*, for the IMU (ll. 1253–1254).
 
 ## Terminology and alternative names
 
@@ -429,7 +372,7 @@ The complementary filter is not averaging. An average weights both sensors equal
 | specific force | proper acceleration; what an accelerometer reads | L3.03 | includes the gravity reaction |
 | complementary filter weight $\alpha$ | blending factor, filter coefficient | L3.03 | here $\alpha$ weights the gyro; in the C3 IIR filter $\alpha$ weights the new sample, the opposite role |
 | IMU | inertial measurement unit; with a magnetometer, AHRS | L3.03 | |
-| Kalman filter | optimal estimator | L3.03 (mentioned) | not examined this year |
+| Kalman filter | optimal estimator | L3.03 (mentioned) | not examined in 2025–26 |
 
 ## Links
 - Parent: [[SESA2027 Aerospace Mechanics & Control Hub]] · Previous: [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]] · Next: [[SESA2027 C2 - Sensor Characteristics, Dynamics and Design]]
@@ -462,3 +405,24 @@ No tasks were set in the L3.02–3.03 recording, and L3.01 has no recording. The
 - [ ] Derive $G = 1+2\nu+(d\rho/\rho)/\varepsilon$ from $R=\rho L/A$ and explain why metal gauges have $G\approx2$ (suggested). → [[#4.1 Resistive: strain gauges and the Wheatstone bridge]]
 - [ ] Derive the piezo transfer function $V/F=(d/C)\,\tau s/(\tau s+1)$ (suggested). → [[#4.5 Piezoelectric]]
 - [ ] Show that a constant gyro bias leaves a bounded error $\tau b$ in the complementary filter, then derive the discrete update and $\alpha=\tau/(\tau+\Delta t)$ (suggested). → [[#Complementary filter]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Speech-to-text and spoken slips, with the correct version
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L3.02–3.03, l. 77 | "resistive conduct, of resistive capacity" | resistive sensors |
+> | L3.02–3.03, l. 87 | "an expert in Wisdom Bridge" | Wheatstone bridge |
+> | L3.02–3.03, l. 177 | "R2 as Vs minus 2Vg, Vs plus 2Vg" | $R_2 = R(V_s+2V_G)/(V_s-2V_G)$ for the quarter bridge, exactly |
+> | L3.02–3.03, ll. 184–185 | gauges "in the region of micro ohm … sorry … kilo ohm" | kΩ (self-corrected) |
+> | L3.02–3.03, l. 286 | "B equal alpha delta T" | $V = \alpha\,\Delta T$ |
+> | L3.02–3.03, ll. 306–312 | the two thermocouple junction materials "normally are semiconductors" | the standard types (K, R, S) are metal alloys; the slide's "excess electrons / vacancies" picture is an analogy borrowed from semiconductors. Semiconductor thermoelectric elements exist (Peltier devices) but are not the usual thermocouple |
+> | L3.02–3.03, l. 405 | "you have done statics last year" | plate bending (the diaphragm formula) |
+> | L3.02–3.03, ll. 979–987 | "gas fobs … to enlighten" | gas-hob igniters, to light them |
+> | L3.02–3.03, l. 1044 | "a new way of reassessing the cell" | a new equilibrium of the crystal cell |
+> | L3.02–3.03, l. 1049 | "most accelerometers have a piezoelectric material in it" | many vibration accelerometers do; the MEMS accelerometers in IMUs are mostly capacitive (§4.3), which is why they can measure gravity |
+> | L3.02–3.03, ll. 1063, 1074 | "the MIU", "a magnometer" | IMU, magnetometer |
+> | L3.02–3.03, l. 1164 | "impartial information" | partial information |
+> | L3.02–3.03, l. 1227 | a capacitive accelerometer cannot tell acceleration from gravity | true of any accelerometer: it measures specific force |

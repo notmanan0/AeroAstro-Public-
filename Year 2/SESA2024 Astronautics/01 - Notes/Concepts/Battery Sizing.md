@@ -31,5 +31,5 @@ Lithium-ion has the highest energy density and is now standard; NiH₂ tolerates
 
 ## Related
 
-- [[SESA2024 08 - Electrical Power Subsystem#3. Batteries|Batteries in the lecture note]] · [[SESA2024 08 - Electrical Power Subsystem#800 km LEO spacecraft, 1 kW for two years|Worked example]]
+- [[SESA2024 08 - Electrical Power Subsystem#3. Batteries|Batteries in the topic note]] · [[SESA2024 08 - Electrical Power Subsystem#800 km LEO spacecraft, 1 kW for two years|Worked example]]
 - [[Eclipse Duration]] · [[Solar Cells and Arrays]]

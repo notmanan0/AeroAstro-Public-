@@ -142,7 +142,7 @@ OS = e^{-\zeta\pi/\sqrt{1-\zeta^2}}\times100\% = e^{-0.4\pi/0.9165} = e^{-1.3711
 $$
 
 > [!warning] Sheet answer 22.403 % is inconsistent with the formula
-> $e^{-0.4\pi/0.84} = e^{-1.4960} = 22.40\%$. The sheet divided by $1-\zeta^2 = 0.84$ instead of $\sqrt{1-\zeta^2} = 0.9165$. The lecture formula (L1.07 slide 21) and a direct simulation both give **25.4 %**. The peak occurs at $t_p = \pi/\omega_d = 0.939$ s.
+> $e^{-0.4\pi/0.84} = e^{-1.4960} = 22.40\%$. The sheet divided by $1-\zeta^2 = 0.84$ instead of $\sqrt{1-\zeta^2} = 0.9165$. The slide formula (L1.07 slide 21) and a direct simulation both give **25.4 %**. The peak occurs at $t_p = \pi/\omega_d = 0.939$ s.
 >
 > Also, the exact 10–90 % rise time for $\zeta = 0.4$ is about $1.46/\omega_n = 0.40$ s. The $1.8/\omega_n$ rule is only approximate.
 

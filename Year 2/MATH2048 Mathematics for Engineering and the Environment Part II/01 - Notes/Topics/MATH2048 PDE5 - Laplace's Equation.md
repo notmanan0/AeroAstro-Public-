@@ -33,9 +33,9 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 20.txt", "02 - Sources/Lecture
 > - **Common mistakes:** solving the $y$ equation with trig functions when its sign makes it hyperbolic; giving Neumann conditions on every side, which leaves an undetermined constant.
 > - **Practise:** [[#One side not held at zero (L20)]]
 
-The wave equation propagates information without damping, because its time behaviour is undamped sines and cosines; the heat equation smooths it out, because its time behaviour is decaying exponentials (ll. 1–11). This lecture covers the third type, elliptic equations, with Laplace's equation as the prototype, and it is the one PDE in the block with no derivation (ll. 12–16).
+Elliptic PDEs are the third type, alongside the wave equation (hyperbolic), which propagates information without damping because its time behaviour is undamped sines and cosines, and the heat equation (parabolic), which smooths it out because its time behaviour is decaying exponentials (ll. 1–11). Laplace's equation is the standard example of an elliptic PDE, and it is the only PDE in the block that is not derived from physics first (ll. 12–16).
 
-A simple linear PDE is hyperbolic, parabolic, elliptic or mixed, and the lecturer's advice on mixed problems was to stay away from them (ll. 17–26). They usually mean the problem is trying to describe a transition between two kinds of physics at once, and they can often be avoided by restricting the domain or changing coordinates.
+A simple linear PDE is hyperbolic, parabolic, elliptic or mixed, and mixed problems are best avoided (ll. 17–26). They usually mean the problem is trying to describe a transition between two kinds of physics at once, and they can often be avoided by restricting the domain or changing coordinates.
 
 ---
 
@@ -53,7 +53,7 @@ $$
 \nabla^2\phi=\nabla\cdot\nabla\phi=\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}+\frac{\partial^2\phi}{\partial z^2}.
 $$
 
-The point of the notation is that physics doesn't depend on the coordinate system (ll. 47–69). $\nabla^2u=0$ holds whatever coordinates you use; the version written with $x$, $y$ and $z$ derivatives holds only in Cartesian coordinates, which is fine in a box and useless on a sphere or around a wing. How to translate between coordinate systems is the subject of the vector calculus block ([[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities|VC2]]).
+The point of the notation is that physics doesn't depend on the coordinate system (ll. 47–69). $\nabla^2u=0$ holds whatever coordinates you use; the version written with $x$, $y$ and $z$ derivatives holds only in Cartesian coordinates, which is fine in a box and useless on a sphere or around a wing. Translating between coordinate systems uses the vector calculus of [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities|VC2]].
 
 In the same notation, the wave and heat equations in several dimensions are $u_{tt}=c^2\nabla^2u$ and $u_t=\kappa^2\nabla^2u$. Setting every time derivative to zero leaves (ll. 71–89)
 
@@ -65,11 +65,11 @@ which is Laplace's equation: the static limit of both. With a source on the righ
 
 ## 2. Separation of variables on the unit square (L20)
 
-There are two derivatives in each direction, so the rule of thumb from PDE1 asks for two conditions in $x$ and two in $y$ (ll. 100–108). The difference from the time-dependent problems is where they go. There, both conditions in time were given at $t=0$. Here they sit at opposite sides of the domain, $x=0,1$ and $y=0,1$, so every condition is a boundary condition. Only Dirichlet conditions are used in this lecture (ll. 96–99).
+There are two derivatives in each direction, so the rule of thumb from PDE1 asks for two conditions in $x$ and two in $y$ (ll. 100–108). The difference from the time-dependent problems is where they go. There, both conditions in time were given at $t=0$. Here they sit at opposite sides of the domain, $x=0,1$ and $y=0,1$, so every condition is a boundary condition. Only Dirichlet conditions are used here (ll. 96–99).
 
 ### All sides held at zero
 
-Solve $u_{xx}+u_{yy}=0$ on $0<x<1$, $0<y<1$ with $u=0$ on all four sides (ll. 109–233). Substitute $u=X(x)Y(y)$; the primes mean $x$-derivatives on $X$ and $y$-derivatives on $Y$, which the lecturer agreed is bad notation but standard (ll. 117–122):
+Solve $u_{xx}+u_{yy}=0$ on $0<x<1$, $0<y<1$ with $u=0$ on all four sides (ll. 109–233). Substitute $u=X(x)Y(y)$; the primes mean $x$-derivatives on $X$ and $y$-derivatives on $Y$, which is bad notation but standard (ll. 117–122):
 
 $$
 X''Y+XY''=0 .
@@ -99,7 +99,7 @@ $$
 Y_n''-(n\pi)^2Y_n=0 .
 $$
 
-The auxiliary equation $m^2-(n\pi)^2=0$ has real, distinct roots $m=\pm n\pi$, so $Y_n=Ae^{n\pi y}+Be^{-n\pi y}$. The slides write this instead as (ll. 185–200)
+The auxiliary equation $m^2-(n\pi)^2=0$ has real, distinct roots $m=\pm n\pi$, so $Y_n=Ae^{n\pi y}+Be^{-n\pi y}$. Equivalently, in hyperbolic functions (ll. 185–200),
 
 $$
 Y_n=\tilde C_n\cosh n\pi y+\tilde D_n\sinh n\pi y .
@@ -123,15 +123,15 @@ $$
 0=\sum_{n=1}^\infty\tilde D_n\sinh n\pi\,\sin n\pi x .
 $$
 
-$\sinh n\pi>0$ because $n\pi>0$, so every $\tilde D_n=0$, and $u\equiv0$. A lot of work for a dull answer, but it is the first sign of the maximum principle in §3.
+$\sinh n\pi>0$ because $n\pi>0$, so every $\tilde D_n=0$, and $u\equiv0$. The answer is trivial, and is the first instance of the maximum principle (§3).
 
 ### Neumann conditions on every side
 
-If the derivative is given on every side, the eigenfunctions become cosines, including the constant for $n=0$ (ll. 238–255). Then any constant is a solution, and nothing in the boundary conditions can fix it; trying to impose its value as well over-determines the problem. This is a general feature of elliptic equations, already met in [[MATH2048 PDE1 - Classification of PDEs and the Wave Equation#2. How many conditions each type needs (L14)|PDE1]]: never give Neumann conditions on the whole boundary.
+If the derivative is given on every side, the eigenfunctions become cosines, including the constant for $n=0$ (ll. 238–255). Then any constant is a solution, and nothing in the boundary conditions can fix it; trying to impose its value as well over-determines the problem. There is a second constraint, which the divergence theorem of [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem|VC5]] makes precise: integrating $\nabla^2u=\nabla\cdot\nabla u=0$ over the square turns into the integral of the outward normal derivative round its edge, so all-Neumann data must satisfy $\oint\frac{\partial u}{\partial n}\,ds=0$ or there is no solution at all. Physically, in a steady state with no sources the heat flowing in through the boundary must equal the heat flowing out. This is a general feature of elliptic equations ([[MATH2048 PDE1 - Classification of PDEs and the Wave Equation#2. How many conditions each type needs (L14)|PDE1]]): Neumann conditions on the whole boundary fix the solution only up to a constant, and only when the compatibility condition holds.
 
 ### One side not held at zero (L20)
 
-Now keep $u=0$ on three sides but set $u(x,1)=x(1-x)$ on the top (ll. 256–326). The problem is inhomogeneous, but the pair of conditions on $x=0$ and $x=1$ is still homogeneous, and that pair is all the eigenvalue problem needs (ll. 274–288). The separation and the $x$-problem are unchanged, so the general solution is the same as above. The non-zero side then behaves like the initial data of the time-dependent problems: it is fitted at the end.
+Now $u=0$ on three sides and $u(x,1)=x(1-x)$ on the top (ll. 256–326). The problem is inhomogeneous, but the pair of conditions on $x=0$ and $x=1$ is still homogeneous, and that pair is all the eigenvalue problem needs (ll. 274–288). The separation and the $x$-problem are unchanged, so the general solution is the same as above. The non-zero side then behaves like the initial data of the time-dependent problems: it is fitted at the end.
 
 On $y=0$, $\tilde C_n=0$ as before (ll. 294–296). On $y=1$ (ll. 297–305):
 
@@ -151,37 +151,63 @@ $$
 u(x,y)=\sum_{n=1}^\infty\frac{4\big(1-(-1)^n\big)}{(n\pi)^3\sinh n\pi}\sin n\pi x\,\sinh n\pi y .
 $$
 
-Each term grows like $\sinh n\pi y$ from zero at the bottom to its boundary value at the top. Higher modes are concentrated close to the top edge, since $\sinh n\pi y/\sinh n\pi\approx e^{-n\pi(1-y)}$ for large $n$, so the fine detail of the boundary data fades within a distance of order $1/(n\pi)$ of it.
+Each term grows like $\sinh n\pi y$ from zero at the bottom to its boundary value at the top. Higher modes are concentrated close to the top edge, since $\sinh n\pi y/\sinh n\pi\approx e^{-n\pi(1-y)}$ for large $n$, so the fine detail of the boundary data fades within a distance of order $1/(n\pi)$ of it. Halfway down, at $y=\frac12$, the $n=1$ mode keeps $\sinh\frac\pi2/\sinh\pi=0.199$ of its boundary amplitude while the $n=3$ mode keeps only $0.0090$, essentially $e^{-3\pi/2}=0.0090$.
 
 ![[m2048_pde_laplace_square.png|560]]
+
+![[m2048_pde_laplace_decay.png|720]]
 
 > [!check] Numbers
 > Summing 60 terms gives $u(0.5,1)=0.250$, the boundary value $\frac14$, while $u(0.5,0.9)=0.185$ and $u(0.5,0.5)=0.051$. On a $99\times99$ interior grid the largest value is $0.243<\frac14$, as the maximum principle requires.
 
 Sources are handled exactly as in PDE4 (ll. 256–260, 347–350): solve for the eigenfunctions, expand the source in them, and solve the resulting ODEs for the coefficients.
 
+### Data that is already an eigenfunction
+
+*(Suggested, not lecturer-set.)* If the top side carries $u(x,1)=\sin\pi x$ instead, the condition on $y=1$ reads
+
+$$
+\sin\pi x=\sum_{n=1}^\infty\tilde D_n\sinh n\pi\,\sin n\pi x ,
+$$
+
+and by uniqueness only $n=1$ survives, with $\tilde D_1\sinh\pi=1$. So
+
+$$
+u=\frac{\sinh\pi y}{\sinh\pi}\,\sin\pi x .
+$$
+
+Check: $u_{xx}=-\pi^2u$ and $u_{yy}=+\pi^2u$, so $u_{xx}+u_{yy}=0$; $u$ vanishes on $x=0$, $x=1$ and $y=0$; and at $y=1$ it is $\sin\pi x$. Its centre value is $u(\frac12,\frac12)=0.199$.
+
+### Data on a different side, and superposition
+
+*(Suggested, not lecturer-set.)* The data are on the right side instead: $u(1,y)=y(1-y)$ with zero on the other three. Now the homogeneous pair is $y=0,1$, so the eigenvalue problem has to be in $y$. Separate with the sign the other way round,
+
+$$
+\frac{Y''}{Y}=-\frac{X''}{X}=\mu,\qquad Y(0)=Y(1)=0,
+$$
+
+which gives $\mu_n=-(n\pi)^2$, $Y_n=\sin n\pi y$, and then $X_n''=(n\pi)^2X_n$ with $X_n(0)=0$, so $X_n=\sinh n\pi x$. Fitting $x=1$ is the same sine series as before, so
+
+$$
+u=\sum_{n=1}^\infty\frac{4\big(1-(-1)^n\big)}{(n\pi)^3\sinh n\pi}\sinh n\pi x\,\sin n\pi y ,
+$$
+
+the top-side solution with $x$ and $y$ swapped, as the symmetry of the square requires. Because Laplace's equation is linear, data on two sides at once is the sum of two one-side problems: with $x(1-x)$ on the top and $y(1-y)$ on the right, each solution vanishes on the other's data side, so their sum satisfies all four conditions.
+
+> [!check] Superposition at the centre
+> 120 terms give $u(\frac12,\frac12)=0.05133$ for the top-side problem; by symmetry the right-side problem has the same centre value, so the two-sided problem has $u(\frac12,\frac12)=0.1027$.
+
 ## 3. The maximum principle (L20)
 
-The lecturer called this "possibly the most important mathematical result" for elliptic equations (ll. 327–346). A solution of Laplace's equation, and of many other elliptic equations without sources, takes its largest value on the boundary of the domain, never strictly inside. Applying the same result to $-u$ shows the smallest value is on the boundary too.
+The maximum principle is a central result for elliptic equations (ll. 327–346). A solution of Laplace's equation, and of many other elliptic equations without sources, takes its largest value on the boundary of the domain, never strictly inside. Applying the same result to $-u$ shows the smallest value is on the boundary too.
 
 Both examples obey it. With zero on every side, the maximum and minimum are both $0$, so $u$ must be zero everywhere, which is the dull answer of §2 obtained without any calculation. More generally, constant boundary values force a constant solution. With $x(1-x)$ on the top, everything inside lies between $0$ and the boundary maximum $\frac14$.
 
+The principle also gives uniqueness for the Dirichlet problem in two lines. If $u_1$ and $u_2$ both solve Laplace's equation with the same boundary values, their difference $w=u_1-u_2$ solves Laplace's equation with $w=0$ on the whole boundary. Its maximum and minimum are both on the boundary, so both are $0$, and $w\equiv0$ inside.
+
 It fails when there is a source, which can put the maximum inside. That makes it a diagnostic: if a quantity you believe obeys Laplace's equation is larger somewhere inside the domain than anywhere on its boundary, there must be a source in there adding to it.
 
-Separation of variables now covers all three types, with non-trivial boundary conditions and sources, but only for linear equations (ll. 352–358). For a nonlinear problem the options are to approximate it by a linear one or to solve it numerically.
-
-## Transcript slips
-
-> [!warning] Lecture 20
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | ll. 78–82 | the static limit written as $\nabla^2y=0$ | $\nabla^2u=0$; $y$ is now a coordinate, as the lecturer notes |
-> | l. 164 | "I think I've managed to flip my conventions" | naming of the constants only; $X_n=\sin n\pi x$ either way |
-> | ll. 197, 236 | "banishes" | vanishes |
-> | l. 214 | "the boundary condition at X is equal to 1" | the side $y=1$, where $\sinh n\pi$ appears |
-> | l. 298 | "the boundary value at x is equal to 1" | $y=1$ |
-> | ll. 311–313 | sine coefficients of $x(1-x)$ are "4 on n pi all squared" | $\frac{4(1-(-1)^n)}{(n\pi)^3}$, cubed, as in PDE2 |
-> | Recap, l. 22 | the 2022/23 question uses "Dirichlet boundaries" with cosine eigenfunctions | Neumann boundaries give the cosines (corrected at l. 277) |
+Separation of variables covers all three types, with non-trivial boundary conditions and sources, but only for linear equations (ll. 352–358). For a nonlinear problem the options are to approximate it by a linear one or to solve it numerically.
 
 ## Links
 
@@ -201,8 +227,23 @@ Nothing was set in Lecture 20. The recap lecture's advice was to practise the pa
 ### Core
 
 - [ ] Rework the square with $u(x,1)=x(1-x)$ and check $u(0.5,1)=\frac14$ from the series (suggested, not lecturer-set). → [[#One side not held at zero (L20)]]
-- [ ] Solve the same square with $u(x,1)=\sin\pi x$ and zero on the other sides, by inspection. Answer: $u=\frac{\sinh\pi y}{\sinh\pi}\sin\pi x$ (suggested, not lecturer-set). → [[#One side not held at zero (L20)]]
+- [ ] Solve the same square with $u(x,1)=\sin\pi x$ and zero on the other sides, by inspection. Answer: $u=\frac{\sinh\pi y}{\sinh\pi}\sin\pi x$ (suggested, not lecturer-set). → [[#Data that is already an eigenfunction]]
 
 ### Further practice
 
-- [ ] Solve the square with $u(1,y)=y(1-y)$ on the right side and zero on the others, by separating with the eigenvalue problem in $y$. Answer: $u=\sum\frac{4(1-(-1)^n)}{(n\pi)^3\sinh n\pi}\sinh n\pi x\,\sin n\pi y$ (suggested, not lecturer-set). → [[#2. Separation of variables on the unit square (L20)]]
+- [ ] Solve the square with $u(1,y)=y(1-y)$ on the right side and zero on the others, by separating with the eigenvalue problem in $y$. Answer: $u=\sum\frac{4(1-(-1)^n)}{(n\pi)^3\sinh n\pi}\sinh n\pi x\,\sin n\pi y$ (suggested, not lecturer-set). → [[#Data on a different side, and superposition]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lecture 20
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | ll. 78–82 | the static limit written as $\nabla^2y=0$ | $\nabla^2u=0$; $y$ is now a coordinate, as the lecturer notes |
+> | l. 164 | "I think I've managed to flip my conventions" | naming of the constants only; $X_n=\sin n\pi x$ either way |
+> | ll. 197, 236 | "banishes" | vanishes |
+> | l. 214 | "the boundary condition at X is equal to 1" | the side $y=1$, where $\sinh n\pi$ appears |
+> | l. 298 | "the boundary value at x is equal to 1" | $y=1$ |
+> | ll. 311–313 | sine coefficients of $x(1-x)$ are "4 on n pi all squared" | $\frac{4(1-(-1)^n)}{(n\pi)^3}$, cubed, as in PDE2 |
+> | Recap, l. 22 | the 2022/23 question uses "Dirichlet boundaries" with cosine eigenfunctions | Neumann boundaries give the cosines (corrected at l. 277) |

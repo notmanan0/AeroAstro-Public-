@@ -17,7 +17,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture15_Hyperbolic2.pdf
 
 Substituting the product and dividing by it leaves a function of one variable equal to a function of another. Fixing either variable shows both must equal the same constant $\lambda$, so the PDE splits into ODEs coupled only through $\lambda$. The boundary conditions on $u$ become conditions on $X$, because the alternative is $T\equiv0$, and the spatial ODE with those conditions is an eigenvalue problem: non-zero solutions exist only for special $\lambda_n$. Each of the cases $\lambda=0$, $\lambda>0$ and $\lambda<0$ must be checked, since which ones survive depends on the boundary conditions.
 
-The lecture's six steps are: separate; turn the boundary conditions into conditions on $X$; solve the eigenvalue problem; solve for $T_n$ with each $\lambda_n$; superpose $\sum X_nT_n$; and fit the initial data, which is a Fourier series problem. Step 1 depends only on the PDE and step 2 only on the boundary conditions, so changing one leaves the other alone.
+The six steps are: separate; turn the boundary conditions into conditions on $X$; solve the eigenvalue problem; solve for $T_n$ with each $\lambda_n$; superpose $\sum X_nT_n$; and fit the initial data, which is a Fourier series problem. Step 1 depends only on the PDE and step 2 only on the boundary conditions, so changing one leaves the other alone.
 
 | Boundary conditions on $[0,L]$ | $\lambda_n$ | $X_n$ |
 |---|---|---|

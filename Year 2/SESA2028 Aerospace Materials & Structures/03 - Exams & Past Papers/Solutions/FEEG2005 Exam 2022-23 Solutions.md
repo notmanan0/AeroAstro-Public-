@@ -139,7 +139,7 @@ $$
 
 **Assumptions:** linear, order-independent damage; constant stress; no oxidation or microstructural ageing (over-tempering). Interpolation is only valid inside the data range.
 
-![[Figures/materials_creep_interpolation_temperature.png]]
+![[materials_creep_interpolation_temperature.png]]
 
 ## Structures
 

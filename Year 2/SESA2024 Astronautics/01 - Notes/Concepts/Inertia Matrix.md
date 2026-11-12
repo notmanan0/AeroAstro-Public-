@@ -26,5 +26,5 @@ The matrix sizes the torquers, sets the response to every control and disturbanc
 
 ## Related
 
-- [[SESA2024 06 - Attitude Control#The inertia matrix|Inertia matrix in the lecture note]] · [[SESA2024 06 - Attitude Control#Inertia matrix from the 2024/25 paper|2024/25 A4 example]]
+- [[SESA2024 06 - Attitude Control#The inertia matrix|Inertia matrix in the topic note]] · [[SESA2024 06 - Attitude Control#Inertia matrix from the 2024/25 paper|2024/25 A4 example]]
 - [[Momentum Bias and Gyroscopic Rigidity]] · [[Spacecraft Stabilisation Types]]

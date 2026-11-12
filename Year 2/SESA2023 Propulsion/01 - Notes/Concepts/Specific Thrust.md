@@ -19,9 +19,9 @@ $$
 X = \frac{F_N}{\dot m_a} = (1+f)V_j-V\quad(\text{fully expanded}).
 $$
 
-Its units are N s kg⁻¹, which is m/s, not N (L18, l. 299 corrects the slide). For a turbofan with matched jets and $f\ll1$, per kilogram of total air, $X\approx V_j-V$, which is why the lecture describes it as the effective velocity increase through the engine (L18, ll. 299–302).
+Its units are N s kg⁻¹, which is m/s, not N (L18, l. 299 corrects the slide). For a turbofan with matched jets and $f\ll1$, per kilogram of total air, $X\approx V_j-V$, which is why it can be read as the effective velocity increase through the engine.
 
-A high $X$ means a compact engine for its thrust but a low propulsive efficiency; a low $X$ means a high $\eta_P$ but a large air flow for the same thrust, $\dot m_a = F_N/X$. Fuel consumption ties to it directly, $\mathrm{sfc} = f/X$. The lecture argues it describes an engine better than the bypass ratio does: the RB211 kept its bypass ratio while its fan pressure ratio, thrust and $X$ all rose (L21, ll. 152–174). Low-$X$ engines also pay the biggest installation penalty, because nacelle drag scales as $kV\,F_N/X$, giving $F_{N,eff} = F_N(1-kV/X)$.
+A high $X$ means a compact engine for its thrust but a low propulsive efficiency; a low $X$ means a high $\eta_P$ but a large air flow for the same thrust, $\dot m_a = F_N/X$. Fuel consumption ties to it directly, $\mathrm{sfc} = f/X$. It describes an engine better than the bypass ratio does: the RB211 kept its bypass ratio while its fan pressure ratio, thrust and $X$ all rose (L21, ll. 152–174). Low-$X$ engines also pay the biggest installation penalty, because nacelle drag scales as $kV\,F_N/X$, giving $F_{N,eff} = F_N(1-kV/X)$.
 
 | Engine (course example) | $X$ (m/s) |
 |---|---|

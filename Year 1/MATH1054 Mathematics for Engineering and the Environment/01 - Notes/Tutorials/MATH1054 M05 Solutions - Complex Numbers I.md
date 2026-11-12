@@ -11,7 +11,7 @@ sheet: "Module 05 work scheme: Examples 3.1–3.16, 4.15; Exercises 1, 6, 8, 10,
 theory_notes: ["[[MATH1054 M05 - Complex Numbers I]]"]
 key_concepts: ["[[Complex Numbers - Cartesian, Polar and Exponential Forms]]", "[[Euler's Formula]]", "[[Argand Diagram]]"]
 status: complete
-sources: ["tmp/md/module_05_complex_numbers_i.md", "02 - Sources/Modern Engineering Mathematics.pdf (§3.2)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 5)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§3.1–3.2, §4.2.6 Ex 4.15)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 5)"]
 ---
 
 # MATH1054 M05 Solutions - Complex Numbers I
@@ -113,7 +113,7 @@ Use (3.5a) and (3.5b): $|z_1z_2|=|z_1||z_2|$ and $\arg(z_1z_2)=\arg z_1+\arg z_2
 - $\arg z_1=\pi-\tan^{-1}\frac5{12}=2.7468$ and $\arg z_2=\pi-\tan^{-1}\frac34=2.4981$. Their sum is $5.2449$ rad.
 - This exceeds $\pi$, so subtract $2\pi$: $\arg(z_1z_2)=\boxed{-1.0383\ \text{rad}\ (-59.49°)}$.
 
-**Check**: $z_1z_2=48-15\mathrm j-20\mathrm j+15\mathrm j^2=33-56\mathrm j$. Then $|33-56\mathrm j|=\sqrt{1089+3136}=65$ ✔, and $\tan^{-1}(-56/33)=-59.49°$ ✔ (fourth quadrant).
+**Check**: $z_1z_2=48-36\mathrm j-20\mathrm j+15\mathrm j^2=33-56\mathrm j$. Then $|33-56\mathrm j|=\sqrt{1089+3136}=65$ ✔, and $\tan^{-1}(-56/33)=-59.49°$ ✔ (fourth quadrant).
 
 ## Example 3.13: Division in polar form
 $\dfrac{r_1\angle\theta_1}{r_2\angle\theta_2}=\dfrac{r_1}{r_2}\angle(\theta_1-\theta_2)$.
@@ -302,5 +302,5 @@ $$\left|\frac{(2+\mathrm j)^{11}}{(-1-2\mathrm j)^9}\right|=\frac{(\sqrt5)^{11}}
 $$\boxed{\cos\alpha=\frac{e^{\mathrm j\alpha}+e^{-\mathrm j\alpha}}2,\qquad\sin\alpha=\frac{e^{\mathrm j\alpha}-e^{-\mathrm j\alpha}}{2\mathrm j}}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_05_complex_numbers_i.md`
+- Problem statements: Module 05 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §3.2, §4.2; MATH1054 Module Booklet, Module 5

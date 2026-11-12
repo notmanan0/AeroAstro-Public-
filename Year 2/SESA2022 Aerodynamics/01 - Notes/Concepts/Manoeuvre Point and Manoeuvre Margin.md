@@ -25,5 +25,5 @@ Practice: [[SESA2022 Examples Sheet 6 - Static Stability Solutions]] and [[SESA2
 
 ## Related
 
-- Full derivation and worked examples: [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#4. Manoeuvre stability (20 Nov lecture)|T6 §4]]
+- Full derivation and worked examples: [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#4. Manoeuvre stability|T6 §4]]
 - [[Neutral Point and Static Margin]] · [[Stick-Fixed vs Stick-Free Stability]]

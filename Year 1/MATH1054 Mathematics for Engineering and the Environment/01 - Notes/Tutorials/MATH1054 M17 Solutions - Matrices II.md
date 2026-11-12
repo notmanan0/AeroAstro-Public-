@@ -12,7 +12,7 @@ sheet: "Specimen Test 17 (booklet) + Module 17 work scheme: Examples 5.22–5.36
 theory_notes: ["[[MATH1054 M17 - Matrices II]]"]
 key_concepts: ["[[Matrix Inverse]]", "[[Gaussian Elimination]]"]
 status: complete
-sources: ["tmp/md/module_17_matrices_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§5.4–5.5)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 17)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§5.4–5.5)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 17)"]
 ---
 
 # MATH1054 M17 Solutions - Matrices II
@@ -141,19 +141,20 @@ $$\mathbf A^{-1}=-\frac13\begin{bmatrix}1&-2\\-2&1\end{bmatrix}=\begin{bmatrix}-
 
 **(b)** $\begin{bmatrix}1&2&3\\2&2&1\\5&6&5\end{bmatrix}$: $|\cdot|=1(10-6)-2(10-5)+3(12-10)=0$, so it is **singular**. Indeed $R_3=R_1+2R_2$.
 
-**(c, the $4\times4$)** $\begin{bmatrix}1&0&0&1\\0&1&0&1\\0&0&1&1\\0&0&0&1\end{bmatrix}$ is upper triangular with $|\cdot|=1$, so non-singular.
+**(c)** $\begin{bmatrix}1&0&0&1\\0&1&0&1\\0&0&1&1\\0&0&0&1\end{bmatrix}$ is upper triangular with $|\cdot|=1$, so non-singular.
 
 $$\mathbf A^{-1}=\begin{bmatrix}1&0&0&-1\\0&1&0&-1\\0&0&1&-1\\0&0&0&1\end{bmatrix}$$
 
 This undoes "add the last coordinate to the others".
 
-**(d, the $3\times3$ with a repeated row)** $\begin{bmatrix}1&0&1\\0&1&0\\1&0&1\end{bmatrix}$: rows 1 and 3 are equal, so $|\cdot|=0$ and it is **singular**.
+**(d)** $\begin{bmatrix}1&0&1\\0&1&0\\1&0&1\end{bmatrix}$: rows 1 and 3 are equal, so $|\cdot|=0$ and it is **singular**.
 
-**(c, complex)** $\begin{bmatrix}1&\mathrm j\\-\mathrm j&2\end{bmatrix}$: $|\cdot|=2-(\mathrm j)(-\mathrm j)=2-1=1$, non-singular.
+## Exercise 52(c),(d): Two more inverses (not in the work scheme)
+**(c)** $\begin{bmatrix}1&\mathrm j\\-\mathrm j&2\end{bmatrix}$: $|\cdot|=2-(\mathrm j)(-\mathrm j)=2-1=1$, non-singular.
 
 $$\mathbf A^{-1}=\begin{bmatrix}2&-\mathrm j\\\mathrm j&1\end{bmatrix}$$
 
-**(d, the second $3\times3$)** $\begin{bmatrix}1&2&3\\0&1&2\\2&3&1\end{bmatrix}$: $|\cdot|=1(1-6)-2(0-4)+3(0-2)=-3$, non-singular.
+**(d)** $\begin{bmatrix}1&2&3\\0&1&2\\2&3&1\end{bmatrix}$: $|\cdot|=1(1-6)-2(0-4)+3(0-2)=-3$, non-singular.
 
 $$\operatorname{adj}=\begin{bmatrix}-5&7&1\\4&-5&-2\\-2&1&1\end{bmatrix},\qquad\mathbf A^{-1}=-\frac13\operatorname{adj}=\begin{bmatrix}\frac53&-\frac73&-\frac13\\-\frac43&\frac53&\frac23\\\frac23&-\frac13&-\frac13\end{bmatrix}$$
 
@@ -281,5 +282,5 @@ $$\boxed{x=\frac{2-\lambda}3,\quad y=\frac{14-\lambda}3,\quad z=\lambda}$$
 $$\mathbf A^{-1}=\boxed{\begin{pmatrix}2&-\frac32&1\\1&-\frac12&0\\-2&2&-1\end{pmatrix}}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_17_matrices_ii.md`
+- Problem statements: Module 17 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §5.4–5.5; MATH1054 Module Booklet, Module 17

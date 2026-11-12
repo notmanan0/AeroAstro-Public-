@@ -20,16 +20,16 @@ sources: ["02 - Sources/Lectures/Lecture2-1.pdf", "02 - Sources/Lectures/Lecture
 # SESA3029 W02 - Oblique Shock Relations and Mach Waves
 
 > [!abstract] Summary
-> A supersonic stream turned abruptly through $\theta$ does it across an oblique shock at angle $\beta$. Only the velocity component normal to the shock jumps, so an oblique shock is a normal shock in $M_{n1}=M_1\sin\beta$ and the Week 1 relations carry straight over. Matching the turn to the wall gives the $\theta$–$\beta$–$M$ relation, with weak and strong solutions below a maximum deflection $\theta_{max}$, detachment above it, and the Mach wave $\beta=\mu=\sin^{-1}(1/M_1)$ as its zero-strength limit. Lecture 2.2 applies it to supersonic intakes.
+> A supersonic stream turned abruptly through $\theta$ does it across an oblique shock at angle $\beta$. Only the velocity component normal to the shock jumps, so an oblique shock is a normal shock in $M_{n1}=M_1\sin\beta$ and the normal-shock relations of W01 carry straight over. Matching the turn to the wall gives the $\theta$–$\beta$–$M$ relation, with weak and strong solutions below a maximum deflection $\theta_{max}$, detachment above it, and the Mach wave $\beta=\mu=\sin^{-1}(1/M_1)$ as its zero-strength limit. Supersonic intakes apply it directly (§10).
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a wall, wedge or ramp turns a supersonic stream **into** itself through $\theta$.
 > - **Assumptions:** steady, inviscid, 2-D; $\theta$ and $\beta$ measured from the upstream velocity; $\gamma=1.4$ for the chart; attached shock ($\theta\le\theta_{max}(M_1)$); weak solution unless told otherwise.
 > - **Method:** 1. Check $\theta\le\theta_{max}(M_1)$, else the shock detaches. 2. $\beta$ from the chart or the $\theta$–$\beta$–$M$ relation. 3. $M_{n1}=M_1\sin\beta$. 4. Normal-shock relations in $M_{n1}$: $M_{n2}$, $p_2/p_1$, $\rho_2/\rho_1$, $p_{02}/p_{01}$. 5. $M_2=M_{n2}/\sin(\beta-\theta)$.
 > - **Common mistakes:** entering $M_1$ instead of $M_{n1}$ in the NST; dividing by $\sin\beta$ instead of $\sin(\beta-\theta)$ for $M_2$.
-> - **Practise:** [[#8.1 Lecture chart example: M₁ = 2, θ = 15°]] · [[SESA3029 Mock Questions - Weeks 1-5#Q2. Oblique shock on a supersonic intake ramp|Mock Q2]]
+> - **Practise:** [[#8.1 Chart example: M₁ = 2, θ = 15°]] · [[SESA3029 Mock Questions - Weeks 1-5#Q2. Oblique shock on a supersonic intake ramp|Mock Q2]]
 
-Sit on the shock and watch a parcel of air cross it. The pressure is the same on both sides of any small piece of shock front, so nothing pushes the parcel along the shock and its tangential velocity $U_t$ comes through unchanged. Normal to the shock it meets the Week 1 normal-shock problem, just with speed $U_{n1}=V_1\sin\beta$ instead of $V_1$, so it gets compressed and slowed by the normal-shock jumps at $M_{n1}$.
+Pressure jumps across an oblique shock but is uniform along each face of the shock front, and it acts normal to the face. A parcel of air crossing the shock therefore feels no force along it, and its tangential velocity $U_t$ comes through unchanged. Normal to the shock it meets the normal-shock problem of [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes|W01]], with speed $U_{n1}=V_1\sin\beta$ instead of $V_1$, so it is compressed and slowed by the normal-shock jumps at $M_{n1}$.
 
 Slowing the normal component while keeping the tangential one swings the velocity vector towards the shock, and that swing is the flow deflection $\theta$. A wedge or ramp therefore needs a shock at just the angle $\beta$ that makes the swing match the wall, and that matching condition is the $\theta$–$\beta$–$M$ relation. Turn the wall more gently and the shock gets weaker, until at zero deflection it is just a Mach wave, the line along which sound pulses from the body pile up.
 
@@ -37,13 +37,13 @@ Another way to see it: an oblique shock is a normal shock seen by an observer sl
 
 ## 1. Where oblique shocks come from
 
-The lecture's keyword is *abruptly* (L2-1, ll. 12–15). A supersonic stream gets no warning of a wall corner, because disturbances can't travel upstream faster than the flow. If the wall turns sharply by $\theta$, the flow must turn by $\theta$ almost instantly, and it does so through a thin oblique shock.
+The flow turns abruptly. A supersonic stream gets no warning of a wall corner, because disturbances can't travel upstream faster than the flow. If the wall turns sharply by $\theta$, the flow must turn by $\theta$ almost instantly, and it does so through a thin oblique shock.
 
-The **flow-turning (deflection) angle** $\theta$ is the angle between the upstream velocity $\mathbf V_1$ and the body surface, and the **shock angle** $\beta$ is the angle between $\mathbf V_1$ and the shock. Both are measured from the upstream velocity vector (L2-1, ll. 16–19), so if $\mathbf V_1$ isn't horizontal you measure from $\mathbf V_1$, not the page axes. Later examples rely on this.
+The **flow-turning (deflection) angle** $\theta$ is the angle between the upstream velocity $\mathbf V_1$ and the body surface, and the **shock angle** $\beta$ is the angle between $\mathbf V_1$ and the shock. Both are measured from the upstream velocity vector (L2-1, ll. 16–19), so if $\mathbf V_1$ isn't horizontal you measure from $\mathbf V_1$, not the page axes.
 
 ![[at_oblique_shock_geometry.png|900]]
 
-*Normal shocks in Week 1 fixed $\beta=90^\circ$ and $\theta=0$, so the angles never mattered. The new question for Lecture 2.1 is: given $M_1$ and $\theta$, what is $\beta$?* (Slide 2; L2-1, ll. 20–23.)
+A normal shock fixes $\beta=90^\circ$ and $\theta=0$, so the angles never matter. For an oblique shock $M_1$ and $\theta$ are given and $\beta$ is the unknown (slide 2; L2-1, ll. 20–23).
 
 ## 2. Resolving the velocities
 
@@ -64,7 +64,7 @@ Downstream, the velocity has turned through $\theta$ towards the shock, so the a
 
 ## 3. Conservation laws across the oblique shock
 
-Wrap the shock in a thin control volume of face area $A$ and thickness $\delta\to0$ (slide 4; L2-1, ll. 30–45). Only the faces parallel to the shock carry flux, so only the normal velocity carries mass through them.
+The control volume around the shock has face area $A$ and thickness $\delta\to0$ (slide 4; L2-1, ll. 30–45). Only the faces parallel to the shock carry flux, so only the normal velocity carries mass through them.
 
 ### Mass
 
@@ -106,12 +106,9 @@ $$
 h_1+\tfrac12U_{n1}^2=h_2+\tfrac12U_{n2}^2.
 $$
 
-> [!note] Transcript wording
-> At L2-1, l. 42, the transcript reads *"stagnation temperature or stagnation entropy is constant"*. The conserved quantity is stagnation enthalpy, $h_0$, or equivalently $T_0$ for a calorically perfect gas. Entropy rises across any shock.
-
 ## 4. It is a normal shock in the normal component
 
-Put the mass, normal-momentum and energy equations beside the Week 1 set (slides 5–6; L2-1, ll. 46–58):
+The mass, normal-momentum and energy equations match the normal-shock set of W01 term for term (slides 5–6; L2-1, ll. 46–58):
 
 | | Oblique shock | Normal shock (W01) |
 |---|---|---|
@@ -145,7 +142,7 @@ The shock tables can be used directly: enter the normal-shock table with $M_{n1}
 
 ### Why p₀₂/p₀₁ depends only on Mₙ₁ (derivation)
 
-You might expect the stagnation pressure to need a new formula, since it includes the tangential kinetic energy. It doesn't. From W01,
+The stagnation pressure needs no new formula, although it includes the tangential kinetic energy. From W01,
 
 $$
 s_2-s_1=c_p\ln\frac{T_2}{T_1}-R\ln\frac{p_2}{p_1}.
@@ -159,7 +156,7 @@ s_2-s_1=s_{02}-s_{01}=c_p\ln\underbrace{\frac{T_{02}}{T_{01}}}_{=1}-R\ln\frac{p_
 \frac{p_{02}}{p_{01}}=e^{-(s_2-s_1)/R}.
 $$
 
-The right-hand side contains only $T_2/T_1$ and $p_2/p_1$, and both depend on $M_{n1}$ alone. So the normal-shock table's $p_{02}/p_{01}$ column, read at $M_{n1}$, is correct for the oblique shock too. The tangential velocity just comes along for the ride: it adds the same kinetic energy to $T_{01}$ and $T_{02}$ and generates no entropy.
+The right-hand side contains only $T_2/T_1$ and $p_2/p_1$, and both depend on $M_{n1}$ alone. So the normal-shock table's $p_{02}/p_{01}$ column, read at $M_{n1}$, is correct for the oblique shock too. The tangential velocity adds the same kinetic energy to $T_{01}$ and $T_{02}$ and generates no entropy.
 
 > [!warning] What does not carry over
 > - The table's downstream Mach number is $M_{n2}$, not $M_2$; divide by $\sin(\beta-\theta)$.
@@ -168,7 +165,7 @@ The right-hand side contains only $T_2/T_1$ and $p_2/p_1$, and both depend on $M
 
 ## 5. The θ–β–M relation, step by step
 
-Once $\beta$ is known, everything else follows. What's left is how $\theta$ and $M_1$ set $\beta$ (slide 7; L2-1, ll. 59–97).
+Once $\beta$ is known, everything else follows. The relation between $\beta$, $\theta$ and $M_1$ comes from matching the velocity triangles on the two sides of the shock (slide 7; L2-1, ll. 59–97).
 
 ![[at_theta_beta_m_geometry.png|900]]
 
@@ -200,11 +197,9 @@ $$
 \boxed{\frac{\tan\beta}{\tan(\beta-\theta)}=\frac{(\gamma+1)M_1^2\sin^2\beta}{2+(\gamma-1)M_1^2\sin^2\beta}}\qquad(\star)
 $$
 
-That is the whole answer; the rest is algebra to isolate $\tan\theta$, which the lecturer calls *"a bit tedious algebra you could do it in 10 minutes"* (L2-1, ll. 177–178). The recording of it (ll. 98–176) is hard to follow because two slips get corrected on the fly (*"I forgot tangent theta here"*, l. 160; *"I have missed this guy here"*, l. 169), so here is a clean version.
-
 ### The algebra
 
-Use the lecture's shorthand $t=\tan\beta$, $s=\sin\beta$, $c=\cos\beta$, and write $T=\tan\theta$ and $K=M_1^2s^2$ (L2-1, l. 107).
+Use the shorthand $t=\tan\beta$, $s=\sin\beta$, $c=\cos\beta$, and write $T=\tan\theta$ and $K=M_1^2s^2$ (L2-1, l. 107).
 
 **(a) Trigonometric identity.**
 
@@ -267,7 +262,7 @@ $$
 
 ### The relation runs the wrong way
 
-The formula gives $\theta$ for a known $\beta$, but usually it's $\theta$ you know (from the wall) and $\beta$ you want: *"the direction of travel is the other way around"* (L2-1, ll. 180–186; slide 8). To get $\beta(\theta,M_1)$ you either read the oblique-shock chart (§6) or solve numerically (§8.2).
+The formula gives $\theta$ for a known $\beta$, but usually it's $\theta$ you know (from the wall) and $\beta$ you want, so the relation has to be used backwards (L2-1, ll. 180–186; slide 8). To get $\beta(\theta,M_1)$ you either read the oblique-shock chart (§6) or solve numerically (§8.2).
 
 ## 6. The oblique-shock chart
 
@@ -279,15 +274,15 @@ The chart plots $\beta$ against $\theta$ for several $M_1$ (slides 9–10; L2-1,
 
 A vertical line $\theta=\text{const}<\theta_{max}$ cuts each $M_1$ curve twice, because the relation is nonlinear in $\beta$ (L2-1, ll. 193–197). The **weak solution** (lower $\beta$) leans closer to the wall, has the smaller normal Mach number and so the smaller jumps, and usually leaves the flow supersonic (L2-1, ll. 199–201). The **strong solution** (higher $\beta$) is closer to normal, gives bigger jumps, and always leaves the flow subsonic.
 
-The weak solution is what forms on wedges and compression corners in practice. The strong one only appears when something downstream forces it, usually a high back pressure or the geometry (slide 9: *"unless there is a restriction in geometric and/or pressure conditions"*). See [[Weak and Strong Oblique Shocks]].
+The weak solution is what forms on wedges and compression corners in practice. The strong one only appears when something downstream forces it, usually a high back pressure or the geometry (slide 9). See [[Weak and Strong Oblique Shocks]].
 
 ![[at_oblique_shock_strength.png|900]]
 
-The "usually" is because, on the weak branch, $M_2$ drops below 1 in a thin band just below $\theta_{max}$, between the dotted $M_2=1$ locus and the dashed $\theta_{max}$ locus. For $M_1=2$ the band is $22.71^\circ<\theta<22.97^\circ$. That's why the lecturer hedges: *"not completely always… I'm going to talk about that later"* (L2-1, l. 200).
+The weak solution is only usually supersonic downstream: on the weak branch, $M_2$ drops below 1 in a thin band just below $\theta_{max}$, between the dotted $M_2=1$ locus and the dashed $\theta_{max}$ locus. For $M_1=2$ the band is $22.71^\circ<\theta<22.97^\circ$. So weak shocks are supersonic downstream nearly always, but not always.
 
 ### Maximum deflection and detachment
 
-Each $M_1$ curve has a turning point at $\theta_{max}$. The transcript calls it an *"inflection point"* (L2-1, l. 201), but it is a maximum of $\theta(\beta)$, where $\mathrm d\theta/\mathrm d\beta=0$. If the wall turns the flow by more than $\theta_{max}$, no attached straight shock can satisfy the conservation laws, so the shock detaches and stands off the body as a curved bow shock (L2-1, ll. 201–204). It is locally normal on the axis and weakens further out. This is the Week 1 Pitot-probe picture: a blunt nose is the extreme case $\theta=90^\circ>\theta_{max}$ at any $M_1$.
+Each $M_1$ curve has a turning point at $\theta_{max}$. It is a maximum of $\theta(\beta)$, where $\mathrm d\theta/\mathrm d\beta=0$. If the wall turns the flow by more than $\theta_{max}$, no attached straight shock can satisfy the conservation laws, so the shock detaches and stands off the body as a curved bow shock. It is locally normal on the axis and weakens further out. The detached shock ahead of a Pitot probe in W01 is this case: a blunt nose is the extreme case $\theta=90^\circ>\theta_{max}$ at any $M_1$.
 
 | $M_1$ | $\mu=\sin^{-1}(1/M_1)$ | $\theta_{max}$ | $\beta$ at $\theta_{max}$ | $\theta$ where weak $M_2=1$ |
 |---:|---:|---:|---:|---:|
@@ -303,7 +298,7 @@ Each $M_1$ curve has a turning point at $\theta_{max}$. The transcript calls it 
 
 Set $\tan\theta=0$ in the boxed relation. The product $2\cot\beta\,[\cdots]$ vanishes in two ways (slide 10; L2-1, ll. 204–212):
 
-Either $\cot\beta=0$, so $\beta=90^\circ$ and the shock is a normal shock (*"oblique shock solution contains the normal shock solution naturally"*), or $M_1^2\sin^2\beta-1=0$, so $\sin\beta=1/M_1$ and $\beta=\mu$, an infinitely weak Mach wave. Every attached oblique shock lies between these limits:
+Either $\cot\beta=0$, so $\beta=90^\circ$ and the shock is a normal shock (so the oblique-shock solution contains the normal shock as a special case), or $M_1^2\sin^2\beta-1=0$, so $\sin\beta=1/M_1$ and $\beta=\mu$, an infinitely weak Mach wave. Every attached oblique shock lies between these limits:
 
 $$
 \boxed{\mu\le\beta\le90^\circ}
@@ -319,21 +314,21 @@ $$
 \tan\theta\ \to\ 2\cot\beta\,\frac{\sin^2\beta}{\gamma+\cos2\beta}=\frac{\sin2\beta}{\gamma+\cos2\beta}.
 $$
 
-The curve no longer depends on $M_1$. This is the purple limiting curve on the chart, with $\theta_{max}=45.58^\circ$ for $\gamma=1.4$. The W01 strong-shock limits showed the same independence of Mach number at high $M_1$.
+The curve no longer depends on $M_1$. This is the purple limiting curve on the chart, with $\theta_{max}=45.58^\circ$ for $\gamma=1.4$. The W01 strong-shock limits are independent of Mach number in the same way.
 
 ## 7. Mach waves and the Mach angle
 
-Why should the weakest oblique shock sit at $\sin\beta=1/M_1$? The last part of the lecture answers this from scratch with a point sound source (slides 11–14; L2-1, ll. 212–235).
+The weakest oblique shock sits at $\sin\beta=1/M_1$, and a point sound source gives it from first principles (slides 11–14).
 
-*"Abruptly was the key word to generate shocks"* (L2-1, l. 212). If the surface curves smoothly instead, each small change in slope sends out only a small, nearly isentropic disturbance, a Mach wave, and many of them together can compress or expand the flow gradually. Expansion fans (Lecture 2.4) and the method of characteristics (Weeks 4–5) are built entirely from Mach waves.
+An abrupt change of slope produces a shock (L2-1, l. 212). A surface that curves smoothly sends out only a small, nearly isentropic disturbance, a Mach wave, at each small change in slope, and many of them together compress or expand the flow gradually. Compression waves can still coalesce into a shock further out, as the [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation|Riemann-invariant deep dive]] shows. Expansion fans ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]]) and the method of characteristics ([[SESA3029 W05a - Method of Characteristics|W05a]]) are built entirely from Mach waves.
 
 ![[at_mach_waves.png|900]]
 
-A source emits a sound pulse every $\Delta t$. Each pulse spreads as a circle at speed $a$ from wherever the source was when it was emitted. The source itself moves at $U=Ma$. Look at $t=3\Delta t$:
+A source emits a sound pulse every $\Delta t$. Each pulse spreads as a circle at speed $a$ from wherever the source was when it was emitted. The source itself moves at $U=Ma$. At $t=3\Delta t$ the four cases are:
 
 | Case | What happens | Consequence |
 |---|---|---|
-| $M=0$ | Concentric circles of radius $a\Delta t,2a\Delta t,3a\Delta t$ | Sound is heard everywhere at once |
+| $M=0$ | Concentric circles of radius $a\Delta t,2a\Delta t,3a\Delta t$ | Sound spreads symmetrically in every direction |
 | $M<1$ | Circles are offset, crowding ahead of the source, but each stays ahead of it | Doppler shift: higher pitch ahead. Sound still reaches everywhere |
 | $M=1$ | Every circle passes through the source's current position | All pulses arrive together as a single plane front, the sonic boom (L2-1, ll. 224–229). The region ahead is a zone of silence |
 | $M>1$ | The source outruns its own pulses. The circles are enveloped by two straight lines (a cone in 3D) | Sound is heard only inside the Mach cone |
@@ -348,28 +343,25 @@ $$
 \boxed{\mu=\sin^{-1}\!\left(\frac1M\right)}.
 $$
 
-The factor 3 cancels. Any pulse gives the same angle, which is why all the circles share one straight envelope. (The transcript says *"arc sine of m"* at l. 235. It is $\sin^{-1}(1/M)$, as on slide 14.)
+The factor 3 cancels. Any pulse gives the same angle, which is why all the circles share one straight envelope.
 
 | $M$ | 1.1 | 1.5 | 2 | 3 | 5 |
 |---|---:|---:|---:|---:|---:|
 | $\mu$ | $65.4^\circ$ | $41.8^\circ$ | $30.0^\circ$ | $19.5^\circ$ | $11.5^\circ$ |
 
-These are the open-circle intercepts on the oblique-shock chart. The oblique-shock relation *"also contains Mach wave solution"* (L2-1, ll. 235–236), and the two independent routes agree. As $M\to1^+$, $\mu\to90^\circ$ and the Mach wave becomes a normal (sonic) front, matching the $M=1$ panel.
+These are the open-circle intercepts on the oblique-shock chart. The oblique-shock relation also contains the Mach-wave solution (L2-1, ll. 235–236), and the two independent routes agree. As $M\to1^+$, $\mu\to90^\circ$ and the Mach wave becomes a normal (sonic) front, matching the $M=1$ panel.
 
 ## 8. Worked examples
 
-### 8.1 Lecture chart example: M₁ = 2, θ = 15°
+### 8.1 Chart example: M₁ = 2, θ = 15°
 
-The lecture reads $\beta$ off the chart for $\theta=15^\circ$, $M_1=2$ (L2-1, ll. 188–191).
+Read $\beta$ off the chart for $\theta=15^\circ$, $M_1=2$.
 
 Solving the θ–β–M relation (§8.2) gives
 
 $$
 \beta_{weak}=45.34^\circ,\qquad\beta_{strong}=79.83^\circ.
 $$
-
-> [!warning] Transcript slip
-> The lecture reads the weak solution as *"42 or 43"* degrees (L2-1, l. 190). The exact value is $45.3^\circ$, and a careful chart reading agrees. Around $42^\circ$ is the weak solution for $\theta\approx13^\circ$. Treat the lecture number as a quick eyeball, not a result.
 
 For the weak solution,
 
@@ -411,7 +403,7 @@ The weak oblique shock loses under 5% of the stagnation pressure, against 28% fo
 
 ### 8.2 Solving for β numerically
 
-Define $f(\beta)=\theta(\beta,M_1)-\theta_{target}$ and apply Newton–Raphson with a numerical derivative, as W01 did for the Rayleigh Pitot formula:
+Define $f(\beta)=\theta(\beta,M_1)-\theta_{target}$ and apply Newton–Raphson with a numerical derivative, as for the Rayleigh Pitot formula in W01:
 
 $$
 \beta^{(k+1)}=\beta^{(k)}-\frac{f(\beta^{(k)})}{f'(\beta^{(k)})}.
@@ -426,7 +418,7 @@ For $M_1=2$, $\theta=15^\circ$, starting at $\beta^{(0)}=40^\circ$:
 | 2 | $45.339^\circ$ | $-0.003$ |
 | 3 | $45.344^\circ$ | $\approx0$ |
 
-The starting guess picks the branch. Start between $\mu$ and $\beta_{\theta_{max}}$ (about $65^\circ$) to land on the weak solution, or between $\beta_{\theta_{max}}$ and $90^\circ$ (say $85^\circ$) for the strong one. Bisection on $[\mu,\beta_{\theta_{max}}]$ is guaranteed to find the weak root. This is the *"iterative methods"* route the lecture mentions (L2-1, l. 192).
+A starting guess between $\mu$ and $\beta_{\theta_{max}}$ (about $65^\circ$) normally converges to the weak solution, and one between $\beta_{\theta_{max}}$ and $90^\circ$ (say $85^\circ$) to the strong one, although a Newton step near the turning point can jump across it. Bisection on $[\mu,\beta_{\theta_{max}}]$ is guaranteed to find the weak root.
 
 ### 8.3 The easy direction: given β, find θ
 
@@ -446,7 +438,7 @@ M_2=\frac{0.5902}{\sin(40^\circ-21.85^\circ)}=\frac{0.5902}{0.3115}=1.894,
 \frac{p_{02}}{p_{01}}=0.754.
 $$
 
-*Check:* $\tan40^\circ/\tan18.15^\circ=0.8391/0.3279=2.559=\rho_2/\rho_1$. ✓ Is it weak or strong? $\theta_{max}(M_1=3)$ occurs at $\beta=65.2^\circ$, and $40^\circ<65.2^\circ$, so it is the weak branch, consistent with $M_2>1$.
+*Check:* $\tan40^\circ/\tan18.15^\circ=0.8391/0.3279=2.559=\rho_2/\rho_1$. ✓ This is the weak branch: $\theta_{max}(M_1=3)$ occurs at $\beta=65.2^\circ$, and $40^\circ<65.2^\circ$, consistent with $M_2>1$.
 
 ### 8.4 Will the shock stay attached?
 
@@ -468,12 +460,12 @@ A slender projectile flies at $M=2.5$. Its nose sends out Mach waves at $\mu=\si
 
 ---
 
-## 10. Lecture 2.2: oblique-shock examples
+## 10. Oblique-shock examples
 
-Lecture 2.2 is a worked-examples lecture. It opens with the Concorde intake (L2-2, ll. 1–6) and asks why the lip is slanted rather than square to the flow, and everything in it uses the §6 chart and the §9 workflow. It starts with three reminders (ll. 7–50). The angles are measured from $\mathbf V_1$, not the page axes: *"if m1 vector is angled… then theta and beta should also be measured from that angle"* (ll. 28–30). The chart's two extra curves are the $\theta_{max}$ locus (red on the slides, dashed on our chart), which separates strong from weak, and the $M_2=1$ locus (blue on the slides, dotted on ours) (ll. 37–50). And a steeper shock is a stronger shock.
+The examples use the §6 chart and the §9 workflow. Angles are measured from $\mathbf V_1$, not the page axes, so if $\mathbf V_1$ is inclined, $\theta$ and $\beta$ are measured from it. The chart's two extra curves are the $\theta_{max}$ locus (dashed), which separates strong from weak, and the $M_2=1$ locus (dotted). A steeper shock is a stronger shock.
 
 > [!important] Exam instruction (L2-2, ll. 74–80)
-> *"Each question will tell you what to do"*: use the table or chart at the nearest value, the average of two lines, linear interpolation, or the exact equations. Practise all four on Example 1. Example Sheet 1 answers are quoted both ways ("nearest value, reading OSC to 0.5 deg").
+> Each exam question states which method to use: the table or chart at the nearest value, the average of two lines, linear interpolation, or the exact equations. Practise all four on Example 1. Example Sheet 1 answers are quoted both ways ("nearest value, reading OSC to 0.5 deg").
 
 ### 10.1 Example 1: M₁ = 1.8, θ = 15°
 
@@ -487,7 +479,7 @@ Lecture 2.2 is a worked-examples lecture. It opens with the Concorde intake (L2-
 > [!warning] Calculator mode (ll. 61–64)
 > $\sin51$ in radian mode is $0.670$, not $0.777$. Either set degree mode or use $51\pi/180$. It is the commonest lost mark in this module.
 
-*Route 2: linear interpolation in the table* (homework, ll. 79–80). $M_{n1}=1.3989$ lies between the 1.38 and 1.40 rows:
+*Route 2: linear interpolation in the table* (ll. 79–80). $M_{n1}=1.3989$ lies between the 1.38 and 1.40 rows:
 
 $$
 \sigma=\frac{1.3989-1.38}{1.40-1.38}=0.943,
@@ -499,7 +491,7 @@ $$
 M_2=\frac{0.7402}{\sin36^\circ}=1.259.
 $$
 
-*Route 3: the exact solution* (*"you can find an exact solution by using an iterative approach"*, ll. 81–89; slide 6 calls it homework). Solve $f(\beta)=\theta(\beta,1.8)-15^\circ=0$ with Newton's method from the chart value:
+*Route 3: the exact solution*, found by iteration (ll. 81–89; slide 6). Solve $f(\beta)=\theta(\beta,1.8)-15^\circ=0$ with Newton's method from the chart value:
 
 | $k$ | $\beta^{(k)}$ | $f$ (deg) |
 |---:|---:|---:|
@@ -523,9 +515,9 @@ $$
 \frac{p_{02}}{p_{01}}=0.957.
 $$
 
-This matches the lecture's *"beta is 51.3 and then m2 is 1.245 instead of 1.259"* (l. 84). The strong solution would be $\beta=76.76^\circ$ with $M_2=0.712$.
+The exact solution is $\beta=51.3^\circ$ and $M_2=1.245$ (slide 6); the chart route gives 1.259. The strong solution would be $\beta=76.76^\circ$ with $M_2=0.712$.
 
-The chart route is about 1% out in $M_2$. That matters, the lecturer says (ll. 85–88), because aerospace safety factors are about 1.3, against about 10 in civil engineering.
+The chart route is about 1% out in $M_2$. That matters because aerospace safety factors are about 1.3, against about 10 in civil engineering.
 
 ### 10.2 Example 2: a supersonic intake at M₁ = 3
 
@@ -541,11 +533,11 @@ $$
 
 Stagnation pressure is what the engine turns into thrust (ll. 100–102; [[Intake Pressure Recovery]]).
 
-*(b) Slanted lip: oblique shock, then a normal shock* (ll. 110–157). Sweep the lower lip back so that the upper lip turns the flow by $\theta=22^\circ$ through an oblique shock. The lower lip sits behind that shock, so no reflection forms inside the duct (ll. 113–117). This is the Concorde shape.
+*(b) Slanted lip: oblique shock, then a normal shock* (ll. 110–157). The lower lip is swept back so that the upper lip turns the flow by $\theta=22^\circ$ through an oblique shock and the lower lip sits behind that shock, so no reflection forms inside the duct (ll. 113–117). This is the Concorde shape.
 
 1. Chart: $\theta=22^\circ$ on the $M_1=3$ curve gives $\beta\approx40^\circ$ (ll. 118–122).
-2. $M_{n1}=3\sin40^\circ=1.928$, about 1.93. The transcript's *"3 times 40 degrees"* (l. 127) means $3\sin40^\circ$.
-3. 1.93 lies midway between the 1.92 and 1.94 rows, so average them (ll. 128–136). The lecturer first went for $p_0$, then corrected himself to find $M_{n2}$ first (l. 132):
+2. $M_{n1}=3\sin40^\circ=1.928$, about 1.93.
+3. 1.93 lies midway between the 1.92 and 1.94 rows, so average them, finding $M_{n2}$ first:
 
 $$
 M_{n2}=\tfrac12(0.5918+0.5880)=0.590,
@@ -565,7 +557,7 @@ $$
 M_3=0.594
 $$
 
-The lecture reads these as 0.762 and 0.593 (ll. 143–149).
+The table route gives 0.762 and 0.593.
 
 5. Chain the stagnation-pressure ratios. Each factor is the ratio across one shock, and the intermediate $p_{02}$ cancels:
 
@@ -575,29 +567,23 @@ $$
 
 The loss is 43%, compared with 67% for the single normal shock (ll. 150–157).
 
-> [!warning] Slide slip (corrected live)
-> The lecture said and showed $p_{02}/p_{01}=0.762$ for the oblique shock (l. 136), the same number as the normal-shock step. At ll. 153–155 the lecturer corrects it: *"it should be five four"*, i.e. 0.754. The product 0.574 on the slide already uses the corrected value.
+Solving exactly instead gives $\beta=40.19^\circ$, $M_{n1}=1.936$, $M_2=1.886$, $p_{02}/p_{01}=0.7507$, $M_3=0.598$ and $p_{03}/p_{02}=0.7739$, so $p_{03}/p_{01}=0.581$. Panel (d) of the figure scans $\theta$: the best single ramp is $\theta=22.6^\circ$, with recovery 0.5812, so the example's $22^\circ$ is close to optimal.
 
-Solving exactly instead gives $\beta=40.19^\circ$, $M_{n1}=1.936$, $M_2=1.886$, $p_{02}/p_{01}=0.7507$, $M_3=0.598$ and $p_{03}/p_{02}=0.7739$, so $p_{03}/p_{01}=0.581$. Panel (d) of the figure scans $\theta$: the best single ramp is $\theta=22.6^\circ$, with recovery 0.5812, so the lecture's $22^\circ$ is close to optimal.
+Several weak shocks beat one strong one because the entropy rise across a shock grows as the cube of its strength, $\Delta s\propto(M_{n1}^2-1)^3$ ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#4. Entropy across a shock and why shocks compress|W03 §4]]). Split a compression of strength $m$ into two of strength $m/2$ and the total entropy rise falls from $m^3$ to $2(m/2)^3=m^3/4$. With two oblique ramps plus a normal shock at $M_1=3$, the best recovery is 0.744, at $\theta=15.0^\circ$ then $18.8^\circ$, and at that optimum all three shocks have the same normal Mach number, $M_n=1.599$. (This is Oswatitsch's equal-strength rule, not lectured.)
 
-Several weak shocks beat one strong one because the entropy rise across a shock grows as the cube of its strength, $\Delta s\propto(M_{n1}^2-1)^3$ ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#4. Entropy across a shock and why shocks compress|W03 §4]]). Split a compression of strength $m$ into two of strength $m/2$ and the total entropy rise falls from $m^3$ to $2(m/2)^3=m^3/4$. With two oblique ramps plus a normal shock at $M_1=3$, the best recovery is 0.744, at $\theta=15.0^\circ$ then $18.8^\circ$, and at that optimum all three shocks have the same normal Mach number, $M_n=1.599$. (This is Oswatitsch's equal-strength rule, a suggested extension rather than lecture material.)
+*(c) The Concorde idea: isentropic compression* (ll. 158–194). A smooth concave ramp in place of the straight one starts at $\theta=0$, so the wave there is a Mach wave (ll. 170–174). Each further increment of turning sends out another Mach wave, and the waves converge (ll. 175–178). Every Mach wave is isentropic, so the stagnation-pressure loss tends to zero (ll. 185–188). Concorde's variable ramps also let the intake work at subsonic take-off and landing (ll. 189–193).
 
-*(c) The Concorde idea: isentropic compression* (ll. 158–194). Replace the straight ramp by a smooth concave one. At the start $\theta=0$, so the wave there is a Mach wave (ll. 170–174). Each further increment of turning sends out another Mach wave, and the waves converge (ll. 175–178). Every Mach wave is isentropic, so the stagnation-pressure loss tends to zero (ll. 185–188). Concorde's variable ramps also let the intake work at subsonic take-off and landing (ll. 189–193).
+### 10.3 Weak shocks with subsonic downstream flow
 
-### 10.3 Weak shocks with subsonic downstream flow (ll. 195–203)
-
-Between the $M_2=1$ locus and the $\theta_{max}$ locus there is a thin band of weak solutions with $M_2<1$. For $M_1=2$ the band is $22.71^\circ<\theta<22.97^\circ$ (§6). *"Don't be confused… if you are in this tiny area"* (ll. 200–202).
-
-> [!note] Transcript wording, ll. 196–199
-> The two sentences about which side is subsonic contradict each other in the recording. Below the $M_2=1$ locus (smaller $\beta$) the flow behind the shock is supersonic; above it, subsonic.
+Between the $M_2=1$ locus and the $\theta_{max}$ locus there is a thin band of weak solutions with $M_2<1$. For $M_1=2$ the band is $22.71^\circ<\theta<22.97^\circ$ (§6). A wedge angle inside the band gives an attached shock with subsonic flow behind it (ll. 200–202).
 
 ### 10.4 Detachment and the bow shock: every solution on one curve
 
-At $M_1=1.96$, $\theta_{max}=22.27^\circ$ (lecture: 22.3°). A $22.5^\circ$ wedge is *"ever so slightly larger"*, so its shock looks attached but actually stands off by a tiny gap (L2-2, ll. 209–212); at $60^\circ$ there is a clear bow shock (ll. 213–214). The bow shock is only normal on the axis. *"Detached shock is normally a normal shock"* (l. 209) means normal at its nose; away from the axis it curves back and weakens.
+At $M_1=1.96$, $\theta_{max}=22.27^\circ$ (22.3° to one decimal place). A $22.5^\circ$ wedge is only just larger, so its shock looks attached but actually stands off by a tiny gap (L2-2, ll. 209–212); at $60^\circ$ there is a clear bow shock (ll. 213–214). A detached shock is normal only at its nose, on the axis (l. 209); away from the axis it curves back and weakens.
 
 ![[at_bow_shock_solutions.png|900]]
 
-Walk along the bow shock from the axis outwards (ll. 215–242):
+Along the bow shock from the axis outwards (ll. 215–242):
 
 | Point | Local $\beta$ | Local turning $\theta^*$ | Flow behind |
 |---|---|---|---|
@@ -609,10 +595,7 @@ Walk along the bow shock from the axis outwards (ll. 215–242):
 | c → d → e | falling to $\mu$ | falling to 0 | supersonic |
 | **e** (far field) | $\mu$ | 0 | Mach wave |
 
-> [!warning] Transcript slip (l. 234)
-> *"c was where angle is maximum"* should say b. At l. 233 the lecturer has just said b is the maximum, and c is the sonic point.
-
-*"All the solution is in here on the bow shock. Interesting, isn't it, that is nature"* (l. 242).
+So every oblique-shock solution, strong and weak, appears somewhere along one bow shock (l. 242).
 
 ---
 
@@ -623,7 +606,7 @@ Walk along the bow shock from the axis outwards (ll. 215–242):
 - Next: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]
 - Year 2 foundation: [[Oblique Shock Waves]] and [[Intake Pressure Recovery]] in [[SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and Intakes]] (note the different symbols: SESA2023 used $\sigma$ for the shock angle and $\delta$ for the deflection)
 - Full formula list: [[SESA3029 Formula Sheet]]
-- Other modules: SESA2023 used the θ–β–M relation for intakes without deriving it; §5 here derives it. [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#7. A mystery flow: wedges and corners|SESA3043 1.3 §7]] has the same wedge in incompressible potential flow, where the flow turns smoothly and accelerates from a stagnation point as $U_e\propto s^m$ instead of turning abruptly through a shock.
+- Other modules: SESA2023 used the θ–β–M relation for intakes without deriving it; §5 here derives it. [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#7. Wedge and corner flows|SESA3043 1.3 §7]] has the same wedge in incompressible potential flow, where the flow turns smoothly and accelerates from a stagnation point as $U_e\propto s^m$ instead of turning abruptly through a shock.
 
 ## Sources
 
@@ -639,21 +622,48 @@ Everything here was set, or explicitly left to you, in Lectures 2.1 and 2.2 unle
 ### Core
 
 - [ ] Show why the normal-shock relations apply with $M_n$, by writing the oblique and normal equation sets side by side (L2-1, ll. 46–58). → [[#4. It is a normal shock in the normal component|§4]]
-- [ ] Derive the $\theta$–$\beta$–$M$ relation from scratch: *"a bit tedious algebra you could do it in 10 minutes"* (L2-1, ll. 97–178). Work from the clean version, since the recording has two on-the-fly corrections. → [[#5. The θ–β–M relation, step by step|§5]]
-- [ ] Read $\beta$ off the chart for $\theta=15^\circ$, $M_1=2$ (L2-1, ll. 188–191). Target: weak $45.3^\circ$, strong $79.8^\circ$ (not the "42 or 43" in the recording). → [[#8.1 Lecture chart example: M₁ = 2, θ = 15°|§8.1]]
+- [ ] Derive the $\theta$–$\beta$–$M$ relation from scratch (L2-1, ll. 97–178). Work from the clean version, since the recording has two on-the-fly corrections. → [[#5. The θ–β–M relation, step by step|§5]]
+- [ ] Read $\beta$ off the chart for $\theta=15^\circ$, $M_1=2$ (L2-1, ll. 188–191). Target: weak $45.3^\circ$, strong $79.8^\circ$ (the recording's 42–43° is a slip; see below). → [[#8.1 Chart example: M₁ = 2, θ = 15°|§8.1]]
 - [ ] Example 1 exactly, by iteration (L2-2, ll. 81–89; slide 6). Target: $\beta=51.34^\circ$, $M_2=1.245$. → [[#10.1 Example 1: M₁ = 1.8, θ = 15°|§10.1]]
 - [ ] The Example 2 intake: reproduce 0.328, then 0.754 × 0.762 = 0.574, using the corrected 0.754 (L2-2, ll. 89–157). → [[#10.2 Example 2: a supersonic intake at M₁ = 3|§10.2]]
 
 ### Further practice
 
-- [ ] The normal-shock jump relations, if you didn't do them last week: *"those are some good examples of some derivation questions in the exam"* (L2-1, ll. 51–54). → [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Pressure jump (homework)|W01 §5]]
+- [ ] The normal-shock jump relations from W01, flagged as likely exam derivation questions (L2-1, ll. 51–54). → [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#Pressure jump|W01 §5]]
 - [ ] The conservation laws across an oblique shock, including why $U_{t1}=U_{t2}$ and why $\tfrac12U_t^2$ cancels in the energy equation (L2-1, ll. 30–45). → [[#3. Conservation laws across the oblique shock|§3]]
 - [ ] Show that the two $\theta=0$ solutions are $\beta=90^\circ$ and $\beta=\mu$ (L2-1, ll. 204–212). → [[#The two ends of every curve (θ = 0)|§6]]
 - [ ] The Mach angle $\mu=\sin^{-1}(1/M)$ from the sound-pulse construction (L2-1, ll. 230–235). → [[#Deriving the Mach angle|§7]]
-- [ ] Solve for $\beta$ *"by using some iterative methods"* (L2-1, l. 192), and check $\theta_{max}(2)=22.97^\circ$ against the chart (ll. 201–204). → [[#8.2 Solving for β numerically|§8.2]] · [[#Maximum deflection and detachment|§6]]
-- [ ] Example 1 by linear interpolation: *"I want you to try this first using a linear interpolation"* (L2-2, ll. 79–80). Target: $M_2=1.259$. → [[#10.1 Example 1: M₁ = 1.8, θ = 15°|§10.1]]
+- [ ] Solve for $\beta$ iteratively (L2-1, l. 192), and check $\theta_{max}(2)=22.97^\circ$ against the chart (ll. 201–204). → [[#8.2 Solving for β numerically|§8.2]] · [[#Maximum deflection and detachment|§6]]
+- [ ] Example 1 by linear interpolation, to be tried first (L2-2, ll. 79–80). Target: $M_2=1.259$. → [[#10.1 Example 1: M₁ = 1.8, θ = 15°|§10.1]]
 - [ ] Explain the weak and strong solutions and which one you normally see, detachment above $\theta_{max}$, and the four sound-source cases (L2-1, ll. 193–232). → [[#Weak and strong solutions|§6]] · [[#7. Mach waves and the Mach angle|§7]]
 - [ ] Explain why the Concorde intake is slanted and has variable ramps (L2-2, ll. 158–194), and walk the points a → e along a bow shock, placing each on the chart (ll. 215–242). → [[#10.2 Example 2: a supersonic intake at M₁ = 3|§10.2(c)]] · [[#10.4 Detachment and the bow shock: every solution on one curve|§10.4]]
 - [ ] Suggested, not lecturer-set: show that $p_{02}/p_{01}$ depends only on $M_{n1}$, and find the single-ramp (22.6°) and two-ramp (0.744) optima at $M_1=3$. → [[#Why p₀₂/p₀₁ depends only on Mₙ₁ (derivation)|§4]] · [[#10.2 Example 2: a supersonic intake at M₁ = 3|§10.2]]
 - [ ] Example Sheet 1, Q1–Q3 and Q5, and Anderson §§9.1, 9.2 and 9.5. → [[SESA3029 Example Sheet 1 - Solutions]]
 - [ ] Blackboard Test 1, due Sunday 11 October; the quiz is released after Lecture 2.3 (L2-2, ll. 243–244).
+
+## Transcript and slide slips
+
+> [!note] Transcript wording
+> Where: [[#Energy]].
+>
+> At L2-1, l. 42, the transcript reads *"stagnation temperature or stagnation entropy is constant"*. The conserved quantity is stagnation enthalpy, $h_0$, or equivalently $T_0$ for a calorically perfect gas. Entropy rises across any shock.
+
+> [!warning] Transcript slip
+> Where: [[#8.1 Chart example: M₁ = 2, θ = 15°]].
+>
+> The lecture reads the weak solution as *"42 or 43"* degrees (L2-1, l. 190). The exact value is $45.3^\circ$, and a careful chart reading agrees. Around $42^\circ$ is the weak solution for $\theta\approx13^\circ$. Treat the lecture number as a quick eyeball, not a result.
+
+> [!warning] Slide slip (corrected live)
+> Where: [[#10.2 Example 2: a supersonic intake at M₁ = 3]].
+>
+> The lecture said and showed $p_{02}/p_{01}=0.762$ for the oblique shock (l. 136), the same number as the normal-shock step. At ll. 153–155 the lecturer corrects it: *"it should be five four"*, i.e. 0.754. The product 0.574 on the slide already uses the corrected value.
+
+> [!note] Transcript wording, ll. 196–199
+> Where: [[#10.3 Weak shocks with subsonic downstream flow]].
+>
+> The two sentences about which side is subsonic contradict each other in the recording. Below the $M_2=1$ locus (smaller $\beta$) the flow behind the shock is supersonic; above it, subsonic.
+
+> [!warning] Transcript slip (l. 234)
+> Where: [[#10.4 Detachment and the bow shock: every solution on one curve]].
+>
+> *"c was where angle is maximum"* should say b. At l. 233 the lecturer has just said b is the maximum, and c is the sonic point.

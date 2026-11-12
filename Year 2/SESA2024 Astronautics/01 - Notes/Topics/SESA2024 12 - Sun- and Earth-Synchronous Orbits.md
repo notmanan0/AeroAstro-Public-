@@ -29,9 +29,9 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_S
 > - **Common mistakes:** putting $a$ in metres into the regression formula; using the sidereal day in $\tau=(M/N)\times86\,400$, where the solar day appears because regression has already been allowed for.
 > - **Practise:** [[#Inclination for 700 to 900 km]] · [[SESA2024 2024-25 Exam Solutions#Section A|2024/25 A6]]
 
-[[SESA2024 11 - Payload and Orbit Selection|The first pass]] ended with two operational requirements: the same illumination on every pass, and the same viewing geometry at regular intervals. This note turns each into a condition on the orbital elements, and then shows that both can be met at once.
+The first pass for a remote-sensing imager ([[SESA2024 11 - Payload and Orbit Selection]]) leaves two operational requirements: the same illumination on every pass, and the same viewing geometry at regular intervals. Each becomes a condition on the orbital elements, and both can be met at once.
 
-The physical picture for the first is a hoop around a ball, and a student holding an inflatable Sun (2025-12-09, ll. 101–175). Carried round the Sun over a year, an unperturbed orbit plane keeps its orientation fixed in space, so at the summer solstice the Sun might be off to one side of the plane and at the equinox square on to it. The Sun angle at the ground track drifts through the year. For constant illumination the plane must instead turn with the Earth's motion round the Sun, completing one turn a year. Something has to supply the torque, and remarkably the Earth's own shape does.
+For illumination, the orbit plane can be treated as a hoop around a ball, carried round the Sun. Over a year an unperturbed orbit plane keeps its orientation fixed in space, so at the summer solstice the Sun might be off to one side of the plane and at the equinox square on to it. The Sun angle at the ground track drifts through the year. For constant illumination the plane must instead turn with the Earth's motion round the Sun, completing one turn a year. The torque is supplied by the Earth's own shape.
 
 ## 1. Sun-synchronism
 
@@ -55,7 +55,7 @@ $$
 \dot\Omega=\frac{360^\circ}{365.25\ \mathrm{days}}=0.9856^\circ\ \text{per day},
 $$
 
-"a little bit under one degree per day" (ll. 201–230).
+a little under one degree per day (ll. 201–230).
 
 ## 2. Nodal regression from the Earth's oblateness
 
@@ -63,18 +63,24 @@ Turning the orbit plane with thrusters would be very expensive, since plane chan
 
 The Earth is not a sphere (ll. 245–300). Its rotation over billions of years has made it slightly oblate: the equatorial radius is about 6378 km and the polar radius about 6357 km, a difference of about 21 km. A perfectly spherical Earth pulls an orbiting spacecraft straight towards its centre. The bulge adds a tiny pull towards the equatorial plane whenever the spacecraft is above or below it, which has a small component normal to the orbit and so produces a torque on the orbit (ll. 300–375).
 
-The orbit, however, carries angular momentum $\mathbf h$, like a spinning bicycle wheel. A torque applied to it does not tip the plane over; it makes $\mathbf h$ precess, exactly as the wheel did in the attitude-control demonstrations ([[SESA2024 06 - Attitude Control#3. Gyroscopic precession and momentum bias|note 06 §3]]). The node, where the orbit crosses the equator, therefore moves a little on each orbit: nodal regression (ll. 376–425).
+The orbit, however, carries angular momentum $\mathbf h$, like a spinning bicycle wheel. A torque applied to it does not tip the plane over; it makes $\mathbf h$ precess, as a spinning wheel does under a torque ([[SESA2024 06 - Attitude Control#3. Gyroscopic precession and momentum bias|note 06 §3]]). The node, where the orbit crosses the equator, therefore moves a little on each orbit: nodal regression (ll. 376–425).
 
-The rate for a circular orbit, quoted on the slides without derivation ("a really complicated analysis", ll. 426–450), is
+The rate for a circular orbit is
 
 $$
 \dot\Omega=-\frac32J_2\sqrt{\mu}\,R_E^2\,a^{-7/2}\cos i,
 $$
 
-with $J_2=1.0826\times10^{-3}$. Converting radians per second to degrees per day, with $a$ in km and $\mu=398\,600.4\ \mathrm{km^3/s^2}$, $R_E=6378.1$ km:
+with $J_2=1.0826\times10^{-3}$ the dimensionless oblateness coefficient (ll. 426–450). The full derivation needs perturbation theory beyond this module and is not examined (outline: [[#Where the regression rate comes from]]). With $a$ in km, $\mu=398\,600.4\ \mathrm{km^3/s^2}$ and $R_E=6378.1$ km, the constant in front of $a^{-7/2}\cos i$ is first evaluated in radians per second:
 
 $$
-\frac32\times1.0826\times10^{-3}\times6378.1^2\times\sqrt{398\,600.4}\times86\,400\times\frac{180}{\pi}=2.0647\times10^{14},
+\frac32J_2R_E^2\sqrt\mu=1.5\times1.0826\times10^{-3}\times6378.1^2\times631.35=4.1707\times10^{7}\ \mathrm{km^{7/2}\,rad/s}.
+$$
+
+Multiply by 86 400 s per day and by $180/\pi$ degrees per radian:
+
+$$
+4.1707\times10^{7}\times86\,400\times\frac{180}{\pi}=2.0647\times10^{14},
 $$
 
 so
@@ -84,6 +90,81 @@ $$
 $$
 
 The constant only works with $a$ in kilometres (2020 Lecture 9, ll. 181–200).
+
+### Where the regression rate comes from
+
+Write the Earth's gravitational potential per unit mass as $U=\mu/r+\mathcal R$, with the force per unit mass equal to $\nabla U$. The bulge contributes the $J_2$ term
+
+$$
+\mathcal R=-\frac{\mu J_2R_E^2}{2r^3}\left(3\sin^2\delta-1\right),
+$$
+
+where $\delta$ is the spacecraft's latitude. Over the equator ($\delta=0$) $\mathcal R$ is positive, an extra pull from the extra mass there; over the poles it is negative.
+
+The latitude follows from the orbital elements. In the spherical triangle formed by the ascending node, the spacecraft and the point on the equator below it, the angle at the node is $i$ and the arc from the node to the spacecraft is the argument of latitude $u=\omega+\theta$, so
+
+$$
+\sin\delta=\sin i\sin u.
+$$
+
+Substitute into $\mathcal R$:
+
+$$
+\mathcal R=-\frac{\mu J_2R_E^2}{2r^3}\left(3\sin^2i\,\sin^2u-1\right).
+$$
+
+The node moves by a tiny amount per orbit, so only the average of $\mathcal R$ over one orbit matters. On a circular orbit $r=a$ and $u$ grows at a constant rate, so the average of $\sin^2u$ over a revolution is $\tfrac12$:
+
+$$
+\langle\mathcal R\rangle=-\frac{\mu J_2R_E^2}{2a^3}\left(\frac32\sin^2i-1\right).
+$$
+
+Take the minus sign inside the bracket:
+
+$$
+\langle\mathcal R\rangle=\frac{\mu J_2R_E^2}{4a^3}\left(2-3\sin^2i\right).
+$$
+
+Lagrange's planetary equation for the node, taken from perturbation theory (Fortescue, Stark and Swinerd, Ch. 5), is
+
+$$
+\dot\Omega=\frac{1}{na^2\sqrt{1-e^2}\,\sin i}\,\frac{\partial\langle\mathcal R\rangle}{\partial i}.
+$$
+
+Set $e=0$ for the circular orbit:
+
+$$
+\dot\Omega=\frac{1}{na^2\sin i}\,\frac{\partial\langle\mathcal R\rangle}{\partial i}.
+$$
+
+Differentiate the averaged potential with respect to $i$, using $\dfrac{d}{di}\sin^2i=2\sin i\cos i$:
+
+$$
+\frac{\partial\langle\mathcal R\rangle}{\partial i}=\frac{\mu J_2R_E^2}{4a^3}\left(-6\sin i\cos i\right)=-\frac{3\mu J_2R_E^2}{2a^3}\sin i\cos i.
+$$
+
+Substitute; the $\sin i$ cancels:
+
+$$
+\dot\Omega=-\frac{3\mu J_2R_E^2}{2na^5}\cos i.
+$$
+
+The mean motion is $n=\sqrt{\mu/a^3}$, so $\mu/n=\sqrt\mu\,a^{3/2}$:
+
+$$
+\dot\Omega=-\frac32J_2\sqrt\mu\,R_E^2\,a^{3/2}a^{-5}\cos i.
+$$
+
+Collect the powers of $a$:
+
+$$
+\dot\Omega=-\frac32J_2\sqrt\mu\,R_E^2\,a^{-7/2}\cos i,
+$$
+
+the rate above, in radians per second when $\mu$, $R_E$ and $a$ share one length unit. The same expression is often written $\dot\Omega=-\tfrac32nJ_2(R_E/a)^2\cos i$, since $\sqrt\mu\,a^{-7/2}=n/a^2$. The surviving $\cos i$ sets the sign of the regression.
+
+> [!check] An 800 km Sun-synchronous orbit from the radian form
+> At $a=7178$ km, $n=\sqrt{398\,600.4/7178^3}=1.0382\times10^{-3}$ rad/s and $(R_E/a)^2=(6378.1/7178)^2=0.78954$, so $\tfrac32nJ_2(R_E/a)^2=1.5\times1.0382\times10^{-3}\times1.0826\times10^{-3}\times0.78954=1.3311\times10^{-6}$ rad/s. The required rate is $2\pi/(365.25\times86\,400)=1.9910\times10^{-7}$ rad/s, so $\cos i=-1.9910\times10^{-7}/1.3311\times10^{-6}=-0.14958$ and $i=98.60^\circ$. The degrees-per-day constant gives the same: $a^{-7/2}=3.1914\times10^{-14}$, $\cos i=0.9856/(-2.0647\times10^{14}\times3.1914\times10^{-14})=-0.14957$, $i=98.60^\circ$, as in the table in [[#Inclination for 700 to 900 km]].
 
 ### Which inclination
 
@@ -99,13 +180,13 @@ $$
 \cos i=\frac{0.9856}{-2.0647\times10^{14}\,a^{-7/2}}.
 $$
 
-For altitudes of 200–1000 km this gives $96^\circ$ to $99.5^\circ$, and for the first-pass 700–900 km about $98^\circ$ to $99^\circ$ (ll. 526–600). That inclination still covers almost the whole globe, which Dr Ryan called "a beautiful natural trick" (l. 598).
+For altitudes of 200–1000 km this gives $96^\circ$ to $99.5^\circ$, and for the first-pass 700–900 km about $98^\circ$ to $99^\circ$ (ll. 526–600). That inclination still covers almost the whole globe, so a Sun-synchronous orbit gives near-global coverage as a bonus (l. 598).
 
 ![[ast_sso_inclination.png|700]]
 
 ## 3. Earth-synchronism
 
-An Earth-synchronous orbit's ground track repeats precisely after a certain number of orbits $N$ in a certain number of days $M$ (ll. 626–700). Once the track repeats, the spacecraft returns over any target, a fire in California or a single ground station, with the same geometry every $M$ days. Dr Ryan's analogy is the old game Snake: the track grows longer orbit by orbit until the snake eats its own tail (2025-12-09, ll. 776–800).
+An Earth-synchronous orbit's ground track repeats precisely after a certain number of orbits $N$ in a certain number of days $M$ (ll. 626–700). Once the track repeats, the spacecraft returns over any target, a fire in California or a single ground station, with the same geometry every $M$ days. The track grows orbit by orbit until it meets its own start (2025-12-09, ll. 776–800).
 
 Define the longitude displacement $\Delta\lambda$ between successive equator crossings. The condition is that $N$ displacements add up to exactly $M$ full turns:
 
@@ -113,10 +194,7 @@ $$
 N\,\Delta\lambda=M\times360^\circ.
 $$
 
-The slides' examples (ll. 726–826): a track at $63^\circ$ inclination repeating after 77 orbits in 5 days, and one at about $70^\circ$ repeating after 15 orbits in 1 day, both Earth-synchronous but not Sun-synchronous; and one at $96^\circ$ repeating after 14 orbits in 1 day, which is both.
-
-> [!warning] Transcript slip (2025-12-09, l. 775)
-> Southampton is put at "53 or something" degrees latitude. It is at about $50.9^\circ$ N.
+Examples (slides, ll. 726–826) include a track at $63^\circ$ inclination repeating after 77 orbits in 5 days, and one at about $70^\circ$ repeating after 15 orbits in 1 day, both Earth-synchronous but not Sun-synchronous; and one at $96^\circ$ repeating after 14 orbits in 1 day, which is both.
 
 ## 4. Both at once
 
@@ -153,22 +231,26 @@ $$
 Insert the numbers:
 
 $$
-\frac{1}{1/86\,164.1-1/31\,557\,600}=86\,400.0\ \mathrm s.
+\frac{1}{86\,164.1}-\frac{1}{31\,557\,600}=1.160575\times10^{-5}-0.003169\times10^{-5}=1.157407\times10^{-5}\ \mathrm{s^{-1}},
+$$
+
+$$
+\frac{1}{1.157407\times10^{-5}}=86\,400.0\ \mathrm s.
 $$
 
 $$
 \boxed{\tau=\frac MN\times86\,400\ \mathrm s}
 $$
 
-This is just the mean solar day, and it makes sense: a Sun-synchronous plane keeps pace with the Sun, so relative to it the Earth turns once per solar day, not per sidereal day. "Does anyone know what 86,400 seconds is? ... A day" (2025-12-11, ll. 120–126). The slides remember the symbols as $m$ for days and $n$ for orbits.
+This is the mean solar day: a Sun-synchronous plane keeps pace with the Sun, so relative to it the Earth turns once per solar day, not per sidereal day (2025-12-11, ll. 120–126). The number of days and orbits are $m$ and $n$ in the slides ($M$ and $N$ here).
 
-With $\tau$ known, Kepler's third law gives $a$, and the regression condition gives $i$. Because $N$ and $M$ must be integers, only a discrete set of orbits is both Sun- and Earth-synchronous, as the next note shows.
+With $\tau$ known, Kepler's third law gives $a$, and the regression condition gives $i$. Because $N$ and $M$ must be integers, only a discrete set of orbits is both Sun- and Earth-synchronous (see [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]]).
 
 ![[ast_repeat_groundtrack_solutions.png|700]]
 
 ## Worked examples
 
-All values recomputed in Python with $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$ and the regression constant $2.0647\times10^{14}$.
+Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$ and the regression constant $2.0647\times10^{14}$.
 
 ### Inclination for 700 to 900 km
 
@@ -178,29 +260,38 @@ All values recomputed in Python with $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/
 | 800 km | 7178 | 98.60° |
 | 900 km | 7278 | 99.03° |
 
-So 700–900 km means $98^\circ$–$99^\circ$, as read off the chart in the lecture (2025-12-09, ll. 526–600).
+So 700–900 km means $98^\circ$–$99^\circ$, as read off the chart.
 
 ### Sixteen orbits a day (2024/25 A6)
 
 A Sun-synchronous orbit repeating after 16 orbits in 1 day has
 
 $$
-\tau=\frac{1}{16}\times86\,400=5400\ \mathrm s,
-\qquad
-a=\left[398\,600\left(\frac{5400}{2\pi}\right)^2\right]^{1/3}=6652.6\ \mathrm{km},
+\tau=\frac{1}{16}\times86\,400=5400\ \mathrm s.
 $$
 
-an altitude of 274.6 km, and
+Kepler's third law, inverted:
 
 $$
-\cos i=\frac{0.9856}{-2.0647\times10^{14}\times6652.6^{-3.5}}
-\quad\Longrightarrow\quad
-i=96.58^\circ.
+a=\left[398\,600\left(\frac{5400}{2\pi}\right)^2\right]^{1/3}=\left[398\,600\times859.4^2\right]^{1/3}=\left(2.944\times10^{11}\right)^{1/3}=6652.6\ \mathrm{km},
 $$
+
+an altitude of $6652.6-6378=274.6$ km. For the inclination, $a^{-3.5}=6652.6^{-3.5}=4.164\times10^{-14}$, so
+
+$$
+\cos i=\frac{0.9856}{-2.0647\times10^{14}\times4.164\times10^{-14}}=\frac{0.9856}{-8.598}=-0.1146,
+$$
+
+$$
+i=\cos^{-1}(-0.1146)=96.58^\circ.
+$$
+
+> [!check] Check against the curve
+> At 274.6 km the Sun-synchronous curve gives just under $96.6^\circ$, and the inclination falls towards $96^\circ$ as the altitude falls, so the answer sits where it should. The orbit is too low for a long mission, since drag at 275 km would need near-continuous make-up.
 
 ### Fourteen orbits a day
 
-The slide example with $M=1$, $N=14$ (2025-12-11, ll. 401–420): $\tau=6171.4$ s, $a=7271.9$ km, altitude 893.9 km, $i=99.01^\circ$. The slide table lists 888.3 km and $98.98^\circ$; the difference of about 6 km presumably comes from different constants or a $J_2$-corrected period in the table, and is not explained in the lecture.
+For the slide example with $M=1$, $N=14$ (2025-12-11, ll. 401–420): $\tau=86\,400/14=6171.4$ s, $a=7271.9$ km, altitude 893.9 km, $a^{-3.5}=3.049\times10^{-14}$, $\cos i=-0.1565$ and $i=99.01^\circ$.
 
 ## Links
 
@@ -214,6 +305,7 @@ The slide example with $M=1$, $N=14$ (2025-12-11, ll. 401–420): $\tau=6171.4$ 
 
 - `Chapter 11_Sun and Earth synchronous orbits_V1.pdf` (Dr C. Ryan, after Prof H. Lewis) with transcripts `SESA2024 Lecture 2025-12-09.txt` and `SESA2024 Lecture 2025-12-11.txt`, ll. 1–130
 - Fortescue, Stark and Swinerd, *Spacecraft Systems Engineering*, Ch. 5 (perturbations and Sun-synchronous orbits)
+- Figures: `generate_ast_ch12_sso_figures.py` (`ast_sso_inclination`, `ast_repeat_groundtrack_solutions`; regenerated in the shared style on 5 Nov 2026, with the $(98,7)=(14,1)$ point marked). Numbers recomputed in Python.
 
 ## Self-study tasks
 
@@ -222,10 +314,22 @@ The slide example with $M=1$, $N=14$ (2025-12-11, ll. 401–420): $\tau=6171.4$ 
 - [ ] Explain, with the Earth–Sun geometry, why a Sun-synchronous plane must turn at 0.9856° per day (2025-12-09, ll. 76–230). → [[#1. Sun-synchronism]]
 - [ ] Explain how the Earth's oblateness makes the node regress, and why the inclination must exceed 90° (ll. 245–525). → [[#2. Nodal regression from the Earth's oblateness]] · [[#Which inclination]]
 - [ ] Derive $\tau=(M/N)\times86\,400$ s for a simultaneously Sun- and Earth-synchronous orbit (2025-12-11, ll. 26–125). → [[#4. Both at once]]
-- [ ] 2024/25 A6: altitude and inclination for 16 orbits per day. Targets 274.6 km and 96.59°. → [[#Sixteen orbits a day (2024/25 A6)]] · [[SESA2024 2024-25 Exam Solutions#Section A|solution]]
+- [ ] 2024/25 A6: altitude and inclination for 16 orbits per day. Targets 274.6 km and 96.58°. → [[#Sixteen orbits a day (2024/25 A6)]] · [[SESA2024 2024-25 Exam Solutions#Section A|solution]]
 
 ### Further practice
 
 - [ ] Watch the MIT bicycle-wheel precession video and the Sun- and Earth-synchronous orbit videos on Blackboard (2025-12-09, ll. 600–625).
 - [ ] Find the Sun-synchronous inclination at 700, 800 and 900 km. → [[#Inclination for 700 to 900 km]]
 - [ ] Check that $1/(1/T_{sid}-1/T_{yr})=86\,400$ s and explain why the solar day appears. → [[#4. Both at once]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (2025-12-09, l. 775)
+> Where: [[#3. Earth-synchronism]].
+>
+> Southampton is put at "53 or something" degrees latitude. It is at about $50.9^\circ$ N.
+
+> [!warning] Slide table difference
+> Where: [[#Fourteen orbits a day]].
+>
+> The slide table lists 888.3 km and $98.98^\circ$ for $M=1$, $N=14$, against 893.9 km and $99.01^\circ$ here. The difference of about 6 km presumably comes from different constants or a $J_2$-corrected period in the table.

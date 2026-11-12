@@ -24,7 +24,7 @@ sources: ["Own APDL scripts (generalised)", "ANSYS Element Reference: PLANE182, 
 # SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)
 
 > [!abstract] Summary
-> Lab 2 models a thin aluminium plate with a circular hole in tension, the classic stress-concentration problem standing in for a window in a fuselage panel or a hole in a wing rib. It is meshed in plane stress with thickness (PLANE182, `KEYOPT(3)=3`), built from a rectangle minus a circle, loaded by a negative edge pressure, and post-processed for the peak von Mises stress, the stress concentration factor $K_t=\sigma_{max}/\sigma_{bulk}$ and the factor of safety. Repeating it with PLANE183 and refining at the hole gives the convergence study; moving the hole gives the coursework sensitivity study. Units here are mm, N and MPa.
+> The lab 2 model is a thin aluminium plate with a circular hole in tension, the classic stress-concentration problem, standing in for a window in a fuselage panel or a hole in a wing rib. It is meshed in plane stress with thickness (PLANE182, `KEYOPT(3)=3`), built from a rectangle minus a circle, loaded by a negative edge pressure, and post-processed for the peak von Mises stress, the stress concentration factor $K_t=\sigma_{max}/\sigma_{bulk}$ and the factor of safety. Repeating it with PLANE183 and refining at the hole gives the convergence study; moving the hole gives the coursework sensitivity study. Units here are mm, N and MPa.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** setting up lab 2, computing $K_t$ and FoS, or checking an FE peak stress by hand.
@@ -44,7 +44,24 @@ Hand check (centred hole), with hole diameter $d = 160$ mm and plate width $W = 
 - Finite width, net-section value (Heywood's approximation): $K_{t,net}\approx2+(1-d/W)^3 = 2.22$.
 - Gross value: $K_{t,gross} = K_{t,net}/(1-d/W)\approx3.7$.
 
-So expect $\sigma_{max}\approx3.7\times120\approx440$ MPa.
+The two definitions differ only in the reference stress. The hole removes a width $d$ from the load path, so the average stress across the net section is
+
+$$
+\sigma_{net}=\sigma\frac{W}{W-d}=\frac{120}{1-0.4}=200\ \mathrm{MPa},
+$$
+
+and the peak is
+
+$$
+\sigma_{max}=K_{t,net}\,\sigma_{net}=\left[2+(1-0.4)^3\right]\times200=2.216\times200=443\ \mathrm{MPa},
+$$
+
+which is the same as $K_{t,gross}\sigma=3.693\times120$. So $\sigma_{max}\approx440$ MPa is the expected peak.
+
+![[dam_plate_hole_kt.png|820]]
+
+> [!check] Factor of safety before running anything
+> With the 460 MPa yield strength of the lab material, the hand check predicts $FoS=460/443=1.04$: the centred-hole plate at 120 MPa is just below yield, so moving the hole towards an edge, which raises $K_t$, will make it yield, which is the point of the coursework sensitivity study. In the limit of a small hole, $d/W\to0$, both curves return to Kirsch's 3.
 
 ## 2. Script
 ```apdl
@@ -132,14 +149,14 @@ Loop over `h_hole` (e.g. 8, 4, 2, 1, 0.5 mm) and both element types. Log `s_max`
 >
 > This gives 4× fewer DOF and no rigid-body modes. Symmetry BCs are exactly the "no over-constraint" support.
 
-## What the lab 2 video does
+## Demonstration plate and results
 
-The video's plate (ll. 1–170) is 1 m by 0.4 m, 0.01 m thick, aluminium with $E=70$ GPa, $\nu=0.33$ and yield strength 460 MPa, with a hole of radius 0.08 m centred at (0.5, 0.21), slightly above centre, in SI units. PLANE182 is set to plane stress with thickness and the thickness given as a real constant. A free mesh with element size 0.02 m (961 elements) triggers a warning that triangles may be too stiff in bending, harmless here because nothing bends. The left edge is fixed in all DOF (the simple, slightly over-constrained version; see section 3) and $-1\times10^8$ Pa pressure on the right edge pulls with 100 MPa.
+The demonstration plate (video, ll. 1–170) is 1 m by 0.4 m, 0.01 m thick, aluminium with $E=70$ GPa, $\nu=0.33$ and yield strength 460 MPa, with a hole of radius 0.08 m centred at (0.5, 0.21), slightly above centre, in SI units. PLANE182 is set to plane stress with thickness and the thickness given as a real constant. A free mesh with element size 0.02 m (961 elements) triggers a warning that triangles may be too stiff in bending, harmless here because nothing bends. The left edge is fixed in all DOF (the simple, slightly over-constrained version; see section 3) and $-1\times10^8$ Pa pressure on the right edge pulls with 100 MPa.
 
-The element solution gives a maximum $\sigma_x$ of 377 MPa at the top of the hole. The nodal von Mises maximum is 359 MPa, the element value 360 MPa: nodal solutions are averaged and continuous, element solutions are extrapolated from the integration points and jump between elements. That 377 MPa agrees with the finite-width hand check of section 1, $K_{t,gross}\approx3.7$ times 100 MPa, so the coarse mesh is already close. A path from (0.5, 0.29) at the top of the hole to (0.5, 0.4) at the plate edge, 100 divisions, maps $\sigma_x$ along the ligament for plotting or export to Excel; sorted nodal listings give the extremes. Global refinement takes the mesh to 3842 elements, and local refinement at the hole uses the nodes attached to the hole's lines. In the video's convergence study, a 20 mm element gives about 97 % of the largest peak found and 10 mm about 99.6 %, a trade against computing cost. The coursework then moves the hole towards the edge until the plate yields.
+The element solution gives a maximum $\sigma_x$ of 377 MPa at the top of the hole. The nodal von Mises maximum is 359 MPa, the element value 360 MPa: nodal solutions are averaged and continuous, element solutions are extrapolated from the integration points and jump between elements. That 377 MPa agrees with the finite-width hand check of section 1, $K_{t,gross}=3.69$ times 100 MPa $=369$ MPa, to 2 %, the difference consistent with the hole sitting 10 mm above centre (a slightly thinner upper ligament), so the coarse mesh is already close. A path from (0.5, 0.29) at the top of the hole to (0.5, 0.4) at the plate edge, 100 divisions, maps $\sigma_x$ along the ligament for plotting or export to Excel; sorted nodal listings give the extremes. Global refinement takes the mesh to 3842 elements, and local refinement at the hole uses the nodes attached to the hole's lines. In the convergence study, a 20 mm element gives about 97 % of the largest peak found and 10 mm about 99.6 %, a trade against computing cost. The coursework then moves the hole towards the edge until the plate yields.
 
-> [!warning] Coursework correction (2026-02-20 09:59, ll. 386–400)
-> The coursework load is 120 MPa, and the bulk stress for $K_t$ is therefore 120 MPa, as force equilibrium and the nodal stress on the loaded edge confirm. An earlier value of 83 MPa, read at the lower boundary, was wrong.
+> [!warning] Bulk stress for the coursework (2026-02-20 09:59, ll. 386–400)
+> The coursework load is 120 MPa, and the bulk stress for $K_t$ is therefore 120 MPa, as force equilibrium and the nodal stress on the loaded edge confirm.
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)]] · Next: [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]]
@@ -148,6 +165,7 @@ The element solution gives a maximum $\sigma_x$ of 377 MPa at the top of the hol
 ## Sources
 - Own APDL plate scripts, generalised (dimensions and loads made round and illustrative; BC improved to avoid over-constraint)
 - Heywood's finite-width approximation; Pilkey, *Peterson's Stress Concentration Factors*
+- Hand-check numbers recomputed in Python. Figures: `01 - Notes/Figures/generate_dam_c3_figures.py`
 
 ## Self-study tasks
 
@@ -159,3 +177,10 @@ The element solution gives a maximum $\sigma_x$ of 377 MPa at the top of the hol
 ### Further practice
 
 - [ ] Compare the FE peak with the Heywood finite-width estimate for your own plate. → [[#1. Model]]
+
+## Transcript and slide slips
+
+> [!warning] Lecture correction (2026-02-20 09:59, ll. 386–400)
+> Where: [[#Demonstration plate and results]].
+>
+> An earlier bulk-stress value of 83 MPa, read at the lower boundary, was wrong; the corrected value is 120 MPa.

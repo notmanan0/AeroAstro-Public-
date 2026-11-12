@@ -7,38 +7,30 @@ aliases: ["stress element", "stress tensor", "stress components", "complementary
 tags: [feeg1002, concept, statics-2, stress]
 status: complete
 parent_lectures: ["[[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels]]", "[[FEEG1002 B4 - Stress Transformation and Mohr's Circle]]"]
-related_concepts: ["[[Stress Transformation Equations]]", "[[Principal Stresses]]", "[[Generalised Hooke's Law]]"]
-sources: []
+related_concepts: ["[[Stress Transformation Equations]]", "[[Principal Stresses]]", "[[Generalised Hooke's Law]]", "[[Thin-Walled Pressure Vessels]]"]
+sources: ["02 - Sources/Statics 2/Lectures/Lecture 01 - Stress in Multiple Dimensions and Pressure Vessels.pdf"]
 ---
 
 # Stress Tensor and Stress Element
 
-## Definition
+A stress element is a small square (2D) or cube (3D) of material, with faces normal to chosen axes, on which the stresses at a point are drawn; the set of stress components on it, $\sigma_{xx}$, $\sigma_{yy}$, $\sigma_{zz}$, $\sigma_{xy}$, $\sigma_{xz}$ and $\sigma_{yz}$, is the stress tensor for those axes.
 
-> [!note] Definition
-> The state of stress at a point is fully described by the stresses on three mutually perpendicular faces of a small element: $\sigma_{ij}$ is the stress in direction $j$ on a face with normal $i$. Moment equilibrium makes the tensor **symmetric** ($\sigma_{xy} = \sigma_{yx}$), so 3D has **six** independent components:
->
-> $$\boldsymbol\sigma = \begin{bmatrix}\sigma_{xx} & \sigma_{xy} & \sigma_{xz}\\ \sigma_{xy} & \sigma_{yy} & \sigma_{yz}\\ \sigma_{xz} & \sigma_{yz} & \sigma_{zz}\end{bmatrix}$$
+In the FEEG1002 notation the first index gives the direction of the stress and the second the normal of the face it acts on, so $\sigma_{xx}$ is a normal stress on the $x$-face and $\sigma_{yx}$ a shear stress acting in $y$ on the $x$-face. Normal stresses are positive in tension. A shear stress is positive when it points in $+x$ or $+y$ on a face whose outward normal is $+x$ or $+y$, which means reading signs from the right-hand and top faces; on the left and bottom faces a positive shear stress points the other way.
 
-## Explanation
+Force equilibrium makes the stresses on opposite faces equal and opposite when the stress is uniform. Moment equilibrium about the centre of the element makes the shear stresses on perpendicular faces equal, $\sigma_{xy}=\sigma_{yx}$ (complementary shear), so in 3D only six components are independent and the tensor is symmetric:
 
-- **Signs**:
-  - normal stress: tension positive;
-  - shear stress: positive when it points in $+x$ or $+y$ on a face with a positive outward normal.
-- **One state, many descriptions**: rotating the element changes the components, not the physical state ([[Stress Transformation Equations]]). Invariants such as $\sigma_{xx}+\sigma_{yy}+\sigma_{zz}$ do not change.
-- **Plane stress**: only $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$ are non-zero. This suits thin plates, shells and free surfaces.
-- **Equilibrium with gradients**: $\partial\sigma_{xx}/\partial x + \partial\sigma_{xy}/\partial y = 0$, and similarly for $y$. This underlies the beam shear-stress formula.
+$$
+\boldsymbol\sigma=\begin{bmatrix}\sigma_{xx}&\sigma_{xy}&\sigma_{xz}\\ \sigma_{xy}&\sigma_{yy}&\sigma_{yz}\\ \sigma_{xz}&\sigma_{yz}&\sigma_{zz}\end{bmatrix}
+$$
 
-## Examples
+When the stress varies with position, equilibrium becomes a balance of gradients, $\partial\sigma_{xx}/\partial x+\partial\sigma_{xy}/\partial y=0$ without body forces, which is the mechanism behind shear stress in beams.
 
-![[s2_stress_element_notation.png|760]]
+A point has one physical state of stress but a different set of components for every orientation of the element. Rotating the element changes the numbers according to the [[Stress Transformation Equations]], while quantities such as $\sigma_{xx}+\sigma_{yy}$ and the [[Principal Stresses]] do not change. In plane stress, which covers thin plates, thin-walled vessels and free surfaces, only $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$ are non-zero.
+
+![[s2_stress_element_notation.png|800]]
 
 ## Related
 
-- Topic notes: [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels]] · [[FEEG1002 B4 - Stress Transformation and Mohr's Circle]]
-- Concepts: [[Stress Transformation Equations]] · [[Principal Stresses]] · [[Generalised Hooke's Law]]
-- Year 2: Cylindrical-coordinate stresses $\sigma_r, \sigma_\theta, \sigma_z$ in [[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates]] · Cauchy stress in [[Navier-Stokes Equations]] (fluid stress is also a symmetric tensor)
-
-## Sources
-
-- Statics 2 Lecture 1b
+- [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels#2. The stress element|stress element and notation]] · [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels#Moment balance and complementary shear|complementary shear]] · [[FEEG1002 B4 - Stress Transformation and Mohr's Circle|transformation in B4]]
+- [[Stress Transformation Equations]] · [[Principal Stresses]] · [[Generalised Hooke's Law]] · [[Thin-Walled Pressure Vessels]]
+- Year 2: stresses in cylindrical coordinates in [[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates]]

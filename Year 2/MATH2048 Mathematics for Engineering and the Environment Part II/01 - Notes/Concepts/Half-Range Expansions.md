@@ -17,7 +17,7 @@ A **half-range expansion** is a Fourier series for a function known only on $0\l
 
 All three represent $f$ on $(0,L)$ and differ outside it and at its ends. If $f$ is continuous its even extension is continuous too, so the cosine series converges fastest; the odd extension jumps at $x=L$ unless $f(L)=0$.
 
-In a PDE the boundary conditions choose the extension. A zero value at both ends (Dirichlet) gives sine eigenfunctions, so the initial data are expanded as a sine series, and a zero slope (Neumann) gives a cosine series. The recorded lecture states this pairing the wrong way round (L6, ll. 197–202), as flagged in FS2.
+In a PDE the boundary conditions choose the extension. A zero value at both ends (Dirichlet) gives sine eigenfunctions, so the initial data are expanded as a sine series, and a zero slope (Neumann) gives a cosine series. Mixing the two up is an easy slip (L6, ll. 197–202 has them reversed; flagged in FS2).
 
 For $f=x$ on $[0,\pi]$ the three expansions are $\frac\pi2-\sum\frac{\sin2nx}n$ (periodic), $\frac\pi2-\frac4\pi\sum_{\text{odd}}\frac{\cos nx}{n^2}$ (even) and $\sum\frac{2(-1)^{n+1}}n\sin nx$ (odd). PS3 Q2's cosine series of $x$ on $[0,1]$ is $\frac12-\frac4{\pi^2}\sum_{\text{odd}}\frac{\cos n\pi x}{n^2}$.
 

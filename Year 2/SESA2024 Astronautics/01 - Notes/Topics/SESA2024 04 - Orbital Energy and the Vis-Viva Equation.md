@@ -20,7 +20,7 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Orb
 # SESA2024 04 - Orbital Energy and the Vis-Viva Equation
 
 > [!abstract] Summary
-> Gravity is a conservative force, so the specific orbital energy $\varepsilon=V^2/2-\mu/r$ is the same at every point of an orbit. Evaluating it at periapsis and apoapsis, where $r_pV_p=r_aV_a$, gives $\varepsilon=-\mu/2a$, which leads to the orbital energy (vis-viva) equation $V^2/2-\mu/r=-\mu/2a$. It gives the speed anywhere on any conic from $r$ and $a$ alone, and every ΔV calculation in the module starts from it.
+> Gravity is a conservative force, so the specific orbital energy $\varepsilon=V^2/2-\mu/r$ is the same at every point of an orbit. Evaluating it at periapsis and apoapsis, where $r_pV_p=r_aV_a$, gives $\varepsilon=-\mu/2a$, which leads to the orbital energy (vis-viva) equation $V^2/2-\mu/r=-\mu/2a$. It gives the speed anywhere on any conic from $r$ and $a$ alone, and every ΔV calculation starts from it.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** you need the speed at a point on an orbit, $a$ from a measured $(r,V)$, or whether an object is bound, escaping or will hit the Earth.
@@ -29,26 +29,23 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Orb
 > - **Common mistakes:** using altitude for $r$; forgetting that $a<0$ for a hyperbola, so $-\mu/2a>0$.
 > - **Practise:** [[#The 200 km circle and the 200 by 40 000 km ellipse]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q4. Unidentified object with apogee height 1000 km and speed 5.589 km/s|Workbook Q4]]
 
-An orbit is a continuous exchange between kinetic and potential energy. A spacecraft climbing from periapsis towards apoapsis slows down, trading speed for height; on the way back down it speeds up again. Nothing is lost, because gravity is conservative: the work it does between two points does not depend on the path taken (2025-11-27, ll. 67–88). So the total energy is a constant of the orbit, like the angular momentum, and fixing its value turns out to need only the semi-major axis.
+An orbit is a continuous exchange between kinetic and potential energy. A spacecraft climbing from periapsis towards apoapsis slows down, trading speed for height; on the way back down it speeds up again. Nothing is lost, because gravity is conservative: the work it does between two points does not depend on the path taken (2025-11-27, ll. 67–88). So the total energy is a constant of the orbit, like the angular momentum, and its value depends only on the semi-major axis.
 
-Dr Ryan called the result "probably the most important equation that you're going to see" in the orbital mechanics, alongside the rocket equation (ll. 23–30, 265–285). It works the same for circles, ellipses, parabolas and hyperbolas.
+Alongside the rocket equation, the vis-viva equation is the most important equation in orbital mechanics (ll. 23–30, 265–285). It works the same for circles, ellipses, parabolas and hyperbolas.
 
 ## 1. Kinetic and potential energy
 
-Kinetic energy is $\tfrac12mV^2$, with $m$ the mass of the spacecraft. Gravitational potential energy needs a reference, and the natural one is a point infinitely far from the central body, where the gravitational force has vanished (ll. 89–110). The potential energy at radius $r$ is the work done by gravity in bringing the spacecraft in from infinity, which is negative:
+Kinetic energy is $\tfrac12mV^2$, with $m$ the mass of the spacecraft. Gravitational potential energy needs a reference, and the natural one is a point infinitely far from the central body, where the gravitational force has vanished (ll. 89–110). The potential energy at radius $r$ is the work done against gravity in bringing the spacecraft in from infinity, which is negative:
 
 $$
-PE=-\int_\infty^r\frac{\mu m}{r'^2}\,dr'.
+PE=\int_\infty^r\frac{\mu m}{r'^2}\,dr'.
 $$
 
 Integrate:
 
 $$
-PE=-\mu m\left[-\frac1{r'}\right]_\infty^r=-\frac{\mu m}{r}.
+PE=\mu m\left[-\frac1{r'}\right]_\infty^r=-\frac{\mu m}{r}.
 $$
-
-> [!warning] Transcript slip (2025-11-27, ll. 105–110)
-> The force is described as "mu ... times by m, the mass of the earth". In $\mu m/r^2$ the $m$ is the spacecraft's mass; the Earth's mass is already inside $\mu=GM$.
 
 Energy conservation then says $KE+PE$ is constant. Divide by $m$ to work per unit mass and call the constant $\varepsilon$, the specific orbital energy (ll. 111–150):
 
@@ -56,11 +53,13 @@ $$
 \frac{V^2}{2}-\frac{\mu}{r}=\varepsilon.
 $$
 
-The potential term is negative everywhere, so a spacecraft can have negative total energy, and it does whenever it is bound.
+The potential term is negative everywhere, so a spacecraft can have negative total energy, and it does whenever it is bound. Round the 200 by 40 000 km orbit of the worked example below, the kinetic term falls from $53.07$ to $1.07\ \mathrm{km^2/s^2}$ between perigee and apogee while the potential term rises from $-60.60$ to $-8.59\ \mathrm{km^2/s^2}$, and the sum stays at $-7.53\ \mathrm{km^2/s^2}$ throughout.
+
+![[ast_energy_exchange.png|760]]
 
 ## 2. The value of ε
 
-The lecture said the slide's derivation was hard to follow and did it differently on the board (ll. 199–265); this is his version with every step. Start from angular momentum. At periapsis and apoapsis the velocity is perpendicular to the radius, so $h=r_pV_p=r_aV_a$ and
+The energy equation has two unknown speeds at the apses, and angular momentum supplies the second relation that eliminates them. At periapsis and apoapsis the velocity is perpendicular to the radius, so $h=r_pV_p=r_aV_a$ and
 
 $$
 \frac{V_p}{V_a}=\frac{r_a}{r_p}.
@@ -116,7 +115,7 @@ $$
 \boxed{V=\sqrt{\mu\left(\frac2r-\frac1a\right)}}
 $$
 
-The course calls it the energy equation or orbital energy equation; "vis-viva" is the textbook name. The derivation used an ellipse, but the result holds for every conic: a parabola has $a\to\infty$ and $\varepsilon=0$, a hyperbola has $a<0$ and $\varepsilon>0$ (ll. 285–295).
+This is the energy equation or orbital energy equation; textbooks call it the vis-viva equation. The derivation used an ellipse, but the result holds for every conic: a parabola has $a\to\infty$ and $\varepsilon=0$, a hyperbola has $a<0$ and $\varepsilon>0$ (ll. 285–295).
 
 | Orbit | $a$ | $\varepsilon$ |
 |---|---|---|
@@ -138,9 +137,6 @@ $$
 
 the same result as the force balance in [[SESA2024 02 - Kepler's Laws and the Orbit Equation#7. The circular-orbit special case|note 02 §7]]. A lower orbit is faster: to overtake a spacecraft ahead of you in the same orbit you drop to a lower orbit, go round faster, then climb back (ll. 353–370).
 
-> [!warning] Transcript slip (2025-11-27, l. 309)
-> The ISS is said to take "45 minutes to orbit at 400 kilometres altitude". Its period is about 92 minutes ([[SESA2024 02 - Kepler's Laws and the Orbit Equation#ISS orbits per day|note 02]]); 45 minutes is roughly the time it spends in sunlight or in shadow on each orbit.
-
 Escape speed. Let $a\to\infty$, so $1/a\to0$:
 
 $$
@@ -153,19 +149,36 @@ $$
 V_p^2=\mu\left(\frac{2}{a(1-e)}-\frac1a\right)=\frac{\mu}{a}\cdot\frac{2-(1-e)}{1-e}=\frac{\mu}{a}\cdot\frac{1+e}{1-e}.
 $$
 
-By the same steps with $r_a=a(1+e)$, $V_a^2=(\mu/a)(1-e)/(1+e)$. Their ratio is $(1+e)/(1-e)=r_a/r_p$, as angular momentum requires. In terms of the two radii, using $a=(r_p+r_a)/2$,
+By the same steps with $r_a=a(1+e)$, $V_a^2=(\mu/a)(1-e)/(1+e)$. Their ratio is $(1+e)/(1-e)=r_a/r_p$, as angular momentum requires.
+
+In terms of the two radii, substitute $1/a=2/(r_p+r_a)$ into the energy equation at periapsis:
+
+$$
+V_p^2=\mu\left(\frac{2}{r_p}-\frac{2}{r_p+r_a}\right).
+$$
+
+Put the bracket over a common denominator:
+
+$$
+V_p^2=2\mu\,\frac{(r_p+r_a)-r_p}{r_p(r_p+r_a)}=\frac{2\mu r_a}{r_p(r_p+r_a)}.
+$$
+
+Swapping the roles of $r_p$ and $r_a$ gives the apoapsis speed, so
 
 $$
 V_p=\sqrt{\frac{2\mu r_a}{r_p(r_p+r_a)}},\qquad V_a=\sqrt{\frac{2\mu r_p}{r_a(r_p+r_a)}}.
 $$
 
-These two are the building blocks of the Hohmann transfer in [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer|the next note]].
+> [!check] Limits
+> With $r_a=r_p=r$ both reduce to $\sqrt{2\mu r/(r\cdot2r)}=\sqrt{\mu/r}$, the circular speed. With $r_a\to\infty$, $V_p\to\sqrt{2\mu/r_p}$, the escape speed: an ellipse whose apoapsis recedes to infinity becomes a parabola. At 200 km ($r_p=6578$ km) that limit is 11.01 km/s.
 
-## 4. Which satellite is fastest?
+These two are the building blocks of the Hohmann transfer ([[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]]).
 
-The lecture's poll question (ll. 309–415): at the marked points, which is fastest, a satellite on a high circular orbit A, one on a lower circular orbit B, or one at the low point of an elliptical orbit C whose periapsis is at about the same radius as B?
+## 4. Comparing the speeds of three satellites
 
-A is slower than B because $V_c=\sqrt{\mu/r}$ falls with radius. For C, the radius is about $r_B$, but the semi-major axis looks roughly twice that, $a\approx2r_C$. Then
+Three satellites are compared at the marked points: one on a high circular orbit A, one on a lower circular orbit B, and one at the low point of an elliptical orbit C whose periapsis is at about the same radius as B.
+
+A is slower than B because $V_c=\sqrt{\mu/r}$ falls with radius. For C, the radius is about $r_B$, but the semi-major axis is roughly twice that, $a\approx2r_C$. Then
 
 $$
 V_C^2=\mu\left(\frac{2}{r_C}-\frac{1}{2r_C}\right)=\frac{3\mu}{2r_C},
@@ -183,15 +196,40 @@ $$
 \frac1a=\frac2r-\frac{V^2}{\mu}.
 $$
 
-If the measurement is at an apsis, the other apsis follows from $r_p+r_a=2a$. Workbook Ch5 Q4 is the classic: an object at apogee, 1000 km up ($r_a=7378$ km), moving at 5.589 km/s. Then $1/a=2/7378-5.589^2/398\,600$, so $a=5189$ km and $r_p=2a-r_a=3000$ km. That is inside the Earth, so the object is on a suborbital trajectory: a ballistic missile, not a satellite. 2023/24 B1 does the same for Starship's second test flight at apogee.
+If the measurement is at an apsis, the other apsis follows from $r_p+r_a=2a$. Workbook Ch5 Q4 is a standard case: an object at apogee, 1000 km up, moving at 5.589 km/s. Its radius is $r_a=6378+1000=7378$ km. The two terms are
+
+$$
+\frac{2}{r_a}=\frac{2}{7378}=2.7108\times10^{-4}\ \mathrm{km^{-1}},
+\qquad
+\frac{V^2}{\mu}=\frac{5.589^2}{398\,600}=7.837\times10^{-5}\ \mathrm{km^{-1}}.
+$$
+
+Subtract:
+
+$$
+\frac1a=2.7108\times10^{-4}-0.7837\times10^{-4}=1.9271\times10^{-4}\ \mathrm{km^{-1}},
+\qquad
+a=5189\ \mathrm{km}.
+$$
+
+The other apsis is
+
+$$
+r_p=2a-r_a=2(5189)-7378=3000\ \mathrm{km}.
+$$
+
+That is inside the Earth ($R_E=6378$ km), so the object is on a suborbital trajectory: a ballistic missile, not a satellite. 2023/24 B1 does the same for Starship's second test flight at apogee.
+
+> [!check] Quick test before the algebra
+> The circular speed at 1000 km is $\sqrt{398\,600/7378}=7.35$ km/s. An object at apogee moving slower than the local circular speed has its perigee below it, and at 5.589 km/s, 24 % short, the perigee falls a long way. The same test works on any "satellite or missile?" question.
 
 ## Worked examples
 
-Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$. All numbers recomputed in Python.
+Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$.
 
 ### The 200 km circle and the 200 by 40 000 km ellipse
 
-This is the Chapter 5 worked example (`Orbital energy worked example_V1.pdf`, Lecture 10). Find the speed (i) in a circular orbit at 200 km altitude and (ii) at the perigee and apogee of an ellipse with perigee 200 km and apogee 40 000 km.
+The speed is required (i) in a circular orbit at 200 km altitude and (ii) at the perigee and apogee of an ellipse with perigee 200 km and apogee 40 000 km (Chapter 5 worked example, Lecture 10).
 
 For the circle, $r_1=6378+200=6578$ km:
 
@@ -222,11 +260,11 @@ $$
 > [!check] Angular momentum
 > $r_pV_p=6578\times10.302=67\,770$ and $r_aV_a=46\,378\times1.461=67\,770\ \mathrm{km^2/s}$, equal as they must be. The ellipse's specific energy is $-\mu/2a=-7.53\ \mathrm{km^2/s^2}$, and the escape speed at 200 km would be $\sqrt2\times7.784=11.01$ km/s, so the ellipse's 10.30 km/s is bound, as its positive $a$ says.
 
-Going from the circle to the ellipse at perigee needs $10.302-7.784=2.518$ km/s, which is the first burn of the transfer in the next note.
+Going from the circle to the ellipse at perigee needs $10.302-7.784=2.518$ km/s, which is the first burn of the transfer in [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]].
 
 ### A Molniya orbit from Heavens-Above
 
-Activity 1 (ll. 419–600) took the elements of the Molniya-1T satellite from Heavens-Above, which lists perigee and apogee heights of 1516 km and 24 738 km, $e=0.59$, $i=64.4^\circ$ and $\Omega=245^\circ$, and entered them in Prof Lewis's Excel orbit visualiser. The spreadsheet needs $a$, so the heights must first become radii. The lecture used $R_E=6371$ km:
+Heavens-Above lists the Molniya-1T satellite with perigee and apogee heights of 1516 km and 24 738 km, $e=0.59$, $i=64.4^\circ$ and $\Omega=245^\circ$ (Activity 1, ll. 419–600). An orbit visualiser takes $a$ as input, so the heights must first become radii. Use $R_E=6371$ km:
 
 $$
 r_p=6371+1516=7887\ \mathrm{km},\qquad r_a=6371+24\,738=31\,109\ \mathrm{km},
@@ -244,7 +282,7 @@ V_p=\sqrt{398\,600\left(\frac{2}{7887}-\frac{1}{19\,498}\right)}=8.98\ \mathrm{k
 V_a=\sqrt{398\,600\left(\frac{2}{31\,109}-\frac{1}{19\,498}\right)}=2.28\ \mathrm{km/s},
 $$
 
-matching the 8.9 and 2.3 km/s the spreadsheet showed as the satellite was stepped round (ll. 595–600). The period is $2\pi\sqrt{a^3/\mu}=7.53$ h, and most of it is spent slowly near apogee over the northern hemisphere, which is the point of the orbit.
+matching the 8.9 and 2.3 km/s of the orbit visualiser (ll. 595–600). The period is $2\pi\sqrt{a^3/\mu}=7.53$ h, and most of it is spent slowly near apogee over the northern hemisphere, which is what the orbit is designed for.
 
 ## Links
 
@@ -260,6 +298,7 @@ matching the 8.9 and 2.3 km/s the spreadsheet showed as the satellite was steppe
 - `Chapter 5_Orbital energy_V1.pdf` and `Chapter 5_Orbital energy worked example_V1.pdf` (Dr C. Ryan, after Prof H. Lewis)
 - Transcript `SESA2024 Lecture 2025-11-27.txt`
 - Fortescue, Stark and Swinerd, *Spacecraft Systems Engineering*, Ch. 4
+- Figures: `generate_ast_ch4_energy_figures.py` (`ast_visviva_speed`, `ast_energy_exchange`). Every number recomputed in Python.
 
 ## Self-study tasks
 
@@ -267,7 +306,7 @@ matching the 8.9 and 2.3 km/s the spreadsheet showed as the satellite was steppe
 
 - [ ] Show that $\varepsilon=-\mu/2a$ from energy conservation and $r_pV_p=r_aV_a$ (done on the board, 2025-11-27, ll. 199–265; Workbook Ch5 Q2). → [[#2. The value of ε]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q2. Show that the specific energy is -mu over 2a|Workbook solution]]
 - [ ] The worked example: speeds on a 200 km circle and at perigee and apogee of a 200 by 40 000 km ellipse (left for the class, ll. 419–425). Targets 7.784, 10.302 and 1.461 km/s. → [[#The 200 km circle and the 200 by 40 000 km ellipse]]
-- [ ] Which satellite has the greatest speed? (lecture poll, ll. 309–415) → [[#4. Which satellite is fastest?]]
+- [ ] Which satellite has the greatest speed? (lecture poll, ll. 309–415) → [[#4. Comparing the speeds of three satellites]]
 - [ ] Identify an object at 1000 km apogee moving at 5.589 km/s (Workbook Ch5 Q4). → [[#5. Identifying an orbit from one measurement]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q4. Unidentified object with apogee height 1000 km and speed 5.589 km/s|Workbook solution]]
 
 ### Further practice
@@ -276,3 +315,15 @@ matching the 8.9 and 2.3 km/s the spreadsheet showed as the satellite was steppe
 - [ ] Activity 2: use the ΔV spreadsheet to see how a tangential burn changes the orbit, and find the ΔV at which it escapes (ll. 600–645). The spreadsheet is on Blackboard, not in the vault.
 - [ ] Derive $V_p$ and $V_a$ in terms of $a$ and $e$, and the escape speed. → [[#3. Special cases]]
 - [ ] Starship at apogee: find $a$, $e$ and whether perigee is inside the Earth (2023/24 B1). → [[SESA2024 2023-24 Exam Solutions]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (2025-11-27, ll. 105–110)
+> Where: [[#1. Kinetic and potential energy]].
+>
+> The force is described as "mu ... times by m, the mass of the earth". In $\mu m/r^2$ the $m$ is the spacecraft's mass; the Earth's mass is already inside $\mu=GM$.
+
+> [!warning] Transcript slip (2025-11-27, l. 309)
+> Where: [[#3. Special cases]].
+>
+> The ISS is said to take "45 minutes to orbit at 400 kilometres altitude". Its period is about 92 minutes ([[SESA2024 02 - Kepler's Laws and the Orbit Equation#ISS orbits per day|note 02]]); 45 minutes is roughly the time it spends in sunlight or in shadow on each orbit.

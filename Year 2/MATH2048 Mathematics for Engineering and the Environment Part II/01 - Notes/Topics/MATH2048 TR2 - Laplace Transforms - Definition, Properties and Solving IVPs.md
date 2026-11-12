@@ -34,9 +34,9 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 11.txt", "02 - Sources/Lecture
 
 The Laplace transform keeps the useful part of the Fourier transform and drops two inconveniences (L11, ll. 20–42). Fourier transforms carry $j$ everywhere, so every calculation is complex, and they run over all time, $-\infty$ to $\infty$, whereas an initial value problem starts at $x=0$ and has no meaningful past. So the Laplace transform starts its integral at zero, replaces $e^{-j\omega t}$ by the real $e^{-sx}$, and needs no normalisation factor. Both are integral transforms of the form $\int_a^bK(s,x)f(x)\,dx$ with different kernels $K$ (ll. 58–69).
 
-The method is a detour through "frequency space" (ll. 7–15): transform the ODE and its initial conditions, solve the resulting algebra, and transform back. For a constant-coefficient ODE with a simple source, the ODE1–ODE2 methods are quicker. The detour pays when the source is awkward, above all when it switches on or off suddenly or acts in an instant, which is [[MATH2048 TR3 - Heaviside and Delta Functions and the Second Shift Theorem|TR3]] (ll. 16–19).
+The method is a detour through "frequency space" (ll. 7–15): transform the ODE and its initial conditions, solve the resulting algebra, and transform back. For a constant-coefficient ODE with a simple source, the ODE1–ODE2 methods are quicker. The detour pays when the source is awkward, above all when it switches on or off suddenly or acts in an instant ([[MATH2048 TR3 - Heaviside and Delta Functions and the Second Shift Theorem|TR3]], ll. 16–19).
 
-One difference in the bookkeeping is worth noticing (ll. 403–418). Solving an ODE directly, you write the general solution with its arbitrary constants and fix them at the very end. With a Laplace transform the initial conditions go in at the start, the moment you transform a derivative, so there are never any arbitrary constants to fix. The other difference is the way back: there is an inversion integral, but it is a contour integral in the complex plane and not practical, so in practice you invert by recognising entries in a table (ll. 419–426).
+The treatment of constants differs from the direct method (ll. 403–418). Solving an ODE directly gives the general solution with its arbitrary constants, which are fixed at the very end. With a Laplace transform the initial conditions go in at the start, the moment you transform a derivative, so there are never any arbitrary constants to fix. A second difference is the way back: there is an inversion integral, but it is a contour integral in the complex plane and not practical, so in practice the inverse is found by recognising entries in a table (ll. 419–426).
 
 ---
 
@@ -46,7 +46,7 @@ $$
 \tilde f(s)=\mathcal L[f(x)]=\int_0^\infty f(x)\,e^{-sx}\,dx .
 $$
 
-The transformed function is written with a tilde, and $s$, like $\omega$, is called a frequency (ll. 13–14, 37–38). The course uses $\mathcal L$ both for the Laplace transform and for a general linear differential operator, so read it from context (ll. 71–74).
+The transformed function is written with a tilde, and $s$, like $\omega$, is called a frequency (ll. 13–14, 37–38). The symbol $\mathcal L$ is used both for the Laplace transform and for a general linear differential operator, so read it from context (ll. 71–74).
 
 ### The exponential, and when the transform exists
 
@@ -61,6 +61,8 @@ The lower limit gives $\frac1{s-a}$. At the upper limit, $e^{-(s-a)x}\to0$ only 
 $$
 \mathcal L[e^{ax}]=\frac1{s-a},\qquad s>a .
 $$
+
+![[m2048_tr_laplace_existence.png|760]]
 
 In general the transform exists for a given $s$ when $f(x)e^{-sx}\to0$ as $x\to\infty$, that is, when $f$ grows no faster than some exponential that $e^{-sx}$ can beat (ll. 154–165). Unlike the Fourier transform, it only exists for some frequencies, so it is less general, but its real exponential kernel decays, so far more functions have one: constants, polynomials and growing exponentials all do.
 
@@ -88,11 +90,33 @@ $$
 \mathcal L[\sin ax]=\frac{a}{s^2+a^2},\qquad s>0 .
 $$
 
-The same steps give $\mathcal L[\cos ax]=\frac{s}{s^2+a^2}$, which the lecturer recommended doing as an exercise (ll. 226–229).
+The same steps give $\mathcal L[\cos ax]$ (ll. 226–229). First, integrating the exponential:
+
+$$
+\int_0^\infty\cos ax\,e^{-sx}\,dx=\left[-\frac{\cos ax\,e^{-sx}}{s}\right]_0^\infty-\frac as\int_0^\infty\sin ax\,e^{-sx}\,dx .
+$$
+
+This time the bracket is not zero at the lower limit, because $\cos0=1$: it gives $0-\big(-\frac1s\big)=\frac1s$. Second:
+
+$$
+-\frac as\int_0^\infty\sin ax\,e^{-sx}\,dx=-\frac as\left(\left[-\frac{\sin ax\,e^{-sx}}{s}\right]_0^\infty+\frac as\int_0^\infty\cos ax\,e^{-sx}\,dx\right)=-\frac{a^2}{s^2}\mathcal L[\cos ax].
+$$
+
+Collect the reappearing integral:
+
+$$
+\Big(1+\frac{a^2}{s^2}\Big)\mathcal L[\cos ax]=\frac1s
+$$
+
+$$
+\mathcal L[\cos ax]=\frac{s}{s^2+a^2},\qquad s>0 .
+$$
+
+The derivative rule below gives a quicker check: $\cos ax=\frac1a\frac{d}{dx}\sin ax$, so $\mathcal L[\cos ax]=\frac1a\big(s\frac{a}{s^2+a^2}-\sin0\big)=\frac{s}{s^2+a^2}$.
 
 ## 2. Properties (L11–L12)
 
-The formula sheet on Blackboard lists the standard transforms and the theorems, and the lecturer was emphatic that it is "the first place that you should look", not something to memorise (L11, ll. 229–235; L12, ll. 14–29). The results below are the ones derived in the lectures.
+The formula sheet on Blackboard lists the standard transforms and the theorems, and it is the first place to look, not something to memorise (L11, ll. 229–235; L12, ll. 14–29). The results below are the ones derived in the course.
 
 ### Linearity
 
@@ -138,7 +162,7 @@ $$
 \frac{d\tilde f}{ds}=\int_0^\infty f(x)\frac{\partial}{\partial s}e^{-sx}\,dx=\int_0^\infty f(x)(-x)e^{-sx}\,dx=-\mathcal L[xf(x)].
 $$
 
-So $\mathcal L[xf]=-\frac{d\tilde f}{ds}$, and more generally $\mathcal L[x^nf]=(-1)^n\frac{d^n\tilde f}{ds^n}$. The lecturer first wrote $-s\tilde f$ here before catching that the $x$ from differentiating the exponential can't come out of the integral (ll. 72–81). For example, $\mathcal L[xe^{ax}]=-\frac{d}{ds}\frac1{s-a}=\frac1{(s-a)^2}$.
+So $\mathcal L[xf]=-\frac{d\tilde f}{ds}$, and more generally $\mathcal L[x^nf]=(-1)^n\frac{d^n\tilde f}{ds^n}$. Don't write $-s\tilde f$ here: the $x$ from differentiating the exponential can't come out of the integral (ll. 72–81). For example, $\mathcal L[xe^{ax}]=-\frac{d}{ds}\frac1{s-a}=\frac1{(s-a)^2}$.
 
 Starting from $\mathcal L[1]=\int_0^\infty e^{-sx}\,dx=\frac1s$ (ll. 102–123) and applying the rule repeatedly:
 
@@ -146,7 +170,15 @@ $$
 \mathcal L[x]=-\frac{d}{ds}\frac1s=\frac1{s^2},\qquad\mathcal L[x^2]=-\frac{d}{ds}\frac1{s^2}=\frac2{s^3},\qquad\mathcal L[x^n]=\frac{n!}{s^{n+1}} .
 $$
 
-Combined with the first shift theorem, $\mathcal L[x^ne^{-bx}]=\frac{n!}{(s+b)^{n+1}}$. The practical message for inverting is that anything written as a sum of $\frac1{s^n}$ or $\frac1{(s+b)^n}$ inverts to polynomials, possibly times an exponential (ll. 136–159).
+The general case follows by induction. If $\mathcal L[x^n]=n!/s^{n+1}$, then
+
+$$
+\mathcal L[x^{n+1}]=\mathcal L[x\cdot x^n]=-\frac{d}{ds}\frac{n!}{s^{n+1}}=-n!\cdot\big(-(n+1)\big)s^{-(n+2)}=\frac{(n+1)!}{s^{n+2}},
+$$
+
+which is the same formula with $n+1$ in place of $n$, and the case $n=0$ is $\mathcal L[1]=1/s$.
+
+Combined with the first shift theorem, $\mathcal L[x^ne^{-bx}]=\frac{n!}{(s+b)^{n+1}}$. For inverting, anything written as a sum of $\frac1{s^n}$ or $\frac1{(s+b)^n}$ inverts to polynomials, possibly times an exponential (ll. 136–159).
 
 ### Parameters, and transforming a PDE
 
@@ -154,13 +186,19 @@ If $f$ depends on a parameter $a$ as well as $x$, then $\mathcal L\big[\frac{\pa
 
 ### Integrals
 
-The transform of an integral (ll. 189–217), by parts with the integral differentiated:
+The transform of an integral (ll. 189–217) comes by parts with the integral as the part to differentiate. Let $g(x)=\int_0^xf(u)\,du$, so $g'=f$ and $g(0)=0$, and integrate $e^{-sx}$ to $-e^{-sx}/s$:
+
+$$
+\mathcal L[g]=\int_0^\infty g(x)e^{-sx}\,dx=\Big[-\frac{g(x)e^{-sx}}{s}\Big]_0^\infty+\frac1s\int_0^\infty f(x)e^{-sx}\,dx .
+$$
+
+The boundary term vanishes at both ends, at infinity because of $e^{-sx}$ and at zero because $g(0)=0$:
 
 $$
 \mathcal L\Big[\int_0^xf(u)\,du\Big]=\frac1s\tilde f(s).
 $$
 
-The boundary term vanishes at both ends, at infinity because of $e^{-sx}$ and at zero because the integral from $0$ to $0$ is zero. The lecturer noted it is rarely used, since there are usually easier routes.
+Equivalently, apply the derivative rule to $g$: $\mathcal L[f]=\mathcal L[g']=s\tilde g-g(0)=s\tilde g$. As a check, $\int_0^x\sin u\,du=1-\cos x$ has transform $\frac1s-\frac{s}{s^2+1}=\frac{1}{s(s^2+1)}$, which is $\frac1s\cdot\frac{1}{s^2+1}$. The rule is rarely used, since there are usually easier routes.
 
 > [!check] SymPy
 > `laplace_transform` gives $\frac1{s-a}$, $\frac a{s^2+a^2}$, $\frac s{s^2+a^2}$, $\frac6{s^4}$ for $x^3$, $\frac1{(s-a)^2}$ for $xe^{ax}$, and $\frac1{(s+2)^2+1}$ for $e^{-2x}\sin x$.
@@ -197,10 +235,10 @@ $$
 (s^2+2s+5)\tilde y=3+\frac2s+\frac5{s^2}.
 $$
 
-The lecturer's trick (ll. 235–247) is to write the right-hand side so that the quadratic appears in it:
+The right-hand side can be rewritten so that the quadratic appears in it (ll. 235–247). Split the $3$ as $2+1$ and put the $1$ with the other two terms over $s^2$:
 
 $$
-3+\frac2s+\frac5{s^2}=2+\frac{s^2+2s+5}{s^2},
+3+\frac2s+\frac5{s^2}=2+\Big(1+\frac2s+\frac5{s^2}\Big)=2+\frac{s^2+2s+5}{s^2},
 $$
 
 so that dividing through gives
@@ -224,20 +262,30 @@ $$
 > [!check] Initial conditions
 > $y(0)=0$, and $y'=-e^{-x}\sin2x+2e^{-x}\cos2x+1$ gives $y'(0)=2+1=3$. SymPy's `dsolve` returns $x+e^{-x}\sin2x$.
 
+Each term of $\tilde y$ is one recognisable piece of the motion: the $1/s^2$ term is the part that follows the ramp source, and the shifted-sine term is a transient that the damping removes within a few units of $x$.
+
+![[m2048_tr_polynomial_source_ivp.png|760]]
+
 ### Partial fractions, the systematic route (L12)
 
 Spotting the right rearrangement is trial and error; partial fractions is the systematic version (ll. 305–334). Any $\tilde y$ that is a ratio of polynomials can be split into a sum of simple fractions, one for each factor of the denominator: $\frac{A}{s+a}$ for a linear factor, $\frac{A_1}{s+a}+\dots+\frac{A_n}{(s+a)^n}$ for a repeated one, and $\frac{Bs+C}{(s+a)^2+b^2}$ for an irreducible quadratic. Each then inverts from the table, to an exponential, to $x^{n-1}e^{-ax}$, or to $e^{-ax}\cos bx$ and $e^{-ax}\sin bx$.
 
-The lecture's example (ll. 338–419) is $y''+3y'+2y=x+e^{-x}$ with $y(0)=y'(0)=0$. Transform, with zero initial data:
+The worked example (ll. 338–419) is $y''+3y'+2y=x+e^{-x}$ with $y(0)=y'(0)=0$. Transform, with zero initial data:
 
 $$
 (s^2+3s+2)\tilde y=\frac1{s^2}+\frac1{s+1}.
 $$
 
-Factorise the quadratic, as the lecturer advised doing whenever possible, and divide:
+Factorise the quadratic, $s^2+3s+2=(s+1)(s+2)$, and divide:
 
 $$
-\tilde y=\frac{1}{s^2(s+1)(s+2)}+\frac{1}{(s+1)^2(s+2)}=\frac{s^2+s+1}{s^2(s+1)^2(s+2)}.
+\tilde y=\frac{1}{s^2(s+1)(s+2)}+\frac{1}{(s+1)^2(s+2)}.
+$$
+
+The common denominator is $s^2(s+1)^2(s+2)$; the first fraction needs an extra $(s+1)$ and the second an extra $s^2$:
+
+$$
+\tilde y=\frac{(s+1)+s^2}{s^2(s+1)^2(s+2)}=\frac{s^2+s+1}{s^2(s+1)^2(s+2)}.
 $$
 
 Write
@@ -252,7 +300,23 @@ $$
 s^2+s+1=As^2(s+1)^2+Bs^2(s+1)(s+2)+Cs^2(s+2)+Ds(s+1)^2(s+2)+E(s+1)^2(s+2).
 $$
 
-This holds for every $s$, so choose values that kill most terms (ll. 387–402). At $s=0$: $1=2E$, so $E=\frac12$. At $s=-1$: $1=C\cdot1\cdot1$, so $C=1$. At $s=-2$: $3=4A$, so $A=\frac34$. The remaining two need two more equations, from two more values of $s$ or by comparing powers (ll. 403–410). Comparing the $s^4$ terms gives $A+B+D=0$, and $s=1$ gives $3=4A+6B+3C+12D+12E$, that is $6B+12D=-9$; together these give $B=0$ and $D=-\frac34$. So
+This holds for every $s$, so choose values that kill most terms (ll. 387–402). At $s=0$: $1=2E$, so $E=\frac12$. At $s=-1$: $1=C\cdot1\cdot1$, so $C=1$. At $s=-2$: $3=4A$, so $A=\frac34$. The remaining two need two more equations, from two more values of $s$ or by comparing powers (ll. 403–410). On the right only the $A$, $B$ and $D$ terms have degree four, each with leading coefficient $1$, and the left has no $s^4$, so comparing $s^4$ terms gives
+
+$$
+A+B+D=0\quad\Longrightarrow\quad B+D=-\tfrac34 .
+$$
+
+At $s=1$ each product is a number: $s^2(s+1)^2=4$, $s^2(s+1)(s+2)=6$, $s^2(s+2)=3$, $s(s+1)^2(s+2)=12$ and $(s+1)^2(s+2)=12$, so
+
+$$
+3=4A+6B+3C+12D+12E=3+6B+3+12D+6,
+$$
+
+$$
+6B+12D=-9 .
+$$
+
+Substitute $B=-\tfrac34-D$: $-\tfrac92-6D+12D=-9$, so $6D=-\tfrac92$, $D=-\tfrac34$ and $B=0$. So
 
 $$
 \tilde y=\frac{3/4}{s+2}+\frac{1}{(s+1)^2}-\frac{3/4}{s}+\frac{1/2}{s^2},
@@ -265,21 +329,51 @@ y=\tfrac34e^{-2x}+xe^{-x}-\tfrac34+\tfrac12x .
 $$
 
 > [!check] SymPy
-> `apart` gives exactly these five coefficients, and `dsolve` on the original ODE returns $\frac x2+xe^{-x}-\frac34+\frac34e^{-2x}$. The lecture stopped after $A$, $C$ and $E$, saying the rest follow the same way.
+> `apart` gives exactly these five coefficients, and `dsolve` on the original ODE returns $\frac x2+xe^{-x}-\frac34+\frac34e^{-2x}$. At $x=0$ this is $\frac34-\frac34=0$, and its derivative $\frac12+e^{-x}-xe^{-x}-\frac32e^{-2x}$ is $\frac12+1-\frac32=0$, matching both initial conditions.
 
-## Transcript slips
+### Inverting from the table (PS5 Q2)
 
-> [!warning] Lectures 11 and 12
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L11, l. 41 | the Fourier normalisation factors multiply to "1 over root 2 pi" | $\frac1{2\pi}$, as said correctly at l. 22 of L10 |
-> | L11, l. 78 | "assuming that f is equal to e to the a s" | $f=e^{ax}$ |
-> | L11, l. 144 | the transform of $e^{ax}$ exists if "S is strictly greater than 0" | $s>a$; l. 147 then says this correctly |
-> | L11, l. 222 | "Laplace transform of sine of AT is equal to A on S squared" | that is the intermediate step $(1+a^2/s^2)\mathcal L[\sin at]=a/s^2$; the result is $a/(s^2+a^2)$ |
-> | L11, ll. 422–424 | the slide says there is no inverse Laplace transform; the lecturer calls this "a lie" | an inverse exists (a complex contour integral) but isn't practical; invert from the table |
-> | L12, ll. 62–80 | $\frac{d\tilde f}{ds}=-s\tilde f$, then corrected | $\frac{d\tilde f}{ds}=-\mathcal L[xf]$ |
-> | L12, l. 233 | "this is 5 on x squared" | $5/s^2$ |
-> | L12, l. 188 | "PDAs" | PDEs |
+PS5 Q2 is pure inversion, and each part shows one move. For (a), $\frac{1}{s(s-3)}=\frac{A}{s}+\frac{B}{s-3}$ with $1=A(s-3)+Bs$; $s=0$ gives $A=-\frac13$ and $s=3$ gives $B=\frac13$, so the inverse is $\frac13(e^{3x}-1)$.
+
+For (b), $\frac{6}{(s+2)^2+9}=2\cdot\frac{3}{(s+2)^2+3^2}$, which is twice $\mathcal L[\sin3x]$ with $s$ shifted by $2$, so the inverse is $2e^{-2x}\sin3x$.
+
+For (c) the quadratic $s^2+2s+5=(s+1)^2+4$ is irreducible, so complete the square and make the numerator match the shift:
+
+$$
+\frac{s+3}{(s+1)^2+4}=\frac{(s+1)+2}{(s+1)^2+2^2}=\frac{s+1}{(s+1)^2+2^2}+\frac{2}{(s+1)^2+2^2}.
+$$
+
+The first is $\mathcal L[\cos2x]$ shifted and the second $\mathcal L[\sin2x]$ shifted, so the inverse is $e^{-x}(\cos2x+\sin2x)$. Writing $s+3$ as $(s+1)+2$ is needed because the numerator has to be expressed in powers of the same shifted variable as the denominator.
+
+For (d), $\frac{1}{s(s+1)(s+2)}=\frac As+\frac B{s+1}+\frac C{s+2}$ with $1=A(s+1)(s+2)+Bs(s+2)+Cs(s+1)$. At $s=0$, $1=2A$; at $s=-1$, $1=-B$; at $s=-2$, $1=2C$. So the inverse is $\frac12-e^{-x}+\frac12e^{-2x}$. SymPy's `inverse_laplace_transform` returns all four answers (for (c) in the equivalent form $\sqrt2e^{-x}\sin(2x+\frac\pi4)$).
+
+### A repeated root with a resonant source (PS5 Q3d)
+
+Solve $y''+2y'+y=4e^{-x}$ with $y(0)=2$, $y'(0)=-1$. The source $e^{-x}$ clashes twice with the complementary function, which by ODE2 would need the guess $Cx^2e^{-x}$; the Laplace route needs no special handling. Transform:
+
+$$
+\big(s^2\tilde y-2s+1\big)+2\big(s\tilde y-2\big)+\tilde y=\frac{4}{s+1}.
+$$
+
+Collect, with $s^2+2s+1=(s+1)^2$:
+
+$$
+(s+1)^2\tilde y=2s+3+\frac{4}{s+1}.
+$$
+
+Write $2s+3=2(s+1)+1$ so that the numerator is in powers of $s+1$, then divide:
+
+$$
+\tilde y=\frac{2}{s+1}+\frac{1}{(s+1)^2}+\frac{4}{(s+1)^3}.
+$$
+
+From $\mathcal L[x^ne^{-x}]=n!/(s+1)^{n+1}$, the three terms invert to $2e^{-x}$, $xe^{-x}$ and $\frac{4}{2!}x^2e^{-x}$:
+
+$$
+y=e^{-x}\big(2+x+2x^2\big).
+$$
+
+Check: $y(0)=2$, and $y'=e^{-x}(1+4x)-e^{-x}(2+x+2x^2)$ gives $y'(0)=1-2=-1$. SymPy's `dsolve` agrees.
 
 ## Links
 
@@ -295,17 +389,33 @@ $$
 
 ## Self-study tasks
 
-Lecture 11 suggested deriving $\mathcal L[\cos ax]$ the same way as the sine (ll. 226–229) and getting to know the formula sheet; Lecture 12 ended with "practice partial fractions. You are going to need them" (ll. 439–440) and pointed to the week-5 STACK partial-fractions question (l. 337).
+Lecture 11 suggested deriving $\mathcal L[\cos ax]$ the same way as the sine (ll. 226–229) and getting to know the formula sheet; Lecture 12 ended by setting partial-fractions practice (ll. 439–440) and pointed to the week-5 STACK partial-fractions question (l. 337).
 
 ### Core
 
-- [ ] Lecturer-set (L11, ll. 226–229): derive $\mathcal L[\cos ax]=\frac s{s^2+a^2}$ by parts twice. → [[#The sine, by parts twice]]
+- [ ] Lecturer-set (L11, ll. 226–229): derive $\mathcal L[\cos ax]=\frac s{s^2+a^2}$ by parts twice. → [[#The sine, by parts twice]] (the cosine follows it)
 - [ ] Prove $\mathcal L[f']=s\tilde f-f(0)$ and $\mathcal L[f'']=s^2\tilde f-sf(0)-f'(0)$ from the definition (an exam A1(a) type). → [[#Derivatives]]
-- [ ] PS5 Q2: invert $\frac1{s(s-3)}$, $\frac6{(s+2)^2+9}$, $\frac{s+3}{s^2+2s+5}$ and $\frac1{s(s+1)(s+2)}$. Answers: $\frac13(e^{3x}-1)$; $2e^{-2x}\sin3x$; $e^{-x}(\cos2x+\sin2x)$; $\frac12-e^{-x}+\frac12e^{-2x}$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
+- [ ] PS5 Q2: invert $\frac1{s(s-3)}$, $\frac6{(s+2)^2+9}$, $\frac{s+3}{s^2+2s+5}$ and $\frac1{s(s+1)(s+2)}$. Answers: $\frac13(e^{3x}-1)$; $2e^{-2x}\sin3x$; $e^{-x}(\cos2x+\sin2x)$; $\frac12-e^{-x}+\frac12e^{-2x}$. → [[#Inverting from the table (PS5 Q2)]]
 - [ ] Lecturer-set (L12, ll. 403–419): finish the partial fractions of the $y''+3y'+2y=x+e^{-x}$ example and check $B=0$, $D=-\frac34$. → [[#Partial fractions, the systematic route (L12)]]
 
 ### Further practice
 
 - [ ] PS5 Q1: transforms of $\sinh ax$, $4\sin x\cos x$, $x\cos ax$ and $e^{-x}\sin2x$ from the definition. Answers: $\frac a{s^2-a^2}$; $\frac4{s^2+4}$; $\frac{s^2-a^2}{(s^2+a^2)^2}$; $\frac2{(s+1)^2+4}$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
-- [ ] PS5 Q3(a)–(d), four IVPs. Answers: $\frac15e^{3x}+\frac45e^{-2x}$; $e^x(2\cosh\sqrt3x-\frac2{\sqrt3}\sinh\sqrt3x)$; $\frac15(\cos x-2\sin x)+\frac25e^x(2\cos x-\sin x)$; $e^{-x}(2+x+2x^2)$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
+- [ ] PS5 Q3(a)–(d), four IVPs. Answers: $\frac15e^{3x}+\frac45e^{-2x}$; $e^x(2\cosh\sqrt3x-\frac2{\sqrt3}\sinh\sqrt3x)$; $\frac15(\cos x-2\sin x)+\frac25e^x(2\cos x-\sin x)$; $e^{-x}(2+x+2x^2)$; (d) is worked here. → [[#A repeated root with a resonant source (PS5 Q3d)]] · [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
 - [ ] Show $\mathcal L[x^n]=\frac{n!}{s^{n+1}}$ by induction from the multiplication-by-$x$ rule (suggested, not lecturer-set). → [[#Multiplication by x, and the powers of x]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 11 and 12
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L11, l. 41 | the Fourier normalisation factors multiply to "1 over root 2 pi" | $\frac1{2\pi}$, as said correctly at l. 22 of L10 |
+> | L11, l. 78 | "assuming that f is equal to e to the a s" | $f=e^{ax}$ |
+> | L11, l. 144 | the transform of $e^{ax}$ exists if "S is strictly greater than 0" | $s>a$; l. 147 then says this correctly |
+> | L11, l. 222 | "Laplace transform of sine of AT is equal to A on S squared" | that is the intermediate step $(1+a^2/s^2)\mathcal L[\sin at]=a/s^2$; the result is $a/(s^2+a^2)$ |
+> | L11, ll. 422–424 | the slide says there is no inverse Laplace transform | an inverse exists (a complex contour integral) but isn't practical; invert from the table |
+> | L12, ll. 62–80 | $\frac{d\tilde f}{ds}=-s\tilde f$, then corrected | $\frac{d\tilde f}{ds}=-\mathcal L[xf]$ |
+> | L12, l. 233 | "this is 5 on x squared" | $5/s^2$ |
+> | L12, l. 188 | "PDAs" | PDEs |

@@ -31,5 +31,5 @@ which gives 13.2 m² for the course's 1 kW, 800 km example.
 
 ## Related
 
-- [[SESA2024 08 - Electrical Power Subsystem#2. Solar cells|Solar cells in the lecture note]] · [[SESA2024 08 - Electrical Power Subsystem#Array|Array sizing]]
+- [[SESA2024 08 - Electrical Power Subsystem#2. Solar cells|Solar cells in the topic note]] · [[SESA2024 08 - Electrical Power Subsystem#Array|Array sizing]]
 - [[Battery Sizing]] · [[Spacecraft Power Sources]] · [[Eclipse Duration]]

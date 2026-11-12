@@ -19,7 +19,7 @@ $${}^a\dot{\mathbf p}={}^b\dot{\mathbf p}+\boldsymbol\omega_{b/a}\times\mathbf p
 
 ${}^b\dot{\mathbf p}$ is the change seen from inside $F_b$, and $\boldsymbol\omega\times\mathbf p$ is the extra change seen from $F_a$ because $F_b$ is rotating.
 
-The derivation is short. A unit vector fixed in $F_b$ can only rotate, so ${}^a\dot{\mathbf b}_i=\boldsymbol\omega_{b/a}\times\mathbf b_i$. Writing $\mathbf p=\sum p_i\mathbf b_i$, the product rule gives ${}^a\dot{\mathbf p}=\sum\dot p_i\mathbf b_i+\sum p_i\,{}^a\dot{\mathbf b}_i$; the first sum is ${}^b\dot{\mathbf p}$ and the second is $\boldsymbol\omega_{b/a}\times\mathbf p$. A step-by-step visual version is in [[SESA3047 2.1 - Vector Operations and the Transport Theorem#8. The transport theorem|2.1 §8]].
+A unit vector fixed in $F_b$ can only rotate, so ${}^a\dot{\mathbf b}_i=\boldsymbol\omega_{b/a}\times\mathbf b_i$. Writing $\mathbf p=\sum p_i\mathbf b_i$, the product rule gives ${}^a\dot{\mathbf p}=\sum\dot p_i\mathbf b_i+\sum p_i\,{}^a\dot{\mathbf b}_i$; the first sum is ${}^b\dot{\mathbf p}$ and the second is $\boldsymbol\omega_{b/a}\times\mathbf p$. A step-by-step visual version is in [[SESA3047 2.1 - Vector Operations and the Transport Theorem#8. The transport theorem|2.1 §8]].
 
 If $\mathbf p$ is fixed in $F_b$, only the rotation term is left, ${}^a\dot{\mathbf p}=\boldsymbol\omega_{b/a}\times\mathbf p$; the nose direction, for example, obeys ${}^e\dot{\mathbf u}=\boldsymbol\omega_{b/e}\times\mathbf u$. If there is no relative rotation, or $\mathbf p\parallel\boldsymbol\omega$, the two derivatives are equal. Translation of the frames never appears.
 

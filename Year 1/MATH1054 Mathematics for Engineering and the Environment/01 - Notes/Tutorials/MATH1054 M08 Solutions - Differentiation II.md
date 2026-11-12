@@ -13,7 +13,7 @@ sheet: "Module 08 work scheme: Examples 2.36, 2.37, 8.21–8.36, 9.10; Exercises
 theory_notes: ["[[MATH1054 M08 - Differentiation II]]"]
 key_concepts: ["[[Implicit and Parametric Differentiation]]", "[[Logarithmic Differentiation]]", "[[Stationary Points and Inflection]]", "[[Taylor and Maclaurin Series]]"]
 status: complete
-sources: ["tmp/md/module_08_differentiation_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§2.5, §8.3.14, §8.4–8.5, §9.4)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 8)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§2.5, §8.3.14, §8.4–8.5, §9.4)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 8)"]
 ---
 
 # MATH1054 M08 Solutions - Differentiation II
@@ -332,5 +332,5 @@ The derivatives cycle $\sin,\cos,-\sin,-\cos$, so at 0 they take the values $0,1
 $$\sin x=0+x+0-\frac{x^3}{3!}+0+\frac{x^5}{5!}-\dots=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\cdots\ ✔$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_08_differentiation_ii.md`
+- Problem statements: Module 08 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §2.5, §8.3.14–8.5, §9.4; MATH1054 Module Booklet, Module 8

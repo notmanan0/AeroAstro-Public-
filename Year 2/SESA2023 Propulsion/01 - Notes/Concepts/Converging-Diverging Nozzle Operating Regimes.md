@@ -26,7 +26,7 @@ With a fixed stagnation pressure, the flow in a converging–diverging nozzle de
 | 7 | $p_b = p_e$ | design: fully supersonic, shock-free, maximum thrust for this area ratio |
 | 8 | $p_b<p_e$ | under-expanded: expansion fans outside |
 
-An internal shock is located in four steps. The supersonic branch of $A/A^*$ gives $M_1$ at the shock, and the shock tables give $M_2$ and $p_{02}/p_{01}$. Since $\dot m\propto p_0A^*$, the new sonic area is $A_2^* = A^*/(p_{02}/p_{01})$. The subsonic branch at $A_e/A_2^*$ then gives $M_e$, and $p_e = p_{02}(p/p_0)_{M_e}$. In the lecture example, $A_e = 0.7$ m², $A_t = 0.2$ m² and $p_0 = 400$ kPa, with the shock at $M_1 = 2.44$ where $A = 0.499$ m², giving $M_e = 0.34$ and $p_e = 193$ kPa.
+An internal shock is located in four steps. The supersonic branch of $A/A^*$ gives $M_1$ at the shock, and the shock tables give $M_2$ and $p_{02}/p_{01}$. Since $\dot m\propto p_0A^*$, the new sonic area is $A_2^* = A^*/(p_{02}/p_{01})$. The subsonic branch at $A_e/A_2^*$ then gives $M_e$, and $p_e = p_{02}(p/p_0)_{M_e}$. In the worked example, $A_e = 0.7$ m², $A_t = 0.2$ m² and $p_0 = 400$ kPa, with the shock at $M_1 = 2.44$ where $A = 0.499$ m², giving $M_e = 0.34$ and $p_e = 193$ kPa.
 
 A rocket's fixed nozzle has one design altitude: it is over-expanded below it and under-expanded above it. Severe over-expansion separates the flow inside the nozzle, which is unstable and unacceptable, hence the altitude-adaptive designs (aerospike, dual-bell) in W11.
 

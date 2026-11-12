@@ -17,7 +17,7 @@ The method of characteristics (MoC) solves steady, two-dimensional, [[Homentropi
 
 $$R^+=\nu-\theta\ \text{along }C^+\ (\text{inclined at }\theta+\mu),\qquad R^-=\nu+\theta\ \text{along }C^-\ (\text{inclined at }\theta-\mu).$$
 
-It works because, for $M>1$ only, the governing PDEs in $\nu$ and $\theta$ form a hyperbolic system with eigenvalues $\pm\tan\mu$. Diagonalising them leaves one unknown per equation, and each equation then says that something does not change along a particular direction. Solving the flow becomes bookkeeping rather than integration.
+It works because, for $M>1$ only, the governing PDEs in $\nu$ and $\theta$ form a hyperbolic system with eigenvalues $\pm\tan\mu$. Diagonalising them leaves one unknown per equation, and each equation then says that something does not change along a particular direction. Solving the flow then becomes arithmetic at mesh points rather than integration.
 
 ## The unit process
 
@@ -52,7 +52,7 @@ The 3.2 slide 9 example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ at $(1.3591,
 | symmetry plane (an inviscid wall with $\theta_W=0$, L3-3, l. 93) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
 
 > [!warning] Check the physics, not just the rules (L3-4, ll. 206–281)
-> A prescribed wall only reflects if the arriving flow is not already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, applying the rules blindly produces a reflection at point 3 and a point 5 that *"doesn't exist"*. In Jae's words, *"Always think about the results, whether it makes sense or not"* ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example (Lecture 3.4)|W05b §15]]).
+> A prescribed wall only reflects if the arriving flow is not already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, applying the rules blindly produces a reflection at point 3 and a point 5 that does not exist, so check every result against the physics ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example|W05b §15]]).
 
 ## Zones and limits
 

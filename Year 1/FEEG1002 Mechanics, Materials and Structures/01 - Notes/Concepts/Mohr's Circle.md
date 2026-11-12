@@ -6,56 +6,25 @@ stream: "Part B: Statics 2"
 aliases: ["Mohr's circle for stress", "Mohr's circle for strain", "Mohr circle"]
 tags: [feeg1002, concept, statics-2, mohrs-circle, principal-stresses]
 status: complete
-parent_lectures: ["[[FEEG1002 B4 - Stress Transformation and Mohr's Circle]]", "[[FEEG1002 B5 - Strain Measurement and Strain Rosettes]]"]
-related_concepts: ["[[Stress Transformation Equations]]", "[[Principal Stresses]]", "[[Strain Gauge Rosettes]]", "[[Principal Axes of a Section]]"]
-sources: []
+parent_lectures: ["[[FEEG1002 B4 - Stress Transformation and Mohr's Circle]]", "[[FEEG1002 B5 - Strain Measurement and Strain Rosettes]]", "[[FEEG1002 B6 - Yield Criteria]]"]
+related_concepts: ["[[Stress Transformation Equations]]", "[[Principal Stresses]]", "[[Strain Gauge Rosettes]]", "[[Tresca Yield Criterion]]"]
+sources: ["02 - Sources/Statics 2/Lectures/Lecture 06 - Mohr's Circle.pdf"]
 ---
 
 # Mohr's Circle
 
-## Definition
+Mohr's circle is the curve traced in the plane of normal stress against shear stress by the stresses on an element as it is rotated; it is centred at $\sigma_{average}=(\sigma_{xx}+\sigma_{yy})/2$ with radius $R=\sqrt{((\sigma_{xx}-\sigma_{yy})/2)^2+\sigma_{xy}^2}$.
 
-> [!note] Definition
-> The transformation equations trace a circle in the ($\sigma_{x'x'}$, $\sigma_{x'y'}$) plane:
->
-> $$(\sigma_{x'x'} - \sigma_{avg})^2 + \sigma_{x'y'}^2 = R^2,\qquad \sigma_{avg} = \frac{\sigma_{xx}+\sigma_{yy}}2,\qquad R = \sqrt{\left(\frac{\sigma_{xx}-\sigma_{yy}}2\right)^2 + \sigma_{xy}^2}$$
->
-> **FEEG1002 convention**: shear is plotted **positive downwards**, so a rotation $\theta$ of the element is a rotation $2\theta$ in the **same sense** on the circle.
+It follows from the double-angle transformation equations: moving $\sigma_{average}$ to the left, squaring both equations and adding removes the angle, leaving $(\sigma_{x'x'}-\sigma_{average})^2+\sigma_{x'y'}^2=R^2$. Every orientation of the element is a point on the circle. In FEEG1002 the normal stress is plotted to the right and the **shear stress positive downwards**; with that choice an anticlockwise rotation $\theta$ of the element moves the point anticlockwise by $2\theta$ on the page. Books that plot shear upwards rotate the other way, so check the convention before borrowing a figure.
 
-## Explanation
+To draw it, mark $\sigma_{xx}$ and $\sigma_{yy}$ on the normal axis, put the centre midway, plot the $x$-face point $(\sigma_{xx},\sigma_{xy})$ for $\theta=0$, and draw the circle through it. The $y$-face point $(\sigma_{yy},-\sigma_{xy})$ is diametrically opposite, because the two faces are 90° apart on the element. The crossings of the normal axis are the principal stresses, $\sigma_I=\sigma_{average}+R$ on the right and $\sigma_{II}=\sigma_{average}-R$ on the left, and the top and bottom of the circle are the maximum in-plane shear stresses $\pm R$, on planes at 45° to the principal planes where both faces carry $\sigma_{average}$. The angle from the $x$-face point to $\sigma_I$ is $2\theta_p$.
 
-Construction:
-1. Centre at $\sigma_{avg}$.
-2. $x$-face point at $(\sigma_{xx}, \sigma_{xy})$; $y$-face point diametrically opposite, at $(\sigma_{yy}, -\sigma_{xy})$.
-3. Draw the circle.
+Three special shapes are worth recognising: uniaxial tension gives a circle through the origin, pure shear one centred on the origin, and equal biaxial stress a single point with no shear on any plane. The same construction works for strain with the tensor shear strain $\varepsilon_{xy}=\gamma_{xy}/2$ on the vertical axis. In 3D each pair of principal stresses has its own circle, and the largest of the three gives the maximum shear stress used by the Tresca criterion. Most mistakes come from the sign of $\sigma_{xy}$, which must be read from the right-hand face of the element.
 
-Readings:
-- principal stresses at the horizontal-axis crossings;
-- maximum in-plane shear $R$ at the top and bottom;
-- the angle from the $x$-face point to $\sigma_I$ is $2\theta_p$.
-
-Special cases:
-- uniaxial: the circle touches the origin;
-- pure shear: centred on the origin;
-- equibiaxial: a point.
-
-For **strain**, use $\varepsilon_{xy} = \gamma_{xy}/2$ on the vertical axis.
-
-The biggest source of errors is the sign of $\sigma_{xy}$. Read it from the arrow on the **+x face**.
-
-## Examples
-
-- Sail (Statics 2 Tutorial 5): $\sigma_I = 4.3$ and $\sigma_{II} = 0.70$ MPa, at $\theta_p = -16.8^\circ$.
-- Revision Q4: $\sigma_I = 55$, $\sigma_{II} = 5$, $\tau_{max} = 25$ MPa, at $\theta_p = -71.6^\circ$.
-
-![[s2_mohr_t5_sail.png|860]]
+![[s2_mohr_rotation.png|850]]
 
 ## Related
 
-- Topic notes: [[FEEG1002 B4 - Stress Transformation and Mohr's Circle]] · [[FEEG1002 B5 - Strain Measurement and Strain Rosettes]]
-- Concepts: [[Stress Transformation Equations]] · [[Principal Stresses]] · [[Strain Gauge Rosettes]] · [[Principal Axes of a Section]]
-- Year 2: Mohr's circle for second moments of area ([[Principal Second Moments of Area]], [[SESA2028 S1 - Section Properties and Unsymmetrical Bending]]) · principal stresses feed [[Von Mises and Tresca Yield Criteria]]
-
-## Sources
-
-- Statics 2 Lecture 6a–b; Statics 2 Lecture 7b
+- [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#4. Mohr's circle|construction in B4]] · [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#Why shear is plotted downwards|why shear is plotted downwards]] · [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#Worked example - sail element|sail example]] · [[FEEG1002 B5 - Strain Measurement and Strain Rosettes#4. Mohr's circle for strain|strain circle in B5]] · [[FEEG1002 B6 - Yield Criteria#Maximum shear stress in three dimensions|three circles in B6]]
+- [[Stress Transformation Equations]] · [[Principal Stresses]] · [[Strain Gauge Rosettes]] · [[Tresca Yield Criterion]]
+- Year 2: Mohr's circle for second moments of area, [[Principal Second Moments of Area]], in [[SESA2028 S1 - Section Properties and Unsymmetrical Bending]]

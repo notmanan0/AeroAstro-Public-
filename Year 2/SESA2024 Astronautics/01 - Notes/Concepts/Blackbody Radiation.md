@@ -25,5 +25,5 @@ A grey body absorbs and emits a constant fraction of the black-body value at all
 
 ## Related
 
-- [[SESA2024 10 - Thermal Control#2. Emission|Emission in the lecture note]]
+- [[SESA2024 10 - Thermal Control#2. Emission|Emission in the topic note]]
 - [[Absorptance and Emittance]] · [[Spacecraft Thermal Balance Equation]]

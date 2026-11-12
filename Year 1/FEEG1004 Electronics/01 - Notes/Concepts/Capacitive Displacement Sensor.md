@@ -13,24 +13,22 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 02 - Displacement S
 
 # Capacitive Displacement Sensor
 
-## Definition
+A capacitive displacement sensor measures position through the change in $C=\varepsilon_0\varepsilon_rA/d$ as the overlap area, the gap or the dielectric varies. It is non-contact, reaches nanometre precision, and is used for proximity sensing and touch screens.
 
-> [!note] Definition
-> $C = \varepsilon_0\varepsilon_rA/d$ is varied through the overlap area, the gap or the dielectric. With the sensor $C_u$ in the **feedback** path of an inverting amplifier and a reference $C_s$ at the input:
->
-> $$V_{out} = -\frac{C_s}{C_u}V_{in} = -\frac{C_s\,d}{\varepsilon_0\varepsilon_rA}V_{in}\ \propto\ d$$
+When the gap is the measured variable, the capacitance varies as $1/d$. Placing the sensor capacitance $C_u$ in the feedback path of an inverting amplifier, with a reference capacitor $C_s$ at the input, inverts this dependence and makes the output linear in the gap:
 
-## Explanation
-- Non-contact, nanometre precision; used for proximity sensing and touch screens.
-- Gap sensing is ∝ 1/d. The op-amp trick inverts it; software look-up tables are the alternative.
-- Sensor values of 1–500 pF are measured through the reactance at over 100 kHz. The output is an AM carrier that must be demodulated.
-- The displacement bandwidth is about 1 Hz–10 kHz.
+$$
+V_{out}=-\frac{C_s}{C_u}V_{in}=-\frac{C_s\,d}{\varepsilon_0\varepsilon_rA}V_{in}\ \propto\ d.
+$$
+
+The alternative is to linearise in software with a look-up table.
+
+Sensor capacitances are only $1$–$500\ \mathrm{pF}$, so they are measured through their reactance with an excitation above $100\ \mathrm{kHz}$. The output is then an amplitude-modulated carrier that must be demodulated, and the usable displacement bandwidth is about $1\ \mathrm{Hz}$ to $10\ \mathrm{kHz}$.
 
 ![[ee_e2_capacitive_sensor.png|700]]
 
 ## Related
-- Topic notes: [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
-- Concepts: [[Capacitance]] · [[Complex Impedance]] · [[Standard Op-Amp Configurations]]
 
-## Sources
-- Transducers lecture 2
+- [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
+- [[Capacitance]] · [[Complex Impedance]] · [[Standard Op-Amp Configurations]]
+- Sources: Transducers lecture 2

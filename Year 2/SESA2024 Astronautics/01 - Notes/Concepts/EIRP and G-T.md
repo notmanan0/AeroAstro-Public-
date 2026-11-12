@@ -21,5 +21,5 @@ $G_R/T_R$ belongs to the ground segment: a large, cold receiver (the 70 m Deep S
 
 ## Related
 
-- [[SESA2024 09 - Communications#6. The link budget equation|Link budget in the lecture note]]
+- [[SESA2024 09 - Communications#6. The link budget equation|Link budget in the topic note]]
 - [[Link Budget Equation]] · [[Antenna Gain and Beamwidth]]

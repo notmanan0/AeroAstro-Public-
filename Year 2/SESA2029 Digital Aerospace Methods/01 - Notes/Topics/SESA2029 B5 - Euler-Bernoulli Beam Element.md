@@ -29,9 +29,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_7_ FE_Beam_final.pdf", "02 - Source
 > - **Common mistakes:** ordering the forces as $(F_1,F_2,M_1,M_2)$ against a matrix built for $(F_1,M_1,F_2,M_2)$; fixing the rotation at a simple support.
 > - **Practise:** [[#Worked example: a propped cantilever with an overhang]] · [[SESA2029 FEA Worked Examples]]
 
-The first lecture of week 4 applies the matrix displacement and minimum-potential-energy methods to the beam, "probably the most mathematical part of the course" (2026-02-20 09:59, ll. 1–10, 296–300). Between the two lectures that day came a demonstration of APDL scripting, covered in [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation|C5]].
+The matrix displacement and minimum-potential-energy methods are applied here to the beam (2026-02-20 09:59, ll. 1–10, 296–300).
 
-When a ruler is bent between your hands, its fibres on the outside stretch and those on the inside shorten, in proportion to the distance from the middle and to how sharply it is bent. All the stored energy is in that bending, so the beam's energy depends only on its curvature. A short beam element can bend into a gentle S-shape, which a straight line cannot describe; that is why it needs a cubic, and why each node needs a slope as well as a deflection so that neighbouring elements join smoothly.
+A ruler bent between the hands has its outside fibres stretched and its inside fibres shortened, in proportion to the distance from the middle and to how sharply it is bent. All the stored energy is in that bending, so the beam's energy depends only on its curvature. A short beam element can bend into a gentle S-shape, which a straight line cannot describe; that is why it needs a cubic, and why each node needs a slope as well as a deflection so that neighbouring elements join smoothly.
 
 ## 1. Beams in aerospace
 
@@ -47,7 +47,7 @@ $$
 \frac MI=\frac\sigma y=\frac ER,
 $$
 
-"probably the most important statement you will ever remember" for estimating the deflection and stress of a wing or a bridge.
+This is the relation to remember for estimating the deflection and stress of a wing or a bridge.
 
 The beam element neglects shear strain from the shear force, consistent with plane sections staying perpendicular to the axis, so only bending stresses and strains store energy (ll. 101–115). The strain energy is the energy density integrated over the volume, which here means over the cross-section and along the length:
 
@@ -93,7 +93,7 @@ $$
 U=\frac12\int_0^LEI\rho^2\,dx .
 $$
 
-The strain energy now depends only on $E$, $I$ and the curvature along the beam. What remains is to express the curvature through the nodal unknowns.
+The strain energy now depends only on $E$, $I$ and the curvature along the beam.
 
 ## 3. Degrees of freedom and cubic shape functions
 
@@ -149,7 +149,13 @@ $$
 d=\frac{2(v_1-v_2)}{L^3}+\frac{\theta_1+\theta_2}{L^2}.
 $$
 
-Substituting $a$, $b$, $c$, $d$ into the cubic and collecting the coefficient of each nodal DOF gives $v=[N]\{d\}$ with, writing $\xi=x/L$ (checked with SymPy),
+Substitute $a$, $b$, $c$, $d$ into $v=a+bx+cx^2+dx^3$:
+
+$$
+v=v_1+\theta_1x+\left[\frac{3(v_2-v_1)}{L^2}-\frac{2\theta_1+\theta_2}{L}\right]x^2+\left[\frac{2(v_1-v_2)}{L^3}+\frac{\theta_1+\theta_2}{L^2}\right]x^3.
+$$
+
+Collect the terms multiplying each nodal DOF. For $v_1$: $1-3x^2/L^2+2x^3/L^3$. For $\theta_1$: $x-2x^2/L+x^3/L^2$. For $v_2$: $3x^2/L^2-2x^3/L^3$. For $\theta_2$: $-x^2/L+x^3/L^2$. Writing $\xi=x/L$, this is $v=[N]\{d\}$ with
 
 $$
 N_1=1-3\xi^2+2\xi^3,
@@ -163,9 +169,9 @@ N_3=3\xi^2-2\xi^3,
 N_4=L\left(-\xi^2+\xi^3\right).
 $$
 
-![[dam_beam_hermite_shape_functions.png|640]]
+![[dam_beam_hermite_shape_functions.png|900]]
 
-Asked what $N$ represents, the lecturer described the shape functions as the basic deformations of the beam (ll. 206–225): each is the deflected shape when its own DOF is one and the other three are zero. $N_1$ and $N_3$ carry unit deflections with zero end slopes; $N_2$ and $N_4$ carry unit slopes with zero end deflections. These cubic Hermite functions are specific to this beam element; other elements have their own (ll. 241–250).
+The shape functions are the basic deformations of the beam: each is the deflected shape when its own DOF is one and the other three are zero. $N_1$ and $N_3$ carry unit deflections with zero end slopes; $N_2$ and $N_4$ carry unit slopes with zero end deflections. These cubic Hermite functions are specific to this beam element; other elements have their own (ll. 241–250).
 
 ## 4. The stiffness matrix by minimum potential energy
 
@@ -203,17 +209,29 @@ $$
 K_{11}=EI\int_0^L B_1^2\,dx=\frac{EI}{L^3}\int_0^1(12\xi-6)^2\,d\xi=\frac{EI}{L^3}(48-72+36)=\frac{12EI}{L^3}.
 $$
 
-Doing all sixteen (SymPy) gives
+The rotation entries work the same way. With $B_2=(6\xi-4)/L$,
+
+$$
+K_{12}=EI\int_0^LB_1B_2\,\mathrm dx=\frac{EI}{L^2}\int_0^1(12\xi-6)(6\xi-4)\,\mathrm d\xi=\frac{EI}{L^2}\left(24-42+24\right)=\frac{6EI}{L^2}=\frac{EI}{L^3}\,6L,
+$$
+
+$$
+K_{22}=EI\int_0^LB_2^2\,\mathrm dx=\frac{EI}{L}\int_0^1(6\xi-4)^2\,\mathrm d\xi=\frac{EI}{L}\left(12-24+16\right)=\frac{4EI}{L}=\frac{EI}{L^3}\,4L^2.
+$$
+
+The other entries follow in the same way, giving
 
 $$
 [K]=\frac{EI}{L^3}\begin{bmatrix}12&6L&-12&6L\\6L&4L^2&-6L&2L^2\\-12&-6L&12&-6L\\6L&2L^2&-6L&4L^2\end{bmatrix}.
 $$
 
-It is symmetric, and each column is the set of nodal forces and moments needed to hold one DOF at unit value with the others at zero. This matrix will be given in the exam; it does not have to be memorised (ll. 301–305). More accuracy needs more nodes per element and a higher-order polynomial, with six generalised boundary conditions for three nodes instead of four (ll. 286–290). Asked whether this matrix applies to every case, the lecturer's answer was that it applies to anything modelled as a two-node Euler–Bernoulli beam, while bars, shells and solids have their own matrices (ll. 286–300).
+It is symmetric, and each column is the set of nodal forces and moments needed to hold one DOF at unit value with the others at zero. This matrix will be given in the exam; it does not have to be memorised (ll. 301–305). More accuracy needs more nodes per element and a higher-order polynomial, with six generalised boundary conditions for three nodes instead of four (ll. 286–290). This matrix applies to anything modelled as a two-node Euler–Bernoulli beam; bars, shells and solids have their own matrices.
 
-## Worked example: a propped cantilever with an overhang
+## Worked examples
 
-The lecture's exercise (ll. 306–385; slides 19–24): a uniform beam, $EI=10^7$ N m², is clamped at node 1 ($x=0$), simply supported at node 2 ($x=2$ m), and carries 10 kN downward at its free end, node 3 ($x=3$ m). Discretise with two elements, write the equilibrium equation in the six global DOF, then apply the boundary conditions to reduce it to three unknowns. Nodes go at the ends and at the support, so element 1 spans 2 m and element 2 spans 1 m.
+### Worked example: a propped cantilever with an overhang
+
+The exercise (slides 19–24): a uniform beam, $EI=10^7$ N m², is clamped at node 1 ($x=0$), simply supported at node 2 ($x=2$ m), and carries 10 kN downward at its free end, node 3 ($x=3$ m). Discretise with two elements, write the equilibrium equation in the six global DOF, then apply the boundary conditions to reduce it to three unknowns. Nodes go at the ends and at the support, so element 1 spans 2 m and element 2 spans 1 m.
 
 For element 1, $EI/L^3=10^7/8=1.25\times10^6$ N/m:
 
@@ -241,7 +259,27 @@ $$
 \begin{Bmatrix}0\\-10^4\\0\end{Bmatrix}=1.25\times10^6\begin{bmatrix}48&-48&16\\-48&96&-48\\16&-48&32\end{bmatrix}\begin{Bmatrix}\theta_2\\v_3\\\theta_3\end{Bmatrix}.
 $$
 
-The lecture ends at this reduced system ("three equations and three unknowns"). Solving it (NumPy) gives
+That leaves three equations in three unknowns. Divide each row by $1.25\times10^6\times16$; the load becomes $-10^4/(2\times10^7)=-5\times10^{-4}$ in the middle row, which with its common factor 3 removed reads
+
+$$
+3\theta_2-3v_3+\theta_3=0,
+\qquad
+-\theta_2+2v_3-\theta_3=-1.667\times10^{-4},
+\qquad
+\theta_2-3v_3+2\theta_3=0.
+$$
+
+The first gives $\theta_3=3v_3-3\theta_2$. Put that into the third:
+
+$$
+\theta_2-3v_3+6v_3-6\theta_2=0
+\quad\Longrightarrow\quad
+\theta_2=0.6\,v_3,
+\qquad
+\theta_3=1.2\,v_3.
+$$
+
+The second row then gives $(-0.6+2-1.2)v_3=0.2v_3=-1.667\times10^{-4}$, so
 
 $$
 \theta_2=-5.0\times10^{-4}\text{ rad},
@@ -253,7 +291,10 @@ $$
 
 Back-substituting into the struck-out rows gives the reactions $F_1=-7.5$ kN, $M_1=-5.0$ kN m and $F_2=+17.5$ kN. Check the statics: vertical forces $-7.5+17.5-10=0$, and moments about node 1, taking anticlockwise positive, $-5+17.5\times2-10\times3=0$.
 
-![[dam_beam_example_deflection.png|640]]
+> [!check] The overhang as a cantilever from the prop
+> The 1 m overhang is a cantilever built in at node 2, which itself rotates by $\theta_2$. Its tip therefore drops by the rigid rotation plus its own bending, $v_3=\theta_2a-\tfrac{Pa^3}{3EI}=-5.0\times10^{-4}\times1-\tfrac{10^4\times1}{3\times10^7}=-5.0\times10^{-4}-3.33\times10^{-4}=-8.33\times10^{-4}$ m, and its tip slope is $\theta_3=\theta_2-\tfrac{Pa^2}{2EI}=-5\times10^{-4}-5\times10^{-4}=-1.0\times10^{-3}$ rad. Both match the FE values.
+
+![[dam_beam_example_deflection.png|900]]
 
 The span between the supports lifts: the overhang load see-saws the beam about the prop, and the clamp has to pull down. The two-element FE curve lies on the exact beam-theory curve, because with only point loads at nodes the exact Euler–Bernoulli deflection between nodes is itself cubic, so cubic elements reproduce it exactly. Distributed loads would need finer meshes or consistent nodal loads to match between the nodes.
 
@@ -264,12 +305,12 @@ The span between the supports lifts: the overhang load see-saws the beam about t
 - Next: [[SESA2029 B6 - 2D and 3D Elements]]
 - Concepts: [[Euler-Bernoulli Beam Element]] · [[Shape Functions]] · [[Global Stiffness Matrix Assembly]] · [[Boundary Conditions and Rigid Body Modes]]
 - Beam loads in the lab: [[SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)]]
-- Scripting demonstrated in this session: [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]
+- APDL scripting: [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]
 
 ## Sources
 
 - FEA Lecture 7 slides, `Lecture_7_ FE_Beam_final.pdf` (worked example on slides 19–24), with transcript `SESA2029 Lecture 2026-02-20 - 0959.txt` (Dr J. Yuan)
-- Shape functions and stiffness matrix derived with SymPy; example solved with NumPy
+- Shape functions and stiffness matrix derived with SymPy; example solved by hand and with NumPy. Figures: `01 - Notes/Figures/generate_dam_b5_figures.py`
 
 ## Self-study tasks
 
@@ -277,7 +318,7 @@ The span between the supports lifts: the overhang load see-saws the beam about t
 
 - [ ] Derive the beam strain energy $U=\tfrac12\int EI\rho^2\,dx$ from bending theory (2026-02-20 09:59, ll. 101–170). → [[#2. Bending theory and the beam's strain energy]]
 - [ ] Derive the cubic shape functions from the four generalised boundary conditions (ll. 166–200). → [[#3. Degrees of freedom and cubic shape functions]]
-- [ ] The two-element beam exercise: global equation in six DOF, then boundary conditions ("this is a kind of example for the exam", ll. 306–385). → [[#Worked example: a propped cantilever with an overhang]]
+- [ ] The two-element beam exercise: global equation in six DOF, then boundary conditions (exam-style, ll. 306–385). → [[#Worked example: a propped cantilever with an overhang]]
 - [ ] Lab 2: recompute your stress concentration factors with a bulk stress of 120 MPa, not 83 MPa (correction announced at ll. 386–400). → [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)]]
 
 ### Further practice

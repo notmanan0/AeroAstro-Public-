@@ -13,7 +13,7 @@ sheet: "Specimen Test 9 (booklet) + Module 09 work scheme: Examples 8.52–8.69;
 theory_notes: ["[[MATH1054 M09 - Integration II]]"]
 key_concepts: ["[[Integration by Substitution]]", "[[Centroids and Solids of Revolution]]", "[[RMS Value]]"]
 status: complete
-sources: ["tmp/md/module_09_integration_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§8.8, §8.9)", "02 - Sources/Formulae & Reference/Integration Formulae.md"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§8.8, §8.9)", "02 - Sources/Formulae & Reference/Integration Formulae.md"]
 ---
 
 # MATH1054 M09 Solutions - Integration II
@@ -227,5 +227,5 @@ $$V=\pi\int_1^2\Big(x^4+2x+\frac1{x^2}\Big)\mathrm dx=\pi\Big[\frac{x^5}5+x^2-\f
 $$\boxed{(\bar x,\bar y)=\big(\tfrac\pi2,\tfrac\pi8\big)\approx(1.571,\,0.393)}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_09_integration_ii.md`
+- Problem statements: Module 09 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §8.8–8.9; MATH1054 Module Booklet, Module 9; [[Integration Formulae]]

@@ -25,7 +25,7 @@ sources: ["02 - Sources/Lectures/Week 02 - Thermodynamics.pdf", "02 - Sources/Le
 # SESA2023 W02 - Thermodynamics, Mixtures, SFEE and Isentropic Efficiency
 
 > [!abstract] Summary
-> Week 2 refreshes Part 1 thermodynamics with a propulsion slant ("nothing new", 3 Feb, ll. 29–30): two independent intensive properties fix the state of a simple gas, a perfect gas turns every enthalpy change into $c_p\Delta T$, and mixtures use mass fractions for specific properties and mole fractions for partial pressures. The steady flow energy equation, applied to each component of a turbojet in turn, gives the station-by-station method used for every engine in the module, and isentropic efficiency measures how far real compressors and turbines depart from the ideal.
+> The thermodynamics is that of Part 1 with nothing added (3 Feb, ll. 29–30): two independent intensive properties fix the state of a simple gas, a perfect gas turns every enthalpy change into $c_p\Delta T$, and mixtures use mass fractions for specific properties and mole fractions for partial pressures. The steady flow energy equation, applied to each component of a turbojet in turn, gives the station-by-station method used for every engine in the module, and isentropic efficiency measures how far real compressors and turbines depart from the ideal.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a component (diffuser, compressor, burner, turbine, nozzle) has known inlet conditions and you need an exit temperature, pressure, work or heat; or a mixture's composition or properties are asked for.
@@ -34,9 +34,7 @@ sources: ["02 - Sources/Lectures/Week 02 - Thermodynamics.pdf", "02 - Sources/Le
 > - **Common mistakes:** swapping the compressor and turbine efficiency definitions (check: the real exit is *hotter* than the isentropic one in both); weighting a mean molar mass by mass fractions instead of mole fractions.
 > - **Practise:** [[#Worked example – turbine with isentropic efficiency]] · [[SESA2023 Problem Sheet 2 Solutions]] Q2.2–Q2.3
 
-Follow one kilogram of air through a turbojet.
-
-Its pressure and temperature fix its state: every other property, density, enthalpy and entropy, follows from the equations of state; that is the two-property rule. Each component changes its energy in one way: the burner adds heat, the compressor adds work, the turbine removes work, and the diffuser and nozzle trade enthalpy for speed. The steady flow energy equation, written once per component, accounts for each of these. For a perfect gas enthalpy is $c_pT$, so every energy term can be written as a temperature difference.
+A kilogram of air passing through a turbojet has its state fixed by its pressure and temperature: every other property, density, enthalpy and entropy, follows from the equations of state; that is the two-property rule. Each component changes its energy in one way: the burner adds heat, the compressor adds work, the turbine removes work, and the diffuser and nozzle trade enthalpy for speed. The steady flow energy equation, written once per component, accounts for each of these. For a perfect gas enthalpy is $c_pT$, so every energy term can be written as a temperature difference.
 
 In a real machine, friction and turbulence turn some of the work into heat inside the gas, so the air leaves a real compressor or turbine hotter and at higher entropy than an ideal one; the compressor then needs more work and the turbine delivers less. A gas turbine works at all because lines of constant pressure fan apart on a $T$–$s$ diagram as the temperature rises, so expanding hot gas through a pressure ratio releases more work than compressing cold gas through the same ratio absorbs, and there is work left over.
 
@@ -46,7 +44,7 @@ In a real machine, friction and turbulence turn some of the work into heat insid
 
 ### Equilibrium, state and properties
 
-- Thermodynamic equilibrium needs thermal (uniform $T$), mechanical (no net force), phase (no spontaneous phase change) and chemical (no change of composition) equilibrium, on a macroscopic scale (3 Feb, ll. 32–44). Chemical equilibrium does not mean reactions stop, only that the composition stops changing; this returns in [[SESA2023 W05 - Combustion, Stoichiometry and Chemical Equilibrium|W05]].
+- Thermodynamic equilibrium needs thermal (uniform $T$), mechanical (no net force), phase (no spontaneous phase change) and chemical (no change of composition) equilibrium, on a macroscopic scale (3 Feb, ll. 32–44). Chemical equilibrium does not mean reactions stop, only that the composition stops changing (see [[SESA2023 W05 - Combustion, Stoichiometry and Chemical Equilibrium|W05]]).
 - **Zeroth Law**: if A and B are each in thermal equilibrium with C, they are in thermal equilibrium with each other.
 - A state is the set of values of the properties; a process is the path between two states (3 Feb, ll. 51–64, 123–130).
 - Property types:
@@ -59,7 +57,7 @@ In a real machine, friction and turbulence turn some of the work into heat insid
 
 > The state of a simple compressible system is completely specified by two independent intensive properties (notes §2.2.3).
 
-"Simple" means no body forces, surface tension, magnetic or electric effects (3 Feb, l. 70). "Independent" is the catch:
+"Simple" means no body forces, surface tension, magnetic or electric effects (3 Feb, l. 70). The two properties must be independent:
 
 - For an ideal gas $u=u(T)$ and $h=h(T)$, so $(T,h)$ or $(T,u)$ do not fix the state: knowing $T$ already tells you $h$.
 - During a phase change (evaporating rocket propellant), $p$ and $T$ are tied by the saturation curve, so $(p,T)$ are not independent either.
@@ -122,7 +120,7 @@ $$
 For air: $R=287$, $c_p=1005$ J kg⁻¹ K⁻¹, $\gamma=1.4$.
 
 - A monatomic gas (argon) has constant $c_p$ at all temperatures. CO₂ and air do not: air's $c_p$ rises by about 200 J kg⁻¹ K⁻¹ (20 %) over a 1500 K range (3 Feb, ll. 207–216).
-- From 300 K to 1000 K a single constant $c_p$ is fine. Across a combustor (say 250 → 1700 K) it is not; either use a higher constant value for the hot part, or split the process and use a different constant $c_p$ in each part (3 Feb, ll. 218–222, 263–269). This is why later weeks use separate $c_{pa}$ and $c_{pg}$ for air and combustion products.
+- From 300 K to 1000 K a single constant $c_p$ is fine. Across a combustor (say 250 → 1700 K) it is not; either use a higher constant value for the hot part, or split the process and use a different constant $c_p$ in each part (3 Feb, ll. 218–222, 263–269). Hence the cycle analysis uses separate $c_{pa}$ and $c_{pg}$ for air and combustion products.
 
 > [!example] Adiabatic work on air (3 Feb, ll. 171–194)
 > Air at $T_1=300$ K receives 100 kJ/kg of work adiabatically. Find $T_2$.
@@ -163,9 +161,6 @@ $$
 x_i = \frac{n_iM_i}{nM} = y_i\frac{M_i}{M}
 $$
 
-> [!warning] Transcript slip: mean molar mass from mass fractions (3 Feb, ll. 316–324)
-> The lecturer computes the molar mass of air as $28\times0.78+32\times0.22$, i.e. weighting $M_i$ by the mass fractions $0.78$ and $0.22$. The correct mass-fraction form is $M=(\sum x_i/M_i)^{-1}=(0.78/28+0.22/32)^{-1}=28.79$ kg/kmol, against 28.88 from the slip. The numbers are close only because $M_{N_2}$ and $M_{O_2}$ are similar. For a mixture containing hydrogen the wrong method fails badly. Weight by mole fractions ($M=\sum y_iM_i$) or use the reciprocal mass-fraction form.
-
 > [!example] H₂/O₂ rocket mixture (3 Feb, ll. 332–353, 388–395)
 > 1 kg of H₂ burns with 7.94 kg of O₂.
 >
@@ -180,9 +175,6 @@ $$
 > At a total pressure of 20 bar (Dalton, below): $p_{H_2}=0.668\times20=13.36$ bar and $p_{O_2}=(1-0.668)\times20=6.64$ bar.
 >
 > An 11 % mass fraction is a 67 % mole fraction: light species dominate the mole count.
-
-> [!warning] Transcript slip (3 Feb, l. 334)
-> "For the complete combustion of hydrogen, we need almost 8 kg of air." The 7.94 kg is oxygen (the mole count uses $M=32$). Burning 1 kg of H₂ in air needs about 34 kg of air.
 
 Data tables quote molar masses in either kg/kmol or g/mol (3 Feb, ll. 345–348). They are numerically equal, but keep the units consistent with $\bar R$, 8.3145 kJ kmol⁻¹ K⁻¹ or J mol⁻¹ K⁻¹.
 
@@ -231,9 +223,6 @@ Specific properties are mass-weighted averages (3 Feb, ll. 396–412).
 >
 > $$c_p = 0.232\times0.92+0.768\times1.03 = 0.213+0.791 = 1.004\ \mathrm{kJ\,kg^{-1}K^{-1}}$$
 
-> [!warning] Transcript slip: the "typo" that was not a typo (3 Feb, ll. 421–427)
-> The lecturer calls the slide's 1.004 a typo and "corrects" it to 1.01, reasoning that a weighted average of 0.92 and 1.03 cannot be 1.004. But 1.004 is between 0.92 and 1.03, and the arithmetic above gives exactly 1.0045. The slide value 1.004 is correct.
-
 ---
 
 ## 3. Steady Flow Energy Equation (Lecture 6)
@@ -266,10 +255,7 @@ $$
 
 $w_x$ is shaft work, not the $p\,dV$ displacement work of a closed system: the flow work is already inside $h$.
 
-> [!warning] Transcript slip (6 Feb, ll. 86–87)
-> "If we put together the first two terms, so the internal energy and the pressure energy, what we get is the entropy." It is the enthalpy, $h=u+p/\rho$.
-
-The combination $h+\tfrac12V^2$ is the stagnation enthalpy $h_0$ (previewing W03), so the SFEE becomes $q-w_x=\Delta h_0$. "Working with the total quantity" in the lecture (6 Feb, ll. 164–176) means exactly this: inside the machines the kinetic energy is either small or lumped into $h_0$.
+The combination $h+\tfrac12V^2$ is the stagnation enthalpy $h_0$ (see [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles|W03]]), so the SFEE becomes $q-w_x=\Delta h_0$. Working with total (stagnation) quantities accounts for the kinetic energy: inside the machines it is either small or lumped into $h_0$.
 
 ### The turbojet, component by component
 
@@ -319,7 +305,7 @@ $$
 | Turbine 4→5 | $q$, KE | $w_t=h_4-h_5=w_c$ | $h_5<h_4$ |
 | Nozzle 5→6 | $q$, $w$, $V_5$ | $\tfrac12V_6^2=h_5-h_6$ | $h_6<h_5$ |
 
-The sign column above is a free first check on every component: "if you get that at the exit of the compressor your enthalpy is lower, you have to do something" (6 Feb, ll. 184–186).
+The sign column above is a free first check on every component: a compressor exit enthalpy lower than the inlet value means something has gone wrong (6 Feb, ll. 184–186).
 
 Perfect gas and reversibility (notes §2.4.2). $\Delta h=c_p\Delta T$, and every reversible adiabatic process is isentropic, so (derived in §4)
 
@@ -486,10 +472,7 @@ $$
 \eta_t = \frac{w_t}{w_{t,s}} = \frac{h_1-h_2}{h_1-h_{2s}} = \frac{T_1-T_2}{T_1-T_{2s}}
 $$
 
-The ideal process always sits on the side that makes $\eta<1$: on the top for a compressor (it needs less work than the real one) and on the bottom for a turbine (it gives more work than the real one).
-
-> [!warning] Transcript slip (6 Feb, ll. 303–307)
-> "The work in the ideal case is given by the entropy at the point 2s… minus the entropy that we have at the beginning." It is the enthalpy: $w_{c,s}=h_{2s}-h_1$. The lecturer also corrects himself mid-sentence about which term is larger (ll. 308–311): the numerator $h_{2s}-h_1$ is the smaller one.
+The ideal work sits on the side that makes $\eta<1$: it is the numerator for a compressor (the ideal compressor needs less work than the real one) and the denominator for a turbine (the ideal turbine gives more work than the real one).
 
 Four sanity checks (notes §2.5.4):
 
@@ -602,7 +585,34 @@ Tasks marked *(set)* were set or explicitly left to you in the Week 2 lectures o
 - [ ] Derive both TdS equations, then the three perfect-gas entropy forms. → [[#Definition and the TdS equations]] · [[#Finite entropy changes of a perfect gas]]
 - [ ] Derive $T_2/T_1=(p_2/p_1)^{(\gamma-1)/\gamma}$ from $\Delta s=0$. → [[#The isentropic relations follow]]
 - [ ] Show $(\partial T/\partial s)_p=T/c_p$ and use it to explain why a gas turbine gives net work. → [[#Why the isobars diverge, and why a gas turbine gives net work]]
-- [ ] Find the molar mass of air both ways and explain why the lecture's method only *happens* to work. → [[#Mass and mole fractions]]
-- [ ] Recompute the $c_p$ of air and decide whether the slide's 1.004 was a typo. → [[#Properties of a mixture]]
+- [ ] Find the molar mass of air with mole fractions and with the reciprocal mass-fraction form, and explain why weighting $M_i$ by mass fractions gives 28.88 rather than 28.79 kg/kmol (see [[#Transcript and slide slips]]). → [[#Mass and mole fractions]]
+- [ ] Recompute the $c_p$ of air from $0.232\times0.92+0.768\times1.03$ and check the value 1.004 (see [[#Transcript and slide slips]]). → [[#Properties of a mixture]]
 - [ ] Turbine and compressor examples with isentropic efficiency, including $\Delta s$. → [[#Worked example – turbine with isentropic efficiency]] · [[#Worked example – compressor and its entropy rise]]
 - [ ] *(set)* Explore the CoolProp Jupyter notebook on Blackboard for real-gas properties (3 Feb, ll. 270–272; notes slide "Real fluid properties"); Problem Sheet 2 Q2.4 uses it.
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip: mean molar mass from mass fractions (3 Feb, ll. 316–324)
+> Where: [[#Mass and mole fractions]].
+>
+> The lecturer computes the molar mass of air as $28\times0.78+32\times0.22$, i.e. weighting $M_i$ by the mass fractions $0.78$ and $0.22$. The correct mass-fraction form is $M=(\sum x_i/M_i)^{-1}=(0.78/28+0.22/32)^{-1}=28.79$ kg/kmol, against 28.88 from the slip. The numbers are close only because $M_{N_2}$ and $M_{O_2}$ are similar. For a mixture containing hydrogen the wrong method fails badly. Weight by mole fractions ($M=\sum y_iM_i$) or use the reciprocal mass-fraction form.
+
+> [!warning] Transcript slip (3 Feb, l. 334)
+> Where: [[#Mass and mole fractions]].
+>
+> "For the complete combustion of hydrogen, we need almost 8 kg of air." The 7.94 kg is oxygen (the mole count uses $M=32$). Burning 1 kg of H₂ in air needs about 34 kg of air.
+
+> [!warning] Transcript slip: the "typo" that was not a typo (3 Feb, ll. 421–427)
+> Where: [[#Properties of a mixture]].
+>
+> The lecturer calls the slide's 1.004 a typo and "corrects" it to 1.01, reasoning that a weighted average of 0.92 and 1.03 cannot be 1.004. But 1.004 is between 0.92 and 1.03, and the arithmetic above gives exactly 1.0045. The slide value 1.004 is correct.
+
+> [!warning] Transcript slip (6 Feb, ll. 86–87)
+> Where: [[#From the First Law to the SFEE]].
+>
+> "If we put together the first two terms, so the internal energy and the pressure energy, what we get is the entropy." It is the enthalpy, $h=u+p/\rho$.
+
+> [!warning] Transcript slip (6 Feb, ll. 303–307)
+> Where: [[#5. Isentropic efficiency]].
+>
+> "The work in the ideal case is given by the entropy at the point 2s… minus the entropy that we have at the beginning." It is the enthalpy: $w_{c,s}=h_{2s}-h_1$. The lecturer also corrects himself mid-sentence about which term is larger (ll. 308–311): the numerator $h_{2s}-h_1$ is the smaller one.

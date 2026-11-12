@@ -182,7 +182,7 @@ $$
 
 The slit increases both stress and twist; it does not provide a harmless manufacturing convenience.
 
-![[Figures/structures_open_vs_closed_torsion.png]]
+![[structures_open_vs_closed_torsion.png]]
 
 ## Q5 - Open circular top-hat
 

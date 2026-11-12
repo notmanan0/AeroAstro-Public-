@@ -13,29 +13,21 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W02-1ab Electrostatics and Electric C
 
 # Coulomb's Law and Electric Field
 
-## Definition
+Coulomb's law gives the force between two point charges, which acts along the line joining them and falls off with the inverse square of their separation. The electric field $\mathbf E$ at a point is the force per unit positive test charge placed there.
 
-> [!note] Definition
->
-> $$F = \frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2},\qquad \mathbf E = \frac{\mathbf F}{q}\ \ [\mathrm{N/C} = \mathrm{V/m}],\qquad \varepsilon_0 = 8.85\times10^{-12}\ \mathrm{F/m}$$
->
-> The field is the force per unit **positive** test charge.
+$$
+F=\frac{1}{4\pi\varepsilon_0}\frac{q_1q_2}{r^2},\qquad \mathbf E=\frac{\mathbf F}{q}\ \ [\mathrm{N/C}=\mathrm{V/m}],\qquad \varepsilon_0=8.85\times10^{-12}\ \mathrm{F/m}.
+$$
 
-## Explanation
-- Like charges repel and unlike attract. The force obeys an inverse-square law along the line joining the charges.
-- **Superposition**: the field of many charges is the vector sum of each charge's field. Resolve components, add, recombine.
-- Field lines start on + and end on −. Their density shows the strength.
-- A uniform field (parallel plates) has $E = V/d$.
+Like charges repel and unlike charges attract. Fields superpose: the field of several charges is the vector sum of the field of each one, found by resolving components, adding them and recombining. Field lines start on positive charges and end on negative ones, and their density shows the field strength. Between parallel plates the field is uniform, with $E=V/d$.
 
-## Examples
-- Tutorial 1 Q1: two +1 mC charges 0.2 m apart repel with $2.25\times10^5$ N. The field between them cancels at the midpoint.
+In Tutorial 1 Q1, two $+1\ \mathrm{mC}$ charges $0.2\ \mathrm m$ apart repel with $2.25\times10^5\ \mathrm N$, and the field between them cancels at the midpoint.
 
 ![[ee_a1_two_charge_field.png|640]]
 
 ## Related
-- Topic notes: [[FEEG1004 A1 - Electrostatics, Potential and Current]]
-- Concepts: [[Electric Potential and Voltage]] · [[Lorentz Force]] · [[Capacitance]]
-- Maths: vector fields and divergence, [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities]]
 
-## Sources
-- Recorded lecture 1a; Tutorial Sheet 1
+- [[FEEG1004 A1 - Electrostatics, Potential and Current]]
+- [[Electric Potential and Voltage]] · [[Lorentz Force]] · [[Capacitance]]
+- Maths: vector fields and divergence, [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities]]
+- Sources: Recorded lecture 1a; Tutorial Sheet 1

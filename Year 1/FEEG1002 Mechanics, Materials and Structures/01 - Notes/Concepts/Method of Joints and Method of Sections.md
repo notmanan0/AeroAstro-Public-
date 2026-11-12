@@ -8,42 +8,24 @@ tags: [feeg1002, concept, statics, trusses]
 status: complete
 parent_lectures: ["[[FEEG1002 A2 - Pin-Jointed Trusses]]"]
 related_concepts: ["[[Free Body Diagram and Equilibrium]]", "[[Static Determinacy]]", "[[Williot Displacement Diagram]]"]
-sources: []
+sources: ["Statics 1 Lectures 3-4"]
 ---
 
 # Method of Joints and Method of Sections
 
-## Definition
+The method of joints and the method of sections are the two ways of finding the bar forces in a statically determinate pin-jointed truss. The **method of joints** isolates one pin at a time and applies $\sum F_x=\sum F_y=0$; the **method of sections** cuts the truss into two parts through at most three bars and applies all three equilibrium equations to one part.
 
-> [!note] Definition
-> Two ways to find the axial bar forces in a statically determinate pin-jointed truss:
-> - **Method of joints**: isolate each pin and apply $\sum F_x = \sum F_y = 0$ (two unknowns per joint).
-> - **Method of sections**: cut through at most three bars, isolate one part and apply all three equilibrium equations. Pick moment points where two unknown bar lines intersect, so each equation has one unknown.
+Both rely on the bars being two-force members: with frictionless pins and loads applied only at the joints, each bar carries a single force along its own axis. Every cut bar force is drawn pointing away from the joint or the cut, which is the tension-positive convention, so a negative answer means compression without any change of drawing.
 
-## Explanation
+At a joint only two equations are available, so the method of joints starts at a joint with no more than two unknown bars and works through the truss from there. It suits small trusses, or cases where every bar force is wanted. The method of sections goes straight to a bar in the middle of a long truss. With three cut bars, taking moments about the point where two of them meet leaves an equation with only the third, so each force comes out of one equation.
 
-- **Tension-positive convention**: draw every cut bar force pointing **away** from the joint. A negative result means compression.
-- **Joints** suit small trusses or finding every force; start where only two bars meet an unknown.
-- **Sections** suit a few bars in a long truss; never cut through a joint.
-- **Zero-force members**:
-  - at an unloaded joint with two non-collinear bars, both are zero;
-  - at an unloaded joint with three bars, two of them collinear, the third is zero.
-  They still stabilise the structure and carry load if the loading changes.
-- Sanity check: imagine removing the bar. Would its joints separate (tension) or approach (compression)?
-
-## Examples
-
-- L3 three-bar truss: $F_{BC} = -447$ N, $F_{AC} = +400$ N, $F_{AB} = 0$.
-- Warren truss (Tutorial 2 Q2): $F_{DE} = -25$ kN, $F_{GF} = +40$ kN (moments about C), $F_{GC} = 0$.
+Some bars carry no force under a given loading. At an unloaded joint with only two bars that are not in line, both are zero; at an unloaded joint with three bars, two of them in line, the third is zero. Such bars are still needed: they stabilise the truss and carry load when the loading changes. A quick physical check on any answer is to imagine removing the bar. If its two joints would then move apart, the bar was in tension; if they would move together, it was in compression.
 
 ![[s1_truss_method_of_sections.png|760]]
 
 ## Related
 
-- Topic notes: [[FEEG1002 A2 - Pin-Jointed Trusses]]
+- Topic notes: [[FEEG1002 A2 - Pin-Jointed Trusses#3. The method of joints|A2, method of joints]] · [[FEEG1002 A2 - Pin-Jointed Trusses#4. The method of sections|A2, method of sections]] · [[FEEG1002 A2 - Pin-Jointed Trusses#Zero-force members|A2, zero-force members]] · [[FEEG1002 A2 - Pin-Jointed Trusses#5. Choosing a method|A2, choosing a method]]
+- Tutorial: [[FEEG1002 Statics 1 Tutorial 2 - Trusses Solutions]]
 - Concepts: [[Free Body Diagram and Equilibrium]] · [[Static Determinacy]] · [[Williot Displacement Diagram]]
-- Year 2: [[Unit Load Method]] for truss deflection and [[Castigliano Second Theorem]] for redundant bars in [[SESA2028 S8 - Virtual Work and Castigliano Theorems]] · stiffness-method trusses in [[SESA2029 B1 - Introduction to FEA and the Matrix Displacement Method]]
-
-## Sources
-
-- Statics 1 Lectures 3b and 4a
+- Year 2: truss deflection by the [[Unit Load Method]] and redundant bars by [[Castigliano Second Theorem]] in [[SESA2028 S8 - Virtual Work and Castigliano Theorems]] · the stiffness method in [[SESA2029 B1 - Introduction to FEA and the Matrix Displacement Method]]

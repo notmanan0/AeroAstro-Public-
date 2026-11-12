@@ -8,7 +8,7 @@ tags: [sesa3029, concept, supersonic, linear-theory, aerofoil]
 status: complete
 parent_lectures: ["[[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]]"]
 related_concepts: ["[[Linearised Compressible Potential Equation]]", "[[Supersonic Wave Drag]]", "[[Shock-Expansion Theory]]", "[[Mach Waves and Mach Angle]]", "[[Riemann Invariants]]"]
-sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture4-6.pdf"]
+sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture 4-5.txt", "02 - Sources/Lectures/Lecture4-6.pdf"]
 ---
 
 # Ackeret Theory
@@ -19,7 +19,9 @@ $$
 C_p=\frac{2\theta}{\sqrt{M_\infty^2-1}}\qquad(\theta\text{ in radians, positive for compression}).
 $$
 
-For $M_\infty>1$ the linearised potential equation is the wave equation $\lambda^2\phi_{xx}=\phi_{yy}$, $\lambda=\sqrt{M_\infty^2-1}$. Its solution above the body is $\phi=f(x-\lambda y)$, constant along the free-stream Mach lines, so $u'=-v'/\lambda$. Flow tangency gives $v'/U_\infty=\theta$, and $C_p=-2u'/U_\infty$ then gives the formula (4.5 slides 2–5). The same result is the weak-wave limit of the method of characteristics: above the body the invariant $R^-=\nu+\theta$ is uniform, so the flow is a simple flow region.
+For $M_\infty>1$ the linearised potential equation is the wave equation $\lambda^2\phi_{xx}=\phi_{yy}$, $\lambda=\sqrt{M_\infty^2-1}$. Its solution above the body is $\phi=f(x-\lambda y)$, constant along the free-stream Mach lines, so $u'=-v'/\lambda$. Flow tangency gives $v'/U_\infty=\theta$, and $C_p=-2u'/U_\infty$ then gives the formula (4.5 slides 2–5). No field solution is needed: the surface slope fixes $C_p$ point by point. The same result is the weak-wave limit of the method of characteristics: above the body the invariant $R^-=\nu+\theta$ is uniform, so the flow is a simple flow region.
+
+The sign of $\theta$ follows from a duct picture. A face and a streamline just outside it form a channel; if the channel narrows downstream, the supersonic flow slows and the pressure rises (compression, $\theta>0$), and if it widens, the flow speeds up and the pressure falls (expansion, $\theta<0$). On a flat plate at positive incidence the upper surface is the expansion, $\theta_u=-\alpha$, and the lower the compression, $\theta_l=+\alpha$.
 
 For a thin aerofoil at incidence $\alpha$, with thickness $h(x)$ and camber $y_c(x)$ (4.6 slides 5–6):
 
@@ -30,7 +32,7 @@ $$
 
 Lift depends only on $\alpha$. Camber and thickness only add drag ([[Supersonic Wave Drag]]). On a flat plate $\Delta C_p$ is uniform, so the centre of pressure is at mid-chord.
 
-Accuracy: at $M_\infty=2$, $\alpha=10^\circ$, Ackeret gives $C_l=0.4031$ and $C_d=0.0703$, against the exact shock-expansion $0.4075$ and $0.0719$ (4.5 slide 7). The course quotes the range $M_\infty>1.2$; the theory fails near $M_\infty=1$ and in hypersonic flow.
+Accuracy: at $M_\infty=2$, $\alpha=10^\circ$, Ackeret gives $C_l=0.4031$ and $C_d=0.0703$, against the exact shock-expansion $0.4075$ and $0.0719$ (4.5 slide 7). It applies for $M_\infty$ from about 1.2 up to 3–4 (title slide; L4-5, ll. 4–5) and fails near $M_\infty=1$ and in hypersonic flow.
 
 ![[at_ackeret_mach_lines.png|760]]
 

@@ -27,7 +27,7 @@ Solid elements are the 3D continuum elements of FE analysis, tetrahedra and hexa
 - They are unsuitable for large thin structures (skins, thin pressure vessels, beams), where shells and beams are both cheaper and more accurate.
 - Use solids when the through-thickness stress matters, or for chunky parts (lugs, fittings, nuclear or civil sections).
 
-- Thin cantilever, same load (FEA Lecture 8, slide 29): beam and shell models give contour maxima of 1875 and 1814, bricks 2113 and tetrahedra 2125, 13 to 17 % higher; the lecture read the values as about 1000 and 2000 ([[SESA2029 B6 - 2D and 3D Elements]]).
+- Thin cantilever, same load (FEA Lecture 8, slide 29): beam and shell models give contour maxima of 1875 and 1814, bricks 2113 and tetrahedra 2125, 13 to 17 % higher ([[SESA2029 B6 - 2D and 3D Elements]]).
 
 ## Related
 

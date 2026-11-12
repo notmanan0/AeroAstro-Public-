@@ -29,9 +29,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_8_ 2D_3D_elements_final.pdf", "02 -
 > - **Common mistakes:** selecting plane strain (KEYOPT(3)) for a thin plate; one layer of linear solids through a thin wall.
 > - **Practise:** [[#Worked example: the same strain under plane stress and plane strain]]
 
-The second lecture of week 4 is practical: how to choose an element (2026-02-20 11:03, ll. 1–20). Aerospace structures are dominated by beams and shells because they are thin-walled; nuclear and civil structures can afford thick sections because weight matters less.
+Choosing the element type is the practical decision in any FE model (2026-02-20 11:03, ll. 1–20). Aerospace structures are dominated by beams and shells because they are thin-walled; nuclear and civil structures can afford thick sections because weight matters less.
 
-An element can only deform in the ways its nodes allow. A beam treats each cross-section as rigid, so it cannot show a section distorting or stress piling up round a hole; lab 2 showed the stress concentration changing with the hole's position, which no beam could capture (ll. 11–25). A sheet of paper resists being stretched in its own plane but bends easily, so an element for thin sheets needs separate stiffness for stretching and for bending. A solid block element has no notion of bending at all and must build it out of several layers of nodes moving relative to each other.
+An element can only deform in the ways its nodes allow. A beam treats each cross-section as rigid, so it cannot show a section distorting or stress piling up round a hole; in lab 2 the stress concentration changes with the hole's position, which no beam could capture (ll. 11–25). A sheet of paper resists being stretched in its own plane but bends easily, so an element for thin sheets needs separate stiffness for stretching and for bending. A solid block element has no notion of bending at all and must build it out of several layers of nodes moving relative to each other.
 
 ## 1. Plane stress and plane strain
 
@@ -73,7 +73,7 @@ $$
 \varepsilon_z=-\frac{\nu}{1-\nu}(\varepsilon_x+\varepsilon_y),
 $$
 
-the geometrical relation the lecture uses to eliminate it (ll. 66–70).
+the geometrical relation that eliminates it.
 
 Plane strain applies to long or thick bodies of uniform section loaded uniformly along their length, such as a dam or a tunnel: the strains perpendicular to the plane are zero (ll. 71–95),
 
@@ -87,16 +87,25 @@ $$
 \sigma_z=\nu(\sigma_x+\sigma_y)\neq0 .
 $$
 
-Substituting it into $\varepsilon_x=(\sigma_x-\nu\sigma_y-\nu\sigma_z)/E$ and the equivalent for $\varepsilon_y$, then inverting, gives
+Substitute it into $\varepsilon_x=(\sigma_x-\nu\sigma_y-\nu\sigma_z)/E$:
+
+$$
+E\varepsilon_x=\sigma_x-\nu\sigma_y-\nu^2\sigma_x-\nu^2\sigma_y=(1-\nu^2)\sigma_x-\nu(1+\nu)\sigma_y=(1+\nu)\left[(1-\nu)\sigma_x-\nu\sigma_y\right],
+$$
+
+and likewise $E\varepsilon_y=(1+\nu)\left[(1-\nu)\sigma_y-\nu\sigma_x\right]$. In matrix form,
+
+$$
+\frac{E}{1+\nu}\begin{Bmatrix}\varepsilon_x\\\varepsilon_y\end{Bmatrix}=\begin{bmatrix}1-\nu&-\nu\\-\nu&1-\nu\end{bmatrix}\begin{Bmatrix}\sigma_x\\\sigma_y\end{Bmatrix}.
+$$
+
+The $2\times2$ matrix has determinant $(1-\nu)^2-\nu^2=1-2\nu$, so its inverse is $\frac{1}{1-2\nu}\begin{bmatrix}1-\nu&\nu\\\nu&1-\nu\end{bmatrix}$. The shear relation $\tau_{xy}=G\gamma_{xy}$ with $G=E/2(1+\nu)$ is unchanged, and $\tfrac{E}{2(1+\nu)}=\tfrac{E}{(1+\nu)(1-2\nu)}\cdot\tfrac{1-2\nu}{2}$. Together,
 
 $$
 \begin{Bmatrix}\sigma_x\\\sigma_y\\\tau_{xy}\end{Bmatrix}=\frac{E}{(1+\nu)(1-2\nu)}\begin{bmatrix}1-\nu&\nu&0\\\nu&1-\nu&0\\0&0&\frac{1-2\nu}{2}\end{bmatrix}\begin{Bmatrix}\varepsilon_x\\\varepsilon_y\\\gamma_{xy}\end{Bmatrix}.
 $$
 
-Aerospace examples are hard to find; a very thick engine component might qualify (ll. 86–95).
-
-> [!warning] Lecture slip (2026-02-20 11:03, ll. 51–55)
-> Introducing plane strain, the dam and tunnel are described as "very thin". Plane strain is the assumption for long or thick bodies, where the material along the length prevents out-of-plane strain; thin bodies are plane stress.
+Aerospace examples are rare; a very thick engine component might qualify (ll. 86–95).
 
 ## 2. Membranes and in-plane element shapes
 
@@ -122,14 +131,15 @@ Shells are recommended when the thickness is at most about a twentieth of the lo
 
 The two basic solids are the hexahedron (hex or brick), with eight corner nodes and higher-order versions with more, and the tetrahedron (tet), with four corner nodes and higher-order versions (ll. 181–200; [[Solid Elements (Tetrahedra and Hexahedra)]]). Bricks can degenerate into wedges for arbitrary geometry, but tets are more flexible and mesh irregular shapes with sharp changes most easily, as in the B2 bracket. Every element family comes in two orders: lower-order elements use linear polynomials and higher-order ones quadratic, with mid-side nodes and more accurate stress recovery, as with two- and three-node beams.
 
-Every node of a solid has three translational DOF and no rotations (ll. 196–215). A solid can rotate, but only through the relative motion of several nodes, so a single element cannot represent rotation.
+Every node of a solid has three translational DOF and no rotations (ll. 196–215). A solid can rotate, but only through the relative motion of several nodes: no node carries a rotation of its own, so a rotation cannot be applied or read at a single node.
 
 Two limitations follow (ll. 211–250). Meshing can distort solid elements, and too much distortion ruins accuracy; ANSYS warns when it happens. The aspect ratio, longest over shortest side, should be at most 3 for linear elements and at most 5 for quadratic ones, so if a linear mesh fails the checks, switch to quadratic elements, accepting more DOF for more tolerance. And a single solid element does not capture bending: at least three linear or two quadratic elements are needed through the thickness. Solids are therefore not ideal for large thin structures: beams, thin pressure vessels, aircraft skins and fuselages, solar panels.
 
-The lecture's thin cantilever, modelled four ways, shows the effect (slide 29). The contour maxima are 1875 for beam elements and 1814 for shells, which agree within about 3 %, but 2113 for bricks and 2125 for tetrahedra, 13 to 17 % higher, with the tet model visibly misbehaving. For a very thin structure the beam or shell answer is the one to trust, subject as always to a convergence study.
+![[dam_solid_bending_layers.png|820]]
 
-> [!warning] Lecture slip (2026-02-20 11:03, ll. 241–250)
-> The values are read out as 1085 and 1014 for the beam and shell, and about 2000 and 2025 for the solids, which would make the solids double. The slide's legends give 1875 (beam), 1814 (shell), 2113 (brick) and 2125 (tet). The conclusion, that solids are unreliable for thin structures, stands; the discrepancy is smaller than stated.
+The figure shows why, with a small plane-stress code standing in for linear bricks: a thin cantilever ($L/h=10$, $\nu=0.3$, tip shear load) meshed with fully integrated four-node quadrilaterals. A linear element cannot take up the curved shape of a bent fibre, so it bends by shearing instead, and that spurious shear makes it too stiff. With one element through the thickness and 20 along the length the tip deflection is only 84 % of the beam-theory value; three layers raise it to 90 %, after which more layers barely help, and the rest of the deficit only goes as the elements are shortened along the beam (97 % with 40 along and eight through). Linear solids need several layers and short elements, and even then they converge slowly in bending, which is the point of the three-layer rule.
+
+A thin cantilever modelled four ways in ANSYS makes the same point from another angle (slide 29): the solid models disagree with the beam and shell models, which agree with each other. The maximum stresses on the contour legends are 1875 for beam elements and 1814 for shells, which agree within about 3 %, but 2113 for bricks and 2125 for tetrahedra, 13 to 17 % higher, with the tet model visibly misbehaving. For a very thin structure the beam or shell answer is the one to trust, subject as always to a convergence study.
 
 ## 5. Summary of element types
 
@@ -143,11 +153,13 @@ The lecture's thin cantilever, modelled four ways, shows the effect (slide 29). 
 | 2D | Shell | 3 to 8 | all translations and rotations except rotation about the normal |
 | 3D | Solid (tet, wedge, hex) | 4 to 20 | translations only |
 
-(Slide 30, which lists 8 to 20 nodes for solids; a linear tetrahedron has 4.) The next lecture covers meshing strategies and modal analysis (ll. 251–268).
+See [[SESA2029 B7 - Meshing, Convergence and Mesh Checks|B7]] for meshing strategies and [[SESA2029 B8 - Modal Analysis|B8]] for modal analysis (ll. 251–268).
 
-## Worked example: the same strain under plane stress and plane strain
+## Worked examples
 
-Not from the lecture: this shows how much the KEYOPT(3) choice matters. An aluminium region ($E=70$ GPa, $\nu=0.33$) has $\varepsilon_x=10^{-3}$, $\varepsilon_y=0$, $\gamma_{xy}=0$.
+### Worked example: the same strain under plane stress and plane strain
+
+*(Suggested, not lecturer-set.)* The KEYOPT(3) choice changes the stresses substantially for the same strain. An aluminium region ($E=70$ GPa, $\nu=0.33$) has $\varepsilon_x=10^{-3}$, $\varepsilon_y=0$, $\gamma_{xy}=0$.
 
 Under plane stress,
 
@@ -171,7 +183,28 @@ $$
 \sigma_z=\nu(\sigma_x+\sigma_y)=51.1\text{ MPa}.
 $$
 
-Preventing the out-of-plane strain makes the material 32 % stiffer in $x$ and adds a through-thickness stress, so modelling a thin plate as plane strain overestimates its stiffness and changes every stress (values from NumPy).
+Preventing the out-of-plane strain makes the material 32 % stiffer in $x$ and adds a through-thickness stress, so modelling a thin plate as plane strain overestimates its stiffness and changes every stress.
+
+With equal biaxial strain, $\varepsilon_x=\varepsilon_y=10^{-3}$, the difference grows. Plane stress gives
+
+$$
+\sigma_x=\sigma_y=\frac{E}{1-\nu^2}(1+\nu)\varepsilon_x=\frac{E}{1-\nu}\varepsilon_x=\frac{70\,000}{0.67}\times10^{-3}=104.5\ \mathrm{MPa},
+\qquad
+\varepsilon_z=-\frac{0.33}{0.67}\times2\times10^{-3}=-9.9\times10^{-4},
+$$
+
+while plane strain gives
+
+$$
+\sigma_x=\sigma_y=\frac{E(1-\nu+\nu)}{(1+\nu)(1-2\nu)}\varepsilon_x=\frac{70\,000}{1.33\times0.34}\times10^{-3}=154.8\ \mathrm{MPa},
+\qquad
+\sigma_z=\nu(\sigma_x+\sigma_y)=102.2\ \mathrm{MPa}.
+$$
+
+The plane-strain stresses are 48 % higher.
+
+> [!check] Plane strain stiffens without limit as $\nu\to\tfrac12$
+> The plane-strain factor $(1+\nu)(1-2\nu)$ goes to zero as $\nu\to\tfrac12$, the incompressible limit, so the biaxial stiffness grows without bound: a material that cannot change volume and cannot strain out of plane cannot change its in-plane area either, so equal biaxial strain is impossible (only strains with $\varepsilon_x+\varepsilon_y=0$, such as shear, remain). The plane-stress factor $1-\nu^2$ stays finite. For $\nu=0$ the two matrices coincide, since there is then no Poisson coupling to the third direction.
 
 ## Links
 
@@ -186,7 +219,7 @@ Preventing the out-of-plane strain makes the material 32 % stiffer in $x$ and ad
 
 - FEA Lecture 8 slides, `Lecture_8_ 2D_3D_elements_final.pdf` (thin-cantilever values read from the slide-29 legends), with transcript `SESA2029 Lecture 2026-02-20 - 1103.txt` (Dr J. Yuan)
 - ANSYS Mechanical APDL Element Reference
-- Worked example computed with NumPy
+- Worked example computed with NumPy. Figures: `01 - Notes/Figures/generate_dam_b6_figures.py` (own Q4 plane-stress solver)
 
 ## Self-study tasks
 
@@ -195,9 +228,26 @@ Preventing the out-of-plane strain makes the material 32 % stiffer in $x$ and ad
 - [ ] Explain plane stress and plane strain, with an example of each, and write their stress–strain matrices (2026-02-20 11:03, ll. 46–95). → [[#1. Plane stress and plane strain]]
 - [ ] Compare plate and shell elements and state when shells are appropriate (ll. 121–180). → [[#3. Plates and shells]]
 - [ ] Explain the two limitations of solid elements (ll. 211–250). → [[#4. Solid elements]]
-- [ ] Continue the lab 2 assignment and the example sheets ("you cannot understand much if you just listen to the lectures", ll. 261–268). → [[SESA2029 FEA Worked Examples]]
+- [ ] Continue the lab 2 assignment and the example sheets (ll. 261–268). → [[SESA2029 FEA Worked Examples]]
 
 ### Further practice
 
 - [ ] Derive the plane-strain matrix from 3D Hooke's law. → [[#1. Plane stress and plane strain]]
 - [ ] Repeat the worked example with $\varepsilon_x=\varepsilon_y=10^{-3}$ (suggested, not lecturer-set). → [[#Worked example: the same strain under plane stress and plane strain]]
+
+## Transcript and slide slips
+
+> [!warning] Lecture slip (2026-02-20 11:03, ll. 51–55)
+> Where: [[#1. Plane stress and plane strain]].
+>
+> Introducing plane strain, the dam and tunnel are described as "very thin". Plane strain is the assumption for long or thick bodies, where the material along the length prevents out-of-plane strain; thin bodies are plane stress.
+
+> [!warning] Lecture slip (2026-02-20 11:03, ll. 241–250)
+> Where: [[#4. Solid elements]].
+>
+> The values are read out as 1085 and 1014 for the beam and shell, and about 2000 and 2025 for the solids, which would make the solids double. The slide's legends give 1875 (beam), 1814 (shell), 2113 (brick) and 2125 (tet). The conclusion, that solids are unreliable for thin structures, stands; the discrepancy is smaller than stated.
+
+> [!warning] Slide slip: node counts of solids (Lecture 8 slide 30)
+> Where: [[#5. Summary of element types]].
+>
+> The summary table lists 8 to 20 nodes for solid elements. A linear tetrahedron has 4 nodes and a linear wedge 6, so the range is 4 to 20, as in the table above.

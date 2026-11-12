@@ -21,6 +21,8 @@ On a rectangle, separation gives trig functions in the direction with homogeneou
 
 ![[m2048_pde_laplace_square.png|480]]
 
+Mode $n$ of boundary data decays into the domain like $e^{-n\pi d}$ at a distance $d$ from its edge, so fine detail in the data is felt only near the boundary. The equation is linear, so data on several sides is the sum of one-side problems. The **maximum principle** (no interior maximum or minimum without a source) gives uniqueness for Dirichlet data in two lines: the difference of two solutions with the same boundary values is zero on the boundary, so it is zero everywhere. All-Neumann data fixes the solution only up to a constant, and must satisfy $\oint\partial u/\partial n\,ds=0$, by the [[Divergence Theorem]].
+
 ## Related
 
 - [[MATH2048 PDE5 - Laplace's Equation]] · [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities]]

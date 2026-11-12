@@ -13,26 +13,22 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W06-7abc Thevenin Superposition and R
 
 # Maximum Power Transfer
 
-## Definition
+A source with Thévenin voltage $V_{TH}$ and resistance $R_{TH}$ delivers the most power to a resistive load when the load resistance equals the source resistance. At that point the source wastes as much power internally as it delivers, so the efficiency is $50\ \%$.
 
-> [!note] Definition
-> A source $(V_{TH}, R_{TH})$ delivers the most power to a resistive load when
->
-> $$R_L = R_{TH},\qquad P_{max} = \frac{V_{TH}^2}{4R_{TH}},\qquad \eta = 50\ \%$$
+$$
+R_L = R_{TH},\qquad P_{max} = \frac{V_{TH}^2}{4R_{TH}},\qquad \eta = 50\ \%
+$$
 
-## Explanation
-- $P = V_{TH}^2R_L/(R_L + R_{TH})^2$. Differentiate and set to zero to get $R_L = R_{TH}$.
-- At the optimum, half the power is lost in the source. **Power systems avoid it** ($R_L\gg R_{TH}$ for efficiency); **signal systems** (antennas, RF) use it.
-- The ideal 5 V source shorted by 1 mΩ "delivering 25 kW" shows why real sources need $R_{TH}$ in their models.
+The load current is $V_{TH}/(R_L + R_{TH})$, so the load power is $P = V_{TH}^2R_L/(R_L + R_{TH})^2$. Differentiating with respect to $R_L$ and setting the result to zero gives $R_L = R_{TH}$, and substituting back gives $P_{max}$.
 
-## Examples
-- A 13 V car battery with 10 mΩ ESR could in principle deliver 4.2 kW into 10 mΩ, with the battery dissipating the same.
+Because half the power is lost in the source at the optimum, power systems deliberately avoid it and run with $R_L\gg R_{TH}$ for efficiency. Signal systems such as antennas and RF chains, where the signal is weak and efficiency matters less, are matched for maximum power instead.
+
+The theorem also shows why a real source must be modelled with its internal resistance. An ideal $5\ \mathrm V$ source shorted by $1\ \mathrm{m\Omega}$ would deliver $25\ \mathrm{kW}$, which no real source can do. A $13\ \mathrm V$ car battery with $10\ \mathrm{m\Omega}$ internal resistance could in principle deliver $4.2\ \mathrm{kW}$ into a matched $10\ \mathrm{m\Omega}$ load, while dissipating the same $4.2\ \mathrm{kW}$ inside itself.
 
 ![[ee_a7_battery_model.png|700]]
 
 ## Related
-- Topic notes: [[FEEG1004 A7 - Thevenin, Superposition and Relays]]
-- Cross-module: the solar-array maximum-power point, [[Solar Cells and Arrays]] · [[Link Budget Equation]] (matched RF chains)
 
-## Sources
-- Recorded lecture 7a (real-world sources); derived
+- [[FEEG1004 A7 - Thevenin, Superposition and Relays]]
+- Cross-module: the solar-array maximum-power point, [[Solar Cells and Arrays]] · [[Link Budget Equation]] (matched RF chains)
+- Sources: Recorded lecture 7a (real-world sources); derived

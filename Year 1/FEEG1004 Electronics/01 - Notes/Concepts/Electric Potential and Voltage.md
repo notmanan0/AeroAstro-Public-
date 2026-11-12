@@ -13,28 +13,21 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W02-1ab Electrostatics and Electric C
 
 # Electric Potential and Voltage
 
-## Definition
+The potential difference, or voltage, between two points is the energy per unit charge needed to move charge from one to the other. Its unit is the volt, one joule per coulomb.
 
-> [!note] Definition
-> The potential difference between two points is the energy per unit charge needed to move charge between them:
->
-> $$V = \frac{W}{q}\ \ [\mathrm{J/C} = \mathrm V],\qquad E_x = -\frac{dV}{dx},\qquad V = EL\ \ \text{(uniform field)}$$
+$$
+V = \frac{W}{q}\ \ [\mathrm{J/C} = \mathrm V],\qquad E_x = -\frac{dV}{dx},\qquad V = EL\ \ \text{(uniform field)}
+$$
 
-## Explanation
-- **Gravity analogy**: potential is height and voltage is the height difference. Work is $q\Delta V$ just as it is $mg\Delta h$.
-- The field is the **slope** of the potential landscape. A charge "falls" down it.
-- The course draws voltage arrows with the **head at the more positive end**.
-- The value of voltage is always relative: circuits pick a **ground** node as 0 V.
+Gravity gives a close analogy: potential plays the part of height and voltage the part of a height difference, so the work done moving a charge through a potential difference is $q\Delta V$, just as lifting a mass takes $mg\Delta h$. The electric field is the slope of this potential landscape, pointing downhill, and a positive charge released in it moves down that slope. Between plates $4\ \mathrm m$ apart held at $0\ \mathrm V$ and $5\ \mathrm V$, the uniform field is $E=5/4=1.25\ \mathrm{V/m}$.
 
-## Examples
-- Plates 4 m apart at 0 V and 5 V: $E$ = 1.25 V/m.
-- An electron and a proton falling through 1000 V gain the same KE ($eV$). The lighter electron moves faster.
-- Ion thrusters: exit KE $= qV_{grid}$ ([[Electric (Ion) Propulsion]]).
+Only differences of potential have meaning, so a circuit picks one node as **ground** and calls it $0\ \mathrm V$; every other node voltage is measured from there. Voltage arrows are drawn with the head at the more positive end.
+
+A charge $q$ falling through a potential difference $V$ gains kinetic energy $qV$. An electron and a proton accelerated through $1000\ \mathrm V$ therefore gain the same kinetic energy, $eV$, but the much lighter electron ends up moving far faster. The same relation sets the exit kinetic energy of an ion thruster, $qV_{grid}$ ([[Electric (Ion) Propulsion]]).
 
 ## Related
-- Topic notes: [[FEEG1004 A1 - Electrostatics, Potential and Current]]
-- Concepts: [[Coulomb's Law and Electric Field]] · [[Kirchhoff's Current and Voltage Laws]]
-- Cross-module: [[Conservative Forces and Potential Energy]] · [[Gradient and Directional Derivative]]
 
-## Sources
-- Recorded lecture 1a; Week 2 interactive session
+- [[FEEG1004 A1 - Electrostatics, Potential and Current]]
+- [[Coulomb's Law and Electric Field]] · [[Kirchhoff's Current and Voltage Laws]]
+- Cross-module: [[Conservative Forces and Potential Energy]] · [[Gradient and Directional Derivative]]
+- Sources: Recorded lecture 1a; Week 2 interactive session

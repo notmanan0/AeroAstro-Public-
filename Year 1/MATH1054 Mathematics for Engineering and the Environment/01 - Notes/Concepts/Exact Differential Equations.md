@@ -8,35 +8,33 @@ tags: [math1054, concept, odes]
 status: complete
 parent_lectures: ["[[MATH1054 M12 - Differential Equations II]]"]
 related_concepts: ["[[Partial Derivatives]]", "[[Integrating Factor Method]]", "[[Conservative Vector Fields]]"]
-sources: ["James, Modern Engineering Mathematics (6th ed.) §10.5.3", "MATH1054 Module Booklet, Module 12"]
+sources: ["James, Modern Engineering Mathematics (6th ed.) §10.5.7", "MATH1054 Module Booklet, Module 12"]
 ---
 
 # Exact Differential Equations
 
-## Definition
+A first-order equation $p(t,x)\,\dot x+q(t,x)=0$ is exact when there is a function $h(t,x)$ with $\partial h/\partial x=p$ and $\partial h/\partial t=q$. Its solutions are then the curves $h(t,x)=C$.
 
-> [!note] Definition
-> $f(x,t)\,\dot x+g(x,t)=0$ is **exact** if there is an $F(x,t)$ with $F_x=f$ and $F_t=g$. Then $\frac{\mathrm d}{\mathrm dt}F(x,t)=0$, so the solution is $F=C$.
->
-> $$\text{Test: }\frac{\partial f}{\partial t}=\frac{\partial g}{\partial x}$$
+The reason is the chain rule for $h\big(t,x(t)\big)$: $\dfrac{\mathrm dh}{\mathrm dt}=\dfrac{\partial h}{\partial x}\dot x+\dfrac{\partial h}{\partial t}=p\,\dot x+q$, so the equation says $\mathrm dh/\mathrm dt=0$. Whether $h$ exists can be tested without finding it. If it does, differentiating $h_x=p$ with respect to $t$ and $h_t=q$ with respect to $x$ gives two mixed second derivatives of $h$, which are equal for any $h$ with continuous second derivatives, so
 
-## Explanation
-1. Check the test.
-2. Integrate $f$ with respect to $x$, adding an unknown $h(t)$.
-3. Differentiate with respect to $t$ and match to $g$ to find $h$.
-4. Write $F=C$. It is usually left implicit.
+$$
+\frac{\partial p}{\partial t}=\frac{\partial q}{\partial x}.
+$$
 
-This is the same idea as finding a potential $\phi$ for a conservative field ([[Conservative Vector Fields]]). A non-exact equation can sometimes be made exact with an integrating factor.
+If the test fails, the equation is not exact. If it holds, $h$ is built by integrating $p$ with respect to $x$, holding $t$ fixed and adding an unknown function $C_1(t)$ in place of a constant, then differentiating with respect to $t$ and matching to $q$. The equation for $C_1'(t)$ contains no $x$ precisely because the test holds: $\partial_x\big(q-\partial_t\!\int p\,\mathrm dx\big)=q_x-p_t=0$.
 
-## Examples
-- $(\ln\sin t-3x^2)\dot x+x\cot t+4t=0$ gives $x\ln\sin t-x^3+2t^2=C$ (Ex 10.16).
-- $\cos t\,\dot x-x\sin t+1=0$ with $x(0)=2$ gives $x=\frac{2-t}{\cos t}$ (Ex 24(d)).
-- $\sqrt t\,\dot x-xt=0$ is **not** exact (Ex 25(b)).
+For example, $(\ln\sin t-3x^2)\,\dot x+x\cot t+4t=0$ (Example 10.16) has $p_t=\cot t=q_x$. Integrating $p$ gives $h=x\ln\sin t-x^3+C_1(t)$; then $h_t=x\cot t+C_1'(t)$ must equal $x\cot t+4t$, so $C_1=2t^2$ and
+
+$$
+x\ln\sin t-x^3+2t^2=C ,
+$$
+
+a cubic in $x$ normally left implicit. With $x(\tfrac12\pi)=3$, $C=0-27+2(\tfrac12\pi)^2=\tfrac12\pi^2-27\approx-22.065$. Other cases: $\cos t\,\dot x-x\sin t+1=0$ with $x(0)=2$ gives $x\cos t+t=2$, so $x=\dfrac{2-t}{\cos t}$ (Exercise 24(d)); $\sqrt t\,\dot x-xt=0$ is not exact, since $p_t=1/(2\sqrt t)$ while $q_x=-t$ (Exercise 25(b)). Multiplying that last equation by $1/(x\sqrt t)$ makes it exact, and a multiplier of this kind is an integrating factor; the [[Integrating Factor Method]] is the systematic version for linear equations.
+
+Two traps recur. The "constant" from integrating with respect to $x$ is a function of $t$, and writing it as a plain number loses the $t$-only terms of $h$, such as the $2t^2$ above. When both conditions are integrated separately and compared, a term that appears in both is counted once. The construction is the same as finding the potential of a conservative vector field ([[Conservative Vector Fields]]), and the solution curves are the contours of $h$.
 
 ## Related
-- Topics: [[MATH1054 M12 - Differential Equations II]]
-- Concepts: [[Partial Derivatives]] · [[Integrating Factor Method]] · [[Conservative Vector Fields]]
 
-## Sources
-- James, Modern Engineering Mathematics (6th ed.) §10.5.3
-- MATH1054 Module Booklet, Module 12
+- Topics: [[MATH1054 M12 - Differential Equations II]] (derivation of the test, Examples 10.15–10.16, Exercises 23(e), 24(d), 25(b), Specimen Test 12 Q4) · [[MATH2048 VC3 - Line Integrals and Conservative Fields]]
+- Concepts: [[Partial Derivatives]] · [[Integrating Factor Method]] · [[Conservative Vector Fields]] · [[Homogeneous First-Order ODEs]]
+- Sources: James, *Modern Engineering Mathematics* (6th ed.) §10.5.7; MATH1054 Module Booklet, Module 12

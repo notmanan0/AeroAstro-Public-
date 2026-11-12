@@ -13,28 +13,19 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 01 - Measurement Sy
 
 # Thermocouples and Cold-Junction Compensation
 
-## Definition
+A thermocouple is a pair of dissimilar metals joined at two junctions; each junction develops a temperature-dependent contact potential, and with the junctions at different temperatures the net EMF (the **Seebeck effect**) is
 
-> [!note] Definition
-> Two dissimilar metals joined at a junction develop a temperature-dependent contact potential. With two junctions at different temperatures, the net EMF (Seebeck effect) is
->
-> $$V\approx S\,(T_{hot} - T_{ref}),\qquad S\sim\text{tens of }\mu\mathrm V/°\mathrm C$$
->
-> It is an **active**, **differential** sensor.
+$$
+V\approx S\,(T_{hot} - T_{ref}),\qquad S\sim\text{tens of }\mu\mathrm V/°\mathrm C
+$$
 
-## Explanation
-- It measures a temperature *difference*. For absolute readings the reference junction temperature must be known.
-- **Ice bath**: the classic 0 °C reference, impractical outside the lab.
-- **Cold-junction compensation**: an IC (silicon transistor) sensor measures the terminal temperature, and the electronics add the equivalent EMF.
-- Extra junctions (to copper leads) cancel if they are at the same temperature.
-- The signal is small (µV), so it needs amplification. Dedicated amplifiers include CJC and give e.g. 10 mV/°C.
+It is an active, differential sensor: it generates its own signal, and that signal measures a temperature difference. For an absolute reading the temperature of the reference junction must be known. The classic reference is an ice bath at 0 °C, which is impractical outside the laboratory. **Cold-junction compensation** (CJC) replaces it: an IC sensor based on a silicon transistor measures the temperature of the terminals, and the electronics add the equivalent EMF. The extra junctions formed where the thermocouple wires meet the copper leads cancel, provided they are at the same temperature.
 
-## Examples
-- Type J (iron–constantan) ≈ 52 µV/°C; type K ≈ 41 µV/°C.
+The sensitivity is about 52 µV/°C for type J (iron–constantan) and about 41 µV/°C for type K. A signal of microvolts needs amplification, and dedicated thermocouple amplifiers include CJC and give an output such as 10 mV/°C.
 
 ## Related
-- Topic notes: [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]]
-- Year 2: [[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion]] (thermoelectric sensing) · engine temperatures, [[Turbine Entry Temperature and Blade Cooling]]
 
-## Sources
-- Transducers lecture 1
+- [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]]
+- [[RTDs and Thermistors]] · [[Passive and Active Transducers]]
+- Year 2: [[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion]] (thermoelectric sensing) · engine temperatures, [[Turbine Entry Temperature and Blade Cooling]]
+- Sources: Transducers lecture 1

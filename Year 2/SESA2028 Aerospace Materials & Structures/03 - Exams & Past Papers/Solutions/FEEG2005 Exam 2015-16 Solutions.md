@@ -242,7 +242,7 @@ $$
 25.0=1.058(20+\log t_r)\;\Rightarrow\;\log t_r=\frac{25.0}{1.058}-20=3.629,\qquad t_r=\boxed{4261\ \text{h}}.
 $$
 
-**The lecturer deducts a mark for no safety factor.** With SF 2, operate for about **2,100 h** before inspection or replacement. ±0.2 on the read-off gives about 2,800-6,600 h.
+**The mark scheme deducts a mark for no safety factor.** With SF 2, operate for about **2,100 h** before inspection or replacement. ±0.2 on the read-off gives about 2,800-6,600 h.
 
 #### (v) Creep mechanisms and optimising a Ni blade [5]
 

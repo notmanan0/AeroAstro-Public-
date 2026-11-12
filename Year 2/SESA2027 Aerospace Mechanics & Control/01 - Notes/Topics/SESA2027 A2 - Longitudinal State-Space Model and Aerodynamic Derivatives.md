@@ -32,9 +32,9 @@ sources: ["02 - Sources/Lectures/Lecture 1.04.pdf", "02 - Sources/Lectures/Lectu
 > - **Common mistakes:** the wrong reference quantity when dimensionalising (rate derivatives carry an extra $\bar c$, $\dot w$ derivatives lose a $U_\infty$); writing $\mathbf A'\mathbf M^{-1}$ instead of $\mathbf M^{-1}\mathbf A'$.
 > - **Practise:** [[#Worked example: SPO state space to transfer function (PS2 Q3)]] · [[SESA2027 Mock Questions#Q2. Gravity and derivatives in the longitudinal model|Mock Q2]] · [[SESA2027 Practice Problems 2 Solutions]]
 
-A1 left us with $\Delta X=m\dot u$, $\Delta Z=m(\dot w-qU_\infty)$, $\Delta M=I_{yy}\dot q$: mass times acceleration on the right, but nothing yet on the left. This topic fills in the left-hand side. Two things push a perturbed aircraft: gravity, whose body-axis components change as the nose rises, and aerodynamics, which change as the speed, angle of attack and pitch rate change.
+The linearised equations of A1, $\Delta X=m\dot u$, $\Delta Z=m(\dot w-qU_\infty)$, $\Delta M=I_{yy}\dot q$, have mass times acceleration on the right, but the out-of-balance forces on the left still need a model. Two things push a perturbed aircraft: gravity, whose body-axis components change as the nose rises, and aerodynamics, which change as the speed, angle of attack and pitch rate change.
 
-Near trim each aerodynamic change is close to proportional to the perturbation that caused it, so it is a constant times $u$, $w$, $q$ or $\dot w$. Those constants are the aerodynamic derivatives. They carry the aircraft's physics: $\mathring Z_w$ is the extra lift from extra angle of attack, $\mathring M_w$ is the static stability from SESA2022, $\mathring M_q$ is the damping the tailplane provides when the aircraft pitches. Put them into Newton's equations and you get four linear first-order ODEs, $\dot{\mathbf x}=\mathbf A\mathbf x+\mathbf B\mathbf u$. Choose what a sensor measures with $\mathbf C$, and the Laplace transform turns the whole aircraft into one transfer function from elevator to pitch rate.
+Near trim each aerodynamic change is close to proportional to the perturbation that caused it, so it is a constant times $u$, $w$, $q$ or $\dot w$. Those constants are the aerodynamic derivatives. They carry the aircraft's physics: $\mathring Z_w$ is the extra lift from extra angle of attack, $\mathring M_w$ is the static stability from SESA2022, $\mathring M_q$ is the damping the tailplane provides when the aircraft pitches. Substituted into Newton's equations, they give four linear first-order ODEs, $\dot{\mathbf x}=\mathbf A\mathbf x+\mathbf B\mathbf u$. Once $\mathbf C$ fixes what a sensor measures, the Laplace transform turns the whole aircraft into one transfer function from elevator to pitch rate.
 
 ---
 
@@ -89,7 +89,7 @@ In level flight ($\gamma_0 = 0$) the whole gravitational perturbation is axial: 
 This is the same answer the rotation matrix gives. In A1, $\mathbf g_B=g(-\sin\Theta,\ \sin\phi\cos\Theta,\ \cos\phi\cos\Theta)$ for a total pitch attitude $\Theta$. In stability axes with wings level, $\Theta=\gamma_0+\theta$, so $X_g=-mg\sin(\gamma_0+\theta)$ and $Z_g=mg\cos(\gamma_0+\theta)$, exactly the starting lines above ([[SESA2027 A1 - Dynamic Systems and Aircraft Equations of Motion#Euler angles and rotation matrices|A1]]).
 
 ## 2. Aerodynamic contributions
-**DAP1**: keep only the first-order Taylor terms. A ring (°) denotes a dimensional derivative.
+Following DAP1, only the first-order Taylor terms are kept. A ring (°) denotes a dimensional derivative.
 
 $$
 \Delta X_a = \mathring X_u u+\mathring X_w w,\qquad \Delta Z_a = \mathring Z_u u+\mathring Z_w w+\mathring Z_q q+\mathring Z_{\dot w}\dot w,\qquad \Delta M_a = \mathring M_u u+\mathring M_w w+\mathring M_q q+\mathring M_{\dot w}\dot w
@@ -97,10 +97,10 @@ $$
 
 - $u$: velocity perturbation.
 - $w$: normal velocity perturbation, i.e. angle of attack, since $\alpha\approx w/U_\infty$.
-- $q$: pitch rate. $\dot w$: rate of change of $\alpha$ (downwash lag at the tail, which turns out to be important).
+- $q$: pitch rate. $\dot w$: rate of change of $\alpha$ (downwash lag at the tail, which is significant).
 - Neglected as small: $\mathring X_q$ and $\mathring X_{\dot w}$. At low speed also $\mathring M_u = 0$.
 
-$\mathring X_q$ and $\mathring X_{\dot w}$ are dropped because $\Delta X_a$ is essentially a drag change, and pitching ($q$) or accelerating in $z$ ($\dot w$) barely changes the drag; it changes the force in $z$, and experimental data back this up (L1.04, ll. 133–169). The lecturer flagged this as a possible exam question: "if an exam question … [gave] the full expansion … which of the elements can be considered small and be negligible, then the correct answer would be those three", meaning $\mathring X_q$, $\mathring X_{\dot w}$ and, at low Mach, $\mathring M_u$. Note too that $\alpha = \tan^{-1}(w/U_\infty)\approx w/U_\infty$ only because $w\ll U_\infty$ (ll. 152–157).
+$\mathring X_q$ and $\mathring X_{\dot w}$ are dropped because $\Delta X_a$ is essentially a drag change, and pitching ($q$) or accelerating in $z$ ($\dot w$) barely changes the drag; it changes the force in $z$, and experimental data back this up (L1.04, ll. 133–169). Naming the negligible elements of a given full expansion is a possible exam question: they are $\mathring X_q$, $\mathring X_{\dot w}$ and, at low Mach, $\mathring M_u$. The approximation $\alpha = \tan^{-1}(w/U_\infty)\approx w/U_\infty$ holds only because $w\ll U_\infty$ (ll. 152–157).
 
 ## 3. The longitudinal state equation
 Combine $\Delta X = m\dot u$, $\Delta Z = m(\dot w-qU_\infty)$, $\Delta M = I_{yy}\dot q$ with $\dot\theta = q$ and rearrange:
@@ -115,7 +115,7 @@ $$
 
 The model contains the climb angle, speed, mass, inertia and aerodynamic derivatives.
 
-How rows 2 and 3 of $\mathbf M$ and $\mathbf A'$ arise (the lecture collected terms on the slide, L1.04, ll. 223–239). Row 2 starts from the $Z$ equation with the aerodynamic and gravitational parts substituted:
+Rows 2 and 3 of $\mathbf M$ and $\mathbf A'$ come from the $Z$ and $M$ equations. Row 2 starts from the $Z$ equation with the aerodynamic and gravitational parts substituted:
 
 $$
 m(\dot w-qU_\infty) = \mathring Z_uu+\mathring Z_ww+\mathring Z_qq+\mathring Z_{\dot w}\dot w-mg\theta\sin\gamma_0
@@ -156,7 +156,7 @@ With $\tfrac12\rho U_\infty^2 S$ for forces (and an extra $\bar c$ for moments),
 | $\mathring M_q$ | $M_q\cdot\tfrac12\rho U_\infty S\bar c^2$ |
 | $\mathring M_{\dot w}$ | $M_{\dot w}\cdot\tfrac12\rho S\bar c^2$ |
 
-The course keeps both versions for a reason (L1.06, ll. 103–110). Dimensionless derivatives (no ring) are the aerodynamicist's view, useful for comparing across the flight envelope to see which change most with height, speed or configuration. Dimensional derivatives (with ring) are what the equations of motion and the control analysis need. Converting one to the other with this table "might be a question that I ask you maybe in the exam, maybe in the quiz" (ll. 108–109).
+Both versions are in use because they serve different purposes (L1.06, ll. 103–110). Dimensionless derivatives (no ring) are the aerodynamicist's view, useful for comparing across the flight envelope to see which change most with height, speed or configuration. Dimensional derivatives (with ring) are what the equations of motion and the control analysis need. Converting one to the other with this table is a possible exam or quiz question (ll. 108–109).
 
 > [!example] F-4C Phantom (L1.06 slide 6)
 > $\rho=0.3809$, $U_\infty=178$ m/s, $S=49.239$ m², $\bar c = 4.889$ m, so $\tfrac12\rho U_\infty^2S = 297119$ N.
@@ -166,7 +166,7 @@ The course keeps both versions for a reason (L1.06, ll. 103–110). Dimensionles
 > - $\mathring M_{\dot w} = -0.591\,(0.5\rho S\bar c^2) = -132.47$ N s²
 > - $\mathring Z_w = -3.1245\,(0.5\rho U_\infty S) = -5215.44$ N s/m
 
-**Where each scale factor comes from.** The dimensionless derivative is defined by dividing the force by $\tfrac12\rho U_\infty^2S$ (the moment by $\tfrac12\rho U_\infty^2S\bar c$) and the perturbation by its own reference. For $Z_w$:
+Each scale factor comes from the definition. The dimensionless derivative is defined by dividing the force by $\tfrac12\rho U_\infty^2S$ (the moment by $\tfrac12\rho U_\infty^2S\bar c$) and the perturbation by its own reference. For $Z_w$:
 
 $$
 \frac{\Delta Z}{\tfrac12\rho U_\infty^2S}=Z_w\,\frac{w}{U_\infty}
@@ -186,11 +186,12 @@ so $\mathring Z_w=Z_w\cdot\tfrac12\rho U_\infty S$, with units $\text{kg/m}^3\cd
 ## 4. Estimating the derivatives from physics (L1.10)
 Consider a perturbation in which the direction of motion is unchanged ($q = \dot w = 0$), with small angles $\theta = \Delta\alpha = w/U_\infty$ and $\Delta(U^2) \approx 2uU_\infty$.
 
-**Thrust**: model it as $T = c_tU^\Lambda$, so $\Delta T = \Lambda D\,u/U_\infty$ (since $T = D$ in trim).
+Thrust is modelled as $T = c_tU^\Lambda$, so $\Delta T = \Lambda D\,u/U_\infty$ (since $T = D$ in trim). The exponent depends on the engine:
+
 - Jet engine: $T$ constant, so $\Lambda = 0$.
 - Piston/propeller: $TU$ constant, so $\Lambda = -1$.
 
-**Drag and lift**:
+The drag and lift changes are
 
 $$
 \Delta D = \tfrac12\rho U_\infty^2S\left(C_D\frac{2u}{U_\infty}+C_{D_\alpha}\frac{w}{U_\infty}\right),\qquad \Delta L^* = \tfrac12\rho U_\infty^2S\left(C_{L^*}\frac{2u}{U_\infty}+C_{L^*_\alpha}\frac{w}{U_\infty}\right)
@@ -199,6 +200,7 @@ $$
 Force balance (after minus before), resolved along body $x$ and $z$. The direction of travel is unchanged, so lift and drag stay tied to the wind while the body axes rotate nose-up by $w/U_\infty$. In body axes the lift therefore tilts forward by $w/U_\infty$ and the drag gains a component along $-z$:
 
 ![[amc_perturbed_force_tilt.png|760]]
+
 - $\Delta X_a = \Delta T-\Delta D+L^*\,w/U_\infty$
 - $\Delta Z_a = -\Delta L^*-D\,w/U_\infty$
 
@@ -209,9 +211,9 @@ $$
 $$
 
 ### Full derivation of the force derivatives
-The lecture did the thrust step on the board and then skipped the drag, lift and $Z$ steps ("Because I am a little bit behind, I'm going to skip the detailed explanation", L1.10, l. 332; "I'm not going to go through that one", l. 379). Assumptions throughout: level trim with $T = D$ and $L^* = W$, constant $\rho$ and $S$, small perturbations so products of $u$ and $w$ are dropped.
+Assumptions throughout: level trim with $T = D$ and $L^* = W$, constant $\rho$ and $S$, small perturbations so products of $u$ and $w$ are dropped. The drag, lift and $Z$ steps complete the outline at L1.10, ll. 332 and 379, where only the thrust step is worked.
 
-**(a) Speed squared.** Before the perturbation the body-axis velocity is $(U_\infty, 0)$. After it is $(U_\infty+u,\ w)$:
+For the speed squared, the body-axis velocity is $(U_\infty, 0)$ before the perturbation and $(U_\infty+u,\ w)$ after it:
 
 $$
 U^2_{\text{after}} = (U_\infty+u)^2+w^2
@@ -229,7 +231,7 @@ $$
 \Delta(U^2) = U^2_{\text{after}}-U_\infty^2 = 2U_\infty u
 $$
 
-(b) Thrust (L1.10, ll. 280–320). Model $T = c_TU^\Lambda$ and differentiate:
+For the thrust (L1.10, ll. 280–320), model $T = c_TU^\Lambda$ and differentiate:
 
 $$
 \frac{\partial T}{\partial U} = c_T\Lambda U^{\Lambda-1}
@@ -255,7 +257,7 @@ $$
 \frac{\Delta T}{\tfrac12\rho U_\infty^2S} = \Lambda C_D\frac{u}{U_\infty}
 $$
 
-**(c) Drag.** $D = \tfrac12\rho U^2SC_D$, and only $U^2$ and $C_D$ change:
+For the drag, $D = \tfrac12\rho U^2SC_D$, and only $U^2$ and $C_D$ change:
 
 $$
 \Delta D = \tfrac12\rho S\left[C_D\,\Delta(U^2)+U_\infty^2\,\Delta C_D\right]
@@ -271,7 +273,7 @@ $$
 
 The lift change follows by replacing $D$ with $L^*$: $\Delta L^*/(\tfrac12\rho U_\infty^2S) = 2C_{L^*}u/U_\infty+C_{L^*_\alpha}w/U_\infty$.
 
-**(d) Collect terms in $x$.** Divide $\Delta X_a = \Delta T-\Delta D+L^*w/U_\infty$ by $\tfrac12\rho U_\infty^2S$:
+To collect the terms in $x$, divide $\Delta X_a = \Delta T-\Delta D+L^*w/U_\infty$ by $\tfrac12\rho U_\infty^2S$:
 
 $$
 \frac{\Delta X_a}{\tfrac12\rho U_\infty^2S} = \Lambda C_D\frac{u}{U_\infty}-2C_D\frac{u}{U_\infty}-C_{D_\alpha}\frac{w}{U_\infty}+C_{L^*}\frac{w}{U_\infty}
@@ -283,7 +285,7 @@ $$
 
 The definition in dimensionless form is $\Delta X_a/(\tfrac12\rho U_\infty^2S) = X_u\,u/U_\infty+X_w\,w/U_\infty$. Matching coefficients gives $X_u = (\Lambda-2)C_D$ and $X_w = C_{L^*}-C_{D_\alpha}$.
 
-**(e) Collect terms in $z$.** Divide $\Delta Z_a = -\Delta L^*-Dw/U_\infty$ by $\tfrac12\rho U_\infty^2S$:
+To collect the terms in $z$, divide $\Delta Z_a = -\Delta L^*-Dw/U_\infty$ by $\tfrac12\rho U_\infty^2S$:
 
 $$
 \frac{\Delta Z_a}{\tfrac12\rho U_\infty^2S} = -2C_{L^*}\frac{u}{U_\infty}-C_{L^*_\alpha}\frac{w}{U_\infty}-C_D\frac{w}{U_\infty}
@@ -307,7 +309,7 @@ $$
 - $M_q$ comes from the tail angle of attack induced by pitch rate, $\Delta\alpha_T\approx ql/U_\infty$.
 - $K = S_Tl/(S\bar c)$ is the tail volume ratio.
 
-Derivation of $M_w$ (slide 16 says "it can be shown"; assumptions: low Mach, linear lift curve, stick fixed). SESA2022 defines the static margin through the slope of the pitching-moment curve:
+Derivation of $M_w$ (assumptions: low Mach, linear lift curve, stick fixed). SESA2022 defines the static margin through the slope of the pitching-moment curve:
 
 $$
 \frac{dC_M}{dC_{L^*}}=-H_s
@@ -380,13 +382,9 @@ The full-cycle UAV example (Mini Skyhunter) compares simulation, wind tunnel and
 - $C_{L_q}$ ($9.16$ rad⁻¹ in simulation, $7.66$ from free flight) cannot be obtained from static wind-tunnel tests. It needs dynamic or flight data.
 - Free-flight data are noisy (gusts, sensor noise, structural vibration), so they were filtered with a 4th-order zero-phase Butterworth filter.
 
-> [!info] Lecturer's practical points on estimation (L1.10)
-> - Simulate before you test: "if you just go with blind eyes into experiments, you might expend a lot of time and find nothing" (ll. 421–426). AVL was run over $\alpha\in[-6^\circ,9^\circ]$ because vortex-lattice methods are valid only in the linear lift range (ll. 427–432).
-> - Pendulum tests need small angles (otherwise the motion is nonlinear) and low rates (otherwise you also measure aerodynamic damping) (ll. 98–106).
-> - The model is mounted upside down so the support struts disturb the lower surface, not the suction side, at the positive angles of attack of interest (ll. 467–475).
-> - Free flight is needed because a conventional wind tunnel holds the model fixed, so the rate derivatives ($C_{L_q}$, damping) can't be measured. Pitching quickly delays separation (hysteresis), which a static test can't capture (ll. 476–503).
-> - The highest angles of attack were tested only at low speed, because lift grows with $V^2$ and would have broken the model (ll. 449–456).
-> - The derivatives found in free flight were fitted with an extended Kalman filter, used as an optimiser that minimises the output error from an initial guess (ll. 505–514).
+Simulation before testing avoids experiments that waste a lot of time and find nothing (L1.10, ll. 421–426). AVL was run over $\alpha\in[-6^\circ,9^\circ]$ because vortex-lattice methods are valid only in the linear lift range (ll. 427–432). Pendulum tests for inertia need small angles, otherwise the motion is nonlinear, and low rates, otherwise they also measure aerodynamic damping (ll. 98–106).
+
+In the wind tunnel the model is mounted upside down, so the support struts disturb the lower surface rather than the suction side at the positive angles of attack of interest (ll. 467–475). The highest angles of attack were tested only at low speed, because lift grows with $V^2$ and would have broken the model (ll. 449–456). Free flight is still needed because a conventional wind tunnel holds the model fixed, so the rate derivatives ($C_{L_q}$, damping) can't be measured; pitching quickly also delays separation (hysteresis), which a static test can't capture (ll. 476–503). The free-flight derivatives were fitted with an extended Kalman filter, used as an optimiser that minimises the output error from an initial guess (ll. 505–514).
 
 ## 5. Adding control inputs (L1.11)
 Extend the homogeneous model with forcing terms: $\mathbf M\dot{\mathbf x} = \mathbf A'\mathbf x+\mathbf B'\mathbf u$.
@@ -401,17 +399,14 @@ $$
 
 Gusts enter through the same aerodynamic derivatives as the states.
 
-The last row of $\mathbf B'$ is zero (L1.11, ll. 81–120). The inputs can't change $\theta$ directly, because $\dot\theta = q$ is a kinematic rate, not an acceleration, and forces and moments act only on the acceleration rows $\dot u$, $\dot w$ and $\dot q$; row 1 is the $x$-force, row 2 the $z$-force and row 3 the pitching moment. Expect $\mathring M_\eta$ to dominate the elevator column and $\mathring X_T$ the throttle column, and note that some entries of $\mathbf B'$ in the lab parameter sets are zero (l. 120). $\mathring X_\eta$ is usually negative, since deflecting the elevator either way adds drag; a linear model can't represent that, so be careful with negative deflections (ll. 147–156).
+The last row of $\mathbf B'$ is zero (L1.11, ll. 81–120). The inputs can't change $\theta$ directly, because $\dot\theta = q$ is a kinematic rate, not an acceleration, and forces and moments act only on the acceleration rows $\dot u$, $\dot w$ and $\dot q$; row 1 is the $x$-force, row 2 the $z$-force and row 3 the pitching moment. $\mathring M_\eta$ dominates the elevator column and $\mathring X_T$ the throttle column, and some entries of $\mathbf B'$ in the lab parameter sets are zero (l. 120). $\mathring X_\eta$ is usually negative, since deflecting the elevator either way adds drag; a linear model can't represent that, so negative deflections need care (ll. 147–156).
 
 ### Elevator derivatives
-The tail lift is $C_{L_T} = a_0+a_1\alpha_T+a_2\eta$ and the tail drag is $C_{D_T} = C_{D_{0T}}+k_TC_{L_T}^2$.
-- **Axial**: $X_T = -D_T$, so $\mathring X_\eta = -\rho V_0^2S_Tk_TC_{L_T}a_2$, giving $X_\eta = -2\frac{S_T}{S}k_TC_{L_T}a_2$.
-- **Normal**: $Z_T = -L_T$ gives $Z_\eta = -\frac{S_T}{S}a_2$ (PS2 Q2).
-- **Moment**: $M_\eta = -\frac{S_Tl_T}{S\bar c}a_2 = -\bar V_Ta_2$, where $\bar V_T$ is the tail volume ratio.
+The tail lift is $C_{L_T} = a_0+a_1\alpha_T+a_2\eta$ and the tail drag is $C_{D_T} = C_{D_{0T}}+k_TC_{L_T}^2$. In the axial direction $X_T = -D_T$, so $\mathring X_\eta = -\rho V_0^2S_Tk_TC_{L_T}a_2$, giving $X_\eta = -2\frac{S_T}{S}k_TC_{L_T}a_2$. In the normal direction $Z_T = -L_T$ gives $Z_\eta = -\frac{S_T}{S}a_2$ (PS2 Q2). The moment derivative is $M_\eta = -\frac{S_Tl_T}{S\bar c}a_2 = -\bar V_Ta_2$, where $\bar V_T$ is the tail volume ratio.
 
 A trailing-edge-down elevator ($\eta>0$) gives more tail lift, so $Z_\eta<0$ (lift is $-z$), and a nose-down moment, so $M_\eta<0$.
 
-The three elevator derivatives line by line (slide 6 does the axial one and says "similar procedure for remaining derivatives"; assumptions: tail at trim speed $V_0$, small perturbation so the tail force is resolved along the body axes without tilt, $\eta$ in radians; dimensionless elevator derivatives are divided by $\tfrac12\rho V_0^2S$ because $\eta$ is already dimensionless).
+Each of the three follows from differentiating a tail force with respect to $\eta$ (L1.11 slide 6 works the axial one only). Assumptions: tail at trim speed $V_0$, small perturbation so the tail force is resolved along the body axes without tilt, and $\eta$ in radians. The dimensionless elevator derivatives are divided by $\tfrac12\rho V_0^2S$ because $\eta$ is already dimensionless.
 
 *Axial.* The tail drag is $D_T=\tfrac12\rho V_0^2S_TC_{D_T}$ and $X_T=-D_T$. Only $C_{D_T}$ depends on $\eta$:
 
@@ -440,7 +435,7 @@ $$
 $$
 
 > [!check] Sign and size check
-> For $S_T/S=0.2$, $l_T/\bar c=3$ ($\bar V_T=0.6$) and $a_2=2$ rad⁻¹: $Z_\eta=-0.40$ and $M_\eta=-1.20$. The moment derivative is three times the force derivative because the tail arm is three chords. That is why $\mathring M_\eta$ dominates the elevator column of $\mathbf B'$ (L1.11, ll. 81–120). $X_\eta$ has the sign of $C_{L_T}$: with a down-loaded tail ($C_{L_T}<0$), $X_\eta>0$ for small $\eta$ (less tail drag as the download falls), which shows how a linear model hides that any large deflection adds drag.
+> For $S_T/S=0.2$, $l_T/\bar c=3$ ($\bar V_T=0.6$) and $a_2=2$ rad⁻¹: $Z_\eta=-0.40$ and $M_\eta=-1.20$. The moment derivative is three times the force derivative because the tail arm is three chords. That is why $\mathring M_\eta$ dominates the elevator column of $\mathbf B'$ (L1.11, ll. 81–120). $X_\eta$ has the sign of $C_{L_T}$: with a down-loaded tail ($C_{L_T}<0$), $X_\eta>0$ for small $\eta$ (less tail drag as the download falls), so a linear model hides the drag that any large deflection adds.
 
 ## 6. From state space to transfer function
 Add an output equation: $\dot{\mathbf x} = \mathbf A\mathbf x+\mathbf B\mathbf u$, $\mathbf y = \mathbf C\mathbf x+\mathbf D\mathbf u$. Take the Laplace transform with zero initial conditions:
@@ -454,7 +449,7 @@ $$
 $$
 
 - The denominator $|s\mathbf I-\mathbf A|$ is the characteristic polynomial.
-- **SISO case**: one input ($\eta$) and one output (e.g. $\mathbf C = [0,0,1,0]$ for $q$). Set $\mathbf D = 0$ because sensors are not directly affected by the inputs.
+- SISO case: one input ($\eta$) and one output (e.g. $\mathbf C = [0,0,1,0]$ for $q$). Set $\mathbf D = 0$ because sensors are not directly affected by the inputs.
 - Longitudinal elevator transfer functions (Cook's "concise" derivatives):
 
 $$
@@ -463,12 +458,9 @@ $$
 
   The quartic denominator factors into the phugoid ($p$) and short-period ($s$) modes. The full form is used for controller validation. The SPO approximation (see [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid]]) is used for design.
 
-> [!info] Exam scope and intuition for this section (L1.11)
-> - The MIMO transfer-function derivation "is not going to be part of the exam. So relax" (ll. 269–272). "I'm not going to be asking you to derive them yourselves" (l. 499) for the $q/\eta$ and $\theta/\eta$ functions.
-> - **$\mathbf C$ is where sensors enter.** It says which states can be measured, which leads to observability in Year 3 (ll. 285–295). Typical sensors: pitot tube for $u$, gyro for $q$, IMU-derived $\theta$ (ll. 424–427).
-> - When would $\mathbf D\ne0$? If a sensor were mounted on a control surface, for example an accelerometer on the elevator (ll. 303–308).
-> - Spot the difference between $q/\eta$ and $\theta/\eta$: $\theta$ is the integral of $q$, so $\theta/\eta$ has one factor $s$ fewer, i.e. two zeros instead of three (ll. 474–493).
-> - Why SISO only? Changing height can be done with elevator or throttle, and they interact. A two-input design is "a little bit too complicated for a year two module" (ll. 384–401).
+The MIMO transfer-function derivation is not examined (L1.11, ll. 269–272), and neither is deriving the $q/\eta$ and $\theta/\eta$ functions by hand (l. 499). The two differ by one integration: $\theta$ is the integral of $q$, so $\theta/\eta$ has one factor $s$ fewer in the numerator, two zeros instead of three (ll. 474–493).
+
+Sensors enter through $\mathbf C$, which says which states can be measured and leads to observability in Year 3 (ll. 285–295). Typical sensors are a pitot tube for $u$, a gyro for $q$ and an IMU-derived $\theta$ (ll. 424–427). $\mathbf D$ would be non-zero only if a sensor were driven directly by an input, for example an accelerometer mounted on the elevator (ll. 303–308). The analysis stays SISO because height can be changed with either elevator or throttle and the two interact; a two-input design is beyond Year 2 (ll. 384–401).
 
 ### Worked example: SPO state space to transfer function (PS2 Q3)
 
@@ -477,6 +469,9 @@ States $(w,q)$, input $\eta$, output $q$:
 $$
 \mathbf A = \begin{bmatrix}-0.2956&178\\-0.1045&-0.4490\end{bmatrix},\qquad \mathbf B = \begin{bmatrix}-6.300\\-4.888\end{bmatrix},\qquad \mathbf C = [0\ \ 1],\qquad \mathbf D=0
 $$
+
+> [!warning] Probable typo in PS2 Q3: the $(2,1)$ entry
+> The diagonal entries are exactly the F-4C SPO values: $\mathring Z_w/m=-5215.44/17\,642=-0.2956$ and $(\mathring M_q+U_\infty\mathring M_{\dot w})/I_{yy}=-0.4490$, with $U_\infty=178$ m/s. For the F-4C the $(2,1)$ entry is $(\mathring M_w+\mathring M_{\dot w}\mathring Z_w/m)/I_{yy}=(-1770.07+39.16)/165\,669=-1.045\times10^{-2}$. The sheet prints $-1.045\times10^{-1}$, ten times larger. With the F-4C value the denominator would be $s^2+0.7446s+1.992$ ($\omega_n=1.41$ rad/s, $\zeta=0.264$, the [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid#5. The SPO approximation (L1.06)|A3]] result). The working below answers the sheet as printed.
 
 Form $s\mathbf I-\mathbf A$:
 
@@ -519,66 +514,17 @@ $$
 > [!check] Numerical check (Python, `scipy.signal.ss2tf`)
 > Numerator $[-4.888,\ -0.7865]$, denominator $[1,\ 0.7446,\ 18.734]$. ✓ The poles are $-0.372\pm4.312i$: $\omega_n=4.33$ rad/s and $\zeta=0.086$, a lightly damped short-period mode. The negative gain is the sign convention: trailing-edge-down elevator pitches the nose down. Also in [[SESA2027 Practice Problems 2 Solutions]].
 
-> [!warning] Possible slip on the sheet: the $(2,1)$ entry
-> The diagonal entries are exactly the F-4C SPO values: $\mathring Z_w/m=-5215.44/17\,642=-0.2956$ and $(\mathring M_q+U_\infty\mathring M_{\dot w})/I_{yy}=-0.4490$, with $U_\infty=178$ m/s. For the F-4C the $(2,1)$ entry is $(\mathring M_w+\mathring M_{\dot w}\mathring Z_w/m)/I_{yy}=(-1770.07+39.16)/165\,669=-1.045\times10^{-2}$. The sheet prints $-1.045\times10^{-1}$, ten times larger. With the F-4C value the denominator would be $s^2+0.7446s+1.992$ ($\omega_n=1.41$ rad/s, $\zeta=0.264$, the [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid#5. The SPO approximation (L1.06)|A3]] result). Answer the sheet as printed, but expect the exponent to be a typo.
+## Exam scope and intuition
 
-## Lecturer emphasis and exam hints (transcripts)
+- One stated exam question type: given the full Taylor expansion, name the derivatives that can be neglected, $\mathring X_q$, $\mathring X_{\dot w}$ and $\mathring M_u$ (L1.04, ll. 166–169). See [[#2. Aerodynamic contributions]].
+- Not examined: the MIMO transfer-function derivation (L1.11, l. 269) and deriving $q/\eta$, $\theta/\eta$ by hand (L1.11, l. 499).
+- The F-4C data come from a 1970s NASA report in dimensionless form, so converting to dimensional derivatives with the table in [[#Dimensional vs dimensionless derivatives]] is needed (L1.04, ll. 269–291). The conversion is a possible exam or quiz question (L1.06, ll. 108–109).
+- The computer-lab parameter sets already contain the $\mathbf B'$ entries needed for the second lab session (L1.11, ll. 69–76).
 
-> [!info] Exam signals
-> - **Stated exam question type**: given the full Taylor expansion, name the derivatives that can be neglected: $\mathring X_q$, $\mathring X_{\dot w}$ and $\mathring M_u$ (L1.04, ll. 166–169). See [[#2. Aerodynamic contributions]].
-> - **Not examined**: the MIMO transfer-function derivation (L1.11, l. 269) and deriving $q/\eta$, $\theta/\eta$ by hand (L1.11, l. 499).
-> - The F-4C data come from a 1970s NASA report in dimensionless form, so you must be able to convert to dimensional derivatives with the table in [[#Dimensional vs dimensionless derivatives]] (L1.04, ll. 269–291). The conversion was flagged again as a possible exam or quiz question (L1.06, ll. 108–109).
-> - **Admin**: the computer-lab parameter sets e-mailed to each group already contain the $\mathbf B'$ entries for the second lab session (L1.11, ll. 69–76).
-
-> [!info] Lecturer intuition
-> - The lateral equations can be treated in exactly the same way; they are skipped only because it would be repetitive (L1.04, ll. 18–24).
+> [!tip] Intuition
+> - The lateral equations can be treated in exactly the same way; they are left out only because it would be repetitive (L1.04, ll. 18–24).
 > - $M_q$ (pitch damping) comes mostly from the tail. In a pull-up the tail sees an extra angle of attack $ql/U_\infty$ that the wing does not (L1.10, ll. 392–406).
-> - Combining simulation, wind-tunnel and free-flight data "improve[s] the accuracy significantly", and second-year projects, IPs and GDPs are the chance to do it (L1.10, ll. 529–537).
-
-## Transcript slips
-
-> [!warning] Speech-to-text and spoken slips, with the correct version
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L1.04, l. 50 | "flight part angle", "setting at three point" | flight-path angle $\gamma_0$ at the trim point |
-> | L1.04, l. 72 | "the closer we're flying to the air center" | the Earth's centre |
-> | L1.04, l. 91 | "delta cg" | $\Delta Z_g$ |
-> | L1.04, l. 122 | "z circle w u" | $\mathring Z_w w$ |
-> | L1.04, l. 150 | "string-wise velocity perturbation" | streamwise |
-> | L1.04, ll. 226–228 | "mu dot" | $m\dot u$ |
-> | L1.04, l. 234 | "ii multiplying q dot" | $I_{yy}\dot q$ |
-> | L1.04, ll. 286–289 | "ZetaQ", "raw U-infinity SC" | $\mathring Z_q$, $\rho U_\infty S\bar c$ |
-> | L1.10, l. 22 | "truss derivatives" | thrust derivatives |
-> | L1.10, l. 62 | "the planar method" | plumb-line method (l. 64) |
-> | L1.10, ll. 130–133 | "digital.com", ".com" | Digital DATCOM |
-> | L1.10, ll. 138–150 | "ABL", "ABL wrapper" | AVL (Athena Vortex Lattice) |
-> | L1.10, l. 159 | "Navier Stock's" | Navier–Stokes |
-> | L1.10, l. 189 | "UABs" | UAVs |
-> | L1.10, l. 227 | "strength-free velocity" | free-stream velocity |
-> | L1.10, l. 281 | "a city that represents a throttle constant" | $c_T$, the throttle constant |
-> | L1.10, l. 301 | "loss of power" | laws of indices |
-> | L1.10, l. 355 | the $L^*w/U_\infty$ term "is basically the induced drag that we have from that change, that increase in lift" | it is the forward component of the trim lift once the body axes have rotated by $w/U_\infty$ relative to the flight path; it is a geometric tilt of $L^*$, not induced drag (which is already inside $C_{D_\alpha}$) |
-> | L1.10, l. 389 | "logmark numbers" | low Mach numbers |
-> | L1.10, l. 402 | "the canary" | the canard |
-> | L1.10, l. 404 | "K minus K CLT … L over C" | $M_q = -KC_{L_{T,\alpha}}\,l/\bar c$ |
-> | L1.10, l. 430 | "15 minutes per second" | 15 m/s |
-> | L1.10, ll. 450–451 | 21° reached "at the high speed" | at the low-speed test; high $\alpha$ was avoided at high speed (ll. 451–456) |
-> | L1.10, l. 454 | "lift doesn't square linearly" | lift doesn't scale linearly; it grows with $V^2$ |
-> | L1.10, l. 508 | "extended kernel filter" | extended Kalman filter |
-> | L1.11, l. 45 | "V prime" | $\mathbf B'$ |
-> | L1.11, ll. 138, 262 | "ghosts" | gusts |
-> | L1.11, ll. 177–189 | "type plane", "angle of a tag", "kernel" | tailplane, angle of attack, canard |
-> | L1.11, l. 194 | "parasite drive" | parasite drag |
-> | L1.11, l. 205 | "rho, b squared, and st" | $\rho$, $V_0^2$, $S_T$ |
-> | L1.11, ll. 251–253 | "dynamic center", "the core of the main wing" | aerodynamic centre, chord $\bar c$ |
-> | L1.11, l. 274 | "H dot equals to AX" | $\dot{\mathbf x} = \mathbf A\mathbf x$ |
-> | L1.11, l. 364 | two inputs "the throttle, and … the pitch angle" | throttle and elevator (l. 369) |
-> | L1.11, l. 417 | "gust on the y-axis" | gust along $z$ ($w_g$) |
-> | L1.11, l. 424 | "we could normally have three inputs" | three outputs (sensors) |
-> | L1.11, ll. 437–438 | "a joint matrix", "the determinant is not the thing that the characteristic polynomial" | adjoint matrix; the determinant is the characteristic polynomial |
-> | L1.11, l. 454 | "not affected by the control outputs" | control inputs |
-> | L1.11, l. 480 | "k subscript k" | $k_q$ |
-> | L1.11, l. 482 | "multiplied by x" | multiplied by $s$ |
+> - Combining simulation, wind-tunnel and free-flight data improves the accuracy significantly, and second-year projects, IPs and GDPs are the chance to do it (L1.10, ll. 529–537).
 
 ## Terminology and alternative names
 
@@ -629,3 +575,50 @@ No tasks were set in L1.04, L1.10 or L1.11. The parameter sets e-mailed to each 
 - [ ] Derive $X_u$, $X_w$, $Z_u$, $Z_w$ for a propeller aircraft. → [[#Full derivation of the force derivatives]]
 - [ ] Derive $M_w=-H_sC_{L^*_\alpha}$ and $M_q=-KC_{L_{T,\alpha}}l/\bar c$. → [[#4. Estimating the derivatives from physics (L1.10)]]
 - [ ] Derive $X_\eta$, $Z_\eta$ and $M_\eta$ from the tailplane lift and drag (Cook §13.4). → [[#Elevator derivatives]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Speech-to-text and spoken slips, with the correct version
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L1.04, l. 50 | "flight part angle", "setting at three point" | flight-path angle $\gamma_0$ at the trim point |
+> | L1.04, l. 72 | "the closer we're flying to the air center" | the Earth's centre |
+> | L1.04, l. 91 | "delta cg" | $\Delta Z_g$ |
+> | L1.04, l. 122 | "z circle w u" | $\mathring Z_w w$ |
+> | L1.04, l. 150 | "string-wise velocity perturbation" | streamwise |
+> | L1.04, ll. 226–228 | "mu dot" | $m\dot u$ |
+> | L1.04, l. 234 | "ii multiplying q dot" | $I_{yy}\dot q$ |
+> | L1.04, ll. 286–289 | "ZetaQ", "raw U-infinity SC" | $\mathring Z_q$, $\rho U_\infty S\bar c$ |
+> | L1.10, l. 22 | "truss derivatives" | thrust derivatives |
+> | L1.10, l. 62 | "the planar method" | plumb-line method (l. 64) |
+> | L1.10, ll. 130–133 | "digital.com", ".com" | Digital DATCOM |
+> | L1.10, ll. 138–150 | "ABL", "ABL wrapper" | AVL (Athena Vortex Lattice) |
+> | L1.10, l. 159 | "Navier Stock's" | Navier–Stokes |
+> | L1.10, l. 189 | "UABs" | UAVs |
+> | L1.10, l. 227 | "strength-free velocity" | free-stream velocity |
+> | L1.10, l. 281 | "a city that represents a throttle constant" | $c_T$, the throttle constant |
+> | L1.10, l. 301 | "loss of power" | laws of indices |
+> | L1.10, l. 355 | the $L^*w/U_\infty$ term "is basically the induced drag that we have from that change, that increase in lift" | it is the forward component of the trim lift once the body axes have rotated by $w/U_\infty$ relative to the flight path; it is a geometric tilt of $L^*$, not induced drag (which is already inside $C_{D_\alpha}$) |
+> | L1.10, l. 389 | "logmark numbers" | low Mach numbers |
+> | L1.10, l. 402 | "the canary" | the canard |
+> | L1.10, l. 404 | "K minus K CLT … L over C" | $M_q = -KC_{L_{T,\alpha}}\,l/\bar c$ |
+> | L1.10, l. 430 | "15 minutes per second" | 15 m/s |
+> | L1.10, ll. 450–451 | 21° reached "at the high speed" | at the low-speed test; high $\alpha$ was avoided at high speed (ll. 451–456) |
+> | L1.10, l. 454 | "lift doesn't square linearly" | lift doesn't scale linearly; it grows with $V^2$ |
+> | L1.10, l. 508 | "extended kernel filter" | extended Kalman filter |
+> | L1.11, l. 45 | "V prime" | $\mathbf B'$ |
+> | L1.11, ll. 138, 262 | "ghosts" | gusts |
+> | L1.11, ll. 177–189 | "type plane", "angle of a tag", "kernel" | tailplane, angle of attack, canard |
+> | L1.11, l. 194 | "parasite drive" | parasite drag |
+> | L1.11, l. 205 | "rho, b squared, and st" | $\rho$, $V_0^2$, $S_T$ |
+> | L1.11, ll. 251–253 | "dynamic center", "the core of the main wing" | aerodynamic centre, chord $\bar c$ |
+> | L1.11, l. 274 | "H dot equals to AX" | $\dot{\mathbf x} = \mathbf A\mathbf x$ |
+> | L1.11, l. 364 | two inputs "the throttle, and … the pitch angle" | throttle and elevator (l. 369) |
+> | L1.11, l. 417 | "gust on the y-axis" | gust along $z$ ($w_g$) |
+> | L1.11, l. 424 | "we could normally have three inputs" | three outputs (sensors) |
+> | L1.11, ll. 437–438 | "a joint matrix", "the determinant is not the thing that the characteristic polynomial" | adjoint matrix; the determinant is the characteristic polynomial |
+> | L1.11, l. 454 | "not affected by the control outputs" | control inputs |
+> | L1.11, l. 480 | "k subscript k" | $k_q$ |
+> | L1.11, l. 482 | "multiplied by x" | multiplied by $s$ |

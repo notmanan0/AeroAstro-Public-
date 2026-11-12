@@ -20,7 +20,7 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_O
 # SESA2024 11 - Payload and Orbit Selection
 
 > [!abstract] Summary
-> Chapter 11 applies the module to one case: an Earth-observation satellite whose payload drives every choice. A first pass for a push-broom imager of about 10 m resolution and a life of years gives a near-polar inclination for global coverage, a near-circular orbit for constant resolution, and an altitude of about 700–900 km as the trade between resolution and drag. The payload's operational needs then add two conditions, the same illumination on every pass and the same viewing geometry at regular intervals, which lead to Sun-synchronous and Earth-synchronous orbits.
+> In an Earth-observation satellite the payload drives every choice, which makes it a clear case of mission analysis. A first pass for a push-broom imager of about 10 m resolution and a life of years gives a near-polar inclination for global coverage, a near-circular orbit for constant resolution, and an altitude of about 700–900 km as the trade between resolution and drag. The payload's operational needs then add two conditions, the same illumination on every pass and the same viewing geometry at regular intervals, which lead to Sun-synchronous and Earth-synchronous orbits.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a question asks for first-pass values of $i$, $e$ and $a$ for a remote-sensing mission, or why a mission needs Sun- or Earth-synchronism.
@@ -29,13 +29,13 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_O
 > - **Common mistakes:** choosing 200 km "for resolution" without the drag penalty; choosing noon passes, which bring sun glint off water.
 > - **Practise:** [[#3. The first pass for a 10 m imager]] · [[#4. A spy satellite with the same method]]
 
-Dr Ryan put mission analysis back in its place in the design process at the start of this block (2025-12-04, ll. 26–150). A scientist's objective, say counting trees to track climate change, leads to a payload with a ground resolution, a wavelength and a field of view. The payload's requirements lead to an orbit, and the orbit leads to a spacecraft concept, which is traded and iterated, sometimes all the way back to the objectives. Mission analysis sits between payload selection and spacecraft design, and much of what decides it is practical: a small budget limits the propulsion, which limits the ΔV, which limits the orbit.
+A scientist's objective, say counting trees to track climate change, leads to a payload with a ground resolution, a wavelength and a field of view. The payload's requirements lead to an orbit, and the orbit leads to a spacecraft concept, which is traded and iterated, sometimes all the way back to the objectives (2025-12-04, ll. 26–150). Mission analysis sits between payload selection and spacecraft design, and much of what decides it is practical: a small budget limits the propulsion, which limits the ΔV, which limits the orbit.
 
-The case study is civil remote sensing: environmental monitoring, climate, weather, forests and agriculture, cartography, ships, fires and volcanoes (ll. 151–175). It is a good teaching case because every element of the orbit can be traced back to something the payload needs.
+The case study is civil remote sensing: environmental monitoring, climate, weather, forests and agriculture, cartography, ships, fires and volcanoes (ll. 151–175). Every element of the orbit in this case can be traced back to something the payload needs.
 
 ## 1. Orbits follow from objectives
 
-The slides give a few examples of objective leading to orbit (ll. 76–125):
+Examples of objective leading to orbit (slides; ll. 76–125):
 
 | Objective | Orbit |
 |---|---|
@@ -48,25 +48,36 @@ There is rarely a single right answer; the choice is a trade.
 
 ## 2. The push-broom imager
 
-The lecture used the simplest remote-sensing instrument (ll. 151–200). A push-broom imager is a line of detectors (CCD elements) laid across the ground track. The spacecraft's motion sweeps the line along the track, recording one strip of the Earth per pixel of travel, like a broom pushed steadily forward without the back-and-forth of sweeping. Strips from successive orbits, displaced as the Earth turns, are joined into a map.
+The simplest remote-sensing instrument is the push-broom imager, a line of detectors (CCD elements) laid across the ground track. The spacecraft's motion sweeps the line along the track, recording one strip of the Earth per pixel of travel, like a broom pushed steadily forward without the back-and-forth of sweeping. Strips from successive orbits, displaced as the Earth turns, are joined into a map.
 
-The strip has a width on the ground, the swath width $d$. For a nadir-pointing instrument with field of view $\beta$ at altitude $h$, two right-angled triangles give
+The strip has a width on the ground, the swath width $d$. For a nadir-pointing instrument with field of view $\beta$ at altitude $h$, the nadir line splits the field of view into two right-angled triangles, each with angle $\beta/2$ at the spacecraft, height $h$ and base $d/2$. The ground is treated as flat across the swath, which is reasonable while $d$ is a few hundred kilometres against an Earth radius of 6378 km.
+
+![[ast_swath_geometry.png|640]]
+
+In one triangle the side opposite $\beta/2$ is $d/2$ and the side adjacent is $h$:
 
 $$
-\tan\frac{\beta}{2}=\frac{d/2}{h}
-\quad\Longrightarrow\quad
+\tan\frac{\beta}{2}=\frac{d/2}{h}.
+$$
+
+Multiply both sides by $2h$:
+
+$$
 d=2h\tan\frac{\beta}{2}.
 $$
 
-The orbit therefore decides how much ground is sampled and how quickly. The swath is used in [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]] to fix the repeat ground track.
+For a fixed field of view the swath grows in proportion to altitude, and so does the ground size of one pixel, since each detector element sees a fixed small angle. The orbit therefore decides how much ground is sampled, how quickly, and at what resolution. The swath is used in [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]] to fix the repeat ground track.
 
 ## 3. The first pass for a 10 m imager
 
 The requirements: view as much of the Earth as possible at about 10 m resolution, for a lifetime of years, since such satellites cost hundreds of millions (ll. 226–260). The six elements divide into three in-plane ones (size $a$, shape $e$, position $\theta$, the last irrelevant for coverage) and three that orient the orbit ($i$, $\Omega$, $\omega$).
 
-Inclination: the options on the slide are about $0^\circ$, about $50^\circ$, or about $90^\circ$ (ll. 260–285). The ground track only reaches latitudes up to the inclination, so a $50^\circ$ orbit would see the UK (about $51^\circ$ N) but not Sweden or Iceland. For global coverage the inclination must be near-polar.
+Inclination: the options are about $0^\circ$, about $50^\circ$ or about $90^\circ$ (ll. 260–285). The highest latitude a ground track reaches equals the inclination for $i\le90^\circ$, and $180^\circ-i$ for a retrograde orbit, because that is the greatest angle the orbit plane makes with the equator. A $50^\circ$ orbit therefore reaches $50^\circ$ N and S and sees only the southern edge of the UK (about $50$–$61^\circ$ N), and none of Sweden or Iceland; a nadir imager with a swath of a few hundred kilometres adds only a couple of degrees beyond that. For global coverage the inclination must be near-polar. A Sun-synchronous orbit at $98^\circ$ reaches $180^\circ-98^\circ=82^\circ$, so only small caps around the poles are missed.
 
-Eccentricity: about 0, about 0.1 or about 0.4 (ll. 285–325). A student suggested a high eccentricity to dwell over a region of interest, which is what Molniya orbits do. For global mapping, though, the instrument should be at the same range everywhere, so that a pixel in Canada and a pixel in Argentina cover the same ground area. That calls for a near-circular orbit.
+Eccentricity: about 0, about 0.1 or about 0.4 (ll. 285–325). A high eccentricity would let the spacecraft dwell over a region of interest, which is what Molniya orbits do. For global mapping, though, the instrument should be at the same range everywhere, so that a pixel in Canada and a pixel in Argentina cover the same ground area. That calls for a near-circular orbit.
+
+> [!check] What the eccentricity options mean in low orbit
+> At $a=7178$ km (800 km mean altitude), $r_p=a(1-e)$ and $r_a=a(1+e)$ give, after subtracting $R_E=6378$ km, apsis altitudes of 728 and 872 km for $e=0.01$, a range ratio of 1.2. For $e=0.1$ they are 82 km and 1518 km: perigee is deep in the atmosphere, and pixel size would vary eighteen-fold round the orbit. For $e=0.4$, $r_p$ is 2071 km below the surface. In low orbit only a near-zero eccentricity is even possible; the larger values belong to orbits with much larger $a$.
 
 Altitude: 200 km, 700 km or 1200 km (ll. 326–400). At 200 km the resolution would be excellent, but drag would bring the satellite down quickly unless it thrusts continuously. At 1200 km drag is negligible (OneWeb flies near there), but the resolution suffers. A middle altitude gives decent images with drag that can be made up over a life of years:
 
@@ -76,10 +87,7 @@ h=700\text{–}900\ \mathrm{km},
 a=R_E+h=7078\text{–}7278\ \mathrm{km}.
 $$
 
-A student also pointed out that altitude sets the period and so how soon the satellite returns over an event such as a hurricane, which is becoming a requirement in its own right (ll. 376–390).
-
-> [!warning] Transcript slip (2025-12-04, ll. 345–355)
-> ESA's GOCE gravity mission is described as flying at 200 km until its ion thruster "failed" and it fell out of the sky. GOCE flew at about 255 km (later lowered to about 224 km), and it re-entered in 2013 after its xenon propellant ran out, not because the thruster failed.
+Altitude also sets the period and so how soon the satellite returns over an event such as a hurricane, which is becoming a requirement in its own right (ll. 376–390).
 
 The first-pass result, which is also the answer to the 3–4 mark past-paper question on first-pass values of $i$, $e$ and $a$ (2013/14, 2018/19, 2019/20):
 
@@ -93,45 +101,53 @@ NASA's Aqua, launched in 2002 at about 705 km, is a real example (ll. 476–505)
 
 ## 4. A spy satellite with the same method
 
-Change one requirement: the resolution goes from 10 m to 0.1 m, everything else the same (ll. 401–475). Global coverage still points to a high inclination. But 0.1 m resolution needs the spacecraft very close to the ground, and staying at 200 km for years is impossible because of drag. The answer is a highly eccentric orbit with a very low perigee over the target region and a high apogee: the spacecraft dives through the dense atmosphere quickly, takes its images, and coasts up and out, so it survives. The result is a large, eccentric orbit, almost the opposite of the civil one. Dr Ryan conceded that a constant-resolution argument could be made for spy satellites too; the point is that one changed requirement changes the orbit completely.
+If the resolution requirement changes from 10 m to 0.1 m with everything else the same (ll. 401–475), global coverage still points to a high inclination. But 0.1 m resolution needs the spacecraft very close to the ground, and staying at 200 km for years is impossible because of drag. A highly eccentric orbit with a very low perigee over the target region and a high apogee resolves this: the spacecraft dives through the dense atmosphere quickly, takes its images, and coasts up and out, so it survives. The result is a large, eccentric orbit, almost the opposite of the civil one. A constant-resolution argument would favour a circular orbit for spy satellites too, but the resolution requirement outweighs it, so one changed requirement changes the orbit completely.
 
 ## 5. Illumination and viewing geometry
 
-Orbital elements are not the whole story; conditions on the ground matter too (ll. 505–650).
+The orbital elements are not the only consideration; conditions on the ground matter too (ll. 505–650).
 
-Illumination. A visible-wavelength imager needs the target in sunlight. The Sun angle matters as well. A low Sun throws long shadows. A Sun directly behind the spacecraft eliminates shadows but produces sun glint: the slide's image of South-East Asia shows a glare off the sea stretching thousands of kilometres. A moderate Sun angle is the compromise.
+Illumination. A visible-wavelength imager needs the target in sunlight. The Sun angle matters as well. A low Sun throws long shadows. A Sun directly behind the spacecraft eliminates shadows but produces sun glint: in an image of South-East Asia (slides), a glare off the sea stretches thousands of kilometres. A moderate Sun angle is the compromise.
 
-Invariance. Remote sensing is about change: before-and-after images of a fire, a volcano or a forest. If the Sun angle drifts from day 1 to day 10 to day 20, the shadows change length and direction and the images cannot be compared. The class chose the row of images with the same moderate Sun angle every time. That requires the target to be imaged at the same local solar time on every pass, which is Sun-synchronism.
+Invariance. Remote sensing is about change: before-and-after images of a fire, a volcano or a forest. If the Sun angle drifts from day 1 to day 10 to day 20, the shadows change length and direction and the images cannot be compared. The useful images are the ones with the same moderate Sun angle every time. That requires the target to be imaged at the same local solar time on every pass, which is Sun-synchronism.
 
-Viewing geometry. An oblique view shows building heights (the lecture's example was artificial islands off Dubai), a vertical view gives clean geometry. Either can be useful, but the same target should be seen with the same geometry at regular intervals so that images can be compared. That requires the ground track to repeat, which is Earth-synchronism.
+Viewing geometry. An oblique view shows building heights (artificial islands off Dubai, for example), a vertical view gives clean geometry. Either can be useful, but the same target should be seen with the same geometry at regular intervals so that images can be compared. That requires the ground track to repeat, which is Earth-synchronism.
 
-The final first-pass requirements for a 10 m imager are therefore: near-polar, near-circular, 700–900 km; target in sunlight at a moderate Sun angle; invariant illumination; invariant, repeating viewing geometry. In other words, a Sun- and Earth-synchronous orbit, the subject of [[SESA2024 12 - Sun- and Earth-Synchronous Orbits|the next note]].
+The final first-pass requirements for a 10 m imager are therefore: near-polar, near-circular, 700–900 km; target in sunlight at a moderate Sun angle; invariant illumination; invariant, repeating viewing geometry. That describes a Sun- and Earth-synchronous orbit ([[SESA2024 12 - Sun- and Earth-Synchronous Orbits]]).
 
 ## 6. What the payload asks of the rest of the spacecraft
 
-The orbit choice also sets the attitude requirement. A past-paper question (2018/19 Q1(vii)) asks for three basic orbit requirements and one attitude requirement for such a mission: near-polar (Sun-synchronous, about $98^\circ$), circular, 700–900 km with a repeat ground track, and nadir pointing from a three-axis-stabilised platform with the required accuracy and stability. How the payload drives the other subsystems in general is the Chapter 4 material in [[SESA2024 01 - Systems Engineering and Spacecraft Design#7. How the payload drives the design (Chapter 4)|note 01 §7]].
+The orbit choice also sets the attitude requirement. A past-paper question (2018/19 Q1(vii)) asks for three basic orbit requirements and one attitude requirement for such a mission: near-polar (Sun-synchronous, about $98^\circ$), circular, 700–900 km with a repeat ground track, and nadir pointing from a three-axis-stabilised platform with the required accuracy and stability. The general effect of the payload on the other subsystems is set out in [[SESA2024 01 - Systems Engineering and Spacecraft Design#7. How the payload drives the design (Chapter 4)|note 01 §7]].
 
 ## Worked example
 
 ### Swath width and altitude range
 
-*(Suggested, not lecturer-set; it uses the instrument of the Chapter 11 worked example.)* An imager with a $28.96^\circ$ field of view at the ends and middle of the first-pass range:
+*(Suggested, not lecturer-set; the instrument is the one in [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]].)* An imager with a $28.96^\circ$ field of view has $\beta/2=14.48^\circ$ and $\tan14.48^\circ=0.2582$, so $d=2\times0.2582\,h=0.5165\,h$. At the ends and middle of the first-pass range:
 
 $$
-d=2h\tan14.48^\circ:\qquad
 h=700\ \mathrm{km}\Rightarrow d=362\ \mathrm{km},
-\quad
+\qquad
 h=800\ \mathrm{km}\Rightarrow d=413\ \mathrm{km},
-\quad
+\qquad
 h=900\ \mathrm{km}\Rightarrow d=465\ \mathrm{km}.
 $$
 
-The corresponding periods, from Kepler's third law with $R_E=6378$ km, are 5926 s, 6052 s and 6179 s, the "6050 ± 120 s" used in the next two notes.
+The periods follow from Kepler's third law with $R_E=6378$ km. At 800 km, $a=7178$ km and
+
+$$
+\tau=2\pi\sqrt{\frac{7178^3}{398\,600}}=2\pi\sqrt{9.278\times10^5}=2\pi\times963.2=6052\ \mathrm s.
+$$
+
+The same calculation at 700 and 900 km gives 5926 s and 6179 s, the 6050 ± 120 s used in [[SESA2024 12 - Sun- and Earth-Synchronous Orbits]] and [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]].
+
+> [!check] Ground covered per orbit
+> At 800 km the swath of 413 km is 1.0 % of the equator's 40 075 km circumference per pass, and the satellite makes $86\,400/6052=14.3$ orbits a day. Counting both the ascending and descending passes (a visible-light imager can use only the sunlit ones, which halves this), one day covers $2\times14.3\times413=11\,800$ km, about 29 % of the equator, which is why the ground track has to be planned to fill the gaps over several days (the repeat-ground-track problem of [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission|note 13]]).
 
 ## Links
 
 - Parent: [[SESA2024 Astronautics Hub]]
-- Previous: [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]] (previous lecture)
+- Previous: [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]]
 - Next: [[SESA2024 12 - Sun- and Earth-Synchronous Orbits]]
 - Concepts: [[Swath Width and Push-Broom Imaging]] · [[Keplerian Orbital Elements]] · [[Sun-Synchronous Orbit]] · [[Repeat Ground Track]]
 - Payload impact: [[SESA2024 01 - Systems Engineering and Spacecraft Design]]
@@ -141,6 +157,7 @@ The corresponding periods, from Kepler's third law with $R_E=6378$ km, are 5926 
 
 - `Chapter 11_Orbit Selection First Pass_V1.pdf` (Dr C. Ryan, after Prof H. Lewis) with transcript `SESA2024 Lecture 2025-12-04.txt`
 - Fortescue, Stark and Swinerd, *Spacecraft Systems Engineering*, Ch. 5 (mission analysis)
+- Figures: `generate_ast_ch11_payload_figures.py` (`ast_swath_geometry`). Numbers recomputed in Python.
 
 ## Self-study tasks
 
@@ -155,3 +172,10 @@ The corresponding periods, from Kepler's third law with $R_E=6378$ km, are 5926 
 - [ ] Three orbit requirements and one attitude requirement for a remote-sensing imager (2018/19 Q1(vii)). → [[#6. What the payload asks of the rest of the spacecraft]]
 - [ ] Advantage of push-broom over whisk-broom imaging (2017/18 Q1(vii)). → [[#2. The push-broom imager]] · [[SESA2024 06 - Attitude Control#Type 1: spinner|whisk-broom on a spinner]]
 - [ ] Swath width and period at 700, 800 and 900 km for a 28.96° field of view. → [[#Swath width and altitude range]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (2025-12-04, ll. 345–355)
+> Where: [[#3. The first pass for a 10 m imager]].
+>
+> ESA's GOCE gravity mission is described as flying at 200 km until its ion thruster "failed" and it fell out of the sky. GOCE flew at about 255 km (later lowered to about 224 km), and it re-entered in 2013 after its xenon propellant ran out, not because the thruster failed.

@@ -14,9 +14,7 @@ sources: ["02 - Sources/Tutorial Sheets/Tutorial Sheet 02 - DC Circuit Analysis 
 # FEEG1004 Tutorial 2 - DC Circuit Analysis and Kirchhoff's Laws Solutions
 
 > [!abstract] Sheet Info
-> The sheet covers mesh matrices, superposition, a Thévenin reduction, capacitor/inductor steady states and transients, and the danger of interrupting an inductor.
-> - No answer key is printed. Every result here was **derived independently and checked numerically** (matrix solve for Q1, nodal cross-check for Q2).
-> - Circuit topologies were read from high-resolution renders of the sheet.
+> Mesh matrices, superposition, a Thévenin reduction, capacitor and inductor steady states and transients, and the danger of interrupting an inductor. No answer key is printed, so every result here was derived independently and checked numerically (a matrix solve for Q1 and a nodal cross-check for Q2). Circuit topologies were read from high-resolution renders of the sheet.
 
 ## Theory Links
 - [[FEEG1004 A6 - Mesh Analysis]] · [[FEEG1004 A7 - Thevenin, Superposition and Relays]] · [[FEEG1004 A4 - Capacitors]] · [[FEEG1004 A5 - Inductors and Electrical Resonance]] · [[RC and RL Transients]]
@@ -24,33 +22,28 @@ sources: ["02 - Sources/Tutorial Sheets/Tutorial Sheet 02 - DC Circuit Analysis 
 ---
 
 ## Q1: Mesh equations for the four-window network
-**Network.**
-- Left window: 20 V source and 5 Ω, sharing a 4 Ω with the centre.
-- Top window: 6 Ω, sharing a 2 Ω with the centre.
-- Centre window: 4 Ω, 2 Ω, a 1 Ω shared with the right window, and a 10 V battery in its bottom wire.
-- Right window: 3 Ω and a 15 V source.
 
-**Step 1, loop currents**: $I_1$ (left), $I_2$ (top), $I_3$ (centre) and $I_4$ (right), all clockwise.
+The network has four windows. The left window holds the 20 V source (+ at top) and a 5 Ω resistor, and shares a 4 Ω resistor with the centre window. The top window holds a 6 Ω resistor and shares a 2 Ω resistor with the centre. The centre window contains the 4 Ω and 2 Ω resistors, a 1 Ω resistor shared with the right window, and a 10 V battery in its bottom wire (+ on the left plate, − on the right plate). The right window holds a 3 Ω resistor and a 15 V source (+ at top, − at bottom).
 
-**Step 2, KVL per window** (rises positive, $IR$ drops negative):
+Assign clockwise loop currents $I_1$ (left), $I_2$ (top), $I_3$ (centre) and $I_4$ (right). In each window's KVL equation, rises are positive and $IR$ drops negative. Clockwise $I_3$ crosses the bottom 10 V battery from right (−) to left (+), a $+10\ \mathrm V$ rise, while clockwise $I_4$ crosses the right-wall 15 V battery from top (+) to bottom (−), a $-15\ \mathrm V$ drop:
 
 $$
 \begin{aligned}
 &20 - 5I_1 - 4(I_1 - I_3) = 0\\
 &-6I_2 - 2(I_2 - I_3) = 0\\
-&-4(I_3 - I_1) - 2(I_3 - I_2) - 1(I_3 - I_4) - 10 = 0\\
-&15 - 3I_4 - 1(I_4 - I_3) = 0
+&10 - 4(I_3 - I_1) - 2(I_3 - I_2) - 1(I_3 - I_4) = 0\\
+&-15 - 3I_4 - 1(I_4 - I_3) = 0
 \end{aligned}
 $$
 
-**Step 3, matrix form** (check it against the inspection rule: diagonal = total mesh resistance, off-diagonal = −shared):
+Collecting coefficients gives the matrix form below. It agrees with the inspection rule: each diagonal entry is the total resistance around that mesh, and each off-diagonal entry is minus the resistance shared by the pair.
 
 $$
 \begin{pmatrix}9&0&-4&0\\0&8&-2&0\\-4&-2&7&-1\\0&0&-1&4\end{pmatrix}
-\begin{pmatrix}I_1\\I_2\\I_3\\I_4\end{pmatrix} = \begin{pmatrix}20\\0\\-10\\15\end{pmatrix}
+\begin{pmatrix}I_1\\I_2\\I_3\\I_4\end{pmatrix} = \begin{pmatrix}20\\0\\10\\-15\end{pmatrix}
 $$
 
-**Step 4, branch currents from loop currents**:
+The branch currents are $i_1$ in 5 Ω, $i_2$ in 2 Ω, $i_3$ in 4 Ω (downwards), $i_4$ through the 10 V battery (rightwards), $i_5$ in 1 Ω (downwards), $i_6$ in 6 Ω and $i_7$ in 3 Ω. In terms of the loop currents,
 
 $$
 \begin{pmatrix}i_1\\i_2\\i_3\\i_4\\i_5\\i_6\\i_7\end{pmatrix} =
@@ -58,75 +51,64 @@ $$
 \begin{pmatrix}I_1\\I_2\\I_3\\I_4\end{pmatrix}
 $$
 
-- The branches are: $i_1$ in 5 Ω, $i_2$ in 2 Ω, $i_3$ in 4 Ω (downwards), $i_4$ through the 10 V battery, $i_5$ in 1 Ω (downwards), $i_6$ in 6 Ω and $i_7$ in 3 Ω.
-- The sheet only asks for the equations. Solving them anyway: $\mathbf I$ = (2.484, 0.148, 0.590, 3.898) A.
-- That gives $\mathbf i$ = (2.484, 0.443, 1.894, −0.590, −3.307, 0.148, 3.898) A.
-- A negative $i_5$ means 3.3 A flows **up** through the 1 Ω.
+The sheet asks only for the equations. Solving them gives $\mathbf I = (3.727, 0.846, 3.385, -2.904)$ A and hence $\mathbf i = (3.727, 2.539, 0.342, -3.385, 6.289, 0.846, -2.904)$ A. The negative values, $i_4 = -3.385$ A and $i_7 = -2.904$ A, mean that those currents flow opposite to the drawn branch arrows. (If the 10 V and 15 V cell symbols were read with reversed polarity, $\mathbf V = (20, 0, -10, 15)^{\mathsf T}$ V, giving $\mathbf I = (2.484, 0.148, 0.590, 3.898)^{\mathsf T}$ A and $\mathbf i = (2.484, 0.443, 1.894, -0.590, -3.307, 0.148, 3.898)^{\mathsf T}$ A.)
 
 ![[ee_t2_q1_mesh.png|860]]
 
-## Q2: Superposition for $i_a$ (50 Ω) with a current source $I_s$ and a 12 V source behind 200 Ω
-- **$I_s$ alone** (12 V shorted): the 200 Ω sits in parallel with the 50 Ω. The current divider gives $i_a' = I_s\times200/250 = 0.8I_s$.
-- **12 V alone** ($I_s$ open): the 200 Ω and 50 Ω are in series, so $i_a'' = 12/250$ = 48 mA.
-- **Sum**:
+## Q2: Superposition for ia (50 Ω) with a current source Is and a 12 V source behind 200 Ω
+
+With $I_s$ acting alone (12 V source shorted), the 200 Ω resistor sits in parallel with the 50 Ω, and the current divider gives $i_a' = I_s\times200/250 = 0.8I_s$. With the 12 V source acting alone ($I_s$ open), the 200 Ω and 50 Ω resistors are in series, so $i_a'' = 12/250 = 48$ mA. Adding the two contributions,
 
 $$
-i_a = 0.8I_s + 0.048\ \mathrm A
+i_a = 0.8I_s + 0.048\ \mathrm A.
 $$
 
-- Nodal check: $I_s + (12 - V)/200 = V/50$ gives $V = 40(I_s + 0.06)$, so $i_a = V/50$ ✔.
-- The graph is a straight line of slope 0.8, intercept 48 mA, crossing zero at $I_s$ = −60 mA.
+A nodal check confirms this: $I_s + (12 - V)/200 = V/50$ gives $V = 40(I_s + 0.06)$, and $i_a = V/50$ reproduces the same line. The graph of $i_a$ against $I_s$ is a straight line of slope 0.8 and intercept 48 mA, crossing zero at $I_s = -60$ mA.
 
 ![[ee_t2_q2_superposition.png|700]]
 
 ## Q3: Thévenin equivalent at A–B
-- **$R_{TH}$**: short $V_1$. The 4 Ω and 12 Ω are then in parallel (3 Ω). Add the series 5 Ω to A. The two 1 Ω resistors between the middle and bottom rails are in parallel (0.5 Ω):
 
-$$R_{TH} = 5 + 3 + 0.5 = 8.5\ \Omega$$
+For $R_{TH}$, short $V_1$. The 4 Ω and 12 Ω resistors are then in parallel (3 Ω), the 5 Ω resistor to A adds in series, and the two 1 Ω resistors between the middle and bottom rails are in parallel (0.5 Ω):
 
-- **$V_{TH}$**:
-  - With A–B open, no current flows in the 5 Ω or down to the bottom rail.
-  - $V_1$ drives current round the 4 Ω + 12 Ω loop, so the 12 Ω carries $V_1\times12/16$.
-  - The middle and bottom rails are at the same potential (no current in the 1 Ω pair).
-  - Hence $V_{TH} = 0.75$ V.
+$$R_{TH} = 5 + 3 + 0.5 = 8.5\ \Omega.$$
+
+For $V_{TH}$, leave A–B open. No current then flows in the 5 Ω resistor or down to the bottom rail, so the middle and bottom rails are at the same potential. $V_1$ drives current around the 4 Ω + 12 Ω loop, and the 12 Ω resistor carries $V_1\times12/16$ of the source voltage, so $V_{TH} = 0.75$ V.
 
 ![[ee_t2_q3_thevenin.png|760]]
 
 ## Q4: Capacitor and inductor steady states and transients
-- **(i) V–I relations**: $i = C\,dv/dt$ and $v = L\,di/dt$.
-- **(ii) Steady-state $V_{out}$**:
-  - (a) Resistor with an open output: no current, so $V_{out}$ = 1 V.
-  - (b) 5 Ω then 1 µF to ground: the capacitor is open at DC, so $V_{out}$ = 1 V.
-  - (c) 1 µH then 5 Ω to ground: the inductor is a short, so $V_{out}$ = 1 V and $I$ = 0.2 A.
-- **(iii) Stored energy**:
-  - (b) $\tfrac{1}{2}CV^2 = \tfrac{1}{2}(10^{-6})(1)^2$ = **0.5 µJ**.
-  - (c) $\tfrac{1}{2}LI^2 = \tfrac{1}{2}(10^{-6})(0.2)^2$ = **20 nJ**.
-- **(iv) Sketches** (initial value, initial slope, final value):
+
+**(i) V–I relations.** $i = C\,dv/dt$ for the capacitor and $v = L\,di/dt$ for the inductor.
+
+**(ii) Steady-state output.** In circuit (a), a resistor with an open output carries no current, so $V_{out} = 1$ V. In circuit (b), with 5 Ω then 1 µF to ground, the capacitor is an open circuit at DC, so again $V_{out} = 1$ V. In circuit (c), with 1 µH then 5 Ω to ground, the inductor is a short circuit, so $V_{out} = 1$ V and $I = 0.2$ A.
+
+**(iii) Stored energy.** The capacitor in (b) stores $\tfrac{1}{2}CV^2 = \tfrac{1}{2}(10^{-6})(1)^2 = 0.5$ µJ, and the inductor in (c) stores $\tfrac{1}{2}LI^2 = \tfrac{1}{2}(10^{-6})(0.2)^2 = 20$ nJ.
+
+**(iv) Sketches.** Each sketch needs the initial value, initial slope and final value:
 
 | Case | $V_{out}$ | $I_{supply}$ | $\tau$ |
 |---|---|---|---|
 | (b) R–C | 0 → 1 V; initial slope $I/C = 0.2/10^{-6}$ V/s | 0.2 A → 0 | $RC$ = 5 µs |
 | (c) L–R | 0 → 1 V (it is $iR$) | 0 → 0.2 A; initial slope $V/L = 10^6$ A/s | $L/R$ = 0.2 µs |
 
-The hydraulic analogy: the membrane fills and stops the flow; the heavy wheel slowly spins up.
+In the hydraulic analogy, the capacitor's membrane stretches until it stops the flow, while the inductor's heavy wheel spins up slowly.
 
 ![[ee_t2_q4_transients.png|760]]
 
 ## Q5: Opening the switch on a 5 mH inductor fed from 12 V with 0.2 Ω internal resistance
-- **(a)** Before opening, the only resistance in the loop is the 0.2 Ω battery resistance (the inductor is a DC short):
 
-  $$I_0 = 12/0.2 = 60\ \mathrm A$$
+**(a) Voltage at switch-off.** Before the switch opens, the inductor is a DC short and the only resistance in the loop is the 0.2 Ω battery resistance, so
 
-  - The inductor current cannot change instantly, so at $t = 0^+$ the 60 A must flow through the only path, the air modelled as 1 MΩ:
+$$I_0 = 12/0.2 = 60\ \mathrm A.$$
 
-  $$V = 60\times10^6 = 60\ \mathrm{MV}$$
+The inductor current cannot change instantly, so at $t = 0^+$ the 60 A must flow through the only remaining path, the air gap modelled as 1 MΩ:
 
-  - It decays with $\tau = L/R = 5\ \mathrm{mH}/1\ \mathrm{M\Omega}$ = 5 ns.
-- **(b) In practice**:
-  - The spark occurs at the **switch contacts** as they separate; the gap is tiny there and the field enormous.
-  - Air breaks down at about 3 MV/m and ionises. Its impedance **collapses** from megohms to a few ohms, so the voltage is limited to the arc voltage.
-  - The stored $\tfrac{1}{2}LI^2 = \tfrac{1}{2}(0.005)(60)^2$ = 9 J is dumped into the arc, eroding the contacts.
-  - This is the ignition-coil principle. It is also why inductive loads need a [[Flyback Diode]].
+$$V = 60\times10^6 = 60\ \mathrm{MV}.$$
+
+This voltage decays with $\tau = L/R = 5\ \mathrm{mH}/1\ \mathrm{M\Omega} = 5$ ns.
+
+**(b) In practice.** The spark occurs at the switch contacts as they separate, where the gap is tiny and the field enormous. Air breaks down at about 3 MV/m and ionises, so its impedance falls from megohms to a few ohms and the voltage is limited to the arc voltage. The stored energy $\tfrac{1}{2}LI^2 = \tfrac{1}{2}(0.005)(60)^2 = 9$ J is dumped into the arc and erodes the contacts. The same principle drives an ignition coil, and it is the reason inductive loads need a [[Flyback Diode]].
 
 ## Sources
 - FEEG1004 Tutorial Sheet 2 (no printed answers; all results derived and verified numerically).

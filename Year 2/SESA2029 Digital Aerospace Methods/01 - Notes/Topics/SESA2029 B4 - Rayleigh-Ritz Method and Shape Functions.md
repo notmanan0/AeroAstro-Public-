@@ -27,9 +27,9 @@ sources: ["02 - Sources/FEM Lectures/Lecture_6_Rayleigh-Ritz_&_Shape_function_fi
 > - **Assumptions:** 1D bar of constant $A$ and $E$, $\varepsilon=du/dx$, polynomial displacement within each element.
 > - **Method:** 1. Assume $u=a+bx$ (or $a+bx+cx^2$). 2. Apply the nodal values as generalised boundary conditions. 3. Solve for the coefficients. 4. Collect the terms multiplying each nodal displacement: these are $N_i$. 5. Check $N_i=1$ at node $i$ and 0 at the others.
 > - **Common mistakes:** forgetting to check the nodal values of each $N_i$; calling a three-node element "three elements".
-> - **Practise:** [[#Quadratic interpolation with three nodes]] · [[#Worked example: a bar under distributed load]]
+> - **Practise:** [[#Quadratic interpolation with three nodes]] · [[#A bar under distributed load]]
 
-This lecture took minimum potential energy from [[SESA2029 B3 - Principle of Minimum Total Potential Energy|B3]] to the general method that FE software implements, still using the bar; the beam follows in [[SESA2029 B5 - Euler-Bernoulli Beam Element|B5]] (2026-02-13, ll. 381–400).
+Rayleigh–Ritz turns the minimum potential energy principle of [[SESA2029 B3 - Principle of Minimum Total Potential Energy|B3]] into the general method that FE software implements, with the bar as the example (2026-02-13, ll. 381–400).
 
 Rayleigh–Ritz is curve fitting guided by an energy principle. The real displacement of a bar is some smooth curve with infinitely many values. Rayleigh–Ritz replaces it by a curve of a chosen family, a straight line or a parabola, with only a few adjustable numbers, and lets the energy principle pick the member of the family that comes closest. Finite elements make the family flexible by using a separate simple curve on each short piece, joined at the nodes, so that even a straight line per element can follow a complicated shape if there are enough elements.
 
@@ -45,7 +45,7 @@ That needs the displacement, and hence the strain and stress, at every point: in
 
 ## 2. Rayleigh–Ritz for the two-node bar
 
-Take a bar of constant area $A$ (ll. 421–490). With $\sigma=E\varepsilon$, and $dV=A\,dx$,
+For a bar of constant area $A$ (ll. 421–490), with $\sigma=E\varepsilon$ and $dV=A\,dx$,
 
 $$
 U=\int_0^L\tfrac12\sigma\varepsilon\,A\,dx=\frac{AE}{2}\int_0^L\varepsilon^2\,dx.
@@ -57,7 +57,7 @@ $$
 U=\frac{AE}{2}\int_0^L\left(\frac{du}{dx}\right)^2dx .
 $$
 
-The strain energy now depends only on $u(x)$, which is unknown. In B3 it was taken as linear without comment; here that becomes an explicit assumption:
+The strain energy now depends only on $u(x)$, which is unknown. B3 used a linear form without stating it; here it is an explicit assumption:
 
 $$
 u=a+bx .
@@ -129,7 +129,7 @@ $$
 
 $[N]$ is the shape function matrix, and $u=[N]\{d\}$ is on the exam equation sheet (ll. 526–535). $N_1$ is 1 at node 1 and 0 at node 2; $N_2$ is the reverse. Every shape function has the value one at its own degree of freedom and zero at the others (ll. 536–545). They also sum to one everywhere, so a rigid-body translation, $u_1=u_2$, is represented exactly. The continuous bar with infinitely many DOF has become a two-DOF problem, with everything between the nodes interpolated.
 
-The lecture stops at the shape functions; the step to the stiffness matrix follows directly. The strain is
+The step from the shape functions to the stiffness matrix follows directly. The strain is
 
 $$
 \varepsilon=\frac{du}{dx}=\frac{d[N]}{dx}\{d\}=[B]\{d\},
@@ -179,13 +179,13 @@ u_1+u_3=2u_2+\frac{cL^2}{2}
 c=\frac{2(u_1-2u_2+u_3)}{L^2}.
 $$
 
-The lecture leaves this as a matrix inversion and shows only the result. Substitute into $u=a+bx+cx^2$:
+This is a matrix inversion. Substitute into $u=a+bx+cx^2$:
 
 $$
 u=u_2+\frac{u_3-u_1}{L}x+\frac{2(u_1-2u_2+u_3)}{L^2}x^2 .
 $$
 
-Collect the coefficient of each nodal displacement (checked with SymPy):
+Collect the coefficient of each nodal displacement:
 
 $$
 N_1=\frac{2x^2}{L^2}-\frac xL,
@@ -197,28 +197,27 @@ $$
 
 Check node 1, $x=-L/2$: $N_1=\tfrac12+\tfrac12=1$, $N_2=1-1=0$, $N_3=\tfrac12-\tfrac12=0$. The pattern holds at every node.
 
-![[dam_bar_shape_functions.png|760]]
+![[dam_bar_shape_functions.png|900]]
 
 The quadratic shape functions are curved, and $N_1$ and $N_3$ dip slightly below zero between nodes, but each is still exactly one or zero at the nodes (ll. 576–595). Because the strain is the derivative, a two-node element has constant strain and a three-node element linearly varying strain.
 
-> [!warning] Lecture slip (2026-02-13, ll. 549–552)
-> The quadratic case is introduced as "if a bar has three elements". It is one element with three nodes.
-
 ## 5. h- and p-refinement
 
-There are two ways to make a finite element model more accurate (ll. 600–625; [[h- and p-Refinement]]). The h-method refines the mesh, reducing the characteristic element size $h$ while keeping the same shape functions; it is the most common approach and what lab 1's convergence study does with linear BEAM188 elements. The p-method raises the polynomial order $p$ of the shape functions, from two-node linear to three-node quadratic and beyond. Both add degrees of freedom. Mainstream FE packages such as ANSYS and Abaqus mainly use the h-method, while some CAD packages with built-in FE (SolidWorks is the lecture's example) use p-methods with polynomial orders up to 8 or 9, depending on how complex the displacement is.
+There are two ways to make a finite element model more accurate (ll. 600–625; [[h- and p-Refinement]]). The h-method refines the mesh, reducing the characteristic element size $h$ while keeping the same shape functions; it is the most common approach and what lab 1's convergence study does with linear BEAM188 elements. The p-method raises the polynomial order $p$ of the shape functions, from two-node linear to three-node quadratic and beyond. Both add degrees of freedom. Mainstream FE packages such as ANSYS and Abaqus mainly use the h-method, while some CAD packages with built-in FE (SolidWorks, for example) use p-methods with polynomial orders up to 8 or 9, depending on how complex the displacement is.
 
-The element libraries offer lower- and higher-order versions of each element, and lab 3 compares a four-node and an eight-node shell, whose difference is exactly their shape functions: higher order is more accurate (ll. 616–625).
+The element libraries offer lower- and higher-order versions of each element, such as the four-node and eight-node shells of lab 3, which differ exactly in their shape functions: higher order is more accurate (ll. 616–625).
 
-## Worked example: a bar under distributed load
+## Worked examples
 
-This example is not in the lecture; it shows Rayleigh–Ritz giving an approximate answer and improving as the trial function grows. A bar of length $L$ hangs from $x=0$ and carries a uniform axial load $q$ per unit length (for example its own weight), with the far end free. The total potential energy is
+### A bar under distributed load
+
+*(Suggested, not lecturer-set.)* Rayleigh–Ritz gives an approximate answer that improves as the trial function grows. A bar of length $L$ hangs from $x=0$ and carries a uniform axial load $q$ per unit length (for example its own weight), with the far end free. The total potential energy is
 
 $$
 \Pi=\frac{AE}{2}\int_0^L\left(\frac{du}{dx}\right)^2dx-\int_0^Lq\,u\,dx .
 $$
 
-The trial function must satisfy the displacement boundary condition $u(0)=0$; the free-end force condition is satisfied automatically. First try $u=bx$. Then $du/dx=b$ and
+The trial function must satisfy the displacement boundary condition $u(0)=0$; the free-end force condition is a natural boundary condition that need not be imposed, but a finite trial function satisfies it only approximately (the linear trial below leaves a force $AEb=qL/2$ at the free end, the quadratic trial none). The first trial is $u=bx$. Then $du/dx=b$ and
 
 $$
 \Pi=\frac{AE}{2}b^2L-\frac{qbL^2}{2}.
@@ -232,13 +231,58 @@ $$
 b=\frac{qL}{2AE}.
 $$
 
-The tip displacement $u(L)=qL^2/(2AE)$ is exact, but the strain is constant at $qL/(2AE)$, whereas the true strain at the root is $qL/(AE)$, so the root stress is underestimated by half. Now try $u=bx+cx^2$. Minimising over both coefficients (SymPy) gives
+The tip displacement $u(L)=qL^2/(2AE)$ is exact, but the strain is constant at $qL/(2AE)$, whereas the true strain at the root is $qL/(AE)$, so the root stress is underestimated by half. The quadratic trial $u=bx+cx^2$ still satisfies $u(0)=0$ and has $du/dx=b+2cx$, so the two integrals are
+
+$$
+\int_0^L(b+2cx)^2\,\mathrm dx=b^2L+2bcL^2+\tfrac43c^2L^3,
+\qquad
+\int_0^Lq(bx+cx^2)\,\mathrm dx=q\left(\tfrac12bL^2+\tfrac13cL^3\right).
+$$
+
+So
+
+$$
+\Pi=\frac{AE}{2}\left(b^2L+2bcL^2+\tfrac43c^2L^3\right)-q\left(\tfrac12bL^2+\tfrac13cL^3\right).
+$$
+
+Set the derivative with respect to each coefficient to zero:
+
+$$
+\frac{\partial\Pi}{\partial b}=AE\left(bL+cL^2\right)-\tfrac12qL^2=0,
+\qquad
+\frac{\partial\Pi}{\partial c}=AE\left(bL^2+\tfrac43cL^3\right)-\tfrac13qL^3=0.
+$$
+
+Divide the first by $L$ and the second by $L^2$:
+
+$$
+AE(b+cL)=\tfrac12qL,
+\qquad
+AE\left(b+\tfrac43cL\right)=\tfrac13qL.
+$$
+
+Subtract the first from the second: $\tfrac13AEcL=-\tfrac16qL$, so $c=-q/(2AE)$, and back-substituting, $b=qL/(AE)$. Hence
 
 $$
 u=\frac{q}{2AE}\left(2Lx-x^2\right),
 $$
 
 which is the exact solution, with root strain $qL/(AE)$. The minimum energies are $-q^2L^3/(8AE)$ for the linear trial and $-q^2L^3/(6AE)$ for the quadratic: the better trial function reaches a lower total potential energy, as the principle requires. A finite element model would reach the same improvement either by p-refinement (quadratic elements) or by h-refinement (more linear elements).
+
+### The same bar with two linear elements
+
+*(Suggested, not lecturer-set.)* Splitting the bar into two elements of length $L/2$, with nodes at $0$, $L/2$ and $L$, gives each element a stiffness $AE/(L/2)=2AE/L$. With linear shape functions the load potential of an element is $-\int qu\,\mathrm dx=-q\int(N_iu_i+N_ju_j)\,\mathrm dx=-\tfrac{qh}{2}(u_i+u_j)$, because each $N$ integrates to $h/2$: the distributed load is shared equally between the two nodes of each element. With $u_1=0$, node 2 collects $qL/4$ from each element and node 3 $qL/4$ from element 2:
+
+$$
+\frac{2AE}{L}\begin{bmatrix}2&-1\\-1&1\end{bmatrix}\begin{Bmatrix}u_2\\u_3\end{Bmatrix}=\begin{Bmatrix}qL/2\\qL/4\end{Bmatrix}.
+$$
+
+Add the two rows: $\tfrac{2AE}{L}u_2=\tfrac34qL$, so $u_2=\tfrac{3qL^2}{8AE}$. The second row then gives $u_3=u_2+\tfrac{qL^2}{8AE}=\tfrac{qL^2}{2AE}$. Both nodal values are exact (the exact solution gives $\tfrac q{2AE}(L^2-\tfrac{L^2}{4})=\tfrac{3qL^2}{8AE}$ at $x=L/2$). The element strains are $u_2/(L/2)=\tfrac{3qL}{4AE}$ and $\tfrac{qL}{4AE}$, so the root strain has improved from $0.5$ to $0.75$ of the exact $qL/(AE)$.
+
+![[dam_hanging_bar_h_refinement.png|900]]
+
+> [!check] How the root strain converges
+> With $N$ equal linear elements the root element's constant strain equals the exact strain at its midpoint, $\tfrac{qL}{AE}\left(1-\tfrac{1}{2N}\right)$: 0.5, 0.75 and 0.875 for $N=1$, 2 and 4, as the figure shows. The error at the root halves with every halving of $h$, first order, while the nodal displacements are exact for any $N$. One quadratic element is exact everywhere, the p-refinement route of [[#5. h- and p-refinement]].
 
 ## Links
 
@@ -251,17 +295,24 @@ which is the exact solution, with root strain $qL/(AE)$. The minimum energies ar
 ## Sources
 
 - FEA Lecture 6 slides, `Lecture_6_Rayleigh-Ritz_&_Shape_function_final.pdf`, with transcript `SESA2029 Lecture 2026-02-13.txt`, ll. 389–639 (Dr J. Yuan)
-- Quadratic shape functions and the worked example checked with SymPy
+- Quadratic shape functions and the worked examples checked with SymPy and NumPy. Figures: `01 - Notes/Figures/generate_dam_b4_figures.py`
 
 ## Self-study tasks
 
 ### Core
 
-- [ ] Derive the linear shape functions of a two-node bar and check their nodal values (2026-02-13, ll. 506–545; the shape-function equation "needs to be used" in the example sheet). → [[#4. Linear shape functions]]
+- [ ] Derive the linear shape functions of a two-node bar and check their nodal values (2026-02-13, ll. 506–545; used in the example sheet). → [[#4. Linear shape functions]]
 - [ ] Derive the quadratic shape functions for a three-node bar (ll. 546–595). → [[#Quadratic interpolation with three nodes]]
-- [ ] Example sheet 2 questions on Rayleigh–Ritz and shape functions ("there are four questions there", ll. 626–635). → [[SESA2029 FEA Worked Examples]]
+- [ ] Example sheet 2 questions on Rayleigh–Ritz and shape functions (four questions, ll. 626–635). → [[SESA2029 FEA Worked Examples]]
 - [ ] Explain the h- and p-methods and which elements in the labs are linear or quadratic (ll. 600–625). → [[#5. h- and p-refinement]]
 
 ### Further practice
 
-- [ ] Repeat the distributed-load example with two linear elements and compare with the one-element quadratic answer (suggested, not lecturer-set). → [[#Worked example: a bar under distributed load]]
+- [ ] Repeat the distributed-load example with two linear elements and compare with the one-element quadratic answer (suggested, not lecturer-set). → [[#The same bar with two linear elements]]
+
+## Transcript and slide slips
+
+> [!warning] Lecture slip (2026-02-13, ll. 549–552)
+> Where: [[#Quadratic interpolation with three nodes]].
+>
+> The quadratic case is introduced as "if a bar has three elements". It is one element with three nodes.

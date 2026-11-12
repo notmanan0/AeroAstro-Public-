@@ -25,7 +25,7 @@ Because it is the shortest design it is also likely the lightest, which matters 
 
 ## Regions
 
-The course names three regions (L3.3 slides 8 and 10, Supplementary Note p. 10). The **complex region** sits behind the expansion corner, where both families of characteristics cross; textbooks call it the kernel or a non-simple region. The **simple flow region** lies next to the designed wall and has *"characteristics from one direction only"* (a simple-wave region in textbooks). Beyond both is the **uniform flow region**, with $M=M_e$ and $\theta=0$.
+Three regions are distinguished (3.3 slides 8 and 10). The **complex region** sits behind the expansion corner, where both families of characteristics cross; textbooks call it the kernel or a non-simple region. The **simple flow region** lies next to the designed wall and has characteristics from one family only (a simple-wave region in textbooks). Beyond both is the **uniform flow region**, with $M=M_e$ and $\theta=0$.
 
 ## Designing one
 
@@ -36,12 +36,12 @@ The course names three regions (L3.3 slides 8 and 10, Supplementary Note p. 10).
 
 With $n$ lines the net has $n(n+3)/2$ points, $n$ of them on the wall: 14 for $n=4$ and 20 for $n=5$.
 
-For $M_e=2.4$ (3.3 slides 11–21), $\theta_{max}=18.373^\circ$. Four lines starting at $0.375^\circ$ put the exit at $x_e/r_a=8.069$, $y_e/r_a=2.400$. Lengths are scaled by $r_a$, *"the nozzle throat's half-width"* (slide 21), so $y_e/r_a$ is the exit half-width.
+For $M_e=2.4$ (3.3 slides 11–21), $\theta_{max}=18.373^\circ$. Four lines starting at $0.375^\circ$ put the exit at $x_e/r_a=8.069$, $y_e/r_a=2.400$. Lengths are scaled by the throat half-width $r_a$ (slide 21), so $y_e/r_a$ is the exit half-width.
 
 > [!check] Built-in check
 > Mass conservation requires $y_e/r_a\to A_e/A^*$, here $2.4031$. MoC gives $2.4003$ with four lines and $2.4028$ with 300. 1D theory gives the exit half-width but not the length; that is what MoC adds.
 
-The MoC coursework uses $n=5$ lines from $0.125^\circ$, with $M_e=3.x$ where $x$ is the last digit of your student ID, for CO₂ with $\gamma=1.289$. It is due 23:59 on Sunday 15 November (L3-4, ll. 367–418; [[SESA3029 W05b - Minimum-Length Nozzle Design#Announcements and deadlines|W05b]]).
+The MoC coursework uses $n=5$ lines from $0.125^\circ$, with $M_e=3.x$ where $x$ is the last digit of your student ID, for CO₂ with $\gamma=1.289$. It is due 23:59 on Sunday 15 November (L3-4, ll. 367–418; [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]]).
 
 > [!warning] $\theta_{max}=\nu(M_e)/2$ holds for any γ, but ν depends on γ
 > At $\gamma=1.289$ the IFT (built for $\gamma=1.4$) gives the wrong $\nu$, $\theta_{max}$ and $A_e/A^*$. Use the general-$\gamma$ formulas. Only $\mu=\sin^{-1}(1/M)$ is the same for every gas.

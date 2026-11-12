@@ -25,5 +25,5 @@ Dividing through gives $T^4$, with the solar terms multiplied by $\alpha_S/\vare
 
 ## Related
 
-- [[SESA2024 10 - Thermal Control#3. The spacecraft thermal balance equation|Derivation in the lecture note]] · [[SESA2024 10 - Thermal Control#A painted sphere in low Earth orbit|Worked example]]
+- [[SESA2024 10 - Thermal Control#3. The spacecraft thermal balance equation|Derivation in the topic note]] · [[SESA2024 10 - Thermal Control#A painted sphere in low Earth orbit|Worked example]]
 - [[Absorptance and Emittance]] · [[Blackbody Radiation]] · [[Eclipse Duration]]

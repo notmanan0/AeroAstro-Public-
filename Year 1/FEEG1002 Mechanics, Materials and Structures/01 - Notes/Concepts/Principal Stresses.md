@@ -3,46 +3,28 @@ title: "Principal Stresses"
 module: "FEEG1002 Mechanics, Materials and Structures"
 type: concept
 stream: "Part B: Statics 2"
-aliases: ["principal directions", "maximum shear stress", "sigma_I sigma_II", "principal planes"]
+aliases: ["principal directions", "maximum in-plane shear stress", "sigma_I sigma_II", "principal planes", "principal strains"]
 tags: [feeg1002, concept, statics-2, principal-stresses, failure]
 status: complete
-parent_lectures: ["[[FEEG1002 B4 - Stress Transformation and Mohr's Circle]]", "[[FEEG1002 B6 - Yield Criteria]]"]
-related_concepts: ["[[Mohr's Circle]]", "[[Stress Transformation Equations]]", "[[Von Mises and Tresca Yield Criteria]]"]
-sources: []
+parent_lectures: ["[[FEEG1002 B4 - Stress Transformation and Mohr's Circle]]", "[[FEEG1002 B5 - Strain Measurement and Strain Rosettes]]", "[[FEEG1002 B6 - Yield Criteria]]"]
+related_concepts: ["[[Mohr's Circle]]", "[[Stress Transformation Equations]]", "[[Tresca Yield Criterion]]", "[[Von Mises Yield Criterion]]"]
+sources: ["02 - Sources/Statics 2/Lectures/Lecture 06 - Mohr's Circle.pdf", "02 - Sources/Statics 2/Lectures/Lecture 08 - Yield Criteria.pdf"]
 ---
 
 # Principal Stresses
 
-## Definition
+The principal stresses are the normal stresses on the planes through a point that carry no shear stress; in plane stress they are $\sigma_{I,II}=\sigma_{average}\pm R$, with $\sigma_I$ the larger, on two perpendicular principal directions.
 
-> [!note] Definition
-> The normal stresses on the orientations with **zero shear**:
->
-> $$\sigma_{I,II} = \frac{\sigma_{xx}+\sigma_{yy}}2 \pm\sqrt{\left(\frac{\sigma_{xx}-\sigma_{yy}}2\right)^2 + \sigma_{xy}^2},\qquad \tan2\theta_p = \frac{2\sigma_{xy}}{\sigma_{xx}-\sigma_{yy}}$$
->
-> The principal directions are 90° apart. The maximum in-plane shear $(\sigma_I - \sigma_{II})/2$ acts at 45° to them.
+Every plane stress state has such directions, because Mohr's circle always crosses the normal-stress axis twice. The angle $\theta_p$ from the $x$ axis to the direction of $\sigma_I$ satisfies $\cos2\theta_p=(\sigma_{xx}-\sigma_{yy})/2R$ and $\sin2\theta_p=\sigma_{xy}/R$; the familiar $\tan2\theta_p=2\sigma_{xy}/(\sigma_{xx}-\sigma_{yy})$ has two solutions 90° apart, so a sketch of the circle is the safest way to tell which belongs to $\sigma_I$. The derivative of the transformation equation, $d\sigma_{x'x'}/d\theta=2\sigma_{x'y'}$, shows that the principal stresses are the largest and smallest normal stresses on any plane through the point, which is why brittle materials are checked against $\sigma_I$. Mathematically they are the eigenvalues of the stress tensor and the principal directions its eigenvectors.
 
-## Explanation
+The maximum in-plane shear stress is the radius, $(\sigma_I-\sigma_{II})/2$, acting at 45° to the principal directions on planes that also carry the normal stress $\sigma_{average}$. In 3D there are three principal stresses on mutually perpendicular planes. In plane stress the third, normal to the plate, is $\sigma_{III}=0$, and when $\sigma_I$ and $\sigma_{II}$ have the same sign the largest shear acts on a plane through the thickness, $\sigma_I/2$, rather than in the plane. Both yield criteria in the course are written in principal stresses, which makes them independent of how the stress element was oriented.
 
-- They are the **eigenvalues** of the stress tensor, and the principal directions its eigenvectors.
-- $\sigma_I$ is the largest normal stress on **any** plane. That is what opens cracks, so brittle materials fail by it.
-- Yield criteria are written in principal stresses, which makes them orientation-independent.
-- In 3D there are three: $\tau_{max,abs} = \tfrac12(\sigma_{max} - \sigma_{min})$. In plane stress $\sigma_{III} = 0$ still counts: two tensile in-plane principals give an out-of-plane $\tau_{max} = \sigma_I/2$.
-- For isotropic materials the principal **strains** share the same directions.
+For an isotropic material the principal strains lie in the same directions as the principal stresses, because Hooke's law makes zero shear stress and zero shear strain coincide. A shaft in torsion is in pure shear with $\sigma_{I,II}=\pm\sigma_{xy}$ at 45°, which is why gauges for measuring torque are mounted at ±45°; a pressure vessel wall is already aligned with its principal directions.
 
-## Examples
-
-- Pure shear (torsion): $\sigma_{I,II} = \pm\tau$ at 45°, which explains the helical brittle fracture of shafts.
-- Pressure vessel: the axial and hoop directions are already principal.
-
-![[s2_mohr_pure_shear.png|760]]
+![[s2_mohr_pure_shear.png|800]]
 
 ## Related
 
-- Topic notes: [[FEEG1002 B4 - Stress Transformation and Mohr's Circle]] · [[FEEG1002 B6 - Yield Criteria]]
-- Concepts: [[Mohr's Circle]] · [[Stress Transformation Equations]] · [[Von Mises and Tresca Yield Criteria]]
-- Year 2: [[Von Mises and Tresca Yield Criteria]] · [[Stress Intensity Factor]] (mode I opening by the normal stress) · crack-growth direction in fatigue ([[SESA2028 M2 - Fatigue - Fracture Surfaces, Mechanisms and Lifing]])
-
-## Sources
-
-- Statics 2 Lecture 6b; Statics 2 Lecture 8a
+- [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#5. Principal stresses and maximum shear|principal stresses in B4]] · [[FEEG1002 B5 - Strain Measurement and Strain Rosettes#Principal strains|principal strains in B5]] · [[FEEG1002 B6 - Yield Criteria#Maximum shear stress in three dimensions|three principal stresses in B6]]
+- [[Mohr's Circle]] · [[Stress Transformation Equations]] · [[Tresca Yield Criterion]] · [[Von Mises Yield Criterion]]
+- Year 2: [[Characteristic Equation and Eigenvalues]] · [[Stress Intensity Factor]] (crack opening by the normal stress)

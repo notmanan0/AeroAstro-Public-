@@ -193,7 +193,7 @@ $$
 
 #### (iv) Larson-Miller, Ni superalloy, 500 MPa at 700 °C [6]
 
-$\log_{10}500=2.699$, which reads to **LMP ≈ 26.4×10³** on Fig. QB1 (the lecturer's read). With $T=973$ K and $C=20$:
+$\log_{10}500=2.699$, which reads to **LMP ≈ 26.4×10³** on Fig. QB1 (the model answer's reading). With $T=973$ K and $C=20$:
 
 $$
 \log t_r=\frac{26\,400}{973}-20=7.13,\qquad t_r=\boxed{1.35\times10^7\ \text{h}}.

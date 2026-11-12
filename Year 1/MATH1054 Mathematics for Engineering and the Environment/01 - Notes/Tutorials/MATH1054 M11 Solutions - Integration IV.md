@@ -11,7 +11,7 @@ sheet: "Specimen Test 11 (booklet) + Module 11 booklet: Exercises A–G (double 
 theory_notes: ["[[MATH1054 M11 - Integration IV]]"]
 key_concepts: ["[[Double Integrals and Change of Order]]", "[[Jacobian and Volume Elements]]"]
 status: complete
-sources: ["tmp/md/module_11_integration_iv.md", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 11, pp.29–42)"]
+sources: ["02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 11, pp.29–42)"]
 ---
 
 # MATH1054 M11 Solutions - Integration IV
@@ -155,5 +155,5 @@ $$I=\int_0^1y\cdot\frac{1-y}{2}\,\mathrm dy=\frac12\Big(\frac12-\frac13\Big)=\bo
 $$\int_0^\pi\!\!\int_0^a\sin\theta\,r\,\mathrm dr\,\mathrm d\theta=\Big[-\cos\theta\Big]_0^\pi\Big[\frac{r^2}2\Big]_0^a=2\cdot\frac{a^2}2=\boxed{a^2}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_11_integration_iv.md`
+- Problem statements: Module 11 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - MATH1054 Module Booklet, Module 11 (Integration IV, booklet pp.29–42)

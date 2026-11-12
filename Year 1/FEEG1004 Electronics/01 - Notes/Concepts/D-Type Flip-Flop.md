@@ -13,22 +13,16 @@ sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors
 
 # D-Type Flip-Flop
 
-## Definition
+A D-type flip-flop is a one-bit memory with a data input $D$ and a clock input $C$. On the active clock edge the output takes the value of the input, $Q\leftarrow D$; between edges $Q$ holds whatever $D$ does, and $\overline Q$ is always its complement.
 
-> [!note] Definition
-> A one-bit memory with data input $D$ and clock $C$. On the active clock **edge**, $Q\leftarrow D$. Between edges, $Q$ holds regardless of $D$. $\overline Q$ is always the complement.
+It is built from the R-S latch, a pair of cross-coupled gates, by adding gating from the clock and an inverter from $D$ to the R input. Because S and R then always take opposite values, the forbidden state $R=S=1$ can never occur. Rising-edge and falling-edge versions both exist, and a triangle on the C input of the symbol marks edge triggering.
 
-## Explanation
-- It derives from the R-S latch (cross-coupled gates) plus clock gating plus an inverter from $D$ to R, which removes the forbidden R = S = 1 state.
-- Rising- or falling-edge versions exist. The triangle on the C input marks edge triggering.
-- Feeding $\overline Q$ back to $D$ makes it **toggle** every edge: a divide-by-2.
-- It is the basic cell of registers, counters and SRAM.
+Feeding $\overline Q$ back to $D$ makes the flip-flop toggle on every edge, so its output runs at half the clock frequency: a divide-by-2. The D-type is the basic cell of registers, counters and SRAM.
 
 ![[ee_b6_flipflop_counter_timing.png|700]]
 
 ## Related
-- Topic notes: [[FEEG1004 B6 - Sequential Logic - Flip-Flops, Registers and Counters]]
-- Concepts: [[Shift Registers and Binary Counters]] · [[Boolean Algebra and De Morgan's Theorems]]
 
-## Sources
-- Mills notes §3.3.1–3.3.3; Week 15 session
+- [[FEEG1004 B6 - Sequential Logic - Flip-Flops, Registers and Counters]]
+- [[Shift Registers and Binary Counters]] · [[Boolean Algebra and De Morgan's Theorems]]
+- Sources: Mills notes §3.3.1–3.3.3; Week 15 session

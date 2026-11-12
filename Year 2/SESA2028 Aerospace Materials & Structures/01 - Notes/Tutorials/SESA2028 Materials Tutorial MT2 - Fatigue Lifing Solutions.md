@@ -12,7 +12,7 @@ sources: ["02 - Sources/SESA2028 green coursework book.pdf (MT2, p.27)"]
 
 # SESA2028 Materials Tutorial MT2 - Fatigue Lifing Solutions
 
-> These are independent worked solutions, not an official mark scheme. Q4 reproduces the lecturer's own worked example. Q2 is identical to 2018-19 A2(i), Q3 to 2014-15 B1, and Q5 to 2016-17 A2(iv) (with a different $A$).
+> These are independent worked solutions, not an official mark scheme. Q4 reproduces the course's worked example. Q2 is identical to 2018-19 A2(i), Q3 to 2014-15 B1, and Q5 to 2016-17 A2(iv) (with a different $A$).
 
 **Conventions used throughout** ([[Paris Law]]):
 
@@ -83,7 +83,7 @@ $$
 - The LCF and HCF laws are empirical fits, and flutter amplitude is uncertain.
 - So apply a safety factor of 2: allow about 250 further stop-starts, then inspect the blade root (NDT) or retire it.
 
-![[Figures/materials_fatigue_miner_budget.png]]
+![[materials_fatigue_miner_budget.png]]
 
 ---
 
@@ -119,7 +119,7 @@ $$
 
 ---
 
-## Q4 - Lecturer's worked example: large flat plate [10 marks]
+## Q4 - Worked example: large flat plate [10 marks]
 
 +120/-30 MPa, $a_i=1.00$ mm, $K_{Ic}=45\ \mathrm{MPa\sqrt m}$, $A=2\times10^{-12}$, $m=3$, $Q=1$.
 
@@ -147,7 +147,7 @@ $$
 =\boxed{2.80\times10^6\ \text{cycles}}.
 $$
 
-The lecturer quotes 2,801,904 cycles, from rounding the denominator to $9.6\times10^{-6}$. Carrying full precision gives 2,795,265; both are fine. Recommend re-inspection at about $1.4\times10^6$ cycles (SF 2).
+The worked example quotes 2,801,904 cycles, from rounding the denominator to $9.6\times10^{-6}$. Carrying full precision gives 2,795,265; both are fine. Recommend re-inspection at about $1.4\times10^6$ cycles (SF 2).
 
 ---
 

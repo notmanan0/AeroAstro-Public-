@@ -29,9 +29,12 @@ The course's standard example is a 200 km parking orbit to GEO: 2.455 plus 1.477
 
 It is the minimum-ΔV two-impulse transfer between coplanar circles, but it is slow for distant targets (years to the outer planets), needs the target correctly phased (a launch window), and does not cover plane changes or low-thrust electric propulsion, which spirals out instead. In Chapter 11 a small Hohmann transfer restores the altitude a remote-sensing satellite loses to drag.
 
+For a very small change in radius the same physics reduces to one line. Differentiating the energy equation at fixed $r$ gives $\delta a=2a\,\delta V/V$ for a tangential burn on a circular orbit, so a small Hohmann boost by $\Delta a$ costs $\Delta V\approx V\Delta a/2a$ in total. That is the drag make-up burn of the [[Orbit Control Cycle]], and the same formula explains why RemoveDebris, pushed backwards at 5 cm/s from the ISS, dropped 177 m below the station and gained 833 m on it every orbit.
+
 ![[ast_hohmann_leo_geo.png|560]]
 
 ## Related
 
-- [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer#2. The Hohmann transfer|Derivation in the lecture note]] · [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer#200 km parking orbit to GEO|Worked example]]
+- [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer#2. The Hohmann transfer|Derivation in the topic note]] · [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer#200 km parking orbit to GEO|Worked example]]
 - [[Vis-Viva Equation]] · [[Tsiolkovsky Rocket Equation]] · [[Orbit Control Cycle]]
+- [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer#4. How far a small burn moves the orbit|Small burns and RemoveDebris]]

@@ -13,27 +13,31 @@ sources: ["James, Modern Engineering Mathematics (6th ed.) §2.2.3", "MATH1054 M
 
 # Inverse Functions
 
-## Definition
+The inverse $f^{-1}$ of a function $f$ reverses it: $y=f^{-1}(x)$ exactly when $x=f(y)$. It exists only if $f$ is **one-to-one** (each output comes from a single input), and then the domain of $f^{-1}$ is the range of $f$ and its range is the domain of $f$.
 
-> [!note] Definition
-> $f^{-1}$ undoes $f$: $f^{-1}(f(x))=x$. It exists iff $f$ is **one-to-one** on its domain. The domain of $f^{-1}$ is the range of $f$.
+A function is one-to-one when every horizontal line meets its graph at most once; a strictly increasing or strictly decreasing function always is. To find the inverse, write $y=f(x)$, solve for $x$ in terms of $y$, then swap the letters. Because swapping $x$ and $y$ sends $(a,b)$ to $(b,a)$, the graph of $f^{-1}$ is the reflection of the graph of $f$ in the line $y=x$, and vertical and horizontal asymptotes swap.
 
-## Explanation
-- **Finding it**: write $y=f(x)$, solve for $x$, then swap the letters.
-- **Graph**: reflect the graph of $f$ in $y=x$. Its asymptotes swap too.
-- **Horizontal-line test**: a function is one-to-one iff every horizontal line meets its graph at most once.
-- **Restricting the domain** makes a function invertible: $x^2$ on $x\ge0$ gives $\sqrt x$; $\sin x$ on $[-\frac\pi2,\frac\pi2]$ gives $\sin^{-1}$.
-- **Derivative**: $\frac{\mathrm d}{\mathrm dx}f^{-1}(x)=\dfrac{1}{f'(f^{-1}(x))}$.
+A function that fails the test can be made invertible by restricting its domain. $x^2$ on $x\geq0$ has inverse $\sqrt x$; $x^2+1$ on $x\geq0$ has inverse $\sqrt{x-1}$ on $x\geq1$ (Exercise 10(c)); $\sin x$ on $[-\frac\pi2,\frac\pi2]$ has inverse $\sin^{-1}x$ ([[Inverse Trigonometric Functions]]); $\cosh x$ on $x\geq0$ has inverse $\cosh^{-1}x$ ([[Hyperbolic Functions]]). The restriction is part of the definition, which is why $\sqrt{x^2}=|x|$ rather than $x$.
 
-## Examples
-- $f=\frac15(4x-3)$ gives $f^{-1}=\frac{5x+3}4$ (Ex 2.6).
-- $f=\frac{x+2}{x+1}$ gives $f^{-1}=\frac{2-x}{x-1}$, $x\neq1$ (Ex 2.7).
-- $x^2+1$ on $x\ge0$ gives $\sqrt{x-1}$ (Ex 10(c)).
+The derivative of an inverse follows from differentiating $f\big(f^{-1}(x)\big)=x$ with the chain rule:
+
+$$
+\begin{aligned}
+f'\big(f^{-1}(x)\big)\,\big(f^{-1}\big)'(x)&=1\\
+\big(f^{-1}\big)'(x)&=\frac{1}{f'\big(f^{-1}(x)\big)},
+\end{aligned}
+$$
+
+or $\frac{\mathrm dy}{\mathrm dx}=1\big/\frac{\mathrm dx}{\mathrm dy}$, wherever $f'\neq0$. For $f(x)=x^3+x$, which has no simple inverse formula, $f(1)=2$ and $f'(1)=4$, so $\big(f^{-1}\big)'(2)=\frac14$; differencing a numerical solution of $z^3+z=2\pm10^{-6}$ gives $0.2500000$.
+
+For example, $y=\frac{x+2}{x+1}$ ($x\neq-1$) rearranges as $x(y-1)=2-y$, so $f^{-1}(x)=\frac{2-x}{x-1}$ with $x\neq1$ (Example 2.7). The excluded value $1$ is the output $f$ never reaches, its horizontal asymptote. Composing back, $f\big(f^{-1}(x)\big)=x$.
+
+![[m1054_inverse_reflections.png|900]]
+
+The common trap is reading the $-1$ as a power. $f^{-1}(x)$ is the inverse function and $[f(x)]^{-1}=1/f(x)$ is the reciprocal, so $\sin^{-1}x$ is not $\operatorname{cosec}x$. A second trap is forgetting that the inverse undoes $f$ only on the restricted domain: $f^{-1}\big(f(x)\big)=x$ can fail outside it.
 
 ## Related
-- Topics: [[MATH1054 M07 - Functions]]
-- Concepts: [[Inverse Trigonometric Functions]] · [[Hyperbolic Functions]] · [[Even, Odd and Periodic Functions]]
 
-## Sources
-- James, Modern Engineering Mathematics (6th ed.) §2.2.3
-- MATH1054 Module Booklet, Module 7
+- Topics: [[MATH1054 M07 - Functions]] · [[MATH1054 M03 - Differentiation I]]
+- Concepts: [[Inverse Trigonometric Functions]] · [[Hyperbolic Functions]] · [[Even, Odd and Periodic Functions]] · [[Product, Quotient and Chain Rules]]
+- Sources: James, *Modern Engineering Mathematics* (6th ed.) §2.2.3; MATH1054 Module Booklet, Module 7

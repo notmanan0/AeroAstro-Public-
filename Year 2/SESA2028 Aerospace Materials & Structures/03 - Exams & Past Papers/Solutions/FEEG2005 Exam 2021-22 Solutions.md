@@ -139,7 +139,7 @@ $$
 
 **Stiffness governs** for all three. Everything meets the 4 mm limit. **UD CFRP is by far the lightest** (about 1/5 of Al). Mg is *heavier* than Al here, because its specific stiffness is slightly lower ($42/1.77=23.7$ vs $70/2.71=25.8$).
 
-![[Figures/materials_selection_rod_and_sheet.png]]
+![[materials_selection_rod_and_sheet.png]]
 
 **(iv) If the load became biaxial [4].** A UD sheet loaded **across** its fibres has $E_T=\left(\frac{0.3}{550}+\frac{0.7}{3.1}\right)^{-1}=4.4$ GPa. For the 0.7 m direction ($\varepsilon=1/700$) that needs $t\approx6.6$ mm, which **fails the 4 mm limit**. So the lay-up must change:
 

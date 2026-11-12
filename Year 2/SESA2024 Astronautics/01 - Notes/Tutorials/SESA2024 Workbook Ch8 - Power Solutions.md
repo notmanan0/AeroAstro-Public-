@@ -39,7 +39,7 @@ sources: ["02 - Sources/Lectures/SESA2024 Astronautics PROBLEM SHEET WORKBOOK 20
 - Fuel cells suit crewed missions of days to weeks.
 
 ## Q3. Solar flux
-- At 1 AU the flux is about 1.4 kW/m² (the "solar constant"; the lecture uses 1350–1370 W/m²). It falls as $1/d^2$.
+- At 1 AU the flux is about 1.4 kW/m² (the "solar constant"; the course uses 1350–1370 W/m²). It falls as $1/d^2$.
 - At 5 AU it is $1400/5^2\approx55$ W/m², which gives only 5–6 W/m² of electrical power after array inefficiencies. That needs enormous arrays.
 - Beyond about 5 AU, RTGs are used. (Juno at Jupiter is the famous solar exception.)
 

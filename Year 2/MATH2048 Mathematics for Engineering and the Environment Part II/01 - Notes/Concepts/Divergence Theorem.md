@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/Vector Calculus/Lecture29_vect
 
 # Divergence Theorem
 
-The **divergence theorem** (Gauss's theorem) states that for a region $V$ bounded by a closed surface $S$ with outward normal, $\oiint_S\mathbf F\cdot d\mathbf S=\iiint_V\nabla\cdot\mathbf F\,dV$.
+The **divergence theorem** (Gauss's theorem) states that for a region $V$ bounded by a closed surface $S$ with outward normal, $\mathop{∯}_S\mathbf F\cdot d\mathbf S=\iiint_V\nabla\cdot\mathbf F\,dV$.
 
 The divergence is the outflow per unit volume, and when the region is cut into small boxes the fluxes through shared internal faces cancel, leaving only the outer surface. The normal must point outward, and $\nabla\cdot\mathbf F$ must exist everywhere inside. It turns a flux through a complicated closed surface, which may need splitting into smooth pieces, into a single volume integral: for $\mathbf F=\mathbf r$ through a closed cylinder, $\nabla\cdot\mathbf r=3$ gives $3\pi a^2h$ at once. An open surface can be closed with a simple flat piece whose flux is then subtracted.
 

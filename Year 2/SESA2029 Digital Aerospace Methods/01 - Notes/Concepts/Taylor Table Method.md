@@ -19,7 +19,7 @@ A systematic way to find the most accurate coefficients of a finite-difference s
 3. Choose the unknowns to zero as many columns as possible.
 4. The first non-zero column is the leading error.
 
-Recipe (for $f'_j = (af_{j-2}+bf_{j-1}+cf_j)/h+\varepsilon$):
+Procedure (for $f'_j = (af_{j-2}+bf_{j-1}+cf_j)/h+\varepsilon$):
 1. Multiply by $h$ and move every term except the error to the left: $hf'_j-af_{j-2}-bf_{j-1}-cf_j = h\varepsilon$.
 2. Column headings: $f_j,\ hf'_j,\ \tfrac{h^2}{2}f''_j,\ \tfrac{h^3}{6}f'''_j,\dots$. The Taylor coefficients for $f_{j+m}$ are $1, m, m^2, m^3,\dots$.
 3. Fill one row per term, including its sign. With $n$ unknowns, set the first $n$ column sums to zero.
@@ -35,7 +35,7 @@ Recipe (for $f'_j = (af_{j-2}+bf_{j-1}+cf_j)/h+\varepsilon$):
 The three equations give $a = \tfrac12$, $b = -2$ and $c = \tfrac32$. The error is $h\varepsilon = (8a+b)\tfrac{h^3}{6}f'''$, so $\varepsilon = \tfrac{h^2}{3}f'''_j$: second order.
 
 - 2-point forward: $f'_j = (f_{j+1}-f_j)/h$ with $\varepsilon = -\tfrac h2f''_j$.
-- 3-point forward: $f'_j = (-3f_j+4f_{j+1}-f_{j+2})/2h$ with $\varepsilon = -\tfrac{h^2}{3}f'''_j$.
+- 3-point forward: $f'_j = (-3f_j+4f_{j+1}-f_{j+2})/2h$ with $\varepsilon = +\tfrac{h^2}{3}f'''_j$ (the same sign as the backward scheme, since the error is even in $h$).
 - Central second derivative: $\varepsilon = -\tfrac{h^2}{12}f''''_j$.
 
 Full tables are in [[SESA2029 CFD Worked Examples]].

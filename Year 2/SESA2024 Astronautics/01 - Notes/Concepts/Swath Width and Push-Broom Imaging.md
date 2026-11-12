@@ -27,5 +27,5 @@ A whisk-broom imager instead sweeps a few detectors across the track with a mech
 
 ## Related
 
-- [[SESA2024 11 - Payload and Orbit Selection#2. The push-broom imager|Push-broom imager in the lecture note]] · [[SESA2024 06 - Attitude Control#Type 1: spinner|Whisk-broom on a spinner]]
+- [[SESA2024 11 - Payload and Orbit Selection#2. The push-broom imager|Push-broom imager in the topic note]] · [[SESA2024 06 - Attitude Control#Type 1: spinner|Whisk-broom on a spinner]]
 - [[Repeat Ground Track]] · [[Payload Data Rate]]

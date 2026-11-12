@@ -13,7 +13,7 @@ sheet: "Specimen Test 22 (booklet) + Module 22 work scheme: Examples 3.17–3.28
 theory_notes: ["[[MATH1054 M22 - Complex Numbers II]]"]
 key_concepts: ["[[De Moivre's Theorem and Roots of Complex Numbers]]", "[[Complex Functions - Trig, Hyperbolic and Logarithm]]", "[[Loci in the Complex Plane]]"]
 status: complete
-sources: ["tmp/md/module_22_complex_numbers_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§3.2.9–3.2.12)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§3.2.9–3.2.10, §3.3.1–3.3.2, §3.4.1–3.4.2)"]
 ---
 
 # MATH1054 M22 Solutions - Complex Numbers II
@@ -273,5 +273,5 @@ $$x^2+(y+2)^2=4\big[x^2+(y-1)^2\big]\ \Rightarrow\ 3x^2+3y^2-12y=0\ \Rightarrow\
 This is a circle with centre $2\mathrm j$ and radius 2 (a circle of Apollonius).
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_22_complex_numbers_ii.md`
-- James, *Modern Engineering Mathematics* (6th ed.) §3.2.9–3.2.12; MATH1054 Module Booklet, Module 22
+- Problem statements: Module 22 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
+- James, *Modern Engineering Mathematics* (6th ed.) §3.2.9–3.2.10, §3.3.1–3.3.2, §3.4.1–3.4.2; MATH1054 Module Booklet, Module 22

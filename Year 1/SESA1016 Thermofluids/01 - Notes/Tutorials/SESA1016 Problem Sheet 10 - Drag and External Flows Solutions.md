@@ -53,7 +53,7 @@ $$f(1)=1,\qquad f'(1)=0.$$
 
 Thus
 
-$$A+B=-1,qquad 3A+4B=-2,$$
+$$A+B=-1,\qquad 3A+4B=-2,$$
 
 and
 
@@ -125,7 +125,7 @@ $$\theta=\int_0^\infty\frac{u}{U_\infty}
 Trapezoidal integration gives
 
 $$
-\theta_{base}=0.8202\ \mathrm{mm},qquad
+\theta_{base}=0.8202\ \mathrm{mm},\qquad
 \theta_{texture}=0.7730\ \mathrm{mm}.
 $$
 
@@ -160,25 +160,21 @@ Atmospheric reference pressure cancels; using all pressures as either absolute o
 
 ## Q10.6 Pressure drag on a diamond airfoil
 
-Each tap represents projected chord length $\Delta x=0.02$ m. For a face at angle $\theta$, the streamwise pressure-force contribution is $p\tan\theta\,\Delta x$ per unit span. Symmetry doubles the upper-face result:
+Each tap represents a projected chord length $\Delta x=0.02$ m. A face inclined at the half-angle $\varepsilon$ to the chord has length $\Delta x/\cos\varepsilon$ per tap, and the streamwise component of the pressure force on it is $p\,\Delta x\tan\varepsilon$ per unit span. Front-face pressure pushes downstream; rear-face suction also acts downstream. Symmetry doubles the upper-surface result:
 
 $$
-D_p'=2\tan\theta\,\Delta x
-\left(\sum p_{front}-\sum p_{rear}\right).
+D_p'=2\tan\varepsilon\,\Delta x
+\left(\sum p_{front}-\sum p_{rear}\right)
+=2\tan\varepsilon\times0.02\times(136\,052+22\,650).
 $$
 
-With front taps 4–6, rear taps 1–3 and $\theta=27^\circ$,
+The sheet's figure marks the 27° angle between the upper and lower faces at the leading edge, i.e. the included angle, so $\varepsilon=13.5^\circ$:
 
-$$\boxed{D_p'=3.23\ \mathrm{kN\,m^{-1}}}.$$
+$$\boxed{D_p'=1.52\ \mathrm{kN\,m^{-1}}},\qquad
+\boxed{C_{dp}=\frac{D_p'}{\tfrac12\rho V_\infty^2c}=0.117}.$$
 
-The pressure-drag coefficient is
-
-$$
-\boxed{C_{dp}=\frac{D_p'}{\tfrac12\rho V_\infty^2c}
-=0.248}.
-$$
-
-Negative rear-face gauge pressures contribute positive drag because suction acts in the downstream direction on those inclined surfaces.
+> [!note] Correction (2026-11-05)
+> The earlier version took 27° as the angle of each face to the chord, giving $D_p'=3.23$ kN/m and $C_{dp}=0.248$. That reading makes the aerofoil 51 % thick, and the figure shows the angle as the included angle. No answer is printed for this question, so state the angle convention you use.
 
 ## Q10.7 Wind-tunnel buoyancy correction
 

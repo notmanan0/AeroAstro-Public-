@@ -25,7 +25,7 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf", "02 - Sources/Lectur
 # SESA2023 W05 - Combustion, Stoichiometry and Chemical Equilibrium
 
 > [!abstract] Summary
-> Earlier weeks modelled the burner as heat added to air; in a real engine fuel is burned and chemical energy becomes thermal energy (L1, ll. 20–25). This week balances atoms for the stoichiometric air requirement, the air–fuel ratio and the equivalence ratio, uses the lower calorific value (the heat released by isothermal combustion at 298 K), and finds the adiabatic flame temperature, or the fuel flow for a given burner exit temperature, by a three-step path through 298 K. At high temperature the products dissociate (CO₂ ⇌ CO + ½O₂), with Le Chatelier's principle giving the trends and equilibrium constants the composition.
+> In a real engine fuel is burned and chemical energy becomes thermal energy, rather than heat being added to air as in the cycle models (L1, ll. 20–25). Balancing atoms gives the stoichiometric air requirement, the air–fuel ratio and the equivalence ratio; the lower calorific value (the heat released by isothermal combustion at 298 K) then gives the adiabatic flame temperature, or the fuel flow for a given burner exit temperature, by a three-step path through 298 K. At high temperature the products dissociate (CO₂ ⇌ CO + ½O₂), with Le Chatelier's principle giving the trends and equilibrium constants the composition.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a question names a fuel and asks for the air needed, $\phi$, the product composition, the flame temperature, the fuel–air ratio for a given $T_{04}$, or an equilibrium composition (CO, NO, H₂).
@@ -34,9 +34,9 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf", "02 - Sources/Lectur
 > - **Common mistakes:** forgetting the 3.762 N₂* that comes with each O₂ (it carries heat and mass); using mole numbers instead of masses in the $c_p$ average.
 > - **Practise:** [[#Worked example – stoichiometric methane flame temperature]] · [[#Worked example – CO equilibrium at 2600 K and 3 bar]] · [[SESA2023 Problem Sheet 5 Solutions]] Q5.1–Q5.3
 
-Combustion conserves atoms: every carbon, hydrogen and oxygen atom that goes in comes out, and only the molecules change, so balancing atoms tells you how much air a kilogram of fuel needs. For every molecule of oxygen, air carries 3.76 molecules of nitrogen, which in this course don't react but still have to be heated, so they keep the flame temperature down.
+Combustion conserves atoms: every carbon, hydrogen and oxygen atom that goes in comes out, and only the molecules change, so balancing atoms tells you how much air a kilogram of fuel needs. For every molecule of oxygen, air carries 3.76 molecules of nitrogen, which are treated as inert but still have to be heated, so they keep the flame temperature down.
 
-The chemical energy is stored in the bonds. Reactants have a high formation enthalpy and products a low one, and in an adiabatic burner the total enthalpy is fixed, so the chemical enthalpy that disappears comes back as sensible enthalpy and the gas gets hot (24 Feb, ll. 376–402). The data book gives values only at 298 K, because the calorific value is measured by burning at 25 °C and removing the heat. To use it in a hot engine, imagine cooling the reactants to 298 K, burning there and heating the products to the exit temperature; energy is a state property, so the detour gives the right answer. Finally, at 2500–3000 K some of the products dissociate: collisions are violent enough to split CO₂ back into CO and O₂, and the products settle at a balance between forming and breaking up that is set by temperature and pressure.
+The chemical energy is stored in the bonds. Reactants have a high formation enthalpy and products a low one, and in an adiabatic burner the total enthalpy is fixed, so the chemical enthalpy that disappears comes back as sensible enthalpy and the gas gets hot (24 Feb, ll. 376–402). The data book gives values only at 298 K, because the calorific value is measured by burning at 25 °C and removing the heat. For a hot engine the reactants are taken down to 298 K, burned there and the products heated to the exit temperature; energy is a state property, so the detour gives the right answer. Finally, at 2500–3000 K some of the products dissociate: collisions are violent enough to split CO₂ back into CO and O₂, and the products settle at a balance between forming and breaking up that is set by temperature and pressure.
 
 ---
 
@@ -97,11 +97,6 @@ $$
 \mathrm{CH_4+2\big(O_2+3.762N_2^*\big)\to CO_2+2H_2O+7.524N_2^*}
 $$
 
-> [!warning] Transcript slips in the balancing (24 Feb, ll. 210, 249, 252)
-> - l. 210: "two hydrogen from here, two hydrogen from water" while counting oxygen atoms on the right (2 in CO₂ + 2 in 2H₂O = 4).
-> - l. 249: "D is equal 1": it is $d=2$ (the lecturer gets it right at l. 219).
-> - l. 252: "0.79 over 0.21 for hydrogen": that ratio belongs to nitrogen.
-
 ### Complete combustion
 
 **Complete combustion**: all the carbon goes to CO₂ and all the hydrogen to H₂O, so no fuel and no oxidiser remain in stoichiometric conditions, and the heat release is the maximum possible (24 Feb, ll. 254–262). Incomplete combustion leaves fuel, CO, soot or H₂, either because there is not enough oxygen or because of poor mixing, flow or temperature conditions.
@@ -122,10 +117,6 @@ $$
 
 So 1 kg/s of methane needs 17.24 kg/s of air entering the burner (24 Feb, ll. 320–324).
 
-> [!warning] Transcript slips: the names of the ratios (24 Feb, ll. 279–280, 294)
-> - l. 279: "the fuel-air ratio, that is also called equivalence ratio". It is not: the fuel–air ratio is $f=1/AFR$, and the equivalence ratio $\phi$ (below) compares the actual mixture with the stoichiometric one.
-> - l. 294: the slide had the nitrogen ratio inverted (21/79); the lecturer corrects it to 79/21.
-
 ### Equivalence ratio
 
 $$
@@ -136,7 +127,7 @@ The mass and molar forms agree because the fuel amount is fixed and only the air
 
 ### Worked example – methane at φ = 0.5
 
-From the lecture (24 Feb, ll. 342–354).
+(24 Feb, ll. 342–354.)
 
 $$
 AFR = \frac{AFR_{st}}{\phi} = \frac{17.24}{0.5} = 34.48
@@ -186,9 +177,6 @@ $$
 
 Reactants have a higher total formation enthalpy than products.
 
-> [!warning] Transcript slip (24 Feb, ll. 388–413)
-> Throughout this passage the transcript says "entropy formation" and even "H always stays for entropy". The quantity is the formation enthalpy $h_f^\circ$, the one tabulated with a superscript zero.
-
 ### Two model processes
 
 Both at constant pressure with no shaft work (notes §5.4.1). The SFEE is $\dot Q-\dot W_x=\dot m(h_{out}-h_{in})$.
@@ -205,10 +193,7 @@ The calorific value is the heat released per kilogram of fuel by isothermal comb
 - LCV (lower calorific value): the water in the products stays as vapour. Propulsion always uses the LCV.
 - HCV (higher): the water condenses, releasing its latent heat, so HCV > LCV.
 
-Data book Table 1: H₂ 120, CH₄ 50.01, C₃H₈ 46.36, n-octane 44.43 MJ/kg; kerosene is taken as about 43 MJ/kg. The pressure dependence is negligible; the temperature dependence is not, which is the reason for the next section.
-
-> [!warning] Transcript slip (24 Feb, l. 436)
-> "Found for a specific temperature, that is 28": it is 298 K (25 °C), as the lecturer says at l. 438.
+Data book Table 1: H₂ 120, CH₄ 50.01, C₃H₈ 46.36, n-octane 44.43 MJ/kg; kerosene is taken as about 43 MJ/kg. The pressure dependence is negligible; the temperature dependence is not, which is why the flame temperature is found by a three-step path through 298 K.
 
 ### Steady-flow adiabatic combustion: the three-step path
 
@@ -226,7 +211,7 @@ $$
 \dot Q_r = -\dot m_f\,LCV
 $$
 
-3. **Heat the products from $T_0$ to $T_2$**:
+3. Heat the products from $T_0$ to $T_2$:
 
 $$
 \dot Q_{02} = \sum_{prod}\dot m_j\left(h_{j,2}-h_{j,0}\right)
@@ -264,7 +249,7 @@ $$
 
 ### Worked example – stoichiometric methane flame temperature
 
-The lecture example (24 Feb, ll. 480–508): stoichiometric CH₄–air, reactants at $T_1=400$ K; $c_{p,r}=1072$ and $c_{p,p}=1116$ J kg⁻¹ K⁻¹ (the lecturer recomputed both from the data book to confirm them); $LCV=50.01$ MJ/kg; $AFR=17.24$.
+The worked example (24 Feb, ll. 480–508): stoichiometric CH₄–air, reactants at $T_1=400$ K; $c_{p,r}=1072$ and $c_{p,p}=1116$ J kg⁻¹ K⁻¹ (both from the data book); $LCV=50.01$ MJ/kg; $AFR=17.24$.
 
 **Chemical term:**
 
@@ -285,7 +270,7 @@ T_2 = 298+\frac{2.742\times10^6+1.093\times10^5}{1116} = 298+2555 = 2853\ \mathr
 $$
 
 > [!check] Numerical checks
-> - The lecture quotes 2854 K; the 1 K difference is rounding in $AFR$.
+> - The reference answer is 2854 K; the 1 K difference is rounding in $AFR$.
 > - Hotter reactants give a hotter flame: each 100 K of preheat adds about $1072\times100/1116=96$ K.
 > - 2853 K is well above the roughly 2300 K that a real methane flame with 400 K reactants reaches, because dissociation (§3) is ignored here: the products are assumed to be only CO₂, H₂O and N₂.
 
@@ -293,7 +278,7 @@ $$
 
 ### The same balance in gas-turbine form
 
-In W06–W07 the question is reversed: the turbine sets the burner exit temperature $T_{04}$, and the fuel–air ratio $f$ must be found. Per kilogram of air, with air entering at $T_{03}$ and fuel supplied at $T_{ref}=298$ K:
+In W06–W07 the turbine sets the burner exit temperature $T_{04}$, and the fuel–air ratio $f$ is the unknown. Per kilogram of air, with air entering at $T_{03}$ and fuel supplied at $T_{ref}=298$ K:
 
 $$
 c_{pa}(T_{ref}-T_{03})-f\,LCV+(1+f)\,c_{pp}(T_{04}-T_{ref}) = 0
@@ -336,9 +321,7 @@ The rate of an elementary reaction follows an Arrhenius form, $k\propto\exp(-E_a
 
 > "If a chemical system at equilibrium experiences a change in concentration, temperature or pressure, then the equilibrium shifts to counteract the imposed change and a new equilibrium is established." (notes §5.5.1)
 
-- **Temperature.** For $\mathrm{CO+\tfrac12O_2\to CO_2}$, Table 4 gives $\Delta h<0$: the forward reaction is exothermic. Raising $T$ favours the endothermic direction, i.e. dissociation of CO₂.
-- **Pressure.** The forward reaction goes from 1.5 kmol to 1 kmol of gas. Raising $p$ favours the side with fewer moles, i.e. less dissociation.
-- NO formation ($\mathrm{N_2+O_2\to2NO}$) is endothermic at all temperatures, so NO appears only in the hottest regions (27 Feb, ll. 188–190).
+For $\mathrm{CO+\tfrac12O_2\to CO_2}$, Table 4 gives $\Delta h<0$, so the forward reaction is exothermic and raising $T$ favours the endothermic direction, i.e. dissociation of CO₂. The same forward reaction goes from 1.5 kmol to 1 kmol of gas, so raising $p$ favours the side with fewer moles, i.e. less dissociation. NO formation ($\mathrm{N_2+O_2\to2NO}$) is endothermic at all temperatures, so NO appears only in the hottest regions (27 Feb, ll. 188–190).
 
 ### Equilibrium constant
 
@@ -414,7 +397,7 @@ $$
 
 ### Worked example – carbon in pure oxygen at φ = 0.25
 
-The lecture example (27 Feb, ll. 191–244): carbon burns in pure O₂ at $\phi=0.25$; the products CO, CO₂ and O₂ are at 3000 K and 2 bar. Find the volume fraction of CO.
+The worked example (27 Feb, ll. 191–244): carbon burns in pure O₂ at $\phi=0.25$; the products CO, CO₂ and O₂ are at 3000 K and 2 bar. Find the volume fraction of CO.
 
 **Air–fuel ratio.** Stoichiometric $\mathrm{C+O_2\to CO_2}$ gives $AFR_{st}=32/12$; at $\phi=0.25$ the oxygen is quadrupled, $AFR=4\times32/12$, so
 
@@ -451,14 +434,6 @@ y_{CO} = \frac{0.211}{4.106} = 5.1\ \%
 $$
 
 ![[prop_equilibrium_co.png|640]]
-
-> [!warning] Transcript slips in this example (27 Feb, ll. 192, 223–224, 236)
-> - l. 192: "carbon that burns with pure hydrogen". It burns in pure oxygen.
-> - ll. 223–224: the lecturer notes that the slide's equilibrium expression is mislabelled; it is the CO + ½O₂ ⇌ CO₂ reaction.
-> - l. 236: "the value that we read is 1.11": that is $\ln K^\theta$, so $K^\theta=e^{1.11}=3.034$.
-
-> [!warning] Transcript slip (27 Feb, l. 49)
-> In the lean methane example: "we have some remaining hydrogen that do not participate". It is excess oxygen that remains.
 
 ---
 
@@ -508,7 +483,7 @@ Tasks marked *(set)* were set or explicitly worked in the Week 5 lectures; the r
 
 - [ ] *(set)* Balance CH₄ in O₂ and in air by both methods; find $AFR_{st}=17.24$ (24 Feb, ll. 196–300). → [[#Combustion in air]] · [[#Air–fuel ratio]]
 - [ ] *(set)* Methane at $\phi=0.5$ (24 Feb, ll. 342–354). Target $AFR=34.48$. → [[#Worked example – methane at φ = 0.5]]
-- [ ] *(set)* Stoichiometric methane flame temperature with reactants at 400 K, including checking $c_{p,r}=1072$ and $c_{p,p}=1116$ from the data book as the lecturer did (24 Feb, ll. 480–508). Target 2853 K. → [[#Worked example – stoichiometric methane flame temperature]]
+- [ ] *(set)* Stoichiometric methane flame temperature with reactants at 400 K, including checking $c_{p,r}=1072$ and $c_{p,p}=1116$ from the data book (24 Feb, ll. 480–508). Target 2853 K. → [[#Worked example – stoichiometric methane flame temperature]]
 - [ ] *(set)* Carbon in pure O₂ at $\phi=0.25$, 3000 K, 2 bar (27 Feb, ll. 191–244). Target 5.1 % CO. → [[#Worked example – carbon in pure oxygen at φ = 0.25]]
 - [ ] *(set)* Work [[SESA2023 Problem Sheet 5 Solutions|Problem Sheet 5]] (propane combustion, flame temperature, NO equilibrium) and the Week 5 Blackboard quiz (27 Feb, l. 9).
 
@@ -520,3 +495,40 @@ Tasks marked *(set)* were set or explicitly worked in the Week 5 lectures; the r
 - [ ] CO equilibrium at 2600 K and 3 bar, then at 30 bar; explain the change with Le Chatelier. Targets 2.3 % and 0.8 % CO. → [[#Worked example – CO equilibrium at 2600 K and 3 bar]]
 - [ ] Sketch the $h$–$T$ diagram with the adiabatic, isothermal and three-step paths. → [[#Two model processes]]
 - [ ] *(set)* Install GasTurb for the propulsion lab and read the lab quiz (24 Feb, ll. 19–27); it draws on W06–W07.
+
+## Transcript and slide slips
+
+> [!warning] Transcript slips in the balancing (24 Feb, ll. 210, 249, 252)
+> Where: [[#Combustion in air]].
+>
+> - l. 210: "two hydrogen from here, two hydrogen from water" while counting oxygen atoms on the right (2 in CO₂ + 2 in 2H₂O = 4).
+> - l. 249: "D is equal 1": it is $d=2$ (the lecturer gets it right at l. 219).
+> - l. 252: "0.79 over 0.21 for hydrogen": that ratio belongs to nitrogen.
+
+> [!warning] Transcript slips: the names of the ratios (24 Feb, ll. 279–280, 294)
+> Where: [[#Air–fuel ratio]].
+>
+> - l. 279: "the fuel-air ratio, that is also called equivalence ratio". It is not: the fuel–air ratio is $f=1/AFR$, and the equivalence ratio $\phi$ (below) compares the actual mixture with the stoichiometric one.
+> - l. 294: the slide had the nitrogen ratio inverted (21/79); the lecturer corrects it to 79/21.
+
+> [!warning] Transcript slip (24 Feb, ll. 388–413)
+> Where: [[#Formation and sensible enthalpy]].
+>
+> Throughout this passage the transcript says "entropy formation" and even "H always stays for entropy". The quantity is the formation enthalpy $h_f^\circ$, the one tabulated with a superscript zero.
+
+> [!warning] Transcript slip (24 Feb, l. 436)
+> Where: [[#Calorific value]].
+>
+> "Found for a specific temperature, that is 28": it is 298 K (25 °C), as the lecturer says at l. 438.
+
+> [!warning] Transcript slips in this example (27 Feb, ll. 192, 223–224, 236)
+> Where: [[#Worked example – carbon in pure oxygen at φ = 0.25]].
+>
+> - l. 192: "carbon that burns with pure hydrogen". It burns in pure oxygen.
+> - ll. 223–224: the lecturer notes that the slide's equilibrium expression is mislabelled; it is the CO + ½O₂ ⇌ CO₂ reaction.
+> - l. 236: "the value that we read is 1.11": that is $\ln K^\theta$, so $K^\theta=e^{1.11}=3.034$.
+
+> [!warning] Transcript slip (27 Feb, l. 49)
+> Where: [[#Worked example – carbon in pure oxygen at φ = 0.25]].
+>
+> In the lean methane example: "we have some remaining hydrogen that do not participate". It is excess oxygen that remains.

@@ -27,7 +27,7 @@ To draw the triangles, put $U$ tangentially and $V_x$ axially, draw the rotor in
 
 ![[prop_compressor_velocity_triangles.png|700]]
 
-Worked values: the lecture compressor ($U = 300$ m/s, $\phi = 0.55$, $\psi = 0.45$, $\alpha_1 = 26^\circ$) has $\alpha_{1,rel} = -53.1^\circ$, $\alpha_2 = 52.6^\circ$ and $\alpha_{2,rel} = -27.1^\circ$. 2021-22 Q4 ($U = 280$ m/s, $\phi = 0.5$, $\psi = 0.4$, $\alpha_1 = 23^\circ$) gives $V_1 = 152$ m/s, $V_{1,rel} = 261$ m/s at $-57.6^\circ$, $V_2 = 221$ m/s at $50.8^\circ$ and $V_{2,rel} = 177$ m/s at $-37.8^\circ$. The 2022-23 Q4 turbine ($V_x = 200$ m/s, $\alpha_2 = 60^\circ$, $U = 350$ m/s, $w = 100$ kJ/kg) has rotor metal angles of $-1.0^\circ$ at inlet and $-55.3^\circ$ at exit.
+Worked values: the W08 example compressor ($U = 300$ m/s, $\phi = 0.55$, $\psi = 0.45$, $\alpha_1 = 26^\circ$) has $\alpha_{1,rel} = -53.1^\circ$, $\alpha_2 = 52.6^\circ$ and $\alpha_{2,rel} = -27.1^\circ$. 2021-22 Q4 ($U = 280$ m/s, $\phi = 0.5$, $\psi = 0.4$, $\alpha_1 = 23^\circ$) gives $V_1 = 152$ m/s, $V_{1,rel} = 261$ m/s at $-57.6^\circ$, $V_2 = 221$ m/s at $50.8^\circ$ and $V_{2,rel} = 177$ m/s at $-37.8^\circ$. The 2022-23 Q4 turbine ($V_x = 200$ m/s, $\alpha_2 = 60^\circ$, $U = 350$ m/s, $w = 100$ kJ/kg) has rotor metal angles of $-1.0^\circ$ at inlet and $-55.3^\circ$ at exit.
 
 ![[prop_e2223_q4_turbine_triangles.png|700]]
 

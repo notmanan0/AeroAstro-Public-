@@ -33,5 +33,5 @@ Past-paper uses: $x_{cp}$ for a NACA 2412-type section ([[SESA2022 Exam 2020-21 
 
 ## Related
 
-- Full derivation and worked examples: [[SESA2022 T4 - Thin Aerofoil Theory#6. Moments, aerodynamic centre, centre of pressure (4 Nov lecture)|T4 §6]]
+- Full derivation and worked examples: [[SESA2022 T4 - Thin Aerofoil Theory#6. Moments, aerodynamic centre, centre of pressure|T4 §6]]
 - [[Trailing-Edge Flap in Thin Aerofoil Theory]] · [[Neutral Point and Static Margin]]

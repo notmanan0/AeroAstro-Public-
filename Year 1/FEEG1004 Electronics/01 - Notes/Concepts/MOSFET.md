@@ -8,31 +8,23 @@ tags: [feeg1004, concept, transistor]
 status: complete
 parent_lectures: ["[[FEEG1004 B3 - Transistors - BJT and MOSFET Switches and Amplifiers]]"]
 related_concepts: ["[[Bipolar Junction Transistor]]", "[[Transistor as a Switch]]"]
-sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors Op-Amps and Digital - Mills.pdf", "02 - Sources/S1 Electronics/S1-W08-EL2 Transistors - Recorded.pdf"]
+sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors Op-Amps and Digital - Mills.pdf", "02 - Sources/S1 Electronics/S1-W08-EL2 Transistors - Recorded.pdf", "Mills notes §1.6.3–1.6.7", "Week 8 session"]
 ---
 
 # MOSFET
 
-## Definition
+A MOSFET is a voltage-controlled transistor whose insulated (oxide) gate draws almost no current. In the n-channel **enhancement** type, a gate–source voltage above the threshold (about 1–2 V) forms an inversion layer that lets drain current flow, and when fully on the channel behaves as a resistance $R_{DS(on)}$ dissipating
 
-> [!note] Definition
-> A voltage-controlled transistor. In the n-channel **enhancement** type, a gate–source voltage above the threshold (~1–2 V) forms an inversion layer that lets drain current flow. The insulated (oxide) gate draws **almost no current**. Fully ON, it behaves as a resistance $R_{DS(on)}$:
->
-> $$P = I^2R_{DS(on)}$$
+$$
+P = I^2R_{DS(on)}
+$$
 
-## Explanation
-- Terminals map to the BJT's: drain ↔ collector, gate ↔ base, source ↔ emitter.
-- **Depletion** MOSFETs conduct at $V_{GS} = 0$. **JFETs** control their channel with a reverse-biased junction.
-- Compared with BJTs: higher input resistance and less temperature sensitivity, ideal for ICs (CMOS), but lower gain.
-- The common-source amplifier is inverting, like the common emitter.
+The terminals map onto those of the BJT: drain to collector, gate to base and source to emitter. A **depletion** MOSFET already conducts at $V_{GS} = 0$, and a **JFET** controls its channel with a reverse-biased junction instead of an insulated gate. Against the BJT, the MOSFET has a higher input resistance and is less sensitive to temperature, which makes it the device of choice in integrated circuits (CMOS), but its gain is lower. Used as an amplifier, the common-source stage is inverting, like the common emitter.
 
-## Examples
-- $R_{DS(on)}$ = 0.04 Ω with a 100 W limit allows 50 A continuous. The heat goes to a heatsink.
-- Photodiode night-light: a MOSFET suits a signal source that can supply only µA.
+As a switch the limit is heating in $R_{DS(on)}$. With $R_{DS(on)}$ = 0.04 Ω and a 100 W dissipation limit, $I = \sqrt{100/0.04}$ = 50 A continuous, with the heat carried away by a heatsink. The near-zero gate current also suits signal sources that can supply only microamps, such as the photodiode in a night-light circuit.
 
 ## Related
-- Topic notes: [[FEEG1004 B3 - Transistors - BJT and MOSFET Switches and Amplifiers]]
-- Concepts: [[Transistor as a Switch]] · [[Bipolar Junction Transistor]] · [[DC Motor Speed Control]]
 
-## Sources
-- Mills notes §1.6.3–1.6.7; Week 8 session
+- [[FEEG1004 B3 - Transistors - BJT and MOSFET Switches and Amplifiers]]
+- [[Transistor as a Switch]] · [[Bipolar Junction Transistor]] · [[DC Motor Speed Control]]
+- Sources: Mills notes §1.6.3–1.6.7; Week 8 session

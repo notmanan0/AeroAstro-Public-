@@ -41,17 +41,13 @@ Compressors have the harder job. Slowing a flow against rising pressure thickens
 
 ## 1. Turbomachines (Lecture 22)
 
-- A turbomachine transfers energy to or from a fluid by steadily rotating aerodynamic surfaces, unlike positive-displacement machines (pistons) whose enclosed volume changes (handout §8.2).
-- Examples: jet-engine compressors and turbines, aircraft propellers, rocket turbopumps.
-- Axial machines have negligible radial velocity; radial machines have negligible axial velocity at rotor inlet or outlet. A centrifugal impeller (turbocharger) takes axial flow in and sends radial flow out. Real machines are rarely purely either.
-- Large gas turbines use axial machines for their high efficiency at high volume flow, with many stages for the pressure ratio. Small helicopter engines use centrifugal compressors (lower volume flow; see specific speed in W09).
-- Through a compressor of pressure ratio 15 the density rises by a large factor (about 10 in a high-OPR core), so the annulus height must fall to keep $V_x$ roughly constant (L22, l. 75; L24, ll. 290–296).
-- There is no physical barrier holding the pressure in: "you can put a string from the inlet of a gas turbine to the outlet". A 40 : 1 pressure ratio is held purely by the aerodynamics of moving aerofoils (L22, ll. 19–25; L24, ll. 27–31).
-- **Materials:** compressors run below about 800 K, too hot for aluminium (creep) but fine for titanium alloys; turbines see up to about 1700 K at take-off and use single-crystal nickel superalloys (L24, ll. 21–24).
+A **turbomachine** transfers energy to or from a fluid by steadily rotating aerodynamic surfaces, unlike a positive-displacement machine (a piston engine), whose enclosed volume changes (handout §8.2). Jet-engine compressors and turbines, aircraft propellers and rocket turbopumps are all turbomachines. Axial machines have negligible radial velocity, and radial machines have negligible axial velocity at rotor inlet or outlet; a centrifugal impeller (turbocharger) takes axial flow in and sends radial flow out, and real machines are rarely purely either. Large gas turbines use axial machines for their high efficiency at high volume flow, with many stages for the pressure ratio, while small helicopter engines use centrifugal compressors because their volume flow is lower (see specific speed in W09).
 
-### Centrifugal compressors (L22, ll. 197–239)
+Through a compressor of pressure ratio 15 the density rises by a large factor (about 10 in a high-OPR core), so the annulus height must fall to keep $V_x$ roughly constant (L22, l. 75; L24, ll. 290–296). There is no physical barrier holding the pressure in: a string could be threaded from the inlet of a gas turbine to the outlet, and a 40 : 1 pressure ratio is held purely by the aerodynamics of moving aerofoils (L22, ll. 19–25; L24, ll. 27–31). Temperature sets the materials. Compressors run below about 800 K, too hot for aluminium (creep) but fine for titanium alloys, whereas turbines see up to about 1700 K at take-off and use single-crystal nickel superalloys (L24, ll. 21–24).
 
-Axial flow enters, and the impeller's near-radial vanes fling it outwards with swirl. Its advantage: even if the vanes stalled, spinning the fluid sets up a centripetal pressure difference between centre and rim (like the blood pressure in your hands when you spin with arms out). So a centrifugal stage supports a much larger pressure ratio: about 4 per stage against about 1.5 for an axial stage. An overall ratio of 16 needs two centrifugal stages but about seven axial ones ($1.5^7\approx17$). They suit small machines (helicopter engines, car turbochargers) and rocket propellant pumps, which handle small volume flows (L22, ll. 186–196).
+### Centrifugal compressors
+
+Axial flow enters, and the impeller's near-radial vanes fling it outwards with swirl. Its advantage: even if the vanes stalled, spinning the fluid sets up a centripetal pressure difference between centre and rim. So a centrifugal stage supports a much larger pressure ratio: about 4 per stage against about 1.5 for an axial stage. An overall ratio of 16 needs two centrifugal stages but about seven axial ones ($1.5^7\approx17$). They suit small machines (helicopter engines, car turbochargers) and rocket propellant pumps, which handle small volume flows (L22, ll. 186–196).
 
 ---
 
@@ -93,26 +89,23 @@ $$
 \Delta h_0 = U\left(V_{\theta2,rel}-V_{\theta1,rel}\right)
 $$
 
-> [!warning] Sign convention: torque *input* (L23, ll. 185–196)
-> The lecturer first set up the torque as an *output*, then checked it against a turbine ("a high swirl velocity coming in, in the direction of rotation… less angular momentum coming out") and reversed it: "this would be torque input rather than torque output". With the form above, $\Delta h_0>0$ for a compressor and $\Delta h_0<0$ for a turbine ($V_{\theta1}>V_{\theta2}$).
-
 > [!warning] Not in the data book (L23, ll. 238–241)
-> "This equation is not in your data book… you essentially need to be able to derive it and know where it comes from. It's not a complicated derivation. You just need to be careful about the signs."
+> This equation is not in the data book, so you need to be able to derive it and know where it comes from. The derivation is short; the care is in the signs.
 
 ### When does it hold?
 
-The lecture's checklist (L23, ll. 242–307):
+Checklist (L23, ll. 242–307):
 
-- The whole flow? No: only along one stream tube, which must have a single $V_\theta$ at inlet and outlet. $V_\theta$ varies from root to tip, so apply it shell by shell (usually at mid-span).
-- **With blade friction:** yes. Viscous shear on the blades is just another way of changing the fluid's angular momentum (a bladeless disc turbine works that way), and friction converts kinetic to thermal energy without changing the total.
-- **With hub friction:** only if the hub rotates with the rotor; friction on a stationary hub upstream is outside the control volume.
-- **Accelerating (unsteady) flow:** no; the SFEE assumed steady flow.
-- **With losses:** yes. Losses do not change the work for a given change of swirl; they change the pressure change that work achieves (a bigger pressure drop in a turbine for the same work, a smaller rise in a compressor) (handout §8.7.1).
-- **Compressible flow:** yes; nothing assumed incompressibility.
+- The whole flow: no, only along one stream tube, which must have a single $V_\theta$ at inlet and outlet. $V_\theta$ varies from root to tip, so apply it shell by shell (usually at mid-span).
+- With blade friction: yes. Viscous shear on the blades is just another way of changing the fluid's angular momentum (a bladeless disc turbine works that way), and friction converts kinetic to thermal energy without changing the total.
+- With hub friction: only if the hub rotates with the rotor; friction on a stationary hub upstream is outside the control volume.
+- Accelerating (unsteady) flow: no; the SFEE assumed steady flow.
+- With losses: yes. Losses do not change the work for a given change of swirl; they change the pressure change that work achieves (a bigger pressure drop in a turbine for the same work, a smaller rise in a compressor) (handout §8.7.1).
+- Compressible flow: yes; nothing assumed incompressibility.
 - Unsteady but periodic flow (rotor blades cutting stator wakes): yes, if the velocities are averaged over a whole number of blade-passing periods (L23, ll. 295–302).
-- **With heat transfer:** not as written; keep the $\dot Q$ term in the SFEE (L23, ll. 303–307).
+- With heat transfer: not as written; keep the $\dot Q$ term in the SFEE (L23, ll. 303–307).
 
-Blade aerodynamics is studied in a linear cascade (L23, ll. 84–122), a row of extruded blades side by side in a wind tunnel, such as at Oxford's Osney Lab, with only the central passage measured so the others hide the end walls. "If you get asked a question about a linear cascade in an exam… you know it's not moving, and if it's not moving there's no work done on the fluid", so $h_0$ is constant. The results transfer to rotating rows by switching to the relative frame.
+Blade aerodynamics is studied in a linear cascade (L23, ll. 84–122), a row of extruded blades side by side in a wind tunnel, such as at Oxford's Osney Lab, with only the central passage measured so the others hide the end walls. A linear cascade does not move, so it does no work on the fluid and $h_0$ is constant; exam questions on cascades rely on this. The results transfer to rotating rows by switching to the relative frame.
 
 ### Worked example – centrifugal impeller
 
@@ -150,33 +143,25 @@ The flow leaves swirling against the blade motion: the turbine has reversed its 
 
 ### Compressor stage
 
-A stage is a rotor followed by a stator (handout §8.4.1).
+A stage is a rotor followed by a stator (handout §8.4.1). The rotor does work, so $V_\theta$ and $h_0$ rise. The absolute velocity goes up, and so does the static pressure, because $p_0$ is rising (work input) while the relative flow is diffused (L24, ll. 58–67). In the rotor's own frame there is no shaft work, so the rotor is a diffuser: turning the flow towards axial widens the relative stream tube, the relative velocity falls and the static pressure rises (L24, ll. 196–221). The stator then removes the swirl at constant $h_0$, so the kinetic energy falls and the static pressure rises again, and the velocity returns to about its starting value, ready for the next rotor (L24, ll. 69–80). A second rotor straight after the first would not work, because the gas is already swirling at about blade speed and the blades could not push it further without going faster still (L24, ll. 69–73).
 
-- **Rotor:** does work, so $V_\theta$ and $h_0$ rise. The absolute velocity goes up, and so does the static pressure, because $p_0$ is rising (work input) while the relative flow is diffused (L24, ll. 58–67).
-- **Stator:** removes the swirl at constant $h_0$; the kinetic energy falls and the static pressure rises (a diffuser). The velocity returns to about its starting value, ready for the next rotor (L24, ll. 69–80).
-- A second rotor straight after the first would not work: the gas is already swirling at about blade speed, so the blades could not push it further without going faster still (L24, ll. 69–73).
-- Inlet guide vanes (IGVs) are a special stator before the first rotor that sets the preferred swirl into it, reducing the relative Mach number on the first rotor and letting every stage use the same optimised design (L24, ll. 91–93, 319–326). Adding swirl speeds the flow up, so the static pressure actually falls through the IGV, not ideal in a compressor but worth it for the rotor incidence (L24, ll. 42–56). Most modern engines start with the fan rotor instead, followed by outlet guide vanes (L22, ll. 56–59).
-- **Stagnation pressure:** it falls slightly through a stator (viscous losses, no work) and rises through a rotor (work input, minus losses). Static pressure rises in both (L24, ll. 185–193).
-- In the rotor's own frame there is no shaft work, so the rotor is simply a diffuser: turning the flow towards axial widens the relative stream tube, the relative velocity falls and the static pressure rises (L24, ll. 196–221).
-- Typical Mach numbers (L24, ll. 259–270): a compressor row decelerates its (relative) flow from about M 0.6 to M 0.3; a turbine row accelerates from about M 0.3 to about M 1 or more, in both stator and rotor frames.
+Stagnation pressure falls slightly through a stator (viscous losses, no work) and rises through a rotor (work input, minus losses), while static pressure rises in both (L24, ll. 185–193). Typical Mach numbers differ between the two machines (L24, ll. 259–270): a compressor row decelerates its (relative) flow from about M 0.6 to M 0.3, and a turbine row accelerates from about M 0.3 to about M 1 or more, in both stator and rotor frames.
+
+Inlet guide vanes (IGVs) are a special stator before the first rotor that sets the preferred swirl into it, reducing the relative Mach number on the first rotor and letting every stage use the same optimised design (L24, ll. 91–93, 319–326). Adding swirl speeds the flow up, so the static pressure actually falls through the IGV, which is not ideal in a compressor but is worth it for the rotor incidence (L24, ll. 42–56). Most modern engines start with the fan rotor instead, followed by outlet guide vanes (L22, ll. 56–59).
 
 ### Turbine stage
 
-A stator (nozzle guide vanes) followed by a rotor (handout §8.4.2). The flow from the combustor has almost no swirl, so the stator first gives it a large swirl, which then pushes the rotor round "like a water wheel" (L22, ll. 259–267). The flow accelerates in both rows; the favourable pressure gradient keeps boundary layers thin, so much more turning is possible.
+A stator (nozzle guide vanes) followed by a rotor (handout §8.4.2). The flow from the combustor has almost no swirl, so the stator first gives it a large swirl, which then pushes the rotor round like water on a water wheel (L22, ll. 259–267). The flow accelerates in both rows; the favourable pressure gradient keeps boundary layers thin, so much more turning is possible.
 
-A turbine passage is a nozzle (L22, ll. 345–395; "you don't need to really go into that in your exam"). Turning the flow *away* from axial narrows the stream tube, so a subsonic flow accelerates. The pressure ratio across a turbine row is often about 2, above the critical 1.89, so the passage chokes at a throat between one blade's trailing edge and its neighbour. Downstream the blade thins while the flow direction barely changes, so the channel slightly diverges and the exit can be supersonic, with oblique trailing-edge shocks. A whole turbine (pressure ratio 20–30) typically has only about five stages.
+A turbine passage is a nozzle (L22, ll. 345–395; not examined in depth). Turning the flow *away* from axial narrows the stream tube, so a subsonic flow accelerates. The pressure ratio across a turbine row is often about 2, above the critical 1.89, so the passage chokes at a throat between one blade's trailing edge and its neighbour. Downstream the blade thins while the flow direction barely changes, so the channel slightly diverges and the exit can be supersonic, with oblique trailing-edge shocks. A whole turbine (pressure ratio 20–30) typically has only about five stages.
 
 ### Blade aerodynamics and why compressors need more stages
 
-- Compressor blading turns the flow towards axial. The stream tube widens, the flow decelerates and the pressure rises, so the boundary layer is pushed against a rising pressure. At high positive incidence (low flow, high speed) it separates: stall, and in the whole machine surge (W09) (handout §8.6; L22, ll. 400–405).
-- Cascade data (L22, ll. 406–430): a compressor cascade with 21° metal exit angle ran at about 9° deviation at design, rising to 15° at positive incidence before separating; acceptable incidence was only about ±8°, and the flow was turned about 30°.
-- A turbine cascade had practically zero deviation over about 50° of incidence and turned the flow about 65° ("one of these should be minus 18 to plus 47", L22, l. 444): twice the compressor's turning (L22, ll. 431–447).
-- So a compressor stage is limited to a pressure ratio under 2, and one turbine stage can drive about six compressor stages.
-- Blade loading falls with more stages, or with more blades per row, at the cost of weight, cost and wetted area.
+Compressor blading turns the flow towards axial. The stream tube widens, the flow decelerates and the pressure rises, so the boundary layer is pushed against a rising pressure, and at high positive incidence (low flow, high speed) it separates: stall, and in the whole machine surge (W09) (handout §8.6; L22, ll. 400–405). Cascade data show the size of the difference (L22, ll. 406–447). A compressor cascade with a 21° metal exit angle ran at about 9° deviation at design, rising to 15° at positive incidence before separating; its acceptable incidence was only about ±8°, and it turned the flow about 30°. A turbine cascade had practically zero deviation and a stable profile loss over about 50° of incidence (L22, ll. 433–437), and it turned the flow about 65°, from −18° to +47° (L22, ll. 444–445), twice the compressor's turning. So a compressor stage is limited to a pressure ratio under 2, and one turbine stage can drive about six compressor stages. Blade loading falls with more stages, or with more blades per row, at the cost of weight, cost and wetted area.
 
 ### Blade anatomy and angles
 
-Hub, casing, root, tip, leading and trailing edges, camber (the curvature between inlet and outlet) (handout §8.4.3; L22, ll. 106–158, 342). The course symbols:
+Hub, casing, root, tip, leading and trailing edges, camber (the curvature between inlet and outlet) (handout §8.4.3; L22, ll. 106–158, 342). Symbols for the blade geometry:
 
 | Quantity | Symbol | Note |
 |---|---|---|
@@ -188,15 +173,9 @@ Hub, casing, root, tip, leading and trailing edges, camber (the curvature betwee
 
 Blades machined integrally with their disc form a blisk (bladed disc), or a bling on a hollow ring. Large turbine blades are slotted in with fir-tree roots so they can be replaced individually without the stress concentrations of welding (L22, ll. 140–148, 244–252).
 
-> [!warning] Transcript slip (L23, ll. 38–40)
-> "A concave surface which we've described as the pressure surface and a convex surface, this upper surface we described as the pressure surface." The convex surface is the suction surface.
-
 - $\alpha$ is the flow angle and $\beta$ the metal angle.
 - Incidence $i=\alpha_{in}-\beta_{in}$: the turbomachinery counterpart of angle of attack (the name is not used because there is no "horizontal" inside a rotating machine, L22, ll. 337–341).
 - Deviation $\delta$: the difference between the flow and metal angles at exit, caused by boundary-layer growth even when the Kutta condition holds.
-
-> [!warning] Deviation sign (L22, ll. 332–336)
-> The slide defines $\delta=\alpha_{out}-\beta_{out}$. The lecturer then says "that should be the other way around I think. Beta out minus alpha out. So in this case it would be positive". Which form gives a positive number depends on the blade's turning direction. Quote the magnitude, say which way the flow under-turns, and state your sign.
 
 ### Mean-line analysis
 
@@ -206,7 +185,7 @@ The mean-line (mid-span) analysis treats the flow at one representative radius a
 - At exit the Kutta–Joukowski condition makes the flow leave the trailing edge smoothly, close to the metal angle.
 - Between blade rows there is no torque on the fluid, so the angular momentum $rV_\theta$ is conserved until the next row.
 
-The lecturer's advice is to sketch the blades first (L24, ll. 95–108; L22, ll. 343–345): "when I'm drawing velocity triangles it's something that you need to be able to do for your exam. I like to draw the blade shape first." A rotor moving to the right must lean so the relative flow meets its leading edge; draw the relative velocity along the metal angle, then add $U$ to get $V$. "I would expect you to be able to sketch out this kind of blade… in your exam and in your careers."
+Sketch the blades first; velocity triangles are an exam skill (L24, ll. 95–108; L22, ll. 343–345). A rotor moving to the right must lean so the relative flow meets its leading edge; draw the relative velocity along the metal angle, then add $U$ to get $V$.
 
 ---
 
@@ -249,10 +228,7 @@ $$
 
 ### Design choices
 
-- **Constant $V_x$**: the usual starting assumption; it corresponds roughly to a constant axial Mach number, and requires the annulus to shrink through a compressor and flare out through a turbine (L24, ll. 290–299).
-- High $V_x$ gives power density, but is limited by compressibility (relative tip Mach number).
-- **Repeating stages**: $V_3=V_1$ and $\alpha_3=\alpha_1$, so each stage can reuse the same optimised design, scaled down as the blades get shorter (L24, ll. 300–326).
-- **Mirror blading**: the stator is the mirror image of the rotor. If both rows' exit flows follow their metal angles, the velocity triangles are mirror images too, which gives extra equations (L24, ll. 327–346):
+Constant $V_x$ is the usual starting assumption. It corresponds roughly to a constant axial Mach number, and requires the annulus to shrink through a compressor and flare out through a turbine (L24, ll. 290–299). A high $V_x$ gives power density, but is limited by compressibility (relative tip Mach number). **Repeating stages** have $V_3=V_1$ and $\alpha_3=\alpha_1$, so each stage can reuse the same optimised design, scaled down as the blades get shorter (L24, ll. 300–326). With **mirror blading** the stator is the mirror image of the rotor; if both rows' exit flows follow their metal angles, the velocity triangles are mirror images too, which gives extra equations (L24, ll. 327–346):
 
 $$
 V_{\theta3} = -V_{\theta2,rel},\qquad V_{\theta3,rel} = -V_{\theta2},\qquad \alpha_3 = -\alpha_{2,rel}
@@ -264,7 +240,7 @@ $$
 V_{\theta1}+V_{\theta2} = U
 $$
 
-The rotor and stator then share the static-pressure rise equally: this is the 50 % reaction stage of [[SESA2023 Problem Sheet 8 Turbomachinery Solutions]] Q8.3 (the term "degree of reaction" is used on the problem sheet, not in the lectures). See [[Degree of Reaction]].
+The rotor and stator then share the static-pressure rise equally: this is the 50 % reaction stage of [[SESA2023 Problem Sheet 8 Turbomachinery Solutions]] Q8.3 (the problem sheet calls this the degree of reaction). See [[Degree of Reaction]].
 
 ### Worked example – repeating compressor stage
 
@@ -331,7 +307,7 @@ The absolute speed rises through the rotor (work input) while the relative speed
 | blade speed $U$ | peripheral speed | handout §8.7 | $U=r\Omega$. |
 | Euler work equation | Euler turbomachinery equation | handout §8.3 | |
 | velocity triangle | velocity diagram, vector diagram | L24, l. 347 | |
-| flow angle $\alpha$, $\alpha_{rel}$ / metal angle $\beta$ | gas angle / blade angle | handout §8.6; L22, ll. 318–324 | "Sometimes they use alpha for absolute angles and beta for relative flow angles, but I just… put the relative label explicitly." |
+| flow angle $\alpha$, $\alpha_{rel}$ / metal angle $\beta$ | gas angle / blade angle | handout §8.6; L22, ll. 318–324 | Some texts use $\alpha$ for absolute and $\beta$ for relative flow angles; here the relative label is written explicitly. |
 | incidence $i$ | angle of attack | handout §8.5 | |
 | nozzle guide vanes (NGV) | turbine stator | handout §8.4.2 | |
 | inlet guide vanes (IGV) | — | L24, ll. 91–93 | |
@@ -356,8 +332,8 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 8 lectures; t
 
 ### Core
 
-- [ ] *(set)* Derive the Euler work equation: "Do the derivation, do some examples, there are some in the problem sheet for this week" (L23, ll. 308–309). It is not in the data book (ll. 238–241). → [[#Derivation]]
-- [ ] *(set)* Draw velocity triangles, blade shapes first: "the key thing that you kind of need to be able to do in the exam… Have a practice" (L24, ll. 348–350). → [[#Worked example – repeating compressor stage]]
+- [ ] *(set)* Derive the Euler work equation and work some examples, including those on the Week 8 problem sheet (L23, ll. 308–309). It is not in the data book (ll. 238–241). → [[#Derivation]]
+- [ ] *(set)* Draw velocity triangles, blade shapes first; this is a key exam skill (L24, ll. 348–350). → [[#Worked example – repeating compressor stage]]
 - [ ] *(set)* Sketch compressor and turbine blade rows with the flow and metal angles (L22, ll. 343–345). → [[#Blade anatomy and angles]]
 - [ ] *(set)* Work [[SESA2023 Problem Sheet 8 Turbomachinery Solutions|Problem Sheet 8 (turbomachinery)]] and the Week 8 quiz (L24, l. 362).
 
@@ -368,5 +344,22 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 8 lectures; t
 - [ ] Show that a repeating mirror stage has $V_{\theta1}+V_{\theta2}=U$. → [[#Design choices]]
 - [ ] Explain, using pressure gradients and boundary layers, why one turbine stage can drive about six compressor stages. → [[#Blade aerodynamics and why compressors need more stages]]
 - [ ] State when the Euler equation holds (whole flow, blade and hub friction, unsteady and periodic flow, losses, compressibility, heat transfer). → [[#When does it hold?]]
-- [ ] Explain why a centrifugal stage can reach a pressure ratio of about 4 while an axial stage manages about 1.5. → [[#Centrifugal compressors (L22, ll. 197–239)]]
+- [ ] Explain why a centrifugal stage can reach a pressure ratio of about 4 while an axial stage manages about 1.5. → [[#Centrifugal compressors]]
 - [ ] Explain why a turbine blade passage can choke and deliver supersonic flow. → [[#Turbine stage]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (L23, ll. 38–40)
+> Where: [[#Blade anatomy and angles]].
+>
+> "A concave surface which we've described as the pressure surface and a convex surface, this upper surface we described as the pressure surface." The convex surface is the suction surface.
+
+> [!warning] Transcript slip: torque output or input? (L23, ll. 185–196)
+> Where: [[#Derivation]].
+>
+> The torque is first set up as an *output*, then checked against a turbine ("a high swirl velocity coming in, in the direction of rotation… less angular momentum coming out") and the sign is reversed: "this would be torque input rather than torque output". With the form above, $\Delta h_0>0$ for a compressor and $\Delta h_0<0$ for a turbine ($V_{\theta1}>V_{\theta2}$).
+
+> [!warning] Slide and transcript: deviation sign (L22, ll. 332–336)
+> Where: [[#Blade anatomy and angles]].
+>
+> The slide defines $\delta=\alpha_{out}-\beta_{out}$; the spoken version reverses it to $\beta_{out}-\alpha_{out}$. Which form gives a positive number depends on the blade's turning direction. Quote the magnitude, say which way the flow under-turns, and state your sign.

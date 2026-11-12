@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3047 Advanced Aerospace Mechanics & Control"]
 tags: [sesa3047, hub, moc]
 status: in-progress
-coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 §§5.1–5.2 and the §5.3 gravity terms lectured in L14 (Mon 2 Nov, Dr Sean Symon), the rest of Chapter 5 written ahead from the handout; Lab 1 filed; Coursework 1 submitted Thu 29 Oct"
+coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 lectured in L14 (Mon 2 Nov) and L15–L16 (Thu 5 Nov), Dr Sean Symon, except §5.6 (MIMO block diagram, not examinable) and the derivative appendix; Chapter 6 §§6.1–6.4 lectured in L17 (Mon 9 Nov), §6.5 set as reading; Labs 1–2 filed; Coursework 1 submitted Thu 29 Oct"
 ---
 
 # SESA3047 Advanced Aerospace Mechanics & Control Hub
@@ -13,7 +13,7 @@ coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 §§5.1–5.2 and 
 > [!abstract] Module at a glance
 > Chapter 1 sets up the language of six-degree-of-freedom mechanics and control (dynamic systems, control architectures, models, states and reference frames). Chapter 2 builds the kinematic toolkit: vector products, the transport theorem, direction cosine matrices and Euler angles. Chapter 3 turns it into the first state equations (Euler-angle rates, motion in moving frames, position from body velocity, the inertia matrix and the rotational dynamic equation), and Chapter 4 completes the 12-state flat-Earth model with inertia coupling, rotors and translational dynamics.
 >
-> Chapters 1–4 are all lectured (L2–L13, finishing in the Thu 22 Oct double) and written up from the transcripts. Chapter 5 (state-space models) is written up in full: 5.1 from L14 (Mon 2 Nov), the first lecture of **Dr Sean Symon**, who teaches the rest of the module; 5.2 partly lectured; 5.3–5.4 written ahead of Thursday's lecture. Lab 1 is filed, and Coursework 1 was submitted on Thu 29 October ([[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
+> Chapters 1–4 are all lectured (L2–L13, finishing in the Thu 22 Oct double) and written up from the transcripts. Chapter 5 (state-space models) is lectured and written up: 5.1 from L14 (Mon 2 Nov), the first lecture of **Dr Sean Symon**, who teaches the rest of the module, and 5.2–5.4 from the Thu 5 Nov double (L15–L16). Chapter 6 (aircraft flight dynamics and the interpretation of eigenvectors) started in L17 (Mon 9 Nov): [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]] covers §§6.1–6.5. Labs 1 and 2 are filed, the lab report (Labs 1–2) is released on Mon 16 Nov, and Coursework 1 was submitted on Thu 29 October ([[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
 >
 > Chapters 1–4 were taught by Dr Cristiano Martinelli; Chapter 5 onwards by Dr Sean Symon.
 
@@ -31,7 +31,7 @@ coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 §§5.1–5.2 and 
    - elementary rotations and the cyclic sign rule;
    - the 3-2-1 NED→FRD sequence multiplied out;
    - Euler-angle extraction, gimbal lock and small-angle rotations;
-   - the §2.4.6 worked example (done on the board in L7).
+   - the §2.4.6 worked example (worked in L7).
 5. [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates]] (Chapter 3, §3.1; lectured in L7–L8)
    - Euler rates vs body rates $p,q,r$; composing the three rotation rates;
    - $\mathbf E(\boldsymbol\Phi)$ multiplied out; $\mathbf H=\mathbf E^{-1}$ derived; $\det\mathbf E=\cos\theta$ and gimbal lock;
@@ -49,27 +49,32 @@ coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 §§5.1–5.2 and 
 8. [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]] (Chapter 4 §4.1; L11, then L12 and the start of L13)
    - full moment expansion, eigenvector interpretation, aircraft block inverse and internal rotor momentum;
    - **inertia coupling with no external moment**: the three L12 cases, simulated;
-   - the $x$–$z$ symmetry argument, and what L12 said to remember;
+   - the $x$–$z$ symmetry argument, and which case to remember (L12);
    - $\dot{\boldsymbol\omega}_{base}+\dot{\boldsymbol\omega}_{add}$; the aircraft rotor terms multiplied out; the diagonal (quadcopter) form;
    - symbolic algebra checks and suggested numerical examples; transcript slips for L11–L13.
 9. [[SESA3047 4.2 - Translational Dynamics]] (Chapter 4 §4.2; L13 ll. 88–309)
-   - rotating Earth, flat Earth and transport into body axes; the gravity rotation the lecturer nearly forgot;
-   - the lecture's four-move derivation; "inertial" terminology flagged;
+   - rotating Earth, flat Earth and transport into body axes; rotating gravity into FRD;
+   - the four-move derivation; "inertial" terminology flagged;
    - effective gravity and the $X,Y,Z$ convention (handout only); a checked numerical derivative.
 10. [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]] (Chapter 4 §4.3; end of L13, shown from the notes)
 11. [[SESA3047 5.1 - State-Space Form and Linearisation]] (Chapter 5 §§5.1–5.2; **lectured**, L14 Mon 2 Nov)
    - $\mathbf A,\mathbf B,\mathbf C,\mathbf D$ and their sizes; $\mathbf C=\mathbf I$ in this module, $\mathbf D$ unused;
    - linearising $\sin x$ about $0$ and $\pi$; the $\epsilon$ bookkeeping ($\epsilon^0$ = equilibrium, $\epsilon^2$ dropped);
    - the force equations linearised about straight flight (Eq. 5.7, flagged as exam material); Eq. 5.8 derived in full, with the rotor exception.
-12. [[SESA3047 5.2 - Longitudinal State-Space Model]] (Chapter 5 §5.3 and appendix; **written ahead**, gravity part lectured in L14)
-   - longitudinal–lateral split and its three conditions; gravity linearised about $\gamma_0$ ($\theta$ vs $\gamma$ flagged);
-   - aerodynamic derivatives, Eqs. 5.17–5.18, $\mathbf A=\mathbf E^{-1}\mathbf A'$ written out; dimensional derivatives with units.
-13. [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams]] (Chapter 5 §§5.4–5.6; **written ahead**)
-   - the satellite–instrument model used in Lab 2, its transfer function by hand, and why its double pole at the origin is not marginally stable;
-   - transfer functions to state space (chain of integrators); block diagrams to state space; handout slips in Eqs. 5.21d and 5.32.
-14. [[SESA3047 5.4 - Time-Domain Solution and Stability]] (Chapter 5 §5.7; **written ahead**)
-   - $e^{\mathbf At}$ from its series; diagonalisation and modes; stability from eigenvalues, with the zero-real-part cases.
+12. [[SESA3047 5.2 - Longitudinal State-Space Model]] (Chapter 5 §5.3; **lectured**, gravity in L14, the rest in L15 ll. 1–308)
+   - longitudinal–lateral split and its three conditions; gravity linearised about $\gamma_0$ ($\theta$ vs $\gamma$ flagged); why Eqs. 5.15–5.16 are linear;
+   - Eqs. 5.17–5.18 as $\mathbf M\dot{\mathbf x}=\mathbf A^\dagger\mathbf x$, why row 4 of $\mathbf M$ is $[0,0,0,1]$, $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$ written out; ODE vs PDE models; dimensional derivatives (handout only).
+13. [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams]] (Chapter 5 §§5.4–5.5; **lectured**, L15 ll. 309–597 and L16 ll. 1–146)
+   - the satellite–instrument model used in Lab 2 (SISO; inputs in $\mathbf B$), its transfer function by hand (handout only) and why its double pole at the origin is not marginally stable;
+   - the simple lag and its stability; Eq. 5.30 by chain of integrators, Routh check, the observation matrix $\mathbf C$, dimension checks; block diagrams (not examinable).
+14. [[SESA3047 5.4 - Time-Domain Solution and Stability]] (Chapter 5 §5.7; **lectured**, L16 ll. 148–424)
+   - $e^{\mathbf At}$ from its series; diagonalisation and modes; stability from eigenvalues, with the zero-real-part cases;
+   - the L16 triangular example $[3\ 2;\ 0\ {-1}]$: eigenvalues, eigenvectors, $\mathbf V^{-1}$, free response and eigenvector scaling (exam material).
 15. [[SESA3047 Chapter 5 Practice Problems - Solutions]]: all five §5.8 problems worked and checked (Problem 1 pointed to in L14 as a former exam question).
+16. [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]] (Chapter 6 §§6.1–6.5; **lectured**, L17 Mon 9 Nov; §6.5 set as reading)
+   - $\mathbf A=\mathbf M^{-1}\mathbf A'$, the longitudinal stability quartic by cofactors, the SPO and phugoid pairs, $\omega_n=|\lambda|$, $\zeta=-\sigma/\omega_n$, half-life and period; conjugate pairs from a real $\mathbf A$;
+   - eigenvectors as mode shapes: dominant states (in comparable units), phases ($\theta$ lags $q$ by $90^\circ+\arcsin\zeta$), the eigenvector initial condition exciting one mode (Fig. 6.1), the phugoid height and energy exchange;
+   - the F-4C SPO approximation (Eqs. 6.22–6.27) by formula and by $2\times2$ trace and determinant; the L17 Simulink feedback demonstration for Lab 2.
    - all twelve states and the 6 + 6 split, solver evaluation, full derivative example and an exact ballistic integration check.
 
 ## Week 1 concept map
@@ -112,10 +117,20 @@ coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 §§5.1–5.2 and 
 | [[Linearisation about an Equilibrium Point]] | [[Longitudinal and Lateral Dynamics]] | [[Transfer Function to State-Space Conversion]] |
 | [[Small Perturbation Linearisation]] (SESA2027) | [[Aerodynamic Stability Derivatives]] (SESA2027) | [[Matrix Exponential and Modal Solution]] |
 | [[State-Space Representation]] (SESA2027) | [[Rotational Dynamic Equation]] (Ch. 3) | [[Characteristic Equation and Eigenvalues]] (SESA2027) |
+| | | [[Eigenvalue Decomposition]] |
+
+## Chapter 6 concept map
+
+| Eigenvalues | Eigenvectors | Longitudinal modes |
+|---|---|---|
+| [[Characteristic Equation and Eigenvalues]] (SESA2027) | [[Eigenvectors as Mode Shapes]] | [[Short Period Oscillation]] (SESA2027) |
+| [[Damping Ratio and Natural Frequency]] (SESA2027) | [[Matrix Exponential and Modal Solution]] (Ch. 5) | [[Phugoid Mode]] (SESA2027) |
+| [[Eigenvalue Decomposition]] (Ch. 5) | [[Eigenvalues and Eigenvectors]] (MATH1054) | [[Aerodynamic Stability Derivatives]] (SESA2027) |
+| | | [[PID Controller]] (SESA2027; Lab 2) |
 
 ## Coverage boundary
 
-The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assembled 12-state model, Eq. 4.42, so **Chapter 4 is fully lectured**. A few handout equations were not lectured: Eq. 4.25 (changing rotor momentum), Eq. 4.31 (effective gravity), and Eqs. 4.38–4.40 (the $X,Y,Z$ convention). They are marked "handout only" in the notes. Chapter 5 (state-space models, Dr Sean Symon) started in L14 (Mon 2 Nov), which covered §§5.1–5.2 and the gravity terms of §5.3. The rest of Chapter 5 is written ahead from the handout, marked `written-ahead`, and will be reconciled with Thursday's lecture. Controllability, observability and control design (Chapters 6–8 by L14's description) remain outside current coverage.
+The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assembled 12-state model, Eq. 4.42, so **Chapter 4 is fully lectured**. A few handout equations were not lectured: Eq. 4.25 (changing rotor momentum), Eq. 4.31 (effective gravity), and Eqs. 4.38–4.40 (the $X,Y,Z$ convention). They are marked "handout only" in the notes. Chapter 5 (state-space models, Dr Sean Symon) started in L14 (Mon 2 Nov), which covered §§5.1–5.2 and the gravity terms of §5.3, and finished in the Thu 5 Nov double (L15–L16). Only §5.6, the MIMO block diagram, was skipped, and it is not on the exam (L16 ll. 426–427); the derivative appendix was not lectured either. Chapter 6 started in L17 (Mon 9 Nov) with §§6.1–6.4; §6.5, the SPO approximation, repeats SESA2027 and was set as reading (L17 ll. 397–400). The phugoid approximation (§6.6) is due on Mon 16 Nov and the lateral modes (§§6.7–6.10) on Thu 19 Nov (L17 ll. 401–406); the rest of the handout is filed, awaiting those lectures. Controllability, observability (around week 10, L16 l. 133) and control design (Chapters 7–8) remain outside current coverage.
 
 | Material | Vault status |
 |---|---|
@@ -130,13 +145,18 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 | Chapter 4 §4.3 | **Complete**, shown from the notes at the end of L13 (ll. 310–344) |
 | Chapter 5 §§5.1–5.2 | **Complete**, lectured in L14 (Mon 2 Nov) ll. 28–342 → [[SESA3047 5.1 - State-Space Form and Linearisation\|5.1]] |
 | Chapter 5 §5.3 gravity (5.9–5.15) | Lectured in L14 ll. 373–509 → [[SESA3047 5.2 - Longitudinal State-Space Model\|5.2]] §2 |
-| Chapter 5 §5.3 aerodynamics, 5.16–5.18, appendix | Written ahead from the handout; awaiting Thu 5 Nov → 5.2 §§3–6 |
-| Chapter 5 §§5.4–5.6 | Written ahead; awaiting Thu 5 Nov (the Lab 2 example) → [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams\|5.3]] |
-| Chapter 5 §5.7 | Written ahead; awaiting lecture → [[SESA3047 5.4 - Time-Domain Solution and Stability\|5.4]] |
+| Chapter 5 §5.3 aerodynamics, split, 5.16–5.18 | **Complete**, lectured in L15 ll. 1–308 (Thu 5 Nov) → 5.2 §§1, 3–5 |
+| Chapter 5 appendix (5.51–5.56) | Handout only, not lectured → 5.2 §6 |
+| Chapter 5 §§5.4–5.5 | **Complete**, lectured in L15 ll. 309–597 and L16 ll. 1–146 → [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams\|5.3]] |
+| Chapter 5 §5.6 (MIMO block diagram) | Not lectured; not on the exam (L16 ll. 426–427) → 5.3 §3, kept for reference |
+| Chapter 5 §5.7 | **Complete**, lectured in L16 ll. 148–424 → [[SESA3047 5.4 - Time-Domain Solution and Stability\|5.4]] |
 | Chapter 5 §5.8 practice problems | Solved → [[SESA3047 Chapter 5 Practice Problems - Solutions]] |
-| Later chapters | Awaiting material (B matrix in Chapters 7–8, L14 ll. 154–155) |
+| Chapter 6 §§6.1–6.4 | **Complete**, lectured in L17 (Mon 9 Nov) ll. 62–392 → [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation\|6.1]] §§1–6 |
+| Chapter 6 §6.5 (SPO approximation) | Set as reading, not re-lectured (L17 ll. 397–400) → 6.1 §7 |
+| Chapter 6 §§6.6–6.10 (phugoid approximation, lateral modes) | Slides filed, awaiting lectures (Mon 16 and Thu 19 Nov, L17 ll. 401–406) |
+| Later chapters | Awaiting material (Chapter 7: the other state-space matrices and pole placement; Chapter 8: MIMO control and LQR, per the module guide; most of the module is about $\mathbf A$, the last few weeks about $\mathbf B$, L16 l. 138) |
 
-Chapter 4 was written from the lecture-note handout on 19 October and updated from L12–L13 on 23 October. Chapter 5 was written on 3 November from the handout (released Sat 31 Oct) and L14; the Thursday 5 Nov lecture will be backfilled in the next weekly run.
+Chapter 4 was written from the lecture-note handout on 19 October and updated from L12–L13 on 23 October. Chapter 5 was written on 3 November from the handout (released Sat 31 Oct) and L14, and backfilled from L15–L16 on 5 November. Chapter 6 §§6.1–6.5 were written on 11 November from the handout and L17.
 
 ## Labs and coursework
 
@@ -148,9 +168,9 @@ Chapter 4 was written from the lecture-note handout on 19 October and updated fr
 > | 0 (intro) | MATLAB matrices, element-wise operators, `ode45` with a first-order state vector | [[SESA3047 1.1 - Dynamic Systems and Control Architectures\|1.1]] (state form) |
 > | 1 | Build $\mathbf C_{FRD/NED}=\mathbf C_x\mathbf C_y\mathbf C_z$; transform north for $\psi=\pm30^\circ$; recover $(20^\circ,15^\circ,30^\circ)$ with atan2/arcsin; probe $\theta=89^\circ, 89.9^\circ, 90^\circ$ | [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles\|2.2]] §§6–10, [[Gimbal Lock]] |
 > | 2 | Nonlinear oscillator (textbooks: Duffing oscillator) $m\ddot x+c\dot x+kx+\mu x^3=f\cos\omega t$; linear vs nonlinear, small vs large amplitude, free and forced | [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models\|1.2]], [[Linear, Nonlinear and Time-Varying Models]] |
-> | 3 | Integrate the rotational dynamics with the Euler-angle kinematics (Eqs. 3.10–3.11, 3.63–3.71); interpret geometric and inertial coupling | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)\|3.1 §7]], [[SESA3047 3.3 - Rigid-Body Rotational Dynamics\|3.3]] |
+> | 3 | Integrate the rotational dynamics with the Euler-angle kinematics (Eqs. 3.10–3.11, 3.63–3.71); interpret geometric and inertial coupling | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#Exposing the coupling: switch off two variables\|3.1 §7]], [[SESA3047 3.3 - Rigid-Body Rotational Dynamics\|3.3]] |
 >
-> The lecturer tied the coupling discussion to the lab: *"we will see how this affects the numerical simulations"* (L8, ll. 67–68). Lab 2 will use Simulink (Lab 1, p. 1).
+> The Euler-angle coupling shows up in the lab simulations (L8, ll. 67–68). Lab 2 will use Simulink (Lab 1, p. 1).
 
 > [!warning] Lab 1 Exercise 2: three wording traps on the sheet
 > - **Equilibrium (p. 5).** *"The origin $(x,\dot x)=(0,0)$ is an equilibrium for both the linear and nonlinear models"* is true only of the **unforced** models ($f=0$). With $f\cos\omega t\neq0$, $\ddot x(0)=f/m\neq0$ at the origin, so it is not a fixed point of the forced system. Linearising about the origin (as in [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#5. Linear and nonlinear models|1.2 §5]]) is a statement about the unforced dynamics; see the trim-condition warning there.
@@ -163,17 +183,25 @@ Chapter 4 was written from the lecture-note handout on 19 October and updated fr
 > - [ ] **Ex. 2, free response:** small vs large amplitude, linear vs nonlinear, $f=0$ (`exercise2_1.m`); relate the frequency shift to $k_{\text{eff}}=k+3\mu x_0^2$. → [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models|1.2 §5]]
 > - [ ] **Ex. 2, forced response:** same models with $f\cos\omega t$ (`exercise2_2.m`), single division by $m$; say explicitly that the origin is no longer an equilibrium.
 > - [ ] **Ex. 2, restoring force:** plot $kx$ and $kx+\mu x^3$ on $|x|\le0.12$ m (`exercise2_3.m`); $\mu x^3$ reaches 10% of $kx$ at $|x|=\sqrt{0.1k/\mu}=0.1$ m.
-> - [ ] **Ex. 3, coupling:** separate **geometric** coupling (Euler-angle kinematics, $\mathbf H(\boldsymbol\Phi)$) from **inertial** coupling ($\boldsymbol\omega\times\mathbf J\boldsymbol\omega$) in `exercise3_1.m`. → [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates|3.1 §7]], [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment (L12 ll. 22–119)|4.1]]
+> - [ ] **Ex. 3, coupling:** separate **geometric** coupling (Euler-angle kinematics, $\mathbf H(\boldsymbol\Phi)$) from **inertial** coupling ($\boldsymbol\omega\times\mathbf J\boldsymbol\omega$) in `exercise3_1.m`. → [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates|3.1 §7]], [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment|4.1]]
 > - [ ] **Ex. 3, feedback vs none:** `exercise3_2.m` runs $\mathbf M=-\mathbf K_P(\boldsymbol\Phi-\boldsymbol\Phi_{ref})-\mathbf K_D\boldsymbol\omega$ and then $\mathbf M=\mathbf 0$ from the same start, as the sheet asks. Interpret with care: the controller feeds back **Euler angles** but applies **body** moments. That is a fair PD attitude loop only near small angles, where $\dot{\boldsymbol\Phi}\approx\boldsymbol\omega$; at large angles $\mathbf H(\boldsymbol\Phi)$ mixes the axes, and near $\theta=\pm90^\circ$ the feedback inherits the singularity.
 
-> [!important] Lab 2 (Simulink): to be released by Fri 6 Nov
-> Announced in L14: *"lab two is going to be about Simulink. My plan is to release lab two, hopefully, by the end of the week … before you do the lab next week"* (ll. 532–537). Thursday's lecture example is *"directly used in the lab"* (l. 535), and the handout says the satellite state-space model of §5.4 is the one used in Lab 2: see [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams#1. Second-order equations as first-order states (5.19–5.24)|5.3 §1]], including the $T_c/J_1$ slip in Eq. 5.21d. Not yet filed.
+> [!important] Lab 2: *Introduction to Simulink* (sessions Tue 10 Nov or Fri 13 Nov)
+> Files: `04 - Labs & Coursework/Lab 2/SESA3047_Lab2.pdf` (3 pages, Dr Sean Symon) and `Simulink Demo.txt`, the transcript of the 15-minute recorded Simulink introduction, which can be watched at the start of the session (L17 ll. 23–28). Three tasks; aim for at least Tasks 1–2. The theory is in [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation#7a. Simulink: feedback around a transfer function|6.1 §7a]].
+>
+> - **Task 1:** the satellite–instrument model of [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams#1. Second-order equations as first-order states (5.19–5.24)|5.3 §1]] (the sheet says "Section 5.2"; it is handout §5.4, Eq. 5.24) driven by a step, first as a State-Space block, then as a Transfer Fcn block, and the two outputs checked against each other. The sheet's $G(s)=0.036(s+25)/[s^2(s^2+0.04s+1)]$ is rounded; exactly $0.036(s+25.28)/[s^2(s^2+0.0396s+1.001)]$, so expect tiny differences between the two blocks.
+> - **Task 2:** unity negative feedback (summing junction, the Sum block, set to $+-$) with (a) PD control $G_c=0.25(2s+1)$, (b) $G_c=0.001(30s+1)$ over a longer horizon, (c) PD plus the notch filter $G_N=[(s/0.9)^2+1]/[(s/25)+1]^2$; judge stability each time.
+> - **Task 3 (challenge, not needed for the report):** pole placement on the Boeing 747 longitudinal model (altitude via elevator; imperial units, $g=32.2$ ft/s²).
+> - Simulink traps: the Step block switches at $t=1$ s by default; raise the Stop Time when the response is slow; State-Space matrix dimensions must agree.
+
+> [!important] Lab report (Labs 1–2) and Coursework 2
+> The lab report is worth 20 % of the module and covers **Labs 1 and 2 only**. It is released on **Mon 16 Nov** (week 9) (L17 ll. 38–46); the module guide lists it as set 12 Nov and due **Thu 26 Nov**, so check the due date on Blackboard. Its timing is set to avoid the Advanced Aeronautics coursework (due Thu 3 Dec) and to have it marked before the winter break (ll. 51–60). Lab 3 is assessed instead inside the final coursework, which joins it to Coursework 2 (ll. 47–50): set Thu 3 Dec, due Thu 10 Dec per the module guide.
 
 > [!important] Coursework 1: submitted Thu 29 Oct
 > Submitted on time as a 14-page handwritten scan: [[SESA3047 Coursework 1 Submission.pdf]]. The folder `04 - Labs & Coursework/Coursework 1/` holds the submission at the top level, with `Brief/` (brief, template, guide), `Working Notes/` (typed draft and explainers), `MATLAB/` (`cw1_q1a_ode45.m`, `cw1_figures.m`) and `Figures/`.
 > - Working notes: [[SESA3047 CW1 Report Draft]] (typed draft), [[SESA3047 CW1 Q1a Physical Interpretation Explained|Q1a interpretation]], [[SESA3047 CW1 Q1b Coupling Paragraph Rewrite|Q1b coupling]], [[SESA3047 CW1 Q1c Decoupled Case Explained|Q1c decoupled case]], [[SESA3047 CW1 Q1d How To Do It Step by Step|Q1d method]], [[SESA3047 CW1 Q1d Wind Components Explained|Q1d wind components]], [[SESA3047 CW1 Q1d c and s Shorthand|Q1d shorthand]] and [[SESA3047 CW1 Runge-Kutta for the Euler-Angle Rates|Runge–Kutta for the Euler-angle rates]].
 >
-> Announced before the L12 break: *"I have uploaded the coursework … in blackboard you can find the instructions as well. Under assessment, coursework one. And the coursework is due by the 29th of October at 11 p.m."* (L12 ll. 352–357).
+> The coursework and its instructions are on Blackboard under Assessment → Coursework 1, due 29 October at 11 p.m. (L12 ll. 352–357).
 >
 > File: `04 - Labs & Coursework/Coursework 1/Brief/Coursework_1.pdf` (2 pages). It is a **separate piece from the Lab 1 report**: two problems, **20 marks, 10 % of the module**.
 > - **Submission**: a single PDF through *Assessments → Coursework 1*. Photographed handwritten work is fine.
@@ -183,13 +211,13 @@ Chapter 4 was written from the lecture-note handout on 19 October and updated fr
 > | Part | Task | Marks | Theory in the vault |
 > |---|---|---:|---|
 > | 1(a) | Euler angles for 5 s of constant $p$, $q$ ($r=0$) from level flight heading north; integrate with `ode45` or equivalent; final roll, pitch and yaw in degrees | 3 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates\|3.1]] §§5–6 (the kinematic equation); Lab 1 Ex. 3 (`ode45`) |
-> | 1(b) | write the integral explicitly, non-matrix; show what depends on time; coupled or not, and why | 3 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#4. Multiplying it out, one step at a time (Appendix §3.4.1, L7 ll. 200–300)\|3.1 §4]] and §6 |
-> | 1(c) | repeat with $q=0$; what changes, and are the angles coupled | 2 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#The lecture's coupling example (L8, ll. 44–68)\|3.1 §7, coupling example]] |
+> | 1(b) | write the integral explicitly, non-matrix; show what depends on time; coupled or not, and why | 3 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#4. Multiplying it out, one step at a time (Appendix §3.4.1)\|3.1 §4]] and §6 |
+> | 1(c) | repeat with $q=0$; what changes, and are the angles coupled | 2 | [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#Exposing the coupling: switch off two variables\|3.1 §7, coupling example]] |
 > | 1(d) | wind $\mathbf v_w^{NED}=[8,4,0]^T$ into FRD through $\mathbf C_{FRD/NED}$ at the final attitude; interpret the signs | 2 | [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles\|2.2]] §6 (3-2-1 DCM, both directions) |
 > | 2(a) | flat-Earth translational and rotational equations, coordinate systems, assumptions | 2 | [[SESA3047 4.2 - Translational Dynamics\|4.2]] §§2–3, [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model\|4.3]] |
 > | 2(b) | gravity in FRD for $\Phi=\mathbf 0$ | 2 | [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Gravity in body axes (derivation)\|2.2, gravity in body axes]] |
 > | 2(c) | $\dot u,\dot v,\dot w$ with the cross-product matrix; why thrust and weight cancelling does not make $\dot w=0$ | 3 | [[SESA3047 4.2 - Translational Dynamics#3. Derive the body-velocity equation (4.33–4.37)\|4.2 §3]], [[Cross-Product Matrix]] |
-> | 2(d) | $\dot p,\dot q,\dot r$ with principal $\mathbf J$ and $\mathbf M=\mathbf 0$; coupling; the case $J_x=J_y=J_z$ | 3 | [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment (L12 ll. 22–119)\|4.1, inertia coupling]] |
+> | 2(d) | $\dot p,\dot q,\dot r$ with principal $\mathbf J$ and $\mathbf M=\mathbf 0$; coupling; the case $J_x=J_y=J_z$ | 3 | [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment\|4.1, inertia coupling]] |
 >
 > **Ambiguity:** 1(d) says *"using the final attitude angles from question B"*, but there is no question B, and part (b) produces equations, not angles. It most likely means the final angles of 1(a); possibly 1(c). The submission used the 1(a) angles ($\phi=0.5269$, $\theta=0.3825$, $\psi=0.1043$ rad).
 
@@ -201,11 +229,26 @@ No tutorial or revision questions had been set for SESA3047 by 22 Oct 2026, and 
 > - The exam paper is written and with the external examiner (University of Surrey) (ll. 9–10).
 > - The **exam formula sheet** will go on Blackboard in about two weeks (mid-November); it includes Taylor series. Report any mistakes (ll. 11–16, 136).
 > - A **mock paper** will be put up (l. 18).
-> - Past papers of **SESA2025** (the old second-year flight mechanics module) cover *"quite a bit"* of the remaining six weeks, though they assess slightly different things (ll. 19–23). The Chapter 5 practice Problem 1 *"used to be an exam question"* for SESA3030 (ll. 230–234).
+> - Past papers of **SESA2025** (the old second-year flight mechanics module) cover a good part of the remaining six weeks, though they assess slightly different things (ll. 19–23). The Chapter 5 practice Problem 1 was once a SESA3030 exam question (ll. 230–234).
+
+> [!important] Exam pointers (L15–L16, Thu 5 Nov)
+> - The longitudinal state-space derivation, Eqs. 5.17–5.18, has a good chance of being on the exam (L15 l. 307); the lateral model is left as your own work (L15 l. 12, Practice problem 3).
+> - Finding eigenvalues and eigenvectors by hand, as in the $[3\ 2;\ 0\ {-1}]$ example, is on the exam (L16 l. 384).
+> - The MIMO block diagram, §5.6, is not on the exam (L16 ll. 426–427).
+> - Dynamics derivations are expected only for mass–spring–damper-type systems with the assumptions given; the satellite equations themselves need not be derived (L15 ll. 355–360).
+
+> [!important] Exam pointers (L17, Mon 9 Nov)
+> - Eigenvalues by hand are expected for a $2\times2$ matrix only, not $3\times3$ or $4\times4$ (ll. 132–142); the $4\times4$ cofactor expansion of §6.2 is optional (ll. 339–344).
+> - Remember $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2=0$ and what $\omega_n$ and $\zeta$ mean (ll. 346–368).
+> - The SPO approximation (§6.5) is set as reading (ll. 397–400).
 
 - [[SESA3047 Chapter 5 Practice Problems - Solutions]]: **lecturer-set** (handout §5.8), five problems with my worked solutions; no answer key issued.
 
 - [[SESA3047 Mock Questions - Chapters 1-4]]: **self-written, not lecturer-set**. Ten exam-style questions (118 marks) with timed full solutions and Python-checked numbers, covering classification and linearisation, frames and flat Earth, the transport theorem, DCMs and gimbal lock, Euler-angle rates, Coriolis acceleration, principal axes, rotor angular momentum and the 12-state model. Its data deliberately differ from Lab 1 and Coursework 1.
+
+- [[SESA3047 Cambridge Question Map]]: every question in the Cambridge 3C5 (dynamics) and 3F2 (systems and control) example and Tripos papers, sorted as in scope, partly in scope or out of scope against this syllabus, with when each becomes doable (Chapters 6–8 included).
+
+- [[SESA3047 Cambridge Practice by Topic]]: the same Cambridge questions sorted under each topic note, best ones first, to practise a topic straight after its lecture.
 
 ## Week 1 exam skills
 
@@ -250,7 +293,7 @@ All of Chapter 4 is now lectured (L11–L13). Items marked *handout only* were n
 
 - expand the full inertia equation by finding momentum components first (L11 ll. 81–180);
 - explain the eigenvector definition of principal axes and why FRD axes need not be principal (L11 ll. 181–228);
-- explain inertia coupling with no external moment: two non-zero rates first drive only the third, then generically all three change; $J_{xx}=J_{zz}$ removes the $\dot q$ coupling (a counterexample to "always"); a single-axis spin is steady (L12 ll. 22–119). *"The case that I would generally remember"* is the diagonal one (L12 ll. 182–187);
+- explain inertia coupling with no external moment: two non-zero rates first drive only the third, then generically all three change; $J_{xx}=J_{zz}$ removes the $\dot q$ coupling (a counterexample to "always"); a single-axis spin is steady (L12 ll. 22–119). the diagonal case is the one to remember (L12 ll. 182–187);
 - explain why an $x$–$z$ symmetry plane gives $J_{xy}=J_{yz}=0$, and contrast this with the cm integral, which needs no symmetry (L12 ll. 128–137);
 - derive the aircraft roll–yaw inverse and check its zero-product limit (shown but not multiplied out in L12 ll. 142–171);
 - explain why the matrix form is kept for numerical work (L12 ll. 192–208);
@@ -258,22 +301,40 @@ All of Chapter 4 is now lectured (L11–L13). Items marked *handout only* were n
 - multiply out the rotor terms for the aircraft and diagonal $\mathbf J$ (L13 ll. 9–86); the spin-up term is *handout only*;
 - derive flat-Earth translational dynamics in four moves: Newton, rotating Earth (centrifugal + Coriolis), flat Earth, body-frame derivative. Then rotate $\mathbf g$ into FRD (L13 ll. 104–309);
 - effective gravity vs gravitation, and the gravity-including $X,Y,Z$ convention (*handout only*);
-- assemble the twelve states in the handout's order, explain *"6 states for the dynamics, and 6 for the kinematics"*, and distinguish all four equation groups (L13 ll. 310–340);
+- assemble the twelve states in the handout's order, explain why there are six states for the dynamics and six for the kinematics, and distinguish all four equation groups (L13 ll. 310–340);
 - explain why the model is integrated numerically and check solver evaluation order against the yawing ballistic example (L13 ll. 318–325).
 
 ## Chapter 5 exam skills
 
-5.1 is lectured (L14); the rest is written ahead and marked.
+All of Chapter 5 is now lectured (L14–L16), except the block diagram of §5.6, which is not examinable.
 
 - say what $\mathbf A,\mathbf B,\mathbf C,\mathbf D$ are, their sizes, and why $\mathbf A$ must be square (L14 ll. 152–162);
 - linearise a one-variable function about a stated equilibrium, and explain why the point matters ($\sin x$ about $0$ and $\pi$; L14 ll. 79–131);
 - find all equilibria of a nonlinear system and linearise it, by $\epsilon$ expansion or Jacobian (Practice problem 1; L14 ll. 230–234);
-- linearise Eqs. 5.3 about straight flight, showing every $\epsilon$ power, and explain why $rU$ survives but $qW$ does not; flagged *"it's on there"* (L14 ll. 164–165, 236–317);
+- linearise Eqs. 5.3 about straight flight, showing every $\epsilon$ power, and explain why $rU$ survives but $qW$ does not; flagged as examinable (L14 ll. 164–165, 236–317);
 - derive Eq. 5.8 and say when gyroscopic terms survive (rotor, rotating trim);
 - linearise gravity about $\gamma_0$, checking that the $\epsilon^0$ terms are trim (L14 ll. 438–509);
-- *written ahead:* assemble Eqs. 5.17–5.18, form $\mathbf A=\mathbf E^{-1}\mathbf A'$, convert dimensionless derivatives; derive the lateral model (Problem 3);
-- *written ahead:* convert second-order ODEs, transfer functions and block diagrams to state space (Problems 2, 4);
-- *written ahead:* solve $\dot{\mathbf x}=\mathbf A\mathbf x$ with $e^{\mathbf At}$ and diagonalisation; judge stability from eigenvalues, including zero-real-part and defective cases (Problem 5).
+- explain the longitudinal–lateral split and why Eqs. 5.15–5.16 are linear (L15 ll. 31–73);
+- assemble Eqs. 5.17–5.18 as $\mathbf M\dot{\mathbf x}=\mathbf A^\dagger\mathbf x$, explain why row 4 of $\mathbf M$ must be $[0,0,0,1]$, form $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$; derive the lateral model (Problem 3) (L15 ll. 85–307; exam flag l. 307);
+- convert coupled second-order ODEs to state space, with the input in $\mathbf B$ (satellite, L15 ll. 378–488);
+- convert a transfer function to state space, say why only the denominator reaches $\mathbf A$, and judge the stability of a simple lag (L15 ll. 517–596; L16 ll. 16–89; Problem 2);
+- say what the observation matrix $\mathbf C$ does, and check matrix dimensions (L16 ll. 91–135);
+- solve $\dot{\mathbf x}=\mathbf A\mathbf x$ with $e^{\mathbf At}$ and diagonalisation; judge stability from eigenvalues, including zero-real-part and defective cases (L16 ll. 148–311; Problem 5);
+- find eigenvalues (triangular shortcut) and eigenvectors by hand, assemble $\mathbf V\boldsymbol\Lambda\mathbf V^{-1}$ and check it (L16 ll. 316–442; exam flag l. 384).
+
+## Chapter 6 exam skills
+
+Chapter 6 §§6.1–6.5 are written up (L17); the phugoid approximation and the lateral modes follow.
+
+- form $\mathbf A=\mathbf M^{-1}\mathbf A'$ from the longitudinal model and say why $\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x$ is not yet state-space form;
+- find the eigenvalues of a $2\times2$ by hand, and read $\omega_n=|\lambda|$, $\zeta=-\sigma/\omega_n$, $t_{1/2}=\ln0.5/\sigma$, $T=2\pi/\omega$ off a complex pair (exam scope, L17 ll. 132–142);
+- derive $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2=0$ from the mass–spring–damper and classify $\zeta$ (L17 ll. 346–391);
+- tell the SPO from the phugoid by eigenvalue (fast and better damped against slow and lightly damped) and by eigenvector ($w$, $q$ against $u$, $\theta$), comparing entries in like units;
+- explain why a real $\mathbf A$ gives conjugate eigenvalue and eigenvector pairs (L17 ll. 107–129);
+- show that starting on an eigenvector excites only its mode, $e^{\mathbf At}\mathbf v_k=e^{\lambda_kt}\mathbf v_k$ (L17 ll. 216–258);
+- read phases from an eigenvector: $u$ and $q$ in phase in the phugoid, $\theta$ lagging $q$ by $90^\circ+\arcsin\zeta$, height out of phase with speed;
+- derive the SPO approximation, state its two assumptions, and evaluate it for the F-4C ($\omega_n=1.41$, $\zeta=0.264$ against $1.405$, $0.2626$ for the full model);
+- set up unity negative feedback in Simulink and explain the proportional-gain trade-off (L17 ll. 501–563; Lab 2).
 
 ## All notes
 
@@ -294,12 +355,17 @@ SORT type ASC, file.name ASC
 
 ## Sources
 
+- `02 - Sources/SESA3047 Module Guide 2026-27.pdf` (week-by-week chapters 1–8, labs and coursework dates)
 - Chapter_4.pdf (10 pages: inertia models, rotors, translational dynamics and complete 6-DOF state model).
 - L11 - SESA3047.txt (Mon 19 Oct; 232 lines: explicit derivative, full inertia expansion and principal axes; stops at §4.1.2).
 - L12 - SESA3047.txt (Thu 22 Oct, first half; 360 lines: inertia coupling, aircraft symmetry, rotors to Eq. 4.20; Coursework 1 announced).
 - L13 - SESA3047.txt (Thu 22 Oct, second half; 344 lines: aircraft rotor terms, translational dynamics, the 12-state model; end of Chapter 4).
 - Chapter_5.pdf (10 pages, Dr Sean Symon, released Sat 31 Oct: state-space form, linearisation, longitudinal model, satellite example, transfer functions and block diagrams to state space, matrix exponential and stability, practice problems, aerodynamic-derivative appendix). Filed from Downloads on 3 Nov.
 - `02 November 2026 at 11_53_51.txt` = **L14** (Mon 2 Nov; 538 lines; Dr Symon's first lecture: announcements, linearisation, Eqs. 5.7–5.8, gravity terms) → [[SESA3047 5.1 - State-Space Form and Linearisation|5.1]], [[SESA3047 5.2 - Longitudinal State-Space Model|5.2]].
+- `05 November 2026 at 14_53_19.txt` = **L15** (Thu 5 Nov, first half of the double; 597 lines; Whisper large-v3-turbo; a decoder loop at 38:47–39:00 and break-silence "Okay." lines at the end were removed): aerodynamic terms, Eq. 5.18, satellite example, simple lag → [[SESA3047 5.2 - Longitudinal State-Space Model|5.2]], [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams|5.3]].
+- Lecture Notes - Chapter 6.pdf (14 pages, Dr Sean Symon: longitudinal model, numerical example, damping and natural frequency, eigenvectors and modes, SPO and phugoid approximations, lateral modes and their approximations). Filed on 11 Nov.
+- `09 November 2026 at 11_54_07.txt` = **L17** (Mon 9 Nov; 573 lines): lab and lab-report announcements, eigenvalues and eigenvectors of Eq. 6.4 in MATLAB, the eigenvector initial-condition demonstration, Eq. 6.16, Simulink feedback demonstration → [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]]. `09 November 2026 at 11_51_49.txt` is a one-line false start with no content.
+- `05 November 2026 at 15_56_57.txt` = **L16** (Thu 5 Nov, second half; 444 lines; Whisper large-v3-turbo, clean): Eq. 5.30, the observation matrix, $e^{\mathbf At}$, eigenvalue decomposition, the triangular example → [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams|5.3]], [[SESA3047 5.4 - Time-Domain Solution and Stability|5.4]].
 
 - `02 - Sources/Lectures/Chapter 1.pdf`
 - `02 - Sources/Lectures/L2 - SESA3047.txt`
@@ -314,8 +380,11 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/L9 - SESA3047.txt` (Thu 8 Oct, second half: transport and Coriolis accelerations, Earth models, position state equation; stopped before the dynamics)
 - `02 - Sources/Lectures/L10 - SESA3047.txt` (Mon 12 Oct: §3.3 rotational dynamics, from linear momentum to Eq. 3.70)
 - `04 - Labs & Coursework/Lab 1/Lab_1.pdf` (Lab 1, MATLAB: DCMs and gimbal lock, nonlinear oscillator, rotational dynamics and kinematics)
+- `04 - Labs & Coursework/Lab 2/SESA3047_Lab2.pdf` (Lab 2, Simulink: satellite open and closed loop, PD and notch-filter control, B747 pole placement) and `Simulink Demo.txt` (transcript of the recorded Simulink introduction)
 - `04 - Labs & Coursework/Coursework 1/Brief/Coursework_1.pdf` (Coursework 1: attitude kinematics and wind components; flat-Earth rigid-body dynamics; due 29 Oct)
 - `04 - Labs & Coursework/Coursework 1/SESA3047 Coursework 1 Submission.pdf` (my submitted answers, handwritten, 14 pages, 29 Oct)
+
+## Transcript and slide slips
 
 > [!warning] Slips found in the Chapter 2 recordings
 > L5 l. 376 drops the $-\sin\theta$ in $\mathbf C_z$; L5 l. 380 says $x$ for $z$; L6 l. 205 drops the minus in $\theta=-\arcsin C_{13}$; L6 l. 208 gives $\psi=\mathrm{atan2}(C_{12},C_{12})$ for $\mathrm{atan2}(C_{12},C_{11})$. All are flagged in [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles|2.2]].
@@ -331,6 +400,12 @@ SORT type ASC, file.name ASC
 
 > [!warning] L14 recording slips
 > *"Newton's third law"* for the second (l. 45); the tangent at $\pi$ given as *"y equals minus x"* (l. 94; it is $y=\pi-x$); *"epsilon squared W1"* said for both products of the $X$ equation (ll. 238–239); $X_g$ without its $m$ (l. 401); *"double angle formulas"* for the compound-angle ones (ll. 444, 497); $\theta$ and $\gamma$ called *"the same thing"* (l. 485; only at trim). Flagged in [[SESA3047 5.1 - State-Space Form and Linearisation#Transcript slips (L14)|5.1]] and [[SESA3047 5.2 - Longitudinal State-Space Model#Transcript slips (L14, gravity part)|5.2]]. Handout slips (Eqs. 5.21d, 5.32, 5.45) are in 5.3 and 5.4.
+
+> [!warning] L15–L16 recording slips
+> L15: $z$ described as the "up" direction tied to altitude (ll. 53, 75–79; FRD $z$ points down); board sign errors in assembling Eq. 5.17, corrected on the fly (ll. 101–120); "two" as the minimum number of satellite states (l. 380; it is four); $T_c$ without $/J_1$ (l. 435, corrected at ll. 499–502). L16: $\mathbf x_0e^{\mathbf At}$ for $e^{\mathbf At}\mathbf x_0$ (l. 177); upper triangular described as "non-zero above the diagonal" (l. 342); "$v_2=1$ gives $v_1=-2$" reversed (l. 398). Flagged in [[SESA3047 5.2 - Longitudinal State-Space Model#Transcript slips (L15, ll. 1–308)|5.2]], [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams#Transcript slips (L15 ll. 309–597 and L16 ll. 1–146)|5.3]] and [[SESA3047 5.4 - Time-Domain Solution and Stability#Transcript slips (L16 ll. 148–445)|5.4]].
+
+> [!warning] L17 and Chapter 6 handout slips
+> Handout: the $q$ entry of $\mathbf v_{3,4}$ in Eq. 6.18 is 0.0005, not 0.005 (also said at L17 l. 160); p. 5 reads a positive $w$ as climbing, but $w$ is positive downwards in FRD axes and the height follows $\dot h=U_\infty\theta-w$; the $90^\circ$ lag of $\theta$ behind $q$ is the undamped limit of $90^\circ+\arcsin\zeta$. L17: "anything less than 1 is under-damped" (l. 385; needs $0<\zeta<1$); $1/(s-1)$ garbled as "1 over s plus t" (ll. 483–485). Flagged in [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation#Transcript slips (L17)|6.1]].
 
 > [!warning] L12–L13 recording slips
 > - L12: *"L, M, M"* and *"L, M, L"* for $L,M,N$ (ll. 23, 160); *"F, D, and R"* for FRD (l. 125); *"sum of the external momentum"* for moments (ll. 259, 312). The rotor momentum *"doesn't change in time"* (ll. 295–297) means only in the body frame.

@@ -3,7 +3,7 @@ title: "Spinning Disc Stress"
 module: "SESA2028 Aerospace Materials & Structures"
 type: concept
 tags: [sesa2028, structures, spinning-discs]
-status: lectured
+status: written-ahead
 ---
 
 # Spinning Disc Stress
@@ -26,7 +26,14 @@ and combine them with the appropriate plane-stress constitutive law. For a solid
 
 ![[structures_spinning_disc_stress.png|700]]
 
-The hoop stress is tensile throughout a uniform solid disc and is commonly largest near the centre.
+The result, for a thin uniform disc in plane stress, is
+
+$$
+\sigma_r=A-\frac{B}{r^2}-\frac{3+\nu}{8}\rho\omega^2r^2,\qquad
+\sigma_\theta=A+\frac{B}{r^2}-\frac{1+3\nu}{8}\rho\omega^2r^2 .
+$$
+
+The hoop stress is tensile throughout a uniform solid disc and largest at the centre, where both stresses equal $\tfrac{3+\nu}{8}\rho\omega^2r_o^2$. A central hole with a free edge raises the peak to the bore hoop stress $\tfrac{\rho\omega^2}{4}[(3+\nu)r_o^2+(1-\nu)r_i^2]$, which tends to twice the solid-disc value as the hole shrinks: even a pinhole doubles it. The topic was not lectured in 2025–26; the note is written from the slides.
 
 See [[SESA2028 S11 - Spinning Discs]].
 

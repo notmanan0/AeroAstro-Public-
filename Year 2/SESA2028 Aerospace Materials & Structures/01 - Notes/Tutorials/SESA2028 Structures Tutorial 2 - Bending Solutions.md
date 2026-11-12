@@ -66,7 +66,7 @@ $$
 \boxed{I_{min}=3.83\times10^5\ \mathrm{mm^4}}.
 $$
 
-![[Figures/structures_principal_inertia_mohr_circle.png]]
+![[structures_principal_inertia_mohr_circle.png]]
 
 ## Q1.2 - Bending moment, neutral axis and extreme stress
 
@@ -106,7 +106,7 @@ $$
 \boxed{\sigma_{xx,min}=-138\ \mathrm{MPa}}.
 $$
 
-![[Figures/structures_unsymmetric_bending_stress.png]]
+![[structures_unsymmetric_bending_stress.png]]
 
 ## Q1.3 - Coupled tip deflection
 

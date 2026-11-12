@@ -183,6 +183,17 @@ Reading the results:
 - Frequencies scale as $\sqrt{E/\rho}$ and hardly change with uniform skin thickening ([[Natural Frequencies and Mode Shapes]]).
 - Mass (and weight = 9.81 × mass) and FoS both rise with thickness: the design trade-off.
 
+The $\rho/\sigma_Y$ rule follows from the thin-skin scaling derived in [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)#How thickness changes stress, mass and frequency|C4]]. Since $\sigma\propto1/t$, the factor of safety is $FoS=\sigma_Y t/(\sigma_0t_0)$ for a reference run at thickness $t_0$ with peak stress $\sigma_0$. Setting $FoS$ to the target $n$ gives
+
+$$
+t_{min}=\frac{n\,\sigma_0\,t_0}{\sigma_Y},
+\qquad
+m_{min}\propto\rho\,t_{min}\propto\frac{\rho}{\sigma_Y}.
+$$
+
+> [!check] Use the scaling to seed the search
+> *(Illustrative numbers.)* If the aluminium wing at $t_0=20$ mm shows a peak of 120 MPa, then with $\sigma_Y=250$ MPa and $n=1.5$, $t_{min}=1.5\times120\times20/250=14.4$ mm. A steel with $\sigma_Y=500$ MPa needs 7.2 mm, but at 7850 kg/m³ against 2700 its skin is $7850\times7.2/(2700\times14.4)=1.45$ times heavier. Starting the minimum-thickness loop at these estimates saves most of its iterations, and if the FE minimum differs much from them, the stress is not scaling as $1/t$, usually because it is being read at a singular root corner.
+
 ## 5. Post-processing the text output in Python
 ```python
 import numpy as np, matplotlib.pyplot as plt
@@ -195,9 +206,9 @@ for elem in (182, 183):
     fig.savefig(f"kt_convergence_{int(elem)}.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 ```
 
-## What the lectures show
+## From the lab 2 session log to a script
 
-Between the two lectures of 2026-02-20 (ll. 386–470), Dr Yuan demonstrated the idea on the lab 2 plate, which needs about seven geometries for its parametric study. The Session Editor records every operation, including mistakes and view changes; cleaned up, the script defines the plate's parameters, element type, real constants, material, geometry, mesh, solution with boundary conditions and the 120 MPa load, and post-processing. Pasting it into the command window stage by stage (geometry, mesh, solve, post) checks each step, and changing one value, such as the hole dimension, and pasting again gives the new result directly. The same session showed reading the bulk stress at the right-hand boundary: select the edge nodes, then list the nodal von Mises stress (`SEQV` column) at a node there, 120 MPa. `HELP,ET` opens the documentation for any command, like a MATLAB function's arguments. Understanding every command is not expected, but scripting is valuable for later design optimisation. The software video adds batch mode: set the Product Launcher's simulation environment to ANSYS Batch, give the input file, and results go to an output file without opening the interface, which is how large sweeps are run (Software_Intro, ll. 31–60, 151–157).
+The lab 2 plate is the standard case (2026-02-20, ll. 386–470): its parametric study needs about seven geometries. The Session Editor records every operation, including mistakes and view changes; cleaned up, the script defines the plate's parameters, element type, real constants, material, geometry, mesh, solution with boundary conditions and the 120 MPa load, and post-processing. Pasting it into the command window stage by stage (geometry, mesh, solve, post) checks each step, and changing one value, such as the hole dimension, and pasting again gives the new result directly. To read the bulk stress at the right-hand boundary, select the edge nodes, then list the nodal von Mises stress (`SEQV` column) at a node there, 120 MPa. `HELP,ET` opens the documentation for a command, whose fields work like a MATLAB function's arguments. Understanding every command is not required; scripting becomes valuable in design optimisation. Batch mode runs without the interface: set the Product Launcher's simulation environment to ANSYS Batch, give the input file, and results go to an output file, which is how large sweeps are run (Software_Intro, ll. 31–60, 151–157).
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)]] · Next: [[SESA2029 C6 - APDL Workflow - FE Model Verification Checks]]
@@ -211,7 +222,10 @@ Between the two lectures of 2026-02-20 (ll. 386–470), Dr Yuan demonstrated the
 
 No sweep was set as an exercise; scripting is optional in this module (briefing, 2026-01-30 10:49).
 
-### Further practice
+### Core
 
 - [ ] Script the lab 2 hole-position study from the code Dr Yuan provided on Blackboard (2026-02-20 09:59, ll. 401–440). → [[#2. Case macro: plate with a hole (plate_case.mac)]]
+
+### Further practice
+
 - [ ] Automate the lab 3 thickness sweep and find the minimum thickness for FoS 1.5 (suggested, not lecturer-set). → [[#4. Wing study: thickness × material with a minimum-thickness search]]

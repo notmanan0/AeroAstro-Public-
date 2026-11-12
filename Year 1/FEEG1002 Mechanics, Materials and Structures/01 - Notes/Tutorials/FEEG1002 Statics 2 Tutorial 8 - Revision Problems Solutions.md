@@ -6,97 +6,126 @@ stream: "Part B: Statics 2"
 tags: [feeg1002, tutorial-solutions, statics-2, revision, rosettes, von-mises, thermal-strain, mohrs-circle]
 sheet: "Statics-2 Tutorial problem sheet 8 (revision)"
 theory_notes: ["[[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels]]", "[[FEEG1002 B2 - Strain in Multiple Dimensions and Thermal Strain]]", "[[FEEG1002 B3 - Generalised Hooke's Law]]", "[[FEEG1002 B4 - Stress Transformation and Mohr's Circle]]", "[[FEEG1002 B5 - Strain Measurement and Strain Rosettes]]", "[[FEEG1002 B6 - Yield Criteria]]"]
-key_concepts: ["[[Strain Gauge Rosettes]]", "[[Generalised Hooke's Law]]", "[[Von Mises and Tresca Yield Criteria]]", "[[Mohr's Circle]]", "[[Thermal Strain]]"]
+key_concepts: ["[[Strain Gauge Rosettes]]", "[[Generalised Hooke's Law]]", "[[Von Mises Yield Criterion]]", "[[Mohr's Circle]]", "[[Thermal Strain]]"]
 status: complete
 sources: ["02 - Sources/Statics 2/Tutorials/Tutorial Sheet 08 - Revision Problems.pdf", "02 - Sources/Statics 2/Tutorials/Tutorial Sheet 08 - Revision Problems - Solutions.pdf"]
 ---
 
 # FEEG1002 Statics 2 Tutorial 8 - Revision Problems Solutions
 
-> [!abstract] Sheet Info
-> Four exam-style questions that chain every Statics 2 topic together: rosette → Hooke → von Mises → safety factor; constrained thermal strain; a pressure vessel → yield → strain Mohr's circle; stress Mohr's circle. All answers are reproduced ✔.
+> [!abstract] Sheet info
+> Four exam-style questions that chain the Statics 2 topics: rosette, Hooke's law, von Mises and safety factor; restrained thermal expansion; pressure vessel, yield and strain Mohr's circle; stress Mohr's circle. All answers match the official solutions, checked numerically. These were the revision problems set for the Easter break (Lecture 8, ll. 637–640).
 
-## Theory Links
-- [[FEEG1002 B3 - Generalised Hooke's Law]] · [[FEEG1002 B4 - Stress Transformation and Mohr's Circle]] · [[FEEG1002 B5 - Strain Measurement and Strain Rosettes]] · [[FEEG1002 B6 - Yield Criteria]]
+## Q1 Rosette on a hydraulic press frame
 
----
+*Taught in:* [[FEEG1002 B5 - Strain Measurement and Strain Rosettes#The 0/60/120 rosette]], [[FEEG1002 B3 - Generalised Hooke's Law#Stresses from strains]] and [[FEEG1002 B6 - Yield Criteria#4. Failure load and safety factor]] · worked in full at [[FEEG1002 B5 - Strain Measurement and Strain Rosettes#Worked example - hydraulic press frame]] and [[FEEG1002 B6 - Yield Criteria#Worked example - hydraulic press frame]].
 
-## Q1: 60 000 t hydraulic press, 0/60/120° rosette ($E = 207$ GPa, $\nu = 0.3$, $\sigma_Y = 355$ MPa, load 450 MN); readings 800, 300, 500 με
-**(a) Strains** (delta-rosette formulas):
+Data: 0/60/120 rosette with gauges 1, 2 and 3 at 0°, 60° and 120°; $E=207$ GPa, $\nu=0.3$, $\sigma_Y=355$ MPa; load 450 MN; readings 800, 300 and 500 με.
 
-$$
-\varepsilon_{xx} = 800,\qquad \varepsilon_{yy} = \frac{2(300+500) - 800}{3} = \mathbf{267},\qquad \varepsilon_{xy} = \frac{300-500}{\sqrt3} = \mathbf{-115}\ \mu\varepsilon
-$$
-
-**(b) Stresses** (plane stress):
+**(a) Strains.**
 
 $$
-\sigma_{xx} = \frac{E}{1-\nu^2}(\varepsilon_{xx} + \nu\varepsilon_{yy}) = \mathbf{200}\ \text{MPa},\quad \sigma_{yy} = \frac{E}{1-\nu^2}(\varepsilon_{yy} + \nu\varepsilon_{xx}) = \mathbf{115}\ \text{MPa},\quad \sigma_{xy} = \frac{E}{1+\nu}\varepsilon_{xy} = \mathbf{-18.4}\ \text{MPa}
+\varepsilon_{xx}=\varepsilon_1=800\ \mu\varepsilon,\qquad \varepsilon_{yy}=\frac{2(\varepsilon_2+\varepsilon_3)-\varepsilon_1}{3}=267\ \mu\varepsilon,\qquad \varepsilon_{xy}=\frac{\varepsilon_2-\varepsilon_3}{\sqrt3}=-115\ \mu\varepsilon
 $$
 
-**(c) Maximum load**:
+Putting these back into the transformation equation at 0°, 60° and 120° returns 800, 300 and 500 με.
+
+**(b) Stresses**, in plane stress:
 
 $$
-\sigma_{eq} = \sqrt{200^2 + 115^2 - 200(115) + 3(18.4)^2} = 177\ \text{MPa},\qquad SF = \frac{355}{177} = 2.0
+\sigma_{xx}=\frac{E}{1-\nu^2}\left(\varepsilon_{xx}+\nu\varepsilon_{yy}\right)=200\ \mathrm{MPa},\qquad \sigma_{yy}=\frac{E}{1-\nu^2}\left(\varepsilon_{yy}+\nu\varepsilon_{xx}\right)=115\ \mathrm{MPa}
 $$
 
 $$
-F_{max} = SF\times450\ \text{MN} = \mathbf{9.0\times10^8}\ \text{N}\ ✔
+\sigma_{xy}=\frac{E}{1+\nu}\varepsilon_{xy}=-18.4\ \mathrm{MPa}
 $$
 
-This relies on linearity: stress is proportional to load up to first yield.
-
-## Q2: Microchip on a rigid board ($E = 140$ GPa, $\nu = 0.265$, $\alpha = 2.59\times10^{-6}$/K, $d = 15$ mm, $t = 2$ mm, 12 joints per side, $\Delta T = +30$ °C)
-Fully restrained **in plane** in both directions:
-
-$$\varepsilon_{total} = \varepsilon_M + \alpha\Delta T = 0\;\Rightarrow\;\varepsilon_{xx} = \varepsilon_{yy} = -\alpha\Delta T$$
-
-Equibiaxial plane stress:
+**(c) Maximum load.**
 
 $$
-\sigma_{xx} = \frac{E}{1-\nu^2}(\varepsilon_{xx} + \nu\varepsilon_{yy}) = -\frac{E\alpha\Delta T}{1-\nu} = \mathbf{-14.8}\ \text{MPa}
+\sigma_{eq}=\sqrt{200^2+115^2-(200)(115)+3(18.4)^2}=177\ \mathrm{MPa},\qquad SF=\frac{355}{177}=2.0
 $$
 
-- Force per side: $F = |\sigma|td = 444$ N.
-- Per solder joint: $444/12 = \mathbf{37}$ **N** ✔
-
-Note $1/(1-\nu)$ rather than 1: biaxial restraint gives a **larger** stress than uniaxial, because Poisson contraction cannot relieve it.
-
-## Q3: LH₂ tank, thin cylinder with $L = 2.5$ m, $R = 0.35$ m
-**(i) Allowable pressure** for $t = 1.5$ mm, $\sigma_Y = 440$ MPa, SF = 3. With $\sigma_{xx} = pR/2t$, $\sigma_{yy} = pR/t$ and no shear:
-
 $$
-\sigma_{eq} = \frac{pR}{t}\sqrt{\tfrac14 + 1 - \tfrac12} = \frac{pR}{t}\sqrt{\tfrac34}\;\Rightarrow\; p = \frac{2\sigma_Yt}{SF\sqrt3R} = \mathbf{7.26\times10^5}\ \text{Pa}\ (7.26\ \text{bar})\ ✔
+F_{max}=SF\times450\ \mathrm{MN}=9.0\times10^8\ \mathrm{N}
 $$
 
-**(ii) Strains** ($E = 120$ GPa, $\nu = 0.33$): $\sigma_{xx} = 84.7$ MPa and $\sigma_{yy} = 169$ MPa, so
+This relies on linearity: every stress is proportional to the load up to first yield.
+
+## Q2 Microchip held by solder joints
+
+*Taught in:* [[FEEG1002 B3 - Generalised Hooke's Law#6. Adding a thermal strain]] · worked in full at [[FEEG1002 B3 - Generalised Hooke's Law#Worked example - chip held by solder joints]].
+
+Data: $E=140$ GPa, $\nu=0.265$, $\alpha=2.59\times10^{-6}$ K⁻¹; square chip 15 mm by 15 mm, 2 mm thick; 12 joints per side; heated by 30 °C; board rigid.
+
+The board prevents all in-plane expansion, so total strain is zero and the mechanical strains are $\varepsilon_{xx}=\varepsilon_{yy}=-\alpha\Delta T=-7.77\times10^{-5}$. In plane stress,
 
 $$
-\varepsilon_{xx} = \frac1E(\sigma_{xx} - \nu\sigma_{yy}) = \mathbf{240}\ \mu\varepsilon,\qquad \varepsilon_{yy} = \frac1E(\sigma_{yy} - \nu\sigma_{xx}) = \mathbf{1178}\ \mu\varepsilon
+\sigma_{xx}=\frac{E}{1-\nu^2}\left(\varepsilon_{xx}+\nu\varepsilon_{yy}\right)=-\frac{E\alpha\Delta T}{1-\nu}=-14.8\ \mathrm{MPa}
 $$
 
-**(iii) Mohr's circle for strain.** There is no shear in $xy$, so these are the principal strains, $\varepsilon_I = 1178$ and $\varepsilon_{II} = 240$ με.
-- Centre: 709 με.
-- Radius: $|\varepsilon_{x'y'}|^{max} = (\varepsilon_I - \varepsilon_{II})/2 = \mathbf{469}\ \mu\varepsilon$, at ±45°.
+$$
+F_{side}=|\sigma_{xx}|\,dt=(14.8\times10^6)(0.015)(0.002)=444\ \mathrm{N},\qquad F_{joint}=\frac{444}{12}=37\ \mathrm{N}
+$$
 
-**(iv) Add torsion.** This adds $\varepsilon_{xy}\neq0$. The centre stays at 709 με but the radius grows, so $\varepsilon_I$ **increases**, $\varepsilon_{II}$ **decreases**, and the principal directions rotate away from the axes.
+The factor $1/(1-\nu)$ makes biaxial restraint 36 % more severe than restraint in one direction, because Poisson contraction cannot relieve it.
 
-![[s2_strain_mohr_t8_q3.png|660]]
+## Q3 Liquid hydrogen tank
 
-## Q4: $\sigma_{xx} = 10$, $\sigma_{yy} = 50$ MPa, shear 15 MPa
-**(a)** Shear arrows on the $+x$ face point **down**, so $\sigma_{xy} = \mathbf{-15}$ **MPa**. The centre is 30 MPa and the $x$-face point is $(10, -15)$, above the axis.
+*Taught in:* [[FEEG1002 B6 - Yield Criteria#Plane stress in xy components]], [[FEEG1002 B3 - Generalised Hooke's Law#2. Plane stress]] and [[FEEG1002 B5 - Strain Measurement and Strain Rosettes#4. Mohr's circle for strain]] · worked in full at [[FEEG1002 B6 - Yield Criteria#Worked example - liquid hydrogen tank]] and [[FEEG1002 B5 - Strain Measurement and Strain Rosettes#Worked example - strain circle for a hydrogen tank]].
 
-**(b)** $R = \sqrt{(-20)^2 + 15^2} = \mathbf{25}$ **MPa** = maximum in-plane shear. So $\sigma_I = \mathbf{55}$ and $\sigma_{II} = \mathbf{5}$ **MPa** ✔
+Data: thin-walled cylinder, length 2.5 m, $R=0.35$ m, plane stress.
 
-**(c)** On the maximum-shear planes both normal stresses equal $\sigma_{avg} = \mathbf{30}$ **MPa**.
+**(i) Allowable pressure** for $t=1.5$ mm, $\sigma_Y=440$ MPa and a safety factor of 3. With $\sigma_{xx}=pR/2t$, $\sigma_{yy}=pR/t$ and no shear,
 
-**(d)** From the $x$-face point to $\sigma_I$:
-- $\beta = \tan^{-1}\dfrac{2(15)}{|10-50|} = 36.87^\circ$, so $|2\theta| = 180^\circ - 36.87^\circ = 143.1^\circ$ and $|\theta| = 71.6^\circ$.
-- The rotation is **clockwise**: $\theta_p = -71.6^\circ$.
+$$
+\sigma_{eq}=\frac{pR}{t}\sqrt{\frac14+1-\frac12}=\frac{\sqrt3}{2}\frac{pR}{t}=\frac{\sigma_Y}{SF}
+$$
 
-**(e)** In the principal element, $x'$ at $-71.6^\circ$ carries 55 MPa and $y'$ carries 5 MPa, with no shear.
+$$
+p=\frac{2\sigma_Yt}{\sqrt3\,SF\,R}=7.26\times10^5\ \mathrm{Pa}=7.26\ \mathrm{bar}
+$$
 
-![[s2_mohr_t8_q4.png|940]]
+**(ii) Strains** with $E=120$ GPa and $\nu=0.33$. The stresses are $\sigma_{xx}=84.7$ MPa and $\sigma_{yy}=169$ MPa, so
+
+$$
+\varepsilon_{xx}=\frac1E\left(\sigma_{xx}-\nu\sigma_{yy}\right)=240\ \mu\varepsilon,\qquad \varepsilon_{yy}=\frac1E\left(\sigma_{yy}-\nu\sigma_{xx}\right)=1178\ \mu\varepsilon
+$$
+
+**(iii) Strain Mohr's circle.** There is no shear in the axial–hoop axes, so these are the principal strains, $\varepsilon_I=1178$ and $\varepsilon_{II}=240$ με. The centre is 709 με and the radius, the maximum shear strain in any orientation, is
+
+$$
+\left|\varepsilon_{x'y'}\right|^{max}=\frac{\varepsilon_I-\varepsilon_{II}}{2}=469\ \mu\varepsilon
+$$
+
+at ±45° to the axis.
+
+**(iv) Adding torsion.** Torsion adds a shear strain $\varepsilon_{xy}\neq0$. The centre stays at 709 με but the radius grows, so $\varepsilon_I$ increases, $\varepsilon_{II}$ decreases, and the principal directions turn away from the axial and hoop directions.
+
+![[s2_strain_mohr_t8_q3.png|800]]
+
+## Q4 Stress element and Mohr's circle
+
+*Taught in:* [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#5. Principal stresses and maximum shear]] · worked in full at [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#Worked example - revision element]].
+
+**(a)** $\sigma_{xx}=10$ MPa and $\sigma_{yy}=50$ MPa, both tensile. The shear arrow on the right-hand face points down, a negative direction on a face with positive normal, so $\sigma_{xy}=-15$ MPa. The centre is $(10+50)/2=30$ MPa and the $x$-face point $(10,-15)$ plots above the axis.
+
+**(b)**
+
+$$
+R=\sqrt{\left(\frac{10-50}{2}\right)^2+(-15)^2}=25\ \mathrm{MPa}
+$$
+
+so the maximum in-plane shear stress is 25 MPa, and $\sigma_I=30+25=55$ MPa, $\sigma_{II}=30-25=5$ MPa.
+
+**(c)** On the planes of maximum shear both normal stresses equal the centre, 30 MPa.
+
+**(d)** The angle between the radius to the $x$-face point and the direction of $\sigma_{II}$ is $\beta=\tan^{-1}(15/20)=36.87^\circ$, so the rotation on the circle from the $x$-face point to $\sigma_I$ is $|2\theta|=180^\circ-36.87^\circ=143.1^\circ$, clockwise (over the top of the circle). Hence $\theta_p=-71.6^\circ$: $\sigma_I$ acts 71.6° clockwise from $x$.
+
+**(e)** The principal element has $x'$ at $-71.6^\circ$ carrying 55 MPa and $y'$ carrying 5 MPa, with no shear.
+
+![[s2_mohr_t8_q4.png|900]]
 
 ## Sources
-- Source sheet and official solutions: Statics-2 Tutorial problem sheet 8 (revision problems)
+
+- `Tutorial Sheet 08 - Revision Problems.pdf` and its solutions.

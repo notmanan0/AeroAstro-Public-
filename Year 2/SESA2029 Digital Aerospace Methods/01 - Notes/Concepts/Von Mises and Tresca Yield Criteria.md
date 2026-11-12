@@ -29,8 +29,5 @@ $$\text{Tresca: }\max\left(|\sigma_1-\sigma_2|,|\sigma_2-\sigma_3|,|\sigma_3-\si
 
 - Parent lectures: [[SESA2029 B2 - Linear Elastic FE Analysis - Procedure, Boundary Conditions and Yield]]
 - Related concepts: [[Stress Concentration Factor and Factor of Safety]] · [[Plane Stress and Plane Strain]]
-
-Related (SESA2028 materials): [[Plane Strain Constraint]] · [[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|SESA2028 M1]] (yield needs shear; brittle fracture follows maximum opening stress)
-
-## Year 1 foundation
-- First derivation and worked examples in [[FEEG1002 B6 - Yield Criteria]].
+- SESA2028 materials: [[Plane Strain Constraint]] · [[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|SESA2028 M1]] (yield needs shear; brittle fracture follows maximum opening stress)
+- Year 1 foundation, with the first derivation and worked examples: [[FEEG1002 B6 - Yield Criteria]]

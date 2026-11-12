@@ -24,7 +24,7 @@ The cycle calculation has been examined almost every year from 2013 to 2020, and
 5. Nozzle: $p_{09} = \Gamma_np_{05}$ and, fully expanded, $V_j = \sqrt{2c_pT_{05}[1-(p_a/p_{09})^{(\gamma-1)/\gamma}]}$.
 6. Performance: $F/\dot m_a = (1+f)V_j-V$, TSFC $= f/(F/\dot m_a)$, and $\eta_O$, $\eta_P$ and $\eta_{th}$.
 
-If the nozzle is a choked convergent one rather than fully expanded, $V_j = a^*$ and there is a pressure thrust $A_9(p^*-p_a)$. The lecture example, M 2 at 31,000 ft with $r_c = 30$ and a turbine entry temperature of 1500 K, gives $F/\dot m = 341.2$ m/s, an sfc of 32.55 g/s/kN and $\eta_O = 43.1\%$.
+If the nozzle is a choked convergent one rather than fully expanded, $V_j = a^*$ and there is a pressure thrust $A_9(p^*-p_a)$. The worked example, M 2 at 31,000 ft with $r_c = 30$ and a turbine entry temperature of 1500 K, gives $F/\dot m = 341.2$ m/s, an sfc of 32.55 g/s/kN and $\eta_O = 43.1\%$.
 
 The $T$–$s$ diagram comparing the ideal and real cycles was asked in 2013-14, 2014-15, 2016-17 and 2017-18. In the real cycle the compressor and turbine lines lean to the right as entropy rises, the burner line falls in pressure, the intake and nozzle losses reduce $p_0$, and the real $T_{05}$ is higher than the ideal value for the same work.
 

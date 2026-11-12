@@ -40,11 +40,11 @@ Heat treatment after working also controls **precipitates** (solution treat and 
 - **Similarities:** both are **diffusionless, displacive (shear)** transformations on rapid cooling from the high-temperature phase. They are athermal (between $M_s$ and $M_f$), give a metastable, supersaturated, fine lath or acicular structure, and can be tempered or aged afterwards.
 - **Ti:** BCC **$\beta$ → HCP $\alpha'$** (or orthorhombic $\alpha''$), supersaturated in **substitutional** $\beta$ stabilisers (V, Mo).
 - **Steel:** FCC $\gamma$ → **BCT** martensite supersaturated in **interstitial carbon**. The trapped C distorts the lattice severely, which is the source of the very high hardness and brittleness.
-- **Effect on performance:** Ti $\alpha'$ is **only moderately harder** than equilibrium $\alpha$ and keeps reasonable ductility (no interstitial-C distortion). It raises strength in quenched $\alpha+\beta$ alloys and, crucially, **decomposes on ageing into fine $\alpha+\beta$**, giving high strength and a fine microstructure (STA Ti-6Al-4V). Too much untempered $\alpha'$ can reduce ductility and fatigue crack-growth resistance, so it is normally aged.
+- **Effect on performance:** Ti $\alpha'$ is **only moderately harder** than equilibrium $\alpha$ and keeps reasonable ductility (no interstitial-C distortion). It raises strength in quenched $\alpha+\beta$ alloys and **decomposes on ageing into fine $\alpha+\beta$**, giving high strength and a fine microstructure (STA Ti-6Al-4V). Too much untempered $\alpha'$ can reduce ductility and fatigue crack-growth resistance, so it is normally aged.
 
 #### (d) Eutectoid TTT diagram [5]
 
-![[Figures/materials_ttt_critical_cooling_rate.png]]
+![[materials_ttt_critical_cooling_rate.png]]
 
 - **A** = austenite, **P** = pearlite, **B** = bainite, **M** = martensite.
 - **Red** = transformation **start** (~1 %); **green** = transformation **finish** (~99 %); **solid orange** = $M_s$ (the dashed lines are $M_{50}$ and $M_{90}$).
@@ -119,7 +119,7 @@ $$
 t_{remaining}=0.471\times11{,}600=\boxed{5470\ \text{h}}\quad(\text{SF 2: about 2,700 h}).
 $$
 
-![[Figures/materials_creep_interpolation_temperature.png]]
+![[materials_creep_interpolation_temperature.png]]
 
 #### (d) Turbine disc with a 1.5 mm scratch [7]
 

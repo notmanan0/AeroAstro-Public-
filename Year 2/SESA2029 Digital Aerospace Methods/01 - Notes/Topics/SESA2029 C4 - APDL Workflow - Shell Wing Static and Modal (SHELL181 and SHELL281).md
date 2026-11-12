@@ -161,7 +161,31 @@ FINISH
 ('TIP |UY|=',E12.4,' m  SMAX=',E12.4,' Pa  FOS=',F8.3,'  MASS=',F10.2,' kg')
 ```
 
-A first estimate of the skin volume is $2c\,l\,t$ (two surfaces × chord × span × thickness). `ASUM` gives the exact developed area, including the curved surfaces and any end caps.
+A first estimate of the skin volume is $2c\,l\,t$ (two surfaces × chord × span × thickness). `ASUM` gives the exact developed area, including the curved surfaces and any end caps. For the illustrative wing above, with a chord of about 2.3 m, a 10 m span, $t=0.02$ m and aluminium,
+
+$$
+m\approx2\times2.3\times10\times0.02\times2700=2480\ \mathrm{kg},
+$$
+
+and the net upward load is $(p_{bot}-p_{top})\,c\,l=5000\times2.3\times10=115$ kN, acting at mid-span, so the root bending moment is about $115\times5=575$ kN m. These two numbers are the first sanity checks on the FE output: `ASUM` should give an area a little above $2cl=46$ m², and the root reaction moment (`PRRSOL`) should be close to 575 kN m.
+
+### How thickness changes stress, mass and frequency
+
+The skin carries the bending as a thin-walled section. Every wall's contribution to the second moment of area is proportional to its thickness, so $I\propto t$ for a fixed outer shape. The bending stress is then
+
+$$
+\sigma=\frac{Mc}{I}\propto\frac1t,
+\qquad
+FoS=\frac{\sigma_Y}{\sigma}\propto t,
+$$
+
+while the mass is $m\propto t$. Doubling the skin thickness doubles both the factor of safety and the weight. For the first bending mode, the single-spring estimate of [[SESA2029 B8 - Modal Analysis|B8]], $\omega\approx\sqrt{k/m}$, with $k\propto EI/l^3\propto Et$ and $m\propto\rho t$, gives
+
+$$
+\omega\propto\sqrt{\frac{Et}{\rho t}}=\sqrt{\frac E\rho},
+$$
+
+independent of $t$: a uniform change of thickness leaves the bending frequencies almost unchanged, and only the specific stiffness $E/\rho$ moves them. The coursework thickness sweep should show this, which makes it a useful check on the modal runs.
 
 ## 5. Modal solution
 ```apdl
@@ -207,13 +231,16 @@ The mode-shape amplitudes and modal "stresses" are relative only ([[Natural Freq
 > 3. Trailing-edge elements: the thin, sharp trailing edge creates high-aspect-ratio or warped elements. Check the element shapes, or switch to SHELL281 ([[FE Element Quality Checks]]).
 > 4. No density, no modes: `MP,DENS` is mandatory for modal analysis.
 
-## What the lab 3 video does
+## Demonstration wing and coursework differences
 
-The video's wing is a model-aeroplane wing in imperial units (ll. 1–82): low-density polyethylene with $E=38\times10^3$ psi, $\nu=0.3$ and density $8.3\times10^{-5}$ (needed for the modal analysis), read in from `wing.inp`. The element is SHELL181 with a single-layer shell section of thickness 0.1 (the layup menu exists because the element also handles composites). The root area is copied 10 in along $z$, and the skin is built by skinning between matching lines (1–8, 2–9, 3–10, 4–6, 5–7). A global element size of 0.25 is meshed and saved as a `.db`, all nodes at $z=0$ are fixed, and the pressures are 0.02 psi on the upper areas 4, 5 and 6 and 0.07 psi on the lower areas 3 and 7. The plot labels DMX and SMX give the maximum deflection and von Mises stress; repeating with smaller elements gives the stress convergence study. For the modal analysis the saved mesh is resumed, the root re-fixed, Block Lanczos selected and five modes extracted, read one at a time from the results summary and animated, with a mesh convergence study on the first five frequencies.
+The demonstration wing is a model-aeroplane wing in imperial units (video, ll. 1–82): low-density polyethylene with $E=38\times10^3$ psi, $\nu=0.3$ and density $8.3\times10^{-5}$ (needed for the modal analysis), read in from `wing.inp`. The element is SHELL181 with a single-layer shell section of thickness 0.1 (the layup menu exists because the element also handles composites). The root area is copied 10 in along $z$, and the skin is built by skinning between matching lines (1–8, 2–9, 3–10, 4–6, 5–7). A global element size of 0.25 is meshed and saved as a `.db`, all nodes at $z=0$ are fixed, and the pressures are 0.02 psi on the upper areas 4, 5 and 6 and 0.07 psi on the lower areas 3 and 7. The plot labels DMX and SMX give the maximum deflection and von Mises stress; repeating with smaller elements gives the stress convergence study. For the modal analysis the saved mesh is resumed, the root re-fixed, Block Lanczos selected and five modes extracted, read one at a time from the results summary and animated, with a mesh convergence study on the first five frequencies.
+
+> [!check] The demonstration wing's density is in consistent imperial units
+> With lengths in inches and forces in pounds-force, a consistent mass unit is lbf s²/in, so a density must be entered in lbf s²/in⁴, not lb/in³. Low-density polyethylene is about 920 kg/m³, or 0.0332 lb/in³; dividing by $g=386.1$ in/s² gives $8.6\times10^{-5}$ lbf s²/in⁴, close to the demonstration value of $8.3\times10^{-5}$. Entering 0.0332 instead would make the model 386 times too heavy and its frequencies $\sqrt{386}\approx20$ times too low.
 
 The coursework version differs: its aerofoil file is in SI units, unlike the millimetre units of labs 1 and 2, and its span comes from the student ID (2026-02-27 09:59, ll. 355–370). The area for the mass can be estimated as two rectangular plates or found exactly with Preprocessor → Modeling → Operate → Calculate Geometry Items (ll. 366–395).
 
-Questions raised in the final week (2026-03-06 09:58, ll. 301–360) are covered in the traps below: stress rising with refinement at the sharp root corner, crashes from too many DOF or distorted trailing-edge elements, pressures acting the wrong way, jobs that will not reopen (start with a new job name and resume the `.db`), and modal runs with no frequencies because the density is missing. Method A below uses the video's area numbering: areas 4–6 upper, 3 and 7 lower.
+Common problems in this lab (2026-03-06 09:58, ll. 301–360) are stress rising with refinement at the sharp root corner, crashes from too many DOF or distorted trailing-edge elements, pressures acting the wrong way, jobs that will not reopen (start with a new job name and resume the `.db`), and modal runs with no frequencies because the density is missing; the four wing-specific traps of §6 cover all but the reopening problem. Method A uses the demonstration wing's area numbering: areas 4–6 upper, 3 and 7 lower.
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)]] · Next: [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]

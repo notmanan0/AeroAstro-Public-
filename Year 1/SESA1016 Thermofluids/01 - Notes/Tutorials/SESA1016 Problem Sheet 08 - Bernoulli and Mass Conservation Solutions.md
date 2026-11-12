@@ -210,9 +210,26 @@ The temperature-dependent density must remain inside the integral.
 
 ## Q8.11 Hydraulic pistons
 
-Choose the fluid-filled junction as a control volume and assign signs to piston volume displacement rates $AV$. Piston A moves twice as quickly as B, and its larger swept-volume contribution is not balanced by B. Continuity therefore requires piston C to provide the remaining outward volume flux:
+Take the liquid in the housing as an incompressible control volume, so the volume swept in by the pistons each second must equal the volume swept out. In the sketch, piston A (diameter 7.5 cm) closes the left port and piston B (diameter 15 cm) the right port. Both move to the left, with $V_A=2V_B$.
 
-$$\boxed{\text{piston C moves upward}}.$$
+Piston B moving left moves into the housing and pushes liquid in at the volume rate
+
+$$
+Q_B=\frac{\pi}{4}(0.15)^2V_B=0.01767V_B\ \mathrm{m^3/s}.
+$$
+
+Piston A moving left moves out of the housing and makes room at the volume rate
+
+$$
+Q_A=\frac{\pi}{4}(0.075)^2(2V_B)=0.00884V_B\ \mathrm{m^3/s}=\tfrac12Q_B.
+$$
+
+The net volume pushed in is $Q_B-Q_A=\tfrac12Q_B>0$. The liquid cannot compress, so piston C must make room for it:
+
+$$\boxed{\text{piston C moves upward}},\qquad A_CV_C=\tfrac12A_BV_B.$$
+
+> [!note] Correction (2026-11-05)
+> The earlier reasoning said that piston A's "larger swept-volume contribution" was unbalanced. In fact A sweeps only half the volume rate of B: its area is a quarter of B's and its speed twice. The answer, C moves up, is unchanged.
 
 ## Related
 

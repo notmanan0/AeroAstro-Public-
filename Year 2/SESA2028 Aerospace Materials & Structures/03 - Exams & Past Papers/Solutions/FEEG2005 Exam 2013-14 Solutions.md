@@ -239,7 +239,7 @@ Compared with cast alloys: fewer defects, finer and controlled grains, and optim
 2. **Water quench**: no time for diffusion, so a **supersaturated** $\alpha$ solid solution with vacancies retained.
 3. **Artificial ageing** (~120-190 °C) in the two-phase field: solute clusters (GP zones), then coherent $\theta''$/$\theta'$ (or $\eta'$) precipitates, fine and closely spaced. Stop at **peak strength (T6)**, before coarsening to incoherent $\theta$ (over-ageing).
 
-![[Figures/materials_ageing_curve.png]]
+![[materials_ageing_curve.png]]
 
 #### (iv) Vacuum impregnation vs hand lay-up [5]
 
@@ -283,7 +283,7 @@ $$
 t_r(850)\approx3163\text{-}3240\ \text{h},\qquad t_r(750)\approx31{,}623\ \text{h}.
 $$
 
-(The lecturer reads 3,163 h from a log-log plot; interpolating $\log t_r$ linearly against $T$ gives 3,240 h.)
+(The model answer reads 3,163 h from a log-log plot; interpolating $\log t_r$ linearly against $T$ gives 3,240 h.)
 
 $$
 \frac{500}{3163}+\frac{2100}{31623}=0.158+0.066=0.224,
@@ -295,7 +295,7 @@ $$
 
 **Recommendation:** with SF 2, about **78 h**. Note the sensitivity to the interpolation method and to the steep temperature dependence.
 
-![[Figures/materials_creep_interpolation_temperature.png]]
+![[materials_creep_interpolation_temperature.png]]
 
 #### (v) Coatings and single crystals [4]
 

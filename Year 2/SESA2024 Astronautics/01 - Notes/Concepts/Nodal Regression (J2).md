@@ -23,9 +23,9 @@ $$
 
 with $a$ in km. The rate falls steeply with altitude ($a^{-7/2}$). It is westward for prograde orbits, zero for exactly polar ones, and eastward for retrograde ones.
 
-The course uses it constructively: choosing $a$ and $i>90^\circ$ so that $\dot\Omega=+0.9856^\circ$/day makes the orbit Sun-synchronous at no propellant cost. Elsewhere it is a nuisance to be allowed for, for example in the drift between planes of a constellation or a fragment cloud.
+It can be used constructively: choosing $a$ and $i>90^\circ$ so that $\dot\Omega=+0.9856^\circ$/day makes the orbit Sun-synchronous at no propellant cost. Elsewhere it is a nuisance to be allowed for, for example in the drift between planes of a constellation or a fragment cloud.
 
 ## Related
 
-- [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#2. Nodal regression from the Earth's oblateness|Nodal regression in the lecture note]]
+- [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#2. Nodal regression from the Earth's oblateness|Nodal regression in the topic note]]
 - [[Sun-Synchronous Orbit]] · [[Orbital Angular Momentum]] · [[Momentum Bias and Gyroscopic Rigidity]]

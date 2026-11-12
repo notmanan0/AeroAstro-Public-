@@ -19,9 +19,9 @@ $$
 \frac{X(s)}{R(s)} = \frac{G(s)C(s)}{1+G(s)C(s)H(s)} .
 $$
 
-The closed-loop poles are the roots of $1+GCH = 0$, not the plant's own poles, and that is how feedback adds stability or damping. With unity feedback ($H = 1$) and $G = B/A$, a proportional controller gives the closed-loop characteristic equation $A(s)+K_pB(s) = 0$. A double integrator under P control, $K_p/(s^2+K_p)$, is only marginally stable; adding derivative action gives $s^2+K_Ds+K_P$, which is stable ([[SESA2027 B2 - Root Locus Method]]). A second-order closed loop $s^2+bs+c$ is stable if and only if $b>0$ and $c>0$, and uncertainty in the plant's $\zeta$, $\omega_n$ or zero shifts $b$ and $c$, which is why margins are needed.
+The closed-loop poles are the roots of $1+GCH = 0$, not the plant's own poles, so feedback can add stability or damping. With unity feedback ($H = 1$) and $G = B/A$, a proportional controller gives the closed-loop characteristic equation $A(s)+K_pB(s) = 0$. A double integrator under P control, $K_p/(s^2+K_p)$, is only marginally stable; adding derivative action gives $s^2+K_Ds+K_P$, which is stable ([[SESA2027 B2 - Root Locus Method]]). A second-order closed loop $s^2+bs+c$ is stable if and only if $b>0$ and $c>0$, and uncertainty in the plant's $\zeta$, $\omega_n$ or zero shifts $b$ and $c$, which is why margins are needed.
 
-L2.07 splits the output into the response to the reference, to a disturbance at the plant input and to sensor noise:
+The output splits into the response to the reference, to a disturbance at the plant input and to sensor noise (L2.07):
 
 $$
 X = \underbrace{\frac{GC}{1+GCH}}_{\text{reference}}R+\underbrace{\frac{G}{1+GCH}}_{\text{disturbance}}U_P-\underbrace{\frac{GCH}{1+GCH}}_{\text{noise}}X_N

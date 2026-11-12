@@ -15,11 +15,15 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture17_Parabolic1.pdf"
 
 The **heat equation** $y_t=\kappa^2y_{xx}$, also called the diffusion equation, is the prototype parabolic PDE: one time derivative balanced against two space derivatives.
 
-Lecture 17 derived it from a random walk. Particles on a grid stay put with probability $\frac12$ and step left or right with probability $\frac14$ each; Taylor-expanding the exact update and letting $\Delta x,\Delta t\to0$ with $\Delta x^2/\Delta t$ fixed gives the equation with $\kappa^2=\Delta x^2/(4\Delta t)$. That limit is the signature of diffusion: spreading over a distance $\ell$ takes a time of order $\ell^2/\kappa^2$.
+The equation follows from a random walk (Lecture 17). Particles on a grid stay put with probability $\frac12$ and step left or right with probability $\frac14$ each; Taylor-expanding the exact update and letting $\Delta x,\Delta t\to0$ with $\Delta x^2/\Delta t$ fixed gives the equation with $\kappa^2=\Delta x^2/(4\Delta t)$. That limit is the signature of diffusion: spreading over a distance $\ell$ takes a time of order $\ell^2/\kappa^2$.
 
 Separation of variables gives the same spatial eigenfunctions as the wave equation, but each mode decays as $e^{-(n\pi\kappa/L)^2t}$, faster for higher $n$, so sharp features vanish first and the solution smooths out. Only the initial temperature can be given. With fixed-temperature ends the rod relaxes to the straight line joining the end values; with insulated ends no heat escapes, the constant mode survives, and the rod settles to the mean of its initial temperature. For $y(x,0)=x(1-x)$ on $[0,1]$ with insulated ends, $y=\frac16-\sum\frac{2(1+(-1)^n)}{(n\pi)^2}\cos n\pi x\,e^{-(n\pi\kappa)^2t}$.
 
+The random walk also fixes the spread: each step has variance $\frac12\Delta x^2$, so after time $t$ the walkers have variance $2\kappa^2t$, the same as the heat equation's Gaussian, and a distance $\ell$ takes a time of order $\ell^2/\kappa^2$ to diffuse across. With insulated ends the total heat $\int y\,dx$ is constant, because its rate of change is $\kappa^2[y_x]$ across the ends, so the rod settles to its initial mean. A loss term, $u_t=h^2u_{xx}-ku$, is removed by $u=e^{-kt}v$, which adds $k$ to every mode's decay rate.
+
 ![[m2048_pde_heat_dirichlet_vs_neumann.png|600]]
+
+![[m2048_pde_random_walk.png|600]]
 
 ## Related
 

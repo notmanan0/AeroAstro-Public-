@@ -13,13 +13,13 @@ sources: ["02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/L8 - SES
 
 # Coriolis and Centripetal Acceleration
 
-Take a point P with position $\mathbf p=\mathbf p_{P/Q}$ in a frame $F_b$ (origin $Q$) that moves and rotates at $\boldsymbol\omega$, with angular acceleration $\boldsymbol\alpha$, relative to $F_a$. Its velocity and acceleration seen from $F_a$ are
+A point P with position $\mathbf p=\mathbf p_{P/Q}$ in a frame $F_b$ (origin $Q$) that moves and rotates at $\boldsymbol\omega$, with angular acceleration $\boldsymbol\alpha$, relative to $F_a$ has velocity and acceleration, seen from $F_a$,
 
 $$\mathbf v_{P/a}=\mathbf v_{P/b}+\underbrace{\mathbf v_{Q/a}+\boldsymbol\omega\times\mathbf p}_{\text{transport velocity}}\qquad(3.23)$$
 
 $$\mathbf a_{P/a}=\mathbf a_{P/b}+\underbrace{\mathbf a_{Q/a}+\boldsymbol\alpha\times\mathbf p+\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf p)}_{\text{transport acceleration}}+\underbrace{2\boldsymbol\omega\times\mathbf v_{P/b}}_{\text{Coriolis}}\qquad(3.26)$$
 
-The **centripetal** term, $\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf p)=-\omega^2\mathbf p_\perp$, points at the rotation axis; a point fixed in a rotating frame moves on a circle and needs it. The $\boldsymbol\alpha\times\mathbf p$ term (tangential or Euler acceleration in textbooks) only appears if the spin rate changes. The **Coriolis** term, $2\boldsymbol\omega\times\mathbf v_{P/b}$, only appears if P moves within the rotating frame, and it is perpendicular to both $\boldsymbol\omega$ and the relative velocity.
+The **centripetal** term, $\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf p)=-\omega^2\mathbf p_\perp$, points at the rotation axis; a point fixed in a rotating frame moves on a circle and needs it. The $\boldsymbol\alpha\times\mathbf p$ term (tangential or Euler acceleration in textbooks) appears only if the angular velocity changes, in magnitude or in direction. The **Coriolis** term, $2\boldsymbol\omega\times\mathbf v_{P/b}$, only appears if P moves within the rotating frame, and it is perpendicular to both $\boldsymbol\omega$ and the relative velocity.
 
 The factor of 2 comes from $\boldsymbol\omega\times\mathbf v_{P/b}$ turning up twice when you differentiate (3.23). The transport theorem applied to $\mathbf v_{P/b}$ gives one, because the rotation turns the direction of the relative velocity. The product rule on $\boldsymbol\omega\times\mathbf p$ gives the other, because P moves to a part of the frame with a different transport velocity. Step-by-step derivation: [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#2. Acceleration of a point in a moving frame (§3.2.1, Eqs. 3.24–3.26)|3.2 §2]].
 

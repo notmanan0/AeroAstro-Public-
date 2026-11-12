@@ -32,21 +32,21 @@ sources: ["02 - Sources/Lectures/Lecture 2.01.pdf", "02 - Sources/Lectures/Lectu
 > - **Common mistakes:** calling the numerator of $X/R$ the characteristic polynomial (it is the denominator, L2.03, l. 266); expecting P alone to remove steady-state error or D alone to change $\omega_n$.
 > - **Practise:** [[#Worked example: P leaves an error, PI removes it]] · [[SESA2027 Mock Questions#Q6. Closed loop and PID actions|Mock Q6]] · [[SESA2027 Practice Problems 2 Solutions]] (Q4–Q5)
 
-An open-loop command is a guess: deflect the elevator by a fixed amount and hope the aircraft does what the model said. Any gust, model error or change in weight shows up straight in the output. A closed loop instead measures the output, compares it with what was wanted, and acts on the difference. Errors are corrected as they appear, and the price is a sensor, some care with signs, and the risk of making the system unstable if you push too hard.
+An open-loop command is a guess: the elevator is deflected by a fixed amount in the hope that the aircraft does what the model said. Any gust, model error or change in weight shows up straight in the output. A closed loop instead measures the output, compares it with what was wanted, and acts on the difference. Errors are corrected as they appear, which needs a sensor and some care with signs, and carries the risk of making the system unstable if the gain is pushed too hard.
 
-The PID controller is the simplest useful way to turn an error into an action. P pushes in proportion to the error now, so it acts first and does most of the work. I pushes in proportion to how long the error has persisted, so it keeps pushing until the error is exactly zero, but it is slow. D pushes against how fast the error is changing, so it brakes the response before it overshoots, but it also reacts to every bit of sensor noise. Each term moves the closed-loop poles in a different direction, which is what B2 and B3 make precise.
+The PID controller is the simplest useful way to turn an error into an action. P pushes in proportion to the error now, so it acts first and does most of the work. I pushes in proportion to how long the error has persisted, so it keeps pushing until the error is exactly zero, but it is slow. D pushes against how fast the error is changing, so it brakes the response before it overshoots, but it also reacts to every bit of sensor noise. Each term moves the closed-loop poles in a different direction ([[SESA2027 B2 - Root Locus Method|B2]], [[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning|B3]]).
 
 ---
 
-## 1. Why control? (L2.01)
-Examples in the lecture:
+## 1. Purpose of control (L2.01)
+Examples:
 - A kestrel hovering: feedback in nature.
 - Watt's steam-engine governor.
 - Chemical process plants.
 - Multirotor attitude and position control.
 - A wind-tunnel model whose controller fails.
 
-The lecture defines a **control system** as "an arrangement of components in which a controller generates a control action by comparing a reference input with the system's feedback signal, i.e. the control error. The controller uses the control error to adjust the system so that its output achieves the specified performance or remains within desired bounds."
+A **control system** is an arrangement of components in which a controller generates a control action by comparing a reference input with the system's feedback signal, i.e. the control error. The controller uses the control error to adjust the system so that its output achieves the specified performance or remains within desired bounds.
 
 | Element | Meaning |
 |---|---|
@@ -56,28 +56,23 @@ The lecture defines a **control system** as "an arrangement of components in whi
 | Reference $r(t)$ | Desired or commanded output |
 | Feedback $y(t)$ | Measured output (or estimated state) |
 
-**General block diagram**:
-- $R\to\Sigma\to E\to C(s)\to U_C\to\Sigma(+U_P\text{, process noise})\to U\to G(s)\to X$
-- Feedback path: $X\to\Sigma(+X_N\text{, measurement noise})\to X_M\to H(s)\ (\text{sensor})\to Y\to$ back to the first $\Sigma$ with a minus sign
+In the general block diagram the forward path runs $R\to\Sigma\to E\to C(s)\to U_C\to\Sigma(+U_P\text{, process noise})\to U\to G(s)\to X$. The feedback path runs $X\to\Sigma(+X_N\text{, measurement noise})\to X_M\to H(s)\ (\text{sensor})\to Y$, and $Y$ returns to the first $\Sigma$ with a minus sign.
 
 ![[amc_feedback_loop_block_diagram.png|900]]
 
-- Why "plant"? The name comes from the chemical process plants where control theory grew up (L2.01, ll. 289–292).
-- Measurement noise $X_N$ covers both true random noise and offsets in the signal (L2.01, ll. 583–586).
+The name plant comes from the chemical process plants where control theory grew up (L2.01, ll. 289–292). Measurement noise $X_N$ covers both true random noise and offsets in the signal (L2.01, ll. 583–586).
 
-The error is always reference minus measurement, $e = r-y$: "for us, we always say reference as positive because that's our baseline" (L2.01, ll. 512–522), although some books use the opposite sign. The feedback summing junction is the only one with a minus sign, because this is negative feedback (ll. 548–558). Part B also assumes an ideal sensor, $H = 1$, meaning "perfect accuracy, no delay, infinite bandwidth … and zero drift. How realistic is that? Zero" (ll. 707–712); Part C removes that assumption. Not every state can be measured either: most aircraft have no angle-of-attack sensor, so $\alpha$ (or $w$) has to be estimated (ll. 527–541).
+The error is always reference minus measurement, $e = r-y$, with the reference taken as positive because it is the baseline (L2.01, ll. 512–522), although some books use the opposite sign. The feedback summing junction is the only one with a minus sign, because this is negative feedback (ll. 548–558). Part B also assumes an ideal sensor, $H = 1$, meaning perfect accuracy, no delay, infinite bandwidth and zero drift, which no real sensor has (ll. 707–712); Part C removes that assumption. Not every state can be measured either: most aircraft have no angle-of-attack sensor, so $\alpha$ (or $w$) has to be estimated (ll. 527–541).
 
-> [!warning] Cautionary tales from the lecture (L2.01, ll. 420–486)
-> - **Wind-tunnel rig, Bristol 7 ft × 5 ft tunnel**: while gains were being tuned, the wireless link to the model dropped. The controller received confusing data and the model departed, damaging its nose. "This is an example of when sensing goes wrong." The lab now asks people to switch off Wi-Fi during tests.
-> - **A retrofitted system with a single sensor**: the lecturer alluded to the Boeing 737 MAX MCAS, where redundant sensing and a disagree warning were optional extras (ll. 453–460). Robustness and redundancy are design requirements, not options.
-> - "There are things you don't know that you don't know. Those are the dangerous ones" (ll. 467–470).
+> [!warning] Sensing failures and redundancy (L2.01, ll. 420–486)
+> In the Bristol 7 ft × 5 ft wind tunnel, the wireless link to a model dropped while its gains were being tuned. The controller received confusing data and the model departed, damaging its nose: a failure of sensing, after which the lab asks people to switch off Wi-Fi during tests. A retrofitted system that relies on a single sensor fails in the same way; in the Boeing 737 MAX MCAS, redundant sensing and a disagree warning were optional extras (ll. 453–460). Robustness and redundancy are design requirements, not options, and the dangerous failures are the ones nobody thought to test for (ll. 467–470).
 
 ### Control objectives
 1. Stability (BIBO): every bounded input gives a bounded output.
-2. **Regulation**: hold a variable at a constant set point despite disturbances.
-3. **Tracking**: follow a time-varying reference.
-4. **Disturbance rejection**: minimise the effect of external disturbances on the output.
-5. **Performance management**: meet the rise-time, overshoot and settling specifications while limiting control effort.
+2. Regulation: hold a variable at a constant set point despite disturbances.
+3. Tracking: follow a time-varying reference.
+4. Disturbance rejection: minimise the effect of external disturbances on the output.
+5. Performance management: meet the rise-time, overshoot and settling specifications while limiting control effort.
 
 ## 2. Control classifications (L2.02)
 
@@ -95,15 +90,11 @@ The error is always reference minus measurement, $e = r-y$: "for us, we always s
 Open-loop and closed-loop control are also called feed-forward and feedback, and the two can be combined (L2.02, ll. 102–116). A feed-forward block passes the reference straight to the control action through a simple model of what to expect. If 2° of elevator is known to give about 0.5° of pitch, for example, the feed-forward path supplies most of the deflection, and the feedback controller only has to correct the remaining, simpler dynamics.
 
 > [!example] Learning-based control in practice (L2.02, ll. 161–175)
-> In the lecturer's gimbal experiment, three reinforcement-learning controllers were trained: on a linear (SPO-type) model, on a model with gimbal friction, and with domain randomisation (the linear model's parameters varied in every simulation, so the agent "was seeing a different aircraft every time"). The randomised agent was the most robust. It coped with changes in inertia, a larger elevator area and an injected aileron fault that shifted the trim point.
+> In one gimbal experiment, three reinforcement-learning controllers were trained: on a linear (SPO-type) model, on a model with gimbal friction, and with domain randomisation (the linear model's parameters varied in every simulation, so the agent saw a different aircraft every time). The randomised agent was the most robust. It coped with changes in inertia, a larger elevator area and an injected aileron fault that shifted the trim point.
 
-**DAP2**: this module uses linear, rule-based, closed-loop control, namely PID (slide 9; L2.02, ll. 190–194).
+This module (DAP2) uses linear, rule-based, closed-loop control, namely PID (slide 9; L2.02, ll. 190–194). PID itself is model-free, since its control law contains no plant model (L2.02, l. 125). The PID gains are nevertheless chosen from a plant model (root locus, Bode design), so the model-based row of the table still matters.
 
-> [!note] Is PID model-based?
-> An earlier version of this note said "model-based". The slide does not, and the lecturer classes PID itself as model-free: its control law contains no plant model (L2.02, l. 125). In this module the PID gains are nevertheless chosen from a plant model (root locus, Bode design), which is why the model-based column of the table still matters.
-
-> [!info] Possible exam question (L2.02, ll. 184–187)
-> "Name a few of the cons for, let's say, model-based control": it needs an accurate model and is sensitive to model errors. For rule-based control: low adaptability, limited scalability, needs expert knowledge.
+The cons of model-based and rule-based control are a possible exam question (L2.02, ll. 184–187). Model-based control needs an accurate model and is sensitive to model errors. Rule-based control has low adaptability and limited scalability, and it needs expert knowledge.
 
 ### SPO approximation with elevator input
 Add $[\mathring Z_\eta,\ \mathring M_\eta]^T\eta$ to the SPO equations, giving $\dot{\mathbf x}_{SPO} = \mathbf A_{SPO}\mathbf x_{SPO}+\mathbf B_{SPO}\eta$ with $\mathbf x = [w,q]^T$. With $\mathbf C = [0,\ 1]$ (measure $q$):
@@ -114,7 +105,7 @@ $$
 
 The lower-case letters are Cook's "concise" derivatives, i.e. the entries of $\mathbf A = \mathbf M^{-1}\mathbf A'$.
 
-Derivation (done on the board in L2.02, ll. 263–453). Write the SPO model in concise form:
+Derivation (L2.02, ll. 263–453). Write the SPO model in concise form:
 
 $$
 \mathbf A = \begin{bmatrix}z_w&z_q\\m_w&m_q\end{bmatrix},\qquad \mathbf B = \begin{bmatrix}z_\eta\\m_\eta\end{bmatrix},\qquad \mathbf C = \begin{bmatrix}0&1\end{bmatrix},\qquad \mathbf D = 0
@@ -158,9 +149,9 @@ $$
 \mathbf C\,\mathrm{adj}(s\mathbf I-\mathbf A)\,\mathbf B = m_\eta s+(m_wz_\eta-m_\eta z_w)
 $$
 
-Divide by the determinant to get $q/\eta$ above. The denominator is the SPO characteristic polynomial, so $-(m_q+z_w) = 2\zeta\omega_n$ and $z_wm_q-z_qm_w = \omega_n^2$ (ll. 346–352). The lecturer does not expect you to repeat this for $\theta/\eta$: just multiply by $1/s$ (ll. 457–463).
+Divide by the determinant to get $q/\eta$ above. The denominator is the SPO characteristic polynomial, so $-(m_q+z_w) = 2\zeta\omega_n$ and $z_wm_q-z_qm_w = \omega_n^2$ (ll. 346–352). For $\theta/\eta$ the result is multiplied by $1/s$ (ll. 457–463).
 
-The lecture example used throughout Part B is
+The example used throughout Part B is
 
 $$
 G(s) = \frac{q}{\eta} = \frac{-1.39(s+0.306)}{s^2+0.805s+1.325}
@@ -175,7 +166,7 @@ $$
 
 Writing $G = B/A$, the closed-loop characteristic equation is $A(s)+C(s)B(s) = 0$ (for a proportional $C$). See [[Closed-Loop Transfer Function]].
 
-**General case with sensor, process noise and measurement noise.** The lecture skipped these steps and promised to upload them (L2.01, ll. 643–716). The block equations are:
+The general loop adds a sensor $H$, process noise $U_P$ and measurement noise $X_N$ (L2.01, ll. 643–716). The block equations are:
 
 $$
 X = G(U_C+U_P),\qquad U_C = CE,\qquad E = R-Y,\qquad Y = HX_M,\qquad X_M = X+X_N
@@ -215,7 +206,7 @@ and with an ideal sensor ($H = 1$) this is the boxed result above. The three ter
 
 ## 4. PID control (L2.03)
 
-**History**:
+Milestones in the history of feedback control:
 - Float valves; Watt's fly-ball governor (1788).
 - Airy (1840) and Maxwell (1868): first stability analyses.
 - Routh (1877) and Lyapunov (1892): stability criteria.
@@ -237,9 +228,9 @@ Each action is studied alone (DAP3), with $G = B/A$:
 
 ![[amc_pid_actions_comparison.png|620]]
 
-Common variants are P, PD, PI and PID. Start simple and add terms as needed (DAP2). The gains must be chosen to guarantee stability.
+Common variants are P, PD, PI and PID. DAP2 favours starting simple and adding terms as needed. The gains must be chosen to guarantee stability.
 
-**The three closed loops, line by line.** With $G=B/A$ and $C$ a single action, multiply the top and bottom of $GC/(1+GC)$ by $A$ (and by $s$ when $C$ contains $1/s$):
+To derive the three closed loops with $G=B/A$ and $C$ a single action, multiply the top and bottom of $GC/(1+GC)$ by $A$ (and by $s$ when $C$ contains $1/s$):
 
 $$
 \text{P: }\frac{(B/A)K_P}{1+(B/A)K_P}=\frac{K_PB}{A+K_PB}
@@ -255,7 +246,7 @@ $$
 
 The I loop has one more power of $s$ in its denominator: integral action adds a closed-loop pole, so the order goes up by one.
 
-Why P leaves a steady-state error and I does not (final-value theorem; assumes the closed loop is stable). The error is $E=R-X$, so
+The final-value theorem (which assumes the closed loop is stable) shows why P leaves a steady-state error and I does not. The error is $E=R-X$, so
 
 $$
 \frac{E}{R}=1-\frac{GC}{1+GC}=\frac{1}{1+GC}
@@ -267,12 +258,11 @@ $$
 e_\infty=\lim_{s\to0}s\cdot\frac1s\cdot\frac{1}{1+G(s)C(s)}=\frac{1}{1+G(0)C(0)}
 $$
 
-- **P:** $C(0)=K_P$, so $e_\infty=1/(1+K_PG(0))$. It shrinks as $K_PG(0)$ grows but is never zero for a finite gain.
-- **I (or PI):** $C(s)$ contains $K_I/s$, so $C(0)\to\infty$ and $e_\infty=0$. The integrator keeps changing its output for as long as any error remains, so the only possible steady state is zero error.
+Under P control $C(0)=K_P$, so $e_\infty=1/(1+K_PG(0))$, which shrinks as $K_PG(0)$ grows but is never zero for a finite gain. Under I (or PI) control $C(s)$ contains $K_I/s$, so $C(0)\to\infty$ and $e_\infty=0$. The integrator keeps changing its output for as long as any error remains, so the only possible steady state is zero error.
 
 ### Worked example: P leaves an error, PI removes it
 
-*(Suggested, not lecturer-set.)* Use the lecture plant $G(s)=q/\eta=-1.39(s+0.306)/(s^2+0.805s+1.325)$.
+*(Suggested, not lecturer-set.)* The plant is the one used throughout Part B, $G(s)=q/\eta=-1.39(s+0.306)/(s^2+0.805s+1.325)$.
 
 - Static gain: $G(0)=-1.39\times0.306/1.325=-0.321$. It is negative, so the gains must be negative too ([[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process#1. Allowable gain signs (L2.07)|B4 §1]]).
 - P with $K_P=-3$: $K_PG(0)=0.963$, so the closed-loop DC gain is $0.963/1.963=0.491$ and $e_\infty=0.509$: half the commanded pitch rate is missing.
@@ -282,16 +272,11 @@ $$
 ![[amc_p_vs_pi_steady_state.png|760]]
 
 > [!check] Numerical check (Python, `scipy.signal.step`)
-> The P responses settle at 0.243, 0.491 and 0.762 for $K_P=-1,-3,-10$, exactly $K_PG(0)/(1+K_PG(0))$. ✓ The PI response reaches 1, but slowly: its slowest pole is at $-0.126$, a time constant of 8 s. That is the "I makes it sluggish" point from L2.03 (ll. 334–354). The early spike in every curve comes from the plant zero at $-0.306$.
+> The P responses settle at 0.243, 0.491 and 0.762 for $K_P=-1,-3,-10$, exactly $K_PG(0)/(1+K_PG(0))$. ✓ The PI response reaches 1, but slowly: its slowest pole is at $-0.126$, a time constant of 8 s. Integral action makes the response sluggish (L2.03, ll. 334–354). The early spike in every curve comes from the plant zero at $-0.306$.
 
-> [!info] What each term does, in the lecturer's words (L2.03)
-> - At time zero the error is largest, the integral has had no time to build up and the derivative starts from zero, so P does the early work (ll. 159–169).
-> - P changes the closed-loop natural frequency, hence rise time and settling time, and a little of the damping. Push it too far and you excite oscillations (ll. 276–308).
-> - I adds a closed-loop root at the origin. In the demo the response time-scale stretched from about 8 s (P) to 60 s (I), so it makes the system sluggish (ll. 334–354).
-> - D alone does not move $\omega_n$ and does not remove steady-state error. Its job is to pull the phase away from −180° and damp oscillation (ll. 377–399). It is shown combined with a fixed $K_P = 3$ because D on its own is not useful.
-> - As a rule of thumb, $K_P$ is usually the largest gain; $K_I$ and $K_D$ are typically one to two orders of magnitude smaller (ll. 359–363).
-> - Integrator wind-up arises because a digital accumulator saturates, which can destabilise the loop (ll. 412–417).
-> - PD or PI is often enough, and two gains are easier to tune than three. Start with P and add terms (ll. 422–436).
+At time zero the error is largest, the integral has had no time to build up and the derivative starts from zero, so P does the early work (L2.03, ll. 159–169). P changes the closed-loop natural frequency, hence rise time and settling time, and a little of the damping; pushed too far, it excites oscillations (ll. 276–308). I adds a closed-loop root at the origin; in the example the response time-scale stretched from about 8 s (P) to 60 s (I), so integral action makes the system sluggish (ll. 334–354). Integrator wind-up arises because a digital accumulator saturates, which can destabilise the loop (ll. 412–417).
+
+D alone does not move $\omega_n$ and does not remove steady-state error. Its job is to pull the phase away from −180° and damp oscillation (ll. 377–399), and in the example it is combined with a fixed $K_P = 3$ because D on its own is not useful. As a rule of thumb, $K_P$ is usually the largest gain, and $K_I$ and $K_D$ are typically one to two orders of magnitude smaller (ll. 359–363). PD or PI is often enough, and two gains are easier to tune than three, so the usual order is to start with P and add terms (ll. 422–436).
 
 > [!example] Satellite 1-DoF attitude via a reaction wheel (L2.03 demo)
 > Plant: $G(s) = \Psi/U = \dfrac{1}{I_{zz}s^2}$ (double integrator).
@@ -304,7 +289,7 @@ $$
 
 Open loop (L2.03, ll. 480–497): a step in wheel speed makes the satellite spin the opposite way, so the yaw angle grows without bound. The double integrator has a −40 dB/decade magnitude and a constant −180° phase, so tracking is impossible without feedback.
 
-Choosing $k_p$ and $k_d$ by matching a standard second-order system (the lecturer calls this loop shaping, ll. 505–517). Let $\rho = I_{zz-wh}/I_{zz}$. Divide the denominator of $T(s)$ by $I_{zz}$:
+Choosing $k_p$ and $k_d$ by matching a standard second-order system (loop shaping). Let $\rho = I_{zz-wh}/I_{zz}$. Divide the denominator of $T(s)$ by $I_{zz}$:
 
 $$
 s^2-\rho k_ds-\rho k_p
@@ -325,46 +310,13 @@ So $k_p$ sets the natural frequency and $k_d$ the damping. Both gains come out n
 > [!check] Demo numbers (computed from the expressions above)
 > The demo used $\rho = 0.05$, $\zeta = 1$ and $\omega_n = 1.8$ rad/s (ll. 478–479, 521–522). Then $k_p = -1.8^2/0.05 = -64.8$ and $k_d = -2\times1\times1.8/0.05 = -72$. Lowering $\zeta$ to 0.5 gives an oscillatory response with a resonant peak in the closed-loop Bode plot; $\zeta = 2.5$ gives an overdamped response (ll. 530–537).
 
-## Lecturer emphasis and exam hints (transcripts)
+## Exam scope
 
-> [!info] Exam scope and admin
-> - "I'm not thinking of including any derivations on the exam" (L2.03, l. 6), referring to the closed-loop and SPO transfer-function derivations above.
-> - Cons of model-based and rule-based control are a possible exam question (L2.02, ll. 184–187).
-> - The closed-loop SPO transfer functions for $q$ and $\theta$ are the ones used for the rest of Part B and the second computer lab (L2.02, ll. 464–465, 483).
-> - The satellite PD Jupyter notebook was put on Blackboard; it is based on Franklin et al. Example 2.3 (L2.03, ll. 439–464, 540).
-> - CubeSat project: tracking a light is a tracking objective on top of stability (L2.01, ll. 609–612).
-
-## Transcript slips
-
-> [!warning] Speech-to-text and spoken slips, with the correct version
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L2.01, l. 226 | "a comfortable system is the Watt-stream engine" | a control system: Watt's steam engine |
-> | L2.01, l. 535 | "vertical velocity on the poliaxis" | along the body $z$-axis |
-> | L2.01, l. 562 | the controller "is going to take the error as an output" | takes the error as its input |
-> | L2.01, l. 571 | "perturbations via ghosts" | gusts |
-> | L2.01, l. 602 | "we want the system to become unstable" | we do not want it to become unstable |
-> | L2.01, l. 604 | "a viable or bounded input, bounded output" | BIBO stability |
-> | L2.02, ll. 165–167 | "domain analyzation", "domain-domain-dominalization" | domain randomisation |
-> | L2.02, l. 172 | "deflecting one of the error runs" | one of the ailerons |
-> | L2.02, l. 253 | "this should be X SPO" | slide correction: $\mathbf x_{SPO} = [w,\ q]^T$ |
-> | L2.02, ll. 283, 312 | "adjoint of S I minus I", "the I joint" | $\mathrm{adj}(s\mathbf I-\mathbf A)$ |
-> | L2.02, l. 323 | "S cubed SPO times minus M W SPO" | $(-z_q)(-m_w)$ |
-> | L2.02, l. 368 | "the adjoint of matrix F is now the thing that F22 …" | $\mathrm{adj}\,\mathbf F = \begin{bmatrix}F_{22}&-F_{12}\\-F_{21}&F_{11}\end{bmatrix}$ |
-> | L2.02, ll. 403–408 | "D of the SPO is Z, eta, and beta" | $\mathbf B_{SPO} = [z_\eta,\ m_\eta]^T$ |
-> | L2.02, l. 472 | "this should have been theta, apologies. And this should have been s here" | slide correction in the $\theta$ closed-loop TF |
-> | L2.03, l. 62 | "go to the nearest law" | the nearest loo (cistern float valve) |
-> | L2.03, l. 97 | "Edward Ruth and Adolf Horwitz" | Edward Routh and Adolf Hurwitz |
-> | L2.03, ll. 108–117 | "Bodhi … was actually working at NACA" | Hendrik Bode, who worked at Bell Telephone Laboratories, as did Nyquist |
-> | L2.03, ll. 126–127 | "Calendar developed a method called the root locus" | Callender et al. (1936) formalised PID; the root locus is Evans's (1948), as the next slide says (l. 131) |
-> | L2.03, l. 256 | "Kp E of s by 1 plus Kp E of s" | $K_PB(s)/[A(s)+K_PB(s)]$ |
-> | L2.03, l. 266 | the characteristic polynomial "is the numerator of this equation" | the denominator |
-> | L2.03, l. 350 | "that extra zero, sorry … that extra pull" | the extra pole at the origin |
-> | L2.03, l. 377 | "this other pole that we are now injecting to the numerator" | the extra zero ($s$ in the numerator) |
-> | L2.03, l. 414 | "integrator window" | integrator wind-up |
-> | L2.03, ll. 489, 491 | "the jaw angle" | the yaw angle |
-> | L2.03, l. 507 | "divide … by I set set" | by $I_{zz}$ |
-> | L2.03, l. 536 | "about 1.5 … sorry, 1.8" | $\omega_n = 1.8$ rad/s |
+- The closed-loop and SPO transfer-function derivations above are not examined (L2.03, l. 6).
+- Cons of model-based and rule-based control are a possible exam question (L2.02, ll. 184–187).
+- The closed-loop SPO transfer functions for $q$ and $\theta$ are the ones used for the rest of Part B and the second computer lab (L2.02, ll. 464–465, 483).
+- The satellite PD Jupyter notebook (on Blackboard) is based on Franklin et al. Example 2.3 (L2.03, ll. 439–464, 540).
+- CubeSat project: tracking a light is a tracking objective on top of stability (L2.01, ll. 609–612).
 
 ## Terminology and alternative names
 
@@ -400,8 +352,8 @@ Three tasks were set in L2.01–L2.03 (marked lecturer-set). No derivations are 
 
 ### Core
 
-- [ ] Lecturer-set (L2.01, ll. 671–687, working promised for upload): derive $X/R$ for the full loop with $H(s)$, process noise and measurement noise. → [[#3. Closed-loop transfer function]]
-- [ ] Lecturer-set (L2.03, l. 539, "I'm going to let you play with this simulation"): in the satellite notebook, vary $\zeta$ and $\omega_n$ and relate the response to $k_p$ and $k_d$. → [[#4. PID control (L2.03)]]
+- [ ] Lecturer-set (L2.01, ll. 671–687): derive $X/R$ for the full loop with $H(s)$, process noise and measurement noise. → [[#3. Closed-loop transfer function]]
+- [ ] Lecturer-set (L2.03, l. 539): in the satellite notebook, vary $\zeta$ and $\omega_n$ and relate the response to $k_p$ and $k_d$. → [[#4. PID control (L2.03)]]
 - [ ] Give two cons each of model-based and rule-based control (possible exam question). → [[#2. Control classifications (L2.02)]]
 - [ ] For $G = B/A$, write the closed-loop characteristic polynomials for P, I and D and say which specification each gain moves (suggested). → [[#4. PID control (L2.03)]]
 - [ ] Find the steady-state error of the lecture plant under P and PI control (suggested). → [[#Worked example: P leaves an error, PI removes it]]
@@ -410,5 +362,39 @@ Three tasks were set in L2.01–L2.03 (marked lecturer-set). No derivations are 
 
 ### Further practice
 
-- [ ] Lecturer-set (L2.02, ll. 466–468, "if you follow the same procedure … for a 3×3 matrix, 4×4 matrix"): repeat the $\mathbf C\,\mathrm{adj}(s\mathbf I-\mathbf A)\mathbf B$ method for the $2\times2$ SPO, then try a $3\times3$. → [[#SPO approximation with elevator input]]
+- [ ] Lecturer-set (L2.02, ll. 466–468): repeat the $\mathbf C\,\mathrm{adj}(s\mathbf I-\mathbf A)\mathbf B$ method for the $2\times2$ SPO, then try a $3\times3$. → [[#SPO approximation with elevator input]]
 - [ ] Prove $e_\infty=1/(1+G(0)C(0))$ with the final-value theorem and show why an integrator forces it to zero (suggested). → [[#4. PID control (L2.03)]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Speech-to-text and spoken slips, with the correct version
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L2.01, l. 226 | "a comfortable system is the Watt-stream engine" | a control system: Watt's steam engine |
+> | L2.01, l. 535 | "vertical velocity on the poliaxis" | along the body $z$-axis |
+> | L2.01, l. 562 | the controller "is going to take the error as an output" | takes the error as its input |
+> | L2.01, l. 571 | "perturbations via ghosts" | gusts |
+> | L2.01, l. 602 | "we want the system to become unstable" | we do not want it to become unstable |
+> | L2.01, l. 604 | "a viable or bounded input, bounded output" | BIBO stability |
+> | L2.02, ll. 165–167 | two garbled forms of the term | domain randomisation |
+> | L2.02, l. 172 | "deflecting one of the error runs" | one of the ailerons |
+> | L2.02, l. 253 | "this should be X SPO" | slide correction: $\mathbf x_{SPO} = [w,\ q]^T$ |
+> | L2.02, ll. 283, 312 | "adjoint of S I minus I", "the I joint" | $\mathrm{adj}(s\mathbf I-\mathbf A)$ |
+> | L2.02, l. 323 | "S cubed SPO times minus M W SPO" | $(-z_q)(-m_w)$ |
+> | L2.02, l. 368 | "the adjoint of matrix F is now the thing that F22 …" | $\mathrm{adj}\,\mathbf F = \begin{bmatrix}F_{22}&-F_{12}\\-F_{21}&F_{11}\end{bmatrix}$ |
+> | L2.02, ll. 403–408 | "D of the SPO is Z, eta, and beta" | $\mathbf B_{SPO} = [z_\eta,\ m_\eta]^T$ |
+> | L2.02, l. 472 | "this should have been theta, apologies. And this should have been s here" | slide correction in the $\theta$ closed-loop TF |
+> | L2.03, l. 62 | "go to the nearest law" | the nearest loo (cistern float valve) |
+> | L2.03, l. 97 | "Edward Ruth and Adolf Horwitz" | Edward Routh and Adolf Hurwitz |
+> | L2.03, ll. 108–117 | "Bodhi … was actually working at NACA" | Hendrik Bode, who worked at Bell Telephone Laboratories, as did Nyquist |
+> | L2.03, ll. 126–127 | "Calendar developed a method called the root locus" | Callender et al. (1936) formalised PID; the root locus is Evans's (1948), as the next slide says (l. 131) |
+> | L2.03, l. 256 | "Kp E of s by 1 plus Kp E of s" | $K_PB(s)/[A(s)+K_PB(s)]$ |
+> | L2.03, l. 266 | the characteristic polynomial "is the numerator of this equation" | the denominator |
+> | L2.03, l. 350 | "that extra zero, sorry … that extra pull" | the extra pole at the origin |
+> | L2.03, l. 377 | "this other pole that we are now injecting to the numerator" | the extra zero ($s$ in the numerator) |
+> | L2.03, l. 414 | "integrator window" | integrator wind-up |
+> | L2.03, ll. 489, 491 | "the jaw angle" | the yaw angle |
+> | L2.03, l. 507 | "divide … by I set set" | by $I_{zz}$ |
+> | L2.03, l. 536 | "about 1.5 … sorry, 1.8" | $\omega_n = 1.8$ rad/s |

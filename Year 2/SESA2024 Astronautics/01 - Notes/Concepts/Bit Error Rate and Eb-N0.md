@@ -29,5 +29,5 @@ Phase shift keying is the usual modulation because it keeps the carrier's power 
 
 ## Related
 
-- [[SESA2024 09 - Communications#7. From bit error rate to data rate|Bit error rate in the lecture note]]
+- [[SESA2024 09 - Communications#7. From bit error rate to data rate|Bit error rate in the topic note]]
 - [[Link Budget Equation]] · [[Payload Data Rate]]

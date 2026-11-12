@@ -8,46 +8,30 @@ tags: [feeg1002, concept, statics, beams, bending-stress]
 status: complete
 parent_lectures: ["[[FEEG1002 A4 - Engineer's Bending Theory and Second Moment of Area]]", "[[FEEG1002 A5 - Beam Deflection and Macaulay's Method]]"]
 related_concepts: ["[[Parallel Axis Theorem]]", "[[Second Moments of Area]]", "[[Moment Curvature Relation]]", "[[Section Modulus]]", "[[Shear Stress Distribution in Beams]]"]
-sources: []
+sources: ["Statics 1 Lectures 7-8"]
 ---
 
 # Engineer's Bending Theory
 
-## Definition
+Engineer's bending theory relates the bending moment $M$ on a beam section to the longitudinal stress it causes and to the curvature $1/R$ of the beam:
 
-> [!note] Definition
-> For a straight, linear elastic beam in bending where plane sections remain plane:
->
-> $$\frac{M}{I} = \frac{\sigma}{y} = \frac{E}{R},\qquad \sigma_{xx} = \frac{My}{I},\qquad I = \iint y^2\,dA$$
->
-> with $y$ measured from the **neutral axis**, which passes through the **centroid** of the section.
+$$
+\frac{M}{I_{zz}}=\frac{\sigma_{xx}}{y}=\frac{E}{R}
+$$
 
-## Explanation
+with $y$ measured downwards from the neutral axis, which passes through the centroid of the section.
 
-- **Kinematics**: $\varepsilon = y/R$, linear through the depth.
-- **Force equilibrium**: $\iint y\,dA = 0$, so the neutral axis is at the centroid.
-- **Moment equilibrium**: $M = (E/R)\iint y^2\,dA = EI/R$.
-- The stress is zero on the neutral axis and largest at the fibres furthest from it. For unsymmetric sections, check tension and compression $y_{max}$ separately.
-- $1/R = M/EI$ is the [[Moment Curvature Relation]] used for deflection.
-- Validity:
-  - pure bending, though accurate with shear for slender beams;
-  - small curvature, and bending about a principal axis (symmetric section);
-  - equal $E$ in tension and compression, and linear elasticity (no yielding).
-- **Superposition**: $\sigma = P/A + My/I$ for combined axial load and bending.
+The result rests on one kinematic assumption: plane cross-sections stay plane and normal to the bent axis. A fibre at distance $y$ from the neutral surface then has length $(R+y)\,d\theta$ against $R\,d\theta$ on the neutral surface, so its strain is $\varepsilon_{xx}=y/R$, linear through the depth. With linear elastic material and the same $E$ in tension and compression, the stress is $\sigma_{xx}=Ey/R$.
 
-## Examples
+Two equilibrium conditions finish the derivation. In pure bending there is no axial force, so $\int\sigma_{xx}\,dA=(E/R)\int y\,dA=0$: the neutral axis passes through the centroid. The stresses must add up to the applied moment, so $M=(E/R)\int y^2\,dA=EI_{zz}/R$, which defines the second moment of area and gives the relation above. Dropping $R$ gives the working form $\sigma_{xx}=My/I_{zz}$.
 
-- Rectangular cantilever with end load: $\sigma_{max} = \pm6FL/bd^2$.
-- Inverted T (Tutorial 4 Q3): the top fibre at 71.3 mm governs, giving $F_{max} = 8.33$ kN.
+The stress is zero on the neutral axis and largest at the fibre furthest from it. For a section with only one axis of symmetry the two extreme fibres are at different distances, so tension and compression must be checked separately, and for a material weaker in one of them the orientation of the section matters. The theory is derived for pure bending, but it stays accurate for slender beams carrying shear. An axial load adds a uniform $P/A$ on top of $My/I_{zz}$ by superposition. The other half of the result, $1/R=M/EI$, is the [[Moment Curvature Relation]] that turns a bending moment diagram into a deflection.
 
-![[s1_bending_stress_tsection.png|760]]
+![[s1_bending_strain_geometry.png|860]]
 
 ## Related
 
-- Topic notes: [[FEEG1002 A4 - Engineer's Bending Theory and Second Moment of Area]] · [[FEEG1002 A5 - Beam Deflection and Macaulay's Method]]
-- Concepts: [[Parallel Axis Theorem]] · [[Second Moments of Area]] · [[Moment Curvature Relation]] · [[Section Modulus]] · [[Shear Stress Distribution in Beams]]
-- Year 2: Coupled bending of unsymmetric sections, $\sigma = \frac{M_zI_{yy} - M_yI_{yz}}{I_{yy}I_{zz}-I_{yz}^2}y + \dots$, in [[Unsymmetrical Bending]] ([[SESA2028 S1 - Section Properties and Unsymmetrical Bending]])
-
-## Sources
-
-- Statics 1 Lectures 7a–c
+- Derivation: [[FEEG1002 A4 - Engineer's Bending Theory and Second Moment of Area#1. Deformation in pure bending|A4, deformation in pure bending]] and [[FEEG1002 A4 - Engineer's Bending Theory and Second Moment of Area#2. Equilibrium of the cross-section|A4, equilibrium of the cross-section]]
+- Use: [[FEEG1002 A4 - Engineer's Bending Theory and Second Moment of Area#4. Strength of a beam of uniform section|A4, strength of a beam]] · [[FEEG1002 A5 - Beam Deflection and Macaulay's Method#Moment and curvature|A5, moment and curvature]] · [[FEEG1002 Statics 1 Tutorial 4 - Bending Stress and Second Moment of Area Solutions]]
+- Concepts: [[Parallel Axis Theorem]] · [[Second Moments of Area]] · [[Section Modulus]] · [[Shear Stress Distribution in Beams]]
+- Year 2: unsymmetric sections, where the neutral axis is no longer parallel to the moment axis, in [[Unsymmetrical Bending]] ([[SESA2028 S1 - Section Properties and Unsymmetrical Bending]])

@@ -30,5 +30,5 @@ The lateral modes are developed dynamically in [[SESA3047 Advanced Aerospace Mec
 
 ## Related
 
-- Full derivation and worked examples: [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#6. Lateral and directional stability (25 Nov lecture)|T6 §6]]
+- Full derivation and worked examples: [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#6. Lateral and directional stability|T6 §6]]
 - [[Neutral Point and Static Margin]]

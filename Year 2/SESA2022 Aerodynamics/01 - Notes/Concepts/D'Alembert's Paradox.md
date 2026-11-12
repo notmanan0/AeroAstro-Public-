@@ -17,7 +17,7 @@ In steady, inviscid, incompressible, irrotational two-dimensional flow, a closed
 
 For the cylinder, $C_p = 1-4\sin^2\theta$ is symmetric about $\theta = 90^\circ$, so the pressure at the front stagnation point is exactly balanced by the pressure at the rear one and $D' = -\oint p\cos\theta\,R\,d\theta = 0$ ([[SESA2022 Exam 2016-17 Solutions]] Q1(ii) does the integration). Adding circulation produces lift, $L' = \rho V_\infty\Gamma$, but still no drag.
 
-Prandtl resolved the paradox in 1904. Viscosity is confined to a thin boundary layer, but that layer separates under the adverse pressure gradient at the rear, so the rear pressure never recovers. The resulting pressure imbalance is form drag, and the wall shear adds skin-friction drag. The lesson for using potential flow is that it predicts lift and the pressures on forward-facing surfaces well, but not drag or the leeward side of a bluff body, which is the point of the validity comments in the hangar and dune questions ([[SESA2022 Exam 2018-19 Solutions]], [[SESA2022 Exam 2023-24 Solutions]]).
+Prandtl resolved the paradox in 1904. Viscosity is confined to a thin boundary layer, but that layer separates under the adverse pressure gradient at the rear, so the rear pressure never recovers. The resulting pressure imbalance is form drag, and the wall shear adds skin-friction drag. Potential flow therefore predicts lift and the pressures on forward-facing surfaces well, but not drag or the leeward side of a bluff body, which is the point of the validity comments in the hangar and dune questions ([[SESA2022 Exam 2018-19 Solutions]], [[SESA2022 Exam 2023-24 Solutions]]).
 
 ## Related
 

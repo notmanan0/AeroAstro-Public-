@@ -13,29 +13,23 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W22-23 AC Analysis 02 - Impedance and 
 
 # Complex Impedance
 
-## Definition
+Complex impedance $Z$ is the ratio of voltage phasor to current phasor for a component or network in sinusoidal steady state, $\mathbf V=Z\mathbf I$. It generalises Ohm's law to AC, with the three basic elements giving
 
-> [!note] Definition
->
-> $$\mathbf V = Z\mathbf I,\qquad Z = R + jX,\qquad Z_R = R,\quad Z_L = j\omega L,\quad Z_C = \frac{1}{j\omega C} = -\frac{j}{\omega C}$$
+$$
+Z=R+jX,\qquad Z_R=R,\qquad Z_L=j\omega L,\qquad Z_C=\frac{1}{j\omega C}=-\frac{j}{\omega C}.
+$$
 
-## Explanation
-- The real part is **resistance** and the imaginary part is **reactance** (opposition to AC through energy storage).
-- **CIVIL**: a capacitor has I leading V; an inductor has V leading I (both by 90°).
-- $X > 0$ means an **inductive** load (current lags); $X < 0$ a **capacitive** load (current leads). What matters is the net reactance.
-- Frequency limits: L is a short at DC and open at high frequency; C is open at DC and a short at high frequency.
-- Series and parallel rules, dividers and every DC theorem carry over with complex arithmetic.
+The real part is the **resistance** and the imaginary part is the **reactance**, the opposition to AC that comes from energy storage. In a capacitor the current leads the voltage by $90^\circ$, and in an inductor the voltage leads the current by $90^\circ$; the mnemonic CIVIL (C: I before V; V before I: L) holds both. A network with net $X>0$ is an inductive load, in which the current lags, and one with $X<0$ is a capacitive load, in which it leads. Only the net reactance decides which.
+
+The frequency limits follow from $\omega L$ and $1/\omega C$. An inductor is a short circuit at DC and an open circuit at high frequency; a capacitor is open at DC and a short at high frequency. Series and parallel rules, dividers and every DC network theorem carry over unchanged, with complex arithmetic in place of real.
 
 ![[ee_d2_reactance_frequency.png|640]]
 
-## Examples
-- Tutorial 7 Q3: 200 Ω + 150 mH + 2 µF at 400 Hz gives 268∠41.7° Ω.
-- Niu Ex. 1: 3.6 + j4.8 − j6.25 = 3.88∠−21.9° Ω.
+In Tutorial 7 Q3, $200\ \Omega$ in series with $150\ \mathrm{mH}$ and $2\ \mu\mathrm F$ at $400\ \mathrm{Hz}$ gives $268\angle41.7^\circ\ \Omega$. In Niu Ex. 1, $3.6+j4.8-j6.25=3.88\angle-21.9^\circ\ \Omega$.
 
 ## Related
-- Topic notes: [[FEEG1004 D2 - Impedance and Phasor Circuit Analysis]]
-- Concepts: [[Capacitance]] · [[Inductance]] · [[Phasor Representation]] · [[RC Low-Pass and High-Pass Filters]]
-- Year 2: [[Transfer Function]]
 
-## Sources
-- AC Analysis 02–03 slides; Niu AC notes (Figs 11–19)
+- [[FEEG1004 D2 - Impedance and Phasor Circuit Analysis]]
+- [[Capacitance]] · [[Inductance]] · [[Phasor Representation]] · [[RC Low-Pass and High-Pass Filters]]
+- Year 2: [[Transfer Function]]
+- Sources: AC Analysis 02–03 slides; Niu AC notes (Figs 11–19)

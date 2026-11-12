@@ -18,7 +18,7 @@ On a flat Earth, with the velocity in FRD and $\mathbf F$ the non-gravitational 
 
 $$\boxed{\dot{\mathbf v}=\mathbf F/m+\mathbf C_{FRD/NED}[0,0,g]^T-\boldsymbol\omega\times\mathbf v.}$$
 
-Newton gives $\mathbf a=\mathbf F/m+\mathbf g$, and the [[Transport Theorem]] gives $\mathbf a^{FRD}=\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v$. Equate the two, rotate gravity into FRD, and move the coordinate-rotation term across. As lectured (L13 ll. 243–278) it takes four moves: Newton in the inertial frame; on a rotating Earth this adds centrifugal and Coriolis terms; the flat-Earth assumption ($\boldsymbol\omega_{e/i}=\mathbf 0$) removes them; and the body-frame derivative adds $\boldsymbol\omega_{b/e}\times\mathbf v$. The last step, which the lecturer nearly forgot, is that $[0,0,g]^T$ is only valid in NED and has to be rotated with $\mathbf C_{FRD/NED}$ (ll. 289–303):
+Newton gives $\mathbf a=\mathbf F/m+\mathbf g$, and the [[Transport Theorem]] gives $\mathbf a^{FRD}=\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v$. Equate the two, rotate gravity into FRD, and move the coordinate-rotation term across. It takes four moves: Newton in the inertial frame; on a rotating Earth this adds centrifugal and Coriolis terms; the flat-Earth assumption ($\boldsymbol\omega_{e/i}=\mathbf 0$) removes them; and the body-frame derivative adds $\boldsymbol\omega_{b/e}\times\mathbf v$. Gravity needs a separate step: $[0,0,g]^T$ is valid only in NED and has to be rotated with $\mathbf C_{FRD/NED}$:
 
 $$
 \mathbf g^{FRD}=g[-\sin\theta,\ \sin\phi\cos\theta,\ \cos\phi\cos\theta]^T.

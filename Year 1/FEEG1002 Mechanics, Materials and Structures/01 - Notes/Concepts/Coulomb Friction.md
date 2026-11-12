@@ -3,47 +3,35 @@ title: "Coulomb Friction"
 module: "FEEG1002 Mechanics, Materials and Structures"
 type: concept
 stream: "Part D: Dynamics"
-aliases: ["static friction", "kinetic friction", "dry friction", "mu_s N", "mu_k N", "impending motion"]
+aliases: ["static friction", "kinetic friction", "dry friction", "mu_s N", "mu_k N", "impending motion", "sliding friction", "coefficient of friction"]
 tags: [feeg1002, concept, dynamics, friction]
 status: complete
-parent_lectures: ["[[FEEG1002 D1 - Linear Motion of Particles]]", "[[FEEG1002 D8 - Kinetics of Rigid Bodies]]", "[[FEEG1002 D9 - Work and Energy for Rigid Bodies]]"]
+date: 2026-11-05
+parent_lectures: ["[[FEEG1002 D1 - Linear Motion of Particles]]", "[[FEEG1002 D3 - Work, Energy and Power]]", "[[FEEG1002 D8 - Kinetics of Rigid Bodies]]", "[[FEEG1002 D9 - Work and Energy for Rigid Bodies]]"]
 related_concepts: ["[[Newton's Laws of Motion]]", "[[Rolling Without Slip]]", "[[Work-Energy Principle]]"]
-sources: []
+sources: ["02 - Sources/Dynamics/Lectures/Lecture 01 - Linear Motion.pdf", "02 - Sources/Dynamics/Lectures/Lecture 08 - Kinetics of Rigid Bodies.pdf"]
 ---
 
 # Coulomb Friction
 
-## Definition
+Coulomb friction is the standard model of dry friction between unlubricated surfaces: while they do not slide, the friction force is whatever equilibrium or the equation of motion requires, up to a limit $\mu_sN$; once they slide, it is $\mu_kN$ and opposes the sliding.
 
-> [!note] Definition
-> - **No sliding**: $F_s \le \mu_sN$. $F_s$ comes from equilibrium or the equation of motion; $\mu_sN$ is only its **limit** (impending motion).
-> - **Sliding**: $F_k = \mu_kN$, opposing the relative sliding velocity, with usually $\mu_k < \mu_s$.
+$$
+F_s\le\mu_sN\quad\text{(no sliding)},\qquad F_k=\mu_kN\quad\text{(sliding)}
+$$
 
-## Explanation
+Here $N$ is the normal reaction and in general $\mu_k<\mu_s$. The coefficients are taken as independent of contact area, load and speed. As the applied force on a block rises from zero, friction follows it with slope 1 up to $\mu_sN$, the point of impending sliding, then drops to the constant $\mu_kN$ once the block moves. The model does not describe a rolling tyre on a road.
 
-- Friction is independent of contact area and sliding speed. It is a model for dry, unlubricated surfaces; car tyres violate it.
-- **Assume, then check**:
-  1. Assume no slip and solve for the friction needed.
-  2. If $F > \mu_sN$, redo with $F = \mu_kN$ in the direction that opposes sliding.
-- Rolling wheels and blocks on accelerating trucks both need this check.
-- **Work**:
-  - kinetic friction always does **negative** work, $-\mu_kN\times$ sliding distance, and is non-conservative;
-  - static friction usually does none (its point does not move), except when it drags a body along, as with the crate on a truck.
-- A block on an incline stays at rest if $\tan\theta\le\mu_s$.
+The inequality cannot be used to calculate the static friction force. That force comes from equilibrium (or from the equations of motion of a body that is not sliding at the contact) and is then checked against $\mu_sN$. Writing $F_s=\mu_sN$ into an equation of motion is the most common error, and the same holds for a wheel assumed to roll without slip. The procedure is to assume no slip, solve for the friction needed, and check it. For the lawn roller of D8 the no-slip solution needs 94.3 N but only $\mu_sN=81.0$ N is available, so the roller slips and the friction becomes $\mu_kN=67.5$ N, directed against the sliding at the contact.
 
-## Examples
+The direction of static friction on a wheel depends on the drive: a wheel turned by a torque at its axle gets forward friction, while one pulled at its centre gets backward friction, which is what makes it turn.
 
-- **Tutorial 1 Q10**: $F_0 = mg(\sin15° + \mu_s\cos15°) = 316.5$ N for impending motion up the slope.
-- **Lawn roller** (Lecture 8): no slip needs 94.3 N but only $\mu_sN = 81.0$ N is available, so it slips.
+Kinetic friction always does negative work, $-\mu_kNs$ over a sliding distance $s$, and is non-conservative; for a slipping wheel the distance is the slippage distance at the contact. Static friction usually does no work because its point of application does not move relative to the surface. A crate carried by an accelerating lorry is the exception: friction does positive work on the crate and equal negative work on the lorry, none for the pair.
 
 ![[d_coulomb_friction.png|760]]
 
 ## Related
 
-- Topic notes: [[FEEG1002 D1 - Linear Motion of Particles]] · [[FEEG1002 D8 - Kinetics of Rigid Bodies]] · [[FEEG1002 D9 - Work and Energy for Rigid Bodies]]
-- Concepts: [[Newton's Laws of Motion]] · [[Rolling Without Slip]] · [[Work-Energy Principle]]
-- Year 2: Friction and wear in [[SESA2028 M3 - Corrosion, Wear and Surface Engineering]] · non-linear (Coulomb) damping vs the viscous model in [[FEEG1002 D6 - Single Degree of Freedom Vibration]]
-
-## Sources
-
-- Dynamics Lecture 1.3, 8.3, 9.2
+- [[FEEG1002 D1 - Linear Motion of Particles#Dry friction|dry friction in D1]] · [[FEEG1002 D1 - Linear Motion of Particles#Block pulled through a pulley|block at impending sliding]] · [[FEEG1002 D3 - Work, Energy and Power#Work of friction|work of friction]] · [[FEEG1002 D3 - Work, Energy and Power#Block sliding down a rough incline|rough incline]] · [[FEEG1002 D3 - Work, Energy and Power#Friction and heat|friction and heat]] · [[FEEG1002 D8 - Kinetics of Rigid Bodies#Rolling with and without slip|rolling with and without slip]] · [[FEEG1002 D8 - Kinetics of Rigid Bodies#Lawn roller pushed along the ground|lawn roller]] · [[FEEG1002 D9 - Work and Energy for Rigid Bodies#Rolling wheels|work on rolling wheels]]
+- [[Newton's Laws of Motion]] · [[Rolling Without Slip]] · [[Work-Energy Principle]]
+- Year 2: friction and wear of surfaces in [[SESA2028 M3 - Corrosion, Wear and Surface Engineering]]

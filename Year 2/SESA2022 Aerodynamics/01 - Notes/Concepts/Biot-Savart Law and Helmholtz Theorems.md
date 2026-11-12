@@ -33,5 +33,5 @@ which [[SESA2022 Exam 2018-19 Solutions]] Q3(i) evaluates for the elliptic distr
 
 ## Related
 
-- Full derivation and worked examples: [[SESA2022 T5 - Finite Wing Theory#1. Definitions and vortex theorems (6 Nov lecture)|T5 §1]]
+- Full derivation and worked examples: [[SESA2022 T5 - Finite Wing Theory#1. Definitions and vortex theorems|T5 §1]]
 - [[Downwash and Induced Drag]] · [[Kelvin's Circulation Theorem]] · [[Elliptic Lift Distribution]]

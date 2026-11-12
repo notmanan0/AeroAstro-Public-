@@ -21,7 +21,7 @@ Each component of $\mathbf u\times\mathbf v=[u_yv_z-u_zv_y,\ u_zv_x-u_xv_z,\ u_x
 
 The matrix is skew-symmetric, $\tilde{\mathbf u}^T=-\tilde{\mathbf u}$, with a zero diagonal and three independent entries. It satisfies $\tilde{\mathbf u}\mathbf u=\mathbf 0$ and $\tilde{\mathbf u}\mathbf v=-\tilde{\mathbf v}\mathbf u$, and from the BAC−CAB rule, $\tilde{\boldsymbol\omega}^2=\boldsymbol\omega\boldsymbol\omega^T-\omega^2\mathbf I$, so $\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf r)=-\omega^2\mathbf r$ when $\boldsymbol\omega\perp\mathbf r$.
 
-It turns up throughout the attitude work: a small rotation is $\mathbf C\approx\mathbf I-\widetilde{\delta\boldsymbol\Theta}$, and the DCM obeys $\dot{\mathbf C}_{b/a}=-\tilde{\boldsymbol\omega}^b_{b/a}\mathbf C_{b/a}$.
+It appears in attitude kinematics: a small rotation is $\mathbf C\approx\mathbf I-\widetilde{\delta\boldsymbol\Theta}$, and the DCM obeys $\dot{\mathbf C}_{b/a}=-\tilde{\boldsymbol\omega}^b_{b/a}\mathbf C_{b/a}$.
 
 ## Related
 

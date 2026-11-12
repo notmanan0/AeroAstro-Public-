@@ -19,7 +19,7 @@ $$\frac{\mathrm d\Phi}{\mathrm dz}=u-iv,\qquad q=\left|\frac{\mathrm d\Phi}{\mat
 
 Note the minus sign: the imaginary part of $\mathrm d\Phi/\mathrm dz$ is $-v$.
 
-The derivative of a complex function only exists, independent of direction, if the Cauchy–Riemann equations hold: $\phi_x=\psi_y$ and $\phi_y=-\psi_x$. Those are just $u=\phi_x=\psi_y$ and $v=\phi_y=-\psi_x$. So $\phi$ and $\psi$ are both harmonic, their contours cross at right angles, and every analytic function is some potential flow. The main message of the 1 October lecture was that one ordinary derivative replaces two sets of partial derivatives.
+The derivative of a complex function only exists, independent of direction, if the Cauchy–Riemann equations hold: $\phi_x=\psi_y$ and $\phi_y=-\psi_x$. Those are just $u=\phi_x=\psi_y$ and $v=\phi_y=-\psi_x$. So $\phi$ and $\psi$ are both harmonic, their contours cross at right angles, and every analytic function is some potential flow. The single derivative $\mathrm d\Phi/\mathrm dz$ then carries what two sets of partial derivatives would otherwise.
 
 | Flow | $\Phi(z)$ |
 |---|---|

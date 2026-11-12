@@ -13,26 +13,21 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W02-1ab Electrostatics and Electric C
 
 # Electric Current and Electrical Power
 
-## Definition
+Electric current is the rate at which charge passes a point, and electrical power is the rate at which an element absorbs or supplies energy, equal to the voltage across it times the current through it.
 
-> [!note] Definition
->
-> $$I = \frac{dQ}{dt}\ [\mathrm{A} = \mathrm{C/s}],\qquad P = VI\ [\mathrm W],\qquad I = neAv_d$$
+$$
+I=\frac{dQ}{dt}\ [\mathrm A=\mathrm{C/s}],\qquad P=VI\ [\mathrm W],\qquad I=neAv_d.
+$$
 
-## Explanation
-- **Conventional current** is the direction positive charge would flow. Electrons in metals move the opposite way.
-- Drift velocity is only centimetres per **hour**. The signal propagates near light speed because the field is established that fast.
-- **Power into an element** is the voltage across it times the current through it. With a resistor, $P = I^2R = V^2/R$.
-- Sign convention: if the current enters the + terminal, the element **absorbs** power (a resistor, or a battery being charged). If it leaves the + terminal, the element supplies power.
+**Conventional current** is the direction positive charge would flow; the electrons in a metal move the opposite way. Their drift velocity $v_d$ is only centimetres per hour, yet a signal travels along a wire at close to the speed of light, because the electric field that drives the carriers is set up that fast.
 
-## Examples
-- 0.1 C of protons over 2 s is 0.05 A.
-- Tutorial 1 Q2(v): Sam's battery takes 40 A at 11 V = 440 W: 400 W to chemical storage and 40 W heat in $R_{ESR}$.
+For a resistor, combining $P=VI$ with Ohm's law gives $P=I^2R=V^2/R$. The sign of the power follows the passive convention: if the current enters an element's positive terminal, the element absorbs power (a resistor, or a battery being charged); if it leaves the positive terminal, the element supplies power.
+
+A flow of $0.1\ \mathrm C$ of protons in $2\ \mathrm s$ is a current of $0.05\ \mathrm A$. In Tutorial 1 Q2(v), Sam's battery takes $40\ \mathrm A$ at $11\ \mathrm V$, which is $440\ \mathrm W$: $400\ \mathrm W$ goes into chemical storage and $40\ \mathrm W$ is lost as heat in $R_{ESR}$.
 
 ## Related
-- Topic notes: [[FEEG1004 A1 - Electrostatics, Potential and Current]] · [[FEEG1004 A3 - DC Circuit Laws - Ohm, KCL, KVL and Dividers]]
-- Concepts: [[Ohm's Law and Resistivity]] · [[Active, Reactive and Apparent Power]]
-- Cross-module: [[Power and Efficiency]]
 
-## Sources
-- Recorded lecture 1b
+- [[FEEG1004 A1 - Electrostatics, Potential and Current]] · [[FEEG1004 A3 - DC Circuit Laws - Ohm, KCL, KVL and Dividers]]
+- [[Ohm's Law and Resistivity]] · [[Active, Reactive and Apparent Power]]
+- Cross-module: [[Power and Efficiency]]
+- Sources: Recorded lecture 1b

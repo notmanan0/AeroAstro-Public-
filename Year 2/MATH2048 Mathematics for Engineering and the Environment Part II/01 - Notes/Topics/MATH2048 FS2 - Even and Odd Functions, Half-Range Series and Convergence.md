@@ -33,11 +33,11 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 6.txt", "02 - Sources/Lectures
 > - **Common mistakes:** using $\frac1L$ instead of $\frac2L$ for a half-range series; evaluating a series at a hidden discontinuity and quoting $f$ instead of the average.
 > - **Practise:** [[#Example: f = x on the interval from 0 to π, three ways]] · [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series|PS3 Q2]]
 
-Lecture 5 calculated every coefficient by brute force and found that many of them came out zero. That wasn't luck: it happened because the functions were even or odd, and noticing the symmetry first saves half the work (L6, ll. 1–4). The sine is odd and the cosine even, so an even function has nothing in common with the sines and an odd function nothing in common with the cosines.
+Many of the coefficients computed by brute force in [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae|FS1]] are zero. This is because the functions are even or odd, and noticing the symmetry first saves half the work (L6, ll. 1–4). The sine is odd and the cosine even, so an even function has nothing in common with the sines and an odd function nothing in common with the cosines.
 
-The same idea answers a practical question. In a physical problem the function usually lives on a bar from $0$ to $L$, not on a symmetric interval, so we are free to invent what it does between $-L$ and $0$ before extending it periodically. Inventing it as a mirror image makes it even and gives a cosine series; inventing it upside-down makes it odd and gives a sine series. Which invention is right depends on what happens at the ends of the bar, which is how half-range series connect to boundary conditions in the PDE block.
+Symmetry also helps with a practical difficulty. In a physical problem the function usually lives on a bar from $0$ to $L$, not on a symmetric interval, so what it does between $-L$ and $0$ can be chosen freely before extending it periodically. Inventing it as a mirror image makes it even and gives a cosine series; inventing it upside-down makes it odd and gives a sine series. Which invention is right depends on what happens at the ends of the bar, which is how half-range series connect to boundary conditions in the PDE block.
 
-The last question is whether the series actually equals the function. The answer is almost always yes, with one catch: at a jump the series can't pick one side, so it takes the average. Jumps also hide in places that aren't obvious, at the joins between periodic copies.
+The series equals the function almost everywhere. At a jump it cannot pick one side, so it takes the average of the two. Jumps also hide in places that aren't obvious, at the joins between periodic copies.
 
 ---
 
@@ -129,11 +129,56 @@ $$
 
 Spot the symmetry, quote the vanishing coefficients, and compute only the other half over the right-hand half of the interval, doubled. That explains FS1: the sawtooth $x$ is odd and had only sine terms, and the tent $|x|$ is even and had only cosine terms.
 
+### Example: 1 + x on the interval from −2 to 2 (PS2 Q2)
+
+$f(x)=1+x$ is neither even nor odd, but it is the sum of an even part, $1$, and an odd part, $x$, and the Euler integrals are linear, so each part can be treated by symmetry on its own. Here $L=2$ and the period is $4$; the periodic extension jumps from $3$ down to $-1$ at $x=2,6,\dots$
+
+The constant only sees the even part, since $\int_{-2}^2x\,dx=0$:
+
+$$
+a_0=\frac12\int_{-2}^{2}(1+x)\,dx=\frac12\cdot4=2 .
+$$
+
+For $a_n$, the even part gives $\frac12\int_{-2}^21\cdot\cos\frac{n\pi x}2\,dx=\frac12\big[\frac{2}{n\pi}\sin\frac{n\pi x}{2}\big]_{-2}^{2}=0$, and the odd part gives zero because $x\cos\frac{n\pi x}2$ is odd. So $a_n=0$ for $n\geq1$.
+
+For $b_n$, the even part gives zero because $\sin\frac{n\pi x}{2}$ is odd, and the odd part $x\sin\frac{n\pi x}2$ is even, so the integral doubles over $[0,2]$:
+
+$$
+b_n=\frac12\cdot2\int_0^2x\sin\frac{n\pi x}{2}\,dx .
+$$
+
+By parts, with $u=x$ and $v'=\sin\frac{n\pi x}2$, $v=-\frac{2}{n\pi}\cos\frac{n\pi x}2$:
+
+$$
+b_n=\Big[-\frac{2x}{n\pi}\cos\frac{n\pi x}{2}\Big]_0^2+\frac{2}{n\pi}\int_0^2\cos\frac{n\pi x}{2}\,dx
+$$
+
+$$
+=-\frac{4}{n\pi}\cos n\pi+\frac{2}{n\pi}\Big[\frac{2}{n\pi}\sin\frac{n\pi x}{2}\Big]_0^2
+$$
+
+$$
+=-\frac{4(-1)^n}{n\pi}+0 .
+$$
+
+So
+
+$$
+1+x\sim1+\frac4\pi\sum_{n=1}^\infty\frac{(-1)^{n+1}}{n}\sin\frac{n\pi x}{2}\qquad(-2<x<2).
+$$
+
+The sketch on $[-6,6]$ that the question asks for is the grey sawtooth below, lifted by the even part $1$; the series passes through the jump averages.
+
+![[m2048_fs_one_plus_x.png|820]]
+
+> [!check] Values of the series
+> At $x=1$, 1000 terms give $1.99936$ against $f(1)=2$. At the jump $x=2$ every sine vanishes and the series gives exactly $1$, the average of $f(2^-)=3$ and $f(-2^+)=-1$, as §4 predicts.
+
 ## 3. Half-range series (L6)
 
 A **half-range series** expands a function given only on half the expected range, $0\leq x\leq L$ (ll. 165–224). There are three ways to fill in the rest.
 
-The periodic extension simply repeats the given piece with period $L$. Nothing is symmetric, so all the coefficients are generally non-zero, but the formulae change because the period is now $L$ rather than $2L$: with half-length $\frac L2$,
+The periodic extension repeats the given piece with period $L$. Nothing is symmetric, so all the coefficients are generally non-zero, but the formulae change because the period is now $L$ rather than $2L$: with half-length $\frac L2$,
 
 $$
 a_n=\frac2L\int_0^Lf(x)\cos\frac{2n\pi x}{L}\,dx,\qquad b_n=\frac2L\int_0^Lf(x)\sin\frac{2n\pi x}{L}\,dx .
@@ -155,8 +200,8 @@ $$
 
 These choices look artificial, but they are dictated by the boundary conditions of a PDE on $[0,L]$ (ll. 186–205). A sine series is zero at $x=0$ and $x=L$, because every $\sin\frac{n\pi x}{L}$ is; it suits a Dirichlet condition with the solution held at zero at the ends, such as a string fixed at both ends. A cosine series has zero slope at $x=0$ and $x=L$, because every derivative $-\frac{n\pi}L\sin\frac{n\pi x}{L}$ vanishes there; it suits a Neumann condition, such as an insulated end with no heat flux. These are exactly the eigenfunctions of the Dirichlet and Neumann eigenproblems in [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems#4. The standard eigenproblems (PS2 Q3, preview of the PDE block)|ODE3 §4]].
 
-> [!warning] The lecture pairs these the wrong way round (L6, ll. 197–202)
-> The transcript says "Dirichlet boundary conditions typically match up with even extensions" and links Neumann or reflection conditions with odd ones. It is the other way round: a zero value at the boundary (Dirichlet) means an odd extension and a sine series, and a zero slope (Neumann) means an even extension and a cosine series. The lecture's own no-penetration example, where the normal velocity vanishes at a wall and the mirror-image flow is odd (ll. 199–204), is really a Dirichlet condition on the velocity, so it agrees with the corrected pairing.
+> [!warning] Get the pairing the right way round
+> A zero value at the boundary (Dirichlet) means an odd extension and a sine series, and a zero slope (Neumann) means an even extension and a cosine series. The no-penetration example, where the normal velocity vanishes at a wall and the mirror-image flow is odd, is a Dirichlet condition on the velocity, so it fits the same rule.
 
 ### Example: f = x on the interval from 0 to π, three ways
 
@@ -168,7 +213,7 @@ $$
 a_0=\frac2\pi\int_0^\pi x\,dx=\frac2\pi\cdot\frac{\pi^2}2=\pi .
 $$
 
-For $b_m$, integrate by parts with $u=x$ and $v'=\sin2mx$, keeping each term over its own power of $2m$ as the lecturer recommends (ll. 255–263):
+For $b_m$, integrate by parts with $u=x$ and $v'=\sin2mx$, keeping each term over its own power of $2m$ as in FS1:
 
 $$
 b_m=\frac2\pi\left[-\frac{x\cos2mx}{2m}+\frac{\sin2mx}{(2m)^2}\right]_0^\pi .
@@ -180,7 +225,13 @@ $$
 b_m=\frac2\pi\left(-\frac{\pi\cos2m\pi}{2m}\right)=-\frac{1}{m},
 $$
 
-since $\cos2m\pi=1$ for every $m$: the argument is always an even multiple of $\pi$, so the alternating $(-1)^m$ of FS1 disappears (ll. 264–283). The $a_m$ vanish in the same way, so
+since $\cos2m\pi=1$ for every $m$: the argument is always an even multiple of $\pi$, so the alternating $(-1)^m$ of FS1 disappears (ll. 264–283). The $a_m$ vanish, which the same parts integration shows:
+
+$$
+a_m=\frac2\pi\left[\frac{x\sin2mx}{2m}+\frac{\cos2mx}{(2m)^2}\right]_0^\pi=\frac2\pi\left(0+\frac{1}{4m^2}-0-\frac{1}{4m^2}\right)=0,
+$$
+
+because $\cos2m\pi=\cos0=1$. So
 
 $$
 x\sim\frac\pi2-\sum_{n=1}^\infty\frac{\sin2nx}{n}\qquad(0<x<\pi).
@@ -189,10 +240,18 @@ $$
 **Even extension.** Mirroring $x$ about zero gives $|x|$ on $(-\pi,\pi)$, so the periodic even extension is exactly FS1's tent (ll. 285–301). The cosine coefficients repeat that calculation over $[0,\pi]$:
 
 $$
-a_0=\frac2\pi\int_0^\pi x\,dx=\pi,\qquad a_n=\frac2\pi\int_0^\pi x\cos nx\,dx=\frac2\pi\left[\frac{\cos nx}{n^2}\right]_0^\pi=\frac{2}{\pi n^2}\big((-1)^n-1\big),
+a_0=\frac2\pi\int_0^\pi x\,dx=\pi,
 $$
 
-so $x\sim\frac\pi2+\sum_n\frac{2}{\pi n^2}((-1)^n-1)\cos nx$ on $(0,\pi)$. The lecturer admitted this is hardly faster than the brute-force version; the real saving is not having to write the $b_n$ at all (ll. 333–341).
+$$
+a_n=\frac2\pi\int_0^\pi x\cos nx\,dx=\frac2\pi\left[\frac{x\sin nx}{n}+\frac{\cos nx}{n^2}\right]_0^\pi
+$$
+
+$$
+=\frac2\pi\left(0+\frac{(-1)^n}{n^2}-0-\frac{1}{n^2}\right)=\frac{2}{\pi n^2}\big((-1)^n-1\big),
+$$
+
+so $x\sim\frac\pi2+\sum_n\frac{2}{\pi n^2}((-1)^n-1)\cos nx$ on $(0,\pi)$. This is hardly faster than the brute-force version; the real saving is not having to write the $b_n$ at all.
 
 **Odd extension.** Mirroring about both axes gives $x$ on $(-\pi,\pi)$, so the periodic odd extension is FS1's sawtooth, and
 
@@ -209,9 +268,47 @@ The three series agree with $x$ on $(0,\pi)$ and differ outside it. They also co
 > [!check] SymPy
 > Integrating directly over $[0,\pi]$: periodic extension $a_0=\pi$, $a_n=0$, $b_n=-1/n$; cosine series $a_n=2((-1)^n-1)/(\pi n^2)$; sine series $b_n=-2(-1)^n/n$.
 
+The periodic extension hides a jump at $x=0$ itself, from $\pi$ just to the left to $0$ just to the right, so its series at $x=0$ gives the average $\frac\pi2$: every $\sin2nx$ vanishes there and only $a_0/2=\frac\pi2$ survives. At $x=\pi/4$, inside the interval, 40 terms give $0.798$ and 4000 give $0.78552$, closing in on $\pi/4=0.78540$ at the slow $1/n$ rate.
+
+### Example: the cosine series of x on the interval from 0 to 1 (PS3 Q2)
+
+Now $L=1$, and the even extension of $x$ is a tent of period $2$ with corners at the integers. The constant:
+
+$$
+a_0=\frac21\int_0^1x\,dx=1 .
+$$
+
+The cosine coefficients, by parts with $v'=\cos n\pi x$:
+
+$$
+a_n=2\int_0^1x\cos n\pi x\,dx=2\left[\frac{x\sin n\pi x}{n\pi}+\frac{\cos n\pi x}{(n\pi)^2}\right]_0^1
+$$
+
+$$
+=2\left(\frac{(-1)^n}{n^2\pi^2}-\frac{1}{n^2\pi^2}\right)=\frac{2\big((-1)^n-1\big)}{n^2\pi^2},
+$$
+
+which is $-4/(n^2\pi^2)$ for odd $n$ and $0$ for even $n$. So
+
+$$
+x\sim\frac12-\frac{4}{\pi^2}\sum_{n\ \mathrm{odd}}\frac{\cos n\pi x}{n^2}\qquad(0\leq x\leq1).
+$$
+
+The extension is continuous, so the series equals $x$ at every point of $[0,1]$, including the ends. At $x=0$:
+
+$$
+0=\frac12-\frac4{\pi^2}\sum_{n\ \mathrm{odd}}\frac1{n^2}
+$$
+
+$$
+\sum_{n=0}^\infty\frac{1}{(2n+1)^2}=\frac{\pi^2}{8},
+$$
+
+the same sum FS1 found from the tent on $(-\pi,\pi)$, because this series is that one with $x$ rescaled by $\pi$ and divided by $\pi$. With $10^5$ odd terms the right-hand side of the first line is $1.0\times10^{-6}$, zero to the accuracy of the truncation.
+
 ## 4. When does a Fourier series converge? (L6)
 
-The lecture stated the result without proof, as theory "you only need to know the result and the implications" (ll. 362–398). The **Dirichlet conditions** are that $f$ is bounded, periodic with some period, and has a finite number of maxima, minima and discontinuities in each period. A function like $1/x$ or $\ln x$ with a singularity inside the domain has no Fourier series, though the same function on a domain that excludes the singularity is fine (ll. 368–374).
+The result is stated without proof; the result and its implications are what is needed, not the proof (ll. 362–398). The **Dirichlet conditions** are that $f$ is bounded, periodic with some period, and has a finite number of maxima, minima and discontinuities in each period. A function like $1/x$ or $\ln x$ with a singularity inside the domain has no Fourier series, though the same function on a domain that excludes the singularity is fine (ll. 368–374).
 
 If the conditions hold, the series converges at every point: to $f(x)$ where $f$ is continuous, and to the average of the left and right limits where it jumps,
 
@@ -219,17 +316,7 @@ $$
 \frac12\big[f(x^-)+f(x^+)\big].
 $$
 
-Jumps can be hidden. The function $x$ is continuous on $(-\pi,\pi)$, but its periodic extension jumps from $\pi$ to $-\pi$ at every odd multiple of $\pi$. One jump per period is still a finite number, so the sawtooth series converges, and at $x=\pm\pi$ it gives $\frac12(\pi+(-\pi))=0$, which is visible directly because every $\sin n\pi=0$ (ll. 380–393). The lecturer added that this is why a step function is sometimes said to take the value $\frac12$ at its jump: the function itself needn't be defined there, but its Fourier series is, and it takes the average (ll. 394–398).
-
-## Transcript slips
-
-> [!warning] Lecture 6
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | ll. 197–202 | Dirichlet conditions match even extensions; Neumann (reflection) conditions match odd ones | Dirichlet (zero value) means odd extension and sine series; Neumann (zero slope) means even extension and cosine series (see the warning in §3) |
-> | ll. 58, 301 | "the tenth function" | the tent function |
-> | l. 98 | "that should have been up to L" | the limits $0$ to $L$ after reversing |
-> | l. 255 | "cos 2mx on 2m plus sine 2mx on 2m squared" | $-\frac{x\cos2mx}{2m}+\frac{\sin2mx}{(2m)^2}$; the $x$ and the minus sign were dropped in speech, and the result $b_m=-1/m$ is right |
+Jumps can be hidden. The function $x$ is continuous on $(-\pi,\pi)$, but its periodic extension jumps from $\pi$ to $-\pi$ at every odd multiple of $\pi$. One jump per period is still a finite number, so the sawtooth series converges, and at $x=\pm\pi$ it gives $\frac12(\pi+(-\pi))=0$, which is visible directly because every $\sin n\pi=0$ (ll. 380–393). This is why a step function is sometimes said to take the value $\frac12$ at its jump: the function itself needn't be defined there, but its Fourier series is, and it takes the average.
 
 ## Links
 
@@ -251,10 +338,23 @@ Lecture 6 left the two remaining product rules (even times even, odd times odd) 
 
 - [ ] Lecturer-set (l. 142): prove that the product of two even functions, and of two odd functions, is even. → [[#Products]]
 - [ ] Prove that an odd function integrates to zero over $[-L,L]$, with the substitution $z=-x$. → [[#The integral of an even or odd function over a symmetric interval]]
-- [ ] PS3 Q2: the cosine series of $f=x$ on $[0,1]$, its sketch on $[-3,3]$, and $\sum_{n\geq0}\frac1{(2n+1)^2}=\frac{\pi^2}8$. Answer: $x\sim\frac12-\frac4{\pi^2}\sum_{n\ \mathrm{odd}}\frac{\cos n\pi x}{n^2}$. → [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series]]
+- [ ] PS3 Q2: the cosine series of $f=x$ on $[0,1]$, its sketch on $[-3,3]$, and $\sum_{n\geq0}\frac1{(2n+1)^2}=\frac{\pi^2}8$. Answer: $x\sim\frac12-\frac4{\pi^2}\sum_{n\ \mathrm{odd}}\frac{\cos n\pi x}{n^2}$. → [[#Example: the cosine series of x on the interval from 0 to 1 (PS3 Q2)]]
+- [ ] PS2 (Fourier series) Q2: the series of $1+x$ on $[-2,2]$, using the even and odd parts separately. → [[#Example: 1 + x on the interval from −2 to 2 (PS2 Q2)]]
 
 ### Further practice
 
 - [ ] PS3 Q3: the half-wave rectified sine, $0$ on $(-\pi,0)$ and $\sin t$ on $(0,\pi)$; show $f=\frac1\pi+\frac12\sin t-\frac2\pi\sum\frac{\cos2nt}{4n^2-1}$. → [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series]]
-- [ ] Find the value of the periodic-extension series of $x$ (period $\pi$) at $x=0$ and explain it from the jump (suggested, not lecturer-set). → [[#4. When does a Fourier series converge? (L6)]]
+- [ ] Find the value of the periodic-extension series of $x$ (period $\pi$) at $x=0$ and explain it from the jump (suggested, not lecturer-set). → [[#Example: f = x on the interval from 0 to π, three ways]]
 - [ ] Write down, without integrating, which coefficients vanish for $x^3$, $x\cos x$ and $e^{|x|}$ on $(-\pi,\pi)$ (suggested, not lecturer-set). → [[#What this does to the coefficients]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lecture 6
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | ll. 197–202 | Dirichlet conditions match even extensions; Neumann (reflection) conditions match odd ones | Dirichlet (zero value) means odd extension and sine series; Neumann (zero slope) means even extension and cosine series (see the warning in §3) |
+> | ll. 58, 301 | "the tenth function" | the tent function |
+> | l. 98 | "that should have been up to L" | the limits $0$ to $L$ after reversing |
+> | l. 255 | "cos 2mx on 2m plus sine 2mx on 2m squared" | $-\frac{x\cos2mx}{2m}+\frac{\sin2mx}{(2m)^2}$; the $x$ and the minus sign were dropped in speech, and the result $b_m=-1/m$ is right |

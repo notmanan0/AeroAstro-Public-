@@ -21,7 +21,7 @@ $$
 \mathbf v\ne\mathbf v^c,
 $$
 
-where the left side is the vector and the right its components in coordinates $c$. The course puts the coordinate label as a right superscript (Chapter 1, Eqs. 1.8 and 1.10).
+where the left side is the vector and the right its components in coordinates $c$. The coordinate label is written as a right superscript (Chapter 1, Eqs. 1.8 and 1.10).
 
 Earth-fixed and body-fixed frames are generally not inertial. The [[Flat-Earth Model]] deliberately approximates a local Earth frame as inertial.
 

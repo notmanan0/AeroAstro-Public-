@@ -19,7 +19,7 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA3029 Formula Sheet.md", "02 - Sou
 > [!abstract] How to use this set
 > - **Eight questions, 127 marks.** Each shows its marks per part and a target time.
 > - **Timing assumption: 1.8 min per mark.** That is a typical rate for a written engineering paper (for example, 100 marks in 3 hours). The set as a whole is about two papers' worth, so pick three or four questions for a timed sitting.
-> - **Gas and data.** Air, $\gamma=1.4$, $R=287$ J/kg K. The exam provides the formula sheet, the IFT, the NST and the OSC ([[SESA3029 Formula Sheet#What the exam formula sheet gives you|what is and is not given]]). The lecturer says exam questions name the method: nearest table value, average, linear interpolation or exact equations (L2-2, ll. 74–80). Here the solutions use the **exact relations**, and quote the **table-interpolated** value next to them wherever a table look-up is the normal route.
+> - **Gas and data.** Air, $\gamma=1.4$, $R=287$ J/kg K. The exam provides the formula sheet, the IFT, the NST and the OSC ([[SESA3029 Formula Sheet#What the exam formula sheet gives you|what is and is not given]]). Exam questions name the method: nearest table value, average, linear interpolation or exact equations (L2-2, ll. 74–80). Here the solutions use the **exact relations**, and quote the **table-interpolated** value next to them wherever a table look-up is the normal route.
 > - **Verification.** Every number was computed in Python (SciPy root finders for θ–β–M, $\nu^{-1}$ and $A/A^*$ inversions). The key values are in each `[!check]` callout. The table-interpolated values were generated from the exact relations rounded to 4 d.p. at the tables' 0.02 spacing, which reproduces `IFT.pdf` and `NST.pdf`.
 
 | Q | Topic | Marks | Time | Theory |
@@ -523,7 +523,7 @@ A converging–diverging nozzle has throat area $A_t=100$ cm² and exit area $A_
 
 ### Q5 solution
 
-**(a) Design point** ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#2. The area–Mach relation (homework, slide 5; Anderson §10.3)|W04 §2]]). The throat is sonic, so $A_e/A^*=A_e/A_t=3.0$. The supersonic root of the area–Mach relation is
+**(a) Design point** ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#2. The area–Mach relation (slide 5; Anderson §10.3)|W04 §2]]). The throat is sonic, so $A_e/A^*=A_e/A_t=3.0$. The supersonic root of the area–Mach relation is
 
 $$
 \frac{A}{A^*}=\frac1M\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}M^2\right)\right]^{3}=3.0
@@ -621,7 +621,7 @@ $$
 
 That is inside the nozzle ($100<234<300$ cm²) ✓. Behind it $M=0.526$, and the subsonic flow diffuses to $M_e=0.380$ at the exit.
 
-**(e) Sea level.** $p_{b6}=47.3<101.3<p_{b5}=376$ kPa, so the nozzle is **over-expanded**: the exit flow is supersonic and shock-free, but $p_e<p_a$. Oblique **lip shocks** raise the jet pressure to ambient ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|W04 §5]]):
+**(e) Sea level.** $p_{b6}=47.3<101.3<p_{b5}=376$ kPa, so the nozzle is **over-expanded**: the exit flow is supersonic and shock-free, but $p_e<p_a$. Oblique **lip shocks** raise the jet pressure to ambient ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (slides 3–4)|W04 §5]]):
 
 $$
 \frac{p_a}{p_e}=\frac{101.3}{47.30}=2.1417.
@@ -670,7 +670,7 @@ The $C^+$ characteristic through A and the $C^-$ characteristic through B meet a
 
 ### Q6 solution
 
-**(a) Compatibility conditions** ([[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]). In the lecture's notation:
+**(a) Compatibility conditions** ([[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]). In the course notation:
 
 $$
 R^+=\nu-\theta\ \text{is constant along }C^+\ (\text{slope }\theta+\mu),
@@ -780,7 +780,7 @@ $$
 M_W=2.34+0.02\times\frac{35.3798-35.2787}{35.7715-35.2787}=\boxed{2.3441}
 $$
 
-The reflected $C^-$ carries *"R plus plus two times the wall angle"* (L3-3, ll. 62–63):
+The reflected $C^-$ carries $R^+$ plus twice the wall angle (L3-3, ll. 62–63):
 
 $$
 R^-_W=R^+_P+2\theta_W=23.3798+24=\boxed{47.3798^\circ}
@@ -988,9 +988,9 @@ $$
 
 Equivalently, $A/A^*(2.5)\big/A/A^*(0.5130)=2.6367/1.3158=2.004$. The second throat must pass the same $\dot m$ at the lower $p_0$ behind the starting shock, so it must be larger. It is made **variable** because this size is only needed to swallow the shock. Once the test section is supersonic, closing it towards $A_{t1}$ makes the diffuser shock weaker and recovers more pressure.
 
-**(c)** The jet boundary is a **constant-pressure** [[Slip Line]]; it cannot support a pressure jump. So a shock arriving at it reflects as an **expansion fan**, which brings the pressure back down to ambient. A solid wall instead fixes the flow **direction**, so a shock reflects as a shock (Q3). Then the fans reflect from the boundary as compressions, and the cycle gives the shock diamonds ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|W04 §5]]).
+**(c)** The jet boundary is a **constant-pressure** [[Slip Line]]; it cannot support a pressure jump. So a shock arriving at it reflects as an **expansion fan**, which brings the pressure back down to ambient. A solid wall instead fixes the flow **direction**, so a shock reflects as a shock (Q3). Then the fans reflect from the boundary as compressions, and the cycle gives the shock diamonds ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (slides 3–4)|W04 §5]]).
 
-**(d)** ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example (Lecture 3.4)|W05b §15]], the inverse problem with new numbers.) From the IFT, $\nu_4=\nu(2.0)=26.3798^\circ$ and $\nu_6=\nu(2.2)=31.7325^\circ$. Subtract the two table expressions:
+**(d)** ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example|W05b §15]], the inverse problem with new numbers.) From the IFT, $\nu_4=\nu(2.0)=26.3798^\circ$ and $\nu_6=\nu(2.2)=31.7325^\circ$. Subtract the two table expressions:
 
 $$
 \nu_6-\nu_4=\theta_w
@@ -1010,7 +1010,7 @@ $$
 M_0=1.62+0.02\times\frac{15.6744-15.4518}{16.0427-15.4518}=1.62+0.02\times0.377=\boxed{1.6275}
 $$
 
-**(e)** The $C^+$ arriving at 3 comes from point 2, where $\theta_2=\theta_w$: the flow is already parallel to the wall. A prescribed wall reflects only if $\theta_A\neq\theta_W$; here the flow does not turn between 2 and 3, so nothing is reflected and point 5 does not exist. The lecturer's lesson: *"make sure that your calculations … comply with the nature"* (L3-4, ll. 279–281).
+**(e)** The $C^+$ arriving at 3 comes from point 2, where $\theta_2=\theta_w$: the flow is already parallel to the wall. A prescribed wall reflects only if $\theta_A\neq\theta_W$; here the flow does not turn between 2 and 3, so nothing is reflected and point 5 does not exist. Always check a reflection against the physics.
 
 > [!check] Python
 > (a) At $M_{n1}=0.8$: $\Delta s/c_v=-0.00655$, $\Delta s/R=-0.01638$. (b) $p_{02}/p_{01}(2.5)=0.49901$, ratio 2.00395; $A/A^*(2.5)=2.63672$, $M_2=0.51299$, $A/A^*(M_2)=1.31576$. (d) $\theta_w=5.35268^\circ$, $\nu_a=15.67432^\circ$, $M_0=1.62753$ (IFT interpolation 1.62753).

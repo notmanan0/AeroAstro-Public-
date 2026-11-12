@@ -23,7 +23,7 @@ sources: ["02 - Sources/Tutorial Sheets/Problem Sheet Week 04.pdf"]
 >
 > $$(1+f)c_pT_{03} = c_pT_{02}+f\,LCV\qquad(\text{fuel enthalpy referenced to 0 K})$$
 >
-> With the lecture's $T_{ref} = 298$ K form the answers change by about 1 %. Q4.2(a) asks for the "air–fuel ratio" but the answer given (0.0521) is the **fuel–air** ratio.
+> With the course's $T_{ref} = 298$ K form the answers change by about 1 %. Q4.2(a) asks for the "air–fuel ratio" but the answer given (0.0521) is the **fuel–air** ratio.
 
 ## Theory Links
 - [[SESA2023 W06 - Jet Engine Cycle Analysis - Brayton, Ramjet, Turbojet and Reheat]] · [[SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and Intakes]]

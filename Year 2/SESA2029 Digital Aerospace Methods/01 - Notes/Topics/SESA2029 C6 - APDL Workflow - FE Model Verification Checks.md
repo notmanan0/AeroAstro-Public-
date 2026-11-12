@@ -23,7 +23,7 @@ sources: ["02 - Sources/FEM Lectures/Lecture_12_Validation and Verification_fina
 # SESA2029 C6 - APDL Workflow - FE Model Verification Checks
 
 > [!abstract] Summary
-> This note turns the verification checklist of FEA Lecture 12 into APDL commands to run before trusting any model, such as the lab 3 wing. Housekeeping merges coincident key points and nodes and checks element shapes; the total mass is compared with a hand estimate and the reactions with the applied loads; a free–free modal analysis should give exactly six rigid-body modes; unit gravity and unit enforced displacement checks expose loose or illegally grounded nodes; and a hand calculation on a simplified version of the problem closes the loop.
+> The verification checklist of FEA Lecture 12, written as APDL commands, is run before trusting any model, such as the lab 3 wing. Housekeeping merges coincident key points and nodes and checks element shapes; the total mass is compared with a hand estimate and the reactions with the applied loads; a free–free modal analysis should give exactly six rigid-body modes; unit gravity and unit enforced displacement checks expose loose or illegally grounded nodes; and a hand calculation on a simplified version of the problem closes the loop.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** about to report results from a model built by hand or by script.
@@ -127,7 +127,7 @@ PLNSOL,U,X               ! should be 1.0 everywhere
 PLNSOL,S,EQV             ! should be ~0 everywhere (non-zero = spurious grounding / constraint)
 ```
 
-Repeat for $y$, $z$ and unit rotations. A rotation needs consistent translations at off-axis support nodes. Any stress means some DOF is illegally grounded.
+Gravity from the previous check and any other load must be cleared first (`ACEL,0,0,0`, `FDELE,ALL,ALL`, `SFDELE,ALL,ALL`), otherwise the model is not load-free. Repeat for $y$, $z$ and unit rotations. A rotation needs consistent translations at off-axis support nodes. Any stress means some DOF is illegally grounded.
 
 ## 7. Hand-calculation check
 Before any study, run a simplified case with a closed-form answer:
@@ -137,9 +137,28 @@ Before any study, run a simplified case with a closed-form answer:
 
 Order-of-magnitude agreement confirms units, loads and BCs. Close agreement confirms the element choice.
 
-## Where this comes from
+### A worked hand check: the lab 1 spar
 
-The checks are those of [[SESA2029 B10 - FE Verification, Validation and Model Updating|B10]] (2026-03-06 10:55, ll. 51–225): accuracy checks such as coincident nodes and elements, wrong connections and distorted elements; then the free–free modal, unit enforced displacement, unit gravity and thermal checks of mathematical soundness. The lecture names them and shows the free–free result on a wing; the commands here are one way to run them in Mechanical APDL. None was set as a lab task, but the free–free check costs one modal run and catches the commonest modelling error, a part that is not connected.
+*(Suggested, not lecturer-set.)* The 4.9 mm H-section spar of [[SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)|C2]] has $L=250$ mm, steel and $I=833.3$ mm⁴. Its area is two flanges plus the web, $A=2\times10\times4.9+0.2\times4.9=99.0$ mm², so its mass per unit length is
+
+$$
+m=99.0\times10^{-6}\ \mathrm{m^2}\times7850\ \mathrm{kg/m^3}=0.777\ \mathrm{kg/m}.
+$$
+
+In SI units,
+
+$$
+f_1=\frac{1.875^2}{2\pi}\sqrt{\frac{2.1\times10^{11}\times833.3\times10^{-12}}{0.777\times0.25^4}}=0.5596\times\sqrt{5.76\times10^4}=134\ \mathrm{Hz}.
+$$
+
+In the mm–N–tonne set the same calculation uses $E=2.1\times10^5$ MPa, $I=833.3$ mm⁴, $L=250$ mm and $m=99.0\times7.85\times10^{-9}$ t/mm, and gives exactly the same 134 Hz, because the set is consistent.
+
+> [!check] What a unit slip does to this number
+> Entering the density as 7850 with millimetre geometry makes the mass $10^{12}$ times too large and the frequency $10^6$ times too small: $1.3\times10^{-4}$ Hz instead of 134 Hz. A modal result that is absurdly low or high by a power of ten is almost always a units error, which is why this check comes before any study.
+
+## The B10 checks in APDL
+
+These are the checks of [[SESA2029 B10 - FE Verification, Validation and Model Updating|B10]] (2026-03-06 10:55, ll. 51–225): accuracy checks such as coincident nodes and elements, wrong connections and distorted elements; then the free–free modal, unit enforced displacement, unit gravity and thermal checks of mathematical soundness. The commands above are one way to run them in Mechanical APDL. None was set as a lab task, but the free–free check costs one modal run and catches the commonest modelling error, a part that is not connected.
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]
@@ -153,6 +172,10 @@ The checks are those of [[SESA2029 B10 - FE Verification, Validation and Model U
 
 No check was set as an exercise.
 
+### Core
+
+- [ ] Run the free–free modal check on your lab 3 wing and confirm exactly six near-zero modes (suggested, not lecturer-set). → [[#4. Free–free modal check]]
+
 ### Further practice
 
-- [ ] Run the free–free modal and mass checks on your lab 3 wing (suggested, not lecturer-set). → [[#4. Free–free modal check]] · [[#2. Mass check]]
+- [ ] Run the mass check on your lab 3 wing and compare it with the $2ctl\rho$ hand estimate (suggested, not lecturer-set). → [[#2. Mass check]]

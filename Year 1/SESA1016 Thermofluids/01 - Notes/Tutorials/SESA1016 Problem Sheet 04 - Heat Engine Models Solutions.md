@@ -94,7 +94,7 @@ On the $T$-$s$ diagram, constant-volume heat addition raises pressure before the
 On a reversible $T$-$s$ diagram, heat is area $\int Tds$. Let the common entropy width be $\Delta s$.
 
 $$
-q_{out}=300\Delta s,qquad
+q_{out}=300\Delta s,\qquad
 q_{in}=\frac{600+1200}{2}\Delta s=900\Delta s.
 $$
 
@@ -151,7 +151,7 @@ Its total entropy change over the complete cycle is zero.
 $r=5$, $T_1=300$ K, $p_1=1$ bar. Isentropic compression gives
 
 $$
-T_2=300(5)^{0.4}=571.1\ \mathrm K,qquad
+T_2=300(5)^{0.4}=571.1\ \mathrm K,\qquad
 p_2=1(5)^{1.4}=9.52\ \mathrm{bar}.
 $$
 
@@ -164,7 +164,7 @@ $$
 Because 4->1 is isobaric, $p_4=p_1$. Isentropic expansion gives
 
 $$
-T_4=T_3(p_4/p_3)^{(\gamma-1)/\gamma}=447.9\ \mathrm K.
+T_4=T_3(p_4/p_3)^{(\gamma-1)/\gamma}=447.6\ \mathrm K.
 $$
 
 $$
@@ -205,7 +205,7 @@ $$
 Specific volumes:
 
 $$
-v_1=RT_1/p_1=0.861,qquad
+v_1=RT_1/p_1=0.861,\qquad
 v_3=RT_3/p_3=0.3633\ \mathrm{m^3/kg}.
 $$
 
@@ -229,6 +229,9 @@ $$
 \boxed{\eta=1-1.679/2.76=39.2\%}\;\checkmark
 $$
 
+> [!warning] Part of process 3→1 actually takes in heat (re-checked in Python, 2026-11-05)
+> The printed answers treat the whole of 3→1 as heat rejection and use its net heat, $Q_{31}=-1.679$ kJ. Along the straight line $p=c_1v+c_2$ the sign of $dQ=dU+p\,dV=\tfrac{c_v}{R}d(pV)+p\,dV$ changes at $v=0.534$ m³/kg: from state 3 to that point the air gains 0.636 kJ, and from there to state 1 it loses 2.315 kJ. With the course definition $\eta=W_{net}/Q_{in}$, where $Q_{in}$ is all the heat supplied, $Q_{in}=2.76+0.636=3.396$ kJ and $\eta=1.081/3.396=31.8\%$. The printed 1679 J and 39.2 % follow the question's own description of 3→1 as heat rejection; quote those if asked, but the strict figures are 2.315 kJ rejected and 31.8 %.
+
 ## Q4.6 Ideal Brayton turbine-inlet temperature
 
 $T_1=300$ K, $r_p=12$, $w_{net}=100$ kJ/kg, $c_p=1.005$ kJ/(kg K).
@@ -236,7 +239,7 @@ $T_1=300$ K, $r_p=12$, $w_{net}=100$ kJ/kg, $c_p=1.005$ kJ/(kg K).
 Let $a=(\gamma-1)/\gamma=0.285714$. Then
 
 $$
-T_2=T_1r_p^a,qquad T_4=T_3r_p^{-a}.
+T_2=T_1r_p^a,\qquad T_4=T_3r_p^{-a}.
 $$
 
 $$

@@ -13,26 +13,20 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 
 # Magnetomotive Force and Reluctance
 
-## Definition
+Magnetomotive force (mmf) $\mathcal F = Ni$ is the drive that a current-carrying coil applies to a magnetic circuit, and reluctance $\mathcal R$ is the circuit's opposition to flux. Together they give the magnetic-circuit equivalent of Ohm's law, $\mathcal F = \mathcal R\Phi$.
 
-> [!note] Definition
->
-> $$\mathcal F = Ni = \oint H\,dl\approx\sum_kH_kl_k,\qquad \mathcal F = \mathcal R\Phi,\qquad \mathcal R = \frac{l}{\mu_0\mu_rA}$$
->
-> This is "Ohm's law" for magnetic circuits: mmf drives flux through reluctance.
+$$
+\mathcal F = Ni = \oint H\,dl\approx\sum_kH_kl_k,\qquad \mathcal F = \mathcal R\Phi,\qquad \mathcal R = \frac{l}{\mu_0\mu_rA}
+$$
 
-## Explanation
-- mmf [A-turns] plays the role of voltage, flux of current, and reluctance of resistance.
-- Steel has $\mu_r$ of order 10³, so the flux follows the core. Air gaps dominate the total reluctance.
-- Self-inductance follows: $L = N\Phi/i = N^2/\mathcal R$. Changing the gap or core position changes $L$, which is how inductive sensors work.
-- Steel **saturates** near 1.5 T, so its reluctance rises sharply.
+In this analogy mmf, measured in ampere-turns, plays the part of voltage, flux the part of current, and reluctance the part of resistance. Reluctance depends on the path length, the cross-section and the permeability, just as resistance depends on length, area and resistivity. In a toroid, $4\ \mathrm A$ through 100 turns gives $400$ ampere-turns, and with $\mathcal R = 1.68\times10^6\ \mathrm{A/Wb}$ the flux is $\Phi = 400/(1.68\times10^6) = 0.238\ \mathrm{mWb}$.
 
-## Examples
-- Toroid: 4 A × 100 turns = 400 A-turns; with $\mathcal R = 1.68\times10^6$ A/Wb, $\Phi$ = 0.238 mWb.
+Steel has $\mu_r$ of order $10^3$, so flux follows the core much as current follows a wire. An air gap has $\mu_r = 1$, so even a short gap usually dominates the total reluctance. The linear model also has a limit: steel saturates near $1.5\ \mathrm T$, after which its reluctance rises sharply.
+
+Self-inductance follows from the same picture, $L = N\Phi/i = N^2/\mathcal R$. Changing the gap or moving a core changes $\mathcal R$ and therefore $L$, which is how inductive displacement sensors work.
 
 ## Related
-- Topic notes: [[FEEG1004 C1 - Magnetic Circuits, Faraday's Law and Force on Conductors]] · [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
-- Concepts: [[Inductance]] · [[Magnetic Flux and Flux Density]] · [[Linear Variable Differential Transformer]]
 
-## Sources
-- Sharkh machines notes §2; Machines 02 slides (toroid question)
+- [[FEEG1004 C1 - Magnetic Circuits, Faraday's Law and Force on Conductors]] · [[FEEG1004 E2 - Displacement Sensors - Potentiometric, Capacitive and Inductive]]
+- [[Inductance]] · [[Magnetic Flux and Flux Density]] · [[Linear Variable Differential Transformer]]
+- Sources: Sharkh machines notes §2; Machines 02 slides (toroid question)

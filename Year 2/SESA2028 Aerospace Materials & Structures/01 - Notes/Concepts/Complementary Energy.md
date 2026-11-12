@@ -28,7 +28,7 @@ $$
 ## Why it matters
 
 - $\partial U/\partial\delta_i=P_i$ (Castigliano's first theorem, valid for nonlinear elastic systems as well).
-- $\partial U^*/\partial P_i=\delta_i$ (Castigliano's second theorem / Engesser). Only because $U^*=U$ for linear systems can we write $\delta_i=\partial U/\partial P_i$ ([[Castigliano Second Theorem]]).
+- $\partial U^*/\partial P_i=\delta_i$ (Castigliano's second theorem / Engesser). $\delta_i=\partial U/\partial P_i$ holds only because $U^*=U$ for linear systems ([[Castigliano Second Theorem]]).
 
 ## Warning
 

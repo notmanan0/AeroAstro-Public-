@@ -23,7 +23,7 @@ $$
 \phi=\mu_1-\mu_2+\theta.
 $$
 
-In the Lecture 2.4 example, $M_1=3$ turned through $\theta=13^\circ$ gives $M_2=3.78$, $p_2/p_1=0.326$ (a 67.4% drop) and a fan angle of $17.1^\circ$.
+For $M_1=3$ turned through $\theta=13^\circ$ (Lecture 2.4 example), the fan gives $M_2=3.78$, $p_2/p_1=0.326$ (a 67.4% drop) and a fan angle of $17.1^\circ$.
 
 ![[at_expansion_fan.png|760]]
 

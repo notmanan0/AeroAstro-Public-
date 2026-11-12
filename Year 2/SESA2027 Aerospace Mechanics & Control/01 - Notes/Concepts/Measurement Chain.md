@@ -23,7 +23,7 @@ The controller only ever sees what comes out of the end of the chain, the measur
 
 The sensor detects the quantity; a transducer converts energy, usually into an electrical signal. Signal conditioning then amplifies and offsets the signal to fit the ADC range, buffers it so the next stage doesn't load the sensor, filters it (the anti-alias filter), linearises it and protects the electronics. Data acquisition samples in time, quantises in amplitude and transmits, the three transformations $V(t)\to V[k]\to N[k]$. A typical example is the pitch-rate chain in PS C Q1: a MEMS gyro, then a buffer, gain and offset stage and an RC anti-alias filter, then a 12-bit ADC sampling at $f_s$, feeding the pitch-rate damper in the flight-control computer ([[SESA2027 Part C Problem Sheet Solutions]]).
 
-Every stage can add error (noise, bias, drift, loading), add delay, or destroy information outright (clipping, aliasing). The lecture's summary is that hardware preserves and software refines: software can calibrate, filter and fuse, but it can't recover information lost before the ADC. The delays add up into a latency budget, $T_d = T_{sensor}+T_{filter}+T_{ADC}+T_{buffer}+T_{processor}+T_{comm}$, which takes $\omega_{gc}T_d$ off the phase margin.
+Every stage can add error (noise, bias, drift, loading), add delay, or destroy information outright (clipping, aliasing). Software can calibrate, filter and fuse, but it can't recover information lost before the ADC. The delays add up into a latency budget, $T_d = T_{sensor}+T_{filter}+T_{ADC}+T_{buffer}+T_{processor}+T_{comm}$, which takes $\omega_{gc}T_d$ off the phase margin.
 
 ## Related
 

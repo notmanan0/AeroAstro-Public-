@@ -19,26 +19,26 @@ sources: ["02 - Sources/Lectures/Tutorial Lecture #1.txt"]
 # SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing
 
 > [!abstract] Summary
-> The first example-question lecture (Fri 9 Oct, `Tutorial Lecture #1.txt`, 240 lines) worked two problems. Example Sheet 1 Q3 reflects a ramp shock off a wall ($M_1=2.3$, $\theta=8^\circ$, giving $p_3=50.1$ kPa) and then searches for the largest ramp angle that still reflects regularly ($\theta_{RR}\approx16.1^\circ$). An isosceles triangular wing at $M_1=1.7$, $\alpha=10^\circ$ is then solved by shock-expansion theory, giving a lift of about 2.9 kN/m. This note also fixes the lecture's flat-plate drag shortcut, which misses about a quarter of the drag on this wing, and solves the weekend homework, $x_{ac}/c=0.49$.
+> Two worked problems. Example Sheet 1 Q3 reflects a ramp shock off a wall ($M_1=2.3$, $\theta=8^\circ$, giving $p_3=50.1$ kPa) and then searches for the largest ramp angle that still reflects regularly ($\theta_{RR}\approx16.1^\circ$). An isosceles triangular wing at $M_1=1.7$, $\alpha=10^\circ$ is then solved by shock-expansion theory, giving a lift of about 2.9 kN/m. This note also fixes the flat-plate drag shortcut, which misses about a quarter of the drag on this wing, and solves the weekend homework, $x_{ac}/c=0.49$.
 
 > [!info] Where this sits
-> The theory is [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]] §§1–2 (reflection) and §6 (shock-expansion method, Lecture 2.5). The question source is the Blackboard folder *Example questions and solutions → Example sheets and solutions* (ll. 4–7). The triangular wing is from the same folder; its sheet is not filed in the vault, so its data are taken from the transcript (ll. 118–189): $c=0.15$ m, $M_1=1.7$, $p_1=20$ kPa, $\alpha=10^\circ$, base angles $10^\circ$.
+> The theory is [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]] §§1–2 (reflection) and §6 (shock-expansion method, Lecture 2.5). The question source is the Blackboard folder *Example questions and solutions → Example sheets and solutions* . The triangular wing is from the same folder; its sheet is not filed in the vault, so its data are taken from the tutorial (ll. 118–189): $c=0.15$ m, $M_1=1.7$, $p_1=20$ kPa, $\alpha=10^\circ$, base angles $10^\circ$.
 
 ---
 
-Every problem in Block 2 is built from two standard calculations: an oblique shock where the flow is turned into itself, and a Prandtl–Meyer fan where it is turned away. The lecturer's message was to make each one automatic, *"a standard procedure that you can just memorize… do mechanically"* (l. 35), *"four steps… a kind of unit you can always do without thinking"* (l. 46).
+Every problem in Block 2 is built from two standard calculations: an oblique shock where the flow is turned into itself, and a Prandtl–Meyer fan where it is turned away. Practise each one until it is automatic, a four-step unit you can do without thinking.
 
 A reflection is two shock calculations in series, and the interesting question is when the second one fails, which is when the flow behind the first shock is too slow to be turned back by $\theta$. An aerofoil made of flat faces needs one calculation per corner; each face then carries one uniform pressure, and the forces follow face by face from pressure times area.
 
 ---
 
-## Part 1. Example Sheet 1 Q3: ramp shock reflected from a wall (ll. 7–117)
+## Part 1. Example Sheet 1 Q3: ramp shock reflected from a wall
 
 $M_1=2.3$, ramp $\theta=8^\circ$, $p_1=0.2$ atm $=20.26$ kPa (l. 15), upper wall parallel to the free stream.
 
 ![[at_tut1_rr_limit.png|900]]
 
-### The unit calculation (ll. 35–46)
+### The unit calculation
 
 For one oblique shock of deflection $\theta$ at upstream Mach $M$:
 
@@ -49,7 +49,7 @@ For one oblique shock of deflection $\theta$ at upstream Mach $M$:
 
 ### (a) Pressures and Mach numbers
 
-**Incident shock A (ll. 18–34).** The chart reads *"about 32 to 33 ish"*; precisely $\beta_A=32.42^\circ$ (l. 23).
+**Incident shock A (ll. 18–34).** The chart reads about $32$–$33^\circ$; precisely $\beta_A=32.42^\circ$ (l. 23).
 
 $$
 M_{n1}=2.3\sin32.42^\circ=1.2329,
@@ -81,23 +81,23 @@ $$
 p_3=1.5379\times32.56=50.08\ \text{kPa},\qquad M_3=\frac{0.8368}{\sin(37.41^\circ-8^\circ)}=1.704.
 $$
 
-All four match the lecture (32.6 kPa, 1.9895, 50.1 kPa, 1.7) and the sheet. The full solution, with the "nearest value" route, is [[SESA3029 Example Sheet 1 - Solutions#Q3. Ramp shock reflected from a wall|ES1 Q3]].
+All four match the tutorial (32.6 kPa, 1.9895, 50.1 kPa, 1.7) and the sheet. The full solution, with the "nearest value" route, is [[SESA3029 Example Sheet 1 - Solutions#Q3. Ramp shock reflected from a wall|ES1 Q3]].
 
 > [!check] Numerical check (Python)
 > Exact $\theta$–$\beta$–$M$ roots and normal-shock relations reproduce every number above to the digits shown.
 
-### (b) The largest ramp angle for regular reflection (ll. 63–113)
+### (b) The largest ramp angle for regular reflection
 
 **Why there is a limit.** The reflected shock must turn zone 2 by the same $\theta$, so we need $\theta\le\theta_{max}(M_2)$. Raise $\theta$ and the incident shock steepens and strengthens, so $M_2$ falls, and $\theta_{max}$ falls with it (ll. 74–83). The two curves cross at the limit. Beyond it, a Mach stem forms ([[Mach Reflection]], ll. 64–66, 112–113).
 
-**The lecture's iteration.**
+**The iteration.**
 
-| Step | Guess $\theta$ | $M_2$ | $\theta_{max}(M_2)$ exact | Lecture |
+| Step | Guess $\theta$ | $M_2$ | $\theta_{max}(M_2)$ exact | Tutorial |
 |---|---|---|---|---|
 | 1 | $8^\circ$ | 1.9896 | $22.79^\circ$ | 22.6° from the chart (l. 85) |
 | 2 | average $15.3^\circ$ | 1.6973 | $16.95^\circ$ | 16.9° (l. 94); $\beta_A\approx40^\circ$ ✓ |
-| 3a | average again $16.1^\circ$ | 1.6634 | $16.17^\circ$ | "very very close" (ll. 95–99) |
-| 3b | interpolated $16.2^\circ$ | 1.6591 | $16.07^\circ$ | "also 16.2" (ll. 108–109) |
+| 3a | average again $16.1^\circ$ | 1.6634 | $16.17^\circ$ | very close to the guess (ll. 95–99) |
+| 3b | interpolated $16.2^\circ$ | 1.6591 | $16.07^\circ$ | also 16.2° (ll. 108–109) |
 
 **Interpolation route (ll. 100–107).** Treat $\theta_{max}$ as a straight line through the two samples $(8,\,22.6)$ and $(15.3,\,16.9)$:
 
@@ -126,11 +126,11 @@ Both averaging and interpolating work because $\theta_{max}(M_2(\theta))$ is smo
 
 ---
 
-## Part 2. The isosceles triangular wing (ll. 118–235)
+## Part 2. The isosceles triangular wing
 
 ![[at_tut1_triangular_wing.png|900]]
 
-### Geometry and which wave goes where (ll. 118–138)
+### Geometry and which wave goes where
 
 The lower surface is the chord, $c=0.15$ m. The two upper faces rise at $\varepsilon=10^\circ$ to an apex at mid-chord:
 
@@ -142,11 +142,11 @@ $$
 
 At $\alpha=10^\circ$, measured from the chord:
 
-- **Upper front face** is inclined at $\varepsilon-\alpha=0$ to the stream: *"exactly tangential… the flow just slide through"* (ll. 128–132). No wave, so $M=1.7$, $p=20$ kPa.
+- **Upper front face** is inclined at $\varepsilon-\alpha=0$ to the stream, exactly tangential, so the flow slides past it (ll. 128–132). No wave, so $M=1.7$, $p=20$ kPa.
 - **Lower surface** turns the flow into itself by $\alpha=10^\circ$: an oblique shock (ll. 133–134).
-- **Apex**: the flow turns away by $\varepsilon+\varepsilon=20^\circ$, *"not 10"* (ll. 135–138): a Prandtl–Meyer fan.
+- **Apex**: the flow turns away by $\varepsilon+\varepsilon=20^\circ$, not $10^\circ$ (ll. 135–138): a Prandtl–Meyer fan.
 
-### Lower surface: one shock unit (ll. 154–164)
+### Lower surface: one shock unit
 
 $$
 \beta=47.17^\circ\quad(\text{chart: "about 47"}),
@@ -168,7 +168,7 @@ $$
 M_{n2}=0.8145,\qquad M_L=\frac{0.8145}{\sin37.17^\circ}=1.348.
 $$
 
-### Upper rear face: one fan unit (ll. 165–179)
+### Upper rear face: one fan unit
 
 From the isentropic table at $M=1.7$: $\nu=17.81^\circ$ and $p/p_0=0.2026$. Add the turn:
 
@@ -188,9 +188,9 @@ $$
 p_{UR}=\frac{0.0638}{0.2026}\times20=6.30\ \text{kPa}\quad(\text{lecture: }6.4).
 $$
 
-The fan calculation is always the same: $\nu_{down}=\nu_{up}+\theta$, read $M$ and $p/p_0$ at the new $\nu$, and divide by the upstream $p/p_0$, since $p_0$ is unchanged through the isentropic fan. *"The exam question will specify which method to use"*, nearest value or interpolation (l. 176).
+The fan calculation is always the same: $\nu_{down}=\nu_{up}+\theta$, read $M$ and $p/p_0$ at the new $\nu$, and divide by the upstream $p/p_0$, since $p_0$ is unchanged through the isentropic fan. The exam question will specify which method to use, nearest value or interpolation (l. 176).
 
-### Forces: what the lecture did (ll. 184–195)
+### Forces by the flat-plate shortcut
 
 **Normal force** (perpendicular to the chord). The lower surface pushes up over the whole chord. Each upper face pushes down; its **projection** on the chord is $c/2$:
 
@@ -202,7 +202,7 @@ $$
 N'=(32.93-10.00-3.15)\times0.15=19.78\times0.15=2.967\ \text{kN/m}.
 $$
 
-**The lecture's resolution** treats the wing like a flat plate:
+**The shortcut** treats the wing like a flat plate:
 
 $$
 L'\approx N'\cos\alpha=2922\ \text{N/m},
@@ -212,11 +212,11 @@ D'\approx N'\sin\alpha=515\ \text{N/m},
 L/D\approx\cot\alpha=5.67.
 $$
 
-The lecture says "about six" (l. 195).
+So $L/D$ is about six.
 
 ### Forces: the chordwise term the shortcut misses
 
-The upper faces are **inclined**, so their pressure forces also have a component **along** the chord. The lecturer noticed this for the moment (ll. 216–224) but not for lift and drag.
+The upper faces are **inclined**, so their pressure forces also have a component **along** the chord. The shortcut includes this for the moment but not for lift and drag.
 
 - The front face's force is normal to the face, so it tilts **rearward** (it faces up and forward). Its chordwise part is $p_{UF}\,\ell\sin\varepsilon=p_{UF}\,h$.
 - The rear face's force tilts **forward**, with chordwise part $p_{UR}\,h$.
@@ -253,7 +253,7 @@ $C_l=L'/(q_\infty c)$ with $q_\infty=\tfrac12\gamma p_1M_1^2=0.7\times20\times2.
 > [!question] Lecture discussion: why don't airliners fly supersonic? (ll. 196–206)
 > A good subsonic aerofoil has $L/D$ of 50 or more, and up to about 150 when highly optimised (l. 199). Supersonic wave drag caps it at single figures, here 4–6. That is why airliners cruise at Mach 0.8–0.9, and why Concorde burned so much fuel.
 
-### Pitching moment about the leading edge (ll. 207–227)
+### Pitching moment about the leading edge
 
 **Lecture method** (nose-up positive). Each face's force acts at the midpoint of its chord projection:
 
@@ -291,15 +291,15 @@ $$
 M'_{LE}=c^2\left[-\frac{32.93}{2}+\frac{20\times1.03109}{8}+\frac{6.302\times2.96891}{8}\right]=0.0225\times(-11.549)=\boxed{-0.2599\ \text{kN m/m}}.
 $$
 
-This is the lecture's *"minus 260 as opposed to [2]61"* (l. 225): a 0.5% correction for the moment, but 35% for the drag. The moment is nose-down.
+This is the tutorial's $-260$ against $-261$: a 0.5% correction for the moment, but 35% for the drag. The moment is nose-down.
 
 $$
 C_{m,LE}=\frac{M'_{LE}}{q_\infty c^2}=-0.2868\ (\text{shortcut}),\quad-0.2854\ (\text{exact}).
 $$
 
-### Weekend homework: the aerodynamic centre (ll. 228–235)
+### Weekend homework: the aerodynamic centre
 
-> *"Use another angle of attack… for example 11 degrees or 9 degrees and calculate cl and cm values again and calculate this approximate derivative and check if you are going to get half"* (ll. 232–234).
+> Repeat the calculation at another angle of attack, $11^\circ$ or $9^\circ$, compute $C_l$ and $C_m$ again, form the approximate derivative and check that it gives one half (ll. 232–234).
 
 $$
 \frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_l}\approx-\frac{C_{m}(\alpha_2)-C_{m}(\alpha_1)}{C_l(\alpha_2)-C_l(\alpha_1)}.
@@ -313,7 +313,7 @@ $$
 | $10^\circ$ | 32.93 | none | 20.00 | 1.700 | 2.444 | 6.30 | 0.4815 | −0.2868 |
 | $11^\circ$ | 34.62 | $1^\circ$ fan | 18.99 | 1.734 | 2.487 | 5.90 | 0.5380 | −0.3145 |
 
-(Lecture's shortcut for $C_l$ and $C_m$; exact values in the figure.)
+(Course shortcut for $C_l$ and $C_m$; exact values in the figure.)
 
 **Central difference** over $9^\circ\to11^\circ$:
 
@@ -323,7 +323,7 @@ $$
 
 One-sided differences give 0.484 ($9\to10^\circ$) and 0.490 ($10\to11^\circ$).
 
-**Along the chord (exact moment transfer).** The lecture's derivative uses $C_l$. Moving the reference point **along the chord** changes the moment only through the chord-normal force, so the exact aerodynamic centre is $x_{ac}/c=-\mathrm dC_{m,LE}/\mathrm dC_n$ ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]]). Here $C_n=N'/(q_\infty c)=\big(p_L-\tfrac12p_{UF}-\tfrac12p_{UR}\big)/q_\infty$, which is exact because each upper face projects onto exactly $c/2$ of the chord:
+**Along the chord (exact moment transfer).** The shortcut derivative uses $C_l$. Moving the reference point **along the chord** changes the moment only through the chord-normal force, so the exact aerodynamic centre is $x_{ac}/c=-\mathrm dC_{m,LE}/\mathrm dC_n$ ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]]). Here $C_n=N'/(q_\infty c)=\big(p_L-\tfrac12p_{UF}-\tfrac12p_{UR}\big)/q_\infty$, which is exact because each upper face projects onto exactly $c/2$ of the chord:
 
 | $\alpha$ | $C_n$ | $C_{m,LE}$ (exact) | $x_{cp}/c=-C_{m,LE}/C_n$ |
 |---|---|---|---|
@@ -336,38 +336,16 @@ $$
 $$
 
 > [!check] Which number to quote
-> All values recomputed in Python from the oblique-shock and Prandtl–Meyer relations ($M_1=1.7$, $p_1=20$ kPa, $\varepsilon=10^\circ$). The lecture's homework asks for $-\Delta C_m/\Delta C_l$, so **0.487** (shortcut) or **0.491** (exact forces) answers the question as set. As a position measured **along the chord**, the aerodynamic centre is at **0.468c**. The 4% gap is the $\cos\alpha$ and drag terms in $C_l=C_n\cos\alpha-C_a\sin\alpha$, which the lift-based formula folds into the "ac". Ackeret theory's exact $c/2$ is a small-$\alpha$ result, where $C_n\approx C_l$.
+> All values recomputed in Python from the oblique-shock and Prandtl–Meyer relations ($M_1=1.7$, $p_1=20$ kPa, $\varepsilon=10^\circ$). The homework asks for $-\Delta C_m/\Delta C_l$, so **0.487** (shortcut) or **0.491** (exact forces) answers the question as set. As a position measured **along the chord**, the aerodynamic centre is at **0.468c**. The 4% gap is the $\cos\alpha$ and drag terms in $C_l=C_n\cos\alpha-C_a\sin\alpha$, which the lift-based formula folds into the "ac". Ackeret theory's exact $c/2$ is a small-$\alpha$ result, where $C_n\approx C_l$.
 
 > [!check] Is "half" right?
-> Close, as the lecturer expected (l. 235). Linearised supersonic (Ackeret) theory, Weeks 7–8, puts the aerodynamic centre of **any** thin aerofoil at exactly $c/2$. Shock-expansion theory is the exact, nonlinear version, so a $10^\circ$-thick section with finite turning angles lands at about $0.49c$. The 2% shortfall is a nonlinear effect. Compare the flat plate in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]], where $C_{m,LE}=-C_n/2$ exactly.
+> Close. Linearised supersonic (Ackeret) theory, Weeks 7–8, puts the aerodynamic centre of **any** thin aerofoil at exactly $c/2$. Shock-expansion theory is the exact, nonlinear version, so a $10^\circ$-thick section with finite turning angles lands at about $0.49c$. The 2% shortfall is a nonlinear effect. Compare the flat plate in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]], where $C_{m,LE}=-C_n/2$ exactly.
 
-Unlike the flat plate, this wing's centre of pressure is not at its aerodynamic centre. At $10^\circ$, $x_{cp}/c=-M'_{LE}/(N'c)=0.261/(2.967\times0.15)=0.587$ with the lecture's shortcut moment (0.584 exact), so the cp sits behind the ac. On the flat plate the two coincided because $C_{m,LE}$ was exactly proportional to $C_n$, with no zero-lift moment. The triangular wing is effectively cambered (flat bottom, peaked top), so it has a nose-down moment at zero lift, and its cp moves with $\alpha$ while the ac stays put.
+Unlike the flat plate, this wing's centre of pressure is not at its aerodynamic centre. At $10^\circ$, $x_{cp}/c=-M'_{LE}/(N'c)=0.261/(2.967\times0.15)=0.587$ with the shortcut moment (0.584 exact), so the cp sits behind the ac. On the flat plate the two coincided because $C_{m,LE}$ was exactly proportional to $C_n$, with no zero-lift moment. The triangular wing is effectively cambered (flat bottom, peaked top), so it has a nose-down moment at zero lift, and its cp moves with $\alpha$ while the ac stays put.
 
-### Why look at sharp, mid-chord-thickness shapes? (ll. 141–153)
+### Why look at sharp, mid-chord-thickness shapes?
 
-Subsonic aerofoils have round leading edges and maximum thickness near the quarter chord. Supersonic sections are sharp-edged, with maximum thickness near **half chord**. *"Later on we will mathematically prove that this type… [is] best to reduce… wave drag"* (ll. 152–153). This is the optimum-aerofoil result of Weeks 7–8.
-
----
-
-## Transcript slips (Tutorial Lecture 1)
-
-> [!warning] Slips in `Tutorial Lecture #1.txt`
-> | Line | Said | Correct |
-> |---|---|---|
-> | l. 2 | "level nozzle" | Laval nozzle |
-> | l. 22 | "2.3 oh no it's not… 2.123" | garbled chart reading at $M_1=2.3$; $\beta_A=32.4^\circ$ (l. 23) |
-> | ll. 68, 79 | "nine one point nine eight nine five", "one point nine nine nine five" | $M_2=1.9895$ |
-> | ll. 71–73, 85 | $\theta_{max}(1.99)$ "about 23… 22.6" | $22.79^\circ$ exactly; 22.6 is a chart reading |
-> | ll. 108–109 | guess 16.2° "then result theta is going to be also 16.2" | it gives $16.07^\circ$; the exact limit is $16.13^\circ$ |
-> | l. 173 | $\nu(M_1)$ "70.81" | $17.81^\circ$ |
-> | l. 174 | "37.7 is here" | $\nu(2.44)=37.71^\circ$, the lower bracketing row |
-> | l. 178 | $p_{2U}$ "6.4 kilopascal" | **6.30 kPa** ($0.0638/0.2026\times20$) |
-> | ll. 189–190 | "19.8 k times c… 0.15… 217 newton per metre" | $19.8\times0.15=2.97$ kN/m $=$ **2970 N/m** |
-> | l. 193 | drag "508 newton" | $N'\sin\alpha=515$ N/m; exactly **694 N/m** (see the warning above) |
-> | ll. 212–214 | "momentum is at the quarter core… three quarters" | moment **arm** $c/4$ and $3c/4$ |
-> | l. 225 | "minus 260 as opposed to 161" | −260 vs **−261** N m/m |
-> | l. 226 | "the one percent difference" | 0.46% |
-> | l. 230 | ac as "the derivative of pitch moment with respect to cl" | $x_{ac}/c=-\mathrm dC_{m,LE}/\mathrm dC_l$ (minus sign) |
+Subsonic aerofoils have round leading edges and maximum thickness near the quarter chord. Supersonic sections are sharp-edged, with maximum thickness near **half chord**. That this shape minimises wave drag is proved later, as the optimum-aerofoil result of Weeks 7–8 (ll. 152–153).
 
 ## Links
 
@@ -391,19 +369,41 @@ Two explicit pieces of homework (ll. 117 and 232–235), both solved here. The r
 
 ### Lecturer-set
 
-- [ ] **Lecturer-set (l. 117):** *"You need to put in your work to get to find the answers yourself… it's your homework"*: do ES1 Q3 (a) and (b) in full, with the tables. → [[#Part 1. Example Sheet 1 Q3: ramp shock reflected from a wall (ll. 7–117)]]
-- [ ] **Lecturer-set, weekend homework (ll. 232–235):** repeat the triangular wing at $\alpha=9^\circ$ or $11^\circ$, form $-\Delta C_m/\Delta C_l$ and check that $x_{ac}\approx c/2$. Answer: 0.487 by the lecture's $C_l$ method; 0.468 measured along the chord. → [[#Weekend homework: the aerodynamic centre (ll. 228–235)]]
-- [ ] **Lecturer-set (ll. 35, 114–115):** practise the oblique-shock and fan "unit calculations" until they are automatic. → [[#The unit calculation (ll. 35–46)]], [[#Upper rear face: one fan unit (ll. 165–179)]]
+- [ ] **Lecturer-set (l. 117):** *"You need to put in your work to get to find the answers yourself… it's your homework"*: do ES1 Q3 (a) and (b) in full, with the tables. → [[#Part 1. Example Sheet 1 Q3: ramp shock reflected from a wall]]
+- [ ] **Lecturer-set, weekend homework (ll. 232–235):** repeat the triangular wing at $\alpha=9^\circ$ or $11^\circ$, form $-\Delta C_m/\Delta C_l$ and check that $x_{ac}\approx c/2$. Answer: 0.487 by the lecture's $C_l$ method; 0.468 measured along the chord. → [[#Weekend homework: the aerodynamic centre]]
+- [ ] **Lecturer-set (ll. 35, 114–115):** practise the oblique-shock and fan "unit calculations" until they are automatic. → [[#The unit calculation]], [[#Upper rear face: one fan unit]]
 
 ### Calculations
 
 - [ ] Triangular wing at $10^\circ$: $p_L=32.93$, $p_{UR}=6.30$ kPa; $L'=2891$, $D'=694$ N/m; $M'_{LE}=-260$ N m/m. → [[#Forces: the chordwise term the shortcut misses]]
-- [ ] *(Suggested)* Find the regular-reflection limit with the secant from guesses $8^\circ$ and $15.3^\circ$. → [[#(b) The largest ramp angle for regular reflection (ll. 63–113)]]
+- [ ] *(Suggested)* Find the regular-reflection limit with the secant from guesses $8^\circ$ and $15.3^\circ$. → [[#(b) The largest ramp angle for regular reflection]]
 - [ ] *(Suggested)* Find the trailing-edge slip-line angle of the triangular wing (the upper stream is compressed, the lower expanded). → [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#3. Shock–shock interaction and slip lines|W03 §3]] method
 
 ### Concepts
 
-- [ ] Explain why $\theta_{max}(M_2)$ falls as the ramp angle rises, and what happens past the limit (ll. 74–83). → [[#(b) The largest ramp angle for regular reflection (ll. 63–113)]]
+- [ ] Explain why $\theta_{max}(M_2)$ falls as the ramp angle rises, and what happens past the limit (ll. 74–83). → [[#(b) The largest ramp angle for regular reflection]]
 - [ ] Explain why $D=N\sin\alpha$ is exact for a flat plate but wrong for the triangular wing. → [[#Forces: the chordwise term the shortcut misses]]
-- [ ] Explain why the cp and the ac coincide for a flat plate but not for this wing. → [[#Weekend homework: the aerodynamic centre (ll. 228–235)]]
+- [ ] Explain why the cp and the ac coincide for a flat plate but not for this wing. → [[#Weekend homework: the aerodynamic centre]]
 - [ ] Explain why supersonic $L/D$ is so much lower than subsonic $L/D$ (ll. 196–206). → [[#Forces: the chordwise term the shortcut misses]]
+
+## Transcript and slide slips
+
+### Transcript slips (Tutorial Lecture 1)
+
+> [!warning] Slips in `Tutorial Lecture #1.txt`
+> | Line | Said | Correct |
+> |---|---|---|
+> | l. 2 | "level nozzle" | Laval nozzle |
+> | l. 22 | "2.3 oh no it's not… 2.123" | garbled chart reading at $M_1=2.3$; $\beta_A=32.4^\circ$ (l. 23) |
+> | ll. 68, 79 | "nine one point nine eight nine five", "one point nine nine nine five" | $M_2=1.9895$ |
+> | ll. 71–73, 85 | $\theta_{max}(1.99)$ "about 23… 22.6" | $22.79^\circ$ exactly; 22.6 is a chart reading |
+> | ll. 108–109 | guess 16.2° "then result theta is going to be also 16.2" | it gives $16.07^\circ$; the exact limit is $16.13^\circ$ |
+> | l. 173 | $\nu(M_1)$ "70.81" | $17.81^\circ$ |
+> | l. 174 | "37.7 is here" | $\nu(2.44)=37.71^\circ$, the lower bracketing row |
+> | l. 178 | $p_{2U}$ "6.4 kilopascal" | **6.30 kPa** ($0.0638/0.2026\times20$) |
+> | ll. 189–190 | "19.8 k times c… 0.15… 217 newton per metre" | $19.8\times0.15=2.97$ kN/m $=$ **2970 N/m** |
+> | l. 193 | drag "508 newton" | $N'\sin\alpha=515$ N/m; exactly **694 N/m** (see the warning above) |
+> | ll. 212–214 | "momentum is at the quarter core… three quarters" | moment **arm** $c/4$ and $3c/4$ |
+> | l. 225 | "minus 260 as opposed to 161" | −260 vs **−261** N m/m |
+> | l. 226 | "the one percent difference" | 0.46% |
+> | l. 230 | ac as "the derivative of pitch moment with respect to cl" | $x_{ac}/c=-\mathrm dC_{m,LE}/\mathrm dC_l$ (minus sign) |

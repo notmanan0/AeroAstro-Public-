@@ -20,7 +20,7 @@ $$
 |---|---|---:|
 | Pinned-pinned | half sine wave | 1.0 |
 | Fixed-free (flagpole) | quarter wave | 2.0 |
-| Fixed-pinned | | about 0.699 (often 0.7) |
+| Fixed-pinned | | 0.699 (often 0.7), from the lowest root of $\tan\mu L=\mu L$, $\mu L=4.493$ |
 | Fixed-fixed | full wave, inflexions at $L/4$ | 0.5 |
 | Fixed-fixed with sway (guided) | | 1.0 |
 

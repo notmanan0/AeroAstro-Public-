@@ -34,4 +34,4 @@ The fix is to propagate attitude with a non-singular representation, the DCM its
 ## Related
 
 - [[Aerospace 3-2-1 Euler Sequence]] · [[Direction Cosine Matrix]] · [[Euler Angles and Rotation Matrices]] (SESA2027)
-- [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Why atan2, not arctan (the L6 question)|Why atan2 is used for extraction]]
+- [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Why atan2, not arctan|Why atan2 is used for extraction]]

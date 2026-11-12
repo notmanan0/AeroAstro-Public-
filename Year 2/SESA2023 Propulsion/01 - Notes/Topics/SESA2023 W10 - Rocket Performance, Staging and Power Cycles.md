@@ -25,7 +25,7 @@ sources: ["02 - Sources/Lectures/Week 10 - Rockets.pdf", "02 - Sources/Lectures/
 # SESA2023 W10 - Rocket Performance, Staging and Power Cycles
 
 > [!abstract] Summary
-> A rocket carries all of its propellant, so the aim is the most impulse per kilogram, which means a hot, high-pressure chamber, light exhaust products and a well-expanded nozzle. Its performance is measured by the specific impulse $I_{sp}$ and effective exhaust velocity $c_e$ overall, the characteristic velocity $C^*$ for the combustion and the thrust coefficient $C_F$ for the nozzle, with $c_e=C^*C_F$. The Tsiolkovsky equation $\Delta V=c_e\ln(m_0/m_{bo})$ shows why staging is essential, and liquid engines' power cycles (pressure-fed, expander, gas generator, staged combustion) trade complexity for chamber pressure, while solid motors are simple but can't be controlled.
+> A rocket carries all of its propellant, so performance is judged by impulse per kilogram, which favours a hot, high-pressure chamber, light exhaust products and a well-expanded nozzle. Its performance is measured by the specific impulse $I_{sp}$ and effective exhaust velocity $c_e$ overall, the characteristic velocity $C^*$ for the combustion and the thrust coefficient $C_F$ for the nozzle, with $c_e=C^*C_F$. The Tsiolkovsky equation $\Delta V=c_e\ln(m_0/m_{bo})$ shows why staging is essential, and liquid engines' power cycles (pressure-fed, expander, gas generator, staged combustion) trade complexity for chamber pressure, while solid motors are simple but can't be controlled.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** given chamber conditions and a nozzle, find $V_j$, $C^*$, $C_F$, $I_{sp}$, throat and exit areas; given $\Delta V$, $I_{sp}$, payload and structural ratio, find propellant and stage masses; or compare power cycles.
@@ -50,8 +50,8 @@ $$
 
 Unlike an air-breather, a rocket wants a small $\dot m$ and a large $V_j$: its whole propellant load has to be carried (LR1, ll. 13–24, 51–68). In a large turbofan the air outweighs the fuel about 500 : 1; in a rocket the oxidiser-to-fuel ratio is more like 4 : 1, and every kilogram of both is on board.
 
-- The equation applies to a static test stand, or to a flying rocket if all the extra pressure and shear forces on the vehicle's sides are booked as drag: "this is our rocket thrust and the rest of it is rocket drag" (LR1, ll. 24–41).
-- The module covers chemical rockets only. Electric propulsion (ionised propellant accelerated by an electric field) obeys the same thrust equation, but "we won't discuss that in this module" (LR1, ll. 44–50).
+- The equation applies to a static test stand, or to a flying rocket if all the extra pressure and shear forces on the vehicle's sides are counted as drag, so the equation gives the thrust and everything else is drag (LR1, ll. 24–41).
+- The module covers chemical rockets only. Electric propulsion (ionised propellant accelerated by an electric field) obeys the same thrust equation, but is not covered in this module (LR1, ll. 44–50).
 
 ### Ideal jet velocity
 
@@ -73,7 +73,7 @@ To raise $V_j$:
 - raise $P_{0c}/P_e$, though with diminishing returns as the bracket tends to 1;
 - choose a light exhaust: $c_pT=\frac{\gamma}{\gamma-1}\frac{\bar R}{M}T$, so at a given temperature a lower molar mass $M$ gives more enthalpy per kilogram (hence hydrogen).
 
-In practice the nozzle is a regenerative heat exchanger (fuel flows through cooling passages in its wall), so "adiabatic" is an approximation. The lecture lists the idealisations and how good they are (LR1, ll. 89–117): adiabatic (reasonable, since little of the flow touches the wall), uniform temperature and velocity (not true near the cooled wall), no viscous losses or separation (so isentropic), and a perfect gas, which is poor for a gas cooling by thousands of kelvin. They give the trends, not accurate numbers.
+In practice the nozzle is a regenerative heat exchanger (fuel flows through cooling passages in its wall), so "adiabatic" is an approximation. The idealisations, and how good they are: adiabatic (reasonable, since little of the flow touches the wall), uniform temperature and velocity (not true near the cooled wall), no viscous losses or separation (so isentropic), and a perfect gas, which is poor for a gas cooling by thousands of kelvin. They give the trends, not accurate numbers.
 
 ![[prop_rocket_nozzle.png|760]]
 
@@ -89,7 +89,7 @@ A supersonic exit decouples the chamber from the outside: everything upstream of
 | Characteristic velocity | $C^*=\dfrac{p_cA_t}{\dot m}$ | the combustor |
 | Thrust coefficient | $C_F=\dfrac{F}{p_cA_t}$ | the nozzle expansion |
 
-- Impulse is force integrated over time: a long gentle push (croquet) or a short hard hit (golf) can give the same change in momentum (LR1, ll. 195–203). Dividing by the propellant weight gives $I_{sp}$ in seconds.
+- Impulse is force integrated over time: a long gentle push and a short hard hit can give the same change in momentum (LR1, ll. 195–203). Dividing by the propellant weight gives $I_{sp}$ in seconds.
 - $g_0=9.81$ m/s², sea-level gravity, is used by convention even for rockets elsewhere; and $m_p$ is the whole propellant, oxidiser plus fuel (LR1, ll. 210–216).
 - $c$ is for *celeritas*, speed (LR1, l. 229). With pressure thrust or a non-uniform exit, $c_e$ is a representative velocity, not the actual jet velocity.
 - The throat is almost always choked, so it is a natural dividing line: $C^*$ for everything upstream (combustion), $C_F$ for everything downstream (nozzle) (LR1, ll. 236–276).
@@ -116,15 +116,12 @@ $$
 
 It depends only on the combustion products ($R$, $\gamma$, $T_c$), not on the diverging section. $C_F$ then carries the nozzle's expansion and the pressure thrust (W11).
 
-> [!warning] $C^*$ is not the throat velocity (LR1, ll. 252–253)
-> "The characteristic velocity C star is the flow velocity through the throat." It has units of velocity, but it is defined as $p_cA_t/\dot m$, not as the gas speed. The gas at a choked throat moves at the critical sound speed $a^*=\sqrt{\gamma RT^*}$. For the F-1 below, $T^*=3600\times2/2.24=3214$ K and $a^*=1193$ m/s, while $C^*=1727$ m/s.
-
-> [!warning] Slide typo (LR1, l. 263)
-> "That should say choked rather than cocked. Sorry, I apologise, not my slides."
+> [!warning] $C^*$ is not the throat velocity
+> $C^*$ has units of velocity, but it is defined as $p_cA_t/\dot m$, not as the gas speed. The gas at a choked throat moves at the critical sound speed $a^*=\sqrt{\gamma RT^*}$. For the F-1 below, $T^*=3600\times2/2.24=3214$ K and $a^*=1193$ m/s, while $C^*=1727$ m/s.
 
 ### Worked example – the Saturn V F-1 engine
 
-The lecture example (LR1, ll. 282–375): $T_c=3600$ K, $P_c=70$ bar, $A_e/A_t=16$, design altitude 24 km ($P_A=2.97$ kPa from the data book), $F=7.7$ MN, $I_{sp}=305$ s; $\gamma=1.24$, $R=356.8$, $c_p=1844$ J kg⁻¹ K⁻¹.
+The worked example (LR1, ll. 282–375): $T_c=3600$ K, $P_c=70$ bar, $A_e/A_t=16$, design altitude 24 km ($P_A=2.97$ kPa from the data book), $F=7.7$ MN, $I_{sp}=305$ s; $\gamma=1.24$, $R=356.8$, $c_p=1844$ J kg⁻¹ K⁻¹.
 
 Ideal jet velocity at the design altitude:
 
@@ -152,9 +149,8 @@ $$
 
 **Component parameters:** $C^*=1727$ m/s, so $C_F=c_e/C^*=1.73$.
 
-> [!warning] Two problems with this example
-> - **Transcript slips (LR1, ll. 298, 320, 367):** the thrust is read as "seven meganewtons" (slide 7.7 MN), and the mass flow as "about 2.3 tons per second" and then "2.5 kilograms per second". The computed value is 2.57 t/s; the real engine ran at about 2.6 t/s.
-> - **Inconsistent design altitude.** An isentropic expansion through $A_e/A_t=16$ at $\gamma=1.24$ reaches only $M_e=3.76$ and $p_e=42$ kPa, a design altitude of about 7 km, not 24 km. The 3213 m/s is therefore an *upper bound* for this nozzle. (The real F-1 throat was about 0.78 m, LR1, l. 374.)
+> [!warning] Inconsistent design altitude
+> An isentropic expansion through $A_e/A_t=16$ at $\gamma=1.24$ reaches only $M_e=3.76$ and $p_e=42$ kPa, a design altitude of about 7 km, not 24 km. The 3213 m/s is therefore an *upper bound* for this nozzle. (The real F-1 throat was about 0.78 m, LR1, l. 374.)
 
 ## 3. Mass ratios and the rocket equation
 
@@ -172,7 +168,7 @@ $$
 
 ### Derivation of the Tsiolkovsky equation
 
-"You don't need to remember the equation by heart, but you need to know how to derive it" (5 May, ll. 45–48). In the 2024-25 exam it was worth 6 marks, and only about a third of the cohort got it (ll. 106–113).
+The equation need not be memorised, but its derivation is examinable (5 May, ll. 45–48): it was worth 6 marks in the 2024-25 exam, and only about a third of the cohort got it (ll. 106–113).
 
 Fully expanded, so the thrust is $F=\dot mc_e$, with the propellant flow $\dot m=-dm/dt$ (the rocket's mass falls). Newton's second law, ignoring gravity and drag:
 
@@ -196,7 +192,7 @@ $$
 \boxed{\Delta V_{ideal} = c_e\ln\frac{m_0}{m_{bo}} = c_e\ln\frac{1}{\lambda+\delta}}
 $$
 
-Keep the minus sign explicit (5 May, ll. 87–96): "one thing that we need to be careful… the mass is actually decreasing." Putting it in at $\dot m=-dm/dt$ saves worrying about which of $m_1$ and $m_2$ is larger.
+Keep the minus sign explicit (5 May, ll. 87–96), because the mass is decreasing. Putting it in at $\dot m=-dm/dt$ saves worrying about which of $m_1$ and $m_2$ is larger.
 
 ### Losses
 
@@ -208,8 +204,8 @@ $$
 
 - Drag $D=\tfrac12\rho V^2SC_D$ favours a slow, vertical climb out of the dense lower atmosphere.
 - Gravity loss favours high acceleration (short burn) and a small $\psi$.
-- The compromise: lift off vertically and slowly (the vehicle is heaviest then anyway), then pitch over in a gravity turn. In the limit, a rocket accelerating sideways just above the ground would have no gravity loss at all, since it is already in orbit; the gravity turn moves towards that once the air is thin (LR2, ll. 116–140).
-- Drag goes with $V^2$, so it pays to reach a reasonable speed quickly and then moderate it in the dense air. A student asked why rockets throttle down on the way up: partly drag, and partly the structural loads near maximum dynamic pressure and through Mach 1 ("I'll research that one", LR2, ll. 143–154).
+- The compromise: lift off vertically and slowly (the vehicle is heaviest then anyway), then pitch over in a gravity turn. In the limit, with no air resistance, a rocket accelerating horizontally just above the ground would have no gravity loss at all, because $\psi=0$ throughout; the gravity turn moves towards that once the air is thin (LR2, ll. 116–140).
+- Drag goes with $V^2$, so a rocket reaches a reasonable speed quickly and then moderates it in the dense air. Rockets throttle down on the way up partly because of drag, and partly because of the structural loads near maximum dynamic pressure and through Mach 1.
 
 ## 4. Staging (rocket staging)
 
@@ -233,20 +229,20 @@ $$
 \lambda_0 = \frac{m_{pl}}{(m_0)_1} = \prod_i\lambda_i,\qquad \Delta V_0 = \sum_i\Delta V_i
 $$
 
-**Work from the top stage down**: the payload is known only for the last stage. The biggest gain is from one to two stages; more give diminishing returns and add complexity ("just an accounting exercise", LR2, ll. 176, 194). Each extra stage needs its own engine, and several small tanks have more structure than one big one, so the total dead weight rises: an optimisation problem (ll. 289–298).
+**Work from the top stage down**: the payload is known only for the last stage. The biggest gain is from one to two stages; more give diminishing returns and add complexity (LR2, ll. 176, 194). Each extra stage needs its own engine, and several small tanks have more structure than one big one, so the total dead weight rises: an optimisation problem (ll. 289–298).
 
 A second reason to stage (LR2, ll. 157–163): each engine is fully expanded at only one altitude. A first stage can be designed for 10–20 km; upper stages fire in near-vacuum and use much larger area ratios. Dropping the low-altitude engines lets each phase use a nozzle suited to it.
 
-All the performance parameters, mass ratios, the rocket equation and the staging relation $(m_{pl})_i=(m_0)_{i+1}$ are printed in the data book, so "you don't need to memorise them" (LR2, ll. 7–10, 48–49, 189–193, 301–302). The 5 May review adds that you must still be able to derive the rocket equation.
+The data book gives all the performance parameters, mass ratios, the rocket equation and the staging relation $(m_{pl})_i=(m_0)_{i+1}$, so they need not be memorised (LR2, ll. 7–10, 48–49, 189–193, 301–302). The rocket equation must still be derivable (5 May review).
 
 ![[prop_rocket_staging.png|640]]
 
 > [!warning] The most common exam error (5 May, ll. 230–241, 389–399)
-> "A very common mistake last year was to use first stage two, then stage one, and then making all the calculation wrong." In the *mission*, stage 1 fires first and is dropped. In the *calculation*, you start with stage 2 because that is where the payload is given. The link is always: payload of stage 1 = initial mass of stage 2.
+> The most common error in the 2024-25 exam was taking the stages in the wrong order in the calculation, which spoils every later number. In the *mission*, stage 1 fires first and is dropped. In the *calculation*, you start with stage 2 because that is where the payload is given. The link is always: payload of stage 1 = initial mass of stage 2.
 
 ### Worked example – Saturn V staging
 
-Lecture example (LR2, ll. 197–264): payload 43.5 t.
+Payload 43.5 t (LR2, ll. 197–264).
 
 | Stage | $m_0$ (t) | $\lambda$ | $\delta$ | $c_e$ (m/s) | $\Delta V$ (m/s) |
 |---|---|---|---|---|---|
@@ -265,13 +261,9 @@ The first stage burns RP-1 (refined kerosene) with LOX, the upper two LH₂/LOX,
 > - $\lambda_0=0.218\times0.253\times0.268=0.0148$ ✔.
 > - Single-stage alternative: burnout mass = all dead weight + payload = $131+36+10+43.5\approx220$ t, so $m_0=220\,e^{13\,433/4129}=5707$ t and $\lambda=43.5/5707=0.76$ %.
 
-> [!warning] Transcript slips in the Saturn V example (LR2, ll. 252, 280–287)
-> - "About 13,000 kilometers per second": it is about 13 km/s (13,433 m/s), as the lecturer says at l. 264.
-> - For the single-stage case the lecturer gives the payload ratio as "0.076 %… about 20 times worse… we can take two tonnes of payload". With the same 43.5 t payload and $m_0=5707$ t the payload ratio is 0.76 %, about half (not a twentieth) of the staged 1.48 %. The "two tonnes" figure would be 0.076 % of the *original* 2942 t, a different comparison.
-
 ### Worked example – the 2024-25 exam rocket question
 
-Reviewed in full on 5 May (ll. 115–330): $\Delta V=5000$ m/s, payload 2000 kg, $I_{sp}=450$ s, $\delta=0.08$.
+$\Delta V=5000$ m/s, payload 2000 kg, $I_{sp}=450$ s, $\delta=0.08$ (5 May, ll. 115–330).
 
 **Single stage.**
 
@@ -305,21 +297,17 @@ $$
 m_{p,2} = 4102\times(1-0.5676) = 1773\ \mathrm{kg},\qquad m_{p,1} = 8412\times0.4324 = 3637\ \mathrm{kg}
 $$
 
-Total 5411 kg, about 190 kg less than the single stage, with the same payload and $\Delta V$; the lecture quotes "8,411" for $(m_0)_1$ (l. 314). See [[SESA2023 Exam 2024-25 Solutions]] Q2.
+Total 5411 kg, about 190 kg less than the single stage, with the same payload and $\Delta V$. See [[SESA2023 Exam 2024-25 Solutions]] Q2.
 
 > [!info] Marking (5 May, ll. 182–198)
 > - Significant figures are not marked, and $g=9.8$ or even 10 is accepted (ll. 138–141, 198).
-> - "If you write even the wrong number I tend to give the mark" when the procedure is right. If you notice a number makes no physical sense but you are sure of the method, write a note saying so: you lose perhaps one mark instead of more.
+> - A wrong number usually still earns the mark when the procedure is right. If you notice a number makes no physical sense but you are sure of the method, write a note saying so: you lose perhaps one mark instead of more.
 
-> [!warning] Transcript slips in the review (5 May, ll. 285, 317, 322)
-> The lecturer reads $\lambda$ as "0.34… 0.487" (it is 0.4876), the stage-1 propellant as "3630" (3637 kg) and the single-stage propellant as "500,098 kg" (5598 kg).
-
-Part (iv): does altitude change the propellant mass flow through a C–D nozzle? (5 May, ll. 334–387). The jet velocity is set inside the engine by the combustion process, not by the flight speed. Once the ambient pressure is below the critical value, the nozzle is choked and the mass flow is fixed by the chamber state and the throat area: climbing further changes the exhaust expansion (and the pressure thrust) but not $\dot m$. Only if the nozzle were unchoked (possible at sea level for some designs) would altitude change the flow.
+Part (iv) asks whether altitude changes the propellant mass flow through a C–D nozzle (5 May, ll. 334–387). It does not, provided the nozzle stays choked. The jet velocity is set inside the engine by the combustion process, not by the flight speed. Once the ambient pressure is below the critical value, the nozzle is choked and the mass flow is fixed by the chamber state and the throat area: climbing further changes the exhaust expansion (and the pressure thrust) but not $\dot m$. Only if the nozzle were unchoked (possible at sea level for some designs) would altitude change the flow.
 
 ## 5. Solid and liquid rockets (Lecture 30)
 
-- **Solid**: fuel and oxidiser are premixed in a solid grain that is also the combustion chamber, so there is no feed system. Simple and storable. But it cannot be controlled or stopped once lit, so the thrust–time profile is designed into the grain shape (the burning area). Lower $I_{sp}$. See [[SESA2023 W11 - Solid Propellants and Rocket Nozzle Design]].
-- **Liquid**: needs pumps or pressurised tanks, and injectors to mix. Complex, heavy, costly, harder to store (cryogenics). But it can be throttled and restarted, and has a higher $I_{sp}$. Fuels: LH₂, RP-1/kerosene; oxidisers: LOX, N₂O₄. Monopropellants (hydrogen peroxide, hydrazine) decompose without a separate oxidiser (L30, l. 41).
+In a **solid** rocket the fuel and oxidiser are premixed in a solid grain that is also the combustion chamber, so there is no feed system, and the motor is simple and storable. It cannot be controlled or stopped once lit, so the thrust–time profile is designed into the grain shape (the burning area), and its $I_{sp}$ is lower (see [[SESA2023 W11 - Solid Propellants and Rocket Nozzle Design]]). A **liquid** rocket needs pumps or pressurised tanks, and injectors to mix the propellants, which makes it complex, heavy, costly and harder to store (cryogenics). In return it can be throttled and restarted, and has a higher $I_{sp}$. Typical fuels are LH₂ and RP-1/kerosene, and typical oxidisers LOX and N₂O₄; monopropellants (hydrogen peroxide, hydrazine) decompose without a separate oxidiser (L30, l. 41).
 
 Propellant choices (L30, ll. 183–233). A comparison at 100 bar chamber pressure and area ratio 45 (roughly vacuum performance):
 
@@ -332,7 +320,7 @@ Propellant choices (L30, ll. 183–233). A comparison at 100 bar chamber pressur
 
 LOX is cryogenic (liquid below about 90 K at ambient pressure).
 
-Above about 100 bar the reactants cannot be treated as perfect gases: nitrogen's critical pressure is about 34 bar, above which there is no distinct liquid and vapour, so real-fluid models are needed (L30, ll. 23–32). The injector plate is "a plate with a thousand tiny Bunsen burners" (ll. 234–240).
+Above about 100 bar the reactants cannot be treated as perfect gases: nitrogen's critical pressure is about 34 bar, above which there is no distinct liquid and vapour, so real-fluid models are needed (L30, ll. 23–32). The injector plate works like a plate of a thousand tiny Bunsen burners (ll. 234–240).
 
 **Engine classes:**
 
@@ -354,20 +342,13 @@ The job of the cycle is to raise the chamber pressure, which needs pump power.
 | Staged combustion (SC) | all the fuel (or oxidiser) through a pre-burner with a little of the other; the rich turbine exhaust goes into the main chamber | highest $P_c$ (SSME > 200 bar); nothing dumped | harshest turbine conditions; most complex | SSME (L30, l. 389), RD-253 |
 | Full-flow SC (legacy exams) | fuel-rich and oxidiser-rich pre-burners drive separate pumps | all propellant through the turbines; cooler turbines; no inter-propellant seal | even more complex | RD-270, Raptor |
 
-How each cycle works (L30, ll. 242–388):
+In a pressure-fed engine each tank must be at least at chamber pressure, plus the injector and pipe losses (L30, ll. 242–388). So 100 bar in the chamber means 100 bar in a cryogenic tank, which is thick and heavy. The tanks are pressurised by self-pressurisation (heat makes a cryogen boil) or from a separate helium bottle. The Aestus upper-stage engine uses hypergolic hydrazine/N₂O₄ and is rated for about 20 starts.
 
-- **Pressure-fed.** Each tank must be at least at chamber pressure (plus injector and pipe losses): 100 bar in the chamber means 100 bar in a cryogenic tank, which is thick and heavy. Pressurise by self-pressurisation (heat makes a cryogen boil) or a separate helium bottle. The Aestus upper-stage engine uses hypergolic hydrazine/N₂O₄ and is rated for about 20 starts.
-- **Expander.** On the fuel side it is a small Brayton cycle: pump, heat (in the nozzle cooling coil), expand through a turbine, then inject. The fuel must leave the turbine still above chamber pressure, so the pump delivers several times the chamber pressure. Only one propellant (usually the fuel) is used, partly because sealing a shaft that carries both a fuel and an oxidiser turbine against leakage, at cryogenic temperatures, is a "massive engineering headache". Heat transfer through the wall limits the turbine power, and the engine needs another source to start the pumps.
-- **Gas generator.** A small separate combustor burns a bleed of fuel and oxidiser to drive the turbine. Its exhaust leaves the turbine below chamber pressure, so it is dumped overboard or sent through a small separate nozzle: wasted propellant.
-- **Staged combustion.** All the fuel goes through a pre-burner with only part of the oxidiser, giving fuel-rich, incomplete combustion: enough temperature to drive the turbine. The rich exhaust then enters the main chamber, where the rest of the oxidiser completes the reaction. Nothing is dumped, but the fuel pump must deliver well above chamber pressure. On the SSME, sparks at the nozzle ignite the propellant instantly at start-up so no explosive hydrogen–oxygen cloud forms; at sea level the plume is over-expanded and shows shock diamonds.
+On the fuel side, an expander engine is a small Brayton cycle: pump, heat (in the nozzle cooling coil), expand through a turbine, then inject. The fuel must leave the turbine still above chamber pressure, so the pump delivers several times the chamber pressure. Only one propellant (usually the fuel) drives the turbine, partly because sealing a shaft that carries both a fuel and an oxidiser turbine against leakage, at cryogenic temperatures, is a major engineering difficulty. Heat transfer through the wall limits the turbine power, and the engine needs another source to start the pumps. This makes the cycle size-limited: the heat it picks up scales with the wall area (∝ size²), while the propellant flow, and so the pump power needed, scales with the volume (∝ size³), so big engines can't pick up enough heat to drive their pumps.
 
-> [!warning] Expander pump pressure (L30, ll. 298–305)
-> The lecturer says the pump outlet must be "five or 10 times the pressure of the combustion chamber. Instead of it being 100 or 200 bar, it needs to be 2000 bar", then "maybe 500 bar here… expand it down to 100 bar". The figures are illustrative and not consistent; the point is that the pump must deliver well above chamber pressure so the fuel can still be injected after the turbine.
+A gas-generator engine burns a bleed of fuel and oxidiser in a small separate combustor to drive the turbine. That exhaust leaves the turbine below chamber pressure, so it is dumped overboard or sent through a small separate nozzle, and its propellant is wasted. Vulcain is a gas-generator engine.
 
-> [!warning] Vulcain is a gas-generator engine
-> The Week 10 notes also list Vulcain under staged combustion; the slides (and the engine) are gas-generator. Use GG.
-
-The expander cycle is size-limited because the heat it picks up scales with the wall area (∝ size²) while the propellant flow, and so the pump power needed, scales with the volume (∝ size³). Big engines can't pick up enough heat to drive their pumps.
+In a staged-combustion engine all the fuel goes through a pre-burner with only part of the oxidiser, giving fuel-rich, incomplete combustion that is hot enough to drive the turbine. The rich exhaust then enters the main chamber, where the rest of the oxidiser completes the reaction. Nothing is dumped, but the fuel pump must deliver well above chamber pressure. On the SSME, sparks at the nozzle ignite the propellant instantly at start-up so no explosive hydrogen–oxygen cloud forms; at sea level the plume is over-expanded and shows shock diamonds.
 
 ---
 
@@ -387,7 +368,7 @@ The expander cycle is size-limited because the heat it picks up scales with the 
 | effective exhaust velocity $c_e$ | equivalent exhaust velocity, $c$ | Week 10 notes | $=g_0I_{sp}$. |
 | characteristic velocity $C^*$ | c-star | Week 10 notes | |
 | thrust coefficient $C_F$ | — | Week 10 notes | |
-| dead weight $m_{dw}$ | structural mass, inert mass | Week 10 notes, 5 May | "date weight" in the transcript. |
+| dead weight $m_{dw}$ | structural mass, inert mass | Week 10 notes, 5 May | |
 | structural ratio $\delta$ | dead-weight ratio, structural coefficient | Week 10 notes | Some texts define $\epsilon=m_s/(m_s+m_p)$ instead. |
 | payload ratio $\lambda$ | — | Week 10 notes | |
 | Tsiolkovsky equation | rocket equation | 5 May, l. 46 | |
@@ -412,7 +393,7 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 10 lectures; 
 
 ### Core
 
-- [ ] *(set)* Derive the Tsiolkovsky equation: "you need to know how to derive it" (5 May, ll. 45–48). → [[#Derivation of the Tsiolkovsky equation]]
+- [ ] *(set)* Derive the Tsiolkovsky equation; the derivation is examinable (5 May, ll. 45–48). → [[#Derivation of the Tsiolkovsky equation]]
 - [ ] *(set)* 2024-25 exam Q2: single- and two-stage propellant masses (5 May, ll. 115–330). Targets 5598 kg and 5411 kg. → [[#Worked example – the 2024-25 exam rocket question]]
 - [ ] *(set)* F-1 engine: $V_j$, $c_e$, $\dot m$, throat and exit diameters (LR1, ll. 282–375). Targets 3213 and 2992 m/s, 0.90 and 3.6 m. → [[#Worked example – the Saturn V F-1 engine]]
 - [ ] *(set)* Saturn V staging (LR2, ll. 197–264), including the single-stage comparison. → [[#Worked example – Saturn V staging]]
@@ -428,3 +409,51 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 10 lectures; 
 - [ ] *(2024-25 Q2(iv))* Explain whether altitude changes the propellant mass flow through a C–D nozzle. → [[#Worked example – the 2024-25 exam rocket question]]
 - [ ] Compare LOX/LH₂, LOX/CH₄, LOX/RP-1 and N₂O₄/hydrazine on performance and storability. → [[#5. Solid and liquid rockets (Lecture 30)]]
 - [ ] Give two reasons for staging besides shedding dead weight. → [[#Relations]]
+
+## Transcript and slide slips
+
+> [!warning] Slide typo (LR1, l. 263)
+> Where: [[#Why the characteristic velocity measures only the combustor]].
+>
+> The slide reads "cocked" where it should read "choked".
+
+> [!warning] Transcript slip: $C^*$ called the throat velocity (LR1, ll. 252–253)
+> Where: [[#Why the characteristic velocity measures only the combustor]].
+>
+> "The characteristic velocity C star is the flow velocity through the throat." $C^*$ is defined as $p_cA_t/\dot m$ and only has the units of a velocity; the gas speed at a choked throat is the critical sound speed $a^*$ (see the warning in that section).
+
+> [!warning] Transcript slip: the stage-order error (5 May, ll. 237–241)
+> Where: [[#4. Staging (rocket staging)]].
+>
+> "A very common mistake last year was to use first stage two, then stage one, and then making all the calculation wrong." The sentence is garbled; the procedure to follow is the one in the warning in that section: start the calculation at the top stage, and take the payload of stage 1 as the initial mass of stage 2.
+
+> [!warning] Transcript slips in the F-1 example (LR1, ll. 298, 320, 367)
+> Where: [[#Worked example – the Saturn V F-1 engine]].
+>
+> The thrust is read as "seven meganewtons" (slide 7.7 MN), and the mass flow as "about 2.3 tons per second" and then "2.5 kilograms per second". The computed value is 2.57 t/s; the real engine ran at about 2.6 t/s.
+
+> [!warning] Transcript slips in the Saturn V example (LR2, ll. 252, 280–287)
+> Where: [[#Worked example – Saturn V staging]].
+>
+> - "About 13,000 kilometers per second": it is about 13 km/s (13,433 m/s), as the lecturer says at l. 264.
+> - For the single-stage case the lecturer gives the payload ratio as "0.076 %… about 20 times worse… we can take two tonnes of payload". With the same 43.5 t payload and $m_0=5707$ t the payload ratio is 0.76 %, about half (not a twentieth) of the staged 1.48 %. The "two tonnes" figure would be 0.076 % of the *original* 2942 t, a different comparison.
+
+> [!warning] Transcript slips in the review (5 May, ll. 285, 317, 322)
+> Where: [[#Worked example – the 2024-25 exam rocket question]].
+>
+> The lecturer reads $\lambda$ as "0.34… 0.487" (it is 0.4876), the stage-1 propellant as "3630" (3637 kg) and the single-stage propellant as "500,098 kg" (5598 kg).
+
+> [!warning] Transcript slip: expander pump pressure (L30, ll. 298–305)
+> Where: [[#6. Liquid-rocket power cycles (Lecture 30)]].
+>
+> The pump outlet is said to need to be "five or 10 times the pressure of the combustion chamber. Instead of it being 100 or 200 bar, it needs to be 2000 bar", then "maybe 500 bar here… expand it down to 100 bar". The figures are illustrative and not consistent; the point is that the pump must deliver well above chamber pressure so the fuel can still be injected after the turbine.
+
+> [!warning] Vulcain is a gas-generator engine
+> Where: [[#6. Liquid-rocket power cycles (Lecture 30)]].
+>
+> The Week 10 notes also list Vulcain under staged combustion; the slides (and the engine) are gas-generator. Use GG.
+
+> [!warning] Transcript slip (LR2, l. 314)
+> Where: [[#Worked example – the 2024-25 exam rocket question]].
+>
+> $(m_0)_1$ is quoted as "8,411" kg; the two-stage total is 5411 kg.

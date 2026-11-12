@@ -18,7 +18,7 @@ Along the fibres the fibre and matrix are bonded and stretch together, an isostr
 
 ![[materials_isostrain_isostress.png|750]]
 
-The same rules give density and electrical resistivity, and approximate strength along the fibres, $\sigma_L\approx V_f\sigma_f+V_m\sigma_m$. They do not give toughness, which depends on interfaces, pull-out and delamination. For a design requirement $P$, rearranging gives the fibre fraction needed, $V_f=(P-P_m)/(P_f-P_m)$; take the larger of the fractions for stiffness and strength, and remember that more than about 0.65 is hard to make. A hybrid adds a term for each fibre. The same arithmetic applies to metal and ceramic matrices ([[MMC vs CMC]]), and the lecturer calls the rule an exam top tip.
+The same rules give density and electrical resistivity, and approximate strength along the fibres, $\sigma_L\approx V_f\sigma_f+V_m\sigma_m$. They do not give toughness, which depends on interfaces, pull-out and delamination. For a design requirement $P$, rearranging gives the fibre fraction needed, $V_f=(P-P_m)/(P_f-P_m)$; take the larger of the fractions for stiffness and strength, and remember that more than about 0.65 is hard to make. A hybrid adds a term for each fibre. The same arithmetic applies to metal and ceramic matrices ([[MMC vs CMC]]), and the rule is a common exam question.
 
 ![[materials_rule_of_mixtures.png|700]]
 

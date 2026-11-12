@@ -35,5 +35,5 @@ Each curve peaks: at $p=0.1$ the optimum is $x=0.633$ with $\Delta V/V_c=0.651$,
 
 ## Related
 
-- [[SESA2024 07 - Spacecraft Propulsion#4. Electric propulsion|Electric propulsion in the lecture note]] · [[SESA2024 07 - Spacecraft Propulsion#Pluto orbiter by electric propulsion|Pluto worked example]]
+- [[SESA2024 07 - Spacecraft Propulsion#4. Electric propulsion|Electric propulsion in the topic note]] · [[SESA2024 07 - Spacecraft Propulsion#Pluto orbiter by electric propulsion|Pluto worked example]]
 - [[Chemical Propulsion Systems]] · [[Tsiolkovsky Rocket Equation]] · [[Spacecraft Power Sources]]

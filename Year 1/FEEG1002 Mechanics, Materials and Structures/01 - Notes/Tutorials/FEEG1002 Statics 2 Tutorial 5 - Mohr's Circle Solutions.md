@@ -13,47 +13,41 @@ sources: ["02 - Sources/Statics 2/Tutorials/Tutorial Sheet 05 - Mohr's Circle.pd
 
 # FEEG1002 Statics 2 Tutorial 5 - Mohr's Circle Solutions
 
-> [!abstract] Sheet Info
-> One question: the stress element in a sail. Answers reproduced ✔ ($\sigma_I = 4.3$, $\sigma_{II} = 0.70$ MPa, $\theta_p = -16.8^\circ$).
+> [!abstract] Sheet info
+> One question: the stress element at a point in a sail. All answers match the official solution ($\sigma_I=4.3$ MPa, $\sigma_{II}=0.70$ MPa, $\theta_p=-16.8^\circ$), checked numerically.
 
-## Theory Links
-- [[FEEG1002 B4 - Stress Transformation and Mohr's Circle]] · [[Mohr's Circle]] · [[Principal Stresses]]
+## Q1 Plane stress element in a sail
 
----
+*Taught in:* [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#Constructing the circle]] and [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#5. Principal stresses and maximum shear]] · worked in full at [[FEEG1002 B4 - Stress Transformation and Mohr's Circle#Worked example - sail element]].
 
-## Q1: Plane stress in a sail, $\sigma_{xx} = 4$ MPa, $\sigma_{yy} = 1$ MPa, shear 1 MPa
-**Reading the shear sign.** On the right-hand ($+x$) face the shear arrow points **down**, and on the top face it points **left**. Both are negative directions on positive faces, so $\sigma_{xy} = \mathbf{-1}$ **MPa**.
+**Reading the element.** $\sigma_{xx}=4$ MPa and $\sigma_{yy}=1$ MPa. On the right-hand face the shear arrow points down and on the top face it points left: negative directions on faces with positive normals, so $\sigma_{xy}=-1$ MPa.
 
-### A) Mohr's circle
-1. Centre: $\sigma_{avg} = \dfrac{4+1}{2} = 2.5$ MPa.
-2. $x$-face point: $(4, -1)$. With the shear axis positive **downwards**, it plots **above** the axis.
-3. $y$-face point: $(1, +1)$, diametrically opposite.
+**A) Mohr's circle.** The centre is $\sigma_{average}=(4+1)/2=2.5$ MPa. With shear plotted positive downwards, the $x$-face point $(4,-1)$ lies above the axis; the $y$-face point $(1,+1)$ is diametrically opposite, below it.
 
-### B) Principal stresses
+**B) Principal stresses.**
 
 $$
-R = \sqrt{\left(\frac{4-1}{2}\right)^2 + 1^2} = 1.80\ \text{MPa}
+R=\sqrt{\left(\frac{4-1}{2}\right)^2+(-1)^2}=1.80\ \mathrm{MPa}
 $$
 
 $$
-\sigma_I = 2.5 + 1.80 = \mathbf{4.30}\ \text{MPa},\qquad \sigma_{II} = 2.5 - 1.80 = \mathbf{0.70}\ \text{MPa}\ ✔
+\sigma_I=2.5+1.80=4.30\ \mathrm{MPa},\qquad \sigma_{II}=2.5-1.80=0.70\ \mathrm{MPa}
 $$
 
-The maximum in-plane shear is $R = 1.80$ MPa, on planes at 45° to the principal planes, where both normal stresses are 2.5 MPa.
+The maximum in-plane shear stress is $R=1.80$ MPa, on planes at 45° to the principal planes, where both normal stresses are 2.5 MPa.
 
-### C) Principal orientation
+**C) Principal element.**
 
 $$
-\tan2\theta = \frac{2|\sigma_{xy}|}{\sigma_{xx} - \sigma_{yy}} = \frac{2}{3}\;\Rightarrow\;|2\theta| = 33.7^\circ,\quad|\theta| = 16.8^\circ
+\tan|2\theta|=\frac{2|\sigma_{xy}|}{\sigma_{xx}-\sigma_{yy}}=\frac23\ \Rightarrow\ |2\theta|=33.7^\circ,\quad |\theta|=16.8^\circ
 $$
 
-On the circle, moving from the $x$-face point (above the axis) to $\sigma_I$ is a **clockwise** rotation. So the element rotates **clockwise**: $\theta_p = \mathbf{-16.8^\circ}$. The $x'$ axis carries 4.3 MPa and the $y'$ axis 0.7 MPa, with **no shear**.
+Going from the $x$-face point, above the axis, down to $\sigma_I$ is a clockwise rotation on the circle, so the element turns clockwise: $\theta_p=-16.8^\circ$. The $x'$ axis then carries 4.3 MPa and the $y'$ axis 0.7 MPa, with no shear.
 
-![[s2_mohr_t5_sail.png|940]]
+**Check.** $\sigma_{x'x'}(-16.8^\circ)=4(0.9164)+1(0.0836)+2(-1)(-0.2769)=4.30$ MPa. Both principal stresses are tensile, so the sail cloth is stretched in every direction at this point and does not wrinkle.
 
-> [!tip] Check with the transformation equation
-> $\sigma_{x'x'}(\theta = -16.8^\circ) = 4(0.9164) + 1(0.0836) + 2(-1)(-0.2769) = 3.666 + 0.084 + 0.554 = 4.30$ ✔
-> Both principal stresses are tensile, so the sail cloth never goes into compression, where it would wrinkle.
+![[s2_mohr_t5_sail.png|900]]
 
 ## Sources
-- Source sheet and official solutions: Statics-2 Tutorial problem sheet 5
+
+- `Tutorial Sheet 05 - Mohr's Circle.pdf` and its solutions.

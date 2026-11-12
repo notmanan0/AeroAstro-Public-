@@ -31,7 +31,7 @@ $$
 r-y_{ss}=\frac{r-d}{1+Kk_p},
 $$
 
-so the loop gain $1+Kk_p$ divides the time constant, the disturbance and the sensitivity to plant-gain error alike. Feedforward leaves $\tau$ unchanged. With $\tau=0.5$ s, $K=8$, $k_p=1.125$, $r=20$ °/s and a 5 °/s gust, the steady output is 25 open loop, 18.5 with feedback, and 20 with feedforward plus feedback. This is worked in [[SESA3047 1.1 - Dynamic Systems and Control Architectures#9. Worked example: three architectures on one plant (suggested)|1.1 §9]] (a suggested example, not lecturer-set).
+so the loop gain $1+Kk_p$ divides the time constant, the disturbance and the sensitivity to plant-gain error alike. Feedforward leaves $\tau$ unchanged. With $\tau=0.5$ s, $K=8$, $k_p=1.125$, $r=20$ °/s and a 5 °/s gust, the steady output is 25 open loop, 18.5 with feedback, and 20 with feedforward plus feedback. Full working: [[SESA3047 1.1 - Dynamic Systems and Control Architectures#9. Worked example: three architectures on one plant (suggested)|1.1 §9]] (a suggested example, not lecturer-set).
 
 ## Related
 

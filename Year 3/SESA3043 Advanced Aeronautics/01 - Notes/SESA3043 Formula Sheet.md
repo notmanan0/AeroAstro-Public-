@@ -11,7 +11,7 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 
 # SESA3043 Formula Sheet
 
-Current coverage: **Chapters 1–3**. Chapters 1–2 and 3.1–3.2 are lectured; 3.3–3.6 are written from the slides, ahead of the lectures.
+Current coverage: **Chapters 1–3**. Chapters 1–2, 3.1–3.2 and CH3-3 slides 1–26 are checked against transcripts; the rest of 3.3 and 3.4–3.6 are written from the slides, ahead of time.
 
 ## Which method? Given → method → predicts → main limitation
 
@@ -260,6 +260,7 @@ $$
 Blasius: $f''(0)=\theta^*=0.4696$, $\eta^*=1.217$, $\eta_{99}=3.47$ (slides 3.5);
 $\delta_{99}/x=4.91/\sqrt{Re_x}$ (slides 5.0), $\delta^*/x=1.721/\sqrt{Re_x}$, $\theta/x=C_f=0.664/\sqrt{Re_x}$, $H=2.59$.
 Separation: $\beta=-0.19884$, $m=-0.0904$. Stagnation ($\beta=1$): $\xi=\sqrt{\nu/c}$, $\eta_{99}\approx2.4$.
+Cylinder, near the front stagnation point ($x=R\theta$ along the surface, $\theta$ small, in radians): $U_e=2U_\infty\sin\theta\approx2U_\infty x/R$, so $c=2U_\infty/R$, $m=1$ and $\delta_{99}=\eta_{99}\sqrt{\nu R/(2U_\infty)}$, independent of $x$ (worked problem, slide 106: 0.374 mm).
 $\beta\pi$ is the included angle of a symmetric wedge. A single wall turned away by $\delta_w$ has $\beta=-2\delta_w/\pi$, so separation needs only $\delta_w=17.9^\circ$.
 
 ## Pohlhausen (3.3)
@@ -268,7 +269,7 @@ $$
 \frac u{U_e}=2\eta-2\eta^3+\eta^4+\frac\lambda6\eta(1-\eta)^3,\qquad\eta=\frac y\delta,\qquad\lambda=\frac{\delta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}=-\left.\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}\right|_0.
 $$
 
-$\delta^*/\delta=\frac{3}{10}-\frac{\lambda}{120}$, $\theta/\delta=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072}$, $\tau_w\delta/(\mu U_e)=2+\lambda/6$; separation $\lambda=-12$; valid $|\lambda|\le12$. For geometrically similar laminar flow, $\delta^2\propto\nu L/U_\infty$ cancels the $1/\nu$, so $\lambda(x/L)$ and the laminar separation point do not depend on $Re$; $Re$ matters through transition.
+$\delta^*/\delta=\frac{3}{10}-\frac{\lambda}{120}$, $\theta/\delta=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072}$, $\tau_w\delta/(\mu U_e)=2+\lambda/6$; separation $\lambda=-12$; valid $|\lambda|\le12$. Coefficients: $a_0=0$, $a_1=2+\lambda/6$, $a_2=-\lambda/2$, $a_3=-2+\lambda/2$, $a_4=1-\lambda/6$. Shape factor $H=\delta^*/\theta$: 2.25 at $\lambda=12$, 2.55 at $\lambda=0$ (Blasius 2.59), 3.50 at $\lambda=-12$; APG raises $H$, FPG lowers it. In terms of $Re_\delta=U_e\delta/\nu$ (Bernoulli at the edge): $\lambda=Re_\delta\frac{\delta}{U_e}\frac{\mathrm dU_e}{\mathrm dx}=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$, so at fixed station and with the other factors held fixed, separation is more likely with higher $Re$, a thicker layer, slower $U_e$ and a stronger APG. For geometrically similar laminar flow, $\delta^2\propto\nu L/U_\infty$ cancels the $1/\nu$, so $\lambda(x/L)$ and the laminar separation point do not depend on $Re$; $Re$ matters through transition.
 
 ## Transition (3.4)
 
@@ -280,13 +281,17 @@ $$
 F=\frac{\omega\nu}{U_e^2},\qquad n=\ln\frac{A}{A_0}=-\int_{x_0}^x\alpha_i\,\mathrm dx,\qquad n_{crit}\approx9.
 $$
 
+Spatial growth (complex $\alpha$, real $\omega$; boundary layers are convectively unstable): growth rate $-\alpha_i$, unstable for $\alpha_i<0$ with $e^{i(\alpha x-\omega t)}$. $c_{ph}=\omega/\alpha$, $\alpha=2\pi/\lambda$, $\omega=2\pi/T$. Thumb plot: $\log Re_{\delta^*}$ against $F$, neutral curve $\alpha_i=0$, tip = small $Re_{crit}$ (first instability, not transition). Transition where the envelope of the constant-frequency amplification curves reaches $n_{crit}=9$ (Smith & Gamberoni; van Ingen; the XFOIL/XFLR5 default), lower $n_{crit}$ for a noisier environment. Blasius: $Re_{\delta^*}=1.7208\sqrt{Re_x}$. APG: larger unstable region, lower $Re_{crit}$; FPG the opposite.
+
 ## Momentum integral equation (3.5)
 
 $$
 \frac{\mathrm d\theta}{\mathrm dx}+(2+H)\frac{\theta}{U_e}\frac{\mathrm dU_e}{\mathrm dx}=\frac{C_f}{2}\qquad\text{(laminar and turbulent)}.
 $$
 
-Thwaites (extension): $\theta^2=\dfrac{0.45\nu}{U_e^6}\displaystyle\int_0^xU_e^5\,\mathrm dx$.
+Conditions: 2-D, steady, incompressible boundary layer. One ODE with three unknowns ($\theta$, $H$ or $\delta^*$, $C_f$), so it needs a closure: an assumed similarity profile or an empirical correlation. Zero pressure gradient ($\mathrm dU_e/\mathrm dx=0$): $\mathrm d\theta/\mathrm dx=C_f/2$.
+
+Thwaites (extension; laminar only; outside the scope of CH3-5, BL6 ll. 343–351): $\theta^2=\dfrac{0.45\nu}{U_e^6}\displaystyle\int_0^xU_e^5\,\mathrm dx$.
 
 Mean skin friction of a flat plate of length $L$ (laminar or turbulent, but **zero pressure gradient**; ship example, slides 40–44): $\overline{C_f}=\dfrac{2\,\theta(L)}{L}$. Fully rough wall (extension): $\sqrt{2/C_f}=\kappa^{-1}\ln(\delta/k_s)+8.5+2\Pi/\kappa$, independent of $\nu$.
 

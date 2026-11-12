@@ -19,7 +19,7 @@ $$
 t_e=\tau\,\frac{180^\circ-2\alpha}{360^\circ},\qquad\cos\alpha=\frac{R_E}{R_E+h},\qquad t_s=\tau-t_e.
 $$
 
-The orbit enters and leaves the shadow where its radius makes the angle $\alpha$ with the Earth–Sun line, so the shadowed arc subtends $180^\circ-2\alpha$. The eclipse fraction falls with altitude, from about 40 % at 350 km to 4.8 % at GEO, but the period rises, so the duration has a broad minimum of about 35 minutes for LEO altitudes of roughly 700–1500 km and climbs to 69 minutes at GEO.
+The Earth's shadow is treated as a cylinder of radius $R_E$. The orbit enters and leaves it where its radius makes the angle $\alpha$ with the terminator (the line through the Earth's centre perpendicular to the Sun direction), since there the spacecraft is $R_E$ from the shadow axis and $r\cos\alpha=R_E$. Entry and exit are each $90^\circ-\alpha$ from the anti-Sun line, so the shadowed arc subtends $180^\circ-2\alpha$. The eclipse fraction falls with altitude, from about 40 % at 350 km to 4.8 % at GEO, but the period rises, so the duration has a broad minimum of about 35 minutes for LEO altitudes of roughly 700–1500 km and climbs to 69 minutes at GEO.
 
 | Altitude | Period | Worst-case eclipse | Sunlight |
 |---|---|---|---|
@@ -36,5 +36,5 @@ The eclipse sets the battery capacity, the array's recharge power and the therma
 
 ## Related
 
-- [[SESA2024 08 - Electrical Power Subsystem#Worst-case eclipse|Derivation in the lecture note]]
+- [[SESA2024 08 - Electrical Power Subsystem#Worst-case eclipse|Derivation in the topic note]]
 - [[Battery Sizing]] · [[Local Solar Time and RAAN]] · [[Spacecraft Thermal Balance Equation]]

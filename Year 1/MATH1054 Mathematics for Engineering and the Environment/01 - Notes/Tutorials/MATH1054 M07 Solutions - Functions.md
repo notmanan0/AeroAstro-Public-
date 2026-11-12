@@ -12,7 +12,7 @@ sheet: "Module 07 work scheme: Examples 2.1–2.61, 8.17(f–h), 8.18(b), 8.20; 
 theory_notes: ["[[MATH1054 M07 - Functions]]"]
 key_concepts: ["[[Inverse Functions]]", "[[Even, Odd and Periodic Functions]]", "[[Inverse Trigonometric Functions]]", "[[Hyperbolic Functions]]"]
 status: complete
-sources: ["tmp/md/module_07_functions.md", "02 - Sources/Modern Engineering Mathematics.pdf (§2.2, §2.6–2.7, §8.3.9–8.3.12)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 7)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§2.2, §2.6–2.7, §8.3.9–8.3.12)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 7)"]
 ---
 
 # MATH1054 M07 Solutions - Functions
@@ -92,6 +92,20 @@ Note that $f\circ g\neq g\circ f$ in general.
 | (b) roots at $0,\pm1,\pm2$ | $180°$ rotation about O | **odd** |
 | (c) through $(0,1)$, rising, asymptotic to the negative $x$-axis (like $e^x$) | neither | **neither** |
 | (d) flat top at $y=1$ on $[-1,1]$, zero at $\pm2$ | mirror in the $y$-axis | **even** |
+| (e) trapezoidal wave, $f\ge0$, period 5 | neither mirror nor $180°$ rotation | **neither** |
+| (f) humps of height 2 for $x>0$, troughs of depth 2 for $x<0$ | $180°$ rotation about O | **odd** |
+
+**(e)** Read one period from the graph: $f$ ramps up on $[-1,0]$, is flat at its maximum $h$ on $[0,2]$, ramps down on $[2,3]$ and is zero on $[3,4]$, then repeats every 5. Compare $x=1$ with $x=-1$:
+
+$$f(1)=h,\qquad f(-1)=0.$$
+
+Since $f(-1)\neq f(1)$, $f$ is not even. Since $f(-1)\neq-f(1)=-h$, $f$ is not odd. More generally, $f\ge0$ everywhere and $f$ is not identically zero, so it can never be odd: an odd function that is positive at some $x$ is negative at $-x$. The function is **neither**.
+
+**(f)** For $x>0$ the graph is a hump of height 2 on $[0,1]$, zero on $[1,2]$ and another hump of height 2 on $[2,3]$. For $x<0$ it is a trough of depth 2 on $[-1,0]$, zero on $[-2,-1]$ and another trough on $[-3,-2]$. Each trough is the hump at the mirror position turned upside down, so
+
+$$f(-x)=-f(x)$$
+
+for every $x$ shown, and $f(0)=0$. Rotating the graph by $180°$ about O maps it onto itself, so the function is **odd**.
 
 ## Example 2.12: Periodic, even and odd extensions of the triangle on $[0,1]$
 The given piece is $f(x)=3x$ on $[0,\tfrac13]$ and $f(x)=\tfrac32(1-x)$ on $[\tfrac13,1]$.
@@ -216,6 +230,14 @@ $$\frac{3/4}{\sqrt{1+9x^2/16}}=\boxed{\frac{3}{\sqrt{16+9x^2}}}$$
 | (b) W-shape, maximum at $(0,0)$, symmetric | **even** | mirror in the $y$-axis |
 | (c) line, positive slope, positive intercept | **neither** | $f(0)\neq0$ rules out odd, and a sloping line is not even |
 | (d) through O, a maximum for $x<0$, increasing for $x>0$ | **neither** | no mirror symmetry and no point symmetry |
+| (e) wave falling through O, maximum just left of O and minimum just right | **odd** | $180°$ rotation about O maps it onto itself |
+| (f) bell-shaped hump centred on the $y$-axis | **even** | mirror in the $y$-axis |
+
+**(e)** The curve passes through O, so $f(0)=0$. The maximum at $x=-a$ just left of O has the same height as the depth of the minimum at $x=+a$ just right of O, and the minimum further left at $x=-b$ matches the maximum further right at $x=+b$. So $f(-x)=-f(x)$ at each pair of mirror points, and the wave is **odd**.
+
+**(f)** The hump has its single maximum on the $y$-axis and falls away equally on both sides towards the $x$-axis, so $f(-x)=f(x)$ and the function is **even**. It is not odd, because $f(0)\neq0$.
+
+**Check**: James's answers are (a) odd, (b) even, (c) neither, (d) neither, (e) odd, (f) even ✔
 
 ## Exercise 68 (p.149) (harder): Sketches
 **(a)** $y=\sin^{-1}(\cos x)$. Since $\cos x=\sin(\frac\pi2-x)$, and $\frac\pi2-x\in[-\frac\pi2,\frac\pi2]$ when $x\in[0,\pi]$:
@@ -336,5 +358,5 @@ $$\frac{\mathrm d}{\mathrm dx}\tan^{-1}4x=\frac{4}{1+(4x)^2}=\boxed{\frac{4}{1+1
 **(ii)** $\dfrac{\mathrm d}{\mathrm dx}x^3\sinh x=\boxed{3x^2\sinh x+x^3\cosh x}$.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_07_functions.md`
+- Problem statements: Module 07 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §2.2, §2.6–2.7, §8.3.9–8.3.12; MATH1054 Module Booklet, Module 7

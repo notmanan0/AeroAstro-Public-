@@ -29,5 +29,5 @@ The constant angle is chosen through the local solar time of the node, which set
 
 ## Related
 
-- [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#1. Sun-synchronism|Sun-synchronism in the lecture note]] · [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#Inclination for 700 to 900 km|Worked inclinations]]
+- [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#1. Sun-synchronism|Sun-synchronism in the topic note]] · [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#Inclination for 700 to 900 km|Worked inclinations]]
 - [[Nodal Regression (J2)]] · [[Repeat Ground Track]] · [[Local Solar Time and RAAN]]

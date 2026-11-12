@@ -41,5 +41,5 @@ Past-paper uses: a 25 % flap in [[SESA2022 Exam 2013-14 Solutions]] Q3, [[SESA20
 
 ## Related
 
-- Full derivation and worked examples: [[SESA2022 T4 - Thin Aerofoil Theory#7. Trailing-edge flaps (31 Oct lecture)|T4 §7]]
+- Full derivation and worked examples: [[SESA2022 T4 - Thin Aerofoil Theory#7. Trailing-edge flaps|T4 §7]]
 - [[Glauert Integrals]] · [[Aerodynamic Centre and Centre of Pressure]] · [[Stick-Fixed vs Stick-Free Stability]]

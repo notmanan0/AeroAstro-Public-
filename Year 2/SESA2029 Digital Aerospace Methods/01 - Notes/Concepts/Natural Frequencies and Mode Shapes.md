@@ -36,6 +36,4 @@ The eigenvalues $\omega_i^2$ give the natural frequencies. The eigenvectors $\{\
 - Parent lectures: [[SESA2029 B8 - Modal Analysis]]
 - Related concepts: [[Participation Factor and Effective Mass]] · [[Damping Ratio and Natural Frequency]] · [[Characteristic Equation and Eigenvalues]]
 - SDOF theory: [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid]]
-
-## Year 1 foundation
-- Single-DOF natural frequency $\sqrt{k/m}$ and equivalent stiffness: [[FEEG1002 D6 - Single Degree of Freedom Vibration]].
+- Year 1 foundation, the single-DOF natural frequency $\sqrt{k/m}$ and equivalent stiffness: [[FEEG1002 D6 - Single Degree of Freedom Vibration]]

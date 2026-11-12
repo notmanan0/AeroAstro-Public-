@@ -29,20 +29,17 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Hoh
 > - **Common mistakes:** adding the Earth's radius to a radius that was already given as a radius (the GEO 42 164 km); taking the full period instead of half for the transfer time.
 > - **Practise:** [[#200 km parking orbit to GEO]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q7. From a 300 km equatorial orbit to GEO with staged masses|Workbook Q7]]
 
-The lecture started with a video, filmed from the ISS, of the RemoveDebris satellite being released by a robotic arm (2025-12-02, ll. 45–130). RemoveDebris, built by the Surrey Space Centre and Surrey Satellite Technology Ltd to demonstrate debris-capture techniques, was pushed gently backwards, against the station's direction of travel. Two quiz questions followed, and they carry the whole idea of this note.
+RemoveDebris, a debris-capture demonstrator built by the Surrey Space Centre and Surrey Satellite Technology Ltd, was released from the ISS by a robotic arm and pushed gently backwards, against the station's direction of travel (2025-12-02, ll. 45–130).
 
-First, which orbit does it end up on? The push is tiny, but it is a change of velocity at one point, so the new orbit must pass through the release point; an orbit that does not intersect the ISS's is impossible. Taking speed away removes kinetic energy, so the energy equation says the new $a$ is smaller: the satellite drops into a slightly elliptical orbit whose highest point is the release point (ll. 133–265). Releasing it forwards would instead have raised it on to a larger ellipse, and many orbits later it could come back and meet the station, which is why the backwards release was chosen (ll. 265–315).
+The push is tiny, but it is a change of velocity at one point, so the new orbit must pass through the release point; an orbit that does not intersect the ISS's is impossible. Taking speed away removes kinetic energy, so the energy equation says the new $a$ is smaller: the satellite drops into a slightly elliptical orbit whose highest point is the release point (ll. 133–265). Releasing it forwards would instead have raised it on to a larger ellipse, and many orbits later it could come back and meet the station, which is why the backwards release was chosen (ll. 265–315).
 
-Second, where does it go relative to the ISS? A smaller $a$ means a shorter period by Kepler's third law, so after half an orbit the satellite is below the station and has gained on it, and each orbit it pulls further ahead (ll. 330–395). The answer to the poll was "ahead and below".
+Relative to the ISS, a smaller $a$ means a shorter period by Kepler's third law, so after half an orbit the satellite is below the station and has gained on it, and each orbit it pulls further ahead, ending up ahead and below (ll. 330–395; numbers for the new orbit and the drift are in §4).
 
 ![[ast_removedebris_relative_motion.png|800]]
 
-This is counter-intuitive enough that Dr Ryan dwelt on it: to catch up with a spacecraft ahead of you in the same orbit, you fire backwards, drop into a lower, faster orbit, and fire forwards again when you have caught up (ll. 375–445). Buzz Aldrin wrote his MIT doctorate on orbital rendezvous, which his fellow astronauts teased him for until Apollo needed it ("Dr Rendezvous").
+To catch up with a spacecraft ahead in the same orbit, the pursuer fires backwards, drops into a lower, faster orbit, and fires forwards again once it has caught up (ll. 375–445). Orbital rendezvous, which Apollo depended on, rests on this reasoning.
 
-The figure uses the linearised relative-motion equations for a circular reference orbit, which the course does not cover; it is there only to show the shape. For a 5 cm/s backwards push at the ISS's altitude, the satellite drops about 177 m below and drifts $3\,\Delta V\,\tau\approx830$ m ahead each orbit.
-
-> [!warning] Transcript slips (2025-12-02, ll. 60–70 and 125–135)
-> RemoveDebris is described as a "large CubeSat" about 30 cm across. It was a microsatellite of about 100 kg, built to CubeSat-style standards but much larger, and it carried two CubeSats of its own as targets. The ISS is again given an orbital period of "about 45 minutes"; it is about 92 minutes.
+The linearised relative-motion equations behind the figure are outside the syllabus, and the figure shows only the shape of the motion. Its two numbers, a 177 m drop and an 833 m drift per orbit, follow from the energy equation and Kepler's third law alone (§4).
 
 ## 1. Assumptions for orbital transfers
 
@@ -116,7 +113,13 @@ V_{Tp}=\sqrt{\frac{\mu}{r_1}}\sqrt{\frac{2r_2}{r_1+r_2}},
 \Delta V_{Tp}=\sqrt{\frac{\mu}{r_1}}\left(\sqrt{\frac{2r_2}{r_1+r_2}}-1\right).
 $$
 
-By the same steps at apoapsis,
+At apoapsis the same steps with $r_2$ in place of $r_1$ give
+
+$$
+\frac{2}{r_2}-\frac{2}{r_1+r_2}=\frac{2(r_1+r_2)-2r_2}{r_2(r_1+r_2)}=\frac{2r_1}{r_2(r_1+r_2)},
+$$
+
+so
 
 $$
 V_{Ta}=\sqrt{\frac{\mu}{r_2}}\sqrt{\frac{2r_1}{r_1+r_2}},
@@ -124,11 +127,30 @@ V_{Ta}=\sqrt{\frac{\mu}{r_2}}\sqrt{\frac{2r_1}{r_1+r_2}},
 \Delta V_{Ta}=\sqrt{\frac{\mu}{r_2}}\left(1-\sqrt{\frac{2r_1}{r_1+r_2}}\right).
 $$
 
-Writing $x=r_1/r_2$ and dividing by $V_1$ gives the total as a function of the radius ratio only:
+To reduce the total to one variable, write $x=r_1/r_2$ and divide every term by $V_1=\sqrt{\mu/r_1}$. The first burn becomes
+
+$$
+\frac{\Delta V_{Tp}}{V_1}=\sqrt{\frac{2r_2}{r_1+r_2}}-1=\sqrt{\frac{2}{1+x}}-1,
+$$
+
+after dividing top and bottom of the fraction by $r_2$. For the second burn, $\sqrt{\mu/r_2}/\sqrt{\mu/r_1}=\sqrt{r_1/r_2}=\sqrt x$, and $2r_1/(r_1+r_2)=2x/(1+x)$:
+
+$$
+\frac{\Delta V_{Ta}}{V_1}=\sqrt x\left(1-\sqrt{\frac{2x}{1+x}}\right)=\sqrt x-x\sqrt{\frac{2}{1+x}}.
+$$
+
+Add the two and collect the $\sqrt{2/(1+x)}$ terms:
+
+$$
+\frac{\Delta V}{V_1}=\sqrt{\frac{2}{1+x}}-1+\sqrt x-x\sqrt{\frac{2}{1+x}}
+$$
 
 $$
 \frac{\Delta V}{V_1}=\left(\frac{2}{1+x}\right)^{1/2}(1-x)+x^{1/2}-1.
 $$
+
+> [!check] The LEO-to-GEO ratio
+> For $r_1=6578$ km and $r_2=42\,164$ km, $x=0.1560$ and the bracket gives $\Delta V/V_1=0.5051$. Times $V_1=7.784$ km/s that is 3.932 km/s, the same as the four-speed calculation in the worked example. At $x=1$ the formula gives $0$, as it must for no transfer.
 
 This rises with $r_2/r_1$ to a maximum of $0.536\,V_1$ at $r_2/r_1=15.58$ and then falls slowly towards $\sqrt2-1=0.414$ as $r_2\to\infty$. The second burn shrinks faster than the first grows, because the outer circular speed falls away.
 
@@ -144,17 +166,80 @@ $$
 
 ## 3. Where the Hohmann transfer is used, and its limits
 
-Most Earth orbits are near-circular and most upper stages are chemical, so the Hohmann transfer is the standard way to raise an orbit, and Dr Ryan flagged it as "a very, very, very common exam question" (ll. 705–715). In practice a launcher often performs the first burn, placing the spacecraft in a geostationary transfer orbit (GTO), and the spacecraft's own apogee engine performs the second (2020 Lecture 13, ll. 151–160).
+Most Earth orbits are near-circular and most upper stages are chemical, so the Hohmann transfer is the standard way to raise an orbit, and it is a very common exam question (ll. 705–715). In practice a launcher often performs the first burn, placing the spacecraft in a geostationary transfer orbit (GTO), and the spacecraft's own apogee engine performs the second (2020 Lecture 13, ll. 151–160).
 
 The same method works around the Sun, from the Earth's orbit to another planet's, but the transfer to the outer planets takes years, and the planets must be correctly phased when you leave, which defines a launch window (Workbook Ch5 Q6). It is the minimum-ΔV two-impulse transfer between coplanar circles, but it is not the fastest, and it does not handle elliptical, inclined or hyperbolic orbits, which need other manoeuvres (ll. 727–750).
 
+## 4. How far a small burn moves the orbit
+
+The RemoveDebris release can be put into numbers using only the energy equation and Kepler's third law. The same small-change method is used for drag make-up in [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]].
+
+Start from the energy equation at the release radius $r$, which does not change during an impulsive burn:
+
+$$
+\frac{V^2}{2}-\frac{\mu}{r}=-\frac{\mu}{2a}.
+$$
+
+A small change $\delta V$ in speed, with $r$ fixed, changes the left side by $V\,\delta V$ and the right side by the derivative of $-\mu/2a$ with respect to $a$, times $\delta a$:
+
+$$
+V\,\delta V=\frac{\mu}{2a^2}\,\delta a.
+$$
+
+Solve for $\delta a$:
+
+$$
+\delta a=\frac{2a^2V}{\mu}\,\delta V.
+$$
+
+The ISS orbit is circular, so $\mu=aV^2$ and
+
+$$
+\delta a=\frac{2a^2V}{aV^2}\,\delta V=\frac{2a}{V}\,\delta V.
+$$
+
+For the ISS, $a=6780$ km and $V=\sqrt{398\,600/6780}=7.668$ km/s. A backwards push of $\delta V=-0.05$ m/s $=-5\times10^{-5}$ km/s gives
+
+$$
+\delta a=\frac{2(6780)}{7.668}\left(-5\times10^{-5}\right)=-0.0884\ \mathrm{km}=-88\ \mathrm m.
+$$
+
+The release point stays on the new orbit and is now its apoapsis, so $r_a=6780$ km and $r_p=2(a+\delta a)-r_a=r_a+2\,\delta a$. The perigee therefore sits $2|\delta a|=177$ m below the station's orbit, half an orbit after release.
+
+For the drift, differentiate Kepler's third law, $\tau=2\pi a^{3/2}\mu^{-1/2}$:
+
+$$
+\frac{d\tau}{da}=\frac32\cdot2\pi a^{1/2}\mu^{-1/2}=\frac32\frac{\tau}{a},
+$$
+
+$$
+\delta\tau=\frac32\,\tau\,\frac{\delta a}{a}.
+$$
+
+With $\tau=5556$ s,
+
+$$
+\delta\tau=\frac32(5556)\frac{-0.0884}{6780}=-0.109\ \mathrm s.
+$$
+
+Each time the satellite returns to the release point it arrives 0.109 s earlier than the station, which is then $V|\delta\tau|=7.668\times0.109=0.833$ km behind it. So the satellite gains 833 m per orbit. Substituting $\delta a=2a\,\delta V/V$ into $V|\delta\tau|$ gives the compact form
+
+$$
+V|\delta\tau|=V\cdot\frac32\tau\cdot\frac{2|\delta V|}{V}=3\,|\delta V|\,\tau,
+$$
+
+and $3(5\times10^{-5})(5556)=0.833$ km.
+
+> [!check] Exact against linearised
+> Solving the energy equation exactly with the reduced speed $V+\delta V$ (here $\delta V=-0.05$ m/s) gives $\delta a=-88.4$ m and $\delta\tau=-0.1087$ s, the same to three figures, so the small-change form is safe for any burn much smaller than the orbital speed. The relative-motion figure above shows the same 177 m and 833 m.
+
 ## Worked examples
 
-All numbers recomputed in Python with $R_E=6378$ km and $\mu=398\,600\ \mathrm{km^3/s^2}$.
+Constants: $R_E=6378$ km and $\mu=398\,600\ \mathrm{km^3/s^2}$.
 
 ### 200 km parking orbit to GEO
 
-The Chapter 5 worked example (`Hohman transfers worked example_V1.pdf`; 2020 Lecture 13): find the ΔV and transfer time from a circular 200 km parking orbit to GEO ($r_{GEO}=42\,164$ km), and estimate the propellant for the second burn if $V_{ex}=2.5$ km/s.
+The task is to find the ΔV and transfer time from a circular 200 km parking orbit to GEO ($r_{GEO}=42\,164$ km), and to estimate the propellant for the second burn if $V_{ex}=2.5$ km/s (Chapter 5 worked example, 2020 Lecture 13).
 
 The parking-orbit radius is $r_1=6378+200=6578$ km, which is also the transfer orbit's perigee. The GEO radius is given as a radius, so nothing is added to it (2020 Lecture 13, ll. 31–45). Then
 
@@ -188,11 +273,18 @@ $$
 \Delta V=3.932\ \mathrm{km/s}.
 $$
 
-The slides add rounded components and quote 1.478 and 3.933 km/s. The transfer time is
+Rounded components give 1.478 and 3.933 km/s, the values on the slides. The transfer time is half the transfer orbit's period:
 
 $$
-t_T=\pi\sqrt{\frac{24\,371^3}{398\,600}}=18\,930\ \mathrm s=5.26\ \mathrm h.
+\frac{a_T^3}{\mu}=\frac{24\,371^3}{398\,600}=3.631\times10^7\ \mathrm{s^2},
 $$
+
+$$
+t_T=\pi\sqrt{3.631\times10^7}=\pi\times6026=18\,930\ \mathrm s=5.26\ \mathrm h.
+$$
+
+> [!check] Energy on each orbit
+> The specific energies $-\mu/2a$ are $-30.30\ \mathrm{km^2/s^2}$ on the parking orbit, $-8.18$ on the transfer ellipse and $-4.73$ in GEO. Each prograde burn raises the energy, and the transfer ellipse sits between the two circles, as it must. Most of the energy gain comes from the first burn (22.1 against 3.5 $\mathrm{km^2/s^2}$), although its ΔV is under twice the second's, because a burn adds energy of about $V\,\delta V$ and the spacecraft is fastest at perigee.
 
 For the second burn, write $x=m_0/m_f$:
 
@@ -204,27 +296,24 @@ $$
 
 About 45 % of the spacecraft's mass after the first burn is propellant for the circularisation alone. A 4000 kg spacecraft in GTO arrives in GEO at about 2200 kg (2020 Lecture 13, ll. 151–160).
 
-> [!check] Is the second burn's propellant plausible?
-> Yes. Real GEO communications satellites launched into GTO typically carry roughly half their launch mass as propellant, most of it for apogee raising, which matches this estimate.
+> [!check] Plausibility of the second burn's propellant
+> Real GEO communications satellites launched into GTO typically carry roughly half their launch mass as propellant, most of it for apogee raising, which matches this estimate.
 
 ### 400 km to GEO with the Excel tool
 
-In the lecture the Hohmann spreadsheet was set to a 6758 km original orbit (about 380 km up) and a 42 164 km target, and the burns were adjusted by hand until the final orbit matched (2025-12-02, ll. 771–880). The exact Hohmann values for that pair of radii are
+In the Hohmann spreadsheet, an original orbit of 6758 km (about 380 km up) and a target of 42 164 km are matched by adjusting the burns by hand until the final orbit agrees. The exact Hohmann values for that pair of radii are
 
 $$
 \Delta V_{Tp}=2.403\ \mathrm{km/s},\qquad\Delta V_{Ta}=1.459\ \mathrm{km/s},\qquad\Delta V=3.862\ \mathrm{km/s},
 $$
 
-with a transfer time of 5.29 h. The lecture read off "3.7 km/s" while the final orbit was still being tuned; the remaining "orbital error" shown by the tool goes to zero as the sum approaches 3.86 km/s. Raising the parking orbit from 200 to 380 km saves about 70 m/s.
-
-> [!warning] Transcript slip (2025-12-02, ll. 815–835)
-> The class was asked for the altitude of a "geostationary transfer orbit" and the answer given was 36 000 km. That is the altitude of the geostationary orbit itself. The transfer orbit (GTO) is the ellipse between the parking orbit and GEO, with its perigee at a few hundred kilometres and its apogee at GEO height.
+with a transfer time of 5.29 h. Reading the sum off while the orbit is still being tuned gives about 3.7 km/s; the remaining "orbital error" shown by the tool goes to zero as the sum approaches 3.86 km/s. Raising the parking orbit from 200 to 380 km saves about 70 m/s.
 
 ## Links
 
 - Parent: [[SESA2024 Astronautics Hub]]
 - Previous: [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation]]
-- Next: [[SESA2024 11 - Payload and Orbit Selection]] (the next lecture, 2025-12-04); the Hohmann make-up manoeuvre returns in [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]]
+- Next: [[SESA2024 11 - Payload and Orbit Selection]] (2025-12-04); the Hohmann make-up manoeuvre is applied in [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]]
 - Concepts: [[Hohmann Transfer]] · [[Vis-Viva Equation]] · [[Tsiolkovsky Rocket Equation]] (SESA2023)
 - Propulsion: [[SESA2024 07 - Spacecraft Propulsion]] · [[SESA2023 Propulsion Hub]]
 
@@ -234,13 +323,14 @@ with a transfer time of 5.29 h. The lecture read off "3.7 km/s" while the final 
 - Transcript `SESA2024 Lecture 2025-12-02.txt`
 - Prof Lewis's 2020 recordings: `SESA2024 Lecture 12.txt` (Hohmann visualisation activity) and `SESA2024 Lecture 13.txt` (the worked example)
 - Fortescue, Stark and Swinerd, *Spacecraft Systems Engineering*, Ch. 5
+- Figures: `ast_hohmann_leo_geo`, `ast_hohmann_dv_ratio` (`generate_ast_extra_figures.py`) and `ast_removedebris_relative_motion` (`generate_ast_ch5_transfer_figures.py`). All numbers recomputed in Python, including the exact (non-linearised) RemoveDebris orbit.
 
 ## Self-study tasks
 
 ### Core
 
 - [ ] The worked example: ΔV, transfer time and second-burn propellant fraction from a 200 km parking orbit to GEO with $V_{ex}=2.5$ km/s ("please go have a look at that", 2025-12-02, ll. 705–715). Targets 3.93 km/s, 5.26 h, 45 %. → [[#200 km parking orbit to GEO]]
-- [ ] RemoveDebris poll questions: which orbit after a backwards release, and where it goes relative to the ISS (ll. 133–395). → [[#SESA2024 05 - Orbital Transfers and the Hohmann Transfer|opening section]]
+- [ ] RemoveDebris poll questions: which orbit after a backwards release, and where it goes relative to the ISS (ll. 133–395). → [[#SESA2024 05 - Orbital Transfers and the Hohmann Transfer|opening section]] · [[#4. How far a small burn moves the orbit]]
 - [ ] 300 km equatorial orbit to GEO, with the staged masses (Workbook Ch5 Q7). Target 3.893 km/s, about 600 kg in GEO. → [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q7. From a 300 km equatorial orbit to GEO with staged masses|Workbook solution]]
 - [ ] Express the Hohmann ΔV in terms of $x=r_1/r_2$ (Workbook Ch5 Q3). → [[#The ΔV in closed form]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q3. Hohmann total delta-V in terms of x = r1 over r2|Workbook solution]]
 
@@ -250,3 +340,15 @@ with a transfer time of 5.29 h. The lecture read off "3.7 km/s" while the final 
 - [ ] Advantages and disadvantages of the Hohmann transfer for interplanetary missions (Workbook Ch5 Q6). → [[#3. Where the Hohmann transfer is used, and its limits]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q6. Hohmann transfer for interplanetary missions|Workbook solution]]
 - [ ] Comet intercept by a heliocentric Hohmann transfer (Workbook Ch5 Q8). → [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q8. Comet intercept by heliocentric Hohmann transfer|Workbook solution]]
 - [ ] Explain why the burns are placed at the apses (2025-12-02, ll. 485–520). → [[#1. Assumptions for orbital transfers]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slips (2025-12-02, ll. 60–70 and 125–135)
+> Where: [[#SESA2024 05 - Orbital Transfers and the Hohmann Transfer]].
+>
+> RemoveDebris is described as a "large CubeSat" about 30 cm across. It was a microsatellite of about 100 kg, built to CubeSat-style standards but much larger, and it carried two CubeSats of its own as targets. The ISS is again given an orbital period of "about 45 minutes"; it is about 92 minutes.
+
+> [!warning] Transcript slip (2025-12-02, ll. 815–835)
+> Where: [[#400 km to GEO with the Excel tool]].
+>
+> The class was asked for the altitude of a "geostationary transfer orbit" and the answer given was 36 000 km. That is the altitude of the geostationary orbit itself. The transfer orbit (GTO) is the ellipse between the parking orbit and GEO, with its perigee at a few hundred kilometres and its apogee at GEO height.

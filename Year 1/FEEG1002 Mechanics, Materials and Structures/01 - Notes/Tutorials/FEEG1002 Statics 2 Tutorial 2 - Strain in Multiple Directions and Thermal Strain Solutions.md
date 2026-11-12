@@ -13,60 +13,69 @@ sources: ["02 - Sources/Statics 2/Tutorials/Tutorial Sheet 02 - Strain in Multip
 
 # FEEG1002 Statics 2 Tutorial 2 - Strain in Multiple Directions and Thermal Strain Solutions
 
-> [!abstract] Sheet Info
-> Two thermal-stress problems with opposite structures:
-> - **parallel**: bonded shell and core, with equal extensions and forces summing to zero;
-> - **series**: a stepped rod between walls, with equal forces and total extension zero.
->
-> All answers are reproduced ✔. The stress in the brass core, which the sheet does not give, is added.
+> [!abstract] Sheet info
+> Two thermal-stress problems with opposite structures: parts bonded in parallel (equal extensions, forces summing to zero) and parts in series between walls (equal forces, total extension zero). All answers match the official solutions, checked numerically; the stress in the core of Q1, which the sheet does not give, is added.
 
-## Theory Links
-- [[FEEG1002 B2 - Strain in Multiple Dimensions and Thermal Strain]] · [[Thermal Strain]]
+The method for both: release the constraint and let each part expand freely by $\alpha\Delta TL$; add a mechanical deformation $FL/EA$ with every force taken as tensile; then impose compatibility and equilibrium and let the signs come out ([[FEEG1002 B2 - Strain in Multiple Dimensions and Thermal Strain#Superposition for constrained assemblies|B2]]).
 
-**Method**: (1) release the constraint and let each part expand freely by $\alpha\Delta TL$; (2) add the mechanical deformation $FL/EA$ with tension-positive forces; (3) impose compatibility and equilibrium.
+## Q1 Aluminium shell bonded to a brass core
 
----
+*Taught in:* [[FEEG1002 B2 - Strain in Multiple Dimensions and Thermal Strain#Superposition for constrained assemblies]] (parallel case) · worked in full at [[FEEG1002 B2 - Strain in Multiple Dimensions and Thermal Strain#Worked example - aluminium shell bonded to a brass core]].
 
-## Q1: Aluminium shell bonded to a brass core, heated from 15 °C to 195 °C
-Data: shell $E = 70$ GPa, $\alpha = 23.6\times10^{-6}$/°C, OD 60 mm; core $E = 105$ GPa, $\alpha = 20.9\times10^{-6}$/°C, Ø25 mm. Axial effects only.
+Data: shell $E=70$ GPa, $\alpha=23.6\times10^{-6}$ °C⁻¹, outer diameter 60 mm; core $E=105$ GPa, $\alpha=20.9\times10^{-6}$ °C⁻¹, diameter 25 mm; stress-free at 15 °C, heated to 195 °C, axial effects only.
 
-**(a)** The parts are bonded, so their extensions are equal. There is no external load, so $F_{Al} + F_{Br} = 0$.
+**(a)** The parts are bonded, so their total extensions are equal; there is no external load, so $F_{Al}+F_{br}=0$:
 
 $$
-\alpha_{Al}L\Delta T + \frac{F_{Al}L}{A_{Al}E_{Al}} = \alpha_{Br}L\Delta T - \frac{F_{Al}L}{A_{Br}E_{Br}}\;\Rightarrow\; F_{Al}\left(\frac{1}{A_{Al}E_{Al}} + \frac{1}{A_{Br}E_{Br}}\right) = (\alpha_{Br} - \alpha_{Al})\Delta T
+\alpha_{Al}\Delta TL+\frac{F_{Al}L}{A_{Al}E_{Al}}=\alpha_{br}\Delta TL-\frac{F_{Al}L}{A_{br}E_{br}}
 $$
 
-- Areas: $A_{Al} = \tfrac\pi4(0.06^2 - 0.025^2) = 2.337\times10^{-3}$ m² and $A_{Br} = 4.909\times10^{-4}$ m².
-- $F_{Al} = -19.05$ kN, so $\sigma_{Al} = \mathbf{-8.15}$ **MPa** ✔ (compressive).
-- The core carries $+19.05$ kN, so $\sigma_{Br} = +38.8$ MPa (tensile).
-
-**Why compressive?** Aluminium wants to expand more ($\alpha_{Al} > \alpha_{Br}$). The bonded pair settles at a common length **between** the two free lengths, so the aluminium is squashed back and the brass pulled forward.
-
-**(b) Steel core** ($E = 200$ GPa, $\alpha = 11.7\times10^{-6}$/°C): the $\alpha$ mismatch is larger and the core is stiffer, giving $\sigma_{Al} = \mathbf{-56.2}$ **MPa** ✔, about 7× larger, and $\sigma_{steel} = +268$ MPa.
-
-![[s2_t2_bimaterial_thermal.png|700]]
-
----
-
-## Extra Q1: Steel AB (Ø30, 250 mm) + brass BC (Ø50, 300 mm) between rigid walls, $\Delta T = +50$ °C
-**(a)** The walls fix the total length, $\delta_{st} + \delta_{br} = 0$. The parts are in series, so the force is the same in both:
-
 $$
-F\left(\frac{L_{st}}{A_{st}E_{st}} + \frac{L_{br}}{A_{br}E_{br}}\right) = -(\alpha_{st}L_{st} + \alpha_{br}L_{br})\Delta T\;\Rightarrow\; F = \mathbf{-142.6}\ \text{kN}\ ✔
+F_{Al}\left(\frac{1}{A_{Al}E_{Al}}+\frac{1}{A_{br}E_{br}}\right)=(\alpha_{br}-\alpha_{Al})\Delta T
 $$
 
-**(b)** $\sigma_{st} = F/A_{st} = \mathbf{-201.8}$ **MPa** and $\sigma_{br} = \mathbf{-72.7}$ **MPa** ✔. The same force acts on a smaller area in the steel.
+With $A_{Al}=\tfrac\pi4(0.06^2-0.025^2)=2.337\times10^{-3}$ m², $A_{br}=4.909\times10^{-4}$ m² and $\Delta T=180$ °C:
 
-**(c)** Total strain = thermal + mechanical:
+$$
+F_{Al}=-19.05\ \mathrm{kN},\qquad \sigma_{Al}=\frac{F_{Al}}{A_{Al}}=-8.15\ \mathrm{MPa},\qquad \sigma_{br}=\frac{-F_{Al}}{A_{br}}=+38.8\ \mathrm{MPa}
+$$
 
-$$\varepsilon_{st} = \alpha_{st}\Delta T + \frac{\sigma_{st}}{E_{st}} = -4.24\times10^{-4},\qquad \varepsilon_{br} = \alpha_{br}\Delta T + \frac{\sigma_{br}}{E_{br}} = +3.53\times10^{-4}$$
+The aluminium wants to expand more than the brass, but the bonded pair settles at a common length between the two free lengths, so the shell is held back in compression and the core pulled along in tension.
 
-The brass **extends** and the steel **shortens**: the brass wins.
+**(b)** With a steel core ($E=200$ GPa, $\alpha=11.7\times10^{-6}$ °C⁻¹) the mismatch in $\alpha$ is larger and the core stiffer, so $\sigma_{Al}=-56.2$ MPa, about seven times larger, and the steel core carries $+268$ MPa.
 
-**(d)** Point B: $\delta_B = \varepsilon_{st}L_{st} = -0.106$ mm, i.e. B moves **0.106 mm towards A**. Check: $\varepsilon_{br}L_{br} = +0.106$ mm ✔
+![[s2_t2_bimaterial_thermal.png|800]]
 
-> [!tip] Sanity check on the stresses
-> −202 MPa in the steel is close to typical steel yield (250 MPa), with nothing but a 50 °C rise. Fully constrained heating is dangerous, which is why pipelines need expansion bends and bridges need expansion joints.
+## Additional Q1 Steel and brass rod between rigid supports
+
+*Taught in:* [[FEEG1002 B2 - Strain in Multiple Dimensions and Thermal Strain#Superposition for constrained assemblies]] (series case) · worked in full at [[FEEG1002 B2 - Strain in Multiple Dimensions and Thermal Strain#Worked example - steel and brass in series between walls]].
+
+Data: AB steel, 250 mm long, 30 mm diameter, $E=200$ GPa, $\alpha=11.7\times10^{-6}$ °C⁻¹; BC brass, 300 mm, 50 mm diameter, $E=105$ GPa, $\alpha=20.9\times10^{-6}$ °C⁻¹; $\Delta T=+50$ °C.
+
+**(a)** The supports fix the total length, $\delta_s+\delta_b=0$, and the parts in series carry the same force $F$:
+
+$$
+F\left(\frac{L_s}{A_sE_s}+\frac{L_b}{A_bE_b}\right)=-\Delta T\left(\alpha_sL_s+\alpha_bL_b\right)
+$$
+
+$$
+F=-142.6\ \mathrm{kN}
+$$
+
+**(b)** $\sigma_s=F/A_s=-201.8$ MPa and $\sigma_b=F/A_b=-72.6$ MPa; the same force acts on the smaller steel area.
+
+**(c)** Total strain is thermal plus mechanical:
+
+$$
+\varepsilon_s=\alpha_s\Delta T+\frac{\sigma_s}{E_s}=-4.24\times10^{-4},\qquad \varepsilon_b=\alpha_b\Delta T+\frac{\sigma_b}{E_b}=+3.53\times10^{-4}
+$$
+
+so the brass extends and the steel shortens.
+
+**(d)** Point B moves by $\varepsilon_sL_s=-0.106$ mm, that is 0.106 mm towards A (upwards in the sheet's figure). The brass gives the same magnitude, $\varepsilon_bL_b=+0.106$ mm, as compatibility requires.
+
+The steel stress of $-202$ MPa is close to the yield stress of a mild steel after only a 50 °C rise, which is why pipelines need expansion bends and bridges expansion joints.
 
 ## Sources
-- Source sheet and official solutions: Statics-2 Tutorial problem sheet 2
+
+- `Tutorial Sheet 02 - Strain in Multiple Directions and Thermal Strain.pdf` and its solutions.

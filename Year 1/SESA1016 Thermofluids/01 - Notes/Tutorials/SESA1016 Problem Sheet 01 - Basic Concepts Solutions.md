@@ -44,7 +44,7 @@ $$
 
 The tube volume is neglected. Absolute pressure is used throughout.
 
-## Q1.2 Rigid CO$_2$ container
+## Q1.2 Rigid CO₂ container
 
 **Data**: $V=2.5\times10^{-3}\ \mathrm{m^3}$, $m_1=4.4\times10^{-3}$ kg, $R_{CO_2}=188.9\ \mathrm{J\,kg^{-1}K^{-1}}$.
 
@@ -53,15 +53,17 @@ The tube volume is neglected. Absolute pressure is used throughout.
 $$
 p_1=\frac{m_1RT_1}{V}
 =\frac{(4.4\times10^{-3})(188.9)(300)}{2.5\times10^{-3}}
-=\boxed{99.75\ \mathrm{kPa}}\;\checkmark
+=\boxed{99.74\ \mathrm{kPa}}
 $$
+
+The sheet prints 99.75 kPa; the product is 99 739 Pa, so 99.74 kPa is the correctly rounded value (re-checked in Python, 2026-11-05).
 
 ### (b) Pressure after heating to 450 K
 
 At fixed mass and volume, $p/T=$ constant:
 
 $$
-p_2=p_1\frac{T_2}{T_1}=99.75\frac{450}{300}
+p_2=p_1\frac{T_2}{T_1}=99.74\frac{450}{300}
 =\boxed{149.6\ \mathrm{kPa}}\;\checkmark
 $$
 

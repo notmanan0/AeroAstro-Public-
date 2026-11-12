@@ -12,264 +12,287 @@ sources: ["02 - Sources/Mechanics of Flight/Mechanics of Flight - Course Notes.p
 
 # SESA1015 Formula Sheet
 
-> [!abstract] Use this as a map, not a substitute for a model
-> Start every calculation with a free-body diagram, units and an explicit flight condition. Most mistakes in this module come from using the right equation for the wrong state: confusing mass with weight, TAS with EAS, degrees with radians, or maximum $L/D$ with minimum-power speed.
+Results by topic, in the notation of the Mechanics of Flight slides (version 2) and the Astronautics decks. Each section links to the topic note that derives them, states the assumptions and works an example. Unless stated otherwise, $V$ is true airspeed, $W=mg$ is weight in newtons, angles in formulas are in radians, and the flight is steady.
 
 ## Symbols and constants
 
-| Symbol | Meaning | SI unit |
+| Symbol | Meaning | Value or unit |
 |---|---|---|
-| $m,W=mg$ | mass, weight | kg, N |
-| $V$ | true airspeed unless stated | m s$^{-1}$ |
-| $S,b,\bar c$ | wing area, span, mean chord | m$^2$, m, m |
+| $\rho_{SL},\ p_{SL},\ T_{SL}$ | ISA sea-level density, pressure, temperature | $1.225$ kg m$^{-3}$, $101\,325$ Pa, $288.15$ K |
+| $c_0$ | troposphere lapse rate | $6.5$ K km$^{-1}$ $=0.0065$ K m$^{-1}$ |
+| $T_S$ | stratosphere temperature (11–20 km) | $216.65$ K |
+| $R,\ \gamma$ | gas constant and ratio of specific heats for air | $287$ J kg$^{-1}$ K$^{-1}$, $1.4$ |
+| $\sigma=\rho/\rho_{SL}$ | relative density | – |
 | $q=\tfrac12\rho V^2$ | dynamic pressure | Pa |
-| $L,D,T$ | lift, drag, thrust | N |
-| $C_L,C_D,C_m$ | lift, drag, pitching-moment coefficient | – |
-| $W/S$ | wing loading | N m$^{-2}$ |
-| $T/W$ | thrust loading | – |
-| $g_0$ | standard gravity | $9.80665$ m s$^{-2}$ |
-| $R$ | specific gas constant for air | $287.05$ J kg$^{-1}$ K$^{-1}$ |
-| $\gamma$ | ratio of specific heats for air | about 1.4 |
+| $S,\ b,\ AR,\ \bar{\bar c}$ | wing area, span, aspect ratio, mean aerodynamic chord | m$^2$, m, –, m |
+| $C_{D0},\ K$ | zero-lift drag coefficient and induced-drag factor in $C_D=C_{D0}+KC_L^2$ | – |
+| $W/S,\ T/W$ | wing loading, thrust-to-weight ratio | N m$^{-2}$, – |
+| $c_t,\ c_p$ | thrust and power specific fuel consumption (fuel weight flow per unit thrust or power) | s$^{-1}$, m$^{-1}$ |
+| $\mu_r$ | runway rolling-friction coefficient | – |
+| $V_{ex}$ | rocket exhaust velocity | m s$^{-1}$ |
 
-## Atmosphere, speed and Mach
+## Atmosphere, airspeed and Mach number
 
-$$p=\rho RT,\qquad a=\sqrt{\gamma RT},\qquad M=\frac{V}{a}$$
+[[SESA1015 M01 - Atmosphere, Airspeed and Mach Number|M01]]
 
-Troposphere with lapse rate $L_T=-0.0065\ \mathrm{K,m^{-1}}$:
+$$
+\frac{dp}{dh}=-\rho g,\qquad p=\rho RT,\qquad \sigma=\frac{\delta}{\theta}\ \ \Big(\delta=\tfrac{p}{p_{SL}},\ \theta=\tfrac{T}{T_{SL}}\Big)
+$$
 
-$$T=T_0+L_Th,qquad \frac{p}{p_0}=\left(\frac{T}{T_0}\right)^{-g_0/(RL_T)},\qquad \rho=\frac{p}{RT}$$
+Troposphere, $T=T_{SL}-c_0h$:
 
-Equivalent airspeed preserves dynamic pressure relative to sea-level density $\rho_0$:
+$$
+\frac{p}{p_{SL}}=\left(\frac{T}{T_{SL}}\right)^{g/(c_0R)},\qquad \frac{\rho}{\rho_{SL}}=\left(\frac{T}{T_{SL}}\right)^{(g-c_0R)/(c_0R)}
+$$
 
-$$q=\frac12\rho V_{TAS}^2=\frac12\rho_0V_{EAS}^2,qquad V_{EAS}=V_{TAS}\sqrt{\frac{\rho}{\rho_0}}$$
+Stratosphere (isothermal at $T_S$):
 
-At low Mach, calibrated airspeed is approximately equivalent airspeed. IAS additionally contains instrument/position error.
+$$
+\frac{p_2}{p_1}=\frac{\rho_2}{\rho_1}=\exp\!\left[\frac{g}{RT_S}(h_1-h_2)\right]
+$$
 
-## Aerodynamic forces and moments
+Pitot-static airspeed and Mach number:
 
-$$L=qSC_L,qquad D=qSC_D,qquad M_{ref}=qS\bar c\,C_m$$
+$$
+p_0-p=\tfrac12\rho V^2,\qquad V_E=\sqrt{\frac{2(p_0-p)}{\rho_{SL}}}=V\sqrt\sigma,\qquad a=\sqrt{\gamma RT},\qquad M=\frac Va,\qquad \frac{p_0-p}{\tfrac12\rho V^2}=1+\frac{M^2}{4}+\cdots
+$$
 
-$$AR=\frac{b^2}{S},\qquad C_L\approx C_{L_\alpha}(\alpha-\alpha_{L=0})$$
+## Forces, coefficients and wing geometry
 
-Parabolic drag polar:
+[[SESA1015 M02 - Aircraft Geometry, Forces and Coefficients|M02]]
 
-$$\boxed{C_D=C_{D0}+kC_L^2},\qquad k=\frac{1}{\pi e AR}$$
+$$
+L=\tfrac12\rho V^2SC_L,\qquad D=\tfrac12\rho V^2SC_D,\qquad M=\tfrac12\rho V^2S\bar{\bar c}\,C_M,\qquad Re=\frac{\rho Vl}{\mu}
+$$
 
-Lift-to-drag ratio:
+$$
+\theta=\alpha+\gamma,\qquad L'=N'\cos\alpha-A'\sin\alpha,\qquad D'=N'\sin\alpha+A'\cos\alpha
+$$
 
-$$\frac{L}{D}=\frac{C_L}{C_D}$$
+$$
+S=2\int_0^{s}c\,dy,\qquad AR=\frac{b^2}{S},\qquad \lambda=\frac{c_T}{c_0},\qquad \bar{\bar c}=\frac{\int c^2\,dy}{\int c\,dy}
+$$
 
-Moment transfer between reference points separated by $\Delta x=x_2-x_1$ (positive aft; check the course sign convention):
+Straight-tapered wing: $S=\tfrac12c_0b(1+\lambda)$, $\bar{\bar c}=\tfrac23c_0\dfrac{1+\lambda+\lambda^2}{1+\lambda}$, $\bar y=\dfrac b6\dfrac{1+2\lambda}{1+\lambda}$. Elliptic wing: $S=\pi c_0b/4$, $\bar{\bar c}=8c_0/(3\pi)$.
 
-$$C_{m,2}=C_{m,1}+C_L\frac{\Delta x}{\bar c}$$
+## Lift curve, drag polar and pitching moment
 
-## Steady level flight and stall
+[[SESA1015 M03 - Aerodynamic Characteristics and the Drag Polar|M03]]
 
-$$L=W,qquad T=D,qquad C_L=\frac{W}{qS}=\frac{2W}{\rho V^2S}$$
+$$
+C_L=a(\alpha-\alpha_0),\qquad a_{rad}=\frac{180}{\pi}a_{deg},\qquad a=\frac{a_0}{1+\dfrac{a_0}{\pi AR}(1+\tau)}
+$$
 
-$$\boxed{V_s=\sqrt{\frac{2W}{\rho S C_{L,max}}}=\sqrt{\frac{2(W/S)}{\rho C_{L,max}}}}$$
+$$
+C_D=C_{D0}+KC_L^2,\qquad K=\frac{1}{\pi eAR}
+$$
 
-Useful scaling:
+Two-point fit from tunnel data: $K=\dfrac{C_{D2}-C_{D1}}{C_{L2}^2-C_{L1}^2}$, $C_{D0}=C_{D1}-KC_{L1}^2$.
 
-$$V_s\propto\sqrt{\frac{W/S}{\rho C_{L,max}}}$$
+$$
+C_m=C_{mo}-hC_L,\qquad \frac{x_{AC}}{c}=\frac{dC_m}{dC_L}=-h\ \text{(AC forward of the reference axis)},\qquad \frac{x_{cp}}{c}=\frac{C_{mo}}{C_L}-h
+$$
 
-Substituting the polar into level flight:
+## Level flight and stall
 
-$$\boxed{D(V)=\frac12\rho V^2SC_{D0}+\frac{2kW^2}{\rho V^2S}}$$
+[[SESA1015 M04 - Steady Level Flight and Stall|M04]]
 
-The first term is parasite drag; the second is induced drag.
+$$
+L=W,\qquad T=D,\qquad V_S=\sqrt{\frac{2(W/S)}{\rho C_{L\max}}},\qquad V_{E,S}=\sqrt{\frac{2(W/S)}{\rho_{SL}C_{L\max}}}
+$$
 
-## Minimum drag, maximum $L/D$ and minimum power
+$$
+D=AV^2+\frac{B}{V^2},\qquad A=\tfrac12\rho SC_{D0},\qquad B=\frac{2KW^2}{\rho S}
+$$
 
-At minimum drag:
+$$
+V^2=\frac{T\pm\sqrt{T^2-4AB}}{2A}\quad\text{(real only if }T\ge D_{min}=2W\sqrt{KC_{D0}}\text{)}
+$$
 
-$$C_{L,MD}=\sqrt{\frac{C_{D0}}{k}},\qquad C_{D,MD}=2C_{D0}$$
+## Minimum drag and minimum power
 
-$$\left(\frac{L}{D}\right)_{max}=\frac{1}{2\sqrt{kC_{D0}}},\qquad D_{min}=2W\sqrt{kC_{D0}}$$
+[[SESA1015 M05 - Minimum Drag, Power and Performance Curves|M05]]
 
-$$V_{MD}=\sqrt{\frac{2W}{\rho S C_{L,MD}}}$$
+$$
+V_{MD}=\left(\frac BA\right)^{1/4},\qquad C_{L,MD}=\sqrt{\frac{C_{D0}}{K}},\qquad C_{D,MD}=2C_{D0},\qquad D_{min}=2W\sqrt{KC_{D0}},\qquad \left(\frac LD\right)_{max}=\frac{1}{2\sqrt{KC_{D0}}}
+$$
 
-Power required:
-
-$$P_R=DV=\frac12\rho SC_{D0}V^3+\frac{2kW^2}{\rho SV}$$
-
-At minimum power:
-
-$$C_{L,MP}=\sqrt{\frac{3C_{D0}}{k}}=\sqrt3\,C_{L,MD},qquad V_{MP}=3^{-1/4}V_{MD}\approx0.760V_{MD}$$
-
-> [!warning] Distinguish the optima
-> Maximum $L/D$ = minimum drag = best still-air glide angle. Minimum power = minimum sink and, for a propeller aircraft with constant efficiency and BSFC, maximum endurance.
+$$
+P=DV=AV^3+\frac BV,\qquad C_{L,MP}=\sqrt{\frac{3C_{D0}}{K}},\qquad C_{D,MP}=4C_{D0},\qquad V_{MP}=3^{-1/4}V_{MD},\qquad P_{min}\propto\frac{1}{\sqrt\sigma}
+$$
 
 ## Jet range and endurance
 
-Let thrust-specific fuel consumption $c_T=-\dot W_f/T$ have units s$^{-1}$ when weight flow is used.
+[[SESA1015 M06 - Jet Aircraft Range and Endurance|M06]]
 
-At constant $V$ and $L/D$:
+$$
+E=\frac{1}{c_t}\frac LD\ln\frac{W_1}{W_2}\qquad\text{(best at }(L/D)_{max}\text{)}
+$$
 
-$$\boxed{E_j=\frac{1}{c_T}\frac{L}{D}\ln\frac{W_i}{W_f}}$$
+$$
+R=\frac{V}{c_t}\frac LD\ln\frac{W_1}{W_2}\qquad\text{(cruise-climb, constant }V\text{ and }C_L\text{)}
+$$
 
-Constant-altitude Breguet range with constant $C_L$, $C_D$, $c_T$:
+$$
+R=\frac{2}{c_t}\sqrt{\frac{2}{\rho S}}\,\frac{C_L^{1/2}}{C_D}\left(\sqrt{W_1}-\sqrt{W_2}\right)\qquad\text{(constant altitude and }C_L\text{)}
+$$
 
-$$\boxed{R_j=\frac{2}{c_T}\sqrt{\frac{2}{\rho S}}\frac{\sqrt{C_L}}{C_D}\left(\sqrt{W_i}-\sqrt{W_f}\right)}$$
+Best constant-altitude range at maximum $C_L^{1/2}/C_D$: $C_L=\sqrt{C_{D0}/(3K)}$, $V=3^{1/4}V_{MD}$. Cruise-climb height gain in the stratosphere: $\Delta h=\dfrac{RT_S}{g}\ln\dfrac{W_1}{W_2}$.
 
-For a constant-$V$ cruise or cruise-climb idealisation:
+## Propeller and battery aircraft
 
-$$\boxed{R_j=\frac{V}{c_T}\frac{L}{D}\ln\frac{W_i}{W_f}}$$
+[[SESA1015 M07 - Propeller Aircraft Range and Endurance|M07]]
 
-Jet optima for a parabolic polar:
+$$
+R=\frac{\eta}{c_p}\frac LD\ln\frac{W_1}{W_2}\qquad\text{(best at }(L/D)_{max}\text{, i.e. }V_{MD}\text{)}
+$$
 
-$$E_{max}:\ \max\frac{C_L}{C_D}\Rightarrow C_L=\sqrt{\frac{C_{D0}}{k}}$$
+$$
+E=\frac{\eta}{c_p}\frac{C_L^{3/2}}{C_D}\sqrt{2\rho S}\left(W_2^{-1/2}-W_1^{-1/2}\right)\qquad\text{(best at }V_{MP}\text{)}
+$$
 
-$$R_{max}\text{ at constant altitude}:\ \max\frac{\sqrt{C_L}}{C_D}\Rightarrow C_L=\sqrt{\frac{C_{D0}}{3k}}$$
-
-## Propeller range and endurance
-
-With propeller efficiency $\eta_p$ and brake-specific fuel consumption expressed consistently as $c_P$:
-
-$$P_A=\eta_p P_{shaft},\qquad P_R=DV$$
-
-The useful structural forms are
-
-$$\boxed{R_p\propto\frac{\eta_p}{c_P}\frac{L}{D}\ln\frac{W_i}{W_f}}$$
-
-$$\boxed{E_p\propto\frac{\eta_p}{c_P}\frac{C_L^{3/2}}{C_D}\frac{1}{\sqrt{\rho S}}\left(\frac{1}{\sqrt{W_f}}-\frac{1}{\sqrt{W_i}}\right)}$$
-
-Thus maximum propeller range occurs at maximum $L/D$ and maximum propeller endurance at minimum power. Always adapt the dimensional prefactor to whether the stated SFC is mass-based or weight-based.
+$$
+R=\eta_t\frac LD\frac{E^*}{g}\frac{m_{bat}}{m}\qquad\text{(battery, constant mass; }E^*\text{ = specific energy)}
+$$
 
 ## Glide and climb
 
-Steady glide with thrust neglected:
+[[SESA1015 M08 - Glide and Climb Performance|M08]]
 
-$$L=W\cos\gamma,qquad D=W\sin\gamma,qquad \tan\gamma=\frac{D}{L}$$
+$$
+\tan\theta=\frac DL,\qquad R_{glide}=h\frac LD,\qquad \theta_{min}\approx2\sqrt{KC_{D0}},\qquad -\dot h=\frac{DV}{W},\qquad -\dot h_{min}=1.755\sqrt{\frac{2W}{\rho S}}\left(C_{D0}K^3\right)^{1/4}
+$$
 
-$$\frac{\text{horizontal distance}}{\text{height lost}}=\frac{L}{D}$$
+$$
+\frac{(T\cos\gamma-D)V}{W}=\frac{dh}{dt}+\frac Vg\frac{dV}{dt},\qquad \sin\theta=\frac{T\cos\gamma-D}{W}\ \text{(steady)},\qquad (\sin\theta)_{max}=\frac TW-\frac{1}{(L/D)_{max}}
+$$
 
-Steady climb:
+$$
+C_{L,\dot h_{max}}=\frac{-(T/W)+\sqrt{(T/W)^2+12KC_{D0}}}{2K}
+$$
 
-$$T-D=W\sin\gamma$$
+## Take-off and landing
 
-Small-angle approximation:
+[[SESA1015 M09 - Take-off and Landing Performance|M09]]
 
-$$\sin\gamma\approx\gamma\approx\frac{T-D}{W},\qquad ROC=V\sin\gamma=\frac{P_A-P_R}{W}$$
+$$
+s_1=\frac{V_2^2}{2g\,(T/W-\mu_r)}=\frac{1.44}{\rho g}\,\frac WS\,\frac{1}{C_{L\max}}\,\frac{1}{T/W-\mu_r}\qquad(V_2\approx1.2V_S)
+$$
 
-Best climb angle maximises excess thrust; best rate of climb maximises excess power.
+$$
+s_1=\frac{1}{2gb}\ln\frac{a}{a-bV_2^2}\qquad\text{(with lift and drag, }\ddot x/g=a-bV^2\text{)}
+$$
 
-## Take-off ground run
+Landing run with drag and friction only, $k=\rho SC_{D0}/(2W)$:
 
-Along the runway:
-
-$$m\dot V=T-D-\mu(W-L)$$
-
-Using approximately constant coefficients and defining
-
-$$A=T-\mu W,qquad B=\frac12\rho S(C_D-\mu C_L),$$
-
-gives
-
-$$mV\frac{dV}{ds}=A-BV^2$$
-
-and, for constant $T,C_L,C_D$,
-
-$$\boxed{s_g=\frac{m}{2B}\ln\left(\frac{A}{A-BV_{LOF}^2}\right)}$$
-
-with the $B\to0$ limit $s_g=V_{LOF}^2/(2A/m)$. A common certification-style assumption is $V_{LOF}\approx1.1$–$1.2V_s$; use the factor stated in the question.
-
-Landing/stall comparisons follow directly from
-
-$$\frac{C_{L,max,2}}{C_{L,max,1}}=\frac{(W/S)_2}{(W/S)_1}\frac{\rho_1}{\rho_2}\left(\frac{V_{s,1}}{V_{s,2}}\right)^2.$$
+$$
+x_{stop}=\frac{1}{2gk}\ln\!\left(1+\frac{kV_L^2}{\mu_r}\right),\qquad t_{stop}=\frac{1}{g\sqrt{\mu_rk}}\tan^{-1}\!\left(V_L\sqrt{\frac{k}{\mu_r}}\right)
+$$
 
 ## Turning flight
 
-Coordinated, level turn:
+[[SESA1015 M10 - Turning Flight and Manoeuvre Performance|M10]]
 
-$$L\cos\phi=W,qquad L\sin\phi=\frac{mV^2}{R}$$
+$$
+n=\frac{1}{\cos\phi},\qquad R=\frac{V^2}{g\tan\phi}=\frac{V^2}{g\sqrt{n^2-1}},\qquad \omega=\frac{g\sqrt{n^2-1}}{V},\qquad V_{S,turn}=V_S\sqrt n
+$$
 
-$$\boxed{n=\frac{L}{W}=\frac{1}{\cos\phi}},\qquad \boxed{R=\frac{V^2}{g\tan\phi}=\frac{V^2}{g\sqrt{n^2-1}}}$$
+Stall limit: $R_{min}=\dfrac{V^2}{g\sqrt{(V/V_S)^4-1}}$; corner speed $V^*=V_S\sqrt{n_{max}}$.
 
-$$\boxed{\dot\psi=\frac{g\tan\phi}{V}=\frac{g\sqrt{n^2-1}}{V}}$$
-
-Accelerated stall speed:
-
-$$\boxed{V_{s,n}=V_s\sqrt n}$$
-
-If thrust limits the turn, solve $T_A=D(V,n)$ together with the load-factor relation rather than assuming any bank angle is achievable.
+Thrust limit: $R_{min}=\left(\dfrac{2KW^2V^2}{\rho Sg^2}\right)^{1/2}\dfrac{1}{\sqrt{T_{max}-D_L}}$, with $D_L$ the level-flight drag at the same speed.
 
 ## Trim and static stability
 
-Trim requires
+[[SESA1015 M11 - Longitudinal Trim and Static Stability|M11]]
 
-$$\sum F_z=0,\qquad \sum M_{CG}=0.$$
+$$
+C_{m_G}=C_{m0}+(h-h_0)C_L-\bar V C_{L_T},\qquad \bar V=\frac{S_Tl_T}{S\bar c},\qquad \alpha_T=\alpha\left(1-\frac{d\varepsilon}{d\alpha}\right)+\alpha_s
+$$
 
-Linear pitching moment:
+$$
+h_n=h_0+\bar V\frac{a_{1T}}{a_1}\left(1-\frac{d\varepsilon}{d\alpha}\right),\qquad K_n=h_n-h,\qquad \frac{dC_{m_G}}{d\alpha}=-a_1K_n
+$$
 
-$$C_m=C_{m0}+C_{m_\alpha}\alpha+C_{m_{\delta_e}}\delta_e$$
-
-Trim angle at a stated elevator setting:
-
-$$\alpha_{trim}=-\frac{C_{m0}+C_{m_{\delta_e}}\delta_e}{C_{m_\alpha}}$$
-
-Longitudinal static stability:
-
-$$\boxed{C_{m_\alpha}<0}$$
-
-Tail volume coefficient and static margin:
-
-$$V_H=\frac{S_Tl_T}{S\bar c},\qquad SM=\frac{x_{NP}-x_{CG}}{\bar c}$$
-
-$$SM>0\ \text{is statically stable},\qquad C_{m_\alpha}\approx-C_{L_\alpha}SM$$
+$$
+\delta_e=\frac{C_{M_0}+C_{m_\alpha}\alpha_{req}}{V_{HT}\,dC_{L_T}/d\delta_e},\qquad \frac{d\eta}{dV}=\frac{2C_LK_n}{V\bar Va_{2T}}
+$$
 
 ## Constraint analysis
 
-Use wing loading $x=W/S$ on the horizontal axis and thrust loading $y=T/W$ on the vertical axis.
+[[SESA1015 M12 - Aircraft Constraint Analysis|M12]]
 
-Level-flight/speed constraint:
+$$
+C_L=\frac{n(W/S)}{q},\qquad \frac TW=\frac{qC_{D0}}{W/S}+\frac{Kn^2}{q}\frac WS+\frac{V_V}{V}
+$$
 
-$$\boxed{\frac{T}{W}=\frac{qC_{D0}}{W/S}+\frac{k(W/S)}{q}}$$
+$$
+\frac WS\le\tfrac12\rho V_S^2C_{L\max}\ \text{(stall/approach)},\qquad \frac TW=\frac{V_2^2}{2gs_1}+\mu\ \text{(simple take-off)}
+$$
 
-Stall/landing constraint:
+$$
+\frac TW=\frac{V_2^2}{2gs_1}+\mu+\left(C_{D,TO}-\mu C_{L,TO}\right)\frac{\bar q}{W/S}\ \text{(refined take-off)}
+$$
 
-$$\boxed{\frac{W}{S}\le\frac12\rho V_s^2C_{L,max}}$$
+Bottom of a manoeuvre curve: $(W/S)^*=\dfrac qn\sqrt{\dfrac{C_{D0}}{K}}$, $(T/W)_{min}=2n\sqrt{KC_{D0}}$. Crossing of take-off line $y_{TO}$ and a manoeuvre curve: $\dfrac{Kn^2}{q}x^2-\left(y_{TO}-\dfrac{V_V}{V}\right)x+qC_{D0}=0$, lower root.
 
-Climb-gradient constraint (simple jet model):
+## Orbits and missions
 
-$$\boxed{\frac{T}{W}\ge\frac{D}{W}+\sin\gamma}$$
+[[SESA1015 A01 - Astronautics Foundations, Missions and Applications|A01]]
 
-The feasible design region lies on the safe side of **every** boundary; the design point is a trade, not an automatic curve intersection.
+$$
+V=\sqrt{\frac{\mu}{r}},\qquad T=2\pi\sqrt{\frac{r^3}{\mu}},\qquad r_{GEO}=\left(\frac{\mu T_{sid}^2}{4\pi^2}\right)^{1/3}=42\,164\ \mathrm{km},\qquad \mu=3.986\times10^{14}\ \mathrm{m^3\,s^{-2}}
+$$
 
-## Rocket propulsion and launch performance
+## Space environment
 
-Rocket thrust:
+[[SESA1015 A02 - Space Environment|A02]]
 
-$$\boxed{T=\dot m v_e+(p_e-p_a)A_e}$$
+$$
+H_i=\frac{RT}{M_ig},\qquad \rho_i=\rho_{i0}\,e^{-(h-h_0)/H_i},\qquad F_0=n_{AO}Vt,\qquad \Delta a_{rev}=-2\pi\frac{C_DA}{m}\rho a^2,\qquad 100\ \text{rad}=1\ \mathrm{J\,kg^{-1}}
+$$
 
-Effective exhaust velocity and specific impulse:
+## Launch environment
 
-$$c=T/\dot m,qquad \boxed{I_{sp}=\frac{T}{\dot m g_0}=\frac{c}{g_0}}$$
+[[SESA1015 A03 - Launch Environment|A03]]
 
-Ideal rocket equation:
+$$
+n=\frac{T-D}{Mg_0},\qquad n_{bo}=n_0\frac{M_0}{M_{bo}},\qquad g_{RMS}=\sqrt{\int G(f)\,df}
+$$
 
-$$\boxed{\Delta v=c\ln\frac{m_0}{m_f}=g_0I_{sp}\ln\frac{m_0}{m_f}}$$
+$$
+L_p=20\log_{10}\frac{p_{rms}}{2\times10^{-5}\ \mathrm{Pa}},\qquad \text{OASPL}=10\log_{10}\sum_i10^{L_i/10}
+$$
 
-Mass fractions:
+## Rocket equation and launch performance
 
-$$m_0=m_p+m_s+m_L,qquad \epsilon=\frac{m_s}{m_s+m_p},\qquad \lambda=\frac{m_L}{m_0}$$
+[[SESA1015 A04 - Rocket Equation and Launch Performance|A04]]
 
-Real ascent budget:
+$$
+T=\dot mV_{ex},\qquad \Delta V=V_{ex}\ln\frac{M_0}{M_b},\qquad \Delta V=\Delta V_{ideal}-\Delta V_g-\Delta V_D
+$$
 
-$$\Delta v_{propulsive}=\Delta v_{mission}+\Delta v_{gravity}+\Delta v_{drag}+\Delta v_{steering}+\Delta v_{residuals}$$
+$$
+\Delta V_g=\int g\sin\gamma\,dt,\qquad \Delta V_D=\int\frac DM\,dt,\qquad V_{circ}=\sqrt{\frac{\mu}{r}}\ (=7.78\text{ km/s at 200 km})
+$$
 
-For ideal sequential stages:
+## Staging and payload fraction
 
-$$\boxed{\Delta v_{total}=\sum_i c_i\ln\frac{m_{0,i}}{m_{f,i}}}$$
+[[SESA1015 A05 - Staging and Payload Fraction|A05]]
 
-The discarded dry mass of a spent stage no longer has to be accelerated, which is the central benefit of staging.
+With payload ratio $p=M_p/M_0$ and structural ratio $s=M_s/M_f$ (structure over propellant):
 
-## Fast dimensional checks
+$$
+\frac{M_0}{M_b}=\frac{1+s}{p+s},\qquad \Delta V_{ideal}=\sum_iV_{ex,i}\ln\frac{1+s_i}{p_i+s_i},\qquad P=\prod_ip_i
+$$
 
-- $q$, $W/S$, pressure and stress all have units N m$^{-2}$.
-- $c_T$ for a jet is typically inverse time only after the fuel-flow convention is made explicit.
-- Angles inside calculus and small-angle formulae must be in radians.
-- A logarithm must have a dimensionless argument.
-- $I_{sp}$ is quoted in seconds; $g_0I_{sp}$ is a velocity.
-- If a result predicts $V_s$ falling when $W/S$ rises, or range increasing when $L/D$ falls, stop and find the sign or inversion error.
+$N$ identical stages: $\dfrac{\Delta V}{V_{ex}}=N\ln\dfrac{1+s}{P^{1/N}+s}\ \to\ \dfrac{\ln(1/P)}{1+s}$ as $N\to\infty$; best split $p_i=P^{1/N}$.
 
+## Dimensional checks
+
+| Quantity | Check |
+|---|---|
+| $W/(\tfrac12\rho V^2S)$ | dimensionless ($C_L$) |
+| $\sqrt{2(W/S)/(\rho C_L)}$ | m s$^{-1}$ |
+| $c_t$ (N of fuel per N of thrust per s) | s$^{-1}$, so $V/c_t$ is a length and $1/c_t$ a time |
+| $c_p$ (N of fuel per W per s) | m$^{-1}$, so $\eta/c_p$ is a length |
+| $V_{ex}\ln(M_0/M_b)$ | m s$^{-1}$ |

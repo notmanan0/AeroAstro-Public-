@@ -70,7 +70,7 @@ Check with a quadratic: take $f = x^2$ at $x_j = 0$ with $h = 1$. Then $f_{j-2} 
 
 ### Solution
 - Ratio $0.0180/0.00453 = 3.97\approx2^2$, so $p = \log_2(3.97) = 1.99$: second order.
-- 256 points is two more doublings: $0.00453/16 = 2.8\times10^{-4}$. This matches the lecture table.
+- 256 points is two more doublings: $0.00453/16 = 2.8\times10^{-4}$. This matches the slide table.
 
 ## Q4: Steady heat equation: set-up and first iterations
 

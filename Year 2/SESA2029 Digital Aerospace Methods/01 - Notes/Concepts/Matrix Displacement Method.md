@@ -21,7 +21,7 @@ which is solved for the nodal displacements once the boundary conditions are app
 
 - Building blocks of every element: equilibrium ($\sigma = F/A$), compatibility ($\varepsilon = u/L$) and the constitutive law ($\sigma = E\varepsilon$). For a bar these give $F = (EA/L)u = ku$.
 - 2-node bar: $\begin{Bmatrix}F_i\\F_j\end{Bmatrix} = k\begin{bmatrix}1&-1\\-1&1\end{bmatrix}\begin{Bmatrix}u_i\\u_j\end{Bmatrix}$.
-- Recipe:
+- Procedure:
   1. form the element matrices;
   2. assemble;
   3. apply BCs;

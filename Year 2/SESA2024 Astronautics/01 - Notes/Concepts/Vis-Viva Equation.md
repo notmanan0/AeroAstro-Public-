@@ -31,5 +31,5 @@ Used the other way round, one measured pair $(r,V)$ gives $1/a=2/r-V^2/\mu$, whi
 
 ## Related
 
-- [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation#2. The value of ε|Derivation in the lecture note]] · [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation#Worked examples|Worked examples]]
+- [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation#2. The value of ε|Derivation in the topic note]] · [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation#Worked examples|Worked examples]]
 - [[Orbital Angular Momentum]] · [[Hohmann Transfer]] · [[Kepler's Laws]]

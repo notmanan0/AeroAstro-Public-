@@ -24,7 +24,9 @@ The method is to treat the three signs of $\lambda$ separately, because each giv
 | $y=0$, $y'=0$ | $\big((2n-1)\pi/2L\big)^2$ | $\sin\big((2n-1)\pi x/2L\big)$ |
 | $y(0)=0$, $y'(1)+y(1)=0$ | $k_n^2$ with $\tan k=-k$ | $\sin k_nx$ |
 
-The last row is the lecture's example: its eigenvalues have no closed form, but the first is $\lambda_1=k_1^2\approx4.116$, and there is one root in each interval $((n-\frac12)\pi,n\pi)$. The eigenvalues are real and increase without bound, $y_n$ has $n-1$ interior zeros, and eigenfunctions of different eigenvalues are orthogonal and together complete, which is the foundation of Fourier series.
+The last row is the worked example in ODE3: its eigenvalues have no closed form, but the first is $\lambda_1=k_1^2\approx4.116$, and there is one root in each interval $((n-\frac12)\pi,n\pi)$. The eigenvalues are real and increase without bound, $y_n$ has $n-1$ interior zeros, and eigenfunctions of different eigenvalues are orthogonal and together complete, which is the foundation of Fourier series.
+
+Eigenfunctions belonging to different eigenvalues are orthogonal on $[0,L]$, which follows from the ODE alone by integrating $y_m''y_n-y_n''y_m$ by parts: the boundary bracket $[y_m'y_n-y_n'y_m]$ vanishes for Dirichlet, Neumann and Robin conditions alike. So the uneven Robin modes $\sin k_nx$ are orthogonal too, though their norm $\int_0^1\sin^2k_1x\,dx=0.598$ is not the Dirichlet $\frac12$. When an eigenvalue has no closed form, Newton's method on $\sin k+k\cos k=0$ from $k=2$ gives $k_1=2.02876$ in three steps.
 
 Separation of variables always produces one of these problems, and a vibrating string's mode shapes are exactly these eigenfunctions (compare SESA2029 [[Natural Frequencies and Mode Shapes]]). Exam questions sometimes write $X''-\lambda X=0$, which flips the signs of the cases and gives $\lambda_n=-n^2$.
 

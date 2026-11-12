@@ -25,7 +25,7 @@ sources: ["03 - Exams & Past Papers/aerothermo test 2 questions.txt"]
 | 5 | $\Delta\theta=5.815^\circ$ | two θ–β–M solves per side, iterate to $p_{3A}=p_{3B}$ | [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#3. Shock–shock interaction and slip lines\|W03 §3]] |
 
 > [!warning] The method changes the last digit
-> Q3 and Q4 name the method: "use OSC, nearest 0.05" and "use IFT, reading to nearest value". The exact answers (1.86 and 22.8 kPa) differ in the last quoted digit from the method-specified ones (1.85 and 22.9 kPa). Use the stated method, as the lecturer insists exam questions will specify one (L2-2, ll. 74–80).
+> Q3 and Q4 name the method: "use OSC, nearest 0.05" and "use IFT, reading to nearest value". The exact answers (1.86 and 22.8 kPa) differ in the last quoted digit from the method-specified ones (1.85 and 22.9 kPa). Use the stated method: exam questions specify one (L2-2, ll. 74–80).
 
 ---
 

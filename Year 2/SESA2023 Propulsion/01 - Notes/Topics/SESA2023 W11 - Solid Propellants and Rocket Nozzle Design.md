@@ -34,9 +34,6 @@ sources: ["02 - Sources/Lectures/Week 11 - Rockets.pdf", "02 - Sources/Lectures/
 > - **Common mistakes:** saying a higher propellant temperature raises the total impulse (it mainly shortens the burn); forgetting that $n\ge1$ is unstable, not just "more sensitive".
 > - **Practise:** [[#Worked example – chamber pressure and its sensitivity]] · [[SESA2023 W10 - Rocket Performance, Staging and Power Cycles#Worked example – the Saturn V F-1 engine|W10 F-1 nozzle]]
 
-> [!note] Scope
-> Solid motors were introduced on 1 May (Lecture 30, ll. 33–182: surface combustion, grain shapes, the Shuttle and Ares boosters), which is recorded; see §1. Lecture 31 (5 May, ll. 400–407) then says the Friday lecture would "study a little bit more the solid propellant and also the nozzle… remove a couple of assumptions about the nozzle, and with that we will complete the course". That 8 May lecture has no recording, so the propellant chemistry, burning-rate law and nozzle-contour material here follow the Week 11 notes and slides.
-
 A solid motor is its own fuel tank and combustion chamber. The grain burns from its exposed surface inwards, and the gas it releases fills the case and leaves through the nozzle. The chamber pressure finds a balance: more pressure means faster burning and more gas made, but also more gas pushed out through the choked throat, and the pressure settles where generation equals discharge. That balance is stable only if burning responds gently to pressure. If the burning rate rose as fast as the discharge does ($n\ge1$), a small pressure rise would feed itself; with $n<1$ the discharge grows faster than the generation and disturbances die out.
 
 A solid can't be throttled, so the thrust curve is set by the shape of the grain's burning surface: a star that burns out to a circle, a tube that grows, an end-burner that stays the same. A real nozzle also loses performance that the one-dimensional area-ratio model misses. The exit flow diverges, so some of its momentum points sideways and is wasted, and boundary layers, particles and chemistry cost more; nozzle shaping is about recovering that last few per cent.
@@ -45,18 +42,15 @@ A solid can't be throttled, so the thrust curve is set by the shape of the grain
 
 ## 1. Solid rocket motors
 
-- **Components:** a case (cylindrical or spherical, thermally insulated), the propellant grain, an igniter (pyrotechnic charge) and the nozzle.
-- **Uses:** from about 2 N to 11 MN. Large boosters (Space Shuttle, Ares, L30), upper stages, tactical missiles (air-to-air, surface-to-air, anti-tank) and gas generators to start turbopumps.
-- **Pros:** few or no moving parts, low cost, very high reliability, minimal maintenance, ready for immediate use (important militarily).
-- **Con:** no restart, no throttling once lit. "Once it's started, there's pretty much no way to stop it… unless you could cool it extremely quickly" (L30, ll. 72–77); for a crew, "there's no way for them to stop this once they've pressed go" (ll. 137–138).
+A solid motor consists of a case (cylindrical or spherical, thermally insulated), the propellant grain, an igniter (pyrotechnic charge) and the nozzle. Solid motors span thrusts from about 2 N to 11 MN and are used as large boosters (Space Shuttle, Ares, L30), upper stages, tactical missiles (air-to-air, surface-to-air, anti-tank) and gas generators to start turbopumps. They have few or no moving parts, low cost, very high reliability and minimal maintenance, and they are ready for immediate use, which matters militarily. Their drawback is that there is no restart and no throttling. Once lit, a motor cannot be stopped short of cooling it extremely quickly (L30, ll. 72–77), so a crew cannot abort the burn once it has started (ll. 137–138).
 
-### How a solid burns (L30, ll. 44–103)
+### How a solid burns
 
 The combustion chamber is the propellant store, as in a firework. Like a lump of coal in a fire, heat from the hot products conducts into the surface, which decomposes into gas that reacts just above it. The fuel and oxidiser are already premixed in the grain (for example aluminium powder with an oxygen-rich compound such as nitrocellulose in a binder), so there is no waiting for mixing and it burns fast.
 
 The gas production is proportional to the burning surface area, and that area changes as the grain burns back. The nozzle stays choked, but a choked nozzle fixes only the *non-dimensional* flow: more gas raises the chamber pressure and so the mass flow and thrust (ll. 99–103).
 
-Grain shapes ("think about this as the lettering in a stick of rock", l. 109):
+The grain's cross-section runs unchanged along its length (l. 109), and its shape sets the thrust profile:
 
 | Grain (cross-section) | Burning area with time | Thrust profile |
 |---|---|---|
@@ -65,7 +59,7 @@ Grain shapes ("think about this as the lettering in a stick of rock", l. 109):
 | "anchor" shape | high at first, then falling | regressive |
 | two-step profiles | designed | e.g. the Space Shuttle boosters: a first thrust peak to cut gravity losses, a lower phase through the dense air, a second peak once drag matters less (ll. 135–142) |
 
-The Ares I first-stage five-segment motor in the test film burned for about two minutes and then stopped quite suddenly; its nozzle can be seen gimballing for thrust-vector control (L30, ll. 143–182).
+The Ares I first-stage five-segment motor burns for about two minutes and then stops quite suddenly; its nozzle gimbals for thrust-vector control (L30, ll. 143–182).
 
 ## 2. Propellants
 
@@ -102,7 +96,7 @@ $$
 
 ### Equilibrium chamber pressure
 
-The step from the notes' statement that "the mass generated must balance the nozzle discharge" to a working formula (an extension, not printed in the notes).
+Equating the mass generated to the nozzle discharge gives a working formula.
 
 Gas generated by a burning surface of area $A_b$ receding at $r$ into propellant of density $\rho_p$:
 
@@ -155,7 +149,7 @@ Suppose $P_c$ rises slightly above equilibrium. Generation grows like $P_c^{\,n}
 
 ### Worked example – chamber pressure and its sensitivity
 
-Suggested example (not from the lecture). A composite propellant with $\rho_p=1750$ kg/m³ burns at $r=7$ mm/s at 7 MPa, with $n=0.35$, and $C^*=1500$ m/s. Write the law as $r=r_{ref}(P_c/P_{ref})^n$.
+Suggested example, not lecturer-set. A composite propellant with $\rho_p=1750$ kg/m³ burns at $r=7$ mm/s at 7 MPa, with $n=0.35$, and $C^*=1500$ m/s. Write the law as $r=r_{ref}(P_c/P_{ref})^n$.
 
 **Area ratio for $P_c=7$ MPa.** The balance becomes $(P_c/P_{ref})^{1-n}=\rho_pr_{ref}C^*K_n/P_{ref}$; set the left side to 1:
 
@@ -225,7 +219,7 @@ $$
 \boxed{\lambda = \frac{1+\cos\alpha}{2}}
 $$
 
-The momentum thrust is multiplied by $\lambda$ (notes eq. 11.3). $\alpha=15^\circ$ gives $\lambda=0.983$, a 1.7 % loss; 12° gives 0.989 and 18° gives 0.976. Use 12–18°: smaller angles make the nozzle too long, heavy and frictional; larger ones lose too much, and very large ones risk jet separation.
+The momentum thrust is multiplied by $\lambda$ (notes eq. 11.3). $\alpha=15^\circ$ gives $\lambda=0.983$, a 1.7 % loss; 12° gives 0.989 and 18° gives 0.976. Half-angles of 12–18° are used: smaller angles make the nozzle too long, heavy and frictional; larger ones lose too much, and very large ones risk jet separation.
 
 **Bell (contoured).** A large initial angle (30–60°) turning gradually to 2–8° at the exit, designed with 2-D (method-of-characteristics) models to cancel the expansion waves from the throat without creating compression waves. It is shorter and has lower divergence loss than a 15° cone of the same area ratio. It is not used on solid motors: two-phase Al₂O₃ particles in the exhaust erode the concave wall.
 
@@ -245,13 +239,13 @@ Unconventional designs, to cut launch cost and escape the single-design-altitude
 
 ---
 
-## 5. The final review (12 May)
+## 5. Exam format
 
-The last Grenga lecture reviewed combustion and compressible flow and set out the exam (L34, ll. 25–67):
+The exam is structured as follows (L34, ll. 25–67; 12 May):
 
-- four questions, 25 marks each, all compulsory ("No, you have to do all four", l. 38), each split into marked sub-parts;
+- four questions, 25 marks each, all compulsory (l. 38), each split into marked sub-parts;
 - expect roughly one each on rockets, turbomachinery, gas-turbine thermodynamics or shocks, and combustion;
-- the data book is provided: "learn how to use the [equations], don't try to memorise" them (ll. 48–52);
+- the data book is provided, so learn how to use the equations rather than memorising them (ll. 48–52);
 - the course was restructured in 2021: papers from 2021 onwards are fully answerable; older papers contain topics no longer taught (ll. 62–67).
 
 See [[SESA2023 Past Paper Map]].
@@ -286,7 +280,7 @@ See [[SESA2023 Past Paper Map]].
 - Parent: [[SESA2023 Propulsion Hub]] · Previous: [[SESA2023 W10 - Rocket Performance, Staging and Power Cycles]]
 - Nozzle regimes (over- and under-expanded): [[Converging-Diverging Nozzle Operating Regimes]] · $C^*$, $C_F$: [[SESA2023 W10 - Rocket Performance, Staging and Power Cycles#2. Performance parameters|W10]]
 - Formula list: [[SESA2023 Formula Sheet]] · exam strategy: [[SESA2023 Past Paper Map]]
-- Not yet examined on the current syllabus (no Week 11 questions in the 2021-25 papers); still likely descriptive exam material.
+- Not examined on the current syllabus (no Week 11 questions in the 2021-25 papers); likely descriptive exam material.
 - Method of characteristics for bell contours, taken further in Year 3: [[SESA3029 W05a - Method of Characteristics]] · [[SESA3029 W05b - Minimum-Length Nozzle Design]]
 - **Related (SESA2028 materials):** [[SESA2028 M5 - Metal and Ceramic Matrix Composites and Hybrid Laminates|SESA2028 M5 CMCs]] (C/C nozzles) · [[Thermal Barrier Coatings]]
 
@@ -294,6 +288,7 @@ See [[SESA2023 Past Paper Map]].
 
 - `Week 11 - Rockets.pdf` (notes: Grenga, Richardson) and `Week 11 - Rockets - Lecture Slides.pdf` (the notes call it Lecture 33).
 - Transcripts: `SESA2023 Lecture 30.txt` (L30, 1 May, E. Richardson: solid motors, grain shapes, ll. 33–182); `SESA2023 Lecture 31.txt` (5 May, ll. 400–407: the plan for the Friday lecture); `SESA2023 Lecture 34.txt` (L34, 12 May: final review and exam structure). The 8 May lecture itself was not recorded.
+- Coverage: §1 (surface combustion, grain shapes, the Shuttle and Ares boosters) follows L30. The 8 May lecture covered solid propellants and the relaxing of some nozzle assumptions; with no recording, the propellant chemistry, burning-rate law and nozzle-contour material follow the Week 11 notes and slides.
 
 ## Self-study tasks
 
@@ -304,7 +299,7 @@ No tasks were recorded as set for Week 11 (the lecture has no transcript), so al
 - [ ] Derive the equilibrium chamber pressure of a solid motor and explain why $n<1$ is required. → [[#Equilibrium chamber pressure]] · [[#Why n is less than one]]
 - [ ] Explain how the propellant temperature changes the thrust, burn time and total impulse. → [[#Other influences on the burning rate]]
 - [ ] Compare double-base and composite propellants in a table from memory. → [[#2. Propellants]]
-- [ ] Sketch tube, star and anchor grains and their thrust–time curves; explain the Shuttle booster's two-peak profile. → [[#How a solid burns (L30, ll. 44–103)]]
+- [ ] Sketch tube, star and anchor grains and their thrust–time curves; explain the Shuttle booster's two-peak profile. → [[#How a solid burns]]
 - [ ] Derive $\lambda=(1+\cos\alpha)/2$ and evaluate it for 12°, 15° and 18°. → [[#Divergent section]]
 
 ### Further practice

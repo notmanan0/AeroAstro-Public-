@@ -33,9 +33,9 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 18.txt", "02 - Sources/Lecture
 > - **Common mistakes:** trying to separate $y=XT$ when the PDE has a source; forgetting to subtract $y_p(x,0)$ from the initial data.
 > - **Practise:** [[#A heated rod with fixed ends (L18)]] · [[#A rod with a periodically heated end (L19)]] · [[#3. The 2024-25 exam, question A2]]
 
-So far the rod has been left alone: an initial temperature, ends held at zero (or insulated), and no heating. Lecture 18 adds heating inside the rod, such as a heater placed in the middle, and Lecture 19 heats it through the ends instead (L18, ll. 15–32). Both are called inhomogeneous problems, which the lecturer conceded is "just the annoying feature" (L19, l. 13). The heat equation is used because one time derivative keeps the algebra short, but everything carries over to the wave equation.
+In the homogeneous problem of [[MATH2048 PDE3 - The Heat Equation|PDE3]] the rod is left alone: an initial temperature, ends held at zero (or insulated), and no heating. Two different changes both go by the name inhomogeneous problem: heating inside the rod, such as a heater placed in the middle, makes the PDE itself inhomogeneous (L18), and heating through the ends makes the boundary conditions inhomogeneous (L19) (L18, ll. 15–32). The heat equation is used because one time derivative keeps the algebra short, but everything carries over to the wave equation.
 
-The two lectures fit together. A source inside the domain is handled by expanding in eigenfunctions, which needs homogeneous boundary conditions. Non-zero boundary conditions are then handled by subtracting something that absorbs them, which leaves homogeneous boundary conditions and, usually, a source. So any combination comes down to the Lecture 18 method.
+The two methods fit together. A source inside the domain is handled by expanding in eigenfunctions, which needs homogeneous boundary conditions. Non-zero boundary conditions are handled by subtracting something that absorbs them, which leaves homogeneous boundary conditions and, usually, a source. So any combination reduces to the eigenfunction expansion for a source.
 
 ---
 
@@ -53,7 +53,7 @@ The last term depends on both $x$ and $t$ in general, so the two sides are no lo
 
 ### The eigenfunction expansion
 
-Look instead at what the homogeneous solution was, before $T_n$ was solved for (ll. 51–74). With fixed ends it was $y=\sum T_n(t)\sin n\pi x$. Each $\sin n\pi x$ vanishes at $x=0$ and $x=1$, so any such sum satisfies the boundary conditions automatically. Changing the PDE changes how the $T_n$ behave, not the boundary conditions, so the solution should still be a sum of the same sines. With insulated ends it would be cosines. So guess
+The homogeneous solution, before $T_n$ was solved for, suggests a form that does work (ll. 51–74). With fixed ends it was $y=\sum T_n(t)\sin n\pi x$. Each $\sin n\pi x$ vanishes at $x=0$ and $x=1$, so any such sum satisfies the boundary conditions automatically. Changing the PDE changes how the $T_n$ behave, not the boundary conditions, so the solution should still be a sum of the same sines. With insulated ends it would be cosines. So guess
 
 $$
 y(x,t)=\sum_{n=1}^\infty T_n(t)\sin n\pi x,\qquad F(x,t)=\sum_{n=1}^\infty F_n(t)\sin n\pi x .
@@ -109,7 +109,7 @@ The $C_n$ term is the familiar decaying mode; the integral is the response to th
 
 ### A heated rod with fixed ends (L18)
 
-Solve $y_t=y_{xx}+x(1-x)$ with $y(0,t)=y(1,t)=0$ and $y(x,0)=x(1-x)$, so $\kappa=1$ and a steady heat source peaked in the middle (ll. 225–340). The source is the function whose sine series was found in [[MATH2048 PDE2 - Separation of Variables for the Wave Equation#Guitar string with fixed ends (L16)|PDE2]], chosen "because we're too lazy to compute another set Fourier series" (l. 290):
+Solve $y_t=y_{xx}+x(1-x)$ with $y(0,t)=y(1,t)=0$ and $y(x,0)=x(1-x)$, so $\kappa=1$ and a steady heat source peaked in the middle (ll. 225–340). The source is the function whose sine series was found in [[MATH2048 PDE2 - Separation of Variables for the Wave Equation#Guitar string with fixed ends (L16)|PDE2]], chosen so that no new Fourier series has to be computed (l. 290):
 
 $$
 F_n=\frac{4\big(1-(-1)^n\big)}{(n\pi)^3},
@@ -135,10 +135,78 @@ $$
 
 Two kinds of term appear (ll. 314–340). The ones multiplied by $e^{-(n\pi)^2t}$ are transients: the $\frac8{(n\pi)^3}$ part is exactly the unforced decay of PDE3, and the $-\frac8{(n\pi)^5}$ correction is there because the initial data doesn't match the final state. The term without an exponential, $\sum\frac8{(n\pi)^5}\sin n\pi x$, is what remains as $t\to\infty$: the steady state, in which heat leaking out through the ends balances the heat put in, more of it in the middle.
 
-> [!check] The steady state directly
-> Setting $y_t=0$ gives $y''=-x(1-x)$ with $y(0)=y(1)=0$. Integrating twice gives $y_s=\frac{x^4}{12}-\frac{x^3}6+\frac x{12}$, and SymPy finds its sine coefficients are $\frac{4(1-(-1)^n)}{(n\pi)^5}$, exactly the non-decaying part of the series. The series also matches a finite-difference solution at $x=0.4$, $t=0.3$: $0.036217$ against $0.036217$.
+The steady state can also be found directly, which is a useful check on the series. Setting $y_t=0$ leaves an ODE with the same boundary conditions:
+
+$$
+y_s''=-x(1-x)=x^2-x,\qquad y_s(0)=y_s(1)=0 .
+$$
+
+Integrate once:
+
+$$
+y_s'=\frac{x^3}{3}-\frac{x^2}{2}+A,
+$$
+
+and again:
+
+$$
+y_s=\frac{x^4}{12}-\frac{x^3}{6}+Ax+B .
+$$
+
+$y_s(0)=0$ gives $B=0$, and $y_s(1)=\frac1{12}-\frac16+A=0$ gives $A=\frac1{12}$, so
+
+$$
+y_s=\frac{x^4}{12}-\frac{x^3}{6}+\frac{x}{12}.
+$$
+
+> [!check] The steady state against the series
+> SymPy finds the sine coefficients of $y_s$ are $\frac{4(1-(-1)^n)}{(n\pi)^5}$, exactly the non-decaying part of the series, and at the midpoint $y_s(\tfrac12)=\frac{1}{192}-\frac1{48}+\frac1{24}=\frac{5}{192}=0.0260$. The full series also matches a finite-difference solution at $x=0.4$, $t=0.3$: $0.036217$ against $0.036217$.
 
 ![[m2048_pde_inhomogeneous_heat.png|760]]
+
+### A source that decays in time (2022-23 exam A2)
+
+The 2022/23 A2 (PDE recap lecture, 13 Nov 2024, ll. 263–397) is $y_t=y_{xx}+e^{-t}(1-x)$ on $[0,1]$ with insulated ends $y_x(0,t)=y_x(1,t)=0$ and $y(x,0)=0$. Insulated ends mean cosines, including the constant mode, so expand
+
+$$
+y=T_0(t)+\sum_{n\geq1}T_n(t)\cos n\pi x,\qquad 1-x=\tfrac12+\sum_{n\geq1}\hat f_n\cos n\pi x .
+$$
+
+The cosine coefficients of $1-x$: the constant is its mean, $\int_0^1(1-x)\,dx=\frac12$, and by parts
+
+$$
+\hat f_n=2\int_0^1(1-x)\cos n\pi x\,dx=2\left(\Big[(1-x)\frac{\sin n\pi x}{n\pi}\Big]_0^1+\int_0^1\frac{\sin n\pi x}{n\pi}\,dx\right)=\frac{2\big(1-(-1)^n\big)}{(n\pi)^2}.
+$$
+
+Substituting and matching cosines gives
+
+$$
+\dot T_0=\tfrac12e^{-t},\qquad\dot T_n+(n\pi)^2T_n=\hat f_ne^{-t}.
+$$
+
+The first integrates directly, with $T_0(0)=0$: $T_0=\frac12(1-e^{-t})$. For the second, the integrating factor gives
+
+$$
+\frac{d}{dt}\Big[e^{(n\pi)^2t}T_n\Big]=\hat f_ne^{((n\pi)^2-1)t},
+$$
+
+$$
+e^{(n\pi)^2t}T_n=\frac{\hat f_n}{(n\pi)^2-1}e^{((n\pi)^2-1)t}+C_n .
+$$
+
+$T_n(0)=0$ gives $C_n=-\frac{\hat f_n}{(n\pi)^2-1}$, and multiplying through by $e^{-(n\pi)^2t}$,
+
+$$
+T_n=\frac{\hat f_n}{(n\pi)^2-1}\Big(e^{-t}-e^{-(n\pi)^2t}\Big).
+$$
+
+The denominator never vanishes because $(n\pi)^2\geq\pi^2>1$. So
+
+$$
+y=\tfrac12\big(1-e^{-t}\big)+\sum_{n\geq1}\frac{\hat f_n}{(n\pi)^2-1}\Big(e^{-t}-e^{-(n\pi)^2t}\Big)\cos n\pi x .
+$$
+
+The source puts in a total heat $\int_0^\infty\int_0^1e^{-t}(1-x)\,dx\,dt=\frac12$ and none can leave, so the rod ends uniform at $\frac12$; every cosine term dies away with the source. SymPy's `dsolve` reproduces $T_n$.
 
 The same steps work for the wave equation, except that each $T_n$ equation is second order, so it needs undetermined coefficients or variation of parameters instead of an integrating factor, and there are two constants per mode (ll. 341–350). The answer has the same structure: a part that balances the source, plus modes excited around it, which for waves need not decay.
 
@@ -178,7 +246,7 @@ $$
 v_t=y_t-\partial_ty_p=\kappa^2v_{xx}+F(x,t),\qquad F=-\partial_ty_p=-\dot f_0-(\dot f_1-\dot f_0)\,x .
 $$
 
-This is the Lecture 18 problem, a source with homogeneous boundary conditions. The lecturer stressed that $v$ obeying homogeneous boundary conditions always holds when the steps are done right; $v$ obeying the original PDE unchanged does not (ll. 115–116, 129).
+This is the problem of §1, a source with homogeneous boundary conditions. The subtraction always leaves $v$ with homogeneous boundary conditions, but $v$ does not obey the original PDE unchanged (ll. 115–116, 129).
 
 The initial data can be handled in either order (ll. 183–195): solve for $v$, add $y_p$, then fit $y(x,0)$; or fit $v(x,0)=y(x,0)-y_p(x,0)$ first. The general default is the first, but the example uses the second.
 
@@ -220,7 +288,7 @@ $$
 \dot T_n+(n\pi)^2T_n=-\frac{\sin t}{n\pi}.
 $$
 
-This time the lecturer used undetermined coefficients, which works for a first-order constant-coefficient ODE as well as a second-order one (ll. 286–334). The complementary function is $C_ne^{-(n\pi)^2t}$. The forcing is a sine, so try $T_p=A\sin t+B\cos t$:
+This time use undetermined coefficients, which works for a first-order constant-coefficient ODE as well as a second-order one (ll. 286–334). The complementary function is $C_ne^{-(n\pi)^2t}$. The forcing is a sine, so try $T_p=A\sin t+B\cos t$:
 
 $$
 \dot T_p+(n\pi)^2T_p=\big(A+(n\pi)^2B\big)\cos t+\big((n\pi)^2A-B\big)\sin t .
@@ -279,23 +347,38 @@ $$
 u=\cos x+\cos3x\cos3t .
 $$
 
-The $\cos x$ part is the static balance between the source and the curvature, $u_{xx}+\cos x=0$, and the $\cos3x$ part oscillates freely. The published solutions write the separated time equation as $\dot T-\lambda T=0$ and the velocity as $\frac{\partial u}{\partial x}$; both should be time derivatives, $\ddot T$ and $\frac{\partial u}{\partial t}$.
+The $\cos x$ part is the static balance between the source and the curvature, $u_{xx}+\cos x=0$, and the $\cos3x$ part oscillates freely. Substituting back confirms it: $u_{tt}=-9\cos3x\cos3t$, and $u_{xx}+\cos x=(-\cos x-9\cos3x\cos3t)+\cos x=-9\cos3x\cos3t$.
 
-## Transcript slips
+## 4. A source switched off (PS7 Q3)
 
-> [!warning] Lectures 18–19
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L18, ll. 25, 57 | "Richelieu boundary conditions" | Dirichlet |
-> | L18, l. 88 | the PDE first written wrongly, then "time derivative equals kappa squared plus f" | $y_t=\kappa^2y_{xx}+F$ |
-> | L18, l. 224 | "thurier series" | Fourier series |
-> | L19, l. 1 | "pausing terms" | forcing terms |
-> | L19, ll. 94–95 | $v=y_p-y$, "got that the wrong way around" | $v=y-y_p$ |
-> | L19, l. 171 | $\partial_ty_p$ read out with the terms jumbled | $\partial_ty_p=\dot f_0+(\dot f_1-\dot f_0)x$ |
-> | L19, ll. 304–320 | two attempts at $\dot T_p+(n\pi)^2T_p$ abandoned ("that's gibberish") | $(A+(n\pi)^2B)\cos t+((n\pi)^2A-B)\sin t$ |
-> | L19, l. 321 | right-hand side "sine of t on n pi" | $-\frac{\sin t}{n\pi}$; the sign is restored at l. 327 |
-> | L19, l. 339 | "a decaying exponential, e to the n pi squared t" | $e^{-(n\pi)^2t}$ |
-> | L19, l. 371 | "dominated by the transient behavior, sorry" | dominated by the periodic forced response |
+PS7 Q3 heats an insulated rod, $u_t=u_{xx}+f(\tau-t)\sin^2\pi x$ with $u_x(0,t)=u_x(1,t)=0$ and $u(x,0)=0$, where the switch $f$ is $1$ for $0\leq t\leq\tau$ and $0$ afterwards. The source needs no integrals once the double-angle formula puts it in cosines:
+
+$$
+\sin^2\pi x=\tfrac12-\tfrac12\cos2\pi x,
+$$
+
+so only the $n=0$ and $n=2$ modes are forced, with $F_0=\frac12f$ and $F_2=-\frac12f$; every other mode starts at zero and is never driven, so it stays zero. With $u=T_0+T_2\cos2\pi x$:
+
+$$
+\dot T_0=\tfrac12f,\qquad\dot T_2+4\pi^2T_2=-\tfrac12f .
+$$
+
+While the source is on ($0\leq t\leq\tau$), $T_0=\frac t2$, and the integrating factor gives, with $T_2(0)=0$,
+
+$$
+T_2=-\frac{1}{8\pi^2}\Big(1-e^{-4\pi^2t}\Big).
+$$
+
+After switch-off, $T_0$ stays at $\frac\tau2$ and $T_2$ decays freely from its value at $\tau$:
+
+$$
+T_2=-\frac{1}{8\pi^2}\Big(1-e^{-4\pi^2\tau}\Big)e^{-4\pi^2(t-\tau)}\qquad(t>\tau).
+$$
+
+The rod ends uniform at $\frac\tau2$: the source delivered $\int_0^\tau\int_0^1\sin^2\pi x\,dx\,dt=\frac\tau2$ of heat and the insulated ends kept all of it.
+
+> [!check] Against a finite-difference solution
+> With $\tau=0.1$, at $t=0.2$ the formula gives $u(0)=0.049760$ and $u(\tfrac12)=0.050240$; an explicit finite-difference solution on 200 cells gives $0.049765$ and $0.050245$.
 
 ## Links
 
@@ -318,11 +401,36 @@ Nothing was explicitly set in either lecture; Lecture 18 pointed to the slides' 
 
 - [ ] Rework the L18 heated rod and check that the non-decaying part is the steady state $\frac{x^4}{12}-\frac{x^3}6+\frac x{12}$ (suggested, not lecturer-set). → [[#A heated rod with fixed ends (L18)]]
 - [ ] 2024/25 A2: the forced wave equation with insulated ends. → [[#3. The 2024-25 exam, question A2]]
-- [ ] PS7 Q3: a source $f\sin^2\pi x$ switched on for $0<t<\tau$ in an insulated rod. Answer: final uniform temperature $\frac\tau2$, with the $\cos2\pi x$ mode decaying after switch-off. → [[MATH2048 Problem Sheets 6-7 Solutions - PDEs]]
+- [ ] PS7 Q3: a source $f\sin^2\pi x$ switched on for $0<t<\tau$ in an insulated rod. Answer: final uniform temperature $\frac\tau2$, with the $\cos2\pi x$ mode decaying after switch-off. → [[#4. A source switched off (PS7 Q3)]]
 
 ### Further practice
 
 - [ ] PS7 Q4: mixed conditions $u(0,t)=0$, $u_x(1,t)=C$, $u(x,0)=0$. Answer: $u=C\big\{x+\frac2{\pi^2}\sum\frac{(-1)^n}{(n-\frac12)^2}\sin(n-\tfrac12)\pi x\,e^{-(n-\frac12)^2\pi^2\kappa^2t}\big\}$. → [[MATH2048 Problem Sheets 6-7 Solutions - PDEs]]
-- [ ] The 2022/23 exam A2, worked in the PDE recap lecture (13 Nov 2024, ll. 263–397): $y_t=y_{xx}+e^{-t}(1-x)$ on $[0,1]$ with insulated ends and $y(x,0)=0$. Answer: $y=\frac12(1-e^{-t})+\sum_{n\geq1}\frac{\hat f_n}{(n\pi)^2-1}\big(e^{-t}-e^{-(n\pi)^2t}\big)\cos n\pi x$ with $\hat f_n=\frac{2(1-(-1)^n)}{(n\pi)^2}$, the cosine coefficients of $1-x$. → [[#Solving for each mode with an integrating factor]]
-- [ ] PS7 Q2: $u_t=h^2u_{xx}-ku$; substituting $u=e^{-kt}v$ removes the decay term. → [[MATH2048 Problem Sheets 6-7 Solutions - PDEs]]
+- [ ] The 2022/23 exam A2, worked in the PDE recap lecture (13 Nov 2024, ll. 263–397): $y_t=y_{xx}+e^{-t}(1-x)$ on $[0,1]$ with insulated ends and $y(x,0)=0$. Answer: $y=\frac12(1-e^{-t})+\sum_{n\geq1}\frac{\hat f_n}{(n\pi)^2-1}\big(e^{-t}-e^{-(n\pi)^2t}\big)\cos n\pi x$ with $\hat f_n=\frac{2(1-(-1)^n)}{(n\pi)^2}$, the cosine coefficients of $1-x$. → [[#A source that decays in time (2022-23 exam A2)]]
+- [ ] PS7 Q2: $u_t=h^2u_{xx}-ku$; substituting $u=e^{-kt}v$ removes the decay term. → [[MATH2048 PDE3 - The Heat Equation#A decay term removed by a substitution (PS7 Q2)|PDE3]]
 - [ ] Redo the L19 example with $T_n$ found by an integrating factor instead of undetermined coefficients (suggested, not lecturer-set). → [[#A rod with a periodically heated end (L19)]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 18–19
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L18, ll. 25, 57 | "Richelieu boundary conditions" | Dirichlet |
+> | L18, l. 88 | the PDE first written wrongly, then "time derivative equals kappa squared plus f" | $y_t=\kappa^2y_{xx}+F$ |
+> | L18, l. 224 | "thurier series" | Fourier series |
+> | L19, l. 1 | "pausing terms" | forcing terms |
+> | L19, ll. 94–95 | $v=y_p-y$, "got that the wrong way around" | $v=y-y_p$ |
+> | L19, l. 171 | $\partial_ty_p$ read out with the terms jumbled | $\partial_ty_p=\dot f_0+(\dot f_1-\dot f_0)x$ |
+> | L19, ll. 304–320 | two attempts at $\dot T_p+(n\pi)^2T_p$ abandoned ("that's gibberish") | $(A+(n\pi)^2B)\cos t+((n\pi)^2A-B)\sin t$ |
+> | L19, l. 321 | right-hand side "sine of t on n pi" | $-\frac{\sin t}{n\pi}$; the sign is restored at l. 327 |
+> | L19, l. 339 | "a decaying exponential, e to the n pi squared t" | $e^{-(n\pi)^2t}$ |
+> | L19, l. 371 | "dominated by the transient behaviour, sorry" | dominated by the periodic forced response |
+
+### Published exam solution slips
+
+> [!warning] 2024/25 A2 published solutions
+> Where: [[#3. The 2024-25 exam, question A2]]
+>
+> The solutions write the separated time equation as $\dot T-\lambda T=0$ and the initial velocity condition as $\frac{\partial u}{\partial x}$. For the wave equation both are time derivatives: $\ddot T-\lambda T=0$ and $\frac{\partial u}{\partial t}(x,0)=0$.

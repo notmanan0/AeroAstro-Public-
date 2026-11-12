@@ -31,5 +31,5 @@ The trade-off is the heart of the power–gain choice: more gain means less tran
 
 ## Related
 
-- [[SESA2024 09 - Communications#5. Antenna gain and beamwidth|Gain and beamwidth in the lecture note]]
+- [[SESA2024 09 - Communications#5. Antenna gain and beamwidth|Gain and beamwidth in the topic note]]
 - [[Link Budget Equation]] · [[EIRP and G-T]] · [[Decibels]]

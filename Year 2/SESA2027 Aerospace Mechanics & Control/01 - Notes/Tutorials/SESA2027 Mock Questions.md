@@ -189,7 +189,7 @@ $$
 >
 > **(b)** Flat at $20\log_{10}5=13.98$ dB to the corner at 1 rad/s, then −20 dB/dec to the corner at 10 rad/s, then −40 dB/dec. Phase 0 → −90° around 1 rad/s and another −90° around 10 rad/s, tending to −180°. *[2]*
 >
-> **(c)** $\lvert L\rvert=1$: $(\omega^2+1)(\omega^2+100)=2500\Rightarrow\omega^4+101\omega^2-2400=0\Rightarrow\omega^2=19.86$, $\omega_{gc}=4.46$ rad/s. $\angle L=-\tan^{-1}4.46-\tan^{-1}0.446=-101.4°$, so $PM=78.6°$. The phase only tends to −180°, so the phase crossover is at infinity and **GM is infinite** (the stated exam case, L2.05, l. 476). *[2 + 1 + 1]* ([[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#1. Why frequency-response design (L2.05)|B3 §1]])
+> **(c)** $\lvert L\rvert=1$: $(\omega^2+1)(\omega^2+100)=2500\Rightarrow\omega^4+101\omega^2-2400=0\Rightarrow\omega^2=19.86$, $\omega_{gc}=4.46$ rad/s. $\angle L=-\tan^{-1}4.46-\tan^{-1}0.446=-101.4°$, so $PM=78.6°$. The phase only tends to −180°, so the phase crossover is at infinity and **GM is infinite** (the stated exam case, L2.05, l. 476). *[2 + 1 + 1]* ([[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#1. Margins and design approach (L2.05)|B3 §1]])
 
 ---
 

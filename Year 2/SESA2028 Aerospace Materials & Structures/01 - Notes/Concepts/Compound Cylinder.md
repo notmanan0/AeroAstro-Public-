@@ -14,7 +14,7 @@ Two (or more) concentric tubes assembled with an interference fit, so that resid
 
 ## Why do it?
 
-In a single thick cylinder under internal pressure the hoop stress is highest at the bore and falls steeply outward. The outer material is under-used, and simply adding thickness gives diminishing returns (as $b\to\infty$, $\sigma_\theta(a)\to p$ however thick the wall).
+In a single thick cylinder under internal pressure the hoop stress is highest at the bore and falls steeply outward. The outer material is under-used, and adding thickness gives diminishing returns (as $b\to\infty$, $\sigma_\theta(a)\to p$ however thick the wall).
 
 A shrink fit puts the inner tube into hoop compression and the outer tube into hoop tension *before* pressurisation. When service pressure is applied, the bore starts from a negative stress, so the peak hoop stress is lower and the distribution is flatter.
 

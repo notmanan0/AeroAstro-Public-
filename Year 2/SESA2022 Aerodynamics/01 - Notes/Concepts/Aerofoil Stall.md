@@ -23,11 +23,11 @@ Aerofoils stall in three ways, depending mainly on thickness and leading-edge sh
 | Leading-edge stall | moderate, ~6–12 % | laminar separation bubble near the LE suddenly bursts | sharp, abrupt drop, with hysteresis |
 | Thin-aerofoil stall | thin, below ~6 %, sharp LE | the LE bubble grows steadily along the chord until it reaches the TE | early, gradual rounding |
 
-The leading edge matters because thin aerofoil theory's $A_0(1+\cos\theta)/\sin\theta$ term predicts infinite suction there. A real leading edge has a very high suction peak followed by a steep adverse pressure gradient, which is exactly what the boundary layer struggles with. Camber, leading-edge slats and flaps, vortex generators, boundary-layer suction or blowing and a larger leading-edge radius all delay stall. On hydrofoils the low-pressure peak can trigger cavitation before stall. After stall $C_d$ rises sharply, $C_{m,c/4}$ becomes more nose-down and the flow turns unsteady (buffet).
+The leading edge matters because thin aerofoil theory's $A_0(1+\cos\theta)/\sin\theta$ term predicts infinite suction there. A real leading edge has a very high suction peak followed by a steep adverse pressure gradient, which a boundary layer struggles to survive. Camber, leading-edge slats and flaps, vortex generators, boundary-layer suction or blowing and a larger leading-edge radius all delay stall. On hydrofoils the low-pressure peak can trigger cavitation before stall. After stall $C_d$ rises sharply, $C_{m,c/4}$ becomes more nose-down and the flow turns unsteady (buffet).
 
 Past-paper uses: sketches at 6° and 16° for a 10 % section ([[SESA2022 Exam 2021-22 Solutions]] B Q1(v)–(vi)); the consequence of a high leading-edge pressure difference ([[SESA2022 Exam 2022-23 Solutions]] B Q1(v), [[SESA2022 Exam 2024-25 Solutions]] Q3(d)–(e)); $C_{p,max}$ against $\alpha$ from test data ([[SESA2022 Exam 2023-24 Solutions]] B Q3).
 
 ## Related
 
-- Stall types in the lecture: [[SESA2022 T4 - Thin Aerofoil Theory#Stall types|T4 §8]]
+- Stall types: [[SESA2022 T4 - Thin Aerofoil Theory#Stall types|T4 §8]]
 - [[Boundary Layer Separation]] · [[Aerodynamic Centre and Centre of Pressure]]

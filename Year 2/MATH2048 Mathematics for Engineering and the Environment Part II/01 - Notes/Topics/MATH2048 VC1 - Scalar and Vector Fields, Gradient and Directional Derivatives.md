@@ -32,17 +32,17 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 21.txt", "02 - Sources/Lecture
 > - **Common mistakes:** dotting with $\mathbf v$ instead of $\hat{\mathbf v}$; forgetting a term when a variable appears inside a composite function such as $\sin(yz)$.
 > - **Practise:** [[#6. The 2023-24 exam, question B1(a)]] · [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus|PS8 Q1–Q4]]
 
-Solving a PDE gives a field, a function of several variables, and that is rarely what is wanted (L21, ll. 1–22). From the velocity field around a wing you want the lift, and from a shock the impact on a surface. Getting those means integrating fields along curves and over surfaces and volumes, and describing how fields change from point to point: vector calculus. The last block of the module, given to all but the civil engineers, builds that toolkit.
+Solving a PDE gives a field, a function of several variables, and that is rarely what is wanted (L21, ll. 1–22). From the velocity field around a wing you want the lift, and from a shock the impact on a surface. Getting those means integrating fields along curves and over surfaces and volumes, and describing how fields change from point to point: vector calculus, the last block of the module (taken by all but the civil engineers).
 
-The organising idea comes from Lecture 23 (ll. 1–45). Integrals describe global properties, averages over a region; derivatives describe local ones, rates of change at a point. In one variable both come with rules that make them useful, linearity, the product and chain rules, integration by parts. The derivatives of vector calculus are chosen so that those rules still hold. This note covers the first of them, the gradient.
+Integrals describe global properties, averages over a region; derivatives describe local ones, rates of change at a point (L23, ll. 1–45). In one variable both come with rules that make them useful, linearity, the product and chain rules, integration by parts. The derivatives of vector calculus are chosen so that those rules still hold. The first of them is the gradient.
 
 ---
 
 ## 1. Scalars, vectors and coordinates (L21)
 
-A scalar at a point is a single number, and physically it is one that doesn't change with the coordinate system (ll. 23–32): the temperature at a point is the same whether the point is located in metres from a corner of the room or by latitude and longitude. A vector, to a mathematician, is a list of numbers, but physically it is an object with a meaning that doesn't depend on coordinates, even though its components do (ll. 33–52). A seat in the lecture theatre can be located as "four rows back and three in" or by three distances from a corner, or by an angle and distance from the lecturer; the place is the same, the numbers differ. Lengths don't change between coordinate systems; components do. Handwritten vectors are underlined, the slides use arrows, and exam papers use bold (ll. 53–57).
+A scalar at a point is a single number, and physically it is one that doesn't change with the coordinate system (ll. 23–32): the temperature at a point is the same whether the point is located in metres from a corner of the room or by latitude and longitude. A vector, to a mathematician, is a list of numbers, but physically it is an object with a meaning that doesn't depend on coordinates, even though its components do (ll. 33–52). A seat in the lecture theatre can be located as "four rows back and three in" or by three distances from a corner, or by an angle and distance from the front; the place is the same, the numbers differ. Lengths don't change between coordinate systems; components do. Vectors are underlined by hand, written with arrows on slides and set in bold in exam papers (ll. 53–57).
 
-Cartesian coordinates use the basis vectors $\mathbf i$, $\mathbf j$, $\mathbf k$, so $\mathbf a=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k$. Any three independent vectors would do as a basis, but the Cartesian ones have three conveniences (ll. 58–107). They have length 1, which any basis can be rescaled to have. They are orthogonal, so each component is found independently by a dot product with one basis vector; in a skewed basis, changing one component changes the others needed to reach the same point. Most importantly, they are the same at every point, so their derivatives are zero. Cylindrical and spherical bases are orthonormal too, but their directions change from point to point, which makes differentiating them unpleasant.
+Cartesian coordinates use the basis vectors $\mathbf i$, $\mathbf j$, $\mathbf k$, so $\mathbf a=a_1\mathbf i+a_2\mathbf j+a_3\mathbf k$. Any three independent vectors would do as a basis, but the Cartesian ones have three conveniences (ll. 58–107). They have length 1, which any basis can be rescaled to have. They are orthogonal, so each component is found independently by a dot product with one basis vector; in a skewed basis, changing one component changes the others needed to reach the same point. They are also the same at every point, so their derivatives are zero. Cylindrical and spherical bases are orthonormal too, but their directions change from point to point, which makes differentiating them unpleasant.
 
 The length of $\mathbf a$ is $|\mathbf a|=\sqrt{a_1^2+a_2^2+a_3^2}$, and $\mathbf a/|\mathbf a|$ is the unit vector in its direction (ll. 108–111). Addition and scalar multiplication act component by component. The **dot product**
 
@@ -58,13 +58,21 @@ $$
 
 with magnitude $|\mathbf a||\mathbf b|\sin\theta$ and direction given by the right-hand rule. Swapping the order flips the sign, $\mathbf b\times\mathbf a=-\mathbf a\times\mathbf b$, which matters when deciding whether a normal points into or out of a body. Two vectors with zero cross product are parallel.
 
+As an example *(suggested, not lecturer-set)*, find a normal to the plane through $(1,0,0)$, $(0,2,0)$ and $(0,0,3)$. Two edges from the first point are $\mathbf a=(-1,2,0)$ and $\mathbf b=(-1,0,3)$, and
+
+$$
+\mathbf a\times\mathbf b=(2\cdot3-0\cdot0)\,\mathbf i-\big((-1)\cdot3-0\cdot(-1)\big)\,\mathbf j+\big((-1)\cdot0-2\cdot(-1)\big)\,\mathbf k=6\,\mathbf i+3\,\mathbf j+2\,\mathbf k .
+$$
+
+Both dot products vanish, $\mathbf a\cdot(6,3,2)=-6+6+0=0$ and $\mathbf b\cdot(6,3,2)=-6+0+6=0$, and the plane is $6x+3y+2z=6$, whose coefficients are this normal; §5 shows the same normal comes out of the gradient of $6x+3y+2z$.
+
 ## 2. Fields (L21)
 
 Solutions of PDEs give scalars and vectors everywhere, not at one point, and these are fields (ll. 170–186). A **scalar field** $\phi(x,y,z)$, or $\phi(x,y,z,t)$, takes a point and returns a number: temperature, pressure, density. Its value at a given physical point doesn't change with the coordinates, provided the inputs are corrected so they describe the same point. A **vector field** $\mathbf F(x,y,z)=F_1\,\mathbf i+F_2\,\mathbf j+F_3\,\mathbf k$ returns a vector at every point, so each component is itself a scalar function of position. Its meaning is fixed but its components change with the coordinates; a fluid velocity has different components in a frame moving with the flow (Lagrangian) and in a fixed one (Eulerian).
 
 ## 3. Parametric curves and tangent vectors (L21)
 
-A curve is intrinsically one-dimensional, so it is described with one parameter rather than an equation in $x$, $y$, $z$, which may not exist in a usable form for a curve that loops or coils (ll. 187–238). Think of a particle moving along it: at "time" $t$ it is at
+A curve is intrinsically one-dimensional, so it is described with one parameter rather than an equation in $x$, $y$, $z$, which may not exist in a usable form for a curve that loops or coils (ll. 187–238). The parameter can be read as the "time" of a particle moving along the curve: at time $t$ it is at
 
 $$
 \mathbf r(t)=x(t)\,\mathbf i+y(t)\,\mathbf j+z(t)\,\mathbf k,\qquad a\leq t\leq b ,
@@ -106,7 +114,7 @@ It is often written as an operator, $\nabla=\mathbf i\frac{\partial}{\partial x}
 
 ### The gradient is normal to level curves
 
-Take $f=x^2+y^2$ in the plane (ll. 172–222). Its level curves, where $f$ is constant, are circles: $f=1$ has radius 1 and $f=16$ radius 4. At the bottom of the larger circle, $(0,-4)$, moving in $x$ stays on the circle to first order, and indeed $f_x=2x=0$ there, while $f_y=2y=-8$, so $\nabla f=-8\,\mathbf j$ points straight down, away from the centre. At a point lower right, $f_x>0$ and $f_y<0$, so $\nabla f$ points down and to the right; on the positive $x$-axis it points along $+\mathbf i$. In each case it is perpendicular to the circle and points outwards, towards larger $f$.
+For $f=x^2+y^2$ in the plane (ll. 172–222), the level curves, where $f$ is constant, are circles: $f=1$ has radius 1 and $f=16$ radius 4. At the bottom of the larger circle, $(0,-4)$, moving in $x$ stays on the circle to first order, and indeed $f_x=2x=0$ there, while $f_y=2y=-8$, so $\nabla f=-8\,\mathbf j$ points straight down, away from the centre. At a point lower right, $f_x>0$ and $f_y<0$, so $\nabla f$ points down and to the right; on the positive $x$-axis it points along $+\mathbf i$. In each case it is perpendicular to the circle and points outwards, towards larger $f$.
 
 If $f$ is the height of a hill, its level curves are contours, and $\nabla f$ points straight uphill, perpendicular to the contour, the direction in which the height increases fastest. The figure shows this for the slightly less symmetric $x^2+2y^2$.
 
@@ -114,7 +122,7 @@ If $f$ is the height of a hill, its level curves are contours, and $\nabla f$ po
 
 ### Directional derivative from the gradient
 
-The lecturer motivated the link with the picture: $\nabla f$ is the change in the steepest direction, so the change in direction $\hat{\mathbf n}$ should be its projection, $\hat{\mathbf n}\cdot\nabla f$ (ll. 223–255). The chain rule proves it. Write $\hat{\mathbf n}=(n_1,n_2,n_3)$ and let $g(h)=f(\mathbf x_0+h\hat{\mathbf n})$, so the directional derivative is $g'(0)$. Along the line, $x=x_0+hn_1$, $y=y_0+hn_2$, $z=z_0+hn_3$, so
+The picture suggests the link: $\nabla f$ is the change in the steepest direction, so the change in direction $\hat{\mathbf n}$ should be its projection, $\hat{\mathbf n}\cdot\nabla f$ (ll. 223–255). The chain rule proves it. Write $\hat{\mathbf n}=(n_1,n_2,n_3)$ and let $g(h)=f(\mathbf x_0+h\hat{\mathbf n})$, so the directional derivative is $g'(0)$. Along the line, $x=x_0+hn_1$, $y=y_0+hn_2$, $z=z_0+hn_3$, so
 
 $$
 g'(h)=\frac{\partial f}{\partial x}\frac{dx}{dh}+\frac{\partial f}{\partial y}\frac{dy}{dh}+\frac{\partial f}{\partial z}\frac{dz}{dh}=n_1\frac{\partial f}{\partial x}+n_2\frac{\partial f}{\partial y}+n_3\frac{\partial f}{\partial z},
@@ -128,13 +136,20 @@ $$
 
 This is where the unit vector matters: with $\mathbf n=\mathbf i$ it must return $\frac{\partial f}{\partial x}$, not a multiple of it (ll. 250–255).
 
+> [!check] The limit definition against the formula
+> Take $f=x^2+2y^2$ at $(1,1)$ in the direction $\hat{\mathbf n}=(3,4)/5$. Directly, $f(1+0.6h,\,1+0.8h)=(1+1.2h+0.36h^2)+2(1+1.6h+0.64h^2)=3+4.4h+1.64h^2$, so the difference quotient is $4.4+1.64h\to4.4$. From the gradient, $\nabla f=(2x,4y)=(2,4)$ and $\hat{\mathbf n}\cdot\nabla f=\frac{6+16}5=4.4$.
+
 Two results follow (ll. 262–277). Since $\hat{\mathbf n}\cdot\nabla f=|\nabla f|\cos\theta$ and $|\cos\theta|\leq1$,
 
 $$
 \Big|\frac{\partial f}{\partial n}\Big|\leq|\nabla f| ,
 $$
 
-with the largest increase, $|\nabla f|$, when $\hat{\mathbf n}$ points along $\nabla f$, and the largest decrease along $-\nabla f$. And if $\hat{\mathbf n}$ is tangent to a level surface, $f$ doesn't change in that direction, so $\hat{\mathbf n}\cdot\nabla f=0$ for every tangent direction: $\nabla f$ is normal to the level surface, which is what the circle example showed. A normal to the surface $f(x,y,z)=c$ at a point is therefore $\nabla f$ evaluated there.
+with the largest increase, $|\nabla f|$, when $\hat{\mathbf n}$ points along $\nabla f$, and the largest decrease along $-\nabla f$. The figure plots $\frac{\partial f}{\partial n}=|\nabla f|\cos\theta$ for the example above as the direction turns through a full circle.
+
+![[m2048_vc_directional_derivative.png|760]]
+
+If $\hat{\mathbf n}$ is tangent to a level surface, $f$ doesn't change in that direction, so $\hat{\mathbf n}\cdot\nabla f=0$ for every tangent direction: $\nabla f$ is normal to the level surface, which is what the circle example showed. A normal to the surface $f(x,y,z)=c$ at a point is therefore $\nabla f$ evaluated there.
 
 ### Linearity and the product rule
 
@@ -184,17 +199,47 @@ in the direction $(8,4,3)/\sqrt{89}$. Part (iii), the Laplacian, is in [[MATH204
 > [!check] PS8 Q2(b)
 > $f=2x+3y^2+2xyz$ at $(1,2,1)$ in the direction $(2,2,1)$: $\nabla f=(2+2yz,\,6y+2xz,\,2xy)=(6,14,4)$, the direction has length 3, and $\frac{\partial f}{\partial n}=\frac{12+28+4}3=\frac{44}3$.
 
-## Transcript slips
+## 7. Problem Sheet 8, Q1 to Q4
 
-> [!warning] Lectures 21 and 23
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L21, ll. 197–198 | lift is "the total integral of the gradient of the pressure across that surface" | lift comes from integrating the pressure (times the normal) over the surface, not its gradient |
-> | L21, l. 204 | "the surface integral around the curve of F dot dr ... that's work done" | a line integral; it is work, not lift |
-> | L21, l. 235 | "zero less than or equal to t less than or equal to y" | $0\leq t\leq1$ |
-> | L23, l. 170 | "DF DX in the X direction" for the third component | $\frac{\partial f}{\partial z}\,\mathbf k$ |
-> | L23, l. 221 | "a level surface is pointing either in the direction of maximum increase or maximum decrease" | the gradient points that way; the level surface is perpendicular to it |
-> | L23, ll. 304–306 | regrouping written wrongly, "Complete nonsense there" | $\alpha(f_x\mathbf i+f_y\mathbf j+\dots)+\beta(g_x\mathbf i+g_y\mathbf j+\dots)$ |
+PS8 Q1 is practice at partial differentiation. For $f=e^y\sin x$, differentiate in $x$ with $y$ fixed and in $y$ with $x$ fixed:
+
+$$
+\nabla f=e^y\cos x\,\mathbf i+e^y\sin x\,\mathbf j .
+$$
+
+For $f=x^3y^2\ln z$ each variable appears in a separate factor, so each partial derivative touches one factor only:
+
+$$
+\nabla f=3x^2y^2\ln z\,\mathbf i+2x^3y\ln z\,\mathbf j+\frac{x^3y^2}{z}\,\mathbf k .
+$$
+
+PS8 Q2(a) asks for the rate of change of $f=\frac{x^2}{3+y}$ at the origin in the direction $\mathbf i+\mathbf j$. The gradient is $\nabla f=\frac{2x}{3+y}\,\mathbf i-\frac{x^2}{(3+y)^2}\,\mathbf j$, which is $\mathbf 0$ at $(0,0)$, so the rate is $0$ in every direction: the origin is a stationary point of $f$ (the bottom of a valley along $x$). PS8 Q2(b) is the check callout in §6.
+
+PS8 Q3 asks for the maximum rate of change of $f=3x^2+2y^2+z^2$ at $(0,1,1)$. Differentiate each variable in turn:
+
+$$
+\nabla f=6x\,\mathbf i+4y\,\mathbf j+2z\,\mathbf k=(0,4,2)\ \text{at}\ (0,1,1).
+$$
+
+The maximum rate is $|\nabla f|=\sqrt{0+16+4}=\sqrt{20}=2\sqrt5\approx4.47$, in the direction $(0,2,1)/\sqrt5$.
+
+PS8 Q4 asks for the angle between the normals to the sphere $x^2+y^2+z^2=9$ and the paraboloid $z=x^2+y^2-3$ at $(2,-1,2)$, which lies on both ($4+1+4=9$ and $4+1-3=2$). Each surface has to be written as a level surface $g=c$ first; for the paraboloid that is $g_2=x^2+y^2-z=3$. Then
+
+$$
+\mathbf n_1=\nabla(x^2+y^2+z^2)=(2x,2y,2z)=(4,-2,4),\qquad\mathbf n_2=\nabla(x^2+y^2-z)=(2x,2y,-1)=(4,-2,-1).
+$$
+
+The dot product and lengths:
+
+$$
+\mathbf n_1\cdot\mathbf n_2=16+4-4=16,\qquad|\mathbf n_1|=\sqrt{36}=6,\qquad|\mathbf n_2|=\sqrt{21},
+$$
+
+$$
+\cos\theta=\frac{16}{6\sqrt{21}}=\frac{8}{3\sqrt{21}}=\frac{8\sqrt{21}}{63}=0.5819,\qquad\theta=54.4^\circ .
+$$
+
+Writing the paraboloid as $z-x^2-y^2=-3$ instead flips $\mathbf n_2$ and gives the supplementary angle $125.6^\circ$; the angle between the surfaces is usually quoted as the acute one.
 
 ## Links
 
@@ -209,15 +254,29 @@ in the direction $(8,4,3)/\sqrt{89}$. Part (iii), the Laplacian, is in [[MATH204
 
 ## Self-study tasks
 
-Lecture 23 ended with "get used to calculating gradients of stuff" (l. 344); nothing more specific was set.
+Lecture 23 ended by recommending practice at calculating gradients (l. 344); nothing more specific was set.
 
 ### Core
 
-- [ ] PS8 Q1: gradients of $e^y\sin x$ and $x^3y^2\ln z$. Answers: $e^y\cos x\,\mathbf i+e^y\sin x\,\mathbf j$; $3x^2y^2\ln z\,\mathbf i+2x^3y\ln z\,\mathbf j+\frac{x^3y^2}z\mathbf k$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
-- [ ] PS8 Q2–Q3: directional derivatives and a maximum rate of change. Answers: $0$; $\frac{44}3$; $2\sqrt5$ along $(0,2,1)/\sqrt5$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
+- [ ] PS8 Q1: gradients of $e^y\sin x$ and $x^3y^2\ln z$. Answers: $e^y\cos x\,\mathbf i+e^y\sin x\,\mathbf j$; $3x^2y^2\ln z\,\mathbf i+2x^3y\ln z\,\mathbf j+\frac{x^3y^2}z\mathbf k$. → [[#7. Problem Sheet 8, Q1 to Q4]]
+- [ ] PS8 Q2–Q3: directional derivatives and a maximum rate of change. Answers: $0$; $\frac{44}3$; $2\sqrt5$ along $(0,2,1)/\sqrt5$. → [[#7. Problem Sheet 8, Q1 to Q4]] · [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
 - [ ] 2023/24 B1(a)(i)–(ii). → [[#6. The 2023-24 exam, question B1(a)]]
 
 ### Further practice
 
-- [ ] PS8 Q4: the angle between the normals to $x^2+y^2+z^2=9$ and $z=x^2+y^2-3$ at $(2,-1,2)$. Answer: $\cos\theta=\frac{8\sqrt{21}}{63}$, $\theta\approx54.4^\circ$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
+- [ ] PS8 Q4: the angle between the normals to $x^2+y^2+z^2=9$ and $z=x^2+y^2-3$ at $(2,-1,2)$. Answer: $\cos\theta=\frac{8\sqrt{21}}{63}$, $\theta\approx54.4^\circ$. → [[#7. Problem Sheet 8, Q1 to Q4]]
 - [ ] Prove $\frac{\partial f}{\partial n}=\hat{\mathbf n}\cdot\nabla f$ with the chain rule, and show $\nabla f(r)=f'(r)\hat{\mathbf r}$ (suggested, not lecturer-set). → [[#Directional derivative from the gradient]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 21 and 23
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L21, ll. 197–198 | lift is "the total integral of the gradient of the pressure across that surface" | lift comes from integrating the pressure (times the normal) over the surface, not its gradient |
+> | L21, l. 204 | "the surface integral around the curve of F dot dr ... that's work done" | a line integral; it is work, not lift |
+> | L21, l. 235 | "zero less than or equal to t less than or equal to y" | $0\leq t\leq1$ |
+> | L23, l. 170 | "DF DX in the X direction" for the third component | $\frac{\partial f}{\partial z}\,\mathbf k$ |
+> | L23, l. 221 | "a level surface is pointing either in the direction of maximum increase or maximum decrease" | the gradient points that way; the level surface is perpendicular to it |
+> | L23, ll. 304–306 | regrouping written wrongly, "Complete nonsense there" | $\alpha(f_x\mathbf i+f_y\mathbf j+\dots)+\beta(g_x\mathbf i+g_y\mathbf j+\dots)$ |

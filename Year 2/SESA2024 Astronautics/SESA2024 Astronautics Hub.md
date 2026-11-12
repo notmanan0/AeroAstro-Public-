@@ -21,7 +21,41 @@ status: lectured
 
 ## Coverage
 
-All fifteen topic notes were rebuilt from the 2025-26 lecture transcripts on 30 Oct 2026 and are at `status: lectured`. The lectures ran in this order: introduction (30 Sep), Ch 1 (2 Oct), Ch 6 (7–16 Oct), Ch 7 (16 Oct plus pre-recording), Ch 5 Kepler and elements (21–30 Oct), sustainability and NewSpace (Dr Vaidya, weeks 5–6, not recorded), Ch 8 (11 Nov; the 13 Nov recording is silent), Ch 9 (18–20 Nov), Ch 10 and Ch 4 (20–25 Nov), Ch 5 energy and Hohmann (27 Nov, 2 Dec), Ch 11 (4–11 Dec), revision (6 Jan). Prof Lewis's 2020 recordings fill the steps the 2025 lectures skipped. Three notes rest on slides or the workbook rather than a recording: [[SESA2024 08 - Electrical Power Subsystem|08]] for battery and array sizing, [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate|14]] (not lectured in 2025-26) and [[SESA2024 15 - Space Sustainability, Debris and NewSpace|15]]. The full mapping is in [[SESA2024 Transcript Index]].
+The module has 15 topic notes, 37 concept notes, 7 workbook solution notes and 12 past-paper solution notes (plus the trend analysis and the legacy key-answer index). Thirteen topic notes (01–13) are `lectured`. Two are `written-ahead`: [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate|14]], because the 2025-26 lectures stopped at the orbital elements (2025-12-11) and orbit control was never lectured, so the note follows the workbook's Chapter 11B solutions and the past papers; and [[SESA2024 15 - Space Sustainability, Debris and NewSpace|15]], because Dr Vaidya's two lectures were not recorded, so the note follows the two slide decks. The notes were rebuilt from the 2025-26 lecture transcripts on 30 Oct 2026. The lectures ran in this order: introduction (30 Sep), Ch 1 (2 Oct), Ch 6 (7–16 Oct), Ch 7 (16 Oct plus pre-recording), Ch 5 Kepler and elements (21–30 Oct), sustainability and NewSpace (Dr Vaidya, weeks 5–6, not recorded), Ch 8 (11 Nov; the 13 Nov recording is silent), Ch 9 (18–20 Nov), Ch 10 and Ch 4 (20–25 Nov), Ch 5 energy and Hohmann (27 Nov, 2 Dec), Ch 11 (4–11 Dec), revision (6 Jan). Prof Lewis's 2020 recordings fill the steps the 2025 lectures skipped. Note [[SESA2024 08 - Electrical Power Subsystem|08]] is lectured, but its battery and array sizing rests on the slides because the 13 Nov recording is silent. The full mapping is in [[SESA2024 Transcript Index]].
+
+On 5 Nov 2026 all fifteen notes were deepened to the current standard: every derivation written out one step per line (thrust and rocket equation, eclipse geometry, battery and array sizing, link budget in dB, EP optimum condition, orbit-control parabola and boost, disposal burn), every worked example substituted with real numbers and rechecked in Python, numerical-check callouts added, inline source problems moved to each note's slips section, nine figures added and four regenerated in the shared style. Note 05 §4 adds the small-burn analysis ($\delta a=2a\,\delta V/V$) that ties RemoveDebris, drag make-up (note 14) and fragment clouds (note 15) together. On 10 Nov 2026 note 12 gained an outline derivation of the $J_2$ regression rate, and the [[SESA2024 Formula Sheet]] was rebuilt in note order, one section per topic note.
+
+## Concept map
+
+```mermaid
+flowchart LR
+  N01["01 Systems engineering<br/>objectives → payload → TLRs → DRs"] --> N11
+  N01 --> SUB{{"subsystems 06–10"}}
+  N02["02 Kepler and the orbit equation<br/>h = r²θ̇, τ = 2π√(a³/μ)"] --> N03["03 Elements and conics<br/>a, e, i, Ω, ω, θ"]
+  N02 --> N04["04 Energy and vis-viva<br/>V²/2 − μ/r = −μ/2a"]
+  N04 --> N05["05 Hohmann and small burns<br/>δa = 2a δV/V"]
+  N07["07 Propulsion<br/>ΔV = V_ex ln(M₀/M_b)"] -->|propellant for ΔV| N05
+  SUB --> N06["06 Attitude control<br/>H = [I]ω, ψ = TΔt/H₀"]
+  SUB --> N07
+  SUB --> N08["08 Power<br/>eclipse → C → array area"]
+  SUB --> N09["09 Communications<br/>link budget, EIRP, E_b/N₀"]
+  SUB --> N10["10 Thermal<br/>α_S/ε, balance equation"]
+  N07 -->|EP power W = TV_ex/2η| N08
+  N08 <-->|array temperature| N10
+  N11["11 Payload and first pass<br/>d = 2h tan(β/2)"] --> N12["12 Sun- and Earth-synchronous<br/>J₂ regression, τ = (M/N)86 400"]
+  N03 -->|Ω and i| N12
+  N06 -->|precession of h| N12
+  N12 --> N13["13 Elements for a mission<br/>N, M iteration, LST → Ω"]
+  N13 -->|LST sets the eclipse| N08
+  N13 --> N10
+  N13 --> N14["14 Drag, control cycle, data rate<br/>δa per orbit, k = √(2Δt₀/δτ)"]
+  N05 -->|small Hohmann boost| N14
+  N14 -->|R_b to downlink| N09
+  N05 -->|disposal burn, fragments| N15["15 Debris and NewSpace<br/>25-year and 5-year rules"]
+  N14 -->|drag sail| N15
+```
+
+Two chains carry most of the exam. The orbital-mechanics chain runs 02 → 04 → 05 with 07 supplying the propellant. The remote-sensing chain runs 11 → 12 → 13 → 14 and then reaches back into power (eclipse), thermal and communications (data rate), which is the module's thread: the payload selects the orbit, and the orbit sizes the spacecraft.
 
 ## Topic map
 
@@ -32,7 +66,7 @@ All fifteen topic notes were rebuilt from the 2025-26 lecture transcripts on 30 
 2. [[SESA2024 02 - Kepler's Laws and the Orbit Equation]]: polar ellipse, $a_r$ and $a_\theta$, $h = r^2\dot\theta$, $u''+u = \mu/h^2$, $\tau = 2\pi\sqrt{a^3/\mu}$
 3. [[SESA2024 03 - Orbital Elements and Conic Sections]]: $a, e, i, \Omega, \omega, \theta$; orbit categories; conics
 4. [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation]]: $\varepsilon = -\mu/2a$; the 200 × 40 000 km example
-5. [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]]: impulsive burns; RemoveDebris; LEO → GEO 3.933 km/s
+5. [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]]: impulsive burns; RemoveDebris; LEO → GEO 3.932 km/s
 
 ### Spacecraft subsystems: Chapters 6–10 (Dr H. Sykulska-Lawrence)
 6. [[SESA2024 06 - Attitude Control]]: $\mathbf H = [\mathbf I]\boldsymbol\omega$; momentum bias; 4 stabilisation types; torquers, sensors, dumping
@@ -43,28 +77,30 @@ All fifteen topic notes were rebuilt from the 2025-26 lecture transcripts on 30 
 
 ### Remote-sensing case study: Chapter 11 (Dr C. Ryan)
 11. [[SESA2024 11 - Payload and Orbit Selection]]: first pass (near-polar, circular, 700–900 km); push-broom; illumination and view needs
-12. [[SESA2024 12 - Sun- and Earth-Synchronous Orbits]]: $J_2$ regression, $i\approx98^\circ$; $\tau = (m/n)86400$
-13. [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]]: the $n, m$ iteration, (98,7) example; LST → RAAN → eclipse
-14. [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]]: δa, δτ, $k$, Hohmann make-up; data rate and compression
+12. [[SESA2024 12 - Sun- and Earth-Synchronous Orbits]]: $J_2$ regression (outline derivation), $i\approx98^\circ$; $\tau = (M/N)\times86\,400$ s
+13. [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]]: the $N, M$ iteration; the lecture's (98,7) is really (14,1), so (99,7) at 845 km; LST → RAAN → eclipse
+14. [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]] (written-ahead): δa, δτ, $k$, Hohmann make-up; data rate and compression
 
 ### Sustainability and NewSpace (Dr N. Vaidya)
-15. [[SESA2024 15 - Space Sustainability, Debris and NewSpace]]: SDGs, debris, IADC/UN/FCC rules, disposal, ADR, SBSP, NewSpace trade-offs
+15. [[SESA2024 15 - Space Sustainability, Debris and NewSpace]] (written-ahead): SDGs, debris, IADC/UN/FCC rules, disposal, ADR, SBSP, NewSpace trade-offs
 
 ## Concept notes
-| Orbits | Subsystems (6–7) | Subsystems (8–10) | Remote sensing |
+All 37 concept notes in `01 - Notes/Concepts`, grouped by the topic notes that use them; the three SESA2023 notes are shared from Propulsion.
+
+| Systems and orbits (01–05) | Attitude and propulsion (06–07) | Power and communications (08–09) | Thermal, remote sensing and debris (10–15) |
 |---|---|---|---|
-| [[Kepler's Laws]] | [[Inertia Matrix]] | [[Spacecraft Power Sources]] | [[Sun-Synchronous Orbit]] |
-| [[Orbit Equation and Conic Sections]] | [[Momentum Bias and Gyroscopic Rigidity]] | [[Solar Cells and Arrays]] | [[Nodal Regression (J2)]] |
-| [[Orbital Angular Momentum]] | [[Spacecraft Stabilisation Types]] | [[Battery Sizing]] | [[Repeat Ground Track]] |
-| [[Vis-Viva Equation]] | [[Reaction Wheels and Momentum Dumping]] | [[Eclipse Duration]] | [[Local Solar Time and RAAN]] |
-| [[Hohmann Transfer]] | [[Attitude Sensors and Torquers]] | [[Decibels]] | [[Swath Width and Push-Broom Imaging]] |
-| [[Keplerian Orbital Elements]] | [[Chemical Propulsion Systems]] | [[Antenna Gain and Beamwidth]] | [[Orbit Control Cycle]] |
-| [[Systems Engineering Design Phases]] | [[Electric Propulsion Sizing]] | [[Link Budget Equation]] | [[Payload Data Rate]] |
-| [[Spacecraft Subsystems]] | [[Tsiolkovsky Rocket Equation]] (SESA2023) | [[EIRP and G-T]] | [[Space Debris Mitigation]] |
-| [[Agile Aerospace]] | | | |
-| | [[Rocket Performance Parameters]] (SESA2023) | [[Bit Error Rate and Eb-N0]] | |
-| | [[Thrust Equation]] (SESA2023) | [[Spacecraft Thermal Balance Equation]] | |
-| | | [[Absorptance and Emittance]] · [[Blackbody Radiation]] · [[Passive vs Active Thermal Control]] | |
+| [[Systems Engineering Design Phases]] | [[Inertia Matrix]] | [[Spacecraft Power Sources]] | [[Blackbody Radiation]] |
+| [[Spacecraft Subsystems]] | [[Momentum Bias and Gyroscopic Rigidity]] | [[Solar Cells and Arrays]] | [[Absorptance and Emittance]] |
+| [[Agile Aerospace]] | [[Spacecraft Stabilisation Types]] | [[Battery Sizing]] | [[Spacecraft Thermal Balance Equation]] |
+| [[Kepler's Laws]] | [[Reaction Wheels and Momentum Dumping]] | [[Eclipse Duration]] | [[Passive vs Active Thermal Control]] |
+| [[Orbit Equation and Conic Sections]] | [[Attitude Sensors and Torquers]] | [[Decibels]] | [[Swath Width and Push-Broom Imaging]] |
+| [[Orbital Angular Momentum]] | [[Chemical Propulsion Systems]] | [[Antenna Gain and Beamwidth]] | [[Sun-Synchronous Orbit]] |
+| [[Keplerian Orbital Elements]] | [[Electric Propulsion Sizing]] | [[Link Budget Equation]] | [[Nodal Regression (J2)]] |
+| [[Vis-Viva Equation]] | [[Tsiolkovsky Rocket Equation]] (SESA2023) | [[EIRP and G-T]] | [[Repeat Ground Track]] |
+| [[Hohmann Transfer]] | [[Thrust Equation]] (SESA2023) | [[Bit Error Rate and Eb-N0]] | [[Local Solar Time and RAAN]] |
+| | [[Rocket Performance Parameters]] (SESA2023) | | [[Orbit Control Cycle]] |
+| | | | [[Payload Data Rate]] |
+| | | | [[Space Debris Mitigation]] |
 
 ## Workbook solutions (Problem Sheet Workbook 2025-26)
 | Chapter | Note | Highlights |
@@ -96,21 +132,44 @@ All fifteen topic notes were rebuilt from the 2025-26 lecture transcripts on 30 
 | 2013/14 | [[SESA2024 2013-14 Exam Solutions]] | orbits + debris intercept · GEO spinner thermal · hyperspectral SSO |
 | All legacy | [[SESA2024 Legacy Papers 2013-2021 Key Answers]] | quick-check index of headline numbers |
 
-> [!tip] Most likely exam content (from 12 papers)
-> 1. **SSO inclination + $(n,m)$ + $h$** (every year) → orbit-control cycle → Hohmann ΔV → propellant → data rate.
-> 2. **Vis-viva storyline**: $a, e$ from $(r, V)$; $\theta$ from $r$; ΔV between orbits; Kepler-3 timing; rocket-equation masses.
-> 3. **Link budget**: EIRP; global-coverage dish; transponder power; power–gain trade-off.
-> 4. **Thermal balance**: noon / terminator / eclipse; choose a finish for a temperature window.
-> 5. **Battery and array sizing** from the worst-case eclipse.
-> 6. Section A staples: LST at the nodes; eclipse $T$ independent of $\varepsilon$; $[\mathbf I]$ → 3-axis; spinner vs 3-axis; fragment motion; systems-engineering steps; EP curve.
+The 2022/23 paper is filed as `SESA2024-202425-01-SESA2024.pdf`; the 2024/25 paper is the `W1` file ([[SESA2024 Past Paper Trend Analysis]]).
+
+- [[SESA2024 Cambridge Part IIA Practice]]: third-year Cambridge questions (Part IIA) that revise this module, listed under each topic note.
+
+## Exam skills
+
+The paper has Section A (25 marks, 7–10 short compulsory questions) and Section B (answer two of three 30-mark case studies); since 2021/22 it has been online and open-book, with marks only for shown working. Every recent paper has one orbital-mechanics B question, one on communications, power or thermal, and one remote-sensing Sun-synchronous question ([[SESA2024 Past Paper Trend Analysis]]). The skills below are the ones the papers and the workbook keep asking for, in order of frequency.
+
+| Skill | Where it is taught and practised |
+|---|---|
+| Sun-synchronous inclination from $a$; $\tau=(M/N)86\,400$ s and the altitude for a repeat (12 of 12 papers) | [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#Sixteen orbits a day (2024/25 A6)\|12: 16 orbits a day]] · [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#Inclination for 700 to 900 km\|12: 700–900 km]] |
+| Swath → $N$, $M$ (coprime) → $\tau$ → $a$, $h$, $i$ → LST and RAAN; ground-track sketch | [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#The 28.96 degree imager\|13: 28.96° imager]] · [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#3. The remaining elements\|13: LST → Ω]] · [[SESA2024 Workbook Ch11B - Remote Sensing Case Study Solutions]] |
+| First-pass $i$, $e$, $a$ for a remote-sensing mission, and why it must be Sun- and Earth-synchronous | [[SESA2024 11 - Payload and Orbit Selection#3. The first pass for a 10 m imager\|11: first pass]] |
+| Vis-viva storylines: $a$ and $e$ from one state, $\theta$ from $r$, satellite or missile, ΔV at a common point | [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation#5. Identifying an orbit from one measurement\|04: one measurement]] · [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation#The 200 km circle and the 200 by 40 000 km ellipse\|04: 200 × 40 000 km]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions]] |
+| Hohmann ΔV and time; small boosts and the relative motion after a small burn | [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer#200 km parking orbit to GEO\|05: LEO → GEO]] · [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer#4. How far a small burn moves the orbit\|05: small burn]] |
+| Periods, $a$ from a period, apsis radii and elements of real orbits | [[SESA2024 02 - Kepler's Laws and the Orbit Equation#Geostationary radius from the sidereal day\|02: GEO radius]] · [[SESA2024 03 - Orbital Elements and Conic Sections#Apsis altitudes of QZSS and NEOWISE\|03: QZSS and NEOWISE]] |
+| Link budget in dB: EIRP, transmitter power, global-coverage dish, data rate from $E_b/N_0$, power–gain trade | [[SESA2024 09 - Communications#GEO TV broadcast satellite\|09: GEO TV]] · [[SESA2024 09 - Communications#Voyager at Saturn (2017/18 B3)\|09: Voyager]] · [[SESA2024 Workbook Ch9 - Communications Solutions]] |
+| Thermal balance at noon, terminator and eclipse; choose a finish for a temperature window | [[SESA2024 10 - Thermal Control#A painted sphere in low Earth orbit\|10: painted sphere]] · [[SESA2024 Workbook Ch10 - Thermal Control Solutions]] |
+| Rocket equation and $I_{sp}$; EP power and the EP optimisation curve | [[SESA2024 07 - Spacecraft Propulsion#Power for a 50 mN thruster\|07: 50 mN thruster]] · [[SESA2024 07 - Spacecraft Propulsion#Pluto orbiter by electric propulsion\|07: Pluto orbiter]] · [[SESA2024 Workbook Ch7 - Propulsion Solutions]] |
+| Worst-case eclipse, battery capacity and mass, array area | [[SESA2024 08 - Electrical Power Subsystem#800 km LEO spacecraft, 1 kW for two years\|08: 800 km, 1 kW]] · [[SESA2024 Workbook Ch8 - Power Solutions]] |
+| Drag decay, the orbit-control cycle $k$, make-up ΔV and propellant; push-broom data rate and compression | [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate#The workbook civilian imager at 619 km\|14: 619 km imager]] |
+| Stabilisation type from an inertia matrix; momentum bias, dumping, torquers and sensors (Section A) | [[SESA2024 06 - Attitude Control#Inertia matrix from the 2024/25 paper\|06: 2024/25 A4]] · [[SESA2024 06 - Attitude Control#4. The four stabilisation types\|06: four types]] · [[SESA2024 Workbook Ch6 - Attitude Control Solutions]] |
+| Fragment-cloud reasoning, disposal ΔV, mitigation rules (Section A) | [[SESA2024 15 - Space Sustainability, Debris and NewSpace#Fragments from a 570 km break-up (2022/23 A6)\|15: 570 km break-up]] · [[SESA2024 15 - Space Sustainability, Debris and NewSpace#A disposal burn from 800 km\|15: disposal burn]] |
+| Systems-engineering steps, ECSS phases, payload-driven trade-offs (Section A) | [[SESA2024 01 - Systems Engineering and Spacecraft Design#5. Design phases (ECSS)\|01: ECSS phases]] · [[SESA2024 01 - Systems Engineering and Spacecraft Design#6. Ulysses: a trajectory that decided the power system\|01: Ulysses]] |
+
+Section A also gives free marks for the LST of the two nodes (12 h apart and constant from pass to pass) and for the eclipse temperature being independent of $\varepsilon$ ([[SESA2024 10 - Thermal Control#4. Dependence of temperature on surface finish|note 10 §4]]).
 
 ## Figures
-All generated in Python (300 dpi) and stored in `01 - Notes/Figures/`. The figures added in the October 2026 rebuild have generator scripts there (`generate_ast_ch5_kepler_figures.py`, `generate_ast_ch5_transfer_figures.py`, `generate_ast_ch6_attitude_figures.py`, `generate_ast_ch8_power_figures.py`), which import `Year 3/_shared/year3_style.py`:
-- orbits and transfers: `ast_ellipse_polar_geometry`, `ast_radial_transverse_axes`, `ast_kepler_equal_areas`, `ast_conic_sections`, `ast_orbital_elements_3d`, `ast_visviva_speed`, `ast_hohmann_leo_geo`, `ast_hohmann_dv_ratio`, `ast_removedebris_relative_motion`;
-- propulsion and ACS: `ast_rocket_equation`, `ast_ep_optimisation`, `ast_gyroscopic_rigidity`, `ast_wheel_momentum_elliptic`, `ast_momentum_dumping`;
-- power, comms and thermal: `ast_solar_cell_iv`, `ast_eclipse_vs_altitude`, `ast_antenna_gain_beamwidth`, `ast_ber_psk`, `ast_link_budget_pluto`, `ast_thermal_alpha_eps`, `ast_array_temperature_profile`;
-- remote sensing: `ast_sso_inclination`, `ast_repeat_groundtrack_solutions`, `ast_sso_ground_track`, `ast_orbit_control_cycle`, `ast_lst_orbit_planes`;
+All generated in Python (300 dpi) and stored in `01 - Notes/Figures/`. The generator scripts there (`generate_ast_ch1_systems_figures.py`, `generate_ast_ch4_energy_figures.py`, `generate_ast_ch5_kepler_figures.py`, `generate_ast_ch5_elements_figures.py`, `generate_ast_ch5_transfer_figures.py`, `generate_ast_ch6_attitude_figures.py`, `generate_ast_ch8_power_figures.py`, `generate_ast_ch9_comms_figures.py`, `generate_ast_ch11_payload_figures.py`, `generate_ast_ch12_sso_figures.py`, `generate_ast_ch14_control_figures.py`, `generate_ast_ch15_debris_figures.py`, `generate_ast_extra_figures.py`) all import `Year 3/_shared/year3_style.py`:
+- systems: `ast_initial_study_logic`, `ast_ecss_phases`;
+- orbits and transfers: `ast_ellipse_polar_geometry`, `ast_radial_transverse_axes`, `ast_kepler_equal_areas`, `ast_conic_sections`, `ast_orbital_elements_3d`, `ast_polar_orbit_omega`, `ast_visviva_speed`, `ast_energy_exchange`, `ast_hohmann_leo_geo`, `ast_hohmann_dv_ratio`, `ast_removedebris_relative_motion`;
+- propulsion and ACS: `ast_rocket_equation`, `ast_ep_optimisation`, `ast_acs_loop`, `ast_gyroscopic_rigidity`, `ast_wheel_momentum_elliptic`, `ast_momentum_dumping`;
+- power, comms and thermal: `ast_solar_cell_iv`, `ast_eclipse_geometry`, `ast_eclipse_vs_altitude`, `ast_antenna_gain_beamwidth`, `ast_ber_psk`, `ast_link_budget_geo_tv`, `ast_link_budget_pluto`, `ast_thermal_alpha_eps`, `ast_array_temperature_profile`;
+- remote sensing: `ast_swath_geometry`, `ast_sso_inclination`, `ast_repeat_groundtrack_solutions`, `ast_sso_ground_track`, `ast_orbit_control_cycle`, `ast_lst_orbit_planes`;
+- debris: `ast_gabbard_570km`;
 - past papers: `ast_2021_ground_track` (2020/21 Q2(iv)).
+
+Four older PNGs still have no generator script in the folder: `ast_ber_psk`, `ast_link_budget_pluto`, `ast_array_temperature_profile` and `ast_sso_ground_track`; they predate the shared style and should be regenerated when next edited.
 
 ## All notes
 ```dataview
@@ -137,7 +196,7 @@ SORT type ASC, file.name ASC
 - **Into** Year 3: advanced spacecraft design and GDP, astrodynamics and perturbations.
 
 ## Sources
-- `02 - Sources/Lectures`: Chapters 1, 4–11 and two guest lectures (2025-26); Problem Sheet Workbook 2025-26 V1.1
+- `02 - Sources/Lectures`: 2025-26 slide decks for Chapters 1 and 4–11 in chapter subfolders (25 PDFs, including the pre-recorded and "complete" versions of Chapters 6–9 and the Chapter 5 and 11 worked examples), Dr Vaidya's two decks on sustainability and debris and on the industrialisation of space (note 15), and the Problem Sheet Workbook 2025-26 V1.1
 - 35 transcripts in `02 - Sources/Lectures` (2025-26 live lectures, pre-recordings, the two quiz walk-throughs, the Planet Labs guest lecture and Prof Lewis's 2020 Chapter 5 and 11 recordings), mapped in [[SESA2024 Transcript Index]]
-- `03 - Exams & Past Papers`: 12 papers, 2013/14–2024/25
+- `03 - Exams & Past Papers`: 12 papers, 2013/14–2024/25, one per year (the 2022/23 paper is the file named `SESA2024-202425-01-SESA2024.pdf`)
 - Fortescue, Stark & Swinerd, *Spacecraft Systems Engineering* (4th ed.), Wiley. The course textbook.

@@ -13,11 +13,11 @@ sources: ["03 - Exams & Past Papers/Ch3_Revision_Questions.pdf"]
 # SESA3043 Ch3 Revision Questions - Worked Solutions
 
 > [!abstract] Sheet info
-> Blackboard revision questions for Chapter 3 (updated 10 Sep 2026), 26 questions over six sections. Most are "understand / explain / derive" prompts whose full answers are in the topic notes; numerical answers are given here in full and were checked in Python. Chapter 3 has not been lectured yet, and the tutorial for it will be the second Friday lecture at the end of the chapter (`02 October 2026 at 14_53_48.txt`, ll. 507–510).
+> Blackboard revision questions for Chapter 3 (updated 10 Sep 2026), 26 questions over six sections. Most are "understand / explain / derive" prompts whose full answers are in the topic notes; numerical answers are given here in full and were checked in Python. Sections 3.1 to 3.5 were lectured between 22 Oct and 12 Nov; 3.6 is due on Fri 13 Nov. The Chapter 3 tutorial falls in the exam-preparation weeks before the Christmas break, with solutions released afterwards (`12 November 2026 at 13_50_20.txt`, ll. 25–29; the earlier plan was the second Friday lecture at the end of the chapter, `02 October 2026 at 14_53_48.txt`, ll. 507–510).
 
 ## 3.1 Introduction
 
-**Q1. Prandtl's thin-BL theory.** High $Re$, so $\delta\ll x$; inviscid, irrotational flow outside and at the edge; viscous flow inside, governed by the reduced BL equations; pressure imposed by the outer flow ($\partial p/\partial y=0$). → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#1. Prandtl's thin boundary-layer theory, revisited (slides 6–7)|3.1 §1]]
+**Q1. Prandtl's thin-BL theory.** High $Re$, so $\delta\ll x$; inviscid, irrotational flow outside and at the edge; viscous flow inside, governed by the reduced BL equations; pressure imposed by the outer flow ($\partial p/\partial y=0$). → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#1. Prandtl's thin boundary-layer theory, revisited (slides 3–7)|3.1 §1]]
 
 **Q2. Definitions.**
 
@@ -60,7 +60,7 @@ $$
 
 **Q1.** At separation $\partial u/\partial y|_0=0$, so $\tau_w=0$ and $C_f=0$; downstream the near-wall flow reverses and $C_f<0$.
 
-**Q2.** At the wall $u=v=0$, so $0=U_eU_e'+\nu\,\partial^2u/\partial y^2|_0=U_eU_e'+\frac{\nu U_e}{\delta^2}\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}|_0$; divide by $U_e$. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#Step 3: the BL equation at the wall (slide 18)|3.3 §2]]
+**Q2.** At the wall $u=v=0$, so $0=U_eU_e'+\nu\,\partial^2u/\partial y^2|_0=U_eU_e'+\frac{\nu U_e}{\delta^2}\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}|_0$; divide by $U_e$. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#The BL equation at the wall (slide 18)|3.3 §2]]
 
 **Q3.** $\lambda=\frac{\delta^2}{\nu}U_e'=Re_\delta\frac{\delta}{U_e}U_e'=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$: dimensionless, and the ratio of pressure-gradient force to viscous shear. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#4. What λ means (revision Q3; slides 28–31)|3.3 §4]]
 

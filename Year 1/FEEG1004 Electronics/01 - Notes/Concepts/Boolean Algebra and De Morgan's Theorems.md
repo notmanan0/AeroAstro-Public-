@@ -13,29 +13,30 @@ sources: ["02 - Sources/S1 Electronics/S1 Electronics Notes - Diodes Transistors
 
 # Boolean Algebra and De Morgan's Theorems
 
-## Definition
+Boolean algebra is the algebra of two-valued logic variables, with AND written as a product and OR as a sum. De Morgan's theorems convert between the two operations under a complement:
 
-> [!note] Definition
->
-> $$\overline{A + B} = \overline A\cdot\overline B,\qquad \overline{A\cdot B} = \overline A + \overline B\qquad(\text{"break the line, change the sign"})$$
->
-> Also key: $A + 1 = 1$, $A + A = A$, $A + \overline A = 1$, $A\overline A = 0$, $A + AB = A$, $A + BC = (A + B)(A + C)$ and $A\oplus B = A\overline B + \overline AB$.
+$$
+\overline{A+B}=\overline A\cdot\overline B,\qquad \overline{A\cdot B}=\overline A+\overline B.
+$$
 
-## Explanation
-- It mostly behaves like ordinary algebra (AND ↔ ×, OR ↔ +). The exceptions are **OR-dominance, idempotence and OR-distributivity**.
-- **SOP from a truth table**: OR together one AND-term per row with $F = 1$.
-- Every identity can be proved by a truth table, row by row (Tutorial 4 Q2).
-- **NAND/NOR are universal**. Double-invert and apply De Morgan to build any function from one gate type.
+The mnemonic is "break the line, change the sign": splitting the complement bar over the variables swaps AND and OR.
 
-## Examples
-- Mills Ex. 3: $A\overline B\,\overline C + AB\overline C + \overline A\,\overline BC + \overline ABC = A\oplus C$ (independent of B).
-- Tutorial 4 Q3: $\overline{\overline{AB} + (B\oplus C)} = ABC$.
+Most manipulations follow ordinary algebra, with AND behaving like multiplication and OR like addition. The exceptions come from OR-dominance, idempotence and the distributivity of OR over AND:
+
+$$
+A+1=1,\qquad A+A=A,\qquad A+\overline A=1,\qquad A\overline A=0,\qquad A+AB=A,\qquad A+BC=(A+B)(A+C).
+$$
+
+Exclusive-OR is $A\oplus B=A\overline B+\overline AB$. Every identity can be proved row by row with a truth table, which is the method of Tutorial 4 Q2.
+
+A sum-of-products expression is read straight from a truth table: OR together one AND-term for each row with $F=1$. NAND and NOR are universal gates. Double-inverting an expression and applying De Morgan turns any function into one built from a single gate type.
+
+In Mills Ex. 3, $A\overline B\,\overline C+AB\overline C+\overline A\,\overline BC+\overline ABC=A\oplus C$, which does not depend on $B$. In Tutorial 4 Q3, $\overline{\overline{AB}+(B\oplus C)}=ABC$.
 
 ![[ee_b5_logic_gates.png|760]]
 
 ## Related
-- Topic notes: [[FEEG1004 B5 - Combinational Logic - Boolean Algebra and Karnaugh Maps]]
-- Concepts: [[Karnaugh Maps]] · [[D-Type Flip-Flop]]
 
-## Sources
-- Mills notes §3.2.3; Week 11 session
+- [[FEEG1004 B5 - Combinational Logic - Boolean Algebra and Karnaugh Maps]]
+- [[Karnaugh Maps]] · [[D-Type Flip-Flop]]
+- Sources: Mills notes §3.2.3; Week 11 session

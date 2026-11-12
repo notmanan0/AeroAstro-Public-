@@ -166,7 +166,7 @@ $$
 **Cold nozzle**, ideal and expanding to 22 kPa:
 
 $$
-V_{jc} = \sqrt{2(1005)(432.4)\left[1-\left(\frac{22}{222.8}\right)^{0.2857}\right]} = \boxed{648.5\text{ m/s}}
+V_{jb} = \sqrt{2(1005)(432.4)\left[1-\left(\frac{22}{222.8}\right)^{0.2857}\right]} = \boxed{648.5\text{ m/s}}
 $$
 
 ### (ii) Turbine pressure ratios (10)
@@ -204,13 +204,13 @@ $$
 $p_{05} = 6683/(13.39\times1.308) = 381.8$ kPa.
 
 $$
-V_{jh} = \sqrt{2(1005)(906.8)\left[1-\left(\frac{22}{381.8}\right)^{0.2857}\right]} = 1008.1\text{ m/s}
+V_{jc} = \sqrt{2(1005)(906.8)\left[1-\left(\frac{22}{381.8}\right)^{0.2857}\right]} = 1008.1\text{ m/s}
 $$
 
 With $\dot m_c = 20/1.5 = 13.33$ kg/s and $\dot m_b = 6.67$ kg/s:
 
 $$
-F = \dot m_c[(1+f)V_{jh}-V]+\dot m_b(V_{jc}-V) = 13.33(1021.7-589.2)+6.67(648.5-589.2) = \boxed{6.16\text{ kN}}
+F = \dot m_c[(1+f)V_{jc}-V]+\dot m_b(V_{jb}-V) = 13.33(1021.7-589.2)+6.67(648.5-589.2) = \boxed{6.16\text{ kN}}
 $$
 
 At M 2 the ram drag ($\dot mV = 11.8$ kN) almost cancels the gross thrust. The bypass stream contributes only 0.4 kN because its jet is barely faster than flight. A low bpr (or a pure turbojet with reheat) is used at supersonic speed for this reason. See [[Bypass Ratio and Fan Pressure Ratio]].

@@ -36,7 +36,7 @@ sources: ["02 - Sources/Lectures/Lecture 3.07.pdf", "02 - Sources/Lectures/Lectu
 
 Between the sensor and the flight computer lies a digital bridge that turns a continuous voltage into a stream of integers. It squeezes the voltage into the ADC's window (range), chops time into samples (time) and rounds each sample to the nearest of $2^n$ levels (amplitude). Each step can destroy information for good: a peak that exceeds the window is clipped flat; a vibration faster than half the sampling rate is folded down and masquerades as slow motion; a high-impedance sensor loses part of its signal to the instrument reading it. Once that has happened, no software can undo it, which is why these jobs belong to hardware.
 
-After the ADC, software can clean the samples: average to remove noise, differentiate to get rates, integrate to get totals, reject spikes, fuse sensors. Each of these steps adds delay. A smoothing filter averages over past samples, so its output lags the signal, and every stage of latency is a pure phase lag that comes straight off the phase margin designed in Part B. The question at each step is not "is it smoother?" but "is it still true enough, soon enough, to feed back?"
+After the ADC, software can clean the samples: average to remove noise, differentiate to get rates, integrate to get totals, reject spikes, fuse sensors. Each of these steps adds delay. A smoothing filter averages over past samples, so its output lags the signal, and every stage of latency is a pure phase lag that comes straight off the phase margin designed in Part B. The criterion at each step is whether the signal is still true enough, and soon enough, to feed back, not whether it is smoother.
 
 ---
 
@@ -50,7 +50,7 @@ After the ADC, software can clean the samples: average to remove noise, differen
 | Electrical protection | Sensor fusion |
 | A hardware error means lost information | Software cannot recover destroyed data |
 
-**Three transformations**: $V(t)\to V[k]\to N[k]$. Sampling changes time; quantisation changes amplitude.
+Of the three transformations (range, time and amplitude), the last two take $V(t)\to V[k]\to N[k]$: sampling changes time and quantisation changes amplitude.
 
 ## 2. Range transformation: scaling and offsetting
 Typical ADC windows are 0–3.3 V (modern MCU), 0–5 V (legacy DAQ) and ±10 V (industrial DAQ). The conditioning circuit is
@@ -59,7 +59,7 @@ $$
 V_{out} = A_vV_{in}+V_{os},\qquad A_v = \frac{V_{ADC,max}-V_{ADC,min}}{V_{max}-V_{min}},\qquad V_{os} = V_{ADC,min}-A_vV_{min}
 $$
 
-> [!example] Lecture example
+> [!example] ±50 mV into a 0–5 V ADC
 > A sensor range of ±50 mV mapped into a 0–5 V ADC:
 > - $A_v = 5/0.1 = 50$
 > - $V_{os} = 0-50(-0.05) = 2.5$ V
@@ -79,7 +79,7 @@ $$
 
 Back-substitute into the first: $V_{os}=V_{ADC,min}-A_vV_{min}$.
 
-**Clipping**: occurs if $V_{out}>V_{ADC,max}$ or $V_{out}<V_{ADC,min}$. The flat top destroys the peak information, and no algorithm can restore it.
+**Clipping** occurs if $V_{out}>V_{ADC,max}$ or $V_{out}<V_{ADC,min}$. The flat top destroys the peak information, and no algorithm can restore it.
 
 ![[amc_psc_q7_range_mapping.png|650]]
 
@@ -93,7 +93,7 @@ $$
 - For a 5 V range: 8 bit gives $Q = 19.5$ mV, 12 bit gives 1.22 mV, and 16 bit gives 76.3 µV.
 - Datasheets define the LSB slightly differently ($2^n$ or $2^n-1$), but the principle is the same: more bits means smaller steps.
 
-Quantisation as noise (an addition to the slides; assumptions: the signal moves over many levels, so the rounding error $e_q$ is equally likely anywhere in $[-Q/2,Q/2]$). The probability density is $1/Q$ on that interval, so the mean is zero and the variance is
+Quantisation can be treated as noise when the signal moves over many levels, so that the rounding error $e_q$ is equally likely anywhere in $[-Q/2,Q/2]$. The probability density is $1/Q$ on that interval, so the mean is zero and the variance is
 
 $$
 \sigma_q^2=\int_{-Q/2}^{Q/2}e^2\,\frac1Q\,de=\frac1Q\left[\frac{e^3}{3}\right]_{-Q/2}^{Q/2}=\frac{1}{Q}\cdot\frac{2}{3}\cdot\frac{Q^3}{8}=\frac{Q^2}{12}
@@ -114,10 +114,9 @@ $$
 V_{meas} = V_{sensor}\frac{Z_{in}}{Z_{out}+Z_{in}},\qquad \varepsilon_{load} = \frac{Z_{out}}{Z_{out}+Z_{in}}
 $$
 
-- Lecture example: $Z_{out} = 10$ kΩ and $Z_{in} = 100$ kΩ give $\varepsilon = 9.1\%$. That signal is lost before the computer sees anything.
-- Line by line: the same current $i=V_{sensor}/(Z_{out}+Z_{in})$ flows through both impedances, and the DAQ sees only the drop across its own input, $V_{meas}=iZ_{in}$. The missing fraction is $1-Z_{in}/(Z_{out}+Z_{in})=Z_{out}/(Z_{out}+Z_{in})$. For $\varepsilon<1\,\%$ you need $Z_{in}>99Z_{out}$, hence the rule of thumb "input impedance at least 100 times the source impedance".
-- **Fix**: a buffer amplifier (op-amp voltage follower) with $Z_{in}\to\infty$ and a low output impedance.
-- The measurement system must not disturb the sensor.
+The same current $i=V_{sensor}/(Z_{out}+Z_{in})$ flows through both impedances, and the DAQ sees only the drop across its own input, $V_{meas}=iZ_{in}$. The missing fraction is $1-Z_{in}/(Z_{out}+Z_{in})=Z_{out}/(Z_{out}+Z_{in})$. With $Z_{out} = 10$ kΩ and $Z_{in} = 100$ kΩ, $\varepsilon = 9.1\%$, and that part of the signal is lost before the computer sees anything. $\varepsilon<1\,\%$ requires $Z_{in}>99Z_{out}$, hence the rule of thumb that the input impedance should be at least 100 times the source impedance.
+
+The measurement system must not disturb the sensor. The fix is a **buffer amplifier** (op-amp voltage follower), with $Z_{in}\to\infty$ and a low output impedance.
 
 ## 5. Time transformation: sampling and aliasing
 See [[Nyquist Sampling and Aliasing]].
@@ -126,7 +125,7 @@ $$
 f_s = \frac1{T_s},\qquad f_N = \frac{f_s}2,\qquad \text{no aliasing if } f_s>2f_{max},\qquad f_{alias} = |f-mf_s|\in[0,f_N]
 $$
 
-- Content above $f_N$ folds into the low-frequency band. The flight computer then "sees motion that is not physically there" (a ghost signal).
+Content above $f_N$ folds into the low-frequency band, so the flight computer sees motion that is not physically there (a ghost signal).
 
 **Why the alias frequency is $\lvert f-mf_s\rvert$.** Sample $x(t)=\cos(2\pi ft)$ at $t=kT_s=k/f_s$:
 
@@ -141,15 +140,14 @@ $$
 $$
 
 since $mk$ is an integer. The samples are identical, so the computer cannot tell $f$ from $f-mf_s$. Because cosine is even, $-(f-mf_s)$ gives the same samples too. Exactly one of these candidates lies in $[0,f_s/2]$: that is the frequency the computer reports. A 70 Hz vibration sampled at 50 Hz therefore appears at $\lvert70-50\rvert=20$ Hz (Part C sheet Q10).
-- **Anti-aliasing filter**: an analogue RC filter before the ADC, with
+
+An **anti-aliasing filter**, an analogue RC filter before the ADC, removes that content before it is sampled. It needs
 
 $$
 \tau = RC\ge\frac{1}{\pi f_s}\quad\Leftrightarrow\quad f_c = \frac{1}{2\pi\tau}\le\frac{f_s}{2} = f_N
 $$
 
-- What we lose: high-frequency noise and very fast dynamics.
-- What we gain: integrity in the control band.
-- In practice, sample at about $10f_{max}$ (see [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]).
+The filter removes high-frequency noise and very fast dynamics, and keeps the control band intact. In practice the sampling rate is about $10f_{max}$ (see [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]).
 
 ![[amc_psc_q10_aliasing.png|650]]
 
@@ -175,40 +173,36 @@ $$
 
 Every stage of delay subtracts directly from the phase margin. See [[Gain and Phase Margins]].
 
-**Why a delay has unit magnitude and phase $-\omega T_d$.** A delay shifts the signal, $y(t)=x(t-T_d)$. Its transform is $Y(s)=e^{-sT_d}X(s)$ (the time-shift rule in [[SESA2027 A4 - Laplace Transforms, Transfer Functions and Step Response#2. Properties and standard transforms (MATH2048 L11–13 recap)|A4]]). At $s=i\omega$:
+**Why a delay has unit magnitude and phase $-\omega T_d$.** A delay shifts the signal, $y(t)=x(t-T_d)$. Its transform is $Y(s)=e^{-sT_d}X(s)$ (the time-shift rule in [[SESA2027 A4 - Laplace Transforms, Transfer Functions and Step Response#2. Properties and standard transforms|A4]]). At $s=i\omega$:
 
 $$
 e^{-i\omega T_d}=\cos\omega T_d-i\sin\omega T_d,\qquad\lvert e^{-i\omega T_d}\rvert=1,\qquad\angle e^{-i\omega T_d}=-\omega T_d
 $$
 
-The delay leaves the gain crossover where it was and rotates the phase there by $-\omega_{gc}T_d$ radians, which is the boxed result. Note it grows linearly with frequency: fast loops are far more delay-sensitive than slow ones.
+The delay leaves the gain crossover where it was and rotates the phase there by $-\omega_{gc}T_d$ radians, which is the boxed result. The phase lag grows linearly with frequency, so fast loops are far more delay-sensitive than slow ones.
 
 ![[amc_delay_phase_erosion.png|760]]
 
 ## 7. DAC and zero-order hold
-The DAC is how the computer "speaks" back. It converts $N[k]$ into $V_{cmd}$ for the actuator electronics (servo drive or valve driver). It does not move the control surface itself.
+The DAC is the computer's output path. It converts $N[k]$ into $V_{cmd}$ for the actuator electronics (servo drive or valve driver). It does not move the control surface itself.
 
-- **Zero-order hold**: the output is held constant between updates, giving a staircase command.
-- **Resolution**:
+With a **zero-order hold** the output is held constant between updates, giving a staircase command. The DAC resolution is
 
 $$
 Q_{DAC} = \frac{V_{DAC,max}-V_{DAC,min}}{2^n},\qquad V_{cmd}[k] = V_{DAC,min}+N[k]Q_{DAC}
 $$
 
-  If the ideal steady command lies between two levels, the loop switches between neighbours. This is actuator hunting (jitter).
+If the ideal steady command lies between two levels, the loop switches between neighbours. This is actuator hunting (jitter).
 
 ### Data-integrity checks
-"A digital signal can look precise but still be physically wrong." Check for:
-1. **Clipping**: stuck at the minimum or maximum, so peaks are lost.
-2. **Stuck signal**: no variation at all, which means a failed sensor or frozen data.
-3. **Rate-limit violation**: a change faster than the physics allows, which means noise or corruption.
-4. **Timing error or missing samples**: this breaks the assumptions of a digital controller.
+A digital signal can look precise but still be physically wrong. Check for:
+1. Clipping: stuck at the minimum or maximum, so peaks are lost.
+2. A stuck signal: no variation at all, which means a failed sensor or frozen data.
+3. A rate-limit violation: a change faster than the physics allows, which means noise or corruption.
+4. Timing errors or missing samples, which break the assumptions of a digital controller.
 
 ## 8. Digital processing after the ADC (L3.08)
-**Signal model**: $y[k] = x[k]+b[k]+n[k]$.
-- $x[k]$ is the truth.
-- $b[k]$ is bias or drift.
-- $n[k]$ is random noise.
+The signal model is $y[k] = x[k]+b[k]+n[k]$, where $x[k]$ is the truth, $b[k]$ is bias or drift and $n[k]$ is random noise.
 
 A filter is an algorithm $\hat x[k] = F(y[k],y[k-1],\dots)$ that uses memory of past samples.
 
@@ -227,8 +221,7 @@ $$
 y_f[k] = \frac1N\sum_{i=0}^{N-1}y[k-i],\qquad \text{delay}\approx\frac{N-1}{2}T_s
 $$
 
-- **Hidden assumption**: the true signal is roughly constant over the window. If that is wrong, the filter distorts the motion.
-- A larger $N$ gives a smoother but later output.
+The hidden assumption is that the true signal is roughly constant over the window; if it is not, the filter distorts the motion. A larger $N$ gives a smoother but later output.
 
 **Where the delay comes from.** Feed in a ramp, $y[k]=ck$. The output is the average of $c\,k, c(k-1),\dots,c(k-N+1)$:
 
@@ -246,11 +239,7 @@ $$
 y_f[k] = \alpha y[k]+(1-\alpha)y_f[k-1],\qquad 0<\alpha<1,\qquad \alpha\approx\frac{T_s}{\tau+T_s}
 $$
 
-- Rearranged: $y_f[k]-y_f[k-1] = \alpha(y[k]-y_f[k-1])$. The estimate moves by a fraction of the current error.
-- This makes the filter itself a discrete dynamic system in the measurement path.
-- $\alpha\to1$ gives fast tracking but a noisy estimate.
-- $\alpha\to0$ gives a smooth but slow estimate.
-- Choosing $\alpha$ is choosing the measurement dynamics.
+Rearranged, $y_f[k]-y_f[k-1] = \alpha(y[k]-y_f[k-1])$: the estimate moves by a fraction of the current error, which makes the filter itself a discrete dynamic system in the measurement path. $\alpha\to1$ gives fast tracking but a noisy estimate, and $\alpha\to0$ a smooth but slow one, so choosing $\alpha$ is choosing the measurement dynamics.
 
 **Where $\alpha\approx T_s/(\tau+T_s)$ comes from.** Start from the analogue RC low-pass, $\tau\dot y_f+y_f=y$, and replace the derivative with a backward difference:
 
@@ -275,16 +264,11 @@ which is the recursive filter with $\alpha=T_s/(\tau+T_s)$ and $1-\alpha=\tau/(\
 *The moving average has a constant delay but lets bands of high-frequency noise through between its nulls. The recursive filter attenuates smoothly, but its delay is largest exactly at the low frequencies the controller cares about.*
 
 ### Median filter
-A median filter is robust to isolated spikes. For the window $\{1.01, 1.03, 8.50, 1.02, 1.00\}$:
-- the mean is 2.512 (contaminated);
-- the median is 1.02 (spike ignored).
+A median filter is robust to isolated spikes. For the window $\{1.01, 1.03, 8.50, 1.02, 1.00\}$ the mean is 2.512 (contaminated), while the median is 1.02 (spike ignored).
 
 ![[amc_digital_filter_tradeoff.png|700]]
 
-The "software tax" is visible in the figure:
-- Heavier smoothing ($\alpha = 0.02$) gives a clean but badly delayed response.
-- The moving average passes the spike (at 1.4 s) as a bump.
-- The median rejects the spike.
+The figure shows what each filter costs. Heavier smoothing ($\alpha = 0.02$) gives a clean but badly delayed response, the moving average passes the spike at 1.4 s as a bump, and the median rejects the spike.
 
 ### Derivatives: noise amplifiers
 
@@ -330,21 +314,21 @@ $$
 \hat x[k] = \alpha\hat x_{fast}[k]+(1-\alpha)\hat x_{slow}[k]
 $$
 
-This assigns frequency roles to the two sources; it is not plain averaging. See [[Complementary Filter]] and [[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion]]. The transfer-function derivation, the discrete update and the bounded bias error $\tau b$ are in [[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion#Complementary filter|C1]]. Note that $\alpha$ there weights the gyro (the fast source), whereas $\alpha$ in the recursive low-pass above weights the new sample; the symbol is reused with different roles.
+This assigns frequency roles to the two sources; it is not plain averaging. See [[Complementary Filter]] and [[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion]]. The transfer-function derivation, the discrete update and the bounded bias error $\tau b$ are in [[SESA2027 C1 - Sensing Systems, Sensor Principles and Sensor Fusion#Complementary filter|C1]]. There $\alpha$ weights the gyro (the fast source), whereas $\alpha$ in the recursive low-pass above weights the new sample; the symbol is reused with different roles.
 
-**Pipeline**: $y[k]$ → validate → filter → estimate → $\hat x[k]$.
+The full processing pipeline is $y[k]$ → validate → filter → estimate → $\hat x[k]$.
 
-Digital processing can make measurements more useful, but every improvement encodes an assumption. For flight control the question is not whether the signal is smoother but whether the processed signal is still truthful enough for feedback.
+Digital processing can make measurements more useful, but every improvement encodes an assumption, and for flight control the processed signal has to remain truthful enough for feedback whether or not it is smoother.
 
 ## 9. Worked example: one channel from sensor to number
 
 *(Suggested, not lecturer-set; it strings together the Part C sheet methods.)* A pitch-rate gyro outputs ±50 mV for ±100 °/s with an output impedance of 10 kΩ. The FCC has a 12-bit, 0–5 V ADC sampling at 100 Hz, and the pitch loop crosses over at 3 rad/s.
 
-1. **Range**: $A_v=5/0.1=50$, $V_{os}=2.5$ V. A 120 °/s manoeuvre gives 60 mV, i.e. $V_{out}=5.5$ V: clipped. Design the window with margin (C2: about 1.5× the expected maximum).
-2. **Resolution**: $Q=5/4096=1.22$ mV at the ADC, i.e. $1.22/50=24.4$ µV at the sensor, or $0.049\ °/\text{s}$ per count. Quantisation noise $Q/\sqrt{12}\to0.014\ °/\text{s}$ RMS.
-3. **Loading**: into a 100 kΩ input, 9.1 % of the signal is lost; a voltage follower fixes it.
-4. **Aliasing**: $f_N=50$ Hz. A 70 Hz engine vibration would appear at 20 Hz. Anti-alias RC with $f_c\le50$ Hz needs $\tau\ge1/(\pi\times100)=3.2$ ms.
-5. **Latency**: if the RC (about 3 ms), conversion, buffering and bus add up to $T_d=50$ ms, the loop loses $3\times0.05=0.15$ rad $=8.6°$ of phase margin. A 10-sample moving average would add another 45 ms and another $7.7°$.
+1. Range: $A_v=5/0.1=50$, $V_{os}=2.5$ V. A 120 °/s manoeuvre gives 60 mV, i.e. $V_{out}=5.5$ V: clipped. Design the window with margin (C2: about 1.5× the expected maximum).
+2. Resolution: $Q=5/4096=1.22$ mV at the ADC, i.e. $1.22/50=24.4$ µV at the sensor, or $0.049\ °/\text{s}$ per count. Quantisation noise $Q/\sqrt{12}\to0.014\ °/\text{s}$ RMS.
+3. Loading: into a 100 kΩ input, 9.1 % of the signal is lost; a voltage follower fixes it.
+4. Aliasing: $f_N=50$ Hz. A 70 Hz engine vibration would appear at 20 Hz. Anti-alias RC with $f_c\le50$ Hz needs $\tau\ge1/(\pi\times100)=3.2$ ms.
+5. Latency: if the RC (about 3 ms), conversion, buffering and bus add up to $T_d=50$ ms, the loop loses $3\times0.05=0.15$ rad $=8.6°$ of phase margin. A 10-sample moving average would add another 45 ms and another $7.7°$.
 
 > [!check] Numbers (Python)
 > $5/4096=1.221$ mV; $1.221/\sqrt{12}=0.352$ mV; $10/110=0.0909$; $1/(100\pi)=3.18$ ms; $3\times0.05\times180/\pi=8.59°$; $3\times0.045\times180/\pi=7.73°$. ✓

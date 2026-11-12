@@ -29,13 +29,13 @@ sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - com
 > - **Common mistakes:** sizing the array for the load alone and forgetting the battery recharge; using the beginning-of-life efficiency without the radiation degradation factor.
 > - **Practise:** [[#800 km LEO spacecraft, 1 kW for two years]] · [[SESA2024 Workbook Ch8 - Power Solutions#Q10. GEO communications spacecraft, 8000 W continuous, 10-year life|Workbook Q10]]
 
-Every electrical component on the spacecraft draws on this subsystem, and losing it, even briefly, can end the mission: "if you lose thermal control, even if it's just for a matter of minutes", a component may go outside its temperature limits and fail (2025-11-11, ll. 26–60). The job is therefore not only to generate enough energy on average, but to supply it continuously, including through every eclipse, and still to manage it at the end of the mission when the arrays and batteries have degraded.
+Every electrical component on the spacecraft draws on this subsystem, and losing it, even briefly, can end the mission: without power for thermal control, even for a few minutes, a component may go outside its temperature limits and fail (2025-11-11, ll. 26–60). The job is therefore not only to generate enough energy on average, but to supply it continuously, including through every eclipse, and still to manage it at the end of the mission when the arrays and batteries have degraded.
 
 For most of an orbit sunlight falls on the arrays and powers the spacecraft; for part of it the Earth blocks the Sun and the batteries take over, and they then have to be recharged in the next sunlit period. The arrays therefore have to be bigger than the load alone requires, and the batteries bigger than a single eclipse requires, because using only a small fraction of a battery's charge each cycle is what lets it survive tens of thousands of cycles.
 
 ## 1. Power sources
 
-The class named solar arrays, batteries, RTGs and fuel cells; the slides add solar dynamic systems and nuclear reactors (2025-11-11, ll. 51–100). The primary power system is the main source over the mission, usually solar arrays for Earth orbit. Because the arrays are sometimes in shadow or pointed away from the Sun, a secondary system stores energy: almost always a rechargeable battery, though flywheels, compressed gas, superconducting magnets or double-layer capacitors are possible (ll. 101–150).
+Power sources include solar arrays, batteries, RTGs and fuel cells, plus solar dynamic systems and nuclear reactors. The primary power system is the main source over the mission, usually solar arrays for Earth orbit. Because the arrays are sometimes in shadow or pointed away from the Sun, a secondary system stores energy: almost always a rechargeable battery, though flywheels, compressed gas, superconducting magnets or double-layer capacitors are possible (ll. 101–150).
 
 ### Solar arrays
 
@@ -45,7 +45,7 @@ $$
 S(d)=\frac{1370}{d^2}\ \mathrm{W/m^2},\quad d\text{ in AU}.
 $$
 
-With 10 % efficiency, Jupiter at about 5 AU gives $1370/25\times0.1\approx5.5\ \mathrm{W/m^2}$ and Saturn at about 10 AU only $1.4\ \mathrm{W/m^2}$. Rosetta, at about 5.25 AU from the Sun, used solar arrays, and Juno does at Jupiter; beyond that other sources are needed.
+With 10 % efficiency, Jupiter at about 5 AU gives $1370/5^2\times0.1\approx5.5\ \mathrm{W/m^2}$ and Saturn at about 10 AU only $1370/10^2\times0.1\approx1.4\ \mathrm{W/m^2}$, against about $137\ \mathrm{W/m^2}$ at the Earth. At Jupiter's actual 5.2 AU the figure is $5.1\ \mathrm{W/m^2}$, a factor of 27 below the Earth value. Rosetta, at about 5.25 AU from the Sun, used solar arrays, and Juno does at Jupiter; beyond that other sources are needed.
 
 ### Primary batteries and fuel cells
 
@@ -61,16 +61,13 @@ An RTG generates electricity by the Seebeck effect: thermocouples between a hot 
 
 ### Choosing a source
 
-The slides plot power level against mission duration (ll. 351–390). Primary batteries cover short, low-power missions; fuel cells short missions at kilowatts; solar arrays and RTGs long missions (the choice between them set by the distance from the Sun); solar dynamic systems long missions at high power; and only nuclear reactors give very high power for very long durations, which regulation currently rules out.
+Power level and mission duration together decide the source (ll. 351–390). Primary batteries cover short, low-power missions; fuel cells short missions at kilowatts; solar arrays and RTGs long missions (the choice between them set by the distance from the Sun); solar dynamic systems long missions at high power; and only nuclear reactors give very high power for very long durations, which regulation rules out.
 
 ## 2. Solar cells
 
-The pre-recorded lecture covers the physics (ll. 1–125). A semiconductor has a band gap of 1–2 eV between its valence and conduction bands. A solar cell joins an n-type layer (excess electrons) to a p-type layer (deficit of electrons); a photon with more energy than the band gap frees an electron, and the junction drives a current.
+A semiconductor has a band gap of 1–2 eV between its valence and conduction bands (pre-recorded lecture, ll. 1–125). A solar cell joins an n-type layer (excess electrons) to a p-type layer (deficit of electrons); a photon with more energy than the band gap frees an electron, and the junction drives a current.
 
-Each cell is tuned to one band gap, which limits its efficiency. A photon below the gap does nothing; a photon above it frees an electron but its excess energy becomes heat. Set the gap high and few photons qualify; set it low and most of the energy is wasted as heat.
-
-> [!warning] Transcript slip (pre-recorded lecture, ll. 26–30)
-> The example says a 1.7 eV photon falling on a 1.1 eV cell loses "1.6 electron volts" as heat. The excess is $1.7-1.1=0.6$ eV.
+Each cell is tuned to one band gap, which limits its efficiency. A photon below the gap does nothing; a photon above it frees an electron but its excess energy becomes heat. A high gap leaves few photons that qualify; a low gap wastes most of their energy as heat.
 
 The cell efficiency is the electrical output over the solar input,
 
@@ -96,7 +93,7 @@ $$
 P(\theta)\approx P(0)\cos\theta.
 $$
 
-Radiation damage reduces both $I_{sc}$ and $V_{oc}$ over the mission (ll. 110–150). The array is therefore sized for end of life (EOL), which means it produces too much power at beginning of life (BOL); the surplus is shed by switching off sections, operating off the maximum power point, or dumping it in a shunt or heater. Cover glass thickness and putting the n-type layer on top improve radiation resistance. The slide table:
+Radiation damage reduces both $I_{sc}$ and $V_{oc}$ over the mission (ll. 110–150). The array is therefore sized for end of life (EOL), which means it produces too much power at beginning of life (BOL); the surplus is shed by switching off sections, operating off the maximum power point, or dumping it in a shunt or heater. Cover glass thickness and putting the n-type layer on top improve radiation resistance. The three cell types compare as follows:
 
 | Cell | Production efficiency | Power loss per °C | Efficiency left after the reference radiation dose | Relative density and cost |
 |---|---|---|---|---|
@@ -106,11 +103,11 @@ Radiation damage reduces both $I_{sc}$ and $V_{oc}$ over the mission (ll. 110–
 
 ### From cells to arrays
 
-Cells are wired in series to reach the bus voltage and in parallel to reach the current (ll. 176–200). They are mounted, with cover glass and an insulating layer, on honeycomb panels with CFRP or aluminium face sheets, or on tensioned flexible blankets. The wiring gaps mean not all the area generates power, which introduces a packing efficiency $\eta_p$. Two-winged arrays rotating about one axis (Olympus) give symmetric drag and one degree of freedom for Sun tracking; boom-mounted arrays (ERS) give two; spinners such as Meteosat and Intelsat 6 have body-mounted cells, as Chapter 6 explained (ll. 151–200).
+Cells are wired in series to reach the bus voltage and in parallel to reach the current (ll. 176–200). They are mounted, with cover glass and an insulating layer, on honeycomb panels with CFRP or aluminium face sheets, or on tensioned flexible blankets. The wiring gaps mean not all the area generates power, which introduces a packing efficiency $\eta_p$. Two-winged arrays rotating about one axis (Olympus) give symmetric drag and one degree of freedom for Sun tracking; boom-mounted arrays (ERS) give two; spinners such as Meteosat and Intelsat 6 have body-mounted cells (see [[SESA2024 06 - Attitude Control]]; ll. 151–200).
 
 ## 3. Batteries
 
-The pre-recorded lecture's terminology (ll. 201–300): a primary battery is not rechargeable; a secondary battery is, and that is the near-universal choice for spacecraft secondary power. The chemistries in use have moved from nickel–cadmium (compact cells, now obsolete) through nickel–hydrogen (individual pressure vessels, better energy storage but bulky, still on some communications satellites and the ISS) to lithium-ion (first on a commercial platform in 2004, now standard), with lithium polymer under qualification.
+The terminology (pre-recorded lecture, ll. 201–300): a primary battery is not rechargeable; a secondary battery is, and that is the near-universal choice for spacecraft secondary power. The chemistries in use have moved from nickel–cadmium (compact cells, now obsolete) through nickel–hydrogen (individual pressure vessels, better energy storage but bulky, still on some communications satellites and the ISS) to lithium-ion (first on a commercial platform in 2004, now standard), with lithium polymer under qualification.
 
 | Parameter | Symbol, units | Meaning |
 |---|---|---|
@@ -127,13 +124,13 @@ The pre-recorded lecture's terminology (ll. 201–300): a primary battery is not
 | Operating temperature | −10 to +40 °C | −10 to +40 °C | 0 to +44 °C |
 | Energy density | lowest | middle | highest |
 
-Temperature matters because a battery taken outside its range can be killed quickly. Cycle life depends above all on the depth of discharge (ll. 301–350): on the NiCd curve, 20 % DoD gives some 20 000–30 000 cycles but 60 % only about 1000. So a long-lived battery is mostly charge that is never used, as with a phone you drain to zero every day. Nickel–hydrogen tolerates a deeper discharge for the same number of cycles. A car's lead–acid battery would last only a few hundred cycles at modest depth.
+Temperature matters because a battery taken outside its range can be killed quickly. Cycle life depends above all on the depth of discharge (ll. 301–350): on the NiCd curve, 20 % DoD gives some 20 000–30 000 cycles but 60 % only about 1000. So a long-lived battery is mostly charge that is never used; a phone battery run nearly flat every day lasts only a few hundred cycles. Nickel–hydrogen tolerates a deeper discharge for the same number of cycles. A car's lead–acid battery would last only a few hundred cycles at modest depth.
 
 ## 4. The power bus and power budgets
 
 Connecting the array straight to the loads would not work: its output varies with eclipse, temperature and pointing. A regulator on the primary bus gives a steady supply, and a charge/discharge controller protects the battery (2025-11-11, ll. 390–430).
 
-Each mission phase has its own power requirement (ll. 431–500). The SOHO budget on the slides lists the service module and payload demands for pre-launch, ascent, parking orbit, transfer orbit, cruise and on-station, each with a 15 % margin (87.5 W becomes 101 W); the payload draws nothing until cruise. The power subsystem must meet every phase.
+Each mission phase has its own power requirement (ll. 431–500). In the SOHO budget (slides), service-module and payload demands are set for pre-launch, ascent, parking orbit, transfer orbit, cruise and on-station, each with a 15 % margin added (87.5 W becomes 101 W); the payload draws nothing until cruise. The power subsystem must meet every phase.
 
 ## 5. Sizing a battery and an array
 
@@ -141,13 +138,29 @@ The order matters (ll. 501–550). The array must power the spacecraft in sunlig
 
 ### Worst-case eclipse
 
-For a circular orbit of altitude $h$, the worst case is the Sun in the orbit plane. Treat the Earth's shadow as a cylinder of radius $R_E$ (ll. 601–725). The spacecraft enters and leaves the shadow where its radius vector makes an angle $\alpha$ with the Earth–Sun line, with
+For a circular orbit of altitude $h$, the worst case is the Sun in the orbit plane, because then the orbit passes through the middle of the shadow. Treat the Earth's shadow as a cylinder of radius $R_E$ extending away from the Sun, which ignores the small spread of the penumbra (ll. 601–725).
+
+![[ast_eclipse_geometry.png|760]]
+
+Let $\alpha$ be the angle between the spacecraft's radius vector at shadow entry and the terminator, the line through the Earth's centre perpendicular to the Sun direction. At entry the spacecraft is on the edge of the cylinder, so its distance from the Sun–Earth axis equals $R_E$. That distance is the side opposite the angle $90^\circ-\alpha$ in the right-angled triangle whose hypotenuse is the orbit radius $r=R_E+h$:
+
+$$
+r\sin(90^\circ-\alpha)=R_E.
+$$
+
+Since $\sin(90^\circ-\alpha)=\cos\alpha$,
 
 $$
 \cos\alpha=\frac{R_E}{R_E+h}.
 $$
 
-The orbit arc inside the shadow subtends $180^\circ-2\alpha$ at the Earth's centre, so with the orbital period $\tau$
+Entry and exit are symmetric about the Sun–Earth axis, each $90^\circ-\alpha$ from it, so the arc inside the shadow subtends
+
+$$
+2(90^\circ-\alpha)=180^\circ-2\alpha
+$$
+
+at the Earth's centre. On a circular orbit the spacecraft sweeps angle at a constant rate, so the time in shadow is the same fraction of the period $\tau$:
 
 $$
 t_e=\tau\,\frac{180^\circ-2\alpha}{360^\circ},
@@ -155,34 +168,61 @@ t_e=\tau\,\frac{180^\circ-2\alpha}{360^\circ},
 t_s=\tau-t_e.
 $$
 
-It applies to circular orbits only.
+The constant rate is why it applies to circular orbits only; on an ellipse the eclipse time depends on where the shadow falls relative to perigee. As $h\to0$, $\alpha\to0$ and the eclipse tends to half the orbit; as $h$ grows, $\alpha\to90^\circ$ and the eclipse fraction shrinks. The period grows at the same time, so the two effects compete in the duration: it falls slightly through low Earth orbit to a minimum of about 35 min near 1400 km, then rises to about 69 min at GEO ([[Eclipse Duration]]).
 
-> [!warning] Transcript slip (2025-11-11, ll. 701–705)
-> The fraction is read out as "180 degrees minus alpha as a proportion of that 60 degrees". The slide's equation (8.2) is right: $(180^\circ-2\alpha)/360^\circ$.
+![[ast_eclipse_vs_altitude.png|700]]
 
 ### Battery
 
-The bus voltage sets the cells in series, $N_c=V_{bus}/V_c$, rounded to a whole number, giving $V_B=N_cV_c$. The battery must deliver the end-of-life load $P_{EOL}$ for the eclipse time while using only the allowed depth of discharge:
+The bus voltage sets the cells in series, $N_c=V_{bus}/V_c$, rounded to a whole number, giving $V_B=N_cV_c$. The battery must deliver the end-of-life load $P_{EOL}$ for the eclipse time. The energy that takes is
 
 $$
-C=\frac{P_{EOL}\,t_e}{\mathrm{DoD}\cdot V_B},
-\qquad
+E_{eclipse}=P_{EOL}\,t_e.
+$$
+
+A battery of capacity $C$ (A h) at voltage $V_B$ stores $CV_B$, but only the fraction DoD may be drawn each cycle:
+
+$$
+E_{usable}=\mathrm{DoD}\cdot C\,V_B.
+$$
+
+Set the usable energy equal to the eclipse demand and solve for the capacity:
+
+$$
+C=\frac{P_{EOL}\,t_e}{\mathrm{DoD}\cdot V_B}.
+$$
+
+The battery's total stored energy and mass follow from the energy density $\varepsilon$, which is quoted at 100 % discharge:
+
+$$
 E=CV_B,
 \qquad
 M_{battery}=\frac{E}{\varepsilon}.
 $$
 
+The DoD sits in the denominator of $C$ and therefore of the mass, which is why a long-lived battery is heavy.
+
 ### Array
 
-The array must charge the battery at the rate $R$ that puts back the discharged capacity in one sunlit period, at an array voltage $V_A$ above the battery voltage (about 1.2 $V_B$):
+The charge taken out in eclipse, $\mathrm{DoD}\cdot C$ (A h), must be put back during the following sunlit period $t_s$. The average charging current is therefore
 
 $$
-R=\frac{\mathrm{DoD}\cdot C}{t_s},
-\qquad
+R=\frac{\mathrm{DoD}\cdot C}{t_s}.
+$$
+
+Charging needs an array voltage $V_A$ above the battery voltage, about $1.2V_B$, so the charging power is $RV_A$. In sunlight the array also carries the load, so
+
+$$
 P_{array}=P_{load}+RV_A.
 $$
 
-The area follows from the flux $S$, the worst off-Sun angle $\theta$, the cell efficiency $\eta$, the packing efficiency $\eta_p$ and the radiation degradation $D$ over the mission:
+The area follows from the power one square metre of array delivers at end of life. The flux $S$ falls on the array at the worst off-Sun angle $\theta$, so the incident power per square metre is $S\cos\theta$. The cell efficiency $\eta$ converts it, the packing efficiency $\eta_p$ accounts for the area between cells, and the radiation degradation $D$ removes the fraction lost by end of life:
+
+$$
+\frac{P}{A}=S\cos\theta\;\eta\;\eta_p\,(1-D).
+$$
+
+Divide the required power by this:
 
 $$
 A_{SA}=\frac{P_{array}}{S\cos\theta\;\eta\;\eta_p\,(1-D)}.
@@ -190,13 +230,13 @@ $$
 
 ## 6. Impact on the spacecraft
 
-The power subsystem interfaces with every electrical subsystem and the payload (slide 39). The mission fixes the primary source (Sun distance, duration, power level). Pointing the arrays at the Sun shapes the configuration and the ACS: wings and drives on a three-axis spacecraft, body-mounted cells on a spinner. And mass: in the example below the battery alone is 67 kg for a 1 kW spacecraft.
+The power subsystem interfaces with every electrical subsystem and the payload (slide 39). The mission fixes the primary source (Sun distance, duration, power level). Pointing the arrays at the Sun shapes the configuration and the ACS: wings and drives on a three-axis spacecraft, body-mounted cells on a spinner. Mass is affected as well: in the example below the battery alone is 67 kg for a 1 kW spacecraft.
 
 ## Worked examples
 
 ### 800 km LEO spacecraft, 1 kW for two years
 
-The lecture example (slides 30–38; set up live on 2025-11-11, ll. 551–725, then continued on 2025-11-13, whose recording has no audio). Estimate the battery and array for a spacecraft in an 800 km circular orbit needing 1 kW for payload and subsystems at the end of a two-year life. Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$. Recomputed in Python.
+The battery and array are to be estimated for a spacecraft in an 800 km circular orbit needing 1 kW for payload and subsystems at the end of a two-year life (slides 30–38). Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$.
 
 Orbit. $r=7178$ km, so
 
@@ -212,7 +252,13 @@ t_e=1.68\times\frac{180-54.6}{360}=0.59\ \mathrm h,
 t_s=1.68-0.59=1.09\ \mathrm h.
 $$
 
-This is the homework the lecture ended on (l. 726). Two years is $2\times365.25\times24/1.68\approx10\,430$ cycles (the slide says 10 420). From the NiCd cycle-life curve, take DoD = 30 % with margin.
+Unrounded, $\alpha=27.31^\circ$, $t_e=0.586$ h and $t_s=1.096$ h. There is one charge–discharge cycle per orbit, so two years gives
+
+$$
+N=\frac{2\times365.25\times24}{1.681}=10\,428\ \text{cycles}
+$$
+
+(10 420 on the slide). From the NiCd cycle-life curve, take DoD = 30 % with margin.
 
 Battery: bus 28 V, NiCd cells of 1.25 V, energy density 30 W h/kg at 100 % discharge. $N_c=28/1.25=22.4$, so choose 22 cells and $V_B=22\times1.25=27.5$ V. With the eclipse rounded to 0.6 h,
 
@@ -232,12 +278,20 @@ R=\frac{0.3\times72.7}{1.09}=20.0\ \mathrm A,
 P_{array}=1000+20.0\times33=1660\ \mathrm W,
 $$
 
+One square metre of array delivers, at end of life,
+
 $$
-A_{SA}=\frac{1660}{1350\cos3^\circ\times0.115\times0.9\times0.9}=13.2\ \mathrm{m^2}.
+\frac{P}{A}=1350\cos3^\circ\times0.115\times0.9\times0.9=125.6\ \mathrm{W/m^2},
 $$
 
-> [!check] Sense of scale
-> The recharge adds two-thirds to the array power (660 W on top of 1000 W). With the exact eclipse of 0.586 h the capacity would be 71.0 A h, so the slide's rounding to 0.6 h is a small extra margin.
+so
+
+$$
+A_{SA}=\frac{1660}{125.6}=13.2\ \mathrm{m^2}.
+$$
+
+> [!check] Energy balance over one orbit
+> In eclipse the battery supplies $1000\times0.6=600$ W h. In sunlight the array puts back $RV_At_s=20.0\times33\times1.09=720$ W h. The ratio is $720/600=1.2=V_A/V_B$, exactly the charging-voltage margin, so the charge returned equals the charge removed. The recharge adds two-thirds to the array power (660 W on top of 1000 W). With the exact eclipse of 0.586 h the capacity would be 71.0 A h, so rounding the eclipse to 0.6 h adds a small margin.
 
 ## Links
 
@@ -254,6 +308,7 @@ $$
 - `2025 Chapter 8 - Power - prerecord slides.pdf` with transcript `SESA2024 Lecture Chapter 8 - Power - prerecorded material.txt` (solar cells, arrays, batteries)
 - `2025 WEEK 7 - Chapter 8 - Power - complete.pdf` with transcript `SESA2024 Lecture 2025-11-11 - 1200.txt` (Dr H. Sykulska-Lawrence: sources, power bus, budgets, eclipse). The 2025-11-13 lecture, which finished the sizing example, has a silent audio track, so slides 33–39 are the only source for the battery and array sizing.
 - Fortescue, Stark and Swinerd, *Spacecraft Systems Engineering*, Ch. 10
+- Figures: `generate_ast_ch8_power_figures.py` (`ast_solar_cell_iv`, `ast_eclipse_geometry`). Example numbers recomputed in Python.
 
 ## Self-study tasks
 
@@ -271,3 +326,15 @@ $$
 - [ ] Battery terms, and NiCd versus NiH₂ packaging (Workbook Ch8 Q8, Q9). → [[#3. Batteries]]
 - [ ] Power at Jupiter and Saturn per square metre of array (done on the board, 2025-11-11, ll. 201–225). → [[#Solar arrays]]
 - [ ] Maximum Sun angle for a small array to give 4 W at end of life (2024/25 A5). → [[SESA2024 2024-25 Exam Solutions#Section A|2024/25 A5]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (pre-recorded lecture, ll. 26–30)
+> Where: [[#2. Solar cells]].
+>
+> The example says a 1.7 eV photon falling on a 1.1 eV cell loses "1.6 electron volts" as heat. The excess is $1.7-1.1=0.6$ eV.
+
+> [!warning] Transcript slip (2025-11-11, ll. 701–705)
+> Where: [[#Worst-case eclipse]].
+>
+> The fraction is read out as "180 degrees minus alpha as a proportion of that 60 degrees". The slide's equation (8.2) is right: $(180^\circ-2\alpha)/360^\circ$.

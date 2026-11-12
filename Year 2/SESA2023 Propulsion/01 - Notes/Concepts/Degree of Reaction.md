@@ -33,7 +33,7 @@ $$
 \tan\alpha_1+\tan\alpha_2 = \frac{1}{\phi},\qquad\tan\alpha_2-\tan\alpha_1 = \frac{\psi}{\phi} .
 $$
 
-In PS8 Q8.3, $\phi = 0.55$ and $\psi = 0.439$ give $\tan\alpha_2 = (1.818+0.798)/2$, so $\alpha_2 = 52.6^\circ$, $\alpha_1 = 27.0^\circ$, $\alpha_{1,rel} = -52.6^\circ$ and $\alpha_{2,rel} = -27.0^\circ$, with $R = 0.500$. The lecture stage ($26^\circ$, $\phi = 0.55$, $\psi = 0.45$) has $R = 0.507$, almost 50 %.
+In PS8 Q8.3, $\phi = 0.55$ and $\psi = 0.439$ give $\tan\alpha_2 = (1.818+0.798)/2$, so $\alpha_2 = 52.6^\circ$, $\alpha_1 = 27.0^\circ$, $\alpha_{1,rel} = -52.6^\circ$ and $\alpha_{2,rel} = -27.0^\circ$, with $R = 0.500$. The W08 example stage ($26^\circ$, $\phi = 0.55$, $\psi = 0.45$) has $R = 0.507$, almost 50 %.
 
 ## Related
 

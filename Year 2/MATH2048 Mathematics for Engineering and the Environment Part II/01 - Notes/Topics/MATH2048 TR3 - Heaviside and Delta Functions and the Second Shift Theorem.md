@@ -33,9 +33,9 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 13.txt", "02 - Sources/Lecture
 > - **Common mistakes:** treating $f(x)H(x-a)$ as if it were $f(x-a)H(x-a)$; inverting $e^{-as}\tilde f$ to $f(x)H(x-a)$ without shifting the argument of $f$.
 > - **Practise:** [[#Switching on a constant force (L13)]] · [[#The 2025-26 exam, question A1]] · [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms|PS5 Q3(e)–(h), Q4]]
 
-This is the lecture where the Laplace transform earns its place (ll. 1–29). The sources of interest are of two kinds. Some do nothing and then suddenly do something, or the reverse, like a current switched on or off. Others act at a single instant, like the force on a ball as it bounces off a wall: the velocity flips sign instantly, so the force that does it acts only at the moment of contact. That second kind is the derivative of the first. The methods of ODE1–ODE2 assume the source is smooth enough to differentiate, which is exactly what these sources are not. An integral transform doesn't care, because integration smooths things out: it adds regularity where differentiation removes it.
+Two kinds of source suit the Laplace transform (ll. 1–29). Some do nothing and then suddenly do something, or the reverse, like a current switched on or off. Others act at a single instant, like the force on a ball as it bounces off a wall: the velocity flips sign instantly, so the force that does it acts only at the moment of contact. That second kind is the derivative of the first. The methods of ODE1–ODE2 assume the source is smooth enough to differentiate, and these sources are not. An integral transform doesn't care, because integration smooths things out: it adds regularity where differentiation removes it.
 
-The chapter needs two functions. The Heaviside function is a unit step, and by scaling, shifting and multiplying it any piecewise-continuous source can be built; the Dirac delta is a unit impulse. Once their transforms are known, the only new tool needed is the second shift theorem, and the delta then needs no extra work at all (ll. 321–354).
+Two functions cover both kinds of source. The Heaviside function is a unit step, and by scaling, shifting and multiplying it any piecewise-continuous source can be built; the Dirac delta is a unit impulse. Once their transforms are known, the only new tool needed is the second shift theorem, and the delta then needs no extra work at all (ll. 321–354).
 
 ---
 
@@ -54,7 +54,7 @@ It is named after Oliver Heaviside, the nineteenth-century engineer (ll. 38–52
 | $f(x)\,[1-H(x-a)]$ | $f$ switched off at $a$ |
 | $f(x)\,[H(x-a)-H(x-b)]$ | $f$ on only for $a<x<b$ |
 
-The first row is the lecture's sketch: left of $-1$ both functions are 0, between $-1$ and $1$ only the first is 1, and right of $1$ both are 1 and cancel.
+In the first row, left of $-1$ both functions are 0, between $-1$ and $1$ only the first is 1, and right of $1$ both are 1 and cancel.
 
 ### Its Laplace transform
 
@@ -151,13 +151,19 @@ $$
 \tilde y=\frac1{s^2+1}+e^{-s}\,\frac1{s(s^2+1)} .
 $$
 
-Partial fractions on the second fraction, ignoring the exponential (ll. 268–271), give $\frac1{s(s^2+1)}=\frac1s-\frac s{s^2+1}$, so
+Partial fractions on the second fraction, ignoring the exponential (ll. 268–271). The denominator has a linear factor and an irreducible quadratic:
+
+$$
+\frac1{s(s^2+1)}=\frac As+\frac{Bs+C}{s^2+1}\quad\Longrightarrow\quad1=A(s^2+1)+(Bs+C)s .
+$$
+
+At $s=0$, $A=1$. Comparing $s^2$ terms, $0=A+B$, so $B=-1$; comparing $s$ terms, $0=C$. So $\frac1{s(s^2+1)}=\frac1s-\frac s{s^2+1}$, and
 
 $$
 \tilde y=\frac1{s^2+1}+e^{-s}\Big(\frac1s-\frac s{s^2+1}\Big).
 $$
 
-Now invert term by term from the formula sheet (ll. 272–306). $\frac1{s^2+1}$ is $\mathcal L[\sin x]$. The bracket is $\mathcal L[1-\cos x]$, and the factor $e^{-s}$ means $a=1$, so by the second shift theorem the whole second term is $\mathcal L\big[(1-\cos(x-1))H(x-1)\big]$. Hence
+Term by term, with the formula sheet (ll. 272–306), $\frac1{s^2+1}$ is $\mathcal L[\sin x]$. The bracket is $\mathcal L[1-\cos x]$, and the factor $e^{-s}$ means $a=1$, so by the second shift theorem the whole second term is $\mathcal L\big[(1-\cos(x-1))H(x-1)\big]$. Hence
 
 $$
 y=\sin x+H(x-1)\big[1-\cos(x-1)\big].
@@ -170,7 +176,41 @@ For $x<1$ this is $\sin x$, the expected free swing. After $x=1$ the extra term 
 > [!check] Continuity at the switch
 > For $x>1$, $y''+y=1$ is satisfied exactly, and the extra term $1-\cos(x-1)$ and its derivative $\sin(x-1)$ are both zero at $x=1$. So $y$ and $y'$ are continuous through the switch; only $y''$ jumps, by the size of the step. SymPy's `inverse_laplace_transform` gives the same $y$.
 
-The lecture's summary of the method (ll. 314–319): transforming the ODE turns each Heaviside source into an exponential on the right-hand side; after solving for $\tilde y$, some terms keep their exponentials; inverting those terms needs the second shift theorem and produces Heaviside functions in the answer.
+Transforming the ODE turns each Heaviside source into an exponential on the right-hand side; after solving for $\tilde y$, some terms keep their exponentials; inverting those terms needs the second shift theorem and produces Heaviside functions in the answer (ll. 314–319).
+
+### A force switched on and then off (PS5 Q3f)
+
+Solve $y''+3y'+2y=f(x)$, $y(0)=y'(0)=0$, where $f=1$ for $0\leq x\leq10$ and $0$ afterwards. Write the source with Heaviside functions first: on at $0$ and off at $10$ is
+
+$$
+f(x)=1-H(x-10).
+$$
+
+Transform, with zero initial data and $s^2+3s+2=(s+1)(s+2)$:
+
+$$
+(s+1)(s+2)\tilde y=\frac1s-\frac{e^{-10s}}{s},
+$$
+
+$$
+\tilde y=\big(1-e^{-10s}\big)\,\frac{1}{s(s+1)(s+2)} .
+$$
+
+The fraction is PS5 Q2(d), already split in TR2: $\frac{1}{s(s+1)(s+2)}=\frac{1/2}{s}-\frac{1}{s+1}+\frac{1/2}{s+2}$, which inverts to
+
+$$
+g(x)=\tfrac12-e^{-x}+\tfrac12e^{-2x}.
+$$
+
+The first copy of the fraction inverts to $g(x)$; the second carries $e^{-10s}$, so by the second shift theorem it inverts to $g(x-10)H(x-10)$:
+
+$$
+y=g(x)-H(x-10)\,g(x-10).
+$$
+
+The response rises towards the steady value $\frac12$ (where $2y=1$) while the force is on, and after $x=10$ the subtracted copy brings it back towards zero. At $x=5$, $y=g(5)=0.4933$; at $x=10$, $y=0.49995$; at $x=12$, $y=g(12)-g(2)=0.5000-0.3738=0.1262$.
+
+![[m2048_tr_pulse_response.png|760]]
 
 ## 3. The Dirac delta (L13)
 
@@ -182,7 +222,7 @@ $$
 
 It picks out the value of the function it multiplies at the point where its argument is zero, provided that point is inside the range of integration. This is called the sifting property.
 
-You will often see $\delta$ described as zero everywhere except at the origin, where it is infinite. The lecturer called this "a very bad way of thinking about it" (l. 37). A slightly better picture is a sequence of narrower and taller rectangles, each with area 1, so that integrating any of them against $f$ gives approximately $f(0)$, and taking the limit (ll. 136–140). That picture is fine for intuition but not for calculation: always use the definition (ll. 141–143). The delta is the derivative of the Heaviside function in this sense, which is what makes it the model of an impulse, such as a hammer blow that changes momentum in an instant.
+$\delta$ is often described as zero everywhere except at the origin, where it is infinite, but that description misleads. A better picture is a sequence of narrower and taller rectangles, each with area 1, so that integrating any of them against $f$ gives approximately $f(0)$, and taking the limit (ll. 136–140). That picture suits intuition but not calculation, which should use the definition (ll. 141–143). The delta is the derivative of the Heaviside function in this sense, which is what makes it the model of an impulse, such as a hammer blow that changes momentum in an instant.
 
 ### Its Laplace transform
 
@@ -227,7 +267,7 @@ $$
 Every time $t$ passes a multiple of $\pi$, another sine switches on, with the same period but a different phase lag (ll. 415–430). Using $\sin(t-n\pi)=(-1)^n\sin t$, the sum is $\sin t$ on $(0,\pi)$; on $(\pi,2\pi)$ the new term $-\sin t$ cancels it and $y=0$; on $(2\pi,3\pi)$ another $+\sin t$ switches on, and so on. The strikes are perfectly timed: the second blow arrives just as the pendulum swings back through the bottom with velocity $-1$, and the impulse of $+1$ stops it dead. The next blow starts it again (right panel of the figure above).
 
 > [!warning] Mistimed strikes don't make it diverge
-> The lecture ends by saying that slightly mistimed strikes would give constructive interference and "the solution would tend to diverge off to infinity" (ll. 433–435). That is only true for strikes about a whole period apart. With spacing $\tau$, the first $N$ strikes give $\sum_{n<N}\sin(t-n\tau)$, whose amplitude is $\big|\sin\frac{N\tau}2\big|/\big|\sin\frac\tau2\big|\leq1/\big|\sin\frac\tau2\big|$. For $\tau$ near $\pi$ that bound is about 1, so the motion stays bounded. The amplitude grows without bound only when $\tau$ is a multiple of $2\pi$, when every strike arrives in phase: resonance with an impulsive source. A simulation of 60 periods gives a peak of 1.00 for $\tau=0.95\pi$, 6.39 for $\tau=1.9\pi$ and 30 (one per strike) for $\tau=2\pi$.
+> Slightly mistimed strikes are sometimes said to give constructive interference and a solution that diverges to infinity (ll. 433–435). That is only true for strikes about a whole period apart. With spacing $\tau$, the first $N$ strikes give $\sum_{n<N}\sin(t-n\tau)$, whose amplitude is $\big|\sin\frac{N\tau}2\big|/\big|\sin\frac\tau2\big|\leq1/\big|\sin\frac\tau2\big|$. For $\tau$ near $\pi$ that bound is about 1, so the motion stays bounded. The amplitude grows without bound only when $\tau$ is a multiple of $2\pi$, when every strike arrives in phase: resonance with an impulsive source. A simulation of 60 periods gives a peak of 1.00 for $\tau=0.95\pi$, 6.39 for $\tau=1.9\pi$ and 30 (one per strike) for $\tau=2\pi$.
 
 ### The 2025-26 exam, question A1
 
@@ -251,18 +291,54 @@ $$
 
 Nothing happens until the impulse at $x=13$, after which the system rings down as a decaying oscillation. This is its impulse response. The question asks you to name each theorem as you use it, here the first and second shift theorems. SymPy's inversion gives the same $y$.
 
-## Transcript slips
+### An impulse with a non-unit leading coefficient (PS5 Q3g)
 
-> [!warning] Lecture 13
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | l. 137 | integrating against the rectangle "gives you precisely the function at f equals to 0" | $f(0)$, the function at $x=0$ |
-> | l. 162 | "let us assume that x is greater than a" | corrected at l. 163 to $a>0$ |
-> | l. 172 | "0 to infinity, a to infinity" | the limits are $a$ to $\infty$ (corrected in passing) |
-> | l. 299 | "Plath transform" | Laplace transform |
-> | l. 423 | $\sin(t-\pi)=-\sin t$ "using the double angle formula" | the compound-angle formula $\sin(A-B)=\sin A\cos B-\cos A\sin B$ |
-> | l. 428 | "sine of T minus 2 pi is just sine of pi" | $\sin(t-2\pi)=\sin t$ |
-> | ll. 433–435 | slightly mistimed strikes make the solution diverge | only spacings near a multiple of $2\pi$ do; see the warning above |
+Solve $2y''+y'+2y=\delta(x-5)$, $y(0)=y'(0)=0$. Transform:
+
+$$
+(2s^2+s+2)\tilde y=e^{-5s}.
+$$
+
+Divide by the leading coefficient before completing the square, so that the quadratic is monic:
+
+$$
+\tilde y=\frac{e^{-5s}}{2}\cdot\frac{1}{s^2+\tfrac12s+1}.
+$$
+
+Complete the square, $s^2+\tfrac12s+1=\big(s+\tfrac14\big)^2+\tfrac{15}{16}$, and write $\omega=\frac{\sqrt{15}}{4}$:
+
+$$
+\tilde y=\frac{e^{-5s}}{2\omega}\cdot\frac{\omega}{\big(s+\tfrac14\big)^2+\omega^2}.
+$$
+
+The fraction is $\mathcal L[\sin\omega x]$ shifted by $\frac14$, so it inverts to $e^{-x/4}\sin\omega x$; then the $e^{-5s}$ delays it by 5. With $\frac{1}{2\omega}=\frac{2}{\sqrt{15}}$,
+
+$$
+y=\frac{2}{\sqrt{15}}\,H(x-5)\,e^{-(x-5)/4}\sin\Big(\frac{\sqrt{15}}{4}(x-5)\Big),
+$$
+
+which is SymPy's `inverse_laplace_transform` result. Dividing by $2$ first matters: forgetting it doubles the answer.
+
+### How hard to strike for a given peak (PS5 Q4)
+
+PS5 Q4 asks, for $y''+\gamma y'+y=k\delta(x-1)$ from rest, which impulse $k_1$ gives a peak response of 2. The same steps give, with $\tau=x-1$ and $\omega=\sqrt{1-\gamma^2/4}$,
+
+$$
+y=\frac{k}{\omega}H(\tau)\,e^{-\gamma\tau/2}\sin\omega\tau .
+$$
+
+The peak is where the derivative of $e^{-\gamma\tau/2}\sin\omega\tau$ vanishes:
+
+$$
+-\tfrac\gamma2\sin\omega\tau+\omega\cos\omega\tau=0\quad\Longrightarrow\quad\tan\omega\tau^*=\frac{2\omega}{\gamma}.
+$$
+
+The peak value then simplifies. From $\tan\omega\tau^*=2\omega/\gamma$, the hypotenuse of the triangle is $\sqrt{\gamma^2+4\omega^2}=\sqrt{\gamma^2+4-\gamma^2}=2$, so $\sin\omega\tau^*=\frac{2\omega}{2}=\omega$, and the unit-impulse peak is $e^{-\gamma\tau^*/2}\sin\omega\tau^*/\omega=e^{-\gamma\tau^*/2}$. Hence $k_1=2e^{\gamma\tau^*/2}$.
+
+For $\gamma=\frac12$: $\omega=\sqrt{15/16}=0.9682$, $\tau^*=\arctan(3.873)/0.9682=1.3613$, and the unit-impulse peak is $e^{-0.3403}\sin(1.3181)/0.9682=0.7115$, so $k_1=2/0.7115=2.811$. For $\gamma=\frac14$ the same steps give $\tau^*=1.4569$, a peak of $0.8335$ and $k_1=2.399$. For $\gamma=0$, $y=k\sin\tau$ peaks at $k$, so $k_1=2$. Less damping lets a smaller blow reach the same height.
+
+> [!check] Peak by brute force
+> Scanning $e^{-\gamma\tau/2}\sin(\omega\tau)/\omega$ on a fine grid gives maxima $0.71153$ at $\tau=1.36134$ ($\gamma=\frac12$) and $0.83351$ at $\tau=1.45690$ ($\gamma=\frac14$), matching the $\tan\omega\tau^*=2\omega/\gamma$ formula to five figures.
 
 ## Links
 
@@ -278,17 +354,32 @@ Nothing happens until the impulse at $x=13$, after which the system rings down a
 
 ## Self-study tasks
 
-Nothing was explicitly set in Lecture 13. The lecturer's closing advice was that the things you need are "all the trigonometric identities and the partial fractions" (ll. 437–438). The tasks below are the problem-sheet and past-paper questions on this lecture.
+Nothing was explicitly set in Lecture 13; the tools it relies on are the trigonometric identities and partial fractions (ll. 437–438). The tasks below are the problem-sheet and past-paper questions on this lecture.
 
 ### Core
 
 - [ ] Prove the second shift theorem from the definition, as in 2025/26 A1(a). → [[#Proof]]
 - [ ] Rework $y''+y=H(x-1)$, $y(0)=0$, $y'(0)=1$ without notes and check that $y$ and $y'$ are continuous at $x=1$. → [[#Switching on a constant force (L13)]]
-- [ ] PS5 Q3(g): $2y''+y'+2y=\delta(x-5)$, $y(0)=y'(0)=0$. Answer: $y=\frac2{\sqrt{15}}H(x-5)e^{-(x-5)/4}\sin\big(\frac{\sqrt{15}}4(x-5)\big)$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
+- [ ] PS5 Q3(g): $2y''+y'+2y=\delta(x-5)$, $y(0)=y'(0)=0$. Answer: $y=\frac2{\sqrt{15}}H(x-5)e^{-(x-5)/4}\sin\big(\frac{\sqrt{15}}4(x-5)\big)$. → [[#An impulse with a non-unit leading coefficient (PS5 Q3g)]]
 - [ ] 2025/26 A1(b): $y''+2y'+2y=\delta(x-13)$, zero initial data. → [[#The 2025-26 exam, question A1]]
 
 ### Further practice
 
-- [ ] PS5 Q3(e), (f) and (h): a sine switched off at $2\pi$, a unit force on for $0<x<10$, and $y''+y=\delta(x-2\pi)\cos x$. Answers: $\big(\frac13\sin x-\frac16\sin2x\big)[1-H(x-2\pi)]$; $g(x)-H(x-10)g(x-10)$ with $g=\frac12-e^{-x}+\frac12e^{-2x}$; $\sin x\,[1+H(x-2\pi)]$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
-- [ ] PS5 Q4: the damped impulse response $y''+\gamma y'+y=k\delta(x-1)$ and the kick $k_1$ needed for a peak of 2. Answers: $k_1=2.8108$, $2.3995$, $2$ for $\gamma=\frac12,\frac14,0$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
+- [ ] PS5 Q3(e), (f) and (h): a sine switched off at $2\pi$, a unit force on for $0<x<10$, and $y''+y=\delta(x-2\pi)\cos x$. Answers: $\big(\frac13\sin x-\frac16\sin2x\big)[1-H(x-2\pi)]$; $g(x)-H(x-10)g(x-10)$ with $g=\frac12-e^{-x}+\frac12e^{-2x}$; $\sin x\,[1+H(x-2\pi)]$. (f) is worked here. → [[#A force switched on and then off (PS5 Q3f)]] · [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
+- [ ] PS5 Q4: the damped impulse response $y''+\gamma y'+y=k\delta(x-1)$ and the kick $k_1$ needed for a peak of 2. Answers: $k_1=2.8108$, $2.3995$, $2$ for $\gamma=\frac12,\frac14,0$. → [[#How hard to strike for a given peak (PS5 Q4)]]
 - [ ] Redo the hammer problem with strikes every $2\pi$ and show the amplitude after $N$ strikes is $N$ (suggested, not lecturer-set). → [[#A pendulum struck by a hammer (L13)]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lecture 13
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | l. 137 | integrating against the rectangle "gives you precisely the function at f equals to 0" | $f(0)$, the function at $x=0$ |
+> | l. 162 | "let us assume that x is greater than a" | corrected at l. 163 to $a>0$ |
+> | l. 172 | "0 to infinity, a to infinity" | the limits are $a$ to $\infty$ (corrected in passing) |
+> | l. 299 | "Plath transform" | Laplace transform |
+> | l. 423 | $\sin(t-\pi)=-\sin t$ "using the double angle formula" | the compound-angle formula $\sin(A-B)=\sin A\cos B-\cos A\sin B$ |
+> | l. 428 | "sine of T minus 2 pi is just sine of pi" | $\sin(t-2\pi)=\sin t$ |
+> | ll. 433–435 | slightly mistimed strikes make the solution diverge | only spacings near a multiple of $2\pi$ do; see the warning above |

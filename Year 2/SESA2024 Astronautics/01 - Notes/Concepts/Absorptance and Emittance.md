@@ -25,5 +25,5 @@ Sunlight dominates a lit spacecraft's heat input, so its temperature is governed
 
 ## Related
 
-- [[SESA2024 10 - Thermal Control#1. Absorption, reflection and transmission|Absorptance in the lecture note]] · [[SESA2024 10 - Thermal Control#4. What the equation tells you|Why the ratio matters]]
+- [[SESA2024 10 - Thermal Control#1. Absorption, reflection and transmission|Absorptance in the topic note]] · [[SESA2024 10 - Thermal Control#4. Dependence of temperature on surface finish|Why the ratio matters]]
 - [[Blackbody Radiation]] · [[Spacecraft Thermal Balance Equation]] · [[Passive vs Active Thermal Control]]

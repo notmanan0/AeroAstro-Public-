@@ -23,5 +23,5 @@ Mission analysis consists of choosing these six values from the payload's needs,
 
 ## Related
 
-- [[SESA2024 03 - Orbital Elements and Conic Sections#2. The orientation elements: i, Ω and ω|Orientation elements in the lecture note]] · [[SESA2024 03 - Orbital Elements and Conic Sections#When elements are undefined|Undefined cases]]
+- [[SESA2024 03 - Orbital Elements and Conic Sections#2. The orientation elements: i, Ω and ω|Orientation elements in the topic note]] · [[SESA2024 03 - Orbital Elements and Conic Sections#When elements are undefined|Undefined cases]]
 - [[Orbit Equation and Conic Sections]] · [[Local Solar Time and RAAN]] · [[Sun-Synchronous Orbit]]

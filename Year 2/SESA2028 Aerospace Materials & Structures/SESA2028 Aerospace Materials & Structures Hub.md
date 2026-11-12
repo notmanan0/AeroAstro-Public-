@@ -14,7 +14,7 @@ SESA2028, examined as FEEG2005, is one design module with two equally weighted t
 
 ## Coverage and sources
 
-All topic notes were rebuilt on 30 October 2026 from the 2025-26 lecture transcripts, the mini-lecture videos and the slides (status `lectured`; S11 is `draft` because spinning discs were not lectured). The structures lectures ran in a different order from the note numbering: energy methods (S7, S8) from 28 January, unsymmetrical bending (S1) from 25 February, shear (S3) and the structures lab (S2) in early March, torsion (S4) in mid-March, buckling (S5, S6) after Easter, and continuum mechanics and thick cylinders (S9, S10) to 13 May. The materials stream, taught by Prof. Philippa Reed, ran ML1 to ML16 from 27 January to 5 May, each lecture backed by short mini-lectures (ML0a to ML16d) in `02 - Sources/Materials Lectures/mini lecture videos`. The materials notes M1–M8 were rebuilt again on 30–31 October 2026 directly from those 43 mini-lecture transcripts and the dinghy-mast video, with line references, full derivations, recomputed past-paper examples and a transcript-slips table in each. Assessment: 50 % exam, 50 % coursework (quizzes at 3 % each, structures lab 10 %, corrosion lab 5 %, fatigue lab 20 %). The recording-to-note mapping is in [[SESA2028 Transcript Index]].
+All topic notes were rebuilt on 30 October 2026 from the 2025-26 lecture transcripts, the mini-lecture videos and the slides (status `lectured`; S11 is `written-ahead`, a complete note from the SL24 slides, because spinning discs were not lectured in 2025–26). On 5 November 2026 every structures note was deepened to the vault standard: all derivations written out step by step (including those left as exercises), every slide example worked with real numbers and checked in Python, new figures from per-topic generator scripts, and slips moved to the end of each note. The materials notes had their inline line references removed from the body, narration cut, slips moved, and further derivations and numerical checks added. The structures lectures ran in a different order from the note numbering: energy methods (S7, S8) from 28 January, unsymmetrical bending (S1) from 25 February, shear (S3) and the structures lab (S2) in early March, torsion (S4) in mid-March, buckling (S5, S6) after Easter, and continuum mechanics and thick cylinders (S9, S10) to 13 May. The materials stream, taught by Prof. Philippa Reed, ran ML1 to ML16 from 27 January to 5 May, each lecture backed by short mini-lectures (ML0a to ML16d) in `02 - Sources/Materials Lectures/mini lecture videos`. The materials notes M1–M8 were rebuilt again on 30–31 October 2026 directly from those 43 mini-lecture transcripts and the dinghy-mast video, with line references, full derivations, recomputed past-paper examples and a transcript-slips table in each. Assessment: 50 % exam, 50 % coursework (quizzes at 3 % each, structures lab 10 %, corrosion lab 5 %, fatigue lab 20 %). The recording-to-note mapping is in [[SESA2028 Transcript Index]].
 
 ## Integrated design route
 
@@ -52,7 +52,21 @@ Use this sequence when revising a component rather than treating the two streams
 4. Axisymmetric continuum mechanics
    - [[SESA2028 S9 - Continuum Mechanics in Cylindrical Coordinates]]
    - [[SESA2028 S10 - Thick Cylinders and Shrink Fits]]
-   - [[SESA2028 S11 - Spinning Discs]]
+   - [[SESA2028 S11 - Spinning Discs]] (written ahead from slides; not lectured)
+
+| Note | Lectures | Main results |
+|---|---|---|
+| S1 unsymmetrical bending | SL7–SL8 | general bending stress derived by superposition, neutral axis, coupled deflection perpendicular to it, rotation of axes and principal values; angle-section cantilever worked in full |
+| S2 deflection and the lab | statics review, lab videos | $EIv''=-M$ integrations, stress against stiffness sizing, gauge conversion and the circle of compliances |
+| S3 shear flow | SL8–SL10 | $\tau=Q\bar yA/I_zt$, general thin-wall shear flow, angle-section and channel examples, off-centre box |
+| S4 torsion | SL11–SL12 | constant shear flow and Bredt–Batho $J$ derived, open-strip $J=bt^3/3$ from nested loops, slit-tube ratios, strut and box examples |
+| S5 Euler buckling | SL13–SL14 | spring-bar stability by moments and energy, all four end conditions derived (including $\tan\mu L=\mu L$), slenderness transition |
+| S6 imperfect columns | SL14–SL15 | secant formula, curved column, beam-column particular integral, dog-toy sizing by bisection, three slide problems |
+| S7 strain energy | SL1–SL3 | $W_e=U$, energy of bars, beams and shafts, shear deflection, bumper selection, offset crank |
+| S8 virtual work and Castigliano | SL3–SL6 | unit-load formula derived, truss displacements, $\partial U/\partial u$ and $\partial C/\partial F$, tubes, propped cantilever, L-frame (42.9 and 8.47 mm), proving ring |
+| S9 continuum mechanics | SL15–SL16 | polar equilibrium and strains derived, Lamé solution with the $\nu$ cancellation shown, force-balance check |
+| S10 thick cylinders | SL16–SL18 | end conditions, Tresca and von Mises limits, same-material shrink-fit pressure derived, jack, bush, compound cylinder, 1000 bar past paper |
+| S11 spinning discs | SL24 slides only | displacement ODE solved, solid and holed discs, DVD safety factor 594 |
 
 ### Material behaviour and selection
 
@@ -140,6 +154,9 @@ Worked solutions cover every supplied paper; there is no 2019-20 paper in the ar
 - State the effective-length factor before using Euler and compare buckling with material failure.
 - For energy methods, draw compatible real and virtual moment fields and split the integral at every discontinuity.
 - For cylinders and shrink fits, enforce radial-stress boundary conditions before superposition.
+- Check the end conditions of a thick cylinder before writing $\sigma_{zz}$; Tresca needs only the hoop and radial stresses.
+- For imperfect columns, say which formula applies (eccentric, curved, lateral load) and check weak-axis Euler buckling separately; sizing problems need a plot or bisection.
+- For an indeterminate structure, name the redundant and the compatibility condition before differentiating.
 
 ### Materials and life
 
@@ -150,15 +167,17 @@ Worked solutions cover every supplied paper; there is no 2019-20 paper in the ar
 - Manufacturing routes, coatings, residual stress and inspection strategy are examinable design choices.
 - Read a fatigue fracture surface backwards: shear lips and final fracture, smooth fatigue region, beach marks, ratchet marks, origins; then infer the loading, stress level and stress concentration (M2).
 - For corrosion, name the anode and why it is the anode, then the area ratio, then the protection (M3).
-- Longer questions reward reasoned engineering judgement over recalled bookwork; the lecturer's worked quench-cracking question (M7) shows how such an answer is built.
+- Longer questions reward reasoned engineering judgement over recalled bookwork; the worked quench-cracking question (M7) shows how such an answer is built.
 
 ## Concept index
 
 | Area | Concepts |
 |---|---|
-| Sections and beams | [[Second Moments of Area]] · [[Principal Axes of a Section]] · [[Unsymmetrical Bending]] · [[Shear Flow]] · [[Shear Centre]] · [[Bredt-Batho Torsion]] |
-| Stability and energy | [[Euler Buckling]] · [[Plate Buckling]] · [[Strain Energy]] · [[Principle of Virtual Work]] · [[Castigliano Theorem]] · [[Castigliano Second Theorem]] |
-| Cylinders and discs | [[Axisymmetric Equilibrium]] · [[Lame Thick-Cylinder Solution]] · [[Shrink Fit]] · [[Spinning Disc Stress]] |
+| Sections and bending (S1, S2) | [[First Moment of Area]] · [[Second Moments of Area]] · [[Principal Axes of a Section]] · [[Principal Second Moments of Area]] · [[Unsymmetrical Bending]] · [[Neutral Axis in Unsymmetrical Bending]] · [[Section Modulus]] · [[Moment Curvature Relation]] · [[Elastic Curve]] |
+| Shear and torsion (S3, S4) | [[Shear Flow]] · [[Shear Centre]] · [[Saint-Venant Torsion]] · [[Bredt-Batho Theory]] · [[Bredt-Batho Torsion]] · [[Open-Section Torsion]] · [[Multi-Cell Torsion]] |
+| Stability (S5, S6) | [[Euler Buckling]] · [[Effective Length]] · [[Slenderness Ratio]] · [[Secant Formula]] · [[Beam-Column]] · [[Beam-Column Amplification]] · [[Plate Buckling]] · [[Plate Buckling Coefficient]] |
+| Energy methods (S7, S8) | [[Strain Energy]] · [[Complementary Energy]] · [[Principle of Virtual Work]] · [[Unit Load Method]] · [[Castigliano Theorem]] · [[Castigliano Second Theorem]] · [[Maxwell-Betti Reciprocity]] |
+| Cylinders and discs (S9–S11) | [[Axisymmetric Equilibrium]] · [[Polar Strain-Displacement Relations]] · [[Strain Compatibility]] · [[Lame Equations]] · [[Lame Thick-Cylinder Solution]] · [[Compound Cylinder]] · [[Shrink Fit]] · [[Shrink Fit Superposition]] · [[Spinning Disc Stress]] |
 | Fracture and fatigue | [[Ductile-Brittle Transition]] · [[Griffith Energy Balance]] · [[Stress Intensity Factor]] · [[Fracture Toughness and LEFM Validity]] · [[Plane Strain Constraint]] · [[Fatigue Fracture Surface Features]] · [[S-N Curve and Basquin Law]] · [[Goodman Relation]] · [[Paris Law]] · [[Miner's Rule]] · [[Total Life vs Damage Tolerance]] · [[Shot Peening]] |
 | Corrosion and surfaces | [[Nernst Equation and Galvanic Series]] · [[Evans Diagram and Passivation]] · [[Localised Corrosion]] · [[Sensitisation and Weld Decay]] · [[Stress Corrosion Cracking]] · [[Corrosion Protection]] |
 | Composites and selection | [[Specific Stiffness and Strength]] · [[Rule of Mixtures]] · [[Critical Fibre Length]] · [[Composite Manufacturing Routes]] · [[MMC vs CMC]] · [[Fibre Metal Laminates]] |
@@ -177,4 +196,4 @@ Worked solutions cover every supplied paper; there is no 2019-20 paper in the ar
 
 ## Figures
 
-The figures are embedded in the topic notes. They are generated by `01 - Notes/Figures/generate_structures_figures.py`, `generate_materials_figures.py` (past-paper figures, numbers from `materials_calcs.py`) and `generate_materials_ml_figures.py` (the mini-lecture figures for M1–M8, built on the shared Year 3 style). The contact-sheet images the hub used to embed were never generated and have been removed.
+The figures are embedded in the topic notes. Every script imports the shared style, `Year 3/_shared/year3_style.py`. The structures notes use one script per note, `01 - Notes/Figures/generate_structures_s1_figures.py` to `generate_structures_s11_figures.py`; `generate_structures_figures.py` keeps the older generic set that the concept notes embed. The materials figures come from `generate_materials_figures.py` (past-paper figures, numbers from `materials_calcs.py`) and `generate_materials_ml_figures.py` (the mini-lecture figures for M1–M8). The contact-sheet images the hub used to embed were never generated and have been removed.

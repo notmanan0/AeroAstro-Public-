@@ -35,7 +35,7 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 24.txt", "02 - Sources/Lecture
 
 The gradient of [[MATH2048 VC1 - Scalar and Vector Fields, Gradient and Directional Derivatives|VC1]] differentiates a scalar field. Vector fields are the more interesting case, and just as two vectors can be multiplied with a dot or a cross, a vector field can be differentiated in two ways (L24, ll. 24–40). The divergence takes a vector field to a scalar field, like a dot product. The curl takes a vector field to a vector field, like a cross product.
 
-Neither is pulled from nowhere. Both are built from the gradient by insisting on the two properties the module wants every derivative to have: linearity, and a product rule. In Cartesian coordinates the basis vectors are constant, so their derivatives vanish, and that alone fixes the formulas.
+Both are built from the gradient by requiring the two properties wanted of every derivative: linearity, and a product rule. In Cartesian coordinates the basis vectors are constant, so their derivatives vanish, and that alone fixes the formulas.
 
 ---
 
@@ -43,7 +43,7 @@ Neither is pulled from nowhere. Both are built from the gradient by insisting on
 
 ### Building it from the gradient
 
-Ask for two things (ll. 41–71). First, linearity. Second, a product rule for a scalar field $f$ times a constant vector $\mathbf c$: the derivative of $f\mathbf c$ should be "derivative of $f$ times $\mathbf c$" plus "$f$ times derivative of $\mathbf c$", and the derivative of a constant is zero. Choosing the dot product for "times" gives the divergence:
+Two properties are required (ll. 41–71). The first is linearity. The second is a product rule for a scalar field $f$ times a constant vector $\mathbf c$: the derivative of $f\mathbf c$ should be "derivative of $f$ times $\mathbf c$" plus "$f$ times derivative of $\mathbf c$", and the derivative of a constant is zero. Choosing the dot product for "times" gives the divergence:
 
 $$
 \nabla\cdot(f\mathbf c)=(\nabla f)\cdot\mathbf c .
@@ -71,7 +71,7 @@ the $x$-derivative of the $x$-component plus the same for $y$ and $z$, a scalar 
 
 ### Zero divergence doesn't mean constant
 
-The slides' example is $\mathbf F=y^2z\,\mathbf i+xz\,\mathbf j-y^2\,\mathbf k$ (ll. 133–158). It is certainly not constant: it is $\mathbf 0$ at the origin and $(1,1,-1)$ at $(1,1,1)$. But each component is independent of its own variable, so
+An example is $\mathbf F=y^2z\,\mathbf i+xz\,\mathbf j-y^2\,\mathbf k$ (ll. 133–158). It is certainly not constant: it is $\mathbf 0$ at the origin and $(1,1,-1)$ at $(1,1,1)$. But each component is independent of its own variable, so
 
 $$
 \nabla\cdot\mathbf F=0+0+0=0 .
@@ -81,7 +81,7 @@ A field with zero divergence everywhere is called **solenoidal**, a name from el
 
 ### What divergence measures
 
-In a fluid, follow a small element containing a fixed number of particles, with velocity field $\mathbf v$ (ll. 159–212). If the arrows converge on a point, the velocity decreases through it along each axis, the divergence is negative, and the point is a sink; if they spread out from it, the divergence is positive and the point is a source. The continuity equation makes this precise:
+In a fluid, a small element containing a fixed number of particles moves with the velocity field $\mathbf v$ (ll. 159–212). If the arrows converge on a point, the velocity decreases through it along each axis, the divergence is negative, and the point is a sink; if they spread out from it, the divergence is positive and the point is a source. The continuity equation makes this precise:
 
 $$
 \frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf v)=0 .
@@ -111,7 +111,13 @@ $$
 (\nabla F_1)\times\mathbf i=\big(\partial_xF_1\,\mathbf i+\partial_yF_1\,\mathbf j+\partial_zF_1\,\mathbf k\big)\times\mathbf i=-\partial_yF_1\,\mathbf k+\partial_zF_1\,\mathbf j .
 $$
 
-Each of the three terms gives two pieces, none along its own basis vector, six in all. Collected, they are
+The other two go the same way, using $\mathbf i\times\mathbf j=\mathbf k$, $\mathbf k\times\mathbf j=-\mathbf i$, $\mathbf i\times\mathbf k=-\mathbf j$ and $\mathbf j\times\mathbf k=\mathbf i$:
+
+$$
+(\nabla F_2)\times\mathbf j=\partial_xF_2\,\mathbf k-\partial_zF_2\,\mathbf i,\qquad(\nabla F_3)\times\mathbf k=-\partial_xF_3\,\mathbf j+\partial_yF_3\,\mathbf i .
+$$
+
+Each of the three terms gives two pieces, none along its own basis vector, six in all. Collecting the $\mathbf i$ pieces ($\partial_yF_3-\partial_zF_2$), the $\mathbf j$ pieces ($\partial_zF_1-\partial_xF_3$) and the $\mathbf k$ pieces ($\partial_xF_2-\partial_yF_1$), they are
 
 $$
 \nabla\times\mathbf F=\Big(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\Big)\mathbf i+\Big(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\Big)\mathbf j+\Big(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\Big)\mathbf k ,
@@ -139,7 +145,23 @@ $$
 \nabla\times\mathbf F=e^z(\sin x-1)\,\mathbf i-ye^z\cos x\,\mathbf j-2xy\,\mathbf k .
 $$
 
-A curl needs six derivatives and gives a vector; a divergence needs three and gives a scalar.
+A curl needs six derivatives and gives a vector; a divergence needs three and gives a scalar. At the point $(\frac\pi2,1,0)$, for instance, $e^0=1$, $\sin\frac\pi2=1$ and $\cos\frac\pi2=0$, so $\nabla\times\mathbf F=0\,\mathbf i-0\,\mathbf j-\pi\,\mathbf k=-\pi\,\mathbf k$.
+
+### The position vector (PS9 Q1(ii) and Q3(ii))
+
+For $\mathbf r=x\,\mathbf i+y\,\mathbf j+z\,\mathbf k$, each component is its own coordinate, so
+
+$$
+\nabla\cdot\mathbf r=\frac{\partial x}{\partial x}+\frac{\partial y}{\partial y}+\frac{\partial z}{\partial z}=3,
+$$
+
+a uniform expansion, and every curl component is a derivative of one coordinate with respect to a different one:
+
+$$
+\nabla\times\mathbf r=\Big(\frac{\partial z}{\partial y}-\frac{\partial y}{\partial z}\Big)\mathbf i+\Big(\frac{\partial x}{\partial z}-\frac{\partial z}{\partial x}\Big)\mathbf j+\Big(\frac{\partial y}{\partial x}-\frac{\partial x}{\partial y}\Big)\mathbf k=\mathbf 0 .
+$$
+
+That is the left panel of the figure below in three dimensions: spreading without spin. The rigid rotation $\mathbf v=-\Omega y\,\mathbf i+\Omega x\,\mathbf j$ is the opposite case: $\nabla\cdot\mathbf v=0$, and the only non-zero curl component is $\partial_x(\Omega x)-\partial_y(-\Omega y)=2\Omega$, so $\nabla\times\mathbf v=2\Omega\,\mathbf k$. The vorticity of a rigid rotation is twice its angular velocity.
 
 ### What curl measures
 
@@ -185,7 +207,7 @@ nine second derivatives in all. In non-Cartesian coordinates it is messier, anot
 
 ### The identities
 
-The slides list eight identities, for scalar fields $f$, $g$ and vector fields $\mathbf F$, $\mathbf G$ (ll. 144–167). Most are on the formula sheet and needn't be memorised.
+Eight identities hold, for scalar fields $f$, $g$ and vector fields $\mathbf F$, $\mathbf G$ (ll. 144–167). Most are on the formula sheet and needn't be memorised.
 
 | # | Identity |
 |---|---|
@@ -220,9 +242,43 @@ $$
 
 Group by component. The $F_1$ terms are $\partial_y\partial_zF_1-\partial_z\partial_yF_1=0$, the $F_2$ terms are $-\partial_x\partial_zF_2+\partial_z\partial_xF_2=0$, and the $F_3$ terms are $\partial_x\partial_yF_3-\partial_y\partial_xF_3=0$. So $\nabla\cdot(\nabla\times\mathbf F)=0$. Identities with repeated cross products, such as 6, also need the vector triple-product rules (ll. 237–242).
 
+### Proof of the product rule for divergence (identity 4)
+
+*(Suggested, not lecturer-set.)* Write $g\mathbf F=(gF_1,gF_2,gF_3)$ and apply the ordinary product rule to each term of the divergence:
+
+$$
+\nabla\cdot(g\mathbf F)=\partial_x(gF_1)+\partial_y(gF_2)+\partial_z(gF_3)
+$$
+
+$$
+=\big(F_1\partial_xg+F_2\partial_yg+F_3\partial_zg\big)+g\big(\partial_xF_1+\partial_yF_2+\partial_zF_3\big)
+$$
+
+$$
+=\nabla g\cdot\mathbf F+g\,\nabla\cdot\mathbf F .
+$$
+
+With $g=\rho$ and $\mathbf F=\mathbf v$ this is the step used in the continuity equation in §1.
+
+### Identity 6 on an example (PS9 Q5(c))
+
+For $\mathbf F=x^2\,\mathbf i+xy\,\mathbf j+xz\,\mathbf k$, compute the curl twice. First,
+
+$$
+\nabla\times\mathbf F=\big(\partial_y(xz)-\partial_z(xy)\big)\mathbf i-\big(\partial_x(xz)-\partial_z(x^2)\big)\mathbf j+\big(\partial_x(xy)-\partial_y(x^2)\big)\mathbf k=0\,\mathbf i-z\,\mathbf j+y\,\mathbf k .
+$$
+
+Then, with $\mathbf G=(0,-z,y)$,
+
+$$
+\nabla\times\mathbf G=\big(\partial_y(y)-\partial_z(-z)\big)\mathbf i-\big(\partial_x(y)-\partial_z(0)\big)\mathbf j+\big(\partial_x(-z)-\partial_y(0)\big)\mathbf k=2\,\mathbf i .
+$$
+
+Now the right-hand side of identity 6: $\nabla\cdot\mathbf F=2x+x+x=4x$, so $\nabla(\nabla\cdot\mathbf F)=4\,\mathbf i$; and $\nabla^2\mathbf F=(\nabla^2x^2,\nabla^2(xy),\nabla^2(xz))=(2,0,0)$. So $\nabla(\nabla\cdot\mathbf F)-\nabla^2\mathbf F=4\,\mathbf i-2\,\mathbf i=2\,\mathbf i$, the same.
+
 ### Why the identities are useful
 
-Lecture 25 showed them at work in fluid dynamics (ll. 243–365). Taking the curl of Navier–Stokes with variable density, identity 2 removes the gradient terms but leaves a baroclinic term $\frac1{\rho^2}\nabla\rho\times\nabla p$, which vanishes when surfaces of constant pressure and density line up, as in strongly stratified ocean and atmosphere layers; with small viscosity, vorticity is then conserved along the flow. Identity 6 with $\nabla\cdot\mathbf v=0$ turns $\nabla\times(\nabla\times\mathbf v)$ into $-\nabla^2\mathbf v$. In a frame rotating at a constant rate $\boldsymbol\Omega$, the Coriolis term $-2\boldsymbol\Omega\times\mathbf v$ appears, and identity 8 with $\nabla\cdot\mathbf v=0$ and $\boldsymbol\Omega$ constant reduces its curl to $2(\boldsymbol\Omega\cdot\nabla)\mathbf v=2\Omega\frac{\partial\mathbf v}{\partial z}$ with $z$ along the rotation axis. The vorticity then changes only through how the velocity varies along that axis, which is what makes rotating-frame models of the atmosphere and of propellers tractable.
+The identities simplify the equations of fluid dynamics (L25, ll. 243–365). Taking the curl of Navier–Stokes with variable density, identity 2 removes the gradient terms but leaves a baroclinic term $\frac1{\rho^2}\nabla\rho\times\nabla p$, which vanishes when surfaces of constant pressure and density line up, as in strongly stratified ocean and atmosphere layers; with small viscosity, vorticity is then conserved along the flow. Identity 6 with $\nabla\cdot\mathbf v=0$ turns $\nabla\times(\nabla\times\mathbf v)$ into $-\nabla^2\mathbf v$. In a frame rotating at a constant rate $\boldsymbol\Omega$, the Coriolis term $-2\boldsymbol\Omega\times\mathbf v$ appears, and identity 8 with $\nabla\cdot\mathbf v=0$ and $\boldsymbol\Omega$ constant reduces its curl to $2(\boldsymbol\Omega\cdot\nabla)\mathbf v=2\Omega\frac{\partial\mathbf v}{\partial z}$ with $z$ along the rotation axis. The vorticity then changes only through how the velocity varies along that axis, which is what makes rotating-frame models of the atmosphere and of propellers tractable.
 
 ## 4. Past exam questions
 
@@ -232,7 +288,9 @@ $$
 \nabla^2\phi=\partial_x(2xy^2)+\partial_y\big(z\cos yz+2x^2y\big)+\partial_z\big(y\cos yz+1\big)=2y^2+\big(2x^2-z^2\sin yz\big)-y^2\sin yz ,
 $$
 
-so $\nabla^2\phi=2(x^2+y^2)-(y^2+z^2)\sin yz$.
+so $\nabla^2\phi=2(x^2+y^2)-(y^2+z^2)\sin yz$. At $P(1,2,0)$, $\sin0=0$ and $\nabla^2\phi=2(1+4)=10$.
+
+**PS8 Q6.** For $f=e^z\sin y$, $\nabla f=e^z\cos y\,\mathbf j+e^z\sin y\,\mathbf k$ and $\nabla^2f=-e^z\sin y+e^z\sin y=0$: this $f$ is harmonic, a solution of Laplace's equation, which is why the $y$ and $z$ curvatures cancel exactly.
 
 **2024/25 B1(a).** For $\mathbf F=\sin(y^2)\,\mathbf i+(1+e^{2z})\,\mathbf j+x^2\,\mathbf k$ at the origin: the gradient of a vector field is not defined in this course, so (i) cannot be computed. Each component is independent of its own variable, so $\nabla\cdot\mathbf F=0$ everywhere. The curl is
 
@@ -244,20 +302,6 @@ which at the origin is $-2\,\mathbf i$.
 
 > [!check] SymPy
 > The L24 curl, the L25 Laplacian $6e^xy\sin z$, both past-paper answers and identities 2, 5 and 6 on PS9's fields all check symbolically.
-
-## Transcript slips
-
-> [!warning] Lectures 24 and 25
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L24, ll. 99–104 | the components of $\nabla F_1$ written wrongly, "that's gibberish, go back" | $\nabla F_1=\partial_xF_1\,\mathbf i+\partial_yF_1\,\mathbf j+\partial_zF_1\,\mathbf k$ |
-> | L24, l. 218 | the cross-product construction gives "the thing that we call the gradient" | the curl, corrected at l. 221 |
-> | L24, l. 300 | a plus sign on the $\mathbf j$ term | minus, corrected in the same line |
-> | L24, l. 354 | the curl of electromagnetic fields "is linked to its helicity" | the curl of $\mathbf B$ is linked to current density (Ampère's law); helicity is $\int\mathbf A\cdot\mathbf B$ |
-> | L24, l. 402 | "auticity" | vorticity |
-> | L25, l. 111 | $\nabla^2\phi=6e^x\sin z$ | $6e^xy\sin z$; the lecturer adds the $y$ at l. 124 |
-> | L25, ll. 249–255 | baroclinic term $\nabla p\times\nabla\rho/\rho^2$ | $\nabla\rho\times\nabla p/\rho^2$, the opposite order |
-> | L25, l. 292 | rotating-frame term "plus 2 omega cross u" | $-2\boldsymbol\Omega\times\mathbf v$ on the right-hand side; the lecture also uses $\omega$ for both the rotation rate and the vorticity |
 
 ## Links
 
@@ -276,12 +320,28 @@ Nothing was explicitly set. Lecture 25 suggested looking for identities whenever
 
 ### Core
 
-- [ ] PS9 Q1 and Q3: divergences and curls, including $\nabla\cdot\mathbf r=3$ and $\nabla\times\mathbf r=\mathbf 0$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
+- [ ] PS9 Q1 and Q3: divergences and curls, including $\nabla\cdot\mathbf r=3$ and $\nabla\times\mathbf r=\mathbf 0$. → [[#The position vector (PS9 Q1(ii) and Q3(ii))]] · [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
 - [ ] PS9 Q6–Q7: $\nabla^2(x^2y^2z^2)=2(y^2z^2+x^2z^2+x^2y^2)$ and $\nabla^2(y^2,x^2,z^2)=(2,2,2)$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
 - [ ] Prove identities 2 and 5 without notes. → [[#Proof that the curl of a gradient vanishes]]
 - [ ] 2024/25 B1(a): all three parts, including why (i) can't be done. → [[#4. Past exam questions]]
 
 ### Further practice
 
-- [ ] PS9 Q5: $\nabla\times(\nabla\times\mathbf F)$ for three fields, checking (c) with identity 6. Answers: $\mathbf 0$, $\mathbf 0$, $2\,\mathbf i$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
-- [ ] Prove identity 4, $\nabla\cdot(g\mathbf F)=\nabla g\cdot\mathbf F+g\nabla\cdot\mathbf F$, and use it to derive $\frac{D\rho}{Dt}=-\rho\nabla\cdot\mathbf v$ from the continuity equation (suggested, not lecturer-set). → [[#What divergence measures]]
+- [ ] PS9 Q5: $\nabla\times(\nabla\times\mathbf F)$ for three fields, checking (c) with identity 6. Answers: $\mathbf 0$, $\mathbf 0$, $2\,\mathbf i$. → [[#Identity 6 on an example (PS9 Q5(c))]]
+- [ ] Prove identity 4, $\nabla\cdot(g\mathbf F)=\nabla g\cdot\mathbf F+g\nabla\cdot\mathbf F$, and use it to derive $\frac{D\rho}{Dt}=-\rho\nabla\cdot\mathbf v$ from the continuity equation (suggested, not lecturer-set). → [[#Proof of the product rule for divergence (identity 4)]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 24 and 25
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L24, ll. 99–104 | the components of $\nabla F_1$ written wrongly | $\nabla F_1=\partial_xF_1\,\mathbf i+\partial_yF_1\,\mathbf j+\partial_zF_1\,\mathbf k$ |
+> | L24, l. 218 | the cross-product construction gives "the thing that we call the gradient" | the curl, corrected at l. 221 |
+> | L24, l. 300 | a plus sign on the $\mathbf j$ term | minus, corrected in the same line |
+> | L24, l. 354 | the curl of electromagnetic fields "is linked to its helicity" | the curl of $\mathbf B$ is linked to current density (Ampère's law); helicity is $\int\mathbf A\cdot\mathbf B$ |
+> | L24, l. 402 | "auticity" | vorticity |
+> | L25, l. 111 | $\nabla^2\phi=6e^x\sin z$ | $6e^xy\sin z$; the lecturer adds the $y$ at l. 124 |
+> | L25, ll. 249–255 | baroclinic term $\nabla p\times\nabla\rho/\rho^2$ | $\nabla\rho\times\nabla p/\rho^2$, the opposite order |
+> | L25, l. 292 | rotating-frame term "plus 2 omega cross u" | $-2\boldsymbol\Omega\times\mathbf v$ on the right-hand side; the lecture also uses $\omega$ for both the rotation rate and the vorticity |

@@ -13,7 +13,7 @@ sheet: "Specimen Test 20 (booklet) + Module 20 work scheme: Examples 7.1–7.29,
 theory_notes: ["[[MATH1054 M20 - Further Calculus II]]"]
 key_concepts: ["[[Arithmetic and Geometric Series]]", "[[Convergence Tests for Series]]", "[[Taylor and Maclaurin Series]]", "[[L'Hôpital's Rule]]"]
 status: complete
-sources: ["tmp/md/module_20_further_calculus_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§7.2–7.8, §9.4)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 20)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§7.2–7.8, §9.4)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 20)"]
 ---
 
 # MATH1054 M20 Solutions - Further Calculus II
@@ -118,7 +118,11 @@ The terms $a_k=\dfrac{k}{k+1}\to1\neq0$. A convergent series needs $a_k\to0$ (th
 
 $$\left|\frac{x^{n+1}/(n+1)}{x^n/n}\right|=\frac{n}{n+1}|x|\to|x|$$
 
-It converges for $|x|<1$, so $\boxed{R=1}$.
+It converges for $|x|<1$ and diverges for $|x|>1$, so $\boxed{R=1}$. At $x=\pm1$ the ratio limit is exactly 1 and the test says nothing, so check each endpoint directly.
+- $x=1$: $\sum\frac1n=1+\frac12+\frac13+\cdots$ is the harmonic series, which **diverges**.
+- $x=-1$: $\sum\frac{(-1)^n}n=-1+\frac12-\frac13+\frac14-\cdots$. The signs alternate and $\frac1n$ decreases to 0, so it **converges**. Its sum is $\ln\frac12=-\ln2$, since $\sum\frac{x^n}n=-\ln(1-x)$ for $-1\le x<1$.
+
+The interval of convergence is therefore $\boxed{-1\le x<1}$.
 
 **(b)** $\sum n^nx^n$:
 
@@ -292,5 +296,5 @@ $$|R_1|<\frac{x^2}9<\frac{0.09}9=0.01\ ✔$$
 (At $x=0.3$, the actual error is $0.0089$.)
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_20_further_calculus_ii.md`
+- Problem statements: Module 20 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §7.2–7.8, §9.4; MATH1054 Module Booklet, Module 20

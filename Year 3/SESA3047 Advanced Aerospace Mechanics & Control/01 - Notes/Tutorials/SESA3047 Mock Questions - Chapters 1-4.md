@@ -176,7 +176,7 @@ The linear model over-predicts by 44 %. A 0.5 N step is not a small perturbation
 
 **(a)** A **reference frame** is an observer: an origin, plus axes with a given motion. Velocities, accelerations and time derivatives are defined relative to a frame. A **coordinate system** is a way of writing a vector's components (Cartesian NED, FRD, spherical, …). The same physical vector has different components in different coordinate systems ([[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#9. Reference frame, coordinate system and vector|1.2 §9]]).
 
-${}^{e}\dot{\mathbf p}^{NED}_{cm/Q}$ reads as follows ([[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#Where each label goes (L4, ll. 44–117)|1.2, where each label goes]]):
+${}^{e}\dot{\mathbf p}^{NED}_{cm/Q}$ reads as follows ([[SESA3047 1.2 - Dynamic Models, Frames and Earth Models#Where each label goes|1.2, where each label goes]]):
 
 - right subscript $cm/Q$: position **of** the centre of mass **relative to** the point $Q$ (the NED origin);
 - left superscript $e$: the time derivative is taken by an observer fixed in the Earth frame $F_e$;
@@ -356,7 +356,7 @@ $$
 \mathbf C=\mathbf C_x(\mathbf C_y\mathbf C_z)=\begin{bmatrix}-0.6275&0.5265&-0.5736\\-0.3969&-0.8501&-0.3462\\-0.6699&0.0104&0.7424\end{bmatrix}.
 $$
 
-Check against the closed form ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Multiplying it out (the step the notes compress into one line)|2.2, multiplying it out]]):
+Check against the closed form ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Multiplying it out|2.2, multiplying it out]]):
 
 - $C_{11}=c_\theta c_\psi=0.8192(-0.7660)=-0.6275$ ✓;
 - $C_{23}=s_\phi c_\theta=-0.4226(0.8192)=-0.3462$ ✓;
@@ -398,7 +398,7 @@ $$
 \arctan\frac{C_{12}}{C_{11}}=\arctan\frac{0.5265}{-0.6275}=\arctan(-0.8391)=-40.0^\circ .
 $$
 
-This is $180^\circ$ out: north-west instead of south-east. The ratio loses the signs. $C_{11}=c_\theta c_\psi<0$ with $c_\theta>0$ says $\cos\psi<0$, so $\psi$ is in the second quadrant. atan2 reads both signs ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Why atan2, not arctan (the L6 question)|2.2, why atan2]]).
+This is $180^\circ$ out: north-west instead of south-east. The ratio loses the signs. $C_{11}=c_\theta c_\psi<0$ with $c_\theta>0$ says $\cos\psi<0$, so $\psi$ is in the second quadrant. atan2 reads both signs ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Why atan2, not arctan|2.2, why atan2]]).
 
 **(d)** NED to FRD is $\mathbf v^{FRD}=\mathbf C\mathbf v^{NED}$ ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#The two directions of transformation (Eqs. 2.40–2.41)|2.2, two directions]]). Row by row:
 
@@ -500,7 +500,7 @@ Remedy: use a non-singular attitude representation such as **quaternions** (or p
 
 ### Solution
 
-**(a)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#3. Composing the three rotation rates (§3.1.2, L7 ll. 160–194)|3.1 §3]], [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#4. Multiplying it out, one step at a time (Appendix §3.4.1, L7 ll. 200–300)|§4]])
+**(a)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#3. Composing the three rotation rates (§3.1.2)|3.1 §3]], [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#4. Multiplying it out, one step at a time (Appendix §3.4.1)|§4]])
 
 $\dot\psi$ is about the NED down axis, which is the first axis in the sequence. To reach FRD it must pass through the pitch and then the roll rotation. $\dot\theta$ is about the intermediate $y$ axis and only needs the roll rotation. $\dot\phi$ is already about body $x$.
 
@@ -528,7 +528,7 @@ $$
 \begin{bmatrix}p\\q\\r\end{bmatrix}=\underbrace{\begin{bmatrix}1&0&-s_\theta\\0&c_\phi&s_\phi c_\theta\\0&-s_\phi&c_\phi c_\theta\end{bmatrix}}_{\mathbf E}\begin{bmatrix}\dot\phi\\\dot\theta\\\dot\psi\end{bmatrix}.
 $$
 
-**(b)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#6. Inverting: the rotational kinematic equation (§3.1.3, Eqs. 3.10–3.11; L7 ll. 323–341)|3.1 §6]]) Rows 2 and 3:
+**(b)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#6. Inverting: the rotational kinematic equation (§3.1.3, Eqs. 3.10–3.11)|3.1 §6]]) Rows 2 and 3:
 
 $$
 q=c_\phi\dot\theta+s_\phi c_\theta\dot\psi,\qquad r=-s_\phi\dot\theta+c_\phi c_\theta\dot\psi .
@@ -716,7 +716,7 @@ $$
 
 ### Solution
 
-**(a)** ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Step 5: the inertia matrix (Eqs. 3.60–3.63)|3.3, the inertia matrix]])
+**(a)** ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#The inertia matrix (Eqs. 3.60–3.63)|3.3, the inertia matrix]])
 
 $$
 J_{xx}=\int_B(y^2+z^2)\,\mathrm dm,\qquad J_{xy}=\int_B xy\,\mathrm dm,
@@ -754,7 +754,7 @@ $$
 \mathbf J_P=\mathbf Q^T\mathbf J_B\mathbf Q=\operatorname{diag}(125,\ 75,\ 150)\ \text{kg m}^2 .
 $$
 
-**(c)** Euler's equations ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Step 5: principal axes, Euler's equations (extension)|3.3, Euler's equations]]), with $J_x=125$, $J_y=75$, $J_z=150$:
+**(c)** Euler's equations ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Principal axes: Euler's equations (extension)|3.3, Euler's equations]]), with $J_x=125$, $J_y=75$, $J_z=150$:
 
 $$
 \dot p=\frac{L+(J_y-J_z)qr}{J_x}=\frac{0.5+(75-150)(0.02)(0.1)}{125}=\frac{0.5-0.15}{125}=2.80\times10^{-3}\ \text{rad/s}^2,
@@ -768,7 +768,7 @@ $$
 \dot r=\frac{N+(J_x-J_y)pq}{J_z}=\frac{-0.2+(125-75)(0.05)(0.02)}{150}=\frac{-0.2+0.05}{150}=-1.000\times10^{-3}\ \text{rad/s}^2 .
 $$
 
-$\dot q\neq0$ with $M=0$: pitch acceleration comes purely from inertia coupling of $r$ and $p$ ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment (L12 ll. 22–119)|4.1, inertia coupling]]).
+$\dot q\neq0$ with $M=0$: pitch acceleration comes purely from inertia coupling of $r$ and $p$ ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment|4.1, inertia coupling]]).
 
 **(d)** Transform to $B$: $\boldsymbol\omega_B=\mathbf Q\boldsymbol\omega_P=[0.05376,\ 0.00316,\ 0.1]^T$ and $\mathbf M_B=\mathbf Q\mathbf M_P=[0.4743,\ -0.1581,\ -0.2]^T$. Solving $\dot{\boldsymbol\omega}_B=\mathbf J_B^{-1}(\mathbf M_B-\tilde{\boldsymbol\omega}_B\mathbf J_B\boldsymbol\omega_B)$ ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]) gives $[3.183,\ 0.696,\ -1.000]^T\times10^{-3}$ rad/s². This equals $\mathbf Q\dot{\boldsymbol\omega}_P$ ✓: the physics does not depend on the axes chosen.
 
@@ -835,7 +835,7 @@ $$
 
 **Base part.** $\mathbf J\boldsymbol\omega=[-J_{xz}r,\ J_{yy}q,\ J_{zz}r-J_{xz}p]^T=[0,\ 5000,\ 0]^T$, which is parallel to $\boldsymbol\omega$. So $\boldsymbol\omega\times\mathbf J\boldsymbol\omega=\mathbf 0$ and, with $\mathbf M=\mathbf 0$, $\dot{\boldsymbol\omega}_{base}=\mathbf 0$.
 
-**Rotor part** ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Step 4: explicit aircraft rotor corrections|4.1, aircraft rotor corrections]]):
+**Rotor part** ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Explicit aircraft rotor corrections|4.1, aircraft rotor corrections]]):
 
 $$
 -\tilde{\boldsymbol\omega}\mathbf h_R=\begin{bmatrix}rh_y-qh_z\\ph_z-rh_x\\qh_x-ph_y\end{bmatrix}=\begin{bmatrix}0\\0\\0.2(1005.3)\end{bmatrix}=\begin{bmatrix}0\\0\\201.06\end{bmatrix}\ \text{N m}.
@@ -881,7 +881,7 @@ $$
 
 i.e. a left-yawing rudder moment $N=-201$ N m.
 
-**(d)** A balanced, axisymmetric rotor on a fixed axis does not move the cm and presents the same inertia at every rotor angle, so $\mathbf J$ stays constant. Its relative spin enters only through $\mathbf h_R$ (L12 ll. 234–242). With twin propellers turning in opposite senses at equal speed, the two $\mathbf h_R$ cancel. Then $\dot{\boldsymbol\omega}_{add}=\mathbf 0$, as with a quadcopter's alternating rotors ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Diagonal inertia: the quadcopter form (L13 ll. 82–86)|4.1, quadcopter form]]). A changing rotor speed would add $-\mathbf J^{-1}\,{}^b\dot{\mathbf h}_R$ (handout only, Eq. 4.25).
+**(d)** A balanced, axisymmetric rotor on a fixed axis does not move the cm and presents the same inertia at every rotor angle, so $\mathbf J$ stays constant. Its relative spin enters only through $\mathbf h_R$ (L12 ll. 234–242). With twin propellers turning in opposite senses at equal speed, the two $\mathbf h_R$ cancel. Then $\dot{\boldsymbol\omega}_{add}=\mathbf 0$, as with a quadcopter's alternating rotors ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Diagonal inertia: the quadcopter form|4.1, quadcopter form]]). A changing rotor speed would add $-\mathbf J^{-1}\,{}^b\dot{\mathbf h}_R$ (handout only, Eq. 4.25).
 
 > [!check] Python check
 > $h_x=1005.310$; $\Gamma=4.0575\times10^8$; `np.linalg.solve(J, -cross(w,hR))` $=[7.433\times10^{-4},\ 0,\ 5.9464\times10^{-3}]$; base term $[0,0,0]$; with $\mathbf M=\boldsymbol\omega\times\mathbf h_R=[0,0,-201.06]$ the total $\dot{\boldsymbol\omega}$ is $[0,0,0]$; $r(2\,\text{s})=0.011893$ rad/s $=0.681^\circ$/s.
@@ -930,7 +930,7 @@ $$
 
 Six degrees of freedom need twelve first-order states: one coordinate (kinematic) and one rate (dynamic) state per degree of freedom (L13 ll. 339–340).
 
-**(b)** ([[SESA3047 4.2 - Translational Dynamics#Step 3: rotate gravity|4.2, rotate gravity]])
+**(b)** ([[SESA3047 4.2 - Translational Dynamics#Rotating gravity into body axes|4.2, rotate gravity]])
 
 $$
 \mathbf g^{FRD}=g\begin{bmatrix}-s_\theta\\s_\phi c_\theta\\c_\phi c_\theta\end{bmatrix}=9.81\begin{bmatrix}-0.08716\\0.25783\\0.96225\end{bmatrix}=\begin{bmatrix}-0.8550\\2.5294\\9.4397\end{bmatrix}\ \text{m/s}^2 .

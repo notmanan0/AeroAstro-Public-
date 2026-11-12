@@ -41,7 +41,7 @@ Where each topic appears across the 11 papers in the vault. There is no 2019-20 
 > 3. **Breguet range**: 2014-15 (12 marks), 2016-17 (10 marks); used in 2023-24 Q3(v).
 > 4. **Rocket $I_{sp}$ from the SFEE**: 2013-14, 2014-15. **Tsiolkovsky**: 2024-25.
 > 5. **Actuator disk** $V_{disk} = \tfrac12(V+V_j)$: 2023-24.
-> 6. **Turbofan specific thrust** $F/\dot m_c = (1+f)V_{jh}+BPR\,V_{jc}-(1+BPR)V$: 2016-17, 2018-19.
+> 6. **Turbofan specific thrust** $F/\dot m_c = (1+f)V_{jc}+BPR\,V_{jb}-(1+BPR)V$ (core $c$, bypass $b$): 2016-17, 2018-19.
 > 7. **Equilibrium cubic** from atom balances and $K_p$: 2013-14.
 
 > [!example] Standard calculations (know the recipe)

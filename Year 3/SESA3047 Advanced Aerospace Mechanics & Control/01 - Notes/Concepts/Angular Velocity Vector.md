@@ -23,7 +23,7 @@ Its properties (§2.2.1):
 | additive | $\boldsymbol\omega_{c/a}=\boldsymbol\omega_{c/b}+\boldsymbol\omega_{b/a}$ | apply the [[Transport Theorem]] twice to a vector fixed in $F_c$ |
 | same derivative in both frames | ${}^a\dot{\boldsymbol\omega}_{b/a}={}^b\dot{\boldsymbol\omega}_{b/a}$ | $\boldsymbol\omega\times\boldsymbol\omega=\mathbf 0$ |
 
-> [!warning] Angular acceleration does not simply add
+> [!warning] Angular acceleration does not add like angular velocity
 >
 > $${}^a\dot{\boldsymbol\omega}_{c/a}={}^b\dot{\boldsymbol\omega}_{c/b}+\boldsymbol\omega_{b/a}\times\boldsymbol\omega_{c/b}+{}^a\dot{\boldsymbol\omega}_{b/a}.$$
 >

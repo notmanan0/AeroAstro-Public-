@@ -31,7 +31,7 @@ sources: ["02 - Sources/Lectures/Chapter 9/2025 WEEK 8 - Chapter 9 - Communicati
 
 There is no point putting an instrument in space if its data cannot be brought home. The communications subsystem receives operating commands from the ground and downlinks the payload data and the telemetry describing the spacecraft's health (2025-11-18, ll. 51–75). For some missions, such as communications, navigation and data-relay satellites, it is the payload.
 
-A transmitter spreads power over a sphere that grows with the square of the distance, so very little arrives. A dish concentrates the power into a narrow beam, at the cost of having to be pointed. The receiver must pick a weak signal out of electromagnetic noise from every warm object it sees, and the question is whether enough energy arrives in each bit to tell a one from a zero reliably. Voyager, some 15–16 billion miles away, is the extreme case: its signal takes nearly a day to arrive and is fantastically weak, yet it is still received.
+A transmitter spreads power over a sphere that grows with the square of the distance, so very little arrives. A dish concentrates the power into a narrow beam, at the cost of having to be pointed. The receiver must pick a weak signal out of electromagnetic noise from every warm object it sees, and the signal is usable only if enough energy arrives in each bit to tell a one from a zero reliably. Voyager, some 15–16 billion miles away, is the extreme case: its signal takes nearly a day to arrive and is fantastically weak, yet it is still received.
 
 ## 1. Decibels
 
@@ -47,14 +47,17 @@ $$
 P=P_{ref}\times10^{x_{dB}/10}.
 $$
 
-Products become sums and quotients become differences, which is the whole reason for using them. The practice conversion set in the lecture: $42.3\ \mathrm{dBW}=10^{4.23}\ \mathrm W=16.98$ kW (l. 160). Decibels are familiar from sound because the ear responds roughly logarithmically, but in communications they are simply ratios.
+Products become sums and quotients become differences, which is the reason for using them: $10\log(AB/C)=10\log A+10\log B-10\log C$. A practice conversion (l. 160): with $x_{dB}=42.3$ dBW,
+
+$$
+P=1\ \mathrm W\times10^{42.3/10}=10^{4.23}\ \mathrm W=16\,980\ \mathrm W=16.98\ \mathrm{kW}.
+$$
+
+Two values to remember: a factor of 2 is $10\log2=3.01$ dB, and a factor of 10 is exactly 10 dB. Decibels are familiar from sound, where the ear responds roughly logarithmically; in communications they are plain ratios.
 
 ## 2. The atmospheric window and frequency allocation
 
 Signals travel at the speed of light, $3\times10^8$ m/s, which still means long delays at interplanetary distances (ll. 176–200).
-
-> [!warning] Transcript slip (2025-11-18, ll. 176–195)
-> Voyager is put at "15 billion miles" with a light time of "17 and a half hours", now perhaps 18 or 19. Light covers 15 billion miles ($2.4\times10^{13}$ m) in 22.4 hours, and Voyager 1 is now about 15.7 billion miles away, roughly 23 light-hours.
 
 The atmosphere limits which frequencies can be used (ll. 200–250). At low frequencies electrons in the ionosphere absorb and reflect; at high frequencies water vapour, oxygen and rain absorb. The usable window runs from about 0.1 to about 30 GHz, and losses inside it still depend on the weather and on the path length through the atmosphere, which is much longer at a $15^\circ$ elevation than straight up. The window is a finite resource, so the International Telecommunication Union (ITU) allocates bands for fixed and mobile communications, navigation, space research, and tracking, telemetry and command, now to three decimal places in some bands (ll. 251–300). Operators apply in advance, like planning permission, and satellites close together in the geostationary ring must not use frequencies that interfere.
 
@@ -80,17 +83,17 @@ The bits are carried by changing one property of a carrier wave (ll. 426–525):
 
 ### Bandwidth
 
-Each bit in the PSK picture takes at least one carrier cycle, so a higher frequency carries more bits per second. Shannon's law gives the maximum data rate of a channel of bandwidth $B$:
+In the PSK picture each bit takes at least one carrier cycle, so the bit rate cannot exceed the carrier frequency, and a higher carrier frequency makes a wider bandwidth available. Shannon's law gives the maximum data rate of a channel of bandwidth $B$:
 
 $$
 C=B\log_2\left(1+\frac SN\right),
 $$
 
-with the bandwidth a direct multiplier (ll. 526–545).
+with the bandwidth, not the carrier frequency, as a direct multiplier (ll. 526–545).
 
 ## 4. Noise
 
-Noise is any unwanted interference in the signal, and the receiver must recover the signal from it (ll. 526–575). Sources include lightning, the Sun, the Earth, galactic sources, artificial sources such as vehicles and machinery, the spacecraft's own electronics, and atmospheric emission and scattering. In the revision lecture's 2017/18 B3 answer, Dr Sykulska-Lawrence stressed emission and scattering rather than absorption, since the frequency is chosen inside the window where absorption is small (2026-01-06, ll. 126–200).
+Noise is any unwanted interference in the signal, and the receiver must recover the signal from it (ll. 526–575). Sources include lightning, the Sun, the Earth, galactic sources, artificial sources such as vehicles and machinery, the spacecraft's own electronics, and atmospheric emission and scattering. In an exam answer (2017/18 B3), emission and scattering are the atmospheric terms to give rather than absorption, since the frequency is chosen inside the window where absorption is small (2026-01-06, ll. 126–200).
 
 Noise is characterised by an equivalent noise temperature $T$. The noise power in bandwidth $B$ and the noise density (per hertz) are
 
@@ -106,7 +109,7 @@ with Boltzmann's constant $k=1.38\times10^{-23}$ J/K, so $10\log k=-228.6$ dB.
 
 An isotropic antenna radiates equally in all directions; its gain is 1, or 0 dB (2025-11-18, ll. 576–625). A high-gain antenna concentrates the power, like a torch bulb with a parabolic mirror. Its gain is the ratio of the peak power flux to that of an isotropic radiator with the same transmitted power. The beam has a peak on the boresight and falls away; the beamwidth $\theta$ is measured between the half-power points, 3 dB below the peak.
 
-For a circular parabolic dish of diameter $D$ at wavelength $\lambda$, the empirical relations used in the course are (2025-11-20, ll. 26–75)
+For a circular parabolic dish of diameter $D$ at wavelength $\lambda$, the empirical relations are (2025-11-20, ll. 26–75)
 
 $$
 \theta_{3dB}=\frac{72\lambda}{D}\ \text{degrees},
@@ -114,9 +117,17 @@ $$
 G=\frac{4\pi A_{eff}}{\lambda^2}=\eta\left(\frac{\pi D}{\lambda}\right)^2,
 $$
 
-where $A_{eff}=\eta A$ is the effective aperture area and the efficiency $\eta$ is 0.4–0.8, typically 0.65 for these antennas. Gain rises with $D^2$ while beamwidth falls with $D$: a bigger dish gives a stronger, narrower beam that must be pointed more accurately.
+where $A_{eff}=\eta A$ is the effective aperture area and the efficiency $\eta$ is 0.4–0.8, typically 0.65 for these antennas. The second form of the gain follows from the dish's physical area, $A=\pi D^2/4$:
 
-The lecture's examples at C band, 4 GHz ($\lambda=0.075$ m), recomputed:
+$$
+G=\frac{4\pi\,\eta\,\pi D^2/4}{\lambda^2}=\eta\frac{\pi^2D^2}{\lambda^2}=\eta\left(\frac{\pi D}{\lambda}\right)^2.
+$$
+
+Gain rises with $D^2$ while beamwidth falls with $D$: a bigger dish gives a stronger, narrower beam that must be pointed more accurately. Doubling the diameter quadruples the gain, $+6.0$ dB, and halves the beamwidth.
+
+![[ast_antenna_gain_beamwidth.png|760]]
+
+Examples at C band, 4 GHz ($\lambda=0.075$ m):
 
 | Dish | $\theta_{3dB}$ | $G$ | $G$ (dB) |
 |---|---|---|---|
@@ -124,12 +135,9 @@ The lecture's examples at C band, 4 GHz ($\lambda=0.075$ m), recomputed:
 | 6 m | 0.90° | 41 060 | 46.1 |
 | 25.9 m (Goonhilly) | 0.21° | $7.65\times10^5$ | 58.8 |
 
-> [!warning] Transcript slip (2025-11-20, ll. 101–110)
-> The 6 m dish is quoted as "64.1 decibels". $0.65(\pi\times6/0.075)^2=41\,060$ is 46.1 dB, and a 6 m dish cannot out-gain the 25.9 m Goonhilly antenna's 58.5–58.8 dB. The digits are transposed.
-
 ## 6. The link budget equation
 
-The pre-recorded lecture derives it (ll. 1–100). The downlink matters most for design: the ground station can be given almost unlimited power, the spacecraft cannot (ll. 1–25).
+The link budget equation is derived from the power flux of an isotropic radiator (pre-recorded lecture, ll. 1–100). The downlink matters most for design: the ground station can be given almost unlimited power, the spacecraft cannot (ll. 1–25).
 
 An isotropic transmitter of power $P_T$ spreads it over a sphere of radius $\rho$, the slant range, so the power flux at the receiver is
 
@@ -155,7 +163,19 @@ $$
 \frac{C}{N_0}=\frac{P_TG_T\cdot G_R/T_R}{L_{FS}\,L_a\,k}.
 $$
 
-Take $10\log_{10}$ of both sides. The squared free-space loss gives a factor of 20:
+Take $10\log_{10}$ of both sides. Each factor in the numerator becomes a positive term and each factor in the denominator a negative one:
+
+$$
+10\log\frac{C}{N_0}=10\log(P_TG_T)+10\log\frac{G_R}{T_R}-10\log L_{FS}-10\log L_a-10\log k.
+$$
+
+The free-space loss is a square, and $10\log x^2=20\log x$:
+
+$$
+10\log L_{FS}=10\log\left(\frac{4\pi\rho}{\lambda}\right)^2=20\log\frac{4\pi\rho}{\lambda}.
+$$
+
+So
 
 $$
 \boxed{10\log\frac{C}{N_0}=10\log(P_TG_T)+10\log\frac{G_R}{T_R}-20\log\frac{4\pi\rho}{\lambda}-10\log L_a-10\log k}
@@ -175,17 +195,17 @@ $$
 10\log\frac{C}{N_0}=10\log\frac{E_b}{N_0}+10\log R_b.
 $$
 
-For a given modulation, $E_b/N_0$ fixes the BER: more energy per bit, fewer errors. Choosing an acceptable BER (say $10^{-6}$, one wrong bit in a million) sets the required $E_b/N_0$ from the curve (about 10 dB for the course's PSK curve), the data rate then sets $C/N_0$, and the link budget gives the EIRP.
+For a given modulation, $E_b/N_0$ fixes the BER: more energy per bit, fewer errors. Choosing an acceptable BER (say $10^{-6}$, one wrong bit in a million) sets the required $E_b/N_0$ from the curve (about 10 dB on the PSK curve), the data rate then sets $C/N_0$, and the link budget gives the EIRP.
 
 ![[ast_ber_psk.png|600]]
 
 ## Worked examples
 
-All numbers recomputed in Python, with $c=3\times10^8$ m/s and $10\log k=-228.6$ dB.
+Constants: $c=3\times10^8$ m/s and $10\log k=-228.6$ dB.
 
 ### GEO TV broadcast satellite
 
-The pre-recorded lecture's example, from an old past paper (ll. 155–290): a GEO satellite broadcasts TV at 92 Mbit/s to users at a slant range of 38 400 km, at C band, 4 GHz. A user's dish is 0.4 m in diameter with a system noise temperature of 150 K. A BER of $10^{-6}$ is required, and there are 5 dB of additional losses. Estimate the satellite EIRP and, if the spacecraft dish is 2 m and the transponders are 50 % efficient, the transponder electrical power.
+An old past-paper question (pre-recorded lecture, ll. 155–290): a GEO satellite broadcasts TV at 92 Mbit/s to users at a slant range of 38 400 km, at C band, 4 GHz. A user's dish is 0.4 m in diameter with a system noise temperature of 150 K. A BER of $10^{-6}$ is required, and there are 5 dB of additional losses. Estimate the satellite EIRP and, if the spacecraft dish is 2 m and the transponders are 50 % efficient, the transponder electrical power.
 
 $\lambda=3\times10^8/4\times10^9=0.075$ m. Term by term:
 
@@ -196,20 +216,32 @@ $$
 using $E_b/N_0\approx10$ dB read from the curve for BER $10^{-6}$;
 
 $$
-G_R=0.65\left(\frac{\pi\times0.4}{0.075}\right)^2=182.5,
+G_R=0.65\left(\frac{\pi\times0.4}{0.075}\right)^2=0.65\times16.755^2=182.5,
+$$
+
+$$
+10\log\frac{G_R}{T_R}=10\log182.5-10\log150=22.61-21.76=0.85\ \mathrm{dB};
+$$
+
+with the slant range in metres, $\rho=3.84\times10^7$ m,
+
+$$
+\frac{4\pi\rho}{\lambda}=\frac{4\pi\times3.84\times10^7}{0.075}=6.434\times10^9,
 \qquad
-10\log\frac{G_R}{T_R}=22.61-21.76=0.85\ \mathrm{dB};
+20\log(6.434\times10^9)=196.17\ \mathrm{dB}.
 $$
 
-$$
-20\log\frac{4\pi\times3.84\times10^7}{0.075}=196.17\ \mathrm{dB}.
-$$
+Rearrange the link budget for the EIRP, moving every other term to the right-hand side:
 
-Then
+$$
+\mathrm{EIRP}=10\log\frac{C}{N_0}-10\log\frac{G_R}{T_R}+20\log\frac{4\pi\rho}{\lambda}+10\log L_a+10\log k,
+$$
 
 $$
 \mathrm{EIRP}=89.64-0.85+196.17+5-228.6=61.36\ \mathrm{dBW}.
 $$
+
+![[ast_link_budget_geo_tv.png|760]]
 
 For the transmitter, $G_T=0.65(\pi\times2/0.075)^2=4562=36.59$ dB, so
 
@@ -219,11 +251,14 @@ $$
 P_T=10^{2.477}=300\ \mathrm W,
 $$
 
-and at 50 % efficiency the transponders draw 600 W. The lecture's warning: convert the slant range to metres to match the wavelength (ll. 251–260).
+and at 50 % efficiency the transponders draw 600 W. The slant range must be in metres to match the wavelength (ll. 251–260).
+
+> [!check] Closing the budget
+> Putting the answer back in, $61.36+0.85-196.17-5+228.6=89.64$ dB, the required $C/N_0$. A slant range left in kilometres would cut the free-space loss by exactly $20\log1000=60$ dB and give an EIRP of 1.36 dBW, about 1.4 W, which is far too little to reach a 0.4 m dish from GEO.
 
 ### Voyager at Saturn (2017/18 B3)
 
-The revision lecture's question (2026-01-06, ll. 201–520). First, compare 2, 3 and 4 m dishes at X band, 8.5 GHz, with efficiency 0.5. $\lambda=0.03529$ m and $G=0.5(\pi D/\lambda)^2=3962.5D^2$:
+The first part of this question (2026-01-06, ll. 201–520) compares 2, 3 and 4 m dishes at X band, 8.5 GHz, with efficiency 0.5. $\lambda=0.03529$ m and $G=0.5(\pi D/\lambda)^2=3962.5D^2$:
 
 | Dish | $G$ | dB | $\theta_{3dB}$ |
 |---|---|---|---|
@@ -233,7 +268,7 @@ The revision lecture's question (2026-01-06, ll. 201–520). First, compare 2, 3
 
 Each step up in size lowers the transmitter power needed for a given EIRP but adds mass, tightens pointing, and for the 4 m dish adds a deployment risk.
 
-Second, Voyager stored 0.5 Gbit at the Saturn fly-by and downlinked it from 9.5 AU at 8.5 GHz with an EIRP of 61.2 dBW to a 70 m Deep Space Network dish (efficiency 0.5) with a noise temperature of 25 K. With $E_b/N_0=10$ dB and 3 dB of additional losses, how long does the downlink take?
+In the second part, Voyager stored 0.5 Gbit at the Saturn fly-by and downlinked it from 9.5 AU at 8.5 GHz with an EIRP of 61.2 dBW to a 70 m Deep Space Network dish (efficiency 0.5) with a noise temperature of 25 K. With $E_b/N_0=10$ dB and 3 dB of additional losses, the downlink time is required.
 
 $$
 G_R=3962.5\times70^2=1.94\times10^7,
@@ -241,7 +276,13 @@ G_R=3962.5\times70^2=1.94\times10^7,
 10\log\frac{G_R}{T_R}=72.89-13.98=58.90\ \mathrm{dB}.
 $$
 
-With $\rho=9.5\times1.5\times10^{11}$ m, the free-space loss is 294.10 dB. Then
+With $\rho=9.5\times1.5\times10^{11}=1.425\times10^{12}$ m, the free-space loss is
+
+$$
+20\log\frac{4\pi\times1.425\times10^{12}}{0.03529}=20\log(5.074\times10^{14})=294.11\ \mathrm{dB}.
+$$
+
+Then
 
 $$
 10\log\frac{C}{N_0}=61.2+58.90-294.10-3+228.6=51.60\ \mathrm{dB},
@@ -257,7 +298,10 @@ $$
 t=\frac{0.5\times10^9}{1.44\times10^4}=3.47\times10^4\ \mathrm s=9.6\ \mathrm h.
 $$
 
-The lecture's 14 421 bit/s and 9.631 h use 1 AU = $1.5\times10^8$ km; with $1.496\times10^8$ km the answers are 14 510 bit/s and 9.57 h.
+The values on the slide, 14 421 bit/s and 9.631 h, use 1 AU = $1.5\times10^8$ km, with the small remaining difference most likely from rounding the intermediate dB values; carried unrounded, the same inputs give 14 437 bit/s and 9.62 h, and with 1 AU = $1.496\times10^8$ km, 14 510 bit/s and 9.57 h. A 0.01 dB rounding is a 0.2 % change, so these differences are all rounding.
+
+> [!check] Why the data rate is so low
+> The free-space loss at 9.5 AU is $20\log(9.5\times1.5\times10^{8}/3.84\times10^{4})=91.4$ dB more than at GEO range for the same wavelength. The 70 m DSN dish ($G_R/T_R=58.9$ dB against 0.85 dB for the TV dish) recovers 58 dB of that, and the rest shows up as a data rate of kilobits rather than megabits per second.
 
 ## Links
 
@@ -275,6 +319,7 @@ The lecture's 14 421 bit/s and 9.631 h use 1 AU = $1.5\times10^8$ km; with $1.49
 - `2025 Chapter 9 - Communications - Lecture slides.pdf` with the pre-recorded transcript `SESA2024 Lecture Chapter 9 - Communications - prerecord - week 8.txt` (link budget derivation, GEO TV example)
 - Revision lecture `SESA2024 Lecture 2026-01-06.txt` (2017/18 B3)
 - Fortescue, Stark and Swinerd, *Spacecraft Systems Engineering*, Ch. 12
+- Figures: `ast_link_budget_geo_tv` (`generate_ast_ch9_comms_figures.py`), `ast_antenna_gain_beamwidth` (`generate_ast_extra_figures.py`) and `ast_ber_psk`. Every dB value recomputed in Python.
 
 ## Self-study tasks
 
@@ -294,3 +339,15 @@ The lecture's 14 421 bit/s and 9.631 h use 1 AU = $1.5\times10^8$ km; with $1.49
 - [ ] Why PSK is the most widely used modulation (asked of the class, ll. 451–500). → [[#Modulation: shift keying]]
 - [ ] The atmospheric window, and large spacecraft antennas and the power–gain trade-off (Workbook Ch9 Q1, Q6). → [[#2. The atmospheric window and frequency allocation]]
 - [ ] GEO global-coverage antenna at 1.5 GHz, and the Pluto fly-by downlink (Workbook Ch9 Q7, Q9). → [[SESA2024 Workbook Ch9 - Communications Solutions#Q7. GEO global-coverage antenna at 1.5 GHz|Workbook Q7]] · [[SESA2024 Workbook Ch9 - Communications Solutions#Q9. Pluto/Charon fly-by downlink, 2 Gbit at 40 AU|Workbook Q9]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (2025-11-18, ll. 176–195)
+> Where: [[#2. The atmospheric window and frequency allocation]].
+>
+> Voyager is put at "15 billion miles" with a light time of "17 and a half hours", now perhaps 18 or 19. Light covers 15 billion miles ($2.4\times10^{13}$ m) in 22.4 hours, and Voyager 1 is now about 15.7 billion miles away, roughly 23 light-hours.
+
+> [!warning] Transcript slip (2025-11-20, ll. 101–110)
+> Where: [[#5. Antenna gain and beamwidth]].
+>
+> The 6 m dish is quoted as "64.1 decibels". $0.65(\pi\times6/0.075)^2=41\,060$ is 46.1 dB, and a 6 m dish cannot out-gain the 25.9 m Goonhilly antenna's 58.5–58.8 dB. The digits are transposed.

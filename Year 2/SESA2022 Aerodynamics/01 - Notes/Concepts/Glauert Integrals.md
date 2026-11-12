@@ -29,7 +29,7 @@ $$
 A_0 = \alpha-\frac1\pi\int_0^\pi\frac{dz}{dx}d\theta_0,\qquad A_n = \frac2\pi\int_0^\pi\frac{dz}{dx}\cos n\theta_0\,d\theta_0,\qquad \alpha_{L=0} = -\frac1\pi\int_0^\pi\frac{dz}{dx}(\cos\theta_0-1)\,d\theta_0 .
 $$
 
-Two results are worth remembering. Parabolic camber $z = \epsilon x(1-x/c)$ gives $A_1 = \epsilon$, $A_{n\ge2} = 0$ and $\alpha_{L=0} = -\epsilon/2$, and a flap hinged at $\theta_h$ gives $A_n = \frac{2\delta}{n\pi}\sin n\theta_h$.
+Two results recur. Parabolic camber $z = \epsilon x(1-x/c)$ gives $A_1 = \epsilon$, $A_{n\ge2} = 0$ and $\alpha_{L=0} = -\epsilon/2$, and a flap hinged at $\theta_h$ gives $A_n = \frac{2\delta}{n\pi}\sin n\theta_h$.
 
 Past-paper uses: a modified NACA line split at $\pi/3$ ([[SESA2022 Exam 2021-22 Solutions]] B Q1); a NACA 4-digit line split at $\theta_p$ ([[SESA2022 Exam 2020-21 Solutions]] B Q1); constant downwash for the elliptic distribution ([[SESA2022 Exam 2018-19 Solutions]] Q3(i)).
 

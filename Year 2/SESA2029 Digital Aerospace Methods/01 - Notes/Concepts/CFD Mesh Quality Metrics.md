@@ -22,7 +22,7 @@ Geometric measures of cell shape that control the accuracy and stability of a CF
 |---|---|
 | Skewness | max < 0.9; quad/hex angles ≈ 90°, tri ≈ 60°, tets with equal angles; avoid included angles < 40° or > 140° |
 | Aspect ratio | ≲ 5 in the bulk flow (average < 5); ≲ 10 in BL cells; ≤ 20–100 in important regions; near walls ≤ 20 (unsteady) or ≤ 200 (steady); max ≈ 300 |
-| Non-orthogonality | < 70°; > 85° usually diverges; orthogonal quality > 0.2 |
+| Non-orthogonality | < 60–70°; > 85° usually diverges; orthogonal quality > 0.2 |
 
 - High aspect ratio is good inside boundary layers, where gradients are one-directional, and bad in the free stream or wake.
 - Meshing tools report the min, max, average and a histogram. Outliers usually sit at sharp leading or trailing edges. Use the average for an overall picture, but inspect the outliers.

@@ -141,30 +141,33 @@ $$
 
 The first group controls viscous regime; the second measures surface rotational speed relative to the flight speed and therefore the strength of the Magnus effect.
 
-## Q5.5 Water-tunnel model of a car
+## Q5.5 Aerofoil drag and a water-tunnel model
 
-Let drag depend on density, viscosity, speed, car length and surface roughness:
+The aerofoil has length (chord) $L$ and width (span) $s$, and its drag depends on density, viscosity and speed:
 
 $$D=f(\rho,\mu,V,L,s).$$
 
-A convenient result is
+There are six variables and three dimensions, so three groups. With $\rho$, $V$, $L$ as repeating variables:
 
 $$
-\boxed{\frac{D}{\rho V^2L^2}=F\left(Re_L,\frac{s}{L}\right)},
-\qquad Re_L=\frac{\rho VL}{\mu}.
+\boxed{\frac{D}{\rho V^2L^2}=F\left(Re,\frac{s}{L}\right)},
+\qquad Re=\frac{\rho VL}{\mu}.
 $$
 
-Exact similarity requires both Reynolds number and relative roughness to match. With $L_m=L_p/5$,
+The model keeps the aspect ratio $s/L$, so only the Reynolds number has to be matched. With $L_m=L_p/5$ and $\nu=\mu/\rho$,
 
 $$
 \frac{V_pL_p}{\nu_{air}}=\frac{V_m(L_p/5)}{\nu_{water}},
 $$
 
 $$
-\boxed{\frac{V_p}{V_m}=\frac{\nu_{air}}{5\nu_{water}}\approx3.0}
+\boxed{\frac{V_p}{V_m}=\frac{\nu_{air}}{5\nu_{water}}=3.0}
 $$
 
-using $\nu_{air}\approx1.5\times10^{-5}$ and $\nu_{water}\approx1.0\times10^{-6}\ \mathrm{m^2\,s^{-1}}$ near room temperature. Thus the full-size road speed is about three times the water-tunnel speed.
+using air at 20 °C ($\mu=1.81\times10^{-5}$ Pa s, $\rho=1.204$ kg/m³, $\nu=1.50\times10^{-5}$ m²/s) and water at 20 °C ($\mu=1.002\times10^{-3}$ Pa s, $\rho=998.2$ kg/m³, $\nu=1.00\times10^{-6}$ m²/s). The ratio is 2.995 in Python. Water's kinematic viscosity is 15 times smaller than air's, so a model one fifth of the size needs only one third of the full-size speed.
+
+> [!note] Correction (2026-11-05)
+> An earlier version of this answer described the object as a car and $s$ as surface roughness. The sheet's question is about an aerofoil of length $L$ and width $s$, so $s/L$ is the aspect ratio, matched by geometric similarity. The numerical answer, 3.0, was and is correct.
 
 ## Exam-ready checklist
 

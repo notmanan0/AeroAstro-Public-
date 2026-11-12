@@ -21,7 +21,7 @@ $$f'_j\approx\frac{f_{j+1}-f_j}{h}\ (\text{forward}),\quad\frac{f_j-f_{j-1}}{h}\
 - Accuracy. Forward and backward are first order, $O(h)$. Central is second order, $O(h^2)$, because the $\pm\tfrac h2f''$ errors cancel. Wider stencils give higher order: one-sided second-order schemes use 3 points, e.g. $(f_{j-2}-4f_{j-1}+3f_j)/2h$.
 - Second derivative = the difference of first differences taken at $j\pm\tfrac12$.
 - Non-uniform grids: replace $h$ with local spacings. For example $f''_j\approx\left[\frac{f_{j+1}-f_j}{x_{j+1}-x_j}-\frac{f_j-f_{j-1}}{x_j-x_{j-1}}\right]\big/\tfrac12(x_{j+1}-x_{j-1})$.
-- Time derivatives use the same formulas with $\Delta t$: forward is explicit Euler, backward is implicit Euler, and 3-point backward is BDF2.
+- Time derivatives use the same formulas with $\Delta t$: forward is explicit Euler, backward is implicit Euler, and 3-point backward is BDF2, which is second order only when the right-hand side is taken at the new level $n+1$ (implicit); with $R^n$ it is explicit but first order ([[SESA2029 A6 - Higher-Order Time Integration, Runge-Kutta and the Blasius Equation#1. The three-point backward scheme in time|A6]]).
 
 - $d/dx[\sin2\pi x]$: the RMS error halves per doubling of $N$ for the forward scheme and quarters for the central scheme.
 

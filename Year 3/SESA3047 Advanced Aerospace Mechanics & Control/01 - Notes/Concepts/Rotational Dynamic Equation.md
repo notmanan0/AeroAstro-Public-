@@ -19,11 +19,11 @@ $${}^b\dot{\boldsymbol\omega}^{FRD}_{b/i}=\left(\mathbf J^{FRD}\right)^{-1}\left
 
 It starts from Newton's law for rotation in the inertial frame, $\sum\mathbf M_{cm}={}^i\dot{\mathbf h}$ with $\mathbf h=\mathbf J\boldsymbol\omega$ ([[Inertia Matrix]]). The [[Transport Theorem]] moves the derivative to body axes, ${}^i\dot{\mathbf h}={}^b\dot{\mathbf h}+\boldsymbol\omega\times\mathbf h$. In body axes $\dot{\mathbf J}=\mathbf 0$ because the body is rigid (constant mass alone isn't enough: deploying panels change $\mathbf J$ at fixed $m$), so ${}^b\dot{\mathbf h}=\mathbf J\dot{\boldsymbol\omega}$, and $\boldsymbol\omega\times\mathbf h=\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$. Solving for $\dot{\boldsymbol\omega}$ gives (3.71).
 
-The step-by-step derivation and figure are in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]. L10 (Mon 12 Oct) ended at the implicit form $\sum\mathbf M_{cm}=\mathbf J\dot{\boldsymbol\omega}+\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ (3.70), and [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Two facts L10 glossed|3.3]] fills in the two steps it skipped over. L11 ll. 35–68 revisits the explicit derivative and ll. 72–228 expand the full-inertia equation and the principal-axis case; see [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]].
+The step-by-step derivation and figure are in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]. The implicit form is $\sum\mathbf M_{cm}=\mathbf J\dot{\boldsymbol\omega}+\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ (3.70, L10); the two steps that the derivation leaves implicit are proved in [[SESA3047 3.3 - Rigid-Body Rotational Dynamics#Two facts used in the derivation|3.3]]. The explicit derivative (L11 ll. 35–68), the full-inertia equation and the principal-axis case (ll. 72–228) are in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics]].
 
 ## Special forms
 
-This note and 3.3 write the moments of inertia as $J_x,J_y,J_z$; 4.1 and the Chapter 4 handout write $J_{xx},J_{yy},J_{zz}$ for the same things.
+The moments of inertia are written $J_x,J_y,J_z$ here and in 3.3, and $J_{xx},J_{yy},J_{zz}$ in 4.1 and the Chapter 4 handout; the two notations mean the same thing.
 
 On principal axes the equation becomes Euler's equations:
 
@@ -49,7 +49,7 @@ With an internal rotor, the total momentum is $\mathbf h=\mathbf J\boldsymbol\om
 
 ## Physical meaning
 
-$\mathbf M$ is the applied moment: aerodynamic, thrust, controls. The $\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ term is the change of angular momentum due to the rotating body frame (Chapter 3, p. 14; the gyroscopic term in textbooks). It exists even with no applied moment, because $\mathbf h$ is generally not parallel to $\boldsymbol\omega$. It is behind inertia coupling (Chapter 4, p. 4; L12; Lab 1 says "inertial coupling"), the need to balance rotors, and the instability of spin about the intermediate principal axis. Torque-free motion conserves $|\mathbf h|$ and the kinetic energy $\tfrac12\boldsymbol\omega^T\mathbf J\boldsymbol\omega$.
+$\mathbf M$ is the applied moment: aerodynamic, thrust, controls. The $\tilde{\boldsymbol\omega}\mathbf J\boldsymbol\omega$ term is the change of angular momentum due to the rotating body frame (Chapter 3, p. 14; the gyroscopic term in textbooks). It exists even with no applied moment, because $\mathbf h$ is generally not parallel to $\boldsymbol\omega$. It is behind inertia coupling (Chapter 4, p. 4; L12; written "inertial coupling" in Lab 1), the need to balance rotors, and the instability of spin about the intermediate principal axis. Torque-free motion conserves $|\mathbf h|$ and the kinetic energy $\tfrac12\boldsymbol\omega^T\mathbf J\boldsymbol\omega$.
 
 ## Related
 

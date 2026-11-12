@@ -21,7 +21,7 @@ $$
 
 with $\dot Q>0$ for heat added and $\dot W_x>0$ for shaft work done by the fluid.
 
-The $p/\rho$ flow work is absorbed into $h = u+p/\rho$, so the work term is shaft work only. In propulsion $gz$ is neglected, and so is the kinetic energy where the velocity is low, at compressor and burner entry and exit, but never the kinetic energy at the intake entry at speed or at the nozzle exit. The lecturer's tip is to work in stagnation quantities, which avoids needing the velocities inside the engine. Applied to each component, per kg:
+The $p/\rho$ flow work is absorbed into $h = u+p/\rho$, so the work term is shaft work only. In propulsion $gz$ is neglected, and so is the kinetic energy where the velocity is low, at compressor and burner entry and exit, but never the kinetic energy at the intake entry at speed or at the nozzle exit. Work in stagnation quantities where you can; which avoids needing the velocities inside the engine. Applied to each component, per kg:
 
 | Component | Result |
 |---|---|

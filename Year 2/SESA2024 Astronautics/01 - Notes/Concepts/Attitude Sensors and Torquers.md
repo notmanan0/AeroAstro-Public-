@@ -21,5 +21,5 @@ Attitude can only be controlled as accurately as it is measured. Reference senso
 
 ## Related
 
-- [[SESA2024 06 - Attitude Control#5. Torques and torquers|Torques and torquers in the lecture note]] · [[SESA2024 06 - Attitude Control#7. Attitude sensors|Sensors]]
+- [[SESA2024 06 - Attitude Control#5. Torques and torquers|Torques and torquers in the topic note]] · [[SESA2024 06 - Attitude Control#7. Attitude sensors|Sensors]]
 - [[Reaction Wheels and Momentum Dumping]] · [[Spacecraft Stabilisation Types]]

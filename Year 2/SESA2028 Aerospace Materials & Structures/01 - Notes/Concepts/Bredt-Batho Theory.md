@@ -10,7 +10,7 @@ parent: ["[[SESA2028 S4 - Torsion of Thin-Walled Sections]]"]
 
 # Bredt-Batho Theory
 
-The theory of torsion of thin-walled closed sections (single cell). This note derives it; [[Bredt-Batho Torsion]] shows how to use it.
+The theory of torsion of thin-walled closed sections (single cell): the shear flow is constant round the wall, equals $T/2A_m$, and gives the torsion constant $J$. Worked use is in [[Bredt-Batho Torsion]].
 
 ## 1. Shear flow is constant round the cell
 
@@ -43,7 +43,7 @@ $$
 
 ## Consequences
 
-- Stiffness ∝ $A_m^2$: enclosed area is everything. A closed tube is typically hundreds of times stiffer in torsion than the same wall slit open ([[Open-Section Torsion]]).
+- Stiffness ∝ $A_m^2$, so the enclosed area dominates. A closed tube is typically hundreds of times stiffer in torsion than the same wall slit open ([[Open-Section Torsion]]).
 - Assumptions: thin walls, closed cell, no restraint of warping, shape of cross-section maintained (diaphragms), linear elastic.
 
 ![[structures_open_vs_closed_torsion.png|700]]

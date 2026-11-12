@@ -18,7 +18,7 @@ sources: ["02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/02 Novem
 # SESA3047 Chapter 5 Practice Problems - Solutions
 
 > [!info] About this sheet
-> The five problems are §5.8 of the Chapter 5 handout (pp. 9–10). No answer key has been issued, so these are my worked solutions, with every number and matrix checked in SymPy/SciPy (`generate_amc_ch5_figures.py --check`). L14 pointed at Problem 1: *"the first question is basically what we're doing right now … that used to be an exam question"* for SESA3030 (ll. 230–234). Problem 4's blocks $P_1,P_2,P_3$ are not given as transfer functions, so it is solved for general blocks first and then for first-order blocks.
+> The five problems are §5.8 of the Chapter 5 handout (pp. 9–10). No answer key has been issued, so these are my worked solutions, with every number and matrix checked in SymPy/SciPy (`generate_amc_ch5_figures.py --check`). Problem 1 matches the L14 material and was once a SESA3030 exam question (ll. 230–234). Problem 4's blocks $P_1,P_2,P_3$ are not given as transfer functions, so it is solved for general blocks first and then for first-order blocks.
 
 ## Problem 1. Equilibria and linearisation of a made-up system
 
@@ -49,7 +49,7 @@ $$
 
 So there are two equilibria, $(-1,1,0)$ and $(-1,-1,0)$, both with $u_0=0$. (With a constant input $u_0>0$ the equilibria move: $(x_0+1)^2=u_0/4$ and $y_0^2=-x_0$, giving up to four, all with $z_0=0$.)
 
-### Linearisation, lecture method
+### Linearisation, course method
 
 Write $x=-1+\epsilon x_1$, $y=1+\epsilon y_1$, $z=\epsilon z_1$, $u=\epsilon u_1$.
 
@@ -200,7 +200,7 @@ $\phi$ appears, so it is a state. From [[SESA3047 3.1 - Rotational Kinematics an
 With $\mathbf x=[v,p,r,\phi]^T$:
 
 $$
-\underbrace{\begin{bmatrix}m&0&0&0\\0&J_{xx}&-J_{xz}&0\\0&-J_{xz}&J_{zz}&0\\0&0&0&1\end{bmatrix}}_{\mathbf E}\dot{\mathbf x}=\underbrace{\begin{bmatrix}\mathring Y_v&\mathring Y_p&\mathring Y_r-mU_\infty&mg\\\mathring L_v&\mathring L_p&\mathring L_r&0\\\mathring N_v&\mathring N_p&\mathring N_r&0\\0&1&0&0\end{bmatrix}}_{\mathbf A'}\mathbf x.
+\underbrace{\begin{bmatrix}m&0&0&0\\0&J_{xx}&-J_{xz}&0\\0&-J_{xz}&J_{zz}&0\\0&0&0&1\end{bmatrix}}_{\mathbf M}\dot{\mathbf x}=\underbrace{\begin{bmatrix}\mathring Y_v&\mathring Y_p&\mathring Y_r-mU_\infty&mg\\\mathring L_v&\mathring L_p&\mathring L_r&0\\\mathring N_v&\mathring N_p&\mathring N_r&0\\0&1&0&0\end{bmatrix}}_{\mathbf A^\dagger}\mathbf x.
 $$
 
 ### The state matrix
@@ -211,7 +211,7 @@ $$
 \begin{bmatrix}J_{xx}&-J_{xz}\\-J_{xz}&J_{zz}\end{bmatrix}^{-1}=\frac{1}{\Gamma}\begin{bmatrix}J_{zz}&J_{xz}\\J_{xz}&J_{xx}\end{bmatrix}.
 $$
 
-Then $\mathbf A=\mathbf E^{-1}\mathbf A'$ is
+Then $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$ (the course's names for the two matrices, L15 ll. 247–250) is
 
 $$
 \mathbf A=\begin{bmatrix}

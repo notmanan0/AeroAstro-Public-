@@ -13,82 +13,117 @@ sources: ["02 - Sources/Statics 1/Tutorials/Tutorial Sheet 06 - Buckling, Torsio
 
 # FEEG1002 Statics 1 Tutorial 6 - Buckling, Torsion and Shear Stress Solutions
 
-> [!abstract] Sheet Info
-> One question on each of the last three Statics 1 lectures. All answers are reproduced ✔ (9.0 kN; 64 mm and 58 MPa; 0.30 MPa and 16.7 cm).
+> [!abstract] Sheet info
+> One question on each of the last three Statics 1 topics: the Euler load of a pin-ended I-section column, a steel shaft joined to an aluminium tube in torsion, and the shear stress in the glue line of a laminated timber beam. All printed answers (9.0 kN; 64 mm and 58 MPa; 0.30 MPa and 16.7 cm) are reproduced and every number was recomputed in Python. None of these three topics was examined in January.
 
-## Theory Links
-- [[FEEG1002 A7 - Euler Buckling of Struts]] · [[FEEG1002 A8 - Torsion of Circular Shafts]] · [[FEEG1002 A9 - Shear Stresses in Beams]]
+Theory: [[FEEG1002 A7 - Euler Buckling of Struts]] · [[FEEG1002 A8 - Torsion of Circular Shafts]] · [[FEEG1002 A9 - Shear Stresses in Beams]]
 
 ---
 
-## Q1: Stainless steel I-column, $L = 5$ m, $E = 213$ GPa, pin-ended
-Section: flanges 40 × 10 mm, web 5 × 30 mm, total depth 50 mm. It is doubly symmetric, so the centroid is at the middle.
+## Q1 - Pin-ended I-section column
 
-**(i) Minimum buckling load.** Compute **both** second moments; the column buckles about the weaker axis.
+Taught in: [[FEEG1002 A7 - Euler Buckling of Struts#Worked example - pin-ended I-section column|A7, I-section column]] · [[FEEG1002 A7 - Euler Buckling of Struts#2. Direction of buckling|A7, direction of buckling]]
 
-$$
-I_{zz} = 2\left(\frac{40(10)^3}{12} + 400(20)^2\right) + \frac{5(30)^3}{12} = 3.38\times10^{-7}\ \text{m}^4
-$$
+A stainless steel column of length 5 m, with $E=213$ GPa, has an I-section with flanges 40 mm wide and 10 mm thick and a web 5 mm thick and 30 mm deep, 50 mm deep overall. The section is doubly symmetric, so its centroid is at the middle.
 
-$$
-I_{yy} = 2\left(\frac{10(40)^3}{12}\right) + \frac{30(5)^3}{12} = 1.07\times10^{-7}\ \text{m}^4\quad(\text{smaller})
-$$
+**(i) Minimum buckling load.** The column buckles about the axis with the smaller second moment, so both are needed. About $z$, each flange centroid is 20 mm from the axis:
 
 $$
-P_{cr} = \frac{\pi^2EI_{yy}}{L_e^2} = \frac{\pi^2(213\times10^9)(1.07\times10^{-7})}{5^2} = \mathbf{9.0}\ \text{kN}\ ✔
+I_{zz}=2\left(\frac{40(10)^3}{12}+400(20)^2\right)+\frac{5(30)^3}{12}=3.38\times10^{-7}\ \mathrm m^4
 $$
 
-Slenderness check: $r = \sqrt{I_{yy}/A} = \sqrt{1.07\times10^{-7}/950\times10^{-6}} = 10.6$ mm, so $L_e/r\approx470$. That is far above the transition slenderness, so buckling certainly governs. The Euler stress is only 9.5 MPa.
-
-**(ii) Extra pinned support at midspan.** The lateral deflection is suppressed at midspan but rotation is still allowed, so the mode becomes a full sine wave with $L_e = L/2$:
+About $y$, every part is centred on the axis:
 
 $$
-P_{cr}' = \frac{\pi^2EI}{(L/2)^2} = 4P_{cr}\quad(\text{factor } \mathbf 4)
+I_{yy}=2\left(\frac{10(40)^3}{12}\right)+\frac{30(5)^3}{12}=1.07\times10^{-7}\ \mathrm m^4
 $$
+
+$I_{yy}$ is the smaller, so with $L_e=L$ for a pin-ended strut:
+
+$$
+P_{crit}=\frac{\pi^2EI_{yy}}{L_e^2}=\frac{\pi^2(213\times10^9)(1.07\times10^{-7})}{5^2}=9.0\ \mathrm{kN}
+$$
+
+The section area is 950 mm², so the Euler stress is only 9.5 MPa, far below any yield stress. The column is very slender: $r=\sqrt{I_{yy}/A}=10.6$ mm and $L_e/r\approx470$, so buckling governs.
+
+**(ii) Extra pinned support at midspan.** The support prevents lateral deflection at midspan but allows rotation, so the lowest mode becomes the second pin-ended mode, a full sine wave with a node at midspan. Each half buckles as a pin-ended strut of length $L/2$:
+
+$$
+P_{crit}'=\frac{\pi^2EI}{(L/2)^2}=4P_{crit}
+$$
+
+The load rises by a factor of 4, to 36 kN.
 
 ![[s1_buckling_mode_shapes.png|640]]
 
 ---
 
-## Q2: Steel shaft inside an aluminium tube, $T = 3$ kN m, $D_o = 70$ mm
-**(i) Bore for $\tau_{Al}\le150$ MPa.** The maximum stress is at the outer radius:
+## Q2 - Steel shaft and aluminium tube
+
+Taught in: [[FEEG1002 A8 - Torsion of Circular Shafts#Worked example - steel shaft and aluminium tube|A8, steel shaft and aluminium tube]] · [[FEEG1002 A8 - Torsion of Circular Shafts#The torsion equations|A8, torsion equations]]
+
+A solid steel shaft and a hollow aluminium tube are joined end to end and transmit $T=3$ kN m. The tube's outer diameter is fixed at 70 mm, so $R_o=0.035$ m.
+
+**(i) Bore of the tube for $\tau_{Al}\le150$ MPa.** The largest shear stress is at the outer radius, and $J=\tfrac{\pi}{2}(R_o^4-R_i^4)$ for a hollow shaft:
 
 $$
-\tau_{max} = \frac{TR_o}{J} = \frac{2TR_o}{\pi(R_o^4 - R_i^4)}\;\Rightarrow\; R_i = \left(R_o^4 - \frac{2TR_o}{\pi\tau_{max}}\right)^{1/4} = 0.0320\ \text{m}
+\tau_{max}=\frac{TR_o}{J}=\frac{2TR_o}{\pi(R_o^4-R_i^4)}
 $$
 
-The inner diameter is **64 mm** ✔. The tube is only 3 mm thick ($n = 0.916$), which is a very efficient use of material.
-
-**(ii) Stress in the steel shaft that just fits.** $R = R_i$, so
+Rearranging for the inner radius:
 
 $$
-\tau_{max,steel} = \frac{2T}{\pi R_i^3} = \frac{2(3000)}{\pi(0.032)^3} = \mathbf{58}\ \text{MPa}\ ✔
+R_i=\left(R_o^4-\frac{2TR_o}{\pi\tau_{max}}\right)^{1/4}=0.0320\ \mathrm m
 $$
 
-Both parts carry the **same torque** in series, but the solid steel shaft has the smaller $J/R$. It still sits comfortably below typical steel shear limits.
+The inner diameter is 64 mm. The tube wall is only 3 mm thick ($n=R_i/R_o=0.916$).
+
+**(ii) Stress in a steel shaft that just fits the tube.** The steel shaft has $R=R_i=0.032$ m and $J=\pi R^4/2$:
+
+$$
+\tau_{max,steel}=\frac{2T}{\pi R^3}=\frac{2(3000)}{\pi(0.032)^3}=58\ \mathrm{MPa}
+$$
+
+Both parts carry the same torque, so their peak stresses go as $R/J$. The thin aluminium tube has the smaller $J/R$, $2.0\times10^{-5}$ m³ against $5.2\times10^{-5}$ m³ for the solid steel shaft, and therefore the higher stress: 150 MPa against 58 MPa.
 
 ![[s1_torsion_hollow_vs_solid.png|760]]
 
 ---
 
-## Q3: Glued laminated beam, two 50 mm square timbers, $F = 2$ kN at midspan, total span $2L$ ($L = 1.5$ m)
-**(i) Glue shear stress.** The glue line is on the **neutral axis**, where $\tau$ is largest. The shear force is $F/2$ throughout, only its sign changes. For a rectangle $K = 3/2$:
+## Q3 - Glued timber beam
+
+Taught in: [[FEEG1002 A9 - Shear Stresses in Beams#Worked example - glued timber beam|A9, glued timber beam]] · [[FEEG1002 A9 - Shear Stresses in Beams#5. The shear stress coefficient|A9, shear stress coefficient]]
+
+Two square timbers of side $d=50$ mm are glued one on top of the other, making a 50 mm wide, 100 mm deep section. The beam spans $2L$ with $L=1.5$ m, simply supported, with $F=2$ kN at midspan.
+
+**(i) Shear stress in the glue.** The glue line is on the neutral axis, where the shear stress is largest. The shear force has magnitude $F/2$ everywhere; only its sign changes at midspan. For a rectangle $K=3/2$, so
 
 $$
-\tau_{glue} = K\frac{Q}{A} = \frac32\cdot\frac{F/2}{2d^2} = \frac{1.5(2000)}{4(0.05)^2} = \mathbf{0.30}\ \text{MPa}\ ✔
+\sigma_{yx}=K\frac{Q}{A}=\frac32\cdot\frac{F/2}{2d^2}=\frac{1.5(2000)}{4(0.05)^2}=0.30\ \mathrm{MPa}
 $$
 
-The span length does not enter: shear stress depends on $Q$, not $M$.
+The span does not enter, because the shear stress depends on $Q$, not $M$.
 
-**(ii) Screw spacing.** Screw core 4 mm, $\tau_{allow} = 200$ MPa, friction ignored.
-- One screw carries $F_s = \tau\,\pi D^2/4 = 2.51$ kN.
-- The horizontal shear flow along the joint is $q = \tau_{glue}\,b = 0.3\times10^6(0.05) = 15$ kN/m.
-- So $n = q/F_s = 5.96$ per metre. Round **up** to 6 per metre: spacing **16.7 cm** ✔
+**(ii) Screw spacing.** A single row of screws with a 4 mm core diameter and an allowable shear stress of 200 MPa replaces the glue, and friction is ignored. One screw carries
+
+$$
+F_s=\tau\frac{\pi D^2}{4}=200\times10^6\cdot\frac{\pi(0.004)^2}{4}=2.51\ \mathrm{kN}
+$$
+
+The horizontal shear force per unit length that the joint must carry is the glue stress times the width:
+
+$$
+q=\sigma_{yx}b=0.3\times10^6(0.05)=15\ \mathrm{kN/m}
+$$
+
+So $q/F_s=5.97$ screws are needed per metre. Rounding up to 6 per metre gives a spacing of 16.7 cm (exactly, $F_s/q=16.8$ cm is the largest spacing that works).
 
 ![[s1_beam_shear_stress.png|860]]
 
-> [!tip] Bending would govern the timber itself
-> $M_{max} = FL/2 = 1.5$ kN m on a 50 × 100 mm section gives $\sigma = 6M/bd^2 = 18$ MPa, which is 60× the glue shear stress, as expected from $\sigma/\tau\sim4L/d$. The glue line is still the weak link: glue shear strength is only a few MPa, and timber is weak in shear along the grain.
+> [!check] Bending stress for comparison
+> $M_{max}=(F/2)L=1.5$ kN m on the 50 × 100 mm section gives $\sigma=6M/(bh^2)=18$ MPa, 60 times the glue shear stress. That agrees with $\sigma/\sigma_{yx}=4L/h$ with $h=100$ mm. The glue line can still be the weak link, because glue shear strengths are a few MPa and timber is weak in shear along the grain.
 
 ## Sources
-- Source sheet and official solutions: Statics-1 Tutorial problem sheet 6
+
+- Tutorial Sheet 06 and its official solutions: Q1 pp. 1–2, Q2 pp. 3–4, Q3 pp. 5–6.
+- Q1(ii) has no printed answer on the problem sheet; the factor of 4 is from the official solution (p. 2).

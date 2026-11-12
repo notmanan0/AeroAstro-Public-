@@ -3,7 +3,7 @@ title: "Boundary Layer Separation"
 module: "SESA2022 Aerodynamics"
 type: concept
 stream: "Topic 2: Boundary Layers"
-aliases: ["separation", "adverse pressure gradient", "flow separation", "favourable pressure gradient", "tripping"]
+aliases: ["separation", "adverse pressure gradient", "flow separation", "favourable pressure gradient", "tripping", "boundary-layer trip", "transition strip", "laminar vs turbulent separation", "drag crisis"]
 tags: [sesa2022, concept, boundary-layers]
 status: complete
 parent_lectures: ["[[SESA2022 T2 - Boundary Layers]]", "[[SESA2022 T4 - Thin Aerofoil Theory]]"]

@@ -29,5 +29,5 @@ For a push-broom imager, full coverage needs the swath to span the track spacing
 
 ## Related
 
-- [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#4. Both at once|Derivation in the lecture note]] · [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#2. The iteration|The N, M iteration]]
+- [[SESA2024 12 - Sun- and Earth-Synchronous Orbits#4. Both at once|Derivation in the topic note]] · [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#2. The iteration|The N, M iteration]]
 - [[Sun-Synchronous Orbit]] · [[Swath Width and Push-Broom Imaging]] · [[Orbit Control Cycle]]

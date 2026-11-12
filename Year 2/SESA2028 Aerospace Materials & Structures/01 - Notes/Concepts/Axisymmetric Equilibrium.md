@@ -36,7 +36,7 @@ $$
 
 ## Why it is not enough on its own
 
-One equation, two unknown stresses ($\sigma_r,\sigma_\theta$): the problem is statically indeterminate. Close it with [[Strain Compatibility]] ($\varepsilon_r=du/dr$, $\varepsilon_\theta=u/r$) and Hooke's law. That combination produces the Lamé and spinning-disc solutions.
+One equation, two unknown stresses ($\sigma_r,\sigma_\theta$): the problem is statically indeterminate. [[Strain Compatibility]] ($\varepsilon_r=du/dr$, $\varepsilon_\theta=u/r$) and Hooke's law supply the missing relation, and together they produce the Lamé and spinning-disc solutions.
 
 The $(\sigma_r-\sigma_\theta)/r$ term is purely geometric: because the side faces are not parallel, the hoop stress has a radial component. This is why radial and hoop stresses cannot generally be equal through a thick wall (except at the centre of a solid disc).
 

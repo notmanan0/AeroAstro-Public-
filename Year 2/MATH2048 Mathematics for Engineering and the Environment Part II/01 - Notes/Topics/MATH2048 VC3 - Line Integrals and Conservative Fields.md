@@ -61,7 +61,7 @@ Three properties follow (ll. 367–384). The value doesn't depend on the paramet
 
 ### Same field, two paths (L22)
 
-Take $\mathbf F=2xy\,\mathbf i+(x^2-z^2)\,\mathbf j-3xz^2\,\mathbf k$ and move from the origin to $(2,1,3)$ along two curves (ll. 28–46).
+The field $\mathbf F=2xy\,\mathbf i+(x^2-z^2)\,\mathbf j-3xz^2\,\mathbf k$ is integrated from the origin to $(2,1,3)$ along two curves (ll. 28–46).
 
 The curved path $C_1$ is $\mathbf r=2t\,\mathbf i+t^3\,\mathbf j+3t^2\,\mathbf k$, $0\leq t\leq1$. Read off $x=2t$, $y=t^3$, $z=3t^2$ and substitute (ll. 47–68):
 
@@ -107,21 +107,29 @@ $$
 
 Same endpoints, different answers: this integral depends on the path (ll. 179–193).
 
+The parametrisation, on the other hand, does not matter. The same straight line can be traced as $\mathbf r=2s^2\,\mathbf i+s^2\,\mathbf j+3s^2\,\mathbf k$, $0\leq s\leq1$, which moves slowly at first and fast at the end. Then $\mathbf F=4s^4\,\mathbf i-5s^4\,\mathbf j-54s^6\,\mathbf k$ and $\frac{d\mathbf r}{ds}=4s\,\mathbf i+2s\,\mathbf j+6s\,\mathbf k$, so
+
+$$
+\int_{C_2}\mathbf F\cdot d\mathbf r=\int_0^1\big(16s^5-10s^5-324s^7\big)\,ds=1-\frac{324}{8}=-\frac{79}{2},
+$$
+
+exactly as before: substituting $t=s^2$, $dt=2s\,ds$ turns one integral into the other.
+
 ### Round a closed loop
 
-Go out along $C_1$ and back along $C_2$ reversed (ll. 199–239). Reversing $C_2$ flips its sign, so
+The loop goes out along $C_1$ and back along $C_2$ reversed (ll. 199–239). Reversing $C_2$ flips its sign, so
 
 $$
 \oint\mathbf F\cdot d\mathbf r=-\frac{323}7+\frac{79}2=\frac{-646+553}{14}=-\frac{93}{14}\approx-6.6 .
 $$
 
-A particle taken round the loop and returned to its start has had net work done on it. That isn't paradoxical; some processes simply don't return all the energy put in.
+A particle taken round the loop and returned to its start has had net work done on it. That isn't paradoxical; some processes don't return all the energy put in.
 
 ![[m2048_vc_two_paths.png|620]]
 
 ### A gradient field on the same two paths
 
-Now take $\mathbf F=y^2z\,\mathbf i+2xyz\,\mathbf j+xy^2\,\mathbf k$, which is $\nabla(xy^2z)$ (ll. 240–316). On $C_1$,
+The field $\mathbf F=y^2z\,\mathbf i+2xyz\,\mathbf j+xy^2\,\mathbf k$ is $\nabla(xy^2z)$ (ll. 240–316). On $C_1$,
 
 $$
 \mathbf F=3t^8\,\mathbf i+12t^6\,\mathbf j+2t^7\,\mathbf k,\qquad\mathbf F\cdot\frac{d\mathbf r}{dt}=6t^8+36t^8+12t^8=54t^8 ,
@@ -133,10 +141,42 @@ $$
 \mathbf F=3t^3\,\mathbf i+12t^3\,\mathbf j+2t^3\,\mathbf k,\qquad\mathbf F\cdot\frac{d\mathbf r}{dt}=6t^3+12t^3+6t^3=24t^3 ,
 $$
 
-so $\int_{C_2}=\frac{24}4=6$. Both equal $xy^2z$ at $(2,1,3)$ minus its value at the origin, $6-0$. That is the conservative case.
+so $\int_{C_2}=\frac{24}4=6$. Both equal $xy^2z$ at $(2,1,3)$ minus its value at the origin, $6-0$. That is the conservative case. The running totals show the difference: for the gradient field the work done so far at any $t$ is just $xy^2z$ at the current point ($6t^9$ on $C_1$, $6t^4$ on $C_2$), so the two curves differ along the way but must meet at the end, while for the first field nothing forces them together.
+
+![[m2048_vc_cumulative_work.png|900]]
 
 > [!check] SymPy
 > The four integrals are $-\frac{323}7$, $-\frac{79}2$, $6$ and $6$. The first field has $\nabla\times\mathbf F=2z\,\mathbf i+3z^2\,\mathbf j\neq\mathbf 0$, consistent with its path dependence.
+
+### Problem Sheet 8, Q7
+
+(a) $\mathbf F=(y+2)\,\mathbf i+x\,\mathbf j$ along $\mathbf r=\sin t\,\mathbf i+\cos t\,\mathbf j$, $0\leq t\leq\frac\pi2$, a quarter of the unit circle from $(0,1)$ to $(1,0)$. On the curve $\mathbf F=(\cos t+2)\,\mathbf i+\sin t\,\mathbf j$, and $\frac{d\mathbf r}{dt}=\cos t\,\mathbf i-\sin t\,\mathbf j$, so
+
+$$
+\mathbf F\cdot\frac{d\mathbf r}{dt}=\cos^2t+2\cos t-\sin^2t=\cos2t+2\cos t,
+$$
+
+$$
+\int_C\mathbf F\cdot d\mathbf r=\Big[\tfrac12\sin2t+2\sin t\Big]_0^{\pi/2}=0+2=2 .
+$$
+
+The field is $\nabla(xy+2x)$, and $xy+2x$ goes from $0$ to $2$.
+
+(b) $\mathbf F=x\,\mathbf i+y\,\mathbf j-z\,\mathbf k$ along $\mathbf r=t\,\mathbf i+3t^2\,\mathbf j+2t^3\,\mathbf k$, $-1\leq t\leq1$. Here $\mathbf F\cdot\frac{d\mathbf r}{dt}=t\cdot1+3t^2\cdot6t-2t^3\cdot6t^2=t+18t^3-12t^5$, an odd function on a symmetric range, so the integral is $0$. The curl test explains why: $\mathbf F=\nabla\big(\tfrac12(x^2+y^2-z^2)\big)$, and the potential takes the same value $\frac12(1+9-4)=3$ at both ends $(-1,3,-2)$ and $(1,3,2)$.
+
+(c) $\mathbf F=3z\,\mathbf i+y^2\,\mathbf j+6z\,\mathbf k$ along the helix $\mathbf r=\cos t\,\mathbf i+\sin t\,\mathbf j+\frac t3\,\mathbf k$, $0\leq t\leq4\pi$. On the helix $\mathbf F=t\,\mathbf i+\sin^2t\,\mathbf j+2t\,\mathbf k$ and $\frac{d\mathbf r}{dt}=-\sin t\,\mathbf i+\cos t\,\mathbf j+\frac13\mathbf k$:
+
+$$
+\mathbf F\cdot\frac{d\mathbf r}{dt}=-t\sin t+\sin^2t\cos t+\frac{2t}{3}.
+$$
+
+Integrate each term over two full turns: $-\int_0^{4\pi}t\sin t\,dt=\big[t\cos t-\sin t\big]_0^{4\pi}=4\pi$ by parts, $\int_0^{4\pi}\sin^2t\cos t\,dt=\big[\tfrac13\sin^3t\big]_0^{4\pi}=0$, and $\int_0^{4\pi}\frac{2t}3\,dt=\frac{16\pi^2}{3}$. So
+
+$$
+\int_C\mathbf F\cdot d\mathbf r=4\pi+\frac{16\pi^2}{3}\approx65.2 .
+$$
+
+This field has curl $3\,\mathbf j\neq\mathbf 0$, so no shortcut was available. SymPy gives all three values.
 
 ## 3. Conservative fields (L26)
 
@@ -146,7 +186,7 @@ $$
 \mathbf F=-\nabla\phi ,
 $$
 
-with a minus sign, because $\phi$ is usually a potential energy and the force pushes towards lower energy, as with gravity or electrostatics (ll. 46–50). If the potential is an entropy, which increases, the sign is plus. Lecture 22's example used the plus sign, so watch which one a question uses. The potential is not unique: adding a constant leaves $\nabla\phi$ unchanged, just as the zero of potential energy can be the floor, the desk or the ceiling, since only differences matter (ll. 51–59).
+with a minus sign, because $\phi$ is usually a potential energy and the force pushes towards lower energy, as with gravity or electrostatics (ll. 46–50). If the potential is an entropy, which increases, the sign is plus. The Lecture 22 example uses the plus sign, so the sign in each question needs checking. The potential is not unique: adding a constant leaves $\nabla\phi$ unchanged, just as the zero of potential energy can be the floor, the desk or the ceiling, since only differences matter (ll. 51–59).
 
 ### The work is a difference of potentials
 
@@ -170,7 +210,7 @@ $$
 \oint_C\mathbf F\cdot d\mathbf r=0 .
 $$
 
-Lecture 22 argued it the other way round (ll. 327–342): split the loop at two points into two paths from $A$ to $B$; path independence makes them equal, and going back along one of them flips its sign, so the two halves cancel.
+It also follows the other way round (ll. 327–342): split the loop at two points into two paths from $A$ to $B$; path independence makes them equal, and going back along one of them flips its sign, so the two halves cancel.
 
 ### When is a field conservative?
 
@@ -186,7 +226,7 @@ $$
 
 Integrating in $x$ leaves a "constant" that can be any function of $y$ and $z$. Rather than integrate all three and match three sets of such functions, integrate the easiest one, then differentiate the result in another variable and compare (ll. 165–176).
 
-The lecture's example (ll. 177–290) is
+The worked example (ll. 177–290) is
 
 $$
 \mathbf F=\big(2xy+\cos2y\big)\,\mathbf i+\big(x^2-2x\sin2y+2y\big)\,\mathbf j .
@@ -216,7 +256,18 @@ $$
 \phi=-x^2y-x\cos2y-y^2+C .
 $$
 
-The constant $C$ doesn't matter (ll. 261–284). Either set it to zero, as the course does, or choose it so the potential vanishes somewhere meaningful, such as at infinity for gravity.
+The constant $C$ doesn't matter (ll. 261–284). Either set it to zero, the usual choice, or choose it so the potential vanishes somewhere meaningful, such as at infinity for gravity.
+
+Starting from the $\mathbf j$ equation instead gives the same answer, which is a good check. $-\phi_y=x^2-2x\sin2y+2y$ integrates in $y$ to
+
+$$
+\phi=-x^2y-x\cos2y-y^2+h(x),
+$$
+
+using $\int\sin2y\,dy=-\frac12\cos2y$, so $-\int(-2x\sin2y)\,dy=-x\cos2y$. Then $-\phi_x=2xy+\cos2y-h'(x)$ must equal $F_1=2xy+\cos2y$, so $h'=0$ and $h$ is a constant: the same $\phi$.
+
+> [!check] Work from the potential
+> From $(0,0)$ to $(1,\frac\pi4)$ the potential drops from $\phi(0,0)=0$ to $\phi(1,\frac\pi4)=-\frac\pi4-\cos\frac\pi2-\frac{\pi^2}{16}=-1.4022$, so the work is $\phi(A)-\phi(B)=1.4022$. Integrating $\mathbf F$ numerically along the straight line between the points gives $1.4022$ as well.
 
 ### Potential flow
 
@@ -255,22 +306,6 @@ $$
 > [!check] SymPy
 > $e^2$, $e-1$ and $\frac{19}4$, and the potential of the L26 example satisfies $-\nabla\phi=\mathbf F$ exactly.
 
-## Transcript slips
-
-> [!warning] Lectures 21, 22 and 26
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L22, l. 139 | "the x component is 2z" | $x=2t$ |
-> | L22, l. 171 | "1 minus 82 on 2" | $1-\frac{81}2=-\frac{79}2$ |
-> | L22, ll. 184–190 | $-\frac{323}7$ is "negative 6.6 roughly", "a factor of 6" from $-39.5$ | $-\frac{323}7\approx-46.1$; the two differ by about 17 %. $-6.6$ is the closed-loop value $-\frac{93}{14}$ |
-> | L22, l. 293 | "2 plus 2I plus J plus 3K" | $2\,\mathbf i+\mathbf j+3\,\mathbf k$ |
-> | L22, l. 325 | conservative fields "in lecture 27" | Lecture 26 |
-> | L26, l. 23 | "negative grad 5" | $-\nabla\phi$ |
-> | L26, l. 40 | potentials "go like the charge density" | they go like one over the distance to the charge, as l. 42 says |
-> | L26, l. 66 | B is at "the lower point of the parameter" | the upper limit, $t=b$ |
-> | L26, l. 231 | $f=-x^2y+x\cos2y+g(y)$ | $-x\cos2y$, corrected at l. 237 |
-> | L26, l. 294 | "gradient of the velocity field being irrotational" | the velocity is the gradient of a potential, so it is irrotational |
-
 ## Links
 
 - Parent: [[MATH2048 Mathematics for Engineering and the Environment Part II Hub]] · Previous: [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities]] · Next: [[MATH2048 VC4 - Surfaces, Surface Area and Flux Integrals]]
@@ -285,11 +320,11 @@ $$
 
 ## Self-study tasks
 
-Lecture 22 said line integrals "should be something that you should be able to hammer through at speed now" (l. 349), and Lecture 26 flagged scalar potentials as needed for the coursework (l. 313).
+Lecture 22 expected line integrals to be routine by this point (l. 349), and Lecture 26 flagged scalar potentials as needed for the coursework (l. 313).
 
 ### Core
 
-- [ ] PS8 Q7(a)–(c). Answers: $2$; $0$ (conservative, equal potentials at the ends); $4\pi+\frac{16\pi^2}3$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
+- [ ] PS8 Q7(a)–(c). Answers: $2$; $0$ (conservative, equal potentials at the ends); $4\pi+\frac{16\pi^2}3$. → [[#Problem Sheet 8, Q7]]
 - [ ] Rework both L22 paths for the first field and confirm the loop value $-\frac{93}{14}$. → [[#Same field, two paths (L22)]]
 - [ ] 2025/26 B1: show $\mathbf F$ is not conservative and integrate it. → [[#4. Past exam questions B1]]
 
@@ -297,3 +332,21 @@ Lecture 22 said line integrals "should be something that you should be able to h
 
 - [ ] 2024/25 B1(b)–(d): find $\phi$ with $\nabla\phi=-\mathbf G$ and use it. → [[#4. Past exam questions B1]]
 - [ ] Find the potential of the L26 example starting from the $\mathbf j$ equation instead, and check you get the same $\phi$ up to a constant (suggested, not lecturer-set). → [[#Finding a potential (L26)]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 21, 22 and 26
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L22, l. 139 | "the x component is 2z" | $x=2t$ |
+> | L22, l. 171 | "1 minus 82 on 2" | $1-\frac{81}2=-\frac{79}2$ |
+> | L22, ll. 184–190 | $-\frac{323}7$ is "negative 6.6 roughly", "a factor of 6" from $-39.5$ | $-\frac{323}7\approx-46.1$; the two differ by about 17 %. $-6.6$ is the closed-loop value $-\frac{93}{14}$ |
+> | L22, l. 293 | "2 plus 2I plus J plus 3K" | $2\,\mathbf i+\mathbf j+3\,\mathbf k$ |
+> | L22, l. 325 | conservative fields "in lecture 27" | Lecture 26 |
+> | L26, l. 23 | "negative grad 5" | $-\nabla\phi$ |
+> | L26, l. 40 | potentials "go like the charge density" | they go like one over the distance to the charge, as l. 42 says |
+> | L26, l. 66 | B is at "the lower point of the parameter" | the upper limit, $t=b$ |
+> | L26, l. 231 | $f=-x^2y+x\cos2y+g(y)$ | $-x\cos2y$, corrected at l. 237 |
+> | L26, l. 294 | "gradient of the velocity field being irrotational" | the velocity is the gradient of a potential, so it is irrotational |

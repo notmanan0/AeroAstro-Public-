@@ -13,7 +13,7 @@ sheet: "Specimen Test 25 (booklet) + Module 25 work scheme: Examples 13.19–13.
 theory_notes: ["[[MATH1054 M25 - Statistics II]]"]
 key_concepts: ["[[Binomial Distribution]]", "[[Normal Distribution and Standardisation]]", "[[Confidence Intervals and Hypothesis Tests for the Mean]]"]
 status: complete
-sources: ["tmp/md/module_25_statistics_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§13.4.x, §13.5)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 25)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§13.4–13.5)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 25)"]
 ---
 
 # MATH1054 M25 Solutions - Statistics II
@@ -218,5 +218,5 @@ $$P(\bar X\ge3580\mid\mu=3500)=P(Z\ge2)=\boxed{0.0228}$$
 This is the $p$-value of the test.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_25_statistics_ii.md`
+- Problem statements: Module 25 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §13.4–13.5; MATH1054 Module Booklet, Module 25 (confidence intervals and tests, booklet pp.87–95)

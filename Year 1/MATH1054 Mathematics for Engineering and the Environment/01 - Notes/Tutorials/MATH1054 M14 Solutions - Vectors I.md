@@ -11,7 +11,7 @@ sheet: "Specimen Test 14 (booklet) + Module 14 work scheme: Examples 4.1–4.29;
 theory_notes: ["[[MATH1054 M14 - Vectors I]]"]
 key_concepts: ["[[Vector Algebra and Components]]", "[[Scalar (Dot) Product]]", "[[Vector (Cross) Product]]"]
 status: complete
-sources: ["tmp/md/module_14_vectors_i.md", "02 - Sources/Modern Engineering Mathematics.pdf (§4.2–4.3)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§4.1–4.2.11)"]
 ---
 
 # MATH1054 M14 Solutions - Vectors I
@@ -41,14 +41,20 @@ $$(l,m,n)=\Big(\tfrac2{\sqrt{14}},-\tfrac1{\sqrt{14}},\tfrac3{\sqrt{14}}\Big)\ap
 **Check**: $l^2+m^2+n^2=1$ ✔.
 
 ## Example 4.4: Vectors around Fig. 4.14
-Every side is "end minus start":
-- $\mathbf g=\vec{\mathrm{AB}}=\boxed{\mathbf b-\mathbf a}$
-- $\mathbf f=\vec{\mathrm{BC}}=\boxed{\mathbf c-\mathbf b}$
-- $\mathbf e=\vec{\mathrm{CD}}=\boxed{\mathbf d-\mathbf c}$
+Read the arrow directions off the figure first: $\mathbf a=\vec{\mathrm{AO}}$ (pointing into O), $\mathbf b=\vec{\mathrm{OB}}$, $\mathbf c=\vec{\mathrm{OC}}$, $\mathbf d=\vec{\mathrm{OD}}$, $\mathbf g=\vec{\mathrm{AB}}$, $\mathbf f=\vec{\mathrm{CB}}$, $\mathbf e=\vec{\mathrm{CD}}$ and $\mathbf h=\vec{\mathrm{AD}}$. Each side then follows from a triangle through O:
+- Triangle OAB: $\mathbf g=\vec{\mathrm{AO}}+\vec{\mathrm{OB}}=\boxed{\mathbf a+\mathbf b}$
+- Triangle OBC: $\mathbf f=\vec{\mathrm{OB}}-\vec{\mathrm{OC}}=\boxed{\mathbf b-\mathbf c}$
+- Triangle OCD: $\mathbf e=\vec{\mathrm{OD}}-\vec{\mathrm{OC}}=\boxed{\mathbf d-\mathbf c}$
 
-Going round the closed loop A→B→C→D→A gives $\mathbf g+\mathbf f+\mathbf e+\mathbf h=\mathbf0$, so
+Going round the closed loop C→D→A→B→C gives zero total displacement:
 
-$$\boxed{\mathbf e=-(\mathbf f+\mathbf g+\mathbf h)}$$
+$$\vec{\mathrm{CD}}+\vec{\mathrm{DA}}+\vec{\mathrm{AB}}+\vec{\mathrm{BC}}=\mathbf0$$
+
+$$\mathbf e+(-\mathbf h)+\mathbf g+(-\mathbf f)=\mathbf0$$
+
+$$\boxed{\mathbf e=\mathbf f-\mathbf g+\mathbf h}$$
+
+**Check**: $\mathbf f-\mathbf g+\mathbf h=\vec{\mathrm{CB}}+\vec{\mathrm{BA}}+\vec{\mathrm{AD}}=\vec{\mathrm{CD}}$ ✔
 
 ## Example 4.5: Quadrilateral OACB with $\vec{\mathrm{OC}}=\mathbf b+\tfrac12\mathbf a$
 
@@ -335,5 +341,5 @@ $$\boldsymbol\omega=\boxed{\tfrac4{\sqrt{14}}(\mathbf i+3\mathbf j+2\mathbf k)}\
 $$\mathbf v=\boldsymbol\omega\times\vec{\mathrm{AP}}=\tfrac4{\sqrt{14}}(1,3,2)\times(1,1,1)=\tfrac4{\sqrt{14}}(1,1,-2)\approx\boxed{(1.069,\,1.069,\,-2.138)}\ \text{m/s}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_14_vectors_i.md`
-- James, *Modern Engineering Mathematics* (6th ed.) §4.2–4.3; MATH1054 Module Booklet, Module 14
+- Problem statements: Module 14 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
+- James, *Modern Engineering Mathematics* (6th ed.) §4.1–4.2.11; MATH1054 Module Booklet, Module 14

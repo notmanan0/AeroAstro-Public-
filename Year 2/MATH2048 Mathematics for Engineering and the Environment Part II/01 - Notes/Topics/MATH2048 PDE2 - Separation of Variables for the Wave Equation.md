@@ -33,9 +33,9 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 15.txt", "02 - Sources/Lecture
 > - **Common mistakes:** skipping the $\lambda=0$ case, which is a real mode with Neumann ends; multiplying $X_n$ by a $T_m$ with a different index.
 > - **Practise:** [[#Guitar string with fixed ends (L16)]] · [[#4. The 2025-26 exam, question A2]] · [[MATH2048 Problem Sheets 6-7 Solutions - PDEs|PS6]]
 
-PDE1 showed that the wave equation splits a pulse into left- and right-moving waves. The aim now is a method that works for any initial data and copes with boundaries, where waves bounce off walls (L15, ll. 11–14). Separation of variables is that method, and the lecturer called it "absolutely central to this unit". It follows the ODE strategy from [[MATH2048 ODE1 - Second-Order Linear ODEs with Constant Coefficients|ODE1]]: guess a form of solution, find which guesses work, and add them all up, because the equation is linear (ll. 16–21). Only the guess is more elaborate.
+The wave equation splits a pulse into left- and right-moving waves ([[MATH2048 PDE1 - Classification of PDEs and the Wave Equation|PDE1]]). Separation of variables works for any initial data and copes with boundaries, where waves bounce off walls (L15, ll. 11–14). It follows the ODE strategy from [[MATH2048 ODE1 - Second-Order Linear ODEs with Constant Coefficients|ODE1]]: guess a form of solution, find which guesses work, and add them all up, because the equation is linear (ll. 16–21). Only the guess is more elaborate.
 
-Everything earlier in the module comes back. The separated spatial problem is an eigenvalue problem from [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems|ODE3]], its solutions are the sines and cosines of Fourier series, and fitting the initial data is a half-range expansion from [[MATH2048 FS2 - Even and Odd Functions, Half-Range Series and Convergence|FS2]].
+The separated spatial problem is an eigenvalue problem from [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems|ODE3]], its solutions are the sines and cosines of Fourier series, and fitting the initial data is a half-range expansion from [[MATH2048 FS2 - Even and Odd Functions, Half-Range Series and Convergence|FS2]].
 
 ---
 
@@ -59,7 +59,7 @@ $$
 \frac1{c^2}X\ddot T=X''T .
 $$
 
-Now the step that looks pointless (ll. 44–61): divide by $y=XT$.
+Dividing by $y=XT$ (ll. 44–61) puts each variable on its own side:
 
 $$
 \frac1{c^2}\frac{\ddot T}{T}=\frac{X''}{X}.
@@ -135,7 +135,10 @@ $$
 y(x,t)=\sum_{n=1}^\infty\sin\frac{n\pi x}L\Big[C_n\cos\frac{n\pi ct}L+D_n\sin\frac{n\pi ct}L\Big].
 $$
 
-Mode $n$ oscillates at angular frequency $n\pi c/L$, an integer multiple of the fundamental: this is why a guitar string has harmonics. $c$ and $L$ are just numbers you can change freely, but changing the boundary conditions changes the eigenfunctions, and the whole procedure has to be redone (ll. 324–328).
+Mode $n$ oscillates at angular frequency $n\pi c/L$, an integer multiple of the fundamental: this is why a guitar string has harmonics.
+
+> [!check] A real string
+> With PDE1's steel string, $c=\sqrt{70/10^{-3}}=264.6\ \mathrm{m\,s^{-1}}$, and a scale length $L=0.65\ \mathrm m$, the fundamental is $f_1=\frac{\omega_1}{2\pi}=\frac{c}{2L}=203.5\ \mathrm{Hz}$, close to the G string of a guitar, with harmonics at $407$, $611$, $814\ \mathrm{Hz}$ and so on. $c$ and $L$ are just numbers you can change freely, but changing the boundary conditions changes the eigenfunctions, and the whole procedure has to be redone (ll. 324–328).
 
 ### Fitting the initial data
 
@@ -161,7 +164,7 @@ Every constant is now fixed.
 
 ## 2. The six-step method (L16)
 
-Lecture 16 set the procedure out as six steps that work for most linear homogeneous second-order PDEs in one space dimension (ll. 7–27). In higher dimensions there is one function per variable and the steps get longer but no harder.
+Six steps work for most linear homogeneous second-order PDEs in one space dimension (L16, ll. 7–27). In higher dimensions there is one function per variable and the steps get longer but no harder.
 
 1. Substitute $y=X(x)T(t)$ into the PDE and separate into ODEs with a constant $\lambda$.
 2. Turn the spatial boundary conditions on $y$ into conditions on $X$.
@@ -188,7 +191,13 @@ $$
 y_t(x,0)=\sum_{n=1}^\infty n\pi c\,B_n\sin n\pi x=0 .
 $$
 
-This is a sine series for the zero function. A function's Fourier coefficients are unique, so if a guess matches both sides it is the answer, with no integrals needed: $B_n=0$ for every $n$. The same shortcut works whenever the data is already a finite sum of modes, so $y_t(x,0)=\sin3\pi x$ would make every coefficient zero except the one multiplying $\sin3\pi x$ (ll. 248–252).
+This is a sine series for the zero function. A function's Fourier coefficients are unique, so if a guess matches both sides it is the answer, with no integrals needed: $B_n=0$ for every $n$. The same shortcut works whenever the data is already a finite sum of modes, so $y_t(x,0)=\sin3\pi x$ would make every coefficient zero except the one multiplying $\sin3\pi x$ (ll. 248–252). Concretely, with $y(x,0)=0$ and $y_t(x,0)=\sin3\pi x$: the displacement gives every $A_n=0$, and matching
+
+$$
+\sum_{n=1}^\infty n\pi c\,B_n\sin n\pi x=\sin3\pi x
+$$
+
+term by term gives $3\pi c\,B_3=1$ and $B_n=0$ otherwise, so $y=\frac{1}{3\pi c}\sin3\pi ct\,\sin3\pi x$: one pure mode, set going by a velocity kick in its own shape.
 
 The displacement gives the sine series of $x(1-x)$ (ll. 255–274):
 
@@ -233,7 +242,7 @@ Step 1 is unchanged, since it depends only on the PDE. In step 2, $y_x=X'T$, so 
 
 **$\lambda=0$.** $X=A+Bx$ gives $X'=B$, and $X'(0)=X'(1)=0$ only says $B=0$. $A$ is free, so $\lambda_0=0$ with $X_0=$ constant is a genuine mode. With fixed ends there was nothing here.
 
-**$\lambda>0$.** As before, only the zero solution; checking this was left as an exercise (l. 392). With $X=Ce^{kx}+De^{-kx}$, $X'(0)=k(C-D)=0$ gives $D=C$, then $X'(1)=kC(e^k-e^{-k})=0$ forces $C=0$.
+**$\lambda>0$.** As before, only the zero solution (l. 392). With $X=Ce^{kx}+De^{-kx}$, $X'(0)=k(C-D)=0$ gives $D=C$, then $X'(1)=kC(e^k-e^{-k})=0$ forces $C=0$.
 
 **$\lambda=-k^2<0$.** $X=E\cos kx+F\sin kx$, so $X'=k(-E\sin kx+F\cos kx)$. $X'(0)=kF=0$ gives $F=0$, and $X'(1)=-kE\sin k=0$ gives $k=n\pi$ again. The eigenvalues are the same as before, but now the cosine survives: $X_n=\cos n\pi x$.
 
@@ -243,11 +252,31 @@ $$
 y=Gt+H+\sum_{n=1}^\infty\big[C_n\cos n\pi ct+D_n\sin n\pi ct\big]\cos n\pi x .
 $$
 
-The $Gt$ term is the whole string drifting sideways at a steady speed, which free ends allow. Zero initial velocity gives $G=0$ and every $D_n=0$ by uniqueness (ll. 426–428). The displacement gives the cosine series of $x(1-x)$, where the constant term needs care: with the usual $\frac12a_0$ convention, $H=\frac12a_0$ (ll. 429–433). The integrals are the ones worked in [[MATH2048 PDE3 - The Heat Equation|PDE3]]:
+The $Gt$ term is the whole string drifting sideways at a steady speed, which free ends allow. Zero initial velocity gives $G=0$ and every $D_n=0$ by uniqueness (ll. 426–428). The displacement gives the cosine series of $x(1-x)$, where the constant term needs care: with the usual $\frac12a_0$ convention, $H=\frac12a_0$ (ll. 429–433). The constant is the mean value (l. 433):
 
 $$
-H=\int_0^1x(1-x)\,dx=\frac16,\qquad C_n=2\int_0^1x(1-x)\cos n\pi x\,dx=-\frac{2\big(1+(-1)^n\big)}{(n\pi)^2}.
+H=\frac12a_0=\frac12\cdot2\int_0^1x(1-x)\,dx=\Big[\frac{x^2}{2}-\frac{x^3}{3}\Big]_0^1=\frac16 .
 $$
+
+For $C_n$, integrate by parts with $v'=\cos n\pi x$, differentiating the polynomial:
+
+$$
+C_n=2\int_0^1x(1-x)\cos n\pi x\,dx=2\left(\Big[x(1-x)\frac{\sin n\pi x}{n\pi}\Big]_0^1-\int_0^1(1-2x)\frac{\sin n\pi x}{n\pi}\,dx\right).
+$$
+
+The bracket vanishes at both ends. Again, with $v'=\sin n\pi x$:
+
+$$
+-\int_0^1(1-2x)\frac{\sin n\pi x}{n\pi}\,dx=\Big[(1-2x)\frac{\cos n\pi x}{(n\pi)^2}\Big]_0^1+\int_0^1\frac{2\cos n\pi x}{(n\pi)^2}\,dx .
+$$
+
+The last integral is $\frac{2}{(n\pi)^3}[\sin n\pi x]_0^1=0$, and the bracket is $\frac{-(-1)^n-1}{(n\pi)^2}$, so
+
+$$
+C_n=-\frac{2\big(1+(-1)^n\big)}{(n\pi)^2}.
+$$
+
+The same integrals reappear in [[MATH2048 PDE3 - The Heat Equation|PDE3]].
 
 So
 
@@ -262,9 +291,9 @@ in which only even $n$ survive. The constant $\frac16$ is the mean displacement,
 > [!check] SymPy
 > $C_2=-\frac1{\pi^2}$, $C_4=-\frac1{4\pi^2}$, odd $C_n=0$, and 200 terms of the cosine series at $x=0.3$ give $0.21001$.
 
-## 3. Standing waves are travelling waves (L17)
+## 3. Standing waves are travelling waves (L17 and PS6)
 
-The start of Lecture 17 links the separated solution back to waves moving at speed $c$ (ll. 6–28). By the product-to-sum formula,
+Each separated solution is a pair of waves moving at speed $c$ (L17, ll. 6–28). By the product-to-sum formula,
 
 $$
 \cos n\pi x\cos n\pi ct=\tfrac12\Big[\cos n\pi(x-ct)+\cos n\pi(x+ct)\Big].
@@ -272,13 +301,51 @@ $$
 
 The first term is constant along lines $x-ct=$ const, which move right at speed $c$, and the second along $x+ct=$ const, which move left. Each standing mode is two equal waves travelling in opposite directions. The same identity works with fixed ends, $\sin n\pi x\cos n\pi ct=\frac12[\sin n\pi(x-ct)+\sin n\pi(x+ct)]$. The difference is what happens at the ends: a fixed end reflects a wave upside down and a free end reflects it the right way up, so in both cases the left- and right-moving waves keep turning into each other.
 
-The plucked string of PS6 Q1 shows this clearly. The triangle splits into two half-height triangles moving apart at speed $c$; what you see is a flat top whose corners run outwards, reflect inverted off the fixed ends, and reassemble as an upside-down triangle at $t=L/c$. After $t=2L/c$, one full period of the fundamental, the string is back where it started.
+### The plucked string (PS6 Q1)
+
+A string of length $L$ with $c=1$ is pulled up to height $h$ at its midpoint and released from rest, so
+
+$$
+f(x)=\begin{cases}\dfrac{2hx}{L},&0\leq x\leq\dfrac L2,\\[2mm]\dfrac{2h(L-x)}{L},&\dfrac L2\leq x\leq L,\end{cases}\qquad g(x)=0 .
+$$
+
+Zero velocity kills every $D_n$, as before. For $C_n=\frac2L\int_0^Lf\sin\frac{n\pi x}L\,dx$, split at the peak. On the left half, by parts with $v=-\frac{L}{n\pi}\cos\frac{n\pi x}{L}$:
+
+$$
+\int_0^{L/2}\frac{2hx}{L}\sin\frac{n\pi x}{L}\,dx=\frac{2h}{L}\left(\Big[-\frac{Lx}{n\pi}\cos\frac{n\pi x}{L}\Big]_0^{L/2}+\frac{L}{n\pi}\int_0^{L/2}\cos\frac{n\pi x}{L}\,dx\right)
+$$
+
+$$
+=\frac{2h}{L}\left(-\frac{L^2}{2n\pi}\cos\frac{n\pi}{2}+\frac{L^2}{n^2\pi^2}\sin\frac{n\pi}{2}\right).
+$$
+
+On the right half the same steps (or the substitution $x\to L-x$, which maps the right half onto the left and turns $\sin\frac{n\pi x}L$ into $-(-1)^n\sin\frac{n\pi x}L$) give
+
+$$
+\frac{2h}{L}\left(+\frac{L^2}{2n\pi}\cos\frac{n\pi}{2}+\frac{L^2}{n^2\pi^2}\sin\frac{n\pi}{2}\right).
+$$
+
+The cosine terms cancel and the sine terms add, so
+
+$$
+C_n=\frac2L\cdot\frac{2h}{L}\cdot\frac{2L^2}{n^2\pi^2}\sin\frac{n\pi}{2}=\frac{8h}{n^2\pi^2}\sin\frac{n\pi}{2},
+$$
+
+which is $0$ for even $n$ and $(-1)^{(n-1)/2}\frac{8h}{n^2\pi^2}$ for odd $n$:
+
+$$
+y=\frac{8h}{\pi^2}\sum_{n\ \mathrm{odd}}\frac{(-1)^{(n-1)/2}}{n^2}\sin\frac{n\pi x}{L}\cos\frac{n\pi t}{L}.
+$$
+
+At $x=L/2$, $t=0$, every $\sin\frac{n\pi}{2}(-1)^{(n-1)/2}=1$, so the series gives $\frac{8h}{\pi^2}\sum_{n\ \mathrm{odd}}\frac1{n^2}=\frac{8h}{\pi^2}\cdot\frac{\pi^2}{8}=h$, using FS1's sum: the peak height comes back exactly. SymPy reproduces $C_n$, and $10^4$ odd terms give $0.99998h$.
+
+The plucked string shows the travelling-wave picture clearly. The triangle splits into two half-height triangles moving apart at speed $c$; between them lies a flat top whose corners run outwards, reflect inverted off the fixed ends, and reassemble as an upside-down triangle at $t=L/c$. After $t=2L/c$, one full period of the fundamental, the string is back where it started.
 
 ![[m2048_pde_plucked_string.png|720]]
 
 ## 4. The 2025-26 exam, question A2
 
-The exam's A2 is this method applied to a variant of the lectured PDE; the solutions note "damped term not seen in classes". Solve
+The exam's A2 applies this method to a variant of the lectured PDE with a damping term, which was not seen in classes (per the published solutions). Solve
 
 $$
 u_{tt}+2\gamma u_t=u_{xx},\qquad0<x<\pi,\quad0<\gamma<1,
@@ -312,22 +379,16 @@ $$
 C_1\sqrt{\frac1{\gamma^2}-1}=1\quad\Longrightarrow\quad C_1=\frac{\gamma}{\sqrt{1-\gamma^2}} .
 $$
 
-> [!check] SymPy
-> $T_n$ satisfies $\ddot T_n+2\gamma\dot T_n+n^2T_n=0$ with $\dot T_n(0)=0$ exactly.
+Multiplying out, the constant $C_1$ cancels the awkward square root and the answer is tidier than it looks:
 
-## Transcript slips
+$$
+u=\frac{\gamma}{\sqrt{1-\gamma^2}}\,e^{-\gamma t}\Big[\sin\omega_1t+\frac{\sqrt{1-\gamma^2}}{\gamma}\cos\omega_1t\Big]\sin x=e^{-\gamma t}\Big[\cos\omega_1t+\frac{\gamma}{\omega_1}\sin\omega_1t\Big]\sin x,
+$$
 
-> [!warning] Lectures 15–17
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L15, l. 31 | $y_{tt}$ "is equal to x" times $\ddot T$ | $X(x)\ddot T$, big $X$ |
-> | L15, l. 117 | "separation ANZAT" (and "ANZATS" elsewhere) | ansatz, the assumed form |
-> | L15, l. 372 | $D_n\frac{n\pi c}L=\frac2L\int_0^Lg\sin\frac{n\pi c}Lx\,dx$ | $\sin\frac{n\pi x}L$, no $c$ inside the sine |
-> | L16, l. 66 | $\ddot T-c^2T=0$, "I missed off the lambda" | $\ddot T-\lambda c^2T=0$ |
-> | L16, l. 144 | "T goes as e to the mx" | $e^{mt}$ |
-> | L16, l. 252 | "match up left and wrong" | left and right |
-> | L16, l. 387 | "Richelieu boundary conditions" | Dirichlet |
-> | L17, ll. 22–28 | homogeneous Neumann conditions "precisely correspond" to left- and right-moving waves, and with Dirichlet conditions "it wouldn't work" | both decompose into travelling waves; the ends differ in reflecting waves inverted (fixed) or upright (free); see §3 |
+with $\omega_1=\sqrt{1-\gamma^2}$. Only the fundamental is excited, because the initial shape is the fundamental, and it rings down at the rate $\gamma$ with a frequency slightly below the undamped $1$.
+
+> [!check] SymPy and a number
+> $T_n$ satisfies $\ddot T_n+2\gamma\dot T_n+n^2T_n=0$ with $\dot T_n(0)=0$ exactly. With $\gamma=\tfrac12$, $\omega_1=0.8660$ and the amplitude at $t=1$ is $e^{-0.5}(\cos0.866+0.577\sin0.866)=0.6597$, the same from both forms above.
 
 ## Links
 
@@ -343,16 +404,32 @@ $$
 
 ## Self-study tasks
 
-Lecture 16 left the $\lambda>0$ case with Neumann ends to "check for yourself" (l. 392) and the Neumann coefficient calculation to the slides (l. 433). Lecture 15 promised "many more examples" (l. 382), which are Problem Sheet 6.
+Lecture 16 left the $\lambda>0$ case with Neumann ends as an exercise (l. 392) and the Neumann coefficient calculation to the slides (l. 433). Lecture 15 pointed forward to more examples (l. 382), which are Problem Sheet 6.
 
 ### Core
 
 - [ ] Lecturer-set (L16, l. 392): show that $\lambda>0$ gives only the zero solution with Neumann ends. → [[#Changing to Neumann ends (L16)]]
 - [ ] Lecturer-set (L16, l. 433): compute $H$ and $C_n$ for the Neumann problem. Answers: $\frac16$ and $-\frac{2(1+(-1)^n)}{(n\pi)^2}$. → [[#Changing to Neumann ends (L16)]]
-- [ ] PS6 Q1: a string plucked into a triangle of height $h$ at $L/2$, released from rest, $c=1$. Answer: $y=\frac{8h}{\pi^2}\sum_{n\text{ odd}}\frac{(-1)^{(n-1)/2}}{n^2}\sin\frac{n\pi x}L\cos\frac{n\pi t}L$. → [[MATH2048 Problem Sheets 6-7 Solutions - PDEs]]
+- [ ] PS6 Q1: a string plucked into a triangle of height $h$ at $L/2$, released from rest, $c=1$. Answer: $y=\frac{8h}{\pi^2}\sum_{n\text{ odd}}\frac{(-1)^{(n-1)/2}}{n^2}\sin\frac{n\pi x}L\cos\frac{n\pi t}L$. → [[#The plucked string (PS6 Q1)]]
 - [ ] 2025/26 A2: the damped wave equation, all four parts. → [[#4. The 2025-26 exam, question A2]]
 
 ### Further practice
 
 - [ ] PS6 Q2: an antisymmetric "Z" displacement released from rest. Answer: only even modes, $y=\sum_k\frac{2\alpha}{k\pi}(-1)^{k+1}\sin\frac{2k\pi x}L\cos\frac{2k\pi ct}L$. → [[MATH2048 Problem Sheets 6-7 Solutions - PDEs]]
 - [ ] Redo the fixed-end example with $y(x,0)=0$ and $y_t(x,0)=\sin3\pi x$, using the uniqueness shortcut. Answer: $y=\frac{1}{3\pi c}\sin3\pi ct\,\sin3\pi x$ (suggested, not lecturer-set). → [[#Guitar string with fixed ends (L16)]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 15–17
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L15, l. 31 | $y_{tt}$ "is equal to x" times $\ddot T$ | $X(x)\ddot T$, big $X$ |
+> | L15, l. 117 | "separation ANZAT" (and "ANZATS" elsewhere) | ansatz, the assumed form |
+> | L15, l. 372 | $D_n\frac{n\pi c}L=\frac2L\int_0^Lg\sin\frac{n\pi c}Lx\,dx$ | $\sin\frac{n\pi x}L$, no $c$ inside the sine |
+> | L16, l. 66 | $\ddot T-c^2T=0$, "I missed off the lambda" | $\ddot T-\lambda c^2T=0$ |
+> | L16, l. 144 | "T goes as e to the mx" | $e^{mt}$ |
+> | L16, l. 252 | "match up left and wrong" | left and right |
+> | L16, l. 387 | "Richelieu boundary conditions" | Dirichlet |
+> | L17, ll. 22–28 | homogeneous Neumann conditions "precisely correspond" to left- and right-moving waves, and with Dirichlet conditions "it wouldn't work" | both decompose into travelling waves; the ends differ in reflecting waves inverted (fixed) or upright (free); see §3 |

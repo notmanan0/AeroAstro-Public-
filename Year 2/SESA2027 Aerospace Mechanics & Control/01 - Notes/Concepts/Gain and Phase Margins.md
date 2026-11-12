@@ -35,5 +35,5 @@ The margins also drive design. Choose $\omega_{gc}$, add the phase lead $\phi_{P
 
 ## Related
 
-- Why GM and PM measure the distance to instability: [[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#1. Why frequency-response design (L2.05)|B3 §1]]
+- Why GM and PM measure the distance to instability: [[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#1. Margins and design approach (L2.05)|B3 §1]]
 - [[Bode Plot]] · [[PID Controller]] · [[Closed-Loop Transfer Function]] · [[Stability vs Manoeuvrability]]

@@ -63,7 +63,7 @@ $$
 =\boxed{-6\ \mathrm{MPa}}.
 $$
 
-![[Figures/structures_thick_cylinder_lame_stress.png]]
+![[structures_thick_cylinder_lame_stress.png]]
 
 ## Q2 - Maximum pressure and diameter change
 
@@ -164,5 +164,5 @@ $$
 
 This pressure acts externally on the inner tube and internally on the outer tube. The radial stress is continuous at the interface, while the hoop stress changes from compression in the inner tube to tension in the outer tube.
 
-![[Figures/structures_shrink_fit_residual_stress.png]]
+![[structures_shrink_fit_residual_stress.png]]
 

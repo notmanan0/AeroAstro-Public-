@@ -10,7 +10,7 @@ parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 
 # SESA2028 Materials Selection and Comparison Tables
 
-The lecturer repeatedly says "make your own comparison tables" and "intelligently interrogate data". These are those tables, followed by a map from **component → service conditions → failure modes → material choice**. That is how most MQ essay questions are framed.
+Making your own comparison tables, and interrogating the data rather than memorising it, is the recommended way to revise. These are those tables, followed by a map from **component → service conditions → failure modes → material choice**. That is how most MQ essay questions are framed.
 
 ## 1. Component → failure mode → material
 

@@ -13,7 +13,7 @@ sheet: "Specimen Test 10 (booklet) + Module 10 work scheme: Examples 8.53, 9.1, 
 theory_notes: ["[[MATH1054 M10 - Integration III]]"]
 key_concepts: ["[[Partial Fractions]]", "[[Completing the Square]]", "[[Improper Integrals]]"]
 status: complete
-sources: ["tmp/md/module_10_integration_iii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§2.3.x partial fractions, §8.8, §9.2)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§2.5.1 partial fractions, §8.8, §9.2)"]
 ---
 
 # MATH1054 M10 Solutions - Integration III
@@ -221,5 +221,5 @@ $$\int_1^Rx^{-1/2}\,\mathrm dx=2\sqrt R-2\to\infty$$
 The integral **diverges**, so it is not defined. This agrees with the $p$-test: $p=\frac12\le1$ on an infinite range.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_10_integration_iii.md`
-- James, *Modern Engineering Mathematics* (6th ed.) partial fractions §2.3; §8.8; §9.2; MATH1054 Module Booklet, Module 10
+- Problem statements: Module 10 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
+- James, *Modern Engineering Mathematics* (6th ed.) partial fractions §2.5.1; §8.8; §9.2; MATH1054 Module Booklet, Module 10

@@ -13,24 +13,20 @@ sources: ["02 - Sources/S2 Machines/S2 Electric Machines Notes - Sharkh.pdf", "0
 
 # Electric and Magnetic Loading
 
-## Definition
+The magnetic loading $B$ of an electric machine is the average air-gap flux density, and the electric loading $A$ is the armature current per unit length of rotor circumference. Together they set the torque a rotor of given volume can produce:
 
-> [!note] Definition
->
-> $$T = 2\,B\,A\,V_R,\qquad A = \frac{Zi_c}{\pi D}\ \text{(electric loading)},\qquad B\ \text{(magnetic loading)},\qquad V_R = \frac{\pi D^2L}{4}$$
+$$
+T=2\,B\,A\,V_R,\qquad A=\frac{Zi_c}{\pi D},\qquad V_R=\frac{\pi D^2L}{4},
+$$
 
-## Explanation
-- $B$ ≈ 0.5–0.8 T (limited by steel saturation) and $A$ ≈ 20–70 kA/m (limited by cooling) are much the same for machines of any size. So **torque ∝ rotor volume**.
-- With $P = T\omega$: **volume ∝ P/ω**. High-speed machines are small for their power.
-- This is why a motor drives a slow load through a step-down gearbox (up to about 1000:1), and why slow wind or tidal turbines use step-up gearboxes.
+where $Z$ is the number of conductors, $i_c$ the conductor current, and $D$ and $L$ the rotor diameter and length.
 
-## Examples
-- 1 kW at 10 rad/s needs 100 N m; at 100 rad/s only 10 N m, about a tenth of the volume.
-- Tutorial 6 Q4 derives $T = 2BAV_R$; Q5 asks why gearboxes are used.
+Both loadings are much the same for machines of any size. $B$ is about $0.5$–$0.8\ \mathrm T$, limited by saturation of the steel, and $A$ is about $20$–$70\ \mathrm{kA/m}$, limited by cooling. Torque is therefore proportional to rotor volume, and since $P=T\omega$, the volume is proportional to $P/\omega$: high-speed machines are small for their power.
+
+A motor driving a slow load therefore runs fast and drives it through a step-down gearbox, with ratios up to about $1000{:}1$, and slow wind and tidal turbines drive their generators through step-up gearboxes. Delivering $1\ \mathrm{kW}$ at $10\ \mathrm{rad/s}$ needs $100\ \mathrm{N\,m}$, while at $100\ \mathrm{rad/s}$ it needs only $10\ \mathrm{N\,m}$ and about a tenth of the volume. Tutorial 6 Q4 derives $T=2BAV_R$, and Q5 asks why gearboxes are used.
 
 ## Related
-- Topic notes: [[FEEG1004 C5 - DC Motors - Torque, Back EMF and Efficiency]]
-- Cross-module: [[Specific Speed]] · [[Dimensional Analysis of Turbomachines]]
 
-## Sources
-- Sharkh notes §4.4; Machines 07 slides
+- [[FEEG1004 C5 - DC Motors - Torque, Back EMF and Efficiency]]
+- Cross-module: [[Specific Speed]] · [[Dimensional Analysis of Turbomachines]]
+- Sources: Sharkh notes §4.4; Machines 07 slides

@@ -21,5 +21,5 @@ Its best-known consequence is the starting vortex. Before an aerofoil moves, a l
 
 ## Related
 
-- The starting vortex in the lecture: [[SESA2022 T4 - Thin Aerofoil Theory#Kelvin's circulation theorem and the starting vortex|T4 §8]]
+- The starting vortex: [[SESA2022 T4 - Thin Aerofoil Theory#Kelvin's circulation theorem and the starting vortex|T4 §8]]
 - [[Kutta Condition]] · [[Biot-Savart Law and Helmholtz Theorems]]

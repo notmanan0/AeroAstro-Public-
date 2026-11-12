@@ -37,7 +37,7 @@ L1.10 estimates each non-dimensional derivative from simple physics:
 
 To turn these into dimensional derivatives, multiply the $u$ and $w$ force derivatives by $\tfrac12\rho U_\infty S$ and add a factor $\bar c$ for each moment or $q$. The $\dot w$ derivatives scale with $\tfrac12\rho S\bar c$ (force) or $\tfrac12\rho S\bar c^2$ (moment). For the F-4C this gives $\mathring M_w = -1770$ N s, $\mathring M_q = -50798$ N m s, $\mathring M_{\dot w} = -132.47$ N s² and $\mathring Z_w = -5215$ N s/m.
 
-The derivatives that matter most are $M_w$ and $M_q$. The short-period frequency, $\omega_n^2\approx(\mathring M_q\mathring Z_w-mU_\infty\mathring M_w)/(mI_{yy})$, is dominated by the $-U_\infty\mathring M_w/I_{yy}$ term, so in practice by the static margin. In real projects the numbers come from a ladder of methods: back-of-envelope estimates, ESDU or DATCOM, vortex-lattice or CFD codes (AVL, XFLR5), wind-tunnel tests, and free-flight system identification (for example with an EKF). $C_{L_q}$ needs dynamic data; a static test can't give it.
+The derivatives that matter most are $M_w$ and $M_q$. The short-period frequency, $\omega_n^2\approx(\mathring M_q\mathring Z_w-mU_\infty\mathring M_w)/(mI_{yy})$, is dominated by the $-U_\infty\mathring M_w/I_{yy}$ term, so in practice by the static margin. In real projects the numbers come from methods of rising cost and fidelity: back-of-envelope estimates, ESDU or DATCOM, vortex-lattice or CFD codes (AVL, XFLR5), wind-tunnel tests, and free-flight system identification (for example with an EKF). $C_{L_q}$ needs dynamic data; a static test can't give it.
 
 ## Related
 

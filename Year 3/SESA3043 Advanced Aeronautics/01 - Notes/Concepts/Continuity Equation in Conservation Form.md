@@ -37,7 +37,7 @@ $$
 \boxed{\nabla\cdot\mathbf u=0}.
 $$
 
-CH1-2 and the lecture (L2, l. 418) say "conservation form" and "non-conservation form". Other texts call the first one the conservative or divergence form.
+CH1-2 says "conservation form" and "non-conservation form". Other texts call the first one the conservative or divergence form.
 
 ## Related
 

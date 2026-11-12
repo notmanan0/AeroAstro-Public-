@@ -38,39 +38,36 @@ An aircraft in flight has nothing solid to push against. All it can do is throw 
 
 Thrust comes from a momentum balance: the momentum per second leaving the engine minus the momentum per second entering it is the force. A rocket's propellant starts at rest in the rocket's frame, so all of the momentum out is thrust; a jet engine has to swallow air that is already arriving at $V_0$, so it only gets credit for the increase in momentum. Every kilogram of air does two jobs (L1, ll. 343–348): it is the oxidiser that burns the fuel and the propellant that gets accelerated. The air flow is about 500 times the fuel flow (ll. 363–364), so the thrust comes almost entirely from accelerating air.
 
-Energy is lost in two stages: the engine first turns the fuel's chemical energy into jet kinetic energy, which is the thermal efficiency, and then only part of that kinetic energy does work on the aircraft, because the jet leaves with leftover speed relative to the ground, which is the propulsive efficiency. That leftover speed is wasted, so a slow jet is efficient, but a slow jet gives little thrust per kilogram. The way out of this propulsive dilemma is to accelerate a lot of air a little, hence today's very large fans.
+Energy is lost in two stages: the engine first turns the fuel's chemical energy into jet kinetic energy, which is the thermal efficiency, and then only part of that kinetic energy does work on the aircraft, because the jet leaves with leftover speed relative to the ground, which is the propulsive efficiency. That leftover speed is wasted, so a slow jet is efficient, but a slow jet gives little thrust per kilogram. The way out of this propulsive dilemma is to accelerate a lot of air a little, hence the very large fans of modern engines.
 
 Range is efficiency integrated over a flight. As fuel burns the aircraft gets lighter, so it needs less lift, less drag, less thrust and less fuel, and that feedback makes the range depend on the logarithm of the weight ratio.
 
 ---
 
-## 1. Module map (Lecture 1)
+## 1. Module structure and assessment
 
-| Section | Weeks | Lecturer |
-|---|---|---|
-| Fundamentals: thermodynamics, gas dynamics | 1–4 | T. Grenga |
-| Combustion | 5 | T. Grenga |
-| Ramjets, gas turbines, turbojets, turbofans | 6–7 | E. Richardson |
-| Turbomachinery (and propellers) | 8–9 | E. Richardson |
-| Rockets | 10–11 | T. Grenga (with E. Richardson) |
+| Section | Weeks |
+|---|---|
+| Fundamentals: thermodynamics, gas dynamics | 1–4 |
+| Combustion | 5 |
+| Ramjets, gas turbines, turbojets, turbofans | 6–7 |
+| Turbomachinery (and propellers) | 8–9 |
+| Rockets | 10–11 |
 
 **Assessment:** 80 % sit-down, closed-book exam in May with the data book provided, and 20 % coursework. The coursework is three summative Blackboard quizzes (3 % each) and two lab quizzes (nozzle lab and propulsion/ramjet lab, 5.5 % each). Lab attendance is mandatory (L3, ll. 11–22).
-
-> [!warning] Transcript slip (L1, ll. 53–54)
-> The lecturer says the courseworks add up to 20 % and "the remaining 20 is a in-person written exam". The exam is 80 % (slide 3, "Exam (80%)").
 
 Two families of propulsion (L1, ll. 325–370):
 
 - Rocket (non-air-breathing): carries fuel and oxidiser (or a monopropellant such as hydrogen peroxide, or an inert gas for electric propulsion). No momentum comes in, so all the momentum out is thrust. The drawback is that the oxidiser has to be carried too.
 - **Air-breathing**: captures air (free oxidiser and working fluid) and carries only fuel. The penalty is the ram drag $\dot m_aV_0$ of the captured air.
 
-The lecturer cares about jet speed for a second reason too (L1, ll. 435–442). Large fans accelerate a large mass of air by a small amount, and besides the better propulsive efficiency a slower jet is much quieter: jet noise scales roughly with $V_j^{\,7}$, "jet velocity power of seven" in the lecture, while the Weeks 6–7 handout says the eighth power ([[SESA2023 W07 - Turbofan Architectures and Fan Pressure Ratio Selection#Noise|W07]]).
+Jet speed matters for a second reason too. Large fans accelerate a large mass of air by a small amount, and besides the better propulsive efficiency a slower jet is much quieter: jet noise scales roughly with $V_j^{\,7}$, or with $V_j^{\,8}$ for acoustic power in the Weeks 6–7 handout ([[SESA2023 W07 - Turbofan Architectures and Fan Pressure Ratio Selection#Noise|W07]]).
 
 ---
 
 ## 2. Thrust from momentum conservation
 
-The course starts from the steady control-volume momentum equation in the $x$-direction (notes eq. 1.1):
+Thrust follows from the steady control-volume momentum equation in the $x$-direction (notes eq. 1.1):
 
 $$
 \dot M_{x,out}-\dot M_{x,in} = \sum F_x
@@ -78,7 +75,7 @@ $$
 
 ### Choosing the control volume
 
-"There's a bit of art and foresight in how you define your control volume" (L2, ll. 17–19). Every control volume gives the right answer, but the convenient one is drawn:
+Choosing the control volume takes some judgement (L2, ll. 17–19). Every control volume gives the right answer, but the convenient one is drawn:
 
 - in the engine's frame, so the thrust $F$ is the force needed to hold the engine (and CV) still;
 - with side boundaries along stream tubes, so no mass crosses them;
@@ -176,7 +173,7 @@ $$
 > [!warning] The simplification needs both conditions
 > $f\ll1$ alone does not remove the pressure term; $P_j=P_A$ alone does not remove the $(1+f)$. For a large civil turbofan $f\approx1/500$ (L2, ll. 151–153), so dropping $f$ costs about 0.2 % in thrust. For an under-expanded supersonic jet the pressure term can be several per cent, and you must keep it.
 
-The stream tube splays out in front of the engine because the fan face can only accept subsonic flow, roughly Mach 0.6, even in flight at Mach 1.8 (L2, ll. 119–131). The transcript's "Mach 1.6" is almost certainly a mis-transcription, since the lecturer goes on to say that anything faster would bring shocks into the fan. The air therefore decelerates, and its pressure rises, before it reaches the engine, so the local pressure at the intake lip isn't $P_A$, which is why the control volume's inlet face is drawn far upstream.
+The stream tube splays out in front of the engine because the fan face can only accept subsonic flow, roughly Mach 0.6, even in flight at Mach 1.8 (L2, ll. 119–131). Anything faster would bring shocks into the fan. The air therefore decelerates, and its pressure rises, before it reaches the engine, so the local pressure at the intake lip isn't $P_A$, which is why the control volume's inlet face is drawn far upstream.
 
 ---
 
@@ -280,7 +277,7 @@ Range rises with high $\eta_O$ (engine), high $L/D$ (aerodynamics) and a high fu
 
 ### Worked example – Boeing 777-200 range
 
-Lecture data (L2, ll. 252–340): MTOW 243 t, fuel burned 42 t, $V_0=248$ m/s (M 0.84), $L/D=20$, TSFC $=1.614\times10^{-5}$ kg s⁻¹ N⁻¹, $g_0=9.81$ m s⁻². Take $W_1$ as MTOW (neglecting climb fuel) and $W_2=243-42=201$ t (neglecting descent fuel):
+Data (L2, ll. 252–340): MTOW 243 t, fuel burned 42 t, $V_0=248$ m/s (M 0.84), $L/D=20$, TSFC $=1.614\times10^{-5}$ kg s⁻¹ N⁻¹, $g_0=9.81$ m s⁻². Take $W_1$ as MTOW (neglecting climb fuel) and $W_2=243-42=201$ t (neglecting descent fuel):
 
 $$
 \frac{V_0}{g_0\,\mathrm{TSFC}} = \frac{248}{9.81\times1.614\times10^{-5}} = 1.566\times10^{6}\ \mathrm m
@@ -297,14 +294,9 @@ $$
 The published range at maximum payload (R1) is 6112 km.
 
 > [!check] Numerical checks
-> - Recomputed: $s=5944$ km, matching the lecturer's "5945" (L2, l. 340).
-> - The flight speed: at 35,000 ft the data book gives $T=218.81$ K, so $a=\sqrt{1.4\times287\times218.81}=296.5$ m/s and $V_0=0.84\times296.5=249$ m/s. The lecturer's 248 m/s is the same to the precision of the inputs.
+> - Recomputed: $s=5944$ km, against 5945 km from unrounded inputs.
+> - The flight speed: at 35,000 ft the data book gives $T=218.81$ K, so $a=\sqrt{1.4\times287\times218.81}=296.5$ m/s and $V_0=0.84\times296.5=249$ m/s, the same as the 248 m/s used above to the precision of the inputs.
 > - The implied overall efficiency is $\eta_O=V_0/(\mathrm{TSFC}\cdot LCV)=248/(1.614\times10^{-5}\times44.65\times10^{6})=0.34$, inside the 0.3–0.4 band quoted for current engines.
-
-> [!warning] Transcript slips and loose ends in the 777 example
-> - L2, l. 307: "It comes out from memory at about 590 kilometers". The answer is about 5900 km; the lecturer corrects himself at l. 309.
-> - The "mysterious 11 tons" (L2, ll. 319–339): empty mass 136 t + maximum payload 54.6 t + fuel burned 42 t is 232.6 t, which is 10.4 t short of the 243 t MTOW. The missing mass is reserve fuel, which is carried but not burned, as a student pointed out. Strictly, $W_2$ still includes the reserve, so the calculation above is unchanged.
-> - L2, ll. 274–277: the TSFC was based on a two-significant-figure source, so quoting it to four figures is "a bit naughty". In the exam, give answers to sensible precision: here "about 5900 km".
 
 Ignoring the climb and descent fuel ought to make the predicted range too long, because those phases burn fuel while covering little distance, yet the prediction comes out 3 % short (L2, ll. 312–317). With $L/D$ and TSFC known only to two figures ($L/D$ could be 19–21), a 3 % miss in either direction is within the input uncertainty.
 
@@ -378,11 +370,11 @@ $$
 
 ![[prop_propulsive_efficiency.png|700]]
 
-The wasted energy is the jet's kinetic energy in the ground frame. The jet leaves with speed $V_j-V_0$ and carries away $\tfrac12\dot m_a(V_j-V_0)^2$ per second, and indeed $\dot W_{jet}-FV_0=\tfrac12\dot m_a(V_j^2-V_0^2)-\dot m_a(V_j-V_0)V_0=\tfrac12\dot m_a(V_j-V_0)^2$. So $\eta_P<1$ is simply the kinetic energy left behind in the wake.
+The wasted energy is the jet's kinetic energy in the ground frame. The jet leaves with speed $V_j-V_0$ and carries away $\tfrac12\dot m_a(V_j-V_0)^2$ per second, and indeed $\dot W_{jet}-FV_0=\tfrac12\dot m_a(V_j^2-V_0^2)-\dot m_a(V_j-V_0)V_0=\tfrac12\dot m_a(V_j-V_0)^2$. So $\eta_P<1$ because of the kinetic energy left behind in the wake.
 
-### Why not make the jet as slow as the aircraft
+### Jet speed approaching flight speed
 
-Lecture 3 (ll. 116–140) asks this directly. $\eta_P\to1$ as $V_j\to V_0$, but the simplified thrust $F=\dot m_a(V_j-V_0)\to0$. To keep $F$ as $V_j-V_0$ shrinks, $\dot m_a$ must grow. By continuity, $\dot m_a=\rho_0V_0A_0$ at the inlet face, so
+$\eta_P\to1$ as $V_j\to V_0$, but the simplified thrust $F=\dot m_a(V_j-V_0)\to0$ (L3, ll. 116–140). To keep $F$ as $V_j-V_0$ shrinks, $\dot m_a$ must grow. By continuity, $\dot m_a=\rho_0V_0A_0$ at the inlet face, so
 
 $$
 A_0 = \frac{\dot m_a}{\rho_0V_0}
@@ -430,7 +422,7 @@ $$
 \eta_{th} = \frac{\dot W_{jet}}{\dot Q_{in}} = \frac{\tfrac12\dot m_a(V_j^2-V_0^2)}{\dot m_f\,LCV} = \frac{V_j^2-V_0^2}{2f\,LCV}
 $$
 
-Check that $\eta_P\eta_{th}=\eta_O$ (the notes say "You can verify that…"):
+Check that $\eta_P\eta_{th}=\eta_O$:
 
 $$
 \eta_P\eta_{th} = \frac{2V_0(V_j-V_0)}{V_j^2-V_0^2}\times\frac{V_j^2-V_0^2}{2f\,LCV}
@@ -448,7 +440,7 @@ $$
 
 ### Raising the thermal efficiency
 
-From L3, ll. 158–224. For an ideal Brayton cycle (SESA1016, revisited in [[SESA2023 W06 - Jet Engine Cycle Analysis - Brayton, Ramjet, Turbojet and Reheat|W06]]) the thermal efficiency rises with the overall pressure ratio, the ratio between the combustor pressure (set by the compressor) and the ambient pressure (set by the altitude). It also rises with the turbine entry temperature (TET).
+For an ideal Brayton cycle (SESA1016, see [[SESA2023 W06 - Jet Engine Cycle Analysis - Brayton, Ramjet, Turbojet and Reheat|W06]]) the thermal efficiency rises with the overall pressure ratio, the ratio between the combustor pressure (set by the compressor) and the ambient pressure (set by the altitude), and does not depend on the turbine entry temperature (TET) at constant specific heat. In a real engine a higher TET also raises the efficiency, because it allows a higher optimum pressure ratio (L3, ll. 158–224).
 
 - Pressure ratios rose from about 15 to over 40 in about 40 years.
 - TET rose from about 1000 K to nearly 1800 K, above the blade material limit, thanks to cooled blades (internal passages fed with cooler compressor air, from the 1960s) and thermal barrier coatings (later).
@@ -458,7 +450,7 @@ The turbine entry, not the combustor, sets the temperature limit (L3, ll. 207–
 
 ### Worked example – Boeing 777 cruise efficiencies
 
-Lecture data (L3, ll. 226–257): $\dot m_a=1295$ kg/s, $V_0=251$ m/s, $V_j=299$ m/s, $\dot m_f=0.58$ kg/s, $LCV=44.65$ MJ/kg. Assume a fully expanded jet.
+Data (L3, ll. 226–257): $\dot m_a=1295$ kg/s, $V_0=251$ m/s, $V_j=299$ m/s, $\dot m_f=0.58$ kg/s, $LCV=44.65$ MJ/kg. Assume a fully expanded jet.
 
 Thrust ($f\ll1$):
 
@@ -496,7 +488,7 @@ and $\eta_P\eta_{th}=0.913\times0.660=0.602$ ✔.
 
 > [!check] How good is the simplified $\eta_P$, and how realistic are these numbers?
 > - Keeping $f$ in the fully expanded form gives $\eta_P=0.914$ instead of $0.913$, a 0.1 % difference. (Problem Sheet 1 Q1.4 explores this error in general.)
-> - The implied TSFC is $0.58/62\,160=9.3\times10^{-6}$ kg s⁻¹ N⁻¹, much lower than the $1.614\times10^{-5}$ used for the same aircraft in Lecture 2. That is why $\eta_O$ comes out at 60 % here but 34 % from the Lecture 2 TSFC. The slide's fuel flow and jet velocity are illustrative; a real cruise $\eta_O$ is about 35 %.
+> - The implied TSFC is $0.58/62\,160=9.3\times10^{-6}$ kg s⁻¹ N⁻¹, much lower than the $1.614\times10^{-5}$ used for the same aircraft in the range example (L2). This explains why $\eta_O$ is 60 % here but 34 % from that TSFC. The fuel flow and jet velocity in this example are illustrative; a real cruise $\eta_O$ is about 35 %.
 
 ---
 
@@ -515,9 +507,9 @@ with $P_{ref}=101.325$ kPa, $T_{ref}=288.15$ K and $\rho_{ref}=1.225$ kg/m³. Ta
 
 ![[prop_isa.png|640]]
 
-### Where the table comes from (beyond the lecture)
+### Where the table comes from (not lectured)
 
-The lecture uses the tables only, but the shape of the pressure curve follows from two lines of physics. Hydrostatic balance and the perfect-gas law:
+Calculations use the ISA tables only, but the shape of the pressure curve follows from two lines of physics. Hydrostatic balance and the perfect-gas law:
 
 $$
 \frac{dP}{dh} = -\rho g,\qquad \rho = \frac{P}{RT}
@@ -550,7 +542,7 @@ $$
 > [!check] Formula against the data book
 > - 10 km: the formula gives $T=223.15$ K and $P=26.44$ kPa. Table 25 gives $\theta=0.7748$ ($T=223.26$ K) and $\delta=0.2615$ ($P=26.50$ kPa). Agreement to 0.2 %.
 > - 20 km: the formula gives 5.47 kPa; Table 25 gives $\delta=0.0546$, i.e. 5.53 kPa (1 % higher).
-> - **Use the data-book values in the exam.** Every worked answer in this vault uses them.
+> - **Use the data-book values in the exam.**
 
 | Altitude | $T$ (K) | $p$ (kPa) | Used in |
 |---|---|---|---|
@@ -563,7 +555,7 @@ $$
 | 20 km | 216.66 | 5.53 | 2021-22 Q2, 2023-24 Q1–Q2 |
 | 51,000 ft | 216.65 | 11.1 | ramjet lecture example |
 
-The lecturer's advice was to learn the data book now: "that data book is the same that is going to be provided to you at the exam… using that in a fast way will help you in the exam" (L3, ll. 262–271). Many of the module's equations are printed in it, so the exam tests understanding and use rather than recall.
+Learn the data book now: the same one is provided in the exam, and using it quickly saves time (L3, ll. 262–271). Many of the module's equations are printed in it, so the exam tests understanding and use rather than recall.
 
 See [[International Standard Atmosphere]].
 
@@ -612,20 +604,39 @@ Tasks marked *(set)* were set or explicitly left to you in the Week 1 lectures o
 
 ### Core
 
-- [ ] *(set)* Derive the Breguet range equation from $F=D$, $L=W$ and the TSFC definition. "You need to know how to derive the [Breguet] range [equation]" (L2, ll. 341–342). → [[#Derivation (one move per line)]]
-- [ ] *(set)* Compute the 777 range: "Maybe somebody quick with the calculator can tell us the answer" (L2, ll. 306–309). Target 5944 km. → [[#Worked example – Boeing 777-200 range]]
+- [ ] *(set)* Derive the Breguet range equation from $F=D$, $L=W$ and the TSFC definition; the derivation is examinable (L2, ll. 341–342). → [[#Derivation (one move per line)]]
+- [ ] *(set)* Compute the 777 range (L2, ll. 306–309). Target 5944 km. → [[#Worked example – Boeing 777-200 range]]
 - [ ] *(set)* 777 cruise efficiencies exercise (L3, ll. 225–257). Targets $F=62.2$ kN, $\eta_P=0.91$, $\eta_{th}=0.66$, $\eta_O=0.60$. → [[#Worked example – Boeing 777 cruise efficiencies]]
-- [ ] *(set)* Verify $\eta_P\eta_{th}=\eta_O$ with the simplified forms ("You can verify that…", notes after eq. 1.34). → [[#Overall and thermal efficiency]]
-- [ ] *(set)* Work [[SESA2023 Problem Sheet 1 Solutions|Problem Sheet 1]] (thrust, efficiencies, range); the problem sheets are "more like the exam questions" (L1, ll. 62–63).
+- [ ] *(set)* Verify $\eta_P\eta_{th}=\eta_O$ with the simplified forms (notes after eq. 1.34). → [[#Overall and thermal efficiency]]
+- [ ] *(set)* Work [[SESA2023 Problem Sheet 1 Solutions|Problem Sheet 1]] (thrust, efficiencies, range); the problem sheets are closer to the exam questions than the lecture examples (L1, ll. 62–63).
 
 ### Further practice
 
-- [ ] *(set)* M 0.84 at 35,000 ft gives 248 m/s: "You'll be able to do that calculation Friday" (L2, ll. 264–267). → [[#Worked example – Boeing 777-200 range]]
+- [ ] *(set)* M 0.84 at 35,000 ft gives 248 m/s (L2, ll. 264–267). → [[#Worked example – Boeing 777-200 range]]
 - [ ] *(set)* Learn to find $T$, $p$, $\rho$ in data-book Tables 24 and 25 quickly (L3, ll. 262–271). → [[#5. International Standard Atmosphere]]
 - [ ] *(set)* Blackboard Quiz 1 (L3, ll. 23–30): unlimited attempts, the last attempt is marked, save before closing.
 - [ ] Derive the rocket and jet-engine thrust equations from a sketched CV, stating where $p=P_A$. → [[#2. Thrust from momentum conservation]]
 - [ ] Derive $\eta_P=2/(1+V_j/V_0)$ from the general definition, stating each assumption. → [[#Propulsive efficiency]]
 - [ ] Show that the kinetic energy wasted in the wake is $\tfrac12\dot m_a(V_j-V_0)^2$. → [[#Propulsive efficiency]]
-- [ ] Explain, with the capture-area result, why $V_j=V_0$ is not used. → [[#Why not make the jet as slow as the aircraft]]
-- [ ] Resolve the "missing 11 tonnes" of the 777 data. → [[#Worked example – Boeing 777-200 range]]
-- [ ] *(Optional, beyond the lecture)* Derive the troposphere law $P/P_{ref}=(T/T_{ref})^{5.256}$. → [[#Where the table comes from (beyond the lecture)]]
+- [ ] Explain, with the capture-area result, why $V_j=V_0$ is not used. → [[#Jet speed approaching flight speed]]
+- [ ] Account for the 10.4 t by which empty mass + maximum payload + fuel burned (232.6 t) falls short of the 243 t MTOW in the 777 data (reserve fuel; see [[#Transcript and slide slips]]). → [[#Worked example – Boeing 777-200 range]]
+- [ ] *(Optional, not lectured)* Derive the troposphere law $P/P_{ref}=(T/T_{ref})^{5.256}$. → [[#Where the table comes from (not lectured)]]
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (L1, ll. 53–54)
+> Where: [[#1. Module structure and assessment]].
+>
+> The lecturer says the courseworks add up to 20 % and "the remaining 20 is a in-person written exam". The exam is 80 % (slide 3, "Exam (80%)").
+
+> [!warning] Transcript slips and loose ends in the 777 example
+> Where: [[#Worked example – Boeing 777-200 range]].
+>
+> - L2, l. 307: "It comes out from memory at about 590 kilometers". The answer is about 5900 km; the lecturer corrects himself at l. 309.
+> - The "mysterious 11 tons" (L2, ll. 319–339): empty mass 136 t + maximum payload 54.6 t + fuel burned 42 t is 232.6 t, which is 10.4 t short of the 243 t MTOW. The missing mass is reserve fuel, which is carried but not burned. Strictly, $W_2$ still includes the reserve, so the calculation above is unchanged.
+> - L2, ll. 274–277: the TSFC was based on a two-significant-figure source, so quoting it to four figures overstates its precision. In the exam, give answers to sensible precision: here "about 5900 km".
+
+> [!warning] Transcript slip (L2, ll. 119–131)
+> Where: [[#Jet engine]].
+>
+> The flight Mach number is transcribed as "Mach 1.6"; the example is Mach 1.8, with the fan face at about Mach 0.6.

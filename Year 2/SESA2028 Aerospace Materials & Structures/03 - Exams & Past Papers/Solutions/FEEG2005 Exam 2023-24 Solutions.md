@@ -113,7 +113,7 @@ Rule of mixtures on the given specific properties (an approximation, strictly va
 
 #### (ii)(a) Jominy equivalence for a 50 mm oil-quenched bar [4]
 
-![[Figures/materials_jominy_readoff_2023_24.png]]
+![[materials_jominy_readoff_2023_24.png]]
 
 | Position | Equivalent Jominy distance | Hardness |
 |---|---:|---:|

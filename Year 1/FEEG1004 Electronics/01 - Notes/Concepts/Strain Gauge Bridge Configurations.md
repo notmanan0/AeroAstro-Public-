@@ -13,15 +13,14 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 03 - Complete Syste
 
 # Strain Gauge Bridge Configurations
 
-## Definition
+A strain gauge bridge configuration is the choice of how many of the four Wheatstone bridge arms hold active gauges and where they sit on the member. With $N$ active gauges, excitation $E$, gauge factor $G$ and strain $\varepsilon$, the bridge output is
 
-> [!note] Definition
->
-> $$V = \frac{N\,E\,G\,\varepsilon}{4}$$
->
-> Here $N$ is the number of active gauges, $E$ the excitation, $G$ the gauge factor and $\varepsilon$ the strain. **Adjacent** arms subtract; **opposite** arms add.
+$$
+V = \frac{N\,E\,G\,\varepsilon}{4}
+$$
 
-## Explanation
+The placement rule follows from the bridge equation: resistance changes in **adjacent** arms subtract, and changes in **opposite** arms add. A gauge pair that sees equal and opposite strains therefore doubles the signal when placed in adjacent arms, while any strain both gauges share (temperature, or a load component that is not wanted) cancels. The table sets out the standard layouts.
+
 | Measurand | Layout | Signal | Temp. comp. | Cancels |
 |---|---|---|---|---|
 | bending | half: top +ε, bottom −ε (adjacent) | ×2 | ✔ | axial |
@@ -30,16 +29,15 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 03 - Complete Syste
 | axial | 2 active + 2 dummy | ×2 | ✔ | bending |
 | torsion | 4 at ±45° | ×4 | ✔ | bending, axial |
 
-- **Dummy gauges** sit at the same temperature as the active ones but unstressed, so the bridge stays balanced as temperature changes.
-- Balance the bridge initially with a trim pot and an isolation resistor.
-- Amplify the output with a **differential amplifier**.
+A **dummy gauge** sits at the same temperature as the active gauges but is unstressed, so the bridge stays balanced as the temperature changes. Two active gauges in opposite arms add their temperature changes as well as their strains, so that axial layout has no temperature compensation until two dummies fill the other arms. In bending the top and bottom fibres strain oppositely, and in torsion the principal strains lie at ±45°, so those layouts compensate for temperature without dummies.
+
+In practice the bridge is first balanced with a trim potentiometer and an isolation resistor, and the small output is amplified by a differential amplifier.
 
 ![[ee_e3_gauge_configurations.png|700]]
 
 ## Related
-- Topic notes: [[FEEG1004 E3 - Strain Gauges, Bridges, Pressure and Flow Sensors]]
-- Concepts: [[Gauge Factor]] · [[Wheatstone Bridge and Strain Gauges]] · [[Standard Op-Amp Configurations]]
-- Cross-module: [[Engineer's Bending Theory]] (top and bottom fibres strain oppositely) · [[Torsion of Circular Shafts]] (±45° principal strains)
 
-## Sources
-- Transducers lecture 3
+- [[FEEG1004 E3 - Strain Gauges, Bridges, Pressure and Flow Sensors]]
+- [[Gauge Factor]] · [[Wheatstone Bridge and Strain Gauges]] · [[Standard Op-Amp Configurations]]
+- Cross-module: [[Engineer's Bending Theory]] (top and bottom fibres strain oppositely) · [[Torsion of Circular Shafts]] (±45° principal strains)
+- Sources: Transducers lecture 3

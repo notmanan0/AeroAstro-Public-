@@ -297,7 +297,7 @@ $$
 (Python-checked. Adding the desuperheating from 140°C to Model B with $U$ gives 39.5 m.)
 
 > [!warning] Printed answer 30.2 m
-> The key's 30.2 m is **not** consistent with Model A, and calling it a decimal slip is not justified. It **is** consistent, to 0.4%, with Model B using the latent heat and $h_i$ alone at a 40 K difference. That is a plausible reconstruction of the key, not a confirmed one: it drops the 12 000 W/m² K outside coefficient that the question supplies, and a condensing film coefficient would differ from the single-phase Dittus–Boelter $h_i$ anyway. In an exam, **state the model** before solving: sensible cooling (3.0 m) or condensation with $h_{fg}$ (30–38 m depending on $U$). Ask in the tutorial which one Prof. Kim intends.
+> The key's 30.2 m is **not** consistent with Model A, and calling it a decimal slip is not justified. It **is** consistent, to 0.4%, with Model B using the latent heat and $h_i$ alone at a 40 K difference. That is a plausible reconstruction of the key, not a confirmed one: it drops the 12 000 W/m² K outside coefficient that the question supplies, and a condensing film coefficient would differ from the single-phase Dittus–Boelter $h_i$ anyway. In an exam, **state the model** before solving: sensible cooling (3.0 m) or condensation with $h_{fg}$ (30–38 m depending on $U$). Ask in the tutorial which model is intended.
 
 ## Links
 

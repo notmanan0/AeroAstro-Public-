@@ -21,7 +21,7 @@ $$u-iv=\frac{\mathrm d\Phi/\mathrm d\bar z}{\mathrm dz/\mathrm d\bar z}.$$
 
 Sharp corners are created at the critical points, where $f'=0$. The flow there has infinite speed unless it stagnates at the matching point in the $\bar z$-plane, which is the Kutta condition.
 
-The recipe is always the same: start from a known flow in $\bar z$ (usually the cylinder), pick the transfer function, transform the geometry and the potential, then get $u-iv$ and the pressure from Bernoulli.
+The procedure is always the same: start from a known flow in $\bar z$ (usually the cylinder), pick the transfer function, transform the geometry and the potential, then get $u-iv$ and the pressure from Bernoulli.
 
 ![[aa_conformal_mapping_family.png|700]]
 

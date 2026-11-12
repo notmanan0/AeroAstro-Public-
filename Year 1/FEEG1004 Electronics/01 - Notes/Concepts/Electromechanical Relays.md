@@ -13,24 +13,16 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W06-7abc Thevenin Superposition and R
 
 # Electromechanical Relays
 
-## Definition
+A relay is an electrically operated switch: current in a **coil** magnetises a core, which pulls an **armature** and moves a set of contacts. A small control current can therefore switch a large load, possibly at mains voltage.
 
-> [!note] Definition
-> An electrically operated switch: current in a **coil** magnetises a core that pulls an **armature**, moving contacts. A small control current switches a large, possibly mains, load.
+Relays are described by their **poles**, the number of independent switches, and their **throws**, the number of contacts each switch can connect to, giving types such as SPST, SPDT and DPST. Normally open (NO) and normally closed (NC) describe the contacts with the coil de-energised. A relay is chosen by its contact current and voltage ratings (the AC and DC ratings differ), its coil voltage and its coil resistance. Switching a $1\ \mathrm{kW}$, $230\ \mathrm V$ lamp, for example, needs contacts rated above $1000/230=4.3\ \mathrm A$.
 
-## Explanation
-- **Poles** = number of independent switches; **throws** = contacts per switch (SPST, SPDT, DPST, ...). NO/NC describe the contacts with the coil **de-energised**.
-- **Equivalent circuit**: coil $R$ in series with $L$, plus contact resistance. The pull-in voltage must actually appear **across the coil**.
-- Select by contact current and voltage (AC and DC ratings differ), coil voltage and coil resistance.
-- An inductive coil needs a [[Flyback Diode]] on its driver.
+Electrically, the coil is a resistance $R$ in series with an inductance $L$, and the contacts add a small contact resistance. The pull-in voltage has to appear across the coil itself, not just across the drive circuit. An $83\ \Omega$ indicator lamp placed in series with a $101\ \Omega$ coil on a $5\ \mathrm V$ supply leaves only $2.74\ \mathrm V$ across the coil, so the relay fails to operate; the lamp belongs in parallel with the coil instead.
 
-## Examples
-- A 1 kW, 230 V lamp needs a relay rated above 4.3 A.
-- An 83 Ω indicator lamp in **series** with a 101 Ω coil leaves only 2.74 V for the coil, so it fails. Put the lamp in parallel.
+Because the coil is inductive, the transistor or switch that drives it needs a [[Flyback Diode]] to protect it when the coil current is interrupted.
 
 ## Related
-- Topic notes: [[FEEG1004 A7 - Thevenin, Superposition and Relays]] · [[FEEG1004 B3 - Transistors - BJT and MOSFET Switches and Amplifiers]]
-- Concepts: [[Transistor as a Switch]] · [[Potential Divider]]
 
-## Sources
-- Recorded lecture 7c; Mills notes §1.6.7
+- [[FEEG1004 A7 - Thevenin, Superposition and Relays]] · [[FEEG1004 B3 - Transistors - BJT and MOSFET Switches and Amplifiers]]
+- [[Transistor as a Switch]] · [[Potential Divider]]
+- Sources: Recorded lecture 7c; Mills notes §1.6.7

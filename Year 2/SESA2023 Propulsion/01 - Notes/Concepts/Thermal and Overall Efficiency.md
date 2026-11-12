@@ -25,7 +25,7 @@ $$
 \eta_{th} = \frac{V_j^2-V_0^2}{2f\,LCV},\qquad\eta_O = \frac{V_0(V_j-V_0)}{f\,LCV} .
 $$
 
-Splitting $\eta_O = \eta_P\eta_{th}$ separates the cycle (pressure ratio, turbine entry temperature, component efficiencies) from the propulsion (jet velocity). The derivation was a 20-mark question in 2017-18 Q1(ii): aircraft power over fuel power, factorised into the two efficiencies. Modern engines have $\eta_P\approx0.6$–0.7, $\eta_{th}\approx0.5$–0.6 and $\eta_O\approx0.3$–0.4, while ideal cycles are much higher, 60–80 % for ideal ramjets. Note that the W07 turbofan exercises define overall efficiency as $F_NV/[c_p(T_{04}-T_{03})]$, relative to the heat added.
+Splitting $\eta_O = \eta_P\eta_{th}$ separates the cycle (pressure ratio, turbine entry temperature, component efficiencies) from the propulsion (jet velocity). The derivation was a 20-mark question in 2017-18 Q1(ii): aircraft power over fuel power, factorised into the two efficiencies. Modern engines have $\eta_P\approx0.6$–0.7, $\eta_{th}\approx0.5$–0.6 and $\eta_O\approx0.3$–0.4, while ideal cycles are much higher, 60–80 % for ideal ramjets. The W07 turbofan exercises define overall efficiency as $F_NV/[c_p(T_{04}-T_{03})]$, relative to the heat added.
 
 Worked values: the M 2, 31,000 ft turbojet example has $\eta_O = 43.1\%$, $\eta_{th} = 54.3\%$ and $\eta_P = 79.4\%$; the 2013-14 ideal ramjet, very fast at M 5.7, has $\eta_O = 78.8\%$, $\eta_P = 91.1\%$ and $\eta_{th} = 86.5\%$; the 2023-24 Q1(iv) propane ramjet manages $\eta_O = 16.0\%$.
 

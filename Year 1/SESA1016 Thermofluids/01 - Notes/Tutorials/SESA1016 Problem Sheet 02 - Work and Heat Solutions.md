@@ -191,7 +191,7 @@ $$
 
 $\Delta U_{12}=0$, so $\boxed{Q_{12}=29.84\ \mathrm{kJ}}$.
 
-### (c-d) Reversible adiabatic compression to $V_3=V_1$
+### (c-d) Reversible adiabatic compression to V₃ = V₁
 
 $$
 T_3=T_2\left(\frac{V_2}{V_3}\right)^{\gamma-1}

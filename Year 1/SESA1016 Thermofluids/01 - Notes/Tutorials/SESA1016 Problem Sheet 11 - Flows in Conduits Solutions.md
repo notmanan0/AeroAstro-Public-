@@ -215,7 +215,7 @@ $$
 
 The piezometer difference represents loss head:
 
-$$h_L=K\frac{V^2}{2g},qquad V=\frac QA.$$
+$$h_L=K\frac{V^2}{2g},\qquad V=\frac QA.$$
 
 For $D=0.042$ m, the three tests give
 

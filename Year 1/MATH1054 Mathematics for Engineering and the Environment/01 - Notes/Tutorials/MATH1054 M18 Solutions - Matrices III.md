@@ -13,7 +13,7 @@ sheet: "Specimen Test 18 (booklet) + Module 18 work scheme: Examples 5.37–5.44
 theory_notes: ["[[MATH1054 M18 - Matrices III]]"]
 key_concepts: ["[[Rank and Consistency of Linear Systems]]", "[[Eigenvalues and Eigenvectors]]", "[[Characteristic Equation and Eigenvalues]]"]
 status: complete
-sources: ["tmp/md/module_18_matrices_iii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§5.6–5.7)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§5.6–5.7)"]
 ---
 
 # MATH1054 M18 Solutions - Matrices III
@@ -60,6 +60,44 @@ $$\left[\begin{array}{ccccc|c}1&0&-1&1&-1&0\\0&1&1&-1&1&1\end{array}\right]$$
 So $\operatorname{rank}\mathbf A=\operatorname{rank}[\mathbf A|\mathbf b]=2$: the system is **consistent**, with $5-2=3$ free parameters. Let $x_3=\alpha$, $x_4=\beta$, $x_5=\gamma$:
 
 $$\boxed{x_1=\alpha-\beta+\gamma,\quad x_2=1-\alpha+\beta-\gamma,\quad x_3=\alpha,\ x_4=\beta,\ x_5=\gamma}$$
+
+## Example 5.39: Linear dependence by rank
+Put the $q$ vectors in the columns of a matrix. They are **independent** iff its rank equals $q$, and **dependent** iff $q-\operatorname{rank}>0$.
+
+**(a)** $(1,2,3)^{\mathrm T}$, $(2,3,1)^{\mathrm T}$:
+
+$$\mathbf A=\begin{bmatrix}1&2\\2&3\\3&1\end{bmatrix}\xrightarrow[R_3-3R_1]{R_2-2R_1}\begin{bmatrix}1&2\\0&-1\\0&-5\end{bmatrix}\xrightarrow{R_3-5R_2}\begin{bmatrix}1&2\\0&-1\\0&0\end{bmatrix}$$
+
+The rank is $2=q$, so the vectors are **independent**.
+
+**(b)** $(1,2,3)^{\mathrm T}$, $(2,3,1)^{\mathrm T}$, $(3,5,4)^{\mathrm T}$: the third vector is the sum of the first two, so in
+
+$$\mathbf B=\begin{bmatrix}1&2&3\\2&3&5\\3&1&4\end{bmatrix}$$
+
+column 3 is column 1 plus column 2. Hence $|\mathbf B|=0$ and the rank is 2 (the first two columns are independent, by (a)). Then $q-\operatorname{rank}\mathbf B=3-2=1$, so the vectors are **dependent**.
+
+**(c)** $(1,2,3)^{\mathrm T}$, $(2,3,4)^{\mathrm T}$, $(0,0,1)^{\mathrm T}$: three vectors with three components, so test the determinant. Expand down the third column:
+
+$$|\mathbf C|=\begin{vmatrix}1&2&0\\2&3&0\\3&4&1\end{vmatrix}=1\cdot\begin{vmatrix}1&2\\2&3\end{vmatrix}=3-4=-1\neq0$$
+
+The rank is 3, so the vectors are **independent**.
+
+**(d)** The three vectors of (c) plus $(0,2,1)^{\mathrm T}$:
+
+$$\mathbf D=\begin{bmatrix}1&2&0&0\\2&3&0&2\\3&4&1&1\end{bmatrix}$$
+
+$\mathbf D$ has 3 rows, so its rank is at most 3. The last three columns give
+
+$$\begin{vmatrix}2&0&0\\3&0&2\\4&1&1\end{vmatrix}=2(0\cdot1-2\cdot1)=-4\neq0,$$
+
+so the rank is exactly 3. Then $q-\operatorname{rank}\mathbf D=4-3=1$, and the vectors are **dependent**. Any four vectors with three components are dependent for the same reason. The dependence is
+
+$$(0,2,1)^{\mathrm T}=4(1,2,3)^{\mathrm T}-2(2,3,4)^{\mathrm T}-3(0,0,1)^{\mathrm T}.$$
+
+**Check**: the components are $4-4-0=0$, $8-6-0=2$ and $12-8-3=1$ ✔.
+
+> [!warning] Misprints in James, p. 385
+> In (c) James prints $\mathbf C$ with third row $(3,1,1)$; from the vectors it should be $(3,4,1)$. Both determinants happen to equal $-1$, so the conclusion stands. In (d) James writes $[q-\operatorname{rank}(\mathbf C)]=1$, which should read $q-\operatorname{rank}(\mathbf D)=1$.
 
 ## Example 5.40: $\mathbf A=\begin{bmatrix}-2&1\\1&-2\end{bmatrix}$
 
@@ -189,5 +227,5 @@ $$|\mathbf A-\lambda\mathbf I|=(3-\lambda)\big[(3-\lambda)(2-\lambda)-1\big]+1\b
 The matrix is symmetric, so the eigenvectors are mutually orthogonal ✔.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_18_matrices_iii.md`
+- Problem statements: Module 18 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §5.6–5.7; MATH1054 Module Booklet, Module 18

@@ -32,4 +32,4 @@ If the lip shock's turn is more than the flow behind it can take ($\theta_{max}$
 ## Related
 
 - [[Converging-Diverging Nozzle Operating Regimes]] (SESA2023) · [[Slip Line]] · [[Expansion Fan]] · [[Mach Reflection]] · [[Afterburning (Reheat)]]
-- Detail: [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (Lecture 2.7, slides 3–4)|W04 §5–6]]
+- Detail: [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (slides 3–4)|W04 §5–6]]

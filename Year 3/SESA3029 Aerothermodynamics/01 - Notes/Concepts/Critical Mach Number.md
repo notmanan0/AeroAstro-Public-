@@ -8,7 +8,7 @@ tags: [sesa3029, concept, transonic, compressible-flow, aerofoil]
 status: complete
 parent_lectures: ["[[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils]]", "[[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]]"]
 related_concepts: ["[[Prandtl-Glauert Transformation]]", "[[Drag Divergence]]", "[[Stagnation Properties]]"]
-sources: ["02 - Sources/Lectures/Lecture4-2.pdf", "02 - Sources/Lectures/Lecture4-4.pdf"]
+sources: ["02 - Sources/Lectures/Lecture4-2.pdf", "02 - Sources/Lectures/Lecture4-4.pdf", "02 - Sources/Lectures/Lecture 4-4.txt"]
 ---
 
 # Critical Mach Number
@@ -21,7 +21,7 @@ $$
 C_{p,cr}=\frac{2}{\gamma M_\infty^2}\left[\left(\frac{1+\frac{\gamma-1}{2}M_\infty^2}{1+\frac{\gamma-1}{2}}\right)^{\gamma/(\gamma-1)}-1\right].
 $$
 
-The second is the aerofoil's own suction peak at that Mach number, here the Prandtl–Glauert-corrected incompressible value $C_{p0,min}/\sqrt{1-M_\infty^2}$. $M_{crit}$ is where the two are equal. The equation has no closed form; plot or tabulate both sides and find the crossing (4.4 slides 8–9).
+The second is the aerofoil's own suction peak at that Mach number, here the Prandtl–Glauert-corrected incompressible value $C_{p0,min}/\sqrt{1-M_\infty^2}$. $M_{crit}$ is where the two are equal. The equation has no closed form; plot both sides and find the crossing (4.4 slides 8–9), or evaluate them at two trial Mach numbers either side of the root and interpolate linearly. The subscript 0 in $C_{p0,min}$ means incompressible, while the $p_0$ in the derivation of $C_{p,cr}$ is the stagnation pressure.
 
 For $C_{p0,min}=-0.4$ in air ($\gamma=1.4$), Prandtl–Glauert gives $M_{crit}=0.747$ and Kármán–Tsien gives $0.733$ (4.4 slides 9 and 11). A larger suction peak lowers it: $C_{p0,min}=-1.0$ gives 0.606, and Example Sheet 2 Q6's $-2.5$ gives 0.448. That is why high-subsonic aircraft use thin sections, flat-rooftop supercritical sections and wing sweep.
 

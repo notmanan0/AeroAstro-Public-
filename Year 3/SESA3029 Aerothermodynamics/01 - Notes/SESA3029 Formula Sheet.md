@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3029 formulae", "Aerothermodynamics formula sheet"]
 tags: [sesa3029, formula, exam-prep]
 status: in-progress
-coverage: "Week 1, Lectures 2.1–2.7, 3.1–3.4, 4.1 (4.2–4.6 written ahead)"
+coverage: "Week 1, Lectures 2.1–2.7, 3.1–3.4, 4.1–4.5 (4.6 written ahead)"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1** (all lectured; 4.1 on Mon 2 Nov), plus **4.2–4.6 written ahead** from the slides. This sheet will expand with the module. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.5** (all checked against transcripts; 4.5 on Thu 12 Nov), plus **4.6 written ahead** from the slides. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Which relation? Given → choose → check
 
@@ -29,7 +29,7 @@ The official sheet gives equations, not the decisions between them. This table l
 | MoC point P from A (below) and B (above) | Along the $C^+$ from A carry $R^+_A=\nu-\theta$; along the $C^-$ from B carry $R^-_B=\nu+\theta$ | Recompute $R^\pm$ from $\nu_P,\theta_P$; slopes use **averaged** $\theta\pm\mu$ |
 | MoC point on a wall or the centreline | Wall: the one arriving invariant plus $\theta_W$. Centreline: $\theta_P=0$ plus the arriving $R^-$ | A wall reflects only if $\theta_A\neq\theta_W$ |
 | Thin aerofoil, subsonic $M_\infty$, incompressible $C_{p0}$ or $C_{l0}$ known | Prandtl–Glauert: divide by $\sqrt{1-M_\infty^2}$ (Kármán–Tsien if asked) | $M_\infty$ below about 0.8 and below $M_{crit}$ ([[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation\|W07b]]) |
-| Thin aerofoil, supersonic, small angles, "linear" or "Ackeret" | $C_p=2\theta/\lambda$ face by face; $C_l=4\alpha/\lambda$ | Radians; $\theta$ from $\vec U_\infty$, + for compression. "Exact" means shock-expansion instead ([[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]]) |
+| Thin aerofoil, supersonic, small angles, "linear" or "Ackeret" | $C_p=2\theta/\lambda$ face by face; $C_l=4\alpha/\lambda$ | Radians; $\theta$ from $\vec U_\infty$, + for compression (face and nearby streamline form a converging duct), − for expansion (diverging duct). "Exact" means shock-expansion instead ([[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]]) |
 
 ## Mach number and gas properties
 
@@ -265,7 +265,7 @@ C_{m,x}=C_{m,LE}+\frac xc\,C_n,
 \frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_n}\approx-\frac{\Delta C_{m,LE}}{\Delta C_n}.
 $$
 
-The lecture uses $C_l$ in place of $C_n$ (small-$\alpha$ form): flat plate $x_{cp}/c=1/(2\cos\alpha)=0.508$ at $10^\circ$ against exactly 0.5 along the chord; triangular wing (Tutorial 1) $-\Delta C_m/\Delta C_l=0.487$ against $-\Delta C_m/\Delta C_n=0.468$.
+The lecture form uses $C_l$ in place of $C_n$ (small-$\alpha$ form): flat plate $x_{cp}/c=1/(2\cos\alpha)=0.508$ at $10^\circ$ against exactly 0.5 along the chord; triangular wing (Tutorial 1) $-\Delta C_m/\Delta C_l=0.487$ against $-\Delta C_m/\Delta C_n=0.468$.
 
 Supersonic ac $\approx c/2$; subsonic $\approx c/4$. Thick section: resolve **each face's** force; with normal force $N'$ and chordwise force $A'$, $L'=N'\cos\alpha-A'\sin\alpha$ and $D'=N'\sin\alpha+A'\cos\alpha$.
 
@@ -281,7 +281,7 @@ $$
 
 ## Quasi-1D nozzle flow (Lecture 2.6)
 
-The three ingredients, as lectured (L2-6, ll. 12–76; the momentum balance includes the side-wall force $(p+\tfrac12\mathrm dp)\,\mathrm dA$):
+The mass, momentum and isentropic relations (L2-6, ll. 12–76; the momentum balance includes the side-wall force $(p+\tfrac12\mathrm dp)\,\mathrm dA$):
 
 $$
 \frac{\mathrm d\rho}{\rho}+\frac{\mathrm dU}{U}+\frac{\mathrm dA}{A}=0,
@@ -375,7 +375,7 @@ Boundary conditions:
 | designed wall (non-reflecting) | $\theta_W=\theta_A$, $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
 | centreline | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B-\mu_P]$ |
 
-A prescribed wall reflects **only if** $\theta_A\neq\theta_W$. If the arriving flow is already parallel to the wall, nothing leaves, whatever the bookkeeping says (3.4's point 3; L3-4, ll. 238–277).
+A prescribed wall reflects **only if** $\theta_A\neq\theta_W$. If the arriving flow is already parallel to the wall, nothing leaves, whatever the table says (point 3 of the generic example; L3-4, ll. 238–277).
 
 Minimum-length nozzle:
 
@@ -400,11 +400,11 @@ $\mu=\sin^{-1}(1/M)$ is independent of $\gamma$.
 
 Reading the exit Mach number off the maximum slope at a **sharp** expansion corner (L3-3, ll. 204–214): $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
 
-Bookkeeping rule (L3-3, ll. 32–36): any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.
+Four-variable rule (L3-3, ll. 32–36): any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.
 
 ## Euler equations and compressible aerofoils (Lectures 4.1–4.6)
 
-4.1 lectured (Mon 2 Nov); 4.2–4.6 written ahead from the slides ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|W07a]], [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]], [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]]).
+4.1–4.5 checked against transcripts (Mon 2, Thu 5, Fri 6, Mon 9 and Thu 12 Nov); 4.6 written ahead from the slides ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|W07a]], [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]], [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]]).
 
 2D Euler equations (inviscid, no heat conduction, unit span; perfect gas):
 
@@ -418,17 +418,36 @@ $$
 
 The letters $\mathbf Q,\mathbf F,\mathbf G$ are shorthand, not the slides'. Slide 12 prints the energy flux as $\rho u(e_t+p)$, a slip for $(\rho e_t+p)u$.
 
+Mach-number effects, 4.2 (perfect gas, $\gamma=1.4$ for numbers). Lift per unit span at a fixed altitude scales with $C_LM_\infty^2$, since $L'=\tfrac12\rho_\infty U_\infty^2cC_L=\tfrac12\gamma p_\infty M_\infty^2cC_L$. On the centre line ahead of the leading edge at $M_\infty>1$ the turning angle is $\theta=0$, so the bow shock there is the normal-shock branch $\beta=90^\circ$ (the other $\theta=0$ solution, $\beta=\mu$, is a Mach wave); e.g. $M_\infty=1.2$: $M_2=0.842$, $\mu=56.4^\circ$. At fixed $\theta$ the weak-branch $\beta$ falls as $M_1$ rises, so the bow shock leans back at higher $M_\infty$. At the trailing edge both streams must leave along one slip line at one pressure (Kutta condition), so each is turned compressively and carries an oblique shock (L4-3). Sweep: the section sees $M_\infty\cos\Lambda$ (infinite swept wing).
+
 Linearised compressible potential equation and pressure coefficient (steady, isentropic, irrotational, thin body, $u',v'\ll U_\infty$; not near $M_\infty=1$, not hypersonic; $\phi$ is the **perturbation** potential, $u'=\phi_x$, $v'=\phi_y$):
 
 $$
 (1-M_\infty^2)\phi_{xx}+\phi_{yy}=0,\qquad C_p=-\frac{2u'}{U_\infty},\qquad a^2=a_\infty^2-(\gamma-1)u'U_\infty .
 $$
 
-Prandtl–Glauert (subsonic; the course says $M_\infty<0.8$; same aerofoil, $\beta=\sqrt{1-M_\infty^2}$, $\phi_0=\beta\phi$, $y_0=\beta y$):
+Pressure coefficient in terms of the free-stream Mach number (exact, perfect gas; a past exam question, L4-3, ll. 414–417):
+
+$$
+C_p=\frac{p-p_\infty}{\tfrac12\rho_\infty U_\infty^2}=\frac{2}{\gamma M_\infty^2}\left(\frac{p}{p_\infty}-1\right),\qquad \tfrac12\rho_\infty U_\infty^2=\tfrac12\gamma p_\infty M_\infty^2 .
+$$
+
+Validity of the linear equation (L4-3, ll. 368–378): $M_\infty<0.8$ (elliptic, Prandtl–Glauert) or $M_\infty>1.2$ (hyperbolic, Ackeret); slide 7 prints 0.9 and 1.1.
+
+Prandtl–Glauert (subsonic, $M_\infty<0.8$; same aerofoil, $\beta=\sqrt{1-M_\infty^2}$, $\phi_0=\beta\phi$, $y_0=\beta y$):
 
 $$
 C_p=\frac{C_{p0}}{\sqrt{1-M_\infty^2}},\qquad C_l=\frac{C_{l0}}{\sqrt{1-M_\infty^2}},\qquad C_m=\frac{C_{m0}}{\sqrt{1-M_\infty^2}}\quad(\text{flat plate: }C_{l0}=2\pi\alpha).
 $$
+
+Subscript 0 = incompressible ($M_\infty\to0$), not stagnation. $C_l$ and $C_m$ come from the chordwise integrals ($x$ along the chord from the LE; small $\alpha$, so $L'\approx N'$; nose-up positive), and $\beta$ comes out because $x_0=x$:
+
+$$
+C_l\approx\frac1c\int_0^c\left(C_{p,l}-C_{p,u}\right)\mathrm dx,\qquad
+C_{m,LE}=-\frac{1}{c^2}\int_0^c\left(C_{p,l}-C_{p,u}\right)x\,\mathrm dx .
+$$
+
+No rule for $C_d$: inviscid subcritical drag is zero, and real drag below $M_{crit}$ is viscous (W07b §7).
 
 Kármán–Tsien:
 
@@ -444,7 +463,7 @@ $$
 
 $C_{p0,min}=-0.4$, $\gamma=1.4$: $M_{crit}=0.747$ (P–G), $0.733$ (K–T). $-1.0$: 0.606, 0.585. $-2.5$ (ES2 Q6): 0.448 (P–G).
 
-Ackeret (supersonic; the course says $M_\infty>1.2$; $\lambda=\sqrt{M_\infty^2-1}$; angles in **radians**; $\theta$ from $\vec U_\infty$, + for compression):
+Ackeret (supersonic, $1.2<M_\infty\lesssim3$–4; $\lambda=\sqrt{M_\infty^2-1}$; angles in **radians**; $\theta$ from $\vec U_\infty$, + for compression):
 
 $$
 u'=-\frac{v'}{\lambda}\ (\text{upper}),\qquad C_p=\frac{2\theta}{\sqrt{M_\infty^2-1}} .
@@ -461,7 +480,7 @@ Flat plate: $C_d=4\alpha^2/\lambda$, $x_{cp}=c/2$. Diamond (thickest at $c/2$, t
 
 $M_\infty=2$, $\alpha=10^\circ$ flat plate: Ackeret $C_l=0.4031$, $C_d=0.0703$; shock-expansion $0.4075$, $0.0719$.
 
-Wing sweep (simple sweep theory): the section sees $M_\infty\cos\Lambda$, with $\Lambda$ the leading-edge sweep (the slide writes $\beta$).
+Wing sweep (simple sweep theory): the section sees $M_\infty\cos\Lambda$, with $\Lambda$ the leading-edge sweep (written $\beta$ on the slides).
 
 ## What the exam formula sheet gives you
 

@@ -14,7 +14,7 @@ related: ["[[Larson-Miller Parameter]]", "[[Miner's Rule]]", "[[Creep Curve and 
 
 The creep form of Miner's rule says that time $t_i$ spent at a stress and temperature whose rupture life is $t_{r,i}$ uses the fraction $t_i/t_{r,i}$ of the creep life, and that rupture is expected when $\sum t_i/t_{r,i}=1$.
 
-It is the same damage-summation assumption as in fatigue, applied to time fractions instead of cycle fractions; the lecturer stresses that the rule belongs to neither mechanism but is a general assumption about adding damage. Each condition's rupture life is read or interpolated from stress–rupture data. Because rupture life is exponential in temperature and a power law in stress, interpolation must be done on logarithmic axes, in $\log t_r$, never linearly in $t_r$. Once the fractions used so far are added, the remaining life at a new condition is $(1-\sum)\,t_{r,\text{new}}$, which should then be reduced by a safety factor.
+It is the same damage-summation assumption as in fatigue, applied to time fractions instead of cycle fractions; the rule belongs to neither mechanism but is a general assumption about adding damage. Each condition's rupture life is read or interpolated from stress–rupture data. Because rupture life is exponential in temperature and a power law in stress, interpolation must be done on logarithmic axes, in $\log t_r$, never linearly in $t_r$. Once the fractions used so far are added, the remaining life at a new condition is $(1-\sum)\,t_{r,\text{new}}$, which should then be reduced by a safety factor.
 
 ![[materials_creep_miner_budgets.png|800]]
 

@@ -71,7 +71,7 @@ Ideal quasi-static expansion/compression can be internally reversible. Actual he
 Both cycles share constant-volume heating 1->2 from 300 to 900 K. Hence
 
 $$
-p_2/p_1=T_2/T_1=3,qquad q_{12}=c_v(900-300)=430.8\ \mathrm{kJ/kg}.
+p_2/p_1=T_2/T_1=3,\qquad q_{12}=c_v(900-300)=430.8\ \mathrm{kJ/kg}.
 $$
 
 ### Cycle A: isentropic 2->3A, then isobaric rejection
@@ -202,7 +202,7 @@ $$
 =\boxed{173\ \mathrm{J\,kg^{-1}K^{-1}}}.
 $$
 
-### Fixed heat input $q=100$ kJ/kg
+### Fixed heat input q = 100 kJ/kg
 
 Isobaric: $T_2=T_1+q/c_p=392.65$ K,
 

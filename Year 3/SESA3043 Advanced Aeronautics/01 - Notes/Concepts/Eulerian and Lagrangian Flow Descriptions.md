@@ -23,7 +23,7 @@ $$
 
 which turns an Eulerian field into the rate of change a Lagrangian particle would see. The [[Reynolds Transport Theorem]] does the same job for extensive quantities in a finite system and control volume.
 
-The lecture's river example puts numbers on it: a probe fixed to the bank reads $+1.00$ K/h while a drifting buoy reads $-0.44$ K/h in the same water ([[SESA3043 1.1 - Mathematical Tools and Flow Description#9.1 Two thermometers in a river (suggested)|SESA3043 1.1 §9.1]]).
+The river example puts numbers on it: a probe fixed to the bank reads $+1.00$ K/h while a drifting buoy reads $-0.44$ K/h in the same water ([[SESA3043 1.1 - Mathematical Tools and Flow Description#9.1 Two thermometers in a river (suggested)|SESA3043 1.1 §9.1]]).
 
 ## Related
 

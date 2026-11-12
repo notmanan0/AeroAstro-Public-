@@ -14,7 +14,7 @@ related: ["[[Evans Diagram and Passivation]]", "[[Localised Corrosion]]", "[[Cor
 
 Standard electrode potentials rank metals by how readily they dissolve, measured against the standard hydrogen electrode at 0 V, and the Nernst equation $E=E^0+(0.0592/n)\log_{10}C_{ion}$ corrects a potential for the ion concentration actually present at 25 °C.
 
-In any pair of metals connected through an electrolyte, the one with the more negative potential is the anode and corrodes. Zinc ($-0.76$ V) against copper ($+0.34$ V) gives a cell of 1.10 V with zinc dissolving; the lecture writes it as "most negative minus least negative", $-1.10$ V, while the usual convention $E_{cathode}-E_{anode}=+1.10$ V gives a positive value for a spontaneous reaction, with $\Delta G=-nFE=-212$ kJ/mol. Standard potentials assume pure metals in 1 M solutions of their own ions. The galvanic series ranks real alloys in a real environment such as seawater, including passive stainless steel and titanium, and is the list to use when choosing metals to join.
+In any pair of metals connected through an electrolyte, the one with the more negative potential is the anode and corrodes. Zinc ($-0.76$ V) against copper ($+0.34$ V) gives a cell of 1.10 V with zinc dissolving; the course writes it as "most negative minus least negative", $-1.10$ V, while the usual convention $E_{cathode}-E_{anode}=+1.10$ V gives a positive value for a spontaneous reaction, with $\Delta G=-nFE=-212$ kJ/mol. Standard potentials assume pure metals in 1 M solutions of their own ions. The galvanic series ranks real alloys in a real environment such as seawater, including passive stainless steel and titanium, and is the list to use when choosing metals to join.
 
 ![[materials_electrode_potentials.png|700]]
 

@@ -32,7 +32,7 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 9.txt", "02 - Sources/Lectures
 > - **Common mistakes:** mixing normalisation conventions between sources (the product of the two factors must be $\frac1{2\pi}$); forgetting the $\omega=0$ check when the answer has $\omega$ in a denominator.
 > - **Practise:** [[#The box function]] · [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms|PS4 (Fourier transforms) Q1]]
 
-The lecture gave three reasons for moving from Fourier series to integral transforms (L9, ll. 7–43). A Fourier series only describes periodic functions on a bounded domain, so letting the period grow without limit should capture every function. A series only contains the discrete frequencies that fit the period, while real signals contain a continuous range, and a signal that looks complicated in time can be simple in frequency. And transforming a differential equation replaces derivatives with algebra, turning an ODE into an algebraic equation and a PDE into an ODE. The catch is the transform there and back, which is only worth it for certain classes of problem, but for those it is often the only practical method.
+There are three reasons for moving from Fourier series to integral transforms (L9, ll. 7–43). A Fourier series only describes periodic functions on a bounded domain, so letting the period grow without limit should capture every function. A series only contains the discrete frequencies that fit the period, while real signals contain a continuous range, and a signal that looks complicated in time can be simple in frequency. And transforming a differential equation replaces derivatives with algebra, turning an ODE into an algebraic equation and a PDE into an ODE. Transforming there and back is only worth it for certain classes of problem, but for those it is often the only practical method.
 
 The transform is built as a limit of the Fourier series. A Fourier series has frequencies spaced $2\pi/T$ apart; as the period $T$ grows, they crowd together, the sum over them looks more and more like the Riemann sum of an integral, and in the limit it becomes one. The coefficient formula, which was already an integral over one period, becomes an integral over all time.
 
@@ -80,6 +80,22 @@ $$
 
 The notation is a capital letter for the transform, $G(\omega)$ for $g(t)$, or $\mathcal F[g]$ (ll. 225–233).
 
+The limit can be watched happening. Repeat the box of [[#The box function]] ($1$ on $|t|<1$) with period $T$. Its Fourier coefficients are
+
+$$
+c_n=\frac1T\int_{-1}^{1}e^{-j2\pi nt/T}\,dt=\frac{2\sin(2\pi n/T)}{2\pi n},
+$$
+
+so with $k=2\pi n/T$ the scaled coefficients are
+
+$$
+\frac{Tc_k}{\sqrt{2\pi}}=\frac{1}{\sqrt{2\pi}}\cdot\frac{2\sin k}{k}=\sqrt{\frac2\pi}\,\frac{\sin k}{k}.
+$$
+
+Because the box is zero outside one period, these are exact samples of the transform $F(\omega)=\sqrt{2/\pi}\,\sin\omega/\omega$ at spacing $\Delta k=2\pi/T$: for $T=8$ the first three are $0.7183$, $0.5079$, $0.2394$ at $k=0.785$, $1.571$, $2.356$, and $F$ takes the same values there. Lengthening the period only fills in the samples more densely.
+
+![[m2048_tr_series_to_transform.png|760]]
+
 ### Normalisation conventions
 
 Splitting the factor $\frac1{2\pi}$ as $\frac1{\sqrt{2\pi}}$ on each side makes the pair symmetric, and this course uses it throughout. Other sources put $1$ on the forward transform and $\frac1{2\pi}$ on the inverse, or move the $2\pi$ into the exponent; numerical libraries such as FFTPACK and FFTW, and sites such as Wolfram MathWorld, disagree with each other. The only fixed requirement is that the two factors multiply to $\frac1{2\pi}$, so check the convention of any tool or reference before using its numbers (ll. 235–255).
@@ -106,9 +122,35 @@ $$
 
 The transform of a real function is in general complex, but this one happens to be real (ll. 320–323). The general formula divides by $\omega$, so $\omega=0$ should strictly be checked on its own (ll. 324–351): there the kernel is 1 and $F(0)=\frac1{\sqrt{2\pi}}\int_{-1}^{1}dt=\frac{2}{\sqrt{2\pi}}=\sqrt{\frac2\pi}$, which agrees with the limit $\sin\omega/\omega\to1$.
 
+### The two-sided exponential (PS4 Q1)
+
+Take $f(t)=e^{-\omega_0|t|}$ with $\omega_0>0$, which decays both ways, so $\int|f|\,dt=2/\omega_0$ is finite. Split at $t=0$, where $|t|$ changes form:
+
+$$
+F(\omega)=\frac1{\sqrt{2\pi}}\left(\int_{-\infty}^{0}e^{\omega_0t}e^{-j\omega t}\,dt+\int_0^{\infty}e^{-\omega_0t}e^{-j\omega t}\,dt\right)
+$$
+
+$$
+=\frac1{\sqrt{2\pi}}\left(\int_{-\infty}^{0}e^{(\omega_0-j\omega)t}\,dt+\int_0^{\infty}e^{-(\omega_0+j\omega)t}\,dt\right).
+$$
+
+Each exponential has a real part that decays towards the infinite limit ($e^{\omega_0t}\to0$ as $t\to-\infty$, $e^{-\omega_0t}\to0$ as $t\to\infty$), so only the $t=0$ ends contribute:
+
+$$
+=\frac1{\sqrt{2\pi}}\left(\frac{1}{\omega_0-j\omega}+\frac{1}{\omega_0+j\omega}\right).
+$$
+
+Put over the common denominator $(\omega_0-j\omega)(\omega_0+j\omega)=\omega_0^2+\omega^2$:
+
+$$
+=\frac1{\sqrt{2\pi}}\cdot\frac{(\omega_0+j\omega)+(\omega_0-j\omega)}{\omega_0^2+\omega^2}=\sqrt{\frac2\pi}\,\frac{\omega_0}{\omega^2+\omega_0^2}.
+$$
+
+It is real because $f$ is even. At $\omega=0$ it gives $\sqrt{2/\pi}/\omega_0=\frac{1}{\sqrt{2\pi}}\int f\,dt$, as the definition requires, and halving $\omega_0$ (a slower decay, a wider pulse) doubles the peak and halves the frequency width.
+
 ![[m2048_tr_fourier_pairs.png|760]]
 
-The figure also shows PS4 Q1's $e^{-\omega_0|t|}$ and the general pattern: a function narrow in time is wide in frequency, and vice versa.
+A function narrow in time is wide in frequency, and vice versa, as the box and $e^{-\omega_0|t|}$ in the figure show.
 
 ### One period of sine
 
@@ -124,7 +166,17 @@ $$
 =\frac1{2j\sqrt{2\pi}}\left[\frac{e^{j(1-\omega)t}}{j(1-\omega)}+\frac{e^{-j(1+\omega)t}}{j(1+\omega)}\right]_{-\pi}^{\pi}.
 $$
 
-At the limits $e^{\pm j\pi}=-1$, so each bracket reduces to $-(e^{-j\omega\pi}-e^{j\omega\pi})=2j\sin\omega\pi$:
+At the limits, $e^{j(1-\omega)(\pm\pi)}=e^{\pm j\pi}e^{\mp j\omega\pi}=-e^{\mp j\omega\pi}$, so the first term gives
+
+$$
+\Big[e^{j(1-\omega)t}\Big]_{-\pi}^{\pi}=-e^{-j\omega\pi}+e^{j\omega\pi}=2j\sin\omega\pi,
+$$
+
+and likewise $e^{-j(1+\omega)(\pm\pi)}=-e^{\mp j\omega\pi}$, so the second term gives the same $2j\sin\omega\pi$. Substitute both:
+
+$$
+=\frac1{2j\sqrt{2\pi}}\left(\frac{2j\sin\omega\pi}{j(1-\omega)}+\frac{2j\sin\omega\pi}{j(1+\omega)}\right)
+$$
 
 $$
 =\frac{\sin\omega\pi}{j\sqrt{2\pi}}\left(\frac1{1-\omega}+\frac1{1+\omega}\right)=\frac{\sin\omega\pi}{j\sqrt{2\pi}}\cdot\frac{2}{1-\omega^2}.
@@ -136,7 +188,13 @@ $$
 F(\omega)=j\sqrt{\frac2\pi}\,\frac{\sin\omega\pi}{\omega^2-1}.
 $$
 
-This one is purely imaginary, which FS3's rule predicts for an odd function (ll. 428–430). The points $\omega=\pm1$ need checking separately; the limit is finite there, $F(\pm1)=\mp j\sqrt{\pi/2}$.
+This one is purely imaginary, which FS3's rule predicts for an odd function (ll. 428–430). The points $\omega=\pm1$ need checking separately, because the general answer is $0/0$ there. At $\omega=1$ go back to the integral, with $e^{-jt}=\cos t-j\sin t$:
+
+$$
+F(1)=\frac1{\sqrt{2\pi}}\int_{-\pi}^{\pi}\sin t\,(\cos t-j\sin t)\,dt=\frac1{\sqrt{2\pi}}\Big(0-j\int_{-\pi}^{\pi}\sin^2t\,dt\Big)=\frac{-j\pi}{\sqrt{2\pi}}=-j\sqrt{\frac\pi2},
+$$
+
+using the odd product $\sin t\cos t$ and FS1's $\int_{-\pi}^{\pi}\sin^2t\,dt=\pi$. L'Hôpital on the general formula gives the same, $j\sqrt{2/\pi}\,\pi\cos\pi/2=-j\sqrt{\pi/2}$, and by oddness $F(-1)=+j\sqrt{\pi/2}$.
 
 > [!check] SymPy
 > Direct integration gives $\sqrt{2/\pi}\,\sin\omega/\omega$ for the box (with $\sqrt{2/\pi}$ at $\omega=0$) and $j\sqrt{2/\pi}\,\sin\pi\omega/(\omega^2-1)$ for the sine pulse, with the finite values $\mp j\sqrt{\pi/2}$ at $\omega=\pm1$.
@@ -165,7 +223,7 @@ $$
 
 Applying it twice gives $\mathcal F[\ddot f]=(j\omega)^2F=-\omega^2F$.
 
-The lecture's first use (ll. 137–148) was a shortcut: $\cos t$ on $|t|<\pi$ is the derivative of the sine pulse, which is continuous because it is zero at $\pm\pi$, so
+The rule gives a shortcut for the cosine pulse (ll. 137–148): $\cos t$ on $|t|<\pi$ is the derivative of the sine pulse, which is continuous because it is zero at $\pm\pi$, so
 
 $$
 \mathcal F[\cos t\ \text{on}\ |t|<\pi]=j\omega\cdot j\sqrt{\frac2\pi}\frac{\sin\omega\pi}{\omega^2-1}=-\sqrt{\frac2\pi}\,\frac{\omega\sin\omega\pi}{\omega^2-1},
@@ -239,23 +297,22 @@ For light damping the peak sits at the natural frequency, as expected; the respo
 
 ![[m2048_tr_response_lecture.png|720]]
 
-> [!check] SymPy
-> Solving $d|G|^{-2}/d\omega=0$ gives $\omega=0$ and $\omega=\pm\sqrt{\omega_0^2-\gamma^2/2}$.
+The height of the peak follows by substituting $\omega^2=\omega_0^2-\tfrac12\gamma^2$ into $D$:
+
+$$
+D=\big(\tfrac12\gamma^2\big)^2+\gamma^2\big(\omega_0^2-\tfrac12\gamma^2\big)=\gamma^2\omega_0^2-\tfrac14\gamma^4,
+$$
+
+$$
+|G|_{\max}=\frac{1}{\gamma\sqrt{\omega_0^2-\tfrac14\gamma^2}}\approx\frac{1}{\gamma\omega_0}\quad(\gamma\ll\omega_0),
+$$
+
+so halving the damping roughly doubles the peak response.
+
+> [!check] Two oscillators
+> With $\omega_0=1$ and $\gamma=0.5$, the formulae give the peak at $\omega=\sqrt{1-0.125}=0.9354$ with $|G|_{\max}=1/(0.5\sqrt{0.9375})=2.066$; a direct numerical scan of $|G|$ finds $0.93541$ and $2.0656$. For $\ddot y+3\dot y+2y=u$, $\omega_0^2=2$ and $\gamma^2=9>2\omega_0^2=4$, so there is no peak: $|G|$ falls monotonically from $|G(0)|=1/\omega_0^2=0.5$. SymPy's solution of $d|G|^{-2}/d\omega=0$ gives $\omega=0$ and $\omega=\pm\sqrt{\omega_0^2-\gamma^2/2}$.
 
 This is the same frequency response as SESA2027's [[Frequency Response Function]], with $\gamma=2\zeta\omega_0$; there the peak is written $\omega_r=\omega_0\sqrt{1-2\zeta^2}$.
-
-## Transcript slips
-
-> [!warning] Lectures 9 and 10
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L9, l. 188 | "the integral… of f of k exponential j k t dt" | $dk$; the integration variable is the frequency |
-> | L9, ll. 202–205 | writes $f$ of $k$ inside the coefficient integral, then corrects himself | $f(t)$ |
-> | L9, l. 278 | "nearly all cases where the Fourier series can be computed are going to be bounded" | where the Fourier transform can be computed, the functions are windowed (zero outside a finite interval) |
-> | L9, l. 322 | "the Fourier transform of the constant turns out to be a real function" | of the box function; a constant has no Fourier transform (ll. 265–266) |
-> | L10, l. 229 | admits the slide's operator equation is written incorrectly | $\mathcal L_y[y]=\mathcal L_u[u]$ with $\mathcal L_y=\frac{d^2}{dt^2}+\gamma\frac{d}{dt}+\omega_0^2$ and $\mathcal L_u=1$ |
-> | L10, ll. 341–375 | sign and factor slips while differentiating $\lvert G\rvert^2$, corrected on the fly | $\omega^2=\omega_0^2-\frac12\gamma^2$ |
-> | L10, l. 305 | high-frequency input is damped "unless… going like omega cubed" | $G\sim1/\omega^2$, so only an input growing at least like $\omega^2$ escapes the damping |
 
 ## Links
 
@@ -271,16 +328,31 @@ This is the same frequency response as SESA2027's [[Frequency Response Function]
 
 ## Self-study tasks
 
-Lecture 10 mentioned "some important exercises that can be done there" on response functions (ll. 397–398) without setting a specific one. Problem Sheet 4 has two Fourier-transform questions.
+Lecture 10 pointed to exercises on response functions (ll. 397–398) without setting a specific one. Problem Sheet 4 has two Fourier-transform questions.
 
 ### Core
 
 - [ ] Derive the transform pair from the complex Fourier series by letting $T\to\infty$. → [[#1. From Fourier series to Fourier transform (L9)]]
-- [ ] PS4 (Fourier transforms) Q1: show $\mathcal F[e^{-\omega_0|t|}]=\sqrt{\frac2\pi}\,\frac{\omega_0}{\omega^2+\omega_0^2}$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
+- [ ] PS4 (Fourier transforms) Q1: show $\mathcal F[e^{-\omega_0|t|}]=\sqrt{\frac2\pi}\,\frac{\omega_0}{\omega^2+\omega_0^2}$. → [[#The two-sided exponential (PS4 Q1)]]
 - [ ] Prove $\mathcal F[\dot f]=j\omega F$, saying where $f\to0$ at $\pm\infty$ is used. → [[#The transform of a derivative]]
 
 ### Further practice
 
 - [ ] PS4 (Fourier transforms) Q2: transform $\sin at$ on $|t|\leq\pi/a$, use the inverse transform to get its Fourier-integral representation, and deduce $\int_0^\infty\frac{\sin\omega\pi\,\sin(\omega\pi/2)}{1-\omega^2}\,d\omega=\frac\pi2$. → [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
-- [ ] Find the response function of $\ddot y+3\dot y+2y=u$ and the frequency, if any, at which $|G|$ peaks (suggested, not lecturer-set). → [[#4. Solving ODEs and the response function (L10)]]
+- [ ] Find the response function of $\ddot y+3\dot y+2y=u$ and the frequency, if any, at which $|G|$ peaks (suggested, not lecturer-set). Answer: no peak, since $\gamma^2>2\omega_0^2$. → [[#4. Solving ODEs and the response function (L10)]]
 - [ ] Check the sine-pulse transform at $\omega=1$ directly from the integral (suggested, not lecturer-set). → [[#One period of sine]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 9 and 10
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L9, l. 188 | "the integral… of f of k exponential j k t dt" | $dk$; the integration variable is the frequency |
+> | L9, ll. 202–205 | writes $f$ of $k$ inside the coefficient integral, then corrects himself | $f(t)$ |
+> | L9, l. 278 | "nearly all cases where the Fourier series can be computed are going to be bounded" | where the Fourier transform can be computed, the functions are windowed (zero outside a finite interval) |
+> | L9, l. 322 | "the Fourier transform of the constant turns out to be a real function" | of the box function; a constant has no Fourier transform (ll. 265–266) |
+> | L10, l. 229 | admits the slide's operator equation is written incorrectly | $\mathcal L_y[y]=\mathcal L_u[u]$ with $\mathcal L_y=\frac{d^2}{dt^2}+\gamma\frac{d}{dt}+\omega_0^2$ and $\mathcal L_u=1$ |
+> | L10, ll. 341–375 | sign and factor slips while differentiating $\lvert G\rvert^2$, corrected on the fly | $\omega^2=\omega_0^2-\frac12\gamma^2$ |
+> | L10, l. 305 | high-frequency input is damped "unless… going like omega cubed" | $G\sim1/\omega^2$, so only an input growing at least like $\omega^2$ escapes the damping |

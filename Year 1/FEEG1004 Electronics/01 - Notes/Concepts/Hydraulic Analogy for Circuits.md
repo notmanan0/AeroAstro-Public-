@@ -13,32 +13,25 @@ sources: ["02 - Sources/S1 Fundamentals/S1-W04-3ab Circuits KCL KVL Resistors - 
 
 # Hydraulic Analogy for Circuits
 
-## Definition
+The hydraulic analogy maps an electrical circuit onto a network of water pipes, with voltage corresponding to pressure and current to volume flow rate. It holds because the governing equations of the two systems have the same form.
 
-> [!note] Definition
-> | Electrical | Hydraulic |
-> |---|---|
-> | voltage | pressure |
-> | current | volume flow rate |
-> | resistance | pipe (laminar) resistance |
-> | capacitance | elastic membrane (compliance) |
-> | inductance | inertia of the fluid / a heavy water-wheel |
-> | KCL, KVL | mass conservation, single-valued pressure |
+| Electrical | Hydraulic |
+|---|---|
+| voltage | pressure |
+| current | volume flow rate |
+| resistance | pipe (laminar) resistance |
+| capacitance | elastic membrane (compliance) |
+| inductance | inertia of the fluid / a heavy water-wheel |
+| KCL, KVL | mass conservation, single-valued pressure |
 
-## Explanation
-- It works because the governing equations have the **same form**, and only in that sense. Other mappings are equally valid (e.g. the force–current analogy).
-- It builds intuition for transients:
-  - a membrane cannot fill instantly, so capacitor voltage is continuous;
-  - a heavy wheel cannot change speed instantly, so inductor current is continuous.
-- In the analogy, resonance is the wheel and membrane swapping energy.
-- Tools transfer too: circuit analysis solves **laminar** pipe and microfluidic networks.
+The analogy is valid only in that formal sense, and other mappings work equally well, such as the force–current analogy for mechanical systems. Its value is the intuition it gives for transients. A membrane cannot stretch instantly, so the pressure across it cannot jump, which is why capacitor voltage is continuous. A heavy water-wheel cannot change speed instantly, which is why inductor current is continuous. Resonance in an LC circuit is the wheel and the membrane passing energy back and forth.
 
-## Examples
-- The capacitor–lamp question: at high frequency the membrane barely stretches before the flow reverses, so the lamp is bright.
+The same picture explains the capacitor–lamp question: at high frequency the flow reverses before the membrane has stretched much, so it barely resists the flow and the lamp is bright.
+
+The correspondence also works in the other direction. Circuit analysis tools solve laminar pipe networks and microfluidic networks directly.
 
 ## Related
-- Topic notes: [[FEEG1004 A3 - DC Circuit Laws - Ohm, KCL, KVL and Dividers]] · [[FEEG1004 A5 - Inductors and Electrical Resonance]]
-- Cross-module: laminar pipe flow, [[Major and Minor Head Losses]] · the mechanical analogy (mass ↔ L, spring ↔ 1/C) in [[FEEG1002 D6 - Single Degree of Freedom Vibration]]
 
-## Sources
-- Recorded lecture 3a (after hyperphysics); lectures 4 and 5a
+- [[FEEG1004 A3 - DC Circuit Laws - Ohm, KCL, KVL and Dividers]] · [[FEEG1004 A5 - Inductors and Electrical Resonance]]
+- Cross-module: laminar pipe flow, [[Major and Minor Head Losses]] · the mechanical analogy (mass ↔ L, spring ↔ 1/C) in [[FEEG1002 D6 - Single Degree of Freedom Vibration]]
+- Sources: Recorded lecture 3a (after hyperphysics); lectures 4 and 5a

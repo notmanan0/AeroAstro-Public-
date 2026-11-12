@@ -87,7 +87,7 @@ $$
 
 **Comment:** this is an **extrapolation** beyond the data (650 > 600 MPa), and 650 MPa is probably close to yield at 600 °C, so the mechanism may change. In practice the blade should be retired, not run at 650 MPa.
 
-![[Figures/materials_creep_stress_powerlaw_fits.png]]
+![[materials_creep_stress_powerlaw_fits.png]]
 
 ---
 

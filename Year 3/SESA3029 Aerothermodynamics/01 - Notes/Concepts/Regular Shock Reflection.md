@@ -19,7 +19,7 @@ $$\beta_B=\beta(\theta,M_2),\qquad \phi=\beta_B-\theta\ne\beta_A.$$
 
 To solve one, use the $\theta$–$\beta$–$M$ relation at $M_1$ for shock A, which gives $\beta_A$, $M_{n1}$, $p_2/p_1$ and $M_2$. Then use it again with the same $\theta$ at $M_2$, measured from $\mathbf V_2$, for shock B, which gives $\beta_B$, $p_3/p_2$ and $M_3$. Chain the ratios, $p_3/p_1=(p_3/p_2)(p_2/p_1)$.
 
-In the lecture example, $M_1=3.6$, $\theta=10^\circ$, $p_1=40$ kPa gives $\beta_A=23.90^\circ$, $M_2=2.982$, $\beta_B=27.51^\circ$, $M_3=2.490$, $p_3=189.6$ kPa and $\phi=17.5^\circ$.
+For example (Lecture 2.3), $M_1=3.6$, $\theta=10^\circ$, $p_1=40$ kPa, gives $\beta_A=23.90^\circ$, $M_2=2.982$, $\beta_B=27.51^\circ$, $M_3=2.490$, $p_3=189.6$ kPa and $\phi=17.5^\circ$.
 
 The reflection is not mirror-like. Because $M_2<M_1$, turning through the same $\theta$ needs a steeper shock relative to $\mathbf V_2$, and once you subtract $\theta$ the reflected shock ends up leaning closer to the wall ($\phi<\beta_A$).
 

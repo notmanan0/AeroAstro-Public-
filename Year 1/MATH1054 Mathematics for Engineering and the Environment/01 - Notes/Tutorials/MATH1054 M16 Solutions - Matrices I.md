@@ -12,7 +12,7 @@ sheet: "Specimen Test 16 (booklet) + Module 16 work scheme: Examples 5.1–5.21;
 theory_notes: ["[[MATH1054 M16 - Matrices I]]"]
 key_concepts: ["[[Matrix Algebra]]", "[[Determinants and Cofactors]]"]
 status: complete
-sources: ["tmp/md/module_16_matrices_i.md", "02 - Sources/Modern Engineering Mathematics.pdf (§5.2–5.4)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§5.2–5.4)"]
 ---
 
 # MATH1054 M16 Solutions - Matrices I
@@ -281,5 +281,5 @@ $$\operatorname{adj}\mathbf A=\boxed{\begin{pmatrix}1&-1&-2\\-1&3&4\\3&-5&-6\end
 **Check**: $|\mathbf A|=2$ and $\mathbf A(\operatorname{adj}\mathbf A)=2\mathbf I$ ✔.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_16_matrices_i.md`
+- Problem statements: Module 16 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §5.2–5.4; MATH1054 Module Booklet, Module 16

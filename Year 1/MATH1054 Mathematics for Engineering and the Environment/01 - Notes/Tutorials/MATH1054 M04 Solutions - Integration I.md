@@ -11,7 +11,7 @@ sheet: "Specimen Test 4 (booklet) + Module 04 work scheme: Examples 8.38–8.74;
 theory_notes: ["[[MATH1054 M04 - Integration I]]"]
 key_concepts: ["[[Integration by Parts]]", "[[Trigonometric Integrals and Power Reduction]]", "[[Trapezium and Simpson's Rules]]"]
 status: complete
-sources: ["tmp/md/module_04_integration_i.md", "02 - Sources/Modern Engineering Mathematics.pdf (§8.6–8.10)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 4)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§8.7–8.10)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 4)"]
 ---
 
 # MATH1054 M04 Solutions - Integration I
@@ -306,5 +306,5 @@ $$S=\frac{0.25}3\Big[1+0.5+4(0.8+0.571429)+2(0.666667)\Big]=\frac{0.25}{3}(8.319
 The exact value is $\ln2=0.693147$, so the error is only $1.1\times10^{-4}$ with just four strips.
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_04_integration_i.md`
-- James, *Modern Engineering Mathematics* (6th ed.) §8.6–8.10; MATH1054 Module Booklet, Module 4
+- Problem statements: Module 04 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
+- James, *Modern Engineering Mathematics* (6th ed.) §8.7–8.10; MATH1054 Module Booklet, Module 4

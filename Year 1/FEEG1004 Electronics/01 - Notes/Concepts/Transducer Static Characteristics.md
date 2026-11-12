@@ -13,27 +13,17 @@ sources: ["02 - Sources/S2 Transducers/S2-W26-31 Transducers 01 - Measurement Sy
 
 # Transducer Static Characteristics
 
-## Definition
+The static characteristics of a transducer describe how its steady output relates to a steady input, and they are the figures quoted on a sensor specification. They are static properties only; the dynamic ones (time constant, bandwidth) follow in SESA2027.
 
-> [!note] Definition
-> - **Sensitivity** $= \Delta A_{out}/\Delta A_{in}$ (e.g. mV/°C).
-> - **Linearity**: constancy of the sensitivity over the range.
-> - **Resolution**: the smallest detectable increment.
-> - **Precision**: spread from noise, non-linearity and hysteresis.
-> - **Accuracy**: closeness of the mean to the truth.
-> - **Uncertainty**: the interval containing the true value.
-> - **Repeatability**, **drift** (output change without input change) and **error** (measured − true).
+**Sensitivity** is the ratio $\Delta A_{out}/\Delta A_{in}$, in units such as mV/°C, and **linearity** is how constant that sensitivity stays over the range. Linearity is quoted as the maximum deviation from the best straight line, as a percentage of full scale. **Resolution** is the smallest increment the transducer can detect. **Precision** is the spread of readings caused by noise, non-linearity and hysteresis, while **accuracy** is how close the mean reading is to the true value. The error is the measured value minus the true value, and the uncertainty is the interval that contains the true value. Repeatability is the agreement between repeated readings of the same input, and drift is a change of output without any change of input.
 
-## Explanation
-- Resolution is often overrated. A 16-bit ADC on 10 V resolves 0.15 mV, but a 10 mV noise floor means the **precision** is 10 mV.
-- Linearity is quoted as the maximum deviation from the best straight line, in % of full scale.
-- These are *static* properties; SESA2027 adds the dynamic ones (time constant, bandwidth).
+Resolution is often overrated, because noise sets the useful limit. A 16-bit ADC on a 10 V range resolves 0.15 mV, but if the noise floor is 10 mV then the precision of the measurement is 10 mV, not 0.15 mV.
 
 ![[ee_e1_static_characteristics.png|700]]
 
 ## Related
-- Topic notes: [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]]
-- Year 2: [[Accuracy and Precision]] · [[ADC Quantisation and Resolution]] · [[Measurement Chain]] · [[Sensor Dynamic Models]]
 
-## Sources
-- Transducers lecture 1
+- [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]]
+- [[Passive and Active Transducers]]
+- Year 2: [[Accuracy and Precision]] · [[ADC Quantisation and Resolution]] · [[Measurement Chain]] · [[Sensor Dynamic Models]]
+- Sources: Transducers lecture 1

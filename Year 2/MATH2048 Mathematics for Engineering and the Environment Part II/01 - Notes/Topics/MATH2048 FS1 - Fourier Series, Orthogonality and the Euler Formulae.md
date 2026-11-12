@@ -32,11 +32,11 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 4.txt", "02 - Sources/Lectures
 > - **Common mistakes:** forgetting the $\frac12$ on $a_0$ in the series; computing $a_0$ from the general $a_n$ formula after dividing by $n$, which fails at $n=0$.
 > - **Practise:** [[#The tent function]] · [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series|PS2 (Fourier series) Q2]]
 
-A Fourier series writes a complicated function in terms of simple ones, sines and cosines, because they are easy to work with: differentiate a sine and you get a cosine, differentiate a cosine and you get minus a sine, and that's it (L4, ll. 36–47). In this module the point is to plug them into differential equations, and in signal processing it is to talk about frequencies.
+A Fourier series writes a complicated function in terms of simple ones, sines and cosines, because they are easy to work with: differentiate a sine and you get a cosine, differentiate a cosine and you get minus a sine, so the family is closed under differentiation (L4, ll. 36–47). For differential equations the point is to plug them in, and in signal processing it is to talk about frequencies.
 
-The lecturer compared it with the Taylor series (ll. 55–110). A Taylor series builds a function from its value and derivatives at one point, so it describes local behaviour well and can fail far from that point. A Fourier series builds the function from its averages against sines and cosines over the whole domain, so when it converges it converges everywhere, which makes it the tool for global behaviour. The coefficients play the same role in both: $f^{(n)}(0)/n!$ multiplies $x^n$ in one, and $a_n$ or $b_n$ multiplies $\cos nx$ or $\sin nx$ in the other.
+A Taylor series builds a function from its value and derivatives at one point, so it describes local behaviour well and can fail far from that point. A Fourier series, by contrast, builds the function from its averages against sines and cosines over the whole domain, so for a function meeting the Dirichlet conditions it converges at every point of the period, which makes it the tool for global behaviour. The coefficients play the same role in both: $f^{(n)}(0)/n!$ multiplies $x^n$ in one, and $a_n$ or $b_n$ multiplies $\cos nx$ or $\sin nx$ in the other.
 
-The restriction is periodicity: every term repeats every $2\pi$ (the $n=2$ term repeats twice in that length, the $n=3$ term three times), so the series can only represent a periodic function. That is less of a restriction than it sounds (ll. 155–179): physical problems live on bounded domains, a domain of any length can be rescaled to length $2\pi$, and the function can then be treated as if copied periodically along the whole line. The coefficients are found by the same trick each time, orthogonality, which the lecturer compared to an orthogonal basis of vectors whose pairwise dot products are zero unless the vectors are the same (L5, ll. 19–22).
+The restriction is periodicity: every term repeats every $2\pi$ (the $n=2$ term repeats twice in that length, the $n=3$ term three times), so the series can only represent a periodic function. That is less of a restriction than it sounds (ll. 155–179): physical problems live on bounded domains, a domain of any length can be rescaled to length $2\pi$, and the function can then be treated as if copied periodically along the whole line. The coefficients are found by the same method each time, orthogonality, which works like an orthogonal basis of vectors whose pairwise dot products are zero unless the vectors are the same.
 
 ---
 
@@ -48,9 +48,9 @@ $$
 f(x)\sim\frac12a_0+\sum_{n=1}^{\infty}\big(a_n\cos nx+b_n\sin nx\big).
 $$
 
-The symbol $\sim$ means "is represented by" rather than "equals": we assume the two agree, calculate the coefficients, and check afterwards, because there are points where they don't (ll. 205–211). A function given only on $(-\pi,\pi)$ is understood to be extended periodically, copied along every $2\pi$.
+The symbol $\sim$ means "is represented by" rather than "equals": the two are assumed to agree, the coefficients calculated and the agreement checked afterwards, because there are points where they don't (ll. 205–211). A function given only on $(-\pi,\pi)$ is understood to be extended periodically, copied along every $2\pi$.
 
-Every coefficient calculation ends with sines and cosines evaluated at multiples of $\pi$, and the lecturer stressed these "over and over again" (ll. 180–193):
+Every coefficient calculation ends with sines and cosines evaluated at multiples of $\pi$, so learn these values:
 
 | For integer $n$ | Value |
 |---|---|
@@ -72,7 +72,7 @@ where the Kronecker delta $\delta_{mn}$ is 1 when $m=n$ and 0 otherwise. In word
 
 ### The sine–sine relation, derived
 
-The lecture derived the first relation from the addition formulae (ll. 226–318). Start from
+Derive the first relation from the addition formulae (ll. 226–318). Start from
 
 $$
 \cos(A+B)=\cos A\cos B-\sin A\sin B .
@@ -104,7 +104,7 @@ $$
 
 because $m\pm n$ is an integer, so every term is the sine of an integer multiple of $\pi$. The symmetric range is the convention because it guarantees exactly that; any range of length $2\pi$ gives the same answer, but the arithmetic is messier (ll. 254–282).
 
-For $m=n$ the step above divides by zero, so it needs a separate calculation, the lecturer's admission that he had "pulled the wool over your eyes" (ll. 284–292). From $\cos2A=1-2\sin^2A$,
+For $m=n$ the step above divides by zero, so it needs a separate calculation. From $\cos2A=1-2\sin^2A$,
 
 $$
 \sin^2mx=\tfrac12(1-\cos2mx),
@@ -116,7 +116,53 @@ $$
 \int_{-\pi}^{\pi}\sin^2mx\,dx=\frac12\left[x-\frac{\sin2mx}{2m}\right]_{-\pi}^{\pi}=\frac12\big(\pi-(-\pi)\big)=\pi .
 $$
 
-The cosine–cosine relation comes the same way from adding the two formulae, and the sine–cosine one from the addition formula for sine (ll. 319–324); PS2 (Fourier series) Q1 asks for all three on $[-L,L]$.
+### The cosine–cosine and sine–cosine relations
+
+These two follow the same pattern as the sine–sine relation (ll. 319–324). Adding the two cosine formulae instead of subtracting them gives
+
+$$
+\cos(A-B)+\cos(A+B)=2\cos A\cos B,
+$$
+
+so
+
+$$
+\cos mx\cos nx=\tfrac12\big[\cos(m-n)x+\cos(m+n)x\big].
+$$
+
+For $m\neq n$ both terms integrate to sines of integer multiples of $\pi$:
+
+$$
+\int_{-\pi}^{\pi}\cos mx\cos nx\,dx=\frac12\left[\frac{\sin(m-n)x}{m-n}+\frac{\sin(m+n)x}{m+n}\right]_{-\pi}^{\pi}=0 .
+$$
+
+For $m=n\geq1$, use $\cos2A=2\cos^2A-1$, so $\cos^2mx=\tfrac12(1+\cos2mx)$:
+
+$$
+\int_{-\pi}^{\pi}\cos^2mx\,dx=\frac12\left[x+\frac{\sin2mx}{2m}\right]_{-\pi}^{\pi}=\pi .
+$$
+
+For the mixed relation, add $\sin(A+B)=\sin A\cos B+\cos A\sin B$ and $\sin(A-B)=\sin A\cos B-\cos A\sin B$:
+
+$$
+\sin(A+B)+\sin(A-B)=2\sin A\cos B,
+$$
+
+$$
+\sin mx\cos nx=\tfrac12\big[\sin(m+n)x+\sin(m-n)x\big].
+$$
+
+Each sine is odd, so its integral over the symmetric range $(-\pi,\pi)$ is zero whatever $m$ and $n$ are, including $m=n$, where the second term is $\sin0=0$:
+
+$$
+\int_{-\pi}^{\pi}\sin mx\cos nx\,dx=0 .
+$$
+
+This one needs no separate $m=n$ case, which is why the third relation has no Kronecker delta. PS2 (Fourier series) Q1 asks for all three on $[-L,L]$; replacing $x$ by $\pi x/L$ and $dx$ by $\pi\,dx/L$ turns each $\pi$ into $L$.
+
+![[m2048_fs_orthogonality_products.png|820]]
+
+A product of two different harmonics oscillates about zero with equal positive and negative area, while the square of one harmonic never goes negative and averages $\tfrac12$, which over a length $2\pi$ gives $\pi$.
 
 ## 3. The Euler formulae (L4)
 
@@ -152,7 +198,21 @@ $$
 =\sum_{n=1}^\infty a_n\pi\delta_{mn}=\pi a_m .
 $$
 
-The sum runs over every $n$, but $m$ is one fixed integer, so exactly one term survives (ll. 409–419). Multiplying by $\sin mx$ instead picks out $b_m$ in the same way. The results are the **Euler formulae**:
+The sum runs over every $n$, but $m$ is one fixed integer, so exactly one term survives (ll. 409–419).
+
+**The sine coefficients.** Multiply by $\sin mx$ instead:
+
+$$
+\int_{-\pi}^{\pi}f\sin mx\,dx=\frac12a_0\int_{-\pi}^{\pi}\sin mx\,dx+\sum_{n=1}^\infty\Big(a_n\int_{-\pi}^{\pi}\sin mx\cos nx\,dx+b_n\int_{-\pi}^{\pi}\sin mx\sin nx\,dx\Big).
+$$
+
+The first integral is zero (an odd function over a symmetric range), the second is zero by the mixed relation, and the third is $\pi\delta_{mn}$:
+
+$$
+=\sum_{n=1}^\infty b_n\pi\delta_{mn}=\pi b_m .
+$$
+
+The results are the **Euler formulae**:
 
 $$
 a_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\cos nx\,dx\quad(n\geq0),\qquad b_n=\frac1\pi\int_{-\pi}^{\pi}f(x)\sin nx\,dx\quad(n\geq1).
@@ -164,7 +224,7 @@ $\frac12a_0=\frac1{2\pi}\int_{-\pi}^{\pi}f\,dx$ is the average of $f$ over a per
 
 ## 4. Worked examples by brute force (L5)
 
-The lecture deliberately computed both examples without using symmetry, to show the mechanics; FS2 shows how symmetry halves the work (L5, ll. 42–44, 122–124).
+Both examples are computed without using symmetry, which would halve the work (FS2; L5, ll. 42–44, 122–124).
 
 ### The sawtooth, f = x
 
@@ -192,7 +252,7 @@ $$
 =\frac1\pi\left(0+\frac{(-1)^m}{m^2}-\frac{(-1)^m}{m^2}\right)=0 .
 $$
 
-The lecturer's bookkeeping tip is to keep each trigonometric term with its own power of $m$, $\sin$ over $m$, $\cos$ over $m^2$, then $\sin$ over $m^3$ and so on, rather than pulling out common factors, because the alternating pattern catches lost powers (ll. 175–186).
+Each trigonometric term is best kept with its own power of $m$, $\sin$ over $m$, $\cos$ over $m^2$, then $\sin$ over $m^3$ and so on, rather than pulling out common factors, because the alternating pattern catches lost powers.
 
 For $b_m$, the same parts with $v'=\sin mx$:
 
@@ -218,11 +278,14 @@ relabelling $m$ as the summation index $n$ (ll. 238–242).
 
 ![[m2048_fs_sawtooth_gibbs.png|680]]
 
-Truncating the series gives a usable approximation: in the lecture's plot four terms are already within about a per cent away from the jumps, and eight are better still (ll. 247–266). Near the jumps the partial sums overshoot, the Gibbs phenomenon.
+Truncating the series gives an approximation that improves with every term, but slowly, because the coefficients fall only as $1/n$ (ll. 247–266). At $x=1$ the partial sums with 4, 8 and 50 terms are $1.246$, $0.896$ and $0.995$. Near the jumps the partial sums overshoot, the Gibbs phenomenon, and adding terms squeezes the overshoot towards the jump without shrinking it.
+
+> [!check] The Gibbs overshoot
+> The maximum of the partial sum just left of $x=\pi$ is $3.414$ with 10 terms, $3.642$ with 50 and $3.688$ with 200. The jump is $2\pi$, so the overshoot above $\pi$ is $4.3\%$, $8.0\%$ and $8.7\%$ of the jump, approaching the limiting $8.95\%$ instead of zero.
 
 ### The tent function
 
-Now take $f(x)=|x|$ on $(-\pi,\pi)$, whose periodic extension is a triangle wave, the "tent" (ll. 267–309). For integrating, the piecewise form is easier than the absolute value:
+Take $f(x)=|x|$ on $(-\pi,\pi)$, whose periodic extension is a triangle wave, the "tent" (ll. 267–309). For integrating, the piecewise form is easier than the absolute value:
 
 $$
 f(x)=\begin{cases}-x,&-\pi\leq x<0,\\ x,&0\leq x\leq\pi.\end{cases}
@@ -248,7 +311,33 @@ $$
 a_m=\frac1\pi\left(-\frac{1-(-1)^m}{m^2}+\frac{(-1)^m-1}{m^2}\right)=\frac{2}{\pi m^2}\big((-1)^m-1\big),
 $$
 
-which is $0$ for even $m$ and $-4/(\pi m^2)$ for odd $m$ (ll. 363–382). The $b_m$ all vanish, left as a check in the lecture (ll. 384–390) and explained by symmetry in FS2. So
+which is $0$ for even $m$ and $-4/(\pi m^2)$ for odd $m$ (ll. 363–382).
+
+The $b_m$ come out as zero (ll. 384–390). The indefinite integral of $x\sin mx$ is the sawtooth's,
+
+$$
+F(x)=-\frac{x\cos mx}{m}+\frac{\sin mx}{m^2},
+$$
+
+with $F(0)=0$, $F(\pi)=-\pi(-1)^m/m$ and $F(-\pi)=\pi(-1)^m/m$, since every sine vanishes. Split the integral at $0$:
+
+$$
+b_m=\frac1\pi\left(\int_{-\pi}^{0}(-x)\sin mx\,dx+\int_0^{\pi}x\sin mx\,dx\right)
+$$
+
+$$
+=\frac1\pi\Big(-\big[F(0)-F(-\pi)\big]+\big[F(\pi)-F(0)\big]\Big)
+$$
+
+$$
+=\frac1\pi\big(F(-\pi)+F(\pi)\big)
+$$
+
+$$
+=\frac1\pi\left(\frac{\pi(-1)^m}{m}-\frac{\pi(-1)^m}{m}\right)=0 .
+$$
+
+The contributions of the two halves cancel exactly (by symmetry, FS2). So
 
 $$
 |x|\sim\frac\pi2-\frac4\pi\sum_{n\ \mathrm{odd}}\frac{\cos nx}{n^2}=\frac\pi2-\frac4\pi\Big(\cos x+\frac{\cos3x}{9}+\frac{\cos5x}{25}+\dots\Big).
@@ -256,10 +345,69 @@ $$
 
 ![[m2048_fs_tent_convergence.png|680]]
 
-This series converges much faster than the sawtooth's, with coefficients falling as $1/n^2$ rather than $1/n$, because the tent is continuous; four terms are already close everywhere except at the corners (ll. 396–399).
+This series converges much faster than the sawtooth's, with coefficients falling as $1/n^2$ rather than $1/n$, because the tent is continuous; a few terms are already close everywhere except at the corners (ll. 396–399). The worst error sits at the corners $x=0,\pm\pi$, and with 1, 2 and 4 non-zero cosine terms it is $0.298$, $0.156$ and $0.079$, roughly halving each time the number of terms doubles.
 
 > [!check] SymPy
 > Integrating directly gives $a_0=0$, $a_n=0$, $b_n=-2(-1)^n/n$ for $f=x$, and $a_0=\pi$, $a_n=2((-1)^n-1)/(\pi n^2)$, $b_n=0$ for $f=|x|$.
+
+### The exponential, e to the x (PS3 Q1)
+
+A function with no symmetry at all needs both families of coefficients. Take $f(x)=e^x$ on $(-\pi,\pi)$, extended periodically, which jumps from $e^{\pi}$ down to $e^{-\pi}$ at every odd multiple of $\pi$.
+
+The constant:
+
+$$
+a_0=\frac1\pi\int_{-\pi}^{\pi}e^x\,dx=\frac{e^{\pi}-e^{-\pi}}{\pi}=\frac{2\sinh\pi}{\pi}.
+$$
+
+For $a_n$ and $b_n$, integration by parts never removes the exponential, but doing it twice brings the original integral back, which can then be solved for. Let $C=\int e^x\cos nx\,dx$ and $S=\int e^x\sin nx\,dx$. Integrate by parts with $e^x$ as the part to integrate:
+
+$$
+C=e^x\cos nx+n\int e^x\sin nx\,dx=e^x\cos nx+nS,
+$$
+
+$$
+S=e^x\sin nx-n\int e^x\cos nx\,dx=e^x\sin nx-nC .
+$$
+
+Substitute the second into the first:
+
+$$
+C=e^x\cos nx+ne^x\sin nx-n^2C,
+$$
+
+$$
+(1+n^2)C=e^x\big(\cos nx+n\sin nx\big).
+$$
+
+Evaluate between $-\pi$ and $\pi$, where $\sin n\pi=0$ and $\cos n\pi=(-1)^n$:
+
+$$
+\int_{-\pi}^{\pi}e^x\cos nx\,dx=\frac{(-1)^n\big(e^{\pi}-e^{-\pi}\big)}{1+n^2}=\frac{2(-1)^n\sinh\pi}{1+n^2}.
+$$
+
+The same substitution the other way round gives $(1+n^2)S=e^x(\sin nx-n\cos nx)$, so
+
+$$
+\int_{-\pi}^{\pi}e^x\sin nx\,dx=\frac{-n(-1)^n\big(e^{\pi}-e^{-\pi}\big)}{1+n^2}=-\frac{2n(-1)^n\sinh\pi}{1+n^2}.
+$$
+
+Dividing by $\pi$,
+
+$$
+a_n=\frac{2(-1)^n\sinh\pi}{\pi(1+n^2)},\qquad b_n=-\frac{2n(-1)^n\sinh\pi}{\pi(1+n^2)},
+$$
+
+and the $n=0$ case of the $a_n$ formula reproduces $a_0$, so here the general formula does cover the constant. The series is
+
+$$
+e^x\sim\frac{\sinh\pi}{\pi}\left[1+2\sum_{n=1}^\infty\frac{(-1)^n}{1+n^2}\big(\cos nx-n\sin nx\big)\right].
+$$
+
+The $b_n$ fall only as $1/n$, like the sawtooth's, because the periodic extension jumps.
+
+> [!check] Convergence at $x=0$
+> $a_0/2=\sinh\pi/\pi=3.676$. At $x=0$ every sine vanishes, and the partial sums with 10, 100 and 1000 terms are $1.0328$, $1.00036$ and $1.0000037$, converging to $e^0=1$.
 
 ## 5. Summing series by evaluating at a point (L5)
 
@@ -275,21 +423,32 @@ $$
 \sum_{n\ \mathrm{odd}}\frac1{n^2}=1+\frac19+\frac1{25}+\dots=\frac{\pi^2}{8}.
 $$
 
-The lecturer's comment was that most of the neat infinite sums in formula books were found exactly this way, and that this is why they turn up in exam questions: take the series, pick a point where the terms simplify, evaluate both sides and rearrange (ll. 416–423). The point has to be one where the series converges to $f$ itself; at a jump of the periodic extension it converges to the average of the two sides instead (FS2).
+Most of the neat infinite sums in formula books were found this way, which is why they turn up in exam questions: take the series, pick a point where the terms simplify, evaluate both sides and rearrange. The point has to be one where the series converges to $f$ itself; at a jump of the periodic extension it converges to the average of the two sides instead (FS2).
 
-## Transcript slips
+The sawtooth gives the alternating odd series. At $x=\pi/2$, $\sin\frac{n\pi}2$ is $0$ for even $n$ and $(-1)^{(n-1)/2}$ for odd $n$, so only odd terms survive and $(-1)^{n+1}=1$ for each of them:
 
-> [!warning] Lectures 4 and 5
-> | Where | Transcript says | Correct |
-> |---|---|---|
-> | L4, l. 1 | "Furrier Series" | Fourier series |
-> | L4, l. 222 | "chronica symbol" | Kronecker delta |
-> | L4, l. 244 | "times sine of A times sine of minus B" | $-\sin A\sin(-B)$, which becomes $+\sin A\sin B$ |
-> | L4, l. 363 | "the sum… of a zero times" | $a_n$ times $[\sin nx/n]$ |
-> | L4, l. 375 | "minus 1 to the power pi" | $(-1)^n$ |
-> | L5, ll. 23, 32, 41 | "Sturm-Ueyville", "Sturm-Lewel", "Sturm-Moeval" | Sturm–Liouville (not examinable) |
-> | L5, l. 287 | "the tenth function" | the tent function (likewise elsewhere in L6–L7) |
-> | L5, l. 399 | "the yellow term is also converging" | the green (eight-term) curve; yellow is the exact function |
+$$
+\frac\pi2=2\Big(1-\frac13+\frac15-\frac17+\dots\Big)
+$$
+
+$$
+1-\frac13+\frac15-\dots=\frac\pi4 .
+$$
+
+The exponential gives a sum with no simple pattern of signs. At $x=0$ the series in [[#The exponential, e to the x (PS3 Q1)]] reads
+
+$$
+1=\frac{\sinh\pi}{\pi}\left[1+2\sum_{n=1}^\infty\frac{(-1)^n}{1+n^2}\right],
+$$
+
+so
+
+$$
+\sum_{n=1}^\infty\frac{(-1)^n}{1+n^2}=\frac12\left(\frac{\pi}{\sinh\pi}-1\right)=-0.36399 .
+$$
+
+> [!check] Direct summation
+> Adding the first $2\times10^5$ terms of $\sum(-1)^n/(1+n^2)$ gives $-0.3639855$, matching $\tfrac12(\pi/\sinh\pi-1)=-0.3639855$. The Leibniz series converges far more slowly: $10^4$ terms of $1-\frac13+\frac15-\dots$ give $0.785373$ against $\pi/4=0.785398$.
 
 ## Links
 
@@ -305,16 +464,31 @@ The lecturer's comment was that most of the neat infinite sums in formula books 
 
 ## Self-study tasks
 
-Lecture 4 left the cosine–cosine and sine–cosine orthogonality relations to the students (ll. 319–325), and Lecture 5 left the tent's $b_n$ as a check (ll. 384–390). The lecturer also opened Lecture 4 with a STACK warning: always check the list of variables STACK says it recognised, use explicit `*` for multiplication and `exp()` for the exponential (ll. 1–26).
+Lecture 4 left the cosine–cosine and sine–cosine orthogonality relations to the students (ll. 319–325), and Lecture 5 left the tent's $b_n$ as a check (ll. 384–390). A STACK warning: always check the list of variables STACK says it recognised, use explicit `*` for multiplication and `exp()` for the exponential (ll. 1–26).
 
 ### Core
 
-- [ ] Lecturer-set (L4, ll. 319–325): derive the cosine–cosine and sine–cosine orthogonality relations, including the $m=n$ cases. This is PS2 (Fourier series) Q1 on $[-L,L]$. → [[#2. Orthogonality (L4)]] · [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series|solution]]
+- [ ] Lecturer-set (L4, ll. 319–325): derive the cosine–cosine and sine–cosine orthogonality relations, including the $m=n$ cases. This is PS2 (Fourier series) Q1 on $[-L,L]$. → [[#The cosine–cosine and sine–cosine relations]] · [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series|solution]]
 - [ ] Lecturer-set (L5, ll. 384–390): show directly that all $b_n=0$ for $f=|x|$. → [[#The tent function]]
 - [ ] PS2 (Fourier series) Q2: the Fourier series of $1+x$ on $[-2,2]$. → [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series]]
 
 ### Further practice
 
-- [ ] PS3 Q1(a)–(c): the real Fourier series of $e^x$ on $(-\pi,\pi)$ and its values at $0,\pm\frac\pi2,\pm\pi$. Answer: $a_n=\frac{2(-1)^n\sinh\pi}{\pi(1+n^2)}$, $b_n=-\frac{2(-1)^nn\sinh\pi}{\pi(1+n^2)}$. → [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series|solution]]
-- [ ] Evaluate the sawtooth series at $x=\pi/2$ to show $1-\frac13+\frac15-\dots=\frac\pi4$ (suggested, not lecturer-set). → [[#The sawtooth, f = x]]
-- [ ] Derive the Euler formula for $b_m$ by multiplying by $\sin mx$ (suggested, not lecturer-set). → [[#3. The Euler formulae (L4)]]
+- [ ] PS3 Q1(a)–(c): the real Fourier series of $e^x$ on $(-\pi,\pi)$ and its values at $0,\pm\frac\pi2,\pm\pi$. Answer: $a_n=\frac{2(-1)^n\sinh\pi}{\pi(1+n^2)}$, $b_n=-\frac{2(-1)^nn\sinh\pi}{\pi(1+n^2)}$. → [[#The exponential, e to the x (PS3 Q1)]] · [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series|solution]]
+- [ ] Evaluate the sawtooth series at $x=\pi/2$ to show $1-\frac13+\frac15-\dots=\frac\pi4$ (suggested, not lecturer-set). → [[#5. Summing series by evaluating at a point (L5)]]
+
+## Transcript and slide slips
+
+### Transcript slips
+
+> [!warning] Lectures 4 and 5
+> | Where | Transcript says | Correct |
+> |---|---|---|
+> | L4, l. 1 | "Furrier Series" | Fourier series |
+> | L4, l. 222 | "chronica symbol" | Kronecker delta |
+> | L4, l. 244 | "times sine of A times sine of minus B" | $-\sin A\sin(-B)$, which becomes $+\sin A\sin B$ |
+> | L4, l. 363 | "the sum… of a zero times" | $a_n$ times $[\sin nx/n]$ |
+> | L4, l. 375 | "minus 1 to the power pi" | $(-1)^n$ |
+> | L5, ll. 23, 32, 41 | "Sturm-Ueyville", "Sturm-Lewel", "Sturm-Moeval" | Sturm–Liouville (not examinable) |
+> | L5, l. 287 | "the tenth function" | the tent function (likewise elsewhere in L6–L7) |
+> | L5, l. 399 | "the yellow term is also converging" | the green (eight-term) curve; yellow is the exact function |

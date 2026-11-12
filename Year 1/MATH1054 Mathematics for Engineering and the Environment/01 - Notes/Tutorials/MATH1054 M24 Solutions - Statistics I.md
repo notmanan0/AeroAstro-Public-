@@ -12,7 +12,7 @@ sheet: "Specimen Test 24 (booklet) + Module 24 work scheme: Examples 13.1–13.1
 theory_notes: ["[[MATH1054 M24 - Statistics I]]"]
 key_concepts: ["[[Probability Rules and Conditional Probability]]", "[[Random Variables, PDF and CDF]]", "[[Mean, Median and Variance of a Distribution]]"]
 status: complete
-sources: ["tmp/md/module_24_statistics_i.md", "02 - Sources/Modern Engineering Mathematics.pdf (§13.2–13.4)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 24)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§13.2–13.4)", "02 - Sources/Course Booklets & Solutions/Module Booklet.pdf (Module 24)"]
 ---
 
 # MATH1054 M24 Solutions - Statistics I
@@ -66,7 +66,7 @@ That is about 5% of components.
 ## Example 13.16: Mean, median and mode
 | Variable | Mean $E[X]$ | Median | Mode |
 |---|---|---|---|
-| (a) die | $\frac{1+2+\cdots+6}6=3.5$ | any value in $[3,4]$; conventionally $3.5$ | none: all outcomes are equally likely |
+| (a) die | $\frac{1+2+\cdots+6}6=3.5$ | any value in $[3,4]$; conventionally $3.5$ | every value $1,\dots,6$ is a mode: all share the largest probability $\frac16$ (a uniform distribution, so no single mode) |
 | (b) ships | $0(0.1)+1(0.3)+2(0.35)+3(0.2)+4(0.05)=1.8$ | $2$, since $F(1)=0.4<0.5\le F(2)$ | $2$ (largest $p$) |
 | (c) lifetime | $\int_0^\infty x\frac12e^{-x/2}\,\mathrm dx=2$ | $1-e^{-m/2}=\frac12$, so $m=2\ln2=1.386$ | $0$ (the density is largest at $x=0$) |
 
@@ -212,5 +212,5 @@ The distribution is symmetric about 3.
 $$\boxed{\mu=\int_0^1xf_X(x)\,\mathrm dx},\qquad\boxed{\sigma^2=\int_0^1(x-\mu)^2f_X(x)\,\mathrm dx=\int_0^1x^2f_X(x)\,\mathrm dx-\mu^2}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_24_statistics_i.md`
+- Problem statements: Module 24 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
 - James, *Modern Engineering Mathematics* (6th ed.) §13.2–13.4; MATH1054 Module Booklet, Module 24

@@ -27,5 +27,5 @@ In use, every term but one is given or computable, and the equation is solved fo
 
 ## Related
 
-- [[SESA2024 09 - Communications#6. The link budget equation|Derivation in the lecture note]] · [[SESA2024 09 - Communications#Worked examples|Worked examples]]
+- [[SESA2024 09 - Communications#6. The link budget equation|Derivation in the topic note]] · [[SESA2024 09 - Communications#Worked examples|Worked examples]]
 - [[EIRP and G-T]] · [[Bit Error Rate and Eb-N0]] · [[Antenna Gain and Beamwidth]] · [[Decibels]]

@@ -23,7 +23,7 @@ sources: ["Own APDL scripts (generalised)", "02 - Sources/FEM Lectures/FEA.txt (
 # SESA2029 C1 - ANSYS Mechanical APDL Scripting Fundamentals
 
 > [!abstract] Summary
-> APDL, the ANSYS Parametric Design Language, drives Mechanical APDL with plain-text commands that follow a fixed processor cycle: begin level, `/PREP7` for the model, `/SOLU` for loads and solution, `/POST1` for results. The labs are done through the menus, and scripting is not required for the coursework, but every menu action is logged as a command, so a cleaned and parametrised log becomes a script that rebuilds the whole model when one number changes. This note is the toolkit; C2 to C6 are complete workflows built from it.
+> APDL, the ANSYS Parametric Design Language, drives Mechanical APDL with plain-text commands that follow a fixed processor cycle: begin level, `/PREP7` for the model, `/SOLU` for loads and solution, `/POST1` for results. The labs are done through the menus, and scripting is not required for the coursework, but every menu action is logged as a command, so a cleaned and parametrised log becomes a script that rebuilds the whole model when one number changes. C2 to C6 apply these commands to complete workflows.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** turning a lab model into a script, or debugging a run that will not solve.
@@ -39,7 +39,7 @@ sources: ["Own APDL scripts (generalised)", "02 - Sources/FEM Lectures/FEA.txt (
 3. Clean it: delete the view and zoom commands and dead ends. Replace `FLST/FITEM` pick lists with explicit entities (e.g. `SPLINE,2,3,4,5,1`).
 4. Parametrise: put every dimension, material value, mesh size and load at the top as named parameters.
 5. Paste blocks into the command window one stage at a time (geometry, then mesh, then solve, then post), checking each step. Or run the whole file with *File → Read Input From…* (`/INPUT,fname,ext`).
-6. Unsure what a command does? Select it and press F1, or look it up in the Command Reference. Its fields work like a function's arguments.
+6. For an unfamiliar command, select it and press F1, or look it up in the Command Reference. Its fields work like a function's arguments.
 
 ## 2. Processor cycle and skeleton
 ```apdl
@@ -77,7 +77,15 @@ FE software has no units, so choose a consistent set and keep to it:
 | SI | m | N | Pa | kg/m³ | shells and wings, modal work |
 | mm-N-MPa | mm | N | MPa (N/mm²) | tonne/mm³ (e.g. steel $7.85\times10^{-9}$) | beams and plates in mm |
 
-Mixing mm geometry with Pa moduli gives stresses wrong by $10^6$.
+The mm–N–MPa set is consistent because $1\ \mathrm{MPa}=1\ \mathrm{N/mm^2}$, and its mass unit follows from Newton's law: 1 N gives $1\ \mathrm{mm/s^2}$ to $1\ \mathrm{N\,s^2/mm}=1000$ kg, a tonne. A density in kg/m³ is therefore converted by
+
+$$
+\rho\ [\mathrm{t/mm^3}]=\rho\ [\mathrm{kg/m^3}]\times\frac{10^{-3}\ \mathrm{t/kg}}{10^{9}\ \mathrm{mm^3/m^3}}=\rho\ [\mathrm{kg/m^3}]\times10^{-12},
+$$
+
+so steel's 7850 kg/m³ becomes $7.85\times10^{-9}$ t/mm³.
+
+Mixing mm geometry with a modulus in Pa makes the structure $10^6$ times too stiff, so every displacement is $10^6$ times too small. In a load-controlled linear static model with a single material the stresses still come out right, because scaling every stiffness by the same factor leaves the load paths unchanged; anything that depends on the absolute stiffness (prescribed displacements, a model mixing materials entered in different units, natural frequencies) is wrong as well. A displacement that looks microscopic is the usual symptom.
 
 ## 4. Command glossary
 | Group | Commands | Notes |
@@ -140,13 +148,13 @@ h_list(1) = 20,10,5,2           ! fills h_list(1..4)
 - Stress keeps rising with refinement: a singularity (sharp corner, point load). Don't use it as the convergence metric ([[Stress Singularities]]).
 - `/CLEAR` inside a loop wipes your loop parameters. Rebuild with `ACLEAR`/`ADELE`/`LSCLEAR` instead, or save and restore them with `PARSAV`/`PARRES` ([[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]).
 
-## What the software videos and briefing cover
+## Software access, interface conventions and the coursework labs
 
-The Software_Intro video sets the scene (ll. 1–157). ANSYS is not on the standard virtual desktop: use the older VDI service (VMware Horizon client, server `vdi.soton.ac.uk`), or install ANSYS from `software.soton.ac.uk`, connected to the university VPN during installation and every launch so the licence can be found. Launch through the Mechanical APDL Product Launcher, which sets the working directory (a new folder per project) and the job name that prefixes every output file, and offers batch mode, in which an input file runs without the user interface and writes an output file. Workbench can run APDL command snippets before or after its own solve, but APDL gives direct access to the mesh and specialist elements.
+ANSYS is not on the standard virtual desktop (Software_Intro video, ll. 1–157): use the older VDI service (VMware Horizon client, server `vdi.soton.ac.uk`), or install ANSYS from `software.soton.ac.uk`, connected to the university VPN during installation and every launch so the licence can be found. Launch through the Mechanical APDL Product Launcher, which sets the working directory (a new folder per project) and the job name that prefixes every output file, and offers batch mode, in which an input file runs without the user interface and writes an output file. Workbench can run APDL command snippets before or after its own solve, but APDL gives direct access to the mesh and specialist elements.
 
 In the interface, commands are a name followed by comma-separated arguments, with blank fields taking defaults; Help documents every command and the processor it belongs to. `FINISH` returns to the begin level; `/PREP7`, `/SOLU` and `/POST1` enter the processors (`/POST26` is the time-history post-processor for transients). Parameters are defined with `=` or `*SET`, must start with a letter, use only letters, digits and underscores, and have at most 32 characters; `**` is the power operator; array parameters must be dimensioned before they are filled or read from a file. Start scripts with `FINISH` and `/CLEAR`, end them with `/EXIT` to close ANSYS automatically, comment with `!`, and recover any command from the log file (List → Files → Log File). Save scripts as `.inp` or `.txt` and run them with File → Read Input From.
 
-The FEA coursework briefing (2026-01-30 10:49) describes the three labs and their coursework extensions: lab 1 spring and cantilever-beam models (beam section sizing to avoid yield, tip, uniform and elliptical loads, element convergence; [[SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)|C2]]); lab 2 plate with a hole (mesh sensitivity, hole size and position, factor of safety and stress concentration factor; [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)|C3]]); lab 3 shell wing (SHELL181 against SHELL281, skin thickness, materials and minimum thickness; [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]). Each student's dimensions come from their ID: the beam semi-span is 2xx mm with xx the last two digits. The report is at most 10 pages, about three per lab, marked 30, 30 and 40, due on 16 March. Scripting "we are not expected for this course"; the Session Editor is for advanced users, though it pays off in later projects that run thousands of cases. Dr Yuan demonstrated it between the lectures of 2026-02-20 for the lab 2 parametric study ([[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation|C5]]).
+The three labs and their coursework extensions (FEA coursework briefing, 2026-01-30 10:49) are: lab 1 spring and cantilever-beam models (beam section sizing to avoid yield, tip, uniform and elliptical loads, element convergence; [[SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)|C2]]); lab 2 plate with a hole (mesh sensitivity, hole size and position, factor of safety and stress concentration factor; [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)|C3]]); lab 3 shell wing (SHELL181 against SHELL281, skin thickness, materials and minimum thickness; [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]). Each student's dimensions come from their ID: the beam semi-span is 2xx mm with xx the last two digits. The report is at most 10 pages, about three per lab, marked 30, 30 and 40, due on 16 March. Scripting is not expected for this course; the Session Editor is for advanced users, and it pays off where thousands of cases are run. Its use for the lab 2 parametric study is in [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation|C5]] (2026-02-20).
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Next: [[SESA2029 C2 - APDL Workflow - Cantilever Beam Loads (BEAM188)]]

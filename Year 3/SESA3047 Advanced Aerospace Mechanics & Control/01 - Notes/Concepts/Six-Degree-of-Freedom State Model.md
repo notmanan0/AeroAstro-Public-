@@ -20,7 +20,7 @@ $$
 \mathbf x=[x,y,z,\phi,\theta,\psi,u,v,w,p,q,r]^T.
 $$
 
-In the lecturer's words, that's *"6 states for the dynamics, and 6 states for the kinematics"* (L13 ll. 339–340): each of the six second-order equations of motion becomes a rate state ($u,v,w,p,q,r$) plus a coordinate state ($x,y,z,\phi,\theta,\psi$). Four groups of equations advance them:
+That is six states for the dynamics and six for the kinematics: each of the six second-order equations of motion becomes a rate state ($u,v,w,p,q,r$) plus a coordinate state ($x,y,z,\phi,\theta,\psi$). Four groups of equations advance them:
 
 | Group | Equation | States advanced |
 |---|---|---|
@@ -33,7 +33,7 @@ Here $\mathbf g=[0,0,g]^T$ is NED gravity and $\mathbf F$ excludes the weight. T
 
 All four groups have to be evaluated together from the current state, and force and moment models plus initial conditions are needed before the system can be integrated. The DCM is an algebraic function of the Euler angles, not an extra state. A closed-form solution only exists in simplified cases, so in general the model is integrated numerically in MATLAB or Python (L13 ll. 320–325).
 
-One case that can be checked analytically is a freely falling body yawing at $r=0.3$ rad/s: its centre of mass follows a parabola while $u$ and $v$ oscillate as its axes turn. The analytic solution and a numerical integration check are in [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model#5. Exact ballistic integration check (suggested)|4.3 §5]].
+One case that can be checked analytically is a freely falling body yawing at $r=0.3$ rad/s ([[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model#5. Exact ballistic integration check (suggested)|4.3 §5]], with the analytic solution and a numerical check): its centre of mass follows a parabola while $u$ and $v$ oscillate as its axes turn.
 
 ## Related
 

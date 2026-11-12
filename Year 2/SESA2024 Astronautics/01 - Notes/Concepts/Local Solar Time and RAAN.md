@@ -23,5 +23,5 @@ The LST is picked from the payload's needs. European optical missions favour a 1
 
 ## Related
 
-- [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#3. The remaining elements|LST and RAAN in the lecture note]] · [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#4. The LST sets the eclipse|Effect on eclipse]]
+- [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#3. The remaining elements|LST and RAAN in the topic note]] · [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission#4. The LST sets the eclipse|Effect on eclipse]]
 - [[Sun-Synchronous Orbit]] · [[Keplerian Orbital Elements]] · [[Eclipse Duration]]

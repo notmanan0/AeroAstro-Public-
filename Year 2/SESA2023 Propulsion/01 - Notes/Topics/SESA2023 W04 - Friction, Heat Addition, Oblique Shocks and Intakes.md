@@ -25,7 +25,7 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 # SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and Intakes
 
 > [!abstract] Summary
-> Week 4 relaxes the ideal W03 assumptions and uses the results to design the engine's front end. Friction and heat addition in a constant-area duct both push the flow towards $M=1$, and too much of either chokes the duct. An oblique shock is a normal shock acting on the normal velocity component, $M_{n1}=M_1\sin\sigma$, so the flow is turned by $\delta$. Intakes slow the flow to about M 0.4–0.5 for the compressor with the least stagnation-pressure loss: subsonic intakes diverge gently (half-angle 6–7°), while supersonic intakes use a normal shock (up to about M 1.7), several oblique shocks or both. The shock inside a C–D nozzle, reviewed at the start of the 17 Feb lecture, is in [[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles#Worked example – shock in the diverging section|W03]].
+> Friction and heat addition in a constant-area duct both push the flow towards $M=1$, and too much of either chokes the duct. An oblique shock is a normal shock acting on the normal velocity component, $M_{n1}=M_1\sin\sigma$, so the flow is turned by $\delta$. Intakes slow the flow to about M 0.4–0.5 for the compressor with the least stagnation-pressure loss: subsonic intakes diverge gently (half-angle 6–7°), while supersonic intakes use a normal shock (up to about M 1.7), several oblique shocks or both.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a duct has friction or heating; a wedge, ramp or spike turns a supersonic flow; or an intake (subsonic or supersonic) must be sized or its loss found.
@@ -34,9 +34,9 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 > - **Common mistakes:** applying the normal-shock relations to $M_1$ instead of $M_{n1}$; forgetting that $M_2$ needs $\sin(\sigma-\delta)$, not $\sin\sigma$.
 > - **Practise:** [[#Worked example – oblique shock at Mach 3]] · [[#Worked example – subsonic intake at 6 km]] · [[SESA2023 Problem Sheet 4 Solutions]] Q4.3
 
-In a constant-area duct with friction, the boundary layer grows along the wall and takes up more of the cross-section, so the duct behaves like a converging nozzle (17 Feb, ll. 265–275): subsonic flow speeds up towards $M=1$ and supersonic flow slows down towards it. Heat addition has a similar effect: heating expands the gas, so in a fixed area it has to speed up if subsonic or slow down if supersonic, again towards Mach 1, and cooling does the opposite. Both can choke the duct: once the exit reaches $M=1$, extra friction or heat can't be absorbed, and the duct accepts less mass flow instead.
+In a constant-area duct with friction, the boundary layer grows along the wall and takes up more of the cross-section, so the duct behaves like a converging nozzle (17 Feb, ll. 265–275): subsonic flow speeds up towards $M=1$ and supersonic flow slows down towards it. Heat addition drives the Mach number towards 1 in the same way, raising the speed in subsonic flow and lowering it in supersonic flow (the signs follow from the Rayleigh-flow relations below), and cooling does the opposite. Both can choke the duct: once the exit reaches $M=1$, extra friction or heat can't be absorbed, and the duct accepts less mass flow instead.
 
-An oblique shock is a normal shock seen at an angle. Split the velocity into parts normal and parallel to the shock, and only the normal part feels it; the parallel part slides through unchanged, and because the normal part shrinks the flow is turned towards the shock. An intake is then a compressor with no moving parts, turning the aircraft's speed into pressure for the engine. Every shock costs stagnation pressure, so a good supersonic intake uses several weak oblique shocks rather than one strong normal shock.
+An oblique shock is a normal shock seen at an angle. Only the velocity component normal to the shock feels it; the parallel component passes through unchanged, and because the normal component shrinks the flow is turned towards the shock. An intake is then a compressor with no moving parts, turning the aircraft's speed into pressure for the engine. Every shock costs stagnation pressure, so a good supersonic intake uses several weak oblique shocks rather than one strong normal shock.
 
 ---
 
@@ -96,8 +96,8 @@ $$
 \frac{M_2^2\left[1+\frac{\gamma-1}{2}M_2^2\right]}{\left(1+\gamma M_2^2\right)^2} = \frac{M_1^2\left[1+\frac{\gamma-1}{2}M_1^2+q\right]}{\left(1+\gamma M_1^2-f\right)^2}\equiv\mathcal A
 $$
 
-> [!warning] Read the notes' version as a ratio
-> In the Week 4 notes this equation is printed on one line, so the $(1+\gamma M^2)^2$ factors can look like multipliers. They are denominators, as the derivation above shows.
+> [!warning] Read the equation as a ratio
+> Written on one line, the $(1+\gamma M^2)^2$ factors can look like multipliers, but they are denominators.
 
 **Solve.** Put $X=M_2^2$ and $k=(\gamma-1)/2$. Cross-multiply:
 
@@ -136,9 +136,6 @@ Which supersonic branch occurs depends on the downstream pressure: a high back p
 
 - $1/\sqrt\gamma=0.845$ for air. Between M 0.845 and 1 the heat added goes mainly into kinetic energy, so the temperature can fall while heat is added (17 Feb, ll. 314–319).
 - The stagnation pressure always falls with friction, because entropy rises.
-
-> [!warning] Transcript slip (17 Feb, ll. 287–288)
-> For the supersonic branch without a shock the lecturer says "there is still isentropic case and we have the acceleration of the flow". With friction the flow is not isentropic, and on this branch it decelerates ($1<M_2<M_1$) while $p$, $\rho$, $T$ rise (notes §3.2.1). The lecturer also flags errors on the heat-transfer slide (ll. 333–335); the table above follows the notes.
 
 ### Choking
 
@@ -184,10 +181,10 @@ $$
 
 With heating instead ($f=0$) the same steps give $q_{max}=0.469$.
 
-> [!check] Lecture reading of the friction plot (17 Feb, ll. 281–285)
-> "If we have a Mach 1 of 2.5, we can read two possible values of Mach 2, one that is around 0.6 and one that is about 2.1, 2.2" for $f=0.4$. The formula gives $0.560$ and $2.111$ ✔.
+> [!check] Reading the friction plot (17 Feb, ll. 281–285)
+> For $M_1=2.5$ and $f=0.4$ the chart gives two possible values of $M_2$, about 0.6 and about 2.1–2.2. The formula gives $0.560$ and $2.111$ ✔.
 
-The lecturer was specific about what is examinable here (17 Feb, ll. 343–353): "I'm not going to ask [the Mach-number relation and the differential relations] at the exam. But… only the conservation law with the presence of the additional term for the friction and the [heat] transfer… and of course, the meaning of this graph." So be able to write the three conservation equations with $f$ and $q$, and explain every region of the two plots.
+What is examinable here (17 Feb, ll. 343–353): not the Mach-number relation or the differential relations, but the conservation laws with the extra friction and heat-transfer terms, and the meaning of the graphs. So be able to write the three conservation equations with $f$ and $q$, and explain every region of the two plots.
 
 ---
 
@@ -211,7 +208,7 @@ $$
 
 **Why $v$ is unchanged.** Momentum parallel to the shock has no pressure force acting on it (pressure acts normal to the shock face), so the parallel momentum flux is the same on both sides. With $\rho_1u_1=\rho_2u_2$ that gives $v_1=v_2=v$.
 
-The jump in the normal component is then exactly a normal shock, and the parallel velocity "does not affect the static properties". So:
+The jump in the normal component is then exactly a normal shock, and the parallel velocity does not affect the static properties. So:
 
 $$
 \boxed{M_{n1} = M_1\sin\sigma>1,\qquad M_{n2} = M_2\sin(\sigma-\delta)<1}
@@ -237,7 +234,7 @@ $$
 \frac{\rho_2}{\rho_1} = \frac{(\gamma+1)M_1^2\sin^2\sigma}{(\gamma-1)M_1^2\sin^2\sigma+2}
 $$
 
-**Equate and solve for $\delta$.** Expanding $\tan(\sigma-\delta)=(\tan\sigma-\tan\delta)/(1+\tan\sigma\tan\delta)$ and collecting the $\tan\delta$ terms gives the course's $\theta$–$\beta$–$M$ relation (notes §3.3; in the data book):
+**Equate and solve for $\delta$.** Expanding $\tan(\sigma-\delta)=(\tan\sigma-\tan\delta)/(1+\tan\sigma\tan\delta)$ and collecting the $\tan\delta$ terms gives the course's $\theta$–$\beta$–$M$ relation (notes §3.3). The 2022 data book filed in Sources does not print it, so learn it:
 
 $$
 \boxed{\tan\delta = 2\cot\sigma\,\frac{M_1^2\sin^2\sigma-1}{M_1^2(\gamma+\cos2\sigma)+2}}
@@ -254,7 +251,7 @@ $$
 
 ### Worked example – oblique shock at Mach 3
 
-From the board example (17 Feb, ll. 458–510): $p_1=101.325$ kPa ("basically atmospheric"), $T_1=288$ K, $M_1=3$, $\sigma=50^\circ$.
+The worked example (17 Feb, ll. 458–510) has $p_1=101.325$ kPa (atmospheric), $T_1=288$ K, $M_1=3$, $\sigma=50^\circ$.
 
 **Normal Mach number:**
 
@@ -282,12 +279,9 @@ $$
 
 The flow stays supersonic: this is a weak shock.
 
-> [!warning] Transcript slip (17 Feb, ll. 489, 505–507)
-> The lecturer first reads "Mach normal 2 is 1.48", then catches it: "I read the wrong value, because this has always to be smaller than 1." $M_{n2}=0.535$; the 1.48 is $M_2$, after dividing by $\sin(\sigma-\delta)$.
-
 > [!check] Numerical checks
 > - $M_{n2}<1$ ✔ and $M_2>1$, consistent with a weak shock.
-> - $p_{02}/p_{01}=0.584$ at $M_{n1}=2.30$. A *normal* shock at M 3 would keep only 0.328: the oblique shock loses far less, which is the whole point of §3.
+> - $p_{02}/p_{01}=0.584$ at $M_{n1}=2.30$. A *normal* shock at M 3 would keep only 0.328: the oblique shock loses far less, which is why supersonic intakes use oblique shocks (§3).
 
 ---
 
@@ -297,11 +291,8 @@ The flow stays supersonic: this is a weak shock.
 
 - Decelerate the flow to M 0.4–0.5 (even 0.3) and raise the static pressure;
 - deliver uniform flow to the compressor, or it will not work at its best (often more important than minimum loss);
-- minimise the stagnation-pressure loss, the external drag (no "fancy shapes") and the weight (short);
+- minimise the stagnation-pressure loss, the external drag (so no elaborate shapes) and the weight (so short);
 - cope with incidence and yaw.
-
-> [!warning] Transcript slip (20 Feb, l. 46)
-> "Decrease the static pressure." A diffuser increases static pressure; the lecturer says so himself at l. 67 ($p_2>p_1$).
 
 The area–velocity relation from W03 sets the shape (20 Feb, ll. 32–43): to slow a subsonic flow, $dA/dx>0$ (diverge); to slow a supersonic flow, $dA/dx<0$ (converge).
 
@@ -325,7 +316,7 @@ $$
 
 so for a perfect gas the stagnation temperature is conserved, $T_{02}=T_{01}$, with $T_2\approx T_{02}$ and $p_2\approx p_{02}$ at the low exit speed (20 Feb, ll. 102–134). In an ideal diffuser $p_{02}=p_{01}$ too.
 
-A real diffuser loses stagnation pressure to friction (and shocks). The course measures this with the stagnation pressure ratio:
+A real diffuser loses stagnation pressure to friction (and shocks). The loss is measured by the stagnation pressure ratio:
 
 $$
 \Gamma_d = \frac{p_{02}}{p_{01}}<1
@@ -341,7 +332,7 @@ $$
 
 where $T_{2s}$ is the temperature reached isentropically from state 1 to the real exit pressure.
 
-Relating $\eta_d$ and $\Gamma_d$ (the "long equation" of the slides). Take the exit as stagnation, so $T_2=T_{02}=T_{01}$ and the exit pressure is $p_{02}$. Divide top and bottom by $T_1$:
+To relate $\eta_d$ and $\Gamma_d$, take the exit as stagnation, so $T_2=T_{02}=T_{01}$ and the exit pressure is $p_{02}$. Divide top and bottom by $T_1$:
 
 $$
 \eta_d = \frac{T_{2s}/T_1-1}{T_{01}/T_1-1}
@@ -367,12 +358,9 @@ $$
 
 For a fixed $\eta_d$, $\Gamma_d$ falls as the flight Mach number rises: the losses grow with $M$ (20 Feb, ll. 187–188).
 
-> [!warning] Slide error confirmed in the lecture (20 Feb, ll. 179–186)
-> A student asked whether the exponent on $\Gamma_d$ should have $\gamma$ in the denominator. It should, $(\gamma-1)/\gamma$ as above. "That mistake is also present in the lecture… I will double check that and correct it."
-
 ### Worked example – subsonic intake at 6 km
 
-From the 20 Feb exercise (ll. 277–300): cruise at 6 km and M 0.85, 100 kg/s of air, diffuser exit M 0.4, $\eta_d=0.9$, half-angle 6°. Find the exit state, the areas and the length.
+Cruise at 6 km and M 0.85, 100 kg/s of air, diffuser exit M 0.4, $\eta_d=0.9$, half-angle 6°. Find the exit state, the areas and the length (20 Feb, ll. 277–300).
 
 **Ambient (data book, 6 km):** $T_1=249.19$ K, $p_1=47.22$ kPa.
 
@@ -419,13 +407,13 @@ $$
 > [!check] Numerical checks
 > - Putting $\Gamma_d=0.9565$ and $M=0.85$ into the boxed $\eta_d$ formula returns exactly 0.900 ✔.
 > - $T_2<T_{02}$ and $p_2<p_{02}$ ✔; $p_2>p_1$ ✔ (the intake compresses).
-> - The slide values (285.2 K, 72.43 kPa) agree to rounding.
+> - The reference values 285.2 K and 72.43 kPa agree to rounding.
 
 ### Supersonic intakes
 
 Shock-free C–D intake: theoretical only (20 Feb, ll. 189–220). Converge to $M=1$ at a throat, then diverge subsonically. It works only at its design Mach number: designed for M 3 but flown at M 2, the throat is too small to pass the mass flow sonically, so less air gets in and efficiency is lost. (It also has the starting problem: the shock that stands ahead of it at start-up cannot be swallowed.)
 
-A student asked why the flow is slowed below Mach 1 at all (20 Feb, ll. 203–207). The answer is that no one has built a compressor, or a conventional combustor, that works with supersonic through-flow; only a scramjet burns supersonically.
+The flow has to be slowed below Mach 1 because no compressor, and no conventional combustor, has been built that works with supersonic through-flow; only a scramjet burns supersonically.
 
 Normal-shock (Pitot) intake (notes §3.3.1; 20 Feb, ll. 224–241): a subsonic divergent intake that, in supersonic flight, has a normal shock standing in front of it. Behind the shock the flow is subsonic, so an ordinary subsonic diffuser follows. It is the simplest and lightest. The loss is the normal-shock ratio (notes eq. 3.12):
 
@@ -441,8 +429,7 @@ with $a$ the ambient state ahead of the shock and 1 the intake entry behind it.
 
 Under 10 % loss up to M 1.5, so acceptable to about M 1.7–1.8.
 
-- **Off-design, less flow needed:** the shock moves out in front of the lip and the excess air spills around the intake (subcritical operation); the loss is unchanged.
-- **Supercritical:** the shock is drawn inside, where the flow has accelerated further, so it is stronger and the $p_0$ loss and mass flow both suffer.
+Off design, when the engine needs less flow, the shock moves out in front of the lip and the excess air spills around the intake (**subcritical** operation), with the loss unchanged. The intake cannot supply more than the design flow, so when the engine demands more (**supercritical** conditions) the shock is drawn inside, where the flow has accelerated further, so it is stronger and the $p_0$ loss and mass flow both suffer.
 
 External compression with oblique shocks (notes §3.3.2; 20 Feb, ll. 242–268). A centre-body (spike) or ramp generates one or more oblique shocks, then a final weak normal shock. Each oblique shock acts only on $M_n=M\sin\sigma<M$, so it is weaker. $n$ shocks of equal strength give a $\Gamma_d$ that rises with $n$, tending to 1 (isentropic) as $n\to\infty$. But every ramp turns the flow further, so the flow arrives at the subsonic diffuser increasingly inclined, which costs loss there: there is an optimum $n$ for each flight Mach number. Used at high supersonic speed; no starting problem, because the compression is outside the duct.
 
@@ -457,10 +444,10 @@ See [[Intake Pressure Recovery]].
 
 ## 4. Problem-solving workflow
 
-1. **Duct with $f$ or $q$:** compute $\mathcal A$; if $1-2\mathcal A(\gamma+1)<0$ the duct is choked. Otherwise take the root on the right branch (subsonic inlet → subsonic root; supersonic → depends on back pressure). Then $p_2/p_1$, $T_2/T_1$ from momentum and energy.
-2. **Oblique shock:** $M_{n1}=M_1\sin\sigma$ (or find $\sigma$ from $\delta$ on the weak branch); normal-shock table at $M_{n1}$; $M_2=M_{n2}/\sin(\sigma-\delta)$.
-3. **Subsonic intake:** ISA → $T_{01}$, $p_{01}$ → $p_{02}$ (via $\Gamma_d$ or $\eta_d$) → exit static state at the exit Mach → areas → diameters → length.
-4. **Supersonic intake:** chain the shock losses, $\Gamma_d=\prod(p_{02}/p_{01})_i$, then a subsonic diffuser as above.
+1. Duct with $f$ or $q$: compute $\mathcal A$; if $1-2\mathcal A(\gamma+1)<0$ the duct is choked. Otherwise take the root on the right branch (subsonic inlet → subsonic root; supersonic → depends on back pressure). Then $p_2/p_1$, $T_2/T_1$ from momentum and energy.
+2. Oblique shock: $M_{n1}=M_1\sin\sigma$ (or find $\sigma$ from $\delta$ on the weak branch); normal-shock table at $M_{n1}$; $M_2=M_{n2}/\sin(\sigma-\delta)$.
+3. Subsonic intake: ISA → $T_{01}$, $p_{01}$ → $p_{02}$ (via $\Gamma_d$ or $\eta_d$) → exit static state at the exit Mach → areas → diameters → length.
+4. Supersonic intake: chain the shock losses, $\Gamma_d=\prod(p_{02}/p_{01})_i$, then a subsonic diffuser as above.
 5. Check: $T_0$ constant through every adiabatic element; $p_0$ never rises; $M_{n2}<1$.
 
 ## Terminology and alternative names
@@ -490,7 +477,7 @@ See [[Intake Pressure Recovery]].
 
 - `Week 04 - Gas Dynamics II - Friction, Heat Transfer, Oblique Shocks and Intakes.pdf`: Week 4 notes (I. Peters, T. Grenga; two handouts: §3.2–3.3 ducts and oblique shocks, §3.1–3.3 intakes) and the Lecture 10–12 slides. Figures after Kundu et al., *Fluid Mechanics*, Ch. 16.
 - Transcripts (line numbers refer to these files): `SESA2023 Lecture 2026-02-17.txt` (17 Feb, Lectures 10–11, ll. 206–513: friction, heating, oblique shocks); `SESA2023 Lecture 2026-02-20.txt` (20 Feb, Lecture 12: intakes).
-- Data book: normal-shock and oblique-shock relations, ISA Table 25.
+- Data book (2022 edition): normal-shock relations and tables, ISA Table 25. It has no oblique-shock relation.
 
 ## Self-study tasks
 
@@ -498,7 +485,7 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 4 lectures; t
 
 ### Core
 
-- [ ] *(set)* Write the constant-area duct conservation equations with the $f$ and $q$ terms, and explain every region of the friction and heating plots: "this may be on the exam… and of course, the meaning of this graph" (17 Feb, ll. 345–353). → [[#Governing equations]] · [[#Reading the plots]]
+- [ ] *(set)* Write the constant-area duct conservation equations with the $f$ and $q$ terms, and explain every region of the friction and heating plots, which may be on the exam (17 Feb, ll. 345–353). → [[#Governing equations]] · [[#Reading the plots]]
 - [ ] *(set)* Oblique shock at M 3, $\sigma=50^\circ$ (17 Feb, ll. 458–510). Targets $\delta=28.9^\circ$, $p_2=607$ kPa, $T_2=560$ K, $M_2=1.48$. → [[#Worked example – oblique shock at Mach 3]]
 - [ ] *(set)* Subsonic intake at 6 km, M 0.85 (20 Feb, ll. 277–300). Targets $p_{02}=72.4$ kPa, $A_2=0.917$ m², $L=1.11$ m. → [[#Worked example – subsonic intake at 6 km]]
 - [ ] *(set)* Explain the three supersonic intake types and when each is used (20 Feb, ll. 189–276). → [[#Supersonic intakes]]
@@ -513,3 +500,30 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 4 lectures; t
 - [ ] Derive the $\eta_d$–$\Gamma_d$ relation. → [[#Ideal and real diffusers]]
 - [ ] Compare one normal shock with an oblique-plus-normal pair at M 3. Target 0.328 vs 0.546. → [[#Supersonic intakes]]
 - [ ] *(set)* Week 4 Blackboard quiz, and the propulsion-lab quiz released at the start of the lab week (20 Feb, ll. 1–19).
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (17 Feb, ll. 287–288)
+> Where: [[#Reading the plots]].
+>
+> For the supersonic branch without a shock the lecturer says "there is still isentropic case and we have the acceleration of the flow". With friction the flow is not isentropic, and on this branch it decelerates ($1<M_2<M_1$) while $p$, $\rho$, $T$ rise (notes §3.2.1). The lecturer also flags errors on the heat-transfer slide (ll. 333–335); the table above follows the notes.
+
+> [!warning] Transcript slip (17 Feb, ll. 489, 505–507)
+> Where: [[#Worked example – oblique shock at Mach 3]].
+>
+> The lecturer first reads "Mach normal 2 is 1.48", then catches it: "I read the wrong value, because this has always to be smaller than 1." $M_{n2}=0.535$; the 1.48 is $M_2$, after dividing by $\sin(\sigma-\delta)$.
+
+> [!warning] Transcript and data book disagree (17 Feb, ll. 479–492)
+> Where: [[#The deflection angle]].
+>
+> Asked whether the oblique-shock equation is given in the data book, the answer is "Yes, of course". The 2022 Thermofluids Data Book in `02 - Sources` prints the normal-shock relations but no $\tan\delta$ relation, so treat it as one to learn.
+
+> [!warning] Transcript slip (20 Feb, l. 46)
+> Where: [[#Requirements (20 Feb, ll. 44–52)]].
+>
+> "Decrease the static pressure." A diffuser increases static pressure; the lecturer says so himself at l. 67 ($p_2>p_1$).
+
+> [!warning] Slide error confirmed in the lecture (20 Feb, ll. 179–186)
+> Where: [[#Ideal and real diffusers]].
+>
+> A student asked whether the exponent on $\Gamma_d$ should have $\gamma$ in the denominator. It should, $(\gamma-1)/\gamma$ as above. "That mistake is also present in the lecture… I will double check that and correct it."

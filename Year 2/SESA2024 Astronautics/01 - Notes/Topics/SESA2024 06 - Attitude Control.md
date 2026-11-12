@@ -29,25 +29,27 @@ sources: ["02 - Sources/Lectures/Chapter 6/2025 WEEK 3 Lecture 1 - Chapter 6 - A
 > - **Common mistakes:** saying reaction wheels can dump momentum (they are internal and cannot change the total); forgetting that a spinner's body-mounted cells make it power-limited.
 > - **Practise:** [[#Inertia matrix from the 2024/25 paper]] · [[SESA2024 Workbook Ch6 - Attitude Control Solutions#Q12. GEO astronomical observatory (1 arcsec for up to 1 h)|Workbook Q12]]
 
-Start with a body orbiting the Earth with no disturbances at all. Its orientation does not change: it keeps pointing at the same distant star while it goes round (2025-10-07, ll. 76–120). Whether that is good depends on the mission. A space telescope wants exactly that; an Earth-imaging camera needs the opposite, because it has to turn once per orbit to keep looking down. The ACS exists to give the payload the pointing it needs, and almost everything in this chapter follows from one fact: a spacecraft can only rotate by exchanging angular momentum, either between its own parts or with the outside world.
+A body orbiting the Earth with no disturbances at all keeps its orientation unchanged: it points at the same distant star while it goes round (2025-10-07, ll. 76–120). Whether that is good depends on the mission. A space telescope wants exactly that; an Earth-imaging camera needs the opposite, because it has to turn once per orbit to keep looking down. The ACS exists to give the payload the pointing it needs, and almost everything about it follows from one fact: a spacecraft can only rotate by exchanging angular momentum, either between its own parts or with the outside world.
 
-That is why attitude control "seems like an easy thing to do but actually it's quite challenging", and why it is "one of the key drivers which really drives the design of the spacecraft" (pre-recorded lecture, ll. 1–10). The choice of stabilisation type fixes how the arrays are mounted, where the antenna can go, how the radiators are pointed, and how carefully the mass must be distributed.
+Attitude control is therefore harder than it looks, and it is one of the main drivers of the spacecraft design (pre-recorded lecture, ll. 1–10). The choice of stabilisation type fixes how the arrays are mounted, where the antenna can go, how the radiators are pointed, and how carefully the mass must be distributed.
 
 ## 1. What the ACS has to do
 
-Dr Sykulska-Lawrence's list on the slides, drawn out of the class with a throwable microphone (2025-10-07, ll. 120–200):
+It has three jobs:
 
 1. Meet the payload's pointing requirements: direction, accuracy, stability and slew rate. An Earth-pointing camera and a telescope tracking a distant star have very different needs, and the payload is the strongest driver.
 2. Meet the housekeeping pointing in every phase of the mission: arrays to the Sun for power, antennas to the ground stations, radiators to deep space for heat rejection, and the thrust vector along the required direction for engine burns. These are usually far less demanding than the payload: a telescope may need arcsecond pointing, a solar array a few degrees.
 3. Manage the overall angular momentum of the spacecraft. This underlies the other two.
 
-The board example shows why the third item is not automatic (ll. 200–240). A spacecraft on an elliptical orbit with a solar array sticking out on one side is meant to hold a fixed attitude. Each time it passes through perigee, drag on the array produces a torque, and the next pass adds another. The momentum keeps building orbit after orbit, so something must be done about it.
+The third item is not automatic (ll. 200–240). A spacecraft on an elliptical orbit with a solar array sticking out on one side is meant to hold a fixed attitude. Each time it passes through perigee, drag on the array produces a torque, and the next pass adds another. The momentum keeps building orbit after orbit, so something must be done about it.
 
 The ACS works as a feedback loop (ll. 240–260). Disturbance torques act on the spacecraft dynamics; attitude sensors measure the result; the on-board processor (or, in older spacecraft, the ground) compares the measurement with the demand and applies a control law; and control torquers act on the spacecraft to correct it. The ACS cannot work alone: it needs power, often propellant, data handling and communications.
 
+![[ast_acs_loop.png|820]]
+
 ## 2. Rotational dynamics
 
-The pre-recorded lecture builds this up in stages (ll. 1–125). For a body moving in a straight line, linear momentum is $\mathbf p=m\mathbf v$. Mass is a scalar, so the momentum is always parallel to the velocity, and Newton's second law says it changes only under an external force:
+Rotational dynamics builds up from the linear case in stages (pre-recorded lecture, ll. 1–125). For a body moving in a straight line, linear momentum is $\mathbf p=m\mathbf v$. Mass is a scalar, so the momentum is always parallel to the velocity, and Newton's second law says it changes only under an external force:
 
 $$
 \frac{d(m\mathbf v)}{dt}=\sum\mathbf F_{ext}.
@@ -69,7 +71,7 @@ $$
 
 With no external torque, $\mathbf H$ is constant in both size and direction.
 
-A matrix can rotate a vector, so $\mathbf H$ need not be parallel to $\boldsymbol\omega$. The lecture contrasts the mathematician's answer ("of course not, a matrix can reorientate a vector") with the engineer's: the cause is the mass distribution (ll. 76–110).
+$\mathbf H$ need not be parallel to $\boldsymbol\omega$, because multiplying by a matrix can reorientate a vector. Physically, the cause is the mass distribution.
 
 ### The inertia matrix
 
@@ -81,7 +83,7 @@ I_{xx}=\int(y^2+z^2)\,dm,
 I_{xy}=\int xy\,dm.
 $$
 
-The diagonal terms are the moments of inertia: the body's resistance to angular acceleration about each axis, like pushing a shopping trolley rather than a lorry (ll. 110–125). The off-diagonal terms are the products of inertia, and they cause cross-coupling: spin a uniform drum about its axis and it spins steadily, but stick a small mass on its rim and the imbalance makes it start to wobble about the other two axes (ll. 126–150). Multiplying out gives the components of $\mathbf H$:
+The diagonal terms are the moments of inertia: the body's resistance to angular acceleration about each axis (ll. 110–125). The off-diagonal terms are the products of inertia, and they cause cross-coupling: a uniform drum spins steadily about its axis, but a small mass stuck on its rim makes the imbalance start a wobble about the other two axes (ll. 126–150). Multiplying out gives the components of $\mathbf H$:
 
 $$
 H_x=I_{xx}\omega_x-I_{xy}\omega_y-I_{xz}\omega_z,
@@ -95,15 +97,29 @@ $$
 H_z=-I_{xz}\omega_x-I_{yz}\omega_y+I_{zz}\omega_z.
 $$
 
-If all the products of inertia are zero, the axes are principal axes and $\mathbf H$ is parallel to $\boldsymbol\omega$ whenever the body spins about one of them.
+If all the products of inertia are zero, the axes are principal axes and $\mathbf H$ is parallel to $\boldsymbol\omega$ whenever the body spins about one of them. If they are not zero, a spin about a body axis produces momentum components about the other two. The 2024/25 A4 matrix of the worked example below, spun about body $z$ at $\boldsymbol\omega=(0,0,0.01)$ rad/s, shows this. Only the third column of $[\mathbf I]$ survives the multiplication:
 
-On a real project one engineer watches the rising mass budget and another watches the inertia matrix, because it governs how the vehicle responds to every torque (ll. 150–180). A Formula 1 car puts the engine and driver back to back in the middle to keep its yaw inertia small; an aircraft designer needs the roll inertia to size the ailerons for a target roll rate.
+$$
+H_x=-I_{xz}\omega_z=-125\times0.01=-1.25\ \mathrm{N\,m\,s},
+$$
+
+$$
+H_y=-I_{yz}\omega_z=-650\times0.01=-6.50\ \mathrm{N\,m\,s},
+$$
+
+$$
+H_z=I_{zz}\omega_z=2750\times0.01=27.5\ \mathrm{N\,m\,s}.
+$$
+
+The momentum vector leans away from the spin axis by $\tan^{-1}\!\left(\sqrt{1.25^2+6.50^2}/27.5\right)=13.5^\circ$. With no external torque $\mathbf H$ must stay fixed in space, so the body cannot keep spinning steadily about $z$: the $z$ axis wobbles round $\mathbf H$. That is the cross-coupling the products of inertia cause.
+
+On a real project one engineer watches the rising mass budget and another watches the inertia matrix, because it governs how the vehicle responds to every torque (ll. 150–180). An aircraft designer likewise needs the roll inertia to size the ailerons for a target roll rate.
 
 ## 3. Gyroscopic precession and momentum bias
 
 ### Precession
 
-Hold a spinning bicycle wheel by one end of its axle. Gravity on the centre of mass and the reaction at the hand form a torque that would make a stationary wheel tip over. A spinning wheel instead swings round in a horizontal circle (pre-recorded lecture, ll. 176–250; demonstrated again live, 2025-10-07, ll. 520–600).
+A spinning bicycle wheel held by one end of its axle swings round in a horizontal circle. Gravity on the centre of mass and the reaction at the hand form a torque that would make a stationary wheel tip over (pre-recorded lecture, ll. 176–250; 2025-10-07, ll. 520–600).
 
 In vector terms, a torque $\mathbf T$ acting for a short time $\Delta t$ adds an angular impulse $\mathbf T\,\Delta t$ to $\mathbf H$:
 
@@ -111,16 +127,25 @@ $$
 \mathbf H_1=\mathbf H_0+\mathbf T\,\Delta t.
 $$
 
-If $\mathbf T$ is perpendicular to $\mathbf H_0$, the magnitude hardly changes and the vector turns through an angle $\psi$ with
+If $\mathbf T$ is perpendicular to $\mathbf H_0$, the impulse and the original momentum form the two shorter sides of a right-angled triangle, with $\mathbf H_1$ as the hypotenuse. The magnitude of the new momentum is
 
 $$
-\tan\psi=\frac{T\,\Delta t}{H_0}
-\quad\Longrightarrow\quad
-\psi\approx\frac{T\,\Delta t}{H_0}
-\quad(\psi\text{ small, in radians}).
+|\mathbf H_1|=\sqrt{H_0^2+(T\,\Delta t)^2}=H_0\sqrt{1+\left(\frac{T\,\Delta t}{H_0}\right)^2}\approx H_0\left[1+\frac12\left(\frac{T\,\Delta t}{H_0}\right)^2\right],
 $$
 
-Dividing by $\Delta t$ gives the precession rate $\dot\psi=T/H_0$. The lecture's rule of thumb is that the displacement appears $90^\circ$ later in the direction of rotation. The mass-element argument behind it: as a small element of the rim travels through the half of its circuit where the torque accelerates it one way, it keeps gaining velocity in that direction, so the largest velocity, and hence the displacement, comes a quarter-turn after the peak acceleration (pre-recorded lecture, ll. 201–225).
+so it changes only to second order in the small ratio $T\,\Delta t/H_0$. The direction changes to first order. The angle $\psi$ between $\mathbf H_0$ and $\mathbf H_1$ is opposite the impulse side of the triangle:
+
+$$
+\tan\psi=\frac{T\,\Delta t}{H_0}.
+$$
+
+For a small angle in radians, $\tan\psi\approx\psi$:
+
+$$
+\psi\approx\frac{T\,\Delta t}{H_0}.
+$$
+
+Dividing by $\Delta t$ gives the precession rate $\dot\psi=T/H_0$. A rule of thumb: the displacement appears $90^\circ$ later in the direction of rotation. The mass-element argument behind it: as a small element of the rim travels through the half of its circuit where the torque accelerates it one way, it keeps gaining velocity in that direction, so the largest velocity, and hence the displacement, comes a quarter-turn after the peak acceleration.
 
 ### Momentum bias and gyroscopic rigidity
 
@@ -131,37 +156,37 @@ The formula says that the same disturbance impulse turns a large $H_0$ through a
 Bias has costs as well as benefits (pre-recorded lecture, ll. 300–330; 2025-10-07, ll. 276–300):
 
 - The stiff axis should stay in one direction for the whole mission, usually perpendicular to the orbit plane, because reorienting it takes a large torque applied for a long time, which costs fuel.
-- A biased body has a nutation mode: hit it with an impulsive torque and the spin axis wobbles, and in space that wobble would continue indefinitely unless damped, so passive or active dampers must be carried. The wheel demonstration showed it decaying quickly in air.
+- A biased body has a nutation mode: hit it with an impulsive torque and the spin axis wobbles, and in space that wobble would continue indefinitely unless damped, so passive or active dampers must be carried. A bicycle wheel's nutation decays quickly in air.
 - The torque response changes. An unbiased spacecraft fired with a torque pulse starts turning, coasts at constant rate, and stops with an opposite pulse. A biased one needs a steady torque to turn at a steady rate (it precesses), with nutation laid on top.
 
 ### External torquers are compulsory
 
-The ACS engineer can only do two things: move momentum around inside the spacecraft (conservation of angular momentum, no external torque) or change the total with an external torque (Newton's second law). The environment always applies external torques, drag in low orbit being the lecture's example, so momentum builds up over the mission. A spacecraft that carries nothing able to apply an external torque will eventually lose control (pre-recorded lecture, ll. 276–300). That is why 2016/17 Q1(iii) asks why external torquers are mandatory.
+The ACS engineer can only do two things: move momentum around inside the spacecraft (conservation of angular momentum, no external torque) or change the total with an external torque (Newton's second law). The environment always applies external torques, for example drag in low orbit, so momentum builds up over the mission. A spacecraft that carries nothing able to apply an external torque will eventually lose control. That is why 2016/17 Q1(iii) asks why external torquers are mandatory.
 
 ## 4. The four stabilisation types
 
-The first decision is whether to use bias at all (2025-10-07, ll. 260–300). With bias there are three ways to store it: spin the whole body, spin most of it, or spin a small wheel inside it. Without bias the spacecraft is three-axis stabilised. This is "one of the key important choices" in the design, because every other subsystem has to work around it.
+The first decision is whether to use bias at all (2025-10-07, ll. 260–300). With bias there are three ways to store it: spin the whole body, spin most of it, or spin a small wheel inside it. Without bias the spacecraft is three-axis stabilised. It is one of the most important choices in the design, because every other subsystem has to work around it.
 
 ### Type 1: spinner
 
-The whole spacecraft spins, typically at 10 to 60 rpm: a large inertia at a low rate (ll. 300–330). For long-term stability the inertia matrix has to satisfy three conditions, which the class worked out on the board (ll. 326–400):
+The whole spacecraft spins, typically at 10 to 60 rpm: a large inertia at a low rate (ll. 300–330). For long-term stability the inertia matrix has to satisfy three conditions:
 
 1. the spin axis is the axis of maximum moment of inertia, $I_{zz}>I_{xx},I_{yy}$;
 2. the products of inertia are zero, so the spin axis is a principal axis and keeps a constant direction;
 3. the transverse moments are equal, $I_{xx}=I_{yy}$, so the body is symmetric about the spin axis and responds to a torque with a constant precession.
 
-Spin about the minimum-inertia axis is only acceptable for short periods, such as a solid-motor burn during transfer. "Symmetry is your friend" (l. 401), and every subsystem engineer then has to keep their hardware balanced, which is why Cluster carried trim masses that could be adjusted to balance it after the instruments were fitted (ll. 651–690).
+Spin about the minimum-inertia axis is only acceptable for short periods, such as a solid-motor burn during transfer. Spin is most stable when the mass distribution is symmetric about the spin axis (l. 401), so every subsystem engineer has to keep their hardware balanced, which is why Cluster carried trim masses that could be adjusted to balance it after the instruments were fitted (ll. 651–690).
 
 The system consequences (ll. 401–510): there is no room for large deployable arrays, so the solar cells are body-mounted on the drum and the spacecraft is power-limited; the antenna has to be omnidirectional or despun; payloads that do not scan have limited places to mount; and thermal design is mixed, because radiators are hard to point but the spin evens out the heating. Meteosat Second Generation turns the limitation into a feature: its imager uses the spin to sweep across the Earth one strip per revolution, stepping down a strip each time, which is whiskbroom scanning (ll. 626–660).
 
 > [!tip] Pushbroom and whiskbroom
-> A pushbroom imager has a long line of detectors across the ground track and lets the spacecraft's motion build up the image line by line. A whiskbroom imager has fewer detectors and sweeps them across the track with a mechanism or, on a spinner, the spin itself. Pushbroom has no moving parts, so modern Earth-observation satellites prefer it (2025-10-07, ll. 626–660; 2025-10-09, ll. 320–330). Chapter 11 sizes a pushbroom camera.
+> A pushbroom imager has a long line of detectors across the ground track and lets the spacecraft's motion build up the image line by line. A whiskbroom imager has fewer detectors and sweeps them across the track with a mechanism or, on a spinner, the spin itself. Pushbroom has no moving parts, so modern Earth-observation satellites prefer it (2025-10-07, ll. 626–660; 2025-10-09, ll. 320–330). Pushbroom sizing is covered in [[Swath Width and Push-Broom Imaging]].
 
 ### Type 2: dual spinner
 
 Most of the spacecraft spins for stability, but a despun platform on top stays still and carries, typically, a directional antenna or a payload that must point (2025-10-09, ll. 26–180). That eases the antenna and payload constraints, but the bearing between the two parts has to carry power and signals across a rotating joint (slip rings), which is a reliability worry on a spacecraft nobody can repair. The friction in the bearing is manageable. The spinning section still dominates, so the spacecraft is still largely power-limited, the inertia matrix is still tightly constrained, and nutation still has to be damped.
 
-Giotto, ESA's Halley's Comet fly-by probe, is the lecture's example. Spin gave it stability against dust impacts during the fly-by, while a despun high-gain antenna kept the link to Earth. During the encounter it was indeed hit by a dust particle, nutated, and lost contact; spin stability let it recover and continue (ll. 101–160). Intelsat 6 and the Galileo Jupiter probe also used this type.
+Giotto, ESA's Halley's Comet fly-by probe, is an example. Spin gave it stability against dust impacts during the fly-by, while a despun high-gain antenna kept the link to Earth. During the encounter it was hit by a dust particle, nutated, and lost contact; spin stability let it recover and continue (ll. 101–160). Intelsat 6 and the Galileo Jupiter probe also used this type.
 
 ### Type 3: hybrid (momentum-bias wheel)
 
@@ -182,7 +207,7 @@ No significant momentum is stored about any axis, so the spacecraft can slew fre
 
 ## 5. Torques and torquers
 
-The slides split torques two ways (2025-10-09, ll. 351–380). External torques come from interaction with the environment and change the total angular momentum; internal torques come from interaction between parts of the spacecraft and conserve it. In each category there are disturbance torques, which happen to the spacecraft, and torquers, which the ACS controls.
+Torques split two ways (slides; 2025-10-09, ll. 351–380). External torques come from interaction with the environment and change the total angular momentum; internal torques come from interaction between parts of the spacecraft and conserve it. In each category there are disturbance torques, which happen to the spacecraft, and torquers, which the ACS controls.
 
 ### External disturbance torques
 
@@ -194,15 +219,15 @@ The slides split torques two ways (2025-10-09, ll. 351–380). External torques 
 | Magnetic | up to about 30 000–40 000 km | on-board currents interact with the Earth's field |
 | Thrust misalignment | all altitudes, during burns | 1 kN offset by 1 mm from the centre of mass gives 1 N m |
 
-Gravity gradient arises because gravity falls off as $1/r^2$: a long body tilted from the local vertical has its lower end pulled slightly harder than its upper end, and the difference rotates it towards the vertical, which is its stable orientation (ll. 426–500). It can be used deliberately for passive stabilisation; the lecture's example is a long, thin ocean-measuring satellite, and Workbook Q10 asks for the mass distribution that suits it. Magnetic torques are also used passively, often on CubeSats. Quiz 1 caught people on "some disturbance torques depend on the spacecraft's shape at all orbital altitudes", which is true: solar radiation pressure acts at every altitude in Earth orbit (Quiz 1 walk-through, ll. 1–30).
+Gravity gradient arises because gravity falls off as $1/r^2$: a long body tilted from the local vertical has its lower end pulled slightly harder than its upper end, and the difference rotates it towards the vertical, which is its stable orientation (ll. 426–500). It can be used deliberately for passive stabilisation; one example is a long, thin ocean-measuring satellite, and Workbook Q10 asks for the mass distribution that suits it. Magnetic torques are also used passively, often on CubeSats. Solar radiation pressure acts at every altitude in Earth orbit, so a disturbance torque that depends on the spacecraft's shape exists at all orbital altitudes (Quiz 1 walk-through, ll. 1–30).
 
 ### External torquers
 
-Every spacecraft must carry at least one (2025-10-14, ll. 51–250):
+Every spacecraft must carry at least one external torquer (2025-10-14, ll. 51–250). **Thrusters** give any torque size, with on/off control that can be pulsed finely, but they use finite propellant. A pure couple about one axis in both senses needs four thrusters, so three axes need twelve, and redundancy can take it to sixteen, each with its feed lines.
 
-- **Thrusters**: any torque size, on/off control that can be pulsed finely, but they use finite propellant. A pure couple about one axis in both senses needs four thrusters, so three axes need twelve, and redundancy can take it to sixteen, each with its feed lines.
-- **Magnetorquers**: electromagnets along each axis (and often a diagonal spare). No propellant and no moving parts, only power. But the torque is small and slow, only exists where there is a well-known magnetic field (an on-board field model is needed), and there is no torque about the field line, since the torque is $\mathbf m\times\mathbf B$.
-- **Adjustable geometry**: trim tabs on the array that use solar radiation pressure. No propellant and very low torque, but keeping a GEO satellite on station a year longer can be worth millions.
+**Magnetorquers** are electromagnets along each axis, often with a diagonal spare. They use no propellant and have no moving parts, only power, but their torque is small and slow. It exists only where there is a well-known magnetic field, so an on-board field model is needed, and because the torque is $\mathbf m\times\mathbf B$ there is none about the field line.
+
+**Adjustable geometry**, such as trim tabs on the array, uses solar radiation pressure. It needs no propellant and gives very low torque, but keeping a GEO satellite on station a year longer can be worth millions.
 
 ### Internal disturbances and torquers
 
@@ -214,7 +239,7 @@ Internal disturbances are mechanisms (deploying or rotating arrays, moving senso
 | Momentum wheel | high (about 6500 rpm), one direction, ±10 % | bias for gyroscopic stiffness |
 | Control moment gyro | constant speed, gimballed | large torques on large spacecraft, e.g. the ISS |
 
-Dr Sykulska-Lawrence demonstrated all three standing on a turntable holding the wheel (ll. 351–420): spinning the wheel up turned her the other way, spinning an already-spinning wheel faster turned her further, and tilting the spinning wheel (gimballing) pulled her round through gyroscopic precession. The ISS video showed four CMGs whose momenta cancel in their neutral position; tilting them sets the station turning, and when all four line up they are saturated and the Russian segment's thrusters must hold attitude while they are returned to neutral (ll. 420–450). CMGs are heavy and complex, so only large spacecraft use them.
+A person standing on a turntable and holding a wheel shows all three (ll. 351–420): spinning the wheel up turns them the other way, spinning an already-spinning wheel faster turns them further, and tilting the spinning wheel (gimballing) pulls them round through gyroscopic precession. The ISS has four CMGs whose momenta cancel in their neutral position; tilting them sets the station turning, and when all four line up they are saturated and the Russian segment's thrusters must hold attitude while they are returned to neutral (ll. 420–450). CMGs are heavy and complex, so only large spacecraft use them.
 
 ## 6. Momentum storage and dumping
 
@@ -222,7 +247,7 @@ Wheels store angular momentum; their motor controls the flow between wheel and b
 
 Some momentum changes are periodic. A satellite in a circular orbit can stay Earth-pointing by rotating once per orbit at a constant rate. On an elliptical orbit the orbital angular rate $\dot\theta=h/r^2$ varies, by Kepler's second law, so the body has to turn faster at perigee than at apogee. Doing that with thrusters would burn propellant all the time. A wheel can absorb the difference instead: it gives momentum to the body near perigee and takes it back near apogee, and after one orbit everything returns to where it started. Sizing the wheel capacity for this avoids using external torquers for any manoeuvre whose before and after momenta are equal.
 
-Other changes are secular. Add a solar array that feels a drag torque at every perigee pass, and the external torque adds the same impulse each orbit. The wheel has to spin a little faster every time to hold attitude, and eventually reaches its maximum speed, at which point it is saturated and control would be lost. Before that, the momentum must be dumped: the wheel is torqued back down while an external torquer (thrusters pulsing, or magnetorquers over a longer period) holds the attitude. Europe calls this momentum dumping; the USA calls it wheel desaturation. Using magnetorquers or trim tabs continuously keeps dumping small and saves propellant.
+Other changes are secular. With a solar array that feels a drag torque at every perigee pass, the external torque adds the same impulse each orbit. The wheel has to spin a little faster every time to hold attitude, and eventually reaches its maximum speed, at which point it is saturated and control would be lost. Before that, the momentum must be dumped: the wheel is torqued back down while an external torquer (thrusters pulsing, or magnetorquers over a longer period) holds the attitude. Europe calls this momentum dumping; the USA calls it wheel desaturation. Using magnetorquers or trim tabs continuously keeps dumping small and saves propellant.
 
 ![[ast_wheel_momentum_elliptic.png|800]]
 
@@ -233,7 +258,7 @@ The ACS cannot control attitude more accurately than it can measure it: if you c
 - Reference sensors give the direction to a reference object in body axes. Their accuracy is limited by the reference: star trackers reach arcseconds, Sun sensors and Earth (horizon) sensors arcminutes, magnetometers degrees, and GPS can also be used. One arcminute is $1/60$ of a degree and one arcsecond $1/3600$ (2025-10-16, ll. 76–125).
 - Inertial sensors, such as gyroscopes, measure changes in attitude only. They keep working while the reference object is eclipsed or below the horizon, but they drift and must be recalibrated against a reference sensor.
 
-The lecture's analogy: on an aircraft at night you can track a star through the window (reference), or close the blind and feel the turn through your inner ear (inertial). The star can disappear behind cloud, and the inner ear drifts, so you use both (2025-10-14, ll. 575–600). Real spacecraft fly both: the Shuttle carried star trackers and an inertial measurement unit, as did Aeolus (2025-10-16, ll. 126–150). MEMS technology, as in phone accelerometers, has changed what is possible.
+On an aircraft at night, a passenger can track a star through the window (reference) or, with the blind closed, feel the turn through the inner ear (inertial). The star can disappear behind cloud and the inner ear drifts, so both are used (2025-10-14, ll. 575–600). Real spacecraft fly both: the Shuttle carried star trackers and an inertial measurement unit, as did Aeolus (2025-10-16, ll. 126–150). MEMS technology, as in phone accelerometers, has changed what is possible.
 
 ## 8. On-board processing and operating modes
 
@@ -255,6 +280,9 @@ $$
 
 and asks which stabilisation type it suits. The products of inertia are large (550 and 650 kg m² against moments of 1250–2750), so the body axes are not principal axes and a spin about $z$ would wobble. It is not a spinner; it is three-axis stabilised. The eigenvalues, the principal moments, are 556, 1698 and 2996 kg m² (computed with NumPy), so even about its principal axes it has no symmetry pair to satisfy the spinner's third condition.
 
+> [!check] Trace and principal axis
+> The sum of the eigenvalues equals the trace of the matrix: $556+1698+2996=5250=1250+1250+2750$ kg m². The largest principal axis has direction cosines $(0.047,-0.362,0.931)$ in body axes, so it lies $21^\circ$ from body $z$ ($\cos^{-1}0.931=21.4^\circ$). Even the best spin axis is well off the body axis a designer would have chosen.
+
 ### Precession of a spinner under a small torque
 
 *(Suggested, not lecturer-set.)* A spinner with $I_{zz}=500\ \mathrm{kg\,m^2}$ spins at 30 rpm, so
@@ -269,11 +297,17 @@ $$
 \psi=\frac{T\,\Delta t}{H_0}=\frac{10^{-4}\times86\,400}{1571}=5.5\times10^{-3}\ \mathrm{rad}=0.32^\circ.
 $$
 
-A momentum wheel of $I=0.05\ \mathrm{kg\,m^2}$ at 6500 rpm stores only 34 N m s, so the same torque would turn it by $14.5^\circ$ in a day: a hybrid gets much less stiffness than a spinner unless it dumps or controls actively.
+A momentum wheel of $I=0.05\ \mathrm{kg\,m^2}$ at 6500 rpm stores
+
+$$
+H_w=0.05\times6500\times\frac{2\pi}{60}=34.0\ \mathrm{N\,m\,s},
+$$
+
+so the same impulse of 8.64 N m s gives $T\,\Delta t/H_w=0.254$. That is no longer small: the small-angle form says $14.5^\circ$, while $\tan^{-1}0.254=14.2^\circ$. Either way, a hybrid gets much less stiffness than a spinner unless it dumps or controls actively.
 
 ### Thrust misalignment during a burn
 
-From the lecture (2025-10-09, ll. 590–600): a 1 kN engine whose thrust line misses the centre of mass by 1 mm produces
+For example, a 1 kN engine whose thrust line misses the centre of mass by 1 mm produces
 
 $$
 T=Fd=1000\times0.001=1\ \mathrm{N\,m}.
@@ -283,7 +317,21 @@ Over a 100 s burn that is an angular impulse of 100 N m s, three times the 34 N 
 
 ### Wheel momentum for Earth-pointing on an ellipse
 
-*(Suggested, not lecturer-set; it quantifies the board example in 2025-10-14, ll. 470–520.)* A spacecraft with pitch inertia 800 kg m² is on a 500 by 6500 km altitude orbit ($r_p=6878$ km, $r_a=12\,878$ km, $e=0.304$) and must stay Earth-pointing. With $h=\sqrt{\mu a(1-e^2)}$, the orbital rate is $h/r_p^2=1.264\times10^{-3}$ rad/s at perigee and $h/r_a^2=3.60\times10^{-4}$ rad/s at apogee. The body's angular momentum about pitch therefore changes by
+*(Suggested, not lecturer-set; the elliptical-orbit pointing case of 2025-10-14, ll. 470–520.)* A spacecraft with pitch inertia 800 kg m² is on a 500 by 6500 km altitude orbit ($r_p=6878$ km, $r_a=12\,878$ km, $e=0.304$) and must stay Earth-pointing. Earth-pointing means the body turns at the orbital rate $\dot\theta$. The orbit has $a=(6878+12\,878)/2=9878$ km, and the angular momentum is
+
+$$
+h=\sqrt{\mu a(1-e^2)}=\sqrt{398\,600\times9878\times(1-0.304^2)}=5.979\times10^4\ \mathrm{km^2/s}.
+$$
+
+From $h=r^2\dot\theta$ the orbital rate at each apsis is
+
+$$
+\dot\theta_p=\frac{h}{r_p^2}=\frac{5.979\times10^4}{6878^2}=1.264\times10^{-3}\ \mathrm{rad/s},
+\qquad
+\dot\theta_a=\frac{h}{r_a^2}=\frac{5.979\times10^4}{12\,878^2}=3.60\times10^{-4}\ \mathrm{rad/s}.
+$$
+
+The body's angular momentum about pitch therefore changes by
 
 $$
 \Delta H=800\,(1.264-0.360)\times10^{-3}=0.72\ \mathrm{N\,m\,s}
@@ -307,6 +355,7 @@ every half orbit, and a reaction wheel with at least that capacity absorbs it wi
 - Chapter 6 live lectures (Dr H. Sykulska-Lawrence): `SESA2024 Lecture 2025-10-07.txt` (purposes, spinner), `SESA2024 Lecture 2025-10-09.txt` (dual spinner, hybrid, three-axis, external disturbances), `SESA2024 Lecture 2025-10-14.txt` (torquers, wheels, momentum storage, sensors) and `SESA2024 Lecture 2025-10-16.txt`, ll. 76–290 (sensors, modes, system impact)
 - `SESA2024 Lecture 2025-10-28 - Quiz 1 Worked Solutions - Drop In session.txt`
 - Fortescue, Stark and Swinerd, *Spacecraft Systems Engineering*, Ch. 9
+- Figures: `generate_ast_ch6_attitude_figures.py` (`ast_acs_loop`, `ast_gyroscopic_rigidity`, `ast_wheel_momentum_elliptic`) and `ast_momentum_dumping` (`generate_ast_extra_figures.py`). Matrix and precession numbers recomputed with NumPy.
 
 ## Self-study tasks
 

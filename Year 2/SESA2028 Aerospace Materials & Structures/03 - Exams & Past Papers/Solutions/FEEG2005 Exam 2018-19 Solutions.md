@@ -48,7 +48,7 @@ Required area $A=F/(0.5\,\mathrm{UTS})$; mass per metre $=\rho A$.
 | Martensitic tempered steel | 610 | 7.38 | 30.6 | ✓ | 5.75 | ✗ |
 | **CFRP (50 %)** | 968 | **4.65** | **24.3** | ✓ | **0.70** | ✓ |
 
-![[Figures/materials_selection_rod_and_sheet.png]]
+![[materials_selection_rod_and_sheet.png]]
 
 **Recommendation: CFRP** with fibres aligned along the rod axis. It is the only system that meets **both** the space and weight limits, with about a 3× margin on mass. It is also stiff (164 GPa axially). Caveats: design the end fittings and joints (load transfer into a composite), check compressive or buckling loads if the load reverses, impact damage, and moisture.
 

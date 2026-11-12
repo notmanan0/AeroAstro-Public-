@@ -22,7 +22,13 @@ Symmetry rules save time:
 - two symmetry axes → S is the centroid;
 - point symmetry can also force S to the centroid even when $I_{yz}\ne0$.
 
-For open channels, S often lies outside the material. That is a physical result, not a warning sign.
+For open channels, S often lies outside the material. That is a physical result, not a warning sign. For a channel of web height $h$, flange width $b$ and uniform thickness $t$ (centreline dimensions), the flange forces form a couple that the shear must balance, giving
+
+$$
+e=\frac{th^2b^2}{4I_z}=\frac{3b^2}{h+6b}
+$$
+
+from the web, on the side away from the flanges: 33.3 mm for the course example with $h=300$, $b=100$, $t=10$ mm. The structures lab measures $e$ directly as the load offset at which the two gauge readings cross.
 
 If a force acts a distance $e$ away from S, analyse it as a force through S plus a torque $T=Ve$.
 

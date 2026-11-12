@@ -13,15 +13,13 @@ sources: ["03 - Exams & Past Papers/Ch1_Revision_Questions.pdf"]
 # SESA3043 Ch1 Revision Questions - Worked Solutions
 
 > [!abstract] Sheet info
-> Blackboard revision questions for Chapter 1 (updated 10 Sep 2026). In the 1 Oct lecture: *"have a look at revision questions… on blackboard for chapter one and let us know either by email or in discussion board which question… you would like us to go to"* in Friday's tutorial (L4, ll. 9–16). Short-answer questions are answered here in full; derivation questions link to the full derivation in the topic notes, with the key steps summarised.
+> Blackboard revision questions for Chapter 1 (updated 10 Sep 2026). Choose which questions to go through in the Friday tutorial and say so by email or on the discussion board (L4, ll. 9–16, 1 Oct). Short-answer questions are answered here in full; derivation questions link to the full derivation in the topic notes, with the key steps summarised.
 
-> [!info] The 2 Oct tutorial (`02 October 2026 at 15_51_44.txt`)
-> The only requests were **§1.3 Q2 and Q3** (ll. 3–5). The lecturer set Q2 up and left the class about 10 minutes to try it (ll. 11–36):
+> [!info] The 2 Oct tutorial
+> The tutorial worked **§1.3 Q2 and Q3**. For Q2:
 > - superpose the complex potentials of a **uniform flow with $\alpha=0$** and a **general doublet with $\nu=\pi$** (source placed upstream of the sink);
 > - differentiate with respect to $z$ and split into real and imaginary parts to get $u$ and $v$;
 > - the last part asks for $C_p(\theta)$, which should reproduce the real-plane result, $C_p=1-4\sin^2\theta$.
->
-> The rest of the recording is inaudible group work. Solutions to all Chapter 1 revision questions were to be released after the tutorial (ll. 6–8). Our worked answers are below.
 
 ## 1.1 Introduction
 
@@ -98,7 +96,7 @@ $$
 
 ## 1.3 Potential flow
 
-- **Q1** Complex potentials of uniform flow, source/sink and point vortex (doublet done in lecture). → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#4. Complex potentials of the elementary flows (revision 1.3 Q1)]]
+- **Q1** Complex potentials of uniform flow, source/sink and point vortex (doublet on the slides). → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#4. Complex potentials of the elementary flows (revision 1.3 Q1)]]
 - **Q2** Cylinder from uniform flow + doublet, velocity field and $C_p=1-4\sin^2\theta$. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#6. The cylinder again, in one line (revision 1.3 Q2)]]
 - **Q3** Wall velocity $U_e=k(m+1)s^m$ and gradient $mU_e/s$ for wedge flow. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Velocity and its gradient along the wall (revision 1.3 Q3)]]
 - **Q4** (extended) Plot $\phi$ and $\psi$ contours: see the generator function `cylinder_flow` in `generate_aero_ch1b_figures.py`. → ![[aa_cylinder_flow.png|500]]
@@ -109,9 +107,9 @@ $$
 All six are answered in [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]]:
 
 - **Q1** scales; **Q2** order-of-magnitude derivation → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#3. Order-of-magnitude analysis, step by step]]
-- **Q3** $\partial p/\partial y=0$: pressure imposed by the outer flow → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Step 3: y-momentum (slides 25–31)]]
-- **Q4** $-\tfrac1\rho\,\mathrm dp/\mathrm dx=U_e\,\mathrm dU_e/\mathrm dx$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Step 4: Bernoulli at the edge (slides 33–37; revision §1.4 Q4)]]
-- **Q5** $\delta/L\sim Re^{-1/2}$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Step 2: x-momentum, term by term (slides 17–24)]]
+- **Q3** $\partial p/\partial y=0$: pressure imposed by the outer flow → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#y-momentum (slides 25–31)]]
+- **Q4** $-\tfrac1\rho\,\mathrm dp/\mathrm dx=U_e\,\mathrm dU_e/\mathrm dx$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Bernoulli at the edge (slides 33–37; revision §1.4 Q4)]]
+- **Q5** $\delta/L\sim Re^{-1/2}$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#x-momentum, term by term (slides 17–24)]]
 - **Q6** parabolic, marching solution → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Why parabolic matters (revision §1.4 Q6)]]
 
 ## Links

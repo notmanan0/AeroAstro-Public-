@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3047 formulae", "Advanced Mechanics and Control formula sheet"]
 tags: [sesa3047, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–5; Chapter 4 lectured in full in L11–L13; Chapter 5 §§5.1–5.2 and the gravity terms of §5.3 lectured in L14 (Mon 2 Nov), the rest of Chapter 5 from the handout ahead of lectures"
-sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt"]
+coverage: "Chapters 1–5 lectured in full (L2–L16); Chapter 6 §§6.1–6.5 from L17 (Mon 9 Nov)"
+sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt"]
 ---
 
 # SESA3047 Formula Sheet
 
-Current coverage: **Chapters 1–5**. Chapter 4 is lectured in full across L11 (Mon 19 Oct) and L12–L13 (Thu 22 Oct). Chapter 5 is partly lectured (L14, Mon 2 Nov); its later sections are written ahead from the handout and marked. A few handout-only pieces are marked where they appear. The lecturer will put the official exam formula sheet on Blackboard in mid-November (L14 ll. 11–16).
+Current coverage: **Chapters 1–5 and Chapter 6 §§6.1–6.5**. Chapter 4 was lectured in full (L11–L13, 19 and 22 Oct), Chapter 5 in L14–L16 (2 and 5 Nov), Chapter 6 §§6.1–6.4 in L17 (9 Nov); §6.5 was set as reading. Handout-only pieces are marked where they appear. The official exam formula sheet goes on Blackboard in mid-November 2026 (L14 ll. 11–16).
 
 ## Control-system notation
 
@@ -265,11 +265,11 @@ M=J_y\dot q+(J_x-J_z)pr+J_{xz}(p^2-r^2),\quad
 N=J_z\dot r-J_{xz}\dot p+(J_y-J_x)pq+J_{xz}qr.
 $$
 
-These Chapter 3 equations supply nine state derivatives. Chapter 4 adds the velocity dynamics and assembles all twelve below.
+These Chapter 3 equations supply nine of the twelve state derivatives; the velocity dynamics supply the rest (assembled below).
 
 ## Principal axes, aircraft inverse and rotors (Chapter 4 §4.1)
 
-L11 covers the full-inertia expansion and principal-axis case; L12 covers inertia coupling, aircraft symmetry and rotors; L13 covers the aircraft rotor terms.
+Sources: L11 (full-inertia expansion, principal axes), L12 (inertia coupling, aircraft symmetry, rotors), L13 (aircraft rotor terms).
 
 $$
 \mathbf J\mathbf e_i=\lambda_i\mathbf e_i,\quad
@@ -394,7 +394,7 @@ $$
 \end{aligned}}
 $$
 
-Four groups, twelve states (*"6 states for the dynamics, and 6 states for the kinematics"*, L13 ll. 339–340); evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
+Four groups, twelve states (six for the dynamics and six for the kinematics, L13 ll. 339–340); evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
 
 ## State-space form and linearisation (Chapter 5 §§5.1–5.2)
 
@@ -428,7 +428,7 @@ $$
 X_{g1}=-mg\,\theta_1\cos\gamma_0,\qquad Z_{g1}=-mg\,\theta_1\sin\gamma_0.\qquad(5.15)
 $$
 
-Aerodynamics (handout; not yet lectured), ring = dimensional, $\mathring X_q=\mathring X_{\dot w}=0$, no control terms:
+Aerodynamics (lectured L15), ring = dimensional constants, so linear; $\mathring X_q=\mathring X_{\dot w}=0$, no control terms:
 
 $$
 \Delta X_a=\mathring X_uu+\mathring X_ww,\quad\Delta Z_a=\mathring Z_uu+\mathring Z_ww+\mathring Z_qq+\mathring Z_{\dot w}\dot w,\quad\Delta M_a=\mathring M_uu+\mathring M_ww+\mathring M_qq+\mathring M_{\dot w}\dot w.\qquad(5.16)
@@ -441,9 +441,9 @@ $$
 =\begin{bmatrix}\mathring X_u&\mathring X_w&0&-mg\cos\gamma_0\\\mathring Z_u&\mathring Z_w&\mathring Z_q+mU_\infty&-mg\sin\gamma_0\\\mathring M_u&\mathring M_w&\mathring M_q&0\\0&0&1&0\end{bmatrix}\mathbf x,\qquad(5.18)
 $$
 
-i.e. $\mathbf E\dot{\mathbf x}=\mathbf A'\mathbf x$, so $\mathbf A=\mathbf E^{-1}\mathbf A'$.
+i.e. $\mathbf M\dot{\mathbf x}=\mathbf A^\dagger\mathbf x$, so $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$ (course names, L15). Row 4 of $\mathbf M$ must be $[0,0,0,1]$, otherwise $\det\mathbf M=0$. Gravity gives no pitching moment (it acts at the cm).
 
-Dimensional derivatives (appendix): force $\times\tfrac12\rho U_\infty^2S$, moment $\times\tfrac12\rho U_\infty^2Sc$, then divide by $U_\infty$ ($u,w$), $U_\infty/c$ ($q$) or $U_\infty^2/c$ ($\dot w$):
+Dimensional derivatives (appendix; handout only, not lectured): force $\times\tfrac12\rho U_\infty^2S$, moment $\times\tfrac12\rho U_\infty^2Sc$, then divide by $U_\infty$ ($u,w$), $U_\infty/c$ ($q$) or $U_\infty^2/c$ ($\dot w$):
 
 $$
 \mathring Z_u=Z_u\tfrac12\rho U_\infty S,\quad\mathring Z_q=Z_q\tfrac12\rho U_\infty Sc,\quad\mathring Z_{\dot w}=Z_{\dot w}\tfrac12\rho Sc,
@@ -457,8 +457,10 @@ Lateral (Practice problem 3, level trim): $\mathbf x=[v,p,r,\phi]^T$, $m\dot v=\
 
 ## Building state-space models (Chapter 5 §§5.4–5.6)
 
-Handout; not yet lectured.
+Lectured L15–L16 (Thu 5 Nov), except the block diagram (§5.6: not lectured, not examinable). Number of states = sum of the highest derivative orders; $\mathbf x$ is always $n\times1$. Inputs go in $\mathbf B\mathbf u$, never in $\mathbf A\mathbf x$. Dimension check: inner sizes of every product agree, $(n\times n)(n\times1)$, $(n\times m)(m\times1)$, $(p\times n)(n\times1)$.
 
+- **Simple lag:** $G=1/(s-T_1)$ $\Rightarrow$ $\dot w=T_1w+r$, $\mathbf A=T_1$, $\mathbf B=1$, $\mathbf C=1$; pole $s=T_1$; free response $w=w_0e^{T_1t}$, unstable for $T_1>0$.
+- **Laplace ↔ time (zero initial conditions):** $sW\leftrightarrow\dot w$, $W/s\leftrightarrow\int w\,dt$.
 - **Second-order ODEs:** each variable and its rate are states. Satellite (Lab 2), $\mathbf x=[\theta_2,\dot\theta_2,\theta_1,\dot\theta_1]^T$, $u=T_c$, $y=\theta_2$:
 
 $$
@@ -475,11 +477,13 @@ $$
 \mathbf A=\begin{bmatrix}0&1&\cdots&0\\\vdots&&\ddots&\vdots\\0&0&\cdots&1\\-a_0&-a_1&\cdots&-a_{n-1}\end{bmatrix},\quad\mathbf B=\begin{bmatrix}0\\\vdots\\0\\1\end{bmatrix},\quad\mathbf C=\begin{bmatrix}b_0&b_1&\cdots&b_{n-1}\end{bmatrix}.
 $$
 
+Only the denominator reaches $\mathbf A$: poles = eigenvalues of $\mathbf A$; zeros sit in $\mathbf C$ (the observation matrix) for this construction. Eq. 5.30: poles $-0.468,-1.653,-3.879$ (Routh column $1,6,8.5,3$), zeros $-0.2\pm0.6j$.
+
 - **Block diagram:** one state per first-order block, $b/(s+a)\Rightarrow\dot x=-ax+b\,(\text{block input})$; replace internal signals ($u_1=K_1(r_1-y_1)$, $y_1=x_1+x_2$) by states and references.
 
 ## Time-domain solution and stability (Chapter 5 §5.7)
 
-Handout; not yet lectured.
+Lectured L16 (Thu 5 Nov). Free system ($\mathbf u=\mathbf 0$), constant $\mathbf A$; matrix first in $e^{\mathbf At}\mathbf x_0$.
 
 $$
 \mathbf x(t)=e^{\mathbf At}\mathbf x_0,\qquad e^{\mathbf At}=\mathbf I+\mathbf At+\frac{(\mathbf At)^2}{2!}+\cdots\quad(\text{not element-wise}).
@@ -491,7 +495,57 @@ $$
 \mathbf x(t)=\mathbf Ve^{\boldsymbol\Lambda t}\mathbf V^{-1}\mathbf x_0=\sum_ic_ie^{\lambda_it}\mathbf v_i.\qquad(5.47)
 $$
 
-Asymptotically stable $\iff$ all $\operatorname{Re}\lambda_i<0$; unstable if any $\operatorname{Re}\lambda_i>0$; simple eigenvalues on the imaginary axis are marginal, repeated defective ones (e.g. the satellite's double zero) unstable. For $2\times2$: $\lambda^2-(\operatorname{tr}\mathbf A)\lambda+\det\mathbf A=0$; stable $\iff\operatorname{tr}\mathbf A<0$ and $\det\mathbf A>0$. Poles of $\mathbf C(s\mathbf I-\mathbf A)^{-1}\mathbf B$ are eigenvalues of $\mathbf A$.
+Asymptotically stable $\iff$ all $\operatorname{Re}\lambda_i<0$; unstable if any $\operatorname{Re}\lambda_i>0$; simple eigenvalues on the imaginary axis are marginal, repeated defective ones (e.g. the satellite's double zero) unstable. For $2\times2$: $\lambda^2-(\operatorname{tr}\mathbf A)\lambda+\det\mathbf A=0$; stable $\iff\operatorname{tr}\mathbf A<0$ and $\det\mathbf A>0$. Poles of $\mathbf C(s\mathbf I-\mathbf A)^{-1}\mathbf B$ are eigenvalues of $\mathbf A$. $\operatorname{Im}\lambda$ sets the oscillation frequency, $\operatorname{Re}\lambda$ growth or decay.
+
+Eigenvectors: solve $(\mathbf A-\lambda_i\mathbf I)\mathbf v_i=\mathbf 0$, fix one free component (scale and sign arbitrary; MATLAB/Python normalise to unit length); $\mathbf V=[\mathbf v_1\ \cdots\ \mathbf v_n]$ in the same order as $\boldsymbol\Lambda$. Triangular $\mathbf A$ (upper or lower): eigenvalues are the main-diagonal entries. $2\times2$ inverse: $[a\ b;\ c\ d]^{-1}=\frac{1}{ad-bc}[d\ {-b};\ {-c}\ a]$. L16 example: $[3\ 2;\ 0\ {-1}]$, $\lambda=3,-1$, $\mathbf v_1=[1,0]^T$, $\mathbf v_2=[1,-2]^T$, $\mathbf V^{-1}=[1\ \tfrac12;\ 0\ {-\tfrac12}]$, unstable.
+
+## Longitudinal modes and eigenvectors (Chapter 6 §§6.1–6.5)
+
+Lectured L17 (Mon 9 Nov); §6.5 set as reading. States $[u,w,q,\theta]$ (m/s, m/s, rad/s, rad), FRD body axes, trim climb angle $\gamma_0$. Details: [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]].
+
+$$
+\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x\ \Rightarrow\ \dot{\mathbf x}=\mathbf A\mathbf x,\qquad\mathbf A=\mathbf M^{-1}\mathbf A'.\qquad(6.3)
+$$
+
+The characteristic equation of the longitudinal $\mathbf A$ is the longitudinal stability quartic; it factors approximately into an SPO quadratic and a phugoid quadratic. A real $\mathbf A$ gives real eigenvalues or conjugate pairs, with conjugate eigenvectors. By hand: $2\times2$ only (L17 ll. 132–142).
+
+For a complex pair $\lambda=\sigma\pm j\omega$ (any $\zeta$ in $0\le\zeta<1$):
+
+$$
+\lambda^2+2\zeta\omega_n\lambda+\omega_n^2=0,\qquad\omega_n=|\lambda|=\sqrt{\sigma^2+\omega^2},\qquad\zeta=-\frac{\sigma}{\omega_n},\qquad\omega=\omega_n\sqrt{1-\zeta^2}.\qquad(6.16)
+$$
+
+Mass–spring–damper: $\omega_n=\sqrt{k/m}$, $\zeta=c/(2m\omega_n)$. Half-life (only for $\sigma<0$; natural log) and period:
+
+$$
+t_{1/2}=\frac{\ln0.5}{\sigma},\qquad T=\frac{2\pi}{\omega}.
+$$
+
+$\zeta>1$ over-damped, $\zeta=1$ critical, $0<\zeta<1$ under-damped (overshoots a step), $\zeta=0$ undamped, $\zeta<0$ growing.
+
+Eigenvectors: $(\mathbf A-\lambda\mathbf I)\mathbf v=\mathbf 0$; MATLAB `[V,D] = eig(A)`, unit length $\sqrt{\sum|v_i|^2}=1$, overall phase arbitrary. Start on an eigenvector and only its mode appears:
+
+$$
+\mathbf x_0=\mathbf v_k\ \Rightarrow\ \mathbf x(t)=e^{\mathbf At}\mathbf v_k=e^{\lambda_kt}\mathbf v_k;\qquad\mathbf x_0=\mathcal R(\mathbf v_k)\ \Rightarrow\ \mathbf x(t)=\mathcal R\left(e^{\lambda_kt}\mathbf v_k\right).\qquad(6.21)
+$$
+
+$|v_i|$ = relative amplitude (compare like units; $\alpha\approx w/U_\infty$), $\arg v_i$ = phase. From $\dot\theta=q$: $\theta=q/\lambda$, so $\theta$ lags $q$ by $90^\circ+\arcsin\zeta$ (decaying oscillation). Level trim: $\dot h=U_\infty\theta-w$. Long-term response is set by the least stable mode.
+
+Eq. 6.4 example: SPO $-0.4988\pm1.3237j$ ($\omega_n=1.414$, $\zeta=0.353$, $t_{1/2}=1.39$ s, $T=4.75$ s); phugoid $-0.00125\pm0.0709j$ ($\omega_n=0.0709$, $\zeta=0.018$, $t_{1/2}\approx555$ s, $T\approx89$ s).
+
+SPO approximation (§6.5): $u,\theta$ frozen (slow), $\mathring Z_{\dot w}\ll m$, $\mathring Z_q\ll mU_\infty$:
+
+$$
+\begin{bmatrix}m&0\\-\mathring M_{\dot w}&J_{yy}\end{bmatrix}\begin{bmatrix}\dot w\\\dot q\end{bmatrix}=\begin{bmatrix}\mathring Z_w&mU_\infty\\\mathring M_w&\mathring M_q\end{bmatrix}\begin{bmatrix}w\\q\end{bmatrix},\qquad(6.23)
+$$
+
+$$
+\omega_n^2=\frac{\mathring M_q\mathring Z_w-mU_\infty\mathring M_w}{mJ_{yy}},\qquad\zeta=\frac{-\left[m(\mathring M_q+U_\infty\mathring M_{\dot w})+\mathring Z_wJ_{yy}\right]}{2\omega_nmJ_{yy}}.\qquad(6.27)
+$$
+
+F-4C (178 m/s, level): full model SPO $-0.3690\pm1.3558j$ ($\omega_n=1.405$, $\zeta=0.2626$), phugoid $-0.0065\pm0.0779j$ ($\omega_n=0.0781$, $\zeta=0.0825$); SPO approximation $\omega_n=1.41$, $\zeta=0.264$.
+
+Unity feedback, gain $K$, plant $1/(s^2+2\zeta\omega_ns+\omega_n^2)$: $\omega_{cl}=\sqrt{\omega_n^2+K}$, $\zeta_{cl}=\zeta\omega_n/\omega_{cl}$, step final value $K/(\omega_n^2+K)$ (stable loop).
 
 ## Related
 
@@ -511,3 +565,5 @@ Asymptotically stable $\iff$ all $\operatorname{Re}\lambda_i<0$; unstable if any
 - [[SESA3047 5.2 - Longitudinal State-Space Model]]
 - [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams]]
 - [[SESA3047 5.4 - Time-Domain Solution and Stability]]
+
+- [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]] · [[Eigenvectors as Mode Shapes]]

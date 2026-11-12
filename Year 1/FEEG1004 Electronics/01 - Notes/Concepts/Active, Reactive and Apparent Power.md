@@ -13,30 +13,22 @@ sources: ["02 - Sources/S2 AC Analysis/S2-W25 AC Analysis 04 - AC Power - Lectur
 
 # Active, Reactive and Apparent Power
 
-## Definition
+In a sinusoidal AC circuit the complex power $\mathbf S=\mathbf V\mathbf I^*=P+jQ$ splits into **active power** $P$, the average power actually delivered, and **reactive power** $Q$, the energy that surges back and forth between the source and the circuit's inductance and capacitance. Its magnitude $|\mathbf S|$ is the **apparent power**.
 
-> [!note] Definition
->
-> $$\mathbf S = \mathbf V\mathbf I^* = P + jQ,\qquad P = VI\cos\phi\ [\mathrm W],\qquad Q = VI\sin\phi\ [\mathrm{VAR}],\qquad |\mathbf S| = VI\ [\mathrm{VA}],\qquad \mathrm{pf} = \cos\phi = \frac{P}{|S|}$$
->
-> Here $\phi = \theta_v - \theta_i$ and V, I are rms.
+With rms magnitudes $V$ and $I$ and phase difference $\phi=\theta_v-\theta_i$,
 
-## Explanation
-- **P**: the average power, dissipated in resistance ($I^2R$).
-- **Q**: energy exchanged with L and C every half-cycle. Inductors have $Q = +I^2X_L$ (absorb); capacitors $Q = -I^2X_C$ (generate).
-- P and Q are each **conserved**: the totals equal the sums over the elements.
-- **Lagging** pf means an inductive load; **leading** means capacitive.
-- Use the **conjugate** $\mathbf I^*$, otherwise Q comes out with the wrong sign.
+$$
+P=VI\cos\phi\ [\mathrm W],\qquad Q=VI\sin\phi\ [\mathrm{VAR}],\qquad |\mathbf S|=VI\ [\mathrm{VA}],\qquad \mathrm{pf}=\cos\phi=\frac{P}{|S|}.
+$$
+
+The active power is dissipated in resistance as $I^2R$. The reactive power is exchanged with inductors and capacitors every half-cycle and averages to zero: an inductor absorbs $Q=+I^2X_L$ and a capacitor generates, with $Q=-I^2X_C$. Both $P$ and $Q$ are conserved separately, so the totals for a circuit equal the sums over its elements. A **lagging** power factor indicates an inductive load and a **leading** one a capacitive load. The conjugate $\mathbf I^*$ in the definition matters: using $\mathbf I$ instead gives $Q$ with the wrong sign.
 
 ![[ee_d4_instantaneous_power.png|800]]
 
-## Examples
-- 50 V into 6 + j11.31 Ω: 91.5 W, 172.5 VAR, 195.3 VA.
-- Tutorial 8 Q3 furnace: 45.7 kW, 71.8 kVAR (pf 0.54).
+For example, $50\ \mathrm V$ across $6+j11.31\ \Omega$ gives $91.5\ \mathrm W$, $172.5\ \mathrm{VAR}$ and $195.3\ \mathrm{VA}$. The furnace in Tutorial 8 Q3 draws $45.7\ \mathrm{kW}$ and $71.8\ \mathrm{kVAR}$, a power factor of $0.54$.
 
 ## Related
-- Topic notes: [[FEEG1004 D4 - AC Power and Power Factor]]
-- Concepts: [[Power Factor Correction]] · [[RMS Value]] · [[Three-Phase Star and Delta Connections]]
 
-## Sources
-- AC Analysis 04 slides; Niu AC notes (Figs 27–35)
+- [[FEEG1004 D4 - AC Power and Power Factor]]
+- [[Power Factor Correction]] · [[RMS Value]] · [[Three-Phase Star and Delta Connections]]
+- Sources: AC Analysis 04 slides; Niu AC notes (Figs 27–35)

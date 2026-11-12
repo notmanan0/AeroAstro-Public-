@@ -29,7 +29,7 @@ sources: ["02 - Sources/FEM Lectures/Lecture_4_Linear_elastic_FEA_Final_2.pdf", 
 > - **Common mistakes:** fixing every bottom node in both directions (over-constraint and false corner stresses); trusting a peak stress from a single coarse mesh.
 > - **Practise:** [[#Worked example: nozzle yield pressure and the two criteria]] · [[SESA2029 FEA Worked Examples]]
 
-All three labs are linear elastic analyses, so this lecture sets out the assumptions, limits and practical pitfalls of the method (2026-02-06 11:01, ll. 1–10).
+The three labs are all linear elastic analyses, so the assumptions, limits and practical pitfalls of the method apply to each (2026-02-06 11:01, ll. 1–10).
 
 "Linear" means the structure behaves like a single spring: double the load and every displacement, strain and stress doubles. That requires the material to stay on the straight part of its stress–strain curve, and the structure to deform so little that its geometry, and therefore its stiffness, is effectively unchanged. Under those conditions one analysis answers every load level, which is what makes linear FEA cheap, reliable and scalable, and why Airbus and Rolls-Royce still size structures with it before any nonlinear work (ll. 26–35).
 
@@ -39,10 +39,7 @@ The first assumption is a linear elastic material: stress proportional to strain
 
 The second is small-deformation theory: the deformation is small enough not to change the structural response, so the stiffness matrix stays constant (ll. 11–25). With large deformations the stiffness depends on the amplitude of the response, which affects both stress and dynamic predictions. Lightweight composite structures that flex a lot need nonlinear procedures, an active research area and the subject of [[SESA2029 B9 - Nonlinear FE Analysis|B9]].
 
-> [!warning] Lecture slip (2026-02-06 11:01, ll. 21–25)
-> "The A350 and A380 [are] made by the composite materials." The A350 airframe is about half composite by weight, but the A380 is mostly aluminium (composites roughly a quarter); the B787 is the other composite-intensive example.
-
-Whether linear analysis is sufficient depends on three questions (ll. 61–95). Where is the analysis in the design cycle? Early on, hand sizing with closed-form solutions for beams, cylinders and spheres may be more appropriate than any FEA. Is the structure likely to buckle? Small-deformation theory does not pick up buckling, yet it is a main failure mode of aerospace structures: wing skins are divided into panels between stiffeners precisely to prevent it, and if buckling is the mode to avoid, a buckling analysis is needed. Will the material deform plastically? Linear FEA cannot model plasticity, but it does give the load at which first yield occurs.
+Whether linear analysis is sufficient depends on three things (ll. 61–95). The first is where the analysis sits in the design cycle: early on, hand sizing with closed-form solutions for beams, cylinders and spheres may be more appropriate than any FEA. The second is whether the structure is likely to buckle. Small-deformation theory does not pick up buckling, yet it is a main failure mode of aerospace structures: wing skins are divided into panels between stiffeners precisely to prevent it, and if buckling is the mode to avoid, a buckling analysis is needed. The third is whether the material will deform plastically. Linear FEA cannot model plasticity, but it does give the load at which first yield occurs.
 
 ## 2. The procedure in practice
 
@@ -50,9 +47,17 @@ The three stages from [[SESA2029 B1 - Introduction to FEA and the Matrix Displac
 
 Geometry can be built in the FE program or imported from SolidWorks or CATIA. Element choice is a trade-off between accuracy and cost: the lab beam can use BEAM188 or BEAM189, which differ in number of nodes and in how well they represent the theoretical deformation (ll. 121–135). The example bracket uses 10-node tetrahedra, with nodes at the corners and mid-edges, which mesh irregular shapes easily ([[Solid Elements (Tetrahedra and Hexahedra)]]). Each tetrahedral node has three translational DOF and no rotations, because rotation is represented by the relative translations of several nodes (ll. 171–185).
 
-Linear stress analysis needs $E$ and Poisson's ratio $\nu$; modal analysis also needs the density. Material choice is driven by cost (aluminium cheapest, then steel, then composites), manufacturability (metals are easy, composites are laid up ply by ply), performance and availability (ll. 141–170). Composites drive modern aerospace through their high specific stiffness: a composite fan blade is lighter, so its centrifugal load is lower and a larger fan diameter becomes possible. (The lecture cites the "Trent 7000 XWB" here, ll. 156–160; the Trent XWB and Trent 7000 actually use hollow titanium blades, and composite fans are found on GE's GEnx and GE9X and Rolls-Royce's UltraFan demonstrator.)
+Linear stress analysis needs $E$ and Poisson's ratio $\nu$; modal analysis also needs the density. Material choice is driven by cost (aluminium cheapest, then steel, then composites), manufacturability (metals are easy, composites are laid up ply by ply), performance and availability (ll. 141–170). Composites drive modern aerospace through their high specific stiffness: a composite fan blade is lighter, so its centrifugal load is lower and a larger fan diameter becomes possible.
 
-The software has no units; it multiplies numbers. Geometry, material properties and loads must therefore use one consistent set: SI (m, N, Pa, kg/m³), or mm, N, MPa with density in tonne/mm³ (ll. 51–60, 166–170). Mixing millimetre geometry with $E$ in pascals is a classic error.
+The software has no units; it multiplies numbers. Geometry, material properties and loads must therefore use one consistent set: SI (m, N, Pa, kg/m³), or mm, N, MPa with density in tonne/mm³ (ll. 51–60, 166–170). Mixing millimetre geometry with $E$ in pascals is a common error. The mm–N–MPa set is consistent because $1\ \mathrm{MPa}=1\ \mathrm{N/mm^2}$ and a force of 1 N accelerates 1 tonne at $1\ \mathrm{mm/s^2}$. For aluminium that means
+
+$$
+E=70\ \mathrm{GPa}=70\,000\ \mathrm{MPa},
+\qquad
+\rho=2700\ \mathrm{kg/m^3}=\frac{2.7\ \mathrm t}{10^9\ \mathrm{mm^3}}=2.7\times10^{-9}\ \mathrm{t/mm^3}.
+$$
+
+Entering $\rho=2700$ with millimetre geometry makes the model $10^{12}$ times too heavy and its natural frequencies $10^6$ times too low, a mistake that shows up immediately in a modal analysis ([[SESA2029 B8 - Modal Analysis|B8]]).
 
 Supports are applied as prescribed displacements at nodes, fixed in some or all of $x$, $y$, $z$; the bracket's back face is fully fixed as if bonded to a rigid foundation (ll. 166–190). Loads go on directly as nodal forces or element pressures, or indirectly on the solid model's faces and edges, from which the program transfers them to the mesh. APDL can script any load function, so a CFD pressure map can be applied to a wing; since the deformed wing changes the CFD boundary, the two are iterated in an aeroelastic analysis at a later design stage (ll. 191–210).
 
@@ -62,16 +67,17 @@ Post-processing starts with the deformed shape, automatically scaled to be visib
 
 ### The answer is approximate
 
-More elements give a better approximation, and a graduated mesh puts more of them where the stress is high (ll. 266–295). In the lecture's T-section example the peak normal stress rises from 393.6 MPa on a uniform coarse mesh to 417.1 MPa with a graded mesh refined round the fillet, so a single coarse mesh underestimates the peak. A convergence study is part of every stress analysis; the plate with a hole in lab 2 is where it is practised ([[Mesh Convergence and Grid Independence]]).
-
-> [!warning] Lecture slip (2026-02-06 11:01, ll. 281–290)
-> The refined value is read out as 470 MPa. The slide's contour legend gives a maximum of 417.1 MPa for the refined mesh (and 393.6 MPa for the coarse one).
+More elements give a better approximation, and a graduated mesh puts more of them where the stress is high (ll. 266–295). In the T-section example the peak normal stress rises from 393.6 MPa on a uniform coarse mesh to 417.1 MPa with a graded mesh refined round the fillet, so a single coarse mesh underestimates the peak. A convergence study is part of every stress analysis; the plate with a hole in lab 2 is where it is practised ([[Mesh Convergence and Grid Independence]]).
 
 ## 3. Rigid-body motion and over-constraint
 
-If the model is not constrained, it can move through space undeformed and strain-free; $[K]$ is singular and the solver usually fails (ll. 321–335). Try solving the lab beam without its clamp: there is no answer, because the structure just floats. A 3D body has six rigid-body modes, three translations and three rotations; a 2D body has three. Removing them all without over-constraining the model is harder than it sounds ([[Boundary Conditions and Rigid Body Modes]]).
+If the model is not constrained, it can move through space undeformed and strain-free; $[K]$ is singular and the solver usually fails (ll. 321–335). Solving the lab beam without its clamp has no answer, because the structure floats free. A 3D body has six rigid-body modes, three translations and three rotations; a 2D body has three. Removing them all without over-constraining the model is harder than it sounds ([[Boundary Conditions and Rigid Body Modes]]).
 
-The lecture's example is a 2D block resting on a surface with pressure on top (ll. 331–350). Fixing $u_y=0$ at the bottom nodes prevents translation in $y$ and rotation about $z$, but not sliding in $x$, so a rigid-body mode remains. Fixing both $u_x$ and $u_y$ at every bottom node stops the rigid-body motion but over-constrains the model: as the block is squashed, Poisson's effect makes it want to expand sideways, and the fixed bottom cannot, so false stress concentrations appear at the bottom corners instead of the uniform stress of the real block. The right answer is $u_y=0$ along the bottom and $u_x=0$ at a single point, or on a line of symmetry. Choosing constraints needs thought before the model is built, and sometimes trial and error.
+For a 2D block resting on a surface with pressure on top (ll. 331–350), fixing $u_y=0$ at the bottom nodes prevents translation in $y$ and rotation about $z$, but not sliding in $x$, so a rigid-body mode remains. Fixing both $u_x$ and $u_y$ at every bottom node stops the rigid-body motion but over-constrains the model: as the block is squashed, Poisson's effect makes it want to expand sideways, and the fixed bottom cannot, so false stress concentrations appear at the bottom corners instead of the uniform stress of the real block. The right answer is $u_y=0$ along the bottom and $u_x=0$ at a single point, or on a line of symmetry. Choosing constraints needs thought before the model is built, and sometimes trial and error.
+
+![[dam_block_constraints.png|900]]
+
+The figure solves the block both ways with a small plane-stress code (2:1 block, $\nu=0.3$, 40 by 20 bilinear elements). With the correct supports the stress is exactly uniaxial, $\sigma_{yy}=-p$ everywhere and $\sigma_e=p$, and the block is free to widen by Poisson's effect. With every bottom node pinned the bottom cannot widen, so it is pulled in by friction-like shear reactions: the von Mises stress drops to $0.82p$ in the middle of the base and rises to $1.46p$ at the bottom corners. Those corner peaks are an artefact of the supports, not of the structure, and on a finer mesh they would keep rising, because a fixed corner of this kind is a singularity ([[Stress Singularities]]).
 
 ### Symmetry
 
@@ -79,7 +85,7 @@ When geometry, loads and supports are symmetric about one or more planes, only p
 
 ## 4. Yield criteria
 
-Which combination of the six stress components causes yield? Two criteria are used in industry, both written in the principal stresses $\sigma_1$, $\sigma_2$, $\sigma_3$ (ll. 291–325; [[Von Mises and Tresca Yield Criteria]]). Tresca (maximum shear stress) predicts yield when
+Two criteria used in industry say which combination of the six stress components causes yield, both written in the principal stresses $\sigma_1$, $\sigma_2$, $\sigma_3$ (ll. 291–325; [[Von Mises and Tresca Yield Criteria]]). Tresca (maximum shear stress) predicts yield when
 
 $$
 \max\left(|\sigma_1-\sigma_2|,\ |\sigma_2-\sigma_3|,\ |\sigma_3-\sigma_1|\right)=\sigma_Y,
@@ -90,6 +96,34 @@ and von Mises (distortion energy) when
 $$
 \sigma_e=\sqrt{\tfrac12\left[(\sigma_1-\sigma_2)^2+(\sigma_2-\sigma_3)^2+(\sigma_3-\sigma_1)^2\right]}=\sigma_Y .
 $$
+
+To compare the two, order the principal stresses $\sigma_1\ge\sigma_2\ge\sigma_3$ and write $a=\sigma_1-\sigma_2\ge0$ and $b=\sigma_2-\sigma_3\ge0$. The largest difference is then $\sigma_1-\sigma_3=a+b$, so the Tresca stress is
+
+$$
+\sigma_T=a+b,
+\qquad
+\sigma_T^2=a^2+2ab+b^2.
+$$
+
+The von Mises bracket is $a^2+b^2+(a+b)^2=2(a^2+ab+b^2)$, so
+
+$$
+\sigma_e^2=a^2+ab+b^2.
+$$
+
+Divide:
+
+$$
+\frac{\sigma_T^2}{\sigma_e^2}=\frac{a^2+2ab+b^2}{a^2+ab+b^2}=1+\frac{ab}{a^2+ab+b^2}.
+$$
+
+The last fraction is zero when $a$ or $b$ is zero (two equal principal stresses, as in uniaxial tension) and largest when $a=b$, where it is $\tfrac13$. Hence
+
+$$
+1\le\frac{\sigma_T}{\sigma_e}\le\frac{2}{\sqrt3}=1.155:
+$$
+
+Tresca always reports an equal or higher stress, so it predicts yield at an equal or lower load, and the two differ by at most 15.5 %, in pure shear.
 
 Tresca is usually regarded as conservative compared with tests, though there is very limited multiaxial test evidence; von Mises is thought to predict yield more accurately but is not always conservative. Von Mises is the usual choice in practice and is what the lab beam's equivalent stress plot shows. ANSYS calls the Tresca quantity the stress intensity, $SI=2\tau_{max}$.
 
@@ -103,7 +137,7 @@ In service the load is kept well below $P_Y$ by a safety factor that covers manu
 
 ## Worked example: nozzle yield pressure and the two criteria
 
-The lecture's nozzle intersection has $\sigma_Y=340$ MPa and is analysed at $P=2.5$ MPa (ll. 306–325).
+The nozzle-intersection example has $\sigma_Y=340$ MPa and is analysed at $P=2.5$ MPa (ll. 306–325).
 
 With von Mises, the maximum equivalent stress is $\sigma_{e,max}=238.6$ MPa, so
 
@@ -119,10 +153,10 @@ $$
 
 lower, so Tresca is the conservative choice here. With a safety factor of 1.5 on the von Mises result, the allowable working pressure would be $3.56/1.5=2.37$ MPa.
 
-> [!warning] Slide slip (Lecture 4, slide 18; 2026-02-06 11:01, l. 319)
-> The slide and the lecture give the Tresca yield pressure as 3.20 MPa; $2.5\times340/256.1=3.32$ MPa.
+Tresca is the more conservative because it never reports a lower stress than von Mises. For a plane-stress state $\sigma_1=200$ MPa, $\sigma_2=100$ MPa, $\sigma_3=0$, Tresca gives the largest difference, 200 MPa, while von Mises gives $\sqrt{\tfrac12(100^2+100^2+200^2)}=173.2$ MPa, a ratio of 1.155 because $a=b=100$ MPa. For pure shear, $\sigma_1=150$, $\sigma_3=-150$, $\sigma_2=0$, the two give 300 and 259.8 MPa, again the maximum ratio. In the nozzle the ratio is $256.1/238.6=1.073$, inside the band derived in [[#4. Yield criteria]].
 
-Why is Tresca the more conservative? For a plane-stress state $\sigma_1=200$ MPa, $\sigma_2=100$ MPa, $\sigma_3=0$, Tresca gives the largest difference, 200 MPa, while von Mises gives $\sqrt{\tfrac12(100^2+100^2+200^2)}=173.2$ MPa. For pure shear, $\sigma_1=150$, $\sigma_2=-150$, $\sigma_3=0$, the two give 300 and 259.8 MPa. The Tresca stress always lies between 1 and $2/\sqrt3\approx1.155$ times the von Mises stress, so it predicts yield at an equal or lower load (values checked in Python).
+> [!check] A uniaxial state gives the same answer either way
+> For uniaxial tension $\sigma_1=\sigma$, $\sigma_2=\sigma_3=0$: Tresca gives $\sigma$ and von Mises $\sqrt{\tfrac12(\sigma^2+0+\sigma^2)}=\sigma$. Both criteria are calibrated to the tensile test, so they can only disagree under multiaxial stress, which is why the limited multiaxial evidence matters.
 
 ## Links
 
@@ -136,7 +170,7 @@ Why is Tresca the more conservative? For a plane-stress state $\sigma_1=200$ MPa
 ## Sources
 
 - FEA Lecture 4 slides, `Lecture_4_Linear_elastic_FEA_Final_2.pdf` (stress values read from the slide contour legends), with transcript `SESA2029 Lecture 2026-02-06 - 1101.txt` (Dr J. Yuan)
-- Worked example recomputed in Python
+- Worked example recomputed in Python. Figures: `01 - Notes/Figures/generate_dam_b2_figures.py` (own Q4 plane-stress solver)
 
 ## Self-study tasks
 
@@ -145,9 +179,31 @@ Why is Tresca the more conservative? For a plane-stress state $\sigma_1=200$ MPa
 - [ ] State the two assumptions of linear elastic FEA and when linear analysis is not sufficient (2026-02-06 11:01, ll. 1–95). → [[#1. The two assumptions and their limits]]
 - [ ] Explain the block-on-a-surface constraint problem and the correct supports (ll. 331–350). → [[#3. Rigid-body motion and over-constraint]]
 - [ ] Compute the yield pressure by von Mises and Tresca for the nozzle (ll. 306–325). → [[#Worked example: nozzle yield pressure and the two criteria]]
-- [ ] Finish lab 1 and the second example-sheet question ("please independently for a second example", ll. 371–380). → [[SESA2029 FEA Worked Examples]]
+- [ ] Finish lab 1 and the second example-sheet question (set for independent work, ll. 371–380). → [[SESA2029 FEA Worked Examples]]
 
 ### Further practice
 
 - [ ] Lab 2: refine the mesh round the hole and see how the peak stress changes (ll. 286–295). → [[#The answer is approximate]] · [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)]]
-- [ ] Show that the Tresca stress is between 1 and $2/\sqrt3$ times the von Mises stress (suggested, not lecturer-set). → [[#Worked example: nozzle yield pressure and the two criteria]]
+- [ ] Show that the Tresca stress is between 1 and $2/\sqrt3$ times the von Mises stress (suggested, not lecturer-set). → [[#4. Yield criteria]]
+
+## Transcript and slide slips
+
+> [!warning] Lecture slip (2026-02-06 11:01, ll. 21–25)
+> Where: [[#1. The two assumptions and their limits]].
+>
+> "The A350 and A380 [are] made by the composite materials." The A350 airframe is about half composite by weight, but the A380 is mostly aluminium (composites roughly a quarter); the B787 is the other composite-intensive example.
+
+> [!warning] Lecture slip (2026-02-06 11:01, ll. 281–290)
+> Where: [[#The answer is approximate]].
+>
+> The refined value is read out as 470 MPa. The slide's contour legend gives a maximum of 417.1 MPa for the refined mesh (and 393.6 MPa for the coarse one).
+
+> [!warning] Slide slip (Lecture 4, slide 18; 2026-02-06 11:01, l. 319)
+> Where: [[#Worked example: nozzle yield pressure and the two criteria]].
+>
+> The slide and the lecture give the Tresca yield pressure as 3.20 MPa; $2.5\times340/256.1=3.32$ MPa.
+
+> [!warning] Lecture slip: composite fan blades (2026-02-06 11:01, ll. 156–160)
+> Where: [[#2. The procedure in practice]].
+>
+> The composite-fan example is attributed to the "Trent 7000 XWB". The Trent XWB and Trent 7000 use hollow titanium fan blades; composite fan blades are found on GE's GEnx and GE9X and on Rolls-Royce's UltraFan demonstrator. The point about lighter blades allowing larger fans stands.

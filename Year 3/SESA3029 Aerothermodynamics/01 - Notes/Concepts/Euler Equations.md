@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Lecture4-1.pdf", "02 - Sources/Lectures/Lecture
 
 # Euler Equations
 
-The Euler equations are the conservation laws of mass, momentum and energy for a compressible fluid with no viscosity and no heat conduction: the Navier–Stokes equations with the viscous terms taken out. In 2D Cartesian form, as derived in SESA3029 Lecture 4.1:
+The Euler equations are the conservation laws of mass, momentum and energy for a compressible fluid with no viscosity and no heat conduction: the Navier–Stokes equations with the viscous terms taken out. In 2D Cartesian form (derived in [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|SESA3029 W07a]]):
 
 $$
 \frac{\partial}{\partial t}\begin{bmatrix}\rho\\ \rho u\\ \rho v\\ \rho e_t\end{bmatrix}

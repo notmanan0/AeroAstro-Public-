@@ -12,7 +12,7 @@ sheet: "Specimen Test 12 (booklet) + Module 12 work scheme: Examples 10.14, 10.1
 theory_notes: ["[[MATH1054 M12 - Differential Equations II]]"]
 key_concepts: ["[[Homogeneous First-Order ODEs]]", "[[Exact Differential Equations]]", "[[Integrating Factor Method]]"]
 status: complete
-sources: ["tmp/md/module_12_differential_equations_ii.md", "02 - Sources/Modern Engineering Mathematics.pdf (§10.5.2–10.5.4)"]
+sources: ["02 - Sources/Modern Engineering Mathematics.pdf (§10.5.5, §10.5.7, §10.5.9, §10.2.2–10.2.3, §10.7)"]
 ---
 
 # MATH1054 M12 Solutions - Differential Equations II
@@ -193,5 +193,5 @@ For $(t+e^x)\dot x+2\cos t+x=0$: $\partial_t(t+e^x)=1$ and $\partial_x(2\cos t+x
 $$\boxed{tx+e^x+2\sin t=C}$$
 
 ## Sources
-- Transcribed problem statements: `tmp/md/module_12_differential_equations_ii.md`
-- James, *Modern Engineering Mathematics* (6th ed.) §10.5.2–10.5.4; MATH1054 Module Booklet, Module 12
+- Problem statements: Module 12 work scheme, `02 - Sources/Course Booklets & Solutions/Module Booklet.pdf`
+- James, *Modern Engineering Mathematics* (6th ed.) §10.5.5, §10.5.7, §10.5.9, §10.2.2–10.2.3, §10.7; MATH1054 Module Booklet, Module 12

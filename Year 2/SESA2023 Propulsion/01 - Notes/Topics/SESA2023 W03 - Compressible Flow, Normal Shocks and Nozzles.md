@@ -30,7 +30,7 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
 > [!summary]- Exam use: quick path
 > - **Use it when:** a nozzle, duct or shock problem gives a reservoir ($p_0$, $T_0$) or a local state and asks for $M$, $p$, $T$, $\dot m$, an area or the thrust.
 > - **Assumptions:** perfect gas, steady, quasi-1D, adiabatic, inviscid; isentropic everywhere except across a shock; $\gamma=1.4$ for air unless told (rocket gases differ).
-> - **Method:** 1. Decide the regime: is the throat choked ($p_b<p^*$, or any supersonic flow downstream)? 2. Isentropic ratios from $M$: $T_0/T$, $p_0/p$, $\rho_0/\rho$. 3. Choked mass flow $\dot m=0.0404\,A_tp_0/\sqrt{T_0}$ (air) or $\rho^*a^*A_t$. 4. Across a shock use the normal-shock relations or table; restart the isentropic relations with the new $p_0$. 5. Thrust $F=\dot mU_e+A_e(p_e-p_b)$.
+> - **Method:** 1. Decide the regime: is the throat choked ($p_b<p^*$ for a converging nozzle; $M=1$ at the throat of a converging–diverging nozzle, regime 3 onwards)? 2. Isentropic ratios from $M$: $T_0/T$, $p_0/p$, $\rho_0/\rho$. 3. Choked mass flow $\dot m=0.0404\,A_tp_0/\sqrt{T_0}$ (air) or $\rho^*a^*A_t$. 4. Across a shock use the normal-shock relations or table; restart the isentropic relations with the new $p_0$. 5. Thrust $F=\dot mU_e+A_e(p_e-p_b)$.
 > - **Common mistakes:** applying isentropic relations straight across a shock; using the reservoir $p_0$ downstream of a shock.
 > - **Practise:** [[#Worked example – shock in the diverging section]] · [[SESA2023 Problem Sheet 3 Solutions]] Q3.3–Q3.4
 
@@ -47,7 +47,7 @@ The full compressible Navier–Stokes equations (mass, momentum, energy with den
 - 1-D flow along $x$ (one momentum equation, not three);
 - steady flow (all $\partial/\partial t$ terms vanish);
 - inviscid flow (no stresses, no viscous heating);
-- **no thermal diffusion**.
+- no thermal diffusion.
 
 That leaves
 
@@ -85,9 +85,9 @@ $$
 \rho_1U_1 = \rho_2U_2,\qquad \tfrac12U_2^2+\int_1^2\frac{dp}{\rho} = \tfrac12U_1^2,\qquad h_1+\tfrac12U_1^2 = h_2+\tfrac12U_2^2
 $$
 
-The pressure integral cannot be done until we know how $\rho$ depends on $p$. In incompressible flow $\rho$ is constant and it gives Bernoulli, $p/\rho+\tfrac12U^2$ = const. In compressible flow $p$, $\rho$ and $T$ are coupled (10 Feb, ll. 123–134).
+The pressure integral cannot be done until the dependence of $\rho$ on $p$ is known. In incompressible flow $\rho$ is constant and it gives Bernoulli, $p/\rho+\tfrac12U^2$ = const. In compressible flow $p$, $\rho$ and $T$ are coupled (10 Feb, ll. 123–134).
 
-Derivations can be examined, but the lecturer advised against memorising every step (10 Feb, ll. 295–308): "Are we expected to memorize the derivations?" "Yes. Derivation can be part of the [exam]. But… don't memorize all the steps." Start from conservation of mass and momentum (and energy), and work towards the result, which is in the data book.
+Derivations can be examined, but don't memorise every step (10 Feb, ll. 295–308). Start from conservation of mass and momentum (and energy), and work towards the result, which is in the data book.
 
 ---
 
@@ -133,9 +133,6 @@ $$
 - $p_0$ and $\rho_0$ are constant only if the flow is also isentropic (they used the isentropic relation).
 - "Pressure" with no qualifier means static pressure (10 Feb, ll. 145–147).
 - Static and stagnation values coincide only when the fluid is at rest in the chosen frame.
-
-> [!warning] Transcript slip (10 Feb, ll. 141–143)
-> "All the kinetic energy has been transformed to entropy. And we consider this quantity as the stagnation entropy." Both words should be enthalpy: the kinetic energy becomes enthalpy, giving the stagnation enthalpy $h_0$. (The entropy does *not* change in this reversible, adiabatic deceleration.)
 
 ---
 
@@ -207,10 +204,6 @@ $$
 
 The speed of sound depends on the gas (through $\gamma$ and $R$) and on its temperature only (10 Feb, ll. 231–234).
 
-> [!warning] Transcript slips in the derivation (10 Feb, ll. 171, 198–199)
-> - l. 171: "Let's make some assumption that this process is adiabatic and irreversible". It must be reversible (isentropic), which is what lets the lecture use $p\propto\rho^\gamma$ at l. 228.
-> - ll. 198–199: the mass result is transcribed as "rho du is equal to the product A du". It is $\rho\,dU=a\,d\rho$ (speed of sound $a$, not area $A$).
-
 ### Worked example – same speed, different Mach number (10 Feb, ll. 258–270)
 
 A jet flies at M 1.1 where $T=220$ K. Air: $\gamma=1.4$, $R=287$.
@@ -259,9 +252,9 @@ $$
 
 Four unknowns ($p_2$, $\rho_2$, $U_2$, $h_2$) and three equations: close with a perfect gas.
 
-### The board derivation: energy in pressure–density form (10 Feb, ll. 396–463)
+### Energy equation in pressure–density form
 
-The lecturer did this "like in an exam where you don't know what to do": look up the target in the data book and work towards it.
+Treat it as you would in an exam: look up the target in the data book and work towards it.
 
 Start from $h_2-h_1=c_p(T_2-T_1)$. Write $c_p$ in terms of $\gamma$ and $R$. From $\gamma=c_p/c_v$ and $R=c_p-c_v$:
 
@@ -287,9 +280,9 @@ $$
 \boxed{\frac{\gamma}{\gamma-1}\left(\frac{p_2}{\rho_2}-\frac{p_1}{\rho_1}\right) = \tfrac12\left(U_1^2-U_2^2\right)}
 $$
 
-### From the jump conditions to the Mach-number relations (the lecture skips this)
+### From the jump conditions to the Mach-number relations
 
-The lecture goes straight from here to the four Rankine–Hugoniot relations ("I will not ask to remember these, they are written in the data book", l. 472). Here is one clean route.
+The four Rankine–Hugoniot relations are in the data book and need not be memorised (l. 472); they follow from the jump conditions as below.
 
 **Step 1: energy with the critical speed.** Write the energy equation with $h=c_pT=a^2/(\gamma-1)$. At the (imaginary) sonic state of the same $T_0$, $U=a=a^*$, so
 
@@ -430,9 +423,6 @@ Properties to remember (10 Feb, ll. 475–491; 17 Feb, ll. 51–62):
 - $p_2/p_1$ grows fastest and without limit; $T_2/T_1$ also grows without limit.
 - $T_0$ unchanged; $p_0$ falls.
 
-> [!warning] Transcript slip (17 Feb, l. 51)
-> "The Mach number after a shock is always negative." It is always less than one.
-
 The formula and the normal-shock table are both in the data book and give "exactly the same" answer (10 Feb, ll. 536–561). Use the table when $M_1$ is a round number and the formula when you would otherwise have to interpolate; a small Python code on Blackboard gives the same values.
 
 ### Worked example – normal shock at Mach 2 (10 Feb, ll. 510–535)
@@ -471,10 +461,6 @@ $$
 > - $T_{02}=T_{01}=450$ K ✔ (adiabatic). $p_{02}<p_{01}$ ✔ (irreversible). $M_2<1$ ✔.
 > - $\Delta s/R=-\ln0.721=0.327$, positive ✔.
 > - Normal-shock table at $M_1=2.00$: $M_2=0.5774$, $p_{02}/p_{01}=0.7209$ ✔.
-
-> [!warning] Transcript slips in this example (10 Feb, ll. 530–535)
-> - "The temperature after the shock is lower… is 250 and now becomes 442." The temperature rises, to 422 K ($250\times1.6875$).
-> - "You see the static temperature is the same… while the static pressure is lower because it is isentropic." It is the stagnation temperature that is the same, and the stagnation pressure that is lower, because the shock is not isentropic.
 
 ---
 
@@ -530,9 +516,6 @@ A converging nozzle fed by a large reservoir at $p_0$, discharging into a back p
 - $p_b=p^*$: $M_e=1$ at the exit.
 - $p_b<p^*$: the exit stays at $p_e=p^*$, $M_e=1$. The flow is choked: $\dot m$ and everything inside the nozzle no longer depend on $p_b$, and $\dot m$ is the maximum possible.
 
-> [!warning] Transcript slip (13 Feb, ll. 136–137)
-> "If the pressure becomes lower than the back pressure, so the pressure outside, will be lower than the critical pressure…" garbles the condition. Choking happens when the back pressure falls below the critical pressure $p^*$.
-
 ### Converging–diverging (de Laval) nozzle: eight regimes
 
 As $p_b$ falls (notes Fig. 3.9; 13 Feb, ll. 152–207; reviewed 17 Feb, ll. 100–130):
@@ -542,9 +525,9 @@ As $p_b$ falls (notes Fig. 3.9; 13 Feb, ll. 152–207; reviewed 17 Feb, ll. 100�
 3. Sonic at the throat only; subsonic deceleration after it. The flow is now choked, and the converging part never changes again.
 4. Supersonic after the throat, then a normal shock in the diverging section; subsonic deceleration to $p_b$. The shock moves downstream as $p_b$ falls.
 5. Normal shock exactly at the exit plane.
-6. **Over-expanded**: no shock inside; oblique shocks and "shock diamonds" outside.
-7. **Design**: $p_e=p_b$, no waves.
-8. **Under-expanded**: $p_b<p_e$; expansion waves outside.
+6. No shock inside; the jet is **over-expanded**, with oblique shocks and shock diamonds outside.
+7. The **design** condition: $p_e=p_b$, no waves.
+8. $p_b<p_e$: the jet is **under-expanded**, with expansion waves outside.
 
 ![[prop_cd_nozzle_regimes.png|680]]
 
@@ -620,18 +603,18 @@ $$
 \rho_0 = \frac{10\times10^5}{287\times400} = 8.71\ \mathrm{kg/m^3},\qquad \dot m = 0.0404\times\frac{0.1\times10^6}{\sqrt{400}} = 202\ \mathrm{kg/s}
 $$
 
-Thrust (lecture: momentum term only):
+Thrust (momentum term only):
 
 $$
 F = \dot mU_e = 202\times598 = 121\ \mathrm{kN}
 $$
 
-> [!check] The lecture's thrust assumes a matched exit
+> [!check] This thrust assumes a matched exit
 > $F=\dot mU_e$ holds only if $p_b=p_e=1.28$ bar. The exit area is $A_e=A_t(A/A^*)_{M=2}=0.1\times1.6875=0.169$ m². Discharging into 1 bar instead, the pressure thrust adds $(1.28-1.00)\times10^5\times0.169=4.7$ kN, giving 125 kN.
 
 ### Worked example – shock in the diverging section
 
-From the 17 Feb review (ll. 145–205; slides 11–16 in the Week 4 deck). A C–D nozzle runs off-design with a normal shock in the diverging section. Reservoir air at $p_0=400$ kPa, $T_0=800$ K; $A_t=0.2$ m²; $M_1=2.44$ just upstream of the shock; $A_e=0.7$ m². Find the area at the shock.
+A C–D nozzle runs off-design with a normal shock in the diverging section. Reservoir air at $p_0=400$ kPa, $T_0=800$ K; $A_t=0.2$ m²; $M_1=2.44$ just upstream of the shock; $A_e=0.7$ m². Find the area at the shock (17 Feb, ll. 145–205; Week 4 slides 11–16).
 
 The flow is isentropic from the reservoir to the shock and from the shock to the exit; only the shock itself is not (17 Feb, ll. 161–166).
 
@@ -671,7 +654,7 @@ $$
 
 After the shock (table at $M_1=2.44$): $M_2=0.519$, $T_2/T_1=2.079$, $p_2/p_1=6.779$, $p_{02}/p_{01}=0.523$, so $T_2=759$ K, $p_2=174$ kPa, $p_{02}=209$ kPa.
 
-**Exit (extension; the lecturer says "if needed… we can find also the temperature and the pressure" at the exit, ll. 201–205).** The new reference throat is
+**Exit (extension: the exit temperature and pressure).** The new reference throat is
 
 $$
 A_2^* = \frac{A_t}{p_{02}/p_{01}} = \frac{0.2}{0.5234} = 0.382\ \mathrm{m^2}
@@ -692,15 +675,12 @@ and that $p_e$ is the back pressure that holds the shock at $A=0.499$ m².
 > - Behind the shock, $(A/A^*)_{M_2=0.519}=1.305$; $0.499/1.305=0.382$ m² $=A_2^*$ ✔.
 > - $T_0$ is 800 K throughout; $p_0$ drops from 400 to 209 kPa at the shock.
 
-> [!warning] Transcript slip (17 Feb, ll. 161–162)
-> "The only known isentropic part of this flow is the one across the shock, while what happened before the shock and after the shock is isentropic." The first half should say non-isentropic: the shock is the only part where the isentropic relations do not apply.
-
 ---
 
 ## 7. Problem-solving workflow
 
 1. Sketch the duct; mark the throat, any shock and the exit; label stations.
-2. Decide whether the throat is choked (back pressure below $p^*$, or any supersonic flow downstream).
+2. Decide whether the throat is choked (back pressure below $p^*$ for a converging nozzle; sonic at the throat of a converging–diverging nozzle, regime 3 onwards).
 3. Choked: $\dot m=0.0404A_tp_0/\sqrt{T_0}$ for air (or $\rho^*a^*A_t$). Not choked: the general $\dot m(p)$ with $p_e=p_b$.
 4. March isentropically with $A/A^*$, $T_0/T$, $p_0/p$; at a shock switch to the normal-shock relations, then restart with $p_{02}$ and $A_2^*$.
 5. Thrust from $F=\dot mU_e+A_e(p_e-p_b)$.
@@ -742,7 +722,7 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 3 lectures; t
 
 - [ ] *(set)* Reproduce and comment on the normal-shock property plot ($M_2$, $p_2/p_1$, $\rho_2/\rho_1$, $T_2/T_1$ against $M_1$): "in last year's exam, there was to reproduce this graph and comment it" (10 Feb, l. 491). → [[#Entropy, the Second Law and stagnation pressure]]
 - [ ] *(set)* Derivations may be examined (10 Feb, ll. 295–305): derive $a=\sqrt{\gamma RT}$ from mass and momentum on a moving wave. → [[#Derivation (Lecture 7)]]
-- [ ] *(set)* Derive the energy equation across a shock in the $p/\rho$ form, as done on the board (10 Feb, ll. 396–463). → [[#The board derivation: energy in pressure–density form (10 Feb, ll. 396–463)]]
+- [ ] *(set)* Derive the energy equation across a shock in the $p/\rho$ form (10 Feb, ll. 396–463). → [[#Energy equation in pressure–density form]]
 - [ ] *(set)* Normal shock at $U_1=634$ m/s (10 Feb, ll. 510–535). Targets $M_2=0.577$, $p_{02}=2.82$ bar. → [[#Worked example – normal shock at Mach 2 (10 Feb, ll. 510–535)]]
 - [ ] *(set)* Shock in the diverging section (17 Feb, ll. 145–205). Target $A=0.499$ m². → [[#Worked example – shock in the diverging section]]
 - [ ] *(set)* Work [[SESA2023 Problem Sheet 3 Solutions|Problem Sheet 3]]: "the problem[s] are on the same style that are in the exam. So do that" (17 Feb, ll. 12–21).
@@ -752,9 +732,43 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 3 lectures; t
 - [ ] Derive $T_0/T=1+\tfrac{\gamma-1}{2}M^2$ from $h_0=h+\tfrac12U^2$. → [[#2. Stagnation properties]]
 - [ ] Derive the area–velocity relation and explain the table of four cases. → [[#The area–velocity relation]]
 - [ ] Derive the general and choked mass-flow equations and the 0.0404 constant. → [[#Mass flow rate]]
-- [ ] Derive $p_2/p_1$, $\rho_2/\rho_1$ and $M_2$ from the jump conditions (beyond the lecture). → [[#From the jump conditions to the Mach-number relations (the lecture skips this)]]
+- [ ] Derive $p_2/p_1$, $\rho_2/\rho_1$ and $M_2$ from the jump conditions (beyond the lecture). → [[#From the jump conditions to the Mach-number relations]]
 - [ ] Show why $p_{02}/p_{01}=e^{-\Delta s/R}$. → [[#Entropy, the Second Law and stagnation pressure]]
 - [ ] Continue the shock-in-nozzle example to the exit. Targets $M_e=0.338$, $p_e=193$ kPa. → [[#Worked example – shock in the diverging section]]
 - [ ] Add the pressure thrust to the 10-bar nozzle example for a 1 bar back pressure. Target 125 kN. → [[#Worked example – isentropic nozzle and thrust (13 Feb, ll. 208–267)]]
 - [ ] *(set)* Read the nozzle-lab notebook on Blackboard before the lab: "after Friday lecture, you should also be able to completely understand it" (10 Feb, ll. 338–342).
 - [ ] *(set)* Week 3 Blackboard quiz (13 Feb, ll. 1–5); the shock code on Blackboard "can be useful to solve the quiz" (10 Feb, ll. 536–537).
+
+## Transcript and slide slips
+
+> [!warning] Transcript slip (10 Feb, ll. 141–143)
+> Where: [[#2. Stagnation properties]].
+>
+> "All the kinetic energy has been transformed to entropy. And we consider this quantity as the stagnation entropy." Both words should be enthalpy: the kinetic energy becomes enthalpy, giving the stagnation enthalpy $h_0$. (The entropy does *not* change in this reversible, adiabatic deceleration.)
+
+> [!warning] Transcript slips in the derivation (10 Feb, ll. 171, 198–199)
+> Where: [[#Derivation (Lecture 7)]].
+>
+> - l. 171: "Let's make some assumption that this process is adiabatic and irreversible". It must be reversible (isentropic), which is what lets the lecture use $p\propto\rho^\gamma$ at l. 228.
+> - ll. 198–199: the mass result is transcribed as "rho du is equal to the product A du". It is $\rho\,dU=a\,d\rho$ (speed of sound $a$, not area $A$).
+
+> [!warning] Transcript slip (17 Feb, l. 51)
+> Where: [[#Entropy, the Second Law and stagnation pressure]].
+>
+> "The Mach number after a shock is always negative." It is always less than one.
+
+> [!warning] Transcript slips in this example (10 Feb, ll. 530–535)
+> Where: [[#Worked example – normal shock at Mach 2 (10 Feb, ll. 510–535)]].
+>
+> - "The temperature after the shock is lower… is 250 and now becomes 442." The temperature rises, to 422 K ($250\times1.6875$).
+> - "You see the static temperature is the same… while the static pressure is lower because it is isentropic." It is the stagnation temperature that is the same, and the stagnation pressure that is lower, because the shock is not isentropic.
+
+> [!warning] Transcript slip (13 Feb, ll. 136–137)
+> Where: [[#Converging nozzle and choking]].
+>
+> "If the pressure becomes lower than the back pressure, so the pressure outside, will be lower than the critical pressure…" garbles the condition. Choking happens when the back pressure falls below the critical pressure $p^*$.
+
+> [!warning] Transcript slip (17 Feb, ll. 161–162)
+> Where: [[#Worked example – shock in the diverging section]].
+>
+> "The only known isentropic part of this flow is the one across the shock, while what happened before the shock and after the shock is isentropic." The first half should say non-isentropic: the shock is the only part where the isentropic relations do not apply.

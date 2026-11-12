@@ -23,5 +23,5 @@ Wheels can absorb periodic momentum changes indefinitely, without any dumping. A
 
 ## Related
 
-- [[SESA2024 06 - Attitude Control#6. Momentum storage and dumping|Momentum storage in the lecture note]] · [[SESA2024 06 - Attitude Control#Internal disturbances and torquers|Wheel types]]
+- [[SESA2024 06 - Attitude Control#6. Momentum storage and dumping|Momentum storage in the topic note]] · [[SESA2024 06 - Attitude Control#Internal disturbances and torquers|Wheel types]]
 - [[Attitude Sensors and Torquers]] · [[Momentum Bias and Gyroscopic Rigidity]]
