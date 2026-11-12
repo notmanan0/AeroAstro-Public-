@@ -18,9 +18,6 @@ sources: ["03 - Exams & Past Papers"]
 >
 > **Every recent paper has one orbital-mechanics B question, one comms/power/thermal B question, and one remote-sensing/SSO B question.**
 
-> [!warning] File naming
-> `SESA2024-202425-01-SESA2024.pdf` is actually the **2022/23** paper (its header reads "Semester 1 Final Assessment 2022/23"). The real 2024/25 paper is `SESA2024-202425-01-SESA2024W1.pdf`. The notes below use the correct years.
-
 ## Section B topics by year
 | Year | B1 | B2 | B3 |
 |---|---|---|---|

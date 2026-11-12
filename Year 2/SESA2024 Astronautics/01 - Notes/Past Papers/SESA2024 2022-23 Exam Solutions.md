@@ -3,9 +3,9 @@ title: "SESA2024 2022-23 Exam Solutions"
 module: "SESA2024 Astronautics"
 type: past-paper
 tags: [sesa2024, past-papers, solutions]
-paper: "SESA2024W1 Semester 1 Final Assessment 2022/23 (file is misnamed SESA2024-202425-01-SESA2024.pdf)"
+paper: "SESA2024W1 Semester 1 Final Assessment 2022/23"
 status: complete
-sources: ["03 - Exams & Past Papers/SESA2024-202425-01-SESA2024.pdf"]
+sources: ["03 - Exams & Past Papers/SESA2024-202223-01-SESA2024.pdf"]
 ---
 
 # SESA2024 2022-23 Exam Solutions
@@ -15,7 +15,7 @@ sources: ["03 - Exams & Past Papers/SESA2024-202425-01-SESA2024.pdf"]
 > - B2: array thermal at 18 000 km (= workbook Ch10 Q7) plus an L-band link.
 > - B3: Starlink in SSO (inclination, ground track, drag cycle, attitude).
 >
-> The file `SESA2024-202425-01-SESA2024.pdf` is this **2022/23** paper. Worked solutions verified in Python; not the official scheme.
+> Worked solutions verified in Python; not the official scheme.
 
 ## Section A
 **A1 (4)**: chemical against electric for a lunar mission.

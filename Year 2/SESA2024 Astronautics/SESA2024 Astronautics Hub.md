@@ -132,7 +132,7 @@ All 37 concept notes in `01 - Notes/Concepts`, grouped by the topic notes that u
 | 2013/14 | [[SESA2024 2013-14 Exam Solutions]] | orbits + debris intercept · GEO spinner thermal · hyperspectral SSO |
 | All legacy | [[SESA2024 Legacy Papers 2013-2021 Key Answers]] | quick-check index of headline numbers |
 
-The 2022/23 paper is filed as `SESA2024-202425-01-SESA2024.pdf`; the 2024/25 paper is the `W1` file ([[SESA2024 Past Paper Trend Analysis]]).
+Trends across the papers: [[SESA2024 Past Paper Trend Analysis]].
 
 - [[SESA2024 Cambridge Part IIA Practice]]: third-year Cambridge questions (Part IIA) that revise this module, listed under each topic note.
 
@@ -198,5 +198,5 @@ SORT type ASC, file.name ASC
 ## Sources
 - `02 - Sources/Lectures`: 2025-26 slide decks for Chapters 1 and 4–11 in chapter subfolders (25 PDFs, including the pre-recorded and "complete" versions of Chapters 6–9 and the Chapter 5 and 11 worked examples), Dr Vaidya's two decks on sustainability and debris and on the industrialisation of space (note 15), and the Problem Sheet Workbook 2025-26 V1.1
 - 35 transcripts in `02 - Sources/Lectures` (2025-26 live lectures, pre-recordings, the two quiz walk-throughs, the Planet Labs guest lecture and Prof Lewis's 2020 Chapter 5 and 11 recordings), mapped in [[SESA2024 Transcript Index]]
-- `03 - Exams & Past Papers`: 12 papers, 2013/14–2024/25, one per year (the 2022/23 paper is the file named `SESA2024-202425-01-SESA2024.pdf`)
+- `03 - Exams & Past Papers`: 12 papers, 2013/14–2024/25, one per year
 - Fortescue, Stark & Swinerd, *Spacecraft Systems Engineering* (4th ed.), Wiley. The course textbook.
