@@ -327,6 +327,16 @@ $$
 v_s=\frac{\mathrm d(U_e\delta^*)}{\mathrm dx}\qquad\text{(STM blowing velocity)}.
 $$
 
+Incompressible, attached layers; $\delta^*$ and $U_e$ evaluated on the original panels.
+
+## Coursework: order of accuracy (3.6 §6)
+
+$$
+\varepsilon\approx K\,N^{-n}\quad\Longrightarrow\quad\log\varepsilon=\log K-n\log N,\qquad n=\frac{\ln(\varepsilon_1/\varepsilon_2)}{\ln(N_2/N_1)}.
+$$
+
+$\varepsilon$ is the relative $C_L$ error against the exact conformal-mapping value; fit only the straight-line (asymptotic) range of $N$.
+
 ## Related
 
 - [[SESA3043 1.1 - Mathematical Tools and Flow Description]]

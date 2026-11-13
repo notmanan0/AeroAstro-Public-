@@ -137,7 +137,7 @@ Longer derivations that run across several notes, with every number recomputed:
 
 ## Coverage boundary
 
-The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assembled 12-state model, Eq. 4.42, so **Chapter 4 is fully lectured**. A few handout equations were not lectured: Eq. 4.25 (changing rotor momentum), Eq. 4.31 (effective gravity), and Eqs. 4.38–4.40 (the $X,Y,Z$ convention). They are marked "handout only" in the notes. Chapter 5 (state-space models, Dr Sean Symon) started in L14 (Mon 2 Nov), which covered §§5.1–5.2 and the gravity terms of §5.3, and finished in the Thu 5 Nov double (L15–L16). Only §5.6, the MIMO block diagram, was skipped, and it is not on the exam (L16 ll. 426–427); the derivative appendix was not lectured either. Chapter 6 started in L17 (Mon 9 Nov) with §§6.1–6.4; §6.5, the SPO approximation, repeats SESA2027 and was set as reading (L17 ll. 397–400). The phugoid approximation (§6.6) is due on Mon 16 Nov and the lateral modes (§§6.7–6.10) on Thu 19 Nov (L17 ll. 401–406); the rest of the handout is filed, awaiting those lectures. Controllability, observability (around week 10, L16 l. 133) and control design (Chapters 7–8) remain outside current coverage.
+The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assembled 12-state model, Eq. 4.42, so **Chapter 4 is fully lectured**. A few handout equations were not lectured: Eq. 4.25 (changing rotor momentum), Eq. 4.31 (effective gravity), and Eqs. 4.38–4.40 (the $X,Y,Z$ convention). They are marked "handout only" in the notes. Chapter 5 (state-space models, Dr Sean Symon) started in L14 (Mon 2 Nov), which covered §§5.1–5.2 and the gravity terms of §5.3, and finished in the Thu 5 Nov double (L15–L16). Only §5.6, the MIMO block diagram, was skipped, and it is not on the exam (L16 ll. 426–427); the derivative appendix was not lectured either. Chapter 6 started in L17 (Mon 9 Nov) with §§6.1–6.4; §6.5, the SPO approximation, repeats SESA2027 and was set as reading (L17 ll. 397–400). The Thu 12 Nov double slot was a lab, not a lecture, so L17 is still the latest lecture. The phugoid approximation (§6.6) is due on Mon 16 Nov and the lateral modes (§§6.7–6.10) on Thu 19 Nov (L17 ll. 401–406); the rest of the handout is filed, awaiting those lectures. Controllability, observability (around week 10, L16 l. 133) and control design (Chapters 7–8) remain outside current coverage.
 
 | Material | Vault status |
 |---|---|
@@ -230,7 +230,7 @@ Chapter 4 was written from the lecture-note handout on 19 October and updated fr
 
 ## Tutorials and mock questions
 
-No tutorial or revision questions had been set for SESA3047 by 22 Oct 2026, and `03 - Exams & Past Papers` is empty.
+SESA3047 has no past papers of its own (it is a new module). The SESA2025 Mechanics of Flight papers below are the suggested practice for Chapters 5 onwards.
 
 > [!important] Exam announcements (L14, Mon 2 Nov)
 > - The exam paper is written and with the external examiner (University of Surrey) (ll. 9–10).
@@ -252,6 +252,8 @@ No tutorial or revision questions had been set for SESA3047 by 22 Oct 2026, and 
 - [[SESA3047 Chapter 5 Practice Problems - Solutions]]: **lecturer-set** (handout §5.8), five problems with my worked solutions; no answer key issued.
 
 - [[SESA3047 Mock Questions - Chapters 1-4]]: **self-written, not lecturer-set**. Ten exam-style questions (118 marks) with timed full solutions and Python-checked numbers, covering classification and linearisation, frames and flat Earth, the transport theorem, DCMs and gimbal lock, Euler-angle rates, Coriolis acceleration, principal axes, rotor angular momentum and the 12-state model. Its data deliberately differ from Lab 1 and Coursework 1.
+
+- [[SESA2025 Past Papers - Index]]: the eleven SESA2025 Mechanics of Flight papers (2013-14 to 2024-25, no 2019-20), filed as practice for Chapters 5 onwards, with worked solutions to all eleven, a question map by SESA3047 topic and when each topic becomes doable. The static-stability, trim and turn questions in them are SESA2027 revision; the lateral-mode questions wait for §§6.7–6.10 (Thu 19 Nov).
 
 - [[SESA3047 Cambridge Question Map]]: every question in the Cambridge 3C5 (dynamics) and 3F2 (systems and control) example and Tripos papers, sorted as in scope, partly in scope or out of scope against this syllabus, with when each becomes doable (Chapters 6–8 included).
 

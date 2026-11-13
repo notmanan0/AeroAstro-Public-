@@ -7,14 +7,14 @@ order: 9.5
 tags: [sesa3029, compressible-flow, supersonic, ackeret, wave-equation, wave-drag, diamond-aerofoil, derivation, deep-dive]
 aliases: ["Ackeret theory derivation", "Ackeret deep dive", "Supersonic wave drag derivation", "Optimum supersonic aerofoil proof"]
 date: 2026-11-12
-status: written-ahead
-coverage: "§§1–3 and the flat-plate results follow Lecture 4.5 (lectured Thu 12 Nov, checked against the transcript): the general solution of the wave equation by characteristic coordinates, the choice of family above and below, the flow field and C_p on both surfaces. §§4–7 are written ahead from Lecture4-6.pdf (4.6, due Fri 13 Nov): lift of a general thin aerofoil, the three parts of the wave drag, the optimum thickness distribution and the diamond's best L/D. §8 checks every result against exact shock-expansion numbers."
+status: lectured
+coverage: "§§1–3 and the flat-plate results follow Lecture 4.5 (lectured Thu 12 Nov, checked against the transcript): the general solution of the wave equation by characteristic coordinates, the choice of family above and below, the flow field and C_p on both surfaces. §§4–7 follow Lecture 4.6 (lectured Fri 13 Nov, checked against the transcript): lift of a general thin aerofoil, the three parts of the wave drag, the optimum thickness distribution and the diamond's best L/D. §8 checks every result against exact shock-expansion numbers."
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]]", "[[SESA3029 Deep Dive - From the Euler Equations to Prandtl-Glauert]]", "[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]"]
 next_topics: []
 key_concepts: ["[[Ackeret Theory]]", "[[Supersonic Wave Drag]]", "[[Linearised Compressible Potential Equation]]", "[[Shock-Expansion Theory]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 2 - Solutions]]", "[[SESA3029 Example Sheet 1 - Solutions]]"]
-sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture 4-5.txt", "02 - Sources/Lectures/Lecture4-6.pdf"]
+sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture 4-5.txt", "02 - Sources/Lectures/Lecture4-6.pdf", "02 - Sources/Lectures/Lecture 4-6.txt"]
 ---
 
 # SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils
@@ -431,13 +431,13 @@ The local pressures are much less accurate than the drag: on the 5 % diamond at 
 ## Sources
 
 - `Lecture4-5.pdf` (4.5 Ackeret Theory), slides 2–8: the wave equation, its solution along Mach lines, $u'=-v'/\lambda$, the Ackeret formula, the flat plate and the slide 7 example. Lectured Thu 12 Nov; recording `Lecture 4-5.txt` (L4-5).
-- `Lecture4-6.pdf` (4.6 Optimum Supersonic Aerofoils), slides 3–10: the decomposition, the sign convention, $C_l$, $C_d$, the $f$–$g$ argument, the optimum $k$ and the diamond question. Not yet lectured (due Fri 13 Nov); §§4–7 are written ahead from these slides.
+- `Lecture4-6.pdf` (4.6 Optimum Supersonic Aerofoils), slides 3–10: the decomposition, the sign convention, $C_l$, $C_d$, the $f$–$g$ argument, the optimum $k$ and the diamond question. Lectured Fri 13 Nov (`Lecture 4-6.txt`, L4-6), following the slides; §§4–7 were checked against it.
 - Anderson, *Modern Compressible Flow*, §§9.7–9.9 (linearised supersonic flow); Liepmann & Roshko, *Elements of Gasdynamics*, §§8.4–8.6 (wave drag and the optimum section).
 - Checks: the general solution, the biconvex and camber integrals and $F(c/2)$ were verified symbolically (sympy); the shock-expansion numbers and every other number were computed in Python. Figures `at_ackeret_drag_polar.png` and `at_ackeret_wave_drag_exact.png` from `generate_aerothermo_deepdive_figures.py`; `at_ackeret_mach_lines.png` and `at_thickness_drag.png` from `generate_aerothermo_w07_figures.py`.
 
 ## Self-study tasks
 
-Tasks citing L4-5 come from the Thu 12 Nov lecture; tasks citing 4.6 slides come from the deck, as 4.6 has not been lectured yet (the same tasks appear in [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils#Self-study tasks|W07c]]). Tasks marked so are suggested, not lecturer-set.
+Tasks citing L4-5 come from the Thu 12 Nov lecture and tasks citing 4.6 slides from the deck lectured on Fri 13 Nov (the same tasks, with L4-6 line references, appear in [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils#Self-study tasks|W07c]]). Tasks marked so are suggested, not lecturer-set.
 
 ### Core
 

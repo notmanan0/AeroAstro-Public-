@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3029 Aerothermodynamics"]
 tags: [sesa3029, hub, moc]
 status: in-progress
-coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.5 lectured with transcripts; 4.6 written ahead from the slides; Tutorial Lecture 1; Example Sheets 1–3; Tests 1–2"
+coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6 lectured with transcripts (Chapter 4 complete, Fri 13 Nov); Tutorial Lecture 1; Example Sheets 1–3; Tests 1–2"
 ---
 
 # SESA3029 Aerothermodynamics Hub
@@ -13,7 +13,7 @@ coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.5 lectured with tra
 > [!abstract] Module at a glance
 > Compressible-flow toolkit → oblique shocks and expansions → supersonic nozzles and the method of characteristics → high-speed aerodynamics → heat transfer. Module lead: Prof. Jae-Wook Kim (Sections 1–4).
 >
-> Everything lectured so far is written up: Week 1, Lectures 2.1–2.7 and 3.1–3.4 (the whole MoC block), Tutorial Lecture 1, Lecture 4.1 (Euler equations, Mon 2 Nov), Lecture 4.2 (effect of Mach number on aerofoil flow, Thu 5 Nov), Lecture 4.3 (compressible potential flow equations, Fri 6 Nov) Lecture 4.4 (Prandtl–Glauert transformation and critical Mach number, Mon 9 Nov) and Lecture 4.5 (Ackeret theory, Thu 12 Nov), all from their transcripts (the 2.5 recording on Blackboard is last year's; the 4.2 recording was repaired and stops at slide 17). The last deck of Chapter 4 (4.6, optimum supersonic aerofoils) is **written ahead** from the slides in [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] §§6–10, to be backfilled from its transcript; it is due on Fri 13 Nov (L4-5, ll. 356–369). The Riemann-invariant derivation is written out in full, step by step, in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]]. There are worked solutions to Example Sheets 1–3 and Blackboard Tests 1–2. Quick reference: [[SESA3029 Formula Sheet]].
+> Everything lectured so far is written up: Week 1, Lectures 2.1–2.7 and 3.1–3.4 (the whole MoC block), Tutorial Lecture 1, Lecture 4.1 (Euler equations, Mon 2 Nov), Lecture 4.2 (effect of Mach number on aerofoil flow, Thu 5 Nov), Lecture 4.3 (compressible potential flow equations, Fri 6 Nov) Lecture 4.4 (Prandtl–Glauert transformation and critical Mach number, Mon 9 Nov) Lecture 4.5 (Ackeret theory, Thu 12 Nov) and Lecture 4.6 (optimum supersonic aerofoils, Fri 13 Nov), all from their transcripts (the 2.5 recording on Blackboard is last year's; the 4.2 recording was repaired and stops at slide 17). That completes Chapter 4. **Mon 16 Nov is a tutorial lecture** on example questions (L4-6, ll. 399–401); attempt the diamond-aerofoil questions ES1 Q6 and ES2 Q5 first (L4-6, ll. 1–10). The Riemann-invariant derivation is written out in full, step by step, in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]]. There are worked solutions to Example Sheets 1–3 and Blackboard Tests 1–2. Quick reference: [[SESA3029 Formula Sheet]].
 
 > [!important] Deadlines
 > - **Weekend homework (Tutorial 1, ll. 232–235):** triangular wing at a second $\alpha$, check $x_{ac}\approx c/2$. Solved: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre|Tutorial 1]].
@@ -81,11 +81,11 @@ coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.5 lectured with tra
    - $C_l$ and $C_m$ from the chordwise integrals (normal force against lift, small $\alpha$); why drag does not scale (the L4-4 reading); the transonic lift and drag rise against the 4.2 CFD;
    - $M_{crit}$ for $C_{p0,min}=-0.4$: 0.747 (P–G), 0.733 (Kármán–Tsien), each with a trial-value table; slips tables for L4-3 and L4-4.
    - the whole chain in depth in [[SESA3029 Deep Dive - From the Euler Equations to Prandtl-Glauert]]: steady Euler → the exact full potential equation and its type (local $M$), the exact perturbation equation, an order-of-magnitude argument for which terms survive (subsonic $(\gamma+1)M_\infty^2\tau\ll(1-M_\infty^2)^{3/2}$, transonic, supersonic $(\gamma+1)M_\infty^4\tau\ll(M_\infty^2-1)^{3/2}$, hypersonic $M_\infty\tau\sim1$), $C_p$ to second order, and Prandtl–Glauert with a general potential scaling and the wavy-wall check.
-9. [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]] (Lecture 4.5, Thu 12 Nov, **lectured** with transcript, §§1–5; Lecture 4.6 **written ahead**, §§6–10, due Fri 13 Nov)
+9. [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]] (Lecture 4.5, Thu 12 Nov, §§1–5, and Lecture 4.6, Fri 13 Nov, §§6–10, both **lectured** with transcripts)
    - the wave equation, its general solution $f(x-\lambda y)$ and the corrugated-sheet picture (new figure); Mach lines, $u'=-v'/\lambda$, $C_p=2\theta/\lambda$ (also from the MoC invariant); only the surface slope is needed;
    - flat plate: $\theta$ from the free-stream vector, the duct test for its sign (new figure), $C_n=C_{p_l}-C_{p_u}$, radians; the slide 7 homework against the 2.5 shock-expansion answer; range $1.2<M_\infty\lesssim3$–4; slips table for L4-5;
-   - general thin aerofoil: $C_l=4\alpha/\lambda$ regardless of camber and thickness; three-term wave drag; the diamond as optimum; best $L/D$ at $\alpha=t/c$.
-   - every step written out in [[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]] (4.6 parts written ahead): the general solution $f(x-\lambda y)+g(x+\lambda y)$ and which family survives, the sign rule derived for both surfaces, lift, the three-part wave drag and the drag polar, the diamond by completing the square, best $L/D$, and checks against exact shock-expansion (thickness drag within 1 % for $t/c\le0.1$ at $M_\infty=2$).
+   - general thin aerofoil: $C_l=4\alpha/\lambda$ regardless of camber and thickness, with the $p_\infty$ step; three-term wave drag; the diamond as optimum (straight facets, unlike subsonic streamlining); best $L/D$ at $\alpha=t/c$; slips table for L4-6.
+   - every step written out in [[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]] (4.6 parts checked against L4-6): the general solution $f(x-\lambda y)+g(x+\lambda y)$ and which family survives, the sign rule derived for both surfaces, lift, the three-part wave drag and the drag polar, the diamond by completing the square, best $L/D$, and checks against exact shock-expansion (thickness drag within 1 % for $t/c\le0.1$ at $M_\infty=2$).
 
 ### Example sheets (worked solutions)
 
@@ -153,7 +153,7 @@ The first three rows are introduced in [[SESA3029 W05a - Method of Characteristi
 
 ## Week 7 concept map (Lectures 4.1–4.6)
 
-4.1–4.5 are lectured; 4.6 is written ahead.
+4.1–4.6 are lectured.
 
 | Foundations | New SESA3029 concepts |
 |---|---|
@@ -170,7 +170,7 @@ The first three rows are introduced in [[SESA3029 W05a - Method of Characteristi
 | 2–3 | Oblique shocks and expansions | 2.1 oblique-shock relations; 2.2 chart and examples; 2.3 reflections, slip lines, shock interactions; 2.4 expansion waves and Prandtl–Meyer; 2.5 shock–expansion method; Tutorial 1 | **Complete** (transcripts; 2.3 on 2 Oct, 2.4 on 5 Oct, 2.5 on 8 Oct, Tutorial 1 on 9 Oct) |
 | 4–5 | Nozzles and MoC | 2.6 Laval nozzle and back pressure; 2.7 under/over-expanded nozzles, supersonic wind tunnel; 3.1–3.4 method of characteristics, minimum-length nozzles | **Complete**: 2.6, 2.7 and 3.1–3.4 lectured (12, 15, 16, 19, 22 and 23 Oct, transcripts). Notes: W04, [[SESA3029 W05a - Method of Characteristics\|W05a]] (3.1–3.2), [[SESA3029 W05b - Minimum-Length Nozzle Design\|W05b]] (3.3–3.4). MoC coursework due Sun 15 Nov |
 | 6 | Reading week (w/c 26 Oct) | Consolidation, coursework | — |
-| 7–8 | High-speed aerodynamics | 4.1 Euler equations; 4.2 effect of Mach number on aerofoil flow; 4.3 compressible potential flow equations; 4.4 Prandtl–Glauert transformation; 4.5 Ackeret theory; 4.6 optimum supersonic aerofoils | **4.1–4.4 lectured** (Mon 2, Thu 5, Fri 6 and Mon 9 Nov, transcripts) → [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils\|W07a]] and [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation\|W07b]] (complete, `lectured`). **4.5 lectured** (Thu 12 Nov, transcript) → [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]] §§1–5. **4.6: slides filed, awaiting lecture** (Fri 13 Nov), written ahead in W07c §§6–10 (note stays `written-ahead` until then). ES2 Q6 belongs to 4.4, Q4–Q5 to 4.5–4.6 |
+| 7–8 | High-speed aerodynamics | 4.1 Euler equations; 4.2 effect of Mach number on aerofoil flow; 4.3 compressible potential flow equations; 4.4 Prandtl–Glauert transformation; 4.5 Ackeret theory; 4.6 optimum supersonic aerofoils | **4.1–4.4 lectured** (Mon 2, Thu 5, Fri 6 and Mon 9 Nov, transcripts) → [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils\|W07a]] and [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation\|W07b]] (complete, `lectured`). **4.5 lectured** (Thu 12 Nov, transcript) → [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]] §§1–5. **4.6 lectured** (Fri 13 Nov, transcript) → W07c §§6–10; W07c is now `lectured`. Mon 16 Nov: tutorial lecture. ES2 Q6 belongs to 4.4, Q4–Q5 to 4.5–4.6 |
 | 9–12 | Heat transfer | Conduction, convection, boundary-layer heat transfer, radiation, numerical methods and heat exchangers | Awaiting lectures (ES3 solved in full) |
 
 The decks for 2.3–2.7 and 3.2–3.4 were written up ahead of their lectures and then reconciled with the transcripts. On 24 October W05 was split into [[SESA3029 W05a - Method of Characteristics|W05a]] (3.1–3.2, §§1–10) and [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]] (3.3–3.4 and the coursework, §§11–17), keeping the section numbers.
@@ -245,7 +245,7 @@ Always check Blackboard for any later change to dates or assessment rules.
 - read $M_e$ off the maximum slope $\theta_{max}$ at a sharp expansion corner, and know that it fails for gradual nozzles; do not confuse this $\theta_{max}$ with the oblique-shock one (L3-3, ll. 133–139, 204–214);
 - work a symbolic MoC table (3.4) in under a minute (a past-paper question type, L3-4, ll. 198–203), spot a non-reflecting wall point by checking the physics, not just the rules (ll. 206–281), and invert measured Mach numbers for $\theta_w$ and $M_0$ (ll. 298–348).
 
-## Week 7 exam skills (Lectures 4.1–4.6; 4.6 not yet lectured)
+## Week 7 exam skills (Lectures 4.1–4.6)
 
 - derive mass, $x$-momentum, $y$-momentum and energy for a 2D control volume by flux in − flux out (+ pressure force or work), and assemble the vector form (L4-1);
 - define $M_{crit}$ (a **free-stream** value) and describe the flow regimes from subsonic to $M_\infty>1$ (4.2);
@@ -296,7 +296,7 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/Lecture4-3.pdf` and `06 November 2026 at 16_57_37.txt` (Fri 6 Nov: trailing-edge shocks, then compressible potential flow equations) → [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]] §§1–5 and W07a §7
 - `02 - Sources/Lectures/Lecture4-4.pdf` and `Lecture 4-4.txt` (Mon 9 Nov: Prandtl–Glauert transformation, $C_l$ and $C_m$, critical Mach number, Kármán–Tsien) → [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]] §§6–9
 - `02 - Sources/Lectures/Lecture4-5.pdf` and `Lecture 4-5.txt` (Thu 12 Nov: Ackeret theory, the flat plate and the comparison with shock-expansion) → [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] §§1–5
-- `02 - Sources/Lectures/Lecture4-6.pdf` (optimum supersonic aerofoils; awaiting the Fri 13 Nov lecture) → W07c §§6–10
+- `02 - Sources/Lectures/Lecture4-6.pdf` and `Lecture 4-6.txt` (Fri 13 Nov: optimum supersonic aerofoils, the diamond) → [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] §§6–10
 - `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf` (the coursework brief) → [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]]
 - `02 - Sources/Lectures/Supplementary Note for MoC.pdf` (12 pages, including the axisymmetric appendix) → W05a and W05b
 - Exam data sheets: `Aerothermodynamics Formula Sheet.pdf`, `IFT.pdf`, `NST.pdf`, `OSC.pdf` (summarised in [[SESA3029 Formula Sheet#What the exam formula sheet gives you]])

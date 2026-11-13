@@ -21,6 +21,8 @@ That transpiration velocity comes from a mass balance on the strip between the w
 
 STM avoids rebuilding the influence matrix each iteration, which is why XFOIL uses it (together with $e^n$ transition and separate laminar and turbulent closures). Revision question 3.6 Q3 shows the effect in a wind tunnel: in a $15\times15$ cm, 2 m long test section at 15 m/s, the boundary layers on the four walls displace the core enough to accelerate it to 17.18 m/s at the exit.
 
+The coupling is only as good as its boundary-layer closures, and those stop at separation (Falkner–Skan at $\beta=-0.1988$, Pohlhausen at $\lambda=-12$). VII is therefore reliable for attached flow, copes with small separation bubbles, and becomes untrustworthy near and beyond stall, where a large part of the upper surface has separated ([[SESA3043 3.6 - Viscous-Inviscid Interaction#Separation and stall|3.6]]).
+
 ## Related
 
 - [[SESA3043 3.6 - Viscous-Inviscid Interaction]] · [[Panel Method]] · [[Momentum Integral Equation]] · [[Displacement and Momentum Thickness]]

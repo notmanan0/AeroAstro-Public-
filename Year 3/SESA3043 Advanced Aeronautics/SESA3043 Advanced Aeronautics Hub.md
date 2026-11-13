@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3043 Advanced Aeronautics"]
 tags: [sesa3043, hub, moc]
 status: in-progress
-coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22 Oct–12 Nov through CH3-5, the momentum integral equation; CH3-6 written ahead from slides)"
+coverage: "Chapters 1–3, all lectured (Ch3 22 Oct–13 Nov, ending with CH3-6 viscous–inviscid interaction and the coursework briefing on Fri 13 Nov)"
 ---
 
 # SESA3043 Advanced Aeronautics Hub
@@ -13,7 +13,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22 Oct–12 
 > [!abstract] Module at a glance
 > Conservation laws and governing equations → potential flow (superposition, complex potential, conformal mapping) → lumped-vortex and panel methods → viscous boundary layers → rotor aerodynamics → environmental impact.
 >
-> Chapters 1 and 2 are fully lectured and written up with transcript line references (Chapter 2 by Dr Zhiwei Hu). Chapter 3 (Dr Dea Wangsawijaya) was written ahead from the slides and Blackboard notes; 3.1 and 3.2 are fully lectured (22–23 Oct, worked problem 5 Nov), 3.3 (5–6 Nov) and 3.4, transition (Fri 6 Nov), likewise; 3.5, the momentum integral equation, was lectured on Thu 12 Nov (BL6). CH3-6 (viscous–inviscid interaction) is still written ahead and is due on Fri 13 Nov, with a panel-method review and coursework questions in the same two-hour session (BL6, ll. 41–49).
+> Chapters 1 and 2 are fully lectured and written up with transcript line references (Chapter 2 by Dr Zhiwei Hu). Chapter 3 (Dr Dea Wangsawijaya) was written ahead from the slides and Blackboard notes; 3.1 and 3.2 are fully lectured (22–23 Oct, worked problem 5 Nov), 3.3 (5–6 Nov) and 3.4, transition (Fri 6 Nov), likewise; 3.5, the momentum integral equation, was lectured on Thu 12 Nov (BL6), and 3.6, viscous–inviscid interaction, on Fri 13 Nov (BL7) after a panel-method refresher, which completes Chapter 3. BL7 ended with the coursework briefing; a new chapter starts in the week of 16 Nov.
 >
 > The coursework code (`dpan`, `ktreff`) was posted on 16 October and is tested in [[SESA3043 2.3 - Panel Methods#10. The Blackboard coursework code (dpan and ktreff)|2.3 §10]]. The Python `dpan.py` crashes on NumPy 2 and `ktreff.py` gives a bad point count for some $n$; fixed copies are in `04 - Labs & Coursework/Panel Method Coursework/`.
 >
@@ -41,7 +41,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22 Oct–12 
 7. [[SESA3043 2.2 - Lumped Vortex Method]] (**lectured 9, 15 and 16 Oct**): flat plate, tandem (with an unequal-chord challenge solved), ground effect, camber, biplane; the exam's small-angle traps.
 8. [[SESA3043 2.3 - Panel Methods]] (**lectured 16 Oct**): source/vortex/doublet panels, both complete methods, what is examinable (process, not arithmetic), the Blackboard code tested and fixed, validation.
 
-**Chapter 3: Methods for boundary layers** (written ahead on 6 Oct; 3.1–3.2 lectured 22–23 Oct and 5 Nov; 3.3 on 5–6 Nov; 3.4 on 6 Nov; 3.5 on 12 Nov; 3.6 still written ahead)
+**Chapter 3: Methods for boundary layers** (written ahead on 6 Oct; 3.1–3.2 lectured 22–23 Oct and 5 Nov; 3.3 on 5–6 Nov; 3.4 on 6 Nov; 3.5 on 12 Nov; 3.6 on 13 Nov)
 
 9. [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures]] (**lectured Thu 22 Oct**, transcript folded in): $\delta_{99}$, $\delta^*$, $\theta$ (control-volume derivation of $D=\rho U_e^2\theta$), $C_f$, $H$. Also the laminar and turbulent profiles compared, the effective body as the answer to a Chapter 1 question, and slips flagged.
 10. [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions]] (**lectured Thu 22, Fri 23 Oct and Thu 5 Nov**): both derived in full, plus the course's tidy-up route and its series argument for integral B. Integrals A and B; the special cases and what "wedge angle $\beta\pi$" measures; the Falkner–Skan table recomputed; the bump picture (new figure); wedge $\beta=0.3$. The cylinder stagnation-point worked problem (slides 100–106, lectured 5 Nov, flagged as the typical exam question) and the slide 107 summary of governing equations.
@@ -51,7 +51,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22 Oct–12 
     - Deep dive: [[SESA3043 Deep Dive - Linear Stability and the Orr-Sommerfeld Equation]]: decomposition, linearisation, normal modes and the Orr–Sommerfeld derivation line by line; the Blasius neutral curve computed ($Re_{\delta^*,crit}=519$) and the $e^n$ envelope for $n_{crit}=9$, 7 and 5.
 13. [[SESA3043 3.5 - Momentum Integral Equation]] (**lectured Thu 12 Nov**, BL6): the MIE derived in six steps (matches the Blackboard handout equation for equation); one ODE in integral quantities, valid for laminar and turbulent layers; the closure problem (three unknowns; Thwaites named, outside the scope); the ship-fouling drag-penalty chart; the summary table of governing equations.
     - Deep dive (with 3.3): [[SESA3043 Deep Dive - Momentum Integral Equation and Pohlhausen Method]]: the MIE derived in full, the Pohlhausen quartic and its integrals as functions of $\lambda$, the coupled Kármán–Pohlhausen march, and separation predicted for Howarth's retarded flow and the cylinder against Thwaites and exact values.
-14. [[SESA3043 3.6 - Viscous-Inviscid Interaction]]: SDM and STM, $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; XFOIL; wind-tunnel VII example; **coursework** pointer.
+14. [[SESA3043 3.6 - Viscous-Inviscid Interaction]] (**lectured Fri 13 Nov**, BL7): SDM and STM, $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; XFOIL's closures (compressible MIE with Thwaites, Falkner–Skan laminar closure, $e^n$ transition); why VII fails at separation and stall; wind-tunnel VII example; the coursework methods (camber-normal thickness, order of accuracy from a log–log fit, new figure); BL7 slips. The first hour of BL7, a panel-method refresher, is folded into [[SESA3043 2.3 - Panel Methods|2.3]].
 
 **Worked solutions:** [[SESA3043 Ch1 Revision Questions - Worked Solutions]] · [[SESA3043 Ch2 Revision Questions - Worked Solutions]] · [[SESA3043 Ch3 Revision Questions - Worked Solutions]]
 
@@ -105,7 +105,7 @@ coverage: "Chapters 1–3 (Ch1 and Ch2 fully lectured; Ch3 lectured 22 Oct–12 
 | Chapter 3.3 | Pohlhausen, pressure gradient, separation | **Complete** (lectured Thu 5 and Fri 6 Nov, transcripts) |
 | Chapter 3.4 | Transition to turbulence | **Complete** (lectured Fri 6 Nov, two transcripts) |
 | Chapter 3.5 | Momentum integral equation | **Lectured Thu 12 Nov** (BL6), slides 3–45 |
-| Chapter 3.6 | Viscous–inviscid interaction | **Written ahead from slides** (6 Oct). Due Fri 13 Nov, after a panel-method review (BL6, ll. 33–49) |
+| Chapter 3.6 | Viscous–inviscid interaction | **Complete** (lectured Fri 13 Nov, BL7, after a panel-method refresher; coursework briefing) |
 | Later chapters | Rotor aerodynamics, environmental impact (Chapters 4–5) | Awaiting material; Chapters 4 and 5 start in the week of 16 Nov (BL6, ll. 23–25) |
 | Revision | Tutorials, exam and practice questions | The last one or two weeks before the Christmas break, with tutorial solutions released afterwards (BL6, ll. 25–29) |
 
@@ -137,6 +137,8 @@ Assessment split (Week 1):
 > The *Coursework Code Explainer* is filed as `02 - Sources/Lectures/Ch2_Notes_CW Code Explainer.pdf`, with `MYKT.dat` (an 81-point KT aerofoil in XFOIL coordinate format, not my Table 1 aerofoil); its equations and three printed slips are in [[SESA3043 2.3 - Panel Methods#10. The Blackboard coursework code (dpan and ktreff)|2.3 §10]].
 
 **Coursework tools** (CH3-6 slide 25): the *Coursework Code Explainer* (filed); use **XFOIL** or XFLR5. The theory is [[SESA3043 3.6 - Viscous-Inviscid Interaction|3.6]].
+
+**Coursework briefing** (BL7, Fri 13 Nov, ll. 1059–1298): submission link under Assessment, *Coursework Instruction and Supporting Materials*, due 3 Dec at 4 pm (l. 1068). Keep the methods and geometry brief within the six pages; export XFOIL/XFLR5 data and plot it in MATLAB or Python rather than pasting screenshots; choose two or three angles of attack to show the boundary-layer trends rather than every result; include an executive summary; no code needs attaching (ll. 1164–1201). Measure thickness normal to the camber line and report the error against the closest NACA section (ll. 1226–1251); the alternative cosine distribution in `ktreff` does not work for every aerofoil (ll. 1215–1222). The order of accuracy is the slope of a log–log fit of the $C_L$ error against $N$, limited to its straight-line range, in double precision (ll. 1257–1295). Both methods are worked in [[SESA3043 3.6 - Viscous-Inviscid Interaction#6. Coursework: thickness and order of accuracy|3.6 §6]]. Extensions go through Student Hub (ll. 1202–1210).
 
 **Tutorial format** (L5, ll. 507–510): the second Friday lecture at the end of each chapter (five chapters) is a tutorial; work through the revision questions while the chapter is being taught and bring the ones you cannot do. For Chapter 2 the tutorial is **pushed back**, to allow time on the revision questions. Their solutions are withheld until then (9 Oct LVM lecture, ll. 436–444).
 
@@ -191,7 +193,7 @@ Check Blackboard for authoritative dates and later changes.
 - derive the Pohlhausen profile and $\lambda$, and read it as flat plate plus a $\lambda$-weighted pressure-gradient term; derive separation at $\lambda=-12$ (set at BL3, ll. 343–345, and again at BL4, ll. 103–107); say what $H$ tells you about the pressure gradient; write $\lambda=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$ and read off the factors that promote separation (BL4, ll. 255–290); explain why turbulence delays separation and lowers a bluff body's drag although skin friction rises (BL4, ll. 316–401);
 - describe natural and bypass transition and receptivity; explain where the Orr–Sommerfeld equation comes from (decomposition, normal modes, linearisation, eigenvalue problem; the full derivation is further reading, BL4, ll. 1943–1962); read $\hat v e^{i(\alpha_rx-\omega t)}e^{-\alpha_ix}$ as shape, wave and growth; read a thumb plot along constant $F$ and constant $Re$, and keep $Re_{crit}$ apart from transition; apply the $e^n$ method with the envelope and $n_{crit}=9$; state its limitations (BL5);
 - follow (SESA6087: reproduce) the MIE derivation (BL6, ll. 75–78); reduce it for a flat plate; say why it holds for laminar and turbulent layers and why it needs a closure (BL6, ll. 313–341);
-- compare SDM and STM; derive $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; iterate a simple VII problem.
+- compare SDM and STM; derive $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; iterate a simple VII problem; explain why VII (and XFOIL) is unreliable once the layer separates.
 
 ## All notes
 
@@ -221,7 +223,7 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/Ch2 Exact Solution and methods for potential flow.pdf`
 - `02 - Sources/Lectures/Ch2_Notes_LVM_Tandem Aerofoils.pdf`, `Ch2_Notes_LVM_Ground Effect.pdf`, `Ch2_Notes_LVM_Cambered Aerofoil.pdf`
 - `02 - Sources/Lectures/Ch2_Notes_Panel Method.pdf`, `Ch2_Panel_Method_Explainer.pdf`
-- Transcripts: `L1 - SESA3043.txt`, `L2 - SESA3043.txt`, `L3 - SESA3043.txt` (Week 1); `L4 - SESA3043.txt`; `02 October 2026 at 14_53_48.txt` (**L5**, CH1-4) and `02 October 2026 at 15_51_44.txt` (Ch1 tutorial); `08 October 2026 at 13_50_19.txt` (Ch2 L1, conformal mapping), `09 October 2026 at 14_57_18.txt` (Ch2 L2, Joukowski and KT), `09 October 2026 at 16_00_58.txt` (Ch2 L3, lumped vortex) and `09 October 2026 at 14_17_51.txt` (Joukowski demo recording); `15 October 2026 at 13_48_35.txt` (ground effect, camber); `16 October 2026 at 14_54_40.txt` and `16 October 2026 at 15_53_48.txt` (camber finished; panel method); `22 October 2026 at 13_51_55.txt` (**BL1**, CH3-1 and the start of CH3-2) and `23 October 2026 at 14_53_16.txt` (**BL2**, CH3-2 to slide 99); `05 November 2026 at 13_59_07.txt` (**BL3**, CH3-2 recap and worked problem, CH3-3 slides 1–26); `06 November 2026 at 14_52_55.txt` (**BL4**, Pohlhausen recap, CH3-3 slides 28–38, CH3-4 to the Orr–Sommerfeld equation) and `06 November 2026 at 15_54_41.txt` (**BL5**, CH3-4 thumb plot, $e^n$ method, pressure gradients); `12 November 2026 at 13_50_20.txt` (**BL6**, coursework and schedule, CH3-5 slides 3–45)
+- Transcripts: `L1 - SESA3043.txt`, `L2 - SESA3043.txt`, `L3 - SESA3043.txt` (Week 1); `L4 - SESA3043.txt`; `02 October 2026 at 14_53_48.txt` (**L5**, CH1-4) and `02 October 2026 at 15_51_44.txt` (Ch1 tutorial); `08 October 2026 at 13_50_19.txt` (Ch2 L1, conformal mapping), `09 October 2026 at 14_57_18.txt` (Ch2 L2, Joukowski and KT), `09 October 2026 at 16_00_58.txt` (Ch2 L3, lumped vortex) and `09 October 2026 at 14_17_51.txt` (Joukowski demo recording); `15 October 2026 at 13_48_35.txt` (ground effect, camber); `16 October 2026 at 14_54_40.txt` and `16 October 2026 at 15_53_48.txt` (camber finished; panel method); `22 October 2026 at 13_51_55.txt` (**BL1**, CH3-1 and the start of CH3-2) and `23 October 2026 at 14_53_16.txt` (**BL2**, CH3-2 to slide 99); `05 November 2026 at 13_59_07.txt` (**BL3**, CH3-2 recap and worked problem, CH3-3 slides 1–26); `06 November 2026 at 14_52_55.txt` (**BL4**, Pohlhausen recap, CH3-3 slides 28–38, CH3-4 to the Orr–Sommerfeld equation) and `06 November 2026 at 15_54_41.txt` (**BL5**, CH3-4 thumb plot, $e^n$ method, pressure gradients); `12 November 2026 at 13_50_20.txt` (**BL6**, coursework and schedule, CH3-5 slides 3–45); `13 November 2026 at 14_46_13.txt` (**BL7**, panel-method refresher, CH3-6, coursework briefing)
 - Coursework code: `02 - Sources/Lectures/dpan.m`, `dpan.py`, `ktreff.m`, `ktreff.py` (posted 16 Oct); `Ch2_Notes_CW Code Explainer.pdf` and `MYKT.dat` (filed 11 Nov)
 - Coursework brief: `04 - Labs & Coursework/Panel Method Coursework/AdvAeronautics 2026-27 Coursework.pdf` (filed 11 Nov)
 - `02 - Sources/Lectures/CH3-1 Introduction(1).pdf`, `CH3-2 Blasius and Falkner-Skan(1).pdf`, `CH3-3 Pohlhausen.pdf`, `CH3-4 Transition to Turbulence(1).pdf`, `CH3-5 Momentum Integral Eqn(1).pdf`, `CH3-6 Viscous Inviscid Interaction.pdf`
@@ -247,3 +249,5 @@ SORT type ASC, file.name ASC
 > 6 Nov (BL4, BL5): flat-plate $H$ said as "almost 2.6" (Pohlhausen 2.55); the sandpaper incident placed "in Australia" (Cape Town, 2018); "the critical Reynolds number equals 9" (it is $n_{crit}=9$), and the envelope crossing called the critical Reynolds number (it is the transition Reynolds number; slide 43 has the same label). Flagged in [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#Transcript slips (BL4, ll. 1–630)|3.3]] and [[SESA3043 3.4 - Transition to Turbulence#Transcript slips (BL4 from l. 634, and BL5)|3.4]].
 >
 > 12 Nov (BL6): the shape factor $H$ said as "shear factor"; the ship chart's ordinate called $C_f$ (slide 44 plots the mean $\overline{C_f}$); the fouling height given as "0.3 millimeter" ($k_s=0.325$ mm); "FLCC" for VLCC. Flagged in [[SESA3043 3.5 - Momentum Integral Equation#Transcript and slide slips|3.5]].
+>
+> 13 Nov (BL7): the refresher repeated the explainer's two rotation slips and said $y_c\sin\theta$ for $y_c\sin\alpha$ in the free-stream potential; both methods abbreviated "STM"; the coursework Reynolds numbers called "a decade apart" (the brief's $10^5$ and $5\times10^6$ are a factor of 50). Flagged in [[SESA3043 2.3 - Panel Methods#Transcript slips (BL7 refresher)|2.3]] and [[SESA3043 3.6 - Viscous-Inviscid Interaction#Transcript slips (BL7)|3.6]].

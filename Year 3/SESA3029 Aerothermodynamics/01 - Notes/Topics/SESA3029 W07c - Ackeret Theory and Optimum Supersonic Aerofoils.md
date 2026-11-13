@@ -7,14 +7,14 @@ order: 9
 tags: [sesa3029, compressible-flow, supersonic, ackeret, linear-theory, wave-drag, diamond-aerofoil]
 aliases: ["SESA3029 Lecture 4.5", "SESA3029 Lecture 4.6", "SESA3029 W07c"]
 date: 2026-11-03
-status: written-ahead
-coverage: "Lecture 4.5 (§§1–5) lectured Thu 12 Nov, transcript folded in; Lecture 4.6 (§§6–10) written ahead from the slides, not yet lectured"
+status: lectured
+coverage: "Lecture 4.5 (§§1–5) lectured Thu 12 Nov and Lecture 4.6 (§§6–10) lectured Fri 13 Nov, both transcripts folded in"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]]", "[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W05a - Method of Characteristics]]"]
 next_topics: ["[[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]]"]
 key_concepts: ["[[Ackeret Theory]]", "[[Supersonic Wave Drag]]", "[[Linearised Compressible Potential Equation]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 2 - Solutions]]", "[[SESA3029 Example Sheet 1 - Solutions]]"]
-sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture 4-5.txt", "02 - Sources/Lectures/Lecture4-6.pdf"]
+sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture 4-5.txt", "02 - Sources/Lectures/Lecture4-6.pdf", "02 - Sources/Lectures/Lecture 4-6.txt"]
 ---
 
 # SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils
@@ -320,9 +320,19 @@ $$
 The free stream is horizontal, and to first order each surface element's pressure acts vertically over its length $\mathrm dx$:
 
 $$
-L'=\int_0^c(p_l-p_u)\,\mathrm dx
-\quad\Rightarrow\quad
-C_l=\frac{1}{\tfrac12\rho_\infty U_\infty^2c}\int_0^c(p_l-p_u)\,\mathrm dx=\frac1c\int_0^c(C_{p_l}-C_{p_u})\,\mathrm dx .
+L'=\int_0^c(p_l-p_u)\,\mathrm dx .
+$$
+
+The pressures cannot be swapped for pressure coefficients directly, because $C_p$ is built from $p-p_\infty$. Add and subtract $p_\infty$:
+
+$$
+L'=\int_0^c\left[(p_l-p_\infty)-(p_u-p_\infty)\right]\mathrm dx .
+$$
+
+Divide by $\tfrac12\rho_\infty U_\infty^2c$:
+
+$$
+C_l=\frac1c\int_0^c(C_{p_l}-C_{p_u})\,\mathrm dx .
 $$
 
 Substitute the two $C_p$:
@@ -425,7 +435,7 @@ $$
 \int_0^c h'^2\,\mathrm dx=\frac{t^2}{4}\left(\frac1k+\frac{1}{c-k}\right)+\int_0^k\left(\frac{\mathrm df}{\mathrm dx}\right)^2\mathrm dx+\int_k^c\left(\frac{\mathrm dg}{\mathrm dx}\right)^2\mathrm dx .
 $$
 
-The last two integrals are squares, so any non-zero $f$ or $g$ only adds drag. For least drag $f=g=0$: the faces should be straight, so faceted aerofoils are favoured in supersonic flight.
+The last two integrals are squares, so any non-zero $f$ or $g$ only adds drag. For least drag $f=g=0$: the faces should be straight, so faceted aerofoils are favoured in supersonic flight. This is the opposite of incompressible aerodynamics, where a smooth, streamlined shape is what keeps the drag low; in supersonic flow every bit of curvature beyond the straight facets raises the wave drag.
 
 **Optimum $k$**. With straight faces the integral is
 
@@ -459,7 +469,7 @@ $$
 
 Moving the peak to $k=0.3c$ costs 19 % more thickness drag (right panel). A biconvex section (two parabolic arcs, $h=2t\,x(c-x)/c^2$) has $\int h'^2\,\mathrm dx=4t^2/(3c)$, a third more than the diamond, the cost of the smooth surface.
 
-Three conclusions follow: symmetric (uncambered) aerofoils are better, faceted ones are better still, and the symmetric faceted aerofoil with its thickest point at half chord is best.
+Three conclusions follow: symmetric (uncambered) aerofoils are better, faceted ones are better still, and the symmetric faceted aerofoil with its thickest point at half chord is best. The thickness term goes as $(t/c)^2$, so halving the thickness cuts the drag due to thickness by a factor of four.
 
 ## 10. The best angle of attack
 
@@ -525,32 +535,35 @@ Real supersonic wings use thin, nearly symmetric sections close to this ideal bu
 
 - `Lecture4-5.pdf`: 4.5 Ackeret Theory (Supersonic Aerofoil Theory for $M_\infty>1.2$), 8 slides. Lectured Thu 12 Nov (§§1–5).
 - `Lecture 4-5.txt` (L4-5): the Thu 12 Nov recording (370 lines), covering all 8 slides. Ll. 1–8 give the range ($M_\infty$ from 1.2 to about 3–4) and the uses; ll. 9–67 the wave equation and the check that $f(x-\lambda y)$ solves it (slides 2–3); ll. 68–144 the corrugated-sheet picture, the line equation and the Mach lines, with $\phi$ constant along them as the Riemann invariants were in the MoC (slides 3–4); ll. 145–160 $u'=-v'/\lambda$ (slide 4); ll. 161–216 the Ackeret formula and why only the surface slope is needed (slide 5); ll. 217–324 the flat plate: $\theta$ from the free-stream vector, the duct test for the signs, $C_n$, $C_l$, $C_d$ and radians (slides 6–7); ll. 325–348 the $M_\infty=2$, $\alpha=10^\circ$ example against the 2.5 shock-expansion answer (slide 7); ll. 349–355 the summary (slide 8). Ll. 356–369 put the proof that the diamond is the best supersonic aerofoil (4.6) on Fri 13 Nov.
-- `Lecture4-6.pdf`: 4.6 Optimum Supersonic Aerofoils, 11 slides. Not yet lectured; §§6–10 are written ahead from the slides.
+- `Lecture4-6.pdf`: 4.6 Optimum Supersonic Aerofoils, 11 slides. Lectured Fri 13 Nov (§§6–10).
+- `Lecture 4-6.txt` (L4-6): the Fri 13 Nov recording (403 lines), covering all 11 slides. Ll. 1–10 point to the diamond-aerofoil questions on Example Sheets 1 and 2; ll. 14–26 the identity $\int_0^{x_0}f'\,\mathrm dx=f(x_0)-f(0)$ used throughout; ll. 27–44 the recap of L4-5; ll. 45–123 the decomposition into thickness, camber and incidence and the signs of $\theta_u$ and $\theta_l$ (slides 3–4); ll. 124–186 $C_l$ (slide 5); ll. 186–274 $C_d$ and the case against camber (slide 6); ll. 275–347 the $f$–$g$ argument, faceted sections and $k=c/2$ (slides 7–9); ll. 348–376 the diamond and the best-$L/D$ exercise (slide 10); ll. 376–397 the CFD Mach-number field at $M_\infty=1.5$ and real wing sections (slide 11). Ll. 399–401: the Mon 16 Nov session is a tutorial lecture on example questions.
+
+Sections 6–10 were written ahead from the slides on 3 Nov and reconciled with L4-6. The lecture followed the slides; it added the $p_\infty$ step in the lift integral (§7) and the contrast with subsonic streamlining (§9).
 - Figures: `generate_aerothermo_w07_figures.py` (`at_ackeret_mach_lines.png`, `at_ackeret_corrugated_potential.png`, `at_ackeret_flat_plate_signs.png`, `at_ackeret_vs_exact.png`, `at_aerofoil_decomposition.png`, `at_thickness_drag.png`, `at_diamond_lift_to_drag.png`). The shock-expansion curves and the waves on the sign figure use the exact θ–β–M and Prandtl–Meyer relations ($\gamma=1.4$) and reproduce the slide 7 numbers.
 - Anderson, *Modern Compressible Flow*, §§4.15 and 9.7–9.9 (linearised supersonic flow); *Fundamentals of Aerodynamics*, §12.3.
 
 ## Self-study tasks
 
-Tasks citing L4-5 come from the Thu 12 Nov lecture. The 4.5 slide 7 homework and the 4.6 slide 10 question come from the slides, and the other 4.6 tasks are taken from its slides until it is lectured. Tasks marked so are suggested, not lecturer-set.
+Tasks citing L4-5 and L4-6 come from the Thu 12 and Fri 13 Nov lectures. Tasks marked so are suggested, not lecturer-set. The Mon 16 Nov session is a tutorial lecture on example questions (L4-6, ll. 399–401).
 
 ### Core
 
 - [ ] **(4.5 slide 7, homework; L4-5, ll. 325–343)** $M_\infty=2$, $\alpha=10^\circ$: $C_l$ and $C_d$ by Ackeret and by shock-expansion, and compare. Answers 0.4031, 0.0703 and 0.4075, 0.0719. → [[#Worked example: flat plate at M = 2, α = 10°|§4]]
-- [ ] **(L4-5, ll. 23–160; slides 2–4)** Show that $\phi=f(x-\lambda y)$ solves $\lambda^2\phi_{xx}=\phi_{yy}$, that its lines of constant $\phi$ are Mach lines at $\mu$ (the line-equation argument), and that $u'=-v'/\lambda$. → [[#1. The wave equation and its solution|§§1–2]]
-- [ ] **(L4-5, ll. 170–216; slide 5)** Derive $C_p=2\theta/\sqrt{M_\infty^2-1}$ from flow tangency, $u'=-v'/\lambda$ and $C_p=-2u'/U_\infty$. → [[#3. Ackeret's formula|§3]]
-- [ ] **(L4-5, ll. 247–313; slides 6–7)** Use the duct test to fix the sign of $\theta$ on each side of a plate at incidence, then derive $C_n$, $C_l$ and $C_d$. → [[#4. The flat plate at incidence|§4]]
-- [ ] **(4.6 slide 10 question)** Find the angle of attack for maximum $L/D$ of a diamond. Answer $\alpha=t/c$, $(L/D)_{max}=c/(2t)$. → [[#10. The best angle of attack|§10]]
+- [ ] **(L4-6, ll. 1–10)** The diamond-aerofoil questions on the example sheets, before Monday's tutorial: [[SESA3029 Example Sheet 2 - Solutions#Q5. Diamond aerofoil by Ackeret theory|ES2 Q5]] (Ackeret) and [[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|ES1 Q6]] (shock-expansion).
+- [ ] **(L4-6, ll. 367–376; slide 10)** Find the angle of attack for maximum $L/D$ of a diamond, and the angle by which the slide 10 sketch is rotated. Answer $\alpha=t/c$, $(L/D)_{max}=c/(2t)$; the sketch is rotated by $t/c$, which puts the upper front face along the free stream. → [[#10. The best angle of attack|§10]]
+- [ ] **(L4-6, ll. 124–274; slides 5–6)** Derive $C_l=4\alpha/\lambda$ and the three-term $C_d$ for a general thin aerofoil, including the $p_\infty$ step. → [[#7. Lift coefficient|§§7–8]]
+- [ ] **(L4-6, ll. 275–347; slides 7–9)** Show that the optimum symmetric section is the diamond ($f=g=0$, $k=c/2$). → [[#9. Thickness drag and the optimum section|§9]]
 
 ### Further practice
 
+- [ ] **(L4-5, ll. 170–216; slide 5)** Derive $C_p=2\theta/\sqrt{M_\infty^2-1}$ from flow tangency, $u'=-v'/\lambda$ and $C_p=-2u'/U_\infty$. → [[#3. Ackeret's formula|§3]]
+- [ ] **(L4-5, ll. 23–160; slides 2–4)** Show that $\phi=f(x-\lambda y)$ solves $\lambda^2\phi_{xx}=\phi_{yy}$, that its lines of constant $\phi$ are Mach lines at $\mu$ (the line-equation argument), and that $u'=-v'/\lambda$. → [[#1. The wave equation and its solution|§§1–2]]
+- [ ] **(L4-5, ll. 247–313; slides 6–7)** Use the duct test to fix the sign of $\theta$ on each side of a plate at incidence, then derive $C_n$, $C_l$ and $C_d$. → [[#4. The flat plate at incidence|§4]]
 - [ ] **(L4-5, ll. 233–240)** A free stream is inclined at $30^\circ$ to the horizontal and a flat plate at $20^\circ$, $M_\infty=2$. Find $\theta$ on each side and $C_{p_u}$, $C_{p_l}$. Answer $\theta_u=-10^\circ$, $\theta_l=+10^\circ$, $C_p=\mp0.202$. → [[#4. The flat plate at incidence|§4, panel (b) of the figure]]
-- [ ] **(4.6 slides 5–6)** Derive $C_l=4\alpha/\lambda$ and the three-term $C_d$ for a general thin aerofoil. → [[#7. Lift coefficient|§§7–8]]
-- [ ] **(4.6 slides 7–10)** Show that the optimum symmetric section is the diamond ($f=g=0$, $k=c/2$). → [[#9. Thickness drag and the optimum section|§9]]
-- [ ] Redo [[SESA3029 Example Sheet 2 - Solutions#Q4. Flat plate by Ackeret theory|ES2 Q4]] and [[SESA3029 Example Sheet 2 - Solutions#Q5. Diamond aerofoil by Ackeret theory|Q5]] using $\lambda$ for $\sqrt{M^2-1}$.
+- [ ] Redo [[SESA3029 Example Sheet 2 - Solutions#Q4. Flat plate by Ackeret theory|ES2 Q4]] using $\lambda$ for $\sqrt{M^2-1}$.
 - [ ] (suggested, not lecturer-set) Derive $u'=+v'/\lambda$ for the lower surface and confirm that $C_p=2\theta/\lambda$ still holds with the sign rule of Remember #2. → [[#2. Mach lines and the key result u′ = −v′/λ|§2]]
 - [ ] (suggested, not lecturer-set; the link is made in L4-5, ll. 133–144) Get the Ackeret formula from the Riemann invariant $R^-=\nu+\theta$. → [[#3. Ackeret's formula|§3, the tip]]
 - [ ] (suggested, not lecturer-set) Show that a biconvex section has $4/3$ of the diamond's thickness drag. → [[#9. Thickness drag and the optimum section|§9]]
-- [ ] (suggested, not lecturer-set) Explain why the slide 6 drag integral can use $C_p$ instead of $p$. → [[#8. Drag coefficient|§8]]
 
 ## Transcript and slide slips
 
@@ -577,3 +590,16 @@ Whisper writes aerofoil as *"elephant"*/*"air force"*, Ackeret as *"accurate"*/*
 > | l. 311 | $C_l$ *"four alpha divided by square root of m minus one"* | $4\alpha/\sqrt{M_\infty^2-1}$ |
 > | l. 313 | $C_d$ *"four alpha squared divided by m squared minus one"* | $4\alpha^2/\sqrt{M_\infty^2-1}$ (square root) |
 > | l. 327 | *"4 square minus 3, square root of 3"* | $M_\infty^2-1=4-1=3$, so $\lambda=\sqrt3$ |
+
+### Transcript slips (L4-6)
+
+Whisper again writes Ackeret as *"accurate"*/*"Eccles"*, aerofoil as *"L4"*/*"air force"* and chord as *"code"*/*"cold"*; these are not listed below.
+
+> [!warning] Slips in `Lecture 4-6.txt` (L4-6, Fri 13 Nov)
+> | Where | Said | Correct |
+> |---|---|---|
+> | ll. 30–31, 353–354 | $C_l$ *"four alpha divided by R squared M squared minus one"*, *"i squared m squared minus one"* | $4\alpha/\sqrt{M_\infty^2-1}$ |
+> | ll. 209–212 | the horizontal force component *"dF times sine beta U"* | $\mathrm dF\sin\theta_u$ |
+> | ll. 250–251 | $\int h'\,\mathrm dx$ is *"h at the leading edge take away trailing edge, take away h of leading edge"* | $h(c)-h(0)=0$ |
+> | l. 301 | aft-face slope *"minus t over 2 times c minus k"* | $-t/[2(c-k)]$ |
+> | l. 339 | *"k equals c over"* (cut off) | $k=c/2$ |
