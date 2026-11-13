@@ -29,7 +29,7 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 14 - Failure of Materials 3 -
 > - **Common mistakes:** confusing fatigue limit (a stress with no failure) with fatigue strength (a stress at a stated number of cycles); using °C in the creep exponent.
 > - **Practise:** [[#Worked example - lifing a cracked plate with the Paris law]] · [[FEEG1002 Materials Tutorial 4 - Failure of Materials Solutions]] Q5–Q7
 
-Even a component designed with its peak stress safely below yield, with a safety factor, can still fail in service (L13, ll. 1–36). It may be loaded and unloaded millions of times, held hot under load for years, or sit in seawater. None of these is captured by a single tensile test, and each needs its own picture of what the material is doing over time.
+Even a component designed with its peak stress safely below yield, with a safety factor, can still fail in service. It may be loaded and unloaded millions of times, held hot under load for years, or sit in seawater. None of these is captured by a single tensile test, and each needs its own picture of what the material is doing over time.
 
 Fatigue is the most important. A wing flexes in turbulence, a ship's hull on every wave, a hip replacement at every step, a fan blade on every take-off. Each cycle may do almost nothing, but a tiny crack can start at a slip step on the surface and grow a little at every cycle until it is long enough for fast fracture ([[FEEG1002 C8 - Fracture - Brittle, Ductile and Fracture Mechanics|C8]]). The modern way to handle this is to assume that every component already contains a crack and to predict how fast it grows, so that the part is inspected and replaced in time.
 
@@ -41,7 +41,7 @@ Creep and corrosion rest on familiar mechanisms: creep is diffusion ([[FEEG1002 
 
 ### Cyclic stress
 
-**Fatigue** is failure under fluctuating stress after many cycles, even though the maximum stress is below the yield strength and the fracture stress. It is associated with about 90 % of metallic failures in service (slide "Fatigue"; L13, ll. 37–72). It is not wearing out: the part is cycled until it breaks. In a test the load is idealised as a sine wave between a maximum stress $\sigma_{max}$ and a minimum $\sigma_{min}$. The **stress range** is
+**Fatigue** is failure under fluctuating stress after many cycles, even though the maximum stress is below the yield strength and the fracture stress. It is associated with about 90 % of metallic failures in service. It is not wearing out: the part is cycled until it breaks. In a test the load is idealised as a sine wave between a maximum stress $\sigma_{max}$ and a minimum $\sigma_{min}$. The **stress range** is
 
 $$
 \Delta\sigma=\sigma_{max}-\sigma_{min}
@@ -53,27 +53,27 @@ $$
 \sigma_a=\frac{\Delta\sigma}{2}=\frac{\sigma_{max}-\sigma_{min}}{2}
 $$
 
-(L13, ll. 73–92).
+.
 
 ![[m9_fatigue_cycle.png|900]]
 
 ### How a fatigue crack starts
 
-A polished part can fail by fatigue at a stress it could carry once with no trouble, because the damage is local. In one grain, a slip system is a little better aligned than the rest and starts to operate. Dislocations run along that one slip plane and emerge at the surface, leaving a tiny step. The step is a stress concentration; more slip happens next to it, the step deepens into an intrusion, and a microcrack forms and starts to propagate (L13, ll. 93–136). This can take hundreds of thousands of cycles. The fatigue process therefore has three steps (slide "S-N Curves: Fatigue Life / Fatigue Strength"): crack initiation, taking $N_i$ cycles; crack propagation, taking $N_p$ cycles; and final fracture, which is so rapid (about one cycle) that it adds nothing to the life. The fatigue life is therefore
+A polished part can fail by fatigue at a stress it could carry once with no trouble, because the damage is local. In one grain, a slip system is a little better aligned than the rest and starts to operate. Dislocations run along that one slip plane and emerge at the surface, leaving a tiny step. The step is a stress concentration; more slip happens next to it, the step deepens into an intrusion, and a microcrack forms and starts to propagate. This can take hundreds of thousands of cycles. The fatigue process therefore has three steps: crack initiation, taking $N_i$ cycles; crack propagation, taking $N_p$ cycles; and final fracture, which is so rapid (about one cycle) that it adds nothing to the life. The fatigue life is therefore
 
 $$
 N_f=N_i+N_p
 $$
 
-In **high-cycle fatigue**, at low stress levels, most of the life is spent in initiation: $N_i$ is long. In **low-cycle fatigue**, at higher stress levels, a crack starts quickly (or is already there) and propagation dominates: $N_p$ becomes much greater than $N_i$ (L13, ll. 266–319).
+In **high-cycle fatigue**, at low stress levels, most of the life is spent in initiation: $N_i$ is long. In **low-cycle fatigue**, at higher stress levels, a crack starts quickly (or is already there) and propagation dominates: $N_p$ becomes much greater than $N_i$.
 
 ### S–N curves
 
-Materials are ranked by their fatigue resistance in a **rotating-bending test**: a mirror-polished cylindrical specimen is rotated while it is bent, so every point on its surface goes from tension to compression and back once per revolution (slide "S-N Curves: Fatigue Characterisation"; L13, ll. 137–187). Each specimen is run to failure at a fixed stress amplitude $S$, and a series of tests at decreasing amplitudes gives the **S–N curve**: stress amplitude against the number of cycles to failure, on a logarithmic scale. The higher the amplitude, the fewer the cycles, because the crack starts sooner. A curve higher and further to the right means a better material in fatigue. A test can run for a week, and many specimens are needed because of the scatter.
+Materials are ranked by their fatigue resistance in a **rotating-bending test**: a mirror-polished cylindrical specimen is rotated while it is bent, so every point on its surface goes from tension to compression and back once per revolution. Each specimen is run to failure at a fixed stress amplitude $S$, and a series of tests at decreasing amplitudes gives the **S–N curve**: stress amplitude against the number of cycles to failure, on a logarithmic scale. The higher the amplitude, the fewer the cycles, because the crack starts sooner. A curve higher and further to the right means a better material in fatigue. A test can run for a week, and many specimens are needed because of the scatter.
 
 ![[m9_sn_curves.png|900]]
 
-Three quantities are read from the curve, and two of them are easily confused (slides "S-N Curves: Fatigue Limit" and "Fatigue Life / Fatigue Strength"; L13, ll. 188–265):
+Three quantities are read from the curve, and two of them are easily confused:
 
 - The **fatigue limit** is the largest fluctuating stress that will not cause failure for an essentially infinite number of cycles: the level at which the curve becomes horizontal. Only some alloys have one, notably iron (steels) and titanium alloys; for steels it is 35–60 % of the tensile strength. This is one reason titanium alloys are so valued.
 - The **fatigue life** $N_f$ is the number of cycles to cause failure at a specified stress level: read across from the stress to the curve, then down.
@@ -83,7 +83,7 @@ The fatigue limit and the fatigue strength must be kept apart; the first is a st
 
 ### What affects fatigue life
 
-The S–N curve of polished specimens ranks materials, but it is not useful for finding the safe life of a real structure (slide "Fatigue Life Influencers"; L13, ll. 320–374). A real component is not a polished dog-bone specimen:
+The S–N curve of polished specimens ranks materials, but it is not useful for finding the safe life of a real structure. A real component is not a polished dog-bone specimen:
 
 - A rough surface has many stress concentrations ready to start cracks, which reduces $N_i$ and shifts the whole S–N curve down.
 - Sharp corners and other stress concentrations designed into a structure start cracks, however low the stress is elsewhere.
@@ -92,7 +92,7 @@ The S–N curve of polished specimens ranks materials, but it is not useful for 
 
 ### Damage-tolerant design
 
-Damage-tolerant design assumes that every engineering structure contains defects, intentional or unavoidable, and designs around how fast a crack grows, its **fatigue crack growth rate** $da/dN$ (slide "Damage tolerant design"; L13, ll. 375–430). The crack tip is a stress concentration described by $K$ ([[FEEG1002 C8 - Fracture - Brittle, Ductile and Fracture Mechanics#4. The stress intensity factor|C8]]), and under cyclic load it is the **stress intensity factor range** that matters:
+Damage-tolerant design assumes that every engineering structure contains defects, intentional or unavoidable, and designs around how fast a crack grows, its **fatigue crack growth rate** $da/dN$. The crack tip is a stress concentration described by $K$ ([[FEEG1002 C8 - Fracture - Brittle, Ductile and Fracture Mechanics#4. The stress intensity factor|C8]]), and under cyclic load it is the **stress intensity factor range** that matters:
 
 $$
 \Delta K=K_{max}-K_{min}
@@ -108,11 +108,11 @@ $$
 \boxed{\Delta K=Y\Delta\sigma\sqrt{\pi a}}
 $$
 
-A crack grows only while it is pulled open. When $\sigma_{min}$ is compressive, the crack faces are pressed shut and the crack does not grow during that part of the cycle (the faces, once separated, do not weld back together). So if $\sigma_{min}$ is compressive, $\sigma_{min}$ and $K_{min}$ are taken to be zero, and $\Delta K=K_{max}$ (L13, ll. 431–475). Even at a constant stress range, $\Delta K$ is not constant: the crack grows a little every cycle, so $a$, $K_{max}$ and $\Delta K$ all increase as the test goes on (L13, ll. 476–525). When $K_{max}$ reaches $K_{IC}$, the crack has reached its critical length and fast fracture follows (L13, ll. 547–562).
+A crack grows only while it is pulled open. When $\sigma_{min}$ is compressive, the crack faces are pressed shut and the crack does not grow during that part of the cycle (the faces, once separated, do not weld back together). So if $\sigma_{min}$ is compressive, $\sigma_{min}$ and $K_{min}$ are taken to be zero, and $\Delta K=K_{max}$. Even at a constant stress range, $\Delta K$ is not constant: the crack grows a little every cycle, so $a$, $K_{max}$ and $\Delta K$ all increase as the test goes on. When $K_{max}$ reaches $K_{IC}$, the crack has reached its critical length and fast fracture follows.
 
 ### The Paris law
 
-Plotted on log–log axes, the crack growth rate $da/dN$ against $\Delta K$ has three regions (slide "Crack Propagation Rate"; L13, ll. 563–590). At low $\Delta K$ cracks grow very slowly or not at all (region I). At high $\Delta K$, as $K_{max}$ approaches $K_{IC}$, growth accelerates towards fast fracture (region III). In between, region II is a straight line:
+Plotted on log–log axes, the crack growth rate $da/dN$ against $\Delta K$ has three regions. At low $\Delta K$ cracks grow very slowly or not at all (region I). At high $\Delta K$, as $K_{max}$ approaches $K_{IC}$, growth accelerates towards fast fracture (region III). In between, region II is a straight line:
 
 $$
 \log\frac{da}{dN}=\log A+m\log\Delta K
@@ -130,7 +130,7 @@ $A$ and $m$ are material constants found from crack-growth tests; $m$ is typical
 
 ### Integrating the Paris law
 
-The life spent growing a crack from one length to another is found by integration, which is the basis of structural lifing (slide "Crack Propagation Rate"). Substitute $\Delta K$ into the Paris law, taking $Y$ and $\Delta\sigma$ as constant:
+The life spent growing a crack from one length to another is found by integration, which is the basis of structural lifing. Substitute $\Delta K$ into the Paris law, taking $Y$ and $\Delta\sigma$ as constant:
 
 $$
 \frac{da}{dN}=A\left(Y\Delta\sigma\sqrt{\pi a}\right)^m=A\,Y^m\Delta\sigma^m\pi^{m/2}a^{m/2}
@@ -166,27 +166,27 @@ $$
 a_c=\frac1\pi\left(\frac{K_{IC}}{Y\sigma_{max}}\right)^2
 $$
 
-Because $m>2$, the term in $a_0$ dominates the bracket: the life depends mostly on the size of the initial crack, and hardly at all on $K_{IC}$. A crack spends most of its life while it is small and growing slowly. This is why the inspection interval is set so that a crack missed at one inspection cannot reach the critical size before the next: let it grow to a set length, inspect at set intervals, and replace the part before failure (L13, ll. 591–632).
+Because $m>2$, the term in $a_0$ dominates the bracket: the life depends mostly on the size of the initial crack, and hardly at all on $K_{IC}$. A crack spends most of its life while it is small and growing slowly. This is why the inspection interval is set so that a crack missed at one inspection cannot reach the critical size before the next: let it grow to a set length, inspect at set intervals, and replace the part before failure.
 
 ### Case study: Southwest Airlines Flight 1380
 
-In April 2018 a fan blade of a CFM56-7B engine on a Boeing 737-700 broke off in flight; debris punctured the cabin and one passenger died (slides "Case Study"; L13, ll. 633–806). The blade had accumulated 67,040 flight hours and 40,569 flight cycles; the engine had been overhauled at 6,125 and 21,924 cycles, and the blades inspected visually and by fluorescent penetrant, 10,712 engine cycles before the accident. **Ratchet marks** on the fracture surface showed that the crack had started at more than one site. Six **arrest lines** (beach marks) recorded each relubrication during servicing, about 1,255 to 2,201 flight cycles apart, and the spacing between them widened as the crack grew, because $\Delta K$ rose with $a$. About 1,704 cycles after the last arrest line, $K_{max}$ reached $K_{IC}$ and the remaining section failed by fast fracture. The investigation concluded that the crack was probably not detectable by penetrant at the last overhaul, and ultrasonic inspection of the blades at every lubrication was introduced. An open crack blocks ultrasound passing through the blade, so it shows up clearly (L13, ll. 807–818).
+In April 2018 a fan blade of a CFM56-7B engine on a Boeing 737-700 broke off in flight; debris punctured the cabin and one passenger died. The blade had accumulated 67,040 flight hours and 40,569 flight cycles; the engine had been overhauled at 6,125 and 21,924 cycles, and the blades inspected visually and by fluorescent penetrant, 10,712 engine cycles before the accident. **Ratchet marks** on the fracture surface showed that the crack had started at more than one site. Six **arrest lines** (beach marks) recorded each relubrication during servicing, about 1,255 to 2,201 flight cycles apart, and the spacing between them widened as the crack grew, because $\Delta K$ rose with $a$. About 1,704 cycles after the last arrest line, $K_{max}$ reached $K_{IC}$ and the remaining section failed by fast fracture. The investigation concluded that the crack was probably not detectable by penetrant at the last overhaul, and ultrasonic inspection of the blades at every lubrication was introduced. An open crack blocks ultrasound passing through the blade, so it shows up clearly.
 
 ## 2. Creep
 
 ### What creep is
 
-**Creep** is time-dependent deformation under a constant static stress, normally at elevated temperature (slide "Creep"; L14, ll. 26–75). It matters in metals above about 0.3–0.4 of the absolute melting temperature $T_m$, and in ceramics above about 0.4–0.5 $T_m$. The reason melting temperature matters is diffusion: creep is a diffusion-controlled process, and diffusion becomes significant at a similar fraction of $T_m$ in all metals ([[FEEG1002 C3 - Diffusion|C3]]). A tungsten lamp filament sags under its own weight at its operating temperature; old lead pipes, with lead's low melting point (327 °C), sag down walls on hot days. Polymers creep near room temperature, which depends on their glass transition temperature ([[FEEG1002 C10 - Polymers - Structure and Mechanics#Creep and stress relaxation|C10]]).
+**Creep** is time-dependent deformation under a constant static stress, normally at elevated temperature. It matters in metals above about 0.3–0.4 of the absolute melting temperature $T_m$, and in ceramics above about 0.4–0.5 $T_m$. The reason melting temperature matters is diffusion: creep is a diffusion-controlled process, and diffusion becomes significant at a similar fraction of $T_m$ in all metals ([[FEEG1002 C3 - Diffusion|C3]]). A tungsten lamp filament sags under its own weight at its operating temperature; old lead pipes, with lead's low melting point (327 °C), sag down walls on hot days. Polymers creep near room temperature, which depends on their glass transition temperature ([[FEEG1002 C10 - Polymers - Structure and Mechanics#Creep and stress relaxation|C10]]).
 
 ### The three stages
 
-A creep test holds a specimen at constant load and temperature and records strain against time (slide "Creep Stages"; L14, ll. 76–120). On loading there is an instantaneous elastic strain. In **primary creep** that follows, the creep rate decreases continuously, because the material strain-hardens as dislocations move. The rate then settles to a constant value in **secondary**, or **steady-state**, creep, where the strain–time curve is a straight line; the majority of the service life is spent here. In **tertiary creep** the rate accelerates as the cross-section shrinks and internal damage grows, ending in rupture.
+A creep test holds a specimen at constant load and temperature and records strain against time. On loading there is an instantaneous elastic strain. In **primary creep** that follows, the creep rate decreases continuously, because the material strain-hardens as dislocations move. The rate then settles to a constant value in **secondary**, or **steady-state**, creep, where the strain–time curve is a straight line; the majority of the service life is spent here. In **tertiary creep** the rate accelerates as the cross-section shrinks and internal damage grows, ending in rupture.
 
 ![[m9_creep_curve.png|900]]
 
 ### Steady-state creep rate
 
-Because most of the life is spent in secondary creep, the steady-state creep rate $\dot\varepsilon_s=\Delta\varepsilon/\Delta t$ is the key parameter for life planning (slide "Creep rate"; L14, ll. 121–205). It depends on stress and temperature as
+Because most of the life is spent in secondary creep, the steady-state creep rate $\dot\varepsilon_s=\Delta\varepsilon/\Delta t$ is the key parameter for life planning. It depends on stress and temperature as
 
 $$
 \boxed{\dot\varepsilon_s=K_2\sigma^n\exp\left(-\frac{Q_c}{RT}\right)}
@@ -200,15 +200,15 @@ $$
 
 ### Designing against creep
 
-Creep resistance comes from a high melting temperature, so that the service temperature is a lower fraction of $T_m$ and the activation energy is high; a high elastic modulus, which reflects strong bonding; and large grains, which mean fewer grain boundaries to slide and fewer fast diffusion paths (L14, ll. 233–257). This is the opposite of the fine grains wanted for strength at room temperature ([[FEEG1002 C5 - Strengthening Mechanisms and Annealing#The Hall–Petch relation|C5]]).
+Creep resistance comes from a high melting temperature, so that the service temperature is a lower fraction of $T_m$ and the activation energy is high; a high elastic modulus, which reflects strong bonding; and large grains, which mean fewer grain boundaries to slide and fewer fast diffusion paths. This is the opposite of the fine grains wanted for strength at room temperature ([[FEEG1002 C5 - Strengthening Mechanisms and Annealing#The Hall–Petch relation|C5]]).
 
-Turbine blades show the progression (L14, ll. 258–311). A blade carries a large centrifugal tensile load from its root in hot gas. A cheap cast blade with equiaxed grains has grain boundaries in every direction and a short creep life. A **directionally solidified** blade has long columnar grains aligned with the load, so the boundaries lie along the stress and slide much less. A **single-crystal** blade, grown through a spiral grain selector so that only one grain survives, has no grain boundaries at all, and is precipitation hardened to block dislocations as well; it is the most expensive and lasts longest.
+Turbine blades show the progression. A blade carries a large centrifugal tensile load from its root in hot gas. A cheap cast blade with equiaxed grains has grain boundaries in every direction and a short creep life. A **directionally solidified** blade has long columnar grains aligned with the load, so the boundaries lie along the stress and slide much less. A **single-crystal** blade, grown through a spiral grain selector so that only one grain survives, has no grain boundaries at all, and is precipitation hardened to block dislocations as well; it is the most expensive and lasts longest.
 
 ## 3. Corrosion
 
 ### Anodic and cathodic reactions
 
-Corrosion of a metal in a wet environment is electrochemical, and needs two coupled reactions (slide "Oxidation vs. Reduction"; L14, ll. 318–348). At the **anode** the metal is oxidised: it gives up its valence electrons and goes into solution as positive ions,
+Corrosion of a metal in a wet environment is electrochemical, and needs two coupled reactions. At the **anode** the metal is oxidised: it gives up its valence electrons and goes into solution as positive ions,
 
 $$
 \mathrm{M}\rightarrow\mathrm{M}^{n+}+ne^-\qquad\text{e.g.}\qquad\mathrm{Fe}\rightarrow\mathrm{Fe}^{2+}+2e^-
@@ -224,7 +224,7 @@ The two rates must balance, because every electron released at the anode is cons
 
 ### The standard emf series and cell voltage
 
-Which metal of a pair becomes the anode is set by the **standard electrode potentials**, measured when each metal, in a standard solution of its own ions, is coupled to a standard hydrogen electrode (slides "Electrical Potentials", "The Standard emf Series"; L14, ll. 349–398). The more negative the potential, the more readily the metal gives up electrons, so in a couple the more negative metal is the anode and the more positive the cathode. The cell voltage is
+Which metal of a pair becomes the anode is set by the **standard electrode potentials**, measured when each metal, in a standard solution of its own ions, is coupled to a standard hydrogen electrode. The more negative the potential, the more readily the metal gives up electrons, so in a couple the more negative metal is the anode and the more positive the cathode. The cell voltage is
 
 $$
 E_{cell}=E_{cathode}-E_{anode}
@@ -244,17 +244,17 @@ $$
 E_{cell}=0.340-(-0.440)=0.780\ \mathrm V
 $$
 
-Iron dissolves and copper is deposited. For zinc coupled to iron, zinc is now the anode. The further apart two metals are in the series, the larger the voltage and the faster the anode corrodes; very reactive metals such as sodium and magnesium sit at the negative end (L14, ll. 430–471). A lemon with zinc and copper electrodes gives about 0.9 V on a multimeter, less than the standard 1.10 V, because the acidic, sugary juice is not a standard solution. The rule of thumb is not to put dissimilar metals in contact in an electrolyte.
+Iron dissolves and copper is deposited. For zinc coupled to iron, zinc is now the anode. The further apart two metals are in the series, the larger the voltage and the faster the anode corrodes; very reactive metals such as sodium and magnesium sit at the negative end. A lemon with zinc and copper electrodes gives about 0.9 V on a multimeter, less than the standard 1.10 V, because the acidic, sugary juice is not a standard solution. The rule of thumb is not to put dissimilar metals in contact in an electrolyte.
 
 ![[m9_emf_series.png|900]]
 
 ### The galvanic series
 
-Real alloys in real environments do not behave exactly as the standard series says. In seawater, the chloride ions change the electrochemistry and carry charge very well, and metals that form protective oxide films behave far more nobly than their standard potential suggests. The **galvanic series** ranks real alloys in seawater, with separate active and passive entries for metals such as stainless steel (slide "The Galvanic series (Sea Water)"; L14, ll. 457–471, 596–602). Titanium is the striking case: its standard potential is very negative, yet in seawater it sits near the noble end because its oxide film makes it inert ([[FEEG1002 Materials Tutorial 4 - Failure of Materials Solutions#Q7 - Corrosion of titanium and protecting buried steel|Tutorial 4, Q7]]).
+Real alloys in real environments do not behave exactly as the standard series says. In seawater, the chloride ions change the electrochemistry and carry charge very well, and metals that form protective oxide films behave far more nobly than their standard potential suggests. The **galvanic series** ranks real alloys in seawater, with separate active and passive entries for metals such as stainless steel. Titanium is the striking case: its standard potential is very negative, yet in seawater it sits near the noble end because its oxide film makes it inert ([[FEEG1002 Materials Tutorial 4 - Failure of Materials Solutions#Q7 - Corrosion of titanium and protecting buried steel|Tutorial 4, Q7]]).
 
 ### Eight forms of corrosion
 
-Eight forms of corrosion are distinguished (slide "Types of Corrosion"; L14, ll. 472–542). The simplest is **uniform attack**, corrosion at about the same rate over the whole exposed surface. In **galvanic corrosion** two different metals or alloys are electrically coupled in an electrolyte, and the more anodic one corrodes.
+Eight forms of corrosion are distinguished. The simplest is **uniform attack**, corrosion at about the same rate over the whole exposed surface. In **galvanic corrosion** two different metals or alloys are electrically coupled in an electrolyte, and the more anodic one corrodes.
 
 Several forms are local cells set up on a single metal. **Crevice corrosion** occurs in crevices and other places with local depletion of oxygen: the oxygen-starved region becomes the anode and the surface outside the crevice the cathode, and attack inside is accelerated. **Pitting** is localised attack in which pits form, typically from the top of horizontal surfaces. The pit makes its own microenvironment, with the anode at the bottom and the cathode at the mouth, and it is an ideal starting point for a fatigue crack. **Intergranular corrosion** runs preferentially along grain boundaries, which are more reactive than the grain interiors, and in **selective leaching** one element or constituent of an alloy is removed preferentially.
 
@@ -262,24 +262,24 @@ The last two forms combine corrosion with mechanical action. **Tribocorrosion** 
 
 ### Passivation
 
-Not all corrosion is bad (slides "Corrosion Protection: Oxide formation", "Passivated Metals"; L14, ll. 543–602). Some metals form an oxide layer that adheres well, is coherent and free of defects, and so protects the metal underneath: aluminium (alumina), chromium (Cr₂O₃) and titanium (TiO₂). The oxide is a ceramic: it does not conduct electrons, and it is a barrier to the diffusion of metal ions outwards and oxygen ions inwards, so further corrosion is stifled. This is **passivation**. Stainless steels contain at least 12 % chromium, which oxidises preferentially at the surface and produces an impervious Cr₂O₃ layer; cobalt–chromium–molybdenum hip alloys have about 26–30 % chromium for the same reason. Aluminium can be **anodised**, oxidised further electrochemically to thicken its protective layer, which can also be dyed. Rust on iron, by contrast, is porous and does not protect.
+Not all corrosion is bad. Some metals form an oxide layer that adheres well, is coherent and free of defects, and so protects the metal underneath: aluminium (alumina), chromium (Cr₂O₃) and titanium (TiO₂). The oxide is a ceramic: it does not conduct electrons, and it is a barrier to the diffusion of metal ions outwards and oxygen ions inwards, so further corrosion is stifled. This is **passivation**. Stainless steels contain at least 12 % chromium, which oxidises preferentially at the surface and produces an impervious Cr₂O₃ layer; cobalt–chromium–molybdenum hip alloys have about 26–30 % chromium for the same reason. Aluminium can be **anodised**, oxidised further electrochemically to thicken its protective layer, which can also be dyed. Rust on iron, by contrast, is porous and does not protect.
 
 ### Protecting against corrosion
 
-Beyond choosing a passive alloy, there are four main methods (slides "Sacrificial Anodes", "Corrosion Protection"; L14, ll. 603–655). Two of them make the structure the cathode. A **sacrificial anode** is a more reactive metal deliberately coupled to the structure so that it becomes the anode and corrodes instead. Galvanised steel is coated with zinc ($-0.763$ V, against $-0.440$ V for iron), which corrodes first and protects the steel even where the coating is scratched. Zinc blocks bolted to a ship's hull below the waterline do the same, and stop working if they are painted over with antifouling. Buried pipes and tanks are protected by magnesium anodes ($-2.38$ V) buried in backfill next to them. **Impressed current** protection reaches the same result electrically: a rectifier drives a current from a separate anode (often scrap metal) through the soil to the structure, so that the structure is forced to be the cathode. It needs a power supply and maintenance.
+Beyond choosing a passive alloy, there are four main methods. Two of them make the structure the cathode. A **sacrificial anode** is a more reactive metal deliberately coupled to the structure so that it becomes the anode and corrodes instead. Galvanised steel is coated with zinc ($-0.763$ V, against $-0.440$ V for iron), which corrodes first and protects the steel even where the coating is scratched. Zinc blocks bolted to a ship's hull below the waterline do the same, and stop working if they are painted over with antifouling. Buried pipes and tanks are protected by magnesium anodes ($-2.38$ V) buried in backfill next to them. **Impressed current** protection reaches the same result electrically: a rectifier drives a current from a separate anode (often scrap metal) through the soil to the structure, so that the structure is forced to be the cathode. It needs a power supply and maintenance.
 
 The other two methods stop the cell from forming at all. Breaking the circuit separates dissimilar metals with insulating washers, paint or other insulation, and protective coatings, oxides or paints, keep the electrolyte off the metal and block the flow of electrons.
 
 ### Designing against corrosion
 
-The design rules follow from the electrochemistry (slide "Summary"; L14, ll. 718–743):
+The design rules follow from the electrochemistry:
 
 - Think about where the anode is, and avoid small anodes coupled to large cathodes: the whole cathodic current is then concentrated on a small area, which corrodes rapidly.
 - Anodes form where oxygen is depleted, so avoid crevices and water traps; provide drainage holes, use good detailing and avoid sharp edges.
 - Welded joints are preferable to bolted joints, which have crevices; if bolting dissimilar metals, isolate them.
 - Avoid bimetallic couples, and use protective coatings.
 
-Even small differences in microstructure can set up a cell: in a forged hip stem whose grain size differed between its top and bottom, the difference was enough to drive galvanic corrosion in the body. Metal-on-metal hip implants show several of these effects at once (L14, ll. 656–717). Cobalt–chromium heads on taper stems corroded at the joint by mechanically assisted crevice corrosion: micromotion stripped the passive oxide, the low oxygen in tissue stopped it re-forming, and the crevice geometry concentrated the attack. One retrieval had lost about 8 mm³ of chromium and cobalt as ions, enough to cause a pseudotumour and destroy the surrounding tissue. Corrosion also leaves pits and grooves that act as stress concentrations for fatigue.
+Even small differences in microstructure can set up a cell: in a forged hip stem whose grain size differed between its top and bottom, the difference was enough to drive galvanic corrosion in the body. Metal-on-metal hip implants show several of these effects at once. Cobalt–chromium heads on taper stems corroded at the joint by mechanically assisted crevice corrosion: micromotion stripped the passive oxide, the low oxygen in tissue stopped it re-forming, and the crevice geometry concentrated the attack. One retrieval had lost about 8 mm³ of chromium and cobalt as ions, enough to cause a pseudotumour and destroy the surrounding tissue. Corrosion also leaves pits and grooves that act as stress concentrations for fatigue.
 
 ---
 

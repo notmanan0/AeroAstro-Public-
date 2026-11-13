@@ -29,7 +29,7 @@ $$
 
 Below $M=1$ the pulses stay ahead of the source, there is no envelope and the sound reaches everywhere, Doppler-shifted. At $M=1$ every pulse passes through the source together, forming a plane front (the sonic boom) with a **zone of silence** ahead of it. Above $M=1$ the sound is heard only inside the **Mach cone** of half-angle $\mu$.
 
-Once the cone has passed you, the pulses emitted while the source was closing on you faster than $a$ arrive in reverse order, and the later ones arrive in the normal order at the same time ([[SESA3029 W05a - Method of Characteristics#9. Zones of dependence and influence (3.2 slides 5–6)|W05a §9]]).
+Once the cone has passed you, the pulses emitted while the source was closing on you faster than $a$ arrive in reverse order, and the later ones arrive in the normal order at the same time ([[SESA3029 W05a - Method of Characteristics#9. Zones of dependence and influence|W05a §9]]).
 
 In the method of characteristics, $\mu$ sets the slope of every characteristic, $\theta\pm\mu$. Since $\mu$ changes with $M$, the characteristics bend as the flow accelerates.
 

@@ -18,7 +18,7 @@ Cathodic protection uses the electrochemistry directly. A buried steel pipeline 
 
 Design matters as much as chemistry. The rules are to know where the anode is, to avoid a small anode with a large cathode, to remove crevices, sharp edges and water traps (with drainage holes, and welded rather than bolted joints where gaps would form), to keep dirt and debris off, and to avoid joining dissimilar metals. A sealed system stops corroding once its oxygen is used up, which is why a closed heating circuit or a sealed bolted joint lasts. Paints and similar coatings work mainly as electrical insulators that break the local circuits, not by sealing out oxygen. Some metals, such as stainless steel, aluminium and titanium, protect themselves with a coherent oxide.
 
-The slide groups the options under five headings: materials selection, coatings (metallic, inorganic, organic), design (avoid excessive stress, dissimilar metals and crevices; exclude air), cathodic and anodic protection, and environmental control through temperature, flow velocity, oxygen level, ion concentration, inhibitors and cleaning.
+The options fall under five headings: materials selection, coatings (metallic, inorganic, organic), design (avoid excessive stress, dissimilar metals and crevices; exclude air), cathodic and anodic protection, and environmental control through temperature, flow velocity, oxygen level, ion concentration, inhibitors and cleaning.
 
 ## Related
 

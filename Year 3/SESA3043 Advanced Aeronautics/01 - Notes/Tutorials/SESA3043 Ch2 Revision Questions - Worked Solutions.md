@@ -66,19 +66,19 @@ $\Phi=-\dfrac{\mu}{2\pi}\dfrac{e^{i\nu}}{z}$, $u=\dfrac{\mu}{2\pi r^2}\cos(2\the
 
 ### Q3. Flow impinging on a plate
 
-$\Phi=\pm U_\infty\sqrt{z^2+4a^2}$, $C_p=1-\dfrac{y^2}{4a^2-y^2}$. → [[SESA3043 2.1 - Complex Functions and Conformal Mapping#3. Flow impinging on a finite plate (slides 9–12; revision 2.1 Q3)]]
+$\Phi=\pm U_\infty\sqrt{z^2+4a^2}$, $C_p=1-\dfrac{y^2}{4a^2-y^2}$. → [[SESA3043 2.1 - Complex Functions and Conformal Mapping#3. Flow impinging on a finite plate]]
 
 ### Q4. Joukowski chord
 
-$c=2b+b\left(1+2\varepsilon+\dfrac{1}{1+2\varepsilon}\right)=\dfrac{4b(1+\varepsilon)^2}{1+2\varepsilon}$. → [[SESA3043 2.1 - Complex Functions and Conformal Mapping#Chord length (derivation; revision 2.1 Q4)]]
+$c=2b+b\left(1+2\varepsilon+\dfrac{1}{1+2\varepsilon}\right)=\dfrac{4b(1+\varepsilon)^2}{1+2\varepsilon}$. → [[SESA3043 2.1 - Complex Functions and Conformal Mapping#Chord length (derivation)]]
 
 ## 2.2 Lumped vortex method
 
 | Q | Configuration | Answer | Full solution |
 |---|---|---|---|
-| 1 | Thin-aerofoil review | a.c. at $c/4$, slope $2\pi$, $\bar x_{cp}=-C_{M,LE}/C_L$ | [[SESA3043 2.2 - Lumped Vortex Method#1. Thin-aerofoil review (slides 25–27; revision 2.2 Q1)]] |
-| 2 | LV steps | 5 steps; why $c/4$ and $3c/4$ | [[SESA3043 2.2 - Lumped Vortex Method#2. The flat plate with one lumped vortex (slides 28–30)]] |
-| 3 | Tandem, gap $\varepsilon c$ | $\dfrac{L_1}{L_2}=\dfrac{2\varepsilon+3}{2\varepsilon+1}$ | [[SESA3043 2.2 - Lumped Vortex Method#General gap s = εc (revision 2.2 Q3)]] |
+| 1 | Thin-aerofoil review | a.c. at $c/4$, slope $2\pi$, $\bar x_{cp}=-C_{M,LE}/C_L$ | [[SESA3043 2.2 - Lumped Vortex Method#1. Thin-aerofoil review]] |
+| 2 | LV steps | 5 steps; why $c/4$ and $3c/4$ | [[SESA3043 2.2 - Lumped Vortex Method#2. The flat plate with one lumped vortex]] |
+| 3 | Tandem, gap $\varepsilon c$ | $\dfrac{L_1}{L_2}=\dfrac{2\varepsilon+3}{2\varepsilon+1}$ | [[SESA3043 2.2 - Lumped Vortex Method#General gap s = εc]] |
 | 4 | Tandem, gap $c/2$, ground at $h=c/2$ | $\Gamma_1=\tfrac{140}{87}\Gamma_\infty$, $\Gamma_2=\tfrac{100}{87}\Gamma_\infty$, $L_1/L_2=7/5$ | [[SESA3043 2.2 - Lumped Vortex Method#Q4. Tandem in ground effect (s = c/2, h = c/2)]] |
 | 5 | Rear plate at $(1+\varepsilon)\alpha$ | $\dfrac{L_1}{L_2}=\dfrac{2(\varepsilon+3)}{4\varepsilon+3}$ | [[SESA3043 2.2 - Lumped Vortex Method#Q5. Rear aerofoil at extra incidence β = εα (s = c/2)]] |
 | 6 | Biplane, gap $c/2$ | each $\tfrac23\Gamma_\infty$; total $\tfrac43$ of one aerofoil | [[SESA3043 2.2 - Lumped Vortex Method#Q6. Biplane, vertical gap c/2]] |

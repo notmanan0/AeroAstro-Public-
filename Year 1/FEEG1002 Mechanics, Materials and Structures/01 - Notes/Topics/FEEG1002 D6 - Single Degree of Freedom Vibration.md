@@ -59,7 +59,7 @@ In the standard SDOF model the spring and damper connect the mass to fixed groun
 
 ### Equivalent springs
 
-The spring in a real system is usually a structural member, and its stiffness is the force per unit deflection at the point where the mass sits (slides pp. 10–11).
+The spring in a real system is usually a structural member, and its stiffness is the force per unit deflection at the point where the mass sits.
 
 ![[d_equivalent_springs.png|900]]
 
@@ -95,7 +95,7 @@ These rules are the opposite way round from resistors in an electrical circuit. 
 
 ### Static and dynamic displacement
 
-For a mass $m$ hanging on a spring, with displacements positive downwards (slide p. 15), at static equilibrium the spring is stretched by $\delta$:
+For a mass $m$ hanging on a spring, with displacements positive downwards, at static equilibrium the spring is stretched by $\delta$:
 
 $$
 mg-k\delta=0
@@ -173,7 +173,7 @@ using $m\omega_n^2=k$. Adding, $V+KE=\tfrac12kx_0^2$, constant: energy passes ba
 
 ### Equation of motion and characteristic equation
 
-Add a viscous damper and take $x$ positive upwards from static equilibrium (slide p. 32). The spring force $kx$ opposes the displacement and the damper force $c\dot x$ opposes the velocity:
+Add a viscous damper and take $x$ positive upwards from static equilibrium. The spring force $kx$ opposes the displacement and the damper force $c\dot x$ opposes the velocity:
 
 $$
 -kx-c\dot x=m\ddot x
@@ -275,7 +275,7 @@ $$
 x(t)=x_0e^{-\zeta\omega_nt}\left(\cos\omega_dt+\frac{\zeta}{\sqrt{1-\zeta^2}}\sin\omega_dt\right)
 $$
 
-For light damping the sine term is small and $x\approx x_0e^{-\zeta\omega_nt}\cos\omega_dt$, which is the form on slide p. 38; the oscillation repeats every **damped period** $T_d=2\pi/\omega_d$.
+For light damping the sine term is small and $x\approx x_0e^{-\zeta\omega_nt}\cos\omega_dt$; the oscillation repeats every **damped period** $T_d=2\pi/\omega_d$.
 
 ### Logarithmic decrement
 
@@ -359,7 +359,7 @@ with $\phi$ running from 0 through $-90°$ (at $\omega=\omega_n$) to $-180°$.
 
 ### Stiffness, damping and mass controlled regions
 
-Which term in the denominator dominates depends on $\omega$ (slide p. 54):
+Which term in the denominator dominates depends on $\omega$:
 
 | Range | Approximation | Region | Phase of $x$ relative to $f$ |
 |---|---|---|---|
@@ -392,7 +392,7 @@ The **unbalance** $m_\varepsilon\varepsilon$ is in kg m. The force grows with th
 
 ### Gantry sign
 
-A sign on a motorway gantry deflects statically by 0.11 m under its own weight. Find its natural frequency, and the amplitude of vibration if a gust gives it an initial velocity of 1 m/s (slides pp. 21–25; L13, ll. 569–655).
+A sign on a motorway gantry deflects statically by 0.11 m under its own weight. Find its natural frequency, and the amplitude of vibration if a gust gives it an initial velocity of 1 m/s.
 
 The static deflection gives the stiffness, $k=mg/\delta$, so the mass cancels:
 
@@ -406,11 +406,11 @@ $$
 x_{max}=\frac{\dot x_0}{\omega_n}=\frac{1}{9.44}=0.106\ \mathrm m
 $$
 
-On the Moon the frequency would be the same: $g$ is smaller, but the static deflection is smaller in the same proportion, while $k$ and $m$ are unchanged (L13, ll. 600–641).
+On the Moon the frequency would be the same: $g$ is smaller, but the static deflection is smaller in the same proportion, while $k$ and $m$ are unchanged.
 
 ### Speed camera on a cantilever post
 
-A 25 kg speed camera sits on top of a 3 m steel post of hollow square section, 100 mm outside and 94 mm inside, with $E=210$ GPa. Treating the post as a massless cantilever and the camera as a rigid mass, find the natural frequency, the amplitude if a bird strike delivers an impulse of 50 N s, the damping ratio if a free vibration's velocity falls from 2 m/s to 0.02 m/s in 3 s, and the response to vortex shedding in a 20 m/s wind (slides pp. 27–29, 44, 57; L14, ll. 10–183; L15, ll. 25–81, 484–534).
+A 25 kg speed camera sits on top of a 3 m steel post of hollow square section, 100 mm outside and 94 mm inside, with $E=210$ GPa. Treating the post as a massless cantilever and the camera as a rigid mass, find the natural frequency, the amplitude if a bird strike delivers an impulse of 50 N s, the damping ratio if a free vibration's velocity falls from 2 m/s to 0.02 m/s in 3 s, and the response to vortex shedding in a 20 m/s wind.
 
 The second moment of area of the hollow square is
 
@@ -458,7 +458,7 @@ six times $f_n$, so the response is mass controlled, $|X/F|\approx1/(\omega^2m)$
 
 ### Wheel hop of a car
 
-A car wheel is held by the tyre ($k=300$ kN/m) and the suspension spring ($k=30$ kN/m), with the body treated as fixed. The wheel has 20 g of unbalance at 0.2 m radius, and the suspension damping is $c=2000$ N s/m. Find the natural frequency, the road speed at which it is excited, and the response amplitude there (L16, ll. 66–223; the slide is not in the vault copy of the deck).
+A car wheel is held by the tyre ($k=300$ kN/m) and the suspension spring ($k=30$ kN/m), with the body treated as fixed. The wheel has 20 g of unbalance at 0.2 m radius, and the suspension damping is $c=2000$ N s/m. Find the natural frequency, the road speed at which it is excited, and the response amplitude there.
 
 Both springs connect the wheel to ground (the road and the fixed body) and share its displacement, so they act in parallel: $k=300+30=330$ kN/m. The wheel mass is not recorded; the stated 12.9 Hz implies about 50 kg, used here:
 
@@ -482,7 +482,7 @@ Lowering the tyre pressure lowers $k$, $f_n$ and the speed at which the hop occu
 
 ### Quick FRF checks
 
-The low-frequency asymptote of a measured FRF is $2\times10^{-6}$ m/N; the stiffness is $k=1/(2\times10^{-6})=500$ kN/m (L16, ll. 266–277). An out-of-balance force of 10 N at 1200 rpm becomes $10\times(3600/1200)^2=90$ N at 3600 rpm, at 60 Hz, since the force scales with $\omega^2$ (L16, ll. 317–335). Balls placed symmetrically on a spinning roulette wheel produce no net force: their unbalance vectors cancel (L16, ll. 336–356).
+The low-frequency asymptote of a measured FRF is $2\times10^{-6}$ m/N; the stiffness is $k=1/(2\times10^{-6})=500$ kN/m. An out-of-balance force of 10 N at 1200 rpm becomes $10\times(3600/1200)^2=90$ N at 3600 rpm, at 60 Hz, since the force scales with $\omega^2$. Balls placed symmetrically on a spinning roulette wheel produce no net force: their unbalance vectors cancel.
 
 ---
 

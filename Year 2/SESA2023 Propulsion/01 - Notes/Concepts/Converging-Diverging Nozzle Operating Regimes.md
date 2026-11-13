@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
 
 # Converging-Diverging Nozzle Operating Regimes
 
-With a fixed stagnation pressure, the flow in a converging–diverging nozzle depends on the back pressure $p_b$. The Week 3 notes (Fig. 3.9) number eight regimes, running from no flow, through choked flow with internal shocks, to design and under-expanded operation. In order of decreasing $p_b$:
+With a fixed stagnation pressure, the flow in a converging–diverging nozzle depends on the back pressure $p_b$. Eight regimes (Fig. 3.9 of the W03 handout) run from no flow, through choked flow with internal shocks, to design and under-expanded operation. In order of decreasing $p_b$:
 
 | Regime | Condition | Flow |
 |---|---|---|

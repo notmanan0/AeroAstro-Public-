@@ -29,13 +29,13 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Orb
 > - **Common mistakes:** using altitude for $r$; forgetting that $a<0$ for a hyperbola, so $-\mu/2a>0$.
 > - **Practise:** [[#The 200 km circle and the 200 by 40 000 km ellipse]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q4. Unidentified object with apogee height 1000 km and speed 5.589 km/s|Workbook Q4]]
 
-An orbit is a continuous exchange between kinetic and potential energy. A spacecraft climbing from periapsis towards apoapsis slows down, trading speed for height; on the way back down it speeds up again. Nothing is lost, because gravity is conservative: the work it does between two points does not depend on the path taken (2025-11-27, ll. 67–88). So the total energy is a constant of the orbit, like the angular momentum, and its value depends only on the semi-major axis.
+An orbit is a continuous exchange between kinetic and potential energy. A spacecraft climbing from periapsis towards apoapsis slows down, trading speed for height; on the way back down it speeds up again. Nothing is lost, because gravity is conservative: the work it does between two points does not depend on the path taken. So the total energy is a constant of the orbit, like the angular momentum, and its value depends only on the semi-major axis.
 
-Alongside the rocket equation, the vis-viva equation is the most important equation in orbital mechanics (ll. 23–30, 265–285). It works the same for circles, ellipses, parabolas and hyperbolas.
+Alongside the rocket equation, the vis-viva equation is the most important equation in orbital mechanics. It works the same for circles, ellipses, parabolas and hyperbolas.
 
 ## 1. Kinetic and potential energy
 
-Kinetic energy is $\tfrac12mV^2$, with $m$ the mass of the spacecraft. Gravitational potential energy needs a reference, and the natural one is a point infinitely far from the central body, where the gravitational force has vanished (ll. 89–110). The potential energy at radius $r$ is the work done against gravity in bringing the spacecraft in from infinity, which is negative:
+Kinetic energy is $\tfrac12mV^2$, with $m$ the mass of the spacecraft. Gravitational potential energy needs a reference, and the natural one is a point infinitely far from the central body, where the gravitational force has vanished. The potential energy at radius $r$ is the work done against gravity in bringing the spacecraft in from infinity, which is negative:
 
 $$
 PE=\int_\infty^r\frac{\mu m}{r'^2}\,dr'.
@@ -47,7 +47,7 @@ $$
 PE=\mu m\left[-\frac1{r'}\right]_\infty^r=-\frac{\mu m}{r}.
 $$
 
-Energy conservation then says $KE+PE$ is constant. Divide by $m$ to work per unit mass and call the constant $\varepsilon$, the specific orbital energy (ll. 111–150):
+Energy conservation then says $KE+PE$ is constant. Divide by $m$ to work per unit mass and call the constant $\varepsilon$, the specific orbital energy:
 
 $$
 \frac{V^2}{2}-\frac{\mu}{r}=\varepsilon.
@@ -115,7 +115,7 @@ $$
 \boxed{V=\sqrt{\mu\left(\frac2r-\frac1a\right)}}
 $$
 
-This is the energy equation or orbital energy equation; textbooks call it the vis-viva equation. The derivation used an ellipse, but the result holds for every conic: a parabola has $a\to\infty$ and $\varepsilon=0$, a hyperbola has $a<0$ and $\varepsilon>0$ (ll. 285–295).
+This is the energy equation or orbital energy equation; textbooks call it the vis-viva equation. The derivation used an ellipse, but the result holds for every conic: a parabola has $a\to\infty$ and $\varepsilon=0$, a hyperbola has $a<0$ and $\varepsilon>0$.
 
 | Orbit | $a$ | $\varepsilon$ |
 |---|---|---|
@@ -127,7 +127,7 @@ This is the energy equation or orbital energy equation; textbooks call it the vi
 
 ## 3. Special cases
 
-Circular orbit (ll. 295–310). With $r=a$:
+Circular orbit. With $r=a$:
 
 $$
 \frac{V^2}{2}=\frac{\mu}{r}-\frac{\mu}{2r}=\frac{\mu}{2r}
@@ -135,7 +135,7 @@ $$
 \boxed{V_c=\sqrt{\frac{\mu}{r}}}
 $$
 
-the same result as the force balance in [[SESA2024 02 - Kepler's Laws and the Orbit Equation#7. The circular-orbit special case|note 02 §7]]. A lower orbit is faster: to overtake a spacecraft ahead of you in the same orbit you drop to a lower orbit, go round faster, then climb back (ll. 353–370).
+the same result as the force balance in [[SESA2024 02 - Kepler's Laws and the Orbit Equation#7. The circular-orbit special case|note 02 §7]]. A lower orbit is faster: to overtake a spacecraft ahead of you in the same orbit you drop to a lower orbit, go round faster, then climb back.
 
 Escape speed. Let $a\to\infty$, so $1/a\to0$:
 
@@ -229,7 +229,7 @@ Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$.
 
 ### The 200 km circle and the 200 by 40 000 km ellipse
 
-The speed is required (i) in a circular orbit at 200 km altitude and (ii) at the perigee and apogee of an ellipse with perigee 200 km and apogee 40 000 km (Chapter 5 worked example, Lecture 10).
+The speed is required (i) in a circular orbit at 200 km altitude and (ii) at the perigee and apogee of an ellipse with perigee 200 km and apogee 40 000 km (Chapter 5 worked example).
 
 For the circle, $r_1=6378+200=6578$ km:
 
@@ -264,7 +264,7 @@ Going from the circle to the ellipse at perigee needs $10.302-7.784=2.518$ km/s,
 
 ### A Molniya orbit from Heavens-Above
 
-Heavens-Above lists the Molniya-1T satellite with perigee and apogee heights of 1516 km and 24 738 km, $e=0.59$, $i=64.4^\circ$ and $\Omega=245^\circ$ (Activity 1, ll. 419–600). An orbit visualiser takes $a$ as input, so the heights must first become radii. Use $R_E=6371$ km:
+Heavens-Above lists the Molniya-1T satellite with perigee and apogee heights of 1516 km and 24 738 km, $e=0.59$, $i=64.4^\circ$ and $\Omega=245^\circ$ (Activity 1). An orbit visualiser takes $a$ as input, so the heights must first become radii. Use $R_E=6371$ km:
 
 $$
 r_p=6371+1516=7887\ \mathrm{km},\qquad r_a=6371+24\,738=31\,109\ \mathrm{km},
@@ -282,7 +282,7 @@ V_p=\sqrt{398\,600\left(\frac{2}{7887}-\frac{1}{19\,498}\right)}=8.98\ \mathrm{k
 V_a=\sqrt{398\,600\left(\frac{2}{31\,109}-\frac{1}{19\,498}\right)}=2.28\ \mathrm{km/s},
 $$
 
-matching the 8.9 and 2.3 km/s of the orbit visualiser (ll. 595–600). The period is $2\pi\sqrt{a^3/\mu}=7.53$ h, and most of it is spent slowly near apogee over the northern hemisphere, which is what the orbit is designed for.
+matching the 8.9 and 2.3 km/s of the orbit visualiser. The period is $2\pi\sqrt{a^3/\mu}=7.53$ h, and most of it is spent slowly near apogee over the northern hemisphere, which is what the orbit is designed for.
 
 ## Links
 

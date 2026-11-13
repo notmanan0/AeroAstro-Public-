@@ -245,7 +245,7 @@ The peak hoop stress falls from 345 to 272 MPa, 21 % lower, and the two tubes no
 
 ### Past paper: a gas cylinder at 1000 bar
 
-A thick-walled steel cylinder ($E=210$ GPa, $\nu=0.3$) holds gas at 1000 bar $=100$ MPa, with internal and external diameters of 250 mm and 500 mm. Find the radial and hoop stress distributions and the maximum normal stresses, and say whether the material is used efficiently (2024–25 paper, SQ3; worked in the revision lecture).
+A thick-walled steel cylinder ($E=210$ GPa, $\nu=0.3$) holds gas at 1000 bar $=100$ MPa, with internal and external diameters of 250 mm and 500 mm. Find the radial and hoop stress distributions and the maximum normal stresses, and say whether the material is used efficiently (2024–25 paper, SQ3).
 
 Here $r_i=125$ mm, $r_o=250$ mm, $k=2$:
 

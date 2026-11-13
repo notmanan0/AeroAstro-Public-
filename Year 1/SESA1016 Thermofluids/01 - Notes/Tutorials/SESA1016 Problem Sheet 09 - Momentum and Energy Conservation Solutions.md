@@ -280,7 +280,7 @@ $$
 
 With $c_p=1005$ J/(kg K) the same method gives $-123.0$, $241.3$, $203.3$ and $80.3$ MW and $33.3\%$. Check on the whole plant: $\dot Q_{in}-\dot W_{electric}=161.8$ MW must equal the exhaust enthalpy excess $\dot mc_p(T_4-T_1)=316\times1010\times507=161.8$ MW.
 
-> [!note] Correction (2026-11-05)
+> [!note] Correction
 > The earlier version quoted the printed numbers but its formulas, with the module's usual $c_p=1005$ J/(kg K), give the slightly different values above; it also omitted the inlet kinetic energy in the combustor balance. The printed answers use $c_p=1010$ J/(kg K) and keep $V_2^2/2$ at combustor entry, as set out here.
 
 ## Q9.11 Isentropic propulsion nozzle

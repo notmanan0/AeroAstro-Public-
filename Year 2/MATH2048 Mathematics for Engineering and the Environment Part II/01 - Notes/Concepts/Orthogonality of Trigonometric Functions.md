@@ -27,5 +27,5 @@ The functions $1$, $\cos nkx$ and $\sin nkx$ behave like an orthogonal basis of 
 
 ## Related
 
-- Derivation: [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae#2. Orthogonality (L4)|FS1 §2]]
+- Derivation: [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae#2. Orthogonality|FS1 §2]]
 - [[Fourier Series]] · [[ODE Eigenvalue Problems]]

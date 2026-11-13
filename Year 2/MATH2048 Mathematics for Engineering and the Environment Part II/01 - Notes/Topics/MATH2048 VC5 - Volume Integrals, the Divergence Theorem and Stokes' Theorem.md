@@ -31,17 +31,17 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 29.txt", "02 - Sources/Lecture
 > - **Assumptions:** fields smooth throughout the volume or surface; for the divergence theorem a closed surface with the outward normal; for Stokes an open surface whose boundary is traversed by the right-hand rule.
 > - **Method:** 1. Decide which side is easier: for a flux, compute $\nabla\cdot\mathbf F$; for a curl flux, look at the boundary. 2. If the surface isn't closed, close it with a flat piece and subtract that flux. 3. Choose coordinates that fit the boundaries and write $dV$ or $d\mathbf S$. 4. Express the integrand in those coordinates. 5. Integrate, using symmetry to drop odd terms.
 > - **Common mistakes:** using an inward normal in the divergence theorem; traversing the Stokes boundary the wrong way for the chosen normal.
-> - **Practise:** [[#The closed cylinder both ways (L29)]] · [[#The paraboloid both ways (L30)]] · [[#4. Past exam questions B2]]
+> - **Practise:** [[#The closed cylinder both ways]] · [[#The paraboloid both ways]] · [[#4. Past exam questions B2]]
 
-Line, surface and volume integrals all follow one pattern: parametrise the object, find how the parameters stretch length, area or volume, and integrate over a simple region of parameters (L30, ll. 5–9). Volume integrals are the third case; the divergence theorem and Stokes' theorem are among the key results of vector calculus.
+Line, surface and volume integrals all follow one pattern: parametrise the object, find how the parameters stretch length, area or volume, and integrate over a simple region of parameters. Volume integrals are the third case; the divergence theorem and Stokes' theorem are among the key results of vector calculus.
 
-Both theorems trade an integral over a region for one over its boundary, one dimension down. The divergence theorem links a volume to the closed surface around it, through the divergence, which measures sources. Stokes' theorem links a surface to the curve around its edge, through the curl, which measures rotation. They are really the same theorem in different dimensions (L30), and the line integral of a conservative field in [[MATH2048 VC3 - Line Integrals and Conservative Fields|VC3]], $\int\nabla\phi\cdot d\mathbf r=\phi(B)-\phi(A)$, is the one-dimensional member of the family.
+Both theorems trade an integral over a region for one over its boundary, one dimension down. The divergence theorem links a volume to the closed surface around it, through the divergence, which measures sources. Stokes' theorem links a surface to the curve around its edge, through the curl, which measures rotation. They are really the same theorem in different dimensions, and the line integral of a conservative field in [[MATH2048 VC3 - Line Integrals and Conservative Fields|VC3]], $\int\nabla\phi\cdot d\mathbf r=\phi(B)-\phi(A)$, is the one-dimensional member of the family.
 
 ---
 
-## 1. Volume integrals and the Jacobian (L29)
+## 1. Volume integrals and the Jacobian
 
-The course only integrates scalar fields over volumes, $\iiint_Vf\,dV$ (ll. 8–18). For a box, this is three nested ordinary integrals in $x$, $y$, $z$. For anything shaped differently, the limits in Cartesian coordinates become awkward or impossible, so describe the volume with three parameters chosen to make the limits simple:
+The course only integrates scalar fields over volumes, $\iiint_Vf\,dV$. For a box, this is three nested ordinary integrals in $x$, $y$, $z$. For anything shaped differently, the limits in Cartesian coordinates become awkward or impossible, so describe the volume with three parameters chosen to make the limits simple:
 
 $$
 \mathbf r(s,t,u)=x(s,t,u)\,\mathbf i+y(s,t,u)\,\mathbf j+z(s,t,u)\,\mathbf k .
@@ -49,7 +49,7 @@ $$
 
 ### The volume element
 
-A small box in parameter space, $ds\times dt\times du$, maps to a small parallelepiped whose edges, by the same Taylor expansion as for surfaces, are $\mathbf r_s\,ds$, $\mathbf r_t\,dt$ and $\mathbf r_u\,du$ (ll. 35–74). The volume of a parallelepiped is the absolute value of the determinant of its three edge vectors, so
+A small box in parameter space, $ds\times dt\times du$, maps to a small parallelepiped whose edges, by the same Taylor expansion as for surfaces, are $\mathbf r_s\,ds$, $\mathbf r_t\,dt$ and $\mathbf r_u\,du$. The volume of a parallelepiped is the absolute value of the determinant of its three edge vectors, so
 
 $$
 dV=|\det J|\,ds\,dt\,du,\qquad J=\begin{pmatrix}\partial_sx&\partial_tx&\partial_ux\\\partial_sy&\partial_ty&\partial_uy\\\partial_sz&\partial_tz&\partial_uz\end{pmatrix}.
@@ -59,7 +59,7 @@ Writing the derivatives in rows instead of columns transposes $J$, which leaves 
 
 ### Cylindrical coordinates
 
-$x=\rho\cos\phi$, $y=\rho\sin\phi$, $z=z$, with $\rho$ the distance from the axis now varying from 0 to the radius, unlike on the cylinder's surface (ll. 78–117). The Jacobian, columns in the order $\rho$, $\phi$, $z$:
+$x=\rho\cos\phi$, $y=\rho\sin\phi$, $z=z$, with $\rho$ the distance from the axis now varying from 0 to the radius, unlike on the cylinder's surface. The Jacobian, columns in the order $\rho$, $\phi$, $z$:
 
 $$
 J=\begin{pmatrix}\cos\phi&-\rho\sin\phi&0\\\sin\phi&\rho\cos\phi&0\\0&0&1\end{pmatrix}.
@@ -79,7 +79,7 @@ $$
 
 ### Spherical coordinates
 
-$x=r\sin\theta\cos\phi$, $y=r\sin\theta\sin\phi$, $z=r\cos\theta$, with $\theta$ measured down from the north pole, $0\leq\theta\leq\pi$, and $\phi$ round the axis (ll. 117–124). The Jacobian, columns in the order $r$, $\theta$, $\phi$:
+$x=r\sin\theta\cos\phi$, $y=r\sin\theta\sin\phi$, $z=r\cos\theta$, with $\theta$ measured down from the north pole, $0\leq\theta\leq\pi$, and $\phi$ round the axis. The Jacobian, columns in the order $r$, $\theta$, $\phi$:
 
 $$
 J=\begin{pmatrix}\sin\theta\cos\phi&r\cos\theta\cos\phi&-r\sin\theta\sin\phi\\\sin\theta\sin\phi&r\cos\theta\sin\phi&r\sin\theta\cos\phi\\\cos\theta&-r\sin\theta&0\end{pmatrix}.
@@ -109,13 +109,13 @@ $$
 dV=r^2\sin\theta\,dr\,d\theta\,d\phi .
 $$
 
-This derivation is what 2024/25 B2(a) and 2025/26 B2(c) ask for. The volume of a ball of radius $a$ then separates into three single integrals (ll. 136–153):
+This derivation is what 2024/25 B2(a) and 2025/26 B2(c) ask for. The volume of a ball of radius $a$ then separates into three single integrals:
 
 $$
 V=\int_0^{2\pi}\!\!d\phi\int_0^\pi\sin\theta\,d\theta\int_0^ar^2\,dr=2\pi\cdot2\cdot\frac{a^3}3=\frac{4\pi a^3}3 .
 $$
 
-To integrate a scalar field instead, rewrite it in the new coordinates first and multiply by $dV$ (ll. 154–165). The same mapping of a simple reference element onto each real element, through its Jacobian, is how finite-element solvers such as Fluent handle arbitrary meshes (ll. 124–135).
+To integrate a scalar field instead, rewrite it in the new coordinates first and multiply by $dV$. The same mapping of a simple reference element onto each real element, through its Jacobian, is how finite-element solvers such as Fluent handle arbitrary meshes.
 
 ### Two volumes (PS11 Q1 and Q2)
 
@@ -135,9 +135,9 @@ $$
 
 The innermost integral gives the height $\rho^2$ of the column above each point of the disc, which is why the Jacobian factor $\rho$ multiplies it.
 
-## 2. The divergence theorem (L29)
+## 2. The divergence theorem
 
-For a volume $V$ enclosed by a closed surface $S$, with $\hat{\mathbf n}$ the **outward** normal (ll. 166–199),
+For a volume $V$ enclosed by a closed surface $S$, with $\hat{\mathbf n}$ the **outward** normal,
 
 $$
 \mathop{∯}_S\mathbf F\cdot d\mathbf S=\iiint_V\nabla\cdot\mathbf F\,dV .
@@ -147,9 +147,9 @@ It is also called Gauss's theorem. The circle on the double integral marks a clo
 
 The theorem expresses what the divergence measures. $\nabla\cdot\mathbf F$ at a point is the net outflow per unit volume from a tiny box there. Split $V$ into many such boxes and add up their outflows: across every internal face, what leaves one box enters its neighbour, so those fluxes cancel, and only the flux through the outer surface survives.
 
-### The closed cylinder both ways (L29)
+### The closed cylinder both ways
 
-Find the flux of $\mathbf F=x\,\mathbf i+y\,\mathbf j+z\,\mathbf k$ out of the closed cylinder of radius $a$ and height $h$, $0\leq z\leq h$ (ll. 200–303). Directly, the surface has to be split into pieces on which the normal varies smoothly, because it jumps at the rims (ll. 210–233): the bottom $S_1$, the top $S_2$ and the curved side $S_3$.
+Find the flux of $\mathbf F=x\,\mathbf i+y\,\mathbf j+z\,\mathbf k$ out of the closed cylinder of radius $a$ and height $h$, $0\leq z\leq h$. Directly, the surface has to be split into pieces on which the normal varies smoothly, because it jumps at the rims: the bottom $S_1$, the top $S_2$ and the curved side $S_3$.
 
 On $S_1$ the outward normal is $-\mathbf k$, so $\mathbf F\cdot d\mathbf S=-z\,dA$, and $z=0$ there: no flux. On $S_2$ it is $+\mathbf k$ and $z=h$, so the flux is $h$ times the disc's area, $\pi a^2h$. On $S_3$, from [[MATH2048 VC4 - Surfaces, Surface Area and Flux Integrals|VC4]], $d\mathbf S=(a\cos s\,\mathbf i+a\sin s\,\mathbf j)\,ds\,dt$ and on the surface $x=a\cos s$, $y=a\sin s$, so
 
@@ -165,17 +165,17 @@ $$
 \mathop{∯}_S\mathbf F\cdot d\mathbf S=\iiint_V3\,dV=3\cdot\pi a^2h ,
 $$
 
-with no calculation beyond the volume. This isn't just a contrived example (ll. 305–311): $\nabla\cdot\mathbf r=3$, so any part of a field pointing radially from the origin contributes 3 times the volume.
+with no calculation beyond the volume. This isn't just a contrived example: $\nabla\cdot\mathbf r=3$, so any part of a field pointing radially from the origin contributes 3 times the volume.
 
-### Closing an open surface (L29)
+### Closing an open surface
 
-The theorem needs a closed surface, but an open one can be closed artificially (ll. 312–333). Find the flux of $\mathbf F=2xy^2\,\mathbf i+z^3\,\mathbf j-x^2y\,\mathbf k$ out through the curved hemisphere $S$: $r=a$, $z\geq0$. Adding the flat disc $\tilde S$ in the plane $z=0$ closes it, and together they enclose the half-ball $V$, so
+The theorem needs a closed surface, but an open one can be closed artificially. Find the flux of $\mathbf F=2xy^2\,\mathbf i+z^3\,\mathbf j-x^2y\,\mathbf k$ out through the curved hemisphere $S$: $r=a$, $z\geq0$. Adding the flat disc $\tilde S$ in the plane $z=0$ closes it, and together they enclose the half-ball $V$, so
 
 $$
 \iint_S\mathbf F\cdot d\mathbf S+\iint_{\tilde S}\mathbf F\cdot d\mathbf S=\iiint_V\nabla\cdot\mathbf F\,dV .
 $$
 
-The divergence is $\partial_x(2xy^2)+\partial_y(z^3)+\partial_z(-x^2y)=2y^2$ (ll. 334–346). In spherical coordinates $y^2=r^2\sin^2\theta\sin^2\phi$, and the half-ball has $0\leq\theta\leq\frac\pi2$ (ll. 347–395):
+The divergence is $\partial_x(2xy^2)+\partial_y(z^3)+\partial_z(-x^2y)=2y^2$. In spherical coordinates $y^2=r^2\sin^2\theta\sin^2\phi$, and the half-ball has $0\leq\theta\leq\frac\pi2$:
 
 $$
 \iiint_V2y^2\,dV=2\int_0^ar^4\,dr\int_0^{\pi/2}\sin^3\theta\,d\theta\int_0^{2\pi}\sin^2\phi\,d\phi=2\cdot\frac{a^5}5\cdot\frac23\cdot\pi=\frac{4\pi a^5}{15}.
@@ -189,7 +189,7 @@ $$
 
 The azimuthal one uses $\sin^2\phi=\frac12(1-\cos2\phi)$, giving $\pi$ over a full turn.
 
-On the disc the outward normal of the half-ball points down, $d\mathbf S=-\mathbf k\,dA$, so $\mathbf F\cdot d\mathbf S=x^2y\,dA$ (ll. 397–419). The disc is symmetric in $y$ and $x^2y$ is odd in $y$, so its integral is zero. Hence
+On the disc the outward normal of the half-ball points down, $d\mathbf S=-\mathbf k\,dA$, so $\mathbf F\cdot d\mathbf S=x^2y\,dA$. The disc is symmetric in $y$ and $x^2y$ is odd in $y$, so its integral is zero. Hence
 
 $$
 \iint_S\mathbf F\cdot d\mathbf S=\frac{4\pi a^5}{15}-0=\frac{4\pi a^5}{15}.
@@ -197,7 +197,7 @@ $$
 
 ### Conservation laws: weak and strong form
 
-The theorem is how the differential conservation laws of fluids and electromagnetism are derived (ll. 422–456). The mass in a fixed volume changes only by flux through its boundary:
+The theorem is how the differential conservation laws of fluids and electromagnetism are derived. The mass in a fixed volume changes only by flux through its boundary:
 
 $$
 \frac{d}{dt}\iiint_V\rho\,dV=-\mathop{∯}_S\rho\mathbf v\cdot d\mathbf S .
@@ -211,27 +211,27 @@ $$
 
 This holds for every volume, so the integrand itself must vanish, which gives the strong, differential form, the continuity equation $\partial_t\rho+\nabla\cdot(\rho\mathbf v)=0$. The step needs the divergence to exist everywhere in $V$. At a shock it doesn't: the weak form still holds across the discontinuity but the strong form breaks down, which is why shock-capturing codes are built on the integral form.
 
-## 3. Stokes' theorem (L30)
+## 3. Stokes' theorem
 
-For an open surface $S$ with boundary curve $C$ (L30, ll. 17–72),
+For an open surface $S$ with boundary curve $C$,
 
 $$
 \iint_S(\nabla\times\mathbf F)\cdot d\mathbf S=\oint_C\mathbf F\cdot d\mathbf r .
 $$
 
-Both sides have a direction to choose, the normal on the left and the way round the curve on the right, and they are tied by the right-hand rule: with the thumb along the normal, the fingers curl in the direction of travel (ll. 37–53). If the normal points up, $C$ is traversed anticlockwise seen from above. The surface must have an edge; a closed surface has no boundary, and then the left side is zero.
+Both sides have a direction to choose, the normal on the left and the way round the curve on the right, and they are tied by the right-hand rule: with the thumb along the normal, the fingers curl in the direction of travel. If the normal points up, $C$ is traversed anticlockwise seen from above. The surface must have an edge; a closed surface has no boundary, and then the left side is zero.
 
 The reasoning mirrors the divergence theorem. The component of $\nabla\times\mathbf F$ along $\hat{\mathbf n}$ is the circulation per unit area round a tiny loop in the surface. Tile $S$ with tiny loops all traversed by the right-hand rule: each internal edge is traversed once each way by its two neighbours and cancels, leaving only the outer boundary $C$.
 
-### The paraboloid both ways (L30)
+### The paraboloid both ways
 
-The example is $\mathbf F=(2z-y)\,\mathbf i+(x+z)\,\mathbf j+(3x-2y)\,\mathbf k$ on the paraboloid $z=9-x^2-y^2$, $z\geq0$, open at the bottom, with upward normal (ll. 73–121). Its curl is constant:
+The example is $\mathbf F=(2z-y)\,\mathbf i+(x+z)\,\mathbf j+(3x-2y)\,\mathbf k$ on the paraboloid $z=9-x^2-y^2$, $z\geq0$, open at the bottom, with upward normal. Its curl is constant:
 
 $$
 \nabla\times\mathbf F=\big(-2-1\big)\,\mathbf i-\big(3-2\big)\,\mathbf j+\big(1-(-1)\big)\,\mathbf k=-3\,\mathbf i-\mathbf j+2\,\mathbf k .
 $$
 
-Surface side (ll. 239–288). The paraboloid is a graph, so from VC4 the upward $d\mathbf S=(-f_x,-f_y,1)\,dx\,dy=(2x,2y,1)\,dx\,dy$, and
+Surface side. The paraboloid is a graph, so from VC4 the upward $d\mathbf S=(-f_x,-f_y,1)\,dx\,dy=(2x,2y,1)\,dx\,dy$, and
 
 $$
 \iint_S(\nabla\times\mathbf F)\cdot d\mathbf S=\iint_{x^2+y^2\leq9}\big(-6x-2y+2\big)\,dx\,dy .
@@ -239,7 +239,7 @@ $$
 
 The disc is symmetric and $-6x-2y$ is odd, so only the 2 survives: twice the disc's area, $2\cdot9\pi=18\pi$.
 
-Line side (ll. 289–341). The boundary is the circle $x^2+y^2=9$, $z=0$, anticlockwise for an upward normal: $\mathbf r=3\cos t\,\mathbf i+3\sin t\,\mathbf j$, $0\leq t\leq2\pi$. On it $\mathbf F=-3\sin t\,\mathbf i+3\cos t\,\mathbf j+(9\cos t-6\sin t)\,\mathbf k$, and $\frac{d\mathbf r}{dt}=-3\sin t\,\mathbf i+3\cos t\,\mathbf j$, so
+Line side. The boundary is the circle $x^2+y^2=9$, $z=0$, anticlockwise for an upward normal: $\mathbf r=3\cos t\,\mathbf i+3\sin t\,\mathbf j$, $0\leq t\leq2\pi$. On it $\mathbf F=-3\sin t\,\mathbf i+3\cos t\,\mathbf j+(9\cos t-6\sin t)\,\mathbf k$, and $\frac{d\mathbf r}{dt}=-3\sin t\,\mathbf i+3\cos t\,\mathbf j$, so
 
 $$
 \oint_C\mathbf F\cdot d\mathbf r=\int_0^{2\pi}\big(9\sin^2t+9\cos^2t\big)\,dt=18\pi .
@@ -251,9 +251,9 @@ Both sides agree.
 
 ### Any surface with the same boundary
 
-The right-hand side depends only on the curve $C$, so the surface integral of a curl is the same over every surface with that boundary, provided the field is defined on all of them (ll. 350–389). Here the flat disc $z=0$, $x^2+y^2\leq9$, with normal $\mathbf k$, gives $\iint2\,dA=18\pi$ at once, which is why the surface-side answer above is twice the disc's area. To integrate a curl over an awkward surface, swap it for the flattest surface with the same edge, or for the line integral round the edge.
+The right-hand side depends only on the curve $C$, so the surface integral of a curl is the same over every surface with that boundary, provided the field is defined on all of them. Here the flat disc $z=0$, $x^2+y^2\leq9$, with normal $\mathbf k$, gives $\iint2\,dA=18\pi$ at once, which is why the surface-side answer above is twice the disc's area. To integrate a curl over an awkward surface, swap it for the flattest surface with the same edge, or for the line integral round the edge.
 
-A cone with the same rim illustrates the point: $\mathbf r=(3-s)\cos t\,\mathbf i+(3-s)\sin t\,\mathbf j+s\,\mathbf k$, $0\leq s\leq3$, with a radius that shrinks linearly from 3 to 0 as the height rises to 3 (the parametrisation of L30, ll. 126–148; see the slips). By the corollary it gives the same answer: with the upward normal $\mathbf r_t\times\mathbf r_s=(3-s)(\cos t\,\mathbf i+\sin t\,\mathbf j+\mathbf k)$, the curl flux is $\int_0^3\int_0^{2\pi}(3-s)(2-3\cos t-\sin t)\,dt\,ds=4\pi\cdot\frac92=18\pi$. In the plane, with $\mathbf F=F_1\,\mathbf i+F_2\,\mathbf j$ and $d\mathbf S=\mathbf k\,dx\,dy$, Stokes' theorem becomes Green's theorem, $\iint(\partial_xF_2-\partial_yF_1)\,dx\,dy=\oint(F_1\,dx+F_2\,dy)$.
+A cone with the same rim illustrates the point: $\mathbf r=(3-s)\cos t\,\mathbf i+(3-s)\sin t\,\mathbf j+s\,\mathbf k$, $0\leq s\leq3$, with a radius that shrinks linearly from 3 to 0 as the height rises to 3 (the parametrisation of L30; see the slips). By the corollary it gives the same answer: with the upward normal $\mathbf r_t\times\mathbf r_s=(3-s)(\cos t\,\mathbf i+\sin t\,\mathbf j+\mathbf k)$, the curl flux is $\int_0^3\int_0^{2\pi}(3-s)(2-3\cos t-\sin t)\,dt\,ds=4\pi\cdot\frac92=18\pi$. In the plane, with $\mathbf F=F_1\,\mathbf i+F_2\,\mathbf j$ and $d\mathbf S=\mathbf k\,dx\,dy$, Stokes' theorem becomes Green's theorem, $\iint(\partial_xF_2-\partial_yF_1)\,dx\,dy=\oint(F_1\,dx+F_2\,dy)$.
 
 The divergence theorem says the same thing from the other side. Two surfaces $S_1$ and $S_2$ with the same edge, one of them with its normal reversed, together form a closed surface round some volume $V$. The flux of a curl out of it is
 
@@ -261,7 +261,7 @@ $$
 \mathop{∯}(\nabla\times\mathbf F)\cdot d\mathbf S=\iiint_V\nabla\cdot(\nabla\times\mathbf F)\,dV=0,
 $$
 
-by identity 5 of [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities|VC2]], so the curl flux into one surface equals the curl flux out through the other. This is the closed-surface version of the same-boundary result (L29, ll. 458–460; L30, ll. 383–389).
+by identity 5 of [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities|VC2]], so the curl flux into one surface equals the curl flux out through the other. This is the closed-surface version of the same-boundary result.
 
 ### Stokes on the unit hemisphere (PS11 Q4)
 
@@ -329,7 +329,7 @@ Lecture 29 suggested reading the extra slides on applying the divergence theorem
 ### Core
 
 - [ ] Derive $dV=r^2\sin\theta\,dr\,d\theta\,d\phi$ from the Jacobian, as in 2024/25 B2(a) and 2025/26 B2(c). → [[#Spherical coordinates]]
-- [ ] Rework the closed cylinder both ways. → [[#The closed cylinder both ways (L29)]]
+- [ ] Rework the closed cylinder both ways. → [[#The closed cylinder both ways]]
 - [ ] PS11 Q1–Q2: a shell with a wedge removed and the region under $z=x^2+y^2$. Answers: $\frac{70\pi}9$; $\frac{\pi a^4}2$. → [[#Two volumes (PS11 Q1 and Q2)]]
 - [ ] 2025/26 B2(a)–(e). → [[#4. Past exam questions B2]]
 

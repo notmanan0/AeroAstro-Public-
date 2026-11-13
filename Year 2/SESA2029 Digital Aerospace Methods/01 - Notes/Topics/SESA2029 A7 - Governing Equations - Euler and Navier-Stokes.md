@@ -29,19 +29,19 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L8, pp. 101–112)", 
 > - **Common mistakes:** claiming boundary-layer effects in an Euler solution; letting the rotation part of the velocity gradient generate stress.
 > - **Practise:** [[#Plane Poiseuille flow]] · [[SESA2029 CFD Worked Examples#Q10: Expand the index-notation Navier–Stokes equations|CFD worked examples Q10]]
 
-These are the equations Fluent solves, in place of the model equations of A2 to A6 (the heat equation, the convection equation, $df/dt=\lambda f$), in the conservation form that the finite volume method of [[SESA2029 A9 - Finite Volume Method|A9]] preserves (2025-10-24, ll. 1–20).
+These are the equations Fluent solves, in place of the model equations of A2 to A6 (the heat equation, the convection equation, $df/dt=\lambda f$), in the conservation form that the finite volume method of [[SESA2029 A9 - Finite Volume Method|A9]] preserves.
 
 Whatever is inside a small box fixed in space, mass, momentum or energy, can change only because some is carried in or out through the faces or because forces act on the faces. The difference between the flux leaving one face and entering the opposite face is a derivative times the box size, and once that is divided by the volume, the conservation law becomes a partial differential equation. Viscosity enters only through the forces, as stresses on the faces, which then have to be related to the motion.
 
 ## 1. Conservation laws in words
 
-For a fixed control volume (CV) surrounded by a control surface (CS), everything is moved to the left so the three laws share a form (ll. 21–60). For mass, the rate of increase of mass in the CV plus the net mass flow rate out of the CV is zero. Momentum follows Newton's second law in each of the three directions: the rate of increase of momentum in the CV plus the net momentum flux out equals the pressure and viscous forces on the CS. For energy, the rate of increase of energy in the CV plus the net energy flux out equals the rate of work done on the CS by pressure and viscous forces, plus any heat sources such as conduction.
+For a fixed control volume (CV) surrounded by a control surface (CS), everything is moved to the left so the three laws share a form. For mass, the rate of increase of mass in the CV plus the net mass flow rate out of the CV is zero. Momentum follows Newton's second law in each of the three directions: the rate of increase of momentum in the CV plus the net momentum flux out equals the pressure and viscous forces on the CS. For energy, the rate of increase of energy in the CV plus the net energy flux out equals the rate of work done on the CS by pressure and viscous forces, plus any heat sources such as conduction.
 
-The conserved quantity is $\phi\in\{\rho,\rho u,\rho v,\rho w,\rho E\}$, where $E$ is the total energy per unit mass, internal energy ($c_vT$ for a calorically perfect gas) plus kinetic (ll. 61–70).
+The conserved quantity is $\phi\in\{\rho,\rho u,\rho v,\rho w,\rho E\}$, where $E$ is the total energy per unit mass, internal energy ($c_vT$ for a calorically perfect gas) plus kinetic.
 
 ## 2. The generic left-hand side
 
-A 2D box $\delta x\times\delta y$ of unit depth (ll. 71–130) contains $\phi\,\delta x\,\delta y$ of the quantity. Through the left face, $\phi u\,\delta y$ enters per second; through the right face, a distance $\delta x$ away, the first Taylor term gives
+A 2D box $\delta x\times\delta y$ of unit depth contains $\phi\,\delta x\,\delta y$ of the quantity. Through the left face, $\phi u\,\delta y$ enters per second; through the right face, a distance $\delta x$ away, the first Taylor term gives
 
 $$
 \left(\phi u+\frac{\partial(\phi u)}{\partial x}\delta x\right)\delta y
@@ -73,7 +73,7 @@ The figure shows the mass fluxes for $\phi=\rho$ and the surface stresses and bo
 
 ## 3. Mass conservation and incompressibility
 
-Put $\phi=\rho$; the right-hand side is zero because mass is neither created nor destroyed (chemical reactions would change the species but not the total mass, and this module uses a single species) (ll. 131–140):
+Put $\phi=\rho$; the right-hand side is zero because mass is neither created nor destroyed (chemical reactions would change the species but not the total mass, and this module uses a single species):
 
 $$
 \frac{\partial\rho}{\partial t}+\frac{\partial(\rho u)}{\partial x}+\frac{\partial(\rho v)}{\partial y}=0.
@@ -91,19 +91,19 @@ $$
 \frac{\partial\rho}{\partial t}+u\frac{\partial\rho}{\partial x}+v\frac{\partial\rho}{\partial y}=-\rho\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right).
 $$
 
-The left side is the rate of change of density following a fluid element, $D\rho/Dt$; the bracket on the right is the divergence of the velocity, how fast the flow is expanding or compressing (ll. 141–160). Incompressible flow is defined by $D\rho/Dt=0$: a fluid particle travelling round an aerofoil feels no change in density. The right side must then vanish too, leaving the divergence-free condition
+The left side is the rate of change of density following a fluid element, $D\rho/Dt$; the bracket on the right is the divergence of the velocity, how fast the flow is expanding or compressing. Incompressible flow is defined by $D\rho/Dt=0$: a fluid particle travelling round an aerofoil feels no change in density. The right side must then vanish too, leaving the divergence-free condition
 
 $$
 \boxed{\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0}
 $$
 
-(ll. 161–175). Following a particle is the Lagrangian view; the CFD grid sits in the fixed Eulerian frame, and $D/Dt$ connects the two (ll. 176–195; [[SESA1016 T9 - Describing Flow and the Material Derivative]]).
+. Following a particle is the Lagrangian view; the CFD grid sits in the fixed Eulerian frame, and $D/Dt$ connects the two ([[SESA1016 T9 - Describing Flow and the Material Derivative]]).
 
-The consequence for CFD is that incompressible flow has no equation for density, so a density-based method has nothing to march: Fluent must be set to pressure-based, and continuity becomes a constraint on the velocity ([[Pressure-Velocity Coupling and SIMPLE]]; ll. 196–205).
+The consequence for CFD is that incompressible flow has no equation for density, so a density-based method has nothing to march: Fluent must be set to pressure-based, and continuity becomes a constraint on the velocity ([[Pressure-Velocity Coupling and SIMPLE]]).
 
 ## 4. Momentum without viscosity: the Euler equations
 
-Put $\phi=\rho u$ and find the pressure force in $x$ (ll. 206–230). Pressure $p$ pushes on the left face with force $p\,\delta y$, and $p+(\partial p/\partial x)\delta x$ pushes back on the right face:
+Put $\phi=\rho u$ and find the pressure force in $x$. Pressure $p$ pushes on the left face with force $p\,\delta y$, and $p+(\partial p/\partial x)\delta x$ pushes back on the right face:
 
 $$
 p\,\delta y-\left(p+\frac{\partial p}{\partial x}\delta x\right)\delta y=-\frac{\partial p}{\partial x}\delta x\,\delta y .
@@ -129,11 +129,11 @@ $$
 \frac{\partial v}{\partial t}+\frac{\partial(uv)}{\partial x}+\frac{\partial(vv)}{\partial y}=-\frac1\rho\frac{\partial p}{\partial y}.
 $$
 
-Three equations in $u$, $v$ and $p$: a closed set, with no energy equation needed (ll. 231–255). A temperature equation could still be solved, but it would be decoupled: it uses the velocities and has no effect back on $u$, $v$ or $p$. In 3D the pattern fills in, with a $w$ equation and $\partial(\cdot\,w)/\partial z$ terms. These are the equations the wing coursework solves, and since there is no viscosity there is no no-slip condition and no boundary layer (ll. 236–245).
+Three equations in $u$, $v$ and $p$: a closed set, with no energy equation needed. A temperature equation could still be solved, but it would be decoupled: it uses the velocities and has no effect back on $u$, $v$ or $p$. In 3D the pattern fills in, with a $w$ equation and $\partial(\cdot\,w)/\partial z$ terms. These are the equations the wing coursework solves, and since there is no viscosity there is no no-slip condition and no boundary layer.
 
 ### Conservation and non-conservation forms
 
-Expand the convective terms of the $x$ equation (ll. 256–275):
+Expand the convective terms of the $x$ equation:
 
 $$
 \frac{\partial(uu)}{\partial x}+\frac{\partial(uv)}{\partial y}
@@ -152,11 +152,11 @@ $$
 \frac{\partial(uu)}{\partial x}+\frac{\partial(uv)}{\partial y}=u\frac{\partial u}{\partial x}+v\frac{\partial u}{\partial y}.
 $$
 
-The right side is the non-conservation form, simpler for pen-and-paper work and the one most fluid mechanics textbooks use. CFD keeps the conservation form, with everything inside a derivative, because integrating a derivative leaves only end-point values (ll. 276–295). The finite volume method mirrors that: every flux leaving one cell enters its neighbour, so no mass, momentum or energy is lost from the calculation ([[Conservation Form of the Governing Equations]]).
+The right side is the non-conservation form, simpler for pen-and-paper work and the one most fluid mechanics textbooks use. CFD keeps the conservation form, with everything inside a derivative, because integrating a derivative leaves only end-point values. The finite volume method mirrors that: every flux leaving one cell enters its neighbour, so no mass, momentum or energy is lost from the calculation ([[Conservation Form of the Governing Equations]]).
 
 ## 5. Viscous stresses
 
-The CFD does not compute individual molecules, but their unresolved motion in a non-uniform flow carries momentum, and on average that appears as internal stresses, which is where viscosity comes from (L8 slide 8). On the $x$-faces a normal stress $\sigma_{xx}$ pulls the fluid apart, as in solid mechanics; on the $y$-faces a shear stress $\sigma_{xy}$ acts in the $x$ direction.
+The CFD does not compute individual molecules, but their unresolved motion in a non-uniform flow carries momentum, and on average that appears as internal stresses, which is where viscosity comes from. On the $x$-faces a normal stress $\sigma_{xx}$ pulls the fluid apart, as in solid mechanics; on the $y$-faces a shear stress $\sigma_{xy}$ acts in the $x$ direction.
 
 ![[dam_viscous_stress_faces.png|760]]
 
@@ -178,11 +178,11 @@ $$
 \frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\sigma_{xy}}{\partial y}.
 $$
 
-The same steps in $y$ give $\partial\sigma_{yx}/\partial x+\partial\sigma_{yy}/\partial y$. Like the pressure, only the difference of a stress across the box produces a net force; a uniform stress pulls equally on opposite faces and does nothing. The system is not closed until the stresses are related to the velocity, and the model will be stress proportional to strain rate, the fluid version of Hooke's law (ll. 331–340).
+The same steps in $y$ give $\partial\sigma_{yx}/\partial x+\partial\sigma_{yy}/\partial y$. Like the pressure, only the difference of a stress across the box produces a net force; a uniform stress pulls equally on opposite faces and does nothing. The system is not closed until the stresses are related to the velocity, and the model will be stress proportional to strain rate, the fluid version of Hooke's law.
 
 ### Strain and rotation
 
-A fluid element can distort in four ways in 2D (nine in 3D), one for each velocity derivative (ll. 341–350). For the simple shear flow $u=ky$, $v=0$, only $\partial u/\partial y=k$ is non-zero. Split the velocity-gradient matrix into a symmetric part and an antisymmetric part by adding and subtracting half of $k$:
+A fluid element can distort in four ways in 2D (nine in 3D), one for each velocity derivative. For the simple shear flow $u=ky$, $v=0$, only $\partial u/\partial y=k$ is non-zero. Split the velocity-gradient matrix into a symmetric part and an antisymmetric part by adding and subtracting half of $k$:
 
 $$
 \begin{pmatrix}0&k\\0&0\end{pmatrix}
@@ -190,13 +190,13 @@ $$
 +\begin{pmatrix}0&k/2\\-k/2&0\end{pmatrix}.
 $$
 
-The symmetric matrix is strain; the antisymmetric one is solid-body rotation (ll. 351–370). Rotating a lump of fluid rigidly does not distort it, so rotation generates no stress; straining it does. In pictures, shear turns a square element into a parallelogram, which is the same as stretching it along the 45° diagonal and then rotating it so the base is horizontal again (ll. 371–385).
+The symmetric matrix is strain; the antisymmetric one is solid-body rotation. Rotating a lump of fluid rigidly does not distort it, so rotation generates no stress; straining it does. In pictures, shear turns a square element into a parallelogram, which is the same as stretching it along the 45° diagonal and then rotating it so the base is horizontal again.
 
 ![[dam_strain_rotation.png|900]]
 
 In the figure each corner of the square moves by the velocity-gradient matrix times its position, times $\Delta t$. The symmetric part moves the corners along the diagonals, lengthening one and shortening the other with no net turning; the antisymmetric part moves every corner perpendicular to its radius, a rigid clockwise turn of $k\Delta t/2$. Adding the two displacements corner by corner gives the shear.
 
-In general the symmetric part is half the matrix plus its transpose and the antisymmetric part half the matrix minus its transpose (ll. 386–395):
+In general the symmetric part is half the matrix plus its transpose and the antisymmetric part half the matrix minus its transpose:
 
 $$
 \begin{pmatrix}u_x&u_y\\v_x&v_y\end{pmatrix}
@@ -208,14 +208,14 @@ The rotation part contains the vorticity $\omega_z=\partial v/\partial x-\partia
 
 ### The Newtonian fluid
 
-A Newtonian fluid has stress proportional to strain rate, with constant of proportionality $2\mu$ (ll. 411–420):
+A Newtonian fluid has stress proportional to strain rate, with constant of proportionality $2\mu$:
 
 $$
 \begin{pmatrix}\sigma_{xx}&\sigma_{xy}\\\sigma_{yx}&\sigma_{yy}\end{pmatrix}
 =2\mu\begin{pmatrix}u_x&\tfrac12(u_y+v_x)\\\tfrac12(u_y+v_x)&v_y\end{pmatrix}.
 $$
 
-The factor 2 is there so that simple shear gives back $\sigma_{xy}=\mu\,du/dy$ ([[Newtonian Fluid and Strain-Rate Tensor]]). Substitute into the viscous force, with every term written out (ll. 421–465):
+The factor 2 is there so that simple shear gives back $\sigma_{xy}=\mu\,du/dy$ ([[Newtonian Fluid and Strain-Rate Tensor]]). Substitute into the viscous force, with every term written out:
 
 $$
 \frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\sigma_{xy}}{\partial y}
@@ -264,9 +264,9 @@ $$
 \end{aligned}}
 $$
 
-Three equations, three unknowns $u$, $v$, $p$: a closed set, solvable numerically however many cells it takes (ll. 471–490). In 3D add the $w$ equation, $\partial(uw)/\partial z$ terms and $\partial^2/\partial z^2$ terms by the same pattern.
+Three equations, three unknowns $u$, $v$, $p$: a closed set, solvable numerically however many cells it takes. In 3D add the $w$ equation, $\partial(uw)/\partial z$ terms and $\partial^2/\partial z^2$ terms by the same pattern.
 
-Two compact notations are in common use (ll. 501–545). The subscript or Einstein notation, where an index repeated in a term is summed over 1, 2, 3, writes all four equations in two lines:
+Two compact notations are in common use. The subscript or Einstein notation, where an index repeated in a term is summed over 1, 2, 3, writes all four equations in two lines:
 
 $$
 \frac{\partial u_i}{\partial x_i}=0,
@@ -286,7 +286,7 @@ is the convenient one for changing coordinates: look up $\nabla\cdot\mathbf u$ i
 
 ### What you need to know
 
-What is examinable (ll. 545–569): the difference between compressible and incompressible flow ($D\rho/Dt$ zero or not); the difference between the Euler and Navier–Stokes equations (no viscosity, so no no-slip and no boundary layers, versus viscous terms that produce boundary layers, the source of the Blasius equation of [[SESA2029 A6 - Higher-Order Time Integration, Runge-Kutta and the Blasius Equation|A6]]); and the definition of a Newtonian fluid. In the coursework, discrepancies in an Euler solution must not be blamed on boundary-layer drag that the model does not contain.
+What is examinable: the difference between compressible and incompressible flow ($D\rho/Dt$ zero or not); the difference between the Euler and Navier–Stokes equations (no viscosity, so no no-slip and no boundary layers, versus viscous terms that produce boundary layers, the source of the Blasius equation of [[SESA2029 A6 - Higher-Order Time Integration, Runge-Kutta and the Blasius Equation|A6]]); and the definition of a Newtonian fluid. In the coursework, discrepancies in an Euler solution must not be blamed on boundary-layer drag that the model does not contain.
 
 ## Worked examples
 

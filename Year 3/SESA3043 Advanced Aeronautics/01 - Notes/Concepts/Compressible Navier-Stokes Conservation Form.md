@@ -22,7 +22,7 @@ $$
 },
 $$
 
-where the **conservation variables** (CH1-2 slide 75; elsewhere called conserved variables or the state vector) are
+where the **conservation variables** (elsewhere called conserved variables or the state vector) are
 
 $$
 \mathbf Q=[\rho,\rho u,\rho v,\rho w,\rho E_T]^T.

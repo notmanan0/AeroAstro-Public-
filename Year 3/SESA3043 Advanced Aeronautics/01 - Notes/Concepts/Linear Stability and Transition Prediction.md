@@ -23,7 +23,7 @@ The $\alpha_i=0$ contour, plotted against $\log Re_{\delta^*}$ and the frequency
 
 The method ignores receptivity and the nonlinear stages, handles non-parallel effects only partly, and can't predict bypass transition.
 
-Pressure gradient has a strong effect. An adverse gradient enlarges the unstable region, lowers $Re_{crit}$ and puts an inflection point in the profile. That allows inviscid (Rayleigh) instability, which stability calculations confirm for typical adverse-gradient profiles and which persists as $Re\to\infty$ (slide 46). An inflection point is necessary but not sufficient, so the instability is a computed result rather than automatic. A favourable gradient is stabilising, which is what natural-laminar-flow aerofoils exploit.
+Pressure gradient has a strong effect. An adverse gradient enlarges the unstable region, lowers $Re_{crit}$ and puts an inflection point in the profile. That allows inviscid (Rayleigh) instability, which stability calculations confirm for typical adverse-gradient profiles and which persists as $Re\to\infty$. An inflection point is necessary but not sufficient, so the instability is a computed result rather than automatic. A favourable gradient is stabilising, which is what natural-laminar-flow aerofoils exploit.
 
 ## Related
 

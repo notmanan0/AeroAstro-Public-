@@ -21,12 +21,13 @@ $$
 C_p=-\frac{2u'}{U_\infty}.
 $$
 
-The derivation (4.3 slides 2–8) has four moves. Write the momentum equations in non-conservative form using mass conservation. Combine them as $u\times(x\text{-mom})+v\times(y\text{-mom})$ and use $\mathrm dp=a^2\,\mathrm d\rho$. Linearise, with the energy equation giving $a^2=a_\infty^2-(\gamma-1)u'U_\infty$. Then introduce the potential. The pressure coefficient follows from the isentropic $p/p_\infty=(a^2/a_\infty^2)^{\gamma/(\gamma-1)}$ and a binomial expansion; $M_\infty$ cancels.
+The derivation has four moves. Write the momentum equations in non-conservative form using mass conservation. Combine them as $u\times(x\text{-mom})+v\times(y\text{-mom})$ and use $\mathrm dp=a^2\,\mathrm d\rho$. Linearise, with the energy equation giving $a^2=a_\infty^2-(\gamma-1)u'U_\infty$. Then introduce the potential. The pressure coefficient follows from the isentropic $p/p_\infty=(a^2/a_\infty^2)^{\gamma/(\gamma-1)}$ and a binomial expansion; $M_\infty$ cancels.
 
-The sign of $1-M_\infty^2$ sets the type. For $M_\infty<1$ the equation is elliptic and a stretch of $y$ turns it into Laplace's equation ([[Prandtl-Glauert Transformation]]). For $M_\infty>1$ it is hyperbolic, a wave equation whose solutions are constant along Mach lines ([[Ackeret Theory]]). It fails near $M_\infty=1$, where the kept term $(1-M_\infty^2)\phi_{xx}$ becomes as small as the dropped ones, and for hypersonic flow ($M_\infty>5$). The safe ranges are $M_\infty<0.8$ and $M_\infty>1.2$ (4.4 and 4.5 title slides).
+The sign of $1-M_\infty^2$ sets the type. For $M_\infty<1$ the equation is elliptic and a stretch of $y$ turns it into Laplace's equation ([[Prandtl-Glauert Transformation]]). For $M_\infty>1$ it is hyperbolic, a wave equation whose solutions are constant along Mach lines ([[Ackeret Theory]]). It fails near $M_\infty=1$, where the kept term $(1-M_\infty^2)\phi_{xx}$ becomes as small as the dropped ones, and for hypersonic flow ($M_\infty>5$). The safe ranges are $M_\infty<0.8$ and $M_\infty>1.2$.
 
 ## Related
 
-- [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#4. The velocity potential equation (4.3 slides 6–7)|W07b §§1–5]] (full derivation)
+- [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#4. The velocity potential equation|W07b §§1–5]] (full derivation)
 - [[Euler Equations]] · [[Prandtl-Glauert Transformation]] · [[Ackeret Theory]]
 - [[Streamfunction and Velocity Potential]] · [[Laplace's Equation]] (the $M_\infty\to0$ limit)
+- From the full potential equation, with the size of every dropped term: [[SESA3029 Deep Dive - From the Euler Equations to Prandtl-Glauert]]

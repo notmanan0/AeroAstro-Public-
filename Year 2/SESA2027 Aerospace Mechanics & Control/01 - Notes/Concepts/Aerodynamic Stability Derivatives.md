@@ -21,7 +21,7 @@ $$
 
 where the ring (°) marks the dimensional form. Derivatives with respect to states end up in the state matrix $\mathbf A$; those with respect to controls ($\eta$, thrust) are control derivatives and go in $\mathbf B$.
 
-L1.10 estimates each non-dimensional derivative from simple physics:
+Each non-dimensional derivative can be estimated from simple physics:
 
 | Derivative | Formula | Physical meaning |
 |---|---|---|
@@ -41,5 +41,5 @@ The derivatives that matter most are $M_w$ and $M_q$. The short-period frequency
 
 ## Related
 
-- Derivations of the force, moment and elevator derivatives: [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#4. Estimating the derivatives from physics (L1.10)|A2 §4]]; the $Z_\eta$ derivation in PS2 Q2: [[SESA2027 Practice Problems 2 Solutions]]
+- Derivations of the force, moment and elevator derivatives: [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#4. Estimating the derivatives from physics|A2 §4]]; the $Z_\eta$ derivation in PS2 Q2: [[SESA2027 Practice Problems 2 Solutions]]
 - [[Neutral Point and Static Margin]] · [[Short Period Oscillation]] · [[State-Space Representation]]

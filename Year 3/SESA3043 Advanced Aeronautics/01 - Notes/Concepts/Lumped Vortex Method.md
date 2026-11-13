@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Ch2 Exact Solution and methods for potential fl
 
 # Lumped Vortex Method
 
-The lumped vortex method models each thin lifting element as a single point vortex $\Gamma$ at its quarter-chord **loading point** $x_L$, and imposes flow tangency at its three-quarter-chord **control point** $x_T$ (the slides' terms). For one flat plate, tangency at the control point gives $U_\infty\alpha=\Gamma/[2\pi(c/2)]$, so $\Gamma=\pi U_\infty\alpha c$ and $C_L=2\pi\alpha$, the thin-aerofoil result.
+The lumped vortex method models each thin lifting element as a single point vortex $\Gamma$ at its quarter-chord **loading point** $x_L$, and imposes flow tangency at its three-quarter-chord **control point** $x_T$ (the course's terms). For one flat plate, tangency at the control point gives $U_\infty\alpha=\Gamma/[2\pi(c/2)]$, so $\Gamma=\pi U_\infty\alpha c$ and $C_L=2\pi\alpha$, the thin-aerofoil result.
 
 With several elements, put a vortex at $\bar x=1/4$ and a control point at $\bar x=3/4$ on each, work out the downwash at every control point from every vortex (and any images), set the required upwash $U_\infty(\alpha-\mathrm dz_c/\mathrm dx)$ equal to the total downwash, and solve the linear system; each element's lift is $L_i=\rho U_\infty\Gamma_i$. Write every induced velocity as a downwash and enter an upward one as a negative downwash, to keep the signs straight.
 

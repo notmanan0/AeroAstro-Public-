@@ -33,7 +33,7 @@ The difference between a solid, a liquid and a gas is the strength of the bonds 
 
 Gases and liquids together are fluids, and what they share is that they flow. Push sideways on the top of a block of rubber and it leans over by a fixed amount and stops; push on the top of a layer of oil and the top keeps moving for as long as you push. A solid resists being deformed; a fluid resists only the rate at which it is deformed, and the property that measures that resistance is the viscosity.
 
-Viscosity is small in air, but it acts over the whole surface of a fuselage and wings, and it is the origin of skin-friction drag, a substantial part of the fuel bill of every airliner (3 Mar, ll. 171–176). Its microscopic origin, molecules carrying momentum between layers moving at different speeds, also explains why air becomes more viscous when heated while oil becomes less.
+Viscosity is small in air, but it acts over the whole surface of a fuselage and wings, and it is the origin of skin-friction drag, a substantial part of the fuel bill of every airliner. Its microscopic origin, molecules carrying momentum between layers moving at different speeds, also explains why air becomes more viscous when heated while oil becomes less.
 
 ---
 
@@ -41,7 +41,7 @@ Viscosity is small in air, but it acts over the whole surface of a fuselage and 
 
 ### Solid and fluid between two plates
 
-A layer of material of thickness $h$ lies between two parallel plates. The bottom plate is held still and a force $F$ is applied to the top plate; two points that start one above the other on the two plates mark the deformation (3 Mar, ll. 62–113).
+A layer of material of thickness $h$ lies between two parallel plates. The bottom plate is held still and a force $F$ is applied to the top plate; two points that start one above the other on the two plates mark the deformation.
 
 If the material is a solid, the top plate moves a distance $l$ and stops when the internal stresses balance $F$. The ratio $l/h$ is the **shear strain**, and for an elastic solid it is proportional to the applied force:
 
@@ -105,7 +105,7 @@ $$
 \frac{\Delta V}{V}=-\frac{\Delta p}{E_v}=-\frac{10^5}{2.2\times10^9}=-4.5\times10^{-5}
 $$
 
-a change of 0.0045 %. That is why liquids are usually treated as **incompressible**: their density is effectively constant, and it depends more on temperature than on pressure (3 Mar, ll. 589–607).
+a change of 0.0045 %. That is why liquids are usually treated as **incompressible**: their density is effectively constant, and it depends more on temperature than on pressure.
 
 ### Speed of sound
 
@@ -145,7 +145,7 @@ $$
 c=\sqrt{1.4\times287\times293.15}=343\ \mathrm{m/s}
 $$
 
-the familiar 340 m/s (3 Mar, l. 627). Air's bulk modulus at atmospheric pressure is only $1.4\times101\,325=1.4\times10^5$ Pa, about 15 000 times smaller than water's, which is why gases are compressible and liquids nearly not. The compressibility of gases becomes important in shock waves.
+the familiar 340 m/s. Air's bulk modulus at atmospheric pressure is only $1.4\times101\,325=1.4\times10^5$ Pa, about 15 000 times smaller than water's, which is why gases are compressible and liquids nearly not. The compressibility of gases becomes important in shock waves.
 
 > [!check] Why not the isothermal value
 > If the gas were compressed isothermally, $pv=$ const would give $E_v=p$ and $c=\sqrt{RT}=290$ m/s, 15 % below the measured speed of sound. The measured value supports the isentropic model.
@@ -154,9 +154,9 @@ the familiar 340 m/s (3 Mar, l. 627). Air's bulk modulus at atmospheric pressure
 
 ### Couette flow and the no-slip condition
 
-Fluid between two plates a distance $h$ apart, with the bottom plate fixed and the top plate moving at $V$, is in **Couette flow**, named after Maurice Couette, one of the founders of rheology, the measurement of how fluids deform (3 Mar, ll. 114–127). $y$ is measured upwards from the bottom plate.
+Fluid between two plates a distance $h$ apart, with the bottom plate fixed and the top plate moving at $V$, is in **Couette flow**, named after Maurice Couette, one of the founders of rheology, the measurement of how fluids deform. $y$ is measured upwards from the bottom plate.
 
-The layer of fluid touching each plate moves with that plate. Close up, the plate surface is a lattice of molecules, and fluid molecules near it interact strongly enough with them to be held at the plate's velocity. This is the **no-slip condition**: the velocity of the fluid relative to a solid surface in contact with it is zero (3 Mar, ll. 205–222). The emphasis is on relative velocity. At the fixed bottom plate the fluid is at rest; at the moving top plate it moves at $V$:
+The layer of fluid touching each plate moves with that plate. Close up, the plate surface is a lattice of molecules, and fluid molecules near it interact strongly enough with them to be held at the plate's velocity. This is the **no-slip condition**: the velocity of the fluid relative to a solid surface in contact with it is zero. The emphasis is on relative velocity. At the fixed bottom plate the fluid is at rest; at the moving top plate it moves at $V$:
 
 $$
 v(0)=0,\qquad v(h)=V
@@ -188,7 +188,7 @@ $$
 \frac{dv}{dy}=\frac{V}{h}
 $$
 
-which equals the rate of shear strain $d(l/h)/dt$ found in §1. The velocity gradient is the general measure of how fast neighbouring layers of fluid are being deformed, and in Couette flow every layer is sheared at the same rate (3 Mar, ll. 230–237).
+which equals the rate of shear strain $d(l/h)/dt$ found in §1. The velocity gradient is the general measure of how fast neighbouring layers of fluid are being deformed, and in Couette flow every layer is sheared at the same rate.
 
 ### Newton's law of viscosity
 
@@ -210,7 +210,7 @@ The units of $\mu$ follow from $\mu=\tau/(dv/dy)$: Pa divided by s⁻¹, so Pa s
 
 ### Newtonian and non-Newtonian fluids
 
-Newton's law says shear stress is proportional to shear rate. To measure $\mu$, shear the fluid at several known rates, measure the stress needed, and plot one against the other: the points lie on a straight line through the origin whose slope is $\mu$, steeper for honey than for water (3 Mar, ll. 262–277). Fluids that behave this way are **Newtonian**: air, water and oils.
+Newton's law says shear stress is proportional to shear rate. To measure $\mu$, shear the fluid at several known rates, measure the stress needed, and plot one against the other: the points lie on a straight line through the origin whose slope is $\mu$, steeper for honey than for water. Fluids that behave this way are **Newtonian**: air, water and oils.
 
 ![[tf_rheology_curves.png|900]]
 
@@ -233,7 +233,7 @@ Its units are (Pa s)/(kg m⁻³) = m²/s, with no mass in them, hence "kinematic
 
 Water is about 50 times more viscous than air, but because it is about 830 times denser its kinematic viscosity is about 17 times smaller.
 
-The meaning of $\nu$ is clearest from an experiment (3 Mar, ll. 322–407). Two identical round tanks, one of water and one of air (with smoke to make it visible), are stirred until the swirling motion has the same speed $V_0$. Friction against the fixed walls then slows each one down. Water has the larger viscous force, since that is proportional to $\mu$, but it also has a much larger mass to decelerate, proportional to $\rho$. By Newton's second law the deceleration goes as force over mass, so as $\mu/\rho=\nu$. Air, with the larger $\nu$, slows down faster, and the swirl in the water persists much longer.
+The meaning of $\nu$ is clearest from an experiment. Two identical round tanks, one of water and one of air (with smoke to make it visible), are stirred until the swirling motion has the same speed $V_0$. Friction against the fixed walls then slows each one down. Water has the larger viscous force, since that is proportional to $\mu$, but it also has a much larger mass to decelerate, proportional to $\rho$. By Newton's second law the deceleration goes as force over mass, so as $\mu/\rho=\nu$. Air, with the larger $\nu$, slows down faster, and the swirl in the water persists much longer.
 
 Under suitable conditions the velocity decays exponentially,
 
@@ -247,7 +247,7 @@ where $R$ is the radius of the tank. The time for the motion to halve is $t_{1/2
 
 ### Molecular origin of viscosity
 
-The mechanism is different in gases and liquids, because their molecules are arranged differently (3 Mar, ll. 412–489).
+The mechanism is different in gases and liquids, because their molecules are arranged differently.
 
 In a gas, take two adjacent layers moving at $V'$ and $V$, with $V'>V$. On top of their bulk motion the molecules move randomly in all directions. Some molecules from the fast layer wander into the slow layer, carrying on average more forward momentum than the molecules there; their collisions speed the slow layer up. Molecules from the slow layer wander into the fast one and slow it down. The net effect is a transfer of momentum from fast fluid to slow, called **molecular diffusion of momentum**, which smooths out the velocity difference over time. Viscosity is the macroscopic name for this. The molecular motions happen over the mean free path, far smaller than the scale of any velocity difference of interest, so the fluid can still be treated as a continuum with $\mu$ as a property. The same process at a wall, where fluid molecules lose momentum in collisions with the atoms of the surface, appears macroscopically as the wall shear stress.
 
@@ -284,7 +284,7 @@ with $a$ and $b$ fitted to measurements for each liquid.
 
 ### Worked example - plate sliding on a fluid film
 
-A plate of area 0.5 m² slides at 1 m/s over a fixed surface, separated by a 1 mm film. Find the shear stress and the force needed for a film of water and for a film of air (suggested example on §7.5).
+A plate of area 0.5 m² slides at 1 m/s over a fixed surface, separated by a 1 mm film. Find the shear stress and the force needed for a film of water and for a film of air (suggested example).
 
 With no-slip at both surfaces and a thin film, the profile is linear and $dv/dy=V/h=1/0.001=1000$ s⁻¹. For water:
 
@@ -300,7 +300,7 @@ For air, $\tau=1.8\times10^{-5}\times1000=0.018$ Pa and $F=0.009$ N, 50 times le
 
 ### Worked example - compressing water
 
-Water at atmospheric pressure is pressurised by an extra 1 bar. Find the fractional volume change and the speed of sound (3 Mar, ll. 589–625).
+Water at atmospheric pressure is pressurised by an extra 1 bar. Find the fractional volume change and the speed of sound.
 
 $$
 \frac{\Delta V}{V}=-\frac{10^5}{2.2\times10^9}=-4.5\times10^{-5}\quad(0.0045\ \%)

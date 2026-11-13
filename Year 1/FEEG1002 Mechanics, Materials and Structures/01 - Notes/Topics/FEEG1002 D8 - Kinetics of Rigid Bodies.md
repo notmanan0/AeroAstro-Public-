@@ -105,7 +105,7 @@ $$
 
 ![[d_mass_moment_of_inertia.png|900]]
 
-Other standard results (slides pp. 19–22): a thin hoop $I_G=mR^2$; a solid cylinder about its axis $\tfrac12mR^2$; a solid sphere $\tfrac25mR^2$; a thin rectangular plate $a\times b$ about its normal through G $\tfrac1{12}m(a^2+b^2)$. The 3D inertia tensor and products of inertia are not assessed.
+Other standard results: a thin hoop $I_G=mR^2$; a solid cylinder about its axis $\tfrac12mR^2$; a solid sphere $\tfrac25mR^2$; a thin rectangular plate $a\times b$ about its normal through G $\tfrac1{12}m(a^2+b^2)$. The 3D inertia tensor and products of inertia are not assessed.
 
 ### Parallel-axis theorem
 
@@ -139,7 +139,7 @@ $$
 I=mk^2,\qquad k=\sqrt{\frac Im}
 $$
 
-It is the radius at which all the mass could be concentrated without changing $I$. A uniform disc has $k_G=R/\sqrt2$; a thin hoop has $k_G=R$, its mass all at the rim. That difference is why the hollow cylinder always loses the rolling race, whatever the masses and sizes (L18b, ll. 248–321, 642–685; see [[FEEG1002 D9 - Work and Energy for Rigid Bodies#Rolling race down a slope|D9]]).
+It is the radius at which all the mass could be concentrated without changing $I$. A uniform disc has $k_G=R/\sqrt2$; a thin hoop has $k_G=R$, its mass all at the rim. That difference is why the hollow cylinder always loses the rolling race, whatever the masses and sizes (see [[FEEG1002 D9 - Work and Energy for Rigid Bodies#Rolling race down a slope|D9]]).
 
 ## 3. Planar equations of motion
 
@@ -187,7 +187,7 @@ $$
 \sum F_x=m(a_G)_x,\qquad\sum F_y=m(a_G)_y,\qquad\sum M_G=0
 $$
 
-or, about another point A, $\sum M_A=m a_Gd$ with $d$ the perpendicular distance from A to the line of action of $m\mathbf a_G$. For curvilinear translation, use n-t axes: $\sum F_n=m(a_G)_n$, $\sum F_t=m(a_G)_t$ and $\sum M_G=0$. The moment sum is zero only about G; about any other point the kinetic moment of $m\mathbf a_G$ must be included, and forgetting it is a common mistake (DAMS8-2, ll. 93–97).
+or, about another point A, $\sum M_A=m a_Gd$ with $d$ the perpendicular distance from A to the line of action of $m\mathbf a_G$. For curvilinear translation, use n-t axes: $\sum F_n=m(a_G)_n$, $\sum F_t=m(a_G)_t$ and $\sum M_G=0$. The moment sum is zero only about G; about any other point the kinetic moment of $m\mathbf a_G$ must be included, and forgetting it is a common mistake (DAMS8-2).
 
 A translating body must also be checked for tipping: the assumption $\alpha=0$ requires every normal reaction to come out positive. If one is negative, the body tips and the problem becomes general plane motion.
 
@@ -227,7 +227,7 @@ $$
 P-F_f=ma_G,\qquad N-mg=0,\qquad F_fr=I_G\alpha
 $$
 
-three equations in four unknowns ($F_f$, $N$, $a_G$, $\alpha$). The fourth relation depends on whether the disc slips, which is not known in advance (slide p. 48):
+three equations in four unknowns ($F_f$, $N$, $a_G$, $\alpha$). The fourth relation depends on whether the disc slips, which is not known in advance:
 
 1. Assume no slip and use $a_G=r\alpha$, with no friction law. Solve, then check $F_f\le\mu_sN$.
 2. If the check fails, the disc slips: use $F_f=\mu_kN$ instead, with $a_G$ and $\alpha$ independent.
@@ -236,7 +236,7 @@ three equations in four unknowns ($F_f$, $N$, $a_G$, $\alpha$). The fourth relat
 
 ## 4. Impulse and momentum for rigid bodies
 
-The impulse-momentum principles of [[FEEG1002 D4 - Linear Impulse and Momentum|D4]] and [[FEEG1002 D5 - Angular Impulse and Momentum|D5]] carry over to rigid bodies (DAMS10, no slides). The **linear momentum** is $\mathbf L=m\mathbf v_G$. The **angular momentum** about a point P is the sum of the moments of the elements' momenta; the same expansion as for the kinetic moments, with velocities $\mathbf v_i=\mathbf v_G+\boldsymbol\omega\times\boldsymbol\rho_i$ in place of accelerations, gives
+The impulse-momentum principles of [[FEEG1002 D4 - Linear Impulse and Momentum|D4]] and [[FEEG1002 D5 - Angular Impulse and Momentum|D5]] carry over to rigid bodies. The **linear momentum** is $\mathbf L=m\mathbf v_G$. The **angular momentum** about a point P is the sum of the moments of the elements' momenta; the same expansion as for the kinetic moments, with velocities $\mathbf v_i=\mathbf v_G+\boldsymbol\omega\times\boldsymbol\rho_i$ in place of accelerations, gives
 
 $$
 H_P=\bar{\mathbf r}\times m\mathbf v_G+I_G\omega,\qquad H_G=I_G\omega
@@ -262,7 +262,7 @@ with P at G or at a point fixed in space: three scalar equations in plane motion
 
 ### Handcart that must not tip
 
-A 200 kg cart on light frictionless wheels is pushed by $P=50$ N at 60° below the horizontal on its handle. G is 0.2 m above the ground; wheel A is 0.3 m behind G and wheel B 0.2 m in front of it; the push acts at a point 0.5 m high and 0.6 m horizontally from G. Find the cart's acceleration and the wheel reactions (slides pp. 32–37; DAMS8-2a).
+A 200 kg cart on light frictionless wheels is pushed by $P=50$ N at 60° below the horizontal on its handle. G is 0.2 m above the ground; wheel A is 0.3 m behind G and wheel B 0.2 m in front of it; the push acts at a point 0.5 m high and 0.6 m horizontally from G. Find the cart's acceleration and the wheel reactions (DAMS8-2a).
 
 Assume the cart translates without tipping, so $\alpha=0$. Horizontally, only the horizontal component of $P$ acts:
 
@@ -300,7 +300,7 @@ Both are positive, so the no-tipping assumption holds. Had $N_A$ come out negati
 
 ### Rod released from rest about a pivot
 
-A uniform 15 kg rod 0.9 m long is pinned at O, 0.3 m from one end, and held horizontal by a cord at the far end. The cord is cut. Find the angular acceleration and the pin reaction at that instant (slides pp. 39–41; DAMS8-2b).
+A uniform 15 kg rod 0.9 m long is pinned at O, 0.3 m from one end, and held horizontal by a cord at the far end. The cord is cut. Find the angular acceleration and the pin reaction at that instant (DAMS8-2b).
 
 G is at the middle, $r_G=0.45-0.3=0.15$ m from O. The rod starts from rest, so $\omega=0$ and $(a_G)_n=r_G\omega^2=0$. The normal equation (along the rod) has nothing to balance, so the pin's normal reaction is $R_n=0$. About O, only the weight has a moment:
 
@@ -330,7 +330,7 @@ These hold only at the instant of release; once the rod moves, $\omega\neq0$ and
 
 ### Lawn roller pushed along the ground
 
-A 40 kg lawn roller of radius 0.2 m and radius of gyration $k_G=R/\sqrt2$ is pushed by a 400 N force along its handle at 45° below the horizontal, applied at the axle. The coefficients of friction are $\mu_s=0.12$ and $\mu_k=0.1$. Does it slip, and what are its accelerations (slides pp. 49–52; DAMS8-3a)?
+A 40 kg lawn roller of radius 0.2 m and radius of gyration $k_G=R/\sqrt2$ is pushed by a 400 N force along its handle at 45° below the horizontal, applied at the axle. The coefficients of friction are $\mu_s=0.12$ and $\mu_k=0.1$. Does it slip, and what are its accelerations (DAMS8-3a)?
 
 $I_G=mk_G^2=40\times0.02=0.8$ kg m². The push acts through G, so the roller is pulled at its centre and friction $F_A$ at the contact acts backwards. Take $x$ in the direction of motion and the roller turning forwards:
 
@@ -375,7 +375,7 @@ $$
 
 ### Driven wheel from the mock exam
 
-A wheel of mass $m$, centroidal inertia $I_G$ and radius $R$ rolls without slip. It is driven by a torque $M$ and loaded at its hub by a vertical force $P_0$ (which includes its weight) and a backward horizontal force $H_0$, and a drag force $D$ acts backwards at height $h_D$ above the centre. Find $a_G$, the no-slip condition, and (with $D=bv_G$) the distance needed to reach speed $v_E$ from rest (mock exam, 25 marks, 15 May 2025).
+A wheel of mass $m$, centroidal inertia $I_G$ and radius $R$ rolls without slip. It is driven by a torque $M$ and loaded at its hub by a vertical force $P_0$ (which includes its weight) and a backward horizontal force $H_0$, and a drag force $D$ acts backwards at height $h_D$ above the centre. Find $a_G$, the no-slip condition, and (with $D=bv_G$) the distance needed to reach speed $v_E$ from rest (mock exam, 25 marks).
 
 The FBD has $P_0$, $H_0$, $M$, $D$, the normal reaction $N$ and the friction $F_f$, which acts forwards because the wheel is driven by a torque. Do not write $F_f=\mu_sN$. Horizontally and about G, taking the sense of $M$ as positive for $\alpha$:
 
@@ -419,7 +419,7 @@ which requires $v_E<A/B$, the terminal speed. With $A=2$, $B=3$, $C=4$ and $v_E=
 
 ### Wheel driven by a torque from rest
 
-A wheel with radius 0.6 m and radius of gyration 0.4 m about its centre rolls without slip under a constant torque of 300 N m. Find its angular velocity after 6 s from rest (DAMS10-2, ll. 1–51). The mass is not recorded; 301 kg reproduces the quoted 11.5 rad/s, and 300 kg is used here.
+A wheel with radius 0.6 m and radius of gyration 0.4 m about its centre rolls without slip under a constant torque of 300 N m. Find its angular velocity after 6 s from rest (DAMS10-2). The mass is not recorded; 301 kg reproduces the quoted 11.5 rad/s, and 300 kg is used here.
 
 Take angular impulse and momentum about the fixed point A on the ground at the initial contact. Friction acts along the ground, through A, so it has no moment about A. The normal force and the weight act on the same vertical line, through the contact point and G, and are equal and opposite, so their moments about A cancel; G moves parallel to the ground, so its height $r$ above A is the arm of $m\mathbf v_G$. Starting from rest,
 
@@ -439,7 +439,7 @@ $$
 
 ### Falling rods with and without a point mass
 
-Two identical uniform rods pivoted at their bottom ends are released from the same small angle; one carries an extra point mass part-way up. Which falls faster (L17b, ll. 15–78; Tutorial 8 Q3)?
+Two identical uniform rods pivoted at their bottom ends are released from the same small angle; one carries an extra point mass part-way up. Which falls faster (Tutorial 8 Q3)?
 
 About the pivot A, with the rod's combined centre of mass at $l_G$ from A and radius of gyration $k_A$, $mgl_G\sin\theta=mk_A^2\alpha$, so
 

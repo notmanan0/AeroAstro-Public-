@@ -445,7 +445,7 @@ $$
 
 ### Worked example - overhanging beam by sketching
 
-Tutorial 3 Q1 has points A to F at $x=0$, 1, 2, 3, 4 and 5 m, a pin at B, a roller at D, 8 kN at C and 3 kN at the free end F (set in L5, ll. 686–702). Moments about B, anticlockwise positive:
+Tutorial 3 Q1 has points A to F at $x=0$, 1, 2, 3, 4 and 5 m, a pin at B, a roller at D, 8 kN at C and 3 kN at the free end F. Moments about B, anticlockwise positive:
 
 $$
 -(1)(8)+2R_D-(4)(3)=0

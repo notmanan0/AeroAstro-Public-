@@ -19,7 +19,7 @@ $$
 \omega_n^2 = \frac{\mathring M_q\mathring Z_w-mU_\infty\mathring M_w}{mI_{yy}},\qquad 2\zeta\omega_n = -\left(\frac{\mathring Z_w}{m}+\frac{\mathring M_q}{I_{yy}}+\frac{U_\infty\mathring M_{\dot w}}{I_{yy}}\right).
 $$
 
-Physically, a disturbance in $\alpha$ is opposed by the pitch stiffness $M_w<0$, which comes from the static margin, but the aircraft overshoots. The overshoot is damped by $M_q$, from the tail incidence $ql/U$, and by the downwash lag in $M_{\dot w}$. The motion is over before the speed has time to change. The frequency is dominated by $-U_\infty\mathring M_w/I_{yy}$, so a larger static margin or a higher speed gives a faster SPO, and the damping comes mainly from $\mathring M_q$ and $\mathring Z_w$. For the F-4C the approximation is within 0.5 % of the full 4×4 model, which is why it is the design model for pitch control. With elevator input it gives the Part B plant,
+Physically, a disturbance in $\alpha$ is opposed by the pitch stiffness $M_w<0$, which comes from the static margin, but the aircraft overshoots. The overshoot is damped by $M_q$, from the tail incidence $ql/U$, and by the downwash lag in $M_{\dot w}$. The motion is over before the speed has time to change. The frequency is dominated by $-U_\infty\mathring M_w/I_{yy}$, so a larger static margin or a higher speed gives a faster SPO, and the damping comes mainly from $\mathring M_q$ and $\mathring Z_w$. For the F-4C the approximation is within 0.5 % of the full 4×4 model, which is why it is the design model for pitch control. With elevator input it gives the pitch-rate plant used for the control design,
 
 $$
 \frac{q}{\eta} = \frac{m_\eta s+(m_wz_\eta-m_\eta z_w)}{s^2-(m_q+z_w)s+(z_wm_q-z_qm_w)} .
@@ -31,5 +31,5 @@ Pilots feel the SPO directly, so the handling-quality rules are strict. CS/FAR 2
 
 ## Related
 
-- The SPO characteristic equation line by line: [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid#5. The SPO approximation (L1.06)|A3 §5]]
+- The SPO characteristic equation line by line: [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid#5. The SPO approximation|A3 §5]]
 - [[Phugoid Mode]] · [[Damping Ratio and Natural Frequency]] · [[Aerodynamic Stability Derivatives]] · [[Neutral Point and Static Margin]] · [[Stability vs Manoeuvrability]]

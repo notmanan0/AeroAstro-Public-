@@ -29,11 +29,11 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Kep
 > - **Common mistakes:** using $\mu_E$ for a heliocentric orbit (or the reverse); mixing metres with $\mathrm{km^3/s^2}$, which is out by a factor of $10^{9/2}$ in the period.
 > - **Practise:** [[#Worked examples]] · [[#Self-study tasks|Quiz 2 questions below]]
 
-Kepler worked from data, not theory. He took Tycho Brahe's naked-eye measurements of planetary positions, made with a sextant rather than a telescope, and fitted three laws to them (2025-10-21, ll. 61–100, 261–290). They describe the shape of an orbit, how the speed varies around it, and how long one revolution takes. All three follow from Newton's second law and his inverse-square law of gravitation, which he proved about seventy years later using the calculus he had just invented.
+Kepler worked from data, not theory. He took Tycho Brahe's naked-eye measurements of planetary positions, made with a sextant rather than a telescope, and fitted three laws to them. They describe the shape of an orbit, how the speed varies around it, and how long one revolution takes. All three follow from Newton's second law and his inverse-square law of gravitation, which he proved about seventy years later using the calculus he had just invented.
 
 Gravity always points at the central body, so it can change the spacecraft's speed and direction but never its angular momentum about that body. That one fact gives the second law directly. The radial balance between gravity and the "centrifugal" term $r\dot\theta^2$ then decides how far the orbit swings in and out, which gives a conic section: a circle or ellipse if the spacecraft is bound, a parabola or hyperbola if it is not (some comets follow hyperbolic paths).
 
-The derivations are for understanding, not recall, and are not examined (2025-10-21, l. 321; also 2025-10-23, ll. 21–30). The results are used everywhere, so the derivation is given in full (the intermediate steps are in 2020 Lectures 4–6).
+The derivations are for understanding, not recall, and are not examined (also 2025-10-23). The results are used everywhere, so the derivation is given in full (the intermediate steps are in 2020 Lectures 4–6).
 
 ## 1. Kepler's three laws
 
@@ -43,9 +43,9 @@ Kepler's laws are:
 2. The line joining the planet to the Sun sweeps out equal areas in equal times (1609).
 3. The square of the period of the planet is proportional to the cube of its mean distance from the Sun (1619).
 
-They hold just as well for a satellite around the Earth, with the Earth at the focus. The "mean distance" in the third law is the semi-major axis $a$, half the longest diameter of the ellipse, and the period is written $\tau$ (2025-10-21, ll. 211–250).
+They hold just as well for a satellite around the Earth, with the Earth at the focus. The "mean distance" in the third law is the semi-major axis $a$, half the longest diameter of the ellipse, and the period is written $\tau$.
 
-The second law has a consequence you can see without any maths. Equal areas in equal times means the thin wedge swept near periapsis, close to the focus, must be short and wide, while the wedge near apoapsis is long and thin. The arc covered near periapsis in the same time is therefore longer, so the body moves fastest when it is closest (2025-10-28, ll. 241–290).
+The second law has a consequence you can see without any maths. Equal areas in equal times means the thin wedge swept near periapsis, close to the focus, must be short and wide, while the wedge near apoapsis is long and thin. The arc covered near periapsis in the same time is therefore longer, so the body moves fastest when it is closest.
 
 ![[ast_kepler_equal_areas.png|800]]
 
@@ -135,7 +135,7 @@ $$
 r=\frac{a(1-e^2)}{1-e\cos\theta}.
 $$
 
-In this construction $\theta$ is measured from the direction pointing away from the nearest vertex, so $\theta=0$ is apoapsis. Orbit problems measure $\theta$ from periapsis instead, which means replacing $\theta$ by $\theta+180^\circ$, and $\cos(\theta+180^\circ)=-\cos\theta$ (2025-10-21, ll. 661–680):
+In this construction $\theta$ is measured from the direction pointing away from the nearest vertex, so $\theta=0$ is apoapsis. Orbit problems measure $\theta$ from periapsis instead, which means replacing $\theta$ by $\theta+180^\circ$, and $\cos(\theta+180^\circ)=-\cos\theta$:
 
 $$
 \boxed{r=\frac{a(1-e^2)}{1+e\cos\theta}}
@@ -170,7 +170,7 @@ $$
 
 ## 3. Acceleration in rotating radial and transverse axes
 
-$F=ma$ needs the acceleration in the same polar description, which is built from first principles here (2020 Lecture 4). Let $\mathbf i$ be the unit vector pointing radially outwards from the Sun $S$ and $\mathbf j$ the unit vector perpendicular to it in the direction of motion (transverse). These axes rotate with the planet, which is what makes the derivation more than just differentiating components.
+$F=ma$ needs the acceleration in the same polar description, which is built from first principles here. Let $\mathbf i$ be the unit vector pointing radially outwards from the Sun $S$ and $\mathbf j$ the unit vector perpendicular to it in the direction of motion (transverse). These axes rotate with the planet, which is what makes the derivation more than just differentiating components.
 
 At $P$ the velocity has a radial component $\dot r$ and a transverse component $r\dot\theta$. A short time $\delta t$ later the planet is at $Q$, having turned through $\delta\theta$, and its components along the new axes are $\dot r+\delta\dot r$ and $(r+\delta r)(\dot\theta+\delta\dot\theta)$.
 
@@ -202,7 +202,7 @@ $$
 \delta v_\theta\approx\dot r\,\delta\theta+r\,\delta\dot\theta+\delta r\,\dot\theta.
 $$
 
-The change has two radial terms ($\delta\dot r$ and $-r\dot\theta\,\delta\theta$) and three transverse terms, which come from two vector diagrams (2025-10-23, ll. 281–300). Divide by $\delta t$ and let $\delta t\to0$, so that $\delta\dot r/\delta t\to\ddot r$, $\delta\theta/\delta t\to\dot\theta$, $\delta\dot\theta/\delta t\to\ddot\theta$ and $\delta r/\delta t\to\dot r$:
+The change has two radial terms ($\delta\dot r$ and $-r\dot\theta\,\delta\theta$) and three transverse terms, which come from two vector diagrams. Divide by $\delta t$ and let $\delta t\to0$, so that $\delta\dot r/\delta t\to\ddot r$, $\delta\theta/\delta t\to\dot\theta$, $\delta\dot\theta/\delta t\to\ddot\theta$ and $\delta r/\delta t\to\dot r$:
 
 $$
 a_r=\ddot r-r\dot\theta^2,
@@ -216,7 +216,7 @@ The $-r\dot\theta^2$ term is the centripetal acceleration of the rotating radius
 
 ## 4. Equations of motion
 
-Gravity is the only force (two-body problem, no drag or thrust). It acts along $-\mathbf i$ with magnitude $GMm/r^2$, where $M$ is the mass of the central body and $m$ the mass of the planet or spacecraft. In vector form, with the unit vector $\mathbf r/r$ (2025-10-23, ll. 341–380):
+Gravity is the only force (two-body problem, no drag or thrust). It acts along $-\mathbf i$ with magnitude $GMm/r^2$, where $M$ is the mass of the central body and $m$ the mass of the planet or spacecraft. In vector form, with the unit vector $\mathbf r/r$:
 
 $$
 -\frac{GMm}{r^2}\frac{\mathbf r}{r}=m\mathbf a.
@@ -258,7 +258,7 @@ $$
 h=rV\sin\alpha=|\mathbf r\times\mathbf V|.
 $$
 
-As a vector, $\mathbf h=\mathbf r\times\mathbf V$ points out of the orbit plane by the right-hand rule. Because it is constant in direction as well as size, the orbit plane is fixed in space (2025-10-23, ll. 481–510). At periapsis and apoapsis the velocity is perpendicular to the radius ($\alpha=90^\circ$), so
+As a vector, $\mathbf h=\mathbf r\times\mathbf V$ points out of the orbit plane by the right-hand rule. Because it is constant in direction as well as size, the orbit plane is fixed in space. At periapsis and apoapsis the velocity is perpendicular to the radius ($\alpha=90^\circ$), so
 
 $$
 h=r_pV_p=r_aV_a.
@@ -266,7 +266,7 @@ $$
 
 ### Radial equation: the orbit equation
 
-The radial equation $\ddot r-r\dot\theta^2=-\mu/r^2$ contains time derivatives, but the orbit equation needs $r$ as a function of $\theta$. Two substitutions do it. Put $u=1/r$, and use $\dot\theta=h/r^2=hu^2$ to swap time derivatives for $\theta$ derivatives with the chain rule (2025-10-23, ll. 521–560; 2020 Lecture 5, ll. 176–300):
+The radial equation $\ddot r-r\dot\theta^2=-\mu/r^2$ contains time derivatives, but the orbit equation needs $r$ as a function of $\theta$. Two substitutions do it. Put $u=1/r$, and use $\dot\theta=h/r^2=hu^2$ to swap time derivatives for $\theta$ derivatives with the chain rule:
 
 $$
 \dot r=\frac{d}{dt}\left(\frac1u\right)=-\frac{1}{u^2}\frac{du}{dt}=-\frac{1}{u^2}\frac{du}{d\theta}\dot\theta.
@@ -343,11 +343,11 @@ $$
 \boxed{a(1-e^2)=\frac{h^2}{\mu}=p}
 $$
 
-where $p$ is the semi-latus rectum, the radius at $\theta=90^\circ$. Everything on both sides is a constant of the orbit, so orbits are ellipses with the central body at the focus, which is Kepler's first law (2025-10-23, ll. 575–605). More generally the solution is a conic: $e=0$ gives a circle, $0<e<1$ an ellipse, $e=1$ a parabola and $e>1$ a hyperbola (see [[SESA2024 03 - Orbital Elements and Conic Sections]]).
+where $p$ is the semi-latus rectum, the radius at $\theta=90^\circ$. Everything on both sides is a constant of the orbit, so orbits are ellipses with the central body at the focus, which is Kepler's first law. More generally the solution is a conic: $e=0$ gives a circle, $0<e<1$ an ellipse, $e=1$ a parabola and $e>1$ a hyperbola (see [[SESA2024 03 - Orbital Elements and Conic Sections]]).
 
 ## 5. Kepler's second law
 
-Over a short time the radius sweeps a thin triangle $SPQ$ (2025-10-28, ll. 161–220). Approximate it by the right-angled triangle with height $r$ and base $r\,\delta\theta$, ignoring the sliver between the chord and the arc, which is second order:
+Over a short time the radius sweeps a thin triangle $SPQ$. Approximate it by the right-angled triangle with height $r$ and base $r\,\delta\theta$, ignoring the sliver between the chord and the arc, which is second order:
 
 $$
 \delta A\approx\tfrac12\,r\cdot r\,\delta\theta=\tfrac12r^2\,\delta\theta.
@@ -363,7 +363,7 @@ Since $h$ is constant, so is the rate at which area is swept: equal areas in equ
 
 ## 6. Kepler's third law and the period
 
-The period is the time to sweep the whole ellipse (2025-10-28, ll. 291–400):
+The period is the time to sweep the whole ellipse:
 
 $$
 \tau=\frac{\text{area}}{\dot A}=\frac{\pi ab}{h/2}.
@@ -391,7 +391,7 @@ $$
 
 This is the third law with the constant of proportionality found. The period depends on the semi-major axis and the central body only. Two orbits with the same $a$ have the same period however different their eccentricities, which is why a transfer ellipse's half-period follows from its $a$ alone in [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]].
 
-Kepler's third law also gives the mean motion (2020 Lecture 6, ll. 101–125):
+Kepler's third law also gives the mean motion:
 
 $$
 n=\frac{2\pi}{\tau}=\sqrt{\frac{\mu}{a^3}},
@@ -401,7 +401,7 @@ the constant angular rate at which a point would go round the auxiliary circle o
 
 ### Big G and μ
 
-$G=6.674\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$ is tiny, which is why it took more than a century after the *Principia* to measure (2025-10-28, ll. 421–495). Henry Cavendish did it in 1798 with a torsion balance: two small lead balls on a rod hung from a fine wire, attracted by two large lead spheres, the twist of the wire giving the force. His result corresponds to $6.74\times10^{-11}$, about 1 % high. In practice $G$ and $M$ are never used separately, because $\mu=GM$ is known far more precisely from spacecraft tracking than either factor:
+$G=6.674\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$ is tiny, which is why it took more than a century after the *Principia* to measure. Henry Cavendish did it in 1798 with a torsion balance: two small lead balls on a rod hung from a fine wire, attracted by two large lead spheres, the twist of the wire giving the force. His result corresponds to $6.74\times10^{-11}$, about 1 % high. In practice $G$ and $M$ are never used separately, because $\mu=GM$ is known far more precisely from spacecraft tracking than either factor:
 
 | Body | $\mu$ |
 |---|---|
@@ -410,7 +410,7 @@ $G=6.674\times10^{-11}\ \mathrm{m^3\,kg^{-1}\,s^{-2}}$ is tiny, which is why it 
 
 ## 7. The circular-orbit special case
 
-The same derivation for a circle is shorter, and 2019/20 B1 asks for it (2025-10-23, ll. 321–340). On a circle $r$ is constant, so $\dot r=\ddot r=0$, and the accelerations reduce to
+The same derivation for a circle is shorter, and 2019/20 B1 asks for it. On a circle $r$ is constant, so $\dot r=\ddot r=0$, and the accelerations reduce to
 
 $$
 a_r=-r\dot\theta^2,\qquad a_\theta=r\ddot\theta.
@@ -447,7 +447,7 @@ The values below use $\mu_E=398\,600.44\ \mathrm{km^3/s^2}$, $\mu_S=1.327\,12\ti
 
 ### Geostationary radius from the sidereal day
 
-The orbit whose period matches the Earth's rotation relative to the stars, 23 h 56 min 4 s $=86\,164\ \mathrm s$, has a radius found by inverting the period equation (2020 Lecture 6, ll. 126–150):
+The orbit whose period matches the Earth's rotation relative to the stars, 23 h 56 min 4 s $=86\,164\ \mathrm s$, has a radius found by inverting the period equation:
 
 $$
 a=\left[\mu\left(\frac{\tau}{2\pi}\right)^2\right]^{1/3}=\left[398\,600\left(\frac{86\,164}{2\pi}\right)^2\right]^{1/3}=42\,164\ \mathrm{km}.
@@ -475,7 +475,7 @@ Around the Sun, with $a$ in AU converted to km:
 | Mars | 1.524 | 687.0 | 1.881 |
 | Pluto | 39.48 | 90 600 | 248.1 |
 
-Inverting for $\tau=365.25\ \mathrm d$ gives $a=0.99999\ \mathrm{AU}$, so a year of 365 days is what an orbit of radius 1 AU requires (2025-10-28, ll. 501–520).
+Inverting for $\tau=365.25\ \mathrm d$ gives $a=0.99999\ \mathrm{AU}$, so a year of 365 days is what an orbit of radius 1 AU requires.
 
 > [!check] Units
 > Keep $a$ in km whenever $\mu$ is in $\mathrm{km^3/s^2}$. Converting $\mu$ to metres means multiplying by $10^9$, not $10^3$, because it is cubic; a factor of a thousand wrong shows up as an obviously absurd answer such as 0.0 revolutions a day.
@@ -490,7 +490,7 @@ $$
 \frac{86\,400}{5431}=15.909\ \text{orbits per day}.
 $$
 
-Low Earth orbits make about sixteen revolutions a day, so an answer of 400 or 4 means a units error (ll. 21–40).
+Low Earth orbits make about sixteen revolutions a day, so an answer of 400 or 4 means a units error.
 
 An asteroid completes one orbit of the Sun while the Earth completes five. Then $\tau_A=5\tau_E$, and taking the ratio of the third law for the two bodies cancels $\mu_S$:
 
@@ -498,7 +498,7 @@ $$
 \frac{a_A}{a_E}=\left(\frac{\tau_A}{\tau_E}\right)^{2/3}=5^{2/3}=2.924,
 $$
 
-so $a_A=2.92\ \mathrm{AU}$, inside the expected range of two to three AU. The trap is using $\mu_E$; the asteroid orbits the Sun (ll. 55–80). 2024/25 B1 uses the same idea with six asteroid orbits to five Earth orbits, giving $a=(5/6)^{2/3}=0.886\ \mathrm{AU}$.
+so $a_A=2.92\ \mathrm{AU}$, inside the expected range of two to three AU. The trap is using $\mu_E$; the asteroid orbits the Sun. 2024/25 B1 uses the same idea with six asteroid orbits to five Earth orbits, giving $a=(5/6)^{2/3}=0.886\ \mathrm{AU}$.
 
 An orbit whose apoapsis radius is three times its periapsis radius:
 
@@ -506,7 +506,7 @@ $$
 e=\frac{r_a-r_p}{r_a+r_p}=\frac{3r_p-r_p}{3r_p+r_p}=\frac{2}{4}=0.5,
 $$
 
-independent of $a$ (ll. 121–140).
+independent of $a$.
 
 ## Links
 

@@ -15,7 +15,7 @@ sources: ["02 - Sources/Lectures/Chapter 1/SESA2024 Astronautics - Chapter 1 (Sy
 
 A spacecraft is a payload, which fulfils the mission objectives, plus a bus (or platform) of service subsystems that deliver it to orbit and keep it working: structure, attitude control, propulsion, communications, data handling, power and thermal.
 
-Each service has one job on the course slides. The structure supports everything through launch loads, vibration and the pressure drop to vacuum. The ACS achieves the pointing requirements of the payload, arrays, antennas and radiators. Propulsion provides orbit transfer and control, and on many spacecraft also dumps reaction-wheel momentum. Communications links the spacecraft to the ground segment for payload data, telemetry and commands. Data handling stores, processes and routes data. Power generates, stores and distributes electricity. Thermal keeps the interior benign, typically near room temperature, for reliability.
+Each service has one job. The structure supports everything through launch loads, vibration and the pressure drop to vacuum. The ACS achieves the pointing requirements of the payload, arrays, antennas and radiators. Propulsion provides orbit transfer and control, and on many spacecraft also dumps reaction-wheel momentum. Communications links the spacecraft to the ground segment for payload data, telemetry and commands. Data handling stores, processes and routes data. Power generates, stores and distributes electricity. Thermal keeps the interior benign, typically near room temperature, for reliability.
 
 The point of listing them together is that they are coupled. The local solar time of the node sets the eclipse, which sizes the battery, the array and the heater power. A larger dish lowers the RF power needed but tightens the pointing requirement. Electric propulsion needs a large array, which in LEO raises the drag. The stabilisation type decides whether the arrays are body-mounted or deployed. Changing one subsystem therefore changes the others, which is the main difference from a car, where a spare wheel can be fitted without redesigning anything else.
 
@@ -25,5 +25,5 @@ Past-paper use: 2020/21 Q9 (subsystem interactions in a design), 2014/15 Q1(ix) 
 
 ## Related
 
-- [[SESA2024 01 - Systems Engineering and Spacecraft Design#1. Payload and bus|Payload and bus in the topic note]] · [[SESA2024 01 - Systems Engineering and Spacecraft Design#7. How the payload drives the design (Chapter 4)|Payload impact table]]
+- [[SESA2024 01 - Systems Engineering and Spacecraft Design#1. Payload and bus|Payload and bus in the topic note]] · [[SESA2024 01 - Systems Engineering and Spacecraft Design#7. How the payload drives the design|Payload impact table]]
 - [[Systems Engineering Design Phases]]

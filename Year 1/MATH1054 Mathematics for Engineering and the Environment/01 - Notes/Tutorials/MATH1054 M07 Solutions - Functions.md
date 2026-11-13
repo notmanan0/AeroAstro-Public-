@@ -82,7 +82,7 @@ $$f(g(x))=(x-1)^2+2(x-1)=\boxed{x^2-1},\qquad g(f(x))=\boxed{x^2+2x-1}$$
 
 Note that $f\circ g\neq g\circ f$ in general.
 
-## Example 2.11: Odd, even or neither (Fig. 2.20)
+## Example 2.11: Odd, even or neither
 - Even means $f(-x)=f(x)$: symmetric about the $y$-axis.
 - Odd means $f(-x)=-f(x)$: rotational symmetry of $180°$ about O.
 

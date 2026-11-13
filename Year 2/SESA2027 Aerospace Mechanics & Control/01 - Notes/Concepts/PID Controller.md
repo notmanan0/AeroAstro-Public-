@@ -29,11 +29,11 @@ where $T_I = K_p/K_I$ is the integral (reset) time and $T_D = K_D/K_p$ the deriv
 
 $T_I$ and $T_D$ are always positive; the sign of $K_p$ is chosen to match the plant gain. Pure derivative action is never used as written. It is filtered, $K_D\,s/(1+s/N)$, or applied to the measurement instead of the error, or replaced by a rate gyro that measures $q$ directly. Following DAP2, the design starts with P and adds terms only when they are needed, giving the P, PD, PI and PID variants.
 
-The gains can be tuned several ways: by frequency-response design (choose $\omega_{gc}$, set $T_D$ for the phase lead needed, take $T_I = 3/\omega_{gc}$, then set $K_p$ so that $|CG| = 1$), by root locus, by [[Ziegler-Nichols Tuning]], or by rules such as Tyreus–Luyben, Cohen–Coon and lambda tuning. The SPO design example gives $K_p = 1.345$, $K_i = 1.345$ and $K_d = 0.46$ at $\omega_{gc} = 3$ rad/s, but these are for the inverted plant. On the real SPO plant, whose gain is negative, they are implemented with a negative sign, while $T_I = 1.0$ s and $T_D = 0.342$ s stay positive; follow the corrected L2.05 slides ([[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#L2.05 as delivered versus the corrected slides]]). PS2 Q7 designs a PD controller with $T_D = 0.192$ s and $K_p = 3.46$ for a 55° phase margin ([[SESA2027 Practice Problems 2 Solutions]]).
+The gains can be tuned several ways: by frequency-response design (choose $\omega_{gc}$, set $T_D$ for the phase lead needed, take $T_I = 3/\omega_{gc}$, then set $K_p$ so that $|CG| = 1$), by root locus, by [[Ziegler-Nichols Tuning]], or by rules such as Tyreus–Luyben, Cohen–Coon and lambda tuning. The SPO design example gives $K_p = 1.345$, $K_i = 1.345$ and $K_d = 0.46$ at $\omega_{gc} = 3$ rad/s, but these are for the inverted plant. On the real SPO plant, whose gain is negative, they are implemented with a negative sign, while $T_I = 1.0$ s and $T_D = 0.342$ s stay positive ([[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#L2.05 as delivered versus the corrected slides|B3]]). PS2 Q7 designs a PD controller with $T_D = 0.192$ s and $K_p = 3.46$ for a 55° phase margin ([[SESA2027 Practice Problems 2 Solutions]]).
 
 ![[amc_pid_actions_comparison.png|600]]
 
 ## Related
 
-- Steady-state error under P and PI: [[SESA2027 B1 - Control System Fundamentals and PID Control#4. PID control (L2.03)|B1 §4]]
+- Steady-state error under P and PI: [[SESA2027 B1 - Control System Fundamentals and PID Control#4. PID control|B1 §4]]
 - [[Closed-Loop Transfer Function]] · [[Ziegler-Nichols Tuning]] · [[Gain and Phase Margins]] · [[Root Locus]] · [[Digital Filtering]]

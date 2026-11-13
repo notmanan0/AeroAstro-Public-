@@ -29,7 +29,7 @@ $$
 
 Since $D' = \int_0^x\tau_w\,dx$, differentiating with respect to $x$ gives the equation ([[SESA2022 Exam 2016-17 Solutions]] Q3(iii) and [[SESA2022 Exam 2017-18 Solutions]] Q4 ask for this derivation).
 
-In use it is a Pohlhausen-type method. Assume a profile shape $u/U_\infty = f(y/\delta)$, compute $\theta/\delta$ and $\tau_w = \mu U_\infty f'(0)/\delta$, substitute into $C_f = 2\,d\theta/dx$ and solve the resulting ODE for $\delta(x)$. It works even with crude profiles because $\theta$ is an integral, so errors in the shape average out: a linear profile gives $\theta/x = 0.577/\sqrt{Re_x}$ against Blasius's 0.664, and the parabolic profile in [[SESA2022 Exam 2024-25 Solutions]] Q1(b) gives $0.73/\sqrt{Re_x}$. [[SESA2022 Exam 2023-24 Solutions]] Q1(iv) runs it backwards, finding a plate length from $\theta$ via $\int C_f\,dx$.
+In use it is a Pohlhausen-type method. Assume a profile shape $u/U_\infty = f(y/\delta)$, compute $\theta/\delta$ and $\tau_w = \mu U_\infty f'(0)/\delta$, substitute into $C_f = 2\,d\theta/dx$ and solve the resulting ODE for $\delta(x)$. It works even with crude profiles because $\theta$ is an integral, so errors in the shape average out: a linear profile gives $\theta/x = 0.577/\sqrt{Re_x}$ against Blasius's 0.664, and the parabolic profile in [[SESA2022 Exam 2024-25 Solutions]] Q1(b) gives $0.73/\sqrt{Re_x}$. Run backwards, it gives a plate length from a measured $\theta$ via $\int C_f\,dx$ ([[SESA2022 Exam 2023-24 Solutions]] Q1(iv)).
 
 ## Related
 

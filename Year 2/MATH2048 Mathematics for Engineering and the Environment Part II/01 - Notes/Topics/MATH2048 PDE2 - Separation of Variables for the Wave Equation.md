@@ -31,17 +31,17 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 15.txt", "02 - Sources/Lecture
 > - **Assumptions:** linear and homogeneous PDE and boundary conditions; constant coefficients; initial data that can be expanded in the eigenfunctions.
 > - **Method:** 1. Substitute $y=X(x)T(t)$, divide by $XT$, set both sides to $\lambda$. 2. Turn the boundary conditions on $y$ into conditions on $X$. 3. Solve the eigenvalue problem in the three cases $\lambda=0$, $\lambda>0$, $\lambda<0$. 4. Solve for $T_n$ with each allowed $\lambda_n$, then superpose $\sum X_nT_n$. 5. Fit the initial data with Fourier series.
 > - **Common mistakes:** skipping the $\lambda=0$ case, which is a real mode with Neumann ends; multiplying $X_n$ by a $T_m$ with a different index.
-> - **Practise:** [[#Guitar string with fixed ends (L16)]] · [[#4. The 2025-26 exam, question A2]] · [[MATH2048 Problem Sheets 6-7 Solutions - PDEs|PS6]]
+> - **Practise:** [[#Guitar string with fixed ends]] · [[#4. The 2025-26 exam, question A2]] · [[MATH2048 Problem Sheets 6-7 Solutions - PDEs|PS6]]
 
-The wave equation splits a pulse into left- and right-moving waves ([[MATH2048 PDE1 - Classification of PDEs and the Wave Equation|PDE1]]). Separation of variables works for any initial data and copes with boundaries, where waves bounce off walls (L15, ll. 11–14). It follows the ODE strategy from [[MATH2048 ODE1 - Second-Order Linear ODEs with Constant Coefficients|ODE1]]: guess a form of solution, find which guesses work, and add them all up, because the equation is linear (ll. 16–21). Only the guess is more elaborate.
+The wave equation splits a pulse into left- and right-moving waves ([[MATH2048 PDE1 - Classification of PDEs and the Wave Equation|PDE1]]). Separation of variables works for any initial data and copes with boundaries, where waves bounce off walls. It follows the ODE strategy from [[MATH2048 ODE1 - Second-Order Linear ODEs with Constant Coefficients|ODE1]]: guess a form of solution, find which guesses work, and add them all up, because the equation is linear. Only the guess is more elaborate.
 
 The separated spatial problem is an eigenvalue problem from [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems|ODE3]], its solutions are the sines and cosines of Fourier series, and fitting the initial data is a half-range expansion from [[MATH2048 FS2 - Even and Odd Functions, Half-Range Series and Convergence|FS2]].
 
 ---
 
-## 1. Separating the wave equation (L15)
+## 1. Separating the wave equation
 
-Solve $y_{tt}=c^2y_{xx}$ on $0<x<L$. The guess is that interesting solutions are products of a function of space alone and a function of time alone (ll. 22–33):
+Solve $y_{tt}=c^2y_{xx}$ on $0<x<L$. The guess is that interesting solutions are products of a function of space alone and a function of time alone:
 
 $$
 y(x,t)=X(x)\,T(t).
@@ -59,7 +59,7 @@ $$
 \frac1{c^2}X\ddot T=X''T .
 $$
 
-Dividing by $y=XT$ (ll. 44–61) puts each variable on its own side:
+Dividing by $y=XT$ puts each variable on its own side:
 
 $$
 \frac1{c^2}\frac{\ddot T}{T}=\frac{X''}{X}.
@@ -69,37 +69,37 @@ The left side depends only on $t$ and the right side only on $x$.
 
 ### Why the two sides must be constant
 
-Call the left side $F(t)$ and the right side $G(x)$, so $F(t)=G(x)$ for all $x$ and $t$ (ll. 62–90). Fix $t=\tau$. Along that line, $F(\tau)$ is a single number, yet it equals $G(x)$ for every $x$, so $G$ is constant. Fixing $x$ instead shows that $F$ is constant. A function of one independent variable can equal a function of another only if both are the same constant, the separation constant $\lambda$:
+Call the left side $F(t)$ and the right side $G(x)$, so $F(t)=G(x)$ for all $x$ and $t$. Fix $t=\tau$. Along that line, $F(\tau)$ is a single number, yet it equals $G(x)$ for every $x$, so $G$ is constant. Fixing $x$ instead shows that $F$ is constant. A function of one independent variable can equal a function of another only if both are the same constant, the separation constant $\lambda$:
 
 $$
 \frac1{c^2}\frac{\ddot T}{T}=\lambda=\frac{X''}{X}.
 $$
 
-This gives two ODEs (ll. 91–109):
+This gives two ODEs:
 
 $$
 X''-\lambda X=0,\qquad\ddot T-\lambda c^2T=0 .
 $$
 
-They are coupled through $\lambda$, which is not yet known. The wave speed is put with $T$ on purpose, so that the spatial problem has as few parameters as possible and looks the same for every PDE with $\partial_x^2$ in it (L17, ll. 214–215).
+They are coupled through $\lambda$, which is not yet known. The wave speed is put with $T$ on purpose, so that the spatial problem has as few parameters as possible and looks the same for every PDE with $\partial_x^2$ in it.
 
 ### Boundary conditions on X
 
-With fixed (Dirichlet) ends, $y(0,t)=0$ for all $t$, so $X(0)T(t)=0$ (ll. 110–126). A product is zero only if a factor is. $T\equiv0$ would make $y\equiv0$, which is no use, so $X(0)=0$. Likewise $X(L)=0$. The spatial problem is
+With fixed (Dirichlet) ends, $y(0,t)=0$ for all $t$, so $X(0)T(t)=0$. A product is zero only if a factor is. $T\equiv0$ would make $y\equiv0$, which is no use, so $X(0)=0$. Likewise $X(L)=0$. The spatial problem is
 
 $$
 X''-\lambda X=0,\qquad X(0)=X(L)=0,
 $$
 
-exactly the eigenvalue problem of ODE3: it has non-zero solutions only for special values of $\lambda$ (ll. 127–136).
+exactly the eigenvalue problem of ODE3: it has non-zero solutions only for special values of $\lambda$.
 
 ### Solving the eigenvalue problem: three cases
 
-The auxiliary equation is $m^2-\lambda=0$, so $m=\pm\sqrt\lambda$, and the sign of $\lambda$ is unknown (ll. 137–148).
+The auxiliary equation is $m^2-\lambda=0$, so $m=\pm\sqrt\lambda$, and the sign of $\lambda$ is unknown.
 
-**$\lambda=0$.** $X''=0$ gives $X=A+Bx$. Then $X(0)=A=0$, and $X(L)=BL=0$ gives $B=0$. Only the zero solution, so ignore it (ll. 149–171).
+**$\lambda=0$.** $X''=0$ gives $X=A+Bx$. Then $X(0)=A=0$, and $X(L)=BL=0$ gives $B=0$. Only the zero solution, so ignore it.
 
-**$\lambda=k^2>0$.** $X=Ce^{kx}+De^{-kx}$. $X(0)=C+D=0$ gives $D=-C$. Then (ll. 177–198)
+**$\lambda=k^2>0$.** $X=Ce^{kx}+De^{-kx}$. $X(0)=C+D=0$ gives $D=-C$. Then
 
 $$
 X(L)=C\big(e^{kL}-e^{-kL}\big)=0 .
@@ -107,7 +107,7 @@ $$
 
 With $k>0$ and $L>0$, $e^{kL}>1>e^{-kL}$, so the bracket is positive and $C=0$. Only the zero solution again.
 
-**$\lambda=-k^2<0$.** The roots are $\pm jk$, so $X=E\cos kx+F\sin kx$ (ll. 200–253). $X(0)=E=0$. Then $X(L)=F\sin kL=0$. $F=0$ is the zero solution, so instead $\sin kL=0$. Sine vanishes only at integer multiples of $\pi$, so
+**$\lambda=-k^2<0$.** The roots are $\pm jk$, so $X=E\cos kx+F\sin kx$. $X(0)=E=0$. Then $X(L)=F\sin kL=0$. $F=0$ is the zero solution, so instead $\sin kL=0$. Sine vanishes only at integer multiples of $\pi$, so
 
 $$
 k=\frac{n\pi}L,\qquad\lambda_n=-\Big(\frac{n\pi}L\Big)^2,\qquad X_n=\sin\frac{n\pi x}L,\qquad n=1,2,3,\dots
@@ -117,7 +117,7 @@ Negative $n$ give the same functions up to sign, and $n=0$ gives zero. Each mode
 
 ### Solving for T and adding up the modes
 
-Only the allowed $\lambda_n$ matter, so solve the $T$ equation just for those (ll. 255–278). With $\lambda_n=-(n\pi/L)^2$ the two minus signs cancel:
+Only the allowed $\lambda_n$ matter, so solve the $T$ equation just for those. With $\lambda_n=-(n\pi/L)^2$ the two minus signs cancel:
 
 $$
 \ddot T_n+\Big(\frac{n\pi c}L\Big)^2T_n=0 .
@@ -129,7 +129,7 @@ $$
 T_n=C_n\cos\frac{n\pi ct}L+D_n\sin\frac{n\pi ct}L .
 $$
 
-Each product $y_n=X_nT_n$ satisfies the PDE and the boundary conditions. The indices must match, because $X_n$ and $T_n$ are tied by the same $\lambda_n$ (ll. 279–299). The wave equation is linear, so any sum of solutions is a solution, and adding all of them gives the general solution (ll. 306–322):
+Each product $y_n=X_nT_n$ satisfies the PDE and the boundary conditions. The indices must match, because $X_n$ and $T_n$ are tied by the same $\lambda_n$. The wave equation is linear, so any sum of solutions is a solution, and adding all of them gives the general solution:
 
 $$
 y(x,t)=\sum_{n=1}^\infty\sin\frac{n\pi x}L\Big[C_n\cos\frac{n\pi ct}L+D_n\sin\frac{n\pi ct}L\Big].
@@ -138,11 +138,11 @@ $$
 Mode $n$ oscillates at angular frequency $n\pi c/L$, an integer multiple of the fundamental: this is why a guitar string has harmonics.
 
 > [!check] A real string
-> With PDE1's steel string, $c=\sqrt{70/10^{-3}}=264.6\ \mathrm{m\,s^{-1}}$, and a scale length $L=0.65\ \mathrm m$, the fundamental is $f_1=\frac{\omega_1}{2\pi}=\frac{c}{2L}=203.5\ \mathrm{Hz}$, close to the G string of a guitar, with harmonics at $407$, $611$, $814\ \mathrm{Hz}$ and so on. $c$ and $L$ are just numbers you can change freely, but changing the boundary conditions changes the eigenfunctions, and the whole procedure has to be redone (ll. 324–328).
+> With PDE1's steel string, $c=\sqrt{70/10^{-3}}=264.6\ \mathrm{m\,s^{-1}}$, and a scale length $L=0.65\ \mathrm m$, the fundamental is $f_1=\frac{\omega_1}{2\pi}=\frac{c}{2L}=203.5\ \mathrm{Hz}$, close to the G string of a guitar, with harmonics at $407$, $611$, $814\ \mathrm{Hz}$ and so on. $c$ and $L$ are just numbers you can change freely, but changing the boundary conditions changes the eigenfunctions, and the whole procedure has to be redone.
 
 ### Fitting the initial data
 
-Given the initial displacement $y(x,0)=f(x)$ and velocity $y_t(x,0)=g(x)$, set $t=0$ (ll. 334–352). $\cos0=1$ and $\sin0=0$, so
+Given the initial displacement $y(x,0)=f(x)$ and velocity $y_t(x,0)=g(x)$, set $t=0$. $\cos0=1$ and $\sin0=0$, so
 
 $$
 f(x)=\sum_{n=1}^\infty C_n\sin\frac{n\pi x}L .
@@ -154,7 +154,7 @@ $$
 C_n=\frac2L\int_0^Lf(x)\sin\frac{n\pi x}L\,dx .
 $$
 
-For the velocity, differentiate the general solution in $t$ term by term and set $t=0$ (ll. 353–373):
+For the velocity, differentiate the general solution in $t$ term by term and set $t=0$:
 
 $$
 g(x)=\sum_{n=1}^\infty\frac{n\pi c}L\,D_n\sin\frac{n\pi x}L,\qquad\frac{n\pi c}LD_n=\frac2L\int_0^Lg(x)\sin\frac{n\pi x}L\,dx .
@@ -162,9 +162,9 @@ $$
 
 Every constant is now fixed.
 
-## 2. The six-step method (L16)
+## 2. The six-step method
 
-Six steps work for most linear homogeneous second-order PDEs in one space dimension (L16, ll. 7–27). In higher dimensions there is one function per variable and the steps get longer but no harder.
+Six steps work for most linear homogeneous second-order PDEs in one space dimension. In higher dimensions there is one function per variable and the steps get longer but no harder.
 
 1. Substitute $y=X(x)T(t)$ into the PDE and separate into ODEs with a constant $\lambda$.
 2. Turn the spatial boundary conditions on $y$ into conditions on $X$.
@@ -173,25 +173,25 @@ Six steps work for most linear homogeneous second-order PDEs in one space dimens
 5. Superpose $\sum X_nT_n$ to get the general solution.
 6. Fix the coefficients from the initial conditions.
 
-Step 1 depends only on the PDE, and step 2 only on the boundary conditions, which is what lets you see what changes between problems (ll. 349–359).
+Step 1 depends only on the PDE, and step 2 only on the boundary conditions, which is what lets you see what changes between problems.
 
-### Guitar string with fixed ends (L16)
+### Guitar string with fixed ends
 
-Solve $y_{tt}=c^2y_{xx}$ on $0<x<1$ with $y(0,t)=y(1,t)=0$, $y(x,0)=x(1-x)$ and $y_t(x,0)=0$, a string pulled into a parabola and released from rest (ll. 28–38). The initial data happen to satisfy the boundary conditions. That isn't required, since the boundary conditions apply only for $t>0$, but it makes the solution better behaved (ll. 34–36).
+Solve $y_{tt}=c^2y_{xx}$ on $0<x<1$ with $y(0,t)=y(1,t)=0$, $y(x,0)=x(1-x)$ and $y_t(x,0)=0$, a string pulled into a parabola and released from rest. The initial data happen to satisfy the boundary conditions. That isn't required, since the boundary conditions apply only for $t>0$, but it makes the solution better behaved.
 
-Steps 1–5 are Lecture 15 with $L=1$ (ll. 39–207): $\lambda_n=-(n\pi)^2$, $X_n=\sin n\pi x$, and
+Steps 1–5 are those of [[#1. Separating the wave equation|§1]] with $L=1$: $\lambda_n=-(n\pi)^2$, $X_n=\sin n\pi x$, and
 
 $$
 y=\sum_{n=1}^\infty\big[A_n\cos n\pi ct+B_n\sin n\pi ct\big]\sin n\pi x .
 $$
 
-For step 6 take the easier condition first, the zero velocity (ll. 216–254):
+For step 6 take the easier condition first, the zero velocity:
 
 $$
 y_t(x,0)=\sum_{n=1}^\infty n\pi c\,B_n\sin n\pi x=0 .
 $$
 
-This is a sine series for the zero function. A function's Fourier coefficients are unique, so if a guess matches both sides it is the answer, with no integrals needed: $B_n=0$ for every $n$. The same shortcut works whenever the data is already a finite sum of modes, so $y_t(x,0)=\sin3\pi x$ would make every coefficient zero except the one multiplying $\sin3\pi x$ (ll. 248–252). Concretely, with $y(x,0)=0$ and $y_t(x,0)=\sin3\pi x$: the displacement gives every $A_n=0$, and matching
+This is a sine series for the zero function. A function's Fourier coefficients are unique, so if a guess matches both sides it is the answer, with no integrals needed: $B_n=0$ for every $n$. The same shortcut works whenever the data is already a finite sum of modes, so $y_t(x,0)=\sin3\pi x$ would make every coefficient zero except the one multiplying $\sin3\pi x$. Concretely, with $y(x,0)=0$ and $y_t(x,0)=\sin3\pi x$: the displacement gives every $A_n=0$, and matching
 
 $$
 \sum_{n=1}^\infty n\pi c\,B_n\sin n\pi x=\sin3\pi x
@@ -199,7 +199,7 @@ $$
 
 term by term gives $3\pi c\,B_3=1$ and $B_n=0$ otherwise, so $y=\frac{1}{3\pi c}\sin3\pi ct\,\sin3\pi x$: one pure mode, set going by a velocity kick in its own shape.
 
-The displacement gives the sine series of $x(1-x)$ (ll. 255–274):
+The displacement gives the sine series of $x(1-x)$:
 
 $$
 A_n=2\int_0^1x(1-x)\sin n\pi x\,dx .
@@ -217,7 +217,7 @@ $$
 A_n=2\left(\left[(1-2x)\frac{\sin n\pi x}{(n\pi)^2}\right]_0^1+\int_0^1\frac{2\sin n\pi x}{(n\pi)^2}\,dx\right).
 $$
 
-The bracket vanishes because $\sin n\pi=0$. The last integral gives (ll. 298–305)
+The bracket vanishes because $\sin n\pi=0$. The last integral gives
 
 $$
 A_n=-\frac{4}{(n\pi)^3}\Big[\cos n\pi x\Big]_0^1=\frac{4}{(n\pi)^3}\big(1-(-1)^n\big).
@@ -232,27 +232,27 @@ $$
 > [!check] SymPy
 > The coefficients are $\frac8{\pi^3}$, $0$, $\frac8{27\pi^3}$ for $n=1,2,3$, and 200 terms of the series at $t=0$, $x=0.3$ give $0.21000$, matching $0.3\times0.7$. The even modes vanish because $x(1-x)$ is symmetric about the middle of the string, while $\sin n\pi x$ for even $n$ is antisymmetric about it.
 
-The process is long but mechanical (ll. 323–329): it works for any initial data, many boundary conditions and many linear PDEs, provided the spatial part with its boundary conditions gives an eigenvalue problem you can solve.
+The process is long but mechanical: it works for any initial data, many boundary conditions and many linear PDEs, provided the spatial part with its boundary conditions gives an eigenvalue problem you can solve.
 
-### Changing to Neumann ends (L16)
+### Changing to Neumann ends
 
-Now keep everything except the boundary conditions, which become $y_x(0,t)=y_x(1,t)=0$ (ll. 331–433). For a string this means ends free to slide vertically, and for sound in a pipe, open ends.
+Now keep everything except the boundary conditions, which become $y_x(0,t)=y_x(1,t)=0$. For a string this means ends free to slide vertically, and for sound in a pipe, open ends.
 
-Step 1 is unchanged, since it depends only on the PDE. In step 2, $y_x=X'T$, so the conditions become $X'(0)=X'(1)=0$. In step 3 the general solutions in each case are the same, because the ODE is the same, but the boundary conditions now pick out different solutions (ll. 360–406).
+Step 1 is unchanged, since it depends only on the PDE. In step 2, $y_x=X'T$, so the conditions become $X'(0)=X'(1)=0$. In step 3 the general solutions in each case are the same, because the ODE is the same, but the boundary conditions now pick out different solutions.
 
 **$\lambda=0$.** $X=A+Bx$ gives $X'=B$, and $X'(0)=X'(1)=0$ only says $B=0$. $A$ is free, so $\lambda_0=0$ with $X_0=$ constant is a genuine mode. With fixed ends there was nothing here.
 
-**$\lambda>0$.** As before, only the zero solution (l. 392). With $X=Ce^{kx}+De^{-kx}$, $X'(0)=k(C-D)=0$ gives $D=C$, then $X'(1)=kC(e^k-e^{-k})=0$ forces $C=0$.
+**$\lambda>0$.** As before, only the zero solution. With $X=Ce^{kx}+De^{-kx}$, $X'(0)=k(C-D)=0$ gives $D=C$, then $X'(1)=kC(e^k-e^{-k})=0$ forces $C=0$.
 
 **$\lambda=-k^2<0$.** $X=E\cos kx+F\sin kx$, so $X'=k(-E\sin kx+F\cos kx)$. $X'(0)=kF=0$ gives $F=0$, and $X'(1)=-kE\sin k=0$ gives $k=n\pi$ again. The eigenvalues are the same as before, but now the cosine survives: $X_n=\cos n\pi x$.
 
-Step 4 for $n\geq1$ is unchanged, since it depends only on the PDE and $\lambda_n$. The new $\lambda_0=0$ mode has $\ddot T_0=0$, so $T_0=Gt+H$, a linear function of time (ll. 407–416). The general solution is
+Step 4 for $n\geq1$ is unchanged, since it depends only on the PDE and $\lambda_n$. The new $\lambda_0=0$ mode has $\ddot T_0=0$, so $T_0=Gt+H$, a linear function of time. The general solution is
 
 $$
 y=Gt+H+\sum_{n=1}^\infty\big[C_n\cos n\pi ct+D_n\sin n\pi ct\big]\cos n\pi x .
 $$
 
-The $Gt$ term is the whole string drifting sideways at a steady speed, which free ends allow. Zero initial velocity gives $G=0$ and every $D_n=0$ by uniqueness (ll. 426–428). The displacement gives the cosine series of $x(1-x)$, where the constant term needs care: with the usual $\frac12a_0$ convention, $H=\frac12a_0$ (ll. 429–433). The constant is the mean value (l. 433):
+The $Gt$ term is the whole string drifting sideways at a steady speed, which free ends allow. Zero initial velocity gives $G=0$ and every $D_n=0$ by uniqueness. The displacement gives the cosine series of $x(1-x)$, where the constant term needs care: with the usual $\frac12a_0$ convention, $H=\frac12a_0$. The constant is the mean value:
 
 $$
 H=\frac12a_0=\frac12\cdot2\int_0^1x(1-x)\,dx=\Big[\frac{x^2}{2}-\frac{x^3}{3}\Big]_0^1=\frac16 .
@@ -291,9 +291,9 @@ in which only even $n$ survive. The constant $\frac16$ is the mean displacement,
 > [!check] SymPy
 > $C_2=-\frac1{\pi^2}$, $C_4=-\frac1{4\pi^2}$, odd $C_n=0$, and 200 terms of the cosine series at $x=0.3$ give $0.21001$.
 
-## 3. Standing waves are travelling waves (L17 and PS6)
+## 3. Standing waves are travelling waves
 
-Each separated solution is a pair of waves moving at speed $c$ (L17, ll. 6–28). By the product-to-sum formula,
+Each separated solution is a pair of waves moving at speed $c$. By the product-to-sum formula,
 
 $$
 \cos n\pi x\cos n\pi ct=\tfrac12\Big[\cos n\pi(x-ct)+\cos n\pi(x+ct)\Big].
@@ -408,15 +408,15 @@ Lecture 16 left the $\lambda>0$ case with Neumann ends as an exercise (l. 392) a
 
 ### Core
 
-- [ ] Lecturer-set (L16, l. 392): show that $\lambda>0$ gives only the zero solution with Neumann ends. → [[#Changing to Neumann ends (L16)]]
-- [ ] Lecturer-set (L16, l. 433): compute $H$ and $C_n$ for the Neumann problem. Answers: $\frac16$ and $-\frac{2(1+(-1)^n)}{(n\pi)^2}$. → [[#Changing to Neumann ends (L16)]]
+- [ ] Lecturer-set (L16, l. 392): show that $\lambda>0$ gives only the zero solution with Neumann ends. → [[#Changing to Neumann ends]]
+- [ ] Lecturer-set (L16, l. 433): compute $H$ and $C_n$ for the Neumann problem. Answers: $\frac16$ and $-\frac{2(1+(-1)^n)}{(n\pi)^2}$. → [[#Changing to Neumann ends]]
 - [ ] PS6 Q1: a string plucked into a triangle of height $h$ at $L/2$, released from rest, $c=1$. Answer: $y=\frac{8h}{\pi^2}\sum_{n\text{ odd}}\frac{(-1)^{(n-1)/2}}{n^2}\sin\frac{n\pi x}L\cos\frac{n\pi t}L$. → [[#The plucked string (PS6 Q1)]]
 - [ ] 2025/26 A2: the damped wave equation, all four parts. → [[#4. The 2025-26 exam, question A2]]
 
 ### Further practice
 
 - [ ] PS6 Q2: an antisymmetric "Z" displacement released from rest. Answer: only even modes, $y=\sum_k\frac{2\alpha}{k\pi}(-1)^{k+1}\sin\frac{2k\pi x}L\cos\frac{2k\pi ct}L$. → [[MATH2048 Problem Sheets 6-7 Solutions - PDEs]]
-- [ ] Redo the fixed-end example with $y(x,0)=0$ and $y_t(x,0)=\sin3\pi x$, using the uniqueness shortcut. Answer: $y=\frac{1}{3\pi c}\sin3\pi ct\,\sin3\pi x$ (suggested, not lecturer-set). → [[#Guitar string with fixed ends (L16)]]
+- [ ] Redo the fixed-end example with $y(x,0)=0$ and $y_t(x,0)=\sin3\pi x$, using the uniqueness shortcut. Answer: $y=\frac{1}{3\pi c}\sin3\pi ct\,\sin3\pi x$ (suggested, not lecturer-set). → [[#Guitar string with fixed ends]]
 
 ## Transcript and slide slips
 

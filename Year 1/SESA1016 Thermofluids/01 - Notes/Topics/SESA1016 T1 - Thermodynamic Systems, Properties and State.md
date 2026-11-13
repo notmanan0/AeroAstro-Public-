@@ -39,7 +39,7 @@ Once the boundary is drawn, the gas inside is described by properties such as pr
 
 ## 1. Closed systems and control volumes
 
-A **control volume** has a boundary fixed in space, and mass may cross it. A nozzle is the standard example: gas enters on one side and leaves on the other, and the analysis tracks what is carried across the boundary. A **closed system** has a boundary that mass cannot cross, so the amount of gas inside is constant. The boundary of a closed system is not necessarily fixed: the gas in a cylinder closed by a piston is a closed system even while the piston moves and the volume changes (L1, ll. 404–420). In practice a closed system is often just called a system.
+A **control volume** has a boundary fixed in space, and mass may cross it. A nozzle is the standard example: gas enters on one side and leaves on the other, and the analysis tracks what is carried across the boundary. A **closed system** has a boundary that mass cannot cross, so the amount of gas inside is constant. The boundary of a closed system is not necessarily fixed: the gas in a cylinder closed by a piston is a closed system even while the piston moves and the volume changes. In practice a closed system is often just called a system.
 
 Energy can still cross the boundary of a closed system, either as heat through the cylinder wall or as work done on or by the piston. If energy cannot cross either, the system is an **isolated system**.
 
@@ -55,7 +55,7 @@ The choice decides which energy terms appear. For a closed system, energy crosse
 
 ## 2. Intensive, extensive and specific properties
 
-Any characteristic of a system is a **property**: pressure $p$, temperature $T$, volume $V$, mass $m$, density $\rho$, and later internal energy $U$, enthalpy $H$ and entropy $S$. Properties come in two kinds (L1, ll. 446–492).
+Any characteristic of a system is a **property**: pressure $p$, temperature $T$, volume $V$, mass $m$, density $\rho$, and later internal energy $U$, enthalpy $H$ and entropy $S$. Properties come in two kinds.
 
 An **intensive** property does not depend on the amount of material: one kilogram of air at 20 °C and two kilograms of the same air are both at 20 °C. Pressure, temperature and density are intensive. An **extensive** property does depend on the amount: double the gas and the mass and volume double. Mass, volume and energy are extensive.
 
@@ -73,13 +73,13 @@ $$
 v_{half}=\frac{V/2}{m/2}=\frac{V}{m}=v
 $$
 
-and a specific property is therefore intensive. The same works for energy: 10 J in 1 kg is 10 J/kg, and after partitioning, 5 J in 0.5 kg is still 10 J/kg (L1, ll. 507–521). Specific properties are useful when the mass is not known, and they let one equation serve any amount of gas.
+and a specific property is therefore intensive. The same works for energy: 10 J in 1 kg is 10 J/kg, and after partitioning, 5 J in 0.5 kg is still 10 J/kg. Specific properties are useful when the mass is not known, and they let one equation serve any amount of gas.
 
 The notation follows a convention: capitals for extensive properties ($V$, $U$, $H$, $S$), lower case for the specific versions ($v$, $u$, $h$, $s$). Temperature $T$ and mass $m$ are the two exceptions.
 
 ## 3. The continuum assumption
 
-Gas is made of molecules, so a property such as density is only meaningful as an average over a volume containing many of them. Shrinking a sampling box shows this. When it is large, adding or losing one molecule as the box changes size makes no visible difference, and the computed density settles at a single value. When it is so small that it holds only a few molecules, the count jumps between zero, one and two as the box grows, and the computed density jumps with it (L1, ll. 543–588).
+Gas is made of molecules, so a property such as density is only meaningful as an average over a volume containing many of them. Shrinking a sampling box shows this. When it is large, adding or losing one molecule as the box changes size makes no visible difference, and the computed density settles at a single value. When it is so small that it holds only a few molecules, the count jumps between zero, one and two as the box grows, and the computed density jumps with it.
 
 ![[tf_continuum_density.png|900]]
 
@@ -88,11 +88,11 @@ The **continuum assumption** treats the material as continuous, with no holes, s
 > [!check] How many molecules does a small sample hold?
 > The number density of an ideal gas is $n=p/(k_BT)$ with $k_B=1.381\times10^{-23}$ J/K. For air at $10^5$ Pa and 293 K, $n=2.47\times10^{25}$ m⁻³. A cube of side 1 µm then holds about $2.5\times10^7$ molecules, plenty to average over; a cube of side 10 nm holds about 25, and the density computed from it would jump by several per cent each time one molecule entered or left.
 
-The assumption fails in two places that matter later: micro-scale devices, where the system size approaches the mean free path, and the upper atmosphere, where the mean free path grows as the density falls. A spacecraft in orbit flies through gas so thin that standard continuum aerodynamics cannot be used to compute its drag (L1, ll. 598–608). Everything in this module assumes a continuum.
+The assumption fails in two places that matter later: micro-scale devices, where the system size approaches the mean free path, and the upper atmosphere, where the mean free path grows as the density falls. A spacecraft in orbit flies through gas so thin that standard continuum aerodynamics cannot be used to compute its drag. Everything in this module assumes a continuum.
 
 ## 4. State, equilibrium and the state postulate
 
-The **state** of a system is defined when a set of properties fully describes its condition. That needs **equilibrium**. If one part of a container is at 20 °C and another at 30 °C, there is no single temperature to quote, so the state is undefined. Left alone, heat flows from the warm region to the cool one until the whole container is at one temperature, and once every property has stopped changing the system is in equilibrium (L1, ll. 609–629).
+The **state** of a system is defined when a set of properties fully describes its condition. That needs **equilibrium**. If one part of a container is at 20 °C and another at 30 °C, there is no single temperature to quote, so the state is undefined. Left alone, heat flows from the warm region to the cool one until the whole container is at one temperature, and once every property has stopped changing the system is in equilibrium.
 
 Equilibrium has several parts. Thermal equilibrium means no temperature differences to drive heat transfer; mechanical equilibrium means no unbalanced pressure forces; phase and chemical equilibrium mean no spontaneous change of phase or composition. A system in all of them is in **thermodynamic equilibrium**.
 

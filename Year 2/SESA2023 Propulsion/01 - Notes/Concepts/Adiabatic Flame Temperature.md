@@ -31,7 +31,7 @@ $$
 f = \frac{c_{p,p}(T_{04}-T_{ref})-c_{p,a}(T_{03}-T_{ref})}{\eta_bLCV-c_{p,p}(T_{04}-T_{ref})},
 $$
 
-which with a single $c_p$ is $f = (T_{04}-T_{03})/[LCV/c_p-(T_{04}-T_{ref})]$. Older papers and PS4 use simpler forms, $(1+f)c_pT_{04} = c_pT_{03}+f\,LCV$ (that is, $T_{ref} = 0$) or $f\approx c_p(T_{04}-T_{03})/LCV$. They differ by about 1–5 %, so state which one you use. A heat loss, as in 2022-23 Q3, adds $\dot Q = -q_{loss}\dot m_f$ on the left, giving $f(LCV-q_{loss}-\dots)$.
+which with a single $c_p$ is $f = (T_{04}-T_{03})/[LCV/c_p-(T_{04}-T_{ref})]$. Simpler forms are $(1+f)c_pT_{04} = c_pT_{03}+f\,LCV$ (that is, $T_{ref} = 0$, as in PS4 and older papers) and $f\approx c_p(T_{04}-T_{03})/LCV$. They differ by about 1–5 %, so state which one you use. A heat loss, as in 2022-23 Q3, adds $\dot Q = -q_{loss}\dot m_f$ on the left, giving $f(LCV-q_{loss}-\dots)$.
 
 $T_2$ peaks near stoichiometric ($\phi\approx1$, slightly rich in reality), and preheating the reactants raises it almost one-for-one. Real peak temperatures are lower than the complete-combustion value because of dissociation ([[Chemical Equilibrium and Dissociation]]) and the rising $c_p$.
 

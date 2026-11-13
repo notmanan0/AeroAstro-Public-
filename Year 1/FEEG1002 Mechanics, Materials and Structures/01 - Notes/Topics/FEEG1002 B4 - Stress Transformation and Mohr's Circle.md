@@ -29,11 +29,11 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 05 - Stresses on Inclined Sec
 > - **Common mistakes:** taking the angle of the weld line instead of the angle of its normal; plotting $\sigma_{xy}$ with the wrong sign, which mirrors the circle and turns the principal direction the wrong way.
 > - **Practise:** [[#Worked example - sail element]] · [[FEEG1002 Statics 2 Tutorial 5 - Mohr's Circle Solutions]]
 
-The force on the cut face of a potato has a normal part and a shear part. A cut perpendicular to the local force has no shear at all, and tilting the knife introduces shear (Lecture 5, ll. 43–56). Nothing about the potato has changed, only the surface. Stress transformation relates the normal and shear stresses on one surface to those on another through the same point.
+The force on the cut face of a potato has a normal part and a shear part. A cut perpendicular to the local force has no shear at all, and tilting the knife introduces shear. Nothing about the potato has changed, only the surface. Stress transformation relates the normal and shear stresses on one surface to those on another through the same point.
 
-It matters because materials and joints fail on particular planes. A ductile metal pulled in tension slips on planes at 45°, where the shear stress is largest; a glued joint fails when the stress across the glue line is too high; a fibre composite is strong along its fibres and weak across them; a spiral-welded pipe needs the stresses across its weld (Lecture 5, ll. 256–297, 554–586). In each case the stresses on an element aligned with $x$ and $y$ are known and those on an element turned through some angle are needed.
+It matters because materials and joints fail on particular planes. A ductile metal pulled in tension slips on planes at 45°, where the shear stress is largest; a glued joint fails when the stress across the glue line is too high; a fibre composite is strong along its fibres and weak across them; a spiral-welded pipe needs the stresses across its weld. In each case the stresses on an element aligned with $x$ and $y$ are known and those on an element turned through some angle are needed.
 
-Mohr's circle is a graphical form of the answer, devised in the nineteenth century to avoid laborious calculation. It survives because it lets you see at once how the stresses change with orientation, where the largest normal stress acts and where the largest shear acts, without losing track of the algebra (Lecture 6, ll. 27–48).
+Mohr's circle is a graphical form of the answer, devised in the nineteenth century to avoid laborious calculation. It survives because it lets you see at once how the stresses change with orientation, where the largest normal stress acts and where the largest shear acts, without losing track of the algebra.
 
 ---
 
@@ -41,7 +41,7 @@ Mohr's circle is a graphical form of the answer, devised in the nineteenth centu
 
 ### Area and force components
 
-A bar of cross-section $A$ carries a tensile force $F$, so the stress on a cross-section is $\sigma_{xx}=F/A$. On a plane whose normal $x'$ makes an angle $\theta$ with the bar axis, horizontal equilibrium of the piece still needs a force $F$ on the cut, but the cut is larger (Lecture 5, ll. 57–119):
+A bar of cross-section $A$ carries a tensile force $F$, so the stress on a cross-section is $\sigma_{xx}=F/A$. On a plane whose normal $x'$ makes an angle $\theta$ with the bar axis, horizontal equilibrium of the piece still needs a force $F$ on the cut, but the cut is larger:
 
 $$
 A_\theta=\frac{A}{\cos\theta}
@@ -65,7 +65,7 @@ $$
 \boxed{\sigma_{x'x'}=\sigma_{xx}\cos^2\theta}
 $$
 
-One cosine comes from resolving the force and the other from the larger area. The shear force on the right-hand piece points down the slope, in the negative $y'$ direction, while a positive shear stress on a face with positive normal points in $+y'$; hence a minus sign (Lecture 5, ll. 132–157):
+One cosine comes from resolving the force and the other from the larger area. The shear force on the right-hand piece points down the slope, in the negative $y'$ direction, while a positive shear stress on a face with positive normal points in $+y'$; hence a minus sign:
 
 $$
 \sigma_{x'y'}=-\frac{F_S}{A_\theta}=-\frac{F\sin\theta}{A/\cos\theta}
@@ -75,7 +75,7 @@ $$
 \boxed{\sigma_{x'y'}=-\sigma_{xx}\sin\theta\cos\theta}
 $$
 
-Neither stress is a stress multiplied by a single cosine or sine; both carry the double dependence on $\theta$ (Lecture 5, ll. 179–200).
+Neither stress is a stress multiplied by a single cosine or sine; both carry the double dependence on $\theta$.
 
 ### How the stresses vary with the angle
 
@@ -85,27 +85,27 @@ $$
 |\sigma_{x'y'}|_{max}=\frac{\sigma_{xx}}{2}
 $$
 
-with a normal stress of $\sigma_{xx}/2$ on the same plane (Lecture 5, ll. 201–255). An element rotated by 45° therefore carries $\sigma_{xx}/2$ normal stress and $\sigma_{xx}/2$ shear stress on all four faces, even though the bar is in simple tension (Lecture 5, ll. 305–343).
+with a normal stress of $\sigma_{xx}/2$ on the same plane. An element rotated by 45° therefore carries $\sigma_{xx}/2$ normal stress and $\sigma_{xx}/2$ shear stress on all four faces, even though the bar is in simple tension.
 
 ![[s2_inclined_section_uniaxial.png|850]]
 
 ### Joints and failure in shear
 
-A butt joint, glued straight across, carries only normal stress in the glue. A scarf joint, cut at an angle, carries both. A finger joint uses long, shallow fingers, so the glue area is large and is loaded mainly in shear, at a low shear stress; and because each piece of wood thins as the other thickens, the stress and strain in the two pieces stay equal along the joint, so the glue is not sheared by differential stretching (Lecture 5, ll. 256–288). The same result says that a material loaded in uniaxial tension can fail in shear at 45° if its shear strength is less than half its tensile strength (Lecture 5, ll. 289–297); this is the starting point of the Tresca criterion in [[FEEG1002 B6 - Yield Criteria|B6]].
+A butt joint, glued straight across, carries only normal stress in the glue. A scarf joint, cut at an angle, carries both. A finger joint uses long, shallow fingers, so the glue area is large and is loaded mainly in shear, at a low shear stress; and because each piece of wood thins as the other thickens, the stress and strain in the two pieces stay equal along the joint, so the glue is not sheared by differential stretching. The same result says that a material loaded in uniaxial tension can fail in shear at 45° if its shear strength is less than half its tensile strength; this is the starting point of the Tresca criterion in [[FEEG1002 B6 - Yield Criteria|B6]].
 
 ## 2. Plane-stress transformation
 
 ### Setting up the wedge
 
-In general an element carries $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$. The stresses on an element rotated by $\theta$ are wanted, with $\theta$ the angle from the $x$ axis to the new axis $x'$, **positive anticlockwise** (Lecture 5, ll. 344–361). Multiplying each stress by a cosine or a sine does not work; the stresses have to be found from equilibrium.
+In general an element carries $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$. The stresses on an element rotated by $\theta$ are wanted, with $\theta$ the angle from the $x$ axis to the new axis $x'$, **positive anticlockwise**. Multiplying each stress by a cosine or a sine does not work; the stresses have to be found from equilibrium.
 
-Take a wedge cut from the element: a vertical face of area $A$ with outward normal $-x$, a horizontal face of area $A\tan\theta$ with outward normal $-y$, and an inclined face of area $A/\cos\theta$ whose outward normal is $x'$ (Lecture 5, ll. 362–393). The vertical face carries $\sigma_{xx}$ acting in $-x$ and $\sigma_{xy}$ acting in $-y$; the bottom face carries $\sigma_{yy}$ acting in $-y$ and $\sigma_{xy}$ acting in $-x$; the inclined face carries the unknowns $\sigma_{x'x'}$ along $x'$ and $\sigma_{x'y'}$ along $y'$. All are drawn positive.
+Take a wedge cut from the element: a vertical face of area $A$ with outward normal $-x$, a horizontal face of area $A\tan\theta$ with outward normal $-y$, and an inclined face of area $A/\cos\theta$ whose outward normal is $x'$. The vertical face carries $\sigma_{xx}$ acting in $-x$ and $\sigma_{xy}$ acting in $-y$; the bottom face carries $\sigma_{yy}$ acting in $-y$ and $\sigma_{xy}$ acting in $-x$; the inclined face carries the unknowns $\sigma_{x'x'}$ along $x'$ and $\sigma_{x'y'}$ along $y'$. All are drawn positive.
 
 ![[s2_wedge_equilibrium.png|900]]
 
 ### Equilibrium along the new x axis
 
-The unit vectors are $\hat x'=(\cos\theta,\sin\theta)$ and $\hat y'=(-\sin\theta,\cos\theta)$. Resolving every force along $x'$ and setting the sum to zero (Lecture 5, ll. 399–445):
+The unit vectors are $\hat x'=(\cos\theta,\sin\theta)$ and $\hat y'=(-\sin\theta,\cos\theta)$. Resolving every force along $x'$ and setting the sum to zero:
 
 $$
 \sigma_{x'x'}\frac{A}{\cos\theta}=\sigma_{xx}A\cos\theta+\sigma_{xy}A\sin\theta+\sigma_{yy}A\tan\theta\sin\theta+\sigma_{xy}A\tan\theta\cos\theta
@@ -123,7 +123,7 @@ $$
 
 ### Equilibrium along the new y axis
 
-Resolving along $y'$ (Lecture 5, ll. 446–488):
+Resolving along $y'$:
 
 $$
 \sigma_{x'y'}\frac{A}{\cos\theta}=-\sigma_{xx}A\sin\theta+\sigma_{xy}A\cos\theta+\sigma_{yy}A\tan\theta\cos\theta-\sigma_{xy}A\tan\theta\sin\theta
@@ -149,7 +149,7 @@ $$
 \sigma_{y'y'}=\sigma_{xx}\sin^2\theta+\sigma_{yy}\cos^2\theta-2\sigma_{xy}\sin\theta\cos\theta
 $$
 
-(Lecture 5, ll. 525–532). Adding it to $\sigma_{x'x'}$, every $\theta$ term cancels through $\sin^2\theta+\cos^2\theta=1$:
+. Adding it to $\sigma_{x'x'}$, every $\theta$ term cancels through $\sin^2\theta+\cos^2\theta=1$:
 
 $$
 \sigma_{x'x'}+\sigma_{y'y'}=\sigma_{xx}+\sigma_{yy}
@@ -159,7 +159,7 @@ The sum of the normal stresses is an **invariant**: it does not depend on the or
 
 ### What the equations say
 
-Each new stress depends on all three old ones, normal and shear alike (Lecture 5, ll. 477–488). The derivation used only equilibrium, no material law, so the equations hold for any material, and because $\sigma_{zz}$ acts normal to the plane and does not enter the in-plane force balance they hold for plane strain as well as plane stress (Lecture 5, ll. 547–553). The practical difficulty is the angle: draw the surface, draw its normal, and measure $\theta$ from $x$ to that normal, anticlockwise positive (Lecture 5, ll. 515–524; Lecture 9, ll. 319–325).
+Each new stress depends on all three old ones, normal and shear alike. The derivation used only equilibrium, no material law, so the equations hold for any material, and because $\sigma_{zz}$ acts normal to the plane and does not enter the in-plane force balance they hold for plane strain as well as plane stress. The practical difficulty is the angle: draw the surface, draw its normal, and measure $\theta$ from $x$ to that normal, anticlockwise positive.
 
 ## 3. Double-angle form
 
@@ -185,7 +185,7 @@ $$
 \boxed{\sigma_{x'y'}=-\frac{\sigma_{xx}-\sigma_{yy}}{2}\sin2\theta+\sigma_{xy}\cos2\theta}
 $$
 
-The two forms are equivalent; the double-angle form removes the squares, which mattered when angles were looked up in tables, and it leads straight to Mohr's circle (Lecture 6, ll. 65–123).
+The two forms are equivalent; the double-angle form removes the squares, which mattered when angles were looked up in tables, and it leads straight to Mohr's circle.
 
 ## 4. Mohr's circle
 
@@ -219,22 +219,22 @@ $$
 \boxed{\left(\sigma_{x'x'}-\sigma_{average}\right)^2+\sigma_{x'y'}^2=R^2}
 $$
 
-the equation of a circle in the plane of normal stress against shear stress, centred at $(\sigma_{average},0)$ with radius $R$. Since $\theta$ has gone, every orientation of the element gives a point on this circle (Lecture 6, ll. 124–190).
+the equation of a circle in the plane of normal stress against shear stress, centred at $(\sigma_{average},0)$ with radius $R$. Since $\theta$ has gone, every orientation of the element gives a point on this circle.
 
 ### Constructing the circle
 
-Given $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$ for an element in the $xy$ axes (Lecture 6, ll. 191–246):
+Given $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$ for an element in the $xy$ axes:
 
 1. Draw axes with normal stress positive to the right and **shear stress positive downwards**.
 2. Mark $\sigma_{xx}$ and $\sigma_{yy}$ on the normal-stress axis; the centre $\sigma_{average}$ is midway between them.
 3. Plot the point $(\sigma_{xx},\sigma_{xy})$, the stresses on the face whose normal is $x$, which is the point for zero rotation, $\theta=0$.
 4. Join it to the centre; that length is $R$, by Pythagoras on the horizontal leg $(\sigma_{xx}-\sigma_{yy})/2$ and the vertical leg $\sigma_{xy}$. Draw the circle.
 
-The formula for $R$ squares both legs, so it gives the right radius whatever the signs, provided $\sigma_{xx}-\sigma_{yy}$ is computed with the signs included (Lecture 9, ll. 388–405). Sketching the circle is the quickest check that the centre really lies midway between the two normal stresses.
+The formula for $R$ squares both legs, so it gives the right radius whatever the signs, provided $\sigma_{xx}-\sigma_{yy}$ is computed with the signs included. Sketching the circle is the quickest check that the centre really lies midway between the two normal stresses.
 
 ### Why shear is plotted downwards
 
-The downward shear axis is chosen so that rotating the element anticlockwise turns the point anticlockwise on the page (Lecture 6, ll. 207–223). The proof is short. Write the point relative to the centre as page coordinates $(u,v)$, with $v$ upwards; since shear is plotted downwards, $v=-\sigma_{x'y'}$. From the double-angle equations, with $a=(\sigma_{xx}-\sigma_{yy})/2$,
+The downward shear axis is chosen so that rotating the element anticlockwise turns the point anticlockwise on the page. The proof is short. Write the point relative to the centre as page coordinates $(u,v)$, with $v$ upwards; since shear is plotted downwards, $v=-\sigma_{x'y'}$. From the double-angle equations, with $a=(\sigma_{xx}-\sigma_{yy})/2$,
 
 $$
 u=a\cos2\theta+\sigma_{xy}\sin2\theta,\qquad v=a\sin2\theta-\sigma_{xy}\cos2\theta
@@ -256,19 +256,19 @@ The page angle grows from $\phi_0$ to $\phi_0+2\theta$: an anticlockwise rotatio
 
 ### The x-face and y-face points
 
-Rotating the element by 90° puts $x'$ along the old $y$ axis and turns the point by 180°, to the opposite end of the diameter. There the normal stress is $\sigma_{yy}$ and the shear is $-\sigma_{xy}$: the physical shear stress has not changed, but on the rotated element it points against the positive direction for that face (Lecture 6, ll. 336–386). So the points for the two faces of any element, $(\sigma_{x'x'},\sigma_{x'y'})$ and $(\sigma_{y'y'},-\sigma_{x'y'})$, are always diametrically opposite, and as the element turns they swing round the circle while the centre stays fixed. That is the invariant $\sigma_{x'x'}+\sigma_{y'y'}$ seen geometrically (Lecture 6, ll. 387–408).
+Rotating the element by 90° puts $x'$ along the old $y$ axis and turns the point by 180°, to the opposite end of the diameter. There the normal stress is $\sigma_{yy}$ and the shear is $-\sigma_{xy}$: the physical shear stress has not changed, but on the rotated element it points against the positive direction for that face. So the points for the two faces of any element, $(\sigma_{x'x'},\sigma_{x'y'})$ and $(\sigma_{y'y'},-\sigma_{x'y'})$, are always diametrically opposite, and as the element turns they swing round the circle while the centre stays fixed. That is the invariant $\sigma_{x'x'}+\sigma_{y'y'}$ seen geometrically.
 
-Do not confuse the horizontal axis of the circle with the $x$ axis of the element. A point lies on the horizontal axis only when the face it represents carries no shear (Lecture 6, ll. 475–482).
+Do not confuse the horizontal axis of the circle with the $x$ axis of the element. A point lies on the horizontal axis only when the face it represents carries no shear.
 
 ## 5. Principal stresses and maximum shear
 
 ### Principal directions
 
-The circle always crosses the normal-stress axis twice, so every plane stress state has two orientations with no shear stress at all, 180° apart on the circle and therefore 90° apart on the element. These are the **principal directions**; on an element aligned with them there is only stretching or compression, no angular distortion (Lecture 6, ll. 483–521).
+The circle always crosses the normal-stress axis twice, so every plane stress state has two orientations with no shear stress at all, 180° apart on the circle and therefore 90° apart on the element. These are the **principal directions**; on an element aligned with them there is only stretching or compression, no angular distortion.
 
 ### Principal stresses
 
-The normal stresses in the principal directions are the **principal stresses**. The first principal stress $\sigma_I$ is the crossing on the right of the circle and the second $\sigma_{II}$ the crossing on the left, whatever their signs (Lecture 6, ll. 527–543):
+The normal stresses in the principal directions are the **principal stresses**. The first principal stress $\sigma_I$ is the crossing on the right of the circle and the second $\sigma_{II}$ the crossing on the left, whatever their signs:
 
 $$
 \boxed{\sigma_I=\sigma_{average}+R,\qquad \sigma_{II}=\sigma_{average}-R}
@@ -288,7 +288,7 @@ $$
 \tan2\theta_p=\frac{2\sigma_{xy}}{\sigma_{xx}-\sigma_{yy}}
 $$
 
-The tangent alone has two solutions 90° apart on the element, one for each principal direction; the signs of the cosine and sine, or a sketch of the circle, show which belongs to $\sigma_I$ (Lecture 6, ll. 589–614; Lecture 9, ll. 422–446).
+The tangent alone has two solutions 90° apart on the element, one for each principal direction; the signs of the cosine and sine, or a sketch of the circle, show which belongs to $\sigma_I$.
 
 ### The principal stress is the extreme normal stress
 
@@ -306,13 +306,13 @@ so the normal stress is stationary exactly where the shear stress vanishes. $\si
 
 ### Maximum in-plane shear stress
 
-The largest shear stresses are at the top and bottom of the circle, 90° round from the principal points, so the element is rotated 45° from the principal directions (Lecture 6, ll. 615–626):
+The largest shear stresses are at the top and bottom of the circle, 90° round from the principal points, so the element is rotated 45° from the principal directions:
 
 $$
 \boxed{\sigma_{x'y'}^{max}=\pm R=\pm\frac{\sigma_I-\sigma_{II}}{2}}
 $$
 
-On those planes the normal stress is not zero: both faces carry $\sigma_{average}$, the centre of the circle (Lecture 6, ll. 627–629).
+On those planes the normal stress is not zero: both faces carry $\sigma_{average}$, the centre of the circle.
 
 ### Special cases
 
@@ -334,7 +334,7 @@ A 3D stress state has three principal stresses on three mutually perpendicular p
 
 ### Worked example - element at 45 degrees in a bar
 
-A bar carries $\sigma_{xx}=F/A=100$ MPa (Lecture 6, ll. 409–474). The circle has $\sigma_{average}=(100+0)/2=50$ MPa and $R=\sqrt{50^2+0}=50$ MPa, so it passes through the origin and through $\sigma_I=100$ MPa. The top of the circle is 90° anticlockwise from the $x$-face point, so the maximum shear acts on an element rotated 45° anticlockwise, with
+A bar carries $\sigma_{xx}=F/A=100$ MPa. The circle has $\sigma_{average}=(100+0)/2=50$ MPa and $R=\sqrt{50^2+0}=50$ MPa, so it passes through the origin and through $\sigma_I=100$ MPa. The top of the circle is 90° anticlockwise from the $x$-face point, so the maximum shear acts on an element rotated 45° anticlockwise, with
 
 $$
 \sigma_{x'x'}=50\ \mathrm{MPa},\qquad \sigma_{x'y'}=-50\ \mathrm{MPa}
@@ -364,7 +364,7 @@ and $91.0+9.0=100=80+20$, as the invariant requires. On the circle, $\sigma_{ave
 
 ### Worked example - helical weld in a pressure vessel
 
-A thin-walled vessel of diameter 1.2 m and wall 7 mm carries 2 MPa internal pressure. Find the normal and shear stresses on a weld at 60° to the longitudinal axis (Tutorial 4 Q1, the helically welded vessel of Lecture 5, ll. 556–565).
+A thin-walled vessel of diameter 1.2 m and wall 7 mm carries 2 MPa internal pressure. Find the normal and shear stresses on a weld at 60° to the longitudinal axis (Tutorial 4 Q1).
 
 With $x$ along the axis, [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels|B1]] gives
 

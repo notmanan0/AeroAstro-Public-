@@ -29,11 +29,11 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 08 - Yield Criteria.pdf", "02
 > - **Common mistakes:** forgetting the out-of-plane shear in Tresca when both in-plane principal stresses have the same sign (a pressure vessel); inverting the safety factor, which must exceed 1 for a safe design.
 > - **Practise:** [[#Worked example - shaft under axial load and torque]] · [[FEEG1002 Statics 2 Tutorial 7 - Yield Criteria Solutions]]
 
-In the simple cases a strength check compares a single stress with an allowable value: $F/A$ in a bar, the surface shear stress in a shaft, the bending stress in a slender beam (Lecture 8, ll. 18–29). The allowable value comes from a tensile test, where the material behaves elastically up to a yield stress and then deforms plastically, leaving a permanent strain after unloading; because the start of yielding is hard to pin down, the 0.2 % offset yield strength is used in practice (Lecture 8, ll. 33–63; [[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation]]). But a pressure vessel wall, a shaft under torque and end load, or the edge of a hole carries several stresses at once, and a rule is needed for combining them into a single quantity to compare with $\sigma_Y$.
+In the simple cases a strength check compares a single stress with an allowable value: $F/A$ in a bar, the surface shear stress in a shaft, the bending stress in a slender beam. The allowable value comes from a tensile test, where the material behaves elastically up to a yield stress and then deforms plastically, leaving a permanent strain after unloading; because the start of yielding is hard to pin down, the 0.2 % offset yield strength is used in practice ([[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation]]). But a pressure vessel wall, a shaft under torque and end load, or the edge of a hole carries several stresses at once, and a rule is needed for combining them into a single quantity to compare with $\sigma_Y$.
 
-There is no single correct answer from theory. A yield criterion is phenomenological: it proposes a combination of the stresses and is judged by how well it matches experiments, and the right choice depends on the material (Lecture 8, ll. 64–96). Ductile metals yield by slip, which is driven by shear stress, so both criteria are built from the maximum shear stresses on the principal planes. Brittle materials fail by normal stress and need different criteria, which are not covered here.
+There is no single correct answer from theory. A yield criterion is phenomenological: it proposes a combination of the stresses and is judged by how well it matches experiments, and the right choice depends on the material. Ductile metals yield by slip, which is driven by shear stress, so both criteria are built from the maximum shear stresses on the principal planes. Brittle materials fail by normal stress and need different criteria, which are not covered here.
 
-Both criteria are written in terms of principal stresses, which do not depend on how the stress element was oriented. That is essential: rotating the element on paper cannot make a component fail (Lecture 8, ll. 512–523).
+Both criteria are written in terms of principal stresses, which do not depend on how the stress element was oriented. That is essential: rotating the element on paper cannot make a component fail.
 
 ---
 
@@ -41,7 +41,7 @@ Both criteria are written in terms of principal stresses, which do not depend on
 
 ### The observation behind it
 
-Ductile metals broken in tension show slip on planes at about 45° to the load; the cup-and-cone fracture of an aluminium tensile specimen has its cone at 45°. From Mohr's circle, 45° is exactly where the shear stress in uniaxial tension is largest, which suggests that shear, not the normal stress, controls yielding (Lecture 8, ll. 97–118). The **Tresca criterion** states that a material yields when the maximum shear stress on any plane reaches a critical value.
+Ductile metals broken in tension show slip on planes at about 45° to the load; the cup-and-cone fracture of an aluminium tensile specimen has its cone at 45°. From Mohr's circle, 45° is exactly where the shear stress in uniaxial tension is largest, which suggests that shear, not the normal stress, controls yielding. The **Tresca criterion** states that a material yields when the maximum shear stress on any plane reaches a critical value.
 
 ### The critical shear stress from a tensile test
 
@@ -51,11 +51,11 @@ $$
 \sigma_{x'y'}^{max}=\frac{\sigma_Y}{2}
 $$
 
-is the largest shear stress the material can carry (Lecture 8, ll. 119–136).
+is the largest shear stress the material can carry.
 
 ### Maximum shear stress in three dimensions
 
-In a general state, the in-plane maximum shear stress is the radius of Mohr's circle, half the difference of the principal stresses. In 3D a cube can always be rotated so that it carries only normal stresses, the three principal stresses $\sigma_I$, $\sigma_{II}$ and $\sigma_{III}$ on mutually perpendicular faces, not in general aligned with $x$, $y$ and $z$ (Lecture 8, ll. 170–193). Each pair of principal stresses defines a plane with its own Mohr's circle, and the largest shear stress overall is the radius of the largest circle (Lecture 8, ll. 194–223):
+In a general state, the in-plane maximum shear stress is the radius of Mohr's circle, half the difference of the principal stresses. In 3D a cube can always be rotated so that it carries only normal stresses, the three principal stresses $\sigma_I$, $\sigma_{II}$ and $\sigma_{III}$ on mutually perpendicular faces, not in general aligned with $x$, $y$ and $z$. Each pair of principal stresses defines a plane with its own Mohr's circle, and the largest shear stress overall is the radius of the largest circle:
 
 $$
 \sigma_{x'y'}^{max}=\frac12\max\left(|\sigma_I-\sigma_{II}|,|\sigma_I-\sigma_{III}|,|\sigma_{II}-\sigma_{III}|\right)
@@ -75,9 +75,9 @@ $$
 \max\left(|\sigma_I-\sigma_{II}|,|\sigma_I|,|\sigma_{II}|\right)<\sigma_Y
 $$
 
-The two extra terms matter. Seen from the side, a plate stretched along $\sigma_I$ behaves, in the plane containing $\sigma_I$ and the thickness direction, as a bar in tension, and it can slip on a plane at 45° through the thickness, where the shear stress is $\sigma_I/2$, even though there is no stress in $z$ (Lecture 8, ll. 224–249).
+The two extra terms matter. Seen from the side, a plate stretched along $\sigma_I$ behaves, in the plane containing $\sigma_I$ and the thickness direction, as a bar in tension, and it can slip on a plane at 45° through the thickness, where the shear stress is $\sigma_I/2$, even though there is no stress in $z$.
 
-Which term is largest depends on the signs (Lecture 8, ll. 250–269). If $\sigma_I$ and $\sigma_{II}$ have the same sign, say $\sigma_I\ge\sigma_{II}\ge0$, then
+Which term is largest depends on the signs. If $\sigma_I$ and $\sigma_{II}$ have the same sign, say $\sigma_I\ge\sigma_{II}\ge0$, then
 
 $$
 |\sigma_I-\sigma_{II}|=\sigma_I-\sigma_{II}\le\sigma_I
@@ -99,21 +99,21 @@ $$
 
 ### The Tresca hexagon
 
-Plotted in the plane of $\sigma_I$ against $\sigma_{II}$, the same-sign conditions give a square in the first and third quadrants and the opposite-sign condition gives straight lines $\sigma_I-\sigma_{II}=\pm\sigma_Y$ joining $(\sigma_Y,0)$ to $(0,-\sigma_Y)$ and $(-\sigma_Y,0)$ to $(0,\sigma_Y)$. Together they make a hexagon: inside it the material is elastic, on it yielding begins (Lecture 8, ll. 270–314). Uniaxial tension reaches the hexagon at $\sigma_I=\sigma_Y$; equal biaxial tension at the corner $\sigma_I=\sigma_{II}=\sigma_Y$, and equal biaxial compression at the opposite corner. Pure shear, as in torsion, has $\sigma_I=-\sigma_{II}$, a circle centred on the origin with radius equal to the shear stress, and it reaches the hexagon at
+Plotted in the plane of $\sigma_I$ against $\sigma_{II}$, the same-sign conditions give a square in the first and third quadrants and the opposite-sign condition gives straight lines $\sigma_I-\sigma_{II}=\pm\sigma_Y$ joining $(\sigma_Y,0)$ to $(0,-\sigma_Y)$ and $(-\sigma_Y,0)$ to $(0,\sigma_Y)$. Together they make a hexagon: inside it the material is elastic, on it yielding begins. Uniaxial tension reaches the hexagon at $\sigma_I=\sigma_Y$; equal biaxial tension at the corner $\sigma_I=\sigma_{II}=\sigma_Y$, and equal biaxial compression at the opposite corner. Pure shear, as in torsion, has $\sigma_I=-\sigma_{II}$, a circle centred on the origin with radius equal to the shear stress, and it reaches the hexagon at
 
 $$
 \sigma_I=-\sigma_{II}=\frac{\sigma_Y}{2}
 $$
 
-so Tresca predicts a shear yield stress of $0.5\sigma_Y$ (Lecture 8, ll. 315–364).
+so Tresca predicts a shear yield stress of $0.5\sigma_Y$.
 
-Tresca connects yielding directly to the shear stress that causes slip, but it is awkward to use, because it requires the principal stresses and a decision about which of three terms governs, and it takes no account of the shear stresses on the other principal planes, however close to the maximum they are (Lecture 8, ll. 365–380).
+Tresca connects yielding directly to the shear stress that causes slip, but it is awkward to use, because it requires the principal stresses and a decision about which of three terms governs, and it takes no account of the shear stresses on the other principal planes, however close to the maximum they are.
 
 ## 2. The von Mises criterion
 
 ### Root mean square of the maximum shear stresses
 
-The **von Mises criterion** takes all three principal planes into account by using the root mean square of their maximum shear stresses, each the radius of a Mohr's circle (Lecture 8, ll. 381–403):
+The **von Mises criterion** takes all three principal planes into account by using the root mean square of their maximum shear stresses, each the radius of a Mohr's circle:
 
 $$
 \sigma_{x'y'}^{RMS}=\sqrt{\frac13\left[\left(\frac{\sigma_I-\sigma_{II}}{2}\right)^2+\left(\frac{\sigma_I-\sigma_{III}}{2}\right)^2+\left(\frac{\sigma_{II}-\sigma_{III}}{2}\right)^2\right]}
@@ -123,7 +123,7 @@ It can also be associated with the strain energy of distortion, the part of the 
 
 ### Calibrating against the tensile test
 
-The critical value comes from the tensile test, where at yield $\sigma_I=\sigma_Y$ and $\sigma_{II}=\sigma_{III}=0$ (Lecture 8, ll. 404–418):
+The critical value comes from the tensile test, where at yield $\sigma_I=\sigma_Y$ and $\sigma_{II}=\sigma_{III}=0$:
 
 $$
 \sigma_{x'y'}^{RMS}=\sqrt{\frac13\left[\frac{\sigma_Y^2}{4}+\frac{\sigma_Y^2}{4}+0\right]}
@@ -145,7 +145,7 @@ $$
 
 ### Equivalent stress
 
-Dividing by 2 and taking the square root defines the **von Mises equivalent stress**, a single scalar that can be compared directly with the yield stress measured in uniaxial tension (Lecture 8, ll. 419–430):
+Dividing by 2 and taking the square root defines the **von Mises equivalent stress**, a single scalar that can be compared directly with the yield stress measured in uniaxial tension:
 
 $$
 \boxed{\sigma_{eq}=\sqrt{\frac12\left[(\sigma_I-\sigma_{II})^2+(\sigma_I-\sigma_{III})^2+(\sigma_{II}-\sigma_{III})^2\right]}<\sigma_Y}
@@ -171,7 +171,7 @@ $$
 
 ### Plane stress in xy components
 
-The form in $xy$ components is the one used most, because it needs no principal stresses (Lecture 8, ll. 431–447; Lecture 9, ll. 528–530). It follows from the principal form. With $c=\sigma_{average}=(\sigma_{xx}+\sigma_{yy})/2$ and $R$ the radius of Mohr's circle, $\sigma_I=c+R$ and $\sigma_{II}=c-R$, so
+The form in $xy$ components is the one used most, because it needs no principal stresses. It follows from the principal form. With $c=\sigma_{average}=(\sigma_{xx}+\sigma_{yy})/2$ and $R$ the radius of Mohr's circle, $\sigma_I=c+R$ and $\sigma_{II}=c-R$, so
 
 $$
 \sigma_I^2+\sigma_{II}^2=2c^2+2R^2,\qquad \sigma_I\sigma_{II}=c^2-R^2
@@ -197,7 +197,7 @@ $$
 
 ### The ellipse and the comparison with Tresca
 
-In the $\sigma_I$–$\sigma_{II}$ plane, $\sigma_I^2+\sigma_{II}^2-\sigma_I\sigma_{II}=\sigma_Y^2$ is an ellipse with its long axis along the line $\sigma_I=\sigma_{II}$. It passes through the six corners of the Tresca hexagon, so the two criteria agree for uniaxial and equal biaxial stress, and everywhere else the ellipse lies outside the hexagon: Tresca is the more conservative (Lecture 8, ll. 448–480).
+In the $\sigma_I$–$\sigma_{II}$ plane, $\sigma_I^2+\sigma_{II}^2-\sigma_I\sigma_{II}=\sigma_Y^2$ is an ellipse with its long axis along the line $\sigma_I=\sigma_{II}$. It passes through the six corners of the Tresca hexagon, so the two criteria agree for uniaxial and equal biaxial stress, and everywhere else the ellipse lies outside the hexagon: Tresca is the more conservative.
 
 ![[s2_yield_loci.png|800]]
 
@@ -215,7 +215,7 @@ $$
 \sigma_I=\frac{2}{\sqrt3}\sigma_Y=1.155\sigma_Y
 $$
 
-The pull across reduces the strain along $\sigma_I$ through the Poisson effect, and reduces the differences between the principal stresses, which is what drives shear (Lecture 8, ll. 462–480).
+The pull across reduces the strain along $\sigma_I$ through the Poisson effect, and reduces the differences between the principal stresses, which is what drives shear.
 
 The criteria differ most in pure shear. With $\sigma_I=-\sigma_{II}=s$:
 
@@ -223,11 +223,11 @@ $$
 s^2+s^2+s^2=\sigma_Y^2\ \Rightarrow\ s=\frac{\sigma_Y}{\sqrt3}=0.577\sigma_Y
 $$
 
-against $0.5\sigma_Y$ for Tresca (Lecture 8, ll. 481–501).
+against $0.5\sigma_Y$ for Tresca.
 
 ### Evidence from torsion tests
 
-The ratio of the shear yield stress in a torsion test to the tensile yield stress decides between the criteria for a given material. For several alloys it is close to the von Mises value of 0.577 (Lecture 8, ll. 502–511):
+The ratio of the shear yield stress in a torsion test to the tensile yield stress decides between the criteria for a given material. For several alloys it is close to the von Mises value of 0.577:
 
 | Material | $\tau_Y/\sigma_Y$ |
 |---|---|
@@ -238,23 +238,23 @@ The ratio of the shear yield stress in a torsion test to the tensile yield stres
 
 ### Hydrostatic stress and the yield surface
 
-With three principal stresses, the von Mises condition $\sigma_{eq}=\sigma_Y$ is a cylinder in $(\sigma_I,\sigma_{II},\sigma_{III})$ space whose axis is the line $\sigma_I=\sigma_{II}=\sigma_{III}$; its section by the plane $\sigma_{III}=0$ is the ellipse above. Points inside are elastic. Along the axis all principal stresses are equal, a hydrostatic state, and every difference in the formula is zero, so no hydrostatic stress, however large, causes yield. Only differences between principal stresses, which produce shear and distortion, do (Lecture 8, ll. 540–553). The block on the ocean floor in [[FEEG1002 B3 - Generalised Hooke's Law#Worked example - a steel block on the ocean floor|B3]] is in exactly this state.
+With three principal stresses, the von Mises condition $\sigma_{eq}=\sigma_Y$ is a cylinder in $(\sigma_I,\sigma_{II},\sigma_{III})$ space whose axis is the line $\sigma_I=\sigma_{II}=\sigma_{III}$; its section by the plane $\sigma_{III}=0$ is the ellipse above. Points inside are elastic. Along the axis all principal stresses are equal, a hydrostatic state, and every difference in the formula is zero, so no hydrostatic stress, however large, causes yield. Only differences between principal stresses, which produce shear and distortion, do. The block on the ocean floor in [[FEEG1002 B3 - Generalised Hooke's Law#Worked example - a steel block on the ocean floor|B3]] is in exactly this state.
 
 ## 3. Using the criteria
 
 ### Choosing between them
 
-Both criteria are for ductile materials. Tresca is the more intuitive, tied directly to the maximum shear stress, and the more conservative. Von Mises is more accurate for most ductile metals and easier to use, since $\sigma_{eq}$ follows from one formula without deciding which shear governs; it is also the "von Mises stress" plotted by finite element software (Lecture 8, ll. 531–539; Lecture 9, ll. 518–527). Because both are written in principal stresses, the result is the same whatever orientation the stresses were calculated or measured in, so a rosette can be stuck on at any angle (Lecture 8, ll. 524–530).
+Both criteria are for ductile materials. Tresca is the more intuitive, tied directly to the maximum shear stress, and the more conservative. Von Mises is more accurate for most ductile metals and easier to use, since $\sigma_{eq}$ follows from one formula without deciding which shear governs; it is also the "von Mises stress" plotted by finite element software. Because both are written in principal stresses, the result is the same whatever orientation the stresses were calculated or measured in, so a rosette can be stuck on at any angle.
 
 ### Limitations
 
-Brittle materials fail by normal stress rather than shear, giving flat fracture surfaces instead of 45° shear lips, and many of them, such as cast iron and concrete, are much stronger in compression than in tension. Both assumptions behind these criteria then fail, and other criteria are needed (Lecture 8, ll. 554–559; [[FEEG1002 C8 - Fracture - Brittle, Ductile and Fracture Mechanics]]).
+Brittle materials fail by normal stress rather than shear, giving flat fracture surfaces instead of 45° shear lips, and many of them, such as cast iron and concrete, are much stronger in compression than in tension. Both assumptions behind these criteria then fail, and other criteria are needed ([[FEEG1002 C8 - Fracture - Brittle, Ductile and Fracture Mechanics]]).
 
 ## 4. Failure load and safety factor
 
 ### Stresses scale with load
 
-With linear elasticity and small deformations assumed, every stress component, and hence $\sigma_{eq}$, is proportional to the applied load. One analysis at load $F$ is enough: there is no need to repeat a simulation at higher loads to find where yield starts (Lecture 8, ll. 560–605). The load at first yield is
+With linear elasticity and small deformations assumed, every stress component, and hence $\sigma_{eq}$, is proportional to the applied load. One analysis at load $F$ is enough: there is no need to repeat a simulation at higher loads to find where yield starts. The load at first yield is
 
 $$
 \boxed{F_{max}=\frac{\sigma_Y}{\sigma_{eq}}F}
@@ -268,7 +268,7 @@ $$
 \boxed{SF=\frac{F_{max}}{F}=\frac{\sigma_Y}{\sigma_{eq}}}
 $$
 
-It must be greater than 1, since the material yields when $\sigma_{eq}\ge\sigma_Y$; an $SF$ of 2 means the load can be doubled before yield begins (Lecture 8, ll. 606–618; Lecture 9, ll. 531–551). The value required in design depends on how well the material is known and controlled, how accurate the model, dimensions and loads are, whether failure would endanger life, and whether fatigue under cyclic loading must be considered; for many applications standards prescribe it (Lecture 8, ll. 619–632).
+It must be greater than 1, since the material yields when $\sigma_{eq}\ge\sigma_Y$; an $SF$ of 2 means the load can be doubled before yield begins. The value required in design depends on how well the material is known and controlled, how accurate the model, dimensions and loads are, whether failure would endanger life, and whether fatigue under cyclic loading must be considered; for many applications standards prescribe it.
 
 ---
 
@@ -276,7 +276,7 @@ It must be greater than 1, since the material yields when $\sigma_{eq}\ge\sigma_
 
 ### Worked example - plate with a hole
 
-A high-strength steel plate ($\sigma_Y=500$ MPa), 150 mm wide and 10 mm thick with a 40 mm central hole, carries 150 kN. An FE analysis gives a maximum von Mises stress of 299.5 MPa at the sides of the hole. Find the safety factor and the load at first yield (Lecture 8, ll. 560–612).
+A high-strength steel plate ($\sigma_Y=500$ MPa), 150 mm wide and 10 mm thick with a 40 mm central hole, carries 150 kN. An FE analysis gives a maximum von Mises stress of 299.5 MPa at the sides of the hole. Find the safety factor and the load at first yield.
 
 $$
 SF=\frac{\sigma_Y}{\sigma_{eq}}=\frac{500}{299.5}=1.67

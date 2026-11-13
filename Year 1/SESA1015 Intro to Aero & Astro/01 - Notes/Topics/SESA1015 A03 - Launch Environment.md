@@ -37,13 +37,13 @@ sources: ["02 - Sources/Astronautics/Astronautics - Part 2 - Environment.pdf"]
 
 On the pad a satellite carries 1 g, its own weight. Once the engines light, three kinds of load arrive together. The first is the steady push of the thrust, which grows relative to the vehicle's mass as propellant is used up, so the payload is pressed into its adapter harder and harder until the stage burns out. The second is vibration: engines, turbopumps and unsteady combustion shake the whole stack, and the shaking reaches the payload through the adapter across a broad band of frequencies. The third is sound. The exhaust of a large rocket is among the loudest noise sources made, and at lift-off it reflects off the pad; later, in transonic flight, turbulent flow over the fairing adds aerodynamic noise. Lightweight panels, solar arrays and antennas are driven directly by the pressure fluctuations.
 
-None of these lasts long, but a spacecraft that is light enough to be worth launching is easily broken by them, and once in orbit its structure carries almost nothing (there is no weight in free fall, [[SESA1015 A02 - Space Environment#Microgravity|A02 §6]]). The structure is therefore sized for launch (p. 39). The launch vehicle's user manual gives the environments as envelopes, and the spacecraft is tested against them on the ground before it flies (p. 46).
+None of these lasts long, but a spacecraft that is light enough to be worth launching is easily broken by them, and once in orbit its structure carries almost nothing (there is no weight in free fall, [[SESA1015 A02 - Space Environment#Microgravity|A02 §6]]). The structure is therefore sized for launch. The launch vehicle's user manual gives the environments as envelopes, and the spacecraft is tested against them on the ground before it flies.
 
 ---
 
 ## 1. Launch as the design case
 
-The launch environment is usually the most severe a spacecraft experiences and is the main driver of its structural design (p. 39). It is one of the induced environments of [[SESA1015 A02 - Space Environment#1. Natural and induced environments|A02 §1]], along with fabrication, testing and transport. The environments it contains, and the way each is quantified, are (pp. 39–45):
+The launch environment is usually the most severe a spacecraft experiences and is the main driver of its structural design. It is one of the induced environments of [[SESA1015 A02 - Space Environment#1. Natural and induced environments|A02 §1]], along with fabrication, testing and transport. The environments it contains, and the way each is quantified, are:
 
 | Environment | Source | How it is specified |
 |---|---|---|
@@ -85,7 +85,7 @@ $$
 =m_p\,\frac{T-D}{M}.
 $$
 
-The gravity terms cancel. The force on the payload depends only on the non-gravitational forces on the vehicle per unit vehicle mass, because gravity acts on every particle of the payload directly and needs no support from the adapter. Dividing by the payload's weight on the ground defines the **load factor**, the "static acceleration" in units of $g_0$ (pp. 40–41):
+The gravity terms cancel. The force on the payload depends only on the non-gravitational forces on the vehicle per unit vehicle mass, because gravity acts on every particle of the payload directly and needs no support from the adapter. Dividing by the payload's weight on the ground defines the **load factor**, the "static acceleration" in units of $g_0$:
 
 $$
 n=\frac{F_i}{m_pg_0}=\frac{T-D}{Mg_0}.
@@ -101,7 +101,7 @@ $$
 n(t)=\frac{T}{g_0\,(M_0-\dot mt)} .
 $$
 
-The numerator is fixed and the denominator shrinks, so $n$ rises throughout the burn and is largest at burnout, when $M=M_{bo}$ (p. 39):
+The numerator is fixed and the denominator shrinks, so $n$ rises throughout the burn and is largest at burnout, when $M=M_{bo}$:
 
 $$
 n_{bo}=\frac{T}{M_{bo}g_0}=\frac{T}{M_0g_0}\cdot\frac{M_0}{M_{bo}}=n_0\,\frac{M_0}{M_{bo}},
@@ -111,7 +111,7 @@ where $n_0=T/(M_0g_0)$ is the thrust-to-weight ratio at ignition. A stage that l
 
 ![[astro_a03_quasi_static_acceleration.png|900]]
 
-Peak static accelerations are about 4 g for Ariane 5, 3 g for the Space Shuttle and 8 g for Saturn (p. 39; but see [[#Transcript and slide slips]]). The flight histories show the burnout pattern (pp. 40–41):
+Peak static accelerations are about 4 g for Ariane 5, 3 g for the Space Shuttle and 8 g for Saturn (but see [[#Transcript and slide slips]]). The flight histories show the burnout pattern:
 
 - Ariane 5: the load factor climbs to about 4.4 g at about 130 s as the solid boosters burn out, drops to about 0.6 g when they separate, climbs again to about 3.3 g as the core stage approaches burnout near 590 s, and falls to about 0.2 g for the low-thrust upper stage.
 - Space Shuttle: the load rises to about 2.7 g at solid-booster burnout near 125 s, drops to about 0.9 g, then climbs again on the main engines until it reaches 3 g at about 450 s. From there the main engines are throttled back so that the load stays at 3 g until main-engine cutoff, about 510 s.
@@ -126,7 +126,7 @@ so the thrust is reduced in proportion to the remaining mass. The Shuttle used t
 
 ## 3. Dynamic acceleration: random vibration
 
-On top of the quasi-static load the payload receives **dynamic acceleration**, also called oscillatory acceleration or random vibration (p. 42). It is generated by functioning machinery (turbopumps, valves), by combustion phenomena in the engines, and by the structure being excited by the acoustic field of §4. The motion is random: it has no single frequency and never repeats, so it is described statistically, by how its mean-square value is distributed over frequency.
+On top of the quasi-static load the payload receives **dynamic acceleration**, also called oscillatory acceleration or random vibration. It is generated by functioning machinery (turbopumps, valves), by combustion phenomena in the engines, and by the structure being excited by the acoustic field of §4. The motion is random: it has no single frequency and never repeats, so it is described statistically, by how its mean-square value is distributed over frequency.
 
 ### The power spectral density
 
@@ -138,7 +138,7 @@ $$
 
 The square root comes from the units: $G$ is in $g^2$/Hz, so its area is in $g^2$. The same RMS idea for a periodic signal is in [[RMS Value]].
 
-Launch-vehicle PSDs are given as envelopes made of straight segments on log–log axes (p. 42). A straight segment from $(f_1,G_1)$ to $(f_2,G_2)$ is a power law
+Launch-vehicle PSDs are given as envelopes made of straight segments on log–log axes. A straight segment from $(f_1,G_1)$ to $(f_2,G_2)$ is a power law
 
 $$
 G(f)=G_1\left(\frac{f}{f_1}\right)^m,\qquad m=\frac{\log_{10}(G_2/G_1)}{\log_{10}(f_2/f_1)} .
@@ -168,7 +168,7 @@ a rise of $+6$ dB/octave means $m\approx2$.
 
 ![[astro_a03_random_vibration_psd.png|900]]
 
-The Ariane envelope (p. 42) has four corner points, $(24\ \text{Hz},\ 0.001)$, $(160,\ 0.04)$, $(700,\ 0.04)$ and $(2000,\ 0.012)$ in $g^2$/Hz:
+The Ariane envelope has four corner points, $(24\ \text{Hz},\ 0.001)$, $(160,\ 0.04)$, $(700,\ 0.04)$ and $(2000,\ 0.012)$ in $g^2$/Hz:
 
 | Segment | $m$ | dB/octave | Area ($g^2$) |
 |---|---|---|---|
@@ -185,7 +185,7 @@ A component with a natural frequency inside the plateau of the envelope responds
 
 ## 4. The acoustic environment
 
-The intense acoustic field during launch is generated by engine noise, from the turbulent mixing of the exhaust jets with the surrounding air, and by aerodynamic noise, from turbulent flow and shock oscillations over the vehicle (p. 43). It is greatest at two moments: at launcher release, when the exhaust is close to the ground and reflects off the pad, and at transonic speed, when aerodynamic noise peaks. Flame trenches and water deluge systems at the pad (p. 44) reduce the reflected noise.
+The intense acoustic field during launch is generated by engine noise, from the turbulent mixing of the exhaust jets with the surrounding air, and by aerodynamic noise, from turbulent flow and shock oscillations over the vehicle. It is greatest at two moments: at launcher release, when the exhaust is close to the ground and reflects off the pad, and at transonic speed, when aerodynamic noise peaks. Flame trenches and water deluge systems at the pad reduce the reflected noise.
 
 ### Sound pressure level
 
@@ -227,7 +227,7 @@ This is the **overall sound pressure level**. Two equal bands give $10\log_{10}2
 
 ![[astro_a03_acoustic_spectrum.png|900]]
 
-The Ariane under-fairing spectrum (p. 43) in octave bands from 31.5 Hz to 8 kHz is 114, 127, 132, 136, 137, 134, 128, 122 and 120 dB. The sum gives an OASPL of 141.6 dB, an RMS pressure of $2\times10^{-5}\times10^{141.6/20}=241$ Pa, dominated by the bands from 125 Hz to 1 kHz. The Shuttle payload-bay curves peak at about 129 dB near 200 Hz at lift-off and about 125 dB near 400 Hz for aerodynamic noise, with the reference level stated as 0 dB $=2\times10^{-5}$ Pa.
+The Ariane under-fairing spectrum in octave bands from 31.5 Hz to 8 kHz is 114, 127, 132, 136, 137, 134, 128, 122 and 120 dB. The sum gives an OASPL of 141.6 dB, an RMS pressure of $2\times10^{-5}\times10^{141.6/20}=241$ Pa, dominated by the bands from 125 Hz to 1 kHz. The Shuttle payload-bay curves peak at about 129 dB near 200 Hz at lift-off and about 125 dB near 400 Hz for aerodynamic noise, with the reference level stated as 0 dB $=2\times10^{-5}$ Pa.
 
 A surface of area $A$ exposed to $p_{rms}$ carries a fluctuating force of about $p_{rms}A$ if the pressure is in phase across it. A 2 m² solar-array panel in the 137 dB band ($p_{rms}=142$ Pa) carries about 283 N RMS; if the panel has a mass of 10 kg, that force alone would give it $283/(10\times9.81)=2.9$ g RMS. The ratio of area to mass decides the response, so large, light structures (solar arrays, antenna reflectors, thin panels) are the ones that acoustics damage, while compact, dense boxes are loaded mainly through their mountings by the random vibration of §3.
 
@@ -263,7 +263,7 @@ With $a=5$ m/s² and $H=7.2$ km, max-q comes at 7.2 km with $V=\sqrt{2\times5\ti
 
 ## 5. Effects on the spacecraft and ground testing
 
-The launch environment is the main input to the structural design of the spacecraft, and ground testing is used to make sure the spacecraft survives it (p. 46). The quasi-static load factors size the primary structure and the adapter; the random-vibration envelope sizes equipment mountings and sets stiffness targets; the acoustic spectrum sizes large panels and appendages. Tests reproduce each environment: a shaker table drives the spacecraft through its adapter with sine and random vibration; an acoustic chamber, a reverberant room with loudspeakers or horns, surrounds it with the specified spectrum; and static or centrifuge tests apply the quasi-static loads. Qualification tests on a test model use levels above the expected flight envelope to demonstrate margin, and lower acceptance tests on the flight model screen it for workmanship faults without using up its life.
+The launch environment is the main input to the structural design of the spacecraft, and ground testing is used to make sure the spacecraft survives it. The quasi-static load factors size the primary structure and the adapter; the random-vibration envelope sizes equipment mountings and sets stiffness targets; the acoustic spectrum sizes large panels and appendages. Tests reproduce each environment: a shaker table drives the spacecraft through its adapter with sine and random vibration; an acoustic chamber, a reverberant room with loudspeakers or horns, surrounds it with the specified spectrum; and static or centrifuge tests apply the quasi-static loads. Qualification tests on a test model use levels above the expected flight envelope to demonstrate margin, and lower acceptance tests on the flight model screen it for workmanship faults without using up its life.
 
 Pyrotechnic release devices at stage and fairing separation produce short, high-frequency shocks, and the pressure inside the fairing drops from one atmosphere to near vacuum within a couple of minutes, so closed volumes in the spacecraft must be vented. The launcher's choice also fixes the mass, volume and centre-of-mass constraints treated in [[Launch Vehicle Interfaces]] and [[SESA1015 A06 - Launch Vehicles, Systems and Interfaces]].
 
@@ -271,7 +271,7 @@ Pyrotechnic release devices at stage and fairing separation produce short, high-
 
 ### Payload and component loads at Ariane 5 burnout
 
-A 3000 kg satellite rides Ariane 5 through solid-booster burnout, where the load factor peaks at about 4.4 g (p. 40). The axial force through the adapter is
+A 3000 kg satellite rides Ariane 5 through solid-booster burnout, where the load factor peaks at about 4.4 g. The axial force through the adapter is
 
 $$
 F_i=n\,m_pg_0=4.4\times3000\times9.81=1.29\times10^5\ \text{N}=129\ \text{kN}.

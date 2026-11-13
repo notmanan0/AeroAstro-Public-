@@ -14,7 +14,7 @@ sources: ["03 - Exams & Past Papers/aerothermo test 2 questions.txt"]
 # SESA3029 Test 2 - Solutions
 
 > [!abstract] Test info
-> Blackboard Test 2 (2.5 % of the module, best of two attempts). It opened on **Mon 19 Oct** and closes **Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8; reminder in L3-4, l. 6). There are five questions on Weeks 1–3: the normal-shock stagnation-pressure loss, the Pitot test, the oblique-shock chart, a Prandtl–Meyer expansion, and the shock–shock interaction of Lecture 2.3. These are worked solutions for revision, written after the test had been done by hand. Every number was checked in Python with $\gamma=1.4$, and the table values were regenerated from the exact relations (they match `IFT.pdf` and `NST.pdf` to 4 d.p.).
+> Blackboard Test 2 (2.5 % of the module, best of two attempts). It opened on **Mon 19 Oct** and closes **Sun 25 Oct, midnight**. There are five questions on Weeks 1–3: the normal-shock stagnation-pressure loss, the Pitot test, the oblique-shock chart, a Prandtl–Meyer expansion, and the shock–shock interaction of W03 §3. These are worked solutions for revision, written after the test had been done by hand. Every number was checked in Python with $\gamma=1.4$, and the table values were regenerated from the exact relations (they match `IFT.pdf` and `NST.pdf` to 4 d.p.).
 
 | Q | Answer | Tool | Theory |
 |---|---|---|---|
@@ -25,7 +25,7 @@ sources: ["03 - Exams & Past Papers/aerothermo test 2 questions.txt"]
 | 5 | $\Delta\theta=5.815^\circ$ | two θ–β–M solves per side, iterate to $p_{3A}=p_{3B}$ | [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#3. Shock–shock interaction and slip lines\|W03 §3]] |
 
 > [!warning] The method changes the last digit
-> Q3 and Q4 name the method: "use OSC, nearest 0.05" and "use IFT, reading to nearest value". The exact answers (1.86 and 22.8 kPa) differ in the last quoted digit from the method-specified ones (1.85 and 22.9 kPa). Use the stated method: exam questions specify one (L2-2, ll. 74–80).
+> Q3 and Q4 name the method: "use OSC, nearest 0.05" and "use IFT, reading to nearest value". The exact answers (1.86 and 22.8 kPa) differ in the last quoted digit from the method-specified ones (1.85 and 22.9 kPa). Use the stated method: exam questions specify one.
 
 ---
 
@@ -287,7 +287,7 @@ $$
 
 ## Q5. Shock–shock interaction at M₁ = 3.1
 
-> Revisit the Lecture 2.3 slide 7 interaction (lower wall up by $\theta_A=18^\circ$, upper wall down by $\theta_B=12^\circ$) with $M_1=3.1$ instead of 3. Find the slip-line angle $\Delta\theta$ to three decimal places.
+> Revisit the W03 §3 interaction (lower wall up by $\theta_A=18^\circ$, upper wall down by $\theta_B=12^\circ$) with $M_1=3.1$ instead of 3. Find the slip-line angle $\Delta\theta$ to three decimal places.
 
 ![[at_test2_slip_line.png|900]]
 
@@ -309,7 +309,7 @@ The procedure is exactly that of [[SESA3029 W03 - Shock Reflections, Expansion W
 - zone 2B is turned **up** by $\theta_B+\Delta\theta$;
 - require $p_{3A}/p_1=p_{3B}/p_1$, where $p_{3A}/p_1=(p_{2A}/p_1)(p_{3A}/p_{2A})$ and likewise for B.
 
-**Step 3: two guesses.** The $M_1=3$ answer (5.85° on the slide) is a good starting point, so try $5^\circ$ and $6^\circ$:
+**Step 3: two guesses.** The $M_1=3$ answer (5.85° read from the chart) is a good starting point, so try $5^\circ$ and $6^\circ$:
 
 | $\Delta\theta$ | turn A | $\beta_{3A}$ | $p_{3A}/p_{2A}$ | $p_{3A}/p_1$ | turn B | $\beta_{3B}$ | $p_{3B}/p_{2B}$ | $p_{3B}/p_1$ | difference |
 |---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -339,13 +339,13 @@ $$
 > [!check] Exact root and the state behind the crossing
 > - A root finder on the full relations gives $\Delta\theta=5.81497^\circ$, i.e. $5.815^\circ$ ✓. The two-guess interpolation is already exact to 3 d.p., because the difference is nearly linear in $\Delta\theta$ (panel a).
 > - At the solution $p_3/p_1=6.834$ on both sides, but $M_{3A}=1.709$ vs $M_{3B}=1.735$, $T_{3A}/T_1=1.844$ vs $T_{3B}/T_1=1.824$, and $p_{03}/p_{01}=0.802$ vs $0.834$. The slip line is real.
-> - The same code gives $5.827^\circ$ at $M_1=3$, against the slide's chart-read $5.85^\circ$. Blackboard may accept a tolerance band; the value above is the exact one.
+> - The same code gives $5.827^\circ$ at $M_1=3$, against the chart-read $5.85^\circ$. Blackboard may accept a tolerance band; the value above is the exact one.
 
 > [!tip] Why $\Delta\theta$ hardly moves
 > Raising $M_1$ from 3.0 to 3.1 raises **both** pressure curves by about 5 % (panel a), so their crossing barely shifts: $5.827^\circ\to5.815^\circ$. At high Mach number the θ–β–M curves crowd towards the $M_1\to\infty$ limit ([[SESA3029 W02 - Oblique Shock Relations and Mach Waves#The M₁ → ∞ curve|W02 §6]]). The way the turning is shared between the two sides is then set mainly by the wall angles. The pressure level is what changes: $p_3/p_1=6.535\to6.834$.
 
 > [!important] Exam link
-> This interaction was last year's exam question (L2-3, ll. 317–319). In the exam, zones 2A and 2B and the first guess were given; you made the second guess and interpolated (ll. 379–382). Steps 3–4 above are exactly that procedure.
+> This interaction was last year's exam question. In the exam, zones 2A and 2B and the first guess were given; you made the second guess and interpolated. Steps 3–4 above are exactly that procedure.
 
 ---
 

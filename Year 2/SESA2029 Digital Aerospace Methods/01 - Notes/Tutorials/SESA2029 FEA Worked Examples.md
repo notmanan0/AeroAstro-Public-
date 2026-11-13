@@ -135,14 +135,14 @@ The span between the supports lifts: the prop acts as a pivot.
 
 ![[dam_beam_example_deflection.png|560]]
 
-## Q6: Yield pressure from one linear run (L4)
+## Q6: Yield pressure from one linear run
 
 *A nozzle made of material with $\sigma_Y = 340$ MPa is analysed at 2.5 MPa internal pressure, giving a peak von Mises stress of 238.6 MPa and a peak Tresca stress intensity of 256.1 MPa. Find the pressure at first yield for each criterion, and the allowable pressure with FoS = 1.5.*
 
 ### Solution
 Linear analysis means stress ∝ pressure:
 - von Mises: $P_Y = 2.5\times340/238.6 = 3.56$ MPa;
-- Tresca: $P_Y = 2.5\times340/256.1 = 3.32$ MPa. This is the lower, conservative value. The slide prints 3.20, which is an arithmetic slip.
+- Tresca: $P_Y = 2.5\times340/256.1 = 3.32$ MPa. This is the lower, conservative value. A printed value of 3.20 is an arithmetic slip.
 
 With FoS = 1.5 on Tresca: $P_{allow} = 3.32/1.5 = 2.21$ MPa.
 
@@ -158,7 +158,7 @@ With FoS = 1.5 on Tresca: $P_{allow} = 3.32/1.5 = 2.21$ MPa.
 - net stress $= 120\times400/240 = 200$ MPa, so $\sigma_{max}\approx443$ MPa;
 - FoS $= 460/443\approx1.04$. That is below 1.5–2, so it is unacceptable: enlarge the plate, reduce the hole or the load, or use a stronger material.
 
-## Q8: 2-DOF modal analysis, participation factor and effective mass (L10)
+## Q8: 2-DOF modal analysis, participation factor and effective mass
 
 *$m_1 = 2$ kg is joined to ground by $k_1 = 1000$ N/m; $m_2 = 1$ kg is joined to ground by $k_2 = 2000$ N/m; $k_3 = 3000$ N/m couples the masses. Find the natural frequencies, mass-normalised modes, participation factors and effective masses for base motion.*
 

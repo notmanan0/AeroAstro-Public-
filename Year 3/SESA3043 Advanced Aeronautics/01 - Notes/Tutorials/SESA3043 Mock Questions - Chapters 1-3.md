@@ -22,9 +22,9 @@ sources: ["01 - Notes/Topics", "03 - Exams & Past Papers/Ch1_Revision_Questions.
 > - **Each solution links** to the topic-note section where the method is derived.
 
 > [!abstract] Scope: what is in and what is left out
-> **In:** everything lectured up to Fri 23 Oct. That is all of Chapter 1 (1.1–1.4) and Chapter 2 (2.1–2.3), plus CH3-1 (3.1) and CH3-2 up to slide 99 (3.2).
+> **In:** everything lectured up to Fri 23 Oct. That is all of Chapter 1 (1.1–1.4) and Chapter 2 (2.1–2.3), plus 3.1 and 3.2 up to the Falkner–Skan solutions.
 >
-> **Left out:** CH3-2 slides 100–106 (the cylinder stagnation-point problem) and CH3-3 to CH3-6: Pohlhausen, transition and the $e^n$ method, the full momentum integral equation, and SDM/STM viscous–inviscid interaction. None of these had been lectured when the mock was written, before reading week; CH3-3 to CH3-5 were lectured between 5 and 12 Nov. The momentum-integral, transition and viscous–inviscid topics appear here only in the parts already lectured:
+> **Left out:** the cylinder stagnation-point problem of 3.2, and 3.3 to 3.6: Pohlhausen, transition and the $e^n$ method, the full momentum integral equation, and SDM/STM viscous–inviscid interaction. None of these had been lectured when the mock was written, before reading week; 3.3 to 3.5 were lectured between 5 and 12 Nov. The momentum-integral, transition and viscous–inviscid topics appear here only in the parts already lectured:
 > - $\mathrm d\theta/\mathrm dx=C_f/2$ for a flat plate (Q8);
 > - laminar against turbulent profiles (Q8);
 > - $\delta^*$ and the effective body (Q7).
@@ -298,7 +298,7 @@ $$
 \frac{\mathrm dU_e}{\mathrm ds}=\frac34ks^{-1/2}=\frac{U_e}{2s}=\frac{12}{0.5}=24\ \text{s}^{-1}.
 $$
 
-Steady Bernoulli along the wall ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Bernoulli at the edge (slides 33–37; revision §1.4 Q4)|1.4, Bernoulli at the edge]]):
+Steady Bernoulli along the wall ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Bernoulli at the edge|1.4, Bernoulli at the edge]]):
 
 $$
 \frac{\mathrm dp}{\mathrm ds}=-\rho U_e\frac{\mathrm dU_e}{\mathrm ds}=-1.225\times12\times24=\boxed{-352.8\ \text{Pa/m}.}
@@ -389,7 +389,7 @@ $$
 > [!check] Python
 > $\beta=0.6667$; walls at $120.0^\circ$; $k=16.000$; on the wall at $s=0.25$: $|\mathrm d\Phi/\mathrm dz|=12.000$ and the flow direction is $120.0^\circ$ (along the wall ✓); $\phi=2.000=ks^{3/2}$ ✓. $\mathrm dp/\mathrm ds=-352.80$ Pa/m at both $s=0.05$ and $0.25$. $p_{apex}-p(0.25)=88.200+6.125=94.325$ Pa; $p(0.05)-p(0.25)=70.560+5.577=76.137$ Pa.
 
-Looking ahead, the wall speed $U_e\propto s^{1/2}$ is a Falkner–Skan edge velocity with $m=\tfrac12$, $\beta=\tfrac23$: an accelerating, favourable-gradient layer, thinner and fuller than Blasius ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Special cases and the wedge angle (slide 77)|3.2]]).
+Looking ahead, the wall speed $U_e\propto s^{1/2}$ is a Falkner–Skan edge velocity with $m=\tfrac12$, $\beta=\tfrac23$: an accelerating, favourable-gradient layer, thinner and fuller than Blasius ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Special cases and the wedge angle|3.2]]).
 
 > [!warning] Common slip
 > Do not drop $\partial\phi/\partial t$ just because the apex is a stagnation point. It is zero **at the apex** because $\phi(0)=0$ there for every $k$, but it is not zero along the wall.
@@ -436,7 +436,7 @@ $$
 v\sim\frac{U_e\delta}{L}=\frac{3\times0.224\times10^{-3}}{0.15}=4.5\ \text{mm/s}\ll U_e.
 $$
 
-Blasius gives $\delta_{99}=4.91\times0.15/670.8=1.10$ mm. The order-of-magnitude estimate is right in its **scaling** but not its constant (a factor of about 5 here), which is all $\mathcal O(\cdot)$ claims (L5, ll. 219–222).
+Blasius gives $\delta_{99}=4.91\times0.15/670.8=1.10$ mm. The order-of-magnitude estimate is right in its **scaling** but not its constant (a factor of about 5 here), which is all $\mathcal O(\cdot)$ claims.
 
 **(b)** With $\delta=0.224$ mm:
 
@@ -453,7 +453,7 @@ $$
 \frac{\nu U_e/L^2}{\nu U_e/\delta^2}=\left(\frac{\delta}{L}\right)^2=\frac{1}{Re_L}=2.2\times10^{-6}.
 $$
 
-So $\nu\,\partial^2u/\partial x^2$ is negligible. The remaining viscous term **cannot** be dropped, or no-slip could not be met. It must therefore balance inertia ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#x-momentum, term by term (slides 17–24)|1.4, x-momentum]]):
+So $\nu\,\partial^2u/\partial x^2$ is negligible. The remaining viscous term **cannot** be dropped, or no-slip could not be met. It must therefore balance inertia ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#x-momentum, term by term|1.4, x-momentum]]):
 
 $$
 \frac{U_e^2}{L}\sim\frac{\nu U_e}{\delta^2}.
@@ -481,7 +481,7 @@ $$
 
 That is the same order as the 60 m/s² of inertia, so it **must be kept**. It is $\mathcal O(U_e^2/L)$, as the scaling $p\sim\rho U_e^2$ predicts. (Check with Bernoulli: $\tfrac12\rho(3.6^2-3.0^2)=1980$ Pa over 45 mm.)
 
-**(c)** Every term in $y$-momentum is at most $\mathcal O(U_e^2\delta/L^2)$ ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#y-momentum (slides 25–31)|1.4, y-momentum]]), so the pressure gradient across the layer can be no larger:
+**(c)** Every term in $y$-momentum is at most $\mathcal O(U_e^2\delta/L^2)$ ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#y-momentum|1.4, y-momentum]]), so the pressure gradient across the layer can be no larger:
 
 $$
 \frac1\rho\frac{\partial p}{\partial y}\sim\frac{U_e^2\delta}{L^2}.
@@ -499,7 +499,7 @@ $$
 \frac{\partial p}{\partial y}=0,\qquad p=p_e(x).
 $$
 
-**Consequence:** the outer potential flow imposes the pressure. $p$ stops being an unknown, which leaves two equations (continuity and $x$-momentum) for $u$ and $v$. Without $\partial^2/\partial x^2$ terms they are **parabolic**, so they can be marched downstream from an inflow profile ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Why parabolic matters (revision §1.4 Q6)|1.4 §4]]).
+**Consequence:** the outer potential flow imposes the pressure. $p$ stops being an unknown, which leaves two equations (continuity and $x$-momentum) for $u$ and $v$. Without $\partial^2/\partial x^2$ terms they are **parabolic**, so they can be marched downstream from an inflow profile ([[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Why parabolic matters|1.4 §4]]).
 
 **(d)** Apply the scaling locally, $\delta/x\sim Re_x^{-1/2}$:
 
@@ -542,7 +542,7 @@ $$
 
 ### Solution
 
-**(a)** On the circle, $\bar z=ae^{i\theta}$ ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#Flow over a finite plate, and an ellipse (slides 13–14)|2.1 §3]]):
+**(a)** On the circle, $\bar z=ae^{i\theta}$ ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#Flow over a finite plate, and an ellipse|2.1 §3]]):
 
 $$
 z=ae^{i\theta}+\frac{b^2}{a}e^{-i\theta}.
@@ -620,7 +620,7 @@ The point is $z=A\cos45^\circ+iB\sin45^\circ=0.354+0.071i$ m: still at 71 % of t
 - $B\to0$ means $b=a$, so $q_{top}=2U_\infty/2=U_\infty$ and $C_p=0$: the flat plate **along** the stream, which has $\Phi=U_\infty z$ and $C_p=0$ ✓.
 - $B=A$ means $b=0$, so $q_{top}=2U_\infty$ and $C_p=-3$: the cylinder ✓.
 
-**(d)** With incidence and circulation (clockwise positive), the circle-plane potential is ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#The flow and the Kutta condition (slide 17)|2.1 §4]]):
+**(d)** With incidence and circulation (clockwise positive), the circle-plane potential is ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#The flow and the Kutta condition|2.1 §4]]):
 
 $$
 \Phi=U_\infty\bar ze^{-i\alpha}+\frac{U_\infty a^2e^{i\alpha}}{\bar z}+\frac{i\Gamma}{2\pi}\ln\bar z.
@@ -692,7 +692,7 @@ A thin aerofoil of chord $c$ is modelled by its camber line: a straight main ele
 
 ### Solution
 
-**(a)** Each segment is a flat plate with its vortex at its own **quarter**-length point and its control point at its own **three-quarter**-length point. The quarter point puts the lift at the aerodynamic centre. The three-quarter point is the spacing ($c/2$ apart) that gives the flat-plate lift slope $2\pi$ ([[SESA3043 2.2 - Lumped Vortex Method#2. The flat plate with one lumped vortex (slides 28–30)|2.2 §2]]). Segments need not be equal, as long as the distances are worked out carefully (GE, ll. 224–228). Distances are taken along the chord, since $\cos\delta\approx1$ ([[SESA3043 2.2 - Lumped Vortex Method#5. Camber with N lumped vortices (slides 34–35 and notes)|2.2 §5]]).
+**(a)** Each segment is a flat plate with its vortex at its own **quarter**-length point and its control point at its own **three-quarter**-length point. The quarter point puts the lift at the aerodynamic centre. The three-quarter point is the spacing ($c/2$ apart) that gives the flat-plate lift slope $2\pi$ ([[SESA3043 2.2 - Lumped Vortex Method#2. The flat plate with one lumped vortex|2.2 §2]]). Segments need not be equal, as long as the distances are worked out carefully (GE). Distances are taken along the chord, since $\cos\delta\approx1$ ([[SESA3043 2.2 - Lumped Vortex Method#5. Camber with N lumped vortices|2.2 §5]]).
 
 $$
 x_{\Gamma_1}=\tfrac14(0.75c)=\tfrac{3c}{16},\qquad x_{T_1}=\tfrac34(0.75c)=\tfrac{9c}{16},
@@ -793,7 +793,7 @@ Zero lift when $\alpha=-\delta/2=\boxed{-5^\circ}$. The flap carries 29 % of the
 > [!check] Python (sympy and numpy)
 > Solving the two tangency equations symbolically gives $\Gamma_1=\tfrac{3\pi}{10}U c(3\alpha+\delta)$, $\Gamma_2=\tfrac{\pi}{10}Uc(\alpha+2\delta)$ and $C_L=2\pi\alpha+\pi\delta$. Numbers: $\Gamma_1=12.5015$, $\Gamma_2=5.0445$ m²/s, $C_L=0.8773$, $L'=1074.7$ N/m. Thin-aerofoil $\alpha_{L=0}/\delta=-0.6090$ (also by quadrature); $C_L^{TAT}=0.9968$. $N$-vortex flap model: effectiveness 0.5469 (3+1 segments), 0.5760, 0.5921, 0.6005, 0.6068, 0.6085 (96+32 segments).
 
-> [!warning] Exam traps (PM1, ll. 77–84)
+> [!warning] Exam traps
 > - Resolve the free stream **normal to each segment**, not to the chord.
 > - Use small angles throughout ($\sin\approx\tan\approx$ angle, $\cos\approx1$). Carrying exact trigonometry leaves equations you cannot solve in the time.
 
@@ -818,8 +818,8 @@ Zero lift when $\alpha=-\delta/2=\boxed{-5^\circ}$. The flap carries 29 % of the
 
 ### Solution
 
-**(a)** ([[SESA3043 2.3 - Panel Methods#4. Method 1: source + vortex panels (slides 51–53; explainer pp. 8–31)|2.3 §4]])
-- **No lift from sources.** A source distribution carries no circulation: the velocity goes *through* it (PM2, ll. 100–109). By Kutta–Joukowski $L'=\rho U_\infty\Gamma$, so zero circulation means zero lift. The explainer's source-panel cylinder gives the symmetric $C_p=1-4\sin^2\theta$ and no lift.
+**(a)** ([[SESA3043 2.3 - Panel Methods#4. Method 1: source + vortex panels|2.3 §4]])
+- **No lift from sources.** A source distribution carries no circulation: the velocity goes *through* it. By Kutta–Joukowski $L'=\rho U_\infty\Gamma$, so zero circulation means zero lift. The explainer's source-panel cylinder gives the symmetric $C_p=1-4\sin^2\theta$ and no lift.
 - **Unknowns.** A source strength $\sigma_j$ on each panel plus **one** vortex strength $\gamma$ shared by all panels: $N+1$.
 - **Equations.** Tangency (zero total normal velocity) at the $N$ panel control points gives $N$ equations. One more is needed.
 - **Kutta condition**, either discrete form (they agree only as $N\to\infty$):
@@ -830,15 +830,15 @@ Zero lift when $\alpha=-\delta/2=\boxed{-5^\circ}$. The flap carries 29 % of the
   - $q_{t,i}=\sum_j q_{t,ij}+U_\infty\cos(\beta_i-\alpha)$ and $C_{p,i}=1-(q_{t,i}/U_\infty)^2$;
   - $\Gamma=\gamma\sum_jl_j$ and $C_L=2\Gamma/(U_\infty c)$ (Kutta–Joukowski, since only the vortex panels carry circulation).
 
-The exam asks for this process and logic, not panel-by-panel arithmetic (16 Oct, ll. 376–394; see the hub).
+The exam asks for this process and logic, not panel-by-panel arithmetic (see the hub).
 
-**(b)** With many lumped vortices, each control point sits ever closer to a point vortex. The self-term $\Gamma/(2\pi d)$ grows without bound and swamps the rest of the matrix (PM1, ll. 98–109). A panel spreads the same loading over a finite length. As a point on a source panel is approached, the subtended angle $\theta_2-\theta_1\to\pm\pi$ and $r_1=r_2$, so the self-induced velocity is
+**(b)** With many lumped vortices, each control point sits ever closer to a point vortex. The self-term $\Gamma/(2\pi d)$ grows without bound and swamps the rest of the matrix. A panel spreads the same loading over a finite length. As a point on a source panel is approached, the subtended angle $\theta_2-\theta_1\to\pm\pi$ and $r_1=r_2$, so the self-induced velocity is
 
 $$
 u_\pm=0,\qquad w_\pm=\pm\frac{\sigma}{2\pi}\pi=\pm\frac\sigma2:
 $$
 
-finite, a clean half-strength outflow on each side ([[SESA3043 2.3 - Panel Methods#Self-induced values (slide 48)|2.3 §2]]). The diagonal is $\tfrac12$, the matrix is diagonally dominant and well conditioned, with no singularity.
+finite, a clean half-strength outflow on each side ([[SESA3043 2.3 - Panel Methods#Self-induced values|2.3 §2]]). The diagonal is $\tfrac12$, the matrix is diagonally dominant and well conditioned, with no singularity.
 
 **(c)(i)** Front control point $F=(-l/2,0)$, outward normal $-x$. Contributions to the **outward normal** velocity:
 - free stream: $U_\infty\cdot(-1)=-U_\infty$ (into the body);
@@ -922,7 +922,7 @@ A smooth flat plate of length $L=0.4$ m is in a uniform stream of lab air at $U=
 
 ### Solution
 
-**(a)** ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#5. Blasius boundary-layer properties (slides 39–74; Notes §3)|3.2 §5]])
+**(a)** ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#5. Blasius boundary-layer properties|3.2 §5]])
 
 $$
 Re_L=\frac{UL}{\nu}=\frac{8\times0.4}{1.5\times10^{-5}}=\boxed{2.133\times10^5},
@@ -960,7 +960,7 @@ $$
 \tau_w=C_f\cdot\tfrac12\rho U^2=1.438\times10^{-3}\times38.4=\boxed{0.0552\ \text{Pa}.}
 $$
 
-**(b)** Control volume ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#4. Momentum thickness θ: the control-volume derivation (slides 19–29)|3.1 §4]]):
+**(b)** Control volume ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#4. Momentum thickness θ: the control-volume derivation|3.1 §4]]):
 
 $$
 D=\rho U^2\theta(L)=1.2\times64\times0.5751\times10^{-3}=\boxed{0.0442\ \text{N/m}.}
@@ -980,7 +980,7 @@ $$
 C_D=\frac{D}{\tfrac12\rho U^2L}=\frac{0.04417}{38.4\times0.4}=\boxed{2.88\times10^{-3}}=\frac{1.328}{\sqrt{Re_L}}=2C_f(L).
 $$
 
-The two routes agree because $\theta^*=f''(0)$: on a flat plate, $\mathrm d\theta/\mathrm dx=C_f/2$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#5. Wall shear, skin friction and the drag link (slide 32)|3.1 §5]]).
+The two routes agree because $\theta^*=f''(0)$: on a flat plate, $\mathrm d\theta/\mathrm dx=C_f/2$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#5. Wall shear, skin friction and the drag link|3.1 §5]]).
 
 **(c)** Integrate continuity up from the wall ($v=0$ at $y=0$) to a height $Y$ above the layer:
 
@@ -1012,7 +1012,7 @@ $$
 v_e=8\times\frac{1.490\times10^{-3}}{2\times0.4}=\boxed{14.9\ \text{mm/s}}=\frac{0.860\,U}{\sqrt{Re_L}}.
 $$
 
-The streamlines leave the plate at only $0.11^\circ$. The outer flow does not see a zero-thickness plate. It sees the **effective (displaced) body**: the plate thickened by $\delta^*$ on each side, here 2.98 mm in total at the TE ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#Physical meaning: the effective body (slide 17)|3.1 §3]]). So the potential flow starts outside the displaced surface (see [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#The effective body (slides 98–99)|3.2, the effective body]]).
+The streamlines leave the plate at only $0.11^\circ$. The outer flow does not see a zero-thickness plate. It sees the **effective (displaced) body**: the plate thickened by $\delta^*$ on each side, here 2.98 mm in total at the TE ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#Physical meaning: the effective body|3.1 §3]]). So the potential flow starts outside the displaced surface (see [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#The effective body|3.2, the effective body]]).
 
 **(d)** Exponent:
 
@@ -1020,7 +1020,7 @@ $$
 m=\frac{\beta}{2-\beta}=\frac{-0.18}{2.18}=\boxed{-0.0826}\quad(U_e\ \text{falls with }x:\ \text{adverse gradient}).
 $$
 
-Wall turning angle. $\beta\pi$ is the included angle of a **symmetric** wedge, so a single wall turns by half of it ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Special cases and the wedge angle (slide 77)|3.2 §6]]):
+Wall turning angle. $\beta\pi$ is the included angle of a **symmetric** wedge, so a single wall turns by half of it ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Special cases and the wedge angle|3.2 §6]]):
 
 $$
 \delta_w=-\frac{\beta\pi}{2}=0.09\pi=\boxed{16.2^\circ}\ \text{away from the flow}.
@@ -1054,7 +1054,7 @@ Blasius at the same $Re_x$: $\delta^*=1.291$ mm, $\theta=0.498$ mm, $H=2.59$, $C
 | Blasius | 1.29 mm | 0.498 mm | 2.59 | $1.66\times10^{-3}$ |
 | ratio | 1.61 | 1.26 | 1.27 | 0.26 |
 
-**Comment.** The adverse gradient decelerates the slow near-wall fluid. The profile empties ($H$ rises from 2.59 towards 4.03, the separation value), the displacement thickness grows by 60 %, and the wall shear falls by three quarters. A wall turned away by only $16^\circ$ already does this; at about $18^\circ$ ($\beta=-0.1988$) the wall shear vanishes and the layer separates. A laminar layer tolerates only a very mild adverse gradient (BL2, ll. 636–655).
+**Comment.** The adverse gradient decelerates the slow near-wall fluid. The profile empties ($H$ rises from 2.59 towards 4.03, the separation value), the displacement thickness grows by 60 %, and the wall shear falls by three quarters. A wall turned away by only $16^\circ$ already does this; at about $18^\circ$ ($\beta=-0.1988$) the wall shear vanishes and the layer separates. A laminar layer tolerates only a very mild adverse gradient.
 
 > [!check] Python (shooting, RK45, tolerance $10^{-11}$)
 > Recomputed data: Blasius $f''(0)=0.46960$, $\eta^*=1.21678$, $\theta^*=0.46960$, $\eta_{99}=3.4719$, $H=2.5911$. $\beta=-0.18$: $f''(0)=0.12864$, $\eta^*=1.87158$, $\theta^*=0.56771$, $H=3.2967$.
@@ -1085,7 +1085,7 @@ $$
 
 ### Solution
 
-Let $\eta=y/\delta$, so $\mathrm dy=\delta\,\mathrm d\eta$; the integrands vanish for $\eta>1$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#7. Worked example: the linear profile (revision 3.1 Q4)|3.1 §7]] does the same for a straight line).
+Let $\eta=y/\delta$, so $\mathrm dy=\delta\,\mathrm d\eta$; the integrands vanish for $\eta>1$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#7. Worked example: the linear profile|3.1 §7]] does the same for a straight line).
 
 **(a) Displacement thickness:**
 
@@ -1123,7 +1123,7 @@ $$
 C_f=\frac{\tau_w}{\tfrac12\rho U_e^2}=\frac{\pi\nu}{U_e\delta}=\boxed{\frac{\pi}{Re_\delta}.}
 $$
 
-**(b) Origin.** For a flat plate (zero pressure gradient) a control volume gives $D=\rho U_e^2\theta$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#4. Momentum thickness θ: the control-volume derivation (slides 19–29)|3.1 §4]]). The drag is also $\int_0^x\tau_w\,\mathrm dx$. Differentiating both in $x$ gives $\rho U_e^2\,\mathrm d\theta/\mathrm dx=\tau_w$, i.e. $\mathrm d\theta/\mathrm dx=C_f/2$. It holds **for a flat plate only** (BL1, ll. 285–289).
+**(b) Origin.** For a flat plate (zero pressure gradient) a control volume gives $D=\rho U_e^2\theta$ ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#4. Momentum thickness θ: the control-volume derivation|3.1 §4]]). The drag is also $\int_0^x\tau_w\,\mathrm dx$. Differentiating both in $x$ gives $\rho U_e^2\,\mathrm d\theta/\mathrm dx=\tau_w$, i.e. $\mathrm d\theta/\mathrm dx=C_f/2$. It holds **for a flat plate only**.
 
 Substitute the profile results:
 
@@ -1196,9 +1196,9 @@ H=\frac{1/8}{7/72}=\frac97=\boxed{1.29.}
 $$
 
 At $y/\delta=0.1$: sine profile $u/U_e=0.156$; power law $0.720$.
-- **Friction.** The turbulent profile is much **fuller**: it reaches most of $U_e$ very close to the wall, so its wall gradient, and hence $\tau_w=\mu\,\partial u/\partial y|_0$, is much larger. A turbulent layer has more skin-friction drag (BL1, ll. 82–88; [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#2. Boundary-layer thickness δ99 (slides 8–9)|3.1 §2]]). The power law itself has an infinite slope at $y=0$. It describes the outer turbulent layer, not the viscous sublayer, so $\tau_w$ cannot be taken from its slope.
-- **$H$ as a diagnostic.** It is a single number for the profile shape ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#6. Shape factor H (slide 31)|3.1 §6]]): about 2.6 for a laminar flat plate, about 1.3 for a turbulent one, and rising above about 3.5–4 towards laminar separation. A measured fall in $H$ along a plate signals transition. $H$ tells you whether the layer is laminar or turbulent and whether there is a pressure gradient (BL1, ll. 234–250).
-- **Aerofoils.** The flat-plate relation assumes uniform pressure on the control volume ($U_e$ constant). On an aerofoil $U_e(x)$ varies, so the pressure forces on the control volume do not cancel and $\theta$ changes for a second reason. The general momentum integral equation adds that pressure-gradient term. Its derivation is CH3-5, which has not yet been lectured ([[SESA3043 3.5 - Momentum Integral Equation|3.5]], written ahead).
+- **Friction.** The turbulent profile is much **fuller**: it reaches most of $U_e$ very close to the wall, so its wall gradient, and hence $\tau_w=\mu\,\partial u/\partial y|_0$, is much larger. A turbulent layer has more skin-friction drag ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#2. Boundary-layer thickness δ99|3.1 §2]]). The power law itself has an infinite slope at $y=0$. It describes the outer turbulent layer, not the viscous sublayer, so $\tau_w$ cannot be taken from its slope.
+- **$H$ as a diagnostic.** It is a single number for the profile shape ([[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#6. Shape factor H|3.1 §6]]): about 2.6 for a laminar flat plate, about 1.3 for a turbulent one, and rising above about 3.5–4 towards laminar separation. A measured fall in $H$ along a plate signals transition. $H$ tells you whether the layer is laminar or turbulent and whether there is a pressure gradient.
+- **Aerofoils.** The flat-plate relation assumes uniform pressure on the control volume ($U_e$ constant). On an aerofoil $U_e(x)$ varies, so the pressure forces on the control volume do not cancel and $\theta$ changes for a second reason. The general momentum integral equation adds that pressure-gradient term. It is derived in [[SESA3043 3.5 - Momentum Integral Equation|3.5]].
 
 > [!check] Python (sympy and numpy)
 > Sine profile: $\delta^*/\delta=(\pi-2)/\pi=0.36338$, $\theta/\delta=(4-\pi)/(2\pi)=0.13662$, $H=2.65979$, wall slope $\pi/2$. $\delta^2=22.9952\,\nu x/U_e$, so $\delta/x=4.7953/\sqrt{Re_x}$; $\theta/x=0.6551$, $\delta^*/x=1.7425$, $C_f\sqrt{Re_x}=0.6551$; errors against Blasius $-1.33\,\%$ ($C_f$), $+1.25\,\%$ ($\delta^*$), $+2.66\,\%$ ($H$). At $x=0.5$ m: $\delta=4.1529$ mm, $\theta=0.5674$ mm, $\delta^*=1.5091$ mm, $C_f=1.1347\times10^{-3}$ (Blasius $\delta_{99}=4.2522$ mm, $C_f=1.1501\times10^{-3}$). Power law: $1/8$, $7/72$, $H=9/7=1.2857$. At $y/\delta=0.1$: 0.1564 and 0.7197.

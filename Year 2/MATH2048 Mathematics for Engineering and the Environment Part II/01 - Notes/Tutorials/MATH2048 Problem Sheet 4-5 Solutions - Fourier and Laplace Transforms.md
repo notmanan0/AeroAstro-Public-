@@ -62,7 +62,7 @@ $$
 F=\frac{-j}{\sqrt{2\pi}}\sin\frac{\omega\pi}a\Big[\frac1{a-\omega}+\frac1{a+\omega}\Big]=\boxed{-j\sqrt{\frac2\pi}\;\frac{a\sin(\omega\pi/a)}{a^2-\omega^2}}
 $$
 
-With $a=1$ this reproduces the Lecture 9 result ✔.
+With $a=1$ this reproduces the one-period-of-sine result in [[MATH2048 TR1 - Fourier Transforms#One period of sine|TR1]] ✔.
 
 **Fourier integral representation.** $F$ is odd in $\omega$ and purely imaginary. So in $e^{j\omega t}=\cos\omega t+j\sin\omega t$, only the $j\sin\omega t$ part survives the integral, and it contributes twice the integral over $(0,\infty)$:
 

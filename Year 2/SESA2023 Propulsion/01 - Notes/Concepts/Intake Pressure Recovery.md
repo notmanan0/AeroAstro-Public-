@@ -33,7 +33,7 @@ $$
 
 which is 0.93 at M 1.5, 0.72 at M 2 and 0.33 at M 3. In [[SESA2023 Problem Sheet 4 Solutions]] Q4.3, a ramjet with a normal-shock inlet at M 3.42 has $p_{02}/p_{01} = 0.227$, so 13.7 bar becomes 3.1 bar. Other values: a measured ramjet with $\Gamma_d = 0.600$ ([[SESA2023 Exam 2023-24 Solutions]] Q2), and a 95 % isentropic intake efficiency at M 2 giving $\Gamma_d = 0.924$ ([[SESA2023 Exam 2013-14 Solutions]] Q3).
 
-Legacy exams ask about the SR-71's J58, which handled its whole speed range with a translating inlet spike that positioned the shocks and kept them at the cowl, bypass doors, and fourth-stage compressor bleed routed through six bypass tubes to the afterburner. At high Mach that made it a turbo-ramjet, with most of the thrust coming from the inlet, afterburner and ejector.
+The SR-71's J58 handled its whole speed range with a translating inlet spike that positioned the shocks and kept them at the cowl, bypass doors, and fourth-stage compressor bleed routed through six bypass tubes to the afterburner. At high Mach that made it a turbo-ramjet, with most of the thrust coming from the inlet, afterburner and ejector.
 
 ## Related
 

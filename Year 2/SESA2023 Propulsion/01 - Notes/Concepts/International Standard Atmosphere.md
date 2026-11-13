@@ -15,7 +15,7 @@ sources: ["02 - Sources/Lectures/Week 01 - Introduction and Fundamentals.pdf"]
 
 The International Standard Atmosphere is a standard model of temperature, pressure and density against altitude. At sea level $p = 101.325$ kPa, $T = 288.15$ K, $\rho = 1.225$ kg/m³ and $a = 340$ m/s. The temperature falls at 6.5 K/km up to 11 km, is constant at 216.65 K from 11 to 20 km, and rises at 1 K/km above 20 km.
 
-Tables give the ratios $\delta = p/p_{sl}$, $\theta = T/T_{sl}$ and $\sigma = \rho/\rho_{sl}$ (Data Book Tables 24–25; Mattingly App. A also gives cold, hot and tropical days). In the troposphere $p = p_{sl}(T/T_{sl})^{g_0/(RL)}$ with $g_0/(RL) = 5.256$, and in the isothermal layer $p = p_{11}\exp[-g_0(h-h_{11})/(RT)]$. The speed of sound is $a = a_{sl}\sqrt\theta$, and viscosity comes from Sutherland's law. Use the static ambient values, then convert to stagnation conditions with the flight Mach number.
+The ratios $\delta = p/p_{sl}$, $\theta = T/T_{sl}$ and $\sigma = \rho/\rho_{sl}$ are tabulated (Data Book Tables 24–25; Mattingly App. A adds cold, hot and tropical days). In the troposphere $p = p_{sl}(T/T_{sl})^{g_0/(RL)}$ with $g_0/(RL) = 5.256$, and in the isothermal layer $p = p_{11}\exp[-g_0(h-h_{11})/(RT)]$. The speed of sound is $a = a_{sl}\sqrt\theta$, and viscosity comes from Sutherland's law. Use the static ambient values, then convert to stagnation conditions with the flight Mach number.
 
 For engines, thrust falls with altitude because $\dot m\propto\rho$, while the falling $T_{02}$ raises $T_{04}/T_{02}$, which helps efficiency. Hot days cut take-off power: in PS7 Q7.3b, 20 K more at the inlet costs 10 % of the specific work.
 

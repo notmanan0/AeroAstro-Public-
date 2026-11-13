@@ -29,25 +29,25 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_Hoh
 > - **Common mistakes:** adding the Earth's radius to a radius that was already given as a radius (the GEO 42 164 km); taking the full period instead of half for the transfer time.
 > - **Practise:** [[#200 km parking orbit to GEO]] · [[SESA2024 Workbook Ch5 - Mission Analysis Solutions#Q7. From a 300 km equatorial orbit to GEO with staged masses|Workbook Q7]]
 
-RemoveDebris, a debris-capture demonstrator built by the Surrey Space Centre and Surrey Satellite Technology Ltd, was released from the ISS by a robotic arm and pushed gently backwards, against the station's direction of travel (2025-12-02, ll. 45–130).
+RemoveDebris, a debris-capture demonstrator built by the Surrey Space Centre and Surrey Satellite Technology Ltd, was released from the ISS by a robotic arm and pushed gently backwards, against the station's direction of travel.
 
-The push is tiny, but it is a change of velocity at one point, so the new orbit must pass through the release point; an orbit that does not intersect the ISS's is impossible. Taking speed away removes kinetic energy, so the energy equation says the new $a$ is smaller: the satellite drops into a slightly elliptical orbit whose highest point is the release point (ll. 133–265). Releasing it forwards would instead have raised it on to a larger ellipse, and many orbits later it could come back and meet the station, which is why the backwards release was chosen (ll. 265–315).
+The push is tiny, but it is a change of velocity at one point, so the new orbit must pass through the release point; an orbit that does not intersect the ISS's is impossible. Taking speed away removes kinetic energy, so the energy equation says the new $a$ is smaller: the satellite drops into a slightly elliptical orbit whose highest point is the release point. Releasing it forwards would instead have raised it on to a larger ellipse, and many orbits later it could come back and meet the station, which is why the backwards release was chosen.
 
-Relative to the ISS, a smaller $a$ means a shorter period by Kepler's third law, so after half an orbit the satellite is below the station and has gained on it, and each orbit it pulls further ahead, ending up ahead and below (ll. 330–395; numbers for the new orbit and the drift are in §4).
+Relative to the ISS, a smaller $a$ means a shorter period by Kepler's third law, so after half an orbit the satellite is below the station and has gained on it, and each orbit it pulls further ahead, ending up ahead and below (numbers for the new orbit and the drift are in §4).
 
 ![[ast_removedebris_relative_motion.png|800]]
 
-To catch up with a spacecraft ahead in the same orbit, the pursuer fires backwards, drops into a lower, faster orbit, and fires forwards again once it has caught up (ll. 375–445). Orbital rendezvous, which Apollo depended on, rests on this reasoning.
+To catch up with a spacecraft ahead in the same orbit, the pursuer fires backwards, drops into a lower, faster orbit, and fires forwards again once it has caught up. Orbital rendezvous, which Apollo depended on, rests on this reasoning.
 
 The linearised relative-motion equations behind the figure are outside the syllabus, and the figure shows only the shape of the motion. Its two numbers, a 177 m drop and an 833 m drift per orbit, follow from the energy equation and Kepler's third law alone (§4).
 
 ## 1. Assumptions for orbital transfers
 
-The analysis rests on two assumptions (2025-12-02, ll. 463–530; slides).
+The analysis rests on two assumptions.
 
-The burns are impulsive. A high-thrust engine fires for a time much shorter than the orbital period, so the change of velocity happens at a single point and the position does not change during it. That means a chemical engine. An ion thruster firing for weeks spirals out gradually instead, and this analysis does not apply to it (ll. 715–730).
+The burns are impulsive. A high-thrust engine fires for a time much shorter than the orbital period, so the change of velocity happens at a single point and the position does not change during it. That means a chemical engine. An ion thruster firing for weeks spirals out gradually instead, and this analysis does not apply to it.
 
-The burns are along the velocity, with a small flight-path angle $\gamma$ between the velocity and the local horizontal. If the thrust has a component along the radius, part of the work goes into fighting gravity rather than changing the orbit, a gravity loss. At periapsis and apoapsis the velocity is exactly perpendicular to the radius, $\gamma=0$, so burns there have no gravity loss (ll. 485–520). With both assumptions the rocket equation applies with no loss terms:
+The burns are along the velocity, with a small flight-path angle $\gamma$ between the velocity and the local horizontal. If the thrust has a component along the radius, part of the work goes into fighting gravity rather than changing the orbit, a gravity loss. At periapsis and apoapsis the velocity is exactly perpendicular to the radius, $\gamma=0$, so burns there have no gravity loss. With both assumptions the rocket equation applies with no loss terms:
 
 $$
 \Delta V=V_{ex}\ln\frac{m_0}{m_f},
@@ -55,11 +55,11 @@ $$
 
 where $V_{ex}$ is the exhaust velocity and $m_0$ and $m_f$ the masses before and after the burn (see [[SESA2024 07 - Spacecraft Propulsion]]).
 
-Because an impulsive burn leaves the position unchanged, the orbits before and after a burn always share the burn point. Two circular orbits of different radii never meet, so going from one to the other needs at least two burns: one to leave the first circle on an orbit that reaches the second, and another to stay on the second (ll. 529–545).
+Because an impulsive burn leaves the position unchanged, the orbits before and after a burn always share the burn point. Two circular orbits of different radii never meet, so going from one to the other needs at least two burns: one to leave the first circle on an orbit that reaches the second, and another to stay on the second.
 
 ## 2. The Hohmann transfer
 
-The Hohmann transfer is the two-burn transfer between coplanar circular orbits that uses a transfer ellipse tangent to both circles (2025-12-02, ll. 551–715). Its periapsis touches the inner circle of radius $r_1$ and its apoapsis touches the outer circle of radius $r_2$. Both burns are therefore at apses and along the velocity, with no gravity loss.
+The Hohmann transfer is the two-burn transfer between coplanar circular orbits that uses a transfer ellipse tangent to both circles. Its periapsis touches the inner circle of radius $r_1$ and its apoapsis touches the outer circle of radius $r_2$. Both burns are therefore at apses and along the velocity, with no gravity loss.
 
 ![[ast_hohmann_leo_geo.png|700]]
 
@@ -95,7 +95,7 @@ $$
 \Delta V=\Delta V_{Tp}+\Delta V_{Ta}.
 $$
 
-Both burns are prograde, so only the magnitudes matter and the order of subtraction does not (2020 Lecture 13, ll. 91–100).
+Both burns are prograde, so only the magnitudes matter and the order of subtraction does not.
 
 ### The ΔV in closed form
 
@@ -166,9 +166,9 @@ $$
 
 ## 3. Where the Hohmann transfer is used, and its limits
 
-Most Earth orbits are near-circular and most upper stages are chemical, so the Hohmann transfer is the standard way to raise an orbit, and it is a very common exam question (ll. 705–715). In practice a launcher often performs the first burn, placing the spacecraft in a geostationary transfer orbit (GTO), and the spacecraft's own apogee engine performs the second (2020 Lecture 13, ll. 151–160).
+Most Earth orbits are near-circular and most upper stages are chemical, so the Hohmann transfer is the standard way to raise an orbit, and it is a very common exam question. In practice a launcher often performs the first burn, placing the spacecraft in a geostationary transfer orbit (GTO), and the spacecraft's own apogee engine performs the second.
 
-The same method works around the Sun, from the Earth's orbit to another planet's, but the transfer to the outer planets takes years, and the planets must be correctly phased when you leave, which defines a launch window (Workbook Ch5 Q6). It is the minimum-ΔV two-impulse transfer between coplanar circles, but it is not the fastest, and it does not handle elliptical, inclined or hyperbolic orbits, which need other manoeuvres (ll. 727–750).
+The same method works around the Sun, from the Earth's orbit to another planet's, but the transfer to the outer planets takes years, and the planets must be correctly phased when you leave, which defines a launch window (Workbook Ch5 Q6). It is the minimum-ΔV two-impulse transfer between coplanar circles, but it is not the fastest, and it does not handle elliptical, inclined or hyperbolic orbits, which need other manoeuvres.
 
 ## 4. How far a small burn moves the orbit
 
@@ -239,9 +239,9 @@ Constants: $R_E=6378$ km and $\mu=398\,600\ \mathrm{km^3/s^2}$.
 
 ### 200 km parking orbit to GEO
 
-The task is to find the ΔV and transfer time from a circular 200 km parking orbit to GEO ($r_{GEO}=42\,164$ km), and to estimate the propellant for the second burn if $V_{ex}=2.5$ km/s (Chapter 5 worked example, 2020 Lecture 13).
+The task is to find the ΔV and transfer time from a circular 200 km parking orbit to GEO ($r_{GEO}=42\,164$ km), and to estimate the propellant for the second burn if $V_{ex}=2.5$ km/s (Chapter 5 worked example).
 
-The parking-orbit radius is $r_1=6378+200=6578$ km, which is also the transfer orbit's perigee. The GEO radius is given as a radius, so nothing is added to it (2020 Lecture 13, ll. 31–45). Then
+The parking-orbit radius is $r_1=6378+200=6578$ km, which is also the transfer orbit's perigee. The GEO radius is given as a radius, so nothing is added to it. Then
 
 $$
 a_T=\frac{6578+42\,164}{2}=24\,371\ \mathrm{km}.
@@ -273,7 +273,7 @@ $$
 \Delta V=3.932\ \mathrm{km/s}.
 $$
 
-Rounded components give 1.478 and 3.933 km/s, the values on the slides. The transfer time is half the transfer orbit's period:
+Rounded components give 1.478 and 3.933 km/s. The transfer time is half the transfer orbit's period:
 
 $$
 \frac{a_T^3}{\mu}=\frac{24\,371^3}{398\,600}=3.631\times10^7\ \mathrm{s^2},
@@ -294,7 +294,7 @@ x=\exp\left(\frac{1.477}{2.5}\right)=1.806,
 \frac{m_p}{m_0}=1-\frac1x=0.446.
 $$
 
-About 45 % of the spacecraft's mass after the first burn is propellant for the circularisation alone. A 4000 kg spacecraft in GTO arrives in GEO at about 2200 kg (2020 Lecture 13, ll. 151–160).
+About 45 % of the spacecraft's mass after the first burn is propellant for the circularisation alone. A 4000 kg spacecraft in GTO arrives in GEO at about 2200 kg.
 
 > [!check] Plausibility of the second burn's propellant
 > Real GEO communications satellites launched into GTO typically carry roughly half their launch mass as propellant, most of it for apogee raising, which matches this estimate.
@@ -313,7 +313,7 @@ with a transfer time of 5.29 h. Reading the sum off while the orbit is still bei
 
 - Parent: [[SESA2024 Astronautics Hub]]
 - Previous: [[SESA2024 04 - Orbital Energy and the Vis-Viva Equation]]
-- Next: [[SESA2024 11 - Payload and Orbit Selection]] (2025-12-04); the Hohmann make-up manoeuvre is applied in [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]]
+- Next: [[SESA2024 11 - Payload and Orbit Selection]]; the Hohmann make-up manoeuvre is applied in [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]]
 - Concepts: [[Hohmann Transfer]] · [[Vis-Viva Equation]] · [[Tsiolkovsky Rocket Equation]] (SESA2023)
 - Propulsion: [[SESA2024 07 - Spacecraft Propulsion]] · [[SESA2023 Propulsion Hub]]
 

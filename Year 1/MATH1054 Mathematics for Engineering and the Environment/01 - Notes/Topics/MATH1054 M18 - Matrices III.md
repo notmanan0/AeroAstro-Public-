@@ -41,7 +41,7 @@ Engineers meet eigenvalues everywhere a linear system has natural directions or 
 
 ---
 
-## 1. Row operations, echelon form and rank (James §5.6)
+## 1. Row operations, echelon form and rank
 
 Three elementary row operations are used: interchange two rows, multiply a row by a non-zero constant, and add a multiple of one row to another. Applied to the augmented matrix $[\mathbf A|\mathbf b]$ they do not change the solution set, because each can be undone by an operation of the same kind (interchange again, multiply by the reciprocal, subtract the same multiple). Any solution of the new system therefore solves the old one and vice versa.
 
@@ -173,7 +173,7 @@ $$
 
 Three non-zero rows: the rank is 3, and the $4\times4$ determinant is zero.
 
-## 2. Consistency of a linear system (James §5.6)
+## 2. Consistency of a linear system
 
 Write the system as $\mathbf A\mathbf X=\mathbf b$, with $\mathbf A$ of size $m\times n$ ($m$ equations, $n$ unknowns), and form the **augmented matrix** $[\mathbf A|\mathbf b]$ by appending $\mathbf b$ as an extra column. James writes it $(\mathbf A:\mathbf b)$. Reduce the augmented matrix to echelon form. If $\operatorname{rank}\mathbf A=r$, the result has $r$ non-zero rows in the $\mathbf A$ part, with leading entries in columns $c_1<c_2<\dots<c_r$, and $m-r$ rows that are zero in the $\mathbf A$ part:
 
@@ -269,7 +269,7 @@ $$
 
 The last row reads $0=-1$, so $\operatorname{rank}\mathbf A=2$ but $\operatorname{rank}[\mathbf A|\mathbf b]=3$: no solution.
 
-## 3. Systems with more unknowns or more equations (James §5.6)
+## 3. Systems with more unknowns or more equations
 
 A system with more unknowns than equations is **underspecified** (also called under-determined), and one with more equations than unknowns is **overspecified** (over-determined). There is no determinant to test, but row reduction and the rank rule work unchanged.
 
@@ -385,7 +385,7 @@ $$
 
 So $q-\operatorname{rank}=4-3=1$ and the vectors are dependent. The dependence is $(0,2,1)^{\mathrm T}=4(1,2,3)^{\mathrm T}-2(2,3,4)^{\mathrm T}-3(0,0,1)^{\mathrm T}$: the components are $4-4-0=0$, $8-6-0=2$ and $12-8-3=1$.
 
-## 5. The eigenvalue problem and the characteristic equation (James §5.7.1)
+## 5. The eigenvalue problem and the characteristic equation
 
 For a square $n\times n$ matrix $\mathbf A$, the **eigenvalue problem** is to find the scalars $\lambda$ for which
 
@@ -492,7 +492,7 @@ with roots $\lambda=2,1,-1$. Expanding $|\lambda\mathbf I-\mathbf A|$ down the f
 > [!check] Trace and determinant of Example 5.41
 > The roots $2+1+(-1)=2$ match $\operatorname{tr}\mathbf A=1+2-1=2$, and $2\cdot1\cdot(-1)=-2$ matches $|\mathbf A|=-2$ (the cubic $(1-\lambda)(\lambda-2)(\lambda+1)$ at $\lambda=0$ is $1\cdot(-2)\cdot1$). A wrong sign anywhere in the expansion almost always breaks one of these.
 
-## 6. Eigenvectors (James §5.7.2)
+## 6. Eigenvectors
 
 For each eigenvalue $\lambda_i$, the eigenvectors are the non-zero solutions of
 
@@ -627,7 +627,7 @@ $$
 
 Since $\lambda_1\neq\lambda_2$ and $\mathbf e_1\neq\mathbf0$, $c_1=0$, and then $c_2\mathbf e_2=\mathbf0$ gives $c_2=0$. The same step, applied repeatedly, removes one vector at a time for any $n$.
 
-## 7. Symmetric matrices (James §5.7.7)
+## 7. Symmetric matrices
 
 A square matrix is **symmetric** if $\mathbf A^{\mathrm T}=\mathbf A$. Real symmetric matrices occur constantly (stiffness and mass matrices, stress tensors, inertia tensors), and they have two properties that make their eigenproblems especially clean: their eigenvalues are real, and eigenvectors belonging to different eigenvalues are orthogonal, $\mathbf e_i^{\mathrm T}\mathbf e_j=0$ for $i\neq j$. An $n\times n$ real symmetric matrix also always has $n$ mutually orthogonal eigenvectors, even with repeated eigenvalues, though repeated roots are outside this module.
 

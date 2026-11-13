@@ -177,11 +177,11 @@ $$
 -Cv^2\cos\theta=ma_x,\qquad -mg-Cv^2\sin\theta=ma_y
 $$
 
-with $v\cos\theta=v_x$, $v\sin\theta=v_y$ and $v=\sqrt{v_x^2+v_y^2}$. The drag rotates with the velocity while the weight does not, so the two equations are coupled and nonlinear and have no analytical solution. They can be stepped forward numerically by holding the acceleration constant over each small time step. For a launch at 60 m/s and 60° the drag-free range is 318 m, and a realistic drag term cuts it to under 100 m; at 6 m/s the effect is negligible (DAMS2-1-1, ll. 160–169). Drag is not assessed numerically, but the qualitative effect is: the projectile slows faster, rises less and flies for a shorter time (L03, ll. 394–439).
+with $v\cos\theta=v_x$, $v\sin\theta=v_y$ and $v=\sqrt{v_x^2+v_y^2}$. The drag rotates with the velocity while the weight does not, so the two equations are coupled and nonlinear and have no analytical solution. They can be stepped forward numerically by holding the acceleration constant over each small time step. For a launch at 60 m/s and 60° the drag-free range is 318 m, and a realistic drag term cuts it to under 100 m; at 6 m/s the effect is negligible (DAMS2-1-1). Drag is not assessed numerically, but the qualitative effect is: the projectile slows faster, rises less and flies for a shorter time.
 
 ## 4. Normal and tangential coordinates
 
-When the path is known it is more convenient to resolve vectors along it. The n-t axes have their origin on the particle and move with it (slide p. 22). The $t$ axis is tangent to the path, positive in the direction of motion, with unit vector $\mathbf u_t$. The $n$ axis is perpendicular to it and positive towards the **centre of curvature** $O'$, with unit vector $\mathbf u_n$. $O'$ always lies on the concave side of the path. The **radius of curvature** $\rho$ is the distance from the path to $O'$; it varies along a general path, but over an infinitesimal arc $ds$ the path is part of a circle of radius $\rho$, so $ds=\rho\,d\theta$, where $d\theta$ is the angle through which the tangent turns.
+When the path is known it is more convenient to resolve vectors along it. The n-t axes have their origin on the particle and move with it. The $t$ axis is tangent to the path, positive in the direction of motion, with unit vector $\mathbf u_t$. The $n$ axis is perpendicular to it and positive towards the **centre of curvature** $O'$, with unit vector $\mathbf u_n$. $O'$ always lies on the concave side of the path. The **radius of curvature** $\rho$ is the distance from the path to $O'$; it varies along a general path, but over an infinitesimal arc $ds$ the path is part of a circle of radius $\rho$, so $ds=\rho\,d\theta$, where $d\theta$ is the angle through which the tangent turns.
 
 ![[d_nt_coordinates.png|900]]
 
@@ -227,7 +227,7 @@ $$
 \boxed{\mathbf a=a_t\mathbf u_t+a_n\mathbf u_n,\qquad a_t=\dot v,\qquad a_n=\frac{v^2}{\rho}}
 $$
 
-with magnitude $a=\sqrt{a_t^2+a_n^2}$. The **tangential** component $a_t$ changes the speed and can be positive or negative; with $a_t=dv/dt=v\,dv/ds$ it obeys the same rules as straight-line motion, including $a_t\,ds=v\,dv$. The **normal** (centripetal) component $a_n$ changes the direction of the velocity and always points towards the centre of curvature. A particle moving at constant speed on a curve has $a_t=0$ but $a_n\neq0$: constant speed is not constant velocity. The graphical argument is not assessed (L03, ll. 573–581), but the result is used in every problem.
+with magnitude $a=\sqrt{a_t^2+a_n^2}$. The **tangential** component $a_t$ changes the speed and can be positive or negative; with $a_t=dv/dt=v\,dv/ds$ it obeys the same rules as straight-line motion, including $a_t\,ds=v\,dv$. The **normal** (centripetal) component $a_n$ changes the direction of the velocity and always points towards the centre of curvature. A particle moving at constant speed on a curve has $a_t=0$ but $a_n\neq0$: constant speed is not constant velocity. The graphical argument is not assessed, but the result is used in every problem.
 
 ### Radius of curvature
 
@@ -257,7 +257,7 @@ $$
 \boxed{\rho=\frac{\left[1+(dy/dx)^2\right]^{3/2}}{\left|d^2y/dx^2\right|}}
 $$
 
-The modulus makes $\rho$ positive; the sign of $d^2y/dx^2$ only says which side the centre of curvature is on. Both derivatives are with respect to $x$, not time. The proof is in a calculus text (result on slide p. 28).
+The modulus makes $\rho$ positive; the sign of $d^2y/dx^2$ only says which side the centre of curvature is on. Both derivatives are with respect to $x$, not time. The proof is in a calculus text.
 
 ### The third axis
 
@@ -287,7 +287,7 @@ $$
 \omega=\omega_0+\alpha_ct,\qquad \theta=\theta_0+\omega_0t+\tfrac12\alpha_ct^2,\qquad \omega^2=\omega_0^2+2\alpha_c(\theta-\theta_0)
 $$
 
-valid only for constant $\alpha$. A particle that turns once in 4 s at constant speed has $\omega=2\pi/4=\pi/2$ rad/s whatever the radius (L04, ll. 92–115).
+valid only for constant $\alpha$. A particle that turns once in 4 s at constant speed has $\omega=2\pi/4=\pi/2$ rad/s whatever the radius.
 
 ## 5. Equations of motion in n-t coordinates
 
@@ -314,11 +314,11 @@ The procedure:
 3. Write the scalar equations.
 4. Use $a_t=dv/dt=v\,dv/ds$ and $a_n=v^2/\rho$ to link them to the motion.
 
-An unknown force such as friction can be drawn in a guessed direction; a negative answer means it acts the other way, and the diagram need not be redrawn (L04, ll. 225–231).
+An unknown force such as friction can be drawn in a guessed direction; a negative answer means it acts the other way, and the diagram need not be redrawn.
 
 ## 6. Relative motion of two particles
 
-Tutorial 2 Q9–Q11 use this section (source: the pre-recorded DAMS2-3 only).
+Tutorial 2 Q9–Q11 use this section.
 
 Let $A$ and $B$ be two particles with positions $\mathbf r_A$ and $\mathbf r_B$ measured from the same fixed origin. The position of $B$ relative to $A$, as seen by an observer translating with $A$ (moving with it but not rotating), is
 
@@ -346,7 +346,7 @@ Also $\mathbf v_{A/B}=-\mathbf v_{B/A}$. These vector equations can be solved by
 
 ### Collision of two particles
 
-Particles A and B move in a plane with $\mathbf r_A=3t\,\mathbf i+9t(2-t)\,\mathbf j$ m and $\mathbf r_B=3(t^2-2t+2)\,\mathbf i+3(t-2)\,\mathbf j$ m. Do they collide, and if so where and at what speeds? (DAMS2-1, ll. 79–140; the position functions are reconstructed to reproduce the quoted roots and speeds.)
+Particles A and B move in a plane with $\mathbf r_A=3t\,\mathbf i+9t(2-t)\,\mathbf j$ m and $\mathbf r_B=3(t^2-2t+2)\,\mathbf i+3(t-2)\,\mathbf j$ m. Do they collide, and if so where and at what speeds? (DAMS2-1; the position functions are reconstructed to reproduce the quoted roots and speeds.)
 
 Equal $x$ coordinates:
 
@@ -378,7 +378,7 @@ at $t=2$ s, so $v_A=\sqrt{9+324}=18.2$ m/s and $v_B=\sqrt{36+9}=6.71$ m/s.
 
 ### Particle accelerating on a circle
 
-A particle starts from rest on a circle of radius $R=2$ m with constant angular acceleration $\alpha_c=1.5$ rad/s². Find its velocity and acceleration after it has travelled half way round, $s=\pi R$ (DAMS2-2, ll. 184–239; the radius is implied by the quoted answers).
+A particle starts from rest on a circle of radius $R=2$ m with constant angular acceleration $\alpha_c=1.5$ rad/s². Find its velocity and acceleration after it has travelled half way round, $s=\pi R$ (DAMS2-2; the radius is implied by the quoted answers).
 
 Half a revolution is $\theta=\pi$. From rest, $\theta=\tfrac12\alpha_ct^2$:
 
@@ -404,7 +404,7 @@ so $a=\sqrt{3^2+18.85^2}=19.1$ m/s², pointing inwards at $\arctan(3/18.85)=9.0�
 
 ### Car over a parabolic hill
 
-A car of mass 800 kg travels over a hill $y=20(1-x^2/6400)$ m. At A, where $x=80$ m and the car is coming down, its speed is 9 m/s and increasing at 3 m/s². Find the resultant normal force and friction force on the car from the road (slides pp. 39–43; DAMS2-Ex1; L04, ll. 193–307).
+A car of mass 800 kg travels over a hill $y=20(1-x^2/6400)$ m. At A, where $x=80$ m and the car is coming down, its speed is 9 m/s and increasing at 3 m/s². Find the resultant normal force and friction force on the car from the road (DAMS2-Ex1).
 
 ![[d_hill_car_example.png|900]]
 
@@ -508,11 +508,11 @@ $$
 \theta=\theta_0\cos\left(\sqrt{\frac gL}\,t\right),\qquad T_{period}=2\pi\sqrt{\frac Lg}
 $$
 
-independent of the mass and, for small swings, of the amplitude. With $L=9.22$ m, $T_{period}=6.09$ s (DAMS2-Ex2, ll. 467–491); for $m=1.2$ kg released at 12.5°, the tension ranges from 11.5 N to 12.3 N. The same equation of motion reappears as the undamped oscillator of [[FEEG1002 D6 - Single Degree of Freedom Vibration|D6]].
+independent of the mass and, for small swings, of the amplitude. With $L=9.22$ m, $T_{period}=6.09$ s (DAMS2-Ex2); for $m=1.2$ kg released at 12.5°, the tension ranges from 11.5 N to 12.3 N. The same equation of motion reappears as the undamped oscillator of [[FEEG1002 D6 - Single Degree of Freedom Vibration|D6]].
 
 ### Two boats leaving a shore
 
-Two boats leave the same point together, A at 6 m/s heading 30° to the left of the normal to the shore and B at 4.5 m/s at 45° to the shore, so that their headings are 75° apart. Find the velocity of A relative to B and when they are 240 m apart (DAMS2-3, ll. 73–129).
+Two boats leave the same point together, A at 6 m/s heading 30° to the left of the normal to the shore and B at 4.5 m/s at 45° to the shore, so that their headings are 75° apart. Find the velocity of A relative to B and when they are 240 m apart (DAMS2-3).
 
 With $x$ along the shore and $y$ out from it,
 
@@ -536,7 +536,7 @@ $$
 
 ### Mine car hoisted by its own motor
 
-A 100 kg mine car C on an incline is hoisted by a motor M mounted on the car itself, which pulls in the cable with a relative acceleration $a_{P/C}=1.2$ m/s², where P is the point of the cable entering the motor. Find the car's acceleration (DAMS2-3, ll. 130–171; Tutorial 2 Q9).
+A 100 kg mine car C on an incline is hoisted by a motor M mounted on the car itself, which pulls in the cable with a relative acceleration $a_{P/C}=1.2$ m/s², where P is the point of the cable entering the motor. Find the car's acceleration (DAMS2-3; Tutorial 2 Q9).
 
 Measure positions down the incline from the fixed point at the top. In the arrangement of the sheet the car hangs on two strands of the cable and the third length runs to P, so the constant cable length gives $s_P+2s_C=\text{const}$ and
 

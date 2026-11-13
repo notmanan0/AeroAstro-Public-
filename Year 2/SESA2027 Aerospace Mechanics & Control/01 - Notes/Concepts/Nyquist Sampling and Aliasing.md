@@ -21,7 +21,7 @@ $$
 
 Aliasing folds high-frequency content, such as structural vibration or EMI, back into a false low-frequency signal, so the flight computer sees motion that isn't physically there. It can't be undone after sampling, because the alias and a real signal at that frequency give identical samples. In PS C Q10, manoeuvres up to 8 Hz need $f_s>16$ Hz; at $f_s = 50$ Hz, $f_N = 25$ Hz and a 70 Hz vibration aliases to $|70-50| = 20$ Hz, inside the control band ([[SESA2027 Part C Problem Sheet Solutions]]).
 
-The defence is an analogue low-pass anti-alias filter before the ADC, with its cut-off at or below $f_N$, which for an RC filter means $\tau = RC\ge1/(\pi f_s)$. That filter adds phase lag in the control band, and a higher sampling rate allows a higher cut-off and less lag. In practice systems sample at around $10f_{max}$ rather than the bare $2f_{max}$, to leave room for the filter's roll-off and keep the delay down.
+The defence is an analogue low-pass anti-alias filter before the ADC, with its cut-off at or below $f_N$, which for an RC filter means $\tau = RC\ge1/(\pi f_s)$. That is a minimum, not a guarantee. A first-order filter is only 3 dB down at its cut-off and then falls at 20 dB per decade, so with $f_c = f_N = 25$ Hz the 70 Hz vibration above still passes at 34 % of its amplitude (−9.5 dB). The cut-off has to sit lower, or $f_s$ be raised, until the attenuation at the frequencies that would fold into the control band is large enough. The filter adds phase lag in the control band, and a higher sampling rate allows a higher cut-off and less lag. In practice systems sample at around $10f_{max}$ rather than the bare $2f_{max}$, to leave room for the filter's roll-off and keep the delay down.
 
 ![[amc_psc_q10_aliasing.png|620]]
 

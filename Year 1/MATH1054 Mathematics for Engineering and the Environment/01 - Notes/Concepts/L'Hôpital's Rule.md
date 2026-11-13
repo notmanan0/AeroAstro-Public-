@@ -47,6 +47,6 @@ The trap is applying the rule to a form that is no longer indeterminate. In $\li
 
 ## Related
 
-- Topics: [[MATH1054 M20 - Further Calculus II#11. L'Hôpital's rule (James §9.4.3)|M20 §11]] · [[MATH1054 M20 Solutions - Further Calculus II#Exercise 19: L'Hôpital's rule|Exercise 19 solutions]] · [[MATH1054 M20 Solutions - Further Calculus II#Example 9.14: L'Hôpital's rule|Example 9.14 solution]]
+- Topics: [[MATH1054 M20 - Further Calculus II#11. L'Hôpital's rule|M20 §11]] · [[MATH1054 M20 Solutions - Further Calculus II#Exercise 19: L'Hôpital's rule|Exercise 19 solutions]] · [[MATH1054 M20 Solutions - Further Calculus II#Example 9.14: L'Hôpital's rule|Example 9.14 solution]]
 - Concepts: [[Taylor and Maclaurin Series]] · [[Derivative from First Principles]]
 - Sources: James, Modern Engineering Mathematics (6th ed.) §9.4.3; MATH1054 Module Booklet, Module 20 (items 17–18, Booklet Example 2, Specimen Test 20 Q6).

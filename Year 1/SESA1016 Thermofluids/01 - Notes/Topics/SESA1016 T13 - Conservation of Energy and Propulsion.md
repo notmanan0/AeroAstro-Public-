@@ -29,7 +29,7 @@ sources: ["02 - Sources/Lectures/Chapter 13.pdf", "02 - Sources/Lectures/SESA101
 > - **Common mistakes:** using $c_v\Delta T$ instead of $c_p\Delta T$ in a flow device (the flow work is already in $h$); forgetting the outlet kinetic energy when the outlet is fast.
 > - **Practise:** [[#Worked example - hair dryer]] · [[SESA1016 Problem Sheet 09 - Momentum and Energy Conservation Solutions]] Q9.7–Q9.11
 
-Energy, from an engineer's point of view, is the capacity of something to do work on its surroundings (25 Mar, ll. 14–25). Water behind a dam can be piped to a turbine; wind can turn a wind turbine's blades (and, in a storm, wreck them); fuel burnt in a jet engine heats gas that drives a turbine and then leaves the nozzle fast enough to push the aircraft. A fluid particle stores energy in three forms that matter here, kinetic, potential and internal, and it can convert between them; what the first law conserves is their total.
+Energy, from an engineer's point of view, is the capacity of something to do work on its surroundings. Water behind a dam can be piped to a turbine; wind can turn a wind turbine's blades (and, in a storm, wreck them); fuel burnt in a jet engine heats gas that drives a turbine and then leaves the nozzle fast enough to push the aircraft. A fluid particle stores energy in three forms that matter here, kinetic, potential and internal, and it can convert between them; what the first law conserves is their total.
 
 The closed-system first law, $\Delta U=Q-W$, follows one lump of gas. A jet engine has fresh air going through it continuously, so the relevant figure is not how many joules one lump receives but how many joules per second the engine handles. So, as for mass and momentum, the first law is rewritten for a control volume as a budget of energy rates: heat and work going in per second must show up as the difference between the energy carried out and carried in per second.
 
@@ -53,11 +53,11 @@ $$
 \boxed{e=\tfrac12V^2+gz+u}
 $$
 
-(25 Mar, ll. 120–146). Other forms, chemical and electrical, are not needed here. For a gas flow the $gz$ term is usually negligible; for liquids it often matters.
+. Other forms, chemical and electrical, are not needed here. For a gas flow the $gz$ term is usually negligible; for liquids it often matters.
 
 ## 2. Flow of energy through a surface
 
-The energy crossing a surface per second is derived as for mass and momentum (25 Mar, ll. 152–214). Through an element $dA$ with unit normal $\vec n$, the volume crossing in time $dt$ is
+The energy crossing a surface per second is derived as for mass and momentum. Through an element $dA$ with unit normal $\vec n$, the volume crossing in time $dt$ is
 
 $$
 d\mathcal V=dA\,dx=dA\,(\vec V\cdot\vec n)\,dt
@@ -93,7 +93,7 @@ $$
 \frac{dU}{dt}=\dot Q-\dot W
 $$
 
-$\dot Q$ is the heat transfer rate (thermal power, positive into the fluid) and $\dot W$ the power delivered by the fluid to its surroundings, both in watts (25 Mar, ll. 292–336). Engines are rated in power, not joules per cycle.
+$\dot Q$ is the heat transfer rate (thermal power, positive into the fluid) and $\dot W$ the power delivered by the fluid to its surroundings, both in watts. Engines are rated in power, not joules per cycle.
 
 ### The control-volume statement
 
@@ -121,11 +121,11 @@ $$
 \dot Q-\dot W=\int_{CS}\rho e\,(\vec V\cdot\vec n)\,dA
 $$
 
-Burning fuel inside the control volume ($\dot Q>0$) must show up as a positive net outflow of energy: the gas leaves hotter than it came in (25 Mar, ll. 413–435).
+Burning fuel inside the control volume ($\dot Q>0$) must show up as a positive net outflow of energy: the gas leaves hotter than it came in.
 
 ### Shaft work and flow work
 
-The work splits into two parts (25 Mar, ll. 436–556):
+The work splits into two parts:
 
 $$
 \dot W=\dot W_x+\dot W_{flow}
@@ -199,11 +199,11 @@ $$
 \dot Q-\dot W_x=\sum_{out}\dot m\,h_{tot,out}-\sum_{in}\dot m\,h_{tot,in}
 $$
 
-Not every term matters in every problem (25 Mar, ll. 683–773). Across a 1 m tall jet engine, $\Delta(gz)\approx10$ J/kg, while $c_p\Delta T\approx1000\times1000=10^6$ J/kg: drop $gz$ for gas flows, keep it for pumps and hydraulic systems. In a combustor the gas moves slowly for flame stability, so kinetic energy can be dropped there too.
+Not every term matters in every problem. Across a 1 m tall jet engine, $\Delta(gz)\approx10$ J/kg, while $c_p\Delta T\approx1000\times1000=10^6$ J/kg: drop $gz$ for gas flows, keep it for pumps and hydraulic systems. In a combustor the gas moves slowly for flame stability, so kinetic energy can be dropped there too.
 
 ### The three conservation laws together
 
-Mass, momentum and energy conservation have the same structure (25 Mar, ll. 778–827). With uniform flow through one inlet and one outlet, in steady flow:
+Mass, momentum and energy conservation have the same structure. With uniform flow through one inlet and one outlet, in steady flow:
 
 | Law | Net outflow (general) | Uniform, one in, one out | Balances |
 |---|---|---|---|
@@ -242,7 +242,7 @@ Putting $b=1$, $\vec V$ or $e$ recovers continuity, the momentum equation and th
 
 ### Thrust from momentum conservation
 
-In cruise the thrust of the engines balances the drag (induced plus parasitic) of the aircraft. Work in the aircraft's frame, so air approaches at $V_\infty$ (27 Mar, ll. 21–112). Draw a control volume round an engine, large enough that the pressure is atmospheric all over its surface. Air enters the streamtube feeding the engine at $V_\infty$ and leaves as a jet at $V_j$; outside the streamtube the velocity stays $V_\infty$ and contributes no net momentum change. The air mass flow is $\dot m_{air}$ and the fuel adds $\dot m_{fuel}$, but the fuel-to-air ratio is only 1–5 %, so $\dot m_{fuel}$ is neglected.
+In cruise the thrust of the engines balances the drag (induced plus parasitic) of the aircraft. Work in the aircraft's frame, so air approaches at $V_\infty$. Draw a control volume round an engine, large enough that the pressure is atmospheric all over its surface. Air enters the streamtube feeding the engine at $V_\infty$ and leaves as a jet at $V_j$; outside the streamtube the velocity stays $V_\infty$ and contributes no net momentum change. The air mass flow is $\dot m_{air}$ and the fuel adds $\dot m_{fuel}$, but the fuel-to-air ratio is only 1–5 %, so $\dot m_{fuel}$ is neglected.
 
 ![[tf_jet_engine_cv.png|900]]
 
@@ -252,11 +252,11 @@ $$
 \boxed{T=\dot m_{air}(V_j-V_\infty)}
 $$
 
-With $V_j>V_\infty$, the engine pushes the air backwards; by Newton's third law the air pushes the engine forwards, and that reaction is the thrust. There are two ways to get a given thrust: accelerate a small mass flow a lot (large $V_j-V_\infty$), or a large mass flow a little (large $\dot m_{air}$) (27 Mar, ll. 128–151).
+With $V_j>V_\infty$, the engine pushes the air backwards; by Newton's third law the air pushes the engine forwards, and that reaction is the thrust. There are two ways to get a given thrust: accelerate a small mass flow a lot (large $V_j-V_\infty$), or a large mass flow a little (large $\dot m_{air}$).
 
 ### Energy balance and propulsive efficiency
 
-Apply the SFEE to the same control volume (27 Mar, ll. 155–222). Fuel burnt at $\dot m_{fuel}$ with calorific value $C_v$ releases $\dot Q=\dot m_{fuel}C_v$. The compressor and turbine are inside the control volume and are paid for by $\dot Q$, so no external shaft work crosses it, $\dot W_x=0$. With $\Delta h=c_p\Delta T$:
+Apply the SFEE to the same control volume. Fuel burnt at $\dot m_{fuel}$ with calorific value $C_v$ releases $\dot Q=\dot m_{fuel}C_v$. The compressor and turbine are inside the control volume and are paid for by $\dot Q$, so no external shaft work crosses it, $\dot W_x=0$. With $\Delta h=c_p\Delta T$:
 
 $$
 \dot Q=\dot m_{air}\left[c_p(T_j-T_\infty)+\tfrac12\left(V_j^2-V_\infty^2\right)\right]
@@ -282,7 +282,7 @@ $$
 \eta_p\le\frac{(V_j-V_\infty)V_\infty}{\tfrac12(V_j^2-V_\infty^2)}=\frac{2V_\infty}{V_j+V_\infty}=\frac{2}{1+V_j/V_\infty}
 $$
 
-which falls as $V_j/V_\infty$ rises: wasting kinetic energy in a fast jet is expensive. Since $\dot Q=DV_\infty/\eta_p$, a lower $\eta_p$ means more fuel for the same aircraft. Accelerating a large mass of air by a little is more fuel-efficient (27 Mar, ll. 270–292).
+which falls as $V_j/V_\infty$ rises: wasting kinetic energy in a fast jet is expensive. Since $\dot Q=DV_\infty/\eta_p$, a lower $\eta_p$ means more fuel for the same aircraft. Accelerating a large mass of air by a little is more fuel-efficient.
 
 ![[tf_propulsive_efficiency.png|900]]
 
@@ -300,11 +300,11 @@ $$
 T=\dot m_f(V_f-V_\infty)+\dot m_j(V_j-V_\infty)
 $$
 
-The fan's share can be 80–90 % of the total, giving the low fuel burn that keeps airliner tickets cheap (27 Mar, ll. 293–353). Military aircraft prioritise thrust-to-weight ratio, compactness, radar signature and speed, so they use low-bypass turbofans or turbojets and accept the higher fuel burn.
+The fan's share can be 80–90 % of the total, giving the low fuel burn that keeps airliner tickets cheap. Military aircraft prioritise thrust-to-weight ratio, compactness, radar signature and speed, so they use low-bypass turbofans or turbojets and accept the higher fuel burn.
 
 ### Components of a turbojet
 
-The core of a jet engine follows, loosely, the Brayton cycle of [[SESA1016 T5 - Ideal Heat Engine Models#The Brayton cycle|T5]], but as an open cycle: the exhaust is not cooled and returned to the compressor but thrown out, and the heat it carries away (the area under 6→1 on the $T$–$s$ diagram, $\dot m c_p(T_j-T_\infty)$) is real and lowers the efficiency (27 Mar, ll. 436–525). The stations are 1 (free stream), 2 (intake exit), 3 (compressor exit), 4 (turbine inlet), 5 (turbine exit) and 6 (nozzle exit). Each component is analysed with the SFEE on its own control volume, steady, with uniform ports and $gz$ dropped.
+The core of a jet engine follows, loosely, the Brayton cycle of [[SESA1016 T5 - Ideal Heat Engine Models#The Brayton cycle|T5]], but as an open cycle: the exhaust is not cooled and returned to the compressor but thrown out, and the heat it carries away (the area under 6→1 on the $T$–$s$ diagram, $\dot m c_p(T_j-T_\infty)$) is real and lowers the efficiency. The stations are 1 (free stream), 2 (intake exit), 3 (compressor exit), 4 (turbine inlet), 5 (turbine exit) and 6 (nozzle exit). Each component is analysed with the SFEE on its own control volume, steady, with uniform ports and $gz$ dropped.
 
 #### Intake
 

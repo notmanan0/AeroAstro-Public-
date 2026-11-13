@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Supplem
 
 # Homentropic Flow
 
-A **homentropic** flow has the same entropy everywhere, $\nabla s=0$. That is stronger than isentropic. Isentropic flow only needs $\mathrm Ds/\mathrm Dt=0$, so each particle keeps its own entropy; homentropic flow also needs every particle to have started with the same value (L3-1, ll. 152–156).
+A **homentropic** flow has the same entropy everywhere, $\nabla s=0$. That is stronger than isentropic. Isentropic flow only needs $\mathrm Ds/\mathrm Dt=0$, so each particle keeps its own entropy; homentropic flow also needs every particle to have started with the same value.
 
 You get it when uniform flow from a single reservoir passes through a region with no shocks. A curved shock breaks it, because different streamlines cross the shock at different angles and pick up different entropy jumps ([[Entropy Change Across a Shock]]). Behind such a shock the flow is still isentropic along each streamline, but no longer homentropic.
 
@@ -30,4 +30,4 @@ All of this is lost as soon as a shock forms. That is why MoC nozzle design aims
 ## Related
 
 - [[Method of Characteristics]] · [[Isentropic Ideal-gas Relations]] · [[Entropy Change Across a Shock]]
-- Detail: [[SESA3029 W05a - Method of Characteristics#4. Momentum along the streamline and homentropic flow (3.1 slides 5–6)|W05a §4]]
+- Detail: [[SESA3029 W05a - Method of Characteristics#4. Momentum along the streamline and homentropic flow|W05a §4]]

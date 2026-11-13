@@ -29,27 +29,27 @@ sources: ["02 - Sources/FEM Lectures/Lecture_4_Linear_elastic_FEA_Final_2.pdf", 
 > - **Common mistakes:** fixing every bottom node in both directions (over-constraint and false corner stresses); trusting a peak stress from a single coarse mesh.
 > - **Practise:** [[#Worked example: nozzle yield pressure and the two criteria]] · [[SESA2029 FEA Worked Examples]]
 
-The three labs are all linear elastic analyses, so the assumptions, limits and practical pitfalls of the method apply to each (2026-02-06 11:01, ll. 1–10).
+The three labs are all linear elastic analyses, so the assumptions, limits and practical pitfalls of the method apply to each (2026-02-06 11:01).
 
-"Linear" means the structure behaves like a single spring: double the load and every displacement, strain and stress doubles. That requires the material to stay on the straight part of its stress–strain curve, and the structure to deform so little that its geometry, and therefore its stiffness, is effectively unchanged. Under those conditions one analysis answers every load level, which is what makes linear FEA cheap, reliable and scalable, and why Airbus and Rolls-Royce still size structures with it before any nonlinear work (ll. 26–35).
+"Linear" means the structure behaves like a single spring: double the load and every displacement, strain and stress doubles. That requires the material to stay on the straight part of its stress–strain curve, and the structure to deform so little that its geometry, and therefore its stiffness, is effectively unchanged. Under those conditions one analysis answers every load level, which is what makes linear FEA cheap, reliable and scalable, and why Airbus and Rolls-Royce still size structures with it before any nonlinear work.
 
 ## 1. The two assumptions and their limits
 
-The first assumption is a linear elastic material: stress proportional to strain with constant Young's modulus $E$, and stress kept below the yield or brittle-fracture stress, so the properties do not change through yielding, creep or crack growth (ll. 1–50). Once a material yields, $E$ alone no longer describes it. Aluminium, steel and titanium are used in their linear range in normal service; viscous materials behave differently.
+The first assumption is a linear elastic material: stress proportional to strain with constant Young's modulus $E$, and stress kept below the yield or brittle-fracture stress, so the properties do not change through yielding, creep or crack growth. Once a material yields, $E$ alone no longer describes it. Aluminium, steel and titanium are used in their linear range in normal service; viscous materials behave differently.
 
-The second is small-deformation theory: the deformation is small enough not to change the structural response, so the stiffness matrix stays constant (ll. 11–25). With large deformations the stiffness depends on the amplitude of the response, which affects both stress and dynamic predictions. Lightweight composite structures that flex a lot need nonlinear procedures, an active research area and the subject of [[SESA2029 B9 - Nonlinear FE Analysis|B9]].
+The second is small-deformation theory: the deformation is small enough not to change the structural response, so the stiffness matrix stays constant. With large deformations the stiffness depends on the amplitude of the response, which affects both stress and dynamic predictions. Lightweight composite structures that flex a lot need nonlinear procedures, an active research area and the subject of [[SESA2029 B9 - Nonlinear FE Analysis|B9]].
 
-Whether linear analysis is sufficient depends on three things (ll. 61–95). The first is where the analysis sits in the design cycle: early on, hand sizing with closed-form solutions for beams, cylinders and spheres may be more appropriate than any FEA. The second is whether the structure is likely to buckle. Small-deformation theory does not pick up buckling, yet it is a main failure mode of aerospace structures: wing skins are divided into panels between stiffeners precisely to prevent it, and if buckling is the mode to avoid, a buckling analysis is needed. The third is whether the material will deform plastically. Linear FEA cannot model plasticity, but it does give the load at which first yield occurs.
+Whether linear analysis is sufficient depends on three things. The first is where the analysis sits in the design cycle: early on, hand sizing with closed-form solutions for beams, cylinders and spheres may be more appropriate than any FEA. The second is whether the structure is likely to buckle. Small-deformation theory does not pick up buckling, yet it is a main failure mode of aerospace structures: wing skins are divided into panels between stiffeners precisely to prevent it, and if buckling is the mode to avoid, a buckling analysis is needed. The third is whether the material will deform plastically. Linear FEA cannot model plasticity, but it does give the load at which first yield occurs.
 
 ## 2. The procedure in practice
 
-The three stages from [[SESA2029 B1 - Introduction to FEA and the Matrix Displacement Method|B1]] each hide choices (ll. 96–245).
+The three stages from [[SESA2029 B1 - Introduction to FEA and the Matrix Displacement Method|B1]] each hide choices.
 
-Geometry can be built in the FE program or imported from SolidWorks or CATIA. Element choice is a trade-off between accuracy and cost: the lab beam can use BEAM188 or BEAM189, which differ in number of nodes and in how well they represent the theoretical deformation (ll. 121–135). The example bracket uses 10-node tetrahedra, with nodes at the corners and mid-edges, which mesh irregular shapes easily ([[Solid Elements (Tetrahedra and Hexahedra)]]). Each tetrahedral node has three translational DOF and no rotations, because rotation is represented by the relative translations of several nodes (ll. 171–185).
+Geometry can be built in the FE program or imported from SolidWorks or CATIA. Element choice is a trade-off between accuracy and cost: the lab beam can use BEAM188 or BEAM189, which differ in number of nodes and in how well they represent the theoretical deformation. The example bracket uses 10-node tetrahedra, with nodes at the corners and mid-edges, which mesh irregular shapes easily ([[Solid Elements (Tetrahedra and Hexahedra)]]). Each tetrahedral node has three translational DOF and no rotations, because rotation is represented by the relative translations of several nodes.
 
-Linear stress analysis needs $E$ and Poisson's ratio $\nu$; modal analysis also needs the density. Material choice is driven by cost (aluminium cheapest, then steel, then composites), manufacturability (metals are easy, composites are laid up ply by ply), performance and availability (ll. 141–170). Composites drive modern aerospace through their high specific stiffness: a composite fan blade is lighter, so its centrifugal load is lower and a larger fan diameter becomes possible.
+Linear stress analysis needs $E$ and Poisson's ratio $\nu$; modal analysis also needs the density. Material choice is driven by cost (aluminium cheapest, then steel, then composites), manufacturability (metals are easy, composites are laid up ply by ply), performance and availability. Composites drive modern aerospace through their high specific stiffness: a composite fan blade is lighter, so its centrifugal load is lower and a larger fan diameter becomes possible.
 
-The software has no units; it multiplies numbers. Geometry, material properties and loads must therefore use one consistent set: SI (m, N, Pa, kg/m³), or mm, N, MPa with density in tonne/mm³ (ll. 51–60, 166–170). Mixing millimetre geometry with $E$ in pascals is a common error. The mm–N–MPa set is consistent because $1\ \mathrm{MPa}=1\ \mathrm{N/mm^2}$ and a force of 1 N accelerates 1 tonne at $1\ \mathrm{mm/s^2}$. For aluminium that means
+The software has no units; it multiplies numbers. Geometry, material properties and loads must therefore use one consistent set: SI (m, N, Pa, kg/m³), or mm, N, MPa with density in tonne/mm³. Mixing millimetre geometry with $E$ in pascals is a common error. The mm–N–MPa set is consistent because $1\ \mathrm{MPa}=1\ \mathrm{N/mm^2}$ and a force of 1 N accelerates 1 tonne at $1\ \mathrm{mm/s^2}$. For aluminium that means
 
 $$
 E=70\ \mathrm{GPa}=70\,000\ \mathrm{MPa},
@@ -59,21 +59,21 @@ $$
 
 Entering $\rho=2700$ with millimetre geometry makes the model $10^{12}$ times too heavy and its natural frequencies $10^6$ times too low, a mistake that shows up immediately in a modal analysis ([[SESA2029 B8 - Modal Analysis|B8]]).
 
-Supports are applied as prescribed displacements at nodes, fixed in some or all of $x$, $y$, $z$; the bracket's back face is fully fixed as if bonded to a rigid foundation (ll. 166–190). Loads go on directly as nodal forces or element pressures, or indirectly on the solid model's faces and edges, from which the program transfers them to the mesh. APDL can script any load function, so a CFD pressure map can be applied to a wing; since the deformed wing changes the CFD boundary, the two are iterated in an aeroelastic analysis at a later design stage (ll. 191–210).
+Supports are applied as prescribed displacements at nodes, fixed in some or all of $x$, $y$, $z$; the bracket's back face is fully fixed as if bonded to a rigid foundation. Loads go on directly as nodal forces or element pressures, or indirectly on the solid model's faces and edges, from which the program transfers them to the mesh. APDL can script any load function, so a CFD pressure map can be applied to a wing; since the deformed wing changes the CFD boundary, the two are iterated in an aeroelastic analysis at a later design stage.
 
-The solution step assembles and solves $\{F\}=[K]\{d\}$, then back-calculates strains, stresses and reactions; for linear analysis it is fully automatic (ll. 211–220).
+The solution step assembles and solves $\{F\}=[K]\{d\}$, then back-calculates strains, stresses and reactions; for linear analysis it is fully automatic.
 
-Post-processing starts with the deformed shape, automatically scaled to be visible, which is the first check that the supports are right; then displacement contours, then stress contours of the three normal, three shear or three principal stresses, or the von Mises equivalent stress (ll. 221–265). A common lab mistake is forgetting to read the results file before plotting, so nothing seems to change when the thickness is changed. Exporting results to Excel or Python is often more flexible than the GUI. The highest stress usually sits at a sharp change of geometry, so the fillet radius there is a design choice ([[Stress Concentration Factor and Factor of Safety]]; a perfectly sharp corner is a singularity, [[Stress Singularities]]).
+Post-processing starts with the deformed shape, automatically scaled to be visible, which is the first check that the supports are right; then displacement contours, then stress contours of the three normal, three shear or three principal stresses, or the von Mises equivalent stress. A common lab mistake is forgetting to read the results file before plotting, so nothing seems to change when the thickness is changed. Exporting results to Excel or Python is often more flexible than the GUI. The highest stress usually sits at a sharp change of geometry, so the fillet radius there is a design choice ([[Stress Concentration Factor and Factor of Safety]]; a perfectly sharp corner is a singularity, [[Stress Singularities]]).
 
 ### The answer is approximate
 
-More elements give a better approximation, and a graduated mesh puts more of them where the stress is high (ll. 266–295). In the T-section example the peak normal stress rises from 393.6 MPa on a uniform coarse mesh to 417.1 MPa with a graded mesh refined round the fillet, so a single coarse mesh underestimates the peak. A convergence study is part of every stress analysis; the plate with a hole in lab 2 is where it is practised ([[Mesh Convergence and Grid Independence]]).
+More elements give a better approximation, and a graduated mesh puts more of them where the stress is high. In the T-section example the peak normal stress rises from 393.6 MPa on a uniform coarse mesh to 417.1 MPa with a graded mesh refined round the fillet, so a single coarse mesh underestimates the peak. A convergence study is part of every stress analysis; the plate with a hole in lab 2 is where it is practised ([[Mesh Convergence and Grid Independence]]).
 
 ## 3. Rigid-body motion and over-constraint
 
-If the model is not constrained, it can move through space undeformed and strain-free; $[K]$ is singular and the solver usually fails (ll. 321–335). Solving the lab beam without its clamp has no answer, because the structure floats free. A 3D body has six rigid-body modes, three translations and three rotations; a 2D body has three. Removing them all without over-constraining the model is harder than it sounds ([[Boundary Conditions and Rigid Body Modes]]).
+If the model is not constrained, it can move through space undeformed and strain-free; $[K]$ is singular and the solver usually fails. Solving the lab beam without its clamp has no answer, because the structure floats free. A 3D body has six rigid-body modes, three translations and three rotations; a 2D body has three. Removing them all without over-constraining the model is harder than it sounds ([[Boundary Conditions and Rigid Body Modes]]).
 
-For a 2D block resting on a surface with pressure on top (ll. 331–350), fixing $u_y=0$ at the bottom nodes prevents translation in $y$ and rotation about $z$, but not sliding in $x$, so a rigid-body mode remains. Fixing both $u_x$ and $u_y$ at every bottom node stops the rigid-body motion but over-constrains the model: as the block is squashed, Poisson's effect makes it want to expand sideways, and the fixed bottom cannot, so false stress concentrations appear at the bottom corners instead of the uniform stress of the real block. The right answer is $u_y=0$ along the bottom and $u_x=0$ at a single point, or on a line of symmetry. Choosing constraints needs thought before the model is built, and sometimes trial and error.
+For a 2D block resting on a surface with pressure on top, fixing $u_y=0$ at the bottom nodes prevents translation in $y$ and rotation about $z$, but not sliding in $x$, so a rigid-body mode remains. Fixing both $u_x$ and $u_y$ at every bottom node stops the rigid-body motion but over-constrains the model: as the block is squashed, Poisson's effect makes it want to expand sideways, and the fixed bottom cannot, so false stress concentrations appear at the bottom corners instead of the uniform stress of the real block. The right answer is $u_y=0$ along the bottom and $u_x=0$ at a single point, or on a line of symmetry. Choosing constraints needs thought before the model is built, and sometimes trial and error.
 
 ![[dam_block_constraints.png|900]]
 
@@ -81,11 +81,11 @@ The figure solves the block both ways with a small plane-stress code (2:1 block,
 
 ### Symmetry
 
-When geometry, loads and supports are symmetric about one or more planes, only part of the structure need be modelled (ll. 346–375). The symmetry condition reproduces the effect of the missing half: nodes on the symmetry plane cannot move normal to it, but can move in it. In the block example a vertical symmetry plane through the middle, with $u_x=0$ on it, removes the sliding mode without over-constraint, and halves the model. A wing analysis models one wing, and a bladed disc (blisk) in an aero-engine is analysed as one sector with cyclic symmetry, so thousands of DOF replace millions; Rolls-Royce's in-house tools and ANSYS both offer this.
+When geometry, loads and supports are symmetric about one or more planes, only part of the structure need be modelled. The symmetry condition reproduces the effect of the missing half: nodes on the symmetry plane cannot move normal to it, but can move in it. In the block example a vertical symmetry plane through the middle, with $u_x=0$ on it, removes the sliding mode without over-constraint, and halves the model. A wing analysis models one wing, and a bladed disc (blisk) in an aero-engine is analysed as one sector with cyclic symmetry, so thousands of DOF replace millions; Rolls-Royce's in-house tools and ANSYS both offer this.
 
 ## 4. Yield criteria
 
-Two criteria used in industry say which combination of the six stress components causes yield, both written in the principal stresses $\sigma_1$, $\sigma_2$, $\sigma_3$ (ll. 291–325; [[Von Mises and Tresca Yield Criteria]]). Tresca (maximum shear stress) predicts yield when
+Two criteria used in industry say which combination of the six stress components causes yield, both written in the principal stresses $\sigma_1$, $\sigma_2$, $\sigma_3$ ([[Von Mises and Tresca Yield Criteria]]). Tresca (maximum shear stress) predicts yield when
 
 $$
 \max\left(|\sigma_1-\sigma_2|,\ |\sigma_2-\sigma_3|,\ |\sigma_3-\sigma_1|\right)=\sigma_Y,
@@ -133,11 +133,11 @@ $$
 P_Y=P\,\frac{\sigma_Y}{\sigma_{max}} .
 $$
 
-In service the load is kept well below $P_Y$ by a safety factor that covers manufacturing variation and scatter in material properties (ll. 311–320).
+In service the load is kept well below $P_Y$ by a safety factor that covers manufacturing variation and scatter in material properties.
 
 ## Worked example: nozzle yield pressure and the two criteria
 
-The nozzle-intersection example has $\sigma_Y=340$ MPa and is analysed at $P=2.5$ MPa (ll. 306–325).
+The nozzle-intersection example has $\sigma_Y=340$ MPa and is analysed at $P=2.5$ MPa.
 
 With von Mises, the maximum equivalent stress is $\sigma_{e,max}=238.6$ MPa, so
 

@@ -15,13 +15,13 @@ sources: ["02 - Sources/Lectures/Lecture4-6.pdf", "02 - Sources/Lectures/Lecture
 
 Wave drag is the drag an inviscid supersonic flow exerts on a body through the pressure changes in its shock and expansion waves. It exists with no boundary layer at all. At supersonic speed there is no leading-edge suction to cancel the rearward component of the pressure forces, as there is in subsonic flow (W03 §6).
 
-Ackeret theory splits the wave drag of a thin aerofoil into three positive parts (4.6 slide 6):
+Ackeret theory splits the wave drag of a thin aerofoil into three positive parts:
 
 $$
 C_d=\frac{4}{\sqrt{M_\infty^2-1}}\left[\alpha^2+\frac1c\int_0^c\left(\frac{\mathrm dh}{\mathrm dx}\right)^2\mathrm dx+\frac1c\int_0^c\left(\frac{\mathrm dy_c}{\mathrm dx}\right)^2\mathrm dx\right],
 $$
 
-drag due to lift (incidence), drag due to thickness and drag due to camber. Camber adds drag but no lift, so supersonic sections are symmetric. Among symmetric sections of thickness $t$, the thickness integral is smallest for straight (faceted) faces meeting at mid-chord: the diamond, with $\int_0^c h'^2\,\mathrm dx=t^2/c$ (4.6 slides 7–9). A biconvex section has $4/3$ of this. For the diamond,
+drag due to lift (incidence), drag due to thickness and drag due to camber. Camber adds drag but no lift, so supersonic sections are symmetric. Among symmetric sections of thickness $t$, the thickness integral is smallest for straight (faceted) faces meeting at mid-chord: the diamond, with $\int_0^c h'^2\,\mathrm dx=t^2/c$. A biconvex section has $4/3$ of this. For the diamond,
 
 $$
 C_d=\frac{4}{\sqrt{M_\infty^2-1}}\left[\alpha^2+\left(\frac tc\right)^2\right],\qquad
@@ -36,5 +36,6 @@ At transonic speed the wave drag appears first as [[Drag Divergence|drag diverge
 
 ## Related
 
-- [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils#8. Drag coefficient (4.6 slide 6)|W07c §§8–10]] · [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#Diamond aerofoil|W03, diamond aerofoil]]
+- [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils#8. Drag coefficient|W07c §§8–10]] · [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#Diamond aerofoil|W03, diamond aerofoil]]
 - [[Ackeret Theory]] · [[Shock-Expansion Theory]] · [[Drag Divergence]]
+- The drag polar, the diamond by completing the square, and the exact-versus-Ackeret drag: [[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]]

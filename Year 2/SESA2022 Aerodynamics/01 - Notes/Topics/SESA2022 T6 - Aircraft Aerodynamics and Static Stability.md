@@ -27,37 +27,37 @@ sources: ["02 - Sources/Stability/Topic 6 Aircraft aerodynamics and static stabi
 > A conventional aircraft trims in pitch with a tailplane, using force balance normal to the flight path and moment balance about the CG, with the tail lift linear in its effective incidence, the elevator angle and the trim-tab angle, and the wing and tail downwash taken from [[SESA2022 T5 - Finite Wing Theory|lifting-line theory]]. Static stability needs $dC_{M_{CG}}/d\alpha<0$, which means the CG ahead of the neutral point and a positive static margin $H_s = h_n-h$; a floating elevator (stick free) reduces the margin, and pitch rate in a manoeuvre adds damping that puts the manoeuvre point behind the neutral point. Lateral and directional stability come from the fin, dihedral, a high wing and sweep.
 
 > [!summary]- Exam use: quick path
-> - **Use it when:** you are given a table of aircraft data ($A$, $e$, $S$, $c$, $l$, $h_0$, $h$, $C_{M_0}$, $a_1$–$a_3$, $b_1$–$b_3$, $m$, $V$, $\rho$) and asked for trim ($\alpha$, $\eta$, $\beta$), neutral points, static margins or a manoeuvre margin. The questions are mostly numerical calculations and explanations of physical phenomena, with short proofs at most (21 Nov, ll. 45–52).
+> - **Use it when:** you are given a table of aircraft data ($A$, $e$, $S$, $c$, $l$, $h_0$, $h$, $C_{M_0}$, $a_1$–$a_3$, $b_1$–$b_3$, $m$, $V$, $\rho$) and asked for trim ($\alpha$, $\eta$, $\beta$), neutral points, static margins or a manoeuvre margin. The questions are mostly numerical calculations and explanations of physical phenomena, with short proofs at most.
 > - **Assumptions:** steady, trimmed, small angles in radians; thrust and drag through the CG; symmetric tail ($M_{T_0} = 0$); linear lift and hinge-moment models; downwash $\epsilon\approx C_L/\pi Ae$; $h$ measured downstream from the datum as a fraction of $c$.
 > - **Method:** 1. $C_W$, $C_{L^*} = C_W\cos\gamma$, $K = S_Tl/Sc$. 2. $C_{L_T}$ from the moment equation, then $C_L$, then $\alpha$. 3. $\epsilon_\alpha$, $\alpha_{T_{eff}}$, then $\eta$ (and $\beta$ if stick free). 4. Margins: $k$ (or $\bar k$ with $\bar a_1$), $C_{L_{T,\alpha}} = k(1-\epsilon_\alpha)$, $H_s = h_0-h+KC_{L_{T,\alpha}}/C_{L^*_\alpha}$. 5. Manoeuvre: $\Phi = \rho Sl/2m$ in the manoeuvre $C_{L_{T,\alpha}}$.
 > - **Common mistakes:** using the 2D slope $a_1$ instead of $k$ (3D tail with its own downwash); forgetting $\cos\gamma$ in a climb.
-> - Plan the order before you calculate, otherwise you meet equations with more than one unknown (21 Nov, ll. 443–447). The data tables include quantities you do not need (18 Nov, ll. 395–397; 20 Nov, l. 443).
-> - Exam technique (7 Jan revision, ll. 15–31, 451–580): Q5 is new to SESA2022; past SESA2025 Q2s are relevant, but the 2025–26 questions are about two-thirds as long, and parts on trim drag were not covered. These questions are just algebra: start from the static-margin definition or the $\alpha_{T_{eff}}$ equation. Trim questions need more intermediate numbers than static margins.
+> - Plan the order before you calculate, otherwise you meet equations with more than one unknown. The data tables include quantities you do not need.
+> - Exam technique: Q5 is new to SESA2022; past SESA2025 Q2s are relevant, but the 2025–26 questions are about two-thirds as long, and parts on trim drag were not covered. These questions are just algebra: start from the static-margin definition or the $\alpha_{T_{eff}}$ equation. Trim questions need more intermediate numbers than static margins.
 > - **Practise:** [[#Worked example: the Examples Sheet 6 aircraft]] · [[SESA2022 Examples Sheet 6 - Static Stability Solutions]]
 
-An aircraft balances on its centre of gravity like a seesaw. The wing's lift acts near the wing's aerodynamic centre, close to the CG; the wing also produces a pitching moment that usually tries to tip the nose down. The tailplane, far behind on a long lever arm $l$, needs only a small force to balance everything. That is trim (14 Nov lecture).
+An aircraft balances on its centre of gravity like a seesaw. The wing's lift acts near the wing's aerodynamic centre, close to the CG; the wing also produces a pitching moment that usually tries to tip the nose down. The tailplane, far behind on a long lever arm $l$, needs only a small force to balance everything. That is trim.
 
-A gust that tips the nose up gives every lifting surface more angle of attack, so each makes more lift. Lift added at the wing, a little ahead of or behind the CG, pushes the nose further up or down; lift added at the tail, far behind, always pushes the nose back down. If the net effect is nose-down, the aircraft returns by itself: it is statically stable, like a ball in a bowl rather than on a hill (19 Nov, ll. 21–41).
+A gust that tips the nose up gives every lifting surface more angle of attack, so each makes more lift. Lift added at the wing, a little ahead of or behind the CG, pushes the nose further up or down; lift added at the tail, far behind, always pushes the nose back down. If the net effect is nose-down, the aircraft returns by itself: it is statically stable, like a ball in a bowl rather than on a hill.
 
-There is one point, the neutral point, where the extra lift from a gust effectively acts. With the CG ahead of it the aircraft weathercocks back into the wind; with the CG behind it every disturbance grows. The distance between them, the static margin, is the safety factor of longitudinal stability (19 Nov, l. 15). A very large margin makes the aircraft stable but sluggish and hard to manoeuvre; fighters such as the X-29 are deliberately unstable and flown by computer (19 Nov, l. 230).
+There is one point, the neutral point, where the extra lift from a gust effectively acts. With the CG ahead of it the aircraft weathercocks back into the wind; with the CG behind it every disturbance grows. The distance between them, the static margin, is the safety factor of longitudinal stability. A very large margin makes the aircraft stable but sluggish and hard to manoeuvre; fighters such as the X-29 are deliberately unstable and flown by computer.
 
 ---
 
 ## 1. Tailplane aerodynamics and trim
 
-Means of trim in pitch (roll and yaw already trimmed): canard (military deltas: the stick rotates the canard), tailless with elevons at the tips (e.g. B-2: deflected together for pitch, differentially for roll), tailplane. The model is the conventional tailplane (14 Nov, ll. 43–63), and the analysis is Newton's laws of equilibrium and nothing more (14 Nov, ll. 14–19).
+Means of trim in pitch (roll and yaw already trimmed): canard (military deltas: the stick rotates the canard), tailless with elevons at the tips (e.g. B-2: deflected together for pitch, differentially for roll), tailplane. The model is the conventional tailplane, and the analysis is Newton's laws of equilibrium and nothing more.
 
 ![[stab_trim_geometry.png|900]]
 
 ### Forces, simplifications and conventions
 
-- Thrust and drag act along the same axis through the CG, so they produce no moment. Along the path: $T = D + D_T + W\sin\gamma$. Real aircraft often have high- or low-mounted engines whose offset adds a moment, which the model ignores (14 Nov, ll. 103–112; 19 Nov, ll. 137–142).
-- The tailplane is symmetric and small, so its own moment about its AC, $M_{T_0}$, is zero. Most tailplanes are symmetric, but some are cambered to give positive lift most of the time (14 Nov, ll. 112–116, 211–220).
-- $M_0$: wing pitching moment about the wing AC, constant with $\alpha$ (T4), nose-up positive (14 Nov, ll. 92, 137).
+- Thrust and drag act along the same axis through the CG, so they produce no moment. Along the path: $T = D + D_T + W\sin\gamma$. Real aircraft often have high- or low-mounted engines whose offset adds a moment, which the model ignores.
+- The tailplane is symmetric and small, so its own moment about its AC, $M_{T_0}$, is zero. Most tailplanes are symmetric, but some are cambered to give positive lift most of the time.
+- $M_0$: wing pitching moment about the wing AC, constant with $\alpha$ (T4), nose-up positive.
 - $l$: distance from the wing AC to the tail AC.
-- $hc$ and $h_0c$: distances of the CG and the wing AC from a datum, as fractions of the MAC $c$, positive downstream (14 Nov, l. 133).
-- Forces positive upward; $\gamma$ = flight-path angle (positive climbing); pitch angle $\theta = \gamma+\alpha$ (14 Nov, ll. 64–86).
-- Tail lift can be either sign. With the CG aft of the wing AC the lift–weight couple pitches the nose up and the tail must lift upwards; with a forward CG it must push down. A forward CG helps stability but can spoil handling (14 Nov, ll. 197–211).
+- $hc$ and $h_0c$: distances of the CG and the wing AC from a datum, as fractions of the MAC $c$, positive downstream.
+- Forces positive upward; $\gamma$ = flight-path angle (positive climbing); pitch angle $\theta = \gamma+\alpha$.
+- Tail lift can be either sign. With the CG aft of the wing AC the lift–weight couple pitches the nose up and the tail must lift upwards; with a forward CG it must push down. A forward CG helps stability but can spoil handling.
 
 ### Trim equations: derivation
 
@@ -67,7 +67,7 @@ $$
 L + L_T - W\cos\gamma = 0\quad\Rightarrow\quad L^* \equiv L+L_T = W\cos\gamma
 $$
 
-Moment balance about the CG (nose-up positive). The wing lift acts $(h-h_0)c$ ahead of the CG when $h>h_0$, so it gives a nose-up moment. The tail lift acts $l-(h-h_0)c$ behind the CG, so positive $L_T$ gives a nose-down moment (14 Nov, ll. 155–170):
+Moment balance about the CG (nose-up positive). The wing lift acts $(h-h_0)c$ ahead of the CG when $h>h_0$, so it gives a nose-up moment. The tail lift acts $l-(h-h_0)c$ behind the CG, so positive $L_T$ gives a nose-down moment:
 
 $$
 M_0 + L(h-h_0)c - L_T\big(l-(h-h_0)c\big) = 0
@@ -91,31 +91,31 @@ $$
 
 The term $L_Tl$ becomes $\tfrac12\rho V^2S_TC_{L_T}l$, and dividing by $\tfrac12\rho V^2Sc$ gives $C_{L_T}S_Tl/(Sc) = C_{L_T}K$.
 
-Tail lift can be positive or negative. With a small $C_{M_0}$, a CG behind the wing AC ($h>h_0$) needs positive tail lift and a CG ahead needs negative tail lift. A forward CG helps stability but needs more tail force (trim drag) and gives poor handling at low speed. Tail sections may be symmetric or negatively cambered (14 Nov, ll. 199–215).
+Tail lift can be positive or negative. With a small $C_{M_0}$, a CG behind the wing AC ($h>h_0$) needs positive tail lift and a CG ahead needs negative tail lift. A forward CG helps stability but needs more tail force (trim drag) and gives poor handling at low speed. Tail sections may be symmetric or negatively cambered.
 
 ### Tailplane components
 
 - Horizontal stabiliser (fixed, or adjustable setting $\alpha_s$).
 - Elevator ($\eta$, positive trailing-edge down) to control tail lift.
-- Trim tab ($\beta$) to cancel the hinge moment so the pilot can fly hands-off (14 Nov, ll. 246–249). In equilibrium flight the elevator is effectively the speed control and the throttle the climb control (14 Nov, ll. 242–245; 18 Nov, ll. 104–106).
-- Horn balance (shielded or unshielded) to reduce stick forces (14 Nov, ll. 361–372).
+- Trim tab ($\beta$) to cancel the hinge moment so the pilot can fly hands-off. In equilibrium flight the elevator is effectively the speed control and the throttle the climb control.
+- Horn balance (shielded or unshielded) to reduce stick forces.
 
 ### Downwash and the tail angle of attack
 
-The tail flies in the wing's downwash $\epsilon$, and its own trailing vortices give it a further induced angle $\epsilon_T$ (14 Nov, ll. 270–320):
+The tail flies in the wing's downwash $\epsilon$, and its own trailing vortices give it a further induced angle $\epsilon_T$:
 
 $$
 \alpha_T = \alpha+\alpha_s,\qquad \alpha_{T_{eff}} = \alpha+\alpha_s-\epsilon-\epsilon_T
 $$
 
-Both are modelled with the lifting-line induced angle (18 Nov, ll. 515–527):
+Both are modelled with the lifting-line induced angle:
 
 $$
 \epsilon \approx \frac{C_L}{\pi Ae} = \frac{C_{L_\alpha}(\alpha-\alpha_0)}{\pi Ae} = \epsilon_\alpha(\alpha-\alpha_0),\quad \epsilon_\alpha \equiv \frac{d\epsilon}{d\alpha} = \frac{C_{L_\alpha}}{\pi Ae},\qquad \epsilon_T = \frac{C_{L_T}}{\pi A_Te_T}
 $$
 
 > [!warning] A modelling choice, not a law
-> The downwash a long way behind an elliptic wing is $2\alpha_i$, not $\alpha_i$; real tails sit in between and above or below the wake. $\epsilon\approx C_L/\pi Ae$ is the course model and is what the exam formula sheet uses. In practice $\epsilon_\alpha$ is often measured (18 Nov, ll. 515–518).
+> The downwash a long way behind an elliptic wing is $2\alpha_i$, not $\alpha_i$; real tails sit in between and above or below the wake. $\epsilon\approx C_L/\pi Ae$ is the course model and is what the exam formula sheet uses. In practice $\epsilon_\alpha$ is often measured.
 
 Substitute and collect the $\alpha$ terms:
 
@@ -133,7 +133,7 @@ $$
 C_L = C_{L_\alpha}(\alpha-\alpha_0),\qquad C_{L_\alpha} = \frac{a_0}{1+a_0/(\pi Ae)} = a_0\frac{\pi Ae}{\pi Ae+a_0}
 $$
 
-Note $\alpha_0$ here is the zero-lift angle, $\alpha_{L=0}$ in T4–T5, and $A$ is the aspect ratio, $AR$ in T5: past mechanics-of-flight papers use $A$ (18 Nov, ll. 398–401).
+Note $\alpha_0$ here is the zero-lift angle, $\alpha_{L=0}$ in T4–T5, and $A$ is the aspect ratio, $AR$ in T5: past mechanics-of-flight papers use $A$.
 
 ### Tail lift and hinge-moment models (linear)
 
@@ -145,8 +145,8 @@ $$
 C_{M_H} = b_1\alpha_{T_{eff}}+b_2\eta+b_3\beta
 $$
 
-- $a_1$ is a 2D lift slope (often $2\pi$); $a_2$ is the flap effectiveness of [[SESA2022 T4 - Thin Aerofoil Theory#7. Trailing-edge flaps|T4 §7]]; these are "aerodynamic derivatives" (14 Nov, ll. 322–360). Expect $a_1>a_2>a_3$: the elevator and tab cover smaller parts of the tail (18 Nov, ll. 203–211).
-- The $b$ coefficients are usually all negative (18 Nov, l. 160), so a gust is opposed by the hinge moment (18 Nov, l. 199). $|b_3|$ is the largest because the tab has the longest arm about the hinge (18 Nov, ll. 214–220). A horn balance reduces $|b_1|$ and $|b_2|$.
+- $a_1$ is a 2D lift slope (often $2\pi$); $a_2$ is the flap effectiveness of [[SESA2022 T4 - Thin Aerofoil Theory#7. Trailing-edge flaps|T4 §7]]; these are "aerodynamic derivatives". Expect $a_1>a_2>a_3$: the elevator and tab cover smaller parts of the tail.
+- The $b$ coefficients are usually all negative, so a gust is opposed by the hinge moment. $|b_3|$ is the largest because the tab has the longest arm about the hinge. A horn balance reduces $|b_1|$ and $|b_2|$.
 - Coefficients come from TAT (see [[Trailing-Edge Flap in Thin Aerofoil Theory]]), wind tunnels or CFD.
 
 The trim tab works through the hinge moment. To get negative tail lift the elevator must go up, and deflecting the tab down ($\beta>0$) creates a hinge moment that pushes the elevator up until $C_{M_H}=0$ ($\eta<0$, $L_T<0$). The stick force is then zero and the aircraft is trimmed.
@@ -182,21 +182,21 @@ $$
 C_{L_T} = \bar a_1\alpha_{T_{eff}}+\bar a_3\beta,\qquad \boxed{\bar a_1 \equiv a_1 - a_2\frac{b_1}{b_2},\quad \bar a_3\equiv a_3-a_2\frac{b_3}{b_2}}
 $$
 
-With $b_1/b_2>0$ (both negative) the elevator has a **floating tendency**: a gust $\Delta\alpha_{T_{eff}}>0$ gives $\Delta\eta = -\Delta\alpha_{T_{eff}}b_1/b_2<0$: the elevator floats up, so the tail makes less lift per unit $\alpha$. That opposes the gust and smooths the response, but too negative a $b_1$ costs pitch stiffness (18 Nov, ll. 173–202). For the Examples Sheet 6 aircraft, $a_1 = 6.28$ rad⁻¹ (fixed) versus $\bar a_1 = 5.78$ rad⁻¹ (free), an 8% loss (roughly 10%): the tail would have to sit about that much further aft to give the same restoring moment (18 Nov, ll. 223–245). A horn balance reduces $b_1$ and helps.
+With $b_1/b_2>0$ (both negative) the elevator has a **floating tendency**: a gust $\Delta\alpha_{T_{eff}}>0$ gives $\Delta\eta = -\Delta\alpha_{T_{eff}}b_1/b_2<0$: the elevator floats up, so the tail makes less lift per unit $\alpha$. That opposes the gust and smooths the response, but too negative a $b_1$ costs pitch stiffness. For the Examples Sheet 6 aircraft, $a_1 = 6.28$ rad⁻¹ (fixed) versus $\bar a_1 = 5.78$ rad⁻¹ (free), an 8% loss (roughly 10%): the tail would have to sit about that much further aft to give the same restoring moment. A horn balance reduces $b_1$ and helps.
 
-Other ways to trim (18 Nov, ll. 246–385):
+Other ways to trim:
 - Fixed tail (e.g. Pilatus PC-6): light, cheap, simple, safe; but the elevator is deflected in almost every flight state, which costs drag.
 - All-moving tail (stabilator), e.g. the Hawk: high trimming power, wide CG range, low trim drag, highly manoeuvrable; heavier structure.
 - Adjustable tail (airliners, e.g. E-170): slowly changes $\alpha_s$ for trim and uses the elevator for control; useful when flaps and slats move the AC, but it needs powered actuation.
-- Wing trailing-edge devices: little moment arm about the CG, except on large swept wings (18 Nov, ll. 346–364).
-- Moving the CG: Concorde pumped fuel between trim tanks because the aerodynamic centre moves aft through Mach 1 (18 Nov, ll. 365–385).
+- Wing trailing-edge devices: little moment arm about the CG, except on large swept wings.
+- Moving the CG: Concorde pumped fuel between trim tanks because the aerodynamic centre moves aft through Mach 1.
 
-Tail setting for zero elevator ($\eta = \beta = 0$, the all-moving-tail case, 18 Nov, ll. 322–341): solve the trim equations for $C_L$ and $C_{L_T}$, get $\alpha$ from $C_L = C_{L_\alpha}(\alpha-\alpha_0)$, then solve $C_{L_T} = a_1\alpha_{T_{eff}}$ for $\alpha_s$.
+Tail setting for zero elevator ($\eta = \beta = 0$, the all-moving-tail case): solve the trim equations for $C_L$ and $C_{L_T}$, get $\alpha$ from $C_L = C_{L_\alpha}(\alpha-\alpha_0)$, then solve $C_{L_T} = a_1\alpha_{T_{eff}}$ for $\alpha_s$.
 
 ### Solution algorithm for trim problems
 
 1. $C_W = \dfrac{mg}{\tfrac12\rho V^2S}$, $C_{L^*} = C_W\cos\gamma$, $K = \dfrac{S_Tl}{Sc}$.
-2. Moment equation: $C_{L_T} = \dfrac{C_{M_0}+C_{L^*}(h-h_0)}{K}$ (18 Nov, l. 460).
+2. Moment equation: $C_{L_T} = \dfrac{C_{M_0}+C_{L^*}(h-h_0)}{K}$.
 3. $C_L = C_{L^*} - C_{L_T}S_T/S$.
 4. $C_{L_\alpha} = a_0\dfrac{\pi Ae}{\pi Ae+a_0}$, so $\alpha = \alpha_0 + C_L/C_{L_\alpha}$.
 5. $\epsilon_\alpha = C_{L_\alpha}/(\pi Ae)$, then $\alpha_{T_{eff}}$.
@@ -208,7 +208,7 @@ This algorithm reproduces all the Examples Sheet 6 answers: [[SESA2022 Examples 
 
 ## 3. Longitudinal static stability
 
-A system has **static stability** if, when it is disturbed from equilibrium, the forces and moments created *initially* tend to return it. ("Static", as opposed to the time history of the motion, which is dynamic stability in [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid|SESA2027]].) Pictures: a ball bearing in a channel (stable), on a flat surface (neutral), on a hill (unstable) (19 Nov, ll. 21–41). The static analysis says nothing about the modes (phugoid, short period, Dutch roll and so on), which need the full six-degree-of-freedom small-perturbation analysis (19 Nov, ll. 42–69).
+A system has **static stability** if, when it is disturbed from equilibrium, the forces and moments created *initially* tend to return it. ("Static", as opposed to the time history of the motion, which is dynamic stability in [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid|SESA2027]].) Pictures: a ball bearing in a channel (stable), on a flat surface (neutral), on a hill (unstable). The static analysis says nothing about the modes (phugoid, short period, Dutch roll and so on), which need the full six-degree-of-freedom small-perturbation analysis.
 
 For an aircraft disturbed by $\Delta\alpha>0$, stability needs a nose-down moment $\Delta C_{M_{CG}}<0$:
 
@@ -220,10 +220,10 @@ Trim at a useful positive $\alpha_e$ also requires $C_{M_{CG}}(\alpha=0) > 0$ (s
 
 ![[stab_cm_alpha.png|520]]
 
-The main contributions to $C_{M_{CG}}$ are the wing/fuselage lift, the wing pitching moment and the tail lift; power effects, drag and other components are minor. $dC_{M_{CG}}/d\alpha$ is the pitch stiffness (19 Nov, ll. 218–219); a steeper negative slope means more of it: the stability versus manoeuvrability trade-off. Moving the CG aft flattens the curve towards neutral (19 Nov, ll. 212–227). The forward-swept X-29 was deliberately unstable for manoeuvrability and flyable only through fly-by-wire with no manual backup; canard fighters are usually unstable too (19 Nov, ll. 228–241).
+The main contributions to $C_{M_{CG}}$ are the wing/fuselage lift, the wing pitching moment and the tail lift; power effects, drag and other components are minor. $dC_{M_{CG}}/d\alpha$ is the pitch stiffness; a steeper negative slope means more of it: the stability versus manoeuvrability trade-off. Moving the CG aft flattens the curve towards neutral. The forward-swept X-29 was deliberately unstable for manoeuvrability and flyable only through fly-by-wire with no manual backup; canard fighters are usually unstable too.
 
-> [!example] Wind-tunnel $C_M$–$\alpha$ (19 Nov, ll. 147–200)
-> Measured about the CG: the wing contribution rises with $\alpha$, the tail contribution falls, and the total has a negative slope. The model is trimmed without control input only where the total crosses $C_{M_{CG}} = 0$, just below 6°; at every other $\alpha$ a pilot would need elevator or tab. Trim means both the vertical force balance and $C_{M_{CG}} = 0$ (l. 190).
+> [!example] Wind-tunnel $C_M$–$\alpha$
+> Measured about the CG: the wing contribution rises with $\alpha$, the tail contribution falls, and the total has a negative slope. The model is trimmed without control input only where the total crosses $C_{M_{CG}} = 0$, just below 6°; at every other $\alpha$ a pilot would need elevator or tab. Trim means both the vertical force balance and $C_{M_{CG}} = 0$.
 
 ### Moment derivative
 
@@ -240,7 +240,7 @@ $$
 $$
 
 - The first term is destabilising if the CG is behind the wing AC ($h>h_0$).
-- The second term is stabilising for a tail behind the CG ($K>0$). For a canard $l<0$, so $K<0$ and the term is destabilising (19 Nov, ll. 306–318).
+- The second term is stabilising for a tail behind the CG ($K>0$). For a canard $l<0$, so $K<0$ and the term is destabilising.
 
 ### Neutral point and static margin
 
@@ -262,7 +262,7 @@ $$
 \boxed{H_s = h_0-h+K\frac{C_{L_{T,\alpha}}}{C_{L^*_\alpha}}},\qquad \frac{dC_{M_{CG}}}{d\alpha} = -C_{L^*_\alpha}H_s,\qquad \text{stable} \iff H_s>0
 $$
 
-The neutral point is the aerodynamic centre of the whole aircraft (14 Nov, l. 423): the CG must be ahead of it (19 Nov, ll. 355–371). Too large a margin makes the aircraft unresponsive and needs large stick forces (19 Nov, ll. 390–394); the margin should stay positive stick fixed, stick free and in manoeuvres (19 Nov, ll. 407–416).
+The neutral point is the aerodynamic centre of the whole aircraft: the CG must be ahead of it. Too large a margin makes the aircraft unresponsive and needs large stick forces; the margin should stay positive stick fixed, stick free and in manoeuvres.
 
 ### Tail lift slope, stick fixed: derivation
 
@@ -291,9 +291,9 @@ $$
 $$
 
 > [!warning] Write out $C_{L_T}$ in full first
-> Write the equation for $C_{L_T}$ out explicitly before differentiating, or the factor $K$ is easily missed (19 Nov, ll. 505–511). Differentiating $a_1\alpha_{T_{eff}}$ directly loses the tail's own downwash.
+> Write the equation for $C_{L_T}$ out explicitly before differentiating, or the factor $K$ is easily missed. Differentiating $a_1\alpha_{T_{eff}}$ directly loses the tail's own downwash.
 
-The chain is: 2D aerofoil slope $a_1$ → 3D tail slope $k$ (the same finite-wing correction as $C_{L_\alpha}$) → 3D tail in the wing's downwash, $k(1-\epsilon_\alpha)$ (19 Nov, ll. 513–527). The model $\epsilon_\alpha\approx C_{L_\alpha}/\pi Ae$ is not very accurate: by the tail the sheet is rolling up into tip vortices, so in practice $\epsilon_\alpha$ is measured or found by CFD (19 Nov, ll. 527–550; 14 Nov, ll. 318–321).
+The chain is: 2D aerofoil slope $a_1$ → 3D tail slope $k$ (the same finite-wing correction as $C_{L_\alpha}$) → 3D tail in the wing's downwash, $k(1-\epsilon_\alpha)$. The model $\epsilon_\alpha\approx C_{L_\alpha}/\pi Ae$ is not very accurate: by the tail the sheet is rolling up into tip vortices, so in practice $\epsilon_\alpha$ is measured or found by CFD.
 
 Stick free, replace $a_1\to\bar a_1$, giving $\bar k = \bar a_1\dfrac{\pi A_Te_T}{\pi A_Te_T+\bar a_1}$ and $C_{L_{T,\alpha}} = \bar k(1-\epsilon_\alpha)$. Because $\bar k<k$ (when $b_1/b_2>0$), the stick-free neutral point is further forward:
 
@@ -301,7 +301,7 @@ $$
 H_{s,\text{stick fixed}} > H_{s,\text{stick free}}
 $$
 
-How far forward the stick-free neutral point moves can only be found by putting in the numbers (19 Nov, ll. 594–603).
+How far forward the stick-free neutral point moves can only be found by putting in the numbers.
 
 ![[stab_margins_axis.png|900]]
 
@@ -313,7 +313,7 @@ See [[Manoeuvre Point and Manoeuvre Margin]].
 
 ### Steady pull-up
 
-Constant radius $R$, speed $V$, pitch rate $q = V/R$, level at the bottom of the circle (20 Nov, ll. 57–127). $p$, $q$, $r$ are the body rates in roll, pitch and yaw, signed by the right-hand rule (20 Nov, ll. 71–90). Newton's second law towards the centre:
+Constant radius $R$, speed $V$, pitch rate $q = V/R$, level at the bottom of the circle. $p$, $q$, $r$ are the body rates in roll, pitch and yaw, signed by the right-hand rule. Newton's second law towards the centre:
 
 $$
 L^*-W = m\frac{V^2}{R}
@@ -327,7 +327,7 @@ $$
 
 ### Pitch rate increases the tail angle of attack
 
-The aircraft rotates nose-up at $q$ about the CG, so the tail, a distance $l-(h-h_0)c\approx l$ behind it, moves down at about $ql$. The tail therefore sees an extra upward relative flow and an extra angle (20 Nov, ll. 128–170). Two assumptions: small angles ($\tan\Delta\alpha\approx\Delta\alpha$) and $l\gg(h-h_0)c$:
+The aircraft rotates nose-up at $q$ about the CG, so the tail, a distance $l-(h-h_0)c\approx l$ behind it, moves down at about $ql$. The tail therefore sees an extra upward relative flow and an extra angle. Two assumptions: small angles ($\tan\Delta\alpha\approx\Delta\alpha$) and $l\gg(h-h_0)c$:
 
 $$
 \Delta\alpha_{T_q}\approx\frac{ql}{V}
@@ -351,7 +351,7 @@ $$
 \Delta\alpha_{T_q} = (n-1)C_W\frac{\rho Sl}{2m} = (n-1)C_W\Phi,\qquad \boxed{\Phi\equiv\frac{\rho Sl}{2m}}\ (\text{mass parameter})
 $$
 
-(20 Nov, ll. 232–246.) The extra tail lift opposes the pitch rate: pitch damping. So
+The extra tail lift opposes the pitch rate: pitch damping. So
 
 $$
 \alpha_{T_{eff}} = (1-\epsilon_\alpha)\alpha+\epsilon_\alpha\alpha_0+\alpha_s-\frac{C_{L_T}}{\pi A_Te_T}+(n-1)C_W\Phi
@@ -365,7 +365,7 @@ $$
 \frac{d}{d\alpha}\left[(n-1)C_W\Phi\right] = \Phi\,C_{L^*_\alpha} = \Phi\left(C_{L_\alpha}+C_{L_{T,\alpha}}\frac{S_T}{S}\right).
 $$
 
-Repeat the stick-fixed derivation with the extra term; the factor $k$ is unchanged (20 Nov, ll. 264–356):
+Repeat the stick-fixed derivation with the extra term; the factor $k$ is unchanged:
 
 $$
 C_{L_{T,\alpha}} = k(1-\epsilon_\alpha)+k\Phi\left(C_{L_\alpha}+C_{L_{T,\alpha}}\frac{S_T}{S}\right)
@@ -388,22 +388,22 @@ $$
 $$
 
 - $C_{L_{T,\alpha}}$ is higher in a manoeuvre, so the manoeuvre point lies aft of the neutral point: the aircraft is more stable while manoeuvring.
-- $\Phi\propto\rho$: the effect shrinks with altitude, where the aircraft feels less stable and more responsive. Lighter aircraft (small $m$) are more affected (20 Nov, ll. 361–390).
-- The aircraft therefore feels less responsive to the pilot in a manoeuvre (20 Nov, ll. 413–414). If manoeuvring had reduced stability, it would have been the design case; since it increases stability, level flight is the critical case (20 Nov, ll. 33–37).
-- Three points to know: stick-fixed NP, stick-free NP and stick-fixed MP. The stick-free manoeuvre point is not covered (20 Nov, ll. 428–434). For stick free only $k\to\bar k$ changes; $C_{L_\alpha}$, $K$, $\epsilon_\alpha$ and $\Phi$ are reused (20 Nov, ll. 546–594).
-- Small rolling or yawing does not change this: for small perturbations the longitudinal and lateral problems decouple (20 Nov, ll. 457–473).
+- $\Phi\propto\rho$: the effect shrinks with altitude, where the aircraft feels less stable and more responsive. Lighter aircraft (small $m$) are more affected.
+- The aircraft therefore feels less responsive to the pilot in a manoeuvre. If manoeuvring had reduced stability, it would have been the design case; since it increases stability, level flight is the critical case.
+- Three points to know: stick-fixed NP, stick-free NP and stick-fixed MP. The stick-free manoeuvre point is not covered. For stick free only $k\to\bar k$ changes; $C_{L_\alpha}$, $K$, $\epsilon_\alpha$ and $\Phi$ are reused.
+- Small rolling or yawing does not change this: for small perturbations the longitudinal and lateral problems decouple.
 
 ## 5. Neutral point from flight tests
 
-Only in-flight quantities are known ($W$, $V$ from a pitot probe, $\eta$ and $\beta$ from calibrated transducers, CG) (21 Nov, ll. 125–130). Before flight test, estimates come from back-of-envelope theory, ESDU data sheets, CFD and wind tunnels (an order of magnitude dearer than computation), with a trend towards less testing (21 Nov, ll. 97–122). The same exercise is carried out in flight tests on a Saab 340B at Southampton Airport (21 Nov, ll. 1–6, 366–390).
+Only in-flight quantities are known ($W$, $V$ from a pitot probe, $\eta$ and $\beta$ from calibrated transducers, CG). Before flight test, estimates come from back-of-envelope theory, ESDU data sheets, CFD and wind tunnels (an order of magnitude dearer than computation), with a trend towards less testing. The same exercise is carried out in flight tests on a Saab 340B at Southampton Airport.
 
-The CG comes from weighing. With the aircraft on front and rear scales at $h_fc$ and $h_rc$ from the datum, moments about the datum (21 Nov, ll. 125–153):
+The CG comes from weighing. With the aircraft on front and rear scales at $h_fc$ and $h_rc$ from the datum, moments about the datum:
 
 $$
 F_fh_fc+F_rh_rc-(F_f+F_r)hc = 0\quad\Rightarrow\quad h = \frac{F_fh_f+F_rh_r}{F_f+F_r}
 $$
 
-Any moment centre works; the datum is just a common reference. Measure the empty aircraft, then add pilots and payload as point masses (21 Nov, ll. 152–161).
+Any moment centre works; the datum is just a common reference. Measure the empty aircraft, then add pilots and payload as point masses.
 
 The flight-test formula comes from trimming at two speeds. Differencing the moment equation (constant $C_{M_0}$, $h$):
 
@@ -429,35 +429,35 @@ $$
 h-h_n = Kk\frac{a_2}{a_1}\frac{d\eta}{dC_{L^*}}\quad\Rightarrow\quad\boxed{h_n - h = H_{s,\text{fixed}} = -Kk\frac{a_2}{a_1}\frac{d\eta}{dC_{L^*}}}
 $$
 
-$d\eta/dC_{L^*}$ is easy to measure, whereas $K$, $k$ and $a_2/a_1$ are uncertain, so the neutral point is found by extrapolation. Plot $\eta$ against $C_{L^*}$ for several CG positions, find the slope for each, then plot the slope against $h$ and extrapolate to zero slope: that $h$ is $h_n$ (21 Nov, ll. 296–355). A positive margin means $d\eta/dC_{L^*}<0$, i.e. more up-elevator to fly slower, and the upper end of each line is $C_{L,max}$ (minimum speed). The slope of the second plot measures $a_1/(Kka_2)$, a check on the theoretical estimates (21 Nov, ll. 356–364). Stick free, plot $d\beta/dC_{L^*}$ against $h$ instead; the slopes have the opposite sign (21 Nov, ll. 368–372).
+$d\eta/dC_{L^*}$ is easy to measure, whereas $K$, $k$ and $a_2/a_1$ are uncertain, so the neutral point is found by extrapolation. Plot $\eta$ against $C_{L^*}$ for several CG positions, find the slope for each, then plot the slope against $h$ and extrapolate to zero slope: that $h$ is $h_n$. A positive margin means $d\eta/dC_{L^*}<0$, i.e. more up-elevator to fly slower, and the upper end of each line is $C_{L,max}$ (minimum speed). The slope of the second plot measures $a_1/(Kka_2)$, a check on the theoretical estimates. Stick free, plot $d\beta/dC_{L^*}$ against $h$ instead; the slopes have the opposite sign.
 
-Moving the CG aft flattens the lines (21 Nov, ll. 348–351). Do not fly near zero slope: there the speed changes with no control input, the limit of static stability (21 Nov, ll. 334–345).
+Moving the CG aft flattens the lines. Do not fly near zero slope: there the speed changes with no control input, the limit of static stability.
 
 ## 6. Lateral and directional stability
 
 See [[Lateral and Directional Stability]].
 
-Lateral and directional stability is covered only qualitatively (25 Nov, ll. 1–3).
+Lateral and directional stability is covered only qualitatively.
 
-The elevator controls pitch ($\theta$, $q$), the ailerons roll ($\phi$, $p$) and the rudder yaw ($\psi$, $r$). These use body axes, $x$ forward, $y$ starboard, $z$ down, as opposed to the aerodynamic axes ($x$ streamwise, $z$ up) (25 Nov, ll. 25–47).
+The elevator controls pitch ($\theta$, $q$), the ailerons roll ($\phi$, $p$) and the rudder yaw ($\psi$, $r$). These use body axes, $x$ forward, $y$ starboard, $z$ down, as opposed to the aerodynamic axes ($x$ streamwise, $z$ up).
 
-Directional stability comes from the vertical fin: in sideslip it makes a side force $F_{vt}$ aft of the CG, giving a restoring yawing moment. The fuselage is destabilising (side force ahead of the CG), so the fin must be bigger (25 Nov, ll. 60–91). A positive yaw angle corresponds to a negative sideslip (ll. 79–80). In a crosswind take-off, tyre friction holds the aircraft on the centreline until lift unloads the wheels; then the fin weathercocks it into the wind and it drifts downwind (25 Nov, ll. 92–116). The rudder alters the fin camber, the same TAT flap physics as the elevator (l. 119). The fin is sized by directional stability, dynamic handling qualities, and rudder authority for crosswind take-off/landing and asymmetric engine failure; one engine out on take-off can size the rudder (25 Nov, ll. 128–149).
+Directional stability comes from the vertical fin: in sideslip it makes a side force $F_{vt}$ aft of the CG, giving a restoring yawing moment. The fuselage is destabilising (side force ahead of the CG), so the fin must be bigger. A positive yaw angle corresponds to a negative sideslip. In a crosswind take-off, tyre friction holds the aircraft on the centreline until lift unloads the wheels; then the fin weathercocks it into the wind and it drifts downwind. The rudder alters the fin camber, the same TAT flap physics as the elevator. The fin is sized by directional stability, dynamic handling qualities, and rudder authority for crosswind take-off/landing and asymmetric engine failure; one engine out on take-off can size the rudder.
 
-Yaw and roll are coupled both ways. Yawing makes one wing faster, giving more lift and a rolling moment; this underlies the Dutch roll, a short-period yaw–roll–sideslip oscillation that must be stable, in which the wingtip seen from the right window traces a circle (ll. 150–213). In the other direction, bank leads to sideslip, which yaws the aircraft through the fin. Without enough lateral stability this gives the spiral mode: nearly neutral, with a doubling time of the order of minutes, so a pilot can correct it, but dangerous for a pilot without instrument training in cloud (ll. 239–297). Rolling itself is damped (roll subsidence): the down-going wing sees a higher $\alpha$ and more lift, which opposes the roll, $L_p<0$, and bigger wings need bigger ailerons (ll. 214–238).
+Yaw and roll are coupled both ways. Yawing makes one wing faster, giving more lift and a rolling moment; this underlies the Dutch roll, a short-period yaw–roll–sideslip oscillation that must be stable, in which the wingtip seen from the right window traces a circle. In the other direction, bank leads to sideslip, which yaws the aircraft through the fin. Without enough lateral stability this gives the spiral mode: nearly neutral, with a doubling time of the order of minutes, so a pilot can correct it, but dangerous for a pilot without instrument training in cloud. Rolling itself is damped (roll subsidence): the down-going wing sees a higher $\alpha$ and more lift, which opposes the roll, $L_p<0$, and bigger wings need bigger ailerons.
 
 Lateral stability (a restoring roll moment in sideslip) has three sources:
 
 - Dihedral: sideslip gives a wing-normal velocity component with higher $\alpha$ on the leading wing.
-- A high wing: the side force acts above the CG, plus fuselage cross-flow interference raises $\alpha$ on the upwind wing (a low wing is destabilising) (ll. 329–362). Textbooks call the first part the pendulum or keel effect of the side force.
+- A high wing: the side force acts above the CG, plus fuselage cross-flow interference raises $\alpha$ on the upwind wing (a low wing is destabilising). Textbooks call the first part the pendulum or keel effect of the side force.
 - Sweep: the leading wing has a larger normal velocity and more lift.
 
-Too much lateral stability (high wing + dihedral + sweep) gives poor controllability; the fix is anhedral, typically on high-wing aircraft such as Antonov transports and the Harrier (ll. 381–390).
+Too much lateral stability (high wing + dihedral + sweep) gives poor controllability; the fix is anhedral, typically on high-wing aircraft such as Antonov transports and the Harrier.
 
 ---
 
 ## Worked example: the Examples Sheet 6 aircraft
 
-Data (Table 1): $A = 8$, $e = 0.90$, $S = 20$ m², $l = 7.0$ m, $c = 1.58$ m, $h_0 = 0.25$, $h = 0.40$, $C_{M_0} = -0.01$, $\alpha_0 = -2^\circ$, $a_0 = 2\pi$, $\alpha_s = -6^\circ$, $A_T = 7$, $e_T = 0.85$, $S_T = 3$ m², $a_1 = 2\pi$, $a_2 = 3.5$, $a_3 = 1.1$, $b_1 = -0.1$, $b_2 = -0.7$, $b_3 = -1.3$ (rad⁻¹), $m = 1500$ kg, $V = 50$ m/s (18, 20 and 21 Nov).
+Data (Table 1): $A = 8$, $e = 0.90$, $S = 20$ m², $l = 7.0$ m, $c = 1.58$ m, $h_0 = 0.25$, $h = 0.40$, $C_{M_0} = -0.01$, $\alpha_0 = -2^\circ$, $a_0 = 2\pi$, $\alpha_s = -6^\circ$, $A_T = 7$, $e_T = 0.85$, $S_T = 3$ m², $a_1 = 2\pi$, $a_2 = 3.5$, $a_3 = 1.1$, $b_1 = -0.1$, $b_2 = -0.7$, $b_3 = -1.3$ (rad⁻¹), $m = 1500$ kg, $V = 50$ m/s.
 
 **Constants.** $K = \frac{3(7)}{20(1.58)} = 0.6646$; $\pi Ae = 22.62$; $C_{L_\alpha} = 2\pi\frac{22.62}{22.62+6.283} = 4.917$; $\epsilon_\alpha = 4.917/22.62 = 0.2174$; $\pi A_Te_T = 18.69$.
 
@@ -468,9 +468,9 @@ Trim in a 20° climb, stick fixed, sea level (Q1):
 4. $\alpha_{T_{eff}} = 0.7826(0.0543)+0.2174(-0.0349)-0.1047-0.0869/18.69 = -0.0745$ rad.
 5. $\eta = \frac{0.0869+2\pi(0.0745)}{3.5} = 0.1585$ rad $= 9.08^\circ$.
 
-The reference answers are $C_{L^*} = 0.452$, $C_{L_T} = 0.087$, $C_L = 0.438$, $a = 4.917$ (18 Nov, l. 477).
+The reference answers are $C_{L^*} = 0.452$, $C_{L_T} = 0.087$, $C_L = 0.438$, $a = 4.917$.
 
-Low-altitude cruise, stick free (Q2, $\gamma = 0$, sea level; 21 Nov, ll. 393–463):
+Low-altitude cruise, stick free (Q2, $\gamma = 0$, sea level):
 1. $C_{L^*} = C_W = 0.480$; $C_{L_T} = \frac{-0.01+0.4805(0.15)}{0.6646} = 0.0934$; $C_L = 0.466$.
 2. $\alpha = -0.0349+0.4665/4.917 = 0.0600$ rad $= 3.44^\circ$.
 3. $\alpha_{T_{eff}} = 0.7826(0.0600)+0.2174(-0.0349)-0.1047-0.0934/18.69 = -0.0704$ rad.
@@ -493,7 +493,7 @@ More: [[SESA2022 Examples Sheet 6 - Static Stability Solutions]] (including the 
 
 ## Exam formula sheet (provided)
 
-The exam paper's formula pages include the static margin definitions, $k$ and $\bar k$, $\bar a_1$, the manoeuvre equation, the mass parameter and the tail volume ratio (21 Nov, ll. 12–37):
+The exam paper's formula pages include the static margin definitions, $k$ and $\bar k$, $\bar a_1$, the manoeuvre equation, the mass parameter and the tail volume ratio:
 
 $$
 C_{L^*} = C_L+C_{L_T}\tfrac{S_T}{S} = C_W\cos\gamma,\quad C_{M_0}+C_{L^*}(h-h_0)-C_{L_T}K=0,\quad K=\tfrac{S_Tl}{Sc}
@@ -522,7 +522,7 @@ $$
 | mass parameter $\Phi = \rho Sl/2m$ | relative density parameter ($1/\mu$ in other texts) | 20 Nov, l. 232 | |
 | $C_{L^*}$ | total (trim) lift coefficient | 14 Nov, l. 177; 18 Nov, l. 40 | |
 | $\epsilon_\alpha = d\epsilon/d\alpha$ | downwash gradient | 14 Nov, ll. 296–318 | |
-| $A$ (aspect ratio) | $AR$ in T5 | 14 Nov, ll. 310–313; 18 Nov, ll. 398–400 | Both are used deliberately, *"so you're used to using both"* (20 Nov, ll. 284–286) |
+| $A$ (aspect ratio) | $AR$ in T5 | 14 Nov, ll. 310–313; 18 Nov, ll. 398–400 | Both are used deliberately, *"so you're used to using both"* |
 | $\alpha_0$ | $\alpha_{L=0}$ in T4–T5 | 14 Nov | |
 | stick fixed / stick free | controls fixed / controls free | 14 Nov, ll. 263–265; 18 Nov | |
 | pitch stiffness $dC_{M_{CG}}/d\alpha$ | $C_{M_\alpha}$, longitudinal static stability derivative | 19 Nov, ll. 218–219 | |

@@ -39,7 +39,7 @@ The remedy is to combine sensors whose weaknesses lie at different frequencies. 
 
 ---
 
-## 1. Sensing in the control loop (L3.01)
+## 1. Sensing in the control loop
 In the B-part block diagram the feedback path contains a sensor $H(s)$ and measurement noise $X_N$ (see [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]). The controller acts on the *measured* output, so sensor errors become control errors. The flight control computer cannot see the aircraft moving; it relies entirely on electrical representations of that motion. Pitch control, for example, needs $\theta$, $q$ and $a_z$, which are measured with gyroscopes, accelerometers and IMUs.
 
 A **sensing system** measures a physical quantity and converts it into a usable signal for monitoring, analysis or control. It is usually several elements working together, not a single device.
@@ -76,7 +76,7 @@ Filtering trades noise against lag. A low-pass filter removes high-frequency noi
 
 The design considerations for a sensing system are range, accuracy, sensitivity, bandwidth, environment (temperature, vibration), reliability and robustness, and integration with the electronics.
 
-## 4. Sensing principles (L3.02)
+## 4. Sensing principles
 Transduction is the conversion of energy from one form to another. The sensing element interacts with the measured variable, and the transduction process turns that interaction into an electrical signal.
 
 | Principle | Physical law | Measures |
@@ -89,7 +89,7 @@ Transduction is the conversion of energy from one form to another. The sensing e
 
 Operating principles fall into three families: electrical-property variation (resistive, capacitive, inductive), energy conversion (thermoelectric, piezoelectric) and field interaction (optical or electromagnetic). The module covers the first two; the third is mentioned only.
 
-These physical relations matter for control because, in the second computer lab, the controller is fed the state as if it could be measured perfectly (L3.02–3.03, ll. 46–54, 1057–1060). In reality a sensing block sits in front of the controller and changes the signal, and the relations in this section are what C2 uses to write the sensors' transfer functions (Bentley, Ch. 8).
+These physical relations matter for control because a real sensing block sits in front of the controller and changes the signal, whereas the idealised simulations feed the controller the state as if it could be measured perfectly. The sensors' transfer functions are built from the relations in this section (Bentley, Ch. 8; [[SESA2027 C2 - Sensor Characteristics, Dynamics and Design|C2]]).
 
 ### 4.1 Resistive: strain gauges and the Wheatstone bridge
 Stretching a conductor lengthens it and narrows its cross-section, so $R$ rises. The bridge output is
@@ -106,7 +106,7 @@ $$
 
 where $G$ is the **gauge factor**, about 2 for metal foil.
 
-Metal foil gets most of its $G\approx2$ from geometry (L3.02–3.03, ll. 77–82). Stretching lengthens the wire and, through the Poisson effect, narrows it (metals have $\nu\approx0.3$), so both effects raise $R$. Assumptions: a uniform wire of diameter $D$, axial strain $\varepsilon = dL/L$, lateral strain $dD/D = -\nu\varepsilon$. Start from
+Metal foil gets most of its $G\approx2$ from geometry. Stretching lengthens the wire and, through the Poisson effect, narrows it (metals have $\nu\approx0.3$), so both effects raise $R$. Assumptions: a uniform wire of diameter $D$, axial strain $\varepsilon = dL/L$, lateral strain $dD/D = -\nu\varepsilon$. Start from
 
 $$
 R = \frac{\rho L}{A}
@@ -142,7 +142,7 @@ $$
 
 For $\nu = 0.3$ the geometric part alone is $1+0.6 = 1.6$; the small change in resistivity under strain (piezoresistance) supplies the rest of a metal's $G\approx2$. In semiconductor gauges the piezoresistive term dominates, giving $G$ of order 100.
 
-The strain gauge is both a sensor and a transducer (ll. 96–110). The wire is the sensor, the part that interacts with the strain; the bridge and its other resistors are the transducer that turns the resistance change into a voltage. What is measured is resistance, not strain: the strain is inferred. Temperature also changes $\rho$, so a temperature change looks like strain. A **half bridge** deals with this by putting a second, identical gauge in the adjacent arm ($R_1$): temperature changes both gauges equally and cancels in the ratio. On a bending cantilever with one gauge in tension and one in compression, the two strain signals add, which doubles the sensitivity while temperature still cancels.
+The strain gauge is both a sensor and a transducer. The wire is the sensor, the part that interacts with the strain; the bridge and its other resistors are the transducer that turns the resistance change into a voltage. What is measured is resistance, not strain: the strain is inferred. Temperature also changes $\rho$, so a temperature change looks like strain. A **half bridge** deals with this by putting a second, identical gauge in the adjacent arm ($R_1$): temperature changes both gauges equally and cancels in the ratio. On a bending cantilever with one gauge in tension and one in compression, the two strain signals add, which doubles the sensitivity while temperature still cancels.
 
 To derive the quarter-bridge result, set $R_1 = R_3 = R_4 = R$ and $R_2 = R+\Delta R$:
 
@@ -182,7 +182,7 @@ $$
 \frac{V_G}{V_s}=\frac{R+\Delta R+\Delta R_T}{2(R+\Delta R_T)}-\frac12=\frac{\Delta R}{2(R+\Delta R_T)}\approx\frac{\Delta R}{2R}
 $$
 
-The temperature term has dropped out of the numerator; it survives only as a tiny change of scale. That is why the half bridge almost balances itself against temperature changes (l. 171).
+The temperature term has dropped out of the numerator; it survives only as a tiny change of scale. That is why the half bridge almost balances itself against temperature changes.
 
 ### Worked example: strain from bridge voltages
 
@@ -197,10 +197,10 @@ The temperature term has dropped out of the numerator; it survives only as a tin
 > [!check] Why amplification is needed
 > Millivolt outputs from a 5 V supply are why every bridge is followed by an instrumentation amplifier in the conditioning stage ([[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering#2. Range transformation: scaling and offsetting|C3 §2]]). A 12-bit ADC on a 0–5 V range resolves 1.22 mV, about the whole quarter-bridge signal.
 
-Ohm's law with a fixed $\rho$ holds only at constant temperature, because resistivity depends on temperature (L3.02, ll. 57–68). It holds for metals (conductors), but not necessarily for semiconductors such as silicon, whose behaviour can be strongly nonlinear (ll. 69–76). A resistive sensor adds no phase: with a purely resistive load the current and voltage are in phase, because $R$ is a real number, and only the amplitude changes, so the sensor behaves like a proportional gain in a controller (ll. 207–218). Off-the-shelf strain gauges are usually 120 Ω or 350 Ω (ll. 180–183). See [[Wheatstone Bridge and Strain Gauges]].
+Ohm's law with a fixed $\rho$ holds only at constant temperature, because resistivity depends on temperature. It holds for metals (conductors), but not necessarily for semiconductors such as silicon, whose behaviour can be strongly nonlinear. A resistive sensor adds no phase: with a purely resistive load the current and voltage are in phase, because $R$ is a real number, and only the amplitude changes, so the sensor behaves like a proportional gain in a controller. Off-the-shelf strain gauges are usually 120 Ω or 350 Ω. See [[Wheatstone Bridge and Strain Gauges]].
 
 ### 4.2 Thermoelectric: thermocouples
-In the **Seebeck effect**, two dissimilar conductors joined across a temperature difference generate $V = \alpha_T(T_h-T_c)$. Carriers at the hot junction diffuse towards the cold one, and different materials create a net charge imbalance. The Seebeck coefficient depends on the materials, the temperature and the junction geometry (ll. 287–303). A thermocouple is self-powered, needing no external supply, and tiny thermocouples can be put in series to amplify the signal (ll. 317–318).
+In the **Seebeck effect**, two dissimilar conductors joined across a temperature difference generate $V = \alpha_T(T_h-T_c)$. Carriers at the hot junction diffuse towards the cold one, and different materials create a net charge imbalance. The Seebeck coefficient depends on the materials, the temperature and the junction geometry. A thermocouple is self-powered, needing no external supply, and tiny thermocouples can be put in series to amplify the signal.
 
 Typical figures:
 - Range −200 to 1700 °C (types K, R, S).
@@ -209,7 +209,7 @@ Typical figures:
 
 Uses include gas-turbine temperatures (500–1500 °C), exhaust gas temperature (EGT, about 400–900 °C) and spacecraft thermal monitoring.
 
-Small thermocouples respond faster. Large ones lag because they must reach equilibrium with their surroundings, and that lag matters for control: in spacecraft battery thermal management, a battery might already be lost before the sensor registers the change (ll. 331–346).
+Small thermocouples respond faster. Large ones lag because they must reach equilibrium with their surroundings, and that lag matters for control: in spacecraft battery thermal management, a battery might already be lost before the sensor registers the change.
 
 ### 4.3 Capacitive
 $C = \varepsilon_0\varepsilon A/d$, with $\varepsilon_0 = 8.85$ pF/m.
@@ -276,12 +276,12 @@ $$
 \frac{V(s)}{F(s)}=\frac{d}{C}\cdot\frac{\tau s}{\tau s+1},\qquad\tau=RC
 $$
 
-This is a first-order high-pass filter. Its DC gain is zero, so a constant force (or a constant 1 g) gives no steady output; signals well above $1/\tau$ pass with sensitivity $d/C$ (V/N). It is the same transfer-function idea C2 uses for every sensor ([[SESA2027 C2 - Sensor Characteristics, Dynamics and Design#Three model orders (DAP2, Occam's razor)|C2]]).
+This is a first-order high-pass filter. Its DC gain is zero, so a constant force (or a constant 1 g) gives no steady output; signals well above $1/\tau$ pass with sensitivity $d/C$ (V/N). Every sensor can be modelled with a transfer function in the same way ([[SESA2027 C2 - Sensor Characteristics, Dynamics and Design#Three model orders (DAP2, Occam's razor)|C2]]).
 
-A gas-hob igniter is a piezo element (L3.02, ll. 975–1051): the click delivers an impact that produces a high voltage and a spark. Electrically the crystal gives a high voltage at very low current and looks like a capacitor, so it can be read as a voltage, a current or a capacitance. Under a constant load the lattice settles into a new equilibrium and the output decays, which is why a piezoelectric accelerometer can't measure gravity, a constant 1 g.
+A gas-hob igniter is a piezo element: the click delivers an impact that produces a high voltage and a spark. Electrically the crystal gives a high voltage at very low current and looks like a capacitor, so it can be read as a voltage, a current or a capacitance. Under a constant load the lattice settles into a new equilibrium and the output decays, which is why a piezoelectric accelerometer can't measure gravity, a constant 1 g.
 
-## 5. Sensor fusion and the IMU (L3.03)
-Real measurements are imperfect (noise, bias, limited bandwidth), and no single sensor gives complete information. Combining sensors improves accuracy and robustness and extends what can be measured. The design trade-off is between precision, reliability and cost: more sensors give redundancy but cost more (ll. 1099–1111).
+## 5. Sensor fusion and the IMU
+Real measurements are imperfect (noise, bias, limited bandwidth), and no single sensor gives complete information. Combining sensors improves accuracy and robustness and extends what can be measured. The design trade-off is between precision, reliability and cost: more sensors give redundancy but cost more.
 
 An **IMU** measures motion without external references. A 3-axis accelerometer plus a 3-axis gyroscope gives 6 DoF, and adding a magnetometer gives 9 DoF. The outputs are linear acceleration and angular velocity in the body frame, and integration gives orientation, velocity and position.
 
@@ -292,7 +292,7 @@ An **IMU** measures motion without external references. A 3-axis accelerometer p
 | Strength | Good long-term reference (gravity) | Accurate short-term dynamics |
 | Weakness | Noisy; affected by manoeuvres; cannot separate acceleration from gravity | Bias integrates into drift; errors accumulate |
 
-A MEMS gyro is a vibrating proof mass on springs. A rotation produces a Coriolis force across the drive direction, which is sensed capacitively (ll. 1192–1220). The gyro is accurate in the short term and poor in the long term, because integration drifts. Integrating means summing, and the noise is summed too, every sample; over time the summed noise (plus numerical error) becomes a signal of its own (ll. 1113–1143). The integration constant (the initial position) is also unknown without an external reference (ll. 1117–1126).
+A MEMS gyro is a vibrating proof mass on springs. A rotation produces a Coriolis force across the drive direction, which is sensed capacitively. The gyro is accurate in the short term and poor in the long term, because integration drifts. Integrating means summing, and the noise is summed too, every sample; over time the summed noise (plus numerical error) becomes a signal of its own. The integration constant (the initial position) is also unknown without an external reference.
 
 ### Complementary filter
 See [[Complementary Filter]].
@@ -346,13 +346,13 @@ The bracket is the gyro's prediction of the new angle, which is what $\theta_{gy
 
 The complementary filter is not averaging. An average weights both sensors equally at every frequency, so it would inherit both the gyro drift and the accelerometer noise; the complementary filter gives each sensor a frequency role, the gyro at high frequency and the accelerometer at low frequency.
 
-The Kalman filter, despite its name, is not a filter but an estimator that combines several measurements using their noise statistics. It is not covered in this module (ll. 1148–1191); it appears in Year 3.
+The Kalman filter, despite its name, is not a filter but an estimator that combines several measurements using their noise statistics. It is not covered in this module.
 
 ## Exam scope
 
-- Part C lab report (ll. 607–619): six pages, with guiding questions for structure; in effect a summary and critical assessment of the Jupyter notebooks and the observations made in them.
-- L3.02–L3.03 give no explicit exam guidance. The physical relations are needed for the sensor transfer functions in C2 (ll. 1057–1058).
-- Further reading: Bentley Ch. 8 (sensing elements, l. 1060); Groves, *Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems*, for the IMU (ll. 1253–1254).
+- Part C lab report: six pages, with guiding questions for structure; in effect a summary and critical assessment of the Jupyter notebooks and the observations made in them.
+- No explicit exam guidance was given for this material. The physical relations are needed for the sensor transfer functions in C2.
+- Further reading: Bentley Ch. 8 (sensing elements); Groves, *Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems*, for the IMU.
 
 ## Terminology and alternative names
 
@@ -396,7 +396,7 @@ No tasks were set in the L3.02–3.03 recording, and L3.01 has no recording. The
 - [ ] Derive $\Delta R/R\approx4V_G/V_s$ for a quarter bridge and $V_G=(V_s/2)G\varepsilon$ for a bending half bridge. → [[#4.1 Resistive: strain gauges and the Wheatstone bridge]]
 - [ ] Find the bridge output for 500 µε with quarter, half and full bridges, and the strain for a measured voltage. → [[#Worked example: strain from bridge voltages]]
 - [ ] Explain why a piezoelectric sensor cannot measure gravity but a capacitive MEMS accelerometer can. → [[#4.5 Piezoelectric]] · [[#4.3 Capacitive]]
-- [ ] Explain, using "integration is summation", why a gyro-only attitude estimate drifts and how the complementary filter fixes it. → [[#5. Sensor fusion and the IMU (L3.03)]]
+- [ ] Explain, using "integration is summation", why a gyro-only attitude estimate drifts and how the complementary filter fixes it. → [[#5. Sensor fusion and the IMU]]
 - [ ] Part C sheet Q1–Q3 and Q13. → [[SESA2027 Part C Problem Sheet Solutions]]
 - [ ] Mock exam question. → [[SESA2027 Mock Questions#Q10. Strain gauge bridge and complementary filter|Mock Q10]]
 

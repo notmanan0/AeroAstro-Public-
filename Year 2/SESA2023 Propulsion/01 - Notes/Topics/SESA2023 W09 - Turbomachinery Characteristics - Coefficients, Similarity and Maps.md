@@ -32,7 +32,7 @@ sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf", 
 > - **Assumptions:** mean-line, constant radius; equal work in every stage; $\psi_{max}$ given; geometric similarity; Reynolds-number effects neglected above $Re\approx2\times10^5$; same gas ($\gamma$, $c_p$) in model and full size unless stated.
 > - **Method:** 1. Overall $\Delta h_0$ from the pressure ratio and $\eta$ (W02). 2. $U=\Omega r$; $\Delta h_{0,stage}\le\psi_{max}U^2$. 3. $n\ge\Delta h_{0,overall}/(\psi_{max}U^2)$, rounded up. 4. Similarity: hold $ND/\sqrt{T_{01}}$ (or $\phi$ and $M$), $\dot m\sqrt{T_{01}}/(D^2p_{01})$ and $\dot W/(\dot mc_pT_{01})$ constant. 5. Read the map at constant $N/\sqrt{T_{01}}$; check the surge margin.
 > - **Common mistakes:** rounding the stage count *down*; forgetting $D^2$ when scaling the non-dimensional mass flow between different sizes.
-> - **Practise:** [[#Worked example – the Lecture 27 HP compressor design]] · [[SESA2023 Problem Sheet 9 Solutions]] Q9.1, Q9.3–Q9.4
+> - **Practise:** [[#Worked example – HP compressor design and scale test]] · [[SESA2023 Problem Sheet 9 Solutions]] Q9.1, Q9.3–Q9.4
 
 Two numbers describe a blade row's working point: $\phi$ says at what angle the gas meets the blade, its incidence, and $\psi$ how hard the blade is turning it. With both near their design values the blade is efficient. Turning is limited, so the work is split into stages. A compressor blade can turn the flow only so far before its boundary layer separates, and the total work needed divided by the most a stage can do gives the minimum number of stages.
 
@@ -40,7 +40,7 @@ If two machines are geometric scale models and their dimensionless groups match,
 
 ---
 
-## 1. Flow and work coefficients (Lecture 25)
+## 1. Flow and work coefficients
 
 ### Definitions
 
@@ -51,23 +51,23 @@ $$
 At constant radius the Euler equation (W08) gives $\Delta h_0=U\Delta V_\theta$, so
 
 $$
-\psi = \frac{\Delta V_\theta}{U}
+\psi = \frac{|\Delta V_\theta|}{U}
 $$
 
 $\psi$ is called the stage loading or work coefficient.
 
-$\psi$ is always taken as positive, using $|\Delta h_0|$; decide from context whether the machine adds or removes work. All of a stage's $\Delta h_0$ happens in the rotor (a stator has no shaft work), so $\psi$ measures how much the rotor turns the flow (L25, ll. 76–97). Because $U$ varies with radius, state where $\psi$ is evaluated, usually mid-span: root and tip values can differ by a factor of two (L26, ll. 3–13). A high $\psi$ means more turning per stage and fewer stages, at lower efficiency.
+$\psi$ is always taken as positive, using $|\Delta h_0|$ and $|\Delta V_\theta|$: a compressor has $\Delta h_0>0$ and $\Delta V_\theta>0$, a turbine has both negative, and which one applies is decided from the machine. All of a stage's $\Delta h_0$ happens in the rotor (a stator has no shaft work), so $\psi$ measures how much the rotor turns the flow. Because $U$ varies with radius, state where $\psi$ is evaluated, usually mid-span: root and tip values can differ by a factor of two. A high $\psi$ means more turning per stage and fewer stages, at lower efficiency.
 
-$\phi$ has two readings (L25, ll. 186–234):
+$\phi$ has two readings:
 
 - At the design stage it sets the blade stagger. Low $\phi$ (small $V_x$, large $U$) means a highly staggered row with more metal facing backwards, better for a high pressure rise per stage. High $\phi$ means a low-stagger, open row, better for a high volume flow.
 - For a machine already built, $\phi$ measures how far it is from its design point. Below design $\phi$ the incidence becomes positive (towards suction-surface stall, like a wing at high angle of attack); above it, negative, and eventually separation on the pressure surface, which needs a larger change because of the blade's curvature.
 
 ### Limits on stage loading
 
-In a compressor the overall adverse pressure gradient makes separation the limit, giving an upper limit of about $\psi\le0.65$ and typical values of 0.35–0.5. A turbine has a favourable pressure gradient overall, but its suction surface always has a region of adverse gradient near the trailing edge, and at high turning, shock waves from the trailing edge strike the adjacent blade's boundary layer (L25, ll. 120–132); its upper limit is $\psi\le2.5$. So a turbine rotor can do about $2.5/0.65\approx4$ times the work of a compressor rotor at the same blade speed, which is why a gas turbine has several times more compressor rows than turbine rows (L25, ll. 136–142). Mach numbers also constrain the design: the fan-tip relative Mach number is kept below about 1.6 (noise, bird strike), and the axial Mach number at the fan face is about 0.6.
+In a compressor the overall adverse pressure gradient makes separation the limit, giving an upper limit of about $\psi\le0.65$ and typical values of 0.35–0.5. A turbine has a favourable pressure gradient overall, but its suction surface always has a region of adverse gradient near the trailing edge, and at high turning, shock waves from the trailing edge strike the adjacent blade's boundary layer; its upper limit is $\psi\le2.5$. So a turbine rotor can do about $2.5/0.65\approx4$ times the work of a compressor rotor at the same blade speed, which is why a gas turbine has several times more compressor rows than turbine rows. Mach numbers also constrain the design: the fan-tip relative Mach number is kept below about 1.6 (noise, bird strike), and the axial Mach number at the fan face is about 0.6.
 
-The **Smith chart** for turbines plots efficiency contours on axes of $(\phi,\psi)$. Raising $\psi$ lowers $\eta$, and the best $\phi$ rises with $\psi$ (handout; Smith 1965). Many different Rolls-Royce turbines collapse onto one chart once non-dimensionalised (L25, ll. 235–303).
+The **Smith chart** for turbines plots efficiency contours on axes of $(\phi,\psi)$. Raising $\psi$ lowers $\eta$, and the best $\phi$ rises with $\psi$ (handout; Smith 1965). Many different Rolls-Royce turbines collapse onto one chart once non-dimensionalised.
 
 ### Worked example – reading the Smith chart
 
@@ -76,11 +76,11 @@ A turbine must deliver a fixed total work.
 - Designed at $\psi=1.3$, the best achievable efficiency (moving along that line to the peak contour) is about 94 %, but the turbine needs 8 stages: heavy and costly.
 - Halve the stage count to 4. Each stage must now do twice the work, so $\psi=2.6$. The best efficiency on that line is only about 88 %, and it occurs at a higher $\phi$.
 
-The trade-off is 6 points of efficiency for half the stages. Halving the number of stages doubles the work per stage because the total $\Delta h_0$ is fixed: merging two stages into one super-stage makes it do the work of both (ll. 291–301).
+The trade-off is 6 points of efficiency for half the stages. Halving the number of stages doubles the work per stage because the total $\Delta h_0$ is fixed: merging two stages into one super-stage makes it do the work of both.
 
 ### The stage count
 
-The choice of $\psi$ is an economic trade-off: low loading is aerodynamically efficient but needs more stages, so a longer, heavier engine with more parts and maintenance (L25, ll. 143–159). With equal work per stage, at least
+The choice of $\psi$ is an economic trade-off: low loading is aerodynamically efficient but needs more stages, so a longer, heavier engine with more parts and maintenance. With equal work per stage, at least
 
 $$
 \boxed{n_{stages}\ge\frac{\Delta h_{0,overall}}{\psi_{max}U^2}}\qquad\text{(round up to an integer)}
@@ -99,7 +99,7 @@ $$
 Axial velocity from the Mach number at the rotor face. Using $a^2=(\gamma-1)c_pT$ and $T=T_{02}/(1+\tfrac{\gamma-1}{2}M^2)$:
 
 $$
-\frac{V_x}{\sqrt{c_pT_{02}}} = \sqrt{\gamma-1}\;M\left(1+\frac{\gamma-1}{2}M^2\right)^{-1/2} = 0.6325\times0.6\times1.0360^{-1/2} = 0.3665
+\frac{V_x}{\sqrt{c_pT_{02}}} = \sqrt{\gamma-1}\;M\left(1+\frac{\gamma-1}{2}M^2\right)^{-1/2} = 0.6325\times0.6\times1.072^{-1/2} = 0.3665
 $$
 
 $$
@@ -118,21 +118,21 @@ $$
 
 ---
 
-## 2. Dimensional analysis (Lecture 25)
+## 2. Dimensional analysis
 
 ### Variables and similarity
 
 The starting point is the set of variables that could change the streamline pattern in the machine. If the streamline patterns, and so the velocity triangles, are similar, then every dimensionless group matches, including efficiency and pressure coefficients (handout; [[SESA2023 Problem Sheet 9 Solutions]] Q9.2).
 
-**Buckingham π**: $n$ variables with $m$ independent dimensions give $n-m$ independent dimensionless groups (L25, l. 307; [[SESA1016 T6 - Dimensional Analysis and Similarity]]).
+**Buckingham π**: $n$ variables with $m$ independent dimensions give $n-m$ independent dimensionless groups ([[SESA1016 T6 - Dimensional Analysis and Similarity]]).
 
 ### Incompressible machines (pumps, fans, hydraulic turbines)
 
-In a pump driven by a motor at speed $\Omega$, with a throttle valve on its outlet, the flow $Q$ (set with the valve) and $\Omega$ are controlled; the fluid brings $\rho$ and $\mu$; a geometrically similar family is scaled by $D$; and $\Delta p$ is the measured (dependent) variable. The independent variables are $Q$, $\Omega$, $D$, $\rho$, $\mu$: five variables, three dimensions (M, L, T), so two groups. There are infinitely many valid choices; use the conventional ones (ll. 15–21, 391–393):
+In a pump driven by a motor at speed $\Omega$, with a throttle valve on its outlet, the flow $Q$ (set with the valve) and $\Omega$ are controlled; the fluid brings $\rho$ and $\mu$; a geometrically similar family is scaled by $D$; and $\Delta p$ is the measured (dependent) variable. The independent variables are $Q$, $\Omega$, $D$, $\rho$, $\mu$: five variables, three dimensions (M, L, T), so two groups. There are infinitely many valid choices; use the conventional ones:
 
-- Reynolds number: this needs a velocity scale, and $\Omega D$ (proportional to blade speed) is used. Factors of 2 or π do not matter as long as the definition is always the same (ll. 396–405).
-- Non-dimensional flow $Q/(\Omega D^3)$: like $\phi=V_x/U$ with $V_x\sim Q/D^2$ and $U\sim\Omega D$ (ll. 409–423).
-- Pressure coefficient $\Delta p/(\rho\Omega^2D^2)$: like $\psi$, because $\Delta h_0\approx\Delta p_0/\rho$ for an isentropic constant-density fluid (ll. 425–436).
+- Reynolds number: this needs a velocity scale, and $\Omega D$ (proportional to blade speed) is used. Factors of 2 or π do not matter as long as the definition is always the same.
+- Non-dimensional flow $Q/(\Omega D^3)$: like $\phi=V_x/U$ with $V_x\sim Q/D^2$ and $U\sim\Omega D$.
+- Pressure coefficient $\Delta p/(\rho\Omega^2D^2)$: like $\psi$, because $\Delta h_0\approx\Delta p_0/\rho$ for an isentropic constant-density fluid.
 
 $$
 \frac{Q}{\Omega D^3}\ (\sim\phi),\qquad Re = \frac{\rho\Omega D^2}{\mu}
@@ -148,7 +148,7 @@ For $Re>2\times10^5$ the boundary layers are thin and turbulent and Re has a wea
 
 ### Compressible machines
 
-Above about M 0.3 compressibility matters, and compressibility $d\rho/dp$ is measured by the speed of sound, $a^2=(\partial p/\partial\rho)_s$, so $\gamma$ and $c_pT$ enter (L26, ll. 108–126). Mass flow replaces volume flow because it is the same at inlet and outlet when density changes (ll. 132–142). The seven variables $\dot m$, $N$, $D$, $\mu$, $\gamma$, $c_pT_{01}$, $p_{01}$ with three dimensions give four groups: a Reynolds-like group, $\gamma$, a flow group and a blade Mach number. The first two can be dropped: Re for the reason above, and $\gamma$ because a given compressor (or turbine) always handles the same gas (ll. 149–167). That leaves (with $a=\sqrt{(\gamma-1)c_pT}$):
+Above about M 0.3 compressibility matters, and compressibility $d\rho/dp$ is measured by the speed of sound, $a^2=(\partial p/\partial\rho)_s$, so $\gamma$ and $c_pT$ enter. Mass flow replaces volume flow because it is the same at inlet and outlet when density changes. The seven variables $\dot m$, $N$, $D$, $\mu$, $\gamma$, $c_pT_{01}$, $p_{01}$ with three dimensions give four groups: a Reynolds-like group, $\gamma$, a flow group and a blade Mach number. The first two can be dropped: Re for the reason above, and $\gamma$ because a given compressor (or turbine) always handles the same gas. That leaves (with $a=\sqrt{(\gamma-1)c_pT}$):
 
 $$
 \gamma,\quad \frac{\dot m\sqrt{c_pT_{01}}}{D^2p_{01}},\quad \frac{ND}{\sqrt{c_pT_{01}}}
@@ -170,9 +170,9 @@ Using similarity (typical exam steps):
 
 These are [[SESA2023 Problem Sheet 9 Solutions]] Q9.3–Q9.4 and [[SESA2023 Exam 2021-22 Solutions]] Q4(ii–iii).
 
-### Worked example – the Lecture 27 HP compressor design
+### Worked example – HP compressor design and scale test
 
-An extended "preliminary design" exercise that ties together W06–W09 (L27, ll. 1–434): specify an HP compressor and plan a cheap scale test. Inlet $T_{023}$, $p_{023}=40$ kPa; overall pressure ratio 15; isentropic efficiency 0.9; input power 5 MW from the HP turbine; 10,000 rpm; cold air ($c_p=1005$, $\gamma=1.4$). Design guidelines: $\psi_{max}$ and $\phi=0.7$, axial flow into every stage ($\alpha_1=0$), constant $V_x$.
+A preliminary design draws on W06–W09: specify an HP compressor and plan a cheap scale test. Inlet $T_{023}=330$ K, $p_{023}=40$ kPa; overall pressure ratio 15; isentropic efficiency 0.9; input power 5 MW from the HP turbine; 10,000 rpm; mean radius 0.3 m; cold air ($c_p=1005$, $\gamma=1.4$). Design guidelines: $\psi_{max}=0.7$ and $\phi=0.7$, axial flow into every stage ($\alpha_1=0$), constant $V_x$.
 
 **(a) Number of stages.** Overall work from the W02 compressor relations:
 
@@ -180,7 +180,7 @@ $$
 \Delta h_{0,overall} = \frac{c_pT_{023}\left(15^{0.2857}-1\right)}{\eta_c} = \frac{1005\times330\times1.1678}{0.9} = 430\ \mathrm{kJ/kg}
 $$
 
-Hundreds of kilojoules per kilogram is typical (l. 136). Blade speed:
+Hundreds of kilojoules per kilogram is typical. Blade speed:
 
 $$
 U = r\Omega = 0.3\times\frac{2\pi\times10\,000}{60} = 314\ \mathrm{m/s}
@@ -194,7 +194,7 @@ $$
 
 Each stage then does $430/7=61.5$ kJ/kg, i.e. $\psi=0.62$. The mass flow is $\dot m=5\ \mathrm{MW}/430\ \mathrm{kJ/kg}=11.6$ kg/s.
 
-(b) First-rotor blade angles (zero incidence: $\beta_1=\alpha_{1,rel}$; zero deviation: $\beta_2=\alpha_{2,rel}$; ll. 173–259).
+(b) First-rotor blade angles (zero incidence: $\beta_1=\alpha_{1,rel}$; zero deviation: $\beta_2=\alpha_{2,rel}$).
 
 $$
 V_x = \phi U = 0.7\times314 = 219.9\ \mathrm{m/s}
@@ -210,9 +210,9 @@ $$
 \beta_1 = \alpha_{1,rel} = \tan^{-1}\frac{0-314}{219.9} = -55.0^\circ,\qquad \beta_2 = \alpha_{2,rel} = \tan^{-1}\frac{195.7-314}{219.9} = -28.3^\circ
 $$
 
-About 27° of turning, a little less than a modern compressor stage, which would aim for about 45–50° (ll. 254–256).
+About 27° of turning, a little less than a modern compressor stage, which would aim for about 45–50°.
 
-**(c) A 1/10-scale test at ambient outlet pressure.** Match the Mach number, $\phi$ and $\psi$; accept a Reynolds number about 10 times lower (weak effect, ll. 303–320). Run with atmospheric pressure at outlet and a throttle valve at inlet, so $p_{023,t}=101.325/15=6.76$ kPa. The throttle is adiabatic with no work, so $T_0$ is unchanged through it (ll. 365–374): $T_{023,t}=298$ K.
+**(c) A 1/10-scale test at ambient outlet pressure.** Match the Mach number, $\phi$ and $\psi$; accept a Reynolds number about 10 times lower (weak effect). Run with atmospheric pressure at outlet and a throttle valve at inlet, so $p_{023,t}=101.325/15=6.76$ kPa. The throttle is adiabatic with no work, so $T_0$ is unchanged through it: $T_{023,t}=298$ K.
 
 Matching the Mach number fixes $V_x/\sqrt{c_pT_{023}}$:
 
@@ -234,16 +234,16 @@ $$
 \frac{\dot W_t}{\dot W} = 1.78\times10^{-3}\times0.903 = 1.60\times10^{-3},\qquad \dot W_t = 5\ \mathrm{MW}\times1.60\times10^{-3} = 8.0\ \mathrm{kW}
 $$
 
-The 1/10-scale test rig cannot run from a conventional plug, but with a simple three-phase power supply it is affordable (l. 431).
+The 1/10-scale test rig cannot run from a conventional plug, but with a simple three-phase power supply it is affordable.
 
 > [!check] Numerical checks
-> - The reference answers 430 kJ/kg, 6.23, 69 and 61 kJ/kg, −55° and −28°, 209 and 298.5 m/s, $1.78\times10^{-3}$, $1.6\times10^{-3}$ and 8.02 kW are all reproduced.
+> - Recomputing from the stated data gives 430 kJ/kg, 6.23, 69 and 61 kJ/kg, −55° and −28°, 209 and 298.5 m/s, $1.78\times10^{-3}$, $1.6\times10^{-3}$ and 8.02 kW, matching the values above.
 > - The model must spin at $U_t/r_t=298.5/0.03=9950$ rad/s, about 95,000 rpm, nearly ten times the full-size speed: small models of high-Mach machines run very fast.
-> - The size alone cuts the Reynolds number by a factor of 10 (l. 433). The throttled inlet also cuts the density: $\rho\propto p_0/T_0$ gives $(6.76/40)\times(330/298)=0.19$. With $U_t/U=0.95$ and $D_t/D=0.1$, $Re_t/Re\approx0.19\times0.95\times0.1=0.018$, about 55 times lower. The Reynolds-number mismatch is the main uncertainty in the test.
+> - The size alone cuts the Reynolds number by a factor of 10. The throttled inlet also cuts the density: $\rho\propto p_0/T_0$ gives $(6.76/40)\times(330/298)=0.19$. With $U_t/U=0.95$ and $D_t/D=0.1$, $Re_t/Re\approx0.19\times0.95\times0.1=0.018$, about 55 times lower. The Reynolds-number mismatch is the main uncertainty in the test.
 
 ---
 
-## 3. Specific speed (Lecture 26)
+## 3. Specific speed
 
 Choosing the machine type before its size is known needs a group without $D$. Eliminating $D$ between $\phi\sim Q/(\Omega D^3)$ and $\psi\sim\Delta h/(\Omega^2D^2)$:
 
@@ -266,20 +266,20 @@ with $\Omega$ in rad/s and SI units; for compressible machines use the inlet vol
 | about 0.4–2 | mixed flow |
 | above about 2 | axial, propellers: few, long, widely spaced blades |
 
-Low-$\phi$, high-$\psi$ machines (a vacuum-cleaner fan, a car supercharger) sit at low $N_s$; high-$\phi$, low-$\psi$ machines (wind turbine, aircraft or ship propeller) at high $N_s$ (L26, ll. 20–93). The chart runs from $N_s\approx0.05$ to 20: Pelton wheels (cups on a wheel, very high turning) at the low end of turbines; positive-displacement machines (Roots or gear pumps, as in car superchargers) at the low end of compressors; then centrifugal, then axial, which reach the highest efficiencies; fans and propellers at the top. Specific speed acts as a shape factor. $N$ is often rotations per second; $\Omega$ is rad/s. Aero engines use axial machines because they are the most efficient at high flow and can be stacked into many stages; multistage centrifugal compressors lose pressure in the ducting between stages.
+Low-$\phi$, high-$\psi$ machines (a vacuum-cleaner fan, a car supercharger) sit at low $N_s$; high-$\phi$, low-$\psi$ machines (wind turbine, aircraft or ship propeller) at high $N_s$. The chart runs from $N_s\approx0.05$ to 20: Pelton wheels (cups on a wheel, very high turning) at the low end of turbines; positive-displacement machines (Roots or gear pumps, as in car superchargers) at the low end of compressors; then centrifugal, then axial, which reach the highest efficiencies; fans and propellers at the top. Specific speed acts as a shape factor. $N$ is often rotations per second; $\Omega$ is rad/s. Aero engines use axial machines because they are the most efficient at high flow and can be stacked into many stages; multistage centrifugal compressors lose pressure in the ducting between stages.
 
 ---
 
-## 4. Characteristic maps (Lecture 26)
+## 4. Characteristic maps
 
 ![[prop_compressor_map.png|680]]
 
 ### High-speed compressor
 
 - Plot $p_{02}/p_{01}$ and $\eta$ against $\dot m\sqrt{T_{01}}/p_{01}$, with lines of constant $N/\sqrt{T_{01}}$.
-- Each speed line is what you get by holding the speed and opening a throttle downstream: the flow rises and the pressure ratio falls (L26, ll. 199–209).
-- At low flow (high incidence) each speed line ends at the surge/stall line. With nothing physically holding the pressure in, a stalled compressor lets the high-pressure combustor gas surge out of the front of the engine: a loud bang (the pressure difference can drive supersonic flow and a blast wave) and probably a flame-out (L25, ll. 108–115; L26, ll. 225–231). Never operate beyond it. Surge itself is not covered in depth in this module (L26, l. 258).
-- At high flow the lines turn vertical at choke, where the pressure ratio collapses (L26, l. 266).
+- Each speed line is what you get by holding the speed and opening a throttle downstream: the flow rises and the pressure ratio falls.
+- At low flow (high incidence) each speed line ends at the surge/stall line. With nothing physically holding the pressure in, a stalled compressor lets the high-pressure combustor gas surge out of the front of the engine: a loud bang (the pressure difference can drive supersonic flow and a blast wave) and probably a flame-out. Never operate beyond it. Surge itself is not covered in depth in this module.
+- At high flow the lines turn vertical at choke, where the pressure ratio collapses.
 - At high speed the lines become steep.
 - Per stage, the pressure-ratio limit is about 2 (axial, shocks) or about 10 (centrifugal). Overall, $\pi=\pi_{stage}^n$ for equal stages.
 - Multistage compressors with an overall ratio above about 10 are hard to start: at low speed the volume flow is mismatched to the annulus areas designed for high density, and the mismatch "snowballs" from stage to stage. Hence multiple spools, variable stators and bleed valves.
@@ -287,7 +287,7 @@ Low-$\phi$, high-$\psi$ machines (a vacuum-cleaner fan, a car supercharger) sit 
 ### Turbine
 
 - Stable boundary layers allow a high pressure ratio per stage, so the blade rows choke.
-- If the first stator (a converging nozzle) chokes, nothing the rotor does downstream can change the flow, so the maximum non-dimensional flow is the same at every speed. If choking happens further downstream, the choked flow varies with speed (L26, ll. 268–281).
+- If the first stator (a converging nozzle) chokes, nothing the rotor does downstream can change the flow, so the maximum non-dimensional flow is the same at every speed. If choking happens further downstream, the choked flow varies with speed.
 - The non-dimensional flow is then constant, independent of pressure ratio.
 - The mass flow can then be changed only through the inlet $p_0$ and $T_0$ (for example, throttling a steam turbine, [[SESA2023 Problem Sheet 9 Solutions]] Q9.5).
 - No instability; a stage can take about 4:1, and a machine about 100:1 overall.
@@ -296,13 +296,13 @@ Low-$\phi$, high-$\psi$ machines (a vacuum-cleaner fan, a car supercharger) sit 
 
 A nozzle has a characteristic too: the non-dimensional flow rises with pressure ratio until it chokes at $p/p_0=0.528$ (W03).
 
-Strictly, $\dot m\sqrt{T_{01}}/p_{01}$ and $N/\sqrt{T_{01}}$ have units, because $D$, $c_p$ and $R$ have been dropped for a single machine on a single gas (L26, ll. 290–295). They are still called the non-dimensional flow and speed; some maps use corrected flow and speed referred to standard-day conditions instead.
+Strictly, $\dot m\sqrt{T_{01}}/p_{01}$ and $N/\sqrt{T_{01}}$ have units, because $D$, $c_p$ and $R$ have been dropped for a single machine on a single gas. They are still called the non-dimensional flow and speed; some maps use corrected flow and speed referred to standard-day conditions instead.
 
 ---
 
 ## 5. Propellers and actuator disk (examined 2023-24, not lectured in 2025-26)
 
-Propellers appear in 2025-26 only as the high-$N_s$ end of the machine family (L26). The 2023-24 paper examined them:
+Propellers appear in 2025-26 only as the high-$N_s$ end of the machine family. The 2023-24 paper examined them:
 
 - the advance ratio $J=V_\infty/(nD)$;
 - velocity triangles at cruise;
@@ -326,7 +326,7 @@ See [[Actuator Disk Theory]] and [[SESA2023 Exam 2023-24 Solutions]] Q4. Treat a
 | Course term | Also called | Where the course uses it | Note |
 |---|---|---|---|
 | flow coefficient $\phi$ | — | handout, L25 | $V_x/U$. |
-| stage loading coefficient $\psi$ | work coefficient, loading coefficient | handout, L25, L27 | $\Delta h_0/U^2$; some texts use $\psi=\Delta h_0/(\tfrac12U^2)$, double the course value. |
+| stage loading coefficient $\psi$ | work coefficient, loading coefficient | handout, L25, L27 | $\lvert\Delta h_0\rvert/U^2$; some texts use $\psi=\Delta h_0/(\tfrac12U^2)$, double the course value. |
 | specific speed $N_s$ | shape factor, $\Omega_s$ | handout, L26 | Dimensionless only in consistent units (rad/s). |
 | characteristic | map | handout, L26 | |
 | non-dimensional mass flow / speed | corrected flow / speed, $\dot m\sqrt\theta/\delta$, $N/\sqrt\theta$ | handout, L26 | |
@@ -353,20 +353,20 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 9 lectures; t
 
 ### Core
 
-- [ ] *(set)* Lecture 27 design exercise: stage count, first-rotor angles and the 1/10-scale test power; the numbers are to be substituted independently (L27, l. 135). Targets 430 kJ/kg, 7 stages, −55° and −28°, 8.0 kW. → [[#Worked example – the Lecture 27 HP compressor design]]
+- [ ] *(set)* Lecture 27 design exercise: stage count, first-rotor angles and the 1/10-scale test power; the numbers are to be substituted independently (L27, l. 135). Targets 430 kJ/kg, 7 stages, −55° and −28°, 8.0 kW. → [[#Worked example – HP compressor design and scale test]]
 - [ ] *(set)* Stage count for the handout's turbojet compressor. Target 6 stages. → [[#Worked example – stage count for a turbojet compressor]]
 - [ ] *(set)* Work [[SESA2023 Problem Sheet 9 Solutions|Problem Sheet 9]] and the summative Week 9 quiz (L26, ll. 309–311).
-- [ ] *(set)* Sketch a compressor map and a turbine map, labelling surge, choke, the speed lines and the efficiency islands; sketching the map and labelling choking and stall is an expected skill (L26, ll. 251–252). → [[#4. Characteristic maps (Lecture 26)]]
+- [ ] *(set)* Sketch a compressor map and a turbine map, labelling surge, choke, the speed lines and the efficiency islands; sketching the map and labelling choking and stall is an expected skill (L26, ll. 251–252). → [[#4. Characteristic maps]]
 - [ ] Read the Smith chart example: why halving the stages costs about 6 points of efficiency. → [[#Worked example – reading the Smith chart]]
 - [ ] Give both interpretations of the flow coefficient (design stagger and off-design incidence). → [[#Definitions]]
 
 ### Further practice
 
 - [ ] Derive the incompressible and compressible dimensionless groups with Buckingham π. → [[#Incompressible machines (pumps, fans, hydraulic turbines)]] · [[#Compressible machines]]
-- [ ] Derive $N_s=\phi^{1/2}/\psi^{3/4}$ by eliminating $D$. → [[#3. Specific speed (Lecture 26)]]
+- [ ] Derive $N_s=\phi^{1/2}/\psi^{3/4}$ by eliminating $D$. → [[#3. Specific speed]]
 - [ ] Explain why a turbine stage can take about four times the loading of a compressor stage. → [[#Limits on stage loading]]
 - [ ] Explain why a high-ratio multistage compressor is hard to start and list three fixes. → [[#High-speed compressor]]
-- [ ] Find the model rotational speed for the Lecture 27 test. Target about 95,000 rpm. → [[#Worked example – the Lecture 27 HP compressor design]]
+- [ ] Find the model rotational speed for the Lecture 27 test. Target about 95,000 rpm. → [[#Worked example – HP compressor design and scale test]]
 
 ## Transcript and slide slips
 
@@ -381,12 +381,12 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 9 lectures; t
 > "This sign here should be the other way around… It should be greater than or equal to this ratio." A fractional stage count is always rounded up (l. 170).
 
 > [!warning] Slide note (L26, l. 43)
-> Where: [[#3. Specific speed (Lecture 26)]].
+> Where: [[#3. Specific speed]].
 >
 > A term on the specific-speed slide has "migrated a little bit, but it should be over the $D^{3/2}$"; the elimination of $D$ above fixes the exponents.
 
 > [!warning] Transcript slips: the spoken data do not match the quoted answers (L27)
-> Where: [[#Worked example – the Lecture 27 HP compressor design]].
+> Where: [[#Worked example – HP compressor design and scale test]].
 >
 > - The slide says pressure ratio 20; "the value of pressure ratio I've actually used in the calculation is 15" (ll. 23–25, 283–284).
 > - The spoken data are $T_{023}=350$ K (l. 103), $\psi_{max}=0.6$ (l. 33) and $r=0.25$ m (l. 62). But every answer quoted (430 kJ/kg, 6.23 stages, $U=314$ m/s, 69 kJ/kg, $V_x=219$ m/s, test $V_x=209$ m/s, mass-flow ratio $1.78\times10^{-3}$) is reproduced exactly with $T_{023}=330$ K, $\eta_c=0.9$, $\psi_{max}=0.7$ and $U=314$ m/s (i.e. $r=0.3$ m at 10,000 rpm). Those values are used in the worked example.

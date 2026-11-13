@@ -21,7 +21,7 @@ $$
 
 $T_0$ stays constant whenever there is no heat transfer or shaft work, by the steady-flow energy equation, even across shocks and with friction. $p_0$ stays constant only if the flow is also isentropic, so any loss, from friction, a shock or mixing, appears as a drop in $p_0$, which is entropy generation. Every property has a static and a stagnation value, which differ in a moving frame; "pressure" on its own means static pressure.
 
-In the engine's frame the free stream arrives with $T_{01} = T_a(1+\tfrac{\gamma-1}{2}M_0^2)$ and $p_{01} = p_a(1+\tfrac{\gamma-1}{2}M_0^2)^{\gamma/(\gamma-1)}$. This ram rise is why ramjets work: the stagnation pressure ratio is 1.52 at M 0.8, 7.82 at M 2 and 49.4 at M 3.2. Rearranged, $T_0 = T+V^2/(2c_p)$ gives $V = \sqrt{2c_p(T_0-T)}$, which is how the jet velocity is found in every nozzle. The Data Book (p. 11 and Tables 19–22) tabulates the flow functions
+In the engine's frame the free stream arrives with $T_{01} = T_a(1+\tfrac{\gamma-1}{2}M_0^2)$ and $p_{01} = p_a(1+\tfrac{\gamma-1}{2}M_0^2)^{\gamma/(\gamma-1)}$. This ram rise is why ramjets work: the stagnation pressure ratio is 1.52 at M 0.8, 7.82 at M 2 and 49.4 at M 3.2. Rearranged, $T_0 = T+V^2/(2c_p)$ gives $V = \sqrt{2c_p(T_0-T)}$, which is how the jet velocity is found in every nozzle. The flow functions below are tabulated in the Data Book (p. 11 and Tables 19–22):
 
 $$
 \frac{V}{\sqrt{c_pT_0}} = \sqrt{\gamma-1}\,M\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{-1/2},\qquad\frac{\dot m\sqrt{c_pT_0}}{Ap_0} = \frac{\gamma}{\sqrt{\gamma-1}}M\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{-\frac{\gamma+1}{2(\gamma-1)}} .

@@ -242,7 +242,7 @@ $$
 
 ### BJT switch design with base overdrive and saturation check
 
-A $V_{\mathrm{in}}=5.0\ \mathrm V$ control signal switches an npn BJT ($\beta=100$, $V_{BE}=0.70\ \mathrm V$, $V_{CE(\mathrm{sat})}=0.20\ \mathrm V$) that drives a high-power LED ($V_F=2.40\ \mathrm V$ at a target forward current $I_F=300\ \mathrm{mA}=0.300\ \mathrm A$) from a $V_{CC}=12.0\ \mathrm V$ collector supply (`ee_b3_transistor_switches.png`(a); Week 8 slides pp. 8–9).
+A $V_{\mathrm{in}}=5.0\ \mathrm V$ control signal switches an npn BJT ($\beta=100$, $V_{BE}=0.70\ \mathrm V$, $V_{CE(\mathrm{sat})}=0.20\ \mathrm V$) that drives a high-power LED ($V_F=2.40\ \mathrm V$ at a target forward current $I_F=300\ \mathrm{mA}=0.300\ \mathrm A$) from a $V_{CC}=12.0\ \mathrm V$ collector supply (`ee_b3_transistor_switches.png`(a)).
 
 With the base switch open, $I_B=0\ \mathrm{mA}$, the BJT is in cut-off, the collector current is $I_C=\boxed{0\ \mathrm{mA}}$ and the LED is off.
 
@@ -332,7 +332,7 @@ After $C_2$ removes the $6.00\ \mathrm V$ DC offset, the AC output is $\boxed{v_
 
 ### MOSFET motor switch current limit and gate-divider biasing
 
-An n-channel enhancement-mode power MOSFET switching a DC motor has a datasheet on-resistance $R_{DS(\mathrm{on})}=0.040\ \Omega$, specified at $V_{GS}=10\ \mathrm V$ (Week 8 slides pp. 15–16). If the continuous power dissipated in the MOSFET is limited to $P_{\max}=100\ \mathrm W$ (removed through a heatsink), rearranging $P_{\max}=I_{D,\max}^2R_{DS(\mathrm{on})}$ gives the maximum steady motor current:
+An n-channel enhancement-mode power MOSFET switching a DC motor has a datasheet on-resistance $R_{DS(\mathrm{on})}=0.040\ \Omega$, specified at $V_{GS}=10\ \mathrm V$. If the continuous power dissipated in the MOSFET is limited to $P_{\max}=100\ \mathrm W$ (removed through a heatsink), rearranging $P_{\max}=I_{D,\max}^2R_{DS(\mathrm{on})}$ gives the maximum steady motor current:
 
 $$
 \begin{aligned}

@@ -15,7 +15,7 @@ sources: ["02 - Sources/Lectures & Problem Sheets/PDEs/Lecture17_Parabolic1.pdf"
 
 The **heat equation** $y_t=\kappa^2y_{xx}$, also called the diffusion equation, is the prototype parabolic PDE: one time derivative balanced against two space derivatives.
 
-The equation follows from a random walk (Lecture 17). Particles on a grid stay put with probability $\frac12$ and step left or right with probability $\frac14$ each; Taylor-expanding the exact update and letting $\Delta x,\Delta t\to0$ with $\Delta x^2/\Delta t$ fixed gives the equation with $\kappa^2=\Delta x^2/(4\Delta t)$. That limit is the signature of diffusion: spreading over a distance $\ell$ takes a time of order $\ell^2/\kappa^2$.
+The equation follows from a random walk. Particles on a grid stay put with probability $\frac12$ and step left or right with probability $\frac14$ each; Taylor-expanding the exact update and letting $\Delta x,\Delta t\to0$ with $\Delta x^2/\Delta t$ fixed gives the equation with $\kappa^2=\Delta x^2/(4\Delta t)$. That limit is the signature of diffusion: spreading over a distance $\ell$ takes a time of order $\ell^2/\kappa^2$.
 
 Separation of variables gives the same spatial eigenfunctions as the wave equation, but each mode decays as $e^{-(n\pi\kappa/L)^2t}$, faster for higher $n$, so sharp features vanish first and the solution smooths out. Only the initial temperature can be given. With fixed-temperature ends the rod relaxes to the straight line joining the end values; with insulated ends no heat escapes, the constant mode survives, and the rod settles to the mean of its initial temperature. For $y(x,0)=x(1-x)$ on $[0,1]$ with insulated ends, $y=\frac16-\sum\frac{2(1+(-1)^n)}{(n\pi)^2}\cos n\pi x\,e^{-(n\pi\kappa)^2t}$.
 

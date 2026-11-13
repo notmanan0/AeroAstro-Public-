@@ -16,7 +16,7 @@ sources: ["02 - Sources/Lectures/Week 09 - Turbomachinery Characteristics.pdf"]
 The **flow coefficient** and the **stage loading** (work coefficient) are the two numbers that describe a turbomachine stage's velocity triangles:
 
 $$
-\phi = \frac{V_x}{U},\qquad\psi = \frac{|\Delta h_0|}{U^2} = \frac{\Delta V_\theta}{U} .
+\phi = \frac{V_x}{U},\qquad\psi = \frac{|\Delta h_0|}{U^2} = \frac{|\Delta V_\theta|}{U} .
 $$
 
 $\phi$ fixes the relative inlet angle. At the design stage a low $\phi$ means highly staggered blades and a high $\phi$ low stagger. For a blade that has already been built, running below the design $\phi$ means positive incidence, towards stall and surge, and above it negative incidence, towards choke, so a machine is efficient only in a narrow band of $\phi$. Multistage compressors keep $V_x$ roughly constant by shrinking the blade height as the density rises.

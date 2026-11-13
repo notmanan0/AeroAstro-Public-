@@ -31,7 +31,7 @@ That is six states for the dynamics and six for the kinematics: each of the six 
 
 Here $\mathbf g=[0,0,g]^T$ is NED gravity and $\mathbf F$ excludes the weight. The model assumes constant mass and body inertia, a flat Earth, and Euler angles away from gimbal lock.
 
-All four groups have to be evaluated together from the current state, and force and moment models plus initial conditions are needed before the system can be integrated. The DCM is an algebraic function of the Euler angles, not an extra state. A closed-form solution only exists in simplified cases, so in general the model is integrated numerically in MATLAB or Python (L13 ll. 320–325).
+All four groups have to be evaluated together from the current state, and force and moment models plus initial conditions are needed before the system can be integrated. The DCM is an algebraic function of the Euler angles, not an extra state. A closed-form solution only exists in simplified cases, so in general the model is integrated numerically in MATLAB or Python.
 
 One case that can be checked analytically is a freely falling body yawing at $r=0.3$ rad/s ([[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model#5. Exact ballistic integration check (suggested)|4.3 §5]], with the analytic solution and a numerical check): its centre of mass follows a parabola while $u$ and $v$ oscillate as its axes turn.
 

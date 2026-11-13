@@ -25,7 +25,7 @@ Because it is the shortest design it is also likely the lightest, which matters 
 
 ## Regions
 
-Three regions are distinguished (3.3 slides 8 and 10). The **complex region** sits behind the expansion corner, where both families of characteristics cross; textbooks call it the kernel or a non-simple region. The **simple flow region** lies next to the designed wall and has characteristics from one family only (a simple-wave region in textbooks). Beyond both is the **uniform flow region**, with $M=M_e$ and $\theta=0$.
+Three regions are distinguished. The **complex region** sits behind the expansion corner, where both families of characteristics cross; textbooks call it the kernel or a non-simple region. The **simple flow region** lies next to the designed wall and has characteristics from one family only (a simple-wave region in textbooks). Beyond both is the **uniform flow region**, with $M=M_e$ and $\theta=0$.
 
 ## Designing one
 
@@ -36,21 +36,21 @@ Three regions are distinguished (3.3 slides 8 and 10). The **complex region** si
 
 With $n$ lines the net has $n(n+3)/2$ points, $n$ of them on the wall: 14 for $n=4$ and 20 for $n=5$.
 
-For $M_e=2.4$ (3.3 slides 11–21), $\theta_{max}=18.373^\circ$. Four lines starting at $0.375^\circ$ put the exit at $x_e/r_a=8.069$, $y_e/r_a=2.400$. Lengths are scaled by the throat half-width $r_a$ (slide 21), so $y_e/r_a$ is the exit half-width.
+For $M_e=2.4$, $\theta_{max}=18.373^\circ$. Four lines starting at $0.375^\circ$ put the exit at $x_e/r_a=8.069$, $y_e/r_a=2.400$. Lengths are scaled by the throat half-width $r_a$, so $y_e/r_a$ is the exit half-width.
 
 > [!check] Built-in check
 > Mass conservation requires $y_e/r_a\to A_e/A^*$, here $2.4031$. MoC gives $2.4003$ with four lines and $2.4028$ with 300. 1D theory gives the exit half-width but not the length; that is what MoC adds.
 
-The MoC coursework uses $n=5$ lines from $0.125^\circ$, with $M_e=3.x$ where $x$ is the last digit of your student ID, for CO₂ with $\gamma=1.289$. It is due 23:59 on Sunday 15 November (L3-4, ll. 367–418; [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]]).
+The MoC coursework uses $n=5$ lines from $0.125^\circ$, with $M_e=3.x$ where $x$ is the last digit of your student ID, for CO₂ with $\gamma=1.289$. It is due 23:59 on Sunday 15 November ([[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]]).
 
 > [!warning] $\theta_{max}=\nu(M_e)/2$ holds for any γ, but ν depends on γ
 > At $\gamma=1.289$ the IFT (built for $\gamma=1.4$) gives the wrong $\nu$, $\theta_{max}$ and $A_e/A^*$. Use the general-$\gamma$ formulas. Only $\mu=\sin^{-1}(1/M)$ is the same for every gas.
 
 ## Reading the exit Mach number off the throat
 
-Measure the wall's maximum slope at the throat and $\nu(M_e)=2\theta_{max}$ gives the design Mach number without a wind tunnel (L3-3, ll. 204–214). A slope of $26.74^\circ$, for example, means $M_e=3.20$.
+Measure the wall's maximum slope at the throat and $\nu(M_e)=2\theta_{max}$ gives the design Mach number without a wind tunnel. A slope of $26.74^\circ$, for example, means $M_e=3.20$.
 
-This $\theta_{max}$ is the largest wall slope, not the oblique-shock maximum deflection (L3-3, ll. 137–139). It also only works for a sharp-corner design. In a gradual-expansion nozzle the flow at the slope maximum has already been expanded by reflected waves, so $\theta_{max}\le\nu(M_e)/2$ and the trick underestimates $M_e$ ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13]]).
+This $\theta_{max}$ is the largest wall slope, not the oblique-shock maximum deflection. It also only works for a sharp-corner design. In a gradual-expansion nozzle the flow at the slope maximum has already been expanded by reflected waves, so $\theta_{max}\le\nu(M_e)/2$ and the trick underestimates $M_e$ ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle|W05b §13]]).
 
 ![[at_moc_mach_angle_throat_angle.png|760]]
 
@@ -59,4 +59,4 @@ This $\theta_{max}$ is the largest wall slope, not the oblique-shock maximum def
 ## Related
 
 - [[Method of Characteristics]] · [[Riemann Invariants]] · [[Prandtl-Meyer Function]] · [[Isentropic Nozzle Flow]] · [[Over- and Under-Expanded Jets]]
-- Detail: [[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13–14]]
+- Detail: [[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle|W05b §13–14]]

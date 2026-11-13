@@ -27,16 +27,16 @@ sources: ["02 - Sources/Lectures/Lecture3-1.pdf", "02 - Sources/Lectures/Lecture
 > - **Assumptions:** steady, **planar**, homentropic, irrotational, $M>1$; $\theta$ is the flow inclination to $x$; IFT values are $\gamma=1.4$ only.
 > - **Method:** 1. Tabulate $R^+=\nu-\theta$ and $R^-=\nu+\theta$ at A (below) and B (above). 2. $\nu_P=\tfrac12(R^+_A+R^-_B)$, $\theta_P=\tfrac12(R^-_B-R^+_A)$. 3. $M_P$ and $\mu_P$ from $\nu_P$. 4. Averaged slopes $\alpha_{AP}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_P]$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B+(\theta-\mu)_P]$. 5. Intersect for $x_P$, $y_P$, then recompute $R^\pm$ at P as a check.
 > - **Common mistakes:** swapping the families (the $C^+$ from the point below carries $R^+$); using only the start-point slope instead of the average.
-> - **Practise:** [[#Worked example (3.2 slide 9)]] · [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]]
+> - **Practise:** [[#Worked example]] · [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]]
 
 Boundary conditions, nozzle design, the generic MoC example, the axisymmetric note and the workflow (§§11–17) are in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]].
 
 ## Coursework and deadlines
 
-> [!important] Test 2 and the MoC coursework (L3-1, ll. 3–12; L3-2, ll. 1–12)
+> [!important] Test 2 and the MoC coursework
 > Blackboard Test 2 opened on Monday 19 October and closed at midnight on Sunday 25 October. It allowed two attempts, with the questions and answers visible afterwards.
 >
-> The MoC coursework is worth 10% of the module and is due on Sunday 15 November (L3-4, ll. 415–418), the date in the Week 1 module guide. The full brief is in [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]].
+> The MoC coursework is worth 10% of the module and is due on Sunday 15 November, the date in the Week 1 module guide. The full brief is in [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]].
 
 ---
 
@@ -46,14 +46,14 @@ Two known points therefore give a third, which is the unit process, and the solu
 
 ---
 
-## 1. Why a two-dimensional method (3.1 slide 2)
+## 1. Why a two-dimensional method
 
-The 1D theory of W04 assumes properties are uniform across each section. That is a good approximation only near the centreline, where symmetry makes the transverse velocity zero. At the wall the velocity must be tangential to the wall, so it has a vertical component that 1D theory cannot see (ll. 18–24). Both the direction and the magnitude of the velocity vary across a section, and a rapidly expanding part drops the pressure locally (ll. 24–26). 1D theory also gives the exit area but no length (W04 §7, L2-6 ll. 279–291). MoC resolves both $x$ and $y$.
+The 1D theory of W04 assumes properties are uniform across each section. That is a good approximation only near the centreline, where symmetry makes the transverse velocity zero. At the wall the velocity must be tangential to the wall, so it has a vertical component that 1D theory cannot see. Both the direction and the magnitude of the velocity vary across a section, and a rapidly expanding part drops the pressure locally. 1D theory also gives the exit area but no length (W04 §7). MoC resolves both $x$ and $y$.
 
-> [!warning] $\theta$ changes meaning in this chapter (slide 3; ll. 37–55, 85)
+> [!warning] $\theta$ changes meaning in this chapter
 > In W02–W04, $\theta$ is the deflection: how far the flow turned relative to the incoming velocity. In MoC, $\theta$ is the inclination of the local velocity to the fixed $x$-axis. A turn through a small angle is now $\Delta\theta$.
 
-**Assumptions** (slide 2 and ll. 150–157, 212–216):
+**Assumptions**:
 
 - steady and planar (infinite in $z$);
 - inviscid and adiabatic, with no shocks and uniform entropy upstream, so entropy is constant everywhere, not just along each streamline. This is [[Homentropic Flow]];
@@ -61,11 +61,11 @@ The 1D theory of W04 assumes properties are uniform across each section. That is
 
 ---
 
-## 2. The curved streamtube and its geometry (3.1 slide 3)
+## 2. The curved streamtube and its geometry
 
 ![[at_moc_streamtube_geometry.png|900]]
 
-Take a small element between two streamlines (ll. 29–40). Use local axes: $l$ along the velocity at the corner, $n$ normal to it. The element has width $\Delta l$ and height $\Delta n$. The flow has inclination $\theta$ to $x$.
+Take a small element between two streamlines. Use local axes: $l$ along the velocity at the corner, $n$ normal to it. The element has width $\Delta l$ and height $\Delta n$. The flow has inclination $\theta$ to $x$.
 
 Moving up by $\Delta n$, the top streamline is inclined at $\theta+\Delta\theta$, with
 
@@ -73,7 +73,7 @@ $$
 \Delta\theta=\frac{\partial\theta}{\partial n}\,\Delta n .
 $$
 
-So over the length $\Delta l$ the right face is taller than the left face by the arc $\Delta l\,\Delta\theta$ (ll. 60–66):
+So over the length $\Delta l$ the right face is taller than the left face by the arc $\Delta l\,\Delta\theta$:
 
 $$
 \Delta n'-\Delta n=\Delta\theta\,\Delta l .
@@ -91,7 +91,7 @@ $$
 \frac{1}{\Delta n}\,\frac{\Delta n'-\Delta n}{\Delta l}=\frac{\partial\theta}{\partial n}.
 $$
 
-Let $\Delta l\to0$. The left side becomes a derivative along $l$ (ll. 76–79):
+Let $\Delta l\to0$. The left side becomes a derivative along $l$:
 
 $$
 \boxed{\frac{\partial\theta}{\partial n}=\frac{1}{\Delta n}\,\frac{\partial\,\Delta n}{\partial l}}
@@ -101,9 +101,9 @@ If the streamlines fan apart in the $n$-direction ($\partial\theta/\partial n>0$
 
 ---
 
-## 3. Mass conservation (3.1 slide 4)
+## 3. Mass conservation
 
-No flow crosses a streamline, so the mass flow per unit span is the same through both faces (ll. 86–102):
+No flow crosses a streamline, so the mass flow per unit span is the same through both faces:
 
 $$
 \rho u\,\Delta n=\left(\rho+\frac{\partial\rho}{\partial l}\Delta l\right)\left(u+\frac{\partial u}{\partial l}\Delta l\right)\left(\Delta n+\frac{\partial\Delta n}{\partial l}\Delta l\right).
@@ -121,7 +121,7 @@ $$
 \rho u\,\Delta n=\rho u\,\Delta n+\rho\frac{\partial u}{\partial l}\Delta l\,\Delta n+u\frac{\partial\rho}{\partial l}\Delta l\,\Delta n+\rho u\frac{\partial\Delta n}{\partial l}\Delta l .
 $$
 
-Cancel $\rho u\,\Delta n$ from both sides (ll. 98–100):
+Cancel $\rho u\,\Delta n$ from both sides:
 
 $$
 0=\rho\frac{\partial u}{\partial l}\Delta l\,\Delta n+u\frac{\partial\rho}{\partial l}\Delta l\,\Delta n+\rho u\frac{\partial\Delta n}{\partial l}\Delta l .
@@ -133,7 +133,7 @@ $$
 \frac{1}{u}\frac{\partial u}{\partial l}+\frac{1}{\rho}\frac{\partial\rho}{\partial l}+\frac{1}{\Delta n}\frac{\partial\Delta n}{\partial l}=0 .
 $$
 
-Replace the last term using §2 (ll. 117–121):
+Replace the last term using §2:
 
 $$
 \boxed{\frac{1}{u}\frac{\partial u}{\partial l}+\frac{1}{\rho}\frac{\partial\rho}{\partial l}+\frac{\partial\theta}{\partial n}=0}
@@ -143,9 +143,9 @@ This is the same bracket expansion as the Laval-nozzle mass balance, $\mathrm d\
 
 ---
 
-## 4. Momentum along the streamline and homentropic flow (3.1 slides 5–6)
+## 4. Momentum along the streamline and homentropic flow
 
-**Momentum in $l$** (ll. 124–147). Momentum out minus momentum in equals the net pressure force in $l$. Per unit span, $\dot m=\rho u\,\Delta n$. The forces are:
+**Momentum in $l$**. Momentum out minus momentum in equals the net pressure force in $l$. Per unit span, $\dot m=\rho u\,\Delta n$. The forces are:
 
 - $p\,\Delta n$ on the left face, pushing in $+l$;
 - $\left(p+\tfrac12\frac{\partial p}{\partial l}\Delta l\right)(\Delta n'-\Delta n)$ from the inclined top face, pushing in $+l$. The face carries the mean pressure, and its $l$-projection is the height change;
@@ -175,9 +175,9 @@ $$
 \boxed{\rho u\,\frac{\partial u}{\partial l}=-\frac{\partial p}{\partial l}}
 $$
 
-This is Euler's equation along a streamline, the same as $\rho U\,\mathrm dU=-\mathrm dp$ in W04 (l. 146).
+This is Euler's equation along a streamline, the same as $\rho U\,\mathrm dU=-\mathrm dp$ in W04.
 
-**Homentropic link** (ll. 159–185). To remove $p$, write $\partial p/\partial l=(\partial p/\partial\rho)_s\,\partial\rho/\partial l$. With $p=C\rho^\gamma$:
+**Homentropic link**. To remove $p$, write $\partial p/\partial l=(\partial p/\partial\rho)_s\,\partial\rho/\partial l$. With $p=C\rho^\gamma$:
 
 $$
 \frac{\partial p}{\partial\rho}=\gamma C\rho^{\gamma-1}=\gamma\,\frac{C\rho^\gamma}{\rho}=\gamma\,\frac{p}{\rho}=\gamma RT=a^2 .
@@ -189,7 +189,7 @@ $$
 \rho u\,\frac{\partial u}{\partial l}=-a^2\,\frac{\partial\rho}{\partial l}.
 $$
 
-**Combine with mass** (ll. 186–200). From §3,
+**Combine with mass**. From §3,
 
 $$
 \frac{\partial\rho}{\partial l}=-\rho\left(\frac{\partial\theta}{\partial n}+\frac{1}{u}\frac{\partial u}{\partial l}\right).
@@ -218,23 +218,23 @@ $$
 
 ---
 
-## 5. Zero vorticity (3.1 slide 7)
+## 5. Zero vorticity
 
-The equation in §4 has two unknowns, $u$ and $\theta$, so a second equation is needed (ll. 205–211). It comes from **irrotationality**:
+The equation in §4 has two unknowns, $u$ and $\theta$, so a second equation is needed. It comes from **irrotationality**:
 
 $$
 \omega=\frac{\partial v}{\partial l}-\frac{\partial u}{\partial n}=0,
 $$
 
-with $u$ along $l$ and $v$ along $n$ (ll. 219–223).
+with $u$ along $l$ and $v$ along $n$.
 
-At the corner of the element $v=0$, because $l$ is aligned with the flow. At the right face the flow has turned by $\Delta\theta$, so its $n$-component is (ll. 226–229)
+At the corner of the element $v=0$, because $l$ is aligned with the flow. At the right face the flow has turned by $\Delta\theta$, so its $n$-component is
 
 $$
 \Delta v=\left(u+\frac{\partial u}{\partial l}\Delta l\right)\Delta\theta .
 $$
 
-Divide by $\Delta l$ and let $\Delta l\to0$ (ll. 230–236):
+Divide by $\Delta l$ and let $\Delta l\to0$:
 
 $$
 \frac{\partial v}{\partial l}=\lim_{\Delta l\to0}\left(u+\frac{\partial u}{\partial l}\Delta l\right)\frac{\Delta\theta}{\Delta l}=u\,\frac{\partial\theta}{\partial l}.
@@ -252,15 +252,15 @@ $$
 \boxed{\frac{\partial\theta}{\partial l}-\frac{1}{u}\frac{\partial u}{\partial n}=0}
 $$
 
-That gives two equations in two unknowns (ll. 240–248), but both contain the nonlinear $\frac1u\,\partial u/\partial(\cdot)$ and have no general solution. The Prandtl–Meyer relation replaces $u$ by angles (§6).
+That gives two equations in two unknowns, but both contain the nonlinear $\frac1u\,\partial u/\partial(\cdot)$ and have no general solution. The Prandtl–Meyer relation replaces $u$ by angles (§6).
 
 ---
 
-## 6. Rewriting in angles with the Prandtl–Meyer function (3.1 slide 8)
+## 6. Rewriting in angles with the Prandtl–Meyer function
 
 ![[at_moc_characteristic_geometry.png|900]]
 
-From the Prandtl–Meyer derivation ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#5. Expansion waves and the Prandtl–Meyer function|W03 §5]]), a supersonic flow turning gradually through Mach waves obeys (ll. 249–254)
+From the Prandtl–Meyer derivation ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#5. Expansion waves and the Prandtl–Meyer function|W03 §5]]), a supersonic flow turning gradually through Mach waves obeys
 
 $$
 \frac{\mathrm du}{u}=\tan\mu\;\mathrm d\nu,
@@ -268,7 +268,7 @@ $$
 \tan\mu=\frac{1}{\sqrt{M^2-1}} .
 $$
 
-It holds for a change in any direction, so (ll. 256–258)
+It holds for a change in any direction, so
 
 $$
 \frac{1}{u}\frac{\partial u}{\partial l}=\tan\mu\,\frac{\partial\nu}{\partial l},
@@ -282,7 +282,7 @@ $$
 \left(M^2-1\right)\tan\mu\,\frac{\partial\nu}{\partial l}=\frac{\partial\theta}{\partial n}.
 $$
 
-Simplify the coefficient (ll. 261–262):
+Simplify the coefficient:
 
 $$
 \left(M^2-1\right)\tan\mu=\frac{M^2-1}{\sqrt{M^2-1}}=\sqrt{M^2-1}=\frac{1}{\tan\mu}.
@@ -300,19 +300,19 @@ $$
 \boxed{\text{Eq. 1:}\quad\frac{\partial\nu}{\partial l}-\tan\mu\,\frac{\partial\theta}{\partial n}=0}
 $$
 
-**Equation 2.** Substitute the second into §5 (ll. 283–285):
+**Equation 2.** Substitute the second into §5:
 
 $$
 \boxed{\text{Eq. 2:}\quad\frac{\partial\theta}{\partial l}-\tan\mu\,\frac{\partial\nu}{\partial n}=0}
 $$
 
-Both equations are now about **angles**: $\nu$, $\theta$ and $\mu$. They are the same equation with $\nu$ and $\theta$ swapped (ll. 286–294). They are still nonlinear, because $\tan\mu$ depends on $M$ and so on $\nu$.
+Both equations are now about **angles**: $\nu$, $\theta$ and $\mu$. They are the same equation with $\nu$ and $\theta$ swapped. They are still nonlinear, because $\tan\mu$ depends on $M$ and so on $\nu$.
 
 ---
 
-## 7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)
+## 7. Compatibility conditions and Riemann invariants
 
-**Add and subtract** (ll. 297–303). Eq. 1 minus Eq. 2:
+**Add and subtract**. Eq. 1 minus Eq. 2:
 
 $$
 \frac{\partial\nu}{\partial l}-\frac{\partial\theta}{\partial l}-\tan\mu\,\frac{\partial\theta}{\partial n}+\tan\mu\,\frac{\partial\nu}{\partial n}=0 .
@@ -340,7 +340,7 @@ $$
 
 Each equation now has one unknown combination.
 
-**The bracket is a derivative along a line** (slides 9–10; ll. 306–330). For any function $f(l,n)$,
+**The bracket is a derivative along a line**. For any function $f(l,n)$,
 
 $$
 \Delta f=\frac{\partial f}{\partial l}\Delta l+\frac{\partial f}{\partial n}\Delta n .
@@ -360,7 +360,7 @@ $$
 
 If the bracket is zero, $f$ does not change along that line.
 
-**Apply it** (slide 11; ll. 334–355). Put $f=\nu-\theta$. By (A) the bracket vanishes, so
+**Apply it**. Put $f=\nu-\theta$. By (A) the bracket vanishes, so
 
 $$
 \Delta(\nu-\theta)=0\ \text{along the line at }+\mu .
@@ -374,7 +374,7 @@ $$
 
 The lines at $\pm\mu$ to the flow are the **Mach lines**, called the **characteristics** $C^\pm$. Relative to the $x$-axis they are inclined at $\theta\pm\mu$.
 
-> [!important] The compatibility conditions (slide 12; ll. 361–367)
+> [!important] The compatibility conditions
 > $$\boxed{R^+=\nu-\theta\ \text{is constant along }C^+,\qquad R^-=\nu+\theta\ \text{is constant along }C^-}$$
 >
 > $R^+$ and $R^-$ are the [[Riemann Invariants]]. $C^+$ runs left of the flow (upwards for flow to the right), $C^-$ runs right of it.
@@ -388,17 +388,17 @@ Know $\nu-\theta$ at one point of an infinitely long $C^+$ line and you know it 
 >
 > $$\nu_2=\nu_1+\theta_w ,$$
 >
-> which is the W03 result. A region where one invariant is the same everywhere is called a simple flow region ([[SESA3029 W05b - Minimum-Length Nozzle Design#12. Nozzles with a straightening section (3.3 slides 8–9)|W05b §12]]).
+> which is the W03 result. A region where one invariant is the same everywhere is called a simple flow region ([[SESA3029 W05b - Minimum-Length Nozzle Design#12. Nozzles with a straightening section|W05b §12]]).
 
 ---
 
-## 8. The eigenvalue route (3.2 slides 2–4)
+## 8. The eigenvalue route
 
-The same result follows from linear algebra (supplementary note §2; L3-2, ll. 13–184), which also shows why the method needs $M>1$.
+The same result follows from linear algebra (supplementary note §2), which also shows why the method needs $M>1$.
 
 In §7 the sum and difference of the two equations happened to be the right combinations. With more complex equations the right combination cannot be guessed, and the eigenvector route finds it systematically, so it is the more general method. It resolves the coupling between the equations: Eq. 1 is mainly about $\nu$ but contains $\partial\theta/\partial n$, and Eq. 2 the other way round, so neither can be solved alone, and the eigenvectors decouple them.
 
-**Matrix form.** Write Eqs. 1 and 2 with $\hat Q=[\nu,\ \theta]^T$ (ll. 39–50; a hat marks a vector and an underline a matrix, l. 49):
+**Matrix form.** Write Eqs. 1 and 2 with $\hat Q=[\nu,\ \theta]^T$ (a hat marks a vector and an underline a matrix):
 
 $$
 \frac{\partial\hat Q}{\partial l}+\underline A\,\frac{\partial\hat Q}{\partial n}=\hat 0,
@@ -406,7 +406,7 @@ $$
 \underline A=\begin{bmatrix}0&-\tan\mu\\-\tan\mu&0\end{bmatrix}.
 $$
 
-**Eigenvalues** (ll. 55–67).
+**Eigenvalues**.
 
 $$
 \det(\underline A-\lambda\underline I)=\begin{vmatrix}-\lambda&-\tan\mu\\-\tan\mu&-\lambda\end{vmatrix}=\lambda^2-\tan^2\mu=0 .
@@ -418,7 +418,7 @@ $$
 \lambda_1=+\tan\mu,\qquad\lambda_2=-\tan\mu .
 $$
 
-A $2\times2$ matrix has two eigenvalues, and a $3\times3$ up to three (ll. 56–59).
+A $2\times2$ matrix has two eigenvalues, and a $3\times3$ up to three.
 
 **Eigenvectors**, from $(\underline A-\lambda\underline I)\hat v=\hat 0$. Choose $x_1=\tfrac12$, $y_1=-\tfrac12$ and $x_2=y_2=\tfrac12$:
 
@@ -457,7 +457,7 @@ $$
 \underline E^{-1}\frac{\partial\hat Q}{\partial l}+\underline\Lambda\,\underline E^{-1}\frac{\partial\hat Q}{\partial n}=\hat 0 .
 $$
 
-$\underline E$ contains no $\mu$, so it is a **constant** matrix and passes through the derivatives (ll. 147–148). Define
+$\underline E$ contains no $\mu$, so it is a **constant** matrix and passes through the derivatives. Define
 
 $$
 \hat R=\underline E^{-1}\hat Q=\begin{bmatrix}\nu-\theta\\\nu+\theta\end{bmatrix}.
@@ -490,13 +490,13 @@ Eigenvectors are defined only up to a scale factor (supplementary note), so a co
 
 ---
 
-## 9. Zones of dependence and influence (3.2 slides 5–6)
+## 9. Zones of dependence and influence
 
 ![[at_moc_unit_process.png|900]]
 
-**The lines and what they carry** (slide 4; L3-2, ll. 185–202). $C^\pm$ are the Mach waves, measured at $\pm\mu$ from the velocity vector. If nothing crosses a line, its invariant is the same however far along it you go. Where lines cross, $\nu$ and $\theta$ change, but each line's own invariant is still conserved. This is the basis of the method.
+**The lines and what they carry**. $C^\pm$ are the Mach waves, measured at $\pm\mu$ from the velocity vector. If nothing crosses a line, its invariant is the same however far along it you go. Where lines cross, $\nu$ and $\theta$ change, but each line's own invariant is still conserved. This is the basis of the method.
 
-**The Mach cone** (slide 5; ll. 204–224). A source moving at $U$ emits sound that spreads at $a$. After $3\Delta t$ the front has radius $3a\Delta t$ and the source has moved $3U\Delta t$. The envelope makes the angle
+**The Mach cone**. A source moving at $U$ emits sound that spreads at $a$. After $3\Delta t$ the front has radius $3a\Delta t$ and the source has moved $3U\Delta t$. The envelope makes the angle
 
 $$
 \sin\mu=\frac{3a\,\Delta t}{3U\,\Delta t}=\frac{1}{M}
@@ -504,10 +504,10 @@ $$
 \mu=\sin^{-1}\frac1M .
 $$
 
-**Zones** (slide 6, panel 1 of the figure; ll. 232–246). The two characteristics through a point P divide the plane:
+**Zones** (panel 1 of the figure). The two characteristics through a point P divide the plane:
 
 - **zone of influence**: the wedge downstream between the $C^+$ and $C^-$ leaving P. P can affect only events there;
-- **zone of dependence**: the wedge upstream between the $C^+$ and $C^-$ arriving at P. The state at P depends only on events there; nothing outside it affects P (l. 246).
+- **zone of dependence**: the wedge upstream between the $C^+$ and $C^-$ arriving at P. The state at P depends only on events there; nothing outside it affects P.
 
 This is the Mach-cone idea from W02 applied to every point of the flow. To a listener ahead of the cone, a supersonic source heading towards them is silent until the cone sweeps over them. That region is the **zone of silence**, and the inside of the cone is the zone of influence.
 
@@ -519,9 +519,9 @@ The order flips at the emission point E where that closing speed equals $a$, whi
 
 ---
 
-## 10. The unit process (3.2 slides 7–9)
+## 10. The unit process
 
-**Flow state** (slide 7; L3-2, ll. 263–277). Let A and B be known points, with A below (its $C^+$ reaches P) and B above (its $C^-$ reaches P). The invariants carry over unchanged:
+**Flow state**. Let A and B be known points, with A below (its $C^+$ reaches P) and B above (its $C^-$ reaches P). The invariants carry over unchanged:
 
 $$
 \nu_P-\theta_P=R^+_A=\nu_A-\theta_A,
@@ -545,22 +545,22 @@ $$
 \boxed{\theta_P=\frac{R^-_B-R^+_A}{2}}
 $$
 
-Then $M_P$ comes from $\nu_P$ (IFT), and $\mu_P=\sin^{-1}(1/M_P)$. The solution has been marched downstream (l. 277).
+Then $M_P$ comes from $\nu_P$ (IFT), and $\mu_P=\sin^{-1}(1/M_P)$. The solution has been marched downstream.
 
 **Two numbers fix everything.** The IFT row found from $\nu_P$ gives $M_P$, and with it $p/p_0$, $\rho/\rho_0$ and $T/T_0$. $\theta_P$ then splits the velocity into $u=V\cos\theta$ and $v=V\sin\theta$. For example, $\nu_P\approx8.4^\circ$ gives $M\approx1.38$.
 
-> [!check] The l. 284 table look-up
+> [!check] The table look-up
 > $\nu(1.38)=8.413^\circ$, and $\nu=8.4^\circ$ inverts to $M=1.3795$ ✓.
 
 **Why the characteristics bend.** The direction of a Mach line is set by $\mu=\sin^{-1}(1/M)$, and $M$ at P differs from $M$ at A and B. So the $C^\pm$ lines leaving P are slightly misaligned with those arriving, and each line turns a little at every crossing. Sketches draw them straight; a real net, such as the coursework's, is not.
 
 ![[at_moc_mach_angle_throat_angle.png|900]]
 
-In the slide 9 example (panel 1), $\mu$ falls from $45.58^\circ$ at point 2 to $35.94^\circ$ at point 3. So $\theta+\mu$ on the $C^+$ falls from $45.58^\circ$ to $44.87^\circ$, even though $\theta$ rises by $8.94^\circ$. That is why the location step averages the two ends.
+In the worked example (panel 1), $\mu$ falls from $45.58^\circ$ at point 2 to $35.94^\circ$ at point 3. So $\theta+\mu$ on the $C^+$ falls from $45.58^\circ$ to $44.87^\circ$, even though $\theta$ rises by $8.94^\circ$. That is why the location step averages the two ends.
 
 In planar flow $\nu_P$ and $\theta_P$ depend only on $R^\pm$, never on $x$ or $y$, so you can fill in the whole flow-state table first and find the coordinates afterwards. The generic MoC example in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]] is done entirely without coordinates. This decoupling fails for axisymmetric nozzles (§16).
 
-**Location** (slide 8; supplementary note eqs. 14–16; L3-2, ll. 320–351). The characteristics are curved, so each is replaced by a straight segment at the average of its inclination angles at the two ends:
+**Location** (supplementary note eqs. 14–16). The characteristics are curved, so each is replaced by a straight segment at the average of its inclination angles at the two ends:
 
 $$
 \alpha_{AP}=\tfrac12\left[(\theta+\mu)_A+(\theta+\mu)_P\right],
@@ -600,7 +600,7 @@ $$
 \boxed{x_P=\frac{x_B\tan\alpha_{BP}-x_A\tan\alpha_{AP}-(y_B-y_A)}{\tan\alpha_{BP}-\tan\alpha_{AP}},\qquad y_P=y_A+(x_P-x_A)\tan\alpha_{AP}}
 $$
 
-### Worked example (3.2 slide 9)
+### Worked example
 
 Point 1 at $(0.69,\ 0.62)$ with $M_1=1.6$, $\theta_1=12^\circ$. Point 2 at $(1.08,\ 0)$ with $M_2=1.4$, $\theta_2=0$. Find point 3.
 
@@ -624,15 +624,15 @@ $$
 \boxed{M_3=1.7039,\quad\theta_3=8.9367^\circ,\quad(x_3,y_3)=(1.3591,\ 0.2814)}
 $$
 
-> [!check] Against the slide
-> This agrees with slide 9 ($1.7039$, $8.9367^\circ$, $(1.3592,\ 0.2814)$) ✓. The last digit of $x_3$ differs through rounding in the slide's intermediate angles.
+> [!check] Against the course answer
+> This agrees with the course answer ($1.7039$, $8.9367^\circ$, $(1.3592,\ 0.2814)$) ✓. The last digit of $x_3$ differs through rounding in its intermediate angles.
 
 Using the slopes at points 1 and 2 only, with no averaging, moves point 3 to $(1.3584,\ 0.2841)$, about $0.003$ away. Averaging matters more when $\mu$ changes a lot between the points, as near $M=1$.
 
 > [!warning] Set the calculator to degrees
 > $\mu_2=\sin^{-1}(1/1.4)=0.795$ on a calculator left in radian mode. That is the angle in **radians** ($0.7956$ rad $=45.58^\circ$). Every MoC angle, including the IFT's $\nu$ column, is in degrees, so one radian value poisons the whole table.
 
-**Calculation procedure** (slides 10–11). Repeat the unit process to fill the flow field with points.
+**Calculation procedure**. Repeat the unit process to fill the flow field with points.
 
 1. On a starting line where the flow is known, compute $\nu$, $\theta$ and $\mu$ at several points, then $R^+$ and $R^-$.
 2. Compute $\theta+\mu$ and $\theta-\mu$ at each point.
@@ -670,10 +670,10 @@ Textbooks (Anderson in particular), other universities and CFD software often us
 - Related concepts: [[Prandtl-Meyer Function]] · [[Mach Waves and Mach Angle]] · [[Expansion Fan]] · [[Isentropic Nozzle Flow]]
 - Maths: [[Eigenvalues and Eigenvectors]] · [[Characteristic Equation and Eigenvalues]]
 - Worked sheet: [[SESA3029 Example Sheet 2 - Solutions]] (Q1–Q2; Q3 also needs the boundary conditions of W05b)
-- Formulae: [[SESA3029 Formula Sheet#Method of characteristics (Lectures 3.1–3.4)|Formula sheet: MoC]]
+- Formulae: [[SESA3029 Formula Sheet#Method of characteristics|Formula sheet: MoC]]
 - Other modules:
-  - [[SESA3043 2.1 - Complex Functions and Conformal Mapping|SESA3043 2.1]] and [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Why the derivative is u − iv (derivation)|SESA3043 1.3 §3]]: steady 2-D irrotational flow is a pair of first-order PDEs in both modules. Subsonically (incompressible in SESA3043) the pair is the Cauchy–Riemann equations: the system is elliptic, has no real characteristics, and its general solution is any analytic $\Phi(z)$. Supersonically (here) the eigenvalues $\pm\tan\mu$ of [[#8. The eigenvalue route (3.2 slides 2–4)|§8]] are real, the system is hyperbolic, and the compatibility conditions $\mathrm d(\nu\mp\theta)=0$ along $C^\pm$ take the place of Cauchy–Riemann. The two modules ask the same question and get opposite answers.
-  - [[SESA3043 1.2b - Potential-Flow Review|SESA3043 1.2b]]: Laplace's equation, the incompressible limit, where every point influences every other (contrast the zones of dependence of [[#9. Zones of dependence and influence (3.2 slides 5–6)|§9]]).
+  - [[SESA3043 2.1 - Complex Functions and Conformal Mapping|SESA3043 2.1]] and [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Why the derivative is u − iv (derivation)|SESA3043 1.3 §3]]: steady 2-D irrotational flow is a pair of first-order PDEs in both modules. Subsonically (incompressible in SESA3043) the pair is the Cauchy–Riemann equations: the system is elliptic, has no real characteristics, and its general solution is any analytic $\Phi(z)$. Supersonically (here) the eigenvalues $\pm\tan\mu$ of [[#8. The eigenvalue route|§8]] are real, the system is hyperbolic, and the compatibility conditions $\mathrm d(\nu\mp\theta)=0$ along $C^\pm$ take the place of Cauchy–Riemann. The two modules ask the same question and get opposite answers.
+  - [[SESA3043 1.2b - Potential-Flow Review|SESA3043 1.2b]]: Laplace's equation, the incompressible limit, where every point influences every other (contrast the zones of dependence of [[#9. Zones of dependence and influence|§9]]).
 
 ## Sources
 
@@ -694,38 +694,38 @@ Deadlines: Test 2 closed at midnight on Sun 25 Oct (L3-1, ll. 3–5; L3-2, ll. 2
 
 ### Core
 
-- [ ] **(L3-2, l. 349)** Solve the two straight-line equations for $x_P$ and $y_P$ and recover the slide 8 formula. → [[#10. The unit process (3.2 slides 7–9)|§10]]
-- [ ] **(L3-2, ll. 453–459) Homework:** confirm that point 3 of the slide 9 example is at $(1.3592,\ 0.2814)$. Only the flow state was worked in class. → [[#Worked example (3.2 slide 9)|§10, steps 5–8]]
+- [ ] **(L3-2, l. 349)** Solve the two straight-line equations for $x_P$ and $y_P$ and recover the slide 8 formula. → [[#10. The unit process|§10]]
+- [ ] **(L3-2, ll. 453–459) Homework:** confirm that point 3 of the slide 9 example is at $(1.3592,\ 0.2814)$. Only the flow state was worked in class. → [[#Worked example|§10, steps 5–8]]
 - [ ] **Test 2 on Blackboard**, two attempts, closed Sun 25 Oct (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). → [[SESA3029 Test 2 - Solutions]]
-- [ ] Add and subtract, then use the directional derivative to get $R^\pm$ (L3-1, ll. 297–357). → [[#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|§7]]
-- [ ] Diagonalise $\underline A$: eigenvalues, eigenvectors, $\underline E^{-1}$, then decouple with $\underline E^{-1}$ on the left (L3-2, ll. 39–182). Then try [[SESA3029 Example Sheet 2 - Solutions#Q1. Eigenvalues and left eigenvectors|ES2 Q1]]. → [[#8. The eigenvalue route (3.2 slides 2–4)|§8]]
+- [ ] Add and subtract, then use the directional derivative to get $R^\pm$ (L3-1, ll. 297–357). → [[#7. Compatibility conditions and Riemann invariants|§7]]
+- [ ] Diagonalise $\underline A$: eigenvalues, eigenvectors, $\underline E^{-1}$, then decouple with $\underline E^{-1}$ on the left (L3-2, ll. 39–182). Then try [[SESA3029 Example Sheet 2 - Solutions#Q1. Eigenvalues and left eigenvectors|ES2 Q1]]. → [[#8. The eigenvalue route|§8]]
 
 ### Further practice
 
 #### Lecturer-set or lecturer-prompted
 
-- [ ] **(L3-1, l. 114)** Find the earlier bracket-expansion mass balance and compare it with the streamtube version. It is in Lecture 2.6, not 2.4. → [[#3. Mass conservation (3.1 slide 4)|§3]]
-- [ ] **(L3-1, ll. 170–184)** Show that $(\partial p/\partial\rho)_s=a^2$ from $p=C\rho^\gamma$. → [[#4. Momentum along the streamline and homentropic flow (3.1 slides 5–6)|§4]]
+- [ ] **(L3-1, l. 114)** Find the earlier bracket-expansion mass balance and compare it with the streamtube version. It is in Lecture 2.6, not 2.4. → [[#3. Mass conservation|§3]]
+- [ ] **(L3-1, ll. 170–184)** Show that $(\partial p/\partial\rho)_s=a^2$ from $p=C\rho^\gamma$. → [[#4. Momentum along the streamline and homentropic flow|§4]]
 
 #### Derivations
 
-- [ ] Derive the streamtube geometry relation $\partial\theta/\partial n=\frac{1}{\Delta n}\partial\Delta n/\partial l$ (L3-1, ll. 56–80). → [[#2. The curved streamtube and its geometry (3.1 slide 3)|§2]]
-- [ ] Derive $(M^2-1)\frac1u\partial u/\partial l=\partial\theta/\partial n$ from mass, $l$-momentum and homentropy (L3-1, ll. 86–204). → [[#4. Momentum along the streamline and homentropic flow (3.1 slides 5–6)|§4]]
-- [ ] Derive the irrotationality condition $\partial\theta/\partial l-\frac1u\partial u/\partial n=0$ (L3-1, ll. 212–239). → [[#5. Zero vorticity (3.1 slide 7)|§5]]
-- [ ] Convert to Eq. 1 and Eq. 2 in $\nu$ and $\theta$ (L3-1, ll. 249–293). → [[#6. Rewriting in angles with the Prandtl–Meyer function (3.1 slide 8)|§6]]
-- [ ] Derive $\nu_P$ and $\theta_P$ from the two invariants (L3-2, ll. 263–277; L3-3, ll. 13–31). → [[#10. The unit process (3.2 slides 7–9)|§10]]
+- [ ] Derive the streamtube geometry relation $\partial\theta/\partial n=\frac{1}{\Delta n}\partial\Delta n/\partial l$ (L3-1, ll. 56–80). → [[#2. The curved streamtube and its geometry|§2]]
+- [ ] Derive $(M^2-1)\frac1u\partial u/\partial l=\partial\theta/\partial n$ from mass, $l$-momentum and homentropy (L3-1, ll. 86–204). → [[#4. Momentum along the streamline and homentropic flow|§4]]
+- [ ] Derive the irrotationality condition $\partial\theta/\partial l-\frac1u\partial u/\partial n=0$ (L3-1, ll. 212–239). → [[#5. Zero vorticity|§5]]
+- [ ] Convert to Eq. 1 and Eq. 2 in $\nu$ and $\theta$ (L3-1, ll. 249–293). → [[#6. Rewriting in angles with the Prandtl–Meyer function|§6]]
+- [ ] Derive $\nu_P$ and $\theta_P$ from the two invariants (L3-2, ll. 263–277; L3-3, ll. 13–31). → [[#10. The unit process|§10]]
 
 #### Calculations
 
-- [ ] **(L3-2, ll. 357–459)** Find $M_3$, $\theta_3$ and $(x_3,y_3)$ for the slide 9 example, with the calculator in degrees. Answer: $1.7039$, $8.9367^\circ$, $(1.3591,\ 0.2814)$. → [[#Worked example (3.2 slide 9)|§10]]
+- [ ] **(L3-2, ll. 357–459)** Find $M_3$, $\theta_3$ and $(x_3,y_3)$ for the slide 9 example, with the calculator in degrees. Answer: $1.7039$, $8.9367^\circ$, $(1.3591,\ 0.2814)$. → [[#Worked example|§10]]
 
 #### Concepts
 
-- [ ] Explain the new meaning of $\theta$ (inclination, not deflection) (L3-1, ll. 37–55). → [[#1. Why a two-dimensional method (3.1 slide 2)|§1]]
-- [ ] Explain why the flow must be homentropic **and** irrotational, and why MoC fails for $M<1$. → [[#8. The eigenvalue route (3.2 slides 2–4)|§8]]
-- [ ] Show that a Prandtl–Meyer fan is a simple flow region with $R^+$ uniform. → [[#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|§7]]
-- [ ] **(L3-2, ll. 299–318)** Explain why the characteristics turn, that is, why the Mach lines leaving P are misaligned with those arriving. → [[#10. The unit process (3.2 slides 7–9)|§10]]
-- [ ] *(Suggested)* Explain what a listener hears from a supersonic speaker, and where the "reversed song" account needs qualifying (L3-2, ll. 215–239). → [[#9. Zones of dependence and influence (3.2 slides 5–6)|§9]]
+- [ ] Explain the new meaning of $\theta$ (inclination, not deflection) (L3-1, ll. 37–55). → [[#1. Why a two-dimensional method|§1]]
+- [ ] Explain why the flow must be homentropic **and** irrotational, and why MoC fails for $M<1$. → [[#8. The eigenvalue route|§8]]
+- [ ] Show that a Prandtl–Meyer fan is a simple flow region with $R^+$ uniform. → [[#7. Compatibility conditions and Riemann invariants|§7]]
+- [ ] **(L3-2, ll. 299–318)** Explain why the characteristics turn, that is, why the Mach lines leaving P are misaligned with those arriving. → [[#10. The unit process|§10]]
+- [ ] *(Suggested)* Explain what a listener hears from a supersonic speaker, and where the "reversed song" account needs qualifying (L3-2, ll. 215–239). → [[#9. Zones of dependence and influence|§9]]
 
 ## Transcript and slide slips
 
@@ -744,7 +744,7 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 > | l. 229 | *"multiplied by this tiny angle, delta V"* | $\Delta\theta$; $\Delta v$ is the velocity it produces |
 > | l. 252 | *"tangent mu … is 1 divided by m squared minus 1"* | $\tan\mu=1/\sqrt{M^2-1}$ (slide 8 is correct) |
 > | l. 253 | *"Pantelmeyer function"* | Prandtl–Meyer (Whisper) |
-> | ll. 264–279 | the substitution garbled; the lecturer went back a slide | $(M^2-1)\tan\mu=\sqrt{M^2-1}=1/\tan\mu$, then multiply by $\tan\mu$ ([[#6. Rewriting in angles with the Prandtl–Meyer function (3.1 slide 8)\|§6]]) |
+> | ll. 264–279 | the substitution garbled; the lecturer went back a slide | $(M^2-1)\tan\mu=\sqrt{M^2-1}=1/\tan\mu$, then multiply by $\tan\mu$ ([[#6. Rewriting in angles with the Prandtl–Meyer function\|§6]]) |
 > | l. 303 | *"partial nu by theta by partial L"* | $\partial(\nu+\theta)/\partial l$ |
 > | ll. 338–343 | *"mu over theta doesn't change … mu minus theta is preserved"* | $\nu-\theta$ (nu, not mu) is constant along $C^+$ |
 > | l. 361 | *"C plus line, which is with the slope of tangent mu"* | **Not a slip; clarification only.** $\tan\mu$ is correct as the slope **relative to the streamline** ($\Delta n/\Delta l$). Relative to $x$ the line is inclined at $\theta+\mu$ |
@@ -758,9 +758,9 @@ Whisper renders some words consistently wrongly in these recordings: "mark" for 
 > | l. 42 | *"0, minus 1, mu, and minus 1, mu, and 0"* | $\underline A$ has $0$ on the diagonal and $-\tan\mu$ off it (garbled) |
 > | l. 64 | *"diagonal terms minus half-diagonal terms"* | product of the diagonal terms minus product of the **off**-diagonal terms: $\lambda^2-\tan^2\mu$ |
 > | l. 86 | *"… minus tangent mu times y1 equals tangent mu"* | $-\tan\mu\,y_1=\tan\mu\,x_1$, so $y_1=-x_1$ |
-> | l. 117 | *"multiply E, matrix, on the left side of each term"* | $\underline E^{-1}$ on the left; corrected at l. 130 ([[#8. The eigenvalue route (3.2 slides 2–4)\|§8]]) |
+> | l. 117 | *"multiply E, matrix, on the left side of each term"* | $\underline E^{-1}$ on the left; corrected at l. 130 ([[#8. The eigenvalue route\|§8]]) |
 > | l. 151 | *"C inverse E inverse E inverse Q"* | garbled: $\partial(\underline E^{-1}\hat Q)/\partial l+\underline\Lambda\,\partial(\underline E^{-1}\hat Q)/\partial n=\hat 0$ |
-> | ll. 216–224 | the speaker's song is heard *"in reverse order"* | true only for pulses emitted before the critical point E; later ones arrive in order, at the same time ([[#9. Zones of dependence and influence (3.2 slides 5–6)\|§9]]) |
+> | ll. 216–224 | the speaker's song is heard *"in reverse order"* | true only for pulses emitted before the critical point E; later ones arrive in order, at the same time ([[#9. Zones of dependence and influence\|§9]]) |
 > | l. 244 | *"this is zone of dependence, it's a zone of influence, something like that"* | upstream wedge: zone of **dependence** of P; downstream wedge: its zone of **influence** |
 > | ll. 263–266 | the lines *"collide at point B"*, *"at point B, the R-plus value"* | at point **P** |
 > | l. 270 | *"R-plus value should be maintained, which is nu plus theta"* | $R^+=\nu-\theta$; $\nu+\theta$ is $R^-$ (said correctly at l. 272) |

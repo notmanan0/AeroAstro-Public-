@@ -18,7 +18,7 @@ The way to read one is backwards. The shear lips are usually the easiest thing t
 
 ![[materials_fatigue_surface_features.png|800]]
 
-The surface also tells you about the loading. The fraction of the section taken by final fracture is roughly the peak nominal stress as a fraction of the UTS, so a small final zone means a low stress and a long life. One origin means a mild stress concentration, many origins a severe one. Tension and unidirectional bending give similar single-sided patterns; reversed bending gives fatigue regions on opposite faces with the final fracture as a band between them; rotating bending gives a lopsided, swirled pattern or origins all round; torsion gives 45° helical cracks, which with many origins form a stepped spiral. The aluminium dinghy mast in the M2 video shows the reversed-bending pattern, with thumbnail cracks starting at corrosion pits ([[Localised Corrosion]]).
+The surface also tells you about the loading. The fraction of the section taken by final fracture is roughly the peak nominal stress as a fraction of the UTS, so a small final zone means a low stress and a long life. One origin means a mild stress concentration, many origins a severe one. Tension and unidirectional bending give similar single-sided patterns; reversed bending gives fatigue regions on opposite faces with the final fracture as a band between them; rotating bending gives a lopsided, swirled pattern or origins all round; torsion gives 45° helical cracks, which with many origins form a stepped spiral. An aluminium dinghy mast shows the reversed-bending pattern, with thumbnail cracks starting at corrosion pits ([[Localised Corrosion]]).
 
 ## Related
 

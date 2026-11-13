@@ -29,9 +29,9 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 04 - Diffusion.pdf", "02 - So
 > - **Common mistakes:** using °C in the Arrhenius exponent; treating the diffusion coefficient as negative (the minus sign in Fick's law says the flow is down the gradient, and $D$ itself is always positive).
 > - **Practise:** [[#Worked example - hydrogen through a palladium membrane]] · [[FEEG1002 Materials Tutorial 1 - Crystal Structures and Diffusion Solutions]] Q8–Q9
 
-The pin-and-ball pictures of [[FEEG1002 C2 - Crystal Structures and Crystallography|C2]] make atoms look fixed, but above absolute zero every atom vibrates about its lattice site, and now and then one gathers enough energy to jump to a neighbouring site. Each jump is random, but where there is a difference in concentration more atoms jump from the crowded side to the sparse side than the other way, and the net result is a steady drift of material down the concentration gradient (L3, ll. 47–73).
+The pin-and-ball pictures of [[FEEG1002 C2 - Crystal Structures and Crystallography|C2]] make atoms look fixed, but above absolute zero every atom vibrates about its lattice site, and now and then one gathers enough energy to jump to a neighbouring site. Each jump is random, but where there is a difference in concentration more atoms jump from the crowded side to the sparse side than the other way, and the net result is a steady drift of material down the concentration gradient.
 
-That drift is how much of materials processing works. Carburising a steel gear pushes carbon into its surface to harden it. Annealing a cold-worked metal lets atoms rearrange into new, soft grains ([[FEEG1002 C5 - Strengthening Mechanisms and Annealing|C5]]). Precipitation hardening relies on solute atoms gathering into tiny particles ([[FEEG1002 C7 - Steels and Precipitation Hardening|C7]]), and creep of a hot turbine blade is partly atoms diffusing under stress ([[FEEG1002 C9 - Fatigue, Creep and Corrosion|C9]]). The process going on in a material is very often either dislocation motion or diffusion (L3, ll. 84–91).
+That drift is how much of materials processing works. Carburising a steel gear pushes carbon into its surface to harden it. Annealing a cold-worked metal lets atoms rearrange into new, soft grains ([[FEEG1002 C5 - Strengthening Mechanisms and Annealing|C5]]). Precipitation hardening relies on solute atoms gathering into tiny particles ([[FEEG1002 C7 - Steels and Precipitation Hardening|C7]]), and creep of a hot turbine blade is partly atoms diffusing under stress ([[FEEG1002 C9 - Fatigue, Creep and Corrosion|C9]]). The process going on in a material is very often either dislocation motion or diffusion.
 
 Two things control the rate. The structure decides how easy each jump is: a small atom slipping between large ones moves far more easily than a large atom waiting for a vacancy. The temperature decides how often an atom has the energy to make the jump, and because that depends exponentially on temperature, so does the rate of diffusion.
 
@@ -39,31 +39,31 @@ Two things control the rate. The structure decides how easy each jump is: a smal
 
 ## 1. Diffusion mechanisms
 
-**Diffusion** is material transport by atomic motion (slide "Diffusion"; L3, l. 93). In a solid it happens in three main ways (L3, ll. 112–211).
+**Diffusion** is material transport by atomic motion. In a solid it happens in three main ways.
 
-In **vacancy diffusion** an atom jumps into a neighbouring lattice site that happens to be empty. Real crystals are never perfect: solidification leaves some sites unoccupied, and these **vacancies** give atoms a route to move. The atom and the vacancy swap places, so atoms flow one way and vacancies the other. Vacancy diffusion covers **self-diffusion** (atoms of the host moving through their own lattice) and **substitutional** solute diffusion (solute atoms of similar size that sit on lattice sites). Its rate depends on how many vacancies there are (L3, ll. 158–176).
+In **vacancy diffusion** an atom jumps into a neighbouring lattice site that happens to be empty. Real crystals are never perfect: solidification leaves some sites unoccupied, and these **vacancies** give atoms a route to move. The atom and the vacancy swap places, so atoms flow one way and vacancies the other. Vacancy diffusion covers **self-diffusion** (atoms of the host moving through their own lattice) and **substitutional** solute diffusion (solute atoms of similar size that sit on lattice sites). Its rate depends on how many vacancies there are.
 
-In **interstitial diffusion** a small solute atom, such as carbon, nitrogen or hydrogen in iron, moves from one interstitial site to the next through the gaps between the much larger host atoms. There are always plenty of interstitial sites, so an interstitial atom never has to wait for a vacancy to appear next to it, and interstitial diffusion is much faster than vacancy diffusion (slide "Diffusion Mechanisms"; L3, ll. 177–202). Hydrogen's ability to diffuse into steel this way is a nuisance, because it embrittles it.
+In **interstitial diffusion** a small solute atom, such as carbon, nitrogen or hydrogen in iron, moves from one interstitial site to the next through the gaps between the much larger host atoms. There are always plenty of interstitial sites, so an interstitial atom never has to wait for a vacancy to appear next to it, and interstitial diffusion is much faster than vacancy diffusion. Hydrogen's ability to diffuse into steel this way is a nuisance, because it embrittles it.
 
-In **atom exchange** two neighbouring atoms swap places directly (L3, ll. 437–492). Direct exchange needs a much higher activation energy than a vacancy jump, so vacancy diffusion dominates.
+In **atom exchange** two neighbouring atoms swap places directly. Direct exchange needs a much higher activation energy than a vacancy jump, so vacancy diffusion dominates.
 
 ![[m3_diffusion_mechanisms.png|900]]
 
 ### Interdiffusion: the diffusion couple
 
-In a block of pure copper pressed hard against a block of pure nickel and held hot, copper atoms move into the nickel and nickel atoms into the copper over time, until there is pure copper at one end, pure nickel at the other and a band of copper–nickel alloy between (slide "Interdiffusion or Impurity Diffusion"; L3, ll. 212–241). Atoms migrate from regions of high concentration to regions of low concentration. This **interdiffusion** (or impurity diffusion) takes time; it is not instantaneous, and it is the concentration gradient that drives it.
+In a block of pure copper pressed hard against a block of pure nickel and held hot, copper atoms move into the nickel and nickel atoms into the copper over time, until there is pure copper at one end, pure nickel at the other and a band of copper–nickel alloy between. Atoms migrate from regions of high concentration to regions of low concentration. This **interdiffusion** (or impurity diffusion) takes time; it is not instantaneous, and it is the concentration gradient that drives it.
 
 ### Activation energy and the structure of the path
 
-An atom sitting at its equilibrium spacing is in an energy minimum ([[FEEG1002 C1 - Atoms and Bonding|C1]]). To jump to the next site it must squeeze past its neighbours, which means climbing over an energy barrier, the **activation energy** $Q$ (L3, ll. 424–430). The lower the barrier, the easier the path and the faster the diffusion. The structure decides the barrier (slide "Effects of Structure on Diffusion"). **Volume diffusion**, through the bulk of the crystal by vacancy jumps or exchange, has a high activation energy and a low rate, limited by the number of vacancies. **Grain-boundary diffusion** is faster. A metal is polycrystalline, made of many crystals (grains) joined at grain boundaries where the atoms are disordered, so a grain boundary behaves like a large set of vacancies with a much lower activation energy (L3, ll. 493–545). **Interstitial diffusion** is much faster than vacancy diffusion, because the interstices are numerous, although they are small.
+An atom sitting at its equilibrium spacing is in an energy minimum ([[FEEG1002 C1 - Atoms and Bonding|C1]]). To jump to the next site it must squeeze past its neighbours, which means climbing over an energy barrier, the **activation energy** $Q$. The lower the barrier, the easier the path and the faster the diffusion. The structure decides the barrier. **Volume diffusion**, through the bulk of the crystal by vacancy jumps or exchange, has a high activation energy and a low rate, limited by the number of vacancies. **Grain-boundary diffusion** is faster. A metal is polycrystalline, made of many crystals (grains) joined at grain boundaries where the atoms are disordered, so a grain boundary behaves like a large set of vacancies with a much lower activation energy. **Interstitial diffusion** is much faster than vacancy diffusion, because the interstices are numerous, although they are small.
 
-Diffusion is promoted by open crystal structures with low packing density, by low melting points (weaker bonds, so lower barriers) and by small diffusing atoms. BCC iron, with a packing factor of 0.68 against 0.74 for FCC, lets carbon diffuse faster than FCC iron at the same temperature (L3, ll. 557–576).
+Diffusion is promoted by open crystal structures with low packing density, by low melting points (weaker bonds, so lower barriers) and by small diffusing atoms. BCC iron, with a packing factor of 0.68 against 0.74 for FCC, lets carbon diffuse faster than FCC iron at the same temperature.
 
 ## 2. Flux and steady-state diffusion
 
 ### Flux
 
-To put a number on the rate of diffusion, consider a thin metal plate, such as part of a vessel wall, with gas at high pressure on one side and low pressure on the other (L3, ll. 242–299). Gas atoms dissolve into the high-pressure face and diffuse through to the low-pressure face. The quantity of interest is the **flux** $J$, the mass (or number of atoms) $M$ diffusing through a unit area of the plate per unit time:
+To put a number on the rate of diffusion, consider a thin metal plate, such as part of a vessel wall, with gas at high pressure on one side and low pressure on the other. Gas atoms dissolve into the high-pressure face and diffuse through to the low-pressure face. The quantity of interest is the **flux** $J$, the mass (or number of atoms) $M$ diffusing through a unit area of the plate per unit time:
 
 $$
 J=\frac{M}{At}
@@ -79,7 +79,7 @@ where $A$ is the area and $t$ the time. Dividing by area and time is natural: a 
 
 ### Steady state
 
-If the pressures (and so the concentrations of gas just inside each face) are held fixed and the plate does not change, the profile settles and the flux no longer changes with time. This is **steady-state diffusion** (L3, ll. 300–326):
+If the pressures (and so the concentrations of gas just inside each face) are held fixed and the plate does not change, the profile settles and the flux no longer changes with time. This is **steady-state diffusion**:
 
 $$
 \frac{dJ}{dt}=0
@@ -95,7 +95,7 @@ $$
 
 ### Fick's first law
 
-Experiments show that the flux is proportional to the concentration gradient (slide "Steady state diffusion: Fick's First law"; L3, ll. 327–350):
+Experiments show that the flux is proportional to the concentration gradient:
 
 $$
 \boxed{J=-D\frac{dC}{dx}}
@@ -113,11 +113,11 @@ Doubling the concentration difference or halving the thickness doubles the flow;
 
 ### Application: purifying hydrogen
 
-Hydrogen made industrially is contaminated with CO₂, H₂O and CH₄. A thin palladium membrane separates them (slide "Steady-state Diffusion and Sustainable Energy"; L3, ll. 351–400). The impure gas is held at high pressure on one side and pure hydrogen at low pressure on the other. Hydrogen molecules are adsorbed on the palladium surface, dissociate into atoms, dissolve and diffuse through the metal, then recombine into H₂ and desorb on the far side. The larger molecules cannot pass. Because both pressures are maintained, this is steady-state diffusion and Fick's first law gives the production rate directly.
+Hydrogen made industrially is contaminated with CO₂, H₂O and CH₄. A thin palladium membrane separates them. The impure gas is held at high pressure on one side and pure hydrogen at low pressure on the other. Hydrogen molecules are adsorbed on the palladium surface, dissociate into atoms, dissolve and diffuse through the metal, then recombine into H₂ and desorb on the far side. The larger molecules cannot pass. Because both pressures are maintained, this is steady-state diffusion and Fick's first law gives the production rate directly.
 
 ## 3. What controls the diffusion coefficient
 
-Diffusion coefficients (Callister's data, m²/s) show the effects of mechanism, temperature and crystal structure separately (slide "Factors that Influence Diffusion"; L3, ll. 598–647):
+Diffusion coefficients (Callister's data, m²/s) show the effects of mechanism, temperature and crystal structure separately:
 
 | Effect | Diffusing species and host | Temperature | $D$ (m²/s) |
 |---|---|---:|---:|
@@ -132,13 +132,13 @@ At 500 °C interstitial carbon diffuses $8\times10^8$ times faster than iron dif
 
 ### The Arrhenius equation
 
-The temperature dependence of the diffusion coefficient follows an **Arrhenius equation** (slide "Effect of Temperature on Diffusion"; L3, ll. 648–688):
+The temperature dependence of the diffusion coefficient follows an **Arrhenius equation**:
 
 $$
 \boxed{D=D_0\exp\left(-\frac{Q}{RT}\right)}
 $$
 
-where $D_0$ is a constant for a given material state (m²/s), $Q$ is the activation energy (J/mol), $R=8.314$ J mol⁻¹ K⁻¹ is the gas constant and $T$ is the absolute temperature in kelvin. The form is the same as for the rate of a chemical reaction, and it applies wherever a process is thermally activated: recrystallisation ([[FEEG1002 C5 - Strengthening Mechanisms and Annealing|C5]]), ageing ([[FEEG1002 C7 - Steels and Precipitation Hardening|C7]]) and creep ([[FEEG1002 C9 - Fatigue, Creep and Corrosion|C9]]). It need not be memorised, but it must be recognised and used whenever diffusion and temperature appear together (L3, ll. 649–655).
+where $D_0$ is a constant for a given material state (m²/s), $Q$ is the activation energy (J/mol), $R=8.314$ J mol⁻¹ K⁻¹ is the gas constant and $T$ is the absolute temperature in kelvin. The form is the same as for the rate of a chemical reaction, and it applies wherever a process is thermally activated: recrystallisation ([[FEEG1002 C5 - Strengthening Mechanisms and Annealing|C5]]), ageing ([[FEEG1002 C7 - Steels and Precipitation Hardening|C7]]) and creep ([[FEEG1002 C9 - Fatigue, Creep and Corrosion|C9]]). It need not be memorised, but it must be recognised and used whenever diffusion and temperature appear together.
 
 The exponential has a physical meaning. $Q/(RT)$ compares the height of the energy barrier with the thermal energy available, and $\exp(-Q/RT)$ is the fraction of attempts at a jump that succeed. Raise $T$ and a much larger fraction of atoms have enough energy to jump the barrier.
 
@@ -191,7 +191,7 @@ A large activation energy gives a steep line: iron self-diffusion ($Q\approx251$
 
 ### Time against temperature in heat treatment
 
-Heat treatments depend on diffusion, and heating is expensive. The same amount of atomic movement can be had by holding at a high temperature for a short time or at a lower temperature for longer, for example five minutes against an hour or two, and the choice is an economic one (L3, ll. 689–702). A rough guide to the trade-off: $D$ has units of m²/s, so the only length that can be built from $D$ and the time $t$ is $\sqrt{Dt}$, and the distance atoms spread scales with it. To get the same spread at a new temperature the product $Dt$ must stay the same,
+Heat treatments depend on diffusion, and heating is expensive. The same amount of atomic movement can be had by holding at a high temperature for a short time or at a lower temperature for longer, for example five minutes against an hour or two, and the choice is an economic one. A rough guide to the trade-off: $D$ has units of m²/s, so the only length that can be built from $D$ and the time $t$ is $\sqrt{Dt}$, and the distance atoms spread scales with it. To get the same spread at a new temperature the product $Dt$ must stay the same,
 
 $$
 D_1t_1=D_2t_2
@@ -233,7 +233,7 @@ about 4.4 g of pure hydrogen per hour.
 
 ### Worked example - activation energy from two diffusion coefficients
 
-For iron diffusing in α-iron, $D=3.0\times10^{-21}$ m²/s at 500 °C and $1.8\times10^{-15}$ m²/s at 900 °C (slide data). Find the activation energy, then estimate $D$ at 700 °C.
+For iron diffusing in α-iron, $D=3.0\times10^{-21}$ m²/s at 500 °C and $1.8\times10^{-15}$ m²/s at 900 °C. Find the activation energy, then estimate $D$ at 700 °C.
 
 Convert to kelvin: $T_1=773$ K and $T_2=1173$ K. Then
 
@@ -260,7 +260,7 @@ D=3.0\times10^{-21}\exp(8.03)=9.1\times10^{-18}\ \mathrm{m^2/s}
 $$
 
 > [!check] Against the table
-> Callister tabulates $Q=251$ kJ/mol and $D_0=2.8\times10^{-4}$ m²/s for iron in α-iron, and $2.8\times10^{-4}\exp(-251\,000/(8.314\times973))=9.4\times10^{-18}$ m²/s at 700 °C. The 3 % difference comes from the two-figure rounding of the slide values.
+> Callister tabulates $Q=251$ kJ/mol and $D_0=2.8\times10^{-4}$ m²/s for iron in α-iron, and $2.8\times10^{-4}\exp(-251\,000/(8.314\times973))=9.4\times10^{-18}$ m²/s at 700 °C. The 3 % difference comes from the two-figure rounding of the given values.
 
 ### Worked example - shortening a carburising treatment
 

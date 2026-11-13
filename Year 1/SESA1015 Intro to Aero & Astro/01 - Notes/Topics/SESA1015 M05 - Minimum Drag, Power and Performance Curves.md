@@ -208,7 +208,7 @@ $$
 
 one curve for all heights. On true-airspeed axes the drag curve keeps the same minimum value $D_{min}$ but slides to higher speeds as the aircraft climbs, by the factor $1/\sqrt\sigma$. A pilot who holds the indicated (equivalent) airspeed for minimum drag holds minimum drag at every height.
 
-The figure shows a business jet of weight 90 kN with $C_D=0.02+0.045C_L^2$ (course notes §4.4, p. 24). The wing area is not specified; $S=30$ m² reproduces the sea-level minimum-drag speed of that example. The minimum drag is $2(90\,000)\sqrt{0.045\times0.02}=5400$ N at both heights, while $V_{MD}$ rises from 85.7 m/s at sea level to 157 m/s at 11 km ($\rho=0.3639$ kg/m³). The thrust available from a jet engine falls roughly in proportion to density, $T_{alt}=T_{SL}\,\sigma$, so at 11 km both curves are far lower.
+The figure shows a business jet of weight 90 kN with $C_D=0.02+0.045C_L^2$. The wing area is not specified; $S=30$ m² reproduces the sea-level minimum-drag speed of that example. The minimum drag is $2(90\,000)\sqrt{0.045\times0.02}=5400$ N at both heights, while $V_{MD}$ rises from 85.7 m/s at sea level to 157 m/s at 11 km ($\rho=0.3639$ kg/m³). The thrust available from a jet engine falls roughly in proportion to density, $T_{alt}=T_{SL}\,\sigma$, so at 11 km both curves are far lower.
 
 ![[mof_m05_altitude_drag.png|900]]
 
@@ -315,7 +315,7 @@ $$
 
 ### Thrust as the rate of change of momentum
 
-An air-breathing propulsion system, whether piston-propeller, turboprop, turbofan, turbojet or open rotor, has a power source (mechanical or electrical) and a propulsor (propeller, fan or the engine's own jet) that does work on the air passing through it and increases its momentum. The thrust is the rate of change of that momentum (Slides v2, p. 65):
+An air-breathing propulsion system, whether piston-propeller, turboprop, turbofan, turbojet or open rotor, has a power source (mechanical or electrical) and a propulsor (propeller, fan or the engine's own jet) that does work on the air passing through it and increases its momentum. The thrust is the rate of change of that momentum:
 
 $$
 T=\frac{d}{dt}(mV)=m\frac{dV}{dt}+V\frac{dm}{dt}.
@@ -350,7 +350,7 @@ $$
 
 For $T=2500$ N at $V_0=100$ m/s, a propeller moving 250 kg/s of air needs $V_e-V_0=10$ m/s and has $\eta_p=0.952$, putting 262.5 kW into the air; a jet moving 12.5 kg/s needs $V_e-V_0=200$ m/s and has $\eta_p=0.50$, putting in 500 kW. Both deliver the same 250 kW of thrust power; the rest is left behind as kinetic energy in the wake.
 
-A rocket carries both its fuel and its oxidiser, as solid or liquid propellant, and takes in no air (Slides v2, p. 66). The combustion products leave the nozzle at an exhaust velocity $V_e$ relative to the vehicle, and the propellant had no velocity relative to the vehicle before it was burned, so there is no intake momentum to subtract. With $V_e$ constant, the product-rule form reduces to
+A rocket carries both its fuel and its oxidiser, as solid or liquid propellant, and takes in no air. The combustion products leave the nozzle at an exhaust velocity $V_e$ relative to the vehicle, and the propellant had no velocity relative to the vehicle before it was burned, so there is no intake momentum to subtract. With $V_e$ constant, the product-rule form reduces to
 
 $$
 T=V_e\frac{dm}{dt},
@@ -369,7 +369,7 @@ T_A&=\frac{\eta P_S}{V},
 \end{aligned}
 $$
 
-and the thrust available falls as $1/V$ (Slides v2, p. 67). With the $P_A=75$ kW of the figure above, $T_A=2500$ N at 30 m/s, 1250 N at 60 m/s and 833 N at 90 m/s. At 30 m/s the propeller matches the 2500 N jet, which is where the two power-available lines cross; below that speed it gives more thrust, above it less. The $1/V$ law cannot hold down to zero speed, since the static thrust of a real propeller is finite ([[Actuator Disk Theory]]).
+and the thrust available falls as $1/V$. With the $P_A=75$ kW of the figure above, $T_A=2500$ N at 30 m/s, 1250 N at 60 m/s and 833 N at 90 m/s. At 30 m/s the propeller matches the 2500 N jet, which is where the two power-available lines cross; below that speed it gives more thrust, above it less. The $1/V$ law cannot hold down to zero speed, since the static thrust of a real propeller is finite ([[Actuator Disk Theory]]).
 
 For a turbojet, $T=\dot m(V_e-V_0)$ with $V_e-V_0$ falling as the flight speed rises, while ram compression in the intake raises the mass flow; over the subsonic range the two effects roughly cancel, which is the basis of the constant-thrust model. A high-bypass turbofan, with its large mass flow and small velocity increase, behaves partly like a propeller and loses some thrust as speed rises.
 
@@ -379,7 +379,7 @@ Fuel consumption follows the same split. A jet burns fuel in proportion to its t
 
 ### Minimum drag and minimum power at two heights
 
-An aircraft has mass 1350 kg, $S=16.25$ m², $AR=7$, $e=0.95$ and $C_{D0}=0.028$. Find $(L/D)_{max}$, $D_{min}$, and the true and equivalent airspeeds for minimum drag and minimum power at sea level and at 3050 m, and the minimum power at both heights (Slides v2, pp. 78–103). The values used are $g=9.8$ m/s², $\rho_{SL}=1.23$ kg/m³, $T_{SL}=288$ K and lapse rate $c_0=0.0065$ K/m.
+An aircraft has mass 1350 kg, $S=16.25$ m², $AR=7$, $e=0.95$ and $C_{D0}=0.028$. Find $(L/D)_{max}$, $D_{min}$, and the true and equivalent airspeeds for minimum drag and minimum power at sea level and at 3050 m, and the minimum power at both heights. The values used are $g=9.8$ m/s², $\rho_{SL}=1.23$ kg/m³, $T_{SL}=288$ K and lapse rate $c_0=0.0065$ K/m.
 
 The weight and induced-drag factor are
 
@@ -426,7 +426,7 @@ $$
 
 ### Absolute ceiling of the jet version
 
-If the same aircraft has a jet giving 2500 N at sea level at all speeds (Slides v2, p. 95), with $T_{alt}=T_{SL}\sigma$, the ceiling is where $T_{alt}=D_{min}$:
+If the same aircraft has a jet giving 2500 N at sea level at all speeds, with $T_{alt}=T_{SL}\sigma$, the ceiling is where $T_{alt}=D_{min}$:
 
 $$
 \sigma=\frac{969}{2500}=0.3875,\qquad\theta=0.3875^{1/4.253}=0.8002,\qquad h=\frac{288(1-0.8002)}{0.0065}=8850\ \text{m}.

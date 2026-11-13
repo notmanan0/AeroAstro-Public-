@@ -34,7 +34,7 @@ $$
 \tan2\theta_p=\frac{2I_{yz}}{I_z-I_y}\quad(\theta\text{ measured from }y\text{ towards }z).
 $$
 
-S1 and the module formula sheet use this form. Some textbooks quote $\tan2\theta_p=2I_{yz}/(I_y-I_z)$, which is the same result with $\theta$ measured the other way (or $I_{yz}$ defined with the opposite sign). Whichever form you use, substitute back and confirm $I_{y'z'}=0$, and state your direction of rotation on the sketch.
+Some textbooks quote $\tan2\theta_p=2I_{yz}/(I_y-I_z)$, which is the same result with $\theta$ measured the other way (or $I_{yz}$ defined with the opposite sign). Whichever form you use, substitute back and confirm $I_{y'z'}=0$, and state your direction of rotation on the sketch.
 
 ## Which axis is which?
 

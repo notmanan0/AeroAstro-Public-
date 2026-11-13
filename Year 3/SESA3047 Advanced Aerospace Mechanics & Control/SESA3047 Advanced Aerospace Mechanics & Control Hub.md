@@ -77,6 +77,13 @@ coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 lectured in L14 (M
    - the F-4C SPO approximation (Eqs. 6.22–6.27) by formula and by $2\times2$ trace and determinant; the L17 Simulink feedback demonstration for Lab 2.
    - all twelve states and the 6 + 6 split, solver evaluation, full derivative example and an exact ballistic integration check.
 
+### Deep dives
+
+Longer derivations that run across several notes, with every number recomputed:
+
+- [[SESA3047 Deep Dive - Euler-Angle Rates and Gimbal Lock]] (Chapters 2–3; after 3.1): the three elemental rotation rates added and resolved into FRD, $\mathbf E=\mathbf C_x(\phi)\mathbf E_\theta$, the same $\mathbf E$ from $\dot{\mathbf C}=-\tilde{\boldsymbol\omega}\mathbf C$, $\mathbf H$ by cofactors; at $\theta=\pm90^\circ$ the parallel columns, the missing axis $\mathbf x_1$, the null space $[1,0,\pm1]^T$ and $\sigma_{max}(\mathbf H)=1/\sqrt{1-|\sin\theta|}$; a pull-up past the vertical integrated both ways; quaternions named as the course's remedy.
+- [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes]] (Chapters 4–6; after 6.1; §9 **written ahead**): the 6-DOF model linearised term by term about steady straight flight (trim balance, gravity with $\phi$, kinematics, height), $\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x$ and $\mathbf M^{-1}$ for the F-4C, the quartic and its approximate quadratic factors, eigenvectors by hand read in angle units ($\gamma=\theta-\alpha$), the SPO approximation's error split, and the §6.6 Lanchester and improved phugoid approximations ahead of the Mon 16 Nov lecture.
+
 ## Week 1 concept map
 
 | Systems and control | Modelling | Mechanics and frames |
@@ -153,7 +160,7 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 | Chapter 5 §5.8 practice problems | Solved → [[SESA3047 Chapter 5 Practice Problems - Solutions]] |
 | Chapter 6 §§6.1–6.4 | **Complete**, lectured in L17 (Mon 9 Nov) ll. 62–392 → [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation\|6.1]] §§1–6 |
 | Chapter 6 §6.5 (SPO approximation) | Set as reading, not re-lectured (L17 ll. 397–400) → 6.1 §7 |
-| Chapter 6 §§6.6–6.10 (phugoid approximation, lateral modes) | Slides filed, awaiting lectures (Mon 16 and Thu 19 Nov, L17 ll. 401–406) |
+| Chapter 6 §§6.6–6.10 (phugoid approximation, lateral modes) | Slides filed, awaiting lectures (Mon 16 and Thu 19 Nov, L17 ll. 401–406); §6.6 written ahead in [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes#9. The phugoid approximations (written ahead)\|the longitudinal deep dive §9]] |
 | Later chapters | Awaiting material (Chapter 7: the other state-space matrices and pole placement; Chapter 8: MIMO control and LQR, per the module guide; most of the module is about $\mathbf A$, the last few weeks about $\mathbf B$, L16 l. 138) |
 
 Chapter 4 was written from the lecture-note handout on 19 October and updated from L12–L13 on 23 October. Chapter 5 was written on 3 November from the handout (released Sat 31 Oct) and L14, and backfilled from L15–L16 on 5 November. Chapter 6 §§6.1–6.5 were written on 11 November from the handout and L17.
@@ -179,7 +186,7 @@ Chapter 4 was written from the lecture-note handout on 19 October and updated fr
 
 > [!todo] Lab 1 report checklist
 > - [ ] **Ex. 1, DCM round trip:** build $\mathbf C_{FRD/NED}$, extract $(\phi,\theta,\psi)$, check $\mathbf C\mathbf C^T=\mathbf I$ and $\det\mathbf C=1$, rebuild $\mathbf C$ from the extracted angles. → [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles|2.2]]
-> - [ ] **Ex. 1, singularity:** run `exercise1_3.m` at $89^\circ$, $89.9^\circ$, $90^\circ$; explain why MATLAB returns $\phi=\psi=0$ at exactly $90^\circ$ and why only $\phi-\psi$ is recoverable. → [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock (§2.4.5)|2.2 §8]]
+> - [ ] **Ex. 1, singularity:** run `exercise1_3.m` at $89^\circ$, $89.9^\circ$, $90^\circ$; explain why MATLAB returns $\phi=\psi=0$ at exactly $90^\circ$ and why only $\phi-\psi$ is recoverable. → [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock|2.2 §8]]
 > - [ ] **Ex. 2, free response:** small vs large amplitude, linear vs nonlinear, $f=0$ (`exercise2_1.m`); relate the frequency shift to $k_{\text{eff}}=k+3\mu x_0^2$. → [[SESA3047 1.2 - Dynamic Models, Frames and Earth Models|1.2 §5]]
 > - [ ] **Ex. 2, forced response:** same models with $f\cos\omega t$ (`exercise2_2.m`), single division by $m$; say explicitly that the origin is no longer an equilibrium.
 > - [ ] **Ex. 2, restoring force:** plot $kx$ and $kx+\mu x^3$ on $|x|\le0.12$ m (`exercise2_3.m`); $\mu x^3$ reaches 10% of $kx$ at $|x|=\sqrt{0.1k/\mu}=0.1$ m.

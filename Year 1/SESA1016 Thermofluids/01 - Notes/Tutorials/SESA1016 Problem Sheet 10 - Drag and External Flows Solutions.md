@@ -173,7 +173,7 @@ The sheet's figure marks the 27° angle between the upper and lower faces at the
 $$\boxed{D_p'=1.52\ \mathrm{kN\,m^{-1}}},\qquad
 \boxed{C_{dp}=\frac{D_p'}{\tfrac12\rho V_\infty^2c}=0.117}.$$
 
-> [!note] Correction (2026-11-05)
+> [!note] Correction
 > The earlier version took 27° as the angle of each face to the chord, giving $D_p'=3.23$ kN/m and $C_{dp}=0.248$. That reading makes the aerofoil 51 % thick, and the figure shows the angle as the included angle. No answer is printed for this question, so state the angle convention you use.
 
 ## Q10.7 Wind-tunnel buoyancy correction

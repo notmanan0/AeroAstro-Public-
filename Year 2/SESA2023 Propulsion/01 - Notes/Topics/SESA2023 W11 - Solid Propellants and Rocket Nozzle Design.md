@@ -42,24 +42,24 @@ A solid can't be throttled, so the thrust curve is set by the shape of the grain
 
 ## 1. Solid rocket motors
 
-A solid motor consists of a case (cylindrical or spherical, thermally insulated), the propellant grain, an igniter (pyrotechnic charge) and the nozzle. Solid motors span thrusts from about 2 N to 11 MN and are used as large boosters (Space Shuttle, Ares, L30), upper stages, tactical missiles (air-to-air, surface-to-air, anti-tank) and gas generators to start turbopumps. They have few or no moving parts, low cost, very high reliability and minimal maintenance, and they are ready for immediate use, which matters militarily. Their drawback is that there is no restart and no throttling. Once lit, a motor cannot be stopped short of cooling it extremely quickly (L30, ll. 72–77), so a crew cannot abort the burn once it has started (ll. 137–138).
+A solid motor consists of a case (cylindrical or spherical, thermally insulated), the propellant grain, an igniter (pyrotechnic charge) and the nozzle. Solid motors span thrusts from about 2 N to 11 MN and are used as large boosters (Space Shuttle, Ares), upper stages, tactical missiles (air-to-air, surface-to-air, anti-tank) and gas generators to start turbopumps. They have few or no moving parts, low cost, very high reliability and minimal maintenance, and they are ready for immediate use, which matters militarily. Their drawback is that there is no restart and no throttling. Once lit, a motor cannot be stopped short of cooling it extremely quickly, so a crew cannot abort the burn once it has started.
 
 ### How a solid burns
 
 The combustion chamber is the propellant store, as in a firework. Like a lump of coal in a fire, heat from the hot products conducts into the surface, which decomposes into gas that reacts just above it. The fuel and oxidiser are already premixed in the grain (for example aluminium powder with an oxygen-rich compound such as nitrocellulose in a binder), so there is no waiting for mixing and it burns fast.
 
-The gas production is proportional to the burning surface area, and that area changes as the grain burns back. The nozzle stays choked, but a choked nozzle fixes only the *non-dimensional* flow: more gas raises the chamber pressure and so the mass flow and thrust (ll. 99–103).
+The gas production is proportional to the burning surface area, and that area changes as the grain burns back. The nozzle stays choked, but a choked nozzle fixes only the *non-dimensional* flow: more gas raises the chamber pressure and so the mass flow and thrust.
 
-The grain's cross-section runs unchanged along its length (l. 109), and its shape sets the thrust profile:
+The grain's cross-section runs unchanged along its length, and its shape sets the thrust profile:
 
 | Grain (cross-section) | Burning area with time | Thrust profile |
 |---|---|---|
 | tube burning outwards | grows with the radius | progressive (rising); usually not wanted, since peak thrust is needed early to cut gravity losses |
 | star | high at first; the points round off into a bigger circle | roughly neutral |
 | "anchor" shape | high at first, then falling | regressive |
-| two-step profiles | designed | e.g. the Space Shuttle boosters: a first thrust peak to cut gravity losses, a lower phase through the dense air, a second peak once drag matters less (ll. 135–142) |
+| two-step profiles | designed | e.g. the Space Shuttle boosters: a first thrust peak to cut gravity losses, a lower phase through the dense air, a second peak once drag matters less |
 
-The Ares I first-stage five-segment motor burns for about two minutes and then stops quite suddenly; its nozzle gimbals for thrust-vector control (L30, ll. 143–182).
+The Ares I first-stage five-segment motor burns for about two minutes and then stops quite suddenly; its nozzle gimbals for thrust-vector control.
 
 ## 2. Propellants
 
@@ -219,7 +219,7 @@ $$
 \boxed{\lambda = \frac{1+\cos\alpha}{2}}
 $$
 
-The momentum thrust is multiplied by $\lambda$ (notes eq. 11.3). $\alpha=15^\circ$ gives $\lambda=0.983$, a 1.7 % loss; 12° gives 0.989 and 18° gives 0.976. Half-angles of 12–18° are used: smaller angles make the nozzle too long, heavy and frictional; larger ones lose too much, and very large ones risk jet separation.
+The momentum thrust is multiplied by $\lambda$. $\alpha=15^\circ$ gives $\lambda=0.983$, a 1.7 % loss; 12° gives 0.989 and 18° gives 0.976. Half-angles of 12–18° are used: smaller angles make the nozzle too long, heavy and frictional; larger ones lose too much, and very large ones risk jet separation.
 
 **Bell (contoured).** A large initial angle (30–60°) turning gradually to 2–8° at the exit, designed with 2-D (method-of-characteristics) models to cancel the expansion waves from the throat without creating compression waves. It is shorter and has lower divergence loss than a 15° cone of the same area ratio. It is not used on solid motors: two-phase Al₂O₃ particles in the exhaust erode the concave wall.
 
@@ -241,12 +241,12 @@ Unconventional designs, to cut launch cost and escape the single-design-altitude
 
 ## 5. Exam format
 
-The exam is structured as follows (L34, ll. 25–67; 12 May):
+The exam is structured as follows:
 
-- four questions, 25 marks each, all compulsory (l. 38), each split into marked sub-parts;
+- four questions, 25 marks each, all compulsory, each split into marked sub-parts;
 - expect roughly one each on rockets, turbomachinery, gas-turbine thermodynamics or shocks, and combustion;
-- the data book is provided, so learn how to use the equations rather than memorising them (ll. 48–52);
-- the course was restructured in 2021: papers from 2021 onwards are fully answerable; older papers contain topics no longer taught (ll. 62–67).
+- the data book is provided, so learn how to use the equations rather than memorising them;
+- the course was restructured in 2021: papers from 2021 onwards are fully answerable; older papers contain topics no longer taught.
 
 See [[SESA2023 Past Paper Map]].
 
@@ -280,7 +280,7 @@ See [[SESA2023 Past Paper Map]].
 - Parent: [[SESA2023 Propulsion Hub]] · Previous: [[SESA2023 W10 - Rocket Performance, Staging and Power Cycles]]
 - Nozzle regimes (over- and under-expanded): [[Converging-Diverging Nozzle Operating Regimes]] · $C^*$, $C_F$: [[SESA2023 W10 - Rocket Performance, Staging and Power Cycles#2. Performance parameters|W10]]
 - Formula list: [[SESA2023 Formula Sheet]] · exam strategy: [[SESA2023 Past Paper Map]]
-- Not examined on the current syllabus (no Week 11 questions in the 2021-25 papers); likely descriptive exam material.
+- No Week 11 question appears in the 2021-25 papers, whose rocket questions draw on W10; treat this note as descriptive background rather than a source of calculations.
 - Method of characteristics for bell contours, taken further in Year 3: [[SESA3029 W05a - Method of Characteristics]] · [[SESA3029 W05b - Minimum-Length Nozzle Design]]
 - **Related (SESA2028 materials):** [[SESA2028 M5 - Metal and Ceramic Matrix Composites and Hybrid Laminates|SESA2028 M5 CMCs]] (C/C nozzles) · [[Thermal Barrier Coatings]]
 

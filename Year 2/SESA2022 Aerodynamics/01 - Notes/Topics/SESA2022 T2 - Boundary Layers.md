@@ -29,22 +29,22 @@ sources: ["02 - Sources/BL/Topic 2 Boundary layers.pdf", "02 - Sources/Lectures/
 > - **Use it when:** you are given a velocity profile (formula or data), a plate or "flat-plate-like" body and asked for $\delta^*$, $\theta$, $H$, $c_f$, $C_F$, drag, $y^+$ or a transition/virtual-origin drag estimate.
 > - **Assumptions:** incompressible, steady, 2D, zero pressure gradient ($U_e = U_\infty$), self-similar profile; correlations are per side and per unit span.
 > - **Method:** 1. Compute $Re_x$ and decide laminar ($<3\times10^5$), transitional ($3\times10^5$–$10^6$) or turbulent. 2. Get $\delta^*/\delta$, $\theta/\delta$, $H$ by integrating the profile in $\eta = y/\delta$. 3. Apply the MIE, $\tau_w/\rho U_\infty^2 = d\theta/dx$, to get $\theta(x)$ and $c_f$ (or use the correlation table). 4. Drag: $D' = \rho U_\infty^2\theta(L)$ per side, then multiply by span and by 2 sides. 5. Transitional plate: virtual origin $x_0$, then $\theta$ at the trailing edge measured from $x_0$.
-> - **Common mistakes:** forgetting the two sides of the plate (L7, ll. 658–663); mixing $c_f$ (local) with $C_F$ (whole plate) (L9, ll. 109–113).
-> - **Exam format:** closed book with all formulae given. You must know which formula applies, the starting point of each derivation and its assumptions; derivations may appear with hints and variations (L1, ll. 499–511; L7, ll. 519–525; L8, ll. 13–19).
-> - Exam technique (Revision 1, ll. 162–363): take $\delta^*/\delta$ and $\theta/\delta$ from the formula sheet and show the substitution $\eta = y/\delta$; for an MIE "show that", equate $c_f = 2\,d\theta/dx$ with $c_f$ from the wall gradient of the profile; a transition point means the virtual origin (the formula sheet gives the method as text, not a formula); unless told otherwise, find the drag for both sides of the plate; a power-law $n$ must be an integer.
+> - **Common mistakes:** forgetting the two sides of the plate; mixing $c_f$ (local) with $C_F$ (whole plate).
+> - **Exam format:** closed book with all formulae given. You must know which formula applies, the starting point of each derivation and its assumptions; derivations may appear with hints and variations.
+> - Exam technique (Revision 1): take $\delta^*/\delta$ and $\theta/\delta$ from the formula sheet and show the substitution $\eta = y/\delta$; for an MIE "show that", equate $c_f = 2\,d\theta/dx$ with $c_f$ from the wall gradient of the profile; a transition point means the virtual origin (the formula sheet gives the method as text, not a formula); unless told otherwise, find the drag for both sides of the plate; a power-law $n$ must be an integer.
 > - **Practise:** [[#Thin foil with transition at mid-chord]] · [[SESA2022 Tutorial 2 - Viscous Flow Solutions]] Q4 · [[SESA2022 Exam 2024-25 Solutions]] Q1
 
 In a wind over a flat plate, the air touching the plate does not move (no slip), and the air far above it moves at $U_\infty$. In between is a thin layer where the speed climbs from zero to $U_\infty$: the boundary layer. The plate drags on this layer through the wall shear stress $\tau_w = \mu\,\partial u/\partial y|_0$, and the layer drags on the plate equally and oppositely: that is skin-friction drag.
 
-The slowed air is evidence of the drag. Momentum that the plate removed is "missing" from the profile, and the momentum thickness $\theta$ measures how much is missing. So you can weigh the drag by looking at the profile at the trailing edge, without ever measuring $\tau_w$: $D' = \rho U_\infty^2\theta$ (L6, ll. 310–321). As the air travels downstream, more of it is slowed, so $\theta$ and $\delta$ grow; the rate of growth is the local shear, $c_f = 2\,d\theta/dx$.
+The slowed air is evidence of the drag. Momentum that the plate removed is "missing" from the profile, and the momentum thickness $\theta$ measures how much is missing. So you can weigh the drag by looking at the profile at the trailing edge, without ever measuring $\tau_w$: $D' = \rho U_\infty^2\theta$. As the air travels downstream, more of it is slowed, so $\theta$ and $\delta$ grow; the rate of growth is the local shear, $c_f = 2\,d\theta/dx$.
 
-A turbulent layer mixes fast air down towards the wall. Its profile is fuller, its wall gradient steeper, so $\tau_w$ and drag are larger (bad for drag), but the fast near-wall air can push further against rising pressure before stopping (good against separation). That trade-off — friction drag versus pressure drag — is why golf balls are dimpled and why the position of transition matters (L10, ll. 615–700).
+A turbulent layer mixes fast air down towards the wall. Its profile is fuller, its wall gradient steeper, so $\tau_w$ and drag are larger (bad for drag), but the fast near-wall air can push further against rising pressure before stopping (good against separation). That trade-off — friction drag versus pressure drag — is why golf balls are dimpled and why the position of transition matters.
 
 ---
 
 ## 1. No-slip condition and the boundary layer
 
-Molecules hitting a surface leave with (on average) the surface velocity, so the fluid velocity at the wall equals the wall velocity (L5, ll. 146–162). Any "slip" velocity is of order mean free path ($\sim10^{-8}$ m in air) × velocity gradient, which is negligible, and the no-slip condition is supported by repeated measurement rather than calculation (L5, ll. 163–168). The exceptions are rarefied flows where the Knudsen number (mean free path / body length) exceeds $0.01$, e.g. hypersonic and micro-fluidic flows (L5, ll. 169–175).
+Molecules hitting a surface leave with (on average) the surface velocity, so the fluid velocity at the wall equals the wall velocity. Any "slip" velocity is of order mean free path ($\sim10^{-8}$ m in air) × velocity gradient, which is negligible, and the no-slip condition is supported by repeated measurement rather than calculation. The exceptions are rarefied flows where the Knudsen number (mean free path / body length) exceeds $0.01$, e.g. hypersonic and micro-fluidic flows.
 
 The BL develops from the leading edge as laminar, becomes unstable, transitions, and becomes fully turbulent. In a turbulent BL the velocity must be *time-averaged* at each point; a Pitot probe does this automatically because its frequency response is low.
 
@@ -56,9 +56,9 @@ $$
 \tau_w = \mu\left.\frac{\partial u}{\partial y}\right|_{y=0}, \qquad c_f = \frac{\tau_w}{\tfrac12\rho U_\infty^2} = \frac{2\nu}{U_\infty^2}\left.\frac{\partial u}{\partial y}\right|_{y=0}
 $$
 
-Laminar, transitional, turbulent (L5, ll. 189–212): a laminar BL is steady, so a probe at one point always reads the same velocity; a turbulent BL is unsteady and unpredictable in both time and space; transition is the region where both appear intermittently. Higher $Re$ (inertia dominating viscosity) favours turbulence (L7, ll. 285–292).
+Laminar, transitional, turbulent: a laminar BL is steady, so a probe at one point always reads the same velocity; a turbulent BL is unsteady and unpredictable in both time and space; transition is the region where both appear intermittently. Higher $Re$ (inertia dominating viscosity) favours turbulence.
 
-The BL lab measures the profile with a Pitot probe traversed away from a flat plate. The probe is intrusive, has a finite diameter (which limits how close to the wall you can resolve) and a low frequency response, so in a turbulent BL it reads a time average. A hot-wire anemometer resolves the fluctuations; PIV gives the whole field (L5, ll. 221–304; L8, ll. 224–236). Discuss these limits, and the accuracy of your measurements, in the report (L8, ll. 209–223).
+The BL lab measures the profile with a Pitot probe traversed away from a flat plate. The probe is intrusive, has a finite diameter (which limits how close to the wall you can resolve) and a low frequency response, so in a turbulent BL it reads a time average. A hot-wire anemometer resolves the fluctuations; PIV gives the whole field. Discuss these limits, and the accuracy of your measurements, in the report.
 
 The layer is thin because viscous diffusion spreads momentum a distance of order $\sqrt{\nu t}$ in time $t$. A particle reaches station $x$ after $t\approx x/U_\infty$, so $\delta\sim\sqrt{\nu x/U_\infty}$, or $\delta/x\sim Re_x^{-1/2}$. At $Re_x = 10^6$ that is about $10^{-3}$, which is why the outer flow can be treated as inviscid ([[SESA2022 T3 - Potential Flow]]). The Blasius constant 4.91 in §4 is the exact coefficient of this scaling.
 
@@ -68,7 +68,7 @@ See [[Displacement and Momentum Thickness]] for a short summary.
 
 ### Boundary-layer thickness
 
-$\delta = \delta_{99}$ is the height where $u = 0.99\,U_\infty$ (L5, ll. 412–447). In data the 99% point usually falls between two measurement heights, so linearly interpolate (L6, ll. 143–146). Because the profile approaches $U_\infty$ asymptotically, $\delta_{99}$ is sensitive to noise; the integral thicknesses below are robust. $\delta$ is also the length used to non-dimensionalise the wall-normal position, and to judge how far a wind-tunnel wall or a CFD boundary must be from a body (L5, ll. 462–480).
+$\delta = \delta_{99}$ is the height where $u = 0.99\,U_\infty$. In data the 99% point usually falls between two measurement heights, so linearly interpolate. Because the profile approaches $U_\infty$ asymptotically, $\delta_{99}$ is sensitive to noise; the integral thicknesses below are robust. $\delta$ is also the length used to non-dimensionalise the wall-normal position, and to judge how far a wind-tunnel wall or a CFD boundary must be from a body.
 
 ### Displacement thickness: derivation
 
@@ -104,7 +104,7 @@ $$
 \boxed{\delta^* = \int_0^\infty\left(1-\frac{u}{U_\infty}\right)dy}
 $$
 
-So $\delta^*$ is how far the wall must be displaced outwards in an inviscid calculation to pass the same mass flow (L5, ll. 683–770). Adding $\delta^*$ to a body is how a potential-flow calculation "sees" the BL.
+So $\delta^*$ is how far the wall must be displaced outwards in an inviscid calculation to pass the same mass flow. Adding $\delta^*$ to a body is how a potential-flow calculation "sees" the BL.
 
 ### Momentum thickness: derivation
 
@@ -136,7 +136,7 @@ $$
 H = \frac{\delta^*}{\theta}
 $$
 
-Laminar $H>2$ (Blasius $2.59$); turbulent $H<2$ (power law $1.29$). $H$ identifies the state of a measured boundary layer, and is a quiz topic (L6, ll. 114–123, l. 121).
+Laminar $H>2$ (Blasius $2.59$); turbulent $H<2$ (power law $1.29$). $H$ identifies the state of a measured boundary layer, and is a quiz topic.
 
 With $\eta = y/\delta$ so $dy = \delta\,d\eta$, and $u/U_\infty = f(\eta)$ with $f = 1$ for $\eta\ge1$:
 
@@ -153,19 +153,19 @@ The upper limit is 1 because both integrands vanish above the BL edge.
 | $\theta$ | $\displaystyle\int_0^\infty\frac{u}{U_\infty}\left(1-\frac{u}{U_\infty}\right)dy$ | Momentum deficit, directly proportional to the drag |
 | $H$ | $\delta^*/\theta$ | Laminar $H>2$, turbulent $H<2$ |
 
-Evaluate these quantities from measured data with a function `bl_prop(U, y)` (L6, ll. 139–198), which you may reuse in the lab report (L9, ll. 306–315). It works in five steps:
+Evaluate these quantities from measured data with a function `bl_prop(U, y)`, which you may reuse in the lab report. It works in five steps:
 
-1. read the `.csv` with `pandas` and convert mm to m (L5, ll. 491–529);
+1. read the `.csv` with `pandas` and convert mm to m;
 2. take $U_\infty$ as the largest measured velocity;
-3. find $\delta_{99}$ with `np.interp` between the two points either side of $0.99U_\infty$ (L5, ll. 582–591);
+3. find $\delta_{99}$ with `np.interp` between the two points either side of $0.99U_\infty$;
 4. estimate $\tau_w = \mu(u_1-u_0)/(y_1-y_0)$ from the wall point and the first measured point;
 5. integrate $\delta^*$ and $\theta$ by the trapezoidal rule (`np.trapz`) up to $\delta$, then form $H$.
 
-Step 4 is a secant through a curved profile, so it underestimates $\tau_w$, badly if the first point is far from the wall (L5, ll. 619–642; L8, ll. 568–580); the integral quantities are much less sensitive. Your measured data will be noisier than the example `.csv`, so explain the errors rather than hiding them (L5, ll. 554–570).
+Step 4 is a secant through a curved profile, so it underestimates $\tau_w$, badly if the first point is far from the wall; the integral quantities are much less sensitive. Your measured data will be noisier than the example `.csv`, so explain the errors rather than hiding them.
 
 ## 3. Momentum integral equation and drag
 
-Assumptions (L6, ll. 254–272): flat plate of unit depth, steady, incompressible, no pressure gradient (so $p = p_\infty$ on all faces and the only $x$-force on the fluid is the wall shear), 2D.
+Assumptions: flat plate of unit depth, steady, incompressible, no pressure gradient (so $p = p_\infty$ on all faces and the only $x$-force on the fluid is the wall shear), 2D.
 
 ![[bl_mie_control_volume.png|900]]
 
@@ -249,10 +249,10 @@ $$
 \boxed{C_F = \frac{2\,\theta(L)}{L} = \frac1L\int_0^L c_f\,dx}
 $$
 
-- A plate or wing has two sides: double the drag (L7, ll. 658–663), unless the question asks for one side.
-- Real bodies have span $b$: $D = bD'$ and $S = bL$, so $b$ cancels in $C_F$ (L7, ll. 619–625; L9, ll. 141–151). State your assumption for the third dimension (L9, ll. 122–132).
-- The doubling and the simple $C_F = 2\theta/L$ hold for a flat plate; with curvature or a pressure gradient the equation changes (L6, ll. 384–414).
-- The same $\theta$–drag relation gives the drag of a body from its wake: integrate $\frac{u}{U_\infty}\left(1-\frac{u}{U_\infty}\right)$ across the wake, from $-w$ to $w$ (the wake width, beyond which the flow is undisturbed), far enough downstream that $p = p_\infty$. It works in 3D too: race-car teams measure drag this way when a balance is impractical (L6, ll. 424–463; Tutorial 2 Q5).
+- A plate or wing has two sides: double the drag, unless the question asks for one side.
+- Real bodies have span $b$: $D = bD'$ and $S = bL$, so $b$ cancels in $C_F$. State your assumption for the third dimension.
+- The doubling and the simple $C_F = 2\theta/L$ hold for a flat plate; with curvature or a pressure gradient the equation changes.
+- The same $\theta$–drag relation gives the drag of a body from its wake: integrate $\frac{u}{U_\infty}\left(1-\frac{u}{U_\infty}\right)$ across the wake, from $-w$ to $w$ (the wake width, beyond which the flow is undisturbed), far enough downstream that $p = p_\infty$. It works in 3D too: race-car teams measure drag this way when a balance is impractical (Tutorial 2 Q5).
 - With a pressure gradient the MIE gains a term, $\dfrac{d\theta}{dx}+(2+H)\dfrac{\theta}{U_e}\dfrac{dU_e}{dx} = \dfrac{c_f}{2}$. That is not lectured in SESA2022; it is derived in [[SESA3043 3.5 - Momentum Integral Equation]].
 
 > [!check] Physical check
@@ -260,7 +260,7 @@ $$
 
 ## 4. Approximate laminar profiles
 
-Self-similarity (Blasius, 1908): profiles $u/U_\infty$ vs $y/\delta(x)$ collapse at every $x$ (L6, ll. 567–612; L7, ll. 480–493). So a single function $f(\eta)$ describes the whole laminar layer, and similarly for a turbulent layer, but you cannot mix laminar and turbulent scalings.
+Self-similarity (Blasius, 1908): profiles $u/U_\infty$ vs $y/\delta(x)$ collapse at every $x$. So a single function $f(\eta)$ describes the whole laminar layer, and similarly for a turbulent layer, but you cannot mix laminar and turbulent scalings.
 
 ### General recipe for any assumed profile
 
@@ -314,7 +314,7 @@ And $\delta/x = (\theta/x)/\hat\theta$, $\delta^*/x = H\,\theta/x$.
 
 ### Linear profile (lectured)
 
-Profile $u/U_\infty = \eta$ (L7, ll. 294–448).
+Profile $u/U_\infty = \eta$.
 
 $$
 \frac{\delta^*}{\delta}=\int_0^1(1-\eta)\,d\eta=\tfrac12
@@ -336,7 +336,7 @@ $$
 
 ### Parabolic profile
 
-Profile $u/U_\infty = 2\eta-\eta^2$ (L7, ll. 506–513); Tutorial 2 Q3 and 2024-25 Q1.
+Profile $u/U_\infty = 2\eta-\eta^2$; Tutorial 2 Q3 and 2024-25 Q1.
 
 $$
 1-f = 1-2\eta+\eta^2 = (1-\eta)^2
@@ -376,7 +376,7 @@ $$
 
 $C_F$ follows from $C_F = 2\theta(L)/L = 2(0.664)/\sqrt{Re_L}$.
 
-If a question says only "laminar", use Blasius ($0.664$, $1.328$, $4.91$) (L7, ll. 646–653). Use the linear or parabolic results only when the question gives that profile: $0.664$ is the Blasius (exact) value, and the parabola gives $0.730$.
+If a question says only "laminar", use Blasius ($0.664$, $1.328$, $4.91$). Use the linear or parabolic results only when the question gives that profile: $0.664$ is the Blasius (exact) value, and the parabola gives $0.730$.
 
 ![[bl_profile_family.png|640]]
 
@@ -385,7 +385,7 @@ If a question says only "laminar", use Blasius ($0.664$, $1.328$, $4.91$) (L7, l
 
 ## 5. Turbulent boundary layers
 
-Properties of turbulence (L8, ll. 50–159):
+Properties of turbulence:
 - Chaotic and unsteady, but with structure: a wide range of interacting eddies, energy passing from large to small scales. The ratio of largest to smallest scales grows with $Re$.
 - Real flows (aerofoils, fuselages) are almost always turbulent, so predicting turbulent drag matters.
 
@@ -402,7 +402,7 @@ Tools (a trade-off between accuracy and cost):
 ### Power-law profile: integrals for general n
 
 $$
-\frac{u}{U_\infty} = \eta^{1/n}\quad(n \approx 7\text{, found by fitting data, L8, ll. 329–421})
+\frac{u}{U_\infty} = \eta^{1/n}\quad(n \approx 7\text{, found by fitting data})
 $$
 
 Displacement thickness:
@@ -434,16 +434,16 @@ $$
 With $n=7$: $\delta^*/\delta = 1/8$, $\theta/\delta = 7/72$, $H = 9/7 \approx 1.29$.
 
 > [!warning] The power law cannot give the wall shear
-> $\dfrac{\partial u}{\partial y} = \dfrac{U_\infty}{n\delta}\eta^{1/n-1}\to\infty$ as $\eta\to0$ for $n>1$. So the power law predicts infinite $\tau_w$ (L8, ll. 541–560). It describes the outer part of the layer, not the wall. Use an empirical $c_f$ correlation, or the [[Law of the Wall]].
+> $\dfrac{\partial u}{\partial y} = \dfrac{U_\infty}{n\delta}\eta^{1/n-1}\to\infty$ as $\eta\to0$ for $n>1$. So the power law predicts infinite $\tau_w$. It describes the outer part of the layer, not the wall. Use an empirical $c_f$ correlation, or the [[Law of the Wall]].
 
-Once $n$ is known at one station, the same $n$ applies at other stations of the same flow (self-similarity) (L8, ll. 524–526).
+Once $n$ is known at one station, the same $n$ applies at other stations of the same flow (self-similarity).
 
 ### Finding n from data
 
 1. Normalise: $\eta = y/\delta$, $f = u/U_\infty$.
-2. Keep only the points inside the BL: find the first index with $y/\delta>1$ (`np.where`) and fit up to the point before it. The traverse usually runs to 2–4$\delta$; fitting all of it gives a poor fit, the commonest error in the tutorials and quizzes (L8, ll. 394–483).
-3. Fit $f = \eta^{1/n}$ with `scipy.optimize.curve_fit`; the example data give $n = 7.12$, rounded to $7$ (L8, ll. 386–424).
-4. Use your $n$. With no data, assume $n=7$, but assuming 7 when data are given loses marks (L8, ll. 514–522, 642–657).
+2. Keep only the points inside the BL: find the first index with $y/\delta>1$ (`np.where`) and fit up to the point before it. The traverse usually runs to 2–4$\delta$; fitting all of it gives a poor fit, the commonest error in the tutorials and quizzes.
+3. Fit $f = \eta^{1/n}$ with `scipy.optimize.curve_fit`; the example data give $n = 7.12$, rounded to $7$.
+4. Use your $n$. With no data, assume $n=7$, but assuming 7 when data are given loses marks.
 
 ### Derivation of the turbulent flat-plate correlations (suggested)
 
@@ -494,13 +494,13 @@ Use these only if you cannot get the values directly from the data.
 
 A turbulent layer grows faster but its $c_f$ falls more slowly. Laminar $\delta\propto x^{1/2}$ against turbulent $\delta\propto x^{4/5}$, because mixing thickens the layer quickly; laminar $c_f\propto Re_x^{-1/2}$ against turbulent $c_f\propto Re_x^{-1/5}$, so on the log–log plot above the turbulent line is flatter and higher, and at $Re_x = 10^6$ the turbulent $c_f$ is about five times the laminar one.
 
-To fit correlations to data, assume $C_F = A\,Re^{b}$ and fit with `curve_fit`. The argument order matters: `curve_fit(f, Re, CF)` with `f(Re, A, b)` (L9, ll. 251–261). The example data give $A = 0.0729$, $b = -0.197$, close to $0.074$ and $-1/5$ (L9, ll. 237–266). In the report, compare your fit with the $n = 7$ correlations and explain the difference (L9, ll. 273–279).
+To fit correlations to data, assume $C_F = A\,Re^{b}$ and fit with `curve_fit`. The argument order matters: `curve_fit(f, Re, CF)` with `f(Re, A, b)`. The example data give $A = 0.0729$, $b = -0.197$, close to $0.074$ and $-1/5$. In the report, compare your fit with the $n = 7$ correlations and explain the difference.
 
-Tools for turbulent flows (L8, ll. 242–322): DNS resolves everything (low $Re$ only), LES resolves the large eddies and models the small, RANS averages and models all fluctuations (used in SESA2029). Lifting-line theory, panel methods, XFOIL and XFLR5 sit at the cheap end. Always ask what a cheaper model lets you get away with and what it gives up.
+Tools for turbulent flows: DNS resolves everything (low $Re$ only), LES resolves the large eddies and models the small, RANS averages and models all fluctuations (used in SESA2029). Lifting-line theory, panel methods, XFOIL and XFLR5 sit at the cheap end. Always ask what a cheaper model lets you get away with and what it gives up.
 
 ## 6. Law of the wall
 
-The outer scaling ($U_\infty$, $\delta$) hides the near-wall physics. Instead, use inner (wall, "plus") units (L9, ll. 378–407):
+The outer scaling ($U_\infty$, $\delta$) hides the near-wall physics. Instead, use inner (wall, "plus") units:
 
 $$
 U_\tau = \sqrt{\frac{\tau_w}{\rho}},\qquad l = \frac{\nu}{U_\tau},\qquad U^+ = \frac{U}{U_\tau},\qquad y^+ = \frac{y}{l} = \frac{yU_\tau}{\nu}
@@ -530,24 +530,24 @@ $$
 \frac{U}{U_\tau} = \frac{\rho U_\tau^2y}{\mu U_\tau} = \frac{yU_\tau}{\nu}\quad\Rightarrow\quad U^+ = y^+.
 $$
 
-The log-law constants are empirical: the course values are $\kappa = 0.4$, $B = 5.0$ (L9, l. 427), the 2024-25 exam rubric uses $\kappa = 0.39$, $B = 4.3$, and a paper's own values should be used. Between the two regions, $5 < y^+ < 50$ is the buffer layer, where neither law fits; in data the log law often fits from $y^+\approx30$ (L9, ll. 450–465).
+The log-law constants are empirical: the course values are $\kappa = 0.4$, $B = 5.0$, the 2024-25 exam rubric uses $\kappa = 0.39$, $B = 4.3$, and a paper's own values should be used. Between the two regions, $5 < y^+ < 50$ is the buffer layer, where neither law fits; in data the log law often fits from $y^+\approx30$.
 
-In CFD, put at least one grid point in the viscous sub-layer, $y^+ < 5$ (often $y^+\approx1$): estimate $U_\tau$ from the flat-plate $c_f$ correlation, run the simulation, then check (L9, ll. 469–480, 492–493). In the lab, compute $y^+$ for your measured points. If none lie in the sub-layer, say so, and describe your curve-fitting choices (a sensitivity check) (L9, ll. 479–491).
+In CFD, put at least one grid point in the viscous sub-layer, $y^+ < 5$ (often $y^+\approx1$): estimate $U_\tau$ from the flat-plate $c_f$ correlation, run the simulation, then check. In the lab, compute $y^+$ for your measured points. If none lie in the sub-layer, say so, and describe your curve-fitting choices (a sensitivity check).
 
 ![[bl_law_of_wall.png|600]]
 
-For a measured turbulent profile (L9, ll. 492–531), estimate $c_f$ from the correlation, then $U_\tau = U_\infty\sqrt{c_f/2}$. At $y = 1$ mm, $y^+ = 55$ and $y/\delta = 0.2$ (0.21 from the data). Both conditions are only just met, so the point is borderline buffer/log. If you accept the log law, $U = U_\tau\left(\tfrac{1}{\kappa}\ln 55 + B\right) = U_\tau(10.0+5.0) = 15.0\,U_\tau$.
+For a measured turbulent profile, estimate $c_f$ from the correlation, then $U_\tau = U_\infty\sqrt{c_f/2}$. At $y = 1$ mm, $y^+ = 55$ and $y/\delta = 0.2$ (0.21 from the data). Both conditions are only just met, so the point is borderline buffer/log. If you accept the log law, $U = U_\tau\left(\tfrac{1}{\kappa}\ln 55 + B\right) = U_\tau(10.0+5.0) = 15.0\,U_\tau$.
 
 ## 7. Transition and the virtual origin method
 
-On a log–log plot, laminar $c_f$ has slope $-1/2$ and turbulent $c_f$ has slope $-1/5$. No real flow follows either line all the way: it leaves the laminar line at transition and joins the turbulent one (L10, ll. 105–125). Transitional Reynolds number for a smooth plate: $Re_{x_T} \approx 3\times10^5$ to $10^6$. This number may not be on the formula sheet, so learn it (L10, ll. 306–318).
+On a log–log plot, laminar $c_f$ has slope $-1/2$ and turbulent $c_f$ has slope $-1/5$. No real flow follows either line all the way: it leaves the laminar line at transition and joins the turbulent one. Transitional Reynolds number for a smooth plate: $Re_{x_T} \approx 3\times10^5$ to $10^6$. This number may not be on the formula sheet, so learn it.
 
-Assuming the whole plate laminar underestimates the drag, and assuming it all turbulent overestimates it (L10, ll. 124–134).
+Assuming the whole plate laminar underestimates the drag, and assuming it all turbulent overestimates it.
 
 ### The model (see [[Virtual Origin Method]])
 
-1. $\theta$ is assumed continuous at transition, $\theta_{lam}(x_T) = \theta_{turb}(x_T)$ (L10, ll. 227–229, 290).
-2. The turbulent layer grows as if it had started, fully turbulent, at a virtual origin $x_0 < x_T$; turbulent formulas use $x-x_0$ in place of $x$ (L10, ll. 203–266).
+1. $\theta$ is assumed continuous at transition, $\theta_{lam}(x_T) = \theta_{turb}(x_T)$.
+2. The turbulent layer grows as if it had started, fully turbulent, at a virtual origin $x_0 < x_T$; turbulent formulas use $x-x_0$ in place of $x$.
 3. The drag of the whole plate comes from the trailing-edge turbulent $\theta$ measured from $x_0$ (§3: drag depends only on the trailing-edge $\theta$).
 
 ![[bl_virtual_origin.png|560]]
@@ -590,9 +590,9 @@ $$
 \boxed{x_0 = x_T\left(1-36.9\,Re_{x_T}^{-3/8}\right)}\qquad(\text{or }38.2\text{ with the }0.036\text{ coefficient})
 $$
 
-The last-resort form $x_0 \approx x_T\left(1-38\,Re_{x_T}^{-3/8}\right)$ (L10, ll. 319–326) is this result with $0.036$.
+The last-resort form $x_0 \approx x_T\left(1-38\,Re_{x_T}^{-3/8}\right)$ is this result with $0.036$.
 
-Given $x_T$, the formula above is explicit for $x_0$. The worked example runs the other way: $x_0$ comes from fitting turbulent data, and $x_T$ is the unknown, appearing as $x_T^{1/2}$ and $(x_T-x_0)^{4/5}$, so it needs `fsolve`. In an exam you will be given the relation and won't be expected to solve the high-order equation by hand (L10, ll. 334–336).
+Given $x_T$, the formula above is explicit for $x_0$. The worked example runs the other way: $x_0$ comes from fitting turbulent data, and $x_T$ is the unknown, appearing as $x_T^{1/2}$ and $(x_T-x_0)^{4/5}$, so it needs `fsolve`. In an exam you will be given the relation and won't be expected to solve the high-order equation by hand.
 
 ### Drag of the transitional plate
 
@@ -604,19 +604,19 @@ $$
 C_F = \frac{2\theta(c)}{c} = 0.074\left(1-\frac{x_0}{c}\right)Re_{c-x_0}^{-1/5}\quad\text{(one side)}
 $$
 
-For the example plate of $L = 0.3$ m (L10, ll. 375–452), the turbulent data give $x_0 \approx 0.18$ m, and matching with the laminar $\theta$ gives $x_T \approx 0.28$ m, i.e. transition near the end of the plate, with $Re_{x_T}$ in $3\times10^5$–$10^6$ ✔ (L10, ll. 452–459).
+For the example plate of $L = 0.3$ m, the turbulent data give $x_0 \approx 0.18$ m, and matching with the laminar $\theta$ gives $x_T \approx 0.28$ m, i.e. transition near the end of the plate, with $Re_{x_T}$ in $3\times10^5$–$10^6$ ✔.
 
-`fsolve`'s answer depends on the starting guess (L10, ll. 399–451), so try several and accept the value they all converge to. Then sanity-check it: $x_0$ must lie between 0 and $x_T$ (0.187 m on the 0.3 m lecture plate), $x_T$ must lie on the plate (0.28 m), and $Re_{x_T}$ must fall in $3\times10^5$–$10^6$. Compare with the explicit approximation, as Tutorial 2 Q5 does (L10, ll. 461–477).
+`fsolve`'s answer depends on the starting guess, so try several and accept the value they all converge to. Then sanity-check it: $x_0$ must lie between 0 and $x_T$ (0.187 m on the 0.3 m lecture plate), $x_T$ must lie on the plate (0.28 m), and $Re_{x_T}$ must fall in $3\times10^5$–$10^6$. Compare with the explicit approximation, as Tutorial 2 Q5 does.
 
-Delaying transition reduces friction drag (L10, ll. 517–560). Passive methods: distributed roughness and bio-inspired surfaces (riblets or shark skin, whale-flipper tubercles). Active methods: e.g. plasma actuators: a DBD actuator adds momentum near the wall through an ionic-wind body force. Harder in high-speed flows because of shocks; transition can be delayed but not eliminated (ll. 560–564).
+Delaying transition reduces friction drag. Passive methods: distributed roughness and bio-inspired surfaces (riblets or shark skin, whale-flipper tubercles). Active methods: e.g. plasma actuators: a DBD actuator adds momentum near the wall through an ionic-wind body force. Harder in high-speed flows because of shocks; transition can be delayed but not eliminated.
 
 ## 8. Pressure gradients and separation
 
-A favourable pressure gradient (FPG), $dp/dx < 0$, accelerates the flow (L10, l. 572). An adverse pressure gradient (APG), $dp/dx > 0$, decelerates the flow everywhere, including near the wall where there is least momentum. Eventually $\partial u/\partial y|_{y=0} = 0$, so $\tau_w = 0$, and the flow separates (L10, ll. 569–601). On aerofoils this is stall, and once the flow separates the aerofoil loses circulation (L10, ll. 605, 633).
+A favourable pressure gradient (FPG), $dp/dx < 0$, accelerates the flow. An adverse pressure gradient (APG), $dp/dx > 0$, decelerates the flow everywhere, including near the wall where there is least momentum. Eventually $\partial u/\partial y|_{y=0} = 0$, so $\tau_w = 0$, and the flow separates. On aerofoils this is stall, and once the flow separates the aerofoil loses circulation.
 
 Separation needs viscosity. It is not caused by a loss of viscous forces; the cause is the opposite, because friction has already drained the near-wall fluid of momentum, so the APG can stop and reverse it. Separation is where the wall shear passes through zero, $\partial u/\partial y|_0 = 0$, and a truly inviscid flow has no boundary layer and does not separate ([[D'Alembert's Paradox]]).
 
-A laminar BL separates earlier because it has less near-wall momentum, giving a bigger separated region (L10, l. 619). Tripping it to turbulent increases mixing and delays separation, giving a smaller wake and lower pressure drag, at the cost of higher friction (L10, ll. 637–656); golf-ball dimples and trips on wind-tunnel models work this way. On bluff bodies, early separation leads to vortex shedding and unsteady forces. Sharp corners separate immediately, so bodies are streamlined (L10, l. 700).
+A laminar BL separates earlier because it has less near-wall momentum, giving a bigger separated region. Tripping it to turbulent increases mixing and delays separation, giving a smaller wake and lower pressure drag, at the cost of higher friction; golf-ball dimples and trips on wind-tunnel models work this way. On bluff bodies, early separation leads to vortex shedding and unsteady forces. Sharp corners separate immediately, so bodies are streamlined.
 
 > [!warning] "Turbulence always increases drag" is false
 > Turbulence always increases skin-friction drag at a given $Re$ on an attached flow. On a bluff body, where pressure drag dominates, tripping can reduce the total drag by delaying separation. State which drag component you mean.
@@ -636,7 +636,7 @@ Wing chord $c = 0.2$ m, span $b = 1.2$ m, speeds 6–15 m/s, fully laminar, flat
 3. $C_F = 1.328/\sqrt{1.6\times10^5} = 1.328/400 = 0.00332$ per side.
 4. $D = 2\times\tfrac12\rho U^2(bc)\,C_F = 2(0.5)(1.225)(144)(0.24)(0.00332) = 0.141$ N.
 
-$C_F$ falls as $Re$ rises (as $Re^{-1/2}$), but drag still rises with speed (as $U^{3/2}$). You must be able to explain why (L7, ll. 699–710).
+$C_F$ falls as $Re$ rises (as $Re^{-1/2}$), but drag still rises with speed (as $U^{3/2}$). You must be able to explain why.
 
 ### Fully turbulent AUV
 

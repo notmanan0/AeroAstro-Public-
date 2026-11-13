@@ -29,15 +29,15 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L9, pp. 113–129; L2
 > - **Common mistakes:** setting $\overline{u'v'}=0$ as if the fluctuations were uncorrelated; putting the first cell in the buffer layer, $5<y_1^+<30$.
 > - **Practise:** [[#4. The closure problem]] · [[#Near-wall cells and the eddy viscosity]]
 
-The coursework report draws on the earlier numerical methods (L9 slide 2): the grid studies use the order of accuracy from the Taylor-series work of [[SESA2029 A2 - Discrete Data, Finite Differences and Taylor Tables|A2]], the Fluent residual is the imbalance of the discrete equations from the iterative methods of [[SESA2029 A3 - Iterative Solution of the Steady Heat Equation|A3]], and the boundary-layer lab compares a laminar Navier–Stokes solution with Blasius and with a turbulence model. Turbulence is the biggest limitation of CFD, because there is no agreed way to model it; CFD therefore still needs an expert user rather than being a push-button tool.
+The coursework report draws on the earlier numerical methods: the grid studies use the order of accuracy from the Taylor-series work of [[SESA2029 A2 - Discrete Data, Finite Differences and Taylor Tables|A2]], the Fluent residual is the imbalance of the discrete equations from the iterative methods of [[SESA2029 A3 - Iterative Solution of the Steady Heat Equation|A3]], and the boundary-layer lab compares a laminar Navier–Stokes solution with Blasius and with a turbulence model. Turbulence is the biggest limitation of CFD, because there is no agreed way to model it; CFD therefore still needs an expert user rather than being a push-button tool.
 
-In Fluent, the wing lab uses the inviscid model (Euler, slip walls, no boundary layers), the laminar boundary-layer lab the laminar model (the full steady Navier–Stokes equations), and the turbulent lab Spalart–Allmaras, one of the models below (ll. 71–95).
+In Fluent, the wing lab uses the inviscid model (Euler, slip walls, no boundary layers), the laminar boundary-layer lab the laminar model (the full steady Navier–Stokes equations), and the turbulent lab Spalart–Allmaras, one of the models below.
 
-The physical picture of turbulence is an energy cascade. Energy is fed in at the largest scales, the width of a jet or the thickness of a boundary layer, by the mean shear working on the flow. Large eddies interact, set up strain fields and stretch vorticity into smaller eddies, which interact again to form smaller ones still, until at the Kolmogorov microscales viscosity turns the motion into heat (ll. 96–120). A dye released in a jet shows the result: separated at first, then folded and mixed by eddies of every size until it is a uniform pale distribution downstream.
+The physical picture of turbulence is an energy cascade. Energy is fed in at the largest scales, the width of a jet or the thickness of a boundary layer, by the mean shear working on the flow. Large eddies interact, set up strain fields and stretch vorticity into smaller eddies, which interact again to form smaller ones still, until at the Kolmogorov microscales viscosity turns the motion into heat. A dye released in a jet shows the result: separated at first, then folded and mixed by eddies of every size until it is a uniform pale distribution downstream.
 
 ## 1. The turbulent boundary layer in wall units
 
-The near-wall scaling is that of [[SESA2029 A1 - Digital Design and the Role of CFD and FEA|A1]] (ll. 116–160). The wall shear stress $\tau_w=\mu\,(\partial u/\partial y)_w$ defines a friction velocity and wall units:
+The near-wall scaling is that of [[SESA2029 A1 - Digital Design and the Role of CFD and FEA|A1]]. The wall shear stress $\tau_w=\mu\,(\partial u/\partial y)_w$ defines a friction velocity and wall units:
 
 $$
 u_\tau=\sqrt{\frac{\tau_w}{\rho}},
@@ -47,7 +47,7 @@ u^+=\frac{u}{u_\tau},
 y^+=\frac{y\,u_\tau}{\nu}.
 $$
 
-In these variables, profiles measured at different stations, and even in different pressure gradients, collapse on one curve near the wall. That is an empirical fact from experiments, a way of collapsing the data rather than a theory (ll. 131–140). Close to the wall is the viscous sublayer, $u^+=y^+$; further out is the log law
+In these variables, profiles measured at different stations, and even in different pressure gradients, collapse on one curve near the wall. That is an empirical fact from experiments, a way of collapsing the data rather than a theory. Close to the wall is the viscous sublayer, $u^+=y^+$; further out is the log law
 
 $$
 u^+=2.5\ln y^++5.24,
@@ -57,11 +57,11 @@ where $2.5=1/\kappa$ with the von Kármán constant $\kappa=0.4$ (the constants 
 
 ![[dam_law_of_the_wall_y1plus.png|640]]
 
-The position of the first grid point in these units, $y_1^+$, decides how the model must treat the wall (ll. 146–160, 341–355, 391–400). A wall-resolved calculation puts it in the sublayer, below 5 and ideally near 1, so the profile is captured by the grid. A wall-function model assumes the first point lies on the log law and needs $30<y_1^+\lesssim200$; even then 15 to 20 points are needed inside the boundary layer, which is what sets the upper limit. In the buffer layer between (8 to 30 on the L2 slides, from about 5 in many references) neither assumption holds and the answer will be wrong. In the lab, plot $y_1^+$ after solving and refine if needed ([[First-Cell Height and y-plus]]).
+The position of the first grid point in these units, $y_1^+$, decides how the model must treat the wall. A wall-resolved calculation puts it in the sublayer, below 5 and ideally near 1, so the profile is captured by the grid. A wall-function model assumes the first point lies on the log law and needs $30<y_1^+\lesssim200$; even then 15 to 20 points are needed inside the boundary layer, which is what sets the upper limit. In the buffer layer between (8 to 30 in the course convention, from about 5 in many references) neither assumption holds and the answer will be wrong. In the lab, plot $y_1^+$ after solving and refine if needed ([[First-Cell Height and y-plus]]).
 
 ## 2. Reynolds averaging
 
-A turbulent signal, for example from a hot-wire probe in a boundary layer, fluctuates about a mean (ll. 156–180). Define the average over a sample time $T$, long compared with the eddy time scale,
+A turbulent signal, for example from a hot-wire probe in a boundary layer, fluctuates about a mean. Define the average over a sample time $T$, long compared with the eddy time scale,
 
 $$
 \bar\phi(x_i)=\frac1T\int_0^T\phi(x_i,t)\,dt,
@@ -77,7 +77,7 @@ In a simulation the average can also be taken over a periodic direction in space
 
 ![[dam_reynolds_decomposition.png|680]]
 
-The averaging rules follow from the integral (L9 slide 6). The mean $\bar\phi$ does not depend on $t$, so averaging it changes nothing:
+The averaging rules follow from the integral. The mean $\bar\phi$ does not depend on $t$, so averaging it changes nothing:
 
 $$
 \bar{\bar\phi}=\frac1T\int_0^T\bar\phi\,\mathrm dt=\bar\phi\,\frac1T\int_0^T\mathrm dt=\bar\phi.
@@ -95,7 +95,7 @@ A constant comes outside the integral, $\overline{c\phi}=c\bar\phi$, and the int
 
 ## 3. The Reynolds stresses
 
-Reynolds substituted the decomposition into the Navier–Stokes equations and averaged them (ll. 201–210). The term $\partial(uv)/\partial y$ matters in boundary layers (ll. 211–240):
+Reynolds substituted the decomposition into the Navier–Stokes equations and averaged them. The term $\partial(uv)/\partial y$ matters in boundary layers:
 
 $$
 \overline{\frac{\partial(uv)}{\partial y}}=\frac{\partial}{\partial y}\overline{(\bar u+u')(\bar v+v')}.
@@ -113,7 +113,7 @@ $$
 =\frac{\partial(\bar u\bar v)}{\partial y}+\frac{\partial\,\overline{u'v'}}{\partial y}.
 $$
 
-Now do every term of the 2D $x$-momentum equation (L9 slide 7). The time derivative and the pressure gradient are linear, so the fluctuation parts average away:
+Now do every term of the 2D $x$-momentum equation. The time derivative and the pressure gradient are linear, so the fluctuation parts average away:
 
 $$
 \overline{\frac{\partial(\bar u+u')}{\partial t}}=\frac{\partial\bar u}{\partial t}+\frac{\partial\overline{u'}}{\partial t}=\frac{\partial\bar u}{\partial t},
@@ -134,22 +134,22 @@ $$
 =\nu\left(\frac{\partial^2\bar u}{\partial x^2}+\frac{\partial^2\bar u}{\partial y^2}\right)-\frac{\partial\,\overline{u'u'}}{\partial x}-\frac{\partial\,\overline{u'v'}}{\partial y}.
 $$
 
-The new terms are averages of the fluctuations, and the mean flow does not determine them. The average $\overline{u'v'}$ would vanish only if $u'$ and $v'$ were uncorrelated random numbers; turbulence has organised structure, so it does not (ll. 245–255). Multiplied by $-\rho$ they have units of stress, hence Reynolds stresses (ll. 271–275).
+The new terms are averages of the fluctuations, and the mean flow does not determine them. The average $\overline{u'v'}$ would vanish only if $u'$ and $v'$ were uncorrelated random numbers; turbulence has organised structure, so it does not. Multiplied by $-\rho$ they have units of stress, hence Reynolds stresses.
 
 ## 4. The closure problem
 
-In 3D the $x$ equation also gains $\overline{u'w'}$, and the $y$ and $z$ equations three terms each; since $\overline{u'v'}=\overline{v'u'}$ and so on, there are six independent Reynolds stresses (ll. 251–260). The count is now:
+In 3D the $x$ equation also gains $\overline{u'w'}$, and the $y$ and $z$ equations three terms each; since $\overline{u'v'}=\overline{v'u'}$ and so on, there are six independent Reynolds stresses. The count is now:
 
 | | Equations | Unknowns |
 |---|---|---|
 | Laminar Navier–Stokes | 4 (continuity, 3 momentum) | 4 ($u$, $v$, $w$, $p$) |
 | Reynolds-averaged | 4 | 10 ($\bar u$, $\bar v$, $\bar w$, $\bar p$ and 6 stresses) |
 
-Exact transport equations can be derived for the Reynolds stresses, but they contain triple products of fluctuations, giving of the order of a hundred unknowns, and the next level adds more again (ll. 261–275). No number of derived equations closes the system, so at some point a physical guess, a model, has to be made. This is the turbulence closure problem, and it is why engineering CFD has no exact treatment of turbulence. Calibrating against direct numerical simulation or using machine learning to tune or choose models does not remove the closure step; only solving the original equations directly would, perhaps on a quantum computer, which is not expected any time soon (ll. 476–495).
+Exact transport equations can be derived for the Reynolds stresses, but they contain triple products of fluctuations, giving of the order of a hundred unknowns, and the next level adds more again. No number of derived equations closes the system, so at some point a physical guess, a model, has to be made. This is the turbulence closure problem, and it is why engineering CFD has no exact treatment of turbulence. Calibrating against direct numerical simulation or using machine learning to tune or choose models does not remove the closure step; only solving the original equations directly would, perhaps on a quantum computer, which is not expected any time soon.
 
 ## 5. The eddy-viscosity hypothesis
 
-The most common approach copies the Newtonian fluid of [[SESA2029 A7 - Governing Equations - Euler and Navier-Stokes|A7]]: suppose the Reynolds stress is proportional to the mean strain rate, as if eddies were large molecules (ll. 276–295). For the boundary-layer stress,
+The most common approach copies the Newtonian fluid of [[SESA2029 A7 - Governing Equations - Euler and Navier-Stokes|A7]]: suppose the Reynolds stress is proportional to the mean strain rate, as if eddies were large molecules. For the boundary-layer stress,
 
 $$
 -\overline{u'v'}=\nu_t\frac{\partial\bar u}{\partial y},
@@ -165,11 +165,11 @@ which looks like the viscous term with $\nu$ replaced by the kinematic eddy visc
 
 ## 6. The models in the Fluent menu
 
-The coefficients of every model were calibrated together against a set of standard flows, documented on the NASA Langley Turbulence Modeling Resource. Fluent allows the coefficients to be changed, but they should be left alone, because the model would then no longer work for the flat plate, the jet and the other cases it was calibrated on (ll. 301–315).
+The coefficients of every model were calibrated together against a set of standard flows, documented on the NASA Langley Turbulence Modeling Resource. Fluent allows the coefficients to be changed, but they should be left alone, because the model would then no longer work for the flat plate, the jet and the other cases it was calibrated on.
 
-Spalart–Allmaras (Boeing, early 1990s) adds a single transport equation for a modified eddy viscosity $\tilde\nu$, with terms that produce, destroy and move it around (ll. 291–355). It grew out of boundary-layer models that worked well in external aerodynamics and was calibrated on the flows round commercial aircraft: leading edges, pressure gradients, wing–fuselage junctions. It was built systematically, starting from simple flows, with each new term (a compressibility or curvature correction, say) made to vanish in the cases the model already handled. It is robust, cheap because it has only one extra unknown, and good for attached flows and simple separation, but it struggles with free shear layers and reattachment. $\tilde\nu$ was designed to vary nearly linearly near the wall, so SA tolerates $y_1^+<5$; some implementations add a wall function for $y_1^+>30$.
+Spalart–Allmaras (Boeing, early 1990s) adds a single transport equation for a modified eddy viscosity $\tilde\nu$, with terms that produce, destroy and move it around. It grew out of boundary-layer models that worked well in external aerodynamics and was calibrated on the flows round commercial aircraft: leading edges, pressure gradients, wing–fuselage junctions. It was built systematically, starting from simple flows, with each new term (a compressibility or curvature correction, say) made to vanish in the cases the model already handled. It is robust, cheap because it has only one extra unknown, and good for attached flows and simple separation, but it struggles with free shear layers and reattachment. $\tilde\nu$ was designed to vary nearly linearly near the wall, so SA tolerates $y_1^+<5$; some implementations add a wall function for $y_1^+>30$.
 
-$k$–$\varepsilon$ (Launder and Spalding, Imperial College, late 1960s) was the first practical model and long the most common (ll. 356–400). The turbulence kinetic energy
+$k$–$\varepsilon$ (Launder and Spalding, Imperial College, late 1960s) was the first practical model and long the most common. The turbulence kinetic energy
 
 $$
 k=\tfrac12\left(\overline{u'^2}+\overline{v'^2}+\overline{w'^2}\right)
@@ -185,13 +185,13 @@ $$
 
 The $k$ equation can be derived exactly from the Navier–Stokes equations (its unknown terms are then modelled), but the $\varepsilon$ equation is essentially postulated, and that is where the weakness lies. It is recommended only for flows without strong pressure gradients, streamline curvature or separation. It came from automotive, nuclear and general engineering rather than aerodynamics, but works reasonably for aerodynamics, and is often used with a wall function when the grid cannot reach the wall: first point at $y_1^+>30$ and not beyond a few hundred.
 
-$k$–$\omega$ (1980s) replaces $\varepsilon$ by the specific dissipation rate $\omega\propto\varepsilon/k$ (ll. 400–410). It is better behaved near the wall, needs $y_1^+\approx1$ or below, and is less good away from it; in particular its predictions are sensitive to the assumed free-stream $\omega$, whereas $k$–$\varepsilon$ is not.
+$k$–$\omega$ (1980s) replaces $\varepsilon$ by the specific dissipation rate $\omega\propto\varepsilon/k$. It is better behaved near the wall, needs $y_1^+\approx1$ or below, and is less good away from it; in particular its predictions are sensitive to the assumed free-stream $\omega$, whereas $k$–$\varepsilon$ is not.
 
-SST (Menter) blends the two with a switching function: $k$–$\omega$ near the wall, $k$–$\varepsilon$ in the free stream (ll. 411–425). It has had the most development of any model over the last twenty years. For aerodynamic work the choice is Spalart–Allmaras or $k$–$\omega$ SST.
+SST (Menter) blends the two with a switching function: $k$–$\omega$ near the wall, $k$–$\varepsilon$ in the free stream. It has had the most development of any model over the last twenty years. For aerodynamic work the choice is Spalart–Allmaras or $k$–$\omega$ SST.
 
-Reynolds-stress models abandon the eddy viscosity and solve six equations for the stresses plus one for the dissipation rate (ll. 421–455). That makes ten stored variables against four for SA ($u$, $v$, $w$ and $\tilde\nu$), with slow convergence and a tendency to blow up in parts of the flow, but they can give better results in flows with strong streamline curvature or swirl, where two-equation models fail. In practice they have not become robust enough for general engineering use.
+Reynolds-stress models abandon the eddy viscosity and solve six equations for the stresses plus one for the dissipation rate. That makes ten stored variables against four for SA ($u$, $v$, $w$ and $\tilde\nu$), with slow convergence and a tendency to blow up in parts of the flow, but they can give better results in flows with strong streamline curvature or swirl, where two-equation models fail. In practice they have not become robust enough for general engineering use.
 
-Two further families are transition models (ll. 436–450), recent additions that can just about compute a laminar layer followed by transition, which work in high-disturbance turbomachinery but poorly in external aerodynamics because they do not model the physics of transition; and unsteady scale-resolving methods (LES, DES), covered in [[SESA2029 A11 - CFD Errors, Verification, Validation and Mesh Quality|A11]].
+Two further families are transition models, recent additions that can just about compute a laminar layer followed by transition, which work in high-disturbance turbomachinery but poorly in external aerodynamics because they do not model the physics of transition; and unsteady scale-resolving methods (LES, DES), covered in [[SESA2029 A11 - CFD Errors, Verification, Validation and Mesh Quality|A11]].
 
 | Model | Extra equations | Eddy viscosity from | Wall treatment |
 |---|---|---|---|
@@ -203,7 +203,7 @@ Two further families are transition models (ll. 436–450), recent additions tha
 
 ### What you need to know
 
-The examinable points (ll. 451–495): the Reynolds decomposition and how it produces the Reynolds stresses; why no number of derived equations closes the system; the eddy viscosity for a simple boundary layer; and how the various models try to close the system. No model is perfect, and different models give different answers for the same flow, which you may see in the turbulent boundary-layer lab. Turbulence and transition modelling are the two big physical unknowns in predicting the flow round aircraft and rockets, so CFD needs an expert user who can tell when grid refinement will help and when the model is the limit.
+The examinable points: the Reynolds decomposition and how it produces the Reynolds stresses; why no number of derived equations closes the system; the eddy viscosity for a simple boundary layer; and how the various models try to close the system. No model is perfect, and different models give different answers for the same flow, which you may see in the turbulent boundary-layer lab. Turbulence and transition modelling are the two big physical unknowns in predicting the flow round aircraft and rockets, so CFD needs an expert user who can tell when grid refinement will help and when the model is the limit.
 
 ## Worked examples
 

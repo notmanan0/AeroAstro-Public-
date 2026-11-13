@@ -29,7 +29,7 @@ $$
 
 then $M_P$ comes from the tables and $\mu_P=\sin^{-1}(1/M_P)$.
 
-The characteristics bend at every crossing because $\mu$ changes with $M$ (L3-2, ll. 299–318), so P is located using slopes averaged between the two ends of each segment:
+The characteristics bend at every crossing because $\mu$ changes with $M$, so P is located using slopes averaged between the two ends of each segment:
 
 $$
 \alpha_{AP}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_P],\qquad\alpha_{BP}=\tfrac12[(\theta-\mu)_B+(\theta-\mu)_P],
@@ -39,7 +39,7 @@ $$
 x_P=\frac{x_B\tan\alpha_{BP}-x_A\tan\alpha_{AP}-(y_B-y_A)}{\tan\alpha_{BP}-\tan\alpha_{AP}},\qquad y_P=y_A+(x_P-x_A)\tan\alpha_{AP}.
 $$
 
-The 3.2 slide 9 example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ at $(1.3591,\ 0.2814)$ ([[SESA3029 W05a - Method of Characteristics#Worked example (3.2 slide 9)|W05a §10]]).
+The worked unit-process example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ at $(1.3591,\ 0.2814)$ ([[SESA3029 W05a - Method of Characteristics#Worked example|W05a §10]]).
 
 ![[at_moc_unit_process.png|760]]
 
@@ -49,9 +49,9 @@ The 3.2 slide 9 example gives $M_3=1.7039$, $\theta_3=8.9367^\circ$ at $(1.3591,
 |---|---|---|
 | prescribed wall (reflecting) | $\nu_W=R^+_A+\theta_W$; reflected $R^-_W=R^+_A+2\theta_W$ | intersect the $C^+$ with the wall |
 | designed wall (non-reflecting: wave cancellation) | $\theta_W=\theta_A$, so $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
-| symmetry plane (an inviscid wall with $\theta_W=0$, L3-3, l. 93) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
+| symmetry plane (an inviscid wall with $\theta_W=0$) | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$ |
 
-> [!warning] Check the physics, not just the rules (L3-4, ll. 206–281)
+> [!warning] Check the physics, not just the rules
 > A prescribed wall only reflects if the arriving flow is not already parallel to it ($\theta_A\neq\theta_W$). In the 3.4 generic example, applying the rules blindly produces a reflection at point 3 and a point 5 that does not exist, so check every result against the physics ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example|W05b §15]]).
 
 ## Zones and limits

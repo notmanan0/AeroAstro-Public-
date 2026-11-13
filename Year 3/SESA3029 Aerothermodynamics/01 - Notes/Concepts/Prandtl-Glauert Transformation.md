@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Lecture4-4.pdf", "02 - Sources/Lectures/Lecture
 
 # Prandtl-Glauert Transformation
 
-The Prandtl–Glauert transformation turns the subsonic linearised potential equation $\beta^2\phi_{xx}+\phi_{yy}=0$, with $\beta=\sqrt{1-M_\infty^2}$, into Laplace's equation by the change of variables $\phi_0=\beta\phi$, $x_0=x$, $y_0=\beta y$ (4.4 slide 2). The incompressible solution $\phi_0$ is therefore the compressible one in disguise, and the pressure coefficients are related by
+The Prandtl–Glauert transformation turns the subsonic linearised potential equation $\beta^2\phi_{xx}+\phi_{yy}=0$, with $\beta=\sqrt{1-M_\infty^2}$, into Laplace's equation by the change of variables $\phi_0=\beta\phi$, $x_0=x$, $y_0=\beta y$. The incompressible solution $\phi_0$ is therefore the compressible one in disguise, and the pressure coefficients are related by
 
 $$
 C_p=\frac{C_{p0}}{\sqrt{1-M_\infty^2}},\qquad C_l=\frac{C_{l0}}{\sqrt{1-M_\infty^2}},\qquad C_m=\frac{C_{m0}}{\sqrt{1-M_\infty^2}} .
@@ -25,7 +25,7 @@ Drag has no such rule. Inviscid, shock-free flow round a 2D aerofoil has zero dr
 
 Physically, compressibility makes the disturbance at the surface $1/\beta$ times stronger and makes it reach $1/\beta$ times further from the body. The rule fails near $M_\infty=1$, where it predicts infinite lift, and above $M_{crit}$ the real lift rises faster than $1/\beta$ once a supersonic region forms. The course quotes $M_\infty<0.8$ and calls this range "transonic aerofoil theory"; textbooks call it subsonic compressible flow.
 
-The Kármán–Tsien rule is more accurate at higher subsonic Mach numbers (4.4 slide 10):
+The Kármán–Tsien rule is more accurate at higher subsonic Mach numbers:
 
 $$
 C_p=\frac{C_{p0}}{\sqrt{1-M_\infty^2}+\dfrac{M_\infty^2}{1+\sqrt{1-M_\infty^2}}\,\dfrac{C_{p0}}{2}} .
@@ -33,6 +33,7 @@ $$
 
 ## Related
 
-- [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#6. The Prandtl–Glauert transformation (4.4 slides 2–3)|W07b §§6–9]] · [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#Lift and moment coefficients (4.4 slide 5)|lift and moment from the chordwise integral]] · [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#Drag does not follow the rule|why drag does not scale]]
+- [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#6. The Prandtl–Glauert transformation|W07b §§6–9]] · [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#Lift and moment coefficients|lift and moment from the chordwise integral]] · [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#Drag does not follow the rule|why drag does not scale]]
 - [[Linearised Compressible Potential Equation]] · [[Critical Mach Number]] · [[Ackeret Theory]] (the supersonic counterpart)
 - [[SESA2022 T4 - Thin Aerofoil Theory]] (the incompressible $C_{p0}$)
+- In depth, with the order-of-magnitude limits and a general potential scaling: [[SESA3029 Deep Dive - From the Euler Equations to Prandtl-Glauert]]

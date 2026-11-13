@@ -18,7 +18,7 @@ sources: ["02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/02 Novem
 # SESA3047 Chapter 5 Practice Problems - Solutions
 
 > [!info] About this sheet
-> The five problems are §5.8 of the Chapter 5 handout (pp. 9–10). No answer key has been issued, so these are my worked solutions, with every number and matrix checked in SymPy/SciPy (`generate_amc_ch5_figures.py --check`). Problem 1 matches the L14 material and was once a SESA3030 exam question (ll. 230–234). Problem 4's blocks $P_1,P_2,P_3$ are not given as transfer functions, so it is solved for general blocks first and then for first-order blocks.
+> The five problems are §5.8 of the Chapter 5 handout (pp. 9–10). No answer key has been issued, so these are my worked solutions, with every number and matrix checked in SymPy/SciPy (`generate_amc_ch5_figures.py --check`). Problem 1 matches the L14 material and was once a SESA3030 exam question. Problem 4's blocks $P_1,P_2,P_3$ are not given as transfer functions, so it is solved for general blocks first and then for first-order blocks.
 
 ## Problem 1. Equilibria and linearisation of a made-up system
 
@@ -107,7 +107,7 @@ $$
 \begin{bmatrix}\dot x_1\\\dot y_1\\\dot z_1\end{bmatrix}=\begin{bmatrix}-1&-2&0\\0&0&1\\0&0&-1\end{bmatrix}\begin{bmatrix}x_1\\y_1\\z_1\end{bmatrix}+\begin{bmatrix}0\\0\\1\end{bmatrix}u_1,
 $$
 
-with $\mathbf C=\mathbf I$ by the module's convention (L14 ll. 160–161).
+with $\mathbf C=\mathbf I$ by the module's convention.
 
 The matrix is upper triangular, so its eigenvalues are the diagonal: $-1$, $0$, $-1$. With a zero eigenvalue the linear model is not asymptotically stable, and the linearisation alone cannot decide the stability of the nonlinear system at this point. (About $(-1,-1,0)$ only the $(1,2)$ entry changes, to $+2$, with the same eigenvalues.)
 
@@ -211,7 +211,7 @@ $$
 \begin{bmatrix}J_{xx}&-J_{xz}\\-J_{xz}&J_{zz}\end{bmatrix}^{-1}=\frac{1}{\Gamma}\begin{bmatrix}J_{zz}&J_{xz}\\J_{xz}&J_{xx}\end{bmatrix}.
 $$
 
-Then $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$ (the course's names for the two matrices, L15 ll. 247–250) is
+Then $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$ (the course's names for the two matrices) is
 
 $$
 \mathbf A=\begin{bmatrix}

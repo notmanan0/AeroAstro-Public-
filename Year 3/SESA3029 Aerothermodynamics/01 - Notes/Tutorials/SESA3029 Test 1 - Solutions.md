@@ -14,7 +14,7 @@ sources: ["03 - Exams & Past Papers/aerothermo quiz questions - solved on ipad b
 # SESA3029 Test 1 - Solutions
 
 > [!abstract] Test info
-> Blackboard Test 1 (2.5% of the module, best of two attempts). Released on 5 Oct, **due Sun 11 Oct, 23:59** (L2-4, ll. 1–3). Five questions, all on Week 1 material: adiabatic and isentropic relations, mass flow, and the Pitot probe. These are worked solutions for revision, written after the questions had already been answered by hand. Every number was checked in Python with $\gamma=1.4$ and $R=287$ J/kg K.
+> Blackboard Test 1 (2.5% of the module, best of two attempts). Released on 5 Oct, **due Sun 11 Oct, 23:59**. Five questions, all on Week 1 material: adiabatic and isentropic relations, mass flow, and the Pitot probe. These are worked solutions for revision, written after the questions had already been answered by hand. Every number was checked in Python with $\gamma=1.4$ and $R=287$ J/kg K.
 
 | Q | Answer | Tool | Theory |
 |---|---|---|---|

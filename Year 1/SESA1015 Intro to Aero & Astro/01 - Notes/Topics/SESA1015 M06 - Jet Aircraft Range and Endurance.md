@@ -197,7 +197,7 @@ $$
 
 ### Mission profiles and the step climb
 
-The range and endurance results describe single segments of a flight. A simple mission profile is warm-up and take-off, climb, cruise, loiter and landing (Slides v2, p. 72). The Breguet and constant-altitude range equations cover the cruise. The loiter, a holding pattern flown while waiting to land, is an endurance segment, flown for least fuel per second at the minimum drag condition of [[#3. Endurance]]. Take-off, climb and descent are not part of these results ([[SESA1015 M08 - Glide and Climb Performance|M08]], [[SESA1015 M09 - Take-off and Landing Performance|M09]]).
+The range and endurance results describe single segments of a flight. A simple mission profile is warm-up and take-off, climb, cruise, loiter and landing. The Breguet and constant-altitude range equations cover the cruise. The loiter, a holding pattern flown while waiting to land, is an endurance segment, flown for least fuel per second at the minimum drag condition of [[#3. Endurance]]. Take-off, climb and descent are not part of these results ([[SESA1015 M08 - Glide and Climb Performance|M08]], [[SESA1015 M09 - Take-off and Landing Performance|M09]]).
 
 Since the fuel each segment burns is proportional to the weight it starts with, segments are combined through their weight fractions, which multiply: $W_{end}/W_{start}=\prod_i W_i/W_{i-1}$. Rearranging the Breguet range and the endurance equation gives the fractions for a cruise of range $R$ and a loiter of duration $E$:
 
@@ -213,7 +213,7 @@ $$
 > [!check] Cruise and loiter fractions
 > For the aircraft of [[#Specific fuel consumption for a 7041 km cruise]] ($c_t=1.6338\times10^{-4}$ s⁻¹, $V=233.1$ m/s, $L/D=17.53$), a 5000 km cruise gives $W_2/W_1=\exp(-0.1999)=0.819$. A 30 minute loiter at $L/D=18$ gives $\exp(-0.0163)=0.984$. The product is 0.806, so the two segments burn 19.4 % of the weight at the start of the cruise.
 
-Air-traffic control assigns fixed flight levels, so a long-haul jet seldom flies a true cruise-climb. It flies a **step climb** instead: a first climb to an initial cruise level, a cruise at constant altitude until enough fuel has burned that a higher level is nearer the optimum, a second climb, a final cruise and then the descent (Slides v2, p. 72). The staircase approximates the continuous cruise-climb, and its range lies between the constant-altitude and cruise-climb values of [[#Comparison with the cruise-climb]], closer to the cruise-climb the smaller the steps. Inverting the stratospheric height gain $\Delta h=(RT_s/g)\ln(W_1/W_2)$ of [[#Height gained]],
+Air-traffic control assigns fixed flight levels, so a long-haul jet seldom flies a true cruise-climb. It flies a **step climb** instead: a first climb to an initial cruise level, a cruise at constant altitude until enough fuel has burned that a higher level is nearer the optimum, a second climb, a final cruise and then the descent. The staircase approximates the continuous cruise-climb, and its range lies between the constant-altitude and cruise-climb values of [[#Comparison with the cruise-climb]], closer to the cruise-climb the smaller the steps. Inverting the stratospheric height gain $\Delta h=(RT_s/g)\ln(W_1/W_2)$ of [[#Height gained]],
 
 $$
 \begin{aligned}
@@ -224,7 +224,7 @@ $$
 
 With $RT_s/g=6338$ m, a 2000 ft (609.6 m) step is due each time the aircraft burns 9.2 % of its current weight, and a 4000 ft step after 17.5 %.
 
-An urban-air-mobility eVTOL (electric vertical take-off and landing) aircraft flies a different profile (Slides v2, p. 72): hover and vertical take-off, a forward transition to wing-borne flight above a transition height, a climb to the cruise height inside an air corridor, the cruise, a descent, a backward transition and a vertical landing. Hover and the transitions are carried by rotor thrust rather than wing lift and use energy unrelated to $L/D$, so the battery range equation of [[SESA1015 M07 - Propeller Aircraft Range and Endurance|M07]] applies only to the energy left for the wing-borne cruise.
+An urban-air-mobility eVTOL (electric vertical take-off and landing) aircraft flies a different profile: hover and vertical take-off, a forward transition to wing-borne flight above a transition height, a climb to the cruise height inside an air corridor, the cruise, a descent, a backward transition and a vertical landing. Hover and the transitions are carried by rotor thrust rather than wing lift and use energy unrelated to $L/D$, so the battery range equation of [[SESA1015 M07 - Propeller Aircraft Range and Endurance|M07]] applies only to the energy left for the wing-borne cruise.
 
 ## 7. Range at constant altitude
 
@@ -272,7 +272,7 @@ $$
 \frac{R_{alt}}{R_{cc}}=\frac{2\left(1-\sqrt{W_2/W_1}\right)}{\ln(W_1/W_2)}<1 .
 $$
 
-Holding the height costs range because the aircraft slows down as it lightens, while the cruise-climb keeps the speed and lets the air thin instead. For small fuel fractions the two agree to first order; for a 24.5 % fuel fraction (the slide example) the constant-altitude cruise reaches 93.3 % of the cruise-climb range.
+Holding the height costs range because the aircraft slows down as it lightens, while the cruise-climb keeps the speed and lets the air thin instead. For small fuel fractions the two agree to first order; for a 24.5 % fuel fraction the constant-altitude cruise reaches 93.3 % of the cruise-climb range.
 
 ![[mof_m06_mass_ratio.png|900]]
 
@@ -306,7 +306,7 @@ The $L/D$ there is $\frac{\sqrt3}{2}(L/D)_{max}=0.866\,(L/D)_{max}$: some aerody
 
 ### Cruise-climb - two ways to fix the speed
 
-For the cruise-climb the factor to maximise is $VL/D=VC_L/C_D$, but how $V$ depends on $C_L$ depends on what else is held fixed (Slides v2, p. 120).
+For the cruise-climb the factor to maximise is $VL/D=VC_L/C_D$, but how $V$ depends on $C_L$ depends on what else is held fixed.
 
 In the first schedule, height matching, the engine runs at a fixed setting, so the thrust-to-density ratio is fixed, $T/\sigma=T_{SL}$. Thrust equals drag:
 
@@ -339,7 +339,7 @@ $$
 V_{opt}=2^{1/4}V_{MD}\approx1.189\,V_{MD}.
 $$
 
-This is the cruise-climb optimum (course notes §5.4 and §6.3.1(b)). Holding it means continually matching the throttle to the height, which is not always possible.
+This is the cruise-climb optimum. Holding it means continually matching the throttle to the height, which is not always possible.
 
 In the second schedule the speed is fixed at the start, from the initial weight and height: $V_1=\sqrt{2W_1/(\rho_1SC_L)}$. Then
 
@@ -360,13 +360,13 @@ The two answers differ because they compare different sets of flights. With the 
 
 The minimum drag $D_{min}=2W\sqrt{KC_{D0}}$ is the same at every height, but $V_{MD}$ as a true airspeed rises as $1/\sqrt\sigma$ ([[SESA1015 M05 - Minimum Drag, Power and Performance Curves|M05]]), and the range-optimum speeds, being fixed multiples of $V_{MD}$, rise with it. The fuel burned per unit distance is $c_tD/V$, so at the optimum condition the fuel per kilometre falls as $\sqrt\sigma$: the same drag, and the same fuel per second, is spread over more kilometres.
 
-For a business jet ($W=90$ kN, $C_D=0.02+0.045C_L^2$ as in the course notes, with $S=30$ m² assumed), $V_{MD}$ is 85.7 m/s at sea level and 157.3 m/s at 11 km. The cruise-climb optimum $2^{1/4}V_{MD}$ is then 101.9 m/s at sea level and 187.0 m/s at 11 km, which is $M=187.0/295.0=0.63$. At the higher altitude the aircraft covers 1.83 times the distance per kilogram of fuel at its optimum. A jet should therefore cruise as high as it can, at $2^{1/4}V_{MD}$ for the cruise-climb, provided the resulting Mach number stays below the drag rise; the speed of sound falls with temperature through the troposphere, so that limit tightens as the aircraft climbs. For a wing loading as high as a transport's, the incompressible optimum is beyond the drag rise, and compressibility, not the parabolic polar, sets the cruise Mach number ([[SESA1015 M07 - Propeller Aircraft Range and Endurance|M07]]).
+For a business jet ($W=90$ kN, $C_D=0.02+0.045C_L^2$, with $S=30$ m² assumed), $V_{MD}$ is 85.7 m/s at sea level and 157.3 m/s at 11 km. The cruise-climb optimum $2^{1/4}V_{MD}$ is then 101.9 m/s at sea level and 187.0 m/s at 11 km, which is $M=187.0/295.0=0.63$. At the higher altitude the aircraft covers 1.83 times the distance per kilogram of fuel at its optimum. A jet should therefore cruise as high as it can, at $2^{1/4}V_{MD}$ for the cruise-climb, provided the resulting Mach number stays below the drag rise; the speed of sound falls with temperature through the troposphere, so that limit tightens as the aircraft climbs. For a wing loading as high as a transport's, the incompressible optimum is beyond the drag rise, and compressibility, not the parabolic polar, sets the cruise Mach number ([[SESA1015 M07 - Propeller Aircraft Range and Endurance|M07]]).
 
 ## 10. Worked examples
 
 ### Specific fuel consumption for a 7041 km cruise
 
-An aircraft with span 34.1 m, $AR=9.5$ and wing loading 5880 N/m² cruises at $M=0.79$ in the lower stratosphere, where $T=216.66$ K and $\rho=0.3648$ kg/m³. It carries 18 000 kg of fuel for the cruise and $C_D=0.018+0.045C_L^2$. Find the specific fuel consumption needed for a cruise of 7041 km at constant Mach number (Slides v2, pp. 114–116).
+An aircraft with span 34.1 m, $AR=9.5$ and wing loading 5880 N/m² cruises at $M=0.79$ in the lower stratosphere, where $T=216.66$ K and $\rho=0.3648$ kg/m³. It carries 18 000 kg of fuel for the cruise and $C_D=0.018+0.045C_L^2$. Find the specific fuel consumption needed for a cruise of 7041 km at constant Mach number.
 
 Geometry and weights, taking the wing loading as the start-of-cruise value so that it includes the fuel:
 
@@ -416,7 +416,7 @@ ending at $233.09\sqrt{543\,138/719\,718}=202.5$ m/s. The ratio $6568/7041=0.933
 
 ### Height gained in one hour of cruise-climb
 
-The same aircraft starts a cruise-climb at sea level with $C_L=0.593$ and $c_t=1.6319\times10^{-4}$ s⁻¹. Find its altitude after one hour (Slides v2, pp. 118–119).
+The same aircraft starts a cruise-climb at sea level with $C_L=0.593$ and $c_t=1.6319\times10^{-4}$ s⁻¹. Find its altitude after one hour.
 
 $$
 \begin{aligned}

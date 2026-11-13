@@ -92,7 +92,7 @@ which for $AR=9$ gives $e_0=0.7831$ and $K=1/(\pi\times9\times0.7831)=0.04516$ (
 
 ## 2. Stall and approach constraint
 
-At the stall the lift coefficient is $C_{L\max}$ and, in level flight, $L=W$ at the stalling speed $V_s$ (course notes §4.2, p. 19):
+At the stall the lift coefficient is $C_{L\max}$ and, in level flight, $L=W$ at the stalling speed $V_s$:
 
 $$
 W=\tfrac12\rho V_s^2SC_{L\max}.
@@ -104,13 +104,13 @@ $$
 \frac WS=\tfrac12\rho V_s^2C_{L\max}.
 $$
 
-For a required stalling speed, any larger wing loading would stall at a higher speed than allowed. The requirement is therefore an upper limit (Slides v1, p. 223):
+For a required stalling speed, any larger wing loading would stall at a higher speed than allowed. The requirement is therefore an upper limit:
 
 $$
 \boxed{\frac WS\leq\tfrac12\rho V_s^2C_{L\max}=q_sC_{L\max}}
 $$
 
-This does not involve $T/W$ at all, so on the diagram it is a vertical line, with the feasible side to the left. The $C_{L\max}$ is the one for the configuration in which the speed limit applies: for an approach constraint it is the landing configuration with flaps and slats out (DC-9: about 1.2 clean, 2.5–3.0 with high-lift devices, Slides v1, p. 91).
+This does not involve $T/W$ at all, so on the diagram it is a vertical line, with the feasible side to the left. The $C_{L\max}$ is the one for the configuration in which the speed limit applies: for an approach constraint it is the landing configuration with flaps and slats out (DC-9: about 1.2 clean, 2.5–3.0 with high-lift devices).
 
 An approach speed is flown with a margin above the stall, $V_{app}=f\,V_s$. The factor is $f=1.1$ (StallReserveFactor in the spreadsheet), so the stall speed that enters the constraint is
 
@@ -120,7 +120,7 @@ $$
 
 Some revision questions instead put the approach speed straight into $q$ (Revision Q39); read which speed the question gives before using it.
 
-A landing field length leads to the same vertical line. On the landing roll with $T=0$ and $L=0$ (Slides v2, p. 181; this is not strictly true) and drag neglected, the equation of motion
+A landing field length leads to the same vertical line. On the landing roll with $T=0$ and $L=0$ (this is not strictly true) and drag neglected, the equation of motion
 
 $$
 \frac TW-\frac DW-\mu\left(1-\frac LW\right)=\frac Vg\,\frac{dV}{dx}
@@ -146,7 +146,7 @@ A maximum roll fixes a maximum $V_{TD}$, a fixed ratio $V_{TD}/V_s$ then fixes a
 
 ## 3. Cruise (level-flight speed) constraint
 
-In steady level flight $n=1$ and thrust equals drag (course notes §4.3, p. 21), so the thrust to weight ratio needed to hold a given speed is $D/W$. Starting from the drag (Slides v1, pp. 102 and 224),
+In steady level flight $n=1$ and thrust equals drag, so the thrust to weight ratio needed to hold a given speed is $D/W$. Starting from the drag,
 
 $$
 \begin{aligned}
@@ -201,13 +201,13 @@ At $x^*$ the cruise lift coefficient is $C_L=x^*/q=\sqrt{C_{D0}/K}$, the minimum
 
 ## 4. Turn constraint
 
-The spreadsheet's turn is a constant-velocity, level, co-ordinated turn ("CV turn") at the cruise speed. In such a turn $T=D$, $L\cos\phi=W$ and $L\sin\phi=(W/g)V^2/R$ (course notes §7.4, p. 42), so the load factor and bank angle are linked by
+The spreadsheet's turn is a constant-velocity, level, co-ordinated turn ("CV turn") at the cruise speed. In such a turn $T=D$, $L\cos\phi=W$ and $L\sin\phi=(W/g)V^2/R$, so the load factor and bank angle are linked by
 
 $$
 n=\frac LW=\frac1{\cos\phi}.
 $$
 
-The lift coefficient needed is $n$ times the level-flight value, $C_L=nW/(qS)$, from Section 1. The thrust equals the drag (Slides v1, p. 220):
+The lift coefficient needed is $n$ times the level-flight value, $C_L=nW/(qS)$, from Section 1. The thrust equals the drag:
 
 $$
 T=qSC_D=qS\left\{C_{D0}+K\left(\frac{nW}{qS}\right)^2\right\}.
@@ -238,7 +238,7 @@ The cruise turn uses $n=1.41$ (n_cvt), a bank angle of $\cos^{-1}(1/1.41)=44.8°
 
 ## 5. Climb constraint
 
-In a steady climb at angle $\gamma$ with zero thrust-vector angle (course notes §7.2, p. 37),
+In a steady climb at angle $\gamma$ with zero thrust-vector angle,
 
 $$
 T-D=W\sin\gamma,\qquad L=W\cos\gamma .
@@ -256,7 +256,7 @@ $$
 \frac TW=\frac{V_V}{V}+\frac DW .
 $$
 
-For a shallow climb $\cos\gamma\approx1$, so $L\approx W$ and $D/W$ is the level-flight value of Section 3 at the climb dynamic pressure $q_{cl}=\frac12\rho V_{cl}^2$ (Slides v1, p. 222):
+For a shallow climb $\cos\gamma\approx1$, so $L\approx W$ and $D/W$ is the level-flight value of Section 3 at the climb dynamic pressure $q_{cl}=\frac12\rho V_{cl}^2$:
 
 $$
 \boxed{\frac TW=\frac{V_V}{V}+\frac{q\,C_{D0}}{W/S}+\frac kq\,\frac WS}\qquad\text{(climb at rate }V_V\text{ and speed }V\text{)}
@@ -295,7 +295,7 @@ For the stall line, a landing weight $W_L=\beta W_{TO}$ gives $(W_{TO}/S)\leq q_
 
 ### The simple form
 
-On the ground run, with $\mu$ the rolling coefficient of friction acting on the wheel load $W-L$, the equation of motion along the runway is (course notes §7.3, p. 40; Slides v2, p. 181)
+On the ground run, with $\mu$ the rolling coefficient of friction acting on the wheel load $W-L$, the equation of motion along the runway is
 
 $$
 \frac TW-\frac DW-\mu\left(1-\frac LW\right)=\frac1g\,\frac{dV}{dt}=\frac Vg\,\frac{dV}{dx}.
@@ -317,13 +317,13 @@ s_1&=\frac{V_2^2}{2g\left(\frac TW-\mu\right)} .
 \end{aligned}
 $$
 
-Solving for the thrust to weight ratio that gives a required run (Slides v1, pp. 191 and 221),
+Solving for the thrust to weight ratio that gives a required run,
 
 $$
 \boxed{\frac TW=\frac{V_2^2}{2gs_1}+\mu}
 $$
 
-The first term is the thrust per unit weight that accelerates the aircraft to $V_2$ in the available length; the second is what the wheels absorb. With $V_2$ given directly the line does not depend on $W/S$, so it is horizontal, with the feasible side above. If instead $V_2=1.2V_s$ is tied to the stall, then $V_2^2=1.44\times2(W/S)/(\rho C_{L\max})$ and the boundary becomes the course-notes form $s_1=\frac{1.44}{\rho g}\frac WS\frac{1}{C_{L\max}}\frac{1}{T/W-\mu}$ (course notes p. 41; Slides v2, p. 180), a straight line through $T/W=\mu$ rising with $W/S$:
+The first term is the thrust per unit weight that accelerates the aircraft to $V_2$ in the available length; the second is what the wheels absorb. With $V_2$ given directly the line does not depend on $W/S$, so it is horizontal, with the feasible side above. If instead $V_2=1.2V_s$ is tied to the stall, then $V_2^2=1.44\times2(W/S)/(\rho C_{L\max})$ and the boundary becomes $s_1=\frac{1.44}{\rho g}\frac WS\frac{1}{C_{L\max}}\frac{1}{T/W-\mu}$, a straight line through $T/W=\mu$ rising with $W/S$:
 
 $$
 \frac TW=\mu+\frac{1.44}{\rho gs_1C_{L\max}}\,\frac WS .

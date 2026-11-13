@@ -36,7 +36,7 @@ The route through a problem is always the same: transform the ODE, solve the alg
 | $\ddot g$ | $s^2G-sg(0)-\dot g(0)$ |
 | $g(t-a)u(t-a)$ | $e^{-as}G(s)$ (a pure delay) |
 
-The final value theorem, $\lim_{t\to\infty}g(t) = \lim_{s\to0}sG(s)$, gives the steady state directly, provided the limit exists, which in practice means the system is stable. The delay entry is used again in the sensor work of Part C: $e^{-sT_d}$ has unit magnitude and phase $-\omega T_d$, which is how sensor and digital latency erode the phase margin ([[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]]). MATH2048 Lectures 11–13 cover the transform itself.
+The final value theorem, $\lim_{t\to\infty}g(t) = \lim_{s\to0}sG(s)$, gives the steady state directly, provided the limit exists, which in practice means the system is stable. The delay entry models sensor and digital latency: $e^{-sT_d}$ has unit magnitude and phase $-\omega T_d$, so it erodes the phase margin without changing the gain ([[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]]).
 
 ## Related
 

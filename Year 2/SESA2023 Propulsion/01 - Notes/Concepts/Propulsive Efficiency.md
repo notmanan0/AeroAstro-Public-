@@ -21,7 +21,7 @@ $$
 
 The kinetic energy left behind in the wake, $\tfrac12\dot m(V_j-V_0)^2$ per second seen from the ground, is wasted, so $\eta_P\to1$ as $V_j\to V_0$. But the thrust is $F = \dot m_a(V_j-V_0)$, which vanishes in the same limit, so high propulsive efficiency at a fixed thrust needs a large mass flow and a small velocity increase. That one idea drives turbofans and high bypass ratios, turboprops, open rotors, distributed electric fans and boundary-layer ingestion.
 
-The derivation is asked in 2014-15 Q1(ii) and 2015-16 Q1(iv). The numerator is the useful thrust power, force times flight speed, and the denominator the rate of increase of the jet's kinetic energy; with $P_j = P_A$ and $f\ll1$, factorising $V_j^2-V_0^2 = (V_j-V_0)(V_j+V_0)$ gives the simple form. The fuel mass makes little difference: in PS1 Q1.4, $f = 0.0036$ changes $\eta_P$ by 0.15 percentage points, and the error grows by about 0.37 points per 0.01 of $f$. The Data Book's "fuel efficiency" $\eta_f$ is the thermal efficiency $\eta_{th}$ of these notes.
+The derivation is asked in 2014-15 Q1(ii) and 2015-16 Q1(iv). The numerator is the useful thrust power, force times flight speed, and the denominator the rate of increase of the jet's kinetic energy; with $P_j = P_A$ and $f\ll1$, factorising $V_j^2-V_0^2 = (V_j-V_0)(V_j+V_0)$ gives the simple form. The fuel mass makes little difference: in PS1 Q1.4, $f = 0.0036$ changes $\eta_P$ by 0.15 percentage points, and the error grows by about 0.37 points per 0.01 of $f$. The thermal efficiency $\eta_{th}$ appears in the Data Book as the "fuel efficiency" $\eta_f$.
 
 ![[prop_propulsive_efficiency.png|640]]
 

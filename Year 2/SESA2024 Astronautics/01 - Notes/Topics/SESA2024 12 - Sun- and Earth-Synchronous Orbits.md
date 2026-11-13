@@ -35,9 +35,9 @@ For illumination, the orbit plane can be treated as a hoop around a ball, carrie
 
 ## 1. Sun-synchronism
 
-A spacecraft in a Sun-synchronous orbit arrives over a given location at the same local solar time on each pass, so the Sun stands at the same height and direction whenever a target is imaged (2025-12-09, ll. 26–75). Seasonal changes in the Sun's elevation still occur; Sun-synchronism removes the drift due to the orbit.
+A spacecraft in a Sun-synchronous orbit arrives over a given location at the same local solar time on each pass, so the Sun stands at the same height and direction whenever a target is imaged. Seasonal changes in the Sun's elevation still occur; Sun-synchronism removes the drift due to the orbit.
 
-The condition is that the angle $\phi$ between the Earth–Sun line and the orbit plane stays constant (ll. 76–200). In terms of the right ascension of the Sun $\alpha_S$ and the RAAN $\Omega$,
+The condition is that the angle $\phi$ between the Earth–Sun line and the orbit plane stays constant. In terms of the right ascension of the Sun $\alpha_S$ and the RAAN $\Omega$,
 
 $$
 \phi=\alpha_S-\Omega=\text{constant}.
@@ -55,15 +55,15 @@ $$
 \dot\Omega=\frac{360^\circ}{365.25\ \mathrm{days}}=0.9856^\circ\ \text{per day},
 $$
 
-a little under one degree per day (ll. 201–230).
+a little under one degree per day.
 
 ## 2. Nodal regression from the Earth's oblateness
 
-Turning the orbit plane with thrusters would be very expensive, since plane changes cost a great deal of ΔV (ll. 226–245). The alternative is a natural perturbation.
+Turning the orbit plane with thrusters would be very expensive, since plane changes cost a great deal of ΔV. The alternative is a natural perturbation.
 
-The Earth is not a sphere (ll. 245–300). Its rotation over billions of years has made it slightly oblate: the equatorial radius is about 6378 km and the polar radius about 6357 km, a difference of about 21 km. A perfectly spherical Earth pulls an orbiting spacecraft straight towards its centre. The bulge adds a tiny pull towards the equatorial plane whenever the spacecraft is above or below it, which has a small component normal to the orbit and so produces a torque on the orbit (ll. 300–375).
+The Earth is not a sphere. Its rotation over billions of years has made it slightly oblate: the equatorial radius is about 6378 km and the polar radius about 6357 km, a difference of about 21 km. A perfectly spherical Earth pulls an orbiting spacecraft straight towards its centre. The bulge adds a tiny pull towards the equatorial plane whenever the spacecraft is above or below it, which has a small component normal to the orbit and so produces a torque on the orbit.
 
-The orbit, however, carries angular momentum $\mathbf h$, like a spinning bicycle wheel. A torque applied to it does not tip the plane over; it makes $\mathbf h$ precess, as a spinning wheel does under a torque ([[SESA2024 06 - Attitude Control#3. Gyroscopic precession and momentum bias|note 06 §3]]). The node, where the orbit crosses the equator, therefore moves a little on each orbit: nodal regression (ll. 376–425).
+The orbit, however, carries angular momentum $\mathbf h$, like a spinning bicycle wheel. A torque applied to it does not tip the plane over; it makes $\mathbf h$ precess, as a spinning wheel does under a torque ([[SESA2024 06 - Attitude Control#3. Gyroscopic precession and momentum bias|note 06 §3]]). The node, where the orbit crosses the equator, therefore moves a little on each orbit: nodal regression.
 
 The rate for a circular orbit is
 
@@ -71,7 +71,7 @@ $$
 \dot\Omega=-\frac32J_2\sqrt{\mu}\,R_E^2\,a^{-7/2}\cos i,
 $$
 
-with $J_2=1.0826\times10^{-3}$ the dimensionless oblateness coefficient (ll. 426–450). The full derivation needs perturbation theory beyond this module and is not examined (outline: [[#Where the regression rate comes from]]). With $a$ in km, $\mu=398\,600.4\ \mathrm{km^3/s^2}$ and $R_E=6378.1$ km, the constant in front of $a^{-7/2}\cos i$ is first evaluated in radians per second:
+with $J_2=1.0826\times10^{-3}$ the dimensionless oblateness coefficient. The full derivation needs perturbation theory beyond this module and is not examined (outline: [[#Where the regression rate comes from]]). With $a$ in km, $\mu=398\,600.4\ \mathrm{km^3/s^2}$ and $R_E=6378.1$ km, the constant in front of $a^{-7/2}\cos i$ is first evaluated in radians per second:
 
 $$
 \frac32J_2R_E^2\sqrt\mu=1.5\times1.0826\times10^{-3}\times6378.1^2\times631.35=4.1707\times10^{7}\ \mathrm{km^{7/2}\,rad/s}.
@@ -89,7 +89,7 @@ $$
 \boxed{\dot\Omega=-2.0647\times10^{14}\,a^{-7/2}\cos i\quad(\text{deg/day},\ a\text{ in km})}
 $$
 
-The constant only works with $a$ in kilometres (2020 Lecture 9, ll. 181–200).
+The constant only works with $a$ in kilometres.
 
 ### Where the regression rate comes from
 
@@ -168,7 +168,7 @@ the rate above, in radians per second when $\mu$, $R_E$ and $a$ share one length
 
 ### Which inclination
 
-The sign of $\dot\Omega$ is set by $\cos i$ (2025-12-09, ll. 451–525):
+The sign of $\dot\Omega$ is set by $\cos i$:
 
 - $0\le i<90^\circ$: $\cos i>0$, $\dot\Omega<0$, the node moves west, the wrong way;
 - $i=90^\circ$: $\cos i=0$, no regression; a polar orbit feels no net torque from the bulge;
@@ -180,13 +180,13 @@ $$
 \cos i=\frac{0.9856}{-2.0647\times10^{14}\,a^{-7/2}}.
 $$
 
-For altitudes of 200–1000 km this gives $96^\circ$ to $99.5^\circ$, and for the first-pass 700–900 km about $98^\circ$ to $99^\circ$ (ll. 526–600). That inclination still covers almost the whole globe, so a Sun-synchronous orbit gives near-global coverage as a bonus (l. 598).
+For altitudes of 200–1000 km this gives $96^\circ$ to $99.5^\circ$, and for the first-pass 700–900 km about $98^\circ$ to $99^\circ$. That inclination still covers almost the whole globe, so a Sun-synchronous orbit gives near-global coverage as a bonus.
 
 ![[ast_sso_inclination.png|700]]
 
 ## 3. Earth-synchronism
 
-An Earth-synchronous orbit's ground track repeats precisely after a certain number of orbits $N$ in a certain number of days $M$ (ll. 626–700). Once the track repeats, the spacecraft returns over any target, a fire in California or a single ground station, with the same geometry every $M$ days. The track grows orbit by orbit until it meets its own start (2025-12-09, ll. 776–800).
+An Earth-synchronous orbit's ground track repeats precisely after a certain number of orbits $N$ in a certain number of days $M$. Once the track repeats, the spacecraft returns over any target, a fire in California or a single ground station, with the same geometry every $M$ days. The track grows orbit by orbit until it meets its own start.
 
 Define the longitude displacement $\Delta\lambda$ between successive equator crossings. The condition is that $N$ displacements add up to exactly $M$ full turns:
 
@@ -194,11 +194,11 @@ $$
 N\,\Delta\lambda=M\times360^\circ.
 $$
 
-Examples (slides, ll. 726–826) include a track at $63^\circ$ inclination repeating after 77 orbits in 5 days, and one at about $70^\circ$ repeating after 15 orbits in 1 day, both Earth-synchronous but not Sun-synchronous; and one at $96^\circ$ repeating after 14 orbits in 1 day, which is both.
+Examples include a track at $63^\circ$ inclination repeating after 77 orbits in 5 days, and one at about $70^\circ$ repeating after 15 orbits in 1 day, both Earth-synchronous but not Sun-synchronous; and one at $96^\circ$ repeating after 14 orbits in 1 day, which is both.
 
 ## 4. Both at once
 
-The displacement per orbit has two parts (2025-12-09, ll. 826–855; 2025-12-11, ll. 26–125). The Earth rotates eastwards under the orbit, which shifts the track westwards by
+The displacement per orbit has two parts. The Earth rotates eastwards under the orbit, which shifts the track westwards by
 
 $$
 \Delta\lambda_{rot}=360^\circ\,\frac{\tau}{T_{sid}},
@@ -242,7 +242,7 @@ $$
 \boxed{\tau=\frac MN\times86\,400\ \mathrm s}
 $$
 
-This is the mean solar day: a Sun-synchronous plane keeps pace with the Sun, so relative to it the Earth turns once per solar day, not per sidereal day (2025-12-11, ll. 120–126). The number of days and orbits are $m$ and $n$ in the slides ($M$ and $N$ here).
+This is the mean solar day: a Sun-synchronous plane keeps pace with the Sun, so relative to it the Earth turns once per solar day, not per sidereal day. The number of days and orbits are $M$ and $N$ here (also written $m$ and $n$).
 
 With $\tau$ known, Kepler's third law gives $a$, and the regression condition gives $i$. Because $N$ and $M$ must be integers, only a discrete set of orbits is both Sun- and Earth-synchronous (see [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]]).
 
@@ -291,7 +291,7 @@ $$
 
 ### Fourteen orbits a day
 
-For the slide example with $M=1$, $N=14$ (2025-12-11, ll. 401–420): $\tau=86\,400/14=6171.4$ s, $a=7271.9$ km, altitude 893.9 km, $a^{-3.5}=3.049\times10^{-14}$, $\cos i=-0.1565$ and $i=99.01^\circ$.
+For the example with $M=1$, $N=14$: $\tau=86\,400/14=6171.4$ s, $a=7271.9$ km, altitude 893.9 km, $a^{-3.5}=3.049\times10^{-14}$, $\cos i=-0.1565$ and $i=99.01^\circ$.
 
 ## Links
 

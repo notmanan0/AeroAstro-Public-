@@ -45,8 +45,6 @@ $$
 
 Set the dummy load to zero only after differentiating.
 
-The practical use of the theorem is in [[Castigliano Theorem]].
-
 ## Related
 
 - Topic: [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]

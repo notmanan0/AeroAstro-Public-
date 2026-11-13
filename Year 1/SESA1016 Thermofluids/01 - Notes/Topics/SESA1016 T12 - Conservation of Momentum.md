@@ -29,9 +29,9 @@ sources: ["02 - Sources/Lectures/Chapter 12.pdf", "02 - Sources/Lectures/SESA101
 > - **Common mistakes:** forgetting the pressure force at a port that is not at atmospheric pressure; giving every outflow a positive momentum, when an outflow moving in the $-y$ direction carries negative $y$-momentum.
 > - **Practise:** [[#Worked example - jet deflected by a vane]] · [[SESA1016 Problem Sheet 09 - Momentum and Energy Conservation Solutions]] Q9.2–Q9.5
 
-Air does not feel as though it has much momentum, but moving fast it carries plenty: enough to lift an aircraft through its wings and push it along through its engines. A water jet pack lifts a person on two downward jets; an F-35 hovers on its lift fan and nozzle. The forces on such devices are related to the momentum of the fluid passing through them (24 Mar, ll. 115–146).
+Air does not feel as though it has much momentum, but moving fast it carries plenty: enough to lift an aircraft through its wings and push it along through its engines. A water jet pack lifts a person on two downward jets; an F-35 hovers on its lift fan and nozzle. The forces on such devices are related to the momentum of the fluid passing through them.
 
-For a single particle Newton's second law gives the relation: the net force equals the rate of change of momentum. Following every particle through a jet engine is impossible, so, as with mass ([[SESA1016 T11 - Conservation of Mass|T11]]), a control volume is drawn round the device and accounts are kept at its surface. If each kilogram leaves with a different velocity from the one it arrived with, something inside must have pushed it, and the force is the momentum carried out per second minus the momentum carried in per second (24 Mar, ll. 476–494). The details inside the box, the blades, flame and shock waves, never need to be known.
+For a single particle Newton's second law gives the relation: the net force equals the rate of change of momentum. Following every particle through a jet engine is impossible, so, as with mass ([[SESA1016 T11 - Conservation of Mass|T11]]), a control volume is drawn round the device and accounts are kept at its surface. If each kilogram leaves with a different velocity from the one it arrived with, something inside must have pushed it, and the force is the momentum carried out per second minus the momentum carried in per second. The details inside the box, the blades, flame and shock waves, never need to be known.
 
 Momentum is a vector, so the accounts are kept separately in each direction, with care over signs: fluid leaving the box downwards carries negative $y$-momentum out, and fluid entering moving to the right brings positive $x$-momentum in, which counts negatively as an inflow.
 
@@ -59,13 +59,13 @@ $$
 \vec M=m\vec V=\rho\mathcal V\vec V
 $$
 
-This is extensive. Two intensive versions appear constantly: dividing by the mass gives $\vec V$, so **velocity is momentum per unit mass**; dividing by the volume gives $\rho\vec V$, the **momentum per unit volume** (24 Mar, ll. 98–111). Wherever $\rho$ appears in a flow quantity it signals "per unit volume".
+This is extensive. Two intensive versions appear constantly: dividing by the mass gives $\vec V$, so **velocity is momentum per unit mass**; dividing by the volume gives $\rho\vec V$, the **momentum per unit volume**. Wherever $\rho$ appears in a flow quantity it signals "per unit volume".
 
 ## 2. Flow of momentum
 
 ### Uniform flow along the axis
 
-Take uniform flow at velocity $V_x$ out of a duct of area $A$ aligned with the $x$ axis (24 Mar, ll. 152–226). In a short time $dt$ a slab of fluid of length $dl=V_x\,dt$ leaves, of volume
+Take uniform flow at velocity $V_x$ out of a duct of area $A$ aligned with the $x$ axis. In a short time $dt$ a slab of fluid of length $dl=V_x\,dt$ leaves, of volume
 
 $$
 d\mathcal V=A\,dl=AV_x\,dt
@@ -95,7 +95,7 @@ There is a flow of mass but no flow of $y$-momentum, because the fluid crossing 
 
 ### Flow at an angle to the axes
 
-With the duct tilted downwards and the axes fixed (24 Mar, ll. 249–285), the velocity has components $V_x$ and $V_y<0$, and the slab leaving in $dt$ has length $|\vec V|dt$ and volume $A|\vec V|dt$. Its momentum in each direction is $\rho V_x$ or $\rho V_y$ times that volume, so
+With the duct tilted downwards and the axes fixed, the velocity has components $V_x$ and $V_y<0$, and the slab leaving in $dt$ has length $|\vec V|dt$ and volume $A|\vec V|dt$. Its momentum in each direction is $\rho V_x$ or $\rho V_y$ times that volume, so
 
 $$
 \dot M_x=\rho V_x|\vec V|A=\dot mV_x,\qquad \dot M_y=\rho V_y|\vec V|A=\dot mV_y
@@ -147,7 +147,7 @@ while $\dot m\bar V=\rho(V/2)(wh)(V/2)=\tfrac14\rho V^2wh$. The true momentum fl
 
 ### The statement
 
-For a fixed control volume (24 Mar, ll. 409–502; Chapter 12, eq. 12.19):
+For a fixed control volume (Chapter 12, eq. 12.19):
 
 $$
 \left\{\begin{matrix}\text{sum of forces on}\\\text{the fluid in the CV}\end{matrix}\right\}=\left\{\begin{matrix}\text{rate of change of}\\\text{momentum in the CV}\end{matrix}\right\}+\left\{\begin{matrix}\text{net outflow of momentum}\\\text{through the CS}\end{matrix}\right\}
@@ -161,7 +161,7 @@ as a vector statement, so one equation per direction.
 
 Two kinds of force act on the fluid in the control volume, and both must be counted.
 
-- **Forces from inside the CV**: a fan pushing the fluid along, the reaction of a body to its drag, the weight of the fluid. The drag $D$ on an aerofoil inside the CV acts downstream on the aerofoil, so the aerofoil pushes the fluid upstream with $D$; it is this force on the fluid that enters the equation (24 Mar, ll. 419–428).
+- **Forces from inside the CV**: a fan pushing the fluid along, the reaction of a body to its drag, the weight of the fluid. The drag $D$ on an aerofoil inside the CV acts downstream on the aerofoil, so the aerofoil pushes the fluid upstream with $D$; it is this force on the fluid that enters the equation.
 - **Forces through the control surface**: pressure acting normally and viscous shear acting tangentially on the fluid at the boundary. Where the boundary cuts a pipe wall or a support, the force transmitted through it also counts.
 
 Where the whole surface is surrounded by atmosphere, a uniform atmospheric pressure all round gives no net force, so pressures can be taken as gauge pressures.
@@ -206,7 +206,7 @@ $$
 \boxed{\sum\vec F=\dot{\vec M}_{out}-\dot{\vec M}_{in}=\dot m\left(\vec V_{out}-\vec V_{in}\right)}
 $$
 
-(24 Mar, ll. 540–565). Resolve it along each axis, keeping the sign of each velocity component. This is what makes the control-volume method powerful: the force a jet engine, vane or wing exerts follows from the flow at its inlet and outlet alone (24 Mar, ll. 566–573).
+. Resolve it along each axis, keeping the sign of each velocity component. This is what makes the control-volume method powerful: the force a jet engine, vane or wing exerts follows from the flow at its inlet and outlet alone.
 
 ---
 
@@ -214,7 +214,7 @@ $$
 
 ### Worked example - jet deflected by a vane
 
-A water jet of diameter 3 cm at 30 m/s is turned downwards through 60° by a fixed vane, leaving at the same speed. Find the force needed to hold the vane (Chapter 12, Example 12.2; 24 Mar, ll. 575–651).
+A water jet of diameter 3 cm at 30 m/s is turned downwards through 60° by a fixed vane, leaving at the same speed. Find the force needed to hold the vane (Chapter 12, Example 12.2).
 
 ![[tf_vane_deflection.png|900]]
 
@@ -413,7 +413,7 @@ $$
 
 ### Worked example - disc held up by a water jet
 
-Water is supplied through a 5 cm tube at 0.2 m/s and leaves upwards through a 1 cm nozzle. The jet supports a disc about 1 m above the nozzle, where it spreads out horizontally. Find the mass flow, the nozzle velocity, the jet speed just below the disc, the mass of the disc, and the height at which a 150 g disc would float (mock exam, 13 May, ll. 200–298).
+Water is supplied through a 5 cm tube at 0.2 m/s and leaves upwards through a 1 cm nozzle. The jet supports a disc about 1 m above the nozzle, where it spreads out horizontally. Find the mass flow, the nozzle velocity, the jet speed just below the disc, the mass of the disc, and the height at which a 150 g disc would float (mock exam).
 
 $$
 \dot m=\rho V_0\frac{\pi d_0^2}{4}=1000\times0.2\times\frac\pi4\times0.05^2=0.393\ \mathrm{kg/s},\qquad V_1=V_0\left(\frac{5}{1}\right)^2=5\ \mathrm{m/s}
@@ -445,7 +445,7 @@ $$
 H=\frac{V_1^2-(Mg/\dot m)^2}{2g}=\frac{25-14.04}{19.62}=0.559\ \mathrm m
 $$
 
-The mass flow is the same at every height, so as the jet slows it widens slightly (13 May, ll. 527–545).
+The mass flow is the same at every height, so as the jet slows it widens slightly.
 
 ---
 

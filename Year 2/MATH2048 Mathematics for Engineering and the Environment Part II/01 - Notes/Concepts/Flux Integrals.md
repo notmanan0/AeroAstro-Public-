@@ -17,7 +17,7 @@ The **flux** of a vector field through a surface is $\iint_S\mathbf F\cdot\hat{\
 
 The tangent vectors $\mathbf r_s$ and $\mathbf r_t$ span a small parallelogram of area $|\mathbf r_s\times\mathbf r_t|\,ds\,dt$, so $dA=|\mathbf N|\,ds\,dt$ for areas and scalar integrals, and $\mathbf N$ is normal to the surface. In the flux, $\hat{\mathbf n}\,dA=\mathbf N\,ds\,dt$, so no normalising is needed. Swapping the order of the cross product reverses $\mathbf N$ and the sign of the flux, so always check the direction against what the question wants. For the course's parametrisations, $\mathbf N=a\cos s\,\mathbf i+a\sin s\,\mathbf j$ on a cylinder (outward, $|\mathbf N|=a$) and $|\mathbf N|=a^2\sin t$ on a sphere, giving areas $2\pi ah$ and $4\pi a^2$. For a graph $z=f(x,y)$, $d\mathbf S=(-f_x,-f_y,1)\,dx\,dy$, pointing up.
 
-Lecture 28's example, $\mathbf F=x\,\mathbf i+y\,\mathbf j+(z-2y)\,\mathbf k$ through the helicoid $(s\cos t,s\sin t,t)$, has $\mathbf N=(\sin t,-\cos t,s)$ and flux $\pi^2$. For a closed surface the [[Divergence Theorem]] usually gives the flux more quickly.
+For example, $\mathbf F=x\,\mathbf i+y\,\mathbf j+(z-2y)\,\mathbf k$ through the helicoid $(s\cos t,s\sin t,t)$ has $\mathbf N=(\sin t,-\cos t,s)$ and flux $\pi^2$. For a closed surface the [[Divergence Theorem]] usually gives the flux more quickly.
 
 ![[m2048_vc_helicoid.png|480]]
 

@@ -29,23 +29,23 @@ sources: ["02 - Sources/FEM Lectures/Lecture_6_Rayleigh-Ritz_&_Shape_function_fi
 > - **Common mistakes:** forgetting to check the nodal values of each $N_i$; calling a three-node element "three elements".
 > - **Practise:** [[#Quadratic interpolation with three nodes]] · [[#A bar under distributed load]]
 
-Rayleigh–Ritz turns the minimum potential energy principle of [[SESA2029 B3 - Principle of Minimum Total Potential Energy|B3]] into the general method that FE software implements, with the bar as the example (2026-02-13, ll. 381–400).
+Rayleigh–Ritz turns the minimum potential energy principle of [[SESA2029 B3 - Principle of Minimum Total Potential Energy|B3]] into the general method that FE software implements, with the bar as the example.
 
 Rayleigh–Ritz is curve fitting guided by an energy principle. The real displacement of a bar is some smooth curve with infinitely many values. Rayleigh–Ritz replaces it by a curve of a chosen family, a straight line or a parabola, with only a few adjustable numbers, and lets the energy principle pick the member of the family that comes closest. Finite elements make the family flexible by using a separate simple curve on each short piece, joined at the nodes, so that even a straight line per element can follow a complicated shape if there are enough elements.
 
 ## 1. Strain energy needs the displacement everywhere
 
-The strain energy density $\bar U=\tfrac12\sigma\varepsilon$ holds at any point of any elastic body (ll. 401–420). In general the stress and strain vary, so the total strain energy is an integral over the volume:
+The strain energy density $\bar U=\tfrac12\sigma\varepsilon$ holds at any point of any elastic body. In general the stress and strain vary, so the total strain energy is an integral over the volume:
 
 $$
 U=\int_V\bar U\,dV.
 $$
 
-That needs the displacement, and hence the strain and stress, at every point: infinitely many degrees of freedom, which is too expensive. The Rayleigh–Ritz method reduces the problem to a finite number of DOF by writing the displacement as a mathematical function of the spatial coordinates with a limited number of unknown coefficients, which become the DOF (ll. 416–425). Polynomials are the most common choice.
+That needs the displacement, and hence the strain and stress, at every point: infinitely many degrees of freedom, which is too expensive. The Rayleigh–Ritz method reduces the problem to a finite number of DOF by writing the displacement as a mathematical function of the spatial coordinates with a limited number of unknown coefficients, which become the DOF. Polynomials are the most common choice.
 
 ## 2. Rayleigh–Ritz for the two-node bar
 
-For a bar of constant area $A$ (ll. 421–490), with $\sigma=E\varepsilon$ and $dV=A\,dx$,
+For a bar of constant area $A$, with $\sigma=E\varepsilon$ and $dV=A\,dx$,
 
 $$
 U=\int_0^L\tfrac12\sigma\varepsilon\,A\,dx=\frac{AE}{2}\int_0^L\varepsilon^2\,dx.
@@ -95,17 +95,17 @@ $$
 U=\frac{AE}{2}\left(\frac{u_{xj}-u_{xi}}{L}\right)^2L=\frac{AE}{2L}(u_{xj}-u_{xi})^2 .
 $$
 
-This is the strain energy used in B3, and with $V=-F_{xi}u_{xi}-F_{xj}u_{xj}$ minimum potential energy gives the same bar matrix. The difference is that the linear variation is now a stated assumption, which for other elements need not hold (ll. 441–450).
+This is the strain energy used in B3, and with $V=-F_{xi}u_{xi}-F_{xj}u_{xj}$ minimum potential energy gives the same bar matrix. The difference is that the linear variation is now a stated assumption, which for other elements need not hold.
 
 ## 3. From Rayleigh–Ritz to finite elements
 
-Rayleigh–Ritz applied to a complete structure needs one function valid everywhere that satisfies all the boundary conditions, which is possible only for simple geometry and simple boundary conditions (ll. 486–500). The finite element method gets round this by applying Rayleigh–Ritz to simple, finite sub-volumes, the elements, each with its own low-order function, and assembling the element models into a global model of the whole structure.
+Rayleigh–Ritz applied to a complete structure needs one function valid everywhere that satisfies all the boundary conditions, which is possible only for simple geometry and simple boundary conditions. The finite element method gets round this by applying Rayleigh–Ritz to simple, finite sub-volumes, the elements, each with its own low-order function, and assembling the element models into a global model of the whole structure.
 
-Interpolation is the technique of evaluating an unknown quantity anywhere in a domain from its known values at other locations (ll. 496–505). In finite elements it defines the displacement throughout an element in terms of a finite number of nodal displacements, and the interpolation functions are called shape functions ([[Shape Functions]]).
+Interpolation is the technique of evaluating an unknown quantity anywhere in a domain from its known values at other locations. In finite elements it defines the displacement throughout an element in terms of a finite number of nodal displacements, and the interpolation functions are called shape functions ([[Shape Functions]]).
 
 ## 4. Linear shape functions
 
-In standard FE numbering, node 1 is at $x=0$ and node 2 at $x=L$ (ll. 506–545). From section 2,
+In standard FE numbering, node 1 is at $x=0$ and node 2 at $x=L$. From section 2,
 
 $$
 u=u_1+\frac{u_2-u_1}{L}x.
@@ -127,7 +127,7 @@ N_1=1-\frac xL,
 N_2=\frac xL .
 $$
 
-$[N]$ is the shape function matrix, and $u=[N]\{d\}$ is on the exam equation sheet (ll. 526–535). $N_1$ is 1 at node 1 and 0 at node 2; $N_2$ is the reverse. Every shape function has the value one at its own degree of freedom and zero at the others (ll. 536–545). They also sum to one everywhere, so a rigid-body translation, $u_1=u_2$, is represented exactly. The continuous bar with infinitely many DOF has become a two-DOF problem, with everything between the nodes interpolated.
+$[N]$ is the shape function matrix, and $u=[N]\{d\}$ is on the exam equation sheet. $N_1$ is 1 at node 1 and 0 at node 2; $N_2$ is the reverse. Every shape function has the value one at its own degree of freedom and zero at the others. They also sum to one everywhere, so a rigid-body translation, $u_1=u_2$, is represented exactly. The continuous bar with infinitely many DOF has become a two-DOF problem, with everything between the nodes interpolated.
 
 The step from the shape functions to the stiffness matrix follows directly. The strain is
 
@@ -147,7 +147,7 @@ The same formula, with the appropriate $[B]$ and material matrix, builds the bea
 
 ## Quadratic interpolation with three nodes
 
-The next polynomial order is quadratic, $u=a+bx+cx^2$, with three unknown constants, so the element needs three nodes: one at each end and one in the middle (ll. 546–600). Putting the origin at the middle node makes the algebra easier, with nodes 1, 2, 3 at $x=-L/2$, $0$, $L/2$ (using $0$, $L/2$, $L$ also works). The three generalised boundary conditions are
+The next polynomial order is quadratic, $u=a+bx+cx^2$, with three unknown constants, so the element needs three nodes: one at each end and one in the middle. Putting the origin at the middle node makes the algebra easier, with nodes 1, 2, 3 at $x=-L/2$, $0$, $L/2$ (using $0$, $L/2$, $L$ also works). The three generalised boundary conditions are
 
 $$
 u_1=a-\frac{bL}{2}+\frac{cL^2}{4},
@@ -199,13 +199,13 @@ Check node 1, $x=-L/2$: $N_1=\tfrac12+\tfrac12=1$, $N_2=1-1=0$, $N_3=\tfrac12-\t
 
 ![[dam_bar_shape_functions.png|900]]
 
-The quadratic shape functions are curved, and $N_1$ and $N_3$ dip slightly below zero between nodes, but each is still exactly one or zero at the nodes (ll. 576–595). Because the strain is the derivative, a two-node element has constant strain and a three-node element linearly varying strain.
+The quadratic shape functions are curved, and $N_1$ and $N_3$ dip slightly below zero between nodes, but each is still exactly one or zero at the nodes. Because the strain is the derivative, a two-node element has constant strain and a three-node element linearly varying strain.
 
 ## 5. h- and p-refinement
 
-There are two ways to make a finite element model more accurate (ll. 600–625; [[h- and p-Refinement]]). The h-method refines the mesh, reducing the characteristic element size $h$ while keeping the same shape functions; it is the most common approach and what lab 1's convergence study does with linear BEAM188 elements. The p-method raises the polynomial order $p$ of the shape functions, from two-node linear to three-node quadratic and beyond. Both add degrees of freedom. Mainstream FE packages such as ANSYS and Abaqus mainly use the h-method, while some CAD packages with built-in FE (SolidWorks, for example) use p-methods with polynomial orders up to 8 or 9, depending on how complex the displacement is.
+There are two ways to make a finite element model more accurate ([[h- and p-Refinement]]). The h-method refines the mesh, reducing the characteristic element size $h$ while keeping the same shape functions; it is the most common approach and what lab 1's convergence study does with linear BEAM188 elements. The p-method raises the polynomial order $p$ of the shape functions, from two-node linear to three-node quadratic and beyond. Both add degrees of freedom. Mainstream FE packages such as ANSYS and Abaqus mainly use the h-method, while some CAD packages with built-in FE (SolidWorks, for example) use p-methods with polynomial orders up to 8 or 9, depending on how complex the displacement is.
 
-The element libraries offer lower- and higher-order versions of each element, such as the four-node and eight-node shells of lab 3, which differ exactly in their shape functions: higher order is more accurate (ll. 616–625).
+The element libraries offer lower- and higher-order versions of each element, such as the four-node and eight-node shells of lab 3, which differ exactly in their shape functions: higher order is more accurate.
 
 ## Worked examples
 

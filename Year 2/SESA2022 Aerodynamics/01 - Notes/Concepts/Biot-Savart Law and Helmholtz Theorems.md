@@ -29,7 +29,7 @@ $$
 w(y_0) = -\frac{1}{4\pi}\int_{-b/2}^{b/2}\frac{d\Gamma/dy}{y_0-y}\,dy ,
 $$
 
-which [[SESA2022 Exam 2018-19 Solutions]] Q3(i) evaluates for the elliptic distribution.
+which evaluates in closed form for the elliptic distribution ([[SESA2022 Exam 2018-19 Solutions]] Q3(i)).
 
 ## Related
 

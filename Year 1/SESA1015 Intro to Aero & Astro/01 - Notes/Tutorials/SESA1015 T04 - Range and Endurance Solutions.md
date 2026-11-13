@@ -144,7 +144,7 @@ W_f&=W_1-W_2=\mathbf{1367\ N}.
 \end{aligned}
 $$
 
-That is 139 kg of fuel, 15.7 % of the dry weight. The slides solve the same problem with different numbers (8000 N, 1112 km, 85 %, 2.7 N/(kW h), $C_D=0.025+0.07C_L^2$): 684 N ([[SESA1015 M07 - Propeller Aircraft Range and Endurance#Minimum fuel for a 1112 km flight|M07 worked example]]).
+That is 139 kg of fuel, 15.7 % of the dry weight. The same problem with different numbers (8000 N, 1112 km, 85 %, 2.7 N/(kW h), $C_D=0.025+0.07C_L^2$) gives 684 N ([[SESA1015 M07 - Propeller Aircraft Range and Endurance#Minimum fuel for a 1112 km flight|M07 worked example]]).
 
 Spreadsheet note: the sheet uses 8101 N, 549 nm (1.853 km each), 82.73 %, 2.71 N/(kW h) and $C_D=0.025+0.075C_L^2$, giving 676 N. Using 1853 m per nautical mile with the question's numbers would give 1368 N.
 

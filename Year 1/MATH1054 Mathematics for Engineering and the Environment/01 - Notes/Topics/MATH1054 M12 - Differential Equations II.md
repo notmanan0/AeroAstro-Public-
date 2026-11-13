@@ -43,7 +43,7 @@ Throughout, $x$ is the dependent variable and $t$ the independent one, and $\dot
 
 ---
 
-## 1. Equations of the form dx/dt = f(x/t) (James §10.5.5)
+## 1. Equations of the form dx/dt = f(x/t)
 
 ### Recognising the form
 
@@ -232,7 +232,7 @@ valid for $t>\sqrt{32}/3=4\sqrt2/3\approx1.886$, where the root is real and $x\n
 > [!check] Numerical integration
 > A fourth-order Runge–Kutta integration of $\dot x=2(x^2+t^2)/(xt)$ from $x(2)=-1$ with step $10^{-4}$ gives $x(3)=-5.250000$. The formula gives $-\tfrac34\sqrt{81-32}=-\tfrac34\cdot7=-5.25$.
 
-## 2. Exact equations (James §10.5.7)
+## 2. Exact equations
 
 ### Mixed partial derivatives and the two-variable chain rule
 
@@ -501,7 +501,7 @@ $$
 
 so the general solution is $tx+e^x+2\sin t=C$.
 
-## 3. Linear equations and the integrating factor (James §10.5.9)
+## 3. Linear equations and the integrating factor
 
 ### The integrating factor, derived from the product rule
 
@@ -759,7 +759,7 @@ Rewrite it as $\dot x=t^2-\dfrac xt$.
 
 The question asks only for the classification. Solving it as a linear equation, $(tx)'=t^3$ gives $x=\tfrac14t^3+C/t$.
 
-## 5. Applications (James §10.2.2, §10.2.3, §10.7)
+## 5. Applications
 
 Each of the models below is a linear first-order equation with constant coefficients, so each is also separable when its input is constant, and each relaxes exponentially to an equilibrium with a time constant set by its coefficients.
 
@@ -925,8 +925,8 @@ A damper whose damping constant $k(1+at)$ grows during the stroke obeys $m\dot v
 
 ### Core
 
-- [ ] Exercises 18(b), 20(d), 21(b) on p. 814 (Module 12 work scheme, item 2). → [[#1. Equations of the form dx/dt = f(x/t) (James §10.5.5)]] · [[MATH1054 M12 Solutions - Differential Equations II#Part B: Assigned exercises|solutions]]
-- [ ] Exercises 23(e), 25(b), 24(d) on pp. 817–818 (Module 12 work scheme, item 4). → [[#2. Exact equations (James §10.5.7)]] · [[MATH1054 M12 Solutions - Differential Equations II#Part B: Assigned exercises|solutions]]
+- [ ] Exercises 18(b), 20(d), 21(b) on p. 814 (Module 12 work scheme, item 2). → [[#1. Equations of the form dx/dt = f(x/t)]] · [[MATH1054 M12 Solutions - Differential Equations II#Part B: Assigned exercises|solutions]]
+- [ ] Exercises 23(e), 25(b), 24(d) on pp. 817–818 (Module 12 work scheme, item 4). → [[#2. Exact equations]] · [[MATH1054 M12 Solutions - Differential Equations II#Part B: Assigned exercises|solutions]]
 - [ ] Exercises 31(c), 33(c), 32(c) on pp. 824–825 (Module 12 work scheme, item 5). → [[#Exercises 31(c), 32(c) and 33(c)]] · [[MATH1054 M12 Solutions - Differential Equations II#Part B: Assigned exercises|solutions]]
 - [ ] Solve $t\dot x+x=0$ by all four methods and check that they agree (Module 12 work scheme, item 6). → [[#One equation, four methods]]
 - [ ] Specimen Test 12, Q1–Q4. → [[MATH1054 M12 Solutions - Differential Equations II#Part C: Specimen Test 12|solutions]] · [[#Specimen Test 12, Q1]]
@@ -934,7 +934,7 @@ A damper whose damping constant $k(1+at)$ grows during the stroke obeys $m\dot v
 ### Further practice
 
 - [ ] Work through Examples 10.14, 10.16 and 10.17 (Module 12 work scheme, items 2, 4 and 5). → [[MATH1054 M12 Solutions - Differential Equations II#Part A: Worked examples|solutions]] · [[#An implicit cubic solution with an initial condition (Example 10.16)]]
-- [ ] Classify Equations 10.6 and 10.7 and read §10.7 on the damper (Module 12 work scheme, item 7). → [[#5. Applications (James §10.2.2, §10.2.3, §10.7)]]
+- [ ] Classify Equations 10.6 and 10.7 and read §10.7 on the damper (Module 12 work scheme, item 7). → [[#5. Applications]]
 - [ ] James §10.5.11 Exercise 35: the hot-water tank time ratios (suggested, not set). → [[#Hot-water tank]]
 - [ ] Reproduce $t_s=0.2606$ s and $x_s=0.1044$ m for the damper with friction (suggested, not set). → [[#Damper test rig]]
 

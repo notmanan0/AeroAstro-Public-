@@ -34,7 +34,7 @@ Both hand-calculation cases were lectured on 8–9 October and are examinable:
 | $z=\bar z-a^2/\bar z$ | flow impinging on a finite plate (plate normal to the stream), $-2a\le y\le2a$ | $\Phi=\pm U_\infty\sqrt{z^2+4a^2}$ | $1-\dfrac{y^2}{4a^2-y^2}$ |
 | $z=\bar z+a^2/\bar z$ | flow over a finite plate (plate along the stream), $-2a\le x\le2a$ | $\Phi=U_\infty z$ | $0$ |
 
-Stick to one transfer function per problem: a different map turns the same $\bar z$ solution into a different body (8 Oct, ll. 310–316). Conformal maps are also used to generate orthogonal CFD meshes (ll. 249–256).
+Stick to one transfer function per problem: a different map turns the same $\bar z$ solution into a different body. Conformal maps are also used to generate orthogonal CFD meshes.
 
 ## Related
 

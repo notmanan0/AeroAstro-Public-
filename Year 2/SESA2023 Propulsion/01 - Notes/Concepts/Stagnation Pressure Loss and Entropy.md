@@ -19,7 +19,7 @@ $$
 s_2-s_1 = -R\ln\frac{p_{02}}{p_{01}}\qquad\Longleftrightarrow\qquad \frac{p_{02}}{p_{01}} = e^{-\Delta s/R} .
 $$
 
-The entropy generated is the stagnation pressure lost.
+The larger the entropy rise, the lower the stagnation pressure ratio.
 
 The result comes from applying $s_2-s_1 = c_p\ln(T_{02}/T_{01})-R\ln(p_{02}/p_{01})$ to the imaginary stagnation states, which have the same entropies as the real ones; with $T_{02} = T_{01}$ the first term vanishes. It holds across a normal or oblique shock, through a duct with friction only, and in an adiabatic intake ($\Gamma_d$) or nozzle ($\Gamma_n$). It doesn't hold where heat is added, as in a combustor, where $T_0$ changes, or where work is done, in a compressor or turbine. Every component loss in the W06 cycle analysis can therefore be read as an entropy rise, and the second law forbids $p_{02}>p_{01}$ in these processes.
 

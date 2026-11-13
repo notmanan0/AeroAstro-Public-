@@ -80,7 +80,7 @@ The sketch is a cosine with period 2.09 s inside an envelope $e^{-0.7t}$ that ha
 
 **Data**: $m = 17642$ kg, $I_{yy} = 165669$ kg m², $U_\infty = 356$ m/s, $\mathring M_{\dot w} = -132.47$, $\mathring Z_w = -12809.54$, $\mathring M_w = -13465.56$, $\mathring M_q = -123272.02$.
 
-The sheet prints $I_{yy}$ as "16,5669", a misplaced comma. The value is 165 669 kg m², the same as the F-4C in L1.06.
+The sheet prints $I_{yy}$ as "16,5669", a misplaced comma. The value is 165 669 kg m², the same as the course F-4C data.
 
 ### (i) $\omega_n$ and $\zeta$
 The SPO characteristic equation from [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid]], divided by $mI_{yy}$, is
@@ -142,7 +142,7 @@ OS = e^{-\zeta\pi/\sqrt{1-\zeta^2}}\times100\% = e^{-0.4\pi/0.9165} = e^{-1.3711
 $$
 
 > [!warning] Sheet answer 22.403 % is inconsistent with the formula
-> $e^{-0.4\pi/0.84} = e^{-1.4960} = 22.40\%$. The sheet divided by $1-\zeta^2 = 0.84$ instead of $\sqrt{1-\zeta^2} = 0.9165$. The slide formula (L1.07 slide 21) and a direct simulation both give **25.4 %**. The peak occurs at $t_p = \pi/\omega_d = 0.939$ s.
+> $e^{-0.4\pi/0.84} = e^{-1.4960} = 22.40\%$. The sheet divided by $1-\zeta^2 = 0.84$ instead of $\sqrt{1-\zeta^2} = 0.9165$. The correct formula and a direct simulation both give **25.4 %**. The peak occurs at $t_p = \pi/\omega_d = 0.939$ s.
 >
 > Also, the exact 10–90 % rise time for $\zeta = 0.4$ is about $1.46/\omega_n = 0.40$ s. The $1.8/\omega_n$ rule is only approximate.
 

@@ -38,7 +38,7 @@ where $\Delta y$ and $\Delta z$ are the signed offsets of each part's centroid f
 
 ## Thin-walled approximation
 
-For $t\ll b$, drop the $t^3$ terms (e.g. a horizontal flange contributes $A\Delta z^2$ to $I_y$ and essentially nothing of its own). Use median-line dimensions.
+For $t\ll b$, drop the $t^3$ terms. With $y$ across the thickness of a horizontal flange of width $b$ along $z$, the flange contributes $A\Delta y^2$ to $I_z$ and essentially nothing of its own, since its own $I_z=bt^3/12$ is negligible. Its own $I_y=tb^3/12$ is not a $t^3$ term and stays in the sum, alongside $A\Delta z^2$. Use median-line dimensions.
 
 ## Worked check
 

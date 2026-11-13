@@ -42,7 +42,7 @@ The Maclaurin series of [[MATH1054 M08 - Differentiation II|Module 8]] are made 
 
 ---
 
-## 1. Sequences and recurrence relations (James §7.2)
+## 1. Sequences and recurrence relations
 
 A **sequence** is the list of values $\{f_0,f_1,f_2,\dots\}$ of a function defined on the whole numbers, with $f_k=f(k)$. A finite sequence $\{f_0,\dots,f_n\}$ is written $\{f_k\}_{k=0}^{n}$ and an infinite one $\{f_k\}_{k=0}^{\infty}$, or just $\{f_k\}$. The index $k$ is a dummy variable: replacing it by $n$ or $r$ changes nothing. A **series** is a sum of terms, and its sum to $n$ terms, $S_n=\sum_{k=1}^{n}f_k$, is itself a sequence.
 
@@ -111,7 +111,7 @@ $$
 
 The minimum $y_{180}=-5+10=5$ is the inner dead centre, and the sequence returns to 15 at $k=360$ and repeats with period 360.
 
-## 2. Arithmetic sequences and series (James §7.3.1)
+## 2. Arithmetic sequences and series
 
 An **arithmetic sequence** (arithmetic progression, AP) has a constant difference $d$ between successive terms, so with first term $a$
 
@@ -168,7 +168,7 @@ $$
 
 The total is £5100 and the last metre costs £225.
 
-## 3. Geometric sequences and series (James §7.3.2)
+## 3. Geometric sequences and series
 
 A **geometric sequence** (geometric progression, GP) has a constant ratio $r$ between successive terms, $a_k=ar^{k-1}$. Its sum to $n$ terms is
 
@@ -208,7 +208,7 @@ $$
 
 using the GP sum with $a=1.03$, $r=1.03$, $n=25$.
 
-## 4. Limits of sequences (James §7.5)
+## 4. Limits of sequences
 
 A sequence $\{a_n\}$ **converges** to the limit $a$, written $a_n\to a$ as $n\to\infty$ or $\lim_{n\to\infty}a_n=a$, if for every $\varepsilon>0$, however small, there is an $N$ such that
 
@@ -275,7 +275,7 @@ $$
 
 The terms can grow a long way first: $10^n/n!$ rises to $2755.73$ at $n=9$ and $n=10$, is still $41.10$ at $n=20$, and only falls to $3.77\times10^{-3}$ at $n=30$. The factorial always wins in the end, which is why the exponential series converges for every $x$ ([[#The exponential series (Booklet Exercise D)]]). Finally, $\left(1+\frac1n\right)^n\to e$, which can be taken as the definition of $e$ and is needed in Example 7.29(b).
 
-## 5. Infinite series (James §7.6.1)
+## 5. Infinite series
 
 An infinite series $\sum_{k}u_k$ **converges** to the sum $S$ if its sequence of partial sums $S_n=u_1+\cdots+u_n$ converges to $S$; otherwise it **diverges**. The definition matters because algebra that is valid for finite sums can fail for infinite ones. Take $S=1-2+4-8+16-\cdots$. Then $2S=2-4+8-16+\cdots$, and adding the two lines term by term leaves $3S=1$, so "$S=\frac13$". The partial sums are $1,-1,3,-5,11,-21,\dots$, which do not settle anywhere: the series diverges and the manipulation was meaningless.
 
@@ -362,7 +362,7 @@ So $S_{2^m}\geq1+\frac m2$, which is unbounded. The growth is very slow, like $\
 > [!warning] Terms tending to zero is necessary, not sufficient
 > $u_k\to0$ does not show that $\sum u_k$ converges; the harmonic series is the counterexample. The $n$th-term test is a quick first check that can only conclude "diverges". When $u_k\to0$, another test has to decide.
 
-## 6. D'Alembert's ratio test (James §7.6.2)
+## 6. D'Alembert's ratio test
 
 A series of positive terms has increasing partial sums, so it converges as soon as its partial sums are bounded above, and it diverges to $+\infty$ otherwise. That gives the **comparison test**: if $0\leq u_k\leq c_k$ and $\sum c_k$ converges, then $\sum u_k$ converges too, because its partial sums are bounded by $\sum c_k$. Comparing with a geometric series gives the test used most often.
 
@@ -431,7 +431,7 @@ $$
 
 so the series diverges. Every term is at least $\frac12$, so $S_n\geq\frac n2$. Specimen Test 20 Q4, $\frac13+\frac24+\frac35+\cdots$, is the same: $u_n=\frac{n}{n+2}\to1$.
 
-## 7. Power series and the radius of convergence (James §7.7)
+## 7. Power series and the radius of convergence
 
 A **power series** is
 
@@ -493,7 +493,7 @@ The standard series (James Figure 7.13) are below; the radius of each follows fr
 
 Here $\binom rn=\frac{r(r-1)\cdots(r-n+1)}{n!}$; when $r$ is a positive whole number the binomial series stops at $x^r$ and is valid for all $x$. Power series can be added, multiplied and divided where they all converge, and substituting the $e^x$, $\sin x$ and $\cos x$ series into $e^{jx}$ proves [[Euler's Formula]].
 
-## 8. Rolle's theorem and the mean value theorems (James §9.3.1)
+## 8. Rolle's theorem and the mean value theorems
 
 **Rolle's theorem.** If $f$ is continuous on $[a,b]$, differentiable on $(a,b)$, and $f(a)=f(b)$, then there is at least one $c$ with $a<c<b$ and $f'(c)=0$.
 
@@ -564,7 +564,7 @@ $$
 
 which is Taylor's theorem with $n=0$.
 
-## 9. Taylor's theorem and the Lagrange remainder (James §9.4.1)
+## 9. Taylor's theorem and the Lagrange remainder
 
 ### A polynomial from four derivatives (Example 9.8)
 
@@ -723,7 +723,7 @@ So $\sqrt{1.02}\approx1.01$ with error at most $5\times10^{-5}$, and since $R_1<
 
 ![[m1054_m20_lagrange_bounds.png|900]]
 
-## 10. Taylor and Maclaurin series (James §9.4.2)
+## 10. Taylor and Maclaurin series
 
 If $R_n(x)\to0$ as $n\to\infty$, the Taylor polynomials converge to $f(x)$ and $f$ equals its **Taylor series** about $a$,
 
@@ -795,7 +795,7 @@ $$
 
 and with $|\sin|\leq1$ and $e^{\theta x}\leq e^{|x|}$, $|R_n|\leq e^{|x|}\frac{(\sqrt2|x|)^{n+1}}{(n+1)!}\to0$ for every $x$, so the series converges to $e^x\sin x$ everywhere. Multiplying the series for $e^x$ and $\sin x$ gives the same terms with far less work (James Example 9.11; see [[MATH1054 M08 - Differentiation II|Module 8]]).
 
-## 11. L'Hôpital's rule (James §9.4.3)
+## 11. L'Hôpital's rule
 
 If $f(x)\to A$ and $g(x)\to B\neq0$ as $x\to a$, then $\frac{f}{g}\to\frac AB$. When $B=0$ a finite limit is only possible if $A=0$ too, and then substitution gives the indeterminate form $\frac00$. **L'Hôpital's rule:** if $f(a)=g(a)=0$, then
 
@@ -919,7 +919,7 @@ The exponential series confirms it: for $x>0$, $e^x>\frac{x^2}{2}$, so $0<\frac{
 
 - [ ] Exercise D (Module 20 work scheme): the Maclaurin series of $e^x$, and show that its remainder tends to 0. → [[#The exponential series (Booklet Exercise D)]] · [[MATH1054 M20 Solutions - Further Calculus II#Part B: Assigned exercises|solution]]
 - [ ] Example 7.29(b) and Example 7.25(b), (d) (James pp. 506–514; the work scheme sets only parts (a) and (c) of 7.25 and part (a) of 7.29). → [[#Radii 1 and 0 (Example 7.29)]] · [[MATH1054 M20 Solutions - Further Calculus II#Example 7.25: Convergence of series|solution]]
-- [ ] Prove the first mean value theorem from Rolle's theorem using $g(x)=f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)$ (Module 20 work scheme, item 11). → [[#8. Rolle's theorem and the mean value theorems (James §9.3.1)]]
+- [ ] Prove the first mean value theorem from Rolle's theorem using $g(x)=f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)$ (Module 20 work scheme, item 11). → [[#8. Rolle's theorem and the mean value theorems]]
 - [ ] Example 9.10 (Module 20 work scheme, item 15): the Maclaurin series of $e^x\sin x$ by repeated differentiation, then check it by multiplying the series of $e^x$ and $\sin x$. → [[#The series of e to the x times sin x (Example 9.10)]] · [[MATH1054 M20 Solutions - Further Calculus II#Part A: Worked examples|solution]]
 - [ ] Redo Booklet Example 1 with three terms and a remainder, $\sin x=x+R_2$, and show the error is below $1.7\times10^{-4}$ for $0<x<0.1$ (suggested, not set). → [[#Booklet Example 1: sin x ≈ x]]
 

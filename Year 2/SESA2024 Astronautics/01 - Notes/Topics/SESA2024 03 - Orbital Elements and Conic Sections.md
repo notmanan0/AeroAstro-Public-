@@ -29,13 +29,13 @@ sources: ["02 - Sources/Lectures/Chapter 5/SESA2024 Astronautics - Chapter 5_orb
 > - **Common mistakes:** measuring $\omega$ from Aries instead of from the node; quoting $\Omega$ for an equatorial orbit or $\omega$ for a circular one, where they are undefined.
 > - **Practise:** [[#Worked examples]] · [[SESA2024 2024-25 Exam Solutions#Section A|2024/25 A3]]
 
-The orbit equation ([[SESA2024 02 - Kepler's Laws and the Orbit Equation]]) describes an ellipse in its own plane, with $\theta$ measured from periapsis. That says nothing about where the plane sits in space, or which way the ellipse points within it. The orbit can be pictured as a bent hoop around a globe (2025-10-28, ll. 641–700). With the hoop lying in the equatorial plane, $a$, $e$ and $\theta$ are enough. Tilting it adds an inclination. Spinning the tilted hoop about the polar axis calls for a reference direction to say where it crosses the equator. Rotating the ellipse within its own plane calls for the direction of periapsis. That makes six numbers.
+The orbit equation ([[SESA2024 02 - Kepler's Laws and the Orbit Equation]]) describes an ellipse in its own plane, with $\theta$ measured from periapsis. That says nothing about where the plane sits in space, or which way the ellipse points within it. The orbit can be pictured as a bent hoop around a globe. With the hoop lying in the equatorial plane, $a$, $e$ and $\theta$ are enough. Tilting it adds an inclination. Spinning the tilted hoop about the polar axis calls for a reference direction to say where it crosses the equator. Rotating the ellipse within its own plane calls for the direction of periapsis. That makes six numbers.
 
-Mission analysis is the job of choosing those six numbers for a spacecraft. The choice is generally driven by the payload requirements, with systems constraints such as thermal limits pushing back (2025-10-28, ll. 521–560). The choice for a remote-sensing satellite is worked through in [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]].
+Mission analysis is the job of choosing those six numbers for a spacecraft. The choice is generally driven by the payload requirements, with systems constraints such as thermal limits pushing back. The choice for a remote-sensing satellite is worked through in [[SESA2024 13 - Calculating Orbital Elements for a Remote Sensing Mission]].
 
 ## 1. The in-plane elements: a, e and θ
 
-The semi-major axis $a$ sets the size of the orbit and, through Kepler's third law, its period. The eccentricity $e$ sets its shape. The true anomaly $\theta$ is the angle from periapsis to the spacecraft, measured at the focus in the direction of motion; it is the only element that changes in an unperturbed orbit (2025-10-28, ll. 561–620).
+The semi-major axis $a$ sets the size of the orbit and, through Kepler's third law, its period. The eccentricity $e$ sets its shape. The true anomaly $\theta$ is the angle from periapsis to the spacecraft, measured at the focus in the direction of motion; it is the only element that changes in an unperturbed orbit.
 
 The apses are the two ends of the major axis. From the orbit equation $r=a(1-e^2)/(1+e\cos\theta)$, periapsis is at $\theta=0$ where $\cos\theta=1$:
 
@@ -49,9 +49,9 @@ $$
 r_a=\frac{a(1-e)(1+e)}{1-e}=a(1+e).
 $$
 
-In both cases $1-e^2$ is factorised as $(1-e)(1+e)$ and the matching factor cancels (2025-10-30, ll. 23–66).
+In both cases $1-e^2$ is factorised as $(1-e)(1+e)$ and the matching factor cancels.
 
-The names of the apses depend on the central body (2025-10-28, ll. 611–645): perigee and apogee for the Earth, perihelion and aphelion for the Sun, perilune and apolune for the Moon, perijove and apojove for Jupiter, and periapsis and apoapsis in general.
+The names of the apses depend on the central body: perigee and apogee for the Earth, perihelion and aphelion for the Sun, perilune and apolune for the Moon, perijove and apojove for Jupiter, and periapsis and apoapsis in general.
 
 ## 2. The orientation elements: i, Ω and ω
 
@@ -59,25 +59,25 @@ The names of the apses depend on the central body (2025-10-28, ll. 611–645): p
 
 The inclination $i$ is the tilt of the orbit plane relative to the equator, measured at the ascending node: $0^\circ$ for an equatorial orbit going round with the Earth, $90^\circ$ for a polar orbit, and up to $180^\circ$. Orbits with $i<90^\circ$ are prograde, moving eastwards with the Earth's rotation; those with $i>90^\circ$ are retrograde, which includes every Sun-synchronous orbit ([[SESA2024 12 - Sun- and Earth-Synchronous Orbits]]).
 
-The right ascension of the ascending node (RAAN) $\Omega$ locates the ascending node, the point where the spacecraft crosses the equator going from the southern to the northern hemisphere. It is measured in the equatorial plane, eastwards from a fixed inertial direction (2025-10-28, ll. 681–720). In effect it is the reference angle that fixes where the orbit plane sits around the polar axis.
+The right ascension of the ascending node (RAAN) $\Omega$ locates the ascending node, the point where the spacecraft crosses the equator going from the southern to the northern hemisphere. It is measured in the equatorial plane, eastwards from a fixed inertial direction. In effect it is the reference angle that fixes where the orbit plane sits around the polar axis.
 
-The reference direction is the First Point of Aries, ♈. The Earth's axis is tilted by about $23.4^\circ$ and keeps pointing the same way in space as the Earth goes round the Sun. At the June solstice the northern hemisphere leans towards the Sun, and at the December solstice away from it. At the March (spring) equinox, around 20 March, it leans neither way, and the line from the Earth to the Sun then lies in the equatorial plane. That line, extended to the stars, is the First Point of Aries. It makes a natural zero because at the equinox the Sun direction lies in both the equator and the ecliptic, so it is the line of intersection of the two planes (ll. 881–900).
+The reference direction is the First Point of Aries, ♈. The Earth's axis is tilted by about $23.4^\circ$ and keeps pointing the same way in space as the Earth goes round the Sun. At the June solstice the northern hemisphere leans towards the Sun, and at the December solstice away from it. At the March (spring) equinox, around 20 March, it leans neither way, and the line from the Earth to the Sun then lies in the equatorial plane. That line, extended to the stars, is the First Point of Aries. It makes a natural zero because at the equinox the Sun direction lies in both the equator and the ecliptic, so it is the line of intersection of the two planes.
 
-The name comes from antiquity, when the Sun at the March equinox lay in the constellation Aries. The equinoxes precess, and that point is now in Pisces, but the name has stuck (ll. 821–845).
+The name comes from antiquity, when the Sun at the March equinox lay in the constellation Aries. The equinoxes precess, and that point is now in Pisces, but the name has stuck.
 
-The argument of perigee $\omega$ locates periapsis within the orbit plane. It is measured in the direction of motion from the ascending node to periapsis (ll. 721–735), so it shows whether the apoapsis dwells over the northern or the southern hemisphere. With $\omega=270^\circ$, periapsis is at the most southerly point of the orbit and apoapsis at the most northerly, which is how Molniya and QZSS orbits spend long periods over high northern latitudes.
+The argument of perigee $\omega$ locates periapsis within the orbit plane. It is measured in the direction of motion from the ascending node to periapsis, so it shows whether the apoapsis dwells over the northern or the southern hemisphere. With $\omega=270^\circ$, periapsis is at the most southerly point of the orbit and apoapsis at the most northerly, which is how Molniya and QZSS orbits spend long periods over high northern latitudes.
 
-The six elements are also loosely called the ephemerides. The equivalent state vector, three Cartesian position components and three velocity components, carries the same information (2025-10-30, ll. 507–520).
+The six elements are also loosely called the ephemerides. The equivalent state vector, three Cartesian position components and three velocity components, carries the same information.
 
 ### When elements are undefined
 
-Two elements lose their meaning in common special cases (2025-10-30, ll. 67–110). If $i=0$ the orbit lies in the equator and never crosses it, so there is no ascending node and $\Omega$ is undefined. If $e=0$ the orbit is a circle with no closest point, so $\omega$ is undefined, and $\theta$ has no periapsis to be measured from. A geostationary orbit has both problems, since it is equatorial and very nearly circular. Different element sets are used for such orbits. A Sun-synchronous orbit is near-circular, so its $\omega$ is not specified.
+Two elements lose their meaning in common special cases. If $i=0$ the orbit lies in the equator and never crosses it, so there is no ascending node and $\Omega$ is undefined. If $e=0$ the orbit is a circle with no closest point, so $\omega$ is undefined, and $\theta$ has no periapsis to be measured from. A geostationary orbit has both problems, since it is equatorial and very nearly circular. Different element sets are used for such orbits. A Sun-synchronous orbit is near-circular, so its $\omega$ is not specified.
 
-The elements are also only constant if the motion is unperturbed, which strictly requires two point masses alone in the universe. Any other body, a non-spherical Earth, or drag perturbs them (ll. 111–130). A Sun-synchronous orbit uses the Earth's oblateness deliberately to turn $\Omega$ at the rate needed to follow the Sun.
+The elements are also only constant if the motion is unperturbed, which strictly requires two point masses alone in the universe. Any other body, a non-spherical Earth, or drag perturbs them. A Sun-synchronous orbit uses the Earth's oblateness deliberately to turn $\Omega$ at the rate needed to follow the Sun.
 
 ## 3. Elements of real objects and what perturbations revealed
 
-Elements of planets and spacecraft (slides; 2025-10-30, ll. 111–485):
+Elements of planets and spacecraft:
 
 | Object | $a$ | $e$ | $i$ | $\Omega$ | $\omega$ |
 |---|---|---|---|---|---|
@@ -97,9 +97,9 @@ The Earth reaches perihelion around 3 January and aphelion around 3 July. Counti
 
 The table gives radii, not altitudes. With $R_E=6378$ km, Starlink's $a=6861$ km is $6861-6378=483$ km up and the ISS's $a=6780$ km is $6780-6378=402$ km up.
 
-Real orbits are perturbed, as two historical cases show. Uranus, found by William Herschel in 1781, was the first planet discovered since antiquity. Decades of observation showed it drifting off its ellipse, pulled forward and then held back by an unseen body. John Couch Adams and Urbain Le Verrier independently worked backwards from the perturbations to predict where that body must be, and the Berlin Observatory found Neptune within about a degree of Le Verrier's position (ll. 199–265). Le Verrier then tried to explain the slow precession of Mercury's perihelion by the same method and proposed an inner planet, Vulcan, which was never found. The real explanation was Einstein's general relativity, published in 1915, and Mercury's precession was one of its first successful tests (ll. 265–340).
+Real orbits are perturbed, as two historical cases show. Uranus, found by William Herschel in 1781, was the first planet discovered since antiquity. Decades of observation showed it drifting off its ellipse, pulled forward and then held back by an unseen body. John Couch Adams and Urbain Le Verrier independently worked backwards from the perturbations to predict where that body must be, and the Berlin Observatory found Neptune within about a degree of Le Verrier's position. Le Verrier then tried to explain the slow precession of Mercury's perihelion by the same method and proposed an inner planet, Vulcan, which was never found. The real explanation was Einstein's general relativity, published in 1915, and Mercury's precession was one of its first successful tests.
 
-The ISS inclination of $51.6^\circ$ illustrates a launch constraint (ll. 485–505). Launching straight east puts a spacecraft into an orbit with inclination equal to the launch-site latitude, and changing the plane afterwards costs a lot of ΔV, so high-inclination missions prefer high-latitude sites (Rocket Lab's New Zealand pad for polar orbits, for example). $51.6^\circ$ is often described as a compromise between the latitudes of Florida and Kazakhstan. More precisely, it is the lowest inclination that Russian launches from Baikonur ($45.6^\circ$ N) can reach while keeping spent stages away from China, and the Shuttle could still reach it from Florida ($28.5^\circ$ N) at a payload penalty.
+The ISS inclination of $51.6^\circ$ illustrates a launch constraint. Launching straight east puts a spacecraft into an orbit with inclination equal to the launch-site latitude, and changing the plane afterwards costs a lot of ΔV, so high-inclination missions prefer high-latitude sites (Rocket Lab's New Zealand pad for polar orbits, for example). $51.6^\circ$ is often described as a compromise between the latitudes of Florida and Kazakhstan. More precisely, it is the lowest inclination that Russian launches from Baikonur ($45.6^\circ$ N) can reach while keeping spent stages away from China, and the Shuttle could still reach it from Florida ($28.5^\circ$ N) at a payload penalty.
 
 ## 4. Common operational orbits
 
@@ -114,11 +114,11 @@ There are six categories, which is also the answer to the eight-mark question "D
 | Semi-synchronous | $\tau\approx12$ h, $a\approx26\,560$ km | navigation (GPS; Galileo, GLONASS and BeiDou fly nearby medium orbits with periods of about 11 to 14 h) |
 | GEO | $i=0$, $e\approx0$, $a=42\,164$ km ($6.6R_E$), $\tau=23$ h 56 min | communications and weather: the satellite stays over one point and sees about a third of the Earth |
 
-QZSS, Japan's regional navigation augmentation, is a variant: geosynchronous ($a=42\,164$ km) but inclined at $43^\circ$ and eccentric with $\omega=270^\circ$, so each satellite lingers near apoapsis over Japan and swings quickly past Australia. Three satellites spaced $120^\circ$ apart keep one high over Japan at all times (ll. 463–480).
+QZSS, Japan's regional navigation augmentation, is a variant: geosynchronous ($a=42\,164$ km) but inclined at $43^\circ$ and eccentric with $\omega=270^\circ$, so each satellite lingers near apoapsis over Japan and swings quickly past Australia. Three satellites spaced $120^\circ$ apart keep one high over Japan at all times.
 
 ## 5. Conic sections
 
-The polar orbit equation $r=p/(1+e\cos\theta)$, with $p=a(1-e^2)=h^2/\mu$, is the equation of a conic section, the curve you get by slicing a cone with a plane (2025-10-30, ll. 551–600). A slice perpendicular to the cone's axis gives a circle, a tilted slice an ellipse, a slice parallel to the side a parabola, and a steeper slice a hyperbola.
+The polar orbit equation $r=p/(1+e\cos\theta)$, with $p=a(1-e^2)=h^2/\mu$, is the equation of a conic section, the curve you get by slicing a cone with a plane. A slice perpendicular to the cone's axis gives a circle, a tilted slice an ellipse, a slice parallel to the side a parabola, and a steeper slice a hyperbola.
 
 ![[ast_conic_sections.png|600]]
 
@@ -147,9 +147,9 @@ $$
 
 Parabolas and hyperbolas have a direction in which the denominator $1+e\cos\theta$ reaches zero, at $\cos\theta=-1/e$ ($\theta=180^\circ$ for the parabola); there $r\to\infty$, which is the direction along which the object leaves. For an ellipse $1+e\cos\theta\ge1-e>0$, so $r$ stays finite all the way round.
 
-Exactly circular and exactly parabolic orbits are not physically achievable, because $e$ would have to be exactly 0 or 1 and any perturbation moves it (ll. 595–615). Bound orbits, $0\le e<1$, are the ones that matter for Earth satellites.
+Exactly circular and exactly parabolic orbits are not physically achievable, because $e$ would have to be exactly 0 or 1 and any perturbation moves it. Bound orbits, $0\le e<1$, are the ones that matter for Earth satellites.
 
-The negative $a$ of a hyperbola follows from the apsis formula. For ʻOumuamua, $a=-1.27$ AU and $e=1.201$ give a perihelion radius $r_p=a(1-e)=(-1.27)(-0.201)=0.255$ AU, which is positive as it must be. ʻOumuamua, found in 2017, was the first object identified as coming from outside the Solar System; its light curve suggested a very elongated shape (ll. 617–660). NEOWISE came in from the Oort cloud on a near-parabolic orbit in 2020 and was the brightest comet seen from the northern hemisphere for decades.
+The negative $a$ of a hyperbola follows from the apsis formula. For ʻOumuamua, $a=-1.27$ AU and $e=1.201$ give a perihelion radius $r_p=a(1-e)=(-1.27)(-0.201)=0.255$ AU, which is positive as it must be. ʻOumuamua, found in 2017, was the first object identified as coming from outside the Solar System; its light curve suggested a very elongated shape. NEOWISE came in from the Oort cloud on a near-parabolic orbit in 2020 and was the brightest comet seen from the northern hemisphere for decades.
 
 ## Worked examples
 
@@ -194,7 +194,7 @@ so its perihelion is closer to the Sun than Mercury's orbit (0.39 AU).
 
 ### Quiz 2: argument of perigee of a polar orbit
 
-A near-circular polar orbit passes over the North Pole at a known true anomaly, and $\omega$ is required (Quiz 2 walk-through, ll. 81–125). Viewed face-on, the orbit plane shows the geometry. For $i=90^\circ$ the orbit plane contains the polar axis, so the equator appears edge-on as a line through the Earth's centre, the ascending node is where the orbit crosses that line going north, and the North Pole is $90^\circ$ further round, measured in the orbit plane.
+A near-circular polar orbit passes over the North Pole at a known true anomaly, and $\omega$ is required (Quiz 2 walk-through). Viewed face-on, the orbit plane shows the geometry. For $i=90^\circ$ the orbit plane contains the polar axis, so the equator appears edge-on as a line through the Earth's centre, the ascending node is where the orbit crosses that line going north, and the North Pole is $90^\circ$ further round, measured in the orbit plane.
 
 ![[ast_polar_orbit_omega.png|560]]
 
@@ -220,7 +220,7 @@ A near-circular orbit still has a periapsis, because a perfect circle is impossi
 
 ### Quiz 2: a circular orbit drawn in perspective
 
-A circular orbit drawn at an angle looks elliptical, with the Earth at its centre (Quiz 2 multiple-choice question, ll. 1–20). An ellipse has the central body at a focus, not the centre, so an orbit centred on the Earth must have $e=0$; the apparent flattening is perspective.
+A circular orbit drawn at an angle looks elliptical, with the Earth at its centre (Quiz 2 multiple-choice question). An ellipse has the central body at a focus, not the centre, so an orbit centred on the Earth must have $e=0$; the apparent flattening is perspective.
 
 ## Links
 

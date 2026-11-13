@@ -60,6 +60,6 @@ The common trap is using $\frac{a}{1-r}$ without checking $|r|<1$: for $1-2+4-8+
 
 ## Related
 
-- Topics: [[MATH1054 M20 - Further Calculus II#2. Arithmetic sequences and series (James §7.3.1)|M20 §2]] · [[MATH1054 M20 - Further Calculus II#3. Geometric sequences and series (James §7.3.2)|M20 §3]] · [[MATH1054 M20 - Further Calculus II#The sum to infinity of a geometric series|sum to infinity]] · [[MATH1054 M20 Solutions - Further Calculus II]]
+- Topics: [[MATH1054 M20 - Further Calculus II#2. Arithmetic sequences and series|M20 §2]] · [[MATH1054 M20 - Further Calculus II#3. Geometric sequences and series|M20 §3]] · [[MATH1054 M20 - Further Calculus II#The sum to infinity of a geometric series|sum to infinity]] · [[MATH1054 M20 Solutions - Further Calculus II]]
 - Concepts: [[Convergence Tests for Series]] · [[Taylor and Maclaurin Series]]
 - Sources: James, Modern Engineering Mathematics (6th ed.) §7.2–7.3 and §7.6.1; MATH1054 Module Booklet, Module 20.

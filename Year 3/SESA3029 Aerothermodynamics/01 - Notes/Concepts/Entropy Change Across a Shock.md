@@ -23,7 +23,7 @@ Differentiating with respect to $m$ gives
 
 $$\frac{\mathrm d}{\mathrm dm}\left(\frac{\Delta s}{c_v}\right)=\frac{2\gamma(\gamma-1)m^2}{(1+m)(\gamma+1+2\gamma m)(\gamma+1+(\gamma-1)m)}\ge0,$$
 
-so $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$. This is the "show it" on Lecture 2.3, slide 9.
+so $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$.
 
 Two consequences follow. For $M_{n1}<1$ the jump would be negative, which the second law forbids, so expansion shocks cannot exist and a supersonic stream has to expand through an isentropic fan instead. And because the jump grows like $m^3$, weak shocks are very nearly isentropic: halving the strength cuts the loss by a factor of eight. That is why intakes compress through several weak shocks rather than one strong one.
 

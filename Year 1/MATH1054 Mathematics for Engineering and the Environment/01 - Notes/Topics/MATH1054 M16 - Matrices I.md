@@ -40,7 +40,7 @@ The determinant answers the question of whether a square system $\mathbf{AX}=\ma
 
 ---
 
-## 1. Matrices, orders and special matrices (James §5.2.1)
+## 1. Matrices, orders and special matrices
 
 A **matrix of order $m\times n$** is a rectangular array of numbers with $m$ rows and $n$ columns,
 
@@ -74,7 +74,7 @@ $$
 
 A column vector transposes to a row vector and vice versa. For example $\mathbf B=\begin{bmatrix}1&2&3\\2&3&4\\3&4&5\end{bmatrix}$ is symmetric with $\operatorname{tr}\mathbf B=1+3+5=9$, and $\begin{bmatrix}2&0&0\\0&3&0\\0&0&4\end{bmatrix}$ is diagonal with trace 9.
 
-## 2. Equality, addition, scalar multiples and the transpose (James §5.2.2)
+## 2. Equality, addition, scalar multiples and the transpose
 
 Two matrices are **equal** if they have the same order and every pair of corresponding elements is equal, $a_{ij}=b_{ij}$ for all $i,j$. Addition and subtraction are defined only for matrices of the same order, element by element:
 
@@ -134,7 +134,7 @@ so $\mathbf A$ and $\mathbf C$ are $3\times3$ and $\mathbf B$ is $3\times2$.
 
 Part (h) illustrates the symmetric-part result. The skew-symmetric part of the same matrix is $\tfrac12(\mathbf A-\mathbf A^{\mathrm T})$ with $\mathbf A-\mathbf A^{\mathrm T}=\begin{bmatrix}0&1&0\\-1&0&1\\0&-1&0\end{bmatrix}$, which has the zero diagonal every skew-symmetric matrix has.
 
-## 3. Matrix multiplication (James §5.2.4)
+## 3. Matrix multiplication
 
 ### The product as composition of two linear maps
 
@@ -261,7 +261,7 @@ The orders are $\mathbf A=\begin{pmatrix}1&2&-1\\3&1&4\end{pmatrix}$: $2\times3$
 | (iv) | $\mathbf{AB}^{\mathrm T}$ | no | $(2\times3)(2\times2)$, inner sizes differ |
 | (v) | $\mathbf{DC}$ | yes, $3\times2$ | $\begin{pmatrix}0-1&-6+1\\0+1&-4-1\\0-1&0+1\end{pmatrix}=\begin{pmatrix}-1&-5\\1&-5\\-1&1\end{pmatrix}$ |
 
-## 4. Laws of matrix multiplication and the transpose of a product (James §5.2.6)
+## 4. Laws of matrix multiplication and the transpose of a product
 
 ### Order matters
 
@@ -541,7 +541,7 @@ The image edges from A' are $\overrightarrow{A'B'}=(0.866,\,0.500)$ and $\overri
 
 ![[m1054_m16_rotation_square.png|620]]
 
-## 7. The determinant of a 2 by 2 and a 3 by 3 matrix (James §5.3)
+## 7. The determinant of a 2 by 2 and a 3 by 3 matrix
 
 ### The 2 by 2 determinant from two equations
 
@@ -664,7 +664,7 @@ $$
 \end{aligned}
 $$
 
-## 8. Minors, cofactors and expansion along any row or column (James §5.3)
+## 8. Minors, cofactors and expansion along any row or column
 
 Deleting row $i$ and column $j$ of an $n\times n$ matrix leaves an $(n-1)\times(n-1)$ determinant called the **minor** $M_{ij}$ of the element $a_{ij}$. The minor with its place sign attached is the **cofactor**
 
@@ -754,7 +754,7 @@ $$
 |\cdot|=(-7)(15)+(4)(-34)+(1)(43)=-105-136+43=-198 .
 $$
 
-## 9. Properties of determinants and row operations (James §5.3)
+## 9. Properties of determinants and row operations
 
 Each property below follows from expanding along a suitable row, which Section 8 allows. Every statement about rows holds for columns too, by property (f).
 
@@ -924,7 +924,7 @@ $$
 > [!check] Exercise 45(b) by eigenvalues
 > The determinant of a matrix is the product of its eigenvalues ([[MATH1054 M18 - Matrices III|M18]]). Here $(1,-1,0,0)$ and $(0,0,1,-1)$ are eigenvectors with eigenvalues 1 and 2, and on vectors of the form $(a,a,b,b)$ the matrix acts as $\begin{bmatrix}9&2\\2&6\end{bmatrix}$, whose eigenvalues are 5 and 10. The product is $1\times2\times5\times10=100$.
 
-## 10. The adjoint matrix and the adjoint theorem (James §5.3)
+## 10. The adjoint matrix and the adjoint theorem
 
 The **adjoint** (also called the adjugate) of a square matrix is the transpose of its matrix of cofactors:
 

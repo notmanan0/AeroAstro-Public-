@@ -21,15 +21,15 @@ $$
 \mathbf C\big|_{\theta=90^\circ}=\begin{bmatrix}0&0&-1\\\sin(\phi-\psi)&\cos(\phi-\psi)&0\\\cos(\phi-\psi)&-\sin(\phi-\psi)&0\end{bmatrix},
 $$
 
-so every pair $(\phi,\psi)$ with the same difference gives the same matrix, and infinitely many angle sets describe one attitude. Full derivation: [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock (§2.4.5)|2.2 §8]].
+so every pair $(\phi,\psi)$ with the same difference gives the same matrix, and infinitely many angle sets describe one attitude. Full derivation: [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock|2.2 §8]].
 
 ![[amc_gimbal_lock.png|800]]
 
 It's a property of the representation, not of the aircraft: nothing physical goes wrong at vertical pitch, only the three-angle description fails. Every three-angle sequence has a singular attitude somewhere, so changing the sequence moves the singularity but can't remove it. The name comes from mechanical gyroscope gimbals, where at $90^\circ$ pitch two gimbal rings line up and the platform loses a free axis.
 
-Software fails silently here: `atan2(0, 0)` returns 0 in Python, NumPy and MATLAB (L6, l. 213), and near the singularity the extracted angles are numerically noisy, so the output is unreliable rather than predictably zero. Robust code checks $|\cos\theta|$ against a tolerance, uses a documented singular branch that keeps $\phi\mp\psi$, and verifies the result by rebuilding the DCM ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock (§2.4.5)|2.2 §8]]).
+Software fails silently here: `atan2(0, 0)` returns 0 in Python, NumPy and MATLAB, and near the singularity the extracted angles are numerically noisy, so the output is unreliable rather than predictably zero. Robust code checks $|\cos\theta|$ against a tolerance, uses a documented singular branch that keeps $\phi\mp\psi$, and verifies the result by rebuilding the DCM ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock|2.2 §8]]).
 
-The fix is to propagate attitude with a non-singular representation, the DCM itself or quaternions (L6, l. 227), and convert to Euler angles only for display. Conventional aircraft rarely get near $|\theta|=90^\circ$, so Euler angles remain standard for them (L6, ll. 224–226).
+The fix is to propagate attitude with a non-singular representation, the DCM itself or quaternions, and convert to Euler angles only for display. Conventional aircraft rarely get near $|\theta|=90^\circ$, so Euler angles remain standard for them.
 
 ## Related
 

@@ -21,5 +21,5 @@ Applied to a fixed control volume, the theorem converts the integral (weak) form
 
 ## Related
 
-- Derivation and examples: [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem#2. The divergence theorem (L29)|VC5 §2]]
+- Derivation and examples: [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem#2. The divergence theorem|VC5 §2]]
 - [[Flux Integrals]] · [[Divergence, Curl and the Laplacian]] · [[Stokes' Theorem]] · [[Jacobian and Volume Elements]]

@@ -41,7 +41,7 @@ The trap is in the notation. The second parameter of $N(\mu,\sigma^2)$ is the va
 
 ## Related
 
-- Topics: [[MATH1054 M25 - Statistics II#5. The normal distribution and standardisation (James §13.5.3)|MATH1054 M25 - Statistics II]] (§5 derives the mean, variance, symmetry and standardisation; §6 covers the central limit theorem)
+- Topics: [[MATH1054 M25 - Statistics II#5. The normal distribution and standardisation|MATH1054 M25 - Statistics II]] (§5 derives the mean, variance, symmetry and standardisation; §6 covers the central limit theorem)
 - Concepts: [[Confidence Intervals and Hypothesis Tests for the Mean]] · [[Binomial Distribution]] · [[Mean, Median and Variance of a Distribution]] · [[Random Variables, PDF and CDF]]
 - Later use: [[Accuracy and Precision]] (Gaussian sensor noise, about 95% within $\pm2\sigma$)
 - Sources: James, *Modern Engineering Mathematics* (6th ed.) §13.5.3–13.5.4 (Figure 13.30, Examples 13.28–13.29, Exercise 59); MATH1054 Module Booklet, Module 25 (items 5–7, Exercises A–B).

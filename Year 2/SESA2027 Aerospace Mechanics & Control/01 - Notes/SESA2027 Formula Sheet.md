@@ -11,7 +11,7 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures", "02 - Sources/Problem Sh
 
 # SESA2027 Formula Sheet
 
-One page per part, in the order of the topic notes; each section links to its note. Angles are in radians inside every formula unless a degree sign is shown. Body axes are right-handed with $x$ forward, $y$ starboard and $z$ down.
+Angles are in radians inside every formula unless a degree sign is shown. Body axes are right-handed with $x$ forward, $y$ starboard and $z$ down.
 
 ## Part A: Dynamic systems
 
@@ -123,7 +123,7 @@ Full longitudinal elevator transfer functions (phugoid $p$, short period $s$): $
 
 ### Modes ([[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid]])
 
-Free, stick-fixed response $\mathbf x = \mathbf x_0e^{\lambda t}$:
+Free, stick-fixed modes $\mathbf x = \mathbf x_0e^{\lambda t}$, with $\mathbf x_0$ the eigenvector for $\lambda$ (the free response is a sum of these):
 
 $$
 \det(\lambda\mathbf I-\mathbf A) = 0\ \Rightarrow\ A\lambda^4+B\lambda^3+C\lambda^2+D\lambda+E = 0,\qquad \lambda = \sigma\pm i\omega
@@ -157,7 +157,7 @@ Sensitivity (F-4C, ±10 %): $I_{yy}$ mainly sets $\omega_n$ ($\omega_n\propto1/\
 
 Phugoid: $E = mgh+\tfrac12mV^2\approx$ const at roughly constant $\alpha$; lightly damped (drag only), may be slightly unstable. Flight path: $\gamma = \theta-\alpha$.
 
-Lateral quartic: one complex pair (Dutch roll) and two real roots (spiral, roll subsidence), so three modes; named only here, analysed in SESA3047.
+Lateral quartic: one complex pair (Dutch roll) and two real roots (spiral, roll subsidence), so three modes (not analysed in SESA2027).
 
 ### Laplace and step response ([[SESA2027 A4 - Laplace Transforms, Transfer Functions and Step Response]])
 
@@ -173,7 +173,7 @@ One-sided transform, $g(t) = 0$ for $t<0$: $G(s) = \displaystyle\int_0^\infty g(
 | $e^{\sigma t}\cos\omega t$; $e^{\sigma t}\sin\omega t$ | $(s-\sigma)/[(s-\sigma)^2+\omega^2]$; $\omega/[(s-\sigma)^2+\omega^2]$ |
 | Doublet $u(t)-2u(t-t_1)+u(t-2t_1)$ | $(1-e^{-t_1s})^2/s$ (no lasting value) |
 
-Transfer function $G = X/U = B(s)/A(s)$: zeros are the roots of $B$, poles the roots of $A$ (= the eigenvalues).
+Transfer function $G = X/U = B(s)/A(s)$: zeros are the roots of $B$, poles the roots of $A$ (= the eigenvalues, unless a pole cancels a zero).
 
 Final-value theorem (closed loop or system stable): $\displaystyle\lim_{t\to\infty}x(t) = \lim_{s\to0}sX(s)$; for $X = K/[s(s^2+2\zeta\omega_ns+\omega_n^2)]$ it is $K/\omega_n^2$.
 
@@ -229,12 +229,12 @@ Bode factors (dB and phase add):
 |---|---|---|
 | Gain $k$ | flat at $20\log_{10}\lvert k\rvert$ | 0, or −180° if $k<0$ |
 | Zero at origin $s$ / pole at origin $1/s$ | +20 / −20 dB/dec | +90° / −90° |
-| Real zero $s-z$ | 0, then +20 dB/dec above $\lvert z\rvert$ | 0 → +90° (phase lead), over $0.1\lvert z\rvert$ to $10\lvert z\rvert$ |
-| Real pole $1/(s-p)$ | 0, then −20 dB/dec | 0 → −90°; −3.01 dB and −45° at the corner |
-| Complex zero pair | +40 dB/dec | 0 → +90° at $\omega_n$ → +180° |
-| Complex pole pair | −40 dB/dec; peak near $\omega_n$ if $\zeta<0.707$ | 0 → −90° at $\omega_n$ → −180°, sharper at low $\zeta$ |
+| Real zero $s-z$, $z<0$ | 0, then +20 dB/dec above $\lvert z\rvert$ | 0 → +90° (phase lead), over $0.1\lvert z\rvert$ to $10\lvert z\rvert$ |
+| Real pole $1/(s-p)$, $p<0$ | 0, then −20 dB/dec | 0 → −90°; −3.01 dB and −45° at the corner |
+| Complex zero pair (left half-plane) | +40 dB/dec | 0 → +90° at $\omega_n$ → +180° |
+| Complex pole pair (left half-plane) | −40 dB/dec; peak near $\omega_n$ if $\zeta<0.707$ | 0 → −90° at $\omega_n$ → −180°, sharper at low $\zeta$ |
 
-Each zero adds up to +90° of steady-state phase lead; a transfer function with poles only lags at every frequency. A change of high-frequency slope by a further −20 dB/dec marks another pole.
+Right-half-plane factors ($z>0$ or $p>0$) have the same magnitude curves but the opposite phase: a right-half-plane zero lags (0 → −90°) and a right-half-plane pole leads (0 → +90°). Each left-half-plane zero adds up to +90° of steady-state phase lead; a transfer function with left-half-plane poles only lags at every frequency. A change of high-frequency slope by a further −20 dB/dec marks another pole.
 
 Pure delay: $\lvert e^{-i\omega T}\rvert = 1$, $\angle e^{-i\omega T} = -\omega T$.
 
@@ -270,7 +270,7 @@ $$
 \frac{q}{\eta} = \frac{m_\eta s+(m_wz_\eta-m_\eta z_w)}{s^2-(m_q+z_w)s+(z_wm_q-z_qm_w)},\qquad \frac{\theta}{\eta} = \frac1s\frac{q}{\eta}
 $$
 
-Course plant: $G = q/\eta = -1.39(s+0.306)/(s^2+0.805s+1.325)$, $G(0) = -0.321$.
+SPO pitch-rate example: $G = q/\eta = -1.39(s+0.306)/(s^2+0.805s+1.325)$, $G(0) = -0.321$.
 
 Pole placement: match the closed-loop polynomial to $s^2+2\zeta\omega_ns+\omega_n^2$ term by term. Satellite PD on $1/(I_{zz}s^2)$ with $\rho = I_{zz-wh}/I_{zz}$: $k_p = -\omega_n^2/\rho$, $k_d = -2\zeta\omega_n/\rho$.
 
@@ -314,7 +314,7 @@ $$
 
 With $T_I = 3/\omega_{gc}$ the integral factor costs $\tan^{-1}(1/3) = 18.4^\circ$ at crossover and its magnitude 1.054 is neglected in $K_p$, so validate the step response and control effort.
 
-Negative-gain plant (corrected L2.05 slides): invert $G$; read $\phi_{current}$ at the current crossover; if $\phi_{PD}<0$ only because of the inversion, use $\lvert\phi_{PD}\rvert$; restore the sign on $K_p$ for the real plant ($T_I$, $T_D$ stay positive). SPO example: $T_D = 0.342$ s, $T_I = 1.0$ s, $K_p = -1.345$.
+Negative-gain plant: invert $G$; read $\phi_{current}$ at the current crossover; restore the sign on $K_p$ for the real plant ($T_I$, $T_D$ stay positive). A negative $\phi_{PD}$ means the inverted plant already exceeds the target margin at that frequency, so the controller would have to add lag; a PD cannot do that. Taking $\lvert\phi_{PD}\rvert$ instead designs a lead, and the margin lands above the target. SPO example: $T_D = 0.342$ s, $T_I = 1.0$ s, $K_p = -1.345$, with a computed phase margin of about 129° against the 70° target.
 
 | ZN ultimate sensitivity ($K_u$, $T_u$ at sustained oscillation, P only) | $K_p$ | $T_I$ | $T_D$ |
 |---|---|---|---|
@@ -448,8 +448,10 @@ $$
 Quantisation ($n$-bit ideal ADC; uniform error for signals spanning many levels):
 
 $$
-Q = \frac{V_{ADC,max}-V_{ADC,min}}{2^n},\quad N[k] = \mathrm{round}\!\left(\frac{V_{out}[k]}{Q}\right),\quad \lvert e_q\rvert\le\frac Q2,\quad \sigma_q = \frac{Q}{\sqrt{12}}
+Q = \frac{V_{ADC,max}-V_{ADC,min}}{2^n},\quad N[k] = \mathrm{round}\!\left(\frac{V_{out}[k]-V_{ADC,min}}{Q}\right),\quad \hat V[k] = V_{ADC,min}+N[k]Q,\quad \lvert e_q\rvert\le\frac Q2,\quad \sigma_q = \frac{Q}{\sqrt{12}}
 $$
+
+with $0\le N\le2^n-1$ (the top of the window saturates at the top code); for a window starting at 0 V, $N = \mathrm{round}(V_{out}/Q)$.
 
 Each extra bit halves $Q$ (−6 dB noise floor). DAC: $Q_{DAC} = (V_{DAC,max}-V_{DAC,min})/2^n$, $V_{cmd}[k] = V_{DAC,min}+N[k]Q_{DAC}$ (zero-order hold staircase).
 
@@ -464,6 +466,8 @@ Sampling and aliasing ($m$ chosen so the alias lands in $[0,f_N]$; in practice s
 $$
 f_N = \frac{f_s}{2},\qquad f_s>2f_{max},\qquad f_{alias} = \lvert f-mf_s\rvert\in[0,f_N],\qquad \text{anti-alias RC: }\tau\ge\frac{1}{\pi f_s}\Leftrightarrow f_c\le f_N
 $$
+
+This is the minimum: a first-order filter is only −3 dB at $f_c$ and falls at −20 dB/dec, so $f_c = f_N$ leaves content just above $f_N$ barely attenuated. Place $f_c$ lower or raise $f_s$ for real suppression.
 
 Latency (pure delay $e^{-sT_d}$, crossover unchanged):
 

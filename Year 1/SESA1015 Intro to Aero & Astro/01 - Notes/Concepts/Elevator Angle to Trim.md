@@ -36,7 +36,7 @@ $$
 \frac{d\eta}{dV}=\frac{2C_L}{V}\,\frac{K_n}{\bar Va_{2T}}.
 $$
 
-A stable aircraft needs more trailing-edge-down elevator as it speeds up and more up-elevator to fly slower; the gradient is steepest at low speed (high $C_L$) and with a large static margin (forward CG). At the neutral point the gradient vanishes, which is how flight tests locate it. For the Slides v2 p. 217 aircraft ($W=22.7$ kN, $S=19$ m², $a=0.08$/deg, $C_{M_0}=0.06$, $dC_{M_{CG}}/d\alpha=-0.0133$/deg, $V_{HT}=0.34$, $dC_{L_T}/d\delta_e=0.04$/deg) at 61 m/s, $\alpha_{req}=6.55°$, $\delta_e=-2.00°$ (2° trailing edge up) and $d\eta/dV=0.21$° per m/s.
+A stable aircraft needs more trailing-edge-down elevator as it speeds up and more up-elevator to fly slower; the gradient is steepest at low speed (high $C_L$) and with a large static margin (forward CG). At the neutral point the gradient vanishes, which is how flight tests locate it. For an example aircraft ($W=22.7$ kN, $S=19$ m², $a=0.08$/deg, $C_{M_0}=0.06$, $dC_{M_{CG}}/d\alpha=-0.0133$/deg, $V_{HT}=0.34$, $dC_{L_T}/d\delta_e=0.04$/deg) at 61 m/s, $\alpha_{req}=6.55°$, $\delta_e=-2.00°$ (2° trailing edge up) and $d\eta/dV=0.21$° per m/s.
 
 The largest up-elevator is needed at the stall, $\alpha=\alpha_{stall}$, and with the CG furthest forward, which is how elevator power sets the forward CG limit. The download the tail then carries must be added to the wing lift, which costs trim drag.
 

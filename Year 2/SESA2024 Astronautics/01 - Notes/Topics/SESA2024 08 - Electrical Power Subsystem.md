@@ -29,17 +29,17 @@ sources: ["02 - Sources/Lectures/Chapter 8/2025 WEEK 7 - Chapter 8 - Power - com
 > - **Common mistakes:** sizing the array for the load alone and forgetting the battery recharge; using the beginning-of-life efficiency without the radiation degradation factor.
 > - **Practise:** [[#800 km LEO spacecraft, 1 kW for two years]] · [[SESA2024 Workbook Ch8 - Power Solutions#Q10. GEO communications spacecraft, 8000 W continuous, 10-year life|Workbook Q10]]
 
-Every electrical component on the spacecraft draws on this subsystem, and losing it, even briefly, can end the mission: without power for thermal control, even for a few minutes, a component may go outside its temperature limits and fail (2025-11-11, ll. 26–60). The job is therefore not only to generate enough energy on average, but to supply it continuously, including through every eclipse, and still to manage it at the end of the mission when the arrays and batteries have degraded.
+Every electrical component on the spacecraft draws on this subsystem, and losing it, even briefly, can end the mission: without power for thermal control, even for a few minutes, a component may go outside its temperature limits and fail. The job is therefore not only to generate enough energy on average, but to supply it continuously, including through every eclipse, and still to manage it at the end of the mission when the arrays and batteries have degraded.
 
 For most of an orbit sunlight falls on the arrays and powers the spacecraft; for part of it the Earth blocks the Sun and the batteries take over, and they then have to be recharged in the next sunlit period. The arrays therefore have to be bigger than the load alone requires, and the batteries bigger than a single eclipse requires, because using only a small fraction of a battery's charge each cycle is what lets it survive tens of thousands of cycles.
 
 ## 1. Power sources
 
-Power sources include solar arrays, batteries, RTGs and fuel cells, plus solar dynamic systems and nuclear reactors. The primary power system is the main source over the mission, usually solar arrays for Earth orbit. Because the arrays are sometimes in shadow or pointed away from the Sun, a secondary system stores energy: almost always a rechargeable battery, though flywheels, compressed gas, superconducting magnets or double-layer capacitors are possible (ll. 101–150).
+Power sources include solar arrays, batteries, RTGs and fuel cells, plus solar dynamic systems and nuclear reactors. The primary power system is the main source over the mission, usually solar arrays for Earth orbit. Because the arrays are sometimes in shadow or pointed away from the Sun, a secondary system stores energy: almost always a rechargeable battery, though flywheels, compressed gas, superconducting magnets or double-layer capacitors are possible.
 
 ### Solar arrays
 
-Arrays convert the solar flux of about 1370 W/m² near the Earth with efficiencies of roughly 10–20 %, so a square metre facing the Sun gives of the order of 100 W (ll. 151–175). The ISS carries about 2500 m² of array. Because sunlight falls off with the square of the distance from the Sun, arrays become impractical in the outer Solar System (ll. 176–230):
+Arrays convert the solar flux of about 1370 W/m² near the Earth with efficiencies of roughly 10–20 %, so a square metre facing the Sun gives of the order of 100 W. The ISS carries about 2500 m² of array. Because sunlight falls off with the square of the distance from the Sun, arrays become impractical in the outer Solar System:
 
 $$
 S(d)=\frac{1370}{d^2}\ \mathrm{W/m^2},\quad d\text{ in AU}.
@@ -49,23 +49,23 @@ With 10 % efficiency, Jupiter at about 5 AU gives $1370/5^2\times0.1\approx5.5\ 
 
 ### Primary batteries and fuel cells
 
-Primary (non-rechargeable) batteries suit short missions and launch vehicles (ll. 230–250). Fuel cells combine hydrogen and oxygen to give power and water, which makes them useful on crewed missions, and reach kilowatts for short durations.
+Primary (non-rechargeable) batteries suit short missions and launch vehicles. Fuel cells combine hydrogen and oxygen to give power and water, which makes them useful on crewed missions, and reach kilowatts for short durations.
 
 ### Solar dynamic systems
 
-A concentrator heats a working fluid that drives a turbine (ll. 251–275). It converts sunlight more efficiently than cells, but it is heavier and mechanically complex, so it is rarely used.
+A concentrator heats a working fluid that drives a turbine. It converts sunlight more efficiently than cells, but it is heavier and mechanically complex, so it is rarely used.
 
 ### Radioisotope thermoelectric generators
 
-An RTG generates electricity by the Seebeck effect: thermocouples between a hot source, the heat of decaying plutonium-238, and a cold sink, which in space is easy to find (ll. 276–350). A typical unit is about 1 m long, 30 cm in diameter, weighs about 40 kg and gives about 200 W. Its output lasts for decades, which is why Voyager 1 and 2 still operate nearly fifty years after launch, but it pumps out heat at every stage from the integration hall to orbit, and its radioactive source is tightly regulated: launching one from Europe is very difficult, and in the USA it needs presidential approval.
+An RTG generates electricity by the Seebeck effect: thermocouples between a hot source, the heat of decaying plutonium-238, and a cold sink, which in space is easy to find. A typical unit is about 1 m long, 30 cm in diameter, weighs about 40 kg and gives about 200 W. Its output lasts for decades, which is why Voyager 1 and 2 still operate nearly fifty years after launch, but it pumps out heat at every stage from the integration hall to orbit, and its radioactive source is tightly regulated: launching one from Europe is very difficult, and in the USA it needs presidential approval.
 
 ### Choosing a source
 
-Power level and mission duration together decide the source (ll. 351–390). Primary batteries cover short, low-power missions; fuel cells short missions at kilowatts; solar arrays and RTGs long missions (the choice between them set by the distance from the Sun); solar dynamic systems long missions at high power; and only nuclear reactors give very high power for very long durations, which regulation rules out.
+Power level and mission duration together decide the source. Primary batteries cover short, low-power missions; fuel cells short missions at kilowatts; solar arrays and RTGs long missions (the choice between them set by the distance from the Sun); solar dynamic systems long missions at high power; and only nuclear reactors give very high power for very long durations, which regulation rules out.
 
 ## 2. Solar cells
 
-A semiconductor has a band gap of 1–2 eV between its valence and conduction bands (pre-recorded lecture, ll. 1–125). A solar cell joins an n-type layer (excess electrons) to a p-type layer (deficit of electrons); a photon with more energy than the band gap frees an electron, and the junction drives a current.
+A semiconductor has a band gap of 1–2 eV between its valence and conduction bands (pre-recorded lecture). A solar cell joins an n-type layer (excess electrons) to a p-type layer (deficit of electrons); a photon with more energy than the band gap frees an electron, and the junction drives a current.
 
 Each cell is tuned to one band gap, which limits its efficiency. A photon below the gap does nothing; a photon above it frees an electron but its excess energy becomes heat. A high gap leaves few photons that qualify; a low gap wastes most of their energy as heat.
 
@@ -75,25 +75,25 @@ $$
 \eta=\frac{P_{out}}{P_{in}}=\frac{P_{out}}{1370\ \mathrm{W/m^2}\times A},
 $$
 
-a little over 10 % for production silicon cells, about 20 % for gallium arsenide, and higher for dual- and triple-junction cells, which stack junctions tuned to different parts of the spectrum (ll. 126–150).
+a little over 10 % for production silicon cells, about 20 % for gallium arsenide, and higher for dual- and triple-junction cells, which stack junctions tuned to different parts of the spectrum.
 
 ### The I-V curve and the maximum power point
 
-A cell's current and voltage depend on the load across it (ll. 51–80). At one extreme is the short-circuit current $I_{sc}$ (no voltage), at the other the open-circuit voltage $V_{oc}$ (no current). Power is $IV$, which peaks near the knee of the curve: the maximum power point, about 14 mW/cm² for a silicon cell. Maximum power point tracking adjusts the load so the array works there. The same mechanism disposes of surplus power: operating off the peak deliberately wastes it.
+A cell's current and voltage depend on the load across it. At one extreme is the short-circuit current $I_{sc}$ (no voltage), at the other the open-circuit voltage $V_{oc}$ (no current). Power is $IV$, which peaks near the knee of the curve: the maximum power point, about 14 mW/cm² for a silicon cell. Maximum power point tracking adjusts the load so the array works there. The same mechanism disposes of surplus power: operating off the peak deliberately wastes it.
 
 ![[ast_solar_cell_iv.png|900]]
 
 ### Temperature, pointing and radiation
 
-A hot cell gives slightly more current but much less voltage, so its power falls; a cold cell gives more power (ll. 80–100). Silicon loses about 0.44 % of its power per °C, gallium arsenide 0.16 % and indium phosphide 0.21 %. Since the cells sit in sunlight, the back of a deployed array is made a good radiator to keep them cool, which a body-mounted array cannot do as well. Coming out of eclipse, the cold cells briefly produce a power surge that the regulator must handle.
+A hot cell gives slightly more current but much less voltage, so its power falls; a cold cell gives more power. Silicon loses about 0.44 % of its power per °C, gallium arsenide 0.16 % and indium phosphide 0.21 %. Since the cells sit in sunlight, the back of a deployed array is made a good radiator to keep them cool, which a body-mounted array cannot do as well. Coming out of eclipse, the cold cells briefly produce a power surge that the regulator must handle.
 
-Power falls roughly as the cosine of the angle between the array normal and the Sun (ll. 101–110):
+Power falls roughly as the cosine of the angle between the array normal and the Sun:
 
 $$
 P(\theta)\approx P(0)\cos\theta.
 $$
 
-Radiation damage reduces both $I_{sc}$ and $V_{oc}$ over the mission (ll. 110–150). The array is therefore sized for end of life (EOL), which means it produces too much power at beginning of life (BOL); the surplus is shed by switching off sections, operating off the maximum power point, or dumping it in a shunt or heater. Cover glass thickness and putting the n-type layer on top improve radiation resistance. The three cell types compare as follows:
+Radiation damage reduces both $I_{sc}$ and $V_{oc}$ over the mission. The array is therefore sized for end of life (EOL), which means it produces too much power at beginning of life (BOL); the surplus is shed by switching off sections, operating off the maximum power point, or dumping it in a shunt or heater. Cover glass thickness and putting the n-type layer on top improve radiation resistance. The three cell types compare as follows:
 
 | Cell | Production efficiency | Power loss per °C | Efficiency left after the reference radiation dose | Relative density and cost |
 |---|---|---|---|---|
@@ -103,11 +103,11 @@ Radiation damage reduces both $I_{sc}$ and $V_{oc}$ over the mission (ll. 110–
 
 ### From cells to arrays
 
-Cells are wired in series to reach the bus voltage and in parallel to reach the current (ll. 176–200). They are mounted, with cover glass and an insulating layer, on honeycomb panels with CFRP or aluminium face sheets, or on tensioned flexible blankets. The wiring gaps mean not all the area generates power, which introduces a packing efficiency $\eta_p$. Two-winged arrays rotating about one axis (Olympus) give symmetric drag and one degree of freedom for Sun tracking; boom-mounted arrays (ERS) give two; spinners such as Meteosat and Intelsat 6 have body-mounted cells (see [[SESA2024 06 - Attitude Control]]; ll. 151–200).
+Cells are wired in series to reach the bus voltage and in parallel to reach the current. They are mounted, with cover glass and an insulating layer, on honeycomb panels with CFRP or aluminium face sheets, or on tensioned flexible blankets. The wiring gaps mean not all the area generates power, which introduces a packing efficiency $\eta_p$. Two-winged arrays rotating about one axis (Olympus) give symmetric drag and one degree of freedom for Sun tracking; boom-mounted arrays (ERS) give two; spinners such as Meteosat and Intelsat 6 have body-mounted cells (see [[SESA2024 06 - Attitude Control]]).
 
 ## 3. Batteries
 
-The terminology (pre-recorded lecture, ll. 201–300): a primary battery is not rechargeable; a secondary battery is, and that is the near-universal choice for spacecraft secondary power. The chemistries in use have moved from nickel–cadmium (compact cells, now obsolete) through nickel–hydrogen (individual pressure vessels, better energy storage but bulky, still on some communications satellites and the ISS) to lithium-ion (first on a commercial platform in 2004, now standard), with lithium polymer under qualification.
+The terminology (pre-recorded lecture): a primary battery is not rechargeable; a secondary battery is, and that is the near-universal choice for spacecraft secondary power. The chemistries in use have moved from nickel–cadmium (compact cells, now obsolete) through nickel–hydrogen (individual pressure vessels, better energy storage but bulky, still on some communications satellites and the ISS) to lithium-ion (first on a commercial platform in 2004, now standard), with lithium polymer under qualification.
 
 | Parameter | Symbol, units | Meaning |
 |---|---|---|
@@ -124,21 +124,21 @@ The terminology (pre-recorded lecture, ll. 201–300): a primary battery is not 
 | Operating temperature | −10 to +40 °C | −10 to +40 °C | 0 to +44 °C |
 | Energy density | lowest | middle | highest |
 
-Temperature matters because a battery taken outside its range can be killed quickly. Cycle life depends above all on the depth of discharge (ll. 301–350): on the NiCd curve, 20 % DoD gives some 20 000–30 000 cycles but 60 % only about 1000. So a long-lived battery is mostly charge that is never used; a phone battery run nearly flat every day lasts only a few hundred cycles. Nickel–hydrogen tolerates a deeper discharge for the same number of cycles. A car's lead–acid battery would last only a few hundred cycles at modest depth.
+Temperature matters because a battery taken outside its range can be killed quickly. Cycle life depends above all on the depth of discharge: on the NiCd curve, 20 % DoD gives some 20 000–30 000 cycles but 60 % only about 1000. So a long-lived battery is mostly charge that is never used; a phone battery run nearly flat every day lasts only a few hundred cycles. Nickel–hydrogen tolerates a deeper discharge for the same number of cycles. A car's lead–acid battery would last only a few hundred cycles at modest depth.
 
 ## 4. The power bus and power budgets
 
-Connecting the array straight to the loads would not work: its output varies with eclipse, temperature and pointing. A regulator on the primary bus gives a steady supply, and a charge/discharge controller protects the battery (2025-11-11, ll. 390–430).
+Connecting the array straight to the loads would not work: its output varies with eclipse, temperature and pointing. A regulator on the primary bus gives a steady supply, and a charge/discharge controller protects the battery.
 
-Each mission phase has its own power requirement (ll. 431–500). In the SOHO budget (slides), service-module and payload demands are set for pre-launch, ascent, parking orbit, transfer orbit, cruise and on-station, each with a 15 % margin added (87.5 W becomes 101 W); the payload draws nothing until cruise. The power subsystem must meet every phase.
+Each mission phase has its own power requirement. In the SOHO budget, service-module and payload demands are set for pre-launch, ascent, parking orbit, transfer orbit, cruise and on-station, each with a 15 % margin added (87.5 W becomes 101 W); the payload draws nothing until cruise. The power subsystem must meet every phase.
 
 ## 5. Sizing a battery and an array
 
-The order matters (ll. 501–550). The array must power the spacecraft in sunlight and also recharge the battery, so it cannot be sized until the battery is known; the battery cannot be sized until the eclipse and the number of cycles are known; and those come from the orbit. So: orbit, then battery, then array, all at end of life.
+The order matters. The array must power the spacecraft in sunlight and also recharge the battery, so it cannot be sized until the battery is known; the battery cannot be sized until the eclipse and the number of cycles are known; and those come from the orbit. So: orbit, then battery, then array, all at end of life.
 
 ### Worst-case eclipse
 
-For a circular orbit of altitude $h$, the worst case is the Sun in the orbit plane, because then the orbit passes through the middle of the shadow. Treat the Earth's shadow as a cylinder of radius $R_E$ extending away from the Sun, which ignores the small spread of the penumbra (ll. 601–725).
+For a circular orbit of altitude $h$, the worst case is the Sun in the orbit plane, because then the orbit passes through the middle of the shadow. Treat the Earth's shadow as a cylinder of radius $R_E$ extending away from the Sun, which ignores the small spread of the penumbra.
 
 ![[ast_eclipse_geometry.png|760]]
 
@@ -230,13 +230,13 @@ $$
 
 ## 6. Impact on the spacecraft
 
-The power subsystem interfaces with every electrical subsystem and the payload (slide 39). The mission fixes the primary source (Sun distance, duration, power level). Pointing the arrays at the Sun shapes the configuration and the ACS: wings and drives on a three-axis spacecraft, body-mounted cells on a spinner. Mass is affected as well: in the example below the battery alone is 67 kg for a 1 kW spacecraft.
+The power subsystem interfaces with every electrical subsystem and the payload. The mission fixes the primary source (Sun distance, duration, power level). Pointing the arrays at the Sun shapes the configuration and the ACS: wings and drives on a three-axis spacecraft, body-mounted cells on a spinner. Mass is affected as well: in the example below the battery alone is 67 kg for a 1 kW spacecraft.
 
 ## Worked examples
 
 ### 800 km LEO spacecraft, 1 kW for two years
 
-The battery and array are to be estimated for a spacecraft in an 800 km circular orbit needing 1 kW for payload and subsystems at the end of a two-year life (slides 30–38). Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$.
+The battery and array are to be estimated for a spacecraft in an 800 km circular orbit needing 1 kW for payload and subsystems at the end of a two-year life. Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$.
 
 Orbit. $r=7178$ km, so
 
@@ -258,7 +258,7 @@ $$
 N=\frac{2\times365.25\times24}{1.681}=10\,428\ \text{cycles}
 $$
 
-(10 420 on the slide). From the NiCd cycle-life curve, take DoD = 30 % with margin.
+(10 420 with rounding). From the NiCd cycle-life curve, take DoD = 30 % with margin.
 
 Battery: bus 28 V, NiCd cells of 1.25 V, energy density 30 W h/kg at 100 % discharge. $N_c=28/1.25=22.4$, so choose 22 cells and $V_B=22\times1.25=27.5$ V. With the eclipse rounded to 0.6 h,
 

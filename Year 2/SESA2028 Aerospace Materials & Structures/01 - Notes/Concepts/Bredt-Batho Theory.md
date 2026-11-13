@@ -10,7 +10,7 @@ parent: ["[[SESA2028 S4 - Torsion of Thin-Walled Sections]]"]
 
 # Bredt-Batho Theory
 
-The theory of torsion of thin-walled closed sections (single cell): the shear flow is constant round the wall, equals $T/2A_m$, and gives the torsion constant $J$. Worked use is in [[Bredt-Batho Torsion]].
+The theory of torsion of thin-walled closed sections (single cell): the shear flow is constant round the wall, equals $T/2A_m$, and gives the torsion constant $J$.
 
 ## 1. Shear flow is constant round the cell
 

@@ -29,13 +29,13 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L4–L5)", "02 - Sour
 > - **Common mistakes:** reading the iteration superscript $n$ as a power; treating a small residual as proof of an accurate answer.
 > - **Practise:** [[#First sweeps by hand]] · [[SESA2029 CFD Worked Examples#Q4: Steady heat equation: set-up and first iterations|CFD worked examples Q4]]
 
-The model problem is the wall of a re-entry capsule: very hot outside, and to be kept at a sensible temperature inside for electronics or crew (L4 slide 3). It is simple enough to have an exact solution, which makes it ideal for testing numerical methods, and its control-volume derivation carries over to the Euler and Navier–Stokes equations.
+The model problem is the wall of a re-entry capsule: very hot outside, and to be kept at a sensible temperature inside for electronics or crew. It is simple enough to have an exact solution, which makes it ideal for testing numerical methods, and its control-volume derivation carries over to the Euler and Navier–Stokes equations.
 
 The physical picture of an iterative method is information spreading. With the outer wall at 1200 K and everything else at 300 K, each interior point repeatedly takes the average of its neighbours. On the first sweep only the point next to the hot wall changes; on the next, its neighbour starts to warm. The influence of the boundary creeps across the grid one point per sweep until the whole profile settles into the straight line that conduction requires. Better methods make that information travel faster, and the factor by which they shrink the error on each sweep is what separates them.
 
 ## 1. The heat equation from a control volume
 
-A slab of thickness $\delta x$ and unit length in $y$ and $z$ (L4 slide 4) receives a heat flux $\dot q$ (W/m², heat per unit area per unit time) on its left face. One Taylor term gives the flux leaving on the right, $\dot q+\frac{\partial\dot q}{\partial x}\delta x$, which is enough as $\delta x\to0$. Energy conservation says the rate of change of internal energy in the slab equals heat in minus heat out. With $e$ the internal energy per unit mass (aerothermodynamics keeps $u$ for velocity), the energy in the slab is $\rho e\,\delta x$ per unit area, so
+A slab of thickness $\delta x$ and unit length in $y$ and $z$ receives a heat flux $\dot q$ (W/m², heat per unit area per unit time) on its left face. One Taylor term gives the flux leaving on the right, $\dot q+\frac{\partial\dot q}{\partial x}\delta x$, which is enough as $\delta x\to0$. Energy conservation says the rate of change of internal energy in the slab equals heat in minus heat out. With $e$ the internal energy per unit mass (aerothermodynamics keeps $u$ for velocity), the energy in the slab is $\rho e\,\delta x$ per unit area, so
 
 $$
 \frac{\partial(\rho e)}{\partial t}\delta x=\dot q-\left(\dot q+\frac{\partial\dot q}{\partial x}\delta x\right).
@@ -75,7 +75,7 @@ where $\alpha$, in m²/s, is the thermal diffusivity. The variables depend on bo
 
 ## 2. The steady problem and its discretisation
 
-At steady state the time derivative vanishes, leaving an ordinary differential equation (L4 slide 5):
+At steady state the time derivative vanishes, leaving an ordinary differential equation:
 
 $$
 \frac{\mathrm d^2T}{\mathrm dx^2}=0,\quad0<x<1,\qquad T(0)=1200\ \mathrm K,\quad T(1)=300\ \mathrm K.
@@ -99,7 +99,7 @@ $$
 T_{j-1}-2T_j+T_{j+1}=0,\qquad j=1,\dots,7.
 $$
 
-That step from a continuous equation to a set of algebraic ones is discretisation. With the two boundary rows $T_0=1200$ and $T_8=300$ there are nine equations for nine unknowns (L4 slide 6):
+That step from a continuous equation to a set of algebraic ones is discretisation. With the two boundary rows $T_0=1200$ and $T_8=300$ there are nine equations for nine unknowns:
 
 $$
 \begin{bmatrix}
@@ -124,7 +124,7 @@ The boundary rows could be substituted into the first and last interior rows to 
 
 ## 3. Direct solution by Gaussian elimination
 
-A spreadsheet can invert the matrix and multiply by the right-hand side, but inverting a matrix is expensive and is never the way to solve a system. The direct method is Gaussian elimination with back substitution (L4 slides 7–8). Forward elimination turns $\mathbf A$ into an upper triangular matrix $\mathbf U$: to clear $A_{21}$, subtract $A_{21}/A_{11}$ times row 1 from row 2, apply the same operation to the right-hand side, treat $A_{31},\dots,A_{n1}$ the same way, then repeat on the next column. Back substitution solves the last equation, which has a single unknown, and works upwards.
+A spreadsheet can invert the matrix and multiply by the right-hand side, but inverting a matrix is expensive and is never the way to solve a system. The direct method is Gaussian elimination with back substitution. Forward elimination turns $\mathbf A$ into an upper triangular matrix $\mathbf U$: to clear $A_{21}$, subtract $A_{21}/A_{11}$ times row 1 from row 2, apply the same operation to the right-hand side, treat $A_{31},\dots,A_{n1}$ the same way, then repeat on the next column. Back substitution solves the last equation, which has a single unknown, and works upwards.
 
 On the $7\times7$ interior system, substituting $T_0=1200$ and $T_8=300$ moves them to the right-hand side:
 
@@ -160,7 +160,7 @@ $$
 
 Back substitution then climbs the rows: $T_6=(-200-T_7)/(-\tfrac76)=525$, $T_5=(-240-525)/(-\tfrac65)=637.5$, and so on up to $T_1=1087.5$ K, every value on the exact line.
 
-The cost of elimination on a full matrix grows roughly as the cube of the number of unknowns (L4 slide 9). The coursework grids already have up to half a million cells, and a $500\,000\times500\,000$ system is out of reach in both time and memory. CFD therefore uses iterative methods, which start from a guess and improve it.
+The cost of elimination on a full matrix grows roughly as the cube of the number of unknowns. The coursework grids already have up to half a million cells, and a $500\,000\times500\,000$ system is out of reach in both time and memory. CFD therefore uses iterative methods, which start from a guess and improve it.
 
 ## 4. Iterative methods
 
@@ -172,7 +172,7 @@ $$
 2T_j=T_{j-1}+T_{j+1},
 $$
 
-and updates it from the values of the previous sweep (L4 slide 9):
+and updates it from the values of the previous sweep:
 
 $$
 T_j^{n+1}=\tfrac12\left(T_{j-1}^n+T_{j+1}^n\right).
@@ -196,7 +196,7 @@ $$
 4T_{i,j}=T_{i-1,j}+T_{i+1,j}+T_{i,j-1}+T_{i,j+1},
 $$
 
-so the update is the average of the four neighbours. In 3D the same steps give the average of six: up, down, left, right, front and back. A spreadsheet with iterative calculation enabled solves the 2D problem directly on a grid of coloured cells (L4 slide 9, example (c)).
+so the update is the average of the four neighbours. In 3D the same steps give the average of six: up, down, left, right, front and back. A spreadsheet with iterative calculation enabled solves the 2D problem directly on a grid of coloured cells.
 
 ![[dam_laplace_2d.png|900]]
 
@@ -229,7 +229,7 @@ More advanced solvers are packaged in libraries. Steepest descent moves along th
 
 ## 5. Residual versus error
 
-The residual measures how well the current values satisfy the discrete equations (L4 slide 10):
+The residual measures how well the current values satisfy the discrete equations:
 
 $$
 R^n=\sqrt{\sum_j\left(T^n_{j-1}-2T^n_j+T^n_{j+1}\right)^2}.
@@ -239,7 +239,7 @@ It should fall to zero when the iteration has converged. The error measures the 
 
 The two can also disagree during the iteration. After 50 Jacobi sweeps on the capsule wall, $R=4.65$ K while the largest error is 10.4 K at the midpoint; after 50 Gauss–Seidel sweeps they are 0.057 K and 0.17 K. The residual understates the remaining error by a factor of two or three here. The residual is the discrete second difference of the error, and the slowly converging error is a smooth hump whose second difference is small, so a small residual can hide a sizeable error.
 
-Residual plots are the first thing a CFD code shows, and for real problems they fall and then flatten instead of reaching zero. What level is acceptable depends on the quantity of interest and on how accurately it is needed (L4 slide 10): watch how the lift, drag, pitching moment or heat flux settle as the iterations proceed. A sensitive pitching moment may need a much lower residual than the lift.
+Residual plots are the first thing a CFD code shows, and for real problems they fall and then flatten instead of reaching zero. What level is acceptable depends on the quantity of interest and on how accurately it is needed: watch how the lift, drag, pitching moment or heat flux settle as the iterations proceed. A sensitive pitching moment may need a much lower residual than the lift.
 
 ## Worked examples
 

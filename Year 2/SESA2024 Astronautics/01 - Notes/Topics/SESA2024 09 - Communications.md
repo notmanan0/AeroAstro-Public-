@@ -29,13 +29,13 @@ sources: ["02 - Sources/Lectures/Chapter 9/2025 WEEK 8 - Chapter 9 - Communicati
 > - **Common mistakes:** slant range in km with wavelength in m in the free-space loss; adding a decibel quantity to a linear one.
 > - **Practise:** [[#GEO TV broadcast satellite]] · [[#Voyager at Saturn (2017/18 B3)]]
 
-There is no point putting an instrument in space if its data cannot be brought home. The communications subsystem receives operating commands from the ground and downlinks the payload data and the telemetry describing the spacecraft's health (2025-11-18, ll. 51–75). For some missions, such as communications, navigation and data-relay satellites, it is the payload.
+There is no point putting an instrument in space if its data cannot be brought home. The communications subsystem receives operating commands from the ground and downlinks the payload data and the telemetry describing the spacecraft's health. For some missions, such as communications, navigation and data-relay satellites, it is the payload.
 
 A transmitter spreads power over a sphere that grows with the square of the distance, so very little arrives. A dish concentrates the power into a narrow beam, at the cost of having to be pointed. The receiver must pick a weak signal out of electromagnetic noise from every warm object it sees, and the signal is usable only if enough energy arrives in each bit to tell a one from a zero reliably. Voyager, some 15–16 billion miles away, is the extreme case: its signal takes nearly a day to arrive and is fantastically weak, yet it is still received.
 
 ## 1. Decibels
 
-Communications calculations multiply and divide quantities spanning many orders of magnitude, so they are done in decibels, a logarithmic ratio (2025-11-18, ll. 76–175). For a power ratio,
+Communications calculations multiply and divide quantities spanning many orders of magnitude, so they are done in decibels, a logarithmic ratio. For a power ratio,
 
 $$
 x_{dB}=10\log_{10}\frac{P}{P_{ref}}.
@@ -47,7 +47,7 @@ $$
 P=P_{ref}\times10^{x_{dB}/10}.
 $$
 
-Products become sums and quotients become differences, which is the reason for using them: $10\log(AB/C)=10\log A+10\log B-10\log C$. A practice conversion (l. 160): with $x_{dB}=42.3$ dBW,
+Products become sums and quotients become differences, which is the reason for using them: $10\log(AB/C)=10\log A+10\log B-10\log C$. A practice conversion: with $x_{dB}=42.3$ dBW,
 
 $$
 P=1\ \mathrm W\times10^{42.3/10}=10^{4.23}\ \mathrm W=16\,980\ \mathrm W=16.98\ \mathrm{kW}.
@@ -57,17 +57,17 @@ Two values to remember: a factor of 2 is $10\log2=3.01$ dB, and a factor of 10 i
 
 ## 2. The atmospheric window and frequency allocation
 
-Signals travel at the speed of light, $3\times10^8$ m/s, which still means long delays at interplanetary distances (ll. 176–200).
+Signals travel at the speed of light, $3\times10^8$ m/s, which still means long delays at interplanetary distances.
 
-The atmosphere limits which frequencies can be used (ll. 200–250). At low frequencies electrons in the ionosphere absorb and reflect; at high frequencies water vapour, oxygen and rain absorb. The usable window runs from about 0.1 to about 30 GHz, and losses inside it still depend on the weather and on the path length through the atmosphere, which is much longer at a $15^\circ$ elevation than straight up. The window is a finite resource, so the International Telecommunication Union (ITU) allocates bands for fixed and mobile communications, navigation, space research, and tracking, telemetry and command, now to three decimal places in some bands (ll. 251–300). Operators apply in advance, like planning permission, and satellites close together in the geostationary ring must not use frequencies that interfere.
+The atmosphere limits which frequencies can be used. At low frequencies electrons in the ionosphere absorb and reflect; at high frequencies water vapour, oxygen and rain absorb. The usable window runs from about 0.1 to about 30 GHz, and losses inside it still depend on the weather and on the path length through the atmosphere, which is much longer at a $15^\circ$ elevation than straight up. The window is a finite resource, so the International Telecommunication Union (ITU) allocates bands for fixed and mobile communications, navigation, space research, and tracking, telemetry and command, now to three decimal places in some bands. Operators apply in advance, like planning permission, and satellites close together in the geostationary ring must not use frequencies that interfere.
 
 ## 3. Encoding, modulation and bandwidth
 
-Space communications are digital, so link quality is measured by the bit error rate (BER), the fraction of bits received wrongly; some errors can be corrected in software (ll. 301–330).
+Space communications are digital, so link quality is measured by the bit error rate (BER), the fraction of bits received wrongly; some errors can be corrected in software.
 
 ### Encoding: pulse code modulation
 
-An analogue signal, such as a voltage from a microphone, is sampled at regular intervals and each sample is quantised into one of $2^n$ levels, written as an $n$-bit word (ll. 326–420). The Nyquist criterion says the sampling frequency must be at least twice the highest frequency of interest. Speech needs frequencies up to about 4 kHz (hearing tests use 0.5, 1, 2 and 4 kHz), so
+An analogue signal, such as a voltage from a microphone, is sampled at regular intervals and each sample is quantised into one of $2^n$ levels, written as an $n$-bit word. The Nyquist criterion says the sampling frequency must be at least twice the highest frequency of interest. Speech needs frequencies up to about 4 kHz (hearing tests use 0.5, 1, 2 and 4 kHz), so
 
 $$
 f_s=2\times4\ \mathrm{kHz}=8\ \mathrm{kHz},
@@ -79,7 +79,7 @@ for one telephone channel with 8-bit (256-level) samples. Despite its name, puls
 
 ### Modulation: shift keying
 
-The bits are carried by changing one property of a carrier wave (ll. 426–525): amplitude (amplitude shift keying), frequency (frequency shift keying) or phase (phase shift keying, PSK). All three are used, but PSK dominates. Amplitude keying means the transmitted power switches on and off, and frequency keying needs more of the tightly allocated spectrum; phase keying keeps both power and frequency constant and just inverts the phase when the bit changes.
+The bits are carried by changing one property of a carrier wave: amplitude (amplitude shift keying), frequency (frequency shift keying) or phase (phase shift keying, PSK). All three are used, but PSK dominates. Amplitude keying means the transmitted power switches on and off, and frequency keying needs more of the tightly allocated spectrum; phase keying keeps both power and frequency constant and just inverts the phase when the bit changes.
 
 ### Bandwidth
 
@@ -89,11 +89,11 @@ $$
 C=B\log_2\left(1+\frac SN\right),
 $$
 
-with the bandwidth, not the carrier frequency, as a direct multiplier (ll. 526–545).
+with the bandwidth, not the carrier frequency, as a direct multiplier.
 
 ## 4. Noise
 
-Noise is any unwanted interference in the signal, and the receiver must recover the signal from it (ll. 526–575). Sources include lightning, the Sun, the Earth, galactic sources, artificial sources such as vehicles and machinery, the spacecraft's own electronics, and atmospheric emission and scattering. In an exam answer (2017/18 B3), emission and scattering are the atmospheric terms to give rather than absorption, since the frequency is chosen inside the window where absorption is small (2026-01-06, ll. 126–200).
+Noise is any unwanted interference in the signal, and the receiver must recover the signal from it. Sources include lightning, the Sun, the Earth, galactic sources, artificial sources such as vehicles and machinery, the spacecraft's own electronics, and atmospheric emission and scattering. In an exam answer (2017/18 B3), emission and scattering are the atmospheric terms to give rather than absorption, since the frequency is chosen inside the window where absorption is small.
 
 Noise is characterised by an equivalent noise temperature $T$. The noise power in bandwidth $B$ and the noise density (per hertz) are
 
@@ -107,9 +107,9 @@ with Boltzmann's constant $k=1.38\times10^{-23}$ J/K, so $10\log k=-228.6$ dB.
 
 ## 5. Antenna gain and beamwidth
 
-An isotropic antenna radiates equally in all directions; its gain is 1, or 0 dB (2025-11-18, ll. 576–625). A high-gain antenna concentrates the power, like a torch bulb with a parabolic mirror. Its gain is the ratio of the peak power flux to that of an isotropic radiator with the same transmitted power. The beam has a peak on the boresight and falls away; the beamwidth $\theta$ is measured between the half-power points, 3 dB below the peak.
+An isotropic antenna radiates equally in all directions; its gain is 1, or 0 dB. A high-gain antenna concentrates the power, like a torch bulb with a parabolic mirror. Its gain is the ratio of the peak power flux to that of an isotropic radiator with the same transmitted power. The beam has a peak on the boresight and falls away; the beamwidth $\theta$ is measured between the half-power points, 3 dB below the peak.
 
-For a circular parabolic dish of diameter $D$ at wavelength $\lambda$, the empirical relations are (2025-11-20, ll. 26–75)
+For a circular parabolic dish of diameter $D$ at wavelength $\lambda$, the empirical relations are
 
 $$
 \theta_{3dB}=\frac{72\lambda}{D}\ \text{degrees},
@@ -137,7 +137,7 @@ Examples at C band, 4 GHz ($\lambda=0.075$ m):
 
 ## 6. The link budget equation
 
-The link budget equation is derived from the power flux of an isotropic radiator (pre-recorded lecture, ll. 1–100). The downlink matters most for design: the ground station can be given almost unlimited power, the spacecraft cannot (ll. 1–25).
+The link budget equation is derived from the power flux of an isotropic radiator (pre-recorded lecture). The downlink matters most for design: the ground station can be given almost unlimited power, the spacecraft cannot.
 
 An isotropic transmitter of power $P_T$ spreads it over a sphere of radius $\rho$, the slant range, so the power flux at the receiver is
 
@@ -181,13 +181,13 @@ $$
 \boxed{10\log\frac{C}{N_0}=10\log(P_TG_T)+10\log\frac{G_R}{T_R}-20\log\frac{4\pi\rho}{\lambda}-10\log L_a-10\log k}
 $$
 
-with $-10\log k=+228.6$ dB. Term by term (ll. 76–125): the carrier-to-noise-density ratio relates to the BER; $P_TG_T$ is the equivalent isotropic radiated power (EIRP); $G_R/T_R$ is the ground station's figure of merit, its sensitivity; then the free-space loss, the additional losses and the constant.
+with $-10\log k=+228.6$ dB. Term by term: the carrier-to-noise-density ratio relates to the BER; $P_TG_T$ is the equivalent isotropic radiated power (EIRP); $G_R/T_R$ is the ground station's figure of merit, its sensitivity; then the free-space loss, the additional losses and the constant.
 
-The losses are fixed by geometry and atmosphere and the figure of merit by the ground station, so on the spacecraft the designer controls only the EIRP. It is the power an isotropic radiator would need to give the same flux at the receiver. The same EIRP can come from high power and low gain or low power and high gain, and that is the power–gain trade-off (ll. 101–130; 2026-01-06, ll. 251–350). A bigger dish saves power but adds mass, may not fit in the fairing without a deployment mechanism (and its risk), may shadow arrays or block payload views, and narrows the beam, tightening the ACS pointing requirement.
+The losses are fixed by geometry and atmosphere and the figure of merit by the ground station, so on the spacecraft the designer controls only the EIRP. It is the power an isotropic radiator would need to give the same flux at the receiver. The same EIRP can come from high power and low gain or low power and high gain, and that is the power–gain trade-off. A bigger dish saves power but adds mass, may not fit in the fairing without a deployment mechanism (and its risk), may shadow arrays or block payload views, and narrows the beam, tightening the ACS pointing requirement.
 
 ## 7. From bit error rate to data rate
 
-If bits arrive at rate $R_b$, each lasts $T_b=1/R_b$, and the energy per bit is $E_b=CT_b=C/R_b$ (pre-recorded lecture, ll. 126–155). Dividing by $N_0$:
+If bits arrive at rate $R_b$, each lasts $T_b=1/R_b$, and the energy per bit is $E_b=CT_b=C/R_b$ (pre-recorded lecture). Dividing by $N_0$:
 
 $$
 \frac{C}{N_0}=\frac{E_b}{N_0}R_b
@@ -205,7 +205,7 @@ Constants: $c=3\times10^8$ m/s and $10\log k=-228.6$ dB.
 
 ### GEO TV broadcast satellite
 
-An old past-paper question (pre-recorded lecture, ll. 155–290): a GEO satellite broadcasts TV at 92 Mbit/s to users at a slant range of 38 400 km, at C band, 4 GHz. A user's dish is 0.4 m in diameter with a system noise temperature of 150 K. A BER of $10^{-6}$ is required, and there are 5 dB of additional losses. Estimate the satellite EIRP and, if the spacecraft dish is 2 m and the transponders are 50 % efficient, the transponder electrical power.
+An old past-paper question (pre-recorded lecture): a GEO satellite broadcasts TV at 92 Mbit/s to users at a slant range of 38 400 km, at C band, 4 GHz. A user's dish is 0.4 m in diameter with a system noise temperature of 150 K. A BER of $10^{-6}$ is required, and there are 5 dB of additional losses. Estimate the satellite EIRP and, if the spacecraft dish is 2 m and the transponders are 50 % efficient, the transponder electrical power.
 
 $\lambda=3\times10^8/4\times10^9=0.075$ m. Term by term:
 
@@ -251,14 +251,14 @@ $$
 P_T=10^{2.477}=300\ \mathrm W,
 $$
 
-and at 50 % efficiency the transponders draw 600 W. The slant range must be in metres to match the wavelength (ll. 251–260).
+and at 50 % efficiency the transponders draw 600 W. The slant range must be in metres to match the wavelength.
 
 > [!check] Closing the budget
 > Putting the answer back in, $61.36+0.85-196.17-5+228.6=89.64$ dB, the required $C/N_0$. A slant range left in kilometres would cut the free-space loss by exactly $20\log1000=60$ dB and give an EIRP of 1.36 dBW, about 1.4 W, which is far too little to reach a 0.4 m dish from GEO.
 
 ### Voyager at Saturn (2017/18 B3)
 
-The first part of this question (2026-01-06, ll. 201–520) compares 2, 3 and 4 m dishes at X band, 8.5 GHz, with efficiency 0.5. $\lambda=0.03529$ m and $G=0.5(\pi D/\lambda)^2=3962.5D^2$:
+The first part of this question compares 2, 3 and 4 m dishes at X band, 8.5 GHz, with efficiency 0.5. $\lambda=0.03529$ m and $G=0.5(\pi D/\lambda)^2=3962.5D^2$:
 
 | Dish | $G$ | dB | $\theta_{3dB}$ |
 |---|---|---|---|
@@ -298,7 +298,7 @@ $$
 t=\frac{0.5\times10^9}{1.44\times10^4}=3.47\times10^4\ \mathrm s=9.6\ \mathrm h.
 $$
 
-The values on the slide, 14 421 bit/s and 9.631 h, use 1 AU = $1.5\times10^8$ km, with the small remaining difference most likely from rounding the intermediate dB values; carried unrounded, the same inputs give 14 437 bit/s and 9.62 h, and with 1 AU = $1.496\times10^8$ km, 14 510 bit/s and 9.57 h. A 0.01 dB rounding is a 0.2 % change, so these differences are all rounding.
+The rounded reference values, 14 421 bit/s and 9.631 h, use 1 AU = $1.5\times10^8$ km, with the small remaining difference most likely from rounding the intermediate dB values; carried unrounded, the same inputs give 14 437 bit/s and 9.62 h, and with 1 AU = $1.496\times10^8$ km, 14 510 bit/s and 9.57 h. A 0.01 dB rounding is a 0.2 % change, so these differences are all rounding.
 
 > [!check] Why the data rate is so low
 > The free-space loss at 9.5 AU is $20\log(9.5\times1.5\times10^{8}/3.84\times10^{4})=91.4$ dB more than at GEO range for the same wavelength. The 70 m DSN dish ($G_R/T_R=58.9$ dB against 0.85 dB for the TV dish) recovers 58 dB of that, and the rest shows up as a data rate of kilobits rather than megabits per second.

@@ -18,7 +18,7 @@ At the end of a fibre there is nothing to carry stress, so the fibre stress ther
 
 ![[materials_critical_fibre_length.png|800]]
 
-At exactly $l_c$ the stress profile is a triangle and the average stress is only half the peak. A shorter fibre can never be broken: it pulls out of the matrix instead. A longer fibre carries $\sigma_f^*$ over its middle, with an average of $\sigma_f^*(1-l_c/2l)$, and once it is about fifteen times $l_c$ the end losses are only a few per cent and the [[Rule of Mixtures]] can be used. For a 7 μm carbon fibre of strength 3.5 GPa with an interface carrying 50 MPa, $l_c$ is about 0.25 mm. The practical catch is alignment: chopped fibres are cheap and flow easily into moulds, but they cannot be aligned as well as continuous ones, so short-fibre composites fall short of the rule-of-mixtures prediction even when the fibres are long enough.
+At exactly $l_c$ the stress profile is a triangle and the average stress is only half the peak. A shorter fibre can never be broken: it pulls out of the matrix instead. A longer fibre carries $\sigma_f^*$ over its middle, with an average of $\sigma_f^*(1-l_c/2l)$, and once it is about fifteen times $l_c$ the end losses are only a few per cent and the [[Rule of Mixtures]] can be used. For a 7 μm carbon fibre of strength 3.5 GPa with an interface carrying 50 MPa, $l_c$ is about 0.25 mm. Alignment is the practical limit: chopped fibres are cheap and flow easily into moulds, but they cannot be aligned as well as continuous ones, so short-fibre composites fall short of the rule-of-mixtures prediction even when the fibres are long enough.
 
 ## Related
 

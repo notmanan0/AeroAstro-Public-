@@ -41,7 +41,7 @@ Physically, a mass on a spring with a dashpot, a pendulum with air resistance, a
 
 ---
 
-## 1. Operators and linear operators (James §10.8.1)
+## 1. Operators and linear operators
 
 An **operator** maps a function to another function. Write $\mathrm D=\dfrac{\mathrm d}{\mathrm dt}$, so $\mathrm D^2=\dfrac{\mathrm d^2}{\mathrm dt^2}$ and so on. A **linear differential operator** of order $n$ is
 
@@ -108,7 +108,7 @@ $$
 
 so the equation is linear even though its coefficients vary with $t$. Exercise 46(a) asks for the operator of $\dot x+t^2x=0$, which is $\mathrm L=\mathrm D+t^2$. Exercise 49(c), $\ddot x+(\sin t)\dot x=(t+\cos t)x$, needs every $x$ term moved to the left first, giving $\mathrm L=\mathrm D^2+(\sin t)\mathrm D-(t+\cos t)$. Specimen Test 13 Q1, $\ddot x+3\dot x+4x=0$, has $\mathrm L=\mathrm D^2+3\mathrm D+4$.
 
-## 2. Superposition and the structure of the general solution (James §10.8.2)
+## 2. Superposition and the structure of the general solution
 
 ### The linearity principle
 
@@ -231,7 +231,7 @@ $$
 
 so a forcing that is a sum of terms of different types is handled one term at a time and the particular integrals are added ([[#Sums of forcing terms (Example 10.43, Exercise 63(h))]]).
 
-## 3. The complementary function of any order (James §10.9.1)
+## 3. The complementary function of any order
 
 From here on the coefficients are real constants: $\mathrm L=a_n\mathrm D^n+\dots+a_1\mathrm D+a_0$.
 
@@ -376,7 +376,7 @@ Examples 10.34–10.36 repeat the three second-order cases from Module 06:
 | 10.35 | $2\ddot x-3\dot x+5x=0$ | $\frac34\pm\mathrm j\frac{\sqrt{31}}4$ | $e^{3t/4}\big(A\cos\frac{\sqrt{31}}4t+B\sin\frac{\sqrt{31}}4t\big)$ |
 | 10.36 | $\ddot x+6\dot x+9x=0$, $x(0)=1$, $\dot x(0)=2$ | $-3$ (double) | $(1+5t)e^{-3t}$ |
 
-## 4. Particular integrals by undetermined coefficients (James §10.9.3)
+## 4. Particular integrals by undetermined coefficients
 
 ### Why the trial functions work
 
@@ -718,7 +718,7 @@ $$
 
 The solution is unique because $\sinh(k\pi/4)\neq0$ for $k>0$. A BVP need not have a unique solution. For $\ddot x+x=0$ with $x(0)=0$ and $x(\pi)=0$, the solution $A\cos t+B\sin t$ needs $A=0$, and then $B\sin\pi=0$ holds for every $B$, so there are infinitely many solutions; with $x(\pi)=1$ instead there are none. That behaviour is the starting point of the eigenvalue problems in [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems]].
 
-## 7. Free oscillations of damped systems (James §10.10.1–10.10.2)
+## 7. Free oscillations of damped systems
 
 ### Standard form, natural frequency and damping parameter
 
@@ -859,7 +859,7 @@ $$
 
 With $\zeta\approx0.3$, three overshoots are visible, about one and a half cycles. The decay time is $T=1/(\zeta\omega)=2M/k=1.6\ \mathrm s$. Falling below $1^\circ$ from $20^\circ$ means falling to 5% of the initial amplitude, which takes $3T=4.8\ \mathrm s$.
 
-## 8. Forced oscillations: transient and steady state (James §10.10.3–10.10.4)
+## 8. Forced oscillations: transient and steady state
 
 ### The steady-state solution
 
@@ -1035,7 +1035,7 @@ and a sinusoidal input $V_i=V\cos\Omega t$ is the forced problem above with $F=V
 
 ### Core
 
-- [ ] Exercises 62(b), 63(a),(b) (Module 13 work scheme, item 3): particular integrals for polynomial, trigonometric and exponential forcing. → [[#4. Particular integrals by undetermined coefficients (James §10.9.3)]] · [[MATH1054 M13 Solutions - Differential Equations III#Exercise 63|solution]] (62(b) under [[MATH1054 M13 Solutions - Differential Equations III#Part B: Assigned exercises|Part B]])
+- [ ] Exercises 62(b), 63(a),(b) (Module 13 work scheme, item 3): particular integrals for polynomial, trigonometric and exponential forcing. → [[#4. Particular integrals by undetermined coefficients]] · [[MATH1054 M13 Solutions - Differential Equations III#Exercise 63|solution]] (62(b) under [[MATH1054 M13 Solutions - Differential Equations III#Part B: Assigned exercises|Part B]])
 - [ ] Exercise 63(h) (Module 13 work scheme, item 4): a sum of forcing terms. → [[#Sums of forcing terms (Example 10.43, Exercise 63(h))]] · [[MATH1054 M13 Solutions - Differential Equations III#Exercise 63|solution]]
 - [ ] Exercise 63(j) (Module 13 work scheme, item 5): forcing at the natural frequency. → [[#Undamped resonance (Exercise 63(j))]] · [[MATH1054 M13 Solutions - Differential Equations III#Exercise 63|solution]]
 - [ ] Exercise 21(a) (Module 13 work scheme, item 6): an initial-value problem applied to CF + PI. → [[#An initial-value problem (Exercise 21(a))]] · [[MATH1054 M13 Solutions - Differential Equations III#Part B: Assigned exercises|solution]]

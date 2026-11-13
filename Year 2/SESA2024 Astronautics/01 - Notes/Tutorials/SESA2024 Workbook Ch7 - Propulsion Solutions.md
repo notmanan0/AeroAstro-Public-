@@ -45,7 +45,7 @@ Why it matters: substitute into the rocket equation, $\Delta V = g_0I_{sp}\ln(M_
 1. Liquid N₂H₄ is fed under pressure. When firing is commanded, an electrically actuated valve opens.
 2. Propellant passes through an injector onto a catalytic bed (platinum/iridium on a large-area aluminium-oxide substrate).
 3. The exothermic decomposition produces hot N₂, NH₃ and H₂ gas.
-4. The gas expands through a nozzle, giving thrust with $I_{sp} \approx 230$ s. The slides give about 240 s, or 290 s with power augmentation, and thrust of 1–10 N.
+4. The gas expands through a nozzle, giving thrust with $I_{sp} \approx 230$ s. Typical quoted values are about 240 s, or 290 s with power augmentation, and thrust of 1–10 N.
 
 ## Q3. Two sources of thrust
 

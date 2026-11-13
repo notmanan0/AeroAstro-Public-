@@ -29,7 +29,7 @@ Sweep differs from one chord line to another on a tapered wing: the line a fract
 
 ![[mof_m02_planform.png|900]]
 
-Worked examples: the elliptic wing with $c_0=0.25$ m and $b=1.1$ m (Slides v2, p. 43) has $S=0.216$ m², $AR=5.60$ and $\bar{\bar c}=0.212$ m; the straight-tapered wing with $b=11$ m, $c_0=2$ m, $\lambda=0.5$ has $S=16.5$ m², $AR=7.33$, $\bar{\bar c}=1.556$ m at $\bar y=2.444$ m.
+Worked examples: the elliptic wing with $c_0=0.25$ m and $b=1.1$ m has $S=0.216$ m², $AR=5.60$ and $\bar{\bar c}=0.212$ m; the straight-tapered wing with $b=11$ m, $c_0=2$ m, $\lambda=0.5$ has $S=16.5$ m², $AR=7.33$, $\bar{\bar c}=1.556$ m at $\bar y=2.444$ m.
 
 The common trap is to mix span and semi-span: $S=2\int_0^s c\,dy$, and $AR=b^2/S=4s^2/S$.
 

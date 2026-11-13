@@ -31,7 +31,7 @@ The oval has three variations. As $b\to0$ with $\Lambda b$ fixed, the source–s
 
 ![[pf_rankine_oval.png|520]]
 
-[[SESA2022 Exam 2015-16 Solutions]] Q1 works the dimensionless oval, with a slender-body $y_{top} = 0.5$ and $C_p = -0.887$.
+In dimensionless form the slender oval has $y_{top} = 0.5$ and $C_p = -0.887$ ([[SESA2022 Exam 2015-16 Solutions]] Q1).
 
 ## Related
 

@@ -26,7 +26,7 @@ sources: ["02 - Sources/Stability/Topic 6 Aircraft aerodynamics and static stabi
 
 The two kinds of stability interact. Rolling is damped because the down-going wing sees a higher $\alpha$, which opposes the roll. Dutch roll is an oscillatory yaw–roll coupling that gets worse when the dihedral effect is strong compared with weathercock stability; yaw dampers fix it. The spiral mode runs the other way: bank leads to sideslip, then yaw into the turn, then more bank, and it diverges if directional stability dominates lateral stability. Too much lateral stability, from a high wing, sweep and dihedral together, makes roll control sluggish and the Dutch roll poor, which is why the Harrier and high-wing swept transports such as the C-5 and An-225 have anhedral. Fin size is set by crosswind landing, rudder authority with an engine out, and Dutch-roll damping.
 
-The lateral modes are developed dynamically in [[SESA3047 Advanced Aerospace Mechanics & Control Hub|SESA3047 Advanced Aerospace Mechanics & Control]]. In SESA2022 they appear as conceptual questions in [[SESA2022 Static Stability Past Paper Questions Solutions]].
+The dynamics of the lateral modes belong to [[SESA3047 Advanced Aerospace Mechanics & Control Hub|SESA3047 Advanced Aerospace Mechanics & Control]]; SESA2022 asks only conceptual questions on them, in [[SESA2022 Static Stability Past Paper Questions Solutions]].
 
 ## Related
 

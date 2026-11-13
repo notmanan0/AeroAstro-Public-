@@ -10,7 +10,7 @@ parent: ["[[SESA2028 S10 - Thick Cylinders and Shrink Fits]]"]
 
 # Lame Equations
 
-The general solution of the axisymmetric elasticity problem with no body force. It is the starting point for every thick-cylinder and shrink-fit question. For how to *use* the result, see [[Lame Thick-Cylinder Solution]].
+The general solution of the axisymmetric elasticity problem with no body force. It is the starting point for every thick-cylinder and shrink-fit question.
 
 ## Derivation (plane stress, $\sigma_z=0$)
 

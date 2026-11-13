@@ -23,7 +23,7 @@ $$
 \mathbf R_x(\phi)=\begin{pmatrix}1&0&0\\0&c_\phi&s_\phi\\0&-s_\phi&c_\phi\end{pmatrix},\quad \mathbf R_y(\theta)=\begin{pmatrix}c_\theta&0&-s_\theta\\0&1&0\\s_\theta&0&c_\theta\end{pmatrix},\quad \mathbf R_z(\psi)=\begin{pmatrix}c_\psi&s_\psi&0\\-s_\psi&c_\psi&0\\0&0&1\end{pmatrix}.
 $$
 
-Each rotation matrix is orthogonal, $\mathbf R^{-1} = \mathbf R^T$, so the reverse transformation is $\mathbf v_E = \mathbf R_{BE}^T\mathbf v_B$. Matrix products don't commute, so a different order gives a different attitude. The body axes are $x$ forward, $y$ starboard and $z$ down, with rates $p, q, r$, velocities $U, V, W$, forces $X, Y, Z$ and moments $L, M, N$. The angles are restricted to $\phi,\psi\in[-\pi,\pi]$ and $\theta\in[-\pi/2,\pi/2]$; at $\theta = \pm90^\circ$ yaw and roll become indistinguishable (gimbal lock), which quaternions avoid. Year 3 picks this up in [[Gimbal Lock]].
+Each rotation matrix is orthogonal, $\mathbf R^{-1} = \mathbf R^T$, so the reverse transformation is $\mathbf v_E = \mathbf R_{BE}^T\mathbf v_B$. Matrix products don't commute, so a different order gives a different attitude. The body axes are $x$ forward, $y$ starboard and $z$ down, with rates $p, q, r$, velocities $U, V, W$, forces $X, Y, Z$ and moments $L, M, N$. The angles are restricted to $\phi,\psi\in[-\pi,\pi]$ and $\theta\in[-\pi/2,\pi/2]$; at $\theta = \pm90^\circ$ yaw and roll become indistinguishable (gimbal lock, [[Gimbal Lock]]), which quaternions avoid.
 
 Two results from the rotation matrices feed straight into the equations of motion. Differentiating a vector in the rotating body frame gives $d\mathbf v/dt = \dot{\mathbf v}_B+\boldsymbol\omega\times\mathbf v$, which produces the $qW$ and $rV$ terms. Rotating gravity into body axes gives
 

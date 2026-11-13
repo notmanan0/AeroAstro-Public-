@@ -24,18 +24,18 @@ sources: ["02 - Sources/Lectures/Lecture4-3.pdf", "02 - Sources/Lectures/Lecture
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** you are given an incompressible $C_p$, $C_l$ or $C_m$ (thin-aerofoil theory, a panel method, a low-speed test) and need its value at a subsonic $M_\infty$, or you need $M_{crit}$ from $C_{p0,min}$.
-> - **Assumptions:** inviscid, irrotational, isentropic (shock-free, so below $M_{crit}$ for the real flow); thin body, so $u',v'\ll U_\infty$; $M_\infty<0.8$ (4.4 title slide); $\gamma=1.4$ for air in $C_{p,cr}$.
+> - **Assumptions:** inviscid, irrotational, isentropic (shock-free, so below $M_{crit}$ for the real flow); thin body, so $u',v'\ll U_\infty$; $M_\infty<0.8$; $\gamma=1.4$ for air in $C_{p,cr}$.
 > - **Method:** 1. Get the incompressible value $C_{p0}$ (or $C_{l0}=2\pi\alpha$ for a flat plate, $\alpha$ in radians). 2. Divide by $\beta=\sqrt{1-M_\infty^2}$. 3. For $M_{crit}$: write LHS $=C_{p0,min}/\sqrt{1-M^2}$ and RHS $=C_{p,cr}(M)$. 4. Evaluate both at two or three trial Mach numbers, find where LHS − RHS changes sign and interpolate linearly. 5. Check $M_{crit}$ lies below about 0.8.
 > - **Common mistakes:** multiplying by $\beta$ instead of dividing, or dividing $C_d$ by $\beta$ too; putting the local Mach number into $C_{p,cr}$ where $M=1$ belongs (the free-stream Mach number in $C_{p,cr}$ is the unknown $M_{crit}$).
-> - **Practise:** [[#Worked example: Cp0,min = −0.4 (4.4 slides 8–9 and 11)|$M_{crit}$ for $C_{p0,min}=-0.4$]] · [[SESA3029 Example Sheet 2 - Solutions#Q6. Critical Mach number via Prandtl–Glauert|ES2 Q6]]
+> - **Practise:** [[#Worked example: Cp0,min = −0.4|$M_{crit}$ for $C_{p0,min}=-0.4$]] · [[SESA3029 Example Sheet 2 - Solutions#Q6. Critical Mach number via Prandtl–Glauert|ES2 Q6]]
 
 Euler CFD of an aerofoil at moderate subsonic Mach numbers ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|4.2]]) gives a $C_p$ curve that looks like the incompressible one, only stronger: the same smooth shape, with bigger peaks. The incompressible solution, which thin-aerofoil theory, panel methods and conformal mapping already provide, can therefore be corrected instead of solving the compressible problem from scratch. A thin aerofoil disturbs the free stream only slightly, so the nonlinear Euler equations can be linearised about the uniform flow (§§1–5). For subsonic flow the resulting linear equation is Laplace's equation in a rescaled coordinate system (§6), every incompressible pressure, lift and moment coefficient carries over by one division (§7), and the same pieces give an estimate of the critical Mach number without any CFD (§§8–9).
 
 Two assumptions carry the whole chapter. The disturbances $u'$ and $v'$ are small compared with $U_\infty$, so products of them can be dropped. And the flow is isentropic and irrotational: no shocks, and therefore no entropy jumps or vorticity behind them. These are the same conditions as for the [[Homentropic Flow|homentropic flow]] of the MoC, and they fail where shocks appear in the 4.2 CFD.
 
-## 1. Steady Euler equations in non-conservative form (4.3 slides 2–3)
+## 1. Steady Euler equations in non-conservative form
 
-Drop the time derivatives from the vector Euler equations of 4.1 (slide 2). The $x$-momentum equation is
+Drop the time derivatives from the vector Euler equations of 4.1. The $x$-momentum equation is
 
 $$
 \frac{\partial(\rho u^2+p)}{\partial x}+\frac{\partial(\rho uv)}{\partial y}=0 .
@@ -59,7 +59,7 @@ $$
 \rho u\frac{\partial v}{\partial x}+\rho v\frac{\partial v}{\partial y}+v\left[\frac{\partial(\rho u)}{\partial x}+\frac{\partial(\rho v)}{\partial y}\right]+\frac{\partial p}{\partial y}=0 .
 $$
 
-Steady mass conservation is (slide 3)
+Steady mass conservation is
 
 $$
 \frac{\partial(\rho u)}{\partial x}+\frac{\partial(\rho v)}{\partial y}=0
@@ -77,15 +77,15 @@ $$
 \rho u\frac{\partial v}{\partial x}+\rho v\frac{\partial v}{\partial y}+\frac{\partial p}{\partial y}=0 \qquad (2)
 $$
 
-## 2. One equation for the velocity field (4.3 slides 3–4)
+## 2. One equation for the velocity field
 
-Take $u\times(1)+v\times(2)$ (slide 3):
+Take $u\times(1)+v\times(2)$:
 
 $$
 \rho u^2\frac{\partial u}{\partial x}+\rho uv\frac{\partial u}{\partial y}+\rho uv\frac{\partial v}{\partial x}+\rho v^2\frac{\partial v}{\partial y}=-u\frac{\partial p}{\partial x}-v\frac{\partial p}{\partial y}.
 $$
 
-The flow is isentropic, so pressure and density are linked by $p=C\rho^\gamma$ everywhere (L4-3, ll. 104–116). Differentiate:
+The flow is isentropic, so pressure and density are linked by $p=C\rho^\gamma$ everywhere. Differentiate:
 
 $$
 \mathrm dp=\gamma C\rho^{\gamma-1}\,\mathrm d\rho=\gamma\,\frac{C\rho^\gamma}{\rho}\,\mathrm d\rho=\gamma\frac{p}{\rho}\,\mathrm d\rho .
@@ -103,17 +103,17 @@ $$
 -a^2\left(u\frac{\partial\rho}{\partial x}+v\frac{\partial\rho}{\partial y}\right)=a^2\rho\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right).
 $$
 
-Divide by $\rho$ (slide 4):
+Divide by $\rho$:
 
 $$
 u^2\frac{\partial u}{\partial x}+uv\left(\frac{\partial u}{\partial y}+\frac{\partial v}{\partial x}\right)+v^2\frac{\partial v}{\partial y}=a^2\left(\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}\right).
 $$
 
-This is still exact for steady, isentropic, inviscid 2D flow. Continuity and the two momentum equations have been combined into one (L4-3, ll. 145–147). Density has disappeared; only velocities and the local speed of sound remain.
+This is still exact for steady, isentropic, inviscid 2D flow. Continuity and the two momentum equations have been combined into one. Density has disappeared; only velocities and the local speed of sound remain.
 
-## 3. Linearising about the free stream (4.3 slides 4–5)
+## 3. Linearising about the free stream
 
-Let $u=U_\infty+u'$ and $v=v'$ with $u',v'\ll U_\infty$ (slide 4). $U_\infty$ is constant, so $\partial u/\partial x=\partial u'/\partial x$ and so on:
+Let $u=U_\infty+u'$ and $v=v'$ with $u',v'\ll U_\infty$. $U_\infty$ is constant, so $\partial u/\partial x=\partial u'/\partial x$ and so on:
 
 $$
 (U_\infty+u')^2\frac{\partial u'}{\partial x}+(U_\infty+u')v'\left(\frac{\partial u'}{\partial y}+\frac{\partial v'}{\partial x}\right)+v'^2\frac{\partial v'}{\partial y}=a^2\left(\frac{\partial u'}{\partial x}+\frac{\partial v'}{\partial y}\right).
@@ -125,7 +125,7 @@ $$
 U_\infty^2\frac{\partial u'}{\partial x}=a^2\left(\frac{\partial u'}{\partial x}+\frac{\partial v'}{\partial y}\right).
 $$
 
-Collected on one side, this is $(a^2-U_\infty^2)\,\partial u'/\partial x+a^2\,\partial v'/\partial y=0$ (L4-3, ll. 211–216). It already looks linear, since no products of $u'$ and $v'$ are left, but the local $a^2$ still depends on the flow. The energy equation for steady adiabatic flow, $h+\tfrac12V^2=\text{const}$ with $h=c_pT=a^2/(\gamma-1)$, multiplied by $(\gamma-1)$, gives (slide 5)
+Collected on one side, this is $(a^2-U_\infty^2)\,\partial u'/\partial x+a^2\,\partial v'/\partial y=0$. It already looks linear, since no products of $u'$ and $v'$ are left, but the local $a^2$ still depends on the flow. The energy equation for steady adiabatic flow, $h+\tfrac12V^2=\text{const}$ with $h=c_pT=a^2/(\gamma-1)$, multiplied by $(\gamma-1)$, gives
 
 $$
 a_\infty^2+\frac{\gamma-1}{2}U_\infty^2=a^2+\frac{\gamma-1}{2}\left(u^2+v^2\right)=a^2+\frac{\gamma-1}{2}\left[(U_\infty+u')^2+v'^2\right].
@@ -151,7 +151,7 @@ $$
 
 The $(\gamma-1)u'U_\infty$ term multiplies derivatives of small quantities, so it is second order. Drop it, divide by $a_\infty^2$ and use $M_\infty=U_\infty/a_\infty$.
 
-In the expression for $a^2$ itself, $(\gamma-1)u'U_\infty$ is first order and is kept. It only becomes negligible here, where it multiplies $\partial u'/\partial x+\partial v'/\partial y$. Dropping it from $a^2$ earlier would not change this equation, but the first-order $a^2$ is needed again for the pressure coefficient in §5 (L4-3, ll. 268–286). Then:
+In the expression for $a^2$ itself, $(\gamma-1)u'U_\infty$ is first order and is kept. It only becomes negligible here, where it multiplies $\partial u'/\partial x+\partial v'/\partial y$. Dropping it from $a^2$ earlier would not change this equation, but the first-order $a^2$ is needed again for the pressure coefficient in §5. Then:
 
 $$
 M_\infty^2\frac{\partial u'}{\partial x}=\frac{\partial u'}{\partial x}+\frac{\partial v'}{\partial y}.
@@ -163,11 +163,11 @@ $$
 \boxed{(1-M_\infty^2)\frac{\partial u'}{\partial x}+\frac{\partial v'}{\partial y}=0}
 $$
 
-This is the linearised Euler equation (slide 5): four nonlinear equations have become one linear one. The dropped second- and third-order terms are one reason the aerofoil theories built on this equation (4.4–4.6) are approximate; keeping the second-order terms gives better theories (L4-3, ll. 289–299), including the transonic small-disturbance equation of §4 near $M_\infty=1$.
+This is the linearised Euler equation: four nonlinear equations have become one linear one. The dropped second- and third-order terms are one reason the aerofoil theories built on this equation (4.4–4.6) are approximate; keeping the second-order terms gives better theories, including the transonic small-disturbance equation of §4 near $M_\infty=1$.
 
-## 4. The velocity potential equation (4.3 slides 6–7)
+## 4. The velocity potential equation
 
-Assume the flow is irrotational (slide 6). For homentropic flow this is consistent: shock-free flow from a uniform stream carries no vorticity.
+Assume the flow is irrotational. For homentropic flow this is consistent: shock-free flow from a uniform stream carries no vorticity.
 
 $$
 \omega=\frac{\partial v}{\partial x}-\frac{\partial u}{\partial y}=0
@@ -193,29 +193,29 @@ $$
 \boxed{(1-M_\infty^2)\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}=0}
 $$
 
-Here $\phi$ is the potential of the **perturbation** velocity only; the full potential is $U_\infty x+\phi$. The linearised Euler equation was one equation in two unknowns, $u'$ and $v'$, so on its own it was not a determinate system. The potential turns it into one equation in one unknown (L4-3, ll. 320–327).
+Here $\phi$ is the potential of the **perturbation** velocity only; the full potential is $U_\infty x+\phi$. The linearised Euler equation was one equation in two unknowns, $u'$ and $v'$, so on its own it was not a determinate system. The potential turns it into one equation in one unknown.
 
-The equation has three limits (slide 7).
+The equation has three limits.
 
 - As $M_\infty\to0$ it reduces to Laplace's equation, the incompressible potential flow of [[Streamfunction and Velocity Potential]] and [[SESA3043 1.2b - Potential-Flow Review|SESA3043 1.2b]].
 - It is not valid near $M_\infty=1$, where the next order of terms would be needed. The reason is visible in §3. The term kept is $(1-M_\infty^2)\,\partial u'/\partial x$, and near $M_\infty=1$ its coefficient goes to zero, so it becomes no larger than the second-order terms that were dropped. Keeping the largest of them gives the transonic small-disturbance equation (the textbook name; not lectured), $[1-M_\infty^2-(\gamma+1)M_\infty^2u'/U_\infty]\,\partial u'/\partial x+\partial v'/\partial y=0$ (checked by expanding to second order).
 - It is not applicable to hypersonic flow ($M_\infty>5$). There $M_\infty^2u'/U_\infty$ is no longer small even when $u'/U_\infty$ is.
 
-The sign of $1-M_\infty^2$ decides the type of equation, and with it the solution method (slide 7):
+The sign of $1-M_\infty^2$ decides the type of equation, and with it the solution method:
 
-| Regime on slide 7 | Type | Method |
+| Regime | Type | Method |
 |---|---|---|
-| $M_\infty<0.9$ ("transonic" on the slide) | elliptic | Prandtl–Glauert transformation (§§6–8) |
+| $M_\infty<0.9$ (called "transonic" in the course) | elliptic | Prandtl–Glauert transformation (§§6–8) |
 | $M_\infty>1.1$ (supersonic) | hyperbolic | Ackeret theory ([[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]]) |
 
-In the hyperbolic case a quantity is constant along the Mach lines, the same structure as in the [[SESA3029 W05a - Method of Characteristics|method of characteristics]] (L4-3, ll. 380–383).
+In the hyperbolic case a quantity is constant along the Mach lines, the same structure as in the [[SESA3029 W05a - Method of Characteristics|method of characteristics]].
 
 > [!note] The word *transonic* in this chapter
-> The Prandtl–Glauert range is labelled *transonic* (4.3 slide 7, and the 4.4 title, *Transonic Aerofoil Theory for $M_\infty<0.8$*). Most textbooks call this range subsonic compressible and keep *transonic* for mixed flow, roughly $0.8<M_\infty<1.2$, where shocks appear and linear theory fails. The quoted limits also vary: $M_\infty<0.9$ and $M_\infty>1.1$ on 4.3 slide 7; 0.8 and 1.2 on the 4.4 and 4.5 title slides and in L4-3 (ll. 368–378). For Prandtl–Glauert the working limit is about 0.8, which can be pushed to 0.85–0.9 with quickly falling accuracy (L4-4, ll. 25–27). In the exam, use the slides' word and quote 0.8 and 1.2 as the safe range.
+> The Prandtl–Glauert range is labelled *transonic* in the course, whose chapter title is *Transonic Aerofoil Theory for $M_\infty<0.8$*. Most textbooks call this range subsonic compressible and keep *transonic* for mixed flow, roughly $0.8<M_\infty<1.2$, where shocks appear and linear theory fails. The quoted limits also vary within the course: $M_\infty<0.9$ and $M_\infty>1.1$ in one place, 0.8 and 1.2 elsewhere. For Prandtl–Glauert the working limit is about 0.8, which can be pushed to 0.85–0.9 with quickly falling accuracy. In the exam, use the course's word and quote 0.8 and 1.2 as the safe range.
 
-## 5. The linearised pressure coefficient (4.3 slide 8)
+## 5. The linearised pressure coefficient
 
-$C_p$ is what lift and drag are built from, so the linearised theory needs it (L4-3, ll. 339–351). Start from the definition and take $p_\infty$ outside the bracket:
+$C_p$ is what lift and drag are built from, so the linearised theory needs it. Start from the definition and take $p_\infty$ outside the bracket:
 
 $$
 C_p=\frac{p-p_\infty}{\tfrac12\rho_\infty U_\infty^2}=\frac{p_\infty}{\tfrac12\rho_\infty U_\infty^2}\left(\frac{p}{p_\infty}-1\right).
@@ -235,7 +235,7 @@ $$
 C_p=\frac{2}{\gamma M_\infty^2}\left(\frac{p}{p_\infty}-1\right).
 $$
 
-This rewriting was a question on the 2025–26 exam paper (L4-3, ll. 391–417).
+This rewriting was a question on the 2025–26 exam paper.
 
 Write the pressure ratio with the perfect-gas law and $a^2=\gamma RT$:
 
@@ -269,9 +269,9 @@ C_p=\frac{2}{\gamma M_\infty^2}\left(-\gamma M_\infty^2\frac{u'}{U_\infty}\right
 \boxed{C_p=-\frac{2u'}{U_\infty}}
 $$
 
-$M_\infty$ has cancelled. The linearised $C_p$ looks exactly like the incompressible thin-aerofoil one of [[SESA2022 T4 - Thin Aerofoil Theory#Linearised pressure coefficient|SESA2022 T4]], but $u'$ now comes from the compressible equation. Starting from Bernoulli and applying the same small-perturbation argument gives the identical expression ([[#7. The Prandtl–Glauert rule for Cp, Cl and Cm (4.4 slides 4–6)|§7]] does this), so there is no break between low-speed and high-speed $C_p$ at this order (L4-3, ll. 476–479). This is the $C_p$ used for the surface pressure, lift and drag in 4.4–4.6.
+$M_\infty$ has cancelled. The linearised $C_p$ looks exactly like the incompressible thin-aerofoil one of [[SESA2022 T4 - Thin Aerofoil Theory#Linearised pressure coefficient|SESA2022 T4]], but $u'$ now comes from the compressible equation. Starting from Bernoulli and applying the same small-perturbation argument gives the identical expression ([[#7. The Prandtl–Glauert rule for Cp, Cl and Cm|§7]] does this), so there is no break between low-speed and high-speed $C_p$ at this order. This is the $C_p$ used for the surface pressure, lift and drag in 4.4–4.6.
 
-## 6. The Prandtl–Glauert transformation (4.4 slides 2–3)
+## 6. The Prandtl–Glauert transformation
 
 For $M_\infty<1$ write $\beta=\sqrt{1-M_\infty^2}$, which is real and positive, so the potential equation is
 
@@ -279,7 +279,7 @@ $$
 \beta^2\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}=0 .
 $$
 
-Define new variables (slide 2):
+Define new variables:
 
 $$
 \phi_0=\beta\phi,\qquad x_0=x,\qquad y_0=\beta y .
@@ -311,7 +311,7 @@ $$
 \boxed{\frac{\partial^2\phi_0}{\partial x_0^2}+\frac{\partial^2\phi_0}{\partial y_0^2}=0}
 $$
 
-A shorter route gives the one-line form on slide 2. Divide $\beta^2\phi_{xx}+\phi_{yy}=0$ by $\beta$:
+A shorter route gives a one-line form. Divide $\beta^2\phi_{xx}+\phi_{yy}=0$ by $\beta$:
 
 $$
 \beta\frac{\partial^2\phi}{\partial x^2}+\frac{1}{\beta}\frac{\partial^2\phi}{\partial y^2}=0 .
@@ -325,7 +325,7 @@ $$
 
 which is Laplace's equation for $\phi_0=\beta\phi$ in $x_0=x$, $y_0=\beta y$.
 
-A solution of Laplace's equation is an incompressible potential flow ($M_\infty\to0$), so $\phi_0$ is an incompressible flow in the $(x_0,y_0)$ plane (slide 3). It is the equation thin-aerofoil theory is built on ([[SESA2022 T4 - Thin Aerofoil Theory]]). Solve that problem, or take an existing solution, then transform back with $\phi=\phi_0/\beta$, $x=x_0$, $y=y_0/\beta$ to get the compressible solution in $(x,y)$. The compressible problem never has to be solved separately: one incompressible solution covers every subsonic Mach number up to about 0.8, and the conversion is a single division by $\beta$ with no further dependence on $\alpha$ or the aerofoil shape.
+A solution of Laplace's equation is an incompressible potential flow ($M_\infty\to0$), so $\phi_0$ is an incompressible flow in the $(x_0,y_0)$ plane. It is the equation thin-aerofoil theory is built on ([[SESA2022 T4 - Thin Aerofoil Theory]]). Solve that problem, or take an existing solution, then transform back with $\phi=\phi_0/\beta$, $x=x_0$, $y=y_0/\beta$ to get the compressible solution in $(x,y)$. The compressible problem never has to be solved separately: one incompressible solution covers every subsonic Mach number up to about 0.8, and the conversion is a single division by $\beta$ with no further dependence on $\alpha$ or the aerofoil shape.
 
 > [!tip] The transformed problem is the same aerofoil
 > Shrinking the normal coordinate ($y_0=\beta y$) looks as if it should make the incompressible aerofoil thinner. It does not, because thin-aerofoil theory applies the flow-tangency condition on the axis, $y=0$, not on the actual surface. For an aerofoil $y=f(x)$ the condition is $v'(x,0)=U_\infty f'(x)$, i.e. $\partial\phi/\partial y=U_\infty f'(x)$ at $y=0$. In the new variables
@@ -336,9 +336,9 @@ A solution of Laplace's equation is an incompressible potential flow ($M_\infty\
 
 On a wavy wall, for which the linear equation has an exact solution, compressibility does two things: the pressure disturbance at the wall is $1/\beta$ times larger, and it reaches $1/\beta$ times further from the wall. At $M_\infty=0.8$ both factors are $1.67$.
 
-## 7. The Prandtl–Glauert rule for Cp, Cl and Cm (4.4 slides 4–6)
+## 7. The Prandtl–Glauert rule for Cp, Cl and Cm
 
-For incompressible flow, Bernoulli gives (slide 4)
+For incompressible flow, Bernoulli gives
 
 $$
 p+\tfrac12\rho_\infty U^2=p_\infty+\tfrac12\rho_\infty U_\infty^2 ,
@@ -365,9 +365,9 @@ $$
 This has the same form as the compressible $C_p$ of §5.
 
 > [!warning] The subscript 0 means incompressible
-> In $C_{p0}$, $u_0'$, $\phi_0$, $C_{l0}$ and $C_{m0}$ the subscript 0 marks the incompressible solution ($M_\infty\to0$), not stagnation conditions (L4-4, ll. 126–128). §8 uses $p_0$ for the stagnation pressure in the same working as $C_{p0,min}$, so both meanings appear side by side there.
+> In $C_{p0}$, $u_0'$, $\phi_0$, $C_{l0}$ and $C_{m0}$ the subscript 0 marks the incompressible solution ($M_\infty\to0$), not stagnation conditions. §8 uses $p_0$ for the stagnation pressure in the same working as $C_{p0,min}$, so both meanings appear side by side there.
 
-The compressible $C_p$ of §5, written in the transformed variables with $\phi=\phi_0/\beta$ and $x=x_0$ (slide 5), is
+The compressible $C_p$ of §5, written in the transformed variables with $\phi=\phi_0/\beta$ and $x=x_0$, is
 
 $$
 C_p=-\frac{2u'}{U_\infty}=-\frac{2}{U_\infty}\frac{\partial\phi}{\partial x}=-\frac{2}{U_\infty}\frac{\partial(\beta^{-1}\phi_0)}{\partial x_0}=-\frac{2}{\beta U_\infty}\frac{\partial\phi_0}{\partial x_0}.
@@ -379,9 +379,9 @@ $$
 \boxed{C_p=\frac{C_{p0}}{\sqrt{1-M_\infty^2}}}
 $$
 
-Once an incompressible pressure coefficient is known, for example from thin-aerofoil theory or a panel method, the compressible one at the same point follows by dividing by $\sqrt{1-M_\infty^2}$ (slide 5).
+Once an incompressible pressure coefficient is known, for example from thin-aerofoil theory or a panel method, the compressible one at the same point follows by dividing by $\sqrt{1-M_\infty^2}$.
 
-### Lift and moment coefficients (4.4 slide 5)
+### Lift and moment coefficients
 
 The $C_p$ rule holds point by point. $C_l$ and $C_m$ follow only after integrating over the chord, and that step needs the definitions of the force coefficients.
 
@@ -391,7 +391,7 @@ $$
 N'=\int_0^c\left(p_l-p_u\right)\mathrm dx .
 $$
 
-This is the **normal force**, perpendicular to the chord, not the lift, which is perpendicular to the free stream (L4-4, ll. 150–156). With the chordwise force $F_t'$ of [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]],
+This is the **normal force**, perpendicular to the chord, not the lift, which is perpendicular to the free stream. With the chordwise force $F_t'$ of [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]],
 
 $$
 L'=N'\cos\alpha-F_t'\sin\alpha .
@@ -429,7 +429,7 @@ $$
 C_{m,LE}=-\frac{1}{c^2}\int_0^c\left(C_{p,l}-C_{p,u}\right)x\,\mathrm dx=\frac{C_{m0,LE}}{\beta}.
 $$
 
-So (slide 5)
+So
 
 $$
 \boxed{C_l=\frac{C_{l0}}{\sqrt{1-M_\infty^2}},\qquad C_m=\frac{C_{m0}}{\sqrt{1-M_\infty^2}}}
@@ -440,19 +440,19 @@ Since $C_{m,x}=C_{m,LE}+(x/c)C_n$ (W01 §2), the moment about any point on the c
 > [!check] A flat plate at $\alpha=4^\circ$, $M_\infty=0.7$
 > Thin-aerofoil theory gives $\mathrm dC_l/\mathrm d\alpha=2\pi$ for a symmetric section ([[SESA2022 T4 - Thin Aerofoil Theory#4. Symmetric aerofoil (flat plate)|SESA2022 T4 §4]]), so $C_{l0}=2\pi\alpha=2\pi(0.06981)=0.4386$, with $\alpha$ in radians. Then $\beta=\sqrt{1-0.49}=0.7141$, and $C_l=2\pi\alpha/\sqrt{1-M_\infty^2}=0.4386/0.7141=0.6142$, a 40 % increase. The factor $1/\beta$ is $1.048$ at $M_\infty=0.3$, $1.155$ at $0.5$, $1.25$ at $0.6$, $1.400$ at $0.7$ and $1.667$ at $0.8$.
 
-### Lift against Mach number (4.4 slide 6)
+### Lift against Mach number
 
 ![[at_compressibility_corrections.png|900]]
 
-The ratio $C_l/C_{l0}=1/\sqrt{1-M_\infty^2}$ is 1 at $M_\infty=0$, climbs slowly at first and steeply above 0.7, and reaches 1.67 at $M_\infty=0.8$ (slide 6; right panel above). It goes to infinity at $M_\infty=1$, which is not physical: the linear theory has broken down there (§4).
+The ratio $C_l/C_{l0}=1/\sqrt{1-M_\infty^2}$ is 1 at $M_\infty=0$, climbs slowly at first and steeply above 0.7, and reaches 1.67 at $M_\infty=0.8$ (right panel above). It goes to infinity at $M_\infty=1$, which is not physical: the linear theory has broken down there (§4).
 
-The Euler CFD lift curve of 4.2 ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#8. Lift, drag and the mechanism of drag divergence (4.2 slides 13–15)|W07a §8]]) follows this curve through the subsonic range, up to a critical Mach number of roughly 0.75–0.8 for that aerofoil. A trend that would otherwise take a series of CFD runs or wind-tunnel tests comes from one formula (L4-4, ll. 207–227).
+The Euler CFD lift curve of 4.2 ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#8. Lift, drag and the mechanism of drag divergence|W07a §8]]) follows this curve through the subsonic range, up to a critical Mach number of roughly 0.75–0.8 for that aerofoil. A trend that would otherwise take a series of CFD runs or wind-tunnel tests comes from one formula.
 
-Once a supersonic region forms on the upper surface, the lift rises further than Prandtl–Glauert predicts (slide 6). Behind the sonic point the flow keeps accelerating, as supersonic flow does in the diverging part of a converging–diverging nozzle (W07a §8), so the pressure on the upper surface falls further and pulls the aerofoil up harder. The same low pressure acts on the rearward-facing part of the surface and is ended by a shock, so the drag rises too, and faster than the lift: $C_l/C_d$ is lower in the transonic range than at subsonic speed (L4-4, ll. 195–206).
+Once a supersonic region forms on the upper surface, the lift rises further than Prandtl–Glauert predicts. Behind the sonic point the flow keeps accelerating, as supersonic flow does in the diverging part of a converging–diverging nozzle (W07a §8), so the pressure on the upper surface falls further and pulls the aerofoil up harder. The same low pressure acts on the rearward-facing part of the surface and is ended by a shock, so the drag rises too, and faster than the lift: $C_l/C_d$ is lower in the transonic range than at subsonic speed.
 
 ### Drag does not follow the rule
 
-There is no rule $C_d=C_{d0}/\sqrt{1-M_\infty^2}$ (L4-4, ll. 180–186). Drag is the force along the free stream. For a thin aerofoil it comes from the pressure acting on the forward- and rearward-facing parts of the surface, and from skin friction. The pressure part needs the surface slopes, not only the chordwise positions, so it is an integral over $y$ ($\oint p\,\mathrm dy$ around the surface) rather than over $x$.
+There is no rule $C_d=C_{d0}/\sqrt{1-M_\infty^2}$. Drag is the force along the free stream. For a thin aerofoil it comes from the pressure acting on the forward- and rearward-facing parts of the surface, and from skin friction. The pressure part needs the surface slopes, not only the chordwise positions, so it is an integral over $y$ ($\oint p\,\mathrm dy$ around the surface) rather than over $x$.
 
 Take $x$ along the free stream and the surfaces $y_u(x)$ and $y_l(x)$. On the upper surface the pressure on an element pushes rearward with $p\,\mathrm dy_u=p\,(\mathrm dy_u/\mathrm dx)\,\mathrm dx$ where the surface faces forward; on the lower surface the rearward push is $-p\,\mathrm dy_l$. So
 
@@ -472,15 +472,15 @@ $$
 C_{d,p}=\frac1c\int_0^c\left(C_{p,u}\frac{\mathrm dy_u}{\mathrm dx}-C_{p,l}\frac{\mathrm dy_l}{\mathrm dx}\right)\mathrm dx .
 $$
 
-In the linear theory the slopes are the same in both problems ([[#6. The Prandtl–Glauert transformation (4.4 slides 2–3)|§6]], the tip), so formally this integral also picks up $1/\beta$. What it scales is zero. Inviscid, shock-free flow round a closed 2D aerofoil has no drag (d'Alembert's paradox; on a flat plate the leading-edge suction of W01 §2 cancels the rearward tilt of the normal force). The subcritical compressible flow is a transformed incompressible one, so its inviscid drag is zero as well.
+In the linear theory the slopes are the same in both problems ([[#6. The Prandtl–Glauert transformation|§6]], the tip), so formally this integral also picks up $1/\beta$. What it scales is zero. Inviscid, shock-free flow round a closed 2D aerofoil has no drag (d'Alembert's paradox; on a flat plate the leading-edge suction of W01 §2 cancels the rearward tilt of the normal force). The subcritical compressible flow is a transformed incompressible one, so its inviscid drag is zero as well.
 
 The drag of a real aerofoil below $M_{crit}$ is skin friction and the pressure drag of the boundary layer and wake, which the inviscid transformation does not describe. The drag coefficient stays nearly constant as $M_\infty$ rises towards $M_{crit}$ and then rises steeply (drag divergence, W07a §8). The Prandtl–Glauert rule therefore covers $C_p$, $C_l$ and $C_m$ only.
 
-## 8. Estimating the critical Mach number (4.4 slides 7–9)
+## 8. Estimating the critical Mach number
 
-$M_{crit}$ is the free-stream Mach number at which the local Mach number first reaches 1 somewhere on the surface ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#7. Flow regimes and the critical Mach number (4.2 slides 5–12)|W07a §7]]). Finding it by CFD or in a wind tunnel takes a sequence of runs, raising or lowering $M_\infty$ until the peak surface Mach number is just 1. Two relations between $C_p$ and Mach number give an estimate directly.
+$M_{crit}$ is the free-stream Mach number at which the local Mach number first reaches 1 somewhere on the surface ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#7. Flow regimes and the critical Mach number|W07a §7]]). Finding it by CFD or in a wind tunnel takes a sequence of runs, raising or lowering $M_\infty$ until the peak surface Mach number is just 1. Two relations between $C_p$ and Mach number give an estimate directly.
 
-The first is the $C_p$ at which the local flow is sonic. The flow is isentropic from the free stream to the surface, so $p_0$, the stagnation pressure, is the same at both. Write $p/p_\infty$ as a ratio of two isentropic stagnation ratios ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#4. Stagnation properties|W01 §4]]; slide 7):
+The first is the $C_p$ at which the local flow is sonic. The flow is isentropic from the free stream to the surface, so $p_0$, the stagnation pressure, is the same at both. Write $p/p_\infty$ as a ratio of two isentropic stagnation ratios ([[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#4. Stagnation properties|W01 §4]]):
 
 $$
 \frac{p}{p_\infty}=\frac{p_0/p_\infty}{p_0/p}=\left(\frac{1+\frac{\gamma-1}{2}M_\infty^2}{1+\frac{\gamma-1}{2}M^2}\right)^{\gamma/(\gamma-1)} .
@@ -494,19 +494,19 @@ $$
 
 This exact isentropic relation depends only on the free-stream Mach number (and $\gamma$), not on the aerofoil.
 
-The second is the aerofoil's own $C_p$ at that point. The point where $M=1$ is reached first is taken as the point of minimum $C_{p0}$, where the incompressible flow is fastest (slide 8). Prandtl–Glauert gives the compressible $C_p$ there as $C_{p0,min}/\sqrt{1-M_\infty^2}$.
+The second is the aerofoil's own $C_p$ at that point. The point where $M=1$ is reached first is taken as the point of minimum $C_{p0}$, where the incompressible flow is fastest. Prandtl–Glauert gives the compressible $C_p$ there as $C_{p0,min}/\sqrt{1-M_\infty^2}$.
 
-Setting the two equal gives one equation for $M_{crit}$ (slide 8):
+Setting the two equal gives one equation for $M_{crit}$:
 
 $$
 \boxed{\frac{C_{p0,min}}{\sqrt{1-M_{crit}^2}}=\frac{2}{\gamma M_{crit}^2}\left[\left(\frac{1+\frac{\gamma-1}{2}M_{crit}^2}{1+\frac{\gamma-1}{2}}\right)^{\gamma/(\gamma-1)}-1\right]}
 $$
 
-It has no closed-form solution. Plot the left-hand side (LHS) and the right-hand side (RHS) against $M_\infty$ and read off the crossing (slide 9), or use a root-finding method: by hand, evaluate both sides at two trial Mach numbers either side of the root and interpolate linearly (L4-4, ll. 263–265).
+It has no closed-form solution. Plot the left-hand side (LHS) and the right-hand side (RHS) against $M_\infty$ and read off the crossing, or use a root-finding method: by hand, evaluate both sides at two trial Mach numbers either side of the root and interpolate linearly.
 
-### Worked example: Cp0,min = −0.4 (4.4 slides 8–9 and 11)
+### Worked example: Cp0,min = −0.4
 
-*If $C_{p0,min}=-0.4$ in incompressible flow of air, estimate $M_{crit}$* (slide 8). Air, so $\gamma=1.4$ and $\gamma/(\gamma-1)=3.5$:
+*If $C_{p0,min}=-0.4$ in incompressible flow of air, estimate $M_{crit}$*. Air, so $\gamma=1.4$ and $\gamma/(\gamma-1)=3.5$:
 
 | $M_\infty$ | LHS: $-0.4/\sqrt{1-M_\infty^2}$ | RHS: $C_{p,cr}$ | LHS − RHS |
 |---:|---:|---:|---:|
@@ -518,7 +518,7 @@ It has no closed-form solution. Plot the left-hand side (LHS) and the right-hand
 The sign changes between 0.74 and 0.75. Linear interpolation on LHS − RHS gives $0.74+0.01\times0.031/0.045=0.7469$, and the exact root is
 
 $$
-M_{crit}=0.747\qquad(\text{Prandtl–Glauert; slide 8}),
+M_{crit}=0.747\qquad(\text{Prandtl–Glauert}),
 $$
 
 with $C_p=-0.602$ at the critical point. Above this free-stream Mach number a supersonic region forms on the aerofoil.
@@ -528,17 +528,17 @@ with $C_p=-0.602$ at the critical point. Above this free-stream Mach number a su
 > [!tip] Reading the plot
 > $C_{p,cr}$ falls steeply in magnitude as $M_\infty$ rises: at high free-stream Mach number only a small speed-up is needed to reach $M=1$. Meanwhile the corrected suction peak grows. A more negative $C_{p0,min}$ (a thicker or more highly loaded aerofoil) meets the $C_{p,cr}$ curve earlier: $C_{p0,min}=-1.0$ gives $M_{crit}=0.606$. That is why thin aerofoils, and the flat-rooftop supercritical sections of 4.2, are used for high subsonic flight.
 
-## 9. Improved correction: Kármán–Tsien (4.4 slides 10–11)
+## 9. Improved correction: Kármán–Tsien
 
-Prandtl–Glauert underestimates the compressible suction at higher subsonic Mach numbers. The Kármán–Tsien rule (1939), about a decade after Prandtl–Glauert (1928), adds a term to the denominator (slide 10):
+Prandtl–Glauert underestimates the compressible suction at higher subsonic Mach numbers. The Kármán–Tsien rule (1939), about a decade after Prandtl–Glauert (1928), adds a term to the denominator:
 
 $$
 C_p=\frac{C_{p0}}{\sqrt{1-M_\infty^2}+\dfrac{M_\infty^2}{1+\sqrt{1-M_\infty^2}}\,\dfrac{C_{p0}}{2}} .
 $$
 
-For a suction peak, $C_{p0}<0$, the extra term is negative, so the denominator is smaller and $|C_p|$ is larger than Prandtl–Glauert's. As $C_{p0}\to0$ the extra term vanishes and Kármán–Tsien reduces to Prandtl–Glauert, so the two differ most at strong suction peaks and high $M_\infty$. Measured $C_p$ (slide 10) lies above the Prandtl–Glauert curve, close to Kármán–Tsien, and at the highest Mach numbers between Kármán–Tsien and a third, more complicated correction, Laitone's, which is not lectured.
+For a suction peak, $C_{p0}<0$, the extra term is negative, so the denominator is smaller and $|C_p|$ is larger than Prandtl–Glauert's. As $C_{p0}\to0$ the extra term vanishes and Kármán–Tsien reduces to Prandtl–Glauert, so the two differ most at strong suction peaks and high $M_\infty$. Measured $C_p$ lies above the Prandtl–Glauert curve, close to Kármán–Tsien, and at the highest Mach numbers between Kármán–Tsien and a third, more complicated correction, Laitone's, which is not lectured.
 
-With Kármán–Tsien on the left-hand side (slide 11), $C_{p0,min}=-0.4$, $\gamma=1.4$:
+With Kármán–Tsien on the left-hand side, $C_{p0,min}=-0.4$, $\gamma=1.4$:
 
 | $M_\infty$ | LHS: Kármán–Tsien | RHS: $C_{p,cr}$ | LHS − RHS |
 |---:|---:|---:|---:|
@@ -572,7 +572,7 @@ compared with $0.747$ from Prandtl–Glauert. The stronger suction reaches sonic
 | transonic aerofoil theory ($M_\infty<0.8$) | subsonic compressible (linearised) theory | 4.4 title; 4.3 slide 7 ("Transonic ($M_\infty<0.9$)"); L4-4, l. 25 ("transonic region", spoken) | Textbooks keep *transonic* for mixed sub/supersonic flow (§4 note) |
 | Prandtl–Glauert transformation; P-G transformation | Prandtl–Glauert rule; Göthert's rule (3D); compressibility correction | 4.4 slides 1–5, 7 | |
 | Karman–Tsien (1939) | Kármán–Tsien rule; von Kármán–Tsien correction | 4.4 slides 10–11 | The slides drop the accent |
-| $C_{p0}$, $C_{l0}$, $C_{m0}$ (incompressible) | $C_{p,0}$; $C_{p,inc}$; $C_{p,i}$ | 4.4 slides 4–8 | 0 = incompressible, not stagnation (L4-4, ll. 126–128) |
+| $C_{p0}$, $C_{l0}$, $C_{m0}$ (incompressible) | $C_{p,0}$; $C_{p,inc}$; $C_{p,i}$ | 4.4 slides 4–8 | 0 = incompressible, not stagnation |
 | normal force $N'$ | $F_n'$ (W01 §2); normal-force coefficient $C_n$ | L4-4, ll. 151–156 (spoken) | $L'\approx N'$ for small $\alpha$ |
 
 ## Links
@@ -580,10 +580,11 @@ compared with $0.747$ from Prandtl–Glauert. The stronger suction reaches sonic
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
 - Previous: [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils]] · Next: [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]]
 - New concepts: [[Linearised Compressible Potential Equation]] · [[Prandtl-Glauert Transformation]] · [[Critical Mach Number]]
-- Earlier: [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]] (normal and chordwise force, $C_{m,LE}$, leading-edge suction) · [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#4. Stagnation properties|W01 §4]] (isentropic ratios used for $C_{p,cr}$) · [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#8. Lift, drag and the mechanism of drag divergence (4.2 slides 13–15)|W07a §8]] (CFD lift against Prandtl–Glauert; drag divergence) · [[Drag Divergence]] · [[Homentropic Flow]] (the same assumption as the MoC)
+- Full potential equation, the order-of-magnitude case for each dropped term (why the limits are 0.8, 1.2 and hypersonic) and Prandtl–Glauert in depth: [[SESA3029 Deep Dive - From the Euler Equations to Prandtl-Glauert]]
+- Earlier: [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#2. Aerodynamic review and the low-speed baseline|W01 §2]] (normal and chordwise force, $C_{m,LE}$, leading-edge suction) · [[SESA3029 W01 - Compressible-Flow Toolkit, Normal Shocks and Pitot Probes#4. Stagnation properties|W01 §4]] (isentropic ratios used for $C_{p,cr}$) · [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#8. Lift, drag and the mechanism of drag divergence|W07a §8]] (CFD lift against Prandtl–Glauert; drag divergence) · [[Drag Divergence]] · [[Homentropic Flow]] (the same assumption as the MoC)
 - Earlier years and other modules: [[SESA2022 T4 - Thin Aerofoil Theory]] (the incompressible $C_{p0}$ and $C_{l0}=2\pi\alpha$) · [[Streamfunction and Velocity Potential]] · [[Laplace's Equation]] · [[SESA3043 1.2b - Potential-Flow Review|SESA3043 1.2b]] · [[SESA3043 2.3 - Panel Methods|SESA3043 2.3]] (panel-method $C_{p0}$ to correct)
 - Worked sheet: [[SESA3029 Example Sheet 2 - Solutions#Q6. Critical Mach number via Prandtl–Glauert|ES2 Q6]] ($C_{p0,min}=-2.5$, $M_{crit}=0.448$)
-- Formulae: [[SESA3029 Formula Sheet#Euler equations and compressible aerofoils (Lectures 4.1–4.6)|Formula sheet: Chapter 4]]
+- Formulae: [[SESA3029 Formula Sheet#Euler equations and compressible aerofoils|Formula sheet: Chapter 4]]
 
 ## Sources
 
@@ -600,29 +601,29 @@ Tasks citing L4-3 or L4-4 were set or posed in those lectures (Fri 6 and Mon 9 N
 
 ### Core
 
-- [ ] **(L4-3, ll. 391–417; 2025–26 exam paper)** Show that $C_p=\dfrac{2}{\gamma M_\infty^2}\left(\dfrac{p}{p_\infty}-1\right)$, then derive $C_p=-2u'/U_\infty$, including the binomial step. → [[#5. The linearised pressure coefficient (4.3 slide 8)|§5]]
-- [ ] **(L4-3, ll. 55–327)** Derive $(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0$ from the steady Euler equations, stating where each assumption enters. → [[#1. Steady Euler equations in non-conservative form (4.3 slides 2–3)|§§1–4]]
-- [ ] **(L4-3, ll. 476–479; worked in L4-4, ll. 99–138)** Start from incompressible Bernoulli, apply $U=U_\infty+u_0'$, and show that $C_{p0}=-2u_0'/U_\infty$; then use $\phi=\phi_0/\beta$ to show $C_p=C_{p0}/\sqrt{1-M_\infty^2}$. → [[#7. The Prandtl–Glauert rule for Cp, Cl and Cm (4.4 slides 4–6)|§7]]
-- [ ] **(L4-4, ll. 141–179)** Show that $\int_0^c(p_l-p_u)\,\mathrm dx$ is the normal force, not the lift, say when $L'\approx N'$, and derive $C_l=C_{l0}/\sqrt{1-M_\infty^2}$ and $C_m=C_{m0}/\sqrt{1-M_\infty^2}$ from the chordwise integrals. → [[#Lift and moment coefficients (4.4 slide 5)|§7, lift and moment]]
-- [ ] **(L4-4, ll. 261–277; slide 8)** Find $M_{crit}$ for $C_{p0,min}=-0.4$ by evaluating LHS and RHS at trial Mach numbers and interpolating. Answer 0.747. → [[#Worked example: Cp0,min = −0.4 (4.4 slides 8–9 and 11)|§8]]
+- [ ] **(L4-3, ll. 391–417; 2025–26 exam paper)** Show that $C_p=\dfrac{2}{\gamma M_\infty^2}\left(\dfrac{p}{p_\infty}-1\right)$, then derive $C_p=-2u'/U_\infty$, including the binomial step. → [[#5. The linearised pressure coefficient|§5]]
+- [ ] **(L4-3, ll. 55–327)** Derive $(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0$ from the steady Euler equations, stating where each assumption enters. → [[#1. Steady Euler equations in non-conservative form|§§1–4]]
+- [ ] **(L4-3, ll. 476–479; worked in L4-4, ll. 99–138)** Start from incompressible Bernoulli, apply $U=U_\infty+u_0'$, and show that $C_{p0}=-2u_0'/U_\infty$; then use $\phi=\phi_0/\beta$ to show $C_p=C_{p0}/\sqrt{1-M_\infty^2}$. → [[#7. The Prandtl–Glauert rule for Cp, Cl and Cm|§7]]
+- [ ] **(L4-4, ll. 141–179)** Show that $\int_0^c(p_l-p_u)\,\mathrm dx$ is the normal force, not the lift, say when $L'\approx N'$, and derive $C_l=C_{l0}/\sqrt{1-M_\infty^2}$ and $C_m=C_{m0}/\sqrt{1-M_\infty^2}$ from the chordwise integrals. → [[#Lift and moment coefficients|§7, lift and moment]]
+- [ ] **(L4-4, ll. 261–277; slide 8)** Find $M_{crit}$ for $C_{p0,min}=-0.4$ by evaluating LHS and RHS at trial Mach numbers and interpolating. Answer 0.747. → [[#Worked example: Cp0,min = −0.4|§8]]
 
 ### Further practice
 
 - [ ] **(L4-4, ll. 180–186; reading)** Read how drag relates between the incompressible and compressible solutions (Anderson, *Fundamentals of Aerodynamics*, §§11.4 and 11.7), and explain why there is no $C_d=C_{d0}/\sqrt{1-M_\infty^2}$ rule. → [[#Drag does not follow the rule|§7, drag]]
-- [ ] **(L4-4, ll. 283–293; slide 11)** Redo the $C_{p0,min}=-0.4$ example with Kármán–Tsien. Answer 0.733. → [[#9. Improved correction: Kármán–Tsien (4.4 slides 10–11)|§9]]
-- [ ] **(L4-4, ll. 66–89)** From $\mathrm dC_l/\mathrm d\alpha=2\pi$ get $C_{l0}$ for a flat plate, write its compressible $C_l$, and evaluate it at $\alpha=4^\circ$, $M_\infty=0.7$. Answer 0.614. → [[#Lift and moment coefficients (4.4 slide 5)|§7, the check]]
-- [ ] **(L4-3, l. 123)** Expand the $y$-momentum equation yourself to get equation (2), $\rho u\,\partial v/\partial x+\rho v\,\partial v/\partial y=-a^2\,\partial\rho/\partial y$. → [[#1. Steady Euler equations in non-conservative form (4.3 slides 2–3)|§1]]
+- [ ] **(L4-4, ll. 283–293; slide 11)** Redo the $C_{p0,min}=-0.4$ example with Kármán–Tsien. Answer 0.733. → [[#9. Improved correction: Kármán–Tsien|§9]]
+- [ ] **(L4-4, ll. 66–89)** From $\mathrm dC_l/\mathrm d\alpha=2\pi$ get $C_{l0}$ for a flat plate, write its compressible $C_l$, and evaluate it at $\alpha=4^\circ$, $M_\infty=0.7$. Answer 0.614. → [[#Lift and moment coefficients|§7, the check]]
+- [ ] **(L4-3, l. 123)** Expand the $y$-momentum equation yourself to get equation (2), $\rho u\,\partial v/\partial x+\rho v\,\partial v/\partial y=-a^2\,\partial\rho/\partial y$. → [[#1. Steady Euler equations in non-conservative form|§1]]
 - [ ] **(Example Sheet 2, Q6)** Solve [[SESA3029 Example Sheet 2 - Solutions#Q6. Critical Mach number via Prandtl–Glauert|ES2 Q6]] ($C_{p0,min}=-2.5$). Answer 0.448.
-- [ ] **(L4-3, ll. 268–286)** Explain why the $(\gamma-1)u'U_\infty$ term is kept in $a^2$ but dropped from the linearised Euler equation. → [[#3. Linearising about the free stream (4.3 slides 4–5)|§3]]
-- [ ] **(L4-3, ll. 355–378; L4-4, ll. 12–27)** Explain why the linear equation fails near $M_\infty=1$ and for $M_\infty>5$. → [[#4. The velocity potential equation (4.3 slides 6–7)|§4]]
-- [ ] (suggested, not lecturer-set) Show that the boundary condition makes the transformed problem the same aerofoil. → [[#6. The Prandtl–Glauert transformation (4.4 slides 2–3)|§6, the tip]]
-- [ ] (suggested, not lecturer-set) $M_{crit}$ for $C_{p0,min}=-1.0$: 0.606 (P–G) and 0.585 (K–T). → [[#8. Estimating the critical Mach number (4.4 slides 7–9)|§8]]
-- [ ] (suggested, not lecturer-set) Find the slide 2 slip in the $y$-momentum line and check that it does not change the result. → [[#1. Steady Euler equations in non-conservative form (4.3 slides 2–3)|§1]]
+- [ ] **(L4-3, ll. 268–286)** Explain why the $(\gamma-1)u'U_\infty$ term is kept in $a^2$ but dropped from the linearised Euler equation. → [[#3. Linearising about the free stream|§3]]
+- [ ] **(L4-3, ll. 355–378; L4-4, ll. 12–27)** Explain why the linear equation fails near $M_\infty=1$ and for $M_\infty>5$. → [[#4. The velocity potential equation|§4]]
+- [ ] (suggested, not lecturer-set) Show that the boundary condition makes the transformed problem the same aerofoil. → [[#6. The Prandtl–Glauert transformation|§6, the tip]]
+- [ ] (suggested, not lecturer-set) $M_{crit}$ for $C_{p0,min}=-1.0$: 0.606 (P–G) and 0.585 (K–T). → [[#8. Estimating the critical Mach number|§8]]
+- [ ] (suggested, not lecturer-set) Find the slide 2 slip in the $y$-momentum line and check that it does not change the result. → [[#1. Steady Euler equations in non-conservative form|§1]]
 
 ## Transcript and slide slips
 
 > [!warning] Slide 2 has $u$ outside the bracket in the $y$-momentum equation
-> Where: [[#1. Steady Euler equations in non-conservative form (4.3 slides 2–3)]].
+> Where: [[#1. Steady Euler equations in non-conservative form]].
 >
 > 4.3 slide 2 writes "$+u[\dots]$" in the $y$-momentum line. Expanding $\partial(\rho uv)/\partial x+\partial(\rho v^2)/\partial y$ gives $v[\partial(\rho u)/\partial x+\partial(\rho v)/\partial y]$ (checked symbolically). The bracket is zero anyway (next step), so the slip does not change the result.
 

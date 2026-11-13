@@ -29,7 +29,7 @@ The two are independent. A sensor can be accurate but imprecise (noisy but unbia
 
 Drift is a slow change in bias with temperature or ageing. It matters most when a signal is integrated, because integration turns a constant bias $b$ into an error $kT_sb$ that grows without limit. A 0.8 °/s gyro bias in a rate damper, for instance, leaves the aircraft pitching at −0.8 °/s, and an attitude obtained by integrating that gyro drifts 48° per minute ([[SESA2027 Part C Problem Sheet Solutions]] Q1).
 
-Noise is usually modelled as zero-mean Gaussian, so about 95 % of readings fall within ±2σ. In the frequency domain it looks like band-limited white noise plus lines from electromagnetic interference. The signal-to-noise ratio (SNR) is signal power over noise power, and a signal below the noise floor cannot be detected at all.
+Noise is usually modelled as zero-mean Gaussian, so about 95 % of readings fall within ±2σ. In the frequency domain it looks like band-limited white noise plus lines from electromagnetic interference. The signal-to-noise ratio (SNR) is signal power over noise power, and a signal below the noise floor cannot be picked out sample by sample, although averaging or correlating over a long record can still recover a known signal.
 
 ## Related
 

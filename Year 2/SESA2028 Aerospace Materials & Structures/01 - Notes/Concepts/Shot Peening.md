@@ -18,7 +18,7 @@ Each impact makes a small dimple and plastically stretches the material immediat
 
 ![[materials_shot_peening_residual_stress.png|700]]
 
-The compression sits where fatigue cracks start, and it lowers the mean stress of every cycle without changing the range, so by the [[Goodman Relation]] the allowable amplitude rises; the fatigue limit and high-cycle strength go up markedly. The impacts also work-harden the surface. The cost is a rougher, dimpled finish, which on its own would shorten initiation, so peening is a trade that pays off at designed-in stress concentrations such as blade fir-tree roots, fillets and spline roots. The same idea, putting the critical region into residual compression before service, underlies the shrink-fit and autofrettage of thick cylinders in the structures half of the module ([[Shrink Fit]]).
+The compression sits where fatigue cracks start, and it lowers the mean stress of every cycle without changing the range, so by the [[Goodman Relation]] the allowable amplitude rises; the fatigue limit and high-cycle strength go up markedly. The impacts also work-harden the surface. The cost is a rougher, dimpled finish, which on its own would shorten initiation, so peening is a trade that pays off at designed-in stress concentrations such as blade fir-tree roots, fillets and spline roots. The same idea, putting the critical region into residual compression before service, underlies the shrink-fit and autofrettage of thick cylinders ([[Shrink Fit]]).
 
 ## Related
 

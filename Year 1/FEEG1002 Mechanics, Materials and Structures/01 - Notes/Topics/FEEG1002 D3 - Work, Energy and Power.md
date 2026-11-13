@@ -237,7 +237,7 @@ $$
 
 which is the constant-acceleration result of [[FEEG1002 D1 - Linear Motion of Particles#3. Constant acceleration|D1]], recovered without time.
 
-Energy conservation also answers the quarter-circle race of [[FEEG1002 D2 - Curvilinear Motion|D2]] (L04, ll. 322–435): on a frictionless quarter circle and on the straight chord between the same two points, the normal force does no work and the weight's work is $mgR$ on both, so the speeds at the bottom are equal. The times are not, and energy alone cannot give them.
+Energy conservation also answers the quarter-circle race of [[FEEG1002 D2 - Curvilinear Motion|D2]]: on a frictionless quarter circle and on the straight chord between the same two points, the normal force does no work and the weight's work is $mgR$ on both, so the speeds at the bottom are equal. The times are not, and energy alone cannot give them.
 
 ### Friction and heat
 
@@ -251,7 +251,7 @@ $$
 Ps=\mu_kNs
 $$
 
-The work done by $P$ is cancelled by the work of friction, but the block warms up and no heat appears in the equation. The resolution is that the surfaces are rough on a small scale: the asperities deform and stick, so the friction force acts through a displacement smaller than $s$, and the difference becomes internal energy. The particle model lumps this together, counting $\mu_kNs$ as both the work of friction and the heat produced (slides pp. 23–24). This does not change how problems are solved.
+The work done by $P$ is cancelled by the work of friction, but the block warms up and no heat appears in the equation. The resolution is that the surfaces are rough on a small scale: the asperities deform and stick, so the friction force acts through a displacement smaller than $s$, and the difference becomes internal energy. The particle model lumps this together, counting $\mu_kNs$ as both the work of friction and the heat produced. This does not change how problems are solved.
 
 ### Systems of particles
 
@@ -291,7 +291,7 @@ $$
 t=\frac dv=\frac{mgd(\sin\theta+C_R\cos\theta)}{P}
 $$
 
-The time to climb depends on the mass and the power only through $m/P$: losing mass and training harder are equivalent (L06, ll. 314–468).
+The time to climb depends on the mass and the power only through $m/P$: losing mass and training harder are equivalent.
 
 ---
 
@@ -299,7 +299,7 @@ The time to climb depends on the mass and the power only through $m/P$: losing m
 
 ### Block sliding down a rough incline
 
-A 50 kg block passes point A moving down a 10° incline at 6 m/s. The coefficient of kinetic friction is 0.5. How far past A does it slide before stopping? What if its mass were doubled, and what if the incline were 30° (slides pp. 26–30; DAMS3-2, ll. 69–147; L06, ll. 14–101)?
+A 50 kg block passes point A moving down a 10° incline at 6 m/s. The coefficient of kinetic friction is 0.5. How far past A does it slide before stopping? What if its mass were doubled, and what if the incline were 30° (DAMS3-2)?
 
 Take state 1 at A and state 2 at the stopping point B, a distance $s$ down the slope, and put the datum for $V_g$ at B, so $V_{gA}=mgs\sin\theta$. The FBD has the weight, the normal force and friction up the slope. Perpendicular to the incline there is no acceleration, so $N=mg\cos\theta$, and the friction does $-\mu_kmg\cos\theta\,s$. The normal force does no work. Then
 
@@ -324,7 +324,7 @@ The mass cancels, so doubling it changes nothing. At 30°, $\mu_k\cos\theta-\sin
 
 ### Minimum speed for a loop
 
-A particle enters a frictionless vertical circular loop of radius $R=1.5$ m at the bottom, A. Find the minimum entry speed for it to stay on the track, and the speed at C where it leaves the loop at the bottom again (slides pp. 31–35; DAMS3-2, ll. 148–200; L06, ll. 102–188).
+A particle enters a frictionless vertical circular loop of radius $R=1.5$ m at the bottom, A. Find the minimum entry speed for it to stay on the track, and the speed at C where it leaves the loop at the bottom again (DAMS3-2).
 
 ![[d_loop_the_loop.png|900]]
 
@@ -357,7 +357,7 @@ and by the same argument $v_C=v_A=8.58$ m/s.
 
 ### Motor hoisting a block through a pulley
 
-A 50 kg block A is lifted by a cable that passes round a pulley attached to A, with one end fixed above and the other end, P, wound in by a motor of efficiency 0.8. At the instant shown P moves down at 12 m/s with an acceleration of 6 m/s². Find the power supplied to the motor (slides pp. 40–43; DAMS3-3, ll. 21–43).
+A 50 kg block A is lifted by a cable that passes round a pulley attached to A, with one end fixed above and the other end, P, wound in by a motor of efficiency 0.8. At the instant shown P moves down at 12 m/s with an acceleration of 6 m/s². Find the power supplied to the motor (DAMS3-3).
 
 The pulley and cable are massless. With positions measured down from the fixed support, the cable gives $s_P+2s_A=l$, so
 
@@ -396,7 +396,7 @@ $$
 
 ### Pendulum speed from energy
 
-A pendulum of length $L$ is released from rest at $\theta_0$. Find $\dot\theta$ as a function of $\theta$ and, for small swings, the period (L12, ll. 349–509).
+A pendulum of length $L$ is released from rest at $\theta_0$. Find $\dot\theta$ as a function of $\theta$ and, for small swings, the period.
 
 With the datum at the lowest point, the height of the bob is $L(1-\cos\theta)$ and its speed is $L\dot\theta$. The cable tension is perpendicular to the motion and does no work, so energy is conserved:
 
@@ -420,11 +420,11 @@ $$
 \theta=\theta_0\cos\left(\sqrt{\frac gL}\,t\right),\qquad T=2\pi\sqrt{\frac Lg}
 $$
 
-For $L=1.2$ m, $T=2.20$ s, so five swings take about 11 s (L12, ll. 510–585).
+For $L=1.2$ m, $T=2.20$ s, so five swings take about 11 s.
 
 ### Collar on a rough vertical shaft
 
-A collar of mass $m$ rests at A on a rough vertical shaft (kinetic friction $\mu_k$). A spring of stiffness $k$ and unstretched length $L/2$ joins it to a fixed point O at the same height as A, a horizontal distance $L$ away. A downward impulse $I$ sets the collar moving, and it comes to rest at C, where the spring makes $\psi=60°$ with the horizontal. Find the speed at A, the spring force at angle $\psi$, the equations of motion, and the work done by friction from A to C (L11, ll. 20–411, a 2016–17 exam question worth 25 marks; symbolic only).
+A collar of mass $m$ rests at A on a rough vertical shaft (kinetic friction $\mu_k$). A spring of stiffness $k$ and unstretched length $L/2$ joins it to a fixed point O at the same height as A, a horizontal distance $L$ away. A downward impulse $I$ sets the collar moving, and it comes to rest at C, where the spring makes $\psi=60°$ with the horizontal. Find the speed at A, the spring force at angle $\psi$, the equations of motion, and the work done by friction from A to C (a 2016–17 exam question worth 25 marks; symbolic only).
 
 The impulse acts over a very short time, so gravity and friction are non-impulsive and the collar starts from rest ([[FEEG1002 D4 - Linear Impulse and Momentum#Impulsive and non-impulsive forces|D4]]):
 

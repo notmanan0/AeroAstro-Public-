@@ -29,9 +29,9 @@ sources: ["02 - Sources/Lectures/Chapter 11/SESA2024 Astronautics - Chapter 11_C
 > - **Common mistakes:** a pair $N$, $M$ with a common factor (98 and 7), which repeats sooner than intended and leaves gaps; forgetting to recheck the swath after the altitude changes.
 > - **Practise:** [[#The 28.96 degree imager]] · [[SESA2024 Workbook Ch11B - Remote Sensing Case Study Solutions#Mission 1: civilian multispectral imager|Workbook 11B Mission 1]]
 
-A Sun- and Earth-synchronous orbit ([[SESA2024 12 - Sun- and Earth-Synchronous Orbits]]) has $\tau=(M/N)\times86\,400$ s, which still leaves a family of orbits. The payload picks one, in particular the camera's field of view, which the instrument team fixes before the mission analysis starts (2025-12-11, ll. 126–175). The only thing the analyst can change is the altitude.
+A Sun- and Earth-synchronous orbit ([[SESA2024 12 - Sun- and Earth-Synchronous Orbits]]) has $\tau=(M/N)\times86\,400$ s, which still leaves a family of orbits. The payload picks one, in particular the camera's field of view, which the instrument team fixes before the mission analysis starts. The only thing the analyst can change is the altitude.
 
-Each pass of the push-broom imager covers a stripe of width $d$ along the ground track. Adjacent ground tracks are farthest apart at the equator and converge towards the poles, so if the stripes touch at the equator, the whole Earth between the latitude limits is covered (ll. 176–225). That fixes how many distinct tracks are needed, and through the repeat condition, the period and the altitude.
+Each pass of the push-broom imager covers a stripe of width $d$ along the ground track. Adjacent ground tracks are farthest apart at the equator and converge towards the poles, so if the stripes touch at the equator, the whole Earth between the latitude limits is covered. That fixes how many distinct tracks are needed, and through the repeat condition, the period and the altitude.
 
 ## 1. The coverage condition
 
@@ -47,7 +47,7 @@ $$
 s(\lambda)\approx\frac{2\pi R_E\cos\lambda}{N},
 $$
 
-ignoring the small tilt of the tracks. The spacing is greatest at the equator, $\lambda=0$, which is therefore where coverage is hardest. Setting the swath equal to the equatorial spacing (ll. 201–250):
+ignoring the small tilt of the tracks. The spacing is greatest at the equator, $\lambda=0$, which is therefore where coverage is hardest. Setting the swath equal to the equatorial spacing:
 
 $$
 d=\frac{2\pi R_E}{N}.
@@ -59,7 +59,7 @@ $$
 N=\mathrm{int}\left(\frac{2\pi R_E}{2h\tan(\beta/2)}\right).
 $$
 
-"int" means a nearby integer, not necessarily rounding down; the ground track can only close on itself after a whole number of orbits (2020 Lecture 9, ll. 91–120). Too low an orbit leaves gaps between the stripes, while the optimum altitude makes them just touch (2025-12-11, ll. 176–200).
+"int" means a nearby integer, not necessarily rounding down; the ground track can only close on itself after a whole number of orbits. Too low an orbit leaves gaps between the stripes, while the optimum altitude makes them just touch.
 
 Rearranging the repeat condition gives the number of days:
 
@@ -69,7 +69,7 @@ $$
 
 ## 2. The iteration
 
-The difficulty is circular (2025-12-11, ll. 276–400). The swath and the period both depend on $h$, but rounding $N$ and $M$ to integers changes the period, and with it $h$. The procedure is therefore a short loop (a flowchart on the slides):
+The difficulty is circular. The swath and the period both depend on $h$, but rounding $N$ and $M$ to integers changes the period, and with it $h$. The procedure is therefore a short loop:
 
 1. Choose an altitude in the first-pass range (700–900 km, so $\tau\approx6050\pm120$ s).
 2. Swath $d=2h\tan(\beta/2)$.
@@ -79,9 +79,9 @@ The difficulty is circular (2025-12-11, ll. 276–400). The swath and the period
 6. Recompute the period from the integers, $\tau=(M/N)\times86\,400$.
 7. If $\tau$ is outside the allowed range, change $N$ by one (or $M$) and go back to 6; otherwise stop.
 
-Then $a=[\mu(\tau/2\pi)^2]^{1/3}$, $h=a-R_E$, and $i$ from the regression condition. Since $\tau\propto1/N$, increasing $N$ shortens the period and lowers the orbit (2020 Lecture 9, ll. 151–165). Changing $M$ makes a bigger jump, because $M$ is the smaller number.
+Then $a=[\mu(\tau/2\pi)^2]^{1/3}$, $h=a-R_E$, and $i$ from the regression condition. Since $\tau\propto1/N$, increasing $N$ shortens the period and lowers the orbit. Changing $M$ makes a bigger jump, because $M$ is the smaller number.
 
-Because $N$ and $M$ must be integers, only a handful of orbits in the 700–900 km band are both Sun- and Earth-synchronous; examples are $(M,N)=(1,14)$ at 888 km and $98.98^\circ$ (slide table), $(6,85)$, $(5,68)$ and others (2025-12-11, ll. 401–450).
+Because $N$ and $M$ must be integers, only a handful of orbits in the 700–900 km band are both Sun- and Earth-synchronous; examples are $(M,N)=(1,14)$ at 888 km and $98.98^\circ$, $(6,85)$, $(5,68)$ and others.
 
 ### N and M must have no common factor
 
@@ -89,7 +89,7 @@ If $N$ and $M$ share a factor, the track repeats sooner than intended. $(98,7)$ 
 
 ## 3. The remaining elements
 
-The elements not yet fixed are $e$, $\omega$ and $\Omega$ (2020 Lecture 8, ll. 1–180).
+The elements not yet fixed are $e$, $\omega$ and $\Omega$.
 
 Eccentricity: close to zero, from the first pass, so the range and pixel size are constant.
 
@@ -111,17 +111,17 @@ The Earth turns $360^\circ$ in 24 hours, $15^\circ$ per hour, so an LST of $t$ h
 | Dawn–dusk | 06:00 / 18:00 | $90^\circ$ or $270^\circ$ | $\alpha_S-90^\circ$ |
 | Mid-morning | 10:30 | $22.5^\circ$ | $\alpha_S-22.5^\circ$ |
 
-Most European remote-sensing satellites fly a "northern-hemisphere morning" orbit with a descending node at about 10:30 LST. They reach Europe around 10:30–11:00, with good illumination and moderate shadows, before afternoon convective cloud builds up over land (2020 Lecture 8, ll. 91–120). Measure $\phi$ clockwise from the Earth–Sun line, and keep to that direction throughout (ll. 61–90).
+Most European remote-sensing satellites fly a "northern-hemisphere morning" orbit with a descending node at about 10:30 LST. They reach Europe around 10:30–11:00, with good illumination and moderate shadows, before afternoon convective cloud builds up over land. Measure $\phi$ clockwise from the Earth–Sun line, and keep to that direction throughout.
 
 ## 4. The LST sets the eclipse
 
-The LST of the node decides how the orbit sits relative to the terminator, and so how much of each orbit is in shadow (2020 Lecture 8, ll. 91–180). A noon–midnight orbit at the equinox has the longest eclipse: at 800 km it is about 35 % of each orbit, roughly 2100 s of a 6050 s period ([[SESA2024 08 - Electrical Power Subsystem#Worst-case eclipse|note 08]]). A dawn–dusk orbit rides the terminator and is in sunlight all year except for short eclipses of 15–20 minutes in the northern winter, because at $98^\circ$ it does not follow the terminator exactly. A 10 a.m. orbit spends about a third of each orbit in eclipse, around 33 minutes on average.
+The LST of the node decides how the orbit sits relative to the terminator, and so how much of each orbit is in shadow. A noon–midnight orbit at the equinox has the longest eclipse: at 800 km it is about 35 % of each orbit, roughly 2100 s of a 6050 s period ([[SESA2024 08 - Electrical Power Subsystem#Worst-case eclipse|note 08]]). A dawn–dusk orbit rides the terminator and is in sunlight all year except for short eclipses of 15–20 minutes in the northern winter, because at $98^\circ$ it does not follow the terminator exactly. A 10 a.m. orbit spends about a third of each orbit in eclipse, around 33 minutes on average.
 
 That chain, from a payload illumination requirement through the LST to the eclipse, then reaches the other subsystems: the battery mass and array size ([[SESA2024 08 - Electrical Power Subsystem]]), the array articulation (a Sun-synchronous orbit removes one degree of freedom, and a dawn–dusk orbit lets the array stay fixed), and the heaters and radiators needed for the hot and cold phases ([[SESA2024 10 - Thermal Control]]). It illustrates the systems-engineering point of [[SESA2024 01 - Systems Engineering and Spacecraft Design|note 01]], that one requirement propagates through every subsystem.
 
 ## 5. Visualising ground tracks
 
-A ground-track version of the Excel visualiser (2020 Lecture 6) takes the elements and the date and time and plots the track, including both the Earth's rotation and the $J_2$ regression (for circular orbits only). Its tracks for the ISS, Hubble and Envisat can be compared with those on Heavens-Above, and varying the date and elements shows how the equator-crossing angle, the maximum latitude and the longitude step per orbit change (ll. 1–80).
+A ground-track version of the Excel visualiser takes the elements and the date and time and plots the track, including both the Earth's rotation and the $J_2$ regression (for circular orbits only). Its tracks for the ISS, Hubble and Envisat can be compared with those on Heavens-Above, and varying the date and elements shows how the equator-crossing angle, the maximum latitude and the longitude step per orbit change.
 
 ![[ast_sso_ground_track.png|760]]
 
@@ -131,7 +131,7 @@ Constants: $R_E=6378$ km, $\mu=398\,600\ \mathrm{km^3/s^2}$.
 
 ### The 28.96 degree imager
 
-A civil mission maps roads and buildings at high resolution for about ten years with a visible imager of field of view $28.96^\circ$. Find $N$, $M$, $a$ and $i$, suggest a descending-node LST, and find the RAAN for a launch at the spring equinox (2020 Lecture 9, ll. 1–240).
+A civil mission maps roads and buildings at high resolution for about ten years with a visible imager of field of view $28.96^\circ$. Find $N$, $M$, $a$ and $i$, suggest a descending-node LST, and find the RAAN for a launch at the spring equinox.
 
 High resolution with a long life gives the same trade as the first pass, so 700–900 km. Start at 800 km:
 

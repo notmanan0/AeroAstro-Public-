@@ -47,11 +47,11 @@ Aluminium alloys are designated by their main alloying element, and engineers in
 | 7xxx | Zn + Mg | yes | aerospace, high strength (7075-T6 is the strongest in the course table) |
 | 8xxx | others, including Li | yes | aerospace Al–Li, attractive for its low density |
 
-Aerospace has driven most of this development. The temper letters record the heat treatment: T4 means solution treated and aged naturally at room temperature, T6 solution treated and artificially aged at a raised temperature. The property table is not for memorising, but it shows the pattern: a 1xxx alloy annealed is weak and ductile, 7075-T6 is strong but much less ductile, and every alloy sits somewhere on that trade-off.
+Aerospace has driven most of this development. The temper letters record the heat treatment: T4 means solution treated and aged naturally at room temperature, T6 solution treated and artificially aged at a raised temperature. Across the property table strength trades against ductility: a 1xxx alloy annealed is weak and ductile, 7075-T6 is strong but much less ductile, and every alloy sits somewhere on that trade-off.
 
 ## 2. Strengthening: making life hard for dislocations
 
-This is revision of Part 1. A dislocation is an extra half-plane of atoms; as it moves it breaks one row of bonds at a time, which is why plastic flow needs much less stress than shearing a perfect crystal. Each dislocation carries a strain field, compressive on one side of its slip plane and tensile on the other. Every strengthening mechanism works by making that strain field interact with something in the microstructure.
+A dislocation is an extra half-plane of atoms; as it moves it breaks one row of bonds at a time, which is why plastic flow needs much less stress than shearing a perfect crystal. Each dislocation carries a strain field, compressive on one side of its slip plane and tensile on the other. Every strengthening mechanism works by making that strain field interact with something in the microstructure.
 
 ### Grain size: Hall–Petch
 
@@ -135,7 +135,7 @@ Titanium's appeal is high specific strength, corrosion resistance from its very 
 
 ## Worked examples
 
-No calculations were set on this topic; these check the quantitative claims behind the descriptive material.
+No calculations were set on this topic.
 
 ### Why the heat treatment peaks
 

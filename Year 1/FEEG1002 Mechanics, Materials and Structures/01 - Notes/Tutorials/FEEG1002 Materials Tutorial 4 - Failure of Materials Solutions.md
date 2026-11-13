@@ -83,7 +83,7 @@ Assumptions: linear elastic fracture mechanics, with plane-strain conditions in 
 
 Taught in: [[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#Using the properties in design]] and [[FEEG1002 C8 - Fracture - Brittle, Ductile and Fracture Mechanics#Using fracture mechanics in design]].
 
-The governing failure mode is yielding, so the safety factor goes on the yield strength. The ordinary rule in the course is a working stress of at most half the yield strength; for a nuclear pressure vessel, where failure would be catastrophic, the lecture recommends a larger margin, a third of the yield strength or less (L4, ll. 497–507; L12, ll. 437–453). A factor of about 3 gives
+The governing failure mode is yielding, so the safety factor goes on the yield strength. The ordinary rule in the course is a working stress of at most half the yield strength; for a nuclear pressure vessel, where failure would be catastrophic, the lecture recommends a larger margin, a third of the yield strength or less. A factor of about 3 gives
 
 $$
 \sigma_{allow}=\frac{375}{3}=125\ \mathrm{MPa}

@@ -29,13 +29,13 @@ sources: ["02 - Sources/FEM Lectures/Lecture_9_Meshing_2_final(1).pdf", "02 - So
 > - **Common mistakes:** refining the whole domain when only the hole needs it; reporting a converged peak stress at a sharp corner.
 > - **Practise:** [[#Worked example: a cantilever with several element types]] · [[#5. Convergence and singularities]]
 
-Choosing and meshing elements determines both the accuracy and the cost of a model, and can be the difference between a run of minutes and one of hours that makes a parametric study impossible (2026-02-27 09:59, ll. 1–20).
+Choosing and meshing elements determines both the accuracy and the cost of a model, and can be the difference between a run of minutes and one of hours that makes a parametric study impossible (2026-02-27 09:59).
 
 As in CFD, the computing cost rises steeply with the number of degrees of freedom, so they should go where the results of interest need them. A displacement is an average over the whole structure and settles on a coarse mesh; a peak stress is a local maximum of a steep gradient and needs many small elements just there. And some peaks are not real: at a perfectly sharp internal corner the exact elastic stress is infinite, so refining the mesh only makes the computed peak grow.
 
 ## 1. Errors in FE analysis
 
-An FE model can do what analytical solutions cannot, but its user must know what errors it carries (ll. 21–95).
+An FE model can do what analytical solutions cannot, but its user must know what errors it carries.
 
 Numerical errors come from the limited number of significant digits the computer keeps and from the tolerance on the iterative solution. Units matter here too: the same structure in metres or millimetres gives numbers of very different size. Exporting an ANSYS stiffness matrix with 8 rather than 16 digits and computing eigenvalues in MATLAB and Python gave results completely different from the analytical solution; 16 digits fixed it (a research example).
 
@@ -47,13 +47,13 @@ User errors include forgotten boundary conditions, constraints in the wrong dire
 
 ## 2. Choosing the element
 
-The first part of a meshing plan is the element (ll. 101–180). Decide the quantity of interest first, displacement, strain, stress, natural frequency or mode shape, since each needs a different mesh. Then decide the dimension. A spar can be modelled in 3D, but as a beam it runs fast enough for parametric studies; 2D plane elements suit thin plates, with plane stress for thin parts and plane strain for thick ones; 3D solids are needed only if the stress varies significantly through the thickness. The rule is to choose an element type appropriate to the loading and stress conditions, one that captures every significant stress the loading, geometry and boundary conditions can produce.
+The first part of a meshing plan is the element. Decide the quantity of interest first, displacement, strain, stress, natural frequency or mode shape, since each needs a different mesh. Then decide the dimension. A spar can be modelled in 3D, but as a beam it runs fast enough for parametric studies; 2D plane elements suit thin plates, with plane stress for thin parts and plane strain for thick ones; 3D solids are needed only if the stress varies significantly through the thickness. The rule is to choose an element type appropriate to the loading and stress conditions, one that captures every significant stress the loading, geometry and boundary conditions can produce.
 
-An element type best for one problem may not be best for another. The cantilever of slide 9 ($E=10^4$, $\nu=0.3$, $L=10$, depth 2, tip load $P=20$) has a beam-theory root stress of 300 and tip deflection 1.031, matched by a single beam element, while some plane-element meshes are far off (see the worked example). For a slender structure, beam elements are both accurate and cheap.
+An element type best for one problem may not be best for another. A standard test cantilever ($E=10^4$, $\nu=0.3$, $L=10$, depth 2, tip load $P=20$) has a beam-theory root stress of 300 and tip deflection 1.031, matched by a single beam element, while some plane-element meshes are far off (see the worked example). For a slender structure, beam elements are both accurate and cheap.
 
-Element types can also be mixed when the physics allows. A fan-blade and rotor model, for example, cannot be solved as a nonlinear 3D solid model because of blade-tip rub and bearing nonlinearities; the shaft is modelled with beam elements, being slender, and the bearings with spring elements constrained in some directions (ll. 151–165).
+Element types can also be mixed when the physics allows. A fan-blade and rotor model, for example, cannot be solved as a nonlinear 3D solid model because of blade-tip rub and bearing nonlinearities; the shaft is modelled with beam elements, being slender, and the bearings with spring elements constrained in some directions.
 
-Element order matters at the same mesh density (slide 10, ll. 165–180). A tapered cantilever with target stresses of 8333 psi at mid-length and 7407 psi at the fixed end gives:
+Element order matters at the same mesh density. A tapered cantilever with target stresses of 8333 psi at mid-length and 7407 psi at the fixed end gives:
 
 | Element | Mid-length (psi) | Ratio | Fixed end (psi) | Ratio |
 |---|---|---|---|---|
@@ -64,7 +64,7 @@ The higher-order element is more accurate on the same mesh and less sensitive to
 
 ## 3. Mesh density depends on the purpose
 
-The density follows from what is to be extracted (ll. 181–200):
+The density follows from what is to be extracted:
 
 | Model | Extracts | Density |
 |---|---|---|
@@ -76,7 +76,7 @@ Natural frequencies and mode shapes need only a coarse mesh compared with stress
 
 ## 4. Refinement strategies
 
-There are four ways to refine (ll. 200–280; [[h- and p-Refinement]]). Global element size reduction (h-refinement everywhere) is the simplest, but it spends elements in the far field of the plate with a hole without improving the stress at the hole. Local refinement selects the lines or areas round a known stress raiser and sets a finer size there, as in lab 2. Raising the element order (PLANE182 to PLANE183) is p-refinement. Manual adjustment, or automatic adaptive refinement in some codes such as COMSOL, completes the list; newer commercial packages increasingly automate meshing. The methods can be combined, and refinement continues until the results change very little from one mesh to the next. The cost rises with the number of degrees of freedom.
+There are four ways to refine ([[h- and p-Refinement]]). Global element size reduction (h-refinement everywhere) is the simplest, but it spends elements in the far field of the plate with a hole without improving the stress at the hole. Local refinement selects the lines or areas round a known stress raiser and sets a finer size there, as in lab 2. Raising the element order (PLANE182 to PLANE183) is p-refinement. Manual adjustment, or automatic adaptive refinement in some codes such as COMSOL, completes the list; newer commercial packages increasingly automate meshing. The methods can be combined, and refinement continues until the results change very little from one mesh to the next. The cost rises with the number of degrees of freedom.
 
 A procedure for choosing sizes:
 
@@ -86,13 +86,13 @@ A procedure for choosing sizes:
 4. Plot the deflected shape (and mode shapes, for modal or buckling analyses) to find the critical areas.
 5. Verify against an analytical solution, such as beam theory, and refine.
 
-Refinement must be gradual, with neighbouring elements of similar size: never a millimetre element next to a metre one, though most tools grade the transition automatically (ll. 266–275).
+Refinement must be gradual, with neighbouring elements of similar size: never a millimetre element next to a metre one, though most tools grade the transition automatically.
 
 ## 5. Convergence and singularities
 
-A mesh convergence study runs the analysis on successively finer meshes; the result is converged when further refinement no longer changes it significantly (ll. 276–295; [[Mesh Convergence and Grid Independence]]). It is essential for peak stresses and strains, which a coarse mesh cannot capture. The location of the peak can move as the mesh changes, so define carefully where the stress is read, possibly at a fixed point.
+A mesh convergence study runs the analysis on successively finer meshes; the result is converged when further refinement no longer changes it significantly ([[Mesh Convergence and Grid Independence]]). It is essential for peak stresses and strains, which a coarse mesh cannot capture. The location of the peak can move as the mesh changes, so define carefully where the stress is read, possibly at a fixed point.
 
-Sometimes the stress does not flatten but keeps rising as elements shrink (ll. 286–305). That is a stress singularity: at a sharp re-entrant corner or a crack tip, and likewise under a point load or point constraint where $F/A$ has $A\to0$, linear elasticity predicts infinite stress, and refinement only samples closer to it ([[Stress Singularities]]). The remedies are to read the stress away from the sharp feature, to add a fillet as a real part would have, and to spread forces and constraints over an area rather than a node.
+Sometimes the stress does not flatten but keeps rising as elements shrink. That is a stress singularity: at a sharp re-entrant corner or a crack tip, and likewise under a point load or point constraint where $F/A$ has $A\to0$, linear elasticity predicts infinite stress, and refinement only samples closer to it ([[Stress Singularities]]). The remedies are to read the stress away from the sharp feature, to add a fillet as a real part would have, and to spread forces and constraints over an area rather than a node.
 
 A small Q4 plane-stress solver on an L-shaped plate, clamped on one edge with a shear load on the lower arm, shows the effect (`generate_dam_b7_figures.py`). Normalised by the coarsest mesh, refining from 4 to 128 elements per unit length gives
 
@@ -116,21 +116,21 @@ $$
 
 ## 6. Element quality checks
 
-For accuracy, elements should have a low aspect ratio, below about 2 to 4 for plane elements (ll. 306–325; solids from B6: at most 3 linear, 5 quadratic). Poor shapes include quadrilaterals that are nearly triangles, highly skewed elements, large aspect ratios, curved sides and off-centre mid-side nodes. The angles between element sides must not approach 0° or 180°, otherwise the shape-function mapping breaks down and the coefficients of the interpolating polynomial cannot be found ([[FE Element Quality Checks]]).
+For accuracy, elements should have a low aspect ratio, below about 2 to 4 for plane elements (solids from B6: at most 3 linear, 5 quadratic). Poor shapes include quadrilaterals that are nearly triangles, highly skewed elements, large aspect ratios, curved sides and off-centre mid-side nodes. The angles between element sides must not approach 0° or 180°, otherwise the shape-function mapping breaks down and the coefficients of the interpolating polynomial cannot be found ([[FE Element Quality Checks]]).
 
-Wings are the usual offenders: twist and a sharp trailing edge produce warnings about aspect ratio and warping. Warnings are not necessarily fatal, and the analysis can continue, but accuracy may suffer; errors must be fixed. After meshing, the mesh check reports, for example, "4 of the 183 newly modified elements violate shape warning limits", with details in the output window, and plotting the warning elements shows where they are (ll. 316–330).
+Wings are the usual offenders: twist and a sharp trailing edge produce warnings about aspect ratio and warping. Warnings are not necessarily fatal, and the analysis can continue, but accuracy may suffer; errors must be fixed. After meshing, the mesh check reports, for example, "4 of the 183 newly modified elements violate shape warning limits", with details in the output window, and plotting the warning elements shows where they are.
 
 ## 7. Lab 3: shell wing
 
-Lab 3 models a uniform wing with an aerofoil section, in static and modal analysis, and needs only one model whose element type and thickness are changed (ll. 331–405; [[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]). The tasks are to compare four-node SHELL181 (linear, efficient for large models with mild curvature) with eight-node SHELL281 (quadratic, better for curvature, more tolerant of aspect ratio, more expensive); to assess the effect of skin thickness on the factor of safety, stress and wing weight; and to find the minimum skin thickness for the same factor of safety with a different material, and its effect on weight. The aerofoil file is in SI units, unlike the millimetre units of labs 1 and 2, so everything else must be in SI too.
+Lab 3 models a uniform wing with an aerofoil section, in static and modal analysis, and needs only one model whose element type and thickness are changed ([[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]). The tasks are to compare four-node SHELL181 (linear, efficient for large models with mild curvature) with eight-node SHELL281 (quadratic, better for curvature, more tolerant of aspect ratio, more expensive); to assess the effect of skin thickness on the factor of safety, stress and wing weight; and to find the minimum skin thickness for the same factor of safety with a different material, and its effect on weight. The aerofoil file is in SI units, unlike the millimetre units of labs 1 and 2, so everything else must be in SI too.
 
-For the weight, treating the skin as two rectangular plates is a rough first estimate; better, Preprocessor → Modeling → Operate → Calculate Geometry Items gives the area of the selected surfaces (and second moments of area, useful for building an equivalent beam model), which times the shell thickness and density gives the mass (ll. 366–395).
+For the weight, treating the skin as two rectangular plates is a rough first estimate; better, Preprocessor → Modeling → Operate → Calculate Geometry Items gives the area of the selected surfaces (and second moments of area, useful for building an equivalent beam model), which times the shell thickness and density gives the mass.
 
 ## Worked examples
 
 ### Worked example: a cantilever with several element types
 
-The cantilever of slide 9 has $E=10^4$, $\nu=0.3$, length $L=10$, depth $h=2$ and unit thickness, with tip load $P=20$. The section properties are
+The test cantilever has $E=10^4$, $\nu=0.3$, length $L=10$, depth $h=2$ and unit thickness, with tip load $P=20$. The section properties are
 
 $$
 I=\frac{bh^3}{12}=\frac{1\times8}{12}=0.667,
@@ -158,7 +158,7 @@ $$
 \sigma=\frac{Mc}{I}=\frac{20\times10\times1}{0.667}=300 .
 $$
 
-These match slide 9. The FE results there (Cook's textbook comparison) include a single two-node beam element, $v_C=1.031$, exact; constant-strain triangles, $v_C=0.264$, about a quarter of the true value because they are far too stiff in bending; a rectangular Q4 mesh, $v_C=0.693$; the same Q4 mesh distorted, $\sigma=190$ and $v_C=0.502$; linear-strain triangles, $\sigma=254$, $v_C=0.987$, and 250 and 0.924 when distorted; and the higher-order quadrilateral meshes, $\sigma$ of 270 to 300 and $v_C$ of 0.98 to 1.035. Low-order elements are stiff in bending and suffer badly from distortion; higher-order ones, or the right element (a beam), do not.
+These are the reference values. Cook's textbook comparison of FE results includes a single two-node beam element, $v_C=1.031$, exact; constant-strain triangles, $v_C=0.264$, about a quarter of the true value because they are far too stiff in bending; a rectangular Q4 mesh, $v_C=0.693$; the same Q4 mesh distorted, $\sigma=190$ and $v_C=0.502$; linear-strain triangles, $\sigma=254$, $v_C=0.987$, and 250 and 0.924 when distorted; and the higher-order quadrilateral meshes, $\sigma$ of 270 to 300 and $v_C$ of 0.98 to 1.035. Low-order elements are stiff in bending and suffer badly from distortion; higher-order ones, or the right element (a beam), do not.
 
 As percentage errors against $v_C=1.031$ and $\sigma=300$:
 

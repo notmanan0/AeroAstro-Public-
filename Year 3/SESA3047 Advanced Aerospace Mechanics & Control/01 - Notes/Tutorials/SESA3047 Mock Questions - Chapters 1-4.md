@@ -20,10 +20,10 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA3047 Formula Sheet.md", "02 - Sou
 > [!warning] Self-written mock questions, not lecturer-set
 > **Self-written mock questions, not lecturer-set; written from lectured content of Chapters 1–4 (to 22 Oct 2026).** Format, marks and timings are guesses at an exam style. They are not the real SESA3047 paper.
 >
-> **What was checked before writing these (24 Oct 2026):**
-> - `02 - Sources/Lectures`: the four chapter handouts and the L2–L13 transcripts. No tutorial sheet, revision questions or problem sheet was set or mentioned in any transcript. The only in-lecture "left to you" items are two matrix multiplications in Chapter 4 (Eqs. 4.11–4.14, L12 ll. 142–144; Eq. 4.23, L13 ll. 3–5), already worked in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Self-study tasks|4.1]].
+> **What was checked before writing these:**
+> - Lectures: no tutorial sheet, revision questions or problem sheet was set for Chapters 1–4. The only "left to you" items are two matrix multiplications in Chapter 4 (Eqs. 4.11–4.14), already worked in [[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Self-study tasks|4.1]].
 > - `03 - Exams & Past Papers`: empty, so there is no past paper or specimen paper.
-> - `04 - Labs & Coursework`: **Lab 1** (MATLAB exercises feeding the 20 % lab report) and **Coursework 1** (20 marks, 10 % of the module, due Thu 29 Oct, 23:00; L12 ll. 352–357). Both are **assessed**, so neither is solved here. The numbers below deliberately differ from both. Where a question practises the same skill (Q4, Q10), it uses its own data and its own attitude, so nothing here is a coursework answer.
+> - `04 - Labs & Coursework`: **Lab 1** (MATLAB exercises feeding the 20 % lab report) and **Coursework 1** (20 marks, 10 % of the module, due Thu 29 Oct, 23:00). Both are **assessed**, so neither is solved here. The numbers below deliberately differ from both. Where a question practises the same skill (Q4, Q10), it uses its own data and its own attitude, so nothing here is a coursework answer.
 
 > [!info] How to use this sheet
 > - **Timing:** marks are converted at ≈1.8 min per mark (about a 2-hour paper of 65–70 marks). The SESA3047 exam format had not been announced by 22 Oct, so treat this rate as an assumption. The whole sheet is 118 marks, about 3.5 hours: do two or three questions per sitting.
@@ -303,7 +303,7 @@ $$
 
 This is an Earth-frame derivative, but written in FRD components. The frame of differentiation and the coordinates are separate choices.
 
-**(c)** ([[SESA3047 2.1 - Vector Operations and the Transport Theorem#Special cases (Eqs. 2.23–2.25)|2.1, special cases]])
+**(c)** ([[SESA3047 2.1 - Vector Operations and the Transport Theorem#Special cases|2.1, special cases]])
 
 (i) Locked boom: ${}^b\dot{\mathbf p}=\mathbf 0$, so ${}^e\dot{\mathbf p}=\boldsymbol\omega\times\mathbf p=[0.03,-0.66,-0.20]^T$ m/s. This is the rigid-body result $\mathbf v_P-\mathbf v_{cm}=\boldsymbol\omega\times\mathbf p$.
 
@@ -362,7 +362,7 @@ Check against the closed form ([[SESA3047 2.2 - Direction Cosine Matrices and Eu
 - $C_{23}=s_\phi c_\theta=-0.4226(0.8192)=-0.3462$ ✓;
 - $C_{32}=-s_\phi c_\psi+c_\phi s_\theta s_\psi=-0.3237+0.3341=0.0104$ ✓.
 
-**(b)** ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#3. Properties of a DCM (§2.3.2), with the reasons|2.2 §3]]) Row 1 length:
+**(b)** ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#3. Properties of a DCM, with the reasons|2.2 §3]]) Row 1 length:
 
 $$
 0.6275^2+0.5265^2+0.5736^2=0.3938+0.2772+0.3290=1.0000 .
@@ -378,7 +378,7 @@ The other rows behave the same way, so $\mathbf C\mathbf C^T=\mathbf I$ and $\de
 
 **Why both must hold.** Each row is an FRD unit vector written in NED components. The three are unit length and mutually perpendicular, so $\mathbf C\mathbf C^T=\mathbf I$ and $\mathbf C^{-1}=\mathbf C^T$: a rotation preserves lengths and angles. $\det\mathbf C=+1$ (not $-1$) because FRD is right-handed like NED. The DCM is a proper rotation, not a reflection.
 
-**(c)** Extraction formulas ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#7. Extracting Euler angles from a DCM (§2.4.4)|2.2 §7]]):
+**(c)** Extraction formulas ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#7. Extracting Euler angles from a DCM|2.2 §7]]):
 
 $$
 \theta=-\arcsin C_{13}=-\arcsin(-0.5736)=35.0^\circ,
@@ -400,7 +400,7 @@ $$
 
 This is $180^\circ$ out: north-west instead of south-east. The ratio loses the signs. $C_{11}=c_\theta c_\psi<0$ with $c_\theta>0$ says $\cos\psi<0$, so $\psi$ is in the second quadrant. atan2 reads both signs ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Why atan2, not arctan|2.2, why atan2]]).
 
-**(d)** NED to FRD is $\mathbf v^{FRD}=\mathbf C\mathbf v^{NED}$ ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#The two directions of transformation (Eqs. 2.40–2.41)|2.2, two directions]]). Row by row:
+**(d)** NED to FRD is $\mathbf v^{FRD}=\mathbf C\mathbf v^{NED}$ ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#The two directions of transformation|2.2, two directions]]). Row by row:
 
 $$
 u=(-0.6275)(-140)+(0.5265)(110)+(-0.5736)(-115)=87.85+57.92+65.96=211.73\ \text{m/s},
@@ -441,7 +441,7 @@ $g_x<0$: nose up, so weight has a rearward component. $g_y<0$: left wing down ($
 
 ### Solution
 
-**(a)** ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock (§2.4.5)|2.2 §8]]) Put $s_\theta=1$, $c_\theta=0$ into the closed-form matrix (formula sheet):
+**(a)** ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#8. The singularity: gimbal lock|2.2 §8]]) Put $s_\theta=1$, $c_\theta=0$ into the closed-form matrix (formula sheet):
 
 $$
 \mathbf C=\begin{bmatrix}0&0&-1\\-c_\phi s_\psi+s_\phi c_\psi&c_\phi c_\psi+s_\phi s_\psi&0\\s_\phi s_\psi+c_\phi c_\psi&-s_\phi c_\psi+c_\phi s_\psi&0\end{bmatrix}.
@@ -500,7 +500,7 @@ Remedy: use a non-singular attitude representation such as **quaternions** (or p
 
 ### Solution
 
-**(a)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#3. Composing the three rotation rates (§3.1.2)|3.1 §3]], [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#4. Multiplying it out, one step at a time (Appendix §3.4.1)|§4]])
+**(a)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#3. Composing the three rotation rates|3.1 §3]], [[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#4. Multiplying it out, one step at a time (Appendix §3.4.1)|§4]])
 
 $\dot\psi$ is about the NED down axis, which is the first axis in the sequence. To reach FRD it must pass through the pitch and then the roll rotation. $\dot\theta$ is about the intermediate $y$ axis and only needs the roll rotation. $\dot\phi$ is already about body $x$.
 
@@ -528,7 +528,7 @@ $$
 \begin{bmatrix}p\\q\\r\end{bmatrix}=\underbrace{\begin{bmatrix}1&0&-s_\theta\\0&c_\phi&s_\phi c_\theta\\0&-s_\phi&c_\phi c_\theta\end{bmatrix}}_{\mathbf E}\begin{bmatrix}\dot\phi\\\dot\theta\\\dot\psi\end{bmatrix}.
 $$
 
-**(b)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#6. Inverting: the rotational kinematic equation (§3.1.3, Eqs. 3.10–3.11)|3.1 §6]]) Rows 2 and 3:
+**(b)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#6. Inverting: the rotational kinematic equation|3.1 §6]]) Rows 2 and 3:
 
 $$
 q=c_\phi\dot\theta+s_\phi c_\theta\dot\psi,\qquad r=-s_\phi\dot\theta+c_\phi c_\theta\dot\psi .
@@ -570,7 +570,7 @@ $$
 \dot\phi=0.15+(0.1765)(-0.3640)=0.15-0.0642=0.0858\ \text{rad/s}=4.91^\circ/\text{s}.
 $$
 
-**(c)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#7. Physical interpretation and the small-angle form (§3.1.4)|3.1 §7]]) The small-angle form $\dot{\boldsymbol\Phi}\approx[p,q,r]^T=[8.59,-4.58,14.32]^\circ$/s is badly wrong here. It is 75 % high in roll rate, 59 % low in pitch rate and 33 % high in yaw rate. At a $30^\circ$ roll angle, yaw and pitch rates are shared between $q$ and $r$.
+**(c)** ([[SESA3047 3.1 - Rotational Kinematics and Euler-Angle Rates#7. Physical interpretation and the small-angle form|3.1 §7]]) The small-angle form $\dot{\boldsymbol\Phi}\approx[p,q,r]^T=[8.59,-4.58,14.32]^\circ$/s is badly wrong here. It is 75 % high in roll rate, 59 % low in pitch rate and 33 % high in yaw rate. At a $30^\circ$ roll angle, yaw and pitch rates are shared between $q$ and $r$.
 
 One Euler step of 0.2 s:
 
@@ -599,7 +599,7 @@ A space station spins about its axis at a constant $\omega=0.2$ rad/s; its centr
 
 ### Solution
 
-**(a)** ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#2. Acceleration of a point in a moving frame (§3.2.1, Eqs. 3.24–3.26)|3.2 §2]]) Write $\boldsymbol\omega=\boldsymbol\omega_{b/a}$, $\boldsymbol\alpha={}^a\dot{\boldsymbol\omega}$, $\mathbf p=\mathbf p_{P/Q}$. Differentiate the position in $F_a$:
+**(a)** ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#2. Acceleration of a point in a moving frame|3.2 §2]]) Write $\boldsymbol\omega=\boldsymbol\omega_{b/a}$, $\boldsymbol\alpha={}^a\dot{\boldsymbol\omega}$, $\mathbf p=\mathbf p_{P/Q}$. Differentiate the position in $F_a$:
 
 $$
 \mathbf v_{P/a}=\mathbf v_{Q/a}+{}^a\dot{\mathbf p}.
@@ -687,7 +687,7 @@ $$
 
 The spin-up drags the ladder forward and partly cancels the Coriolis push.
 
-The flat-Earth model sets exactly these frame terms to zero for the Earth ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#Rotating Earth (Eqs. 3.27–3.31)|3.2, rotating Earth]], [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#Flat Earth (Eqs. 3.32–3.33)|flat Earth]]). On Earth, $\Omega=7.29\times10^{-5}$ rad/s, 2700 times smaller than here, so the terms are of order $10^{-2}$ m/s², not 1 m/s².
+The flat-Earth model sets exactly these frame terms to zero for the Earth ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#Rotating Earth|3.2, rotating Earth]], [[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#Flat Earth|flat Earth]]). On Earth, $\Omega=7.29\times10^{-5}$ rad/s, 2700 times smaller than here, so the terms are of order $10^{-2}$ m/s², not 1 m/s².
 
 > [!check] Python check
 > `np.cross` gives $\boldsymbol\omega\times\mathbf p=[0,8,0]$, centripetal $[-1.6,0,0]$, Coriolis $[0,-0.6,0]$; $\mathbf a_{P/i}=[-1.5,-0.6,0]$, $\mathbf F=[-120,-48,0]$ N; with spin-up $[-1.5,-0.2,0]$, $[-120,-16,0]$ N; Coriolis/centripetal $=0.375$.
@@ -716,7 +716,7 @@ $$
 
 ### Solution
 
-**(a)** ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#The inertia matrix (Eqs. 3.60–3.63)|3.3, the inertia matrix]])
+**(a)** ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#The inertia matrix|3.3, the inertia matrix]])
 
 $$
 J_{xx}=\int_B(y^2+z^2)\,\mathrm dm,\qquad J_{xy}=\int_B xy\,\mathrm dm,
@@ -770,7 +770,7 @@ $$
 
 $\dot q\neq0$ with $M=0$: pitch acceleration comes purely from inertia coupling of $r$ and $p$ ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Inertia coupling with no external moment|4.1, inertia coupling]]).
 
-**(d)** Transform to $B$: $\boldsymbol\omega_B=\mathbf Q\boldsymbol\omega_P=[0.05376,\ 0.00316,\ 0.1]^T$ and $\mathbf M_B=\mathbf Q\mathbf M_P=[0.4743,\ -0.1581,\ -0.2]^T$. Solving $\dot{\boldsymbol\omega}_B=\mathbf J_B^{-1}(\mathbf M_B-\tilde{\boldsymbol\omega}_B\mathbf J_B\boldsymbol\omega_B)$ ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation (§3.3.3, Eqs. 3.64–3.71)|3.3 §4]]) gives $[3.183,\ 0.696,\ -1.000]^T\times10^{-3}$ rad/s². This equals $\mathbf Q\dot{\boldsymbol\omega}_P$ ✓: the physics does not depend on the axes chosen.
+**(d)** Transform to $B$: $\boldsymbol\omega_B=\mathbf Q\boldsymbol\omega_P=[0.05376,\ 0.00316,\ 0.1]^T$ and $\mathbf M_B=\mathbf Q\mathbf M_P=[0.4743,\ -0.1581,\ -0.2]^T$. Solving $\dot{\boldsymbol\omega}_B=\mathbf J_B^{-1}(\mathbf M_B-\tilde{\boldsymbol\omega}_B\mathbf J_B\boldsymbol\omega_B)$ ([[SESA3047 3.3 - Rigid-Body Rotational Dynamics#4. The rotational dynamic equation|3.3 §4]]) gives $[3.183,\ 0.696,\ -1.000]^T\times10^{-3}$ rad/s². This equals $\mathbf Q\dot{\boldsymbol\omega}_P$ ✓: the physics does not depend on the axes chosen.
 
 Angular momentum: $\mathbf h_P=[6.25,\ 1.5,\ 15]^T$ and $\mathbf h_B=[6.404,\ -0.553,\ 15]^T$, both of size 16.32 kg m²/s. The angle between $\mathbf h$ and $\boldsymbol\omega$ is $6.24^\circ$. They are parallel only for spin about a principal axis.
 
@@ -881,7 +881,7 @@ $$
 
 i.e. a left-yawing rudder moment $N=-201$ N m.
 
-**(d)** A balanced, axisymmetric rotor on a fixed axis does not move the cm and presents the same inertia at every rotor angle, so $\mathbf J$ stays constant. Its relative spin enters only through $\mathbf h_R$ (L12 ll. 234–242). With twin propellers turning in opposite senses at equal speed, the two $\mathbf h_R$ cancel. Then $\dot{\boldsymbol\omega}_{add}=\mathbf 0$, as with a quadcopter's alternating rotors ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Diagonal inertia: the quadcopter form|4.1, quadcopter form]]). A changing rotor speed would add $-\mathbf J^{-1}\,{}^b\dot{\mathbf h}_R$ (handout only, Eq. 4.25).
+**(d)** A balanced, axisymmetric rotor on a fixed axis does not move the cm and presents the same inertia at every rotor angle, so $\mathbf J$ stays constant. Its relative spin enters only through $\mathbf h_R$. With twin propellers turning in opposite senses at equal speed, the two $\mathbf h_R$ cancel. Then $\dot{\boldsymbol\omega}_{add}=\mathbf 0$, as with a quadcopter's alternating rotors ([[SESA3047 4.1 - Inertia Models and Rotor Dynamics#Diagonal inertia: the quadcopter form|4.1, quadcopter form]]). A changing rotor speed would add $-\mathbf J^{-1}\,{}^b\dot{\mathbf h}_R$ (handout only, Eq. 4.25).
 
 > [!check] Python check
 > $h_x=1005.310$; $\Gamma=4.0575\times10^8$; `np.linalg.solve(J, -cross(w,hR))` $=[7.433\times10^{-4},\ 0,\ 5.9464\times10^{-3}]$; base term $[0,0,0]$; with $\mathbf M=\boldsymbol\omega\times\mathbf h_R=[0,0,-201.06]$ the total $\dot{\boldsymbol\omega}$ is $[0,0,0]$; $r(2\,\text{s})=0.011893$ rad/s $=0.681^\circ$/s.
@@ -899,7 +899,7 @@ A 25 kg fixed-wing UAV is modelled as a rigid body over a flat Earth, with princ
 - aerodynamic plus propulsive force (gravity excluded) $\mathbf F^{FRD}=[-20,\ -5,\ -230]^T$ N;
 - moment $\mathbf M^{FRD}=[0.3,\ -0.2,\ 0.1]^T$ N m, with $\mathbf J=\operatorname{diag}(2.0,\ 3.5,\ 5.0)$ kg m².
 
-**(a)** List the twelve states in the handout order, write the four equation groups, and say which are kinematics and which dynamics. **[3]**
+**(a)** List the twelve states in the course's order, write the four equation groups, and say which are kinematics and which dynamics. **[3]**
 
 **(b)** Find $\mathbf g^{FRD}$. **[2]**
 
@@ -928,7 +928,7 @@ $$
 \end{aligned}
 $$
 
-Six degrees of freedom need twelve first-order states: one coordinate (kinematic) and one rate (dynamic) state per degree of freedom (L13 ll. 339–340).
+Six degrees of freedom need twelve first-order states: one coordinate (kinematic) and one rate (dynamic) state per degree of freedom.
 
 **(b)** ([[SESA3047 4.2 - Translational Dynamics#Rotating gravity into body axes|4.2, rotate gravity]])
 
@@ -978,7 +978,7 @@ $$
 \mathbf C=\begin{bmatrix}0.4981&0.8627&-0.0872\\-0.8252&0.5025&0.2578\\0.2662&-0.0565&0.9623\end{bmatrix}.
 $$
 
-Position rates: the transpose takes FRD to NED ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#5. The position state equation (§3.2.3, Eqs. 3.35–3.40)|3.2 §5]]):
+Position rates: the transpose takes FRD to NED ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#5. The position state equation|3.2 §5]]):
 
 $$
 \dot x=0.4981(30)-0.8252(1.5)+0.2662(2)=14.94-1.24+0.53=14.24\ \text{m/s},
@@ -1002,7 +1002,7 @@ $$
 \dot\psi=\frac{0.0902}{\cos5^\circ}=0.0906\ \text{rad/s}.
 $$
 
-**(f)** FRD axes rotate with the aircraft. $[\dot u,\dot v,\dot w]^T$ is only the rate of change of the components; the inertial acceleration is $\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v=\mathbf F/m+\mathbf g=[-1.655,\ 2.329,\ 0.240]^T$ m/s² ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#4. Differentiating the velocity in the body frame (§3.2.2 Eq. 3.34, §3.2.4 Eqs. 3.41–3.42)|3.2 §4]]). For example, $\dot v$ is only $0.13$ m/s², while the lateral inertial acceleration is $2.33$ m/s²: most of the sideways force goes into turning the velocity vector with the rotating axes ($ru=2.4$ m/s²). At every solver evaluation, recompute $\mathbf C$ and $\mathbf H$ from the **current trial** Euler angles, recompute $\mathbf F$ and $\mathbf M$ from the current state and controls, and evaluate all four groups together ([[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model#3. Evaluate the derivative for a numerical solver|4.3 §3]]).
+**(f)** FRD axes rotate with the aircraft. $[\dot u,\dot v,\dot w]^T$ is only the rate of change of the components; the inertial acceleration is $\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v=\mathbf F/m+\mathbf g=[-1.655,\ 2.329,\ 0.240]^T$ m/s² ([[SESA3047 3.2 - Translational Kinematics and Accelerations in Moving Frames#4. Differentiating the velocity in the body frame|3.2 §4]]). For example, $\dot v$ is only $0.13$ m/s², while the lateral inertial acceleration is $2.33$ m/s²: most of the sideways force goes into turning the velocity vector with the rotating axes ($ru=2.4$ m/s²). At every solver evaluation, recompute $\mathbf C$ and $\mathbf H$ from the **current trial** Euler angles, recompute $\mathbf F$ and $\mathbf M$ from the current state and controls, and evaluate all four groups together ([[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model#3. Evaluate the derivative for a numerical solver|4.3 §3]]).
 
 > [!check] Python check
 > $\mathbf g^{FRD}=[-0.85500,\ 2.52935,\ 9.43967]$; $\boldsymbol\omega\times\mathbf v=[-0.02,\ 2.2,\ -1.35]$; $\dot{\mathbf v}=[-1.634998,\ 0.129353,\ 1.589674]$; $\dot{\boldsymbol\omega}=[0.147000,\ -0.050286,\ 0.018500]$; $\mathbf C^T\mathbf v=[14.2375,\ 26.5226,\ -0.3034]$, track $61.773^\circ$; $\mathbf H\boldsymbol\omega=[0.107893,\ 0.027591,\ 0.090560]$; $\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v=\mathbf F/m+\mathbf g=[-1.654998,\ 2.329353,\ 0.239674]$.

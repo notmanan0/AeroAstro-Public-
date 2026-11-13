@@ -24,7 +24,7 @@ $$
 
 Each term is a mode: its eigenvector is the shape, its eigenvalue the time behaviour. The imaginary part of $\lambda$ sets the oscillation frequency and the real part alone sets growth or decay, so one eigenvalue with a positive real part is enough to make the system unstable. The poles of a transfer function are the same numbers as the eigenvalues of $\mathbf A$, so this is the Year 2 right-half-plane rule in matrix form. The system is asymptotically stable exactly when every eigenvalue has a negative real part, and unstable if any has a positive real part. Eigenvalues on the imaginary axis are marginal if they are simple, but a repeated one without enough eigenvectors (a Jordan block) adds a $te^{\lambda t}$ term. The satellite of Chapter 5, with a double zero eigenvalue and one eigenvector, drifts without bound for this reason.
 
-As a check, $e^{\mathbf A}$ for $\mathbf A=[1\ 2;\ 3\ 4]$ is $[51.97\ 74.74;\ 112.10\ 164.07]$, not $[e^1\ e^2;\ e^3\ e^4]$. Exponentiating entry by entry is correct only for the diagonal entries of a diagonal matrix, whose off-diagonal zeros stay zero. For the triangular $\mathbf A=[3\ 2;\ 0\ {-1}]$ (L16), $e^{\mathbf At}=[e^{3t}\ \ \tfrac12(e^{3t}-e^{-t});\ 0\ \ e^{-t}]$, which grows because of the eigenvalue 3.
+As a check, $e^{\mathbf A}$ for $\mathbf A=[1\ 2;\ 3\ 4]$ is $[51.97\ 74.74;\ 112.10\ 164.07]$, not $[e^1\ e^2;\ e^3\ e^4]$. Exponentiating entry by entry is correct only for the diagonal entries of a diagonal matrix, whose off-diagonal zeros stay zero. For the triangular $\mathbf A=[3\ 2;\ 0\ {-1}]$, $e^{\mathbf At}=[e^{3t}\ \ \tfrac12(e^{3t}-e^{-t});\ 0\ \ e^{-t}]$, which grows because of the eigenvalue 3.
 
 ## Related
 

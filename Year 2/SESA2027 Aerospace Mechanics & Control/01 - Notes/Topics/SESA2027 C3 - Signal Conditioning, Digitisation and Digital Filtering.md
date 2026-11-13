@@ -40,7 +40,7 @@ After the ADC, software can clean the samples: average to remove noise, differen
 
 ---
 
-## 1. Hardware vs software (L3.07)
+## 1. Hardware vs software
 
 | Hardware must *preserve* | Software can *refine* |
 |---|---|
@@ -87,8 +87,10 @@ Back-substitute into the first: $V_{os}=V_{ADC,min}-A_vV_{min}$.
 See [[ADC Quantisation and Resolution]].
 
 $$
-Q = \frac{V_{ADC,max}-V_{ADC,min}}{2^n},\qquad N[k] = \mathrm{round}\!\left(\frac{V_{out}[k]}{Q}\right),\qquad \hat V[k] = N[k]Q,\qquad |e_q|\le\frac Q2
+Q = \frac{V_{ADC,max}-V_{ADC,min}}{2^n},\qquad N[k] = \mathrm{round}\!\left(\frac{V_{out}[k]-V_{ADC,min}}{Q}\right),\qquad \hat V[k] = V_{ADC,min}+N[k]Q,\qquad |e_q|\le\frac Q2
 $$
+
+The code $N$ is limited to $0\le N\le2^n-1$, so an input at the top of the window saturates at the top code, and $|e_q|\le Q/2$ holds only inside the window. For a window that starts at 0 V this reduces to $N=\mathrm{round}(V_{out}/Q)$ and $\hat V=NQ$.
 
 - For a 5 V range: 8 bit gives $Q = 19.5$ mV, 12 bit gives 1.22 mV, and 16 bit gives 76.3 µV.
 - Datasheets define the LSB slightly differently ($2^n$ or $2^n-1$), but the principle is the same: more bits means smaller steps.
@@ -141,13 +143,13 @@ $$
 
 since $mk$ is an integer. The samples are identical, so the computer cannot tell $f$ from $f-mf_s$. Because cosine is even, $-(f-mf_s)$ gives the same samples too. Exactly one of these candidates lies in $[0,f_s/2]$: that is the frequency the computer reports. A 70 Hz vibration sampled at 50 Hz therefore appears at $\lvert70-50\rvert=20$ Hz (Part C sheet Q10).
 
-An **anti-aliasing filter**, an analogue RC filter before the ADC, removes that content before it is sampled. It needs
+An **anti-aliasing filter**, an analogue RC filter before the ADC, attenuates content above $f_N$ before it is sampled. Its cut-off must satisfy at least
 
 $$
 \tau = RC\ge\frac{1}{\pi f_s}\quad\Leftrightarrow\quad f_c = \frac{1}{2\pi\tau}\le\frac{f_s}{2} = f_N
 $$
 
-The filter removes high-frequency noise and very fast dynamics, and keeps the control band intact. In practice the sampling rate is about $10f_{max}$ (see [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]).
+This is a minimum, not a guarantee. A first-order filter is only 3 dB down at $f_c$ and then falls at 20 dB per decade, so it does not remove content above $f_N$. With $f_c=f_N=25$ Hz (for $f_s=50$ Hz), the 70 Hz vibration above is still passed at $1/\sqrt{1+(70/25)^2}=34\,\%$ of its amplitude, and it then aliases to 20 Hz. The cut-off has to sit lower, or $f_s$ be raised, until the attenuation at the frequencies that would fold into the control band is large enough. The filter attenuates high-frequency noise and very fast dynamics, and passes the control band with some phase lag. In practice the sampling rate is about $10f_{max}$ (see [[SESA2027 B4 - Robustness, Stability vs Manoeuvrability and Design Process]]).
 
 ![[amc_psc_q10_aliasing.png|650]]
 
@@ -201,7 +203,7 @@ A digital signal can look precise but still be physically wrong. Check for:
 3. A rate-limit violation: a change faster than the physics allows, which means noise or corruption.
 4. Timing errors or missing samples, which break the assumptions of a digital controller.
 
-## 8. Digital processing after the ADC (L3.08)
+## 8. Digital processing after the ADC
 The signal model is $y[k] = x[k]+b[k]+n[k]$, where $x[k]$ is the truth, $b[k]$ is bias or drift and $n[k]$ is random noise.
 
 A filter is an algorithm $\hat x[k] = F(y[k],y[k-1],\dots)$ that uses memory of past samples.
@@ -229,7 +231,7 @@ $$
 y_f[k]=\frac cN\sum_{i=0}^{N-1}(k-i)=c\left(k-\frac{1}{N}\cdot\frac{(N-1)N}{2}\right)=c\left(k-\frac{N-1}{2}\right)
 $$
 
-The output is the input shifted back by $(N-1)/2$ samples, i.e. $(N-1)T_s/2$ seconds: the centre of the window. Because the weights are symmetric this delay is the same at every frequency (figure below).
+The output is the input shifted back by $(N-1)/2$ samples, i.e. $(N-1)T_s/2$ seconds: the centre of the window. Because the weights are symmetric this delay is the same at every frequency.
 
 **How much noise it removes.** For independent noise samples of variance $\sigma^2$, the average of $N$ of them has variance $\sigma^2/N$, so the noise standard deviation falls by $\sqrt N$. Halving the noise costs four times the window and four times the delay.
 
@@ -268,7 +270,7 @@ A median filter is robust to isolated spikes. For the window $\{1.01, 1.03, 8.50
 
 ![[amc_digital_filter_tradeoff.png|700]]
 
-The figure shows what each filter costs. Heavier smoothing ($\alpha = 0.02$) gives a clean but badly delayed response, the moving average passes the spike at 1.4 s as a bump, and the median rejects the spike.
+Heavier smoothing ($\alpha = 0.02$) gives a clean but badly delayed response, the moving average passes the spike at 1.4 s as a bump, and the median rejects the spike.
 
 ### Derivatives: noise amplifiers
 

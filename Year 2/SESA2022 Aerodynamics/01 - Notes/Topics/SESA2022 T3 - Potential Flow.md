@@ -30,13 +30,13 @@ sources: ["02 - Sources/PF/Topic 3 Potential Flow.pdf", "02 - Sources/PF/Topic_3
 > - **Assumptions:** 2D in the $x$–$z$ plane, steady, inviscid, incompressible, irrotational; $\Gamma>0$ clockwise, $\theta$ anticlockwise from $+x$.
 > - **Method:** 1. Superpose the bricks' $\psi$ (add images for walls). 2. Differentiate: $u = \partial\psi/\partial z$, $w=-\partial\psi/\partial x$ (or $V_r$, $V_\theta$). 3. Stagnation points from $u=w=0$. 4. Body streamline: $\psi_{body} = \psi(\text{stagnation point})$, or the streamline through a given point. 5. $C_p = 1-(u^2+w^2)/U_\infty^2$, then integrate for forces if needed.
 > - **Common mistakes:** sign of the vortex term ($V_\theta = -\Gamma/2\pi r$ for clockwise $\Gamma>0$); forgetting that the image of a vortex has the opposite sign but the image of a source has the same sign.
-> - **Exam format:** the stream functions are in the rubric; you must know which bricks to add, how to simplify, and where to set $x = 0$ or $z = 0$ (L15, ll. 536–561). Hard derivatives come with identities (L14, ll. 397–412, 1042–1050). Drag from potential flow is always zero, so that answer needs no calculation (L14, ll. 848–860).
-> - Exam technique (Revision 1, ll. 368–455): $x = r\cos\theta$, $z = r\sin\theta$ and $u_r$, $u_\theta$ from $\psi$ are on the Topic 1 formula page; the velocity normal to a streamline is zero, a five-mark answer that needs a reason, not pages of derivation; answer the decision ("will erosion occur?") and the meaning of a negative $C_p$; use every value the question gives.
+> - **Exam format:** the stream functions are in the rubric; you must know which bricks to add, how to simplify, and where to set $x = 0$ or $z = 0$. Hard derivatives come with identities. Drag from potential flow is always zero, so that answer needs no calculation.
+> - Exam technique (Revision 1): $x = r\cos\theta$, $z = r\sin\theta$ and $u_r$, $u_\theta$ from $\psi$ are on the Topic 1 formula page; the velocity normal to a streamline is zero, a five-mark answer that needs a reason, not pages of derivation; answer the decision ("will erosion occur?") and the meaning of a negative $C_p$; use every value the question gives.
 > - **Practise:** [[#Worked example: a spinning cylinder]] · [[SESA2022 Tutorial 3 - Potential Flow Solutions]] Q4 · [[SESA2022 Exam 2024-25 Solutions]] Q2
 
 Shrinking the boundary layer of [[SESA2022 T2 - Boundary Layers]] to nothing leaves the outer flow: no friction, and fluid elements that slide without spinning. Such a flow has a "height map" $\phi$ whose slope is the velocity, and a family of streamlines $\psi = $ const. Both obey Laplace's equation, which is linear, so flows can be added.
 
-That gives a construction kit (L13, ll. 7, 172–178). A uniform flow carries everything downstream. A source pushes fluid outwards and so bends the incoming streamlines round a blunt nose. A sink swallows it again and closes the shape. A doublet is a source and sink squeezed together, and with a uniform flow it makes a circle. A vortex adds swirl: faster on one side, slower on the other, and through Bernoulli a pressure difference, which is lift.
+That gives a construction kit. A uniform flow carries everything downstream. A source pushes fluid outwards and so bends the incoming streamlines round a blunt nose. A sink swallows it again and closes the shape. A doublet is a source and sink squeezed together, and with a uniform flow it makes a circle. A vortex adds swirl: faster on one side, slower on the other, and through Bernoulli a pressure difference, which is lift.
 
 Because no fluid crosses a streamline, any closed streamline can be replaced by a solid body without changing the flow outside. Finding the flow past a given shape therefore reduces to finding which bricks give a streamline of that shape. With viscosity ignored, the pressure on a closed body always balances in the streamwise direction: zero drag (D'Alembert). Lift survives, and it depends only on the circulation: $L' = \rho V_\infty\Gamma$. On a real aerofoil the Kutta condition fixes $\Gamma$ ([[SESA2022 T4 - Thin Aerofoil Theory]]).
 
@@ -46,15 +46,15 @@ Because no fluid crosses a streamline, any closed streamline can be replaced by 
 
 ![[pf_sign_convention.png|600]]
 
-Flows are set in the $x$–$z$ plane: $x$ is streamwise, $z$ is vertical, and $y$ points *into the page* (spanwise) to keep a right-handed system (L11, ll. 300–320). Velocity components are $u$ (along $x$) and $w$ (along $z$).
+Flows are set in the $x$–$z$ plane: $x$ is streamwise, $z$ is vertical, and $y$ points *into the page* (spanwise) to keep a right-handed system. Velocity components are $u$ (along $x$) and $w$ (along $z$).
 
 - The vorticity component that matters is along $y$: $\omega_y = \dfrac{\partial u}{\partial z} - \dfrac{\partial w}{\partial x}$.
-- With $y$ into the page, positive $\omega_y$ is clockwise as drawn, so clockwise circulation is positive ($\Gamma > 0$ clockwise) (L11, ll. 319–320; L12, ll. 743–744; L13, ll. 16–17).
-- The polar angle $\theta$, and positive $V_\theta$, still run anticlockwise from $+x$ (L13, ll. 531–532). That is why a positive (clockwise) vortex has $V_\theta = -\Gamma/(2\pi r)$ (L13, ll. 26–27).
+- With $y$ into the page, positive $\omega_y$ is clockwise as drawn, so clockwise circulation is positive ($\Gamma > 0$ clockwise).
+- The polar angle $\theta$, and positive $V_\theta$, still run anticlockwise from $+x$. That is why a positive (clockwise) vortex has $V_\theta = -\Gamma/(2\pi r)$.
 - Irrotational: $\dfrac{\partial u}{\partial z} = \dfrac{\partial w}{\partial x}$.
 
 > [!warning] Two conventions in the same module
-> Positive vorticity is anticlockwise in the $x$–$y$ plane with $z$ out of the page (L3, ll. 718–722), but clockwise in the aerodynamic $x$–$z$ plane used from L11 onwards. Older papers (pre-2020) use the $x$–$y$ plane with $u = \partial\psi/\partial y$, $v = -\partial\psi/\partial x$; the algebra is identical with $z\to y$. Always check which axes a question uses.
+> Positive vorticity is anticlockwise in the $x$–$y$ plane with $z$ out of the page, but clockwise in the aerodynamic $x$–$z$ plane used from L11 onwards. Older papers (pre-2020) use the $x$–$y$ plane with $u = \partial\psi/\partial y$, $v = -\partial\psi/\partial x$; the algebra is identical with $z\to y$. Always check which axes a question uses.
 
 ## 2. Governing equations
 
@@ -68,7 +68,7 @@ $$
 u\frac{\partial u}{\partial x}+w\frac{\partial u}{\partial z}=-\frac1\rho\frac{\partial p}{\partial x},\qquad u\frac{\partial w}{\partial x}+w\frac{\partial w}{\partial z}=-\frac1\rho\frac{\partial p}{\partial z}
 $$
 
-The viscous (Navier–Stokes) terms are not derived in this module (L4, ll. 466–480).
+The viscous (Navier–Stokes) terms are not derived in this module.
 
 ### Velocity potential and streamfunction
 
@@ -79,7 +79,7 @@ The viscous (Navier–Stokes) terms are not derived in this module (L4, ll. 466�
 
 ### Streamfunction from the flow between two streamlines
 
-Label each streamline with a number $\psi$, constant along it (L4, ll. 56–142). Between neighbouring streamlines $\psi$ and $\psi+d\psi$ no fluid crosses either line, so $d\psi$ is the volume flow rate per unit depth passing between them. Across a short line element $(dx, dz)$ that flow rate is $u\,dz-w\,dx$:
+Label each streamline with a number $\psi$, constant along it. Between neighbouring streamlines $\psi$ and $\psi+d\psi$ no fluid crosses either line, so $d\psi$ is the volume flow rate per unit depth passing between them. Across a short line element $(dx, dz)$ that flow rate is $u\,dz-w\,dx$:
 
 $$
 d\psi = u\,dz-w\,dx.
@@ -91,9 +91,9 @@ $$
 u = \frac{\partial\psi}{\partial z},\qquad w = -\frac{\partial\psi}{\partial x}.
 $$
 
-Only differences of $\psi$ mean anything; the value on one streamline can be chosen freely, which is why bodies are usually put on $\psi = 0$ (L14, ll. 111–117; L15, ll. 182–186).
+Only differences of $\psi$ mean anything; the value on one streamline can be chosen freely, which is why bodies are usually put on $\psi = 0$.
 
-$\psi$ exists for any 2D incompressible flow, rotational or not. $\phi$ exists only for irrotational flow, but works in 2D or 3D (L11, ll. 232–237). Where both exist, streamlines and equipotentials are perpendicular: their slopes are $w/u$ and $-u/w$, whose product is $-1$. Use this as a check on numerical plots (L4, ll. 733–759).
+$\psi$ exists for any 2D incompressible flow, rotational or not. $\phi$ exists only for irrotational flow, but works in 2D or 3D. Where both exist, streamlines and equipotentials are perpendicular: their slopes are $w/u$ and $-u/w$, whose product is $-1$. Use this as a check on numerical plots.
 
 ### Why both satisfy Laplace's equation
 
@@ -121,7 +121,7 @@ $$
 \omega_y = \frac{\partial u}{\partial z}-\frac{\partial w}{\partial x} = \frac{\partial^2\psi}{\partial z^2}+\frac{\partial^2\psi}{\partial x^2} = 0
 $$
 
-So for incompressible, irrotational flow (L4, ll. 640–726; L11, ll. 175–209):
+So for incompressible, irrotational flow:
 
 $$
 \nabla^2\phi = 0,\qquad \nabla^2\psi = 0\quad\Rightarrow\quad \psi = \psi_1+\psi_2+\dots+\psi_n
@@ -149,7 +149,7 @@ $$
 \nabla\left(\frac p\rho+\tfrac12V^2\right) = 0.
 $$
 
-The gradient is zero in every direction, so $p+\tfrac12\rho V^2$ is the same constant everywhere, not just along a streamline (L11, ll. 518–548).
+The gradient is zero in every direction, so $p+\tfrac12\rho V^2$ is the same constant everywhere, not just along a streamline.
 
 > [!note]- A route without vector identities
 > Irrotational means $\partial w/\partial x = \partial u/\partial z$. In the $x$-momentum equation $u\,u_x+w\,u_z = -p_x/\rho$, replace $u_z$ by $w_x$: the left side becomes $\frac{\partial}{\partial x}\tfrac12(u^2+w^2)$. Integrating in $x$ gives $p+\tfrac12\rho(u^2+w^2) = f(z)$. The $z$-momentum equation, with $w_x$ replaced by $u_z$, gives the same expression $= g(x)$. A function of $z$ alone can equal a function of $x$ alone only if both are the same constant.
@@ -189,7 +189,7 @@ Velocity $(U_\infty\cos\alpha, U_\infty\sin\alpha)$. Integrate $\psi_z = u$: $\p
 
 ### Source and sink: strength from the flow rate
 
-A source is a point where fluid is created: divergence is non-zero only at that point, and mass is conserved everywhere else, so the same total flow crosses every circle round it (L12, ll. 118–147). It pushes out a volume flow rate $q$ through a cylinder of radius $r$ and depth $l$ (L12, ll. 149–260):
+A source is a point where fluid is created: divergence is non-zero only at that point, and mass is conserved everywhere else, so the same total flow crosses every circle round it. It pushes out a volume flow rate $q$ through a cylinder of radius $r$ and depth $l$:
 
 $$
 q = \int_0^{2\pi}V_r\,(l\,r\,d\theta) = 2\pi r\,l\,V_r.
@@ -201,11 +201,11 @@ $$
 V_r = \frac{\Lambda}{2\pi r},\qquad V_\theta = 0.
 $$
 
-Streamfunction: $\frac1r\psi_\theta = V_r$ gives $\psi_\theta = \Lambda/2\pi$, so $\psi = \frac{\Lambda}{2\pi}\theta$ (and $-\psi_r = 0 = V_\theta$ ✔). Potential: $\phi_r = V_r$ gives $\phi = \frac{\Lambda}{2\pi}\ln r$. $\Lambda>0$ source, $\Lambda<0$ sink (L12, ll. 237–241). Some papers write $Q$ for $\Lambda$ (L12, l. 284).
+Streamfunction: $\frac1r\psi_\theta = V_r$ gives $\psi_\theta = \Lambda/2\pi$, so $\psi = \frac{\Lambda}{2\pi}\theta$ (and $-\psi_r = 0 = V_\theta$ ✔). Potential: $\phi_r = V_r$ gives $\phi = \frac{\Lambda}{2\pi}\ln r$. $\Lambda>0$ source, $\Lambda<0$ sink. Some papers write $Q$ for $\Lambda$.
 
 ### Doublet: the limit of a source–sink pair
 
-The derivation is not required (L12, l. 526); the limit is short.
+The derivation is not required; the limit is short.
 
 Place a source $+\Lambda$ at $(-l/2,0)$ and a sink $-\Lambda$ at $(+l/2,0)$. Their streamfunctions add:
 
@@ -250,29 +250,27 @@ A point vortex is irrotational away from its centre even though the fluid goes r
 ## 5. How to build a flow
 
 1. Superpose bricks using physical intuition.
-2. Find the streamline that represents the body using a boundary condition (L13, ll. 340–348; this is the step the exam tests most):
+2. Find the streamline that represents the body using a boundary condition (this is the step the exam tests most):
    - Stagnation point ($\mathbf V = 0$), then $\psi_{body} = \psi(\text{stag. pt})$
    - No normal flow at a wall
    - A streamline through a given point
    - The streamline's shape matching the geometry
 3. The remaining streamlines give the flow around the body. Differentiate to get velocities, then use Bernoulli for pressure.
 
-Choose polar or Cartesian coordinates, whichever is easier, unless the question specifies (L13, ll. 325–336). In the exam, functions will be easy to differentiate and difficult identities will be supplied (L13, ll. 351–354; L14, ll. 1040–1050).
+Choose polar or Cartesian coordinates, whichever is easier, unless the question specifies. In the exam, functions will be easy to differentiate and difficult identities will be supplied.
 
-Numerically (Jupyter notebook, potential-flow computing lab): build a mesh with `np.meshgrid`, compute $\psi$, get velocities with `np.gradient(psi)` ($u = \partial\psi/\partial z$, $w=-\partial\psi/\partial x$), then compute $C_p$ (L11, ll. 455–504). Grid resolution matters: Tutorial 3 Q3 gives $C_p=-10.5$ on a coarse grid versus the true $0.872$.
+Numerically (Jupyter notebook, potential-flow computing lab): build a mesh with `np.meshgrid`, compute $\psi$, get velocities with `np.gradient(psi)` ($u = \partial\psi/\partial z$, $w=-\partial\psi/\partial x$), then compute $C_p$. Grid resolution matters: Tutorial 3 Q3 gives $C_p=-10.5$ on a coarse grid versus the true $0.872$.
 
 > [!warning] Notebook pitfalls
-> - `np.gradient` on a meshgrid array returns the derivative along the rows ($z$) first, and returns differences, not derivatives, unless you divide by the spacing (L3, ll. 246–253; L11, ll. 495–508).
-> - Elements not at the origin: use $x-x_0$, $z-z_0$ in $r$ and $\theta$ (`arctan2`) (L12, ll. 295–307).
-> - Point singularities give garbage values nearby; mask them out (optional) (L12, ll. 385–457).
-> - With no freestream, use a stated $U_{ref}$, never $U_\infty = 0$ (L11, ll. 529–553).
-> - `fsolve` needs a sensible starting guess; values read off a discrete grid differ slightly from the analytical ones (L13, ll. 498–501; L15, ll. 389–394).
+> - `np.gradient` on a meshgrid array returns the derivative along the rows ($z$) first, and returns differences, not derivatives, unless you divide by the spacing.
+> - Elements not at the origin: use $x-x_0$, $z-z_0$ in $r$ and $\theta$ (`arctan2`).
+> - Point singularities give garbage values nearby; mask them out (optional).
+> - With no freestream, use a stated $U_{ref}$, never $U_\infty = 0$.
+> - `fsolve` needs a sensible starting guess; values read off a discrete grid differ slightly from the analytical ones.
 
 ---
 
 ## 6. Example 1: uniform flow + source (Rankine half-body)
-
-L13, ll. 178–440.
 
 $$
 \psi = U_\infty r\sin\theta + \frac{\Lambda}{2\pi}\theta
@@ -305,13 +303,11 @@ C_p = 1-\left(\frac{4}{\pi^2}+1\right) = -\frac{4}{\pi^2} = -0.405.
 $$
 
 > [!example] Numbers
-> $U_\infty = 10$ m/s, $\Lambda = 20$ m²/s: nose at $r_s = 20/(20\pi) = 0.318$ m upstream of the source, body width far downstream $2$ m, and $C_p = -0.405$ above the source whatever the numbers (Python ✔). The course notebook gets $-0.375$ at the nearest grid point and $-0.387$ after interpolation, against the analytical $-0.405$: a discretisation error you should be able to explain (L13, ll. 549–566).
+> $U_\infty = 10$ m/s, $\Lambda = 20$ m²/s: nose at $r_s = 20/(20\pi) = 0.318$ m upstream of the source, body width far downstream $2$ m, and $C_p = -0.405$ above the source whatever the numbers (Python ✔). The course notebook gets $-0.375$ at the nearest grid point and $-0.387$ after interpolation, against the analytical $-0.405$: a discretisation error you should be able to explain.
 
-$\theta = 0$ is not part of the body surface. The direct reason is that on $\theta = 0$, $V_r = U_\infty+\Lambda/2\pi r>0$ for every $r$, so it never vanishes. Only the ratio $\Lambda/U_\infty$ matters for the shape (L13, ll. 257–267).
+$\theta = 0$ is not part of the body surface. The direct reason is that on $\theta = 0$, $V_r = U_\infty+\Lambda/2\pi r>0$ for every $r$, so it never vanishes. Only the ratio $\Lambda/U_\infty$ matters for the shape.
 
 ## 7. Example 2: flow past a circular cylinder (uniform flow + doublet)
-
-L14, ll. 69–830.
 
 $$
 \psi = V_\infty r\sin\theta-\frac{\kappa}{2\pi}\frac{\sin\theta}{r} = V_\infty r\sin\theta\left(1-\frac{R^2}{r^2}\right),\qquad R^2 \equiv \frac{\kappa}{2\pi V_\infty}
@@ -329,7 +325,7 @@ $$
 
 - $V_r = 0$ on $r=R$, so the circle is the streamline $\psi=0$: it can be a solid cylinder.
 - On the surface $V_\theta = -2V_\infty\sin\theta$.
-- Stagnation at $\theta = 0,\pi$. Maximum speed $2V_\infty$ at the top and bottom (L14, ll. 525, 652).
+- Stagnation at $\theta = 0,\pi$. Maximum speed $2V_\infty$ at the top and bottom.
 
 **Surface pressure:**
 
@@ -341,7 +337,7 @@ $$
 \boxed{C_p = 1-4\sin^2\theta}\qquad C_p(0)=1,\quad C_p(\pi/2)=-3,\quad C_p = 0\text{ at }\theta=30^\circ,150^\circ,\dots
 $$
 
-(L14, ll. 657–714.) The distribution is symmetric fore–aft and top–bottom, so there is zero lift and zero drag ([[D'Alembert's Paradox]]).
+The distribution is symmetric fore–aft and top–bottom, so there is zero lift and zero drag ([[D'Alembert's Paradox]]).
 
 **Real flows**: viscosity causes separation and a wake ($Re=1.54$: attached; $Re=26$: twin vortices; $Re=140$: vortex street). Drag crisis at $Re\sim3\times10^5$, when the BL turns turbulent before separating ([[SESA2022 T2 - Boundary Layers#8. Pressure gradients and separation|T2 §8]]).
 
@@ -349,8 +345,6 @@ $$
 > The attached, symmetric streamlines at $Re = 1.54$ are not a reason potential flow works. Creeping flow is the opposite limit: viscosity dominates and $C_D$ is very large, as the drag curve shows. Potential flow is useful at high $Re$ on streamlined bodies, where viscous effects are confined to thin boundary layers ([[SESA2022 T2 - Boundary Layers|T2]]).
 
 ## 8. Example 3: Rankine oval (uniform flow + source at −b + sink at +b)
-
-L15, ll. 80–440.
 
 $$
 \psi = V_\infty z + \frac{\Lambda}{2\pi}(\theta_1-\theta_2),\quad \theta_1=\tan^{-1}\frac{z}{x+b},\ \theta_2=\tan^{-1}\frac{z}{x-b}
@@ -388,9 +382,9 @@ $$
 V_\infty z_{top} + \frac{\Lambda}{\pi}\tan^{-1}\!\left(\frac{z_{top}}{b}\right) - \frac{\Lambda}{2} = 0
 $$
 
-This is transcendental: solve numerically (`fsolve` in the lab), or use the slender approximation in the exam, where it will be explicitly stated (L15, ll. 331–336).
+This is transcendental: solve numerically (`fsolve` in the lab), or use the slender approximation in the exam, where it will be explicitly stated.
 
-Slender-oval approximation (L15, ll. 262–286). For a long, thin oval $z_{top}\ll b$, so $\theta_1$ is small and $\tan\theta_1\approx\theta_1$, i.e. $z_{top}\approx b\theta_1$:
+Slender-oval approximation. For a long, thin oval $z_{top}\ll b$, so $\theta_1$ is small and $\tan\theta_1\approx\theta_1$, i.e. $z_{top}\approx b\theta_1$:
 
 $$
 V_\infty b\theta_1-\frac{\Lambda}{2\pi}(\pi-2\theta_1) = 0.
@@ -435,22 +429,20 @@ For an oval hangar with $V_\infty = 10$ m/s, $b = 10$ m and $\Lambda = 100$ m²/
 
 These values were checked in Python (`brentq`) ✔. Tutorial 3 Q4 uses the semi-oval as a hangar: [[SESA2022 Tutorial 3 - Potential Flow Solutions]].
 
-> [!warning] When the slender approximation fails (L15, ll. 338–365)
+> [!warning] When the slender approximation fails
 > For a long oval the aspect ratio is $13.698$ by `fsolve` and $13.699$ by the slender formula; for a fat oval $1.261$ against $1.667$, a 32% error. Use `fsolve` when you can, and say so when you approximate.
 
-**Body or streamline coordinates.** Given $\psi$ (the body, $\psi = 0$, or the streamline through a chosen point, e.g. $\psi(0,2)$), fix $x$ and solve $\psi(x,z) = \psi_0$ for $z$ with `fsolve`, then mirror for the lower half (L15, ll. 367–395, 450–463).
+**Body or streamline coordinates.** Given $\psi$ (the body, $\psi = 0$, or the streamline through a chosen point, e.g. $\psi(0,2)$), fix $x$ and solve $\psi(x,z) = \psi_0$ for $z$ with `fsolve`, then mirror for the lower half.
 
-Half an oval sitting on the ground is also a hill or sand dune: that was the previous year's exam question (L15, ll. 463–490). See [[Rankine Oval]].
+Half an oval sitting on the ground is also a hill or sand dune: that was the previous year's exam question. See [[Rankine Oval]].
 
 ## 9. Example 4: lifting flow over a cylinder (uniform flow + doublet + vortex)
-
-L15, ll. 595–680 and L16, ll. 1–295.
 
 $$
 \psi = V_\infty r\sin\theta\left(1-\frac{R^2}{r^2}\right)+\frac{\Gamma}{2\pi}\ln\frac{r}{R}
 $$
 
-The constant $-\frac{\Gamma}{2\pi}\ln R$ is added so that $\psi=0$ on the cylinder, as in the non-lifting case (L15, ll. 626–632; L16, ll. 28–34).
+The constant $-\frac{\Gamma}{2\pi}\ln R$ is added so that $\psi=0$ on the cylinder, as in the non-lifting case.
 
 $$
 V_r = V_\infty\cos\theta\left(1-\frac{R^2}{r^2}\right),\qquad V_\theta = -V_\infty\sin\theta\left(1+\frac{R^2}{r^2}\right)-\frac{\Gamma}{2\pi r}
@@ -484,7 +476,7 @@ $$
 r = \frac{\Gamma}{4\pi V_\infty}\pm\sqrt{\left(\frac{\Gamma}{4\pi V_\infty}\right)^2-R^2}.
 $$
 
-The two roots multiply to $R^2$, so one is outside the cylinder (the real stagnation point) and one inside (ignore it, L15, ll. 662–668).
+The two roots multiply to $R^2$, so one is outside the cylinder (the real stagnation point) and one inside (ignore it).
 
 ![[pf_lifting_cylinder.png]]
 
@@ -510,13 +502,13 @@ $$
 D' = -\int_0^{2\pi}(p-p_\infty)\cos\theta\,R\,d\theta,\qquad L' = -\int_0^{2\pi}(p-p_\infty)\sin\theta\,R\,d\theta
 $$
 
-Subtracting $p_\infty$ changes nothing, because a uniform pressure integrates to zero net force round a closed body; it is done so that $C_p$ appears. ($p_\infty$ is not negligible compared with $p$; both are about $10^5$ Pa.) Divide by $\tfrac12\rho V_\infty^2(2R)$, using the planform area $2R$ per unit span (L16, ll. 254–264):
+Subtracting $p_\infty$ changes nothing, because a uniform pressure integrates to zero net force round a closed body; it is done so that $C_p$ appears. ($p_\infty$ is not negligible compared with $p$; both are about $10^5$ Pa.) Divide by $\tfrac12\rho V_\infty^2(2R)$, using the planform area $2R$ per unit span:
 
 $$
 c_d = -\frac12\int_0^{2\pi}C_p\cos\theta\,d\theta,\qquad c_l = -\frac12\int_0^{2\pi}C_p\sin\theta\,d\theta
 $$
 
-**Drag.** Every term of $C_p$ is a function of $\sin\theta$ alone (a constant, $\sin\theta$, $\sin^2\theta$). Each, multiplied by $\cos\theta$, integrates to zero over a full period. So $c_d = 0$ (L16, ll. 285–295).
+**Drag.** Every term of $C_p$ is a function of $\sin\theta$ alone (a constant, $\sin\theta$, $\sin^2\theta$). Each, multiplied by $\cos\theta$, integrates to zero over a full period. So $c_d = 0$.
 
 **Lift.** Multiply $C_p$ by $\sin\theta$ and integrate term by term:
 - constant terms × $\sin\theta$: $\int_0^{2\pi}\sin\theta\,d\theta = 0$;
@@ -535,7 +527,7 @@ $$
 L' = \tfrac12\rho V_\infty^2(2R)\frac{\Gamma}{RV_\infty}\quad\Rightarrow\quad\boxed{L' = \rho V_\infty\Gamma}\quad\text{(Kutta–Joukowski)}
 $$
 
-**Magnus effect**: a spinning cylinder or ball drags a circulation round with it and generates lift (L15, ll. 673–680; L16, ll. 423–431). See [[Kutta-Joukowski Theorem]].
+**Magnus effect**: a spinning cylinder or ball drags a circulation round with it and generates lift. See [[Kutta-Joukowski Theorem]].
 
 ### Worked example: a spinning cylinder
 
@@ -552,7 +544,7 @@ $V_\infty = 20$ m/s, $R = 0.5$ m, $\Gamma = 50$ m²/s (clockwise), $\rho = 1.225
 
 ## 10. D'Alembert's paradox and the Kutta–Joukowski theorem
 
-**D'Alembert (1752):** in steady, inviscid, incompressible flow the drag on any closed 2D body is zero. (This is a 2D result: a finite wing has induced drag even in inviscid flow, [[SESA2022 T5 - Finite Wing Theory|T5]].) Fore–aft symmetry kills drag; top–bottom asymmetry gives lift (L16, ll. 324–334). Experiments always show drag; the missing physics is viscosity (no-slip, boundary layers, separation), not identified until the Navier–Stokes equations decades later (L16, ll. 290–320). Even XFLR5 only adds skin friction through boundary-layer models (L16, ll. 313–319).
+**D'Alembert (1752):** in steady, inviscid, incompressible flow the drag on any closed 2D body is zero. (This is a 2D result: a finite wing has induced drag even in inviscid flow, [[SESA2022 T5 - Finite Wing Theory|T5]].) Fore–aft symmetry kills drag; top–bottom asymmetry gives lift. Experiments always show drag; the missing physics is viscosity (no-slip, boundary layers, separation), not identified until the Navier–Stokes equations decades later. Even XFLR5 only adds skin friction through boundary-layer models.
 
 **Kutta–Joukowski:**
 
@@ -560,19 +552,19 @@ $$
 L' = \rho_\infty V_\infty\Gamma
 $$
 
-It holds for any 2D body with net circulation $\Gamma$, independent of the integration path as long as the path encloses the body (Kutta, German; Joukowski, Russian; ≈1902–1906, via complex variables and conformal mapping; L16, ll. 370–380). The lifting cylinder of §9 satisfies it. Lift needs circulation, and potential flow cannot say how much; the Kutta condition fixes it ([[SESA2022 T4 - Thin Aerofoil Theory]]).
+It holds for any 2D body with net circulation $\Gamma$, independent of the integration path as long as the path encloses the body (Kutta, German; Joukowski, Russian; ≈1902–1906, via complex variables and conformal mapping). The lifting cylinder of §9 satisfies it. Lift needs circulation, and potential flow cannot say how much; the Kutta condition fixes it ([[SESA2022 T4 - Thin Aerofoil Theory]]).
 
 ## 11. Method of images
 
-To enforce $\mathbf V\cdot\hat n = 0$ at a plane wall, place an image element of equal magnitude mirrored across the wall (L16, ll. 485–540):
+To enforce $\mathbf V\cdot\hat n = 0$ at a plane wall, place an image element of equal magnitude mirrored across the wall:
 - Sources and sinks: image has the same sign (their normal velocities cancel on the wall).
 - Vortices (and doublets with axis normal to the wall): image has the opposite sign.
 
-The image sign can be checked by drawing velocity arrows (L16, ll. 540–543). For a clockwise vortex above the wall and its anticlockwise image below, both induce flow along the wall in the same direction, so the tangential components add. At any wall point off to one side each induced velocity also has a normal component, and the two are equal and opposite, so they cancel. The same check works for sources.
+The image sign can be checked by drawing velocity arrows. For a clockwise vortex above the wall and its anticlockwise image below, both induce flow along the wall in the same direction, so the tangential components add. At any wall point off to one side each induced velocity also has a normal component, and the two are equal and opposite, so they cancel. The same check works for sources.
 
 ### Vortex near a wall (Example 5: multirotor near a wall)
 
-Freestream $U_\infty$ plus vortex $\Gamma$ at $(0,a)$ plus image $-\Gamma$ at $(0,-a)$ (L16, ll. 544–600):
+Freestream $U_\infty$ plus vortex $\Gamma$ at $(0,a)$ plus image $-\Gamma$ at $(0,-a)$:
 
 $$
 \psi = U_\infty z + \frac{\Gamma}{2\pi}\ln\sqrt{x^2+(z-a)^2} - \frac{\Gamma}{2\pi}\ln\sqrt{x^2+(z+a)^2}

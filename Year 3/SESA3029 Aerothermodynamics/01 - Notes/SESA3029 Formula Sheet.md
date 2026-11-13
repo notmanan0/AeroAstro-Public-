@@ -11,7 +11,7 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.5** (all checked against transcripts; 4.5 on Thu 12 Nov), plus **4.6 written ahead** from the slides. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.5**, plus **4.6 written ahead**. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Which relation? Given → choose → check
 
@@ -190,6 +190,37 @@ $$
 
 Maximum deflection for air: $\theta_{max}=12.1^\circ,\ 23.0^\circ,\ 34.1^\circ,\ 41.1^\circ,\ 45.6^\circ$ at $M_1=1.5,\ 2,\ 3,\ 5,\ \infty$.
 
+Derived in [[SESA3029 Deep Dive - Theta-Beta-Mach Relation, Full Derivation]] (perfect gas):
+
+$$
+\frac{\rho_2}{\rho_1}=\frac{\tan\beta}{\tan(\beta-\theta)}=\frac{(\gamma+1)M_1^2\sin^2\beta}{2+(\gamma-1)M_1^2\sin^2\beta},\qquad
+U_{n1}U_{n2}=\frac{2a_0^2-(\gamma-1)U_t^2}{\gamma+1}\ (\text{oblique Prandtl relation}).
+$$
+
+Cubic in $\tan\beta$ (weak, strong and one rejected negative root):
+
+$$
+\left(1+\tfrac{\gamma-1}{2}M_1^2\right)\tan\theta\,\tan^3\beta-\left(M_1^2-1\right)\tan^2\beta+\left(1+\tfrac{\gamma+1}{2}M_1^2\right)\tan\theta\,\tan\beta+1=0 .
+$$
+
+Shock angle at $\theta_{max}$ and on the sonic line ($M_2=1$):
+
+$$
+\sin^2\beta_{\theta_{max}}=\frac{(\gamma+1)M_1^2-4+\sqrt{(\gamma+1)\left[(\gamma+1)M_1^4+8(\gamma-1)M_1^2+16\right]}}{4\gamma M_1^2},
+$$
+
+$$
+\sin^2\beta^*=\frac{(\gamma+1)M_1^2-(3-\gamma)+\sqrt{(\gamma+1)\left[(\gamma+1)M_1^4-2(3-\gamma)M_1^2+\gamma+9\right]}}{4\gamma M_1^2} .
+$$
+
+$\beta^*<\beta_{\theta_{max}}$, so the strong branch is always subsonic; the weak branch is subsonic only in the thin band between them ($22.71^\circ<\theta<22.97^\circ$ at $M_1=2$). Limits: $\theta_{max}\to0$ as $M_1\to1$; $\theta_{max}\to\sin^{-1}(1/\gamma)=45.58^\circ$ at $\sin^2\beta=(\gamma+1)/(2\gamma)$ as $M_1\to\infty$.
+
+Weak-shock limit (small $\theta$, radians): the shock leaves the Mach line linearly and its pressure is Ackeret's:
+
+$$
+\beta-\mu\approx\frac{(\gamma+1)M_1^2}{4\left(M_1^2-1\right)}\,\theta,\qquad C_p\approx\frac{2\theta}{\sqrt{M_1^2-1}} .
+$$
+
 Given $\theta$ and $\beta$, the relation is linear in $M_1^2$ ([[SESA3029 Test 2 - Solutions#Q3. Mach number from the oblique-shock chart|Test 2 Q3]]):
 
 $$
@@ -202,7 +233,7 @@ $$
 \mu=\sin^{-1}\!\left(\frac1M\right).
 $$
 
-## Shock chains, reflections and slip lines (Lecture 2.3)
+## Shock chains, reflections and slip lines
 
 Ratios across successive shocks multiply:
 
@@ -223,7 +254,7 @@ $$
 \frac{p_{02}}{p_{01}}=e^{-(s_2-s_1)/R}.
 $$
 
-## Prandtl–Meyer expansion (Lecture 2.4)
+## Prandtl–Meyer expansion
 
 $$
 \mathrm d\nu=\sqrt{M^2-1}\,\frac{\mathrm dU}{U},
@@ -241,7 +272,7 @@ As $M\to\infty$, $\nu_{max}=90^\circ\left(\sqrt{\tfrac{\gamma+1}{\gamma-1}}-1\ri
 
 Across a fan, $p_0$ and $T_0$ are constant: use the isentropic ratios. Assumes a steady, planar, isentropic turn of a supersonic stream ($M_1>1$); $\nu$ and $\theta$ in degrees with the IFT, radians in any calculus.
 
-## Shock-expansion method (Lecture 2.5)
+## Shock-expansion method
 
 Flat plate at incidence $\alpha$, with $q_\infty=\tfrac12\gamma p_\infty M_\infty^2$ and $\Delta p=p_L-p_U$:
 
@@ -255,7 +286,7 @@ C_{m,LE}=-\frac{\Delta p}{2q_\infty},
 x_{cp}=\frac c2.
 $$
 
-Moment transfer and the two centres (L2-5, ll. 215–242). Exact along the chord, with $C_n=\Delta p/q_\infty$ for the plate:
+Moment transfer and the two centres. Exact along the chord, with $C_n=\Delta p/q_\infty$ for the plate:
 
 $$
 C_{m,x}=C_{m,LE}+\frac xc\,C_n,
@@ -279,9 +310,9 @@ C_l=\frac{4\alpha}{\sqrt{M^2-1}},
 C_d=\frac{4(\alpha^2+\varepsilon^2)}{\sqrt{M^2-1}}\ \ (\text{diamond}).
 $$
 
-## Quasi-1D nozzle flow (Lecture 2.6)
+## Quasi-1D nozzle flow
 
-The mass, momentum and isentropic relations (L2-6, ll. 12–76; the momentum balance includes the side-wall force $(p+\tfrac12\mathrm dp)\,\mathrm dA$):
+The mass, momentum and isentropic relations (the momentum balance includes the side-wall force $(p+\tfrac12\mathrm dp)\,\mathrm dA$):
 
 $$
 \frac{\mathrm d\rho}{\rho}+\frac{\mathrm dU}{U}+\frac{\mathrm dA}{A}=0,
@@ -321,7 +352,7 @@ $$
 - $p_{b6}$: the supersonic root;
 - $p_{b5}$: $p_{b6}\times(p_2/p_1)_{NS}(M_e)$.
 
-## Jets and wind tunnels (Lecture 2.7)
+## Jets and wind tunnels
 
 Lip shock for an over-expanded jet:
 
@@ -339,7 +370,7 @@ $$
 
 which is 3.046 at $M=3$.
 
-## Method of characteristics (Lectures 3.1–3.4)
+## Method of characteristics
 
 Valid for steady, **planar** (2-D), homentropic, irrotational flow with $M>1$. $\theta$ is the flow **inclination** to $x$. The invariants below are exact only under these assumptions: in an axisymmetric nozzle the compatibility relations gain a $1/r$ term, so $\nu\mp\theta$ are no longer constant along characteristics (the Supplementary Note for MoC, p. 1, treats only the planar case and points elsewhere for the axisymmetric extension). The IFT values are $\gamma=1.4$ only; the CO₂ coursework needs the general-$\gamma$ forms at the end of this section.
 
@@ -375,7 +406,7 @@ Boundary conditions:
 | designed wall (non-reflecting) | $\theta_W=\theta_A$, $M_W=M_A$ | $\alpha_{AW}=(\theta+\mu)_A$, $\alpha_{BW}=\tfrac12(\theta_B+\theta_W)$ |
 | centreline | $\theta_P=0$, $\nu_P=R^-_B$, $R^+_P=R^-_P$ | $x_P=x_B-y_B/\tan\alpha_{BP}$, $\alpha_{BP}=\tfrac12[(\theta-\mu)_B-\mu_P]$ |
 
-A prescribed wall reflects **only if** $\theta_A\neq\theta_W$. If the arriving flow is already parallel to the wall, nothing leaves, whatever the table says (point 3 of the generic example; L3-4, ll. 238–277).
+A prescribed wall reflects **only if** $\theta_A\neq\theta_W$. If the arriving flow is already parallel to the wall, nothing leaves, whatever the table says (point 3 of the generic example).
 
 Minimum-length nozzle:
 
@@ -383,11 +414,11 @@ $$
 \theta_{max}=\frac{\nu(M_e)}{2},\qquad\text{expansion-fan lines: }\nu=\theta,\ R^-=2\theta,\qquad \frac{y_e}{r_a}\to\frac{A_e}{A^*}.
 $$
 
-$\theta_{max}$ is the wall's maximum slope; $r_a$ is the throat half-width and $y_e$ the exit half-width (3.3 slides 9, 21).
+$\theta_{max}$ is the wall's maximum slope; $r_a$ is the throat half-width and $y_e$ the exit half-width.
 
 $M_e=2.4$: $\theta_{max}=18.373^\circ$, $x_e/r_a=8.069$, $y_e/r_a=2.400$ (four lines).
 
-With $n$ lines the net has $n(n+3)/2$ points: 14 for $n=4$, 20 for $n=5$ (the coursework, L3-4, ll. 374–397).
+With $n$ lines the net has $n(n+3)/2$ points: 14 for $n=4$, 20 for $n=5$ (the coursework).
 
 General $\gamma$ (the coursework uses CO₂, $\gamma=1.289$; the IFT is $\gamma=1.4$ only):
 
@@ -398,13 +429,13 @@ $$
 
 $\mu=\sin^{-1}(1/M)$ is independent of $\gamma$.
 
-Reading the exit Mach number off the maximum slope at a **sharp** expansion corner (L3-3, ll. 204–214): $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
+Reading the exit Mach number off the maximum slope at a **sharp** expansion corner: $\nu(M_e)=2\theta_{max}$, e.g. $26.74^\circ\Rightarrow M_e=3.20$. A gradual-expansion nozzle has $\theta_{max}\le\nu(M_e)/2$, so the trick fails there. This $\theta_{max}$ is a wall slope, not the oblique-shock limit.
 
-Four-variable rule (L3-3, ll. 32–36): any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.
+Four-variable rule: any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. Interior points use $R^+$ and $R^-$; walls and the centreline use one invariant and $\theta$.
 
-## Euler equations and compressible aerofoils (Lectures 4.1–4.6)
+## Euler equations and compressible aerofoils
 
-4.1–4.5 checked against transcripts (Mon 2, Thu 5, Fri 6, Mon 9 and Thu 12 Nov); 4.6 written ahead from the slides ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|W07a]], [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]], [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]]).
+4.1–4.5 lectured; 4.6 written ahead ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|W07a]], [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]], [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]]).
 
 2D Euler equations (inviscid, no heat conduction, unit span; perfect gas):
 
@@ -416,9 +447,9 @@ $$
 e_t=c_vT+\tfrac12(u^2+v^2).
 $$
 
-The letters $\mathbf Q,\mathbf F,\mathbf G$ are shorthand, not the slides'. Slide 12 prints the energy flux as $\rho u(e_t+p)$, a slip for $(\rho e_t+p)u$.
+The letters $\mathbf Q,\mathbf F,\mathbf G$ are shorthand. The energy flux is $(\rho e_t+p)u$, not $\rho u(e_t+p)$.
 
-Mach-number effects, 4.2 (perfect gas, $\gamma=1.4$ for numbers). Lift per unit span at a fixed altitude scales with $C_LM_\infty^2$, since $L'=\tfrac12\rho_\infty U_\infty^2cC_L=\tfrac12\gamma p_\infty M_\infty^2cC_L$. On the centre line ahead of the leading edge at $M_\infty>1$ the turning angle is $\theta=0$, so the bow shock there is the normal-shock branch $\beta=90^\circ$ (the other $\theta=0$ solution, $\beta=\mu$, is a Mach wave); e.g. $M_\infty=1.2$: $M_2=0.842$, $\mu=56.4^\circ$. At fixed $\theta$ the weak-branch $\beta$ falls as $M_1$ rises, so the bow shock leans back at higher $M_\infty$. At the trailing edge both streams must leave along one slip line at one pressure (Kutta condition), so each is turned compressively and carries an oblique shock (L4-3). Sweep: the section sees $M_\infty\cos\Lambda$ (infinite swept wing).
+Mach-number effects, 4.2 (perfect gas, $\gamma=1.4$ for numbers). Lift per unit span at a fixed altitude scales with $C_LM_\infty^2$, since $L'=\tfrac12\rho_\infty U_\infty^2cC_L=\tfrac12\gamma p_\infty M_\infty^2cC_L$. On the centre line ahead of the leading edge at $M_\infty>1$ the turning angle is $\theta=0$, so the bow shock there is the normal-shock branch $\beta=90^\circ$ (the other $\theta=0$ solution, $\beta=\mu$, is a Mach wave); e.g. $M_\infty=1.2$: $M_2=0.842$, $\mu=56.4^\circ$. At fixed $\theta$ the weak-branch $\beta$ falls as $M_1$ rises, so the bow shock leans back at higher $M_\infty$. At the trailing edge both streams must leave along one slip line at one pressure (Kutta condition), so each is turned compressively and carries an oblique shock. Sweep: the section sees $M_\infty\cos\Lambda$ (infinite swept wing).
 
 Linearised compressible potential equation and pressure coefficient (steady, isentropic, irrotational, thin body, $u',v'\ll U_\infty$; not near $M_\infty=1$, not hypersonic; $\phi$ is the **perturbation** potential, $u'=\phi_x$, $v'=\phi_y$):
 
@@ -426,13 +457,23 @@ $$
 (1-M_\infty^2)\phi_{xx}+\phi_{yy}=0,\qquad C_p=-\frac{2u'}{U_\infty},\qquad a^2=a_\infty^2-(\gamma-1)u'U_\infty .
 $$
 
-Pressure coefficient in terms of the free-stream Mach number (exact, perfect gas; a past exam question, L4-3, ll. 414–417):
+Pressure coefficient in terms of the free-stream Mach number (exact, perfect gas; a past exam question):
 
 $$
 C_p=\frac{p-p_\infty}{\tfrac12\rho_\infty U_\infty^2}=\frac{2}{\gamma M_\infty^2}\left(\frac{p}{p_\infty}-1\right),\qquad \tfrac12\rho_\infty U_\infty^2=\tfrac12\gamma p_\infty M_\infty^2 .
 $$
 
-Validity of the linear equation (L4-3, ll. 368–378): $M_\infty<0.8$ (elliptic, Prandtl–Glauert) or $M_\infty>1.2$ (hyperbolic, Ackeret); slide 7 prints 0.9 and 1.1.
+Validity of the linear equation: $M_\infty<0.8$ (elliptic, Prandtl–Glauert) or $M_\infty>1.2$ (hyperbolic, Ackeret); 0.9 and 1.1 are also quoted.
+
+Full potential equation (exact for steady, shock-free flow from a uniform stream; elliptic where the local $M<1$, hyperbolic where $M>1$), from [[SESA3029 Deep Dive - From the Euler Equations to Prandtl-Glauert]]:
+
+$$
+\left(\Phi_x^2-a^2\right)\Phi_{xx}+2\Phi_x\Phi_y\Phi_{xy}+\left(\Phi_y^2-a^2\right)\Phi_{yy}=0,\qquad a^2=a_\infty^2-\frac{\gamma-1}{2}\left(\Phi_x^2+\Phi_y^2-U_\infty^2\right).
+$$
+
+Order-of-magnitude validity for thickness ratio $\tau$ (boundaries are orders of magnitude, not sharp): subsonic $(\gamma+1)M_\infty^2\tau\ll(1-M_\infty^2)^{3/2}$; supersonic $(\gamma+1)M_\infty^4\tau\ll(M_\infty^2-1)^{3/2}$, best at $M_\infty=2$, failing near 1 and when $M_\infty\tau\sim1$ (hypersonic). Near $M_\infty=1$ keep one term (transonic small-disturbance equation, not lectured): $\left[1-M_\infty^2-(\gamma+1)M_\infty^2\phi_x/U_\infty\right]\phi_{xx}+\phi_{yy}=0$.
+
+Pressure coefficient to second order: $C_p\approx-\dfrac{2u'}{U_\infty}-\left(1-M_\infty^2\right)\dfrac{u'^2}{U_\infty^2}-\dfrac{v'^2}{U_\infty^2}$.
 
 Prandtl–Glauert (subsonic, $M_\infty<0.8$; same aerofoil, $\beta=\sqrt{1-M_\infty^2}$, $\phi_0=\beta\phi$, $y_0=\beta y$):
 
@@ -476,11 +517,17 @@ C_l=\frac{4\alpha}{\sqrt{M_\infty^2-1}},\qquad
 C_d=\frac{4}{\sqrt{M_\infty^2-1}}\left[\alpha^2+\frac1c\int_0^c h'^2\,\mathrm dx+\frac1c\int_0^c y_c'^2\,\mathrm dx\right].
 $$
 
+General solution (characteristic coordinates): $\phi=f(x-\lambda y)+g(x+\lambda y)$; only $f$ above the aerofoil and only $g$ below, so $C_p(x,y)=2y_u'(x-\lambda y)/\lambda$ above. Drag polar ([[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]]):
+
+$$
+C_d=\frac{\lambda}{4}C_l^2+\frac{4}{\lambda}\left[\overline{h'^2}+\overline{y_c'^2}\right],\qquad \overline{q}=\frac1c\int_0^cq\,\mathrm dx .
+$$
+
 Flat plate: $C_d=4\alpha^2/\lambda$, $x_{cp}=c/2$. Diamond (thickest at $c/2$, the minimum-drag symmetric section): $C_d=\frac4\lambda[\alpha^2+(t/c)^2]$; $(L/D)_{max}=c/(2t)$ at $\alpha=t/c$, for any $M_\infty$. Biconvex: thickness term $\tfrac43(t/c)^2$.
 
 $M_\infty=2$, $\alpha=10^\circ$ flat plate: Ackeret $C_l=0.4031$, $C_d=0.0703$; shock-expansion $0.4075$, $0.0719$.
 
-Wing sweep (simple sweep theory): the section sees $M_\infty\cos\Lambda$, with $\Lambda$ the leading-edge sweep (written $\beta$ on the slides).
+Wing sweep (simple sweep theory): the section sees $M_\infty\cos\Lambda$, with $\Lambda$ the leading-edge sweep (written $\beta$ in the course).
 
 ## What the exam formula sheet gives you
 

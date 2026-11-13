@@ -29,7 +29,7 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 04 - Generalised Hooke's Law.
 > - **Common mistakes:** using $\sigma=E\varepsilon$ in one direction and forgetting the Poisson terms; assuming $\varepsilon_{zz}=0$ in plane stress (the plate thins) or $\sigma_{zz}=0$ in plane strain.
 > - **Practise:** [[#Worked example - submersible hull at 100 m]] · [[FEEG1002 Statics 2 Tutorial 3 - Generalised Hooke's Law Solutions]]
 
-The familiar Hooke's law, $\sigma=E\varepsilon$, is a one-stress law. It is what a tensile test measures, just as $\tau=G\gamma$ is what a torsion test measures, so each characterises a material. But a pressure vessel wall is stretched round its circumference and along its length at once, and the two stretches interact: pulling in one direction makes the material contract in the others. A strain in one direction therefore depends on the stresses in all directions, and the one-stress law no longer holds on its own (Lecture 4, ll. 1–70).
+The familiar Hooke's law, $\sigma=E\varepsilon$, is a one-stress law. It is what a tensile test measures, just as $\tau=G\gamma$ is what a torsion test measures, so each characterises a material. But a pressure vessel wall is stretched round its circumference and along its length at once, and the two stretches interact: pulling in one direction makes the material contract in the others. A strain in one direction therefore depends on the stresses in all directions, and the one-stress law no longer holds on its own.
 
 The generalised law is the uniaxial law and Poisson's ratio applied once for each stress, with the results added. Superposition is allowed because the material is linear. The result needs no new material constants: for an isotropic material, $E$ and $\nu$ describe everything, including shear and volume change.
 
@@ -39,7 +39,7 @@ The full 3D law is rarely used in its entirety. Most problems are two-dimensiona
 
 ## 1. Assumptions
 
-Stress–strain relations are empirical: they come from experiments on the material. The material is assumed **homogeneous**, the same throughout the body; **isotropic**, the same in every direction; and **linear elastic**, obeying Hooke's law in each direction (Lecture 4, ll. 99–141). Metals satisfy all three well. Wood, muscle and fibre composites are not isotropic: they are stiffer along their fibres than across them, and need more constants ([[SESA2028 M4 - Polymer Matrix Composites]]). Rubber is not linear at large strains.
+Stress–strain relations are empirical: they come from experiments on the material. The material is assumed **homogeneous**, the same throughout the body; **isotropic**, the same in every direction; and **linear elastic**, obeying Hooke's law in each direction. Metals satisfy all three well. Wood, muscle and fibre composites are not isotropic: they are stiffer along their fibres than across them, and need more constants ([[SESA2028 M4 - Polymer Matrix Composites]]). Rubber is not linear at large strains.
 
 ## 2. Plane stress
 
@@ -51,7 +51,7 @@ $$
 \sigma_{zz}=\sigma_{xz}=\sigma_{yz}=0
 $$
 
-so only $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$ remain. It describes thin plates loaded in their own plane, such as the skin of an aircraft or a ship, and thin-walled pressure vessels, where the radial stress is of order $p$ and is neglected ([[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels#The radial stress|B1]]). It also holds at any free surface (Lecture 4, ll. 150–180; Lecture 9, ll. 229–231).
+so only $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$ remain. It describes thin plates loaded in their own plane, such as the skin of an aircraft or a ship, and thin-walled pressure vessels, where the radial stress is of order $p$ and is neglected ([[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels#The radial stress|B1]]). It also holds at any free surface.
 
 ![[s2_plane_stress_strain.png|900]]
 
@@ -69,7 +69,7 @@ $$
 \varepsilon_{yy}=\frac{\sigma_{yy}}{E},\qquad \varepsilon_{xx}=-\nu\frac{\sigma_{yy}}{E}
 $$
 
-The stress in $y$ therefore changes the strain in $x$ (Lecture 4, ll. 181–232).
+The stress in $y$ therefore changes the strain in $x$.
 
 ### Superposition
 
@@ -83,7 +83,7 @@ $$
 \boxed{\varepsilon_{xx}=\frac1E\left(\sigma_{xx}-\nu\sigma_{yy}\right)},\qquad \boxed{\varepsilon_{yy}=\frac1E\left(\sigma_{yy}-\nu\sigma_{xx}\right)}
 $$
 
-Each normal strain is a direct term from the stress in its own direction minus a Poisson term from the stress across it. Pulling in $y$ reduces the strain in $x$ (Lecture 4, ll. 233–291).
+Each normal strain is a direct term from the stress in its own direction minus a Poisson term from the stress across it. Pulling in $y$ reduces the strain in $x$.
 
 ### The out-of-plane strain
 
@@ -93,7 +93,7 @@ $$
 \boxed{\varepsilon_{zz}=-\frac{\nu}{E}\left(\sigma_{xx}+\sigma_{yy}\right)}
 $$
 
-In plane stress $\sigma_{zz}=0$ but in general $\varepsilon_{zz}\neq0$: a stretched plate gets thinner (Lecture 4, ll. 292–318).
+In plane stress $\sigma_{zz}=0$ but in general $\varepsilon_{zz}\neq0$: a stretched plate gets thinner.
 
 ### Shear strain
 
@@ -117,11 +117,11 @@ $$
 \boxed{\varepsilon_{xy}=\frac{1+\nu}{E}\sigma_{xy}}
 $$
 
-Normal stresses cause no shear strain, and shear stress causes no normal strain in the $x$, $y$ or $z$ directions: a shear stress only changes angles (Lecture 4, ll. 319–387). This decoupling is a property of isotropic materials.
+Normal stresses cause no shear strain, and shear stress causes no normal strain in the $x$, $y$ or $z$ directions: a shear stress only changes angles. This decoupling is a property of isotropic materials.
 
 ### Why G is not independent
 
-The relation $G=E/2(1+\nu)$ can be proved once stress and strain transformation are available ([[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]], [[FEEG1002 B5 - Strain Measurement and Strain Rosettes|B5]]) (Lecture 4, ll. 342–347 defer the proof). Take an element in pure shear, $\sigma_{xy}=\tau$ with no normal stresses. Its Mohr's circle is centred on the origin, so at 45° the element carries principal stresses $\sigma_I=\tau$ and $\sigma_{II}=-\tau$ with no shear. In those axes the plane-stress law gives the principal strain
+The relation $G=E/2(1+\nu)$ can be proved once stress and strain transformation are available ([[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]], [[FEEG1002 B5 - Strain Measurement and Strain Rosettes|B5]]). Take an element in pure shear, $\sigma_{xy}=\tau$ with no normal stresses. Its Mohr's circle is centred on the origin, so at 45° the element carries principal stresses $\sigma_I=\tau$ and $\sigma_{II}=-\tau$ with no shear. In those axes the plane-stress law gives the principal strain
 
 $$
 \varepsilon_I=\frac1E\left(\sigma_I-\nu\sigma_{II}\right)
@@ -165,13 +165,13 @@ $$
 \boxed{\sigma_{yy}=\frac{E}{1-\nu^2}\left(\varepsilon_{yy}+\nu\varepsilon_{xx}\right)},\qquad \boxed{\sigma_{xy}=\frac{E}{1+\nu}\varepsilon_{xy}}
 $$
 
-This form is less intuitive than the strain form, and there is no need to memorise it; know where to find it (Lecture 4, ll. 388–418; Lecture 9, ll. 250–258).
+This form is less intuitive than the strain form, and there is no need to memorise it; know where to find it.
 
 ## 3. Hooke's law in three dimensions
 
 ### Strains from stresses
 
-With a stress in $z$ as well, each normal strain picks up one more Poisson term (Lecture 4, ll. 419–468):
+With a stress in $z$ as well, each normal strain picks up one more Poisson term:
 
 $$
 \boxed{\varepsilon_{xx}=\frac1E\left[\sigma_{xx}-\nu(\sigma_{yy}+\sigma_{zz})\right]}
@@ -195,7 +195,7 @@ Setting $\sigma_{zz}=0$ recovers the plane-stress equations.
 
 ### Stresses from strains in three dimensions
 
-The inverse follows in a few lines (it is quoted without derivation at Lecture 4, ll. 469–494). Write $S=\sigma_{xx}+\sigma_{yy}+\sigma_{zz}$. The first strain equation can be rearranged as
+The inverse follows in a few lines. Write $S=\sigma_{xx}+\sigma_{yy}+\sigma_{zz}$. The first strain equation can be rearranged as
 
 $$
 E\varepsilon_{xx}=\sigma_{xx}-\nu(S-\sigma_{xx})
@@ -232,7 +232,7 @@ $$
 with $\sigma_{yy}$ and $\sigma_{zz}$ following by cycling the indices, and $\sigma_{xy}=\frac{E}{1+\nu}\varepsilon_{xy}$ and likewise for the other shear stresses. The factor $(1-2\nu)$ in the denominator blows up as $\nu\to0.5$, a first sign of incompressibility.
 
 > [!tip] Simplify before you solve
-> A 3D question almost always tells you something is zero: a stress on a free surface, a strain where a wall prevents movement. Put those zeros in first; the system then collapses to one or two equations (Lecture 4, ll. 461–491; Lecture 9, ll. 285–296).
+> A 3D question almost always tells you something is zero: a stress on a free surface, a strain where a wall prevents movement. Put those zeros in first; the system then collapses to one or two equations.
 
 ## 4. Volume change and the bulk modulus
 
@@ -248,7 +248,7 @@ $$
 \boxed{\varepsilon_{vol}=\frac{1-2\nu}{E}\left(\sigma_{xx}+\sigma_{yy}+\sigma_{zz}\right)}
 $$
 
-Shear stresses do not appear: they change shape, not volume (Lecture 4, ll. 495–516).
+Shear stresses do not appear: they change shape, not volume.
 
 ### Hydrostatic stress and the bulk modulus
 
@@ -262,17 +262,17 @@ $$
 \boxed{\varepsilon_{vol}=\frac{\sigma_H}{K},\qquad K=\frac{E}{3(1-2\nu)}}
 $$
 
-where $K$ is the **bulk modulus**, the resistance of the bulk material to change of volume (Lecture 4, ll. 517–540). It applies to a solid block, not to a hollow structure: a submarine hull is a thin-walled pressure vessel and deforms by the stresses of [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels|B1]], not by bulk compression.
+where $K$ is the **bulk modulus**, the resistance of the bulk material to change of volume. It applies to a solid block, not to a hollow structure: a submarine hull is a thin-walled pressure vessel and deforms by the stresses of [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels|B1]], not by bulk compression.
 
 ### Incompressibility and the range of Poisson's ratio
 
-If $\nu=0.5$, then $1-2\nu=0$ and the volume never changes, whatever the stresses; the material is **incompressible**. Rubber ($\nu\approx0.499$) and water-rich biological tissue come close (Lecture 4, ll. 541–562). The admissible range follows from requiring both moduli to be positive:
+If $\nu=0.5$, then $1-2\nu=0$ and the volume never changes, whatever the stresses; the material is **incompressible**. Rubber ($\nu\approx0.499$) and water-rich biological tissue come close. The admissible range follows from requiring both moduli to be positive:
 
 $$
 G=\frac{E}{2(1+\nu)}>0\ \Rightarrow\ \nu>-1,\qquad K=\frac{E}{3(1-2\nu)}>0\ \Rightarrow\ \nu<0.5
 $$
 
-so $-1<\nu<0.5$. Ordinary engineering materials sit near 0.3; negative values occur only in specially designed (for example 3D-printed re-entrant) structures, which widen when stretched (Lecture 4, ll. 563–590).
+so $-1<\nu<0.5$. Ordinary engineering materials sit near 0.3; negative values occur only in specially designed (for example 3D-printed re-entrant) structures, which widen when stretched.
 
 | Material | $E$ | $\nu$ |
 |---|---|---|
@@ -295,7 +295,7 @@ $$
 \varepsilon_{zz}=\varepsilon_{xz}=\varepsilon_{yz}=0
 $$
 
-so a cube of material can stretch and shear in the $x$–$y$ plane but cannot get thicker or thinner. It suits long structures loaded uniformly along their length and prevented from changing length: a dam fixed along a valley, a tunnel through rock that cannot lengthen the mountain around it (Lecture 4, ll. 591–611).
+so a cube of material can stretch and shear in the $x$–$y$ plane but cannot get thicker or thinner. It suits long structures loaded uniformly along their length and prevented from changing length: a dam fixed along a valley, a tunnel through rock that cannot lengthen the mountain around it.
 
 ### The out-of-plane stress
 
@@ -309,7 +309,7 @@ $$
 \boxed{\sigma_{zz}=\nu\left(\sigma_{xx}+\sigma_{yy}\right)}
 $$
 
-Holding the strain at zero needs a stress: squeeze a cylinder between two walls and it tries to lengthen, so the walls must push back (Lecture 4, ll. 612–646).
+Holding the strain at zero needs a stress: squeeze a cylinder between two walls and it tries to lengthen, so the walls must push back.
 
 ### In-plane relations
 
@@ -331,7 +331,7 @@ and likewise for $\varepsilon_{yy}$. The shear relation is unchanged.
 
 ### Plane stress against plane strain
 
-The two cases are mirror images, and confusing them is the commonest error in this topic (Lecture 9, ll. 259–273):
+The two cases are mirror images, and confusing them is the commonest error in this topic:
 
 | | Plane stress | Plane strain |
 |---|---|---|
@@ -339,7 +339,7 @@ The two cases are mirror images, and confusing them is the commonest error in th
 | Not zero in $z$ | $\varepsilon_{zz}=-\frac\nu E(\sigma_{xx}+\sigma_{yy})$ | $\sigma_{zz}=\nu(\sigma_{xx}+\sigma_{yy})$ |
 | Typical case | thin plate, vessel wall, free surface | long dam, tunnel, block between walls |
 
-Both are described by the same two constants, $E$ and $\nu$; the rest of the generalised law is just a systematic way of combining them (Lecture 4, ll. 619–646).
+Both are described by the same two constants, $E$ and $\nu$; the rest of the generalised law is just a systematic way of combining them.
 
 ## 6. Adding a thermal strain
 
@@ -438,7 +438,7 @@ Restraint in two directions gives $E\varepsilon_T/(1-\nu)$, about 36 % more than
 
 ### Worked example - a steel block on the ocean floor
 
-A solid steel block ($E=210$ GPa, $\nu=0.30$) rests at 11 km depth in sea water of density 1025 kg/m³ (suggested, not lecturer-set; the sunken block is the example at Lecture 4, ll. 519–525). The stress is hydrostatic:
+A solid steel block ($E=210$ GPa, $\nu=0.30$) rests at 11 km depth in sea water of density 1025 kg/m³ (suggested, not lecturer-set). The stress is hydrostatic:
 
 $$
 \sigma_H=-\rho gh=-(1025)(9.81)(11\,000)=-110.6\ \mathrm{MPa}

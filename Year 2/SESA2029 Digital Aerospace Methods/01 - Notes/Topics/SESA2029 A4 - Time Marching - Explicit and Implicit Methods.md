@@ -41,9 +41,9 @@ $$
 \frac{\partial T}{\partial t}=\alpha\frac{\partial^2T}{\partial x^2}
 $$
 
-is solved on $0\le x\le1$ with $T(0)=1200$ K and an initial temperature of 300 K inside (L5 slide 7). $T$ is a function of time and space. The notation is $T_j^n$: subscript $j$ for the grid point at $x_j=jh$, superscript $n$ for the time level $t_n=n\Delta t$, not a power.
+is solved on $0\le x\le1$ with $T(0)=1200$ K and an initial temperature of 300 K inside. $T$ is a function of time and space. The notation is $T_j^n$: subscript $j$ for the grid point at $x_j=jh$, superscript $n$ for the time level $t_n=n\Delta t$, not a power.
 
-The inner face is adiabatic, with no heat transfer, so by Fourier's law the temperature gradient there is zero. That is a Neumann boundary condition, fixing a derivative, as opposed to the Dirichlet condition at $x=0$, which fixes a value. A backward difference discretises it (L5 slide 9):
+The inner face is adiabatic, with no heat transfer, so by Fourier's law the temperature gradient there is zero. That is a Neumann boundary condition, fixing a derivative, as opposed to the Dirichlet condition at $x=0$, which fixes a value. A backward difference discretises it:
 
 $$
 \left.\frac{\partial T}{\partial x}\right|_{x=1}=0
@@ -57,7 +57,7 @@ In Python that is the line setting the last element equal to the one before it. 
 
 ## 2. The explicit scheme
 
-Use a forward difference in time and the second-order central difference in space, with the right-hand side evaluated at the known level $n$ (L5 slide 8):
+Use a forward difference in time and the second-order central difference in space, with the right-hand side evaluated at the known level $n$:
 
 $$
 \frac{T_j^{n+1}-T_j^n}{\Delta t}=\alpha\frac{T_{j-1}^n-2T_j^n+T_{j+1}^n}{h^2}.
@@ -83,7 +83,7 @@ The Fourier number is dimensionless: $\alpha$ is in m²/s, $\Delta t$ in s and $
 
 ## 3. The implicit scheme
 
-The implicit scheme writes the equation at the new level $n+1$, so that the time derivative looks back from $n+1$ to $n$ (a backward difference), and evaluates the right-hand side at $n+1$ too (L5 slide 8):
+The implicit scheme writes the equation at the new level $n+1$, so that the time derivative looks back from $n+1$ to $n$ (a backward difference), and evaluates the right-hand side at $n+1$ too:
 
 $$
 \frac{T_j^{n+1}-T_j^n}{\Delta t}=\alpha\frac{T_{j-1}^{n+1}-2T_j^{n+1}+T_{j+1}^{n+1}}{h^2}.
@@ -161,7 +161,7 @@ The backward difference is also first order, with the leading error of opposite 
 
 ## 4. What the experiments show
 
-The runs below use $\alpha=0.1$ and $N=8$ ($h=0.125$) up to $t=0.72$ (L5 slides 9–10).
+The runs below use $\alpha=0.1$ and $N=8$ ($h=0.125$) up to $t=0.72$.
 
 Accuracy. With $\Delta t=0.06$ (12 steps, $F=0.384$) the explicit scheme gives an inner-wall temperature of 325.1 K, against 330.3 K when the time step is made very small. Halving the step gives 327.8 K, and halving again 329.1 K: errors of 5.2, 2.4 and 1.2 K, halving each time, the signature of a first-order method. The implicit scheme gives 334.6, 332.6 and 331.5 K at the same three steps, errors of $+4.3$, $+2.3$ and $+1.2$ K, the same size and opposite sign.
 
@@ -178,7 +178,7 @@ The explicit instability appears as a saw-tooth because the fastest-growing erro
 
 ## 5. The model equation for stability
 
-[[SESA2029 A5 - Numerical Stability - Von Neumann Analysis, Fourier and CFL Numbers|A5]] analyses stability once for many equations by using a model ordinary differential equation (L5 slide 11):
+[[SESA2029 A5 - Numerical Stability - Von Neumann Analysis, Fourier and CFL Numbers|A5]] analyses stability once for many equations by using a model ordinary differential equation:
 
 $$
 \frac{\mathrm df}{\mathrm dt}=\lambda f.

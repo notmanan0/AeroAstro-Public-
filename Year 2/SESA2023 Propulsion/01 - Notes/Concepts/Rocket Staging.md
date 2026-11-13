@@ -23,7 +23,7 @@ The calculation starts from the final payload and works down the stack with $(m_
 
 The $\delta$ model needs care, though. Because $\delta$ is a fraction of each stage's initial mass, the gain can be small for a modest $\Delta V$. In 2024-25 Q2(iii), two stages at 2.5 km/s each ($\lambda_i = 0.4876$, $m_{02} = 4.10$ t, $m_{01} = 8.41$ t) need less propellant than one stage (5.41 t against 5.60 t) but have a slightly higher lift-off mass (8.41 t against 8.26 t), because of the extra structure.
 
-Serial stages burn in sequence, while parallel strap-on boosters burn alongside the core at lift-off. The legacy question on choosing a launch vehicle (2015-16 Q2(ii)) expects payload mass and orbit ($\Delta V$), reliability and heritage, cost per kg, fairing size, launch site and inclination, schedule, the launch environment (g-loads, vibration, acoustics) and insurance.
+Serial stages burn in sequence, while parallel strap-on boosters burn alongside the core at lift-off. Choosing a launch vehicle (2015-16 Q2(ii)) depends on payload mass and orbit ($\Delta V$), reliability and heritage, cost per kg, fairing size, launch site and inclination, schedule, the launch environment (g-loads, vibration, acoustics) and insurance.
 
 ![[prop_rocket_staging.png|600]]
 

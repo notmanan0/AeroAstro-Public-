@@ -31,25 +31,25 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 24.txt", "02 - Sources/Lecture
 > - **Assumptions:** Cartesian coordinates; fields twice continuously differentiable for the identities.
 > - **Method:** 1. Write out $F_1$, $F_2$, $F_3$. 2. Divergence: add $\partial_xF_1$, $\partial_yF_2$, $\partial_zF_3$. 3. Curl: expand the determinant by minors, derivative row acting on component row, with a minus on the $\mathbf j$ term. 4. Laplacian: add the three unmixed second derivatives. 5. Evaluate at the point last.
 > - **Common mistakes:** dropping the minus sign on the $\mathbf j$ component of the curl; trying to take the gradient of a vector field, which this course doesn't define (2024/25 B1(a)(i)).
-> - **Practise:** [[#The curl, by the same route (L24)]] · [[#4. Past exam questions]]
+> - **Practise:** [[#The curl, by the same route]] · [[#4. Past exam questions]]
 
-The gradient of [[MATH2048 VC1 - Scalar and Vector Fields, Gradient and Directional Derivatives|VC1]] differentiates a scalar field. Vector fields are the more interesting case, and just as two vectors can be multiplied with a dot or a cross, a vector field can be differentiated in two ways (L24, ll. 24–40). The divergence takes a vector field to a scalar field, like a dot product. The curl takes a vector field to a vector field, like a cross product.
+The gradient of [[MATH2048 VC1 - Scalar and Vector Fields, Gradient and Directional Derivatives|VC1]] differentiates a scalar field. Vector fields are the more interesting case, and just as two vectors can be multiplied with a dot or a cross, a vector field can be differentiated in two ways. The divergence takes a vector field to a scalar field, like a dot product. The curl takes a vector field to a vector field, like a cross product.
 
 Both are built from the gradient by requiring the two properties wanted of every derivative: linearity, and a product rule. In Cartesian coordinates the basis vectors are constant, so their derivatives vanish, and that alone fixes the formulas.
 
 ---
 
-## 1. Divergence (L24)
+## 1. Divergence
 
 ### Building it from the gradient
 
-Two properties are required (ll. 41–71). The first is linearity. The second is a product rule for a scalar field $f$ times a constant vector $\mathbf c$: the derivative of $f\mathbf c$ should be "derivative of $f$ times $\mathbf c$" plus "$f$ times derivative of $\mathbf c$", and the derivative of a constant is zero. Choosing the dot product for "times" gives the divergence:
+Two properties are required. The first is linearity. The second is a product rule for a scalar field $f$ times a constant vector $\mathbf c$: the derivative of $f\mathbf c$ should be "derivative of $f$ times $\mathbf c$" plus "$f$ times derivative of $\mathbf c$", and the derivative of a constant is zero. Choosing the dot product for "times" gives the divergence:
 
 $$
 \nabla\cdot(f\mathbf c)=(\nabla f)\cdot\mathbf c .
 $$
 
-Now expand a general field in its components (ll. 72–127). By linearity,
+Now expand a general field in its components. By linearity,
 
 $$
 \nabla\cdot\mathbf F=\nabla\cdot(F_1\mathbf i)+\nabla\cdot(F_2\mathbf j)+\nabla\cdot(F_3\mathbf k).
@@ -71,7 +71,7 @@ the $x$-derivative of the $x$-component plus the same for $y$ and $z$, a scalar 
 
 ### Zero divergence doesn't mean constant
 
-An example is $\mathbf F=y^2z\,\mathbf i+xz\,\mathbf j-y^2\,\mathbf k$ (ll. 133–158). It is certainly not constant: it is $\mathbf 0$ at the origin and $(1,1,-1)$ at $(1,1,1)$. But each component is independent of its own variable, so
+An example is $\mathbf F=y^2z\,\mathbf i+xz\,\mathbf j-y^2\,\mathbf k$. It is certainly not constant: it is $\mathbf 0$ at the origin and $(1,1,-1)$ at $(1,1,1)$. But each component is independent of its own variable, so
 
 $$
 \nabla\cdot\mathbf F=0+0+0=0 .
@@ -81,7 +81,7 @@ A field with zero divergence everywhere is called **solenoidal**, a name from el
 
 ### What divergence measures
 
-In a fluid, a small element containing a fixed number of particles moves with the velocity field $\mathbf v$ (ll. 159–212). If the arrows converge on a point, the velocity decreases through it along each axis, the divergence is negative, and the point is a sink; if they spread out from it, the divergence is positive and the point is a source. The continuity equation makes this precise:
+In a fluid, a small element containing a fixed number of particles moves with the velocity field $\mathbf v$. If the arrows converge on a point, the velocity decreases through it along each axis, the divergence is negative, and the point is a sink; if they spread out from it, the divergence is positive and the point is a source. The continuity equation makes this precise:
 
 $$
 \frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf v)=0 .
@@ -95,11 +95,11 @@ $$
 
 $\frac{D}{Dt}$ is the material derivative, the rate of change seen moving with the flow. A positive divergence makes the density of the element fall, which with fixed mass means its volume is growing: the flow is expanding. Negative divergence means it is being compressed. An incompressible flow has $\nabla\cdot\mathbf v=0$.
 
-## 2. Curl (L24)
+## 2. Curl
 
-### The curl, by the same route (L24)
+### The curl, by the same route
 
-Repeat the construction with the cross product in the product rule, $\nabla\times(f\mathbf c)=(\nabla f)\times\mathbf c$ (ll. 213–264). Linearity and the constant basis give
+Repeat the construction with the cross product in the product rule, $\nabla\times(f\mathbf c)=(\nabla f)\times\mathbf c$. Linearity and the constant basis give
 
 $$
 \nabla\times\mathbf F=(\nabla F_1)\times\mathbf i+(\nabla F_2)\times\mathbf j+(\nabla F_3)\times\mathbf k .
@@ -123,17 +123,17 @@ $$
 \nabla\times\mathbf F=\Big(\frac{\partial F_3}{\partial y}-\frac{\partial F_2}{\partial z}\Big)\mathbf i+\Big(\frac{\partial F_1}{\partial z}-\frac{\partial F_3}{\partial x}\Big)\mathbf j+\Big(\frac{\partial F_2}{\partial x}-\frac{\partial F_1}{\partial y}\Big)\mathbf k ,
 $$
 
-which there is no need to memorise, because it is the determinant (ll. 262–289)
+which there is no need to memorise, because it is the determinant
 
 $$
 \nabla\times\mathbf F=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\partial_x&\partial_y&\partial_z\\F_1&F_2&F_3\end{vmatrix}.
 $$
 
-Expand it by minors along the top row, with the alternating signs $+,-,+$. In each $2\times2$ minor the derivatives act on the components, so the order matters: the top-left derivative acts on the bottom-right component, minus the top-right derivative acting on the bottom-left (ll. 302–306).
+Expand it by minors along the top row, with the alternating signs $+,-,+$. In each $2\times2$ minor the derivatives act on the components, so the order matters: the top-left derivative acts on the bottom-right component, minus the top-right derivative acting on the bottom-left.
 
-### Worked example (L24)
+### Worked example
 
-For $\mathbf F=xy^2\,\mathbf i+e^z\,\mathbf j+ye^z\sin x\,\mathbf k$ (ll. 290–316):
+For $\mathbf F=xy^2\,\mathbf i+e^z\,\mathbf j+ye^z\sin x\,\mathbf k$:
 
 $$
 \nabla\times\mathbf F=\mathbf i\Big[\partial_y(ye^z\sin x)-\partial_z(e^z)\Big]-\mathbf j\Big[\partial_x(ye^z\sin x)-\partial_z(xy^2)\Big]+\mathbf k\Big[\partial_x(e^z)-\partial_y(xy^2)\Big].
@@ -165,7 +165,7 @@ That is the left panel of the figure below in three dimensions: spreading withou
 
 ### What curl measures
 
-The curl measures local rotation (ll. 323–403). The curl of a fluid velocity is the **vorticity**, $\boldsymbol\omega=\nabla\times\mathbf v$. The motion of a small fluid element splits into expansion (the divergence), shear (deformation of a square into a parallelogram, which is what viscosity resists) and spin, which is what vorticity measures. The figure shows the three cases: a radial field spreads but doesn't spin, a rigid rotation spins with zero divergence, and a shear flow has zero divergence but non-zero curl, so a small paddle wheel placed in it turns even though every streamline is straight.
+The curl measures local rotation. The curl of a fluid velocity is the **vorticity**, $\boldsymbol\omega=\nabla\times\mathbf v$. The motion of a small fluid element splits into expansion (the divergence), shear (deformation of a square into a parallelogram, which is what viscosity resists) and spin, which is what vorticity measures. The figure shows the three cases: a radial field spreads but doesn't spin, a rigid rotation spins with zero divergence, and a shear flow has zero divergence but non-zero curl, so a small paddle wheel placed in it turns even though every streamline is straight.
 
 ![[m2048_vc_div_curl_fields.png|900]]
 
@@ -177,19 +177,19 @@ $$
 
 kills the pressure and potential body-force terms, since each is a gradient and $\nabla\times\nabla f=\mathbf 0$ (identity 2 below). What is left says that, following the flow, vorticity changes only through viscosity. That is why vorticity is generated where viscosity matters, in boundary layers and at trailing edges, where vortices are shed and drag results.
 
-## 3. The Laplacian and the vector identities (L25)
+## 3. The Laplacian and the vector identities
 
 ### The Laplacian
 
-The Laplacian is a second derivative, the divergence of the gradient (L25, ll. 29–44). With $\nabla f=(f_x,f_y,f_z)$, taking the $x$-derivative of the $x$-component and so on,
+The Laplacian is a second derivative, the divergence of the gradient. With $\nabla f=(f_x,f_y,f_z)$, taking the $x$-derivative of the $x$-component and so on,
 
 $$
 \nabla^2f=\nabla\cdot\nabla f=\frac{\partial^2f}{\partial x^2}+\frac{\partial^2f}{\partial y^2}+\frac{\partial^2f}{\partial z^2}.
 $$
 
-It has already appeared throughout [[MATH2048 PDE5 - Laplace's Equation|Block 4]] (ll. 45–57): the wave and heat equations in several dimensions are $u_{tt}=c^2\nabla^2u$ and $u_t=\kappa^2\nabla^2u$, their static limit is Laplace's equation $\nabla^2u=0$, and with a source it is Poisson's equation, used for gravitational and electrostatic potentials. In Navier–Stokes, $\nu\nabla^2\mathbf v$ is the viscous term (ll. 58–77). Taking the divergence of incompressible Navier–Stokes kills the time-derivative and viscous terms, because $\nabla\cdot\mathbf v=0$, and leaves $\nabla^2p=0$ for the pressure when the density is constant; numerical codes use this, as a pressure projection, to keep the flow incompressible.
+It has already appeared throughout [[MATH2048 PDE5 - Laplace's Equation|Block 4]]: the wave and heat equations in several dimensions are $u_{tt}=c^2\nabla^2u$ and $u_t=\kappa^2\nabla^2u$, their static limit is Laplace's equation $\nabla^2u=0$, and with a source it is Poisson's equation, used for gravitational and electrostatic potentials. In Navier–Stokes, $\nu\nabla^2\mathbf v$ is the viscous term. Taking the divergence of incompressible Navier–Stokes kills the time-derivative and viscous terms, because $\nabla\cdot\mathbf v=0$, and leaves $\nabla^2p=0$ for the pressure when the density is constant; numerical codes use this, as a pressure projection, to keep the flow incompressible.
 
-For $\phi=e^xy^3\sin z$ (ll. 79–134), the gradient is $e^xy^3\sin z\,\mathbf i+3e^xy^2\sin z\,\mathbf j+e^xy^3\cos z\,\mathbf k$, and its divergence is
+For $\phi=e^xy^3\sin z$, the gradient is $e^xy^3\sin z\,\mathbf i+3e^xy^2\sin z\,\mathbf j+e^xy^3\cos z\,\mathbf k$, and its divergence is
 
 $$
 \nabla^2\phi=e^xy^3\sin z+6e^xy\sin z-e^xy^3\sin z=6e^xy\sin z .
@@ -197,7 +197,7 @@ $$
 
 In Cartesian coordinates the intermediate gradient can be skipped by differentiating twice directly, which leaves fewer chances to slip.
 
-The Laplacian of a vector field is defined component by component (ll. 136–143):
+The Laplacian of a vector field is defined component by component:
 
 $$
 \nabla^2\mathbf F=\nabla^2F_1\,\mathbf i+\nabla^2F_2\,\mathbf j+\nabla^2F_3\,\mathbf k ,
@@ -207,7 +207,7 @@ nine second derivatives in all. In non-Cartesian coordinates it is messier, anot
 
 ### The identities
 
-Eight identities hold, for scalar fields $f$, $g$ and vector fields $\mathbf F$, $\mathbf G$ (ll. 144–167). Most are on the formula sheet and needn't be memorised.
+Eight identities hold, for scalar fields $f$, $g$ and vector fields $\mathbf F$, $\mathbf G$. Most are on the formula sheet and needn't be memorised.
 
 | # | Identity |
 |---|---|
@@ -220,27 +220,27 @@ Eight identities hold, for scalar fields $f$, $g$ and vector fields $\mathbf F$,
 | 7 | $\nabla(\mathbf F\cdot\mathbf G)=\mathbf F\times(\nabla\times\mathbf G)+\mathbf G\times(\nabla\times\mathbf F)+(\mathbf F\cdot\nabla)\mathbf G+(\mathbf G\cdot\nabla)\mathbf F$ |
 | 8 | $\nabla\times(\mathbf F\times\mathbf G)=\mathbf F(\nabla\cdot\mathbf G)-\mathbf G(\nabla\cdot\mathbf F)+(\mathbf G\cdot\nabla)\mathbf F-(\mathbf F\cdot\nabla)\mathbf G$ |
 
-Here $(\mathbf F\cdot\nabla)=F_1\partial_x+F_2\partial_y+F_3\partial_z$ is a scalar operator that acts on each component of whatever follows. All of them are coordinate-free statements, so proving them in Cartesian coordinates proves them everywhere (ll. 148–163).
+Here $(\mathbf F\cdot\nabla)=F_1\partial_x+F_2\partial_y+F_3\partial_z$ is a scalar operator that acts on each component of whatever follows. All of them are coordinate-free statements, so proving them in Cartesian coordinates proves them everywhere.
 
 ### Proof that the curl of a gradient vanishes
 
-Put the components of $\nabla f$ into the third row of the curl determinant (ll. 169–197):
+Put the components of $\nabla f$ into the third row of the curl determinant:
 
 $$
 \nabla\times\nabla f=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\partial_x&\partial_y&\partial_z\\f_x&f_y&f_z\end{vmatrix}=\big(\partial_yf_z-\partial_zf_y\big)\,\mathbf i-\big(\partial_xf_z-\partial_zf_x\big)\,\mathbf j+\big(\partial_xf_y-\partial_yf_x\big)\,\mathbf k .
 $$
 
-For a twice continuously differentiable $f$, mixed partial derivatives commute, $\frac{\partial^2f}{\partial y\,\partial z}=\frac{\partial^2f}{\partial z\,\partial y}$, so each bracket is zero and $\nabla\times\nabla f=\mathbf 0$. This is the curl test for conservative fields in [[MATH2048 VC3 - Line Integrals and Conservative Fields|VC3]]. The same argument shows any centrally symmetric field, $f(r)\hat{\mathbf r}=\nabla\int f\,dr$, has zero curl (L24, ll. 344–347).
+For a twice continuously differentiable $f$, mixed partial derivatives commute, $\frac{\partial^2f}{\partial y\,\partial z}=\frac{\partial^2f}{\partial z\,\partial y}$, so each bracket is zero and $\nabla\times\nabla f=\mathbf 0$. This is the curl test for conservative fields in [[MATH2048 VC3 - Line Integrals and Conservative Fields|VC3]]. The same argument shows any centrally symmetric field, $f(r)\hat{\mathbf r}=\nabla\int f\,dr$, has zero curl.
 
 ### Proof that the divergence of a curl vanishes
 
-Take the divergence of the curl's components (ll. 198–235):
+Take the divergence of the curl's components:
 
 $$
 \nabla\cdot(\nabla\times\mathbf F)=\partial_x\big(\partial_yF_3-\partial_zF_2\big)+\partial_y\big(\partial_zF_1-\partial_xF_3\big)+\partial_z\big(\partial_xF_2-\partial_yF_1\big).
 $$
 
-Group by component. The $F_1$ terms are $\partial_y\partial_zF_1-\partial_z\partial_yF_1=0$, the $F_2$ terms are $-\partial_x\partial_zF_2+\partial_z\partial_xF_2=0$, and the $F_3$ terms are $\partial_x\partial_yF_3-\partial_y\partial_xF_3=0$. So $\nabla\cdot(\nabla\times\mathbf F)=0$. Identities with repeated cross products, such as 6, also need the vector triple-product rules (ll. 237–242).
+Group by component. The $F_1$ terms are $\partial_y\partial_zF_1-\partial_z\partial_yF_1=0$, the $F_2$ terms are $-\partial_x\partial_zF_2+\partial_z\partial_xF_2=0$, and the $F_3$ terms are $\partial_x\partial_yF_3-\partial_y\partial_xF_3=0$. So $\nabla\cdot(\nabla\times\mathbf F)=0$. Identities with repeated cross products, such as 6, also need the vector triple-product rules.
 
 ### Proof of the product rule for divergence (identity 4)
 
@@ -278,7 +278,7 @@ Now the right-hand side of identity 6: $\nabla\cdot\mathbf F=2x+x+x=4x$, so $\na
 
 ### Why the identities are useful
 
-The identities simplify the equations of fluid dynamics (L25, ll. 243–365). Taking the curl of Navier–Stokes with variable density, identity 2 removes the gradient terms but leaves a baroclinic term $\frac1{\rho^2}\nabla\rho\times\nabla p$, which vanishes when surfaces of constant pressure and density line up, as in strongly stratified ocean and atmosphere layers; with small viscosity, vorticity is then conserved along the flow. Identity 6 with $\nabla\cdot\mathbf v=0$ turns $\nabla\times(\nabla\times\mathbf v)$ into $-\nabla^2\mathbf v$. In a frame rotating at a constant rate $\boldsymbol\Omega$, the Coriolis term $-2\boldsymbol\Omega\times\mathbf v$ appears, and identity 8 with $\nabla\cdot\mathbf v=0$ and $\boldsymbol\Omega$ constant reduces its curl to $2(\boldsymbol\Omega\cdot\nabla)\mathbf v=2\Omega\frac{\partial\mathbf v}{\partial z}$ with $z$ along the rotation axis. The vorticity then changes only through how the velocity varies along that axis, which is what makes rotating-frame models of the atmosphere and of propellers tractable.
+The identities simplify the equations of fluid dynamics. Taking the curl of Navier–Stokes with variable density, identity 2 removes the gradient terms but leaves a baroclinic term $\frac1{\rho^2}\nabla\rho\times\nabla p$, which vanishes when surfaces of constant pressure and density line up, as in strongly stratified ocean and atmosphere layers; with small viscosity, vorticity is then conserved along the flow. Identity 6 with $\nabla\cdot\mathbf v=0$ turns $\nabla\times(\nabla\times\mathbf v)$ into $-\nabla^2\mathbf v$. In a frame rotating at a constant rate $\boldsymbol\Omega$, the Coriolis term $-2\boldsymbol\Omega\times\mathbf v$ appears, and identity 8 with $\nabla\cdot\mathbf v=0$ and $\boldsymbol\Omega$ constant reduces its curl to $2(\boldsymbol\Omega\cdot\nabla)\mathbf v=2\Omega\frac{\partial\mathbf v}{\partial z}$ with $z$ along the rotation axis. The vorticity then changes only through how the velocity varies along that axis, which is what makes rotating-frame models of the atmosphere and of propellers tractable.
 
 ## 4. Past exam questions
 

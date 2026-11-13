@@ -36,9 +36,9 @@ $$
 
 If the rotor's momentum is constant in the body frame, its body derivative drops out, but the $\boldsymbol\omega\times\mathbf h_R$ term (the gyroscopic moment, in textbook terms) does not. Spinning the rotor up changes the momentum's magnitude and adds the second term. If the rotor axis moves, the derivative has to be kept and the constant-inertia approximation checked.
 
-## Constant rotor momentum (Eq. 4.20)
+## Constant rotor momentum
 
-For rotor momentum constant in the body frame (L12 ll. 295–297), the result splits into a base part and an additional part (ll. 336–349):
+For rotor momentum constant in the body frame, the result splits into a base part and an additional part:
 
 $$
 \dot{\boldsymbol\omega}
@@ -46,7 +46,7 @@ $$
 \ \underbrace{-\ \mathbf J^{-1}\tilde{\boldsymbol\omega}\mathbf h_R}_{\text{additional: the rotors}}.
 $$
 
-Each rate gets its own correction, $\dot p=\dot p_{base}+\dot p_{add}$ and so on (L13 ll. 35–52), and the form of the correction depends on $\mathbf J$ (L13 ll. 82–86). On principal axes it reduces to
+Each rate gets its own correction, $\dot p=\dot p_{base}+\dot p_{add}$ and so on, and the form of the correction depends on $\mathbf J$. On principal axes it reduces to
 
 $$
 \dot p_{add}=\frac{rh_y-qh_z}{J_{xx}},\qquad
@@ -54,7 +54,7 @@ $$
 \dot r_{add}=\frac{qh_x-ph_y}{J_{zz}}.
 $$
 
-The rigid-body equations survive at all because an axisymmetric rotor doesn't move the centre of mass as it turns (L12 ll. 234–242).
+The rigid-body equations survive at all because an axisymmetric rotor doesn't move the centre of mass as it turns.
 
 ## Numbers
 

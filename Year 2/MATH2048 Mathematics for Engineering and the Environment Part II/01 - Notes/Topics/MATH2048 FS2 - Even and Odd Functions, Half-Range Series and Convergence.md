@@ -33,7 +33,7 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 6.txt", "02 - Sources/Lectures
 > - **Common mistakes:** using $\frac1L$ instead of $\frac2L$ for a half-range series; evaluating a series at a hidden discontinuity and quoting $f$ instead of the average.
 > - **Practise:** [[#Example: f = x on the interval from 0 to π, three ways]] · [[MATH2048 Problem Sheets 2-4 Solutions - Fourier Series|PS3 Q2]]
 
-Many of the coefficients computed by brute force in [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae|FS1]] are zero. This is because the functions are even or odd, and noticing the symmetry first saves half the work (L6, ll. 1–4). The sine is odd and the cosine even, so an even function has nothing in common with the sines and an odd function nothing in common with the cosines.
+Many of the coefficients computed by brute force in [[MATH2048 FS1 - Fourier Series, Orthogonality and the Euler Formulae|FS1]] are zero. This is because the functions are even or odd, and noticing the symmetry first saves half the work. The sine is odd and the cosine even, so an even function has nothing in common with the sines and an odd function nothing in common with the cosines.
 
 Symmetry also helps with a practical difficulty. In a physical problem the function usually lives on a bar from $0$ to $L$, not on a symmetric interval, so what it does between $-L$ and $0$ can be chosen freely before extending it periodically. Inventing it as a mirror image makes it even and gives a cosine series; inventing it upside-down makes it odd and gives a sine series. Which invention is right depends on what happens at the ends of the bar, which is how half-range series connect to boundary conditions in the PDE block.
 
@@ -41,9 +41,9 @@ The series equals the function almost everywhere. At a jump it cannot pick one s
 
 ---
 
-## 1. Fourier series on a general interval (L6)
+## 1. Fourier series on a general interval
 
-To move from $(-\pi,\pi)$ to a domain $(-L,L)$, change variable (ll. 6–45). Let
+To move from $(-\pi,\pi)$ to a domain $(-L,L)$, change variable. Let
 
 $$
 x=\frac{\pi}{L}x',\qquad dx=\frac\pi L\,dx',
@@ -61,15 +61,15 @@ $$
 a_n=\frac1\pi\int_{-L}^{L}f(x')\cos\frac{n\pi x'}{L}\,\frac\pi L\,dx'=\frac1L\int_{-L}^{L}f(x')\cos\frac{n\pi x'}{L}\,dx',
 $$
 
-and likewise $b_n=\frac1L\int_{-L}^{L}f\sin\frac{n\pi x}{L}\,dx$, dropping the prime. Two checks keep the formulae straight (ll. 25–40): at the ends $x=\pm L$ the argument $n\pi x/L$ is an integer multiple of $\pi$, so a whole number of half-waves fits the domain; and the factor in front is one over half the length of the domain. Setting $L=\pi$ recovers FS1.
+and likewise $b_n=\frac1L\int_{-L}^{L}f\sin\frac{n\pi x}{L}\,dx$, dropping the prime. Two checks keep the formulae straight: at the ends $x=\pm L$ the argument $n\pi x/L$ is an integer multiple of $\pi$, so a whole number of half-waves fits the domain; and the factor in front is one over half the length of the domain. Setting $L=\pi$ recovers FS1.
 
-## 2. Even and odd functions (L6)
+## 2. Even and odd functions
 
-A function is **even** if $g(-x)=g(x)$, symmetric about $x=0$ like the tent $|x|$ or $\cos x$, and **odd** if $h(-x)=-h(x)$, like the sawtooth $x$ or $\sin x$ (ll. 50–63). Most functions are neither.
+A function is **even** if $g(-x)=g(x)$, symmetric about $x=0$ like the tent $|x|$ or $\cos x$, and **odd** if $h(-x)=-h(x)$, like the sawtooth $x$ or $\sin x$. Most functions are neither.
 
 ### The integral of an even or odd function over a symmetric interval
 
-Split any integral at zero (ll. 64–121):
+Split any integral at zero:
 
 $$
 \int_{-L}^{L}g(x)\,dx=\int_{-L}^{0}g(x)\,dx+\int_0^{L}g(x)\,dx.
@@ -103,7 +103,7 @@ This holds for any $L$: an integrable odd function always integrates to zero ove
 
 ### Products
 
-Products follow the sign rules for multiplying $\pm1$: odd times even is odd, and even times even and odd times odd are even (ll. 128–142). For $g$ even and $h$ odd, put $z(x)=g(x)h(x)$:
+Products follow the sign rules for multiplying $\pm1$: odd times even is odd, and even times even and odd times odd are even. For $g$ even and $h$ odd, put $z(x)=g(x)h(x)$:
 
 $$
 z(-x)=g(-x)h(-x)=g(x)\cdot\big(-h(x)\big)=-z(x),
@@ -113,7 +113,7 @@ so $z$ is odd; the other two cases go the same way.
 
 ### What this does to the coefficients
 
-The three Euler integrals have $f$, $f\cos$ and $f\sin$ under them, with $\cos$ even and $\sin$ odd (ll. 143–163).
+The three Euler integrals have $f$, $f\cos$ and $f\sin$ under them, with $\cos$ even and $\sin$ odd.
 
 If $f$ is even, $f\cos\frac{n\pi x}L$ is even and $f\sin\frac{n\pi x}L$ is odd, so
 
@@ -174,9 +174,9 @@ The sketch on $[-6,6]$ that the question asks for is the grey sawtooth below, li
 > [!check] Values of the series
 > At $x=1$, 1000 terms give $1.99936$ against $f(1)=2$. At the jump $x=2$ every sine vanishes and the series gives exactly $1$, the average of $f(2^-)=3$ and $f(-2^+)=-1$, as §4 predicts.
 
-## 3. Half-range series (L6)
+## 3. Half-range series
 
-A **half-range series** expands a function given only on half the expected range, $0\leq x\leq L$ (ll. 165–224). There are three ways to fill in the rest.
+A **half-range series** expands a function given only on half the expected range, $0\leq x\leq L$. There are three ways to fill in the rest.
 
 The periodic extension repeats the given piece with period $L$. Nothing is symmetric, so all the coefficients are generally non-zero, but the formulae change because the period is now $L$ rather than $2L$: with half-length $\frac L2$,
 
@@ -198,14 +198,14 @@ $$
 
 ### Which extension goes with which boundary condition
 
-These choices look artificial, but they are dictated by the boundary conditions of a PDE on $[0,L]$ (ll. 186–205). A sine series is zero at $x=0$ and $x=L$, because every $\sin\frac{n\pi x}{L}$ is; it suits a Dirichlet condition with the solution held at zero at the ends, such as a string fixed at both ends. A cosine series has zero slope at $x=0$ and $x=L$, because every derivative $-\frac{n\pi}L\sin\frac{n\pi x}{L}$ vanishes there; it suits a Neumann condition, such as an insulated end with no heat flux. These are exactly the eigenfunctions of the Dirichlet and Neumann eigenproblems in [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems#4. The standard eigenproblems (PS2 Q3, preview of the PDE block)|ODE3 §4]].
+These choices look artificial, but they are dictated by the boundary conditions of a PDE on $[0,L]$. A sine series is zero at $x=0$ and $x=L$, because every $\sin\frac{n\pi x}{L}$ is; it suits a Dirichlet condition with the solution held at zero at the ends, such as a string fixed at both ends. A cosine series has zero slope at $x=0$ and $x=L$, because every derivative $-\frac{n\pi}L\sin\frac{n\pi x}{L}$ vanishes there; it suits a Neumann condition, such as an insulated end with no heat flux. These are exactly the eigenfunctions of the Dirichlet and Neumann eigenproblems in [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems#4. The standard eigenproblems (PS2 Q3, preview of the PDE block)|ODE3 §4]].
 
 > [!warning] Get the pairing the right way round
 > A zero value at the boundary (Dirichlet) means an odd extension and a sine series, and a zero slope (Neumann) means an even extension and a cosine series. The no-penetration example, where the normal velocity vanishes at a wall and the mirror-image flow is odd, is a Dirichlet condition on the velocity, so it fits the same rule.
 
 ### Example: f = x on the interval from 0 to π, three ways
 
-Take $f(x)=x$ on $0\leq x<\pi$ (ll. 225–361), so $L=\pi$.
+Take $f(x)=x$ on $0\leq x<\pi$, so $L=\pi$.
 
 **Periodic extension, period $\pi$.** The constant:
 
@@ -225,7 +225,7 @@ $$
 b_m=\frac2\pi\left(-\frac{\pi\cos2m\pi}{2m}\right)=-\frac{1}{m},
 $$
 
-since $\cos2m\pi=1$ for every $m$: the argument is always an even multiple of $\pi$, so the alternating $(-1)^m$ of FS1 disappears (ll. 264–283). The $a_m$ vanish, which the same parts integration shows:
+since $\cos2m\pi=1$ for every $m$: the argument is always an even multiple of $\pi$, so the alternating $(-1)^m$ of FS1 disappears. The $a_m$ vanish, which the same parts integration shows:
 
 $$
 a_m=\frac2\pi\left[\frac{x\sin2mx}{2m}+\frac{\cos2mx}{(2m)^2}\right]_0^\pi=\frac2\pi\left(0+\frac{1}{4m^2}-0-\frac{1}{4m^2}\right)=0,
@@ -237,7 +237,7 @@ $$
 x\sim\frac\pi2-\sum_{n=1}^\infty\frac{\sin2nx}{n}\qquad(0<x<\pi).
 $$
 
-**Even extension.** Mirroring $x$ about zero gives $|x|$ on $(-\pi,\pi)$, so the periodic even extension is exactly FS1's tent (ll. 285–301). The cosine coefficients repeat that calculation over $[0,\pi]$:
+**Even extension.** Mirroring $x$ about zero gives $|x|$ on $(-\pi,\pi)$, so the periodic even extension is exactly FS1's tent. The cosine coefficients repeat that calculation over $[0,\pi]$:
 
 $$
 a_0=\frac2\pi\int_0^\pi x\,dx=\pi,
@@ -259,7 +259,7 @@ $$
 x\sim\sum_{n=1}^\infty\frac{2(-1)^{n+1}}{n}\sin nx\qquad(0<x<\pi).
 $$
 
-Here the symmetry saves the most, since $a_0$ and $a_n$ need no work at all (ll. 352–361).
+Here the symmetry saves the most, since $a_0$ and $a_n$ need no work at all.
 
 ![[m2048_fs_half_range_extensions.png|720]]
 
@@ -306,9 +306,9 @@ $$
 
 the same sum FS1 found from the tent on $(-\pi,\pi)$, because this series is that one with $x$ rescaled by $\pi$ and divided by $\pi$. With $10^5$ odd terms the right-hand side of the first line is $1.0\times10^{-6}$, zero to the accuracy of the truncation.
 
-## 4. When does a Fourier series converge? (L6)
+## 4. When does a Fourier series converge?
 
-The result is stated without proof; the result and its implications are what is needed, not the proof (ll. 362–398). The **Dirichlet conditions** are that $f$ is bounded, periodic with some period, and has a finite number of maxima, minima and discontinuities in each period. A function like $1/x$ or $\ln x$ with a singularity inside the domain has no Fourier series, though the same function on a domain that excludes the singularity is fine (ll. 368–374).
+The result is stated without proof; the result and its implications are what is needed, not the proof. The **Dirichlet conditions** are that $f$ is bounded, periodic with some period, and has a finite number of maxima, minima and discontinuities in each period. A function like $1/x$ or $\ln x$ with a singularity inside the domain has no Fourier series, though the same function on a domain that excludes the singularity is fine.
 
 If the conditions hold, the series converges at every point: to $f(x)$ where $f$ is continuous, and to the average of the left and right limits where it jumps,
 
@@ -316,7 +316,7 @@ $$
 \frac12\big[f(x^-)+f(x^+)\big].
 $$
 
-Jumps can be hidden. The function $x$ is continuous on $(-\pi,\pi)$, but its periodic extension jumps from $\pi$ to $-\pi$ at every odd multiple of $\pi$. One jump per period is still a finite number, so the sawtooth series converges, and at $x=\pm\pi$ it gives $\frac12(\pi+(-\pi))=0$, which is visible directly because every $\sin n\pi=0$ (ll. 380–393). This is why a step function is sometimes said to take the value $\frac12$ at its jump: the function itself needn't be defined there, but its Fourier series is, and it takes the average.
+Jumps can be hidden. The function $x$ is continuous on $(-\pi,\pi)$, but its periodic extension jumps from $\pi$ to $-\pi$ at every odd multiple of $\pi$. One jump per period is still a finite number, so the sawtooth series converges, and at $x=\pm\pi$ it gives $\frac12(\pi+(-\pi))=0$, which is visible directly because every $\sin n\pi=0$. This is why a step function is sometimes said to take the value $\frac12$ at its jump: the function itself needn't be defined there, but its Fourier series is, and it takes the average.
 
 ## Links
 

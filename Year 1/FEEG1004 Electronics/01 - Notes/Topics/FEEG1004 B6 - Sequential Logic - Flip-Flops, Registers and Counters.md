@@ -43,7 +43,7 @@ coverage: Lecture 5a (ll. 1–190, sequential vs combinational logic, cross-coup
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** tracing the state sequence of a D flip-flop circuit, a shift register or a ripple counter, or finding the output frequencies of a divider chain.
-> - **Assumptions:** ideal logic levels; edge-triggered flip-flops that sample $D$ instantly on the active edge (a triangle $\triangleright$ at the clock input: rising edge $0 \to 1$ for an unbarred $C$, falling edge $1 \to 0$ for a barred $\overline{C}$). The gate-level wiring of the master–slave flip-flop is not required, but tracing state sequences of D flip-flop circuits is (W15-EL5 interactive, slide 3).
+> - **Assumptions:** ideal logic levels; edge-triggered flip-flops that sample $D$ instantly on the active edge (a triangle $\triangleright$ at the clock input: rising edge $0 \to 1$ for an unbarred $C$, falling edge $1 \to 0$ for a barred $\overline{C}$). The gate-level wiring of the master–slave flip-flop is not required, but tracing state sequences of D flip-flop circuits is (W15-EL5 interactive).
 > - **Method:** 1. Decide whether the flip-flops are synchronously clocked (all clock pins on one master clock) or ripple clocked (each clock driven by an output such as $\overline{Q}$ of the previous stage), and whether the active edge is rising or falling. 2. Tabulate the present outputs $Q_i$ and the data inputs $D_i$ immediately before each edge. 3. On each active edge, copy each pre-edge $D_i$ into $Q_i$ and set $\overline{Q}_i$ to its complement. 4. Read a counter word as $DCBA_2$, with the most significant bit (slowest stage $D$, weight $2^3 = 8$) on the left and the least significant bit (fastest stage $A$, weight $2^0 = 1$) on the right. 5. For a divider chain, stage $m$ runs at $f_{\text{clock}}/2^m$ and $N$ stages give $2^N$ states.
 > - **Common mistakes:** updating synchronous stages one after another within a single edge, so that a stage uses its neighbour's new output instead of the pre-edge value; reading a counter word in schematic order $ABCD$ instead of $DCBA$.
 > - **Practise:** [[#Worked examples]] · [[#Two-bit synchronous state machine]]
@@ -187,7 +187,7 @@ A shift register only gives data back in the order in which they were shifted in
 
 ### Two-bit synchronous state machine
 
-Two rising-edge-triggered D flip-flops, storing $Q_1$ and $Q_0$, share a common clock (W15-EL5 interactive, slide 6). The output $Q_0$ of the second flip-flop is wired to the data input of the first ($D_1 = Q_0$), and the complementary output $\overline{Q}_1$ of the first is wired to the data input of the second ($D_0 = \overline{Q}_1$). Starting from $Q_1 Q_0 = 00$, the task is the sequence of states over the first four rising edges.
+Two rising-edge-triggered D flip-flops, storing $Q_1$ and $Q_0$, share a common clock (W15-EL5 interactive). The output $Q_0$ of the second flip-flop is wired to the data input of the first ($D_1 = Q_0$), and the complementary output $\overline{Q}_1$ of the first is wired to the data input of the second ($D_0 = \overline{Q}_1$). Starting from $Q_1 Q_0 = 00$, the task is the sequence of states over the first four rising edges.
 
 Because both flip-flops share the clock, both sample their pre-edge inputs $D_1^{(k)} = Q_0^{(k)}$ and $D_0^{(k)} = \overline{Q}_1^{(k)}$ simultaneously at each rising edge:
 
@@ -281,7 +281,7 @@ For part (b), an $N$-bit counter has $2^N$ distinct states, so $2^N \ge 60$ is n
 
 ### LED driven by a sinusoidal source
 
-In this exam-style question (W15-EL5 interactive, slides 7–9), a $5.0\ \text{V}_{\text{rms}}$, $50\ \text{Hz}$ sinusoidal source $v_{\text{in}}(t)$ drives a light-emitting diode (forward threshold $V_F = 2.8\ \text{V}$) in series with a current-limiting resistor $R = 200\ \Omega$. Part (a) asks for the peak voltage $V_{\text{peak}}$, the period $T$, and the instants $t_{\text{on}}$ and $t_{\text{off}}$ in the first cycle ($0 \le t \le T$) at which the LED switches on and off. Part (b) asks for the LED current $i_{\text{LED}}(t)$ while conducting and its peak value $I_{\text{peak}}$.
+In this exam-style question (W15-EL5 interactive), a $5.0\ \text{V}_{\text{rms}}$, $50\ \text{Hz}$ sinusoidal source $v_{\text{in}}(t)$ drives a light-emitting diode (forward threshold $V_F = 2.8\ \text{V}$) in series with a current-limiting resistor $R = 200\ \Omega$. Part (a) asks for the peak voltage $V_{\text{peak}}$, the period $T$, and the instants $t_{\text{on}}$ and $t_{\text{off}}$ in the first cycle ($0 \le t \le T$) at which the LED switches on and off. Part (b) asks for the LED current $i_{\text{LED}}(t)$ while conducting and its peak value $I_{\text{peak}}$.
 
 For part (a), the peak amplitude and period are
 

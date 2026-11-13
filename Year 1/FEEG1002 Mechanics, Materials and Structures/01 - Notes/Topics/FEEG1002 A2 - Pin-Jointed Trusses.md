@@ -374,7 +374,7 @@ With the bar forces known, the stress in each bar follows from its area and can 
 
 ### Worked example - bike frame by the method of joints
 
-Tutorial 2 Q1 models a bicycle frame as a pin-jointed truss (set in L3, ll. 749–758). Joint A (top left, at the head tube) is pinned and joint D (bottom right, at the rear axle) is on a roller. With A at the origin, B is 0.5 m to the right of A, C is 0.5 m below B, and D is 0.5 m to the right of C. The bars are AB, AC, BC, BD and CD, so AC and BD are at 45°. The rider's weight $F=750$ N acts downwards at B.
+Tutorial 2 Q1 models a bicycle frame as a pin-jointed truss. Joint A (top left, at the head tube) is pinned and joint D (bottom right, at the rear axle) is on a roller. With A at the origin, B is 0.5 m to the right of A, C is 0.5 m below B, and D is 0.5 m to the right of C. The bars are AB, AC, BC, BD and CD, so AC and BD are at 45°. The rider's weight $F=750$ N acts downwards at B.
 
 The role of each bar shows when it is removed. Without CD the rear triangle would splay open, so CD is in tension; without BD it would collapse, so BD is in compression.
 

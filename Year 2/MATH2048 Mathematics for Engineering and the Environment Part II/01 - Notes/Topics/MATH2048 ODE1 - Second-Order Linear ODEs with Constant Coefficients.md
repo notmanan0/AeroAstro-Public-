@@ -33,7 +33,7 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 1.txt", "02 - Sources/Lectures
 > - **Common mistakes:** writing $(c_1+c_2x)e^{\lambda x}$ only when the roots are genuinely repeated, and forgetting it then; dropping the $-e^{-x}$ part of the product rule when differentiating $e^{-x}\cos2x$ for an initial condition.
 > - **Practise:** [[#An initial value problem with complex roots]] · [[MATH2048 Problem Sheets 1-2 Solutions - ODEs#Q1: Constant coefficients|PS1 Q1]]
 
-The subject of the module is partial differential equations, motivated by the Navier–Stokes, Navier–Cauchy and Maxwell equations. The method used to solve them, separation of variables, reduces a PDE to several ordinary differential equations of a kind already solved in first year (L1, ll. 52–64), so the ODEs needed are a fast recap.
+The subject of the module is partial differential equations, motivated by the Navier–Stokes, Navier–Cauchy and Maxwell equations. The method used to solve them, separation of variables, reduces a PDE to several ordinary differential equations of a kind already solved in first year, so the ODEs needed are a fast recap.
 
 Linear ODEs are the ones that can actually be solved in general. The unknown $y$ only ever appears on its own or differentiated, multiplied by known functions of $x$, so two solutions of the homogeneous equation can be added to give another. That makes the homogeneous problem the one to master, and subtracting any particular solution reduces every inhomogeneous problem to it.
 
@@ -41,7 +41,7 @@ With constant coefficients the solutions are exponentials, because an exponentia
 
 ---
 
-## 1. Linear ODEs, and why homogeneous problems are enough (L1)
+## 1. Linear ODEs, and why homogeneous problems are enough
 
 The general linear second-order ODE, divided through by the coefficient of $y''$, is
 
@@ -49,11 +49,11 @@ $$
 y''+p(x)\,y'+q(x)\,y=r(x).
 $$
 
-It is linear because $y$ appears only as $y$, $y'$ or $y''$, each multiplied by a known function of $x$; a term such as $y^2$ or $yy'$ would make it nonlinear and much harder (ll. 238–250). It is **homogeneous** when $r\equiv0$ and inhomogeneous otherwise, with $r$ the source or forcing term.
+It is linear because $y$ appears only as $y$, $y'$ or $y''$, each multiplied by a known function of $x$; a term such as $y^2$ or $yy'$ would make it nonlinear and much harder. It is **homogeneous** when $r\equiv0$ and inhomogeneous otherwise, with $r$ the source or forcing term.
 
 ### Removing the source with any particular integral
 
-Suppose $y_{PI}$ is a **particular integral**: any one function that satisfies the full equation. It doesn't have to satisfy the boundary or initial conditions or be physically sensible; any function that solves the differential equation will do (ll. 264–276). Define
+Suppose $y_{PI}$ is a **particular integral**: any one function that satisfies the full equation. It doesn't have to satisfy the boundary or initial conditions or be physically sensible; any function that solves the differential equation will do. Define
 
 $$
 v=y-y_{PI}.
@@ -77,7 +77,7 @@ $$
 =0.
 $$
 
-So $v$ satisfies the homogeneous equation, and solving the inhomogeneous problem reduces to finding one particular integral and then solving a homogeneous problem (ll. 277–290). The same subtraction works for linear PDEs, which is how it is used in [[MATH2048 PDE4 - Inhomogeneous PDEs and Inhomogeneous Boundary Conditions|PDE4]].
+So $v$ satisfies the homogeneous equation, and solving the inhomogeneous problem reduces to finding one particular integral and then solving a homogeneous problem. The same subtraction works for linear PDEs, which is how it is used in [[MATH2048 PDE4 - Inhomogeneous PDEs and Inhomogeneous Boundary Conditions|PDE4]].
 
 ### The general solution and how many conditions fix it
 
@@ -87,7 +87,7 @@ $$
 y=c_1y_1(x)+c_2y_2(x),
 $$
 
-where $y_1$ and $y_2$ are **linearly independent** solutions (neither is a constant multiple of the other: $c_1y_1+c_2y_2\equiv0$ only when $c_1=c_2=0$). With a source, the general solution is that plus $y_{PI}$, which carries no constant (ll. 291–296). An $n$th-order linear ODE has $n$ independent solutions and so $n$ arbitrary constants (ll. 297–305), and fixing them takes $n$ independent conditions: for second order, two, either the value and derivative at one point or values or derivatives at two points (ll. 312–321). Which of these it is matters a great deal, as [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems|ODE3]] shows.
+where $y_1$ and $y_2$ are **linearly independent** solutions (neither is a constant multiple of the other: $c_1y_1+c_2y_2\equiv0$ only when $c_1=c_2=0$). With a source, the general solution is that plus $y_{PI}$, which carries no constant. An $n$th-order linear ODE has $n$ independent solutions and so $n$ arbitrary constants, and fixing them takes $n$ independent conditions: for second order, two, either the value and derivative at one point or values or derivatives at two points. Which of these it is matters a great deal, as [[MATH2048 ODE3 - Boundary Value and Eigenvalue Problems|ODE3]] shows.
 
 ### Testing independence: the Wronskian (background)
 
@@ -137,7 +137,7 @@ $$
 ay''+by'+cy=0\qquad(a,b,c\ \text{constant},\ a\neq0),
 $$
 
-guess an exponential (the "Ansatz", German for an educated guess, ll. 341–343):
+guess an exponential (the "Ansatz", German for an educated guess):
 
 $$
 y=e^{\lambda x}.
@@ -159,13 +159,13 @@ $$
 \big(a\lambda^2+b\lambda+c\big)e^{\lambda x}=0.
 $$
 
-The exponential is never zero, so the bracket must vanish (ll. 351–356). This is the **auxiliary equation**,
+The exponential is never zero, so the bracket must vanish. This is the **auxiliary equation**,
 
 $$
 a\lambda^2+b\lambda+c=0\quad\Longrightarrow\quad \lambda=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
 $$
 
-An $n$th-order constant-coefficient ODE gives an $n$th-degree polynomial in the same way, which is hard to solve by hand beyond a quadratic (ll. 357–360).
+An $n$th-order constant-coefficient ODE gives an $n$th-degree polynomial in the same way, which is hard to solve by hand beyond a quadratic.
 
 | Discriminant | Roots | Independent solutions | General solution |
 |---|---|---|---|
@@ -175,7 +175,7 @@ An $n$th-order constant-coefficient ODE gives an $n$th-degree polynomial in the 
 
 Three special cases come up constantly in the PDE block. $y''+k^2y=0$ has $\lambda=\pm jk$ and $y=c_1\cos kx+c_2\sin kx$. $y''-k^2y=0$ has $\lambda=\pm k$ and $y=c_1e^{kx}+c_2e^{-kx}$, which is the same as $A\cosh kx+B\sinh kx$; the hyperbolic form is usually easier when a condition sits at $x=0$. And if $c=0$ one root is $\lambda=0$, giving a constant solution: $y''-3y'=0$ has $y=c_1+c_2e^{3x}$.
 
-Throughout the module $j$ denotes $\sqrt{-1}$, the engineering convention. The STACK coursework system uses $i$, so answers there have to be translated (ll. 400–412).
+Throughout the module $j$ denotes $\sqrt{-1}$, the engineering convention. The STACK coursework system uses $i$, so answers there have to be translated.
 
 ### Repeated roots and the second solution
 
@@ -244,7 +244,7 @@ So the ODE becomes $ae^{\lambda x}v''=0$. Neither $a$ nor the exponential is zer
 
 ### Complex roots: from exponentials to cosine and sine
 
-Complex roots give cosines and sines because of Euler's formula (set on slide 14). Start from the two exponential solutions with arbitrary, possibly complex, constants $A$ and $B$:
+Complex roots give cosines and sines because of Euler's formula. Start from the two exponential solutions with arbitrary, possibly complex, constants $A$ and $B$:
 
 $$
 y=Ae^{(\alpha+j\beta)x}+Be^{(\alpha-j\beta)x}.
@@ -288,7 +288,7 @@ $$
 
 so $y=Re^{\alpha x}\cos(\beta x-\phi)$ and $|y|\leq Re^{\alpha x}$.
 
-The curve plotted on slide 14 is $y=\tfrac23e^{-x/5}\cos\pi x+\tfrac13e^{-x/5}\sin\pi x$, so $\alpha=-\tfrac15$, $\beta=\pi$ and $R=\sqrt{4/9+1/9}=\sqrt5/3\approx0.745$. Working backwards, the roots $-\tfrac15\pm j\pi$ come from
+The example curve is $y=\tfrac23e^{-x/5}\cos\pi x+\tfrac13e^{-x/5}\sin\pi x$, so $\alpha=-\tfrac15$, $\beta=\pi$ and $R=\sqrt{4/9+1/9}=\sqrt5/3\approx0.745$. Working backwards, the roots $-\tfrac15\pm j\pi$ come from
 
 $$
 (\lambda+\tfrac15)^2+\pi^2=\lambda^2+\tfrac25\lambda+\big(\tfrac1{25}+\pi^2\big)=0,
@@ -300,9 +300,9 @@ so the plotted curve solves $y''+0.4y'+(0.04+\pi^2)y=0$ with $y(0)=\tfrac23$ and
 
 The curve $e^{-x/5}$ is a guide to the decay rate but lies above the oscillation throughout. The tight envelope is $\tfrac{\sqrt5}{3}e^{-x/5}$, which the curve touches once per half-period, at $\pi x-\phi=k\pi$ with $\phi=\arctan\tfrac12\approx0.464$.
 
-## 3. The mass–spring–damper (slides 10–12)
+## 3. The mass–spring–damper
 
-This standard physical example (slides 10–12) was not lectured (L1, ll. 414–434) and is background for SESA2027. A mass $m$ on a spring of stiffness $k$ with friction obeys Newton's second law
+This standard physical example was not lectured and is background for SESA2027. A mass $m$ on a spring of stiffness $k$ with friction obeys Newton's second law
 
 $$
 m\ddot y+2c\dot y+ky=0,

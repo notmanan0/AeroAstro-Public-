@@ -41,7 +41,7 @@ Vectors can also depend on time. Because $\mathbf i$, $\mathbf j$ and $\mathbf k
 
 ---
 
-## 1. The scalar triple product (James §4.2.12)
+## 1. The scalar triple product
 
 For three vectors $\mathbf a$, $\mathbf b$ and $\mathbf c$ the **scalar triple product** is the scalar
 
@@ -188,7 +188,7 @@ $$
 > [!check] Specimen Q1(ii) as a determinant
 > $\begin{vmatrix}1&1&0\\0&0&2\\0&1&0\end{vmatrix}=1(0\cdot0-2\cdot1)-1(0\cdot0-2\cdot0)+0=-2$, matching the unit-vector route.
 
-## 2. The triple vector product (James §4.2.12)
+## 2. The triple vector product
 
 The **triple vector product** of three vectors is a cross product of a cross product. Its expansion (James 4.13) is
 
@@ -241,7 +241,7 @@ $$
 
 the same vector, with two dot products instead of two cross products.
 
-## 3. Differentiating a vector function of time (James §9.5.1)
+## 3. Differentiating a vector function of time
 
 A vector whose components depend on time, $\mathbf v(t)=v_1(t)\,\mathbf i+v_2(t)\,\mathbf j+v_3(t)\,\mathbf k$, has derivative
 
@@ -424,7 +424,7 @@ The radial component contains the centripetal term $-r\omega^2$, present even wh
 > [!check] Reduction to the unit circle
 > James Example 9.20 has $\mathbf r=\sin t\,\mathbf i+\cos t\,\mathbf j=\cos(\tfrac\pi2-t)\,\mathbf i+\sin(\tfrac\pi2-t)\,\mathbf j$, so $r=1$, $\theta=\tfrac\pi2-t$ and $\omega=-1$. The polar formula gives $\ddot{\mathbf r}=(0-1\cdot1)\,\hat{\mathbf r}+0\,\hat{\boldsymbol\theta}=-\hat{\mathbf r}=-\mathbf r$, as found directly in part (b).
 
-## 5. Integrating vectors: paths from the acceleration (James §9.5.1)
+## 5. Integrating vectors: paths from the acceleration
 
 Integration also acts on each component,
 
@@ -514,7 +514,7 @@ $$
 \end{aligned}
 $$
 
-## 6. Straight lines (James §4.3.1)
+## 6. Straight lines
 
 Let A and B be two points on a line, with position vectors $\mathbf a$ and $\mathbf b$, and let P, with position vector $\mathbf r$, be any point of the line. Then $\overrightarrow{\mathrm{AP}}$ is a multiple $t$ of $\overrightarrow{\mathrm{AB}}$, and the triangle law gives
 
@@ -575,7 +575,7 @@ James Example 4.38 finds where a line crosses all three coordinate planes. The l
 | $zx$-plane, $y=0$ | $4+t=0$ | $-4$ | $(-7,0,2)$ |
 | $xy$-plane, $z=0$ | $6+t=0$ | $-6$ | $(-11,-2,0)$ |
 
-## 7. Intersecting, parallel and skew lines (James §4.3.1)
+## 7. Intersecting, parallel and skew lines
 
 Two lines $\mathbf r=\mathbf a_1+s\,\mathbf d_1$ and $\mathbf r=\mathbf a_2+t\,\mathbf d_2$ meet if some $s$ and $t$ give the same point. Equating the position vectors gives three scalar equations in two unknowns. Solve any two of them for $s$ and $t$, then substitute into the third:
 
@@ -663,7 +663,7 @@ $$
 
 The third equation holds, so the lines meet at $(1-2(-2),\,-2,\,1)=(5,-2,1)$.
 
-## 8. Shortest distance between skew lines (James §4.3.1)
+## 8. Shortest distance between skew lines
 
 For a point P on $L_1$ and a point Q on $L_2$:
 
@@ -766,7 +766,7 @@ $$
 
 The feet are at $t=-1$, the point $(2,-3,4)$, and $s=2$, the point $(-1,2,3)$; their difference $(-3,5,-1)=-\mathbf n$ has length $\sqrt{35}$.
 
-## 9. Planes (James §4.3.3)
+## 9. Planes
 
 Let A, with position vector $\mathbf a$, be a point of a plane and $\mathbf n$ a non-zero **normal**, perpendicular to the plane. For any point P of the plane, with position vector $\mathbf r$, the vector $\overrightarrow{\mathrm{AP}}=\mathbf r-\mathbf a$ lies in the plane and so is perpendicular to $\mathbf n$:
 
@@ -855,7 +855,7 @@ $$
 
 The plane is $2x-3y+z=3$. The other two points check: $-6-3+12=3$ and $4+3-4=3$.
 
-## 10. Where a line meets a plane, and where two planes meet (James §4.3.3)
+## 10. Where a line meets a plane, and where two planes meet
 
 A point of the line $\mathbf r=\mathbf a+t\mathbf d$ lies on the plane $\mathbf r\cdot\mathbf n=p$ when
 
@@ -899,7 +899,7 @@ $$
 
 Setting $x=0$ instead gives $y+z=5$ and $y+2z=15$, so $z=10$, $y=-5$ and $\mathbf r=(0,-5,10)+t(1,2,-3)$. It is the same line, because $(0,-5,10)=(3,1,1)-3(1,2,-3)$. Three planes usually meet in a single point, found by solving three linear equations; the cases where they do not are the inconsistent and underdetermined systems of [[Rank and Consistency of Linear Systems]].
 
-## 11. Distance from a point to a plane (James §4.3.3)
+## 11. Distance from a point to a plane
 
 Let $P_0$, with position vector $\mathbf p_0=(x_0,y_0,z_0)$, be a point off the plane $\mathbf r\cdot\mathbf n=p$, and let Q, with position vector $\mathbf q$, be any point of the plane, so $\mathbf q\cdot\mathbf n=p$. The perpendicular distance is the size of the component of $\overrightarrow{\mathrm{QP_0}}$ along the unit normal:
 
@@ -994,5 +994,5 @@ $$
 ## Transcript and slide slips
 
 > [!warning] James §4.2.12, p. 270: the volume needs a modulus
-> Where: [[#1. The scalar triple product (James §4.2.12)]]
+> Where: [[#1. The scalar triple product]]
 > James concludes $(\mathbf a\times\mathbf b)\cdot\mathbf c=$ volume of the parallelepiped. The unit vector $\mathbf k$ in the proof is perpendicular to $\mathbf a$ and $\mathbf b$ but can point up or down, so the triple product is negative for a left-handed ordering; the volume is $|(\mathbf a\times\mathbf b)\cdot\mathbf c|$ (Module 15 work scheme, item 1). Exercise 57 is an instance: the determinant is $-15$ and the volume 15.

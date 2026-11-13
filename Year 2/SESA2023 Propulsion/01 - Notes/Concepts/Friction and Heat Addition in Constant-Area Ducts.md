@@ -21,7 +21,7 @@ $$
 
 Both friction and heating drive the flow towards $M = 1$. Subsonic flow accelerates while its pressure and density fall; supersonic flow decelerates while $p$, $\rho$ and $T$ rise, or, if the back pressure is high, jumps to subsonic through a normal shock. For each inlet Mach number there is a maximum $f$ or $q$ that brings the outlet to $M_2 = 1$, and adding more forces the upstream flow to change, reducing the mass flow. This is the frictional (Fanno) or thermal (Rayleigh) version of nozzle choking. Cooling ($q<0$) does the opposite and always has a solution: it accelerates supersonic flow and decelerates subsonic flow.
 
-Temperature has one exception: heating subsonic flow with $1/\gamma<M^2<1$ lowers $T$, because most of the heat goes into kinetic energy. Friction always lowers $p_0$ as entropy rises, and subsonic outlets with $M_2>1$ are inaccessible because they would need $\Delta s<0$. Physically, the growing displacement thickness of the boundary layer acts like a converging nozzle.
+Temperature has one exception: heating subsonic flow with $1/\gamma<M^2<1$ lowers $T$, because most of the heat goes into kinetic energy. Friction always lowers $p_0$ as entropy rises, so a subsonic inlet can never reach $M_2>1$, which would need $\Delta s<0$, and a supersonic inlet becomes subsonic only through a shock. Physically, the growing displacement thickness of the boundary layer acts like a converging nozzle.
 
 These results matter for engines because heat release in a ramjet or scramjet combustor is Rayleigh-like, which is why the combustor's $\Gamma_c<1$ even without friction, and too much heat at a supersonic combustor inlet causes thermal choking (unstart).
 

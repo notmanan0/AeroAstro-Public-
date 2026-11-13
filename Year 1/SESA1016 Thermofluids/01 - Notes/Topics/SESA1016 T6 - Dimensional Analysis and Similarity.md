@@ -29,9 +29,9 @@ sources: ["02 - Sources/Lectures/Chapter 6.pdf", "02 - Sources/Lectures/SESA1016
 > - **Common mistakes:** choosing the dependent variable as a repeating variable; forgetting that an angle or a ratio of lengths is already a dimensionless group.
 > - **Practise:** [[#Worked example - scale-model aerofoil]] · [[SESA1016 Problem Sheet 05 - Dimensional Analysis Solutions]] Q5.1–Q5.3
 
-The drag on a sphere held in a wind tunnel plausibly depends on the sphere's diameter, the air speed, and the air's density and viscosity. Measuring the effect of each one properly needs about ten values of it while the others are held fixed, and every combination of the others has to be repeated: ten velocities for each of ten diameters is 100 runs, and adding ten densities and ten viscosities makes 10 000 (24 Feb, ll. 401–475). Changing the density and viscosity of the air in a wind tunnel is impractical anyway, and a smooth curve usually needs more like 100 points than 10.
+The drag on a sphere held in a wind tunnel plausibly depends on the sphere's diameter, the air speed, and the air's density and viscosity. Measuring the effect of each one properly needs about ten values of it while the others are held fixed, and every combination of the others has to be repeated: ten velocities for each of ten diameters is 100 runs, and adding ten densities and ten viscosities makes 10 000. Changing the density and viscosity of the air in a wind tunnel is impractical anyway, and a smooth curve usually needs more like 100 points than 10.
 
-Dimensional analysis cuts this down, because the laws of physics cannot depend on the units chosen to measure in. The drag must therefore be expressible as a relationship between dimensionless combinations of the variables, and there are far fewer of those than there are variables. For the sphere there are only two, $D/(\rho V^2d^2)$ and $\rho Vd/\mu$, so one curve of one against the other, measured by varying only the speed, holds all 10 000 experiments' worth of information (24 Feb, ll. 491–553).
+Dimensional analysis cuts this down, because the laws of physics cannot depend on the units chosen to measure in. The drag must therefore be expressible as a relationship between dimensionless combinations of the variables, and there are far fewer of those than there are variables. For the sphere there are only two, $D/(\rho V^2d^2)$ and $\rho Vd/\mu$, so one curve of one against the other, measured by varying only the speed, holds all 10 000 experiments' worth of information.
 
 The same idea makes scale-model testing work. A small model in a wind tunnel and the full-size aircraft obey the same dimensionless relationship, so if the independent dimensionless groups are made equal, the dependent one is equal too, and a force measured on the model converts directly to the force on the prototype.
 
@@ -41,7 +41,7 @@ The same idea makes scale-model testing work. A small model in a wind tunnel and
 
 ### Units are invented, dimensions are not
 
-Every symbol in an equation has units. In $pV=mRT$, pressure is in Pa, volume in m³, mass in kg, $R$ in J kg⁻¹ K⁻¹ and temperature in K. Writing them out, kg cancels against kg⁻¹ and K against K⁻¹, leaving Pa m³ = J. Since a pascal is N m⁻² and a joule is N m, both sides are N m and everything cancels (24 Feb, ll. 47–83). The same works in pounds, feet and seconds, as long as systems are not mixed.
+Every symbol in an equation has units. In $pV=mRT$, pressure is in Pa, volume in m³, mass in kg, $R$ in J kg⁻¹ K⁻¹ and temperature in K. Writing them out, kg cancels against kg⁻¹ and K against K⁻¹, leaving Pa m³ = J. Since a pascal is N m⁻² and a joule is N m, both sides are N m and everything cancels. The same works in pounds, feet and seconds, as long as systems are not mixed.
 
 Units are a human convention: the metre could have been defined as any length. What does not depend on the convention is the **dimension** of a quantity. A length is a length whether it is measured in metres, inches or light years, and its dimension is written [L]. Dimensions go in square brackets and use capitals, so they cannot be confused with variables or units. Most fluid mechanics needs only three basic dimensions:
 
@@ -51,7 +51,7 @@ $$
 
 Temperature [Θ] and electric current [I] are further basic dimensions, but they rarely enter the fluid problems in this module. The symbol $\doteq$ means "has the dimensions of", to distinguish it from equality.
 
-To find the dimensions of a less familiar quantity, use an equation known to be correct (24 Feb, ll. 167–192). From $F=ma$:
+To find the dimensions of a less familiar quantity, use an equation known to be correct. From $F=ma$:
 
 $$
 F\doteq[M][L][T]^{-2}
@@ -76,7 +76,7 @@ $$
 
 The viscosity entry comes from [[SESA1016 T7 - Fluid Properties and Viscosity|T7]]: shear stress $\tau=\mu\,du/dy$, so $\mu\doteq[M][L]^{-1}[T]^{-2}/[T]^{-1}=[M][L]^{-1}[T]^{-1}$.
 
-In the fluids half of the module $V$ means velocity; volume is written with a different V (lecture-notes notation) to avoid the clash, since $U$ is already internal energy (24 Feb, ll. 119–138).
+In the fluids half of the module $V$ means velocity; volume is written with a different V (lecture-notes notation) to avoid the clash, since $U$ is already internal energy.
 
 ### Dimensional homogeneity
 
@@ -84,7 +84,7 @@ An equation can only be physically correct if both sides have the same dimension
 
 Homogeneity can prove an equation wrong but never prove it right. For the total width $w$ of an aircraft with wing length $\ell$ and fuselage diameter $d$, $w=\ell\times d$ is impossible ([L] = [L]²), but both $w=d+2\ell$ and $w=d+\ell$ are homogeneous, and only one of them is correct. A pure number such as 2 has no dimensions, so homogeneity is blind to it.
 
-It is still the quickest check on a long derivation. Suppose two methods give two candidate results for a pressure (24 Feb, ll. 229–341):
+It is still the quickest check on a long derivation. Suppose two methods give two candidate results for a pressure:
 
 $$
 p=2p_0\frac{\rho g}{\rho V^2}\qquad\text{or}\qquad p=2p_0\frac{\rho gh}{\rho V^2}
@@ -138,7 +138,7 @@ $$
 D=\rho V^2d^2\,f'\!\left(\frac{\rho Vd}{\mu}\right)
 $$
 
-(24 Feb, ll. 525–550). Ten to a hundred experiments replace ten thousand.
+. Ten to a hundred experiments replace ten thousand.
 
 The method only works if the list of variables is right. Choosing which variables matter is the hard step, and it needs physical understanding: dimensional analysis cannot tell you that you have forgotten one.
 

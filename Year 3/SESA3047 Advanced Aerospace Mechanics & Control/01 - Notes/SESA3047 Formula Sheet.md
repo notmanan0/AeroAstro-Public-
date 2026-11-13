@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3047 formulae", "Advanced Mechanics and Control formula sheet"]
 tags: [sesa3047, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–5 lectured in full (L2–L16); Chapter 6 §§6.1–6.5 from L17 (Mon 9 Nov)"
+coverage: "Chapters 1–5 lectured in full (L2–L16); Chapter 6 §§6.1–6.5 from L17 (Mon 9 Nov); §6.6 phugoid approximations written ahead"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt"]
 ---
 
 # SESA3047 Formula Sheet
 
-Current coverage: **Chapters 1–5 and Chapter 6 §§6.1–6.5**. Chapter 4 was lectured in full (L11–L13, 19 and 22 Oct), Chapter 5 in L14–L16 (2 and 5 Nov), Chapter 6 §§6.1–6.4 in L17 (9 Nov); §6.5 was set as reading. Handout-only pieces are marked where they appear. The official exam formula sheet goes on Blackboard in mid-November 2026 (L14 ll. 11–16).
+Current coverage: **Chapters 1–5 and Chapter 6 §§6.1–6.5**. Chapter 4 was lectured in full (L11–L13, 19 and 22 Oct), Chapter 5 in L14–L16 (2 and 5 Nov), Chapter 6 §§6.1–6.4 in L17; §6.5 was set as reading; the §6.6 phugoid approximations are written ahead of Mon 16 Nov and marked so. Handout-only pieces are marked where they appear. The official exam formula sheet goes on Blackboard in mid-November 2026.
 
 ## Control-system notation
 
@@ -105,7 +105,7 @@ $$
 | NED | north | east | down | local position, ground velocity, gravity |
 | FRD | forward | right | down | body forces, body velocity, angular velocity |
 
-## Vector operations (Chapter 2)
+## Vector operations
 
 $$
 \mathbf u\cdot\mathbf v=|\mathbf u||\mathbf v|\cos\alpha=\mathbf u^T\mathbf v,
@@ -188,7 +188,7 @@ $\mathrm{atan2}(y,x)\in(-\pi,\pi]$ uses the signs of both arguments; $\arctan(y/
 
 Notation: $\mathbf p_{A/B}$ (of $A$ relative to $B$), $(\cdot)^c$ (components in coordinates $c$), ${}^b\dot{(\cdot)}$ (derivative observed from $F_b$).
 
-## Rotational kinematics (Chapter 3, §3.1)
+## Rotational kinematics
 
 Body rates $\boldsymbol\omega^{FRD}_{b/r}=[p,q,r]^T$; Euler angles $\boldsymbol\Phi=[\phi,\theta,\psi]^T$.
 
@@ -206,9 +206,15 @@ $$
 \dot\phi=p+(q s_\phi+r c_\phi)\tan\theta,\qquad\dot\theta=qc_\phi-rs_\phi,\qquad\dot\psi=\frac{qs_\phi+rc_\phi}{c_\theta}.
 $$
 
-Small angles: $\dot\phi\approx p$, $\dot\theta\approx q$, $\dot\psi\approx r$. Flat Earth: $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/e}=\boldsymbol\omega_{b/i}$; rotating Earth: $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/i}-\boldsymbol\omega_{r/i}$ (L8). Coupling check (L8): $r=0$, $\theta=0$ gives $\dot\theta=q\cos\phi$, $\dot\psi=q\sin\phi$. Level turn: $\dot\psi=g\tan\phi/V$, $q=\dot\psi\sin\phi$, $r=\dot\psi\cos\phi$.
+Small angles: $\dot\phi\approx p$, $\dot\theta\approx q$, $\dot\psi\approx r$. Flat Earth: $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/e}=\boldsymbol\omega_{b/i}$; rotating Earth: $\boldsymbol\omega_{b/r}=\boldsymbol\omega_{b/i}-\boldsymbol\omega_{r/i}$. Coupling check: $r=0$, $\theta=0$ gives $\dot\theta=q\cos\phi$, $\dot\psi=q\sin\phi$. Level turn: $\dot\psi=g\tan\phi/V$, $q=\dot\psi\sin\phi$, $r=\dot\psi\cos\phi$.
 
-## Velocity and acceleration in moving frames (§3.2)
+Structure and singularity ([[SESA3047 Deep Dive - Euler-Angle Rates and Gimbal Lock|deep dive]]): $\mathbf E=\big[\mathbf e_1\ \big|\ \mathbf C_x\mathbf e_2\ \big|\ \mathbf C_x\mathbf C_y\mathbf e_3\big]=\mathbf C_x(\phi)\,\mathbf E_\theta$ with $\mathbf E_\theta=\begin{bmatrix}1&0&-s_\theta\\0&1&0\\0&0&c_\theta\end{bmatrix}$, so $\mathbf H=\mathbf E_\theta^{-1}\mathbf C_x^T$ and $\mathbf H=\operatorname{adj}\mathbf E/\cos\theta$. At $\theta=\pm90^\circ$: rank 2, null space $[1,0,\pm1]^T$ (equal or opposite $\dot\phi$, $\dot\psi$ give no rotation), missing axis $\mathbf x_1=[0,s_\phi,c_\phi]^T$ in FRD, body-rate component about it $q\sin\phi+r\cos\phi$.
+
+$$
+\dot\phi-\dot\psi=p-(q\sin\phi+r\cos\phi)\frac{\cos\theta}{1+\sin\theta}\ \ (\text{finite at }\theta=90^\circ),\qquad\sigma_{max}(\mathbf H)=\frac{1}{\sqrt{1-|\sin\theta|}}\approx\frac{\sqrt2}{\delta},\ \ \delta=90^\circ-|\theta|\ \text{in rad}.
+$$
+
+## Velocity and acceleration in moving frames
 
 $$
 \mathbf v_{P/a}=\mathbf v_{P/b}+\mathbf v_{Q/a}+\boldsymbol\omega_{b/a}\times\mathbf p_{P/Q},
@@ -232,7 +238,7 @@ $$
 \dot{\mathbf p}^{NED}_{cm/Q}=\begin{bmatrix}\dot x\\\dot y\\\dot z\end{bmatrix}=\mathbf C^T_{FRD/NED}\begin{bmatrix}u\\v\\w\end{bmatrix}.
 $$
 
-## Rigid-body dynamics (§§3.3–3.4)
+## Rigid-body dynamics
 
 $$
 \mathbf Q=m\mathbf v_{cm/i},\qquad\sum\mathbf F_{ext}=m\,\mathbf a_{cm/i}.
@@ -267,7 +273,7 @@ $$
 
 These Chapter 3 equations supply nine of the twelve state derivatives; the velocity dynamics supply the rest (assembled below).
 
-## Principal axes, aircraft inverse and rotors (Chapter 4 §4.1)
+## Principal axes, aircraft inverse and rotors
 
 Sources: L11 (full-inertia expansion, principal axes), L12 (inertia coupling, aircraft symmetry, rotors), L13 (aircraft rotor terms).
 
@@ -277,7 +283,7 @@ $$
 \mathbf J_P=\mathbf Q^T\mathbf J_B\mathbf Q=\operatorname{diag}(\lambda_i).
 $$
 
-Inertia coupling, principal axes, no external moment (L12):
+Inertia coupling, principal axes, no external moment:
 
 $$
 \dot p=\frac{(J_{yy}-J_{zz})qr}{J_{xx}},\qquad
@@ -285,7 +291,7 @@ $$
 \dot r=\frac{(J_{xx}-J_{yy})pq}{J_{zz}}.
 $$
 
-Each rate's derivative needs **both other rates** non-zero **and** its inertia difference non-zero. With two non-zero rates, initially only the third rate changes (unless its inertia difference is zero, e.g. $J_{xx}=J_{zz}$ kills $\dot q$); the others can change later, once the third rate has grown. A single-axis spin stays steady (L12, ll. 22–119).
+Each rate's derivative needs **both other rates** non-zero **and** its inertia difference non-zero. With two non-zero rates, initially only the third rate changes (unless its inertia difference is zero, e.g. $J_{xx}=J_{zz}$ kills $\dot q$); the others can change later, once the third rate has grown. A single-axis spin stays steady.
 
 For aircraft symmetry $J_{xy}=J_{yz}=0$:
 
@@ -318,7 +324,7 @@ $$
 -\tilde{\boldsymbol\omega}\mathbf h_R-{}^b\dot{\mathbf h}_R).
 $$
 
-Constant body-frame rotor momentum removes only its body derivative (the lectured case, L12). The last term is handout-only (Eq. 4.25). With ${}^b\dot{\mathbf h}_R=\mathbf 0$:
+Constant body-frame rotor momentum removes only its body derivative (the lectured case). The last term is handout-only (Eq. 4.25). With ${}^b\dot{\mathbf h}_R=\mathbf 0$:
 
 $$
 \dot{\boldsymbol\omega}=\dot{\boldsymbol\omega}_{base}+\dot{\boldsymbol\omega}_{add},\qquad
@@ -338,7 +344,7 @@ $$
 
 Principal axes ($J_{xz}=0$): $\dot p_{add}=(rh_y-qh_z)/J_{xx}$, $\dot q_{add}=(ph_z-rh_x)/J_{yy}$, $\dot r_{add}=(qh_x-ph_y)/J_{zz}$.
 
-## Translational dynamics (Chapter 4 §4.2)
+## Translational dynamics
 
 Lectured in L13 (Thu 22 Oct), except effective gravity and the scalar/$X,Y,Z$ forms. $\mathbf F$ excludes gravity. Rotating Earth (Eq. 4.30, lectured):
 
@@ -379,7 +385,7 @@ $$
 
 Do not add explicit gravity to that second convention.
 
-## Complete flat-Earth model (Chapter 4 §4.3)
+## Complete flat-Earth model
 
 $$
 \mathbf x=[x,y,z,\phi,\theta,\psi,u,v,w,p,q,r]^T,
@@ -394,9 +400,9 @@ $$
 \end{aligned}}
 $$
 
-Four groups, twelve states (six for the dynamics and six for the kinematics, L13 ll. 339–340); evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
+Four groups, twelve states (six for the dynamics and six for the kinematics); evaluate together using current-state force and moment models. The baseline last row excludes internal rotors. Assumptions: constant mass/inertia, rigid-body approximation, flat Earth, and $\cos\theta\ne0$. Height relative to the NED origin is $h=-z$.
 
-## State-space form and linearisation (Chapter 5 §§5.1–5.2)
+## State-space form and linearisation
 
 Lectured in L14 (Mon 2 Nov).
 
@@ -404,7 +410,7 @@ $$
 \dot{\mathbf x}=\mathbf A\mathbf x+\mathbf B\mathbf u,\qquad\mathbf y=\mathbf C\mathbf x+\mathbf D\mathbf u,
 $$
 
-with $\mathbf x$: $n\times1$, $\mathbf u$: $m\times1$, $\mathbf y$: $p\times1$; state matrix $\mathbf A$: $n\times n$, control matrix $\mathbf B$: $n\times m$, output matrix $\mathbf C$: $p\times n$, feedforward matrix $\mathbf D$: $p\times m$. In this module $\mathbf C=\mathbf I$ unless stated and $\mathbf D$ is not used (L14 ll. 157–161).
+with $\mathbf x$: $n\times1$, $\mathbf u$: $m\times1$, $\mathbf y$: $p\times1$; state matrix $\mathbf A$: $n\times n$, control matrix $\mathbf B$: $n\times m$, output matrix $\mathbf C$: $p\times n$, feedforward matrix $\mathbf D$: $p\times m$. In this module $\mathbf C=\mathbf I$ unless stated and $\mathbf D$ is not used.
 
 Linearising: $x=x_0+\epsilon x_1$ about an equilibrium; keep $\epsilon^1$, drop $\epsilon^2$; the $\epsilon^0$ terms must be the equilibrium and cancel. Example: $\sin(x_0+\epsilon x_1)\approx\epsilon x_1\cos x_0$ when $\sin x_0=0$ ($y=x$ about 0, $y=-(x-\pi)$ about $\pi$).
 
@@ -420,7 +426,7 @@ $$
 
 A product survives at first order only if one factor has a non-zero equilibrium value. An internal rotor $\mathbf h_r$ adds first-order $\boldsymbol\omega_1\times\mathbf h_r$ terms to Eq. 5.8.
 
-## Longitudinal state-space model (Chapter 5 §5.3)
+## Longitudinal state-space model
 
 Gravity (lectured L14), trim climb angle $\gamma_0$, pitch perturbation $\theta_1$, $x$ along $U_\infty$ at trim, radians:
 
@@ -441,7 +447,7 @@ $$
 =\begin{bmatrix}\mathring X_u&\mathring X_w&0&-mg\cos\gamma_0\\\mathring Z_u&\mathring Z_w&\mathring Z_q+mU_\infty&-mg\sin\gamma_0\\\mathring M_u&\mathring M_w&\mathring M_q&0\\0&0&1&0\end{bmatrix}\mathbf x,\qquad(5.18)
 $$
 
-i.e. $\mathbf M\dot{\mathbf x}=\mathbf A^\dagger\mathbf x$, so $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$ (course names, L15). Row 4 of $\mathbf M$ must be $[0,0,0,1]$, otherwise $\det\mathbf M=0$. Gravity gives no pitching moment (it acts at the cm).
+i.e. $\mathbf M\dot{\mathbf x}=\mathbf A^\dagger\mathbf x$, so $\mathbf A=\mathbf M^{-1}\mathbf A^\dagger$ (course names). Row 4 of $\mathbf M$ must be $[0,0,0,1]$, otherwise $\det\mathbf M=0$. Gravity gives no pitching moment (it acts at the cm).
 
 Dimensional derivatives (appendix; handout only, not lectured): force $\times\tfrac12\rho U_\infty^2S$, moment $\times\tfrac12\rho U_\infty^2Sc$, then divide by $U_\infty$ ($u,w$), $U_\infty/c$ ($q$) or $U_\infty^2/c$ ($\dot w$):
 
@@ -455,7 +461,7 @@ $$
 
 Lateral (Practice problem 3, level trim): $\mathbf x=[v,p,r,\phi]^T$, $m\dot v=\mathring Y_vv+\mathring Y_pp+(\mathring Y_r-mU_\infty)r+mg\phi$, $\dot\phi=p$, and the $L$, $N$ rows of Eq. 5.8 equal to $\mathring L_vv+\mathring L_pp+\mathring L_rr$ and $\mathring N_vv+\mathring N_pp+\mathring N_rr$.
 
-## Building state-space models (Chapter 5 §§5.4–5.6)
+## Building state-space models
 
 Lectured L15–L16 (Thu 5 Nov), except the block diagram (§5.6: not lectured, not examinable). Number of states = sum of the highest derivative orders; $\mathbf x$ is always $n\times1$. Inputs go in $\mathbf B\mathbf u$, never in $\mathbf A\mathbf x$. Dimension check: inner sizes of every product agree, $(n\times n)(n\times1)$, $(n\times m)(m\times1)$, $(p\times n)(n\times1)$.
 
@@ -481,7 +487,7 @@ Only the denominator reaches $\mathbf A$: poles = eigenvalues of $\mathbf A$; ze
 
 - **Block diagram:** one state per first-order block, $b/(s+a)\Rightarrow\dot x=-ax+b\,(\text{block input})$; replace internal signals ($u_1=K_1(r_1-y_1)$, $y_1=x_1+x_2$) by states and references.
 
-## Time-domain solution and stability (Chapter 5 §5.7)
+## Time-domain solution and stability
 
 Lectured L16 (Thu 5 Nov). Free system ($\mathbf u=\mathbf 0$), constant $\mathbf A$; matrix first in $e^{\mathbf At}\mathbf x_0$.
 
@@ -499,7 +505,7 @@ Asymptotically stable $\iff$ all $\operatorname{Re}\lambda_i<0$; unstable if any
 
 Eigenvectors: solve $(\mathbf A-\lambda_i\mathbf I)\mathbf v_i=\mathbf 0$, fix one free component (scale and sign arbitrary; MATLAB/Python normalise to unit length); $\mathbf V=[\mathbf v_1\ \cdots\ \mathbf v_n]$ in the same order as $\boldsymbol\Lambda$. Triangular $\mathbf A$ (upper or lower): eigenvalues are the main-diagonal entries. $2\times2$ inverse: $[a\ b;\ c\ d]^{-1}=\frac{1}{ad-bc}[d\ {-b};\ {-c}\ a]$. L16 example: $[3\ 2;\ 0\ {-1}]$, $\lambda=3,-1$, $\mathbf v_1=[1,0]^T$, $\mathbf v_2=[1,-2]^T$, $\mathbf V^{-1}=[1\ \tfrac12;\ 0\ {-\tfrac12}]$, unstable.
 
-## Longitudinal modes and eigenvectors (Chapter 6 §§6.1–6.5)
+## Longitudinal modes and eigenvectors
 
 Lectured L17 (Mon 9 Nov); §6.5 set as reading. States $[u,w,q,\theta]$ (m/s, m/s, rad/s, rad), FRD body axes, trim climb angle $\gamma_0$. Details: [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]].
 
@@ -507,7 +513,7 @@ $$
 \mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x\ \Rightarrow\ \dot{\mathbf x}=\mathbf A\mathbf x,\qquad\mathbf A=\mathbf M^{-1}\mathbf A'.\qquad(6.3)
 $$
 
-The characteristic equation of the longitudinal $\mathbf A$ is the longitudinal stability quartic; it factors approximately into an SPO quadratic and a phugoid quadratic. A real $\mathbf A$ gives real eigenvalues or conjugate pairs, with conjugate eigenvectors. By hand: $2\times2$ only (L17 ll. 132–142).
+The characteristic equation of the longitudinal $\mathbf A$ is the longitudinal stability quartic; it factors approximately into an SPO quadratic and a phugoid quadratic. A real $\mathbf A$ gives real eigenvalues or conjugate pairs, with conjugate eigenvectors. By hand: $2\times2$ only.
 
 For a complex pair $\lambda=\sigma\pm j\omega$ (any $\zeta$ in $0\le\zeta<1$):
 
@@ -545,6 +551,19 @@ $$
 
 F-4C (178 m/s, level): full model SPO $-0.3690\pm1.3558j$ ($\omega_n=1.405$, $\zeta=0.2626$), phugoid $-0.0065\pm0.0779j$ ($\omega_n=0.0781$, $\zeta=0.0825$); SPO approximation $\omega_n=1.41$, $\zeta=0.264$.
 
+Linearising the 6-DOF model ([[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes|deep dive]]): trim balance $X_{a0}=mg\sin\gamma_0$, $Z_{a0}=-mg\cos\gamma_0$, $M_{a0}=0$ ($x$ along $U_\infty$, $\theta_0=\gamma_0$); body gravity $mg[-s_\theta,\ s_\phi c_\theta,\ c_\phi c_\theta]^T$ gives $Y_{g1}=mg\cos\gamma_0\,\phi_1$ and no $\phi$ in $X_{g1}$, $Z_{g1}$; $\dot h=U_\infty\sin\gamma_0+U_\infty\cos\gamma_0\,\theta+\sin\gamma_0\,u-\cos\gamma_0\,w$. Inverse of the lower-triangular $\mathbf M$: diagonal $1/m$, $1/(m-\mathring Z_{\dot w})$, $1/J_{yy}$, 1 plus $(\mathbf M^{-1})_{32}=\mathring M_{\dot w}/[J_{yy}(m-\mathring Z_{\dot w})]$.
+
+Quartic $\lambda^4+a_3\lambda^3+a_2\lambda^2+a_1\lambda+a_0$ with well-separated modes: fast $\approx\lambda^2+a_3\lambda+a_2$, slow $\approx\lambda^2+\dfrac{a_1a_2-a_0a_3}{a_2^2}\lambda+\dfrac{a_0}{a_2}$. Eigenvector by hand: set $\theta=1$, then $q=\lambda$, solve rows 1–2 for $u,w$; row 3 is the check. Compare in angle units $u/U_\infty$, $\alpha=w/U_\infty$, $\theta$, $\gamma=\theta-\alpha$. F-4C: SPO $\alpha\approx\theta$, $|\gamma|=0.22|\theta|$, $|u|/U_\infty=0.04|\theta|$; phugoid $\gamma\approx\theta$, $|\alpha|=0.10|\theta|$, $|\theta|=1.414\,|u|/U_\infty$.
+
+Phugoid approximations (§6.6, written ahead of Mon 16 Nov): Lanchester, constant energy and $C_L$ (Eqs. 6.28–6.33), and the improved form with $\dot q=0$, $\gamma_0=0$, $\mathring Z_q=\mathring Z_{\dot w}=\mathring M_q=\mathring M_{\dot w}=0$ (Eq. 6.38):
+
+$$
+\ddot h+\frac{2g^2}{U_\infty^2}h=0,\ \ \omega_n=\frac{\sqrt2\,g}{U_\infty},\ \zeta=0;\qquad
+\omega_n^2=\frac{g}{mU_\infty}\left(\frac{\mathring M_u\mathring Z_w}{\mathring M_w}-\mathring Z_u\right),\ \ \zeta=\frac{1}{2\omega_nm}\left[\frac{\mathring M_u}{\mathring M_w}\left(\mathring X_w-\frac{mg}{U_\infty}\right)-\mathring X_u\right].
+$$
+
+F-4C: Lanchester $\omega_n=0.0779$; Eq. 6.38 $\omega_n=0.0796$, $\zeta=0.0949$ (full model $0.0781$, $0.0825$). At fixed $C_L$, $\mathring Z_u=-2mg/U_\infty$, and with $\mathring M_u=0$ Eq. 6.38 reduces to Lanchester's $\omega_n$.
+
 Unity feedback, gain $K$, plant $1/(s^2+2\zeta\omega_ns+\omega_n^2)$: $\omega_{cl}=\sqrt{\omega_n^2+K}$, $\zeta_{cl}=\zeta\omega_n/\omega_{cl}$, step final value $K/(\omega_n^2+K)$ (stable loop).
 
 ## Related
@@ -567,3 +586,4 @@ Unity feedback, gain $K$, plant $1/(s^2+2\zeta\omega_ns+\omega_n^2)$: $\omega_{c
 - [[SESA3047 5.4 - Time-Domain Solution and Stability]]
 
 - [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]] · [[Eigenvectors as Mode Shapes]]
+- Deep dives: [[SESA3047 Deep Dive - Euler-Angle Rates and Gimbal Lock]] · [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes]]

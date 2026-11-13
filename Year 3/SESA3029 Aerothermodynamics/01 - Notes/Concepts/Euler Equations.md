@@ -23,7 +23,7 @@ $$
 \qquad e_t=c_vT+\tfrac12(u^2+v^2).
 $$
 
-The first column is the vector of "conservative" variables and the other two are the flux vectors (4.1 slide 12). Each row comes from the same balance on a small control volume: the rate of increase inside equals flux in minus flux out, plus the pressure force (momentum) or the pressure work (energy). Pressure enters the $x$-momentum flux in the $x$-derivative and the $y$-momentum flux in the $y$-derivative, because it pushes on the faces normal to each direction. The energy flux $(\rho e_t+p)u=\rho uh_t$ is the energy carried in plus the work done by pressure.
+The first column is the vector of "conservative" variables and the other two are the flux vectors. Each row comes from the same balance on a small control volume: the rate of increase inside equals flux in minus flux out, plus the pressure force (momentum) or the pressure work (energy). Pressure enters the $x$-momentum flux in the $x$-derivative and the $y$-momentum flux in the $y$-derivative, because it pushes on the faces normal to each direction. The energy flux $(\rho e_t+p)u=\rho uh_t$ is the energy carried in plus the work done by pressure.
 
 The set is closed by the perfect-gas law $p=\rho RT$. It is nonlinear and coupled, so apart from simple geometries there is no analytical solution, and CFD solves it on a grid. Because it is in conservation (flux) form, a numerical solution captures shocks: the flux balance across a discontinuity is exactly the [[Normal-Shock Jump Relations|normal-shock relations]]. Slide 12 of 4.1 prints the energy flux as $\rho u(e_t+p)$, a slip for $(\rho e_t+p)u$.
 
@@ -31,6 +31,6 @@ Adding viscous stresses and heat conduction gives the [[Compressible Navier-Stok
 
 ## Related
 
-- [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#5. Vector form and what CFD does with it (4.1 slides 12–13)|W07a §§1–5]] (full derivation)
+- [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#5. Vector form and what CFD does with it|W07a §§1–5]] (full derivation)
 - [[Conservation Form of the Governing Equations]] · [[Navier-Stokes Equations]] · [[Finite Volume Method]] (SESA2029)
 - [[Linearised Compressible Potential Equation]]

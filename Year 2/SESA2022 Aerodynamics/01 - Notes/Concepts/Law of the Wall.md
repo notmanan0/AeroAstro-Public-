@@ -28,7 +28,7 @@ the profiles from all flows collapse onto one universal curve.
 | Log layer | $y^+>30$–$50$, $y/\delta<0.2$ | $u^+ = \frac1\kappa\ln y^++B$ | Reynolds stress dominates |
 | Outer / wake | $y/\delta>0.2$ | power law or Coles wake | large eddies, depends on history |
 
-The constants are $\kappa\approx0.39$–$0.41$ and $B\approx4.3$–$5.0$; the 2024-25 rubric uses $\kappa = 0.39$ and $B = 4.3$. The inner scaling is needed because a power law, $u\propto y^{1/n}$, has an infinite gradient at the wall and so can't give $\tau_w$. The Clauser method turns this round: choose $u_\tau$ so that the measured points fall on the log law, and $C_f$ follows from a velocity profile alone. Wall units are also how near-wall devices and meshes are sized. Riblets and roughness are specified in wall units (10 wall units is $h = 10\nu/u_\tau$), and CFD first-cell heights aim for $y^+\approx1$.
+The constants are $\kappa\approx0.39$–$0.41$ and $B\approx4.3$–$5.0$; the 2024-25 paper takes $\kappa = 0.39$ and $B = 4.3$. The inner scaling is needed because a power law, $u\propto y^{1/n}$, has an infinite gradient at the wall and so can't give $\tau_w$. The Clauser method turns this round: choose $u_\tau$ so that the measured points fall on the log law, and $C_f$ follows from a velocity profile alone. Wall units are also how near-wall devices and meshes are sized. Riblets and roughness are specified in wall units (10 wall units is $h = 10\nu/u_\tau$), and CFD first-cell heights aim for $y^+\approx1$.
 
 ![[bl_law_of_wall.png|520]]
 

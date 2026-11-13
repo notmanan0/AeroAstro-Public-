@@ -127,7 +127,7 @@ $$
 
 **Velocity given as a function of position**, $v(s)$: from $v=ds/dt$, $dt=ds/v(s)$ and $t=\int_{s_0}^{s}ds/v(s)$.
 
-The time form for $a(v)$ (absent from the table on slide p. 10) is the one used for the marble falling in water (L02b, ll. 833–841), so both $a(v)$ forms are used.
+The time form for $a(v)$ is the one used for the marble falling in water, so both $a(v)$ forms are used.
 
 ## 3. Constant acceleration
 
@@ -169,7 +169,7 @@ These are the **SUVAT equations**. They are valid only if the acceleration is co
 
 ## 4. Newton's laws and the equation of motion
 
-Newton's three laws (slide p. 16):
+Newton's three laws:
 
 1. A particle at rest, or moving in a straight line at constant velocity, stays so if the resultant force on it is zero (the law of inertia).
 2. A non-zero resultant force gives the particle an acceleration in the direction of the force, proportional to the force and inversely proportional to the mass: $\sum\mathbf F=m\mathbf a$.
@@ -226,7 +226,7 @@ which depends on position. At the International Space Station ($y\approx400$ km)
 
 ### Dry friction
 
-Coulomb's model of dry friction distinguishes two regimes (slides pp. 31–35).
+Coulomb's model of dry friction distinguishes two regimes.
 
 While the surfaces do not slide, the friction force $F_s$ is whatever is needed to keep them together, up to a limit:
 
@@ -338,7 +338,7 @@ To find the kinematic link:
 
 ![[d_pulley_constraints.png|940]]
 
-For two blocks on inclines joined by one cord over a pulley, $s_A+l_{CD}+s_B=l_T$, so $v_B=-v_A$ and $a_B=-a_A$: one block goes up its slope as fast as the other comes down. With a movable pulley carrying block B (slide p. 52), the cord passes down to B's pulley, back up, and over to A, so
+For two blocks on inclines joined by one cord over a pulley, $s_A+l_{CD}+s_B=l_T$, so $v_B=-v_A$ and $a_B=-a_A$: one block goes up its slope as fast as the other comes down. With a movable pulley carrying block B, the cord passes down to B's pulley, back up, and over to A, so
 
 $$
 2s_B+h+s_A=l_T
@@ -352,7 +352,7 @@ $$
 2a_B=-a_A
 $$
 
-where $h$ and $l_T$ are constant. Measuring $s_B$ up from the lower pulley instead gives $2(h-s_B)+h+s_A=l_T$ and $2v_B=v_A$; this is the same physical statement in a different coordinate (slide p. 53).
+where $h$ and $l_T$ are constant. Measuring $s_B$ up from the lower pulley instead gives $2(h-s_B)+h+s_A=l_T$ and $2v_B=v_A$; this is the same physical statement in a different coordinate.
 
 ### Pulley kinetics and mechanical advantage
 
@@ -380,9 +380,9 @@ $$
 a_B=\frac{m_Bg-2F}{m_B+4m_A},\qquad T=\frac{m_B(F+2m_Ag)}{m_B+4m_A}
 $$
 
-A pulley that carries $n$ strands gives a **mechanical advantage** of $n$: the force on the load is $nT$, but the load moves $n$ times more slowly than the cord. The anchoring points carry the sum of all strand tensions, so they must be checked too. With one fixed pulley redirecting the pull, the load sees $F$ and the ceiling $2F$; with a movable pulley the load sees $2F$, moves at half the speed, and the anchors carry $F+2F=3F$ (slide p. 58).
+A pulley that carries $n$ strands gives a **mechanical advantage** of $n$: the force on the load is $nT$, but the load moves $n$ times more slowly than the cord. The anchoring points carry the sum of all strand tensions, so they must be checked too. With one fixed pulley redirecting the pull, the load sees $F$ and the ceiling $2F$; with a movable pulley the load sees $2F$, moves at half the speed, and the anchors carry $F+2F=3F$.
 
-For the compound system of slides pp. 59–62, cord 1 gives $s_A+2s_C=l_1$ and cord 2 gives $s_B+(s_B-s_C)=l_2$. Eliminating $s_C$:
+For a compound system with two cords, cord 1 gives $s_A+2s_C=l_1$ and cord 2 gives $s_B+(s_B-s_C)=l_2$. Eliminating $s_C$:
 
 $$
 s_C=2s_B-l_2
@@ -483,14 +483,14 @@ $$
 
 ![[d_escape_velocity.png|900]]
 
-In practice this speed cannot be reached instantaneously at launch, and drag in the atmosphere would take a large share of it, so the result is an idealisation (DAMS1-Ex2, ll. 111–123).
+In practice this speed cannot be reached instantaneously at launch, and drag in the atmosphere would take a large share of it, so the result is an idealisation (DAMS1-Ex2).
 
 > [!check] Numerical check
 > Integrating $\ddot y=-g_0R_e^2/(R_e+y)^2$ numerically from $v_0=5$ km/s gives 3988 m/s at 500 km, the same as the closed form.
 
 ### Ship and marble with linear drag
 
-A ship of mass $m$ is driven by a constant propulsive force $F$ against a drag $F_D=bv$. Find $v(t)$ from rest (L12, ll. 109–153, a 2020–21 past-paper question; no numerical data are recorded). The same equation describes a marble sinking in water, with $mg-F_B$ in place of $F$ and $c$ in place of $b$ (L02b, ll. 769–847).
+A ship of mass $m$ is driven by a constant propulsive force $F$ against a drag $F_D=bv$. Find $v(t)$ from rest (a 2020–21 past-paper question; no numerical data are recorded). The same equation describes a marble sinking in water, with $mg-F_B$ in place of $F$ and $c$ in place of $b$.
 
 The FBD has the propulsion $F$ forwards, drag $bv$ backwards, and weight and buoyancy balancing vertically. Horizontally,
 
@@ -527,7 +527,7 @@ The speed rises towards the terminal value $F/b$, where drag balances propulsion
 
 ### Pulley system with a movable pulley
 
-Take the system of [[#Pulley kinetics and mechanical advantage]] with illustrative values $m_A=10$ kg, $m_B=20$ kg and $F=50$ N (DAMS1-4, l. 97 leaves the system unsolved). Then
+Take the system of [[#Pulley kinetics and mechanical advantage]] with illustrative values $m_A=10$ kg, $m_B=20$ kg and $F=50$ N. Then
 
 $$
 a_B=\frac{20\times9.81-2\times50}{20+4\times10}=\frac{96.2}{60}=1.60\ \mathrm{m/s^2}

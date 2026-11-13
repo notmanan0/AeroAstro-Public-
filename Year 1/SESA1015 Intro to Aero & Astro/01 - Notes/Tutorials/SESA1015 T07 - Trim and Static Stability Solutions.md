@@ -56,7 +56,7 @@ $$
 > [!check] Back-substitution
 > $\bar V=0.36356\times0.93/0.61940=0.54587$, and $h_n=0.25+0.54587\times(5.02/4.92)\times0.79=0.25+0.44000=0.69000$, so $K_n=0.18$.
 
-The same method is the Slides v2 p. 211 example, which gives 0.268 m² ([[SESA1015 M11 - Longitudinal Trim and Static Stability#Tail area for a given static margin (Slides v2 p. 211)]]). The workbook sheet carries the note that a static-margin question will be in the exam (cell J15).
+The same method gives 0.268 m² for the example in [[SESA1015 M11 - Longitudinal Trim and Static Stability#Tail area for a given static margin]]. The workbook sheet carries the note that a static-margin question will be in the exam (cell J15).
 
 > [!warning] Spreadsheet input cell disagrees with the wording
 > The sheet's inputs are $h=0.46$, $A=9.8$, $S=1.1$ m², $d\varepsilon/d\alpha=0.17$, $K_n=0.16$, $a_1=5.01$, $a_{1T}=5.07$, $l_T=1.03$ m, and the cell labelled "quarter chord" holds 0.46 instead of 0.25. The sheet therefore uses $h_n-h_0=0.16$ and returns $S_T=0.0682$ m². With $h_0=0.25$ the same inputs give $\bar V=0.4405$ and $S_T=0.158$ m². Check the "quarter chord" cell before trusting the sheet's answer.

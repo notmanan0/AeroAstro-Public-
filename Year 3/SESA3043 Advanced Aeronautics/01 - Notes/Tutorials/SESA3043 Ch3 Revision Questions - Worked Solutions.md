@@ -13,11 +13,11 @@ sources: ["03 - Exams & Past Papers/Ch3_Revision_Questions.pdf"]
 # SESA3043 Ch3 Revision Questions - Worked Solutions
 
 > [!abstract] Sheet info
-> Blackboard revision questions for Chapter 3 (updated 10 Sep 2026), 26 questions over six sections. Most are "understand / explain / derive" prompts whose full answers are in the topic notes; numerical answers are given here in full and were checked in Python. Sections 3.1 to 3.5 were lectured between 22 Oct and 12 Nov; 3.6 is due on Fri 13 Nov. The Chapter 3 tutorial falls in the exam-preparation weeks before the Christmas break, with solutions released afterwards (`12 November 2026 at 13_50_20.txt`, ll. 25–29; the earlier plan was the second Friday lecture at the end of the chapter, `02 October 2026 at 14_53_48.txt`, ll. 507–510).
+> Blackboard revision questions for Chapter 3 (updated 10 Sep 2026), 26 questions over six sections. Most are "understand / explain / derive" prompts whose full answers are in the topic notes; numerical answers are given here in full and were checked in Python. Sections 3.1 to 3.5 were lectured between 22 Oct and 12 Nov; 3.6 is due on Fri 13 Nov. The Chapter 3 tutorial falls in the exam-preparation weeks before the Christmas break, with solutions released afterwards.
 
 ## 3.1 Introduction
 
-**Q1. Prandtl's thin-BL theory.** High $Re$, so $\delta\ll x$; inviscid, irrotational flow outside and at the edge; viscous flow inside, governed by the reduced BL equations; pressure imposed by the outer flow ($\partial p/\partial y=0$). → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#1. Prandtl's thin boundary-layer theory, revisited (slides 3–7)|3.1 §1]]
+**Q1. Prandtl's thin-BL theory.** High $Re$, so $\delta\ll x$; inviscid, irrotational flow outside and at the edge; viscous flow inside, governed by the reduced BL equations; pressure imposed by the outer flow ($\partial p/\partial y=0$). → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#1. Prandtl's thin boundary-layer theory, revisited|3.1 §1]]
 
 **Q2. Definitions.**
 
@@ -30,13 +30,13 @@ sources: ["03 - Exams & Past Papers/Ch3_Revision_Questions.pdf"]
 
 → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures|3.1 §§2–6]]
 
-**Q3.** $\tau_w=\mu\,\partial u/\partial y|_0$, $C_f=\tau_w/\frac12\rho U_e^2$. On a flat plate $D=\rho U_e^2\theta=\int_0^x\tau_w\,\mathrm dx$, so $\mathrm d\theta/\mathrm dx=C_f/2$. → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#5. Wall shear, skin friction and the drag link (slide 32)|3.1 §5]]
+**Q3.** $\tau_w=\mu\,\partial u/\partial y|_0$, $C_f=\tau_w/\frac12\rho U_e^2$. On a flat plate $D=\rho U_e^2\theta=\int_0^x\tau_w\,\mathrm dx$, so $\mathrm d\theta/\mathrm dx=C_f/2$. → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#5. Wall shear, skin friction and the drag link|3.1 §5]]
 
-**Q4. Linear profile.** $\delta^*=\delta/2$, $\theta=\delta/6$, $H=3$, $C_f=2\nu/(U_e\delta)=2/Re_\delta$. So $\delta^*$ and $\theta$ grow in proportion to $\delta$ and $C_f$ falls as $1/\delta$. (With the flat-plate MIE: $\delta/x=3.46/\sqrt{Re_x}$, $C_f=0.577/\sqrt{Re_x}$.) → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#7. Worked example: the linear profile (revision 3.1 Q4)|3.1 §7]]
+**Q4. Linear profile.** $\delta^*=\delta/2$, $\theta=\delta/6$, $H=3$, $C_f=2\nu/(U_e\delta)=2/Re_\delta$. So $\delta^*$ and $\theta$ grow in proportion to $\delta$ and $C_f$ falls as $1/\delta$. (With the flat-plate MIE: $\delta/x=3.46/\sqrt{Re_x}$, $C_f=0.577/\sqrt{Re_x}$.) → [[SESA3043 3.1 - Boundary-Layer Concepts and Thickness Measures#7. Worked example: the linear profile|3.1 §7]]
 
 ## 3.2 Blasius and Falkner–Skan
 
-**Q1.** $\xi=\sqrt{2\nu x/((m+1)U_e)}$ ($m=0$ for Blasius), $\eta=y/\xi$, $f=\psi/(U_e\xi)$, with $\partial\eta/\partial x=\frac{\eta}{2x}(m-1)$, $\partial\eta/\partial y=1/\xi$. → [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#2. The Blasius similarity variables (slides 12–27; Notes §1)|3.2 §2]]
+**Q1.** $\xi=\sqrt{2\nu x/((m+1)U_e)}$ ($m=0$ for Blasius), $\eta=y/\xi$, $f=\psi/(U_e\xi)$, with $\partial\eta/\partial x=\frac{\eta}{2x}(m-1)$, $\partial\eta/\partial y=1/\xi$. → [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#2. The Blasius similarity variables|3.2 §2]]
 
 **Q2. Integrals A and B (flat plate).**
 
@@ -44,7 +44,7 @@ $$
 \eta^*=\int_0^\infty(1-f')\,\mathrm d\eta=1.217,\qquad\theta^*=\int_0^\infty f'(1-f')\,\mathrm d\eta=f''(0)=0.4696.
 $$
 
-A from the asymptote $f\to\eta-1.217$; B by parts plus the Blasius equation. → [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Integral type B (slides 46–68; Notes Eqs. 10–11)|3.2 §5]]
+A from the asymptote $f\to\eta-1.217$; B by parts plus the Blasius equation. → [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#Integral type B|3.2 §5]]
 
 **Q3.** $\delta^*=\xi\eta^*$, $\theta=\xi\theta^*$, giving $\delta^*/x=1.721/\sqrt{Re_x}$, $\theta/x=0.664/\sqrt{Re_x}$, $H=2.59$.
 
@@ -60,37 +60,37 @@ $$
 
 **Q1.** At separation $\partial u/\partial y|_0=0$, so $\tau_w=0$ and $C_f=0$; downstream the near-wall flow reverses and $C_f<0$.
 
-**Q2.** At the wall $u=v=0$, so $0=U_eU_e'+\nu\,\partial^2u/\partial y^2|_0=U_eU_e'+\frac{\nu U_e}{\delta^2}\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}|_0$; divide by $U_e$. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#The BL equation at the wall (slide 18)|3.3 §2]]
+**Q2.** At the wall $u=v=0$, so $0=U_eU_e'+\nu\,\partial^2u/\partial y^2|_0=U_eU_e'+\frac{\nu U_e}{\delta^2}\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}|_0$; divide by $U_e$. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#The BL equation at the wall|3.3 §2]]
 
-**Q3.** $\lambda=\frac{\delta^2}{\nu}U_e'=Re_\delta\frac{\delta}{U_e}U_e'=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$: dimensionless, and the ratio of pressure-gradient force to viscous shear. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#4. What λ means (revision Q3; slides 28–31)|3.3 §4]]
+**Q3.** $\lambda=\frac{\delta^2}{\nu}U_e'=Re_\delta\frac{\delta}{U_e}U_e'=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$: dimensionless, and the ratio of pressure-gradient force to viscous shear. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#4. What λ means|3.3 §4]]
 
 **Q4.** $u/U_e=F(\eta)+\lambda G(\eta)$: $\lambda>0$ fuller (thinner, higher shear, lower $H$); $\lambda<0$ emptier, with an inflection point. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#3. Integral properties as functions of λ|3.3 §3]]
 
 **Q5.** $\tau_w\propto a_1=2+\lambda/6=0$ gives $\boxed{\lambda=-12}$, where $H=3.5$.
 
-**Q6.** APG decelerates the slow wall fluid; separation is likelier at high $Re$, with thick layers, slow edge flow and strong APG. Delay it by gentler pressure recovery, tripping to turbulence, vortex generators, suction, blowing and slots. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#Ways to delay separation (revision Q6)|3.3 §5]]
+**Q6.** APG decelerates the slow wall fluid; separation is likelier at high $Re$, with thick layers, slow edge flow and strong APG. Delay it by gentler pressure recovery, tripping to turbulence, vortex generators, suction, blowing and slots. → [[SESA3043 3.3 - Pohlhausen Method and Pressure Gradients#Ways to delay separation|3.3 §5]]
 
 ## 3.4 Transition
 
-**Q1–Q2.** Receptivity → TS waves → Λ-vortices → breakdown → turbulent spots → turbulence (natural); or bypass via large disturbances. → [[SESA3043 3.4 - Transition to Turbulence#2. The roadmap to transition (slides 9–16)|3.4 §2]]
+**Q1–Q2.** Receptivity → TS waves → Λ-vortices → breakdown → turbulent spots → turbulence (natural); or bypass via large disturbances. → [[SESA3043 3.4 - Transition to Turbulence#2. The roadmap to transition|3.4 §2]]
 
-**Q3.** Base flow plus small wave, products neglected, normal modes: Orr–Sommerfeld. → [[SESA3043 3.4 - Transition to Turbulence#4. Linear stability: deriving the Orr–Sommerfeld equation (slides 20–24)|3.4 §4]]
+**Q3.** Base flow plus small wave, products neglected, normal modes: Orr–Sommerfeld. → [[SESA3043 3.4 - Transition to Turbulence#4. Linear stability: deriving the Orr–Sommerfeld equation|3.4 §4]]
 
 **Q4.** Contours of $\alpha_i$ in $(\log Re_{\delta^*},F)$; inside the neutral curve $\alpha_i<0$; the tip is $Re_{crit}$. → 3.4 §6
 
-**Q5.** $n=-\int_{x_0}^x\alpha_i\,\mathrm dx$ for each $F$; envelope; transition at $n_{crit}=9$. → [[SESA3043 3.4 - Transition to Turbulence#7. The n factor and the eⁿ method (slides 37–44)|3.4 §7]]
+**Q5.** $n=-\int_{x_0}^x\alpha_i\,\mathrm dx$ for each $F$; envelope; transition at $n_{crit}=9$. → [[SESA3043 3.4 - Transition to Turbulence#7. The n factor and the eⁿ method|3.4 §7]]
 
 **Q6.** APG destabilises (larger region, lower $Re_{crit}$, inflectional instability); FPG stabilises.
 
 ## 3.5 Momentum integral equation
 
-**Q1–Q3.** $\frac{\mathrm d\theta}{\mathrm dx}+(2+H)\frac{\theta}{U_e}\frac{\mathrm dU_e}{\mathrm dx}=\frac{C_f}{2}$, derived in six steps. → [[SESA3043 3.5 - Momentum Integral Equation#1. The derivation, step by step (slides 5–38)|3.5 §1]]
+**Q1–Q3.** $\frac{\mathrm d\theta}{\mathrm dx}+(2+H)\frac{\theta}{U_e}\frac{\mathrm dU_e}{\mathrm dx}=\frac{C_f}{2}$, derived in six steps. → [[SESA3043 3.5 - Momentum Integral Equation#1. The derivation, step by step|3.5 §1]]
 
 ## 3.6 Viscous–inviscid interaction
 
-**Q1.** SDM repanels each iteration (direct but costly); STM keeps the panels and blows through them (cheap, used by XFOIL). → [[SESA3043 3.6 - Viscous-Inviscid Interaction#SDM against STM (revision Q1)|3.6 §4]]
+**Q1.** SDM repanels each iteration (direct but costly); STM keeps the panels and blows through them (cheap, used by XFOIL). → [[SESA3043 3.6 - Viscous-Inviscid Interaction#SDM against STM|3.6 §4]]
 
-**Q2.** Mass balance on the tunnel between $x$ and $x+\Delta x$: $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$. → [[SESA3043 3.6 - Viscous-Inviscid Interaction#Deriving vₛ (slide 21; revision Q2)|3.6 §4]]
+**Q2.** Mass balance on the tunnel between $x$ and $x+\Delta x$: $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$. → [[SESA3043 3.6 - Viscous-Inviscid Interaction#Deriving vₛ|3.6 §4]]
 
 **Q3. Wind tunnel.** $U_e=U_0a^2/(a-2\delta^*)^2$, $\delta^*=\frac97\theta$, $\theta=0.036L\,Re_L^{-1/5}$:
 

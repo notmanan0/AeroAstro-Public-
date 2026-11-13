@@ -20,7 +20,7 @@ sources: ["04 - Labs & Coursework/Revision & Spreadsheets/SESA1015 - Revision Qu
 >
 > $$T\cos\gamma-D=W\sin\theta,\qquad\frac{dh}{dt}=V\sin\theta=\frac{V\,(T\cos\gamma-D)}{W}.$$
 >
-> Speeds in knots are converted with 1 kn = 0.5144 m s⁻¹ (Slides v2, p. 132); sea-level density $\rho_0=1.225$ kg m⁻³. The glide examples (minimum glide angle, glide distance, minimum sink) are worked in M08 itself: [[SESA1015 M08 - Glide and Climb Performance#Engine-out glide after a bird strike|bird-strike glide]] and [[SESA1015 M08 - Glide and Climb Performance#Best glide and minimum sink of a 15-tonne jet|15-tonne jet glide]].
+> Speeds in knots are converted with 1 kn = 0.5144 m s⁻¹; sea-level density $\rho_0=1.225$ kg m⁻³. The glide examples (minimum glide angle, glide distance, minimum sink) are worked in M08 itself: [[SESA1015 M08 - Glide and Climb Performance#Engine-out glide after a bird strike|bird-strike glide]] and [[SESA1015 M08 - Glide and Climb Performance#Best glide and minimum sink of a 15-tonne jet|15-tonne jet glide]].
 
 ## Question 17
 

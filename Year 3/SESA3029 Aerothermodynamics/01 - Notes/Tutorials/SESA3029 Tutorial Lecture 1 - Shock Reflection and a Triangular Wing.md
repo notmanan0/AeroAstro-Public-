@@ -22,7 +22,7 @@ sources: ["02 - Sources/Lectures/Tutorial Lecture #1.txt"]
 > Two worked problems. Example Sheet 1 Q3 reflects a ramp shock off a wall ($M_1=2.3$, $\theta=8^\circ$, giving $p_3=50.1$ kPa) and then searches for the largest ramp angle that still reflects regularly ($\theta_{RR}\approx16.1^\circ$). An isosceles triangular wing at $M_1=1.7$, $\alpha=10^\circ$ is then solved by shock-expansion theory, giving a lift of about 2.9 kN/m. This note also fixes the flat-plate drag shortcut, which misses about a quarter of the drag on this wing, and solves the weekend homework, $x_{ac}/c=0.49$.
 
 > [!info] Where this sits
-> The theory is [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]] §§1–2 (reflection) and §6 (shock-expansion method, Lecture 2.5). The question source is the Blackboard folder *Example questions and solutions → Example sheets and solutions* . The triangular wing is from the same folder; its sheet is not filed in the vault, so its data are taken from the tutorial (ll. 118–189): $c=0.15$ m, $M_1=1.7$, $p_1=20$ kPa, $\alpha=10^\circ$, base angles $10^\circ$.
+> The theory is [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]] §§1–2 (reflection) and §6 (shock-expansion method). The question source is the Blackboard folder *Example questions and solutions → Example sheets and solutions* . The triangular wing is from the same folder; its sheet is not filed in the vault, so its data are taken from the tutorial: $c=0.15$ m, $M_1=1.7$, $p_1=20$ kPa, $\alpha=10^\circ$, base angles $10^\circ$.
 
 ---
 
@@ -34,7 +34,7 @@ A reflection is two shock calculations in series, and the interesting question i
 
 ## Part 1. Example Sheet 1 Q3: ramp shock reflected from a wall
 
-$M_1=2.3$, ramp $\theta=8^\circ$, $p_1=0.2$ atm $=20.26$ kPa (l. 15), upper wall parallel to the free stream.
+$M_1=2.3$, ramp $\theta=8^\circ$, $p_1=0.2$ atm $=20.26$ kPa, upper wall parallel to the free stream.
 
 ![[at_tut1_rr_limit.png|900]]
 
@@ -49,7 +49,7 @@ For one oblique shock of deflection $\theta$ at upstream Mach $M$:
 
 ### (a) Pressures and Mach numbers
 
-**Incident shock A (ll. 18–34).** The chart reads about $32$–$33^\circ$; precisely $\beta_A=32.42^\circ$ (l. 23).
+**Incident shock A.** The chart reads about $32$–$33^\circ$; precisely $\beta_A=32.42^\circ$.
 
 $$
 M_{n1}=2.3\sin32.42^\circ=1.2329,
@@ -67,7 +67,7 @@ $$
 M_2=\frac{0.8224}{\sin(32.42^\circ-8^\circ)}=1.9896.
 $$
 
-**Reflected shock B (ll. 47–60).** The wall must turn zone 2 back to horizontal, so the deflection is again $8^\circ$, now at $M_2=1.99$ (l. 49):
+**Reflected shock B.** The wall must turn zone 2 back to horizontal, so the deflection is again $8^\circ$, now at $M_2=1.99$:
 
 $$
 \beta_B=37.41^\circ,\qquad M_{n}=1.9896\sin37.41^\circ=1.2087,
@@ -88,18 +88,18 @@ All four match the tutorial (32.6 kPa, 1.9895, 50.1 kPa, 1.7) and the sheet. The
 
 ### (b) The largest ramp angle for regular reflection
 
-**Why there is a limit.** The reflected shock must turn zone 2 by the same $\theta$, so we need $\theta\le\theta_{max}(M_2)$. Raise $\theta$ and the incident shock steepens and strengthens, so $M_2$ falls, and $\theta_{max}$ falls with it (ll. 74–83). The two curves cross at the limit. Beyond it, a Mach stem forms ([[Mach Reflection]], ll. 64–66, 112–113).
+**Why there is a limit.** The reflected shock must turn zone 2 by the same $\theta$, so we need $\theta\le\theta_{max}(M_2)$. Raise $\theta$ and the incident shock steepens and strengthens, so $M_2$ falls, and $\theta_{max}$ falls with it. The two curves cross at the limit. Beyond it, a Mach stem forms ([[Mach Reflection]]).
 
 **The iteration.**
 
 | Step | Guess $\theta$ | $M_2$ | $\theta_{max}(M_2)$ exact | Tutorial |
 |---|---|---|---|---|
-| 1 | $8^\circ$ | 1.9896 | $22.79^\circ$ | 22.6° from the chart (l. 85) |
-| 2 | average $15.3^\circ$ | 1.6973 | $16.95^\circ$ | 16.9° (l. 94); $\beta_A\approx40^\circ$ ✓ |
-| 3a | average again $16.1^\circ$ | 1.6634 | $16.17^\circ$ | very close to the guess (ll. 95–99) |
-| 3b | interpolated $16.2^\circ$ | 1.6591 | $16.07^\circ$ | also 16.2° (ll. 108–109) |
+| 1 | $8^\circ$ | 1.9896 | $22.79^\circ$ | 22.6° from the chart |
+| 2 | average $15.3^\circ$ | 1.6973 | $16.95^\circ$ | 16.9°; $\beta_A\approx40^\circ$ ✓ |
+| 3a | average again $16.1^\circ$ | 1.6634 | $16.17^\circ$ | very close to the guess |
+| 3b | interpolated $16.2^\circ$ | 1.6591 | $16.07^\circ$ | also 16.2° |
 
-**Interpolation route (ll. 100–107).** Treat $\theta_{max}$ as a straight line through the two samples $(8,\,22.6)$ and $(15.3,\,16.9)$:
+**Interpolation route.** Treat $\theta_{max}$ as a straight line through the two samples $(8,\,22.6)$ and $(15.3,\,16.9)$:
 
 $$
 \theta_{max}(\theta)\approx22.6+(\theta-8)\,\frac{16.9-22.6}{15.3-8}=22.6-0.7808\,(\theta-8).
@@ -119,9 +119,9 @@ $$
 \boxed{\theta\approx16.2^\circ}\qquad(\text{exact fixed point }16.13^\circ;\ \text{sheet }16^\circ).
 $$
 
-Both averaging and interpolating work because $\theta_{max}(M_2(\theta))$ is smooth and nearly straight over $8^\circ$–$17^\circ$ (figure, panel b), so a secant through two guesses lands almost on the crossing. Averaging amounts to bisection on the bracket $[\theta,\theta_{max}]$; the secant converges faster. It's the same two-guesses-and-interpolate pattern as the slip-line problem in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#3. Shock–shock interaction and slip lines|W03 §3]] and the $\beta$ search in Lecture 2.5.
+Both averaging and interpolating work because $\theta_{max}(M_2(\theta))$ is smooth and nearly straight over $8^\circ$–$17^\circ$ (figure, panel b), so a secant through two guesses lands almost on the crossing. Averaging amounts to bisection on the bracket $[\theta,\theta_{max}]$; the secant converges faster. It's the same two-guesses-and-interpolate pattern as the slip-line problem in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#3. Shock–shock interaction and slip lines|W03 §3]] and the $\beta$ search in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method|W03]].
 
-> [!warning] "16.2 gives 16.2" is not quite right (ll. 108–109)
+> [!warning] "16.2 gives 16.2" is not quite right
 > Exactly, $\theta=16.2^\circ$ gives $\theta_{max}(M_2)=16.07^\circ<16.2^\circ$, so it is just past the limit. The true limit is $16.13^\circ$; the discrepancy comes from the chart readings (22.6 for 22.79). Quote 16.1°, or 16° to the sheet's precision.
 
 ---
@@ -142,9 +142,9 @@ $$
 
 At $\alpha=10^\circ$, measured from the chord:
 
-- **Upper front face** is inclined at $\varepsilon-\alpha=0$ to the stream, exactly tangential, so the flow slides past it (ll. 128–132). No wave, so $M=1.7$, $p=20$ kPa.
-- **Lower surface** turns the flow into itself by $\alpha=10^\circ$: an oblique shock (ll. 133–134).
-- **Apex**: the flow turns away by $\varepsilon+\varepsilon=20^\circ$, not $10^\circ$ (ll. 135–138): a Prandtl–Meyer fan.
+- **Upper front face** is inclined at $\varepsilon-\alpha=0$ to the stream, exactly tangential, so the flow slides past it. No wave, so $M=1.7$, $p=20$ kPa.
+- **Lower surface** turns the flow into itself by $\alpha=10^\circ$: an oblique shock.
+- **Apex**: the flow turns away by $\varepsilon+\varepsilon=20^\circ$, not $10^\circ$: a Prandtl–Meyer fan.
 
 ### Lower surface: one shock unit
 
@@ -161,7 +161,7 @@ $$
 $$
 
 $$
-p_L=1.6466\times20=32.93\ \text{kPa}\quad(\text{lecture: }33),
+p_L=1.6466\times20=32.93\ \text{kPa}\quad(\text{course value: }33),
 $$
 
 $$
@@ -185,10 +185,10 @@ M_{UR}=2.44+0.02\times\frac{37.81-37.71}{38.18-37.71}=2.444,
 $$
 
 $$
-p_{UR}=\frac{0.0638}{0.2026}\times20=6.30\ \text{kPa}\quad(\text{lecture: }6.4).
+p_{UR}=\frac{0.0638}{0.2026}\times20=6.30\ \text{kPa}\quad(\text{course value: }6.4).
 $$
 
-The fan calculation is always the same: $\nu_{down}=\nu_{up}+\theta$, read $M$ and $p/p_0$ at the new $\nu$, and divide by the upstream $p/p_0$, since $p_0$ is unchanged through the isentropic fan. The exam question will specify which method to use, nearest value or interpolation (l. 176).
+The fan calculation is always the same: $\nu_{down}=\nu_{up}+\theta$, read $M$ and $p/p_0$ at the new $\nu$, and divide by the upstream $p/p_0$, since $p_0$ is unchanged through the isentropic fan. The exam question will specify which method to use, nearest value or interpolation.
 
 ### Forces by the flat-plate shortcut
 
@@ -250,8 +250,8 @@ $C_l=L'/(q_\infty c)$ with $q_\infty=\tfrac12\gamma p_1M_1^2=0.7\times20\times2.
 | $C_d$ | 0.0849 | 0.1143 |
 | $L/D$ | 5.67 | 4.17 |
 
-> [!question] Lecture discussion: why don't airliners fly supersonic? (ll. 196–206)
-> A good subsonic aerofoil has $L/D$ of 50 or more, and up to about 150 when highly optimised (l. 199). Supersonic wave drag caps it at single figures, here 4–6. That is why airliners cruise at Mach 0.8–0.9, and why Concorde burned so much fuel.
+> [!question] Why don't airliners fly supersonic?
+> A good subsonic aerofoil has $L/D$ of 50 or more, and up to about 150 when highly optimised. Supersonic wave drag caps it at single figures, here 4–6. That is why airliners cruise at Mach 0.8–0.9, and why Concorde burned so much fuel.
 
 ### Pitching moment about the leading edge
 
@@ -299,7 +299,7 @@ $$
 
 ### Weekend homework: the aerodynamic centre
 
-> Repeat the calculation at another angle of attack, $11^\circ$ or $9^\circ$, compute $C_l$ and $C_m$ again, form the approximate derivative and check that it gives one half (ll. 232–234).
+> Repeat the calculation at another angle of attack, $11^\circ$ or $9^\circ$, compute $C_l$ and $C_m$ again, form the approximate derivative and check that it gives one half.
 
 $$
 \frac{x_{ac}}{c}=-\frac{\mathrm dC_{m,LE}}{\mathrm dC_l}\approx-\frac{C_{m}(\alpha_2)-C_{m}(\alpha_1)}{C_l(\alpha_2)-C_l(\alpha_1)}.
@@ -345,13 +345,13 @@ Unlike the flat plate, this wing's centre of pressure is not at its aerodynamic 
 
 ### Why look at sharp, mid-chord-thickness shapes?
 
-Subsonic aerofoils have round leading edges and maximum thickness near the quarter chord. Supersonic sections are sharp-edged, with maximum thickness near **half chord**. That this shape minimises wave drag is proved later, as the optimum-aerofoil result of Weeks 7–8 (ll. 152–153).
+Subsonic aerofoils have round leading edges and maximum thickness near the quarter chord. Supersonic sections are sharp-edged, with maximum thickness near **half chord**. That this shape minimises wave drag is proved later, as the optimum-aerofoil result of Weeks 7–8.
 
 ## Links
 
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
 - Theory: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]] (§§1–2 reflection, §6 shock-expansion)
-- Next lecture topic (announced, l. 2): [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]
+- Next lecture topic (announced): [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]]
 - Worked sheets: [[SESA3029 Example Sheet 1 - Solutions]] (Q3 in full; Q4 flat plate; Q6–Q7 diamond)
 - Concepts: [[Regular Shock Reflection]] · [[Mach Reflection]] · [[Shock-Expansion Theory]] · [[Prandtl-Meyer Function]] · [[Aerodynamic Centre and Centre of Pressure]]
 - Formulae: [[SESA3029 Formula Sheet]]

@@ -41,7 +41,7 @@ For a source on the right-hand side, any particular integral will do (ODE1). The
 
 ---
 
-## 1. Euler equations (L2)
+## 1. Euler equations
 
 The general Euler equation is
 
@@ -77,7 +77,7 @@ $$
 an^2+(b-a)n+c=0.
 $$
 
-This is the Euler auxiliary equation. Compared with the constant-coefficient one, the $n^2$ and constant terms are the same and only the linear coefficient changes, from $b$ to $b-a$ (ll. 85–92). Writing $n(n-1)$ out explicitly before collecting terms is the safest way not to drop the $-a$.
+This is the Euler auxiliary equation. Compared with the constant-coefficient one, the $n^2$ and constant terms are the same and only the linear coefficient changes, from $b$ to $b-a$. Writing $n(n-1)$ out explicitly before collecting terms is the safest way not to drop the $-a$.
 
 | Roots of $an^2+(b-a)n+c=0$ | General solution |
 |---|---|
@@ -87,7 +87,7 @@ This is the Euler auxiliary equation. Compared with the constant-coefficient one
 
 ### The pulsating star
 
-The worked example is a model for radial pulsations of a star (ll. 99–108). A spherically symmetric fluid body under its own gravity, pulsing in and out as $e^{j\ell t}$, has a spatial part $X(r)$ satisfying
+The worked example is a model for radial pulsations of a star. A spherically symmetric fluid body under its own gravity, pulsing in and out as $e^{j\ell t}$, has a spatial part $X(r)$ satisfying
 
 $$
 \frac1r\frac{d^2}{dr^2}\big[rX\big]-\frac{\ell(\ell+1)}{r^2}X=0.
@@ -144,7 +144,7 @@ Physical conditions can kill whole solutions without any boundary value being gi
 
 ### Repeated or complex roots: the substitution t = ln x
 
-$x^n$ with a complex $n$ is awkward, and it isn't obvious what replaces "multiply by $x$" for a repeated root (ll. 171–179). Changing the independent variable removes both difficulties (ll. 181–207). Let
+$x^n$ with a complex $n$ is awkward, and it isn't obvious what replaces "multiply by $x$" for a repeated root. Changing the independent variable removes both difficulties. Let
 
 $$
 t=\ln x,\qquad x=e^t,\qquad \frac{dt}{dx}=\frac1x,
@@ -192,13 +192,13 @@ $$
 a\ddot y+(b-a)\dot y+cy=0.
 $$
 
-This is a constant-coefficient ODE in $t$, and its auxiliary equation $a\lambda^2+(b-a)\lambda+c=0$ is the Euler auxiliary equation with $\lambda=n$. Solve in $t$ with the ODE1 table and convert back: $e^{nt}=x^n$, $te^{nt}=x^n\ln x$ and $e^{\alpha t}\cos\beta t=x^\alpha\cos(\beta\ln x)$. That is where the Euler table comes from, and it is also why the guess $x^n$ works at all (ll. 208–215). The final answer has to be in $x$; stopping at $y(t)$ loses marks.
+This is a constant-coefficient ODE in $t$, and its auxiliary equation $a\lambda^2+(b-a)\lambda+c=0$ is the Euler auxiliary equation with $\lambda=n$. Solve in $t$ with the ODE1 table and convert back: $e^{nt}=x^n$, $te^{nt}=x^n\ln x$ and $e^{\alpha t}\cos\beta t=x^\alpha\cos(\beta\ln x)$. That is where the Euler table comes from, and it is also why the guess $x^n$ works at all. The final answer has to be in $x$; stopping at $y(t)$ loses marks.
 
-In practice the auxiliary equation is tried first, with $\ln x$ rather than $x$ multiplying the second solution for a repeated root, since almost every engineering and mathematical physics problem gives real roots, distinct or repeated (ll. 228–230). Only complex roots force the full substitution.
+In practice the auxiliary equation is tried first, with $\ln x$ rather than $x$ multiplying the second solution for a repeated root, since almost every engineering and mathematical physics problem gives real roots, distinct or repeated. Only complex roots force the full substitution.
 
 ### Two worked Euler equations
 
-A repeated root arises in $x^2y''+3xy'+y=0$ (ll. 216–225), which gives
+A repeated root arises in $x^2y''+3xy'+y=0$, which gives
 
 $$
 n(n-1)+3n+1=n^2+2n+1=(n+1)^2=0,
@@ -255,7 +255,7 @@ so $n=-2$ twice and $y=x^{-2}(c_1+c_2\ln x)$. All three agree with SymPy's `dsol
 
 ## 2. Inhomogeneous ODEs: complementary function plus particular integral
 
-For $y''+py'+qy=r(x)$ the procedure has three steps (ll. 259–274):
+For $y''+py'+qy=r(x)$ the procedure has three steps:
 
 1. Ignore the source and solve the homogeneous equation for the **complementary functions** $y_1$, $y_2$.
 2. Find any **particular integral** $y_P$ that satisfies the full equation.
@@ -265,7 +265,7 @@ As in ODE1, $y-y_P$ satisfies the homogeneous equation, so every solution has th
 
 ### The method of undetermined coefficients
 
-Guess a particular integral of the same form as the source, with unknown coefficients, substitute, and match terms (ll. 264–274). The logic is balancing: a guess $Ax+B$ against a source $4x$ works because differentiating a polynomial gives lower powers, so the $Ax$ can balance the $4x$ and the $B$ can absorb the constant that differentiation produces, whereas a guess $x^2$ would leave an $x^2$ term with nothing on the right to balance it (ll. 289–318). An exponential differentiates into itself, so $Ce^{kx}$ balances $e^{kx}$ (ll. 319–328).
+Guess a particular integral of the same form as the source, with unknown coefficients, substitute, and match terms. The logic is balancing: a guess $Ax+B$ against a source $4x$ works because differentiating a polynomial gives lower powers, so the $Ax$ can balance the $4x$ and the $B$ can absorb the constant that differentiation produces, whereas a guess $x^2$ would leave an $x^2$ term with nothing on the right to balance it. An exponential differentiates into itself, so $Ce^{kx}$ balances $e^{kx}$.
 
 | Source $r(x)$ | Guess for $y_P$ |
 |---|---|
@@ -276,11 +276,11 @@ Guess a particular integral of the same form as the source, with unknown coeffic
 | $x^ne^{kx}$ | $(A_nx^n+\dots+A_0)e^{kx}$ |
 | a sum of the above | the sum of the guesses |
 
-Sensible guesses exist only for polynomials, exponentials and simple trigonometric functions, the last being exponentials in disguise through Euler's formula. For logarithms, fractional powers and the like there is no sensible guess, and the method should be abandoned (ll. 410–420).
+Sensible guesses exist only for polynomials, exponentials and simple trigonometric functions, the last being exponentials in disguise through Euler's formula. For logarithms, fractional powers and the like there is no sensible guess, and the method should be abandoned.
 
 ### Worked example: matching coefficients
 
-Solve $y''+4y'+4y=4x+25e^{3x}$ (ll. 256–367).
+Solve $y''+4y'+4y=4x+25e^{3x}$.
 
 The complementary functions come from $\lambda^2+4\lambda+4=(\lambda+2)^2=0$, a repeated root $\lambda=-2$:
 
@@ -330,7 +330,7 @@ The answer can sometimes be spotted by inspection, but matching term by term wor
 
 ### Clashes with the complementary function
 
-The complementary function is found first because it decides the guess (ll. 371–409). If the natural guess is already a complementary function, substituting it gives zero, so it can never balance the source; the fix is to multiply the guess by successive powers of $x$. With the same left-hand side as above, whose complementary functions are $e^{-2x}$ and $xe^{-2x}$, two clashing sources are $e^{-2x}$ and $xe^{-2x}$.
+The complementary function is found first because it decides the guess. If the natural guess is already a complementary function, substituting it gives zero, so it can never balance the source; the fix is to multiply the guess by successive powers of $x$. With the same left-hand side as above, whose complementary functions are $e^{-2x}$ and $xe^{-2x}$, two clashing sources are $e^{-2x}$ and $xe^{-2x}$.
 
 For $r=e^{-2x}$, both $Ce^{-2x}$ and $Cxe^{-2x}$ are complementary functions, so the first guess worth trying is $y_P=Cx^2e^{-2x}$. Differentiate:
 
@@ -406,7 +406,7 @@ $$
 u''+u=4\sin x .
 $$
 
-This is the undamped oscillator forced at its own frequency, the resonance problem treated in [[#Resonance (L3 slide 18)]], so the guess for $u$ must carry a factor $x$:
+This is the undamped oscillator forced at its own frequency, the resonance problem treated in [[#Resonance]], so the guess for $u$ must carry a factor $x$:
 
 $$
 u=x(C\cos x+D\sin x),
@@ -428,9 +428,9 @@ $$
 
 The same substitution handles PS1 Q3(a), $y''-2y'+y=4e^x$: with $k=1$ the root is repeated, both coefficients vanish, $u''=4$, $u=2x^2$ and $y_P=2x^2e^x$. SymPy's `dsolve` gives both general solutions.
 
-### Resonance (L3 slide 18)
+### Resonance
 
-The 1940 Tacoma Narrows bridge collapse is the classic motivating case (L2 slide 16 and L3 slide 18). An undamped oscillator driven at frequency $\omega_s$ obeys
+The 1940 Tacoma Narrows bridge collapse is the classic motivating case. An undamped oscillator driven at frequency $\omega_s$ obeys
 
 $$
 \ddot y+\omega_0^2y=\cos\omega_st,
@@ -524,7 +524,7 @@ Lecture 2 set the Tacoma Narrows challenge on its last slide and otherwise point
 
 ### Further practice
 
-- [ ] Lecturer-set challenge (L2 slide 16): explain the Tacoma Narrows collapse, then derive $y_P=\frac{t}{2\omega_0}\sin\omega_0t$ both directly and as the limit of the beat solution. → [[#Resonance (L3 slide 18)]]
+- [ ] Lecturer-set challenge (L2 slide 16): explain the Tacoma Narrows collapse, then derive $y_P=\frac{t}{2\omega_0}\sin\omega_0t$ both directly and as the limit of the beat solution. → [[#Resonance]]
 - [ ] Find $y_P$ for $y''+4y'+4y=xe^{-2x}$ and show why $Cx^2e^{-2x}$ fails (suggested, not lecturer-set). → [[#Why the powers of x work]]
 - [ ] Solve the pulsating-star equation and say which constant vanishes for a star and which for a point charge (L2, ll. 154–170). → [[#The pulsating star]]
 

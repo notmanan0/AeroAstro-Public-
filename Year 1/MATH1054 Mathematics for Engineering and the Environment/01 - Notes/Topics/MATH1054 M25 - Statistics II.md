@@ -41,7 +41,7 @@ Inference then runs the probability statement backwards. If $\bar X$ is within $
 
 ---
 
-## 1. Independent random variables and joint distributions (James §13.4.8)
+## 1. Independent random variables and joint distributions
 
 Two random variables measured on the same object, such as a person's height and weight, generally depend on each other. Two random variables are **independent** when knowing the value of one tells nothing about the other. For discrete variables $X$ (values $u_1,\dots,u_k$) and $Y$ (values $v_1,\dots,v_m$) independence means the joint probability factorises, exactly as for independent events $P(A\cap B)=P(A)P(B)$:
 
@@ -93,7 +93,7 @@ P(X+Y\le7)&=(0.050+0.035+0.015)+(0.200+0.140)+0.150\\
 \end{aligned}
 $$
 
-## 2. Scaling and adding random variables (James §13.4.9)
+## 2. Scaling and adding random variables
 
 ### The distribution of a sum
 
@@ -220,7 +220,7 @@ $$
 
 the **standard error of the mean**. It falls only as $1/\sqrt n$: four times the sample buys half the error. This result underlies §3 and §6–8.
 
-## 3. Sample average and sample variance (James §13.4.10)
+## 3. Sample average and sample variance
 
 For data $x_1,\dots,x_n$ the **sample average** and the **sample variance** used in this module are
 
@@ -327,7 +327,7 @@ $$
 \bar x=5.40,\qquad s^2=\frac{296.56-10(5.4)^2}{9}=\frac{4.96}{9}=0.5511,\qquad s=0.742\ \text{thousand hours}.
 $$
 
-## 4. The binomial distribution (James §13.5.1)
+## 4. The binomial distribution
 
 A **Bernoulli trial** is one observation with two outcomes, success with probability $p$ and failure with probability $q=1-p$, recorded as $X=1$ or $X=0$. Its mean and variance are
 
@@ -401,7 +401,7 @@ $$
 > [!check] Poisson cross-check
 > The Poisson approximation with $\lambda=np=2$ (James §13.5.2, outside this module) gives $e^{-2}(1+2+2)=0.6767$, agreeing with the exact binomial $0.6767$ to four figures.
 
-## 5. The normal distribution and standardisation (James §13.5.3)
+## 5. The normal distribution and standardisation
 
 A continuous random variable $X$ has the **normal distribution** with mean $\mu$ and variance $\sigma^2$, written $X\sim N(\mu,\sigma^2)$, if its density is
 
@@ -941,7 +941,7 @@ so $H_0$ is rejected at 5%: the mean life exceeds 3500 h. The probability of a s
 ## Transcript and slide slips
 
 > [!warning] James, *Modern Engineering Mathematics* (6th ed.), §13.4.9–13.4.10
-> Where: [[#2. Scaling and adding random variables (James §13.4.9)]] and [[#Die tossed 24 times (James Example 13.22)]]
+> Where: [[#2. Scaling and adding random variables]] and [[#Die tossed 24 times (James Example 13.22)]]
 >
 > | Where | James prints | Correct |
 > |---|---|---|

@@ -11,7 +11,7 @@ sources: ["03 - Exams & Past Papers/SESA2022-202425-01-SESA2022.pdf (rubric, pp.
 
 # SESA2022 Formula Sheet
 
-Sections follow the topic notes, T2 to T6. Items marked ★ are not on the exam's formula pages, so learn them: for T2–T5 that means not on the 2024-25 rubric (pp. 9–18 of the paper), for T6 not in the list of static-stability formulae given in the exam (21 Nov, ll. 12–37). Angles in radians throughout unless stated.
+Sections follow the topic notes, T2 to T6. Items marked ★ are not on the exam's formula pages, so learn them: for T2–T5 that means not on the 2024-25 rubric (pp. 9–18 of the paper), for T6 not in the list of static-stability formulae given in the exam. Angles in radians throughout unless stated.
 
 ## T2 Boundary layers ([[SESA2022 T2 - Boundary Layers]])
 
@@ -60,7 +60,7 @@ Flat-plate correlations, used only when no profile or data is given (a question 
 
 - ★ Reynolds-number ranges (smooth plate): laminar $Re_x<3\times10^5$, transitional $3\times10^5$–$10^6$, turbulent above. Laminar $\delta\propto x^{1/2}$, turbulent $\delta\propto x^{4/5}$.
 - ★ Power law $u/U_\infty = \eta^{1/n}$ ($n$ an integer, fitted to points with $y/\delta\le1$; $n = 7$ only when no data): $\delta^*/\delta = \dfrac{1}{n+1}$, $\theta/\delta = \dfrac{n}{(n+1)(n+2)}$, $H = \dfrac{n+2}{n}$. It gives infinite $\tau_w$, so $c_f$ comes from a correlation.
-- Wall units: $U_\tau = \sqrt{\tau_w/\rho} = U_\infty\sqrt{c_f/2}$, $y^+ = yU_\tau/\nu$, $U^+ = U/U_\tau$, viscous length $\nu/U_\tau$. Viscous sub-layer $U^+ = y^+$ for $y^+<5$; buffer layer $5<y^+<50$; log layer $U^+ = \frac1\kappa\ln y^++B$ for $y^+>50$ and $y/\delta<0.2$, with $\kappa = 0.39$, $B = 4.3$ (2024-25 rubric) or $\kappa = 0.4$, $B = 5.0$ (slides): use the paper's values. CFD wall grid: first point at $y^+\lesssim1$–$5$.
+- Wall units: $U_\tau = \sqrt{\tau_w/\rho} = U_\infty\sqrt{c_f/2}$, $y^+ = yU_\tau/\nu$, $U^+ = U/U_\tau$, viscous length $\nu/U_\tau$. Viscous sub-layer $U^+ = y^+$ for $y^+<5$; buffer layer $5<y^+<50$; log layer $U^+ = \frac1\kappa\ln y^++B$ for $y^+>50$ and $y/\delta<0.2$, with $\kappa = 0.39$, $B = 4.3$ (2024-25 rubric) or $\kappa = 0.4$, $B = 5.0$ (standard values): use the paper's values. CFD wall grid: first point at $y^+\lesssim1$–$5$.
 - [[Virtual Origin Method|Virtual origin]] (transition at $x_T$): $\theta$ is continuous, $\theta_{lam}(x_T) = \theta_{turb}(x_T-x_0)$, and the turbulent formulae use $x-x_0$. ★ Explicit with Blasius and $0.037$: $x_0 = x_T\left(1-36.9\,Re_{x_T}^{-3/8}\right)$; with $0.036$ the constant is $38.2$ ([[SESA2022 T2 - Boundary Layers#Matching condition|derivation]]). Check $0<x_0<x_T$.
 - ★ Transitional plate, chord $c$, one side: $\theta(c) = 0.037(c-x_0)Re_{c-x_0}^{-1/5}$, $D' = \rho U_\infty^2\theta(c)$, $C_F = 0.074\left(1-\dfrac{x_0}{c}\right)Re_{c-x_0}^{-1/5}$. It must lie between the all-laminar and all-turbulent values.
 - Separation: an adverse pressure gradient ($dp/dx>0$) drives $\partial u/\partial y|_0\to0$, so $\tau_w = 0$ at separation; a turbulent layer separates later (descriptive, [[SESA2022 T2 - Boundary Layers#8. Pressure gradients and separation|T2 §8]]).
@@ -113,7 +113,7 @@ $$
 - Kutta condition: $\gamma(TE) = V_1-V_2 = 0$. Kelvin: $D\Gamma/Dt = 0$, so a starting vortex $-\Gamma$ is shed.
 - ★ Fundamental equation (tangency on the chord, $\gamma(c) = 0$): $\dfrac{1}{2\pi}\displaystyle\int_0^c\frac{\gamma(\xi)\,d\xi}{x-\xi} = V_\infty\left(\alpha-\frac{dz}{dx}\right)$.
 - Transformation: $\xi = \frac c2(1-\cos\theta)$, $x = \frac c2(1-\cos\theta_0)$, LE at $\theta = 0$, TE at $\pi$. Hinge or point at $x/c$: $\cos\theta_0 = 1-2x/c$.
-- ★ Glauert integrals (principal values; given in the exam, 29 Oct, ll. 485–493): $\displaystyle\int_0^\pi\frac{\cos n\theta\,d\theta}{\cos\theta-\cos\theta_0} = \frac{\pi\sin n\theta_0}{\sin\theta_0}$, $\displaystyle\int_0^\pi\frac{\sin n\theta\sin\theta\,d\theta}{\cos\theta-\cos\theta_0} = -\pi\cos n\theta_0$. Orthogonality: $\int_0^\pi\cos m\theta\cos n\theta\,d\theta = \int_0^\pi\sin m\theta\sin n\theta\,d\theta = \frac\pi2\delta_{mn}$ ($m,n\ge1$); $\int_0^\pi\cos n\theta\,d\theta = 0$.
+- ★ Glauert integrals (principal values; given in the exam): $\displaystyle\int_0^\pi\frac{\cos n\theta\,d\theta}{\cos\theta-\cos\theta_0} = \frac{\pi\sin n\theta_0}{\sin\theta_0}$, $\displaystyle\int_0^\pi\frac{\sin n\theta\sin\theta\,d\theta}{\cos\theta-\cos\theta_0} = -\pi\cos n\theta_0$. Orthogonality: $\int_0^\pi\cos m\theta\cos n\theta\,d\theta = \int_0^\pi\sin m\theta\sin n\theta\,d\theta = \frac\pi2\delta_{mn}$ ($m,n\ge1$); $\int_0^\pi\cos n\theta\,d\theta = 0$.
 - ★ Flat plate: $\gamma(\theta) = 2V_\infty\alpha\dfrac{1+\cos\theta}{\sin\theta}$, i.e. $\gamma(x) = 2V_\infty\alpha\sqrt{(c-x)/x}$; $c_l = 2\pi\alpha$, $c_{m,le} = -c_l/4$, $x_{cp} = c/4$.
 
 General cambered section:

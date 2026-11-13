@@ -41,7 +41,7 @@ The hyperbolic functions are built out of $e^x$ and $e^{-x}$. They behave like $
 
 ---
 
-## 1. Functions, domain and range (James §2.2.1)
+## 1. Functions, domain and range
 
 A **function** $f$ from a set $X$ to a set $Y$ assigns to each $x$ in $X$ exactly one $y=f(x)$ in $Y$. The set $X$ is the **domain**, $Y$ is the **codomain**, $f(x)$ is the **image** of $x$, and the set of all images is the **range** (James also calls it the image set). The range is contained in the codomain but is often smaller. For real functions the codomain is usually taken to be $\mathbb R$, so the work in a question goes into the domain (which inputs give a real answer) and the range (which outputs are actually reached).
 
@@ -108,7 +108,7 @@ $$
 
 The domain is $(-\infty,-1)\cup(1,\infty)$. Only $x^2$ appears, so $f(-x)=f(x)$ and $f$ is even over its domain; for instance $f(2)=f(-2)=5/\sqrt3\approx2.887$.
 
-## 2. Inverse functions (James §2.2.3)
+## 2. Inverse functions
 
 The **inverse function** $f^{-1}$ reverses $f$: if $y=f(x)$ then $x=f^{-1}(y)$. Relabelling so that $x$ is again the input,
 
@@ -232,7 +232,7 @@ The same rule gives $\frac{\mathrm d}{\mathrm dx}\ln x$: with $y=\ln x$, $x=e^y$
 > [!check] Inverse slope by finite differences
 > Solving $z^3+z=2\pm10^{-6}$ numerically and differencing gives $\big(f^{-1}\big)'(2)=0.2500000$, matching $1/f'(1)=\frac14$.
 
-## 3. Composite functions (James §2.2.4)
+## 3. Composite functions
 
 The **composite** $f\circ g$ applies $g$ first and then $f$:
 
@@ -260,7 +260,7 @@ The two differ, and in general $f\circ g\neq g\circ f$. A function composed with
 
 Two composites recur: $f(x-k)$ is the graph of $f$ moved $k$ units to the right and $f(x+k)$ is the graph moved $k$ units to the left, for $k>0$. Writing $x^2+2x-3=(x+1)^2-4$ shows that this parabola is $x^2$ moved one unit left and four down, with its minimum at $(-1,-4)$ ([[Completing the Square]]).
 
-## 4. Even, odd and periodic functions (James §2.2.6)
+## 4. Even, odd and periodic functions
 
 A function is **even** if
 
@@ -353,7 +353,7 @@ with peak $f(\frac13)=1$. Three different functions agree with it on $[0,1]$:
 
 The data on $[0,1]$ do not fix the function elsewhere; the symmetry and period chosen do. The even and odd extensions with period $2L$ of a function given on $[0,L]$ are the half-range cosine and sine series of MATH2048 ([[Half-Range Expansions]]).
 
-## 5. Inverse trigonometric functions (James §2.6.7)
+## 5. Inverse trigonometric functions
 
 Each trigonometric function is periodic, so it fails the horizontal-line test. Each is restricted to one interval on which it is one-to-one and takes all its values, and the inverse is defined on that branch (James calls these the principal values; a calculator returns them):
 
@@ -460,7 +460,7 @@ which agrees with $\pi-\cos^{-1}\frac12=\pi-\frac\pi3$.
 
 ![[m1054_arccos_specimen.png|560]]
 
-## 6. Exponentials and logarithms (James §2.7.1–2.7.2)
+## 6. Exponentials and logarithms
 
 The exponential $e^x$ is defined for all real $x$, is positive and strictly increasing, so it is one-to-one onto $(0,\infty)$. Its inverse is the **natural logarithm**:
 
@@ -563,7 +563,7 @@ $$
 
 At $x=7$ both forms give $3.5$.
 
-## 7. Hyperbolic functions (James §2.7.4)
+## 7. Hyperbolic functions
 
 The **hyperbolic cosine** and **hyperbolic sine** are
 
@@ -780,7 +780,7 @@ $$
 > [!check] Recovering x
 > $e^x=\cosh x+\sinh x=\frac{13}{12}-\frac5{12}=\frac23$, so $x=\ln\frac23=-0.4055$, and a calculator gives $\sinh^{-1}(-\frac5{12})=-0.4055$ and $\cosh(-0.4055)=1.0833=\frac{13}{12}$.
 
-## 8. Inverse hyperbolic functions (James §2.7.5)
+## 8. Inverse hyperbolic functions
 
 $\sinh$ and $\tanh$ are strictly increasing, so they have inverses without restriction. $\cosh$ is even, so it is restricted to $x\geq0$, which makes the range of $\cosh^{-1}$ the non-negative numbers:
 
@@ -870,7 +870,7 @@ $$
 
 A calculator's `asinh`, `acosh` and `atanh` give the same three values. The other root in $\cosh^{-1}3$, $\ln\big(3-\sqrt8\big)=-1.763$, is the excluded negative branch.
 
-## 9. Derivatives of inverse trigonometric and hyperbolic functions (James §8.3.9, §8.3.12)
+## 9. Derivatives of inverse trigonometric and hyperbolic functions
 
 ### Inverse trigonometric derivatives
 

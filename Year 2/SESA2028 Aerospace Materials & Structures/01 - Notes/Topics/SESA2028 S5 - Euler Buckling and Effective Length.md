@@ -48,7 +48,7 @@ Equilibrium, $Fx=kxL$, has two families of solutions: $x=0$ at any load, and any
 
 ### The same result from energy
 
-For a conservative system with total potential energy $\Pi$, equilibrium is $d\Pi/dq=0$ for the displacement $q$, and the second derivative classifies it: positive is stable (a valley), negative unstable (a hilltop), zero neutral. When the bar tilts by $\theta$, the spring stretches $L\sin\theta$ and stores $\tfrac12k(L\sin\theta)^2$; the top drops $L(1-\cos\theta)$, so the load loses potential energy $FL(1-\cos\theta)$:
+For a conservative system with total potential energy $\Pi$, equilibrium is $d\Pi/dq=0$ for the displacement $q$, and the second derivative classifies it: positive is stable (a valley), negative unstable (a hilltop), zero marginal (neutral to this order of approximation). When the bar tilts by $\theta$, the spring stretches $L\sin\theta$ and stores $\tfrac12k(L\sin\theta)^2$; the top drops $L(1-\cos\theta)$, so the load loses potential energy $FL(1-\cos\theta)$:
 
 $$
 \Pi(\theta)=\tfrac12k(L\sin\theta)^2-FL(1-\cos\theta).
@@ -67,6 +67,8 @@ $$
 $$
 
 positive for $F<kL$ and negative for $F>kL$: the upright bar is stable below $F_{cr}=kL$ and unstable above it, the same bifurcation load as the moment argument.
+
+At $F=kL$ itself the second derivative vanishes and cannot decide the question. Expanding $\Pi$ for small $\theta$ at $F=kL$ gives $\Pi\approx-kL^2\theta^4/8$, so the exact bar is slightly unstable there, and the tilted equilibria $\cos\theta=F/kL$, which exist only for $F<kL$, are unstable too. Neutral equilibrium at the critical load is the result of the linearised analysis, and it is the linearised analysis that the column calculations below use.
 
 ![[structures_s5_stability_and_slenderness.png|900]]
 
@@ -132,7 +134,7 @@ $$
 \boxed{P_{cr}=\frac{\pi^2EI}{L^2}}
 $$
 
-the Euler load. Higher modes would need the column restrained at the nodes of the lower ones. The amplitude $A$ stays undetermined: linear theory says the column can take any small deflection at $P_{cr}$, the neutral equilibrium of §1, which is why the load–deflection graph of a perfect column is a horizontal line at $P_{cr}$. The result says that stiffer materials (higher $E$) resist buckling better, that the column buckles about the axis with the smaller second moment, so $I_{min}$ is used ([[Euler Buckling]]), and that the critical load falls as $1/L^2$.
+the Euler load. Higher modes would need the column restrained at the nodes of the lower ones. The amplitude $A$ stays undetermined: linear theory says the column can take any small deflection at $P_{cr}$, the neutral equilibrium of the linearised analysis, which is why the load–deflection graph of a perfect column is a horizontal line at $P_{cr}$. The result says that stiffer materials (higher $E$) resist buckling better, that the column buckles about the axis with the smaller second moment, so $I_{min}$ is used ([[Euler Buckling]]), and that the critical load falls as $1/L^2$.
 
 ## 3. Other end conditions and effective length
 
@@ -266,7 +268,7 @@ $$
 while yield would need $\sigma_YA=250\times2827=707$ kN. The column buckles at 159 kN, at a stress of only $158\,900/2827=56$ MPa.
 
 > [!check] Slenderness
-> $\kappa=\sqrt{2.898\times10^6/2827}=32.0$ mm and $KL/\kappa=6000/32.0=187$, more than twice the transition value of 89, so buckling governs, as found. The eccentrically loaded version of this column is in [[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]].
+> $\kappa=\sqrt{2.898\times10^6/2827}=32.0$ mm and $KL/\kappa=6000/32.0=187$, more than twice the transition value of 89, so buckling governs, as found.
 
 ### Hollow square pinned column
 
@@ -286,7 +288,7 @@ $$
 P_{cr}=\frac{\pi^2\times200\,000\times1.149\times10^6}{3000^2}=252\text{ kN},
 $$
 
-a safety factor of $252/120=2.10$ against buckling and $250/85.7=2.92$ against yield. The critical stress is $\pi^2(200\,000)/105^2=180$ MPa, below $\sigma_Y$ because the slenderness exceeds 89. [[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]] shows how an initial curvature erodes this margin.
+a safety factor of $252/120=2.10$ against buckling and $250/85.7=2.92$ against yield. The critical stress is $\pi^2(200\,000)/105^2=180$ MPa, below $\sigma_Y$ because the slenderness exceeds 89. An initial curvature erodes this margin ([[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]]).
 
 ## Links
 

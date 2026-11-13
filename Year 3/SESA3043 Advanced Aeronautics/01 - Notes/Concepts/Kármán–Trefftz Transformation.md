@@ -21,10 +21,10 @@ With $p=2$ it reduces to Joukowski. Near $\bar z=b$ the map behaves like $(\bar 
 
 $$\frac bc=\frac{(1+\varepsilon)^p-\varepsilon^p}{4(1+\varepsilon)^p}.$$
 
-With the slide's $2b$ prefactor, $z\approx(2/p)\bar z$ far from the body, so the stream in the circle plane has to be $(2/p)U_\infty$ to give $U_\infty$ in the physical plane.
+With the course's $2b$ prefactor, $z\approx(2/p)\bar z$ far from the body, so the stream in the circle plane has to be $(2/p)U_\infty$ to give $U_\infty$ in the physical plane.
 
 The finite trailing-edge angle makes it a good test case for panel methods, which cusped Joukowski sections are not. The coursework generates a KT aerofoil with the code provided and runs potential-flow calculations on it.
 
 ## Related
 
-- [[SESA3043 2.1 - Complex Functions and Conformal Mapping#5. The Kármán–Trefftz aerofoil (slides 19–20)]] · [[SESA3043 2.3 - Panel Methods#7. Validation against exact solutions]]
+- [[SESA3043 2.1 - Complex Functions and Conformal Mapping#5. The Kármán–Trefftz aerofoil]] · [[SESA3043 2.3 - Panel Methods#7. Validation against exact solutions]]

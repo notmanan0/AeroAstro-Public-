@@ -23,7 +23,7 @@ sources: ["02 - Sources/FEM Lectures/Lecture_12_Validation and Verification_fina
 # SESA2029 C6 - APDL Workflow - FE Model Verification Checks
 
 > [!abstract] Summary
-> The verification checklist of FEA Lecture 12, written as APDL commands, is run before trusting any model, such as the lab 3 wing. Housekeeping merges coincident key points and nodes and checks element shapes; the total mass is compared with a hand estimate and the reactions with the applied loads; a free–free modal analysis should give exactly six rigid-body modes; unit gravity and unit enforced displacement checks expose loose or illegally grounded nodes; and a hand calculation on a simplified version of the problem closes the loop.
+> The FE model verification checklist ([[SESA2029 B10 - FE Verification, Validation and Model Updating|B10]]), written as APDL commands, is run before trusting any model, such as the lab 3 wing. Housekeeping merges coincident key points and nodes and checks element shapes; the total mass is compared with a hand estimate and the reactions with the applied loads; a free–free modal analysis should give exactly six rigid-body modes; unit gravity and unit enforced displacement checks expose loose or illegally grounded nodes; and a hand calculation on a simplified version of the problem closes the loop.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** about to report results from a model built by hand or by script.
@@ -158,7 +158,7 @@ In the mm–N–tonne set the same calculation uses $E=2.1\times10^5$ MPa, $I=83
 
 ## The B10 checks in APDL
 
-These are the checks of [[SESA2029 B10 - FE Verification, Validation and Model Updating|B10]] (2026-03-06 10:55, ll. 51–225): accuracy checks such as coincident nodes and elements, wrong connections and distorted elements; then the free–free modal, unit enforced displacement, unit gravity and thermal checks of mathematical soundness. The commands above are one way to run them in Mechanical APDL. None was set as a lab task, but the free–free check costs one modal run and catches the commonest modelling error, a part that is not connected.
+These are the checks of [[SESA2029 B10 - FE Verification, Validation and Model Updating|B10]] (2026-03-06 10:55): accuracy checks such as coincident nodes and elements, wrong connections and distorted elements; then the free–free modal, unit enforced displacement, unit gravity and thermal checks of mathematical soundness. The commands above are one way to run them in Mechanical APDL. None was set as a lab task, but the free–free check costs one modal run and catches the commonest modelling error, a part that is not connected.
 
 ## Links
 - Parent: [[SESA2029 Digital Aerospace Methods Hub]] · Previous: [[SESA2029 C5 - APDL Workflow - Parametric Sweeps and Batch Automation]]

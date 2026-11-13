@@ -35,27 +35,27 @@ FEA treats a structure as a network of springs. A single bar under axial load be
 
 ## 1. What FEA is and why aerospace uses it
 
-The finite element method is a computer-based numerical method for approximate solutions of engineering problems defined by ordinary or partial differential equations (2026-01-30 10:00, ll. 71–100). Analytical solutions exist only for simple, idealised structures such as a uniform beam; aerospace structures are rarely like that, and increasingly use composites, metamaterials and topology-optimised shapes. The method divides the structure into elements, each with its own geometry and properties, and assembles them. An A350 wing, for example, has glass fibre in the leading edge, carbon-fibre panels and aluminium spars, which no closed-form solution handles (2026-02-06 09:59, ll. 171–185).
+The finite element method is a computer-based numerical method for approximate solutions of engineering problems defined by ordinary or partial differential equations (2026-01-30 10:00). Analytical solutions exist only for simple, idealised structures such as a uniform beam; aerospace structures are rarely like that, and increasingly use composites, metamaterials and topology-optimised shapes. The method divides the structure into elements, each with its own geometry and properties, and assembles them. An A350 wing, for example, has glass fibre in the leading edge, carbon-fibre panels and aluminium spars, which no closed-form solution handles (2026-02-06 09:59).
 
-Courant proposed the method in 1943, and aerospace engineers developed it; the direct stiffness method of Turner, Clough, Martin and Topp at Boeing put it in matrix form for computer programming, which is why "direct stiffness method" and "matrix displacement method" (MDM) are used interchangeably (2026-02-06 09:59, ll. 21–35).
+Courant proposed the method in 1943, and aerospace engineers developed it; the direct stiffness method of Turner, Clough, Martin and Topp at Boeing put it in matrix form for computer programming, which is why "direct stiffness method" and "matrix displacement method" (MDM) are used interchangeably (2026-02-06 09:59).
 
-FEA is used across the design cycle, from material properties through components such as ribs and panels to assemblies (2026-01-30 10:00, ll. 71–140). Once validated, a model predicts behaviour under many loading cases far more cheaply and quickly than testing, shows what happens inside the structure where measurements are hard, identifies weaknesses, propagates uncertainty in material properties for robust design, and supplies the material-, component- and assembly-level evidence that certification demands. The analysis types are structural (linear and nonlinear stress), thermal (temperature and thermal-stress distributions, critical in turbines above 1000 °C), and dynamic: modal analysis for natural frequencies and mode shapes, such as the nodal-diameter modes of a bladed disc, and transient analysis for forced response and vibration stress, which feeds fatigue life (ll. 141–190).
+FEA is used across the design cycle, from material properties through components such as ribs and panels to assemblies (2026-01-30 10:00). Once validated, a model predicts behaviour under many loading cases far more cheaply and quickly than testing, shows what happens inside the structure where measurements are hard, identifies weaknesses, propagates uncertainty in material properties for robust design, and supplies the material-, component- and assembly-level evidence that certification demands. The analysis types are structural (linear and nonlinear stress), thermal (temperature and thermal-stress distributions, critical in turbines above 1000 °C), and dynamic: modal analysis for natural frequencies and mode shapes, such as the nodal-diameter modes of a bladed disc, and transient analysis for forced response and vibration stress, which feeds fatigue life.
 
 ### The FEA procedure
 
-Every analysis has three stages (2026-01-30 10:00, ll. 191–230). Pre-processing creates or imports the geometry (from SolidWorks or CATIA, say), defines material properties, discretises the geometry into a mesh with a chosen element type, and applies boundary conditions, both displacement constraints such as a clamped wing root and loads such as pressure. A badly chosen element type or mesh can give results unlike experiment, so the model must be checked by a convergence study and validated against tests. The solution stage solves the system of equations for the unknown nodal displacements. Post-processing turns displacements into strains and stresses, and checks, for example, that the maximum stress stays below yield.
+Every analysis has three stages (2026-01-30 10:00). Pre-processing creates or imports the geometry (from SolidWorks or CATIA, say), defines material properties, discretises the geometry into a mesh with a chosen element type, and applies boundary conditions, both displacement constraints such as a clamped wing root and loads such as pressure. A badly chosen element type or mesh can give results unlike experiment, so the model must be checked by a convergence study and validated against tests. The solution stage solves the system of equations for the unknown nodal displacements. Post-processing turns displacements into strains and stresses, and checks, for example, that the maximum stress stays below yield.
 
-Each element carries its own equation $\{F\}^e=[K]^e\{d\}^e$, where $\{F\}^e$ holds the forces at the element's nodes, $\{d\}^e$ the nodal displacements and $[K]^e$ is an $n\times n$ stiffness matrix (ll. 231–260). For an 8-node brick with three degrees of freedom (DOF) per node, $n=24$. Assembling the elements gives a global system whose number of equations equals the total number of DOF, possibly millions; more elements give more accuracy and more cost.
+Each element carries its own equation $\{F\}^e=[K]^e\{d\}^e$, where $\{F\}^e$ holds the forces at the element's nodes, $\{d\}^e$ the nodal displacements and $[K]^e$ is an $n\times n$ stiffness matrix. For an 8-node brick with three degrees of freedom (DOF) per node, $n=24$. Assembling the elements gives a global system whose number of equations equals the total number of DOF, possibly millions; more elements give more accuracy and more cost.
 
-The size of a model is the number of nodes times the DOF per node, and it sets the computational cost, so it should be estimated before meshing (2026-02-06 09:59, ll. 146–160). Large models need techniques such as domain decomposition and high-performance computing. In the software, points that define the geometry are key points; once the mesh exists, the points where elements join are nodes.
+The size of a model is the number of nodes times the DOF per node, and it sets the computational cost, so it should be estimated before meshing (2026-02-06 09:59). Large models need techniques such as domain decomposition and high-performance computing. In the software, points that define the geometry are key points; once the mesh exists, the points where elements join are nodes.
 
 ### Assessment and the labs
 
-Part B has three computer labs: 1D springs and beams, a 2D plate with a hole (like a fuselage panel or wing rib), and a 3D wing in static and modal analysis (2026-01-30 10:00, ll. 41–70, 271–300; see [[SESA2029 C1 - ANSYS Mechanical APDL Scripting Fundamentals|C1]]–[[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]). The FEA coursework, a 10-page lab report, is 30 % of the module, due Monday of week 8 (16 March). The one-hour exam is 40 % (20 % CFD, 20 % FEA): about 30 minutes for FEA, 25 marks over about eight questions, half on key concepts and terms and half on hand calculations with the methods of weeks 2 and 3. Two example sheets and a mock paper support it.
+Part B has three computer labs: 1D springs and beams, a 2D plate with a hole (like a fuselage panel or wing rib), and a 3D wing in static and modal analysis (see [[SESA2029 C1 - ANSYS Mechanical APDL Scripting Fundamentals|C1]]–[[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]). The FEA coursework, a 10-page lab report, is 30 % of the module, due Monday of week 8. The one-hour exam is 40 % (20 % CFD, 20 % FEA): about 30 minutes for FEA, 25 marks over about eight questions, half on key concepts and terms and half on hand calculations with the methods of weeks 2 and 3. Two example sheets and a mock paper support it.
 
 ## 2. The single-DOF bar
 
-A bar of cross-section $A$, length $L$ and Young's modulus $E$ is fixed at one end and pulled by an axial force $F$ at the other (2026-02-06 09:59, ll. 51–95). A bar can deform and carry force only along its axis, which is what makes it the basic element of pin-jointed frames and space trusses. Three relations describe it:
+A bar of cross-section $A$, length $L$ and Young's modulus $E$ is fixed at one end and pulled by an axial force $F$ at the other (2026-02-06 09:59). A bar can deform and carry force only along its axis, which is what makes it the basic element of pin-jointed frames and space trusses. Three relations describe it:
 
 $$
 \sigma=\frac FA\quad\text{(equilibrium)},
@@ -83,7 +83,7 @@ The constant of proportionality between force and extension is the stiffness. On
 
 ## 3. The two-DOF bar element
 
-Both ends of the bar are free to move, as for a bar attached to supporting structure or a Formula 1 suspension link (ll. 96–145). The nodes $i$ and $j$ have axial displacements $u_i$ and $u_j$ and nodal forces $F_i$ and $F_j$. The extension is $u_j-u_i$, so the tension in the bar is
+Both ends of the bar are free to move, as for a bar attached to supporting structure or a Formula 1 suspension link. The nodes $i$ and $j$ have axial displacements $u_i$ and $u_j$ and nodal forces $F_i$ and $F_j$. The extension is $u_j-u_i$, so the tension in the bar is
 
 $$
 F=k(u_j-u_i).
@@ -117,7 +117,7 @@ $\{F\}$ and $\{d\}$ are one-dimensional arrays and $[K]$ is two-dimensional, wit
 
 ## 4. Assembling two bars
 
-Two bars of the same length but different areas form a stepped bar, discretised as element 1 (nodes 1–2, stiffness $k_1$) and element 2 (nodes 2–3, $k_2$) (ll. 161–230). Each element has its own matrix; this freedom to give every element its own area, length and material is the point of the method. The model has three nodes with one DOF each, $\{d\}=\{u_1\ u_2\ u_3\}^T$, so the global matrix is $3\times3$.
+Two bars of the same length but different areas form a stepped bar, discretised as element 1 (nodes 1–2, stiffness $k_1$) and element 2 (nodes 2–3, $k_2$). Each element has its own matrix; this freedom to give every element its own area, length and material is the point of the method. The model has three nodes with one DOF each, $\{d\}=\{u_1\ u_2\ u_3\}^T$, so the global matrix is $3\times3$.
 
 Two principles are imposed. Compatibility: element 1's node $j$ and element 2's node $i$ are the same node and have the same displacement $u_2$. Each element's equations can then be written in terms of the three global DOF by padding with rows and columns of zeros:
 
@@ -143,9 +143,9 @@ $$
 
 The figure shows the same addition for the example-sheet bars of [[#Worked example: two bars clamped at both ends]]: each element's $2\times2$ block lands on the rows and columns of its own two nodes, and only the entry for the shared node 2 receives contributions from both.
 
-In practice the expansion is not written out: each element's entries are added into the global rows and columns of its DOF, and overlapping entries sum. The global matrix is square, symmetric and banded. Keep the DOF numbering consistent between the nodes and the matrix, or rows and columns end up in the wrong places (ll. 361–405; [[Global Stiffness Matrix Assembly]]).
+In practice the expansion is not written out: each element's entries are added into the global rows and columns of its DOF, and overlapping entries sum. The global matrix is square, symmetric and banded. Keep the DOF numbering consistent between the nodes and the matrix, or rows and columns end up in the wrong places ([[Global Stiffness Matrix Assembly]]).
 
-Bars at an angle need the angle taken into account in the force equilibrium (ll. 231–235). For a bar at angle $\theta$ with $c=\cos\theta$, $s=\sin\theta$ and two DOF $(u,v)$ per node, only displacement along the bar stretches it, so the extension is the displacement difference resolved along the bar,
+Bars at an angle need the angle taken into account in the force equilibrium. For a bar at angle $\theta$ with $c=\cos\theta$, $s=\sin\theta$ and two DOF $(u,v)$ per node, only displacement along the bar stretches it, so the extension is the displacement difference resolved along the bar,
 
 $$
 \delta=c(u_j-u_i)+s(v_j-v_i).
@@ -169,9 +169,9 @@ which reduces to the axial bar for $\theta=0$ ($c=1$, $s=0$). For $\theta=90°$ 
 
 ## 5. Boundary conditions and solution
 
-The boundary conditions are of two kinds: the forces applied to the model, in $\{F\}$, and the displacement constraints, in $\{d\}$ (ll. 231–250). A clamped beam end has zero deflection and rotation; a simply supported end has zero deflection but can rotate. Getting them right matters more than anything else downstream: when a model is updated to match experiment, the boundary conditions are usually what needs changing, and they will be assessed in the exam. The unspecified displacements are the unknowns, and the model cannot be solved until enough displacements are constrained; otherwise $[K]$ is singular, the structure can move as a rigid body, and the software stops with a zero-pivot error ([[Boundary Conditions and Rigid Body Modes]]).
+The boundary conditions are of two kinds: the forces applied to the model, in $\{F\}$, and the displacement constraints, in $\{d\}$. A clamped beam end has zero deflection and rotation; a simply supported end has zero deflection but can rotate. Getting them right matters more than anything else downstream: when a model is updated to match experiment, the boundary conditions are usually what needs changing, and they will be assessed in the exam. The unspecified displacements are the unknowns, and the model cannot be solved until enough displacements are constrained; otherwise $[K]$ is singular, the structure can move as a rigid body, and the software stops with a zero-pivot error ([[Boundary Conditions and Rigid Body Modes]]).
 
-For the stepped bar fixed at node 1 and loaded by $F$ at node 3 (ll. 251–290), the reaction at node 1 is not yet known and is left out of the force vector; it is recovered later:
+For the stepped bar fixed at node 1 and loaded by $F$ at node 3, the reaction at node 1 is not yet known and is left out of the force vector; it is recovered later:
 
 $$
 \begin{Bmatrix}R_1\\0\\F\end{Bmatrix}=\begin{bmatrix}k_1&-k_1&0\\-k_1&k_1+k_2&-k_2\\0&-k_2&k_2\end{bmatrix}\begin{Bmatrix}0\\u_2\\u_3\end{Bmatrix}.
@@ -201,7 +201,7 @@ $$
 
 springs in series, as expected. Back-substitution then gives the reaction from the struck-out first row, $R_1=-k_1u_2=-F$, and the member forces from each element equation, for example $F^{(2)}=k_2(u_3-u_2)=F$, with stress $F^{(e)}/A_e$.
 
-The method is general (ll. 291–305): it applies to bars, beams, shear panels and solids, as long as the element matrices are known, and it is mechanical enough to program directly. Every analysis repeats the same steps:
+The method is general: it applies to bars, beams, shear panels and solids, as long as the element matrices are known, and it is mechanical enough to program directly. Every analysis repeats the same steps:
 
 1. Form the element matrices.
 2. Assemble the global matrix.
@@ -214,7 +214,7 @@ The method is general (ll. 291–305): it applies to bars, beams, shear panels a
 
 ### Worked example: two bars clamped at both ends
 
-Example sheet 1 (ll. 306–405): bar 1 has area $2A$, bar 2 area $A$, both length $L$ and modulus $E$; both outer ends are clamped and an axial load $P$ acts at the junction.
+Example sheet 1: bar 1 has area $2A$, bar 2 area $A$, both length $L$ and modulus $E$; both outer ends are clamped and an axial load $P$ acts at the junction.
 
 The element stiffnesses are
 

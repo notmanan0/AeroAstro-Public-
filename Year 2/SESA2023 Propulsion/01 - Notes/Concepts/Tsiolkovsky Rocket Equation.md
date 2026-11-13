@@ -33,7 +33,7 @@ $$
 
 In PS10 Q10.1 ($\Delta V = 9140$ m/s, $I_{sp} = 400$ s, $\delta = 0.03$, 2 t payload) that gives $m_0 = 29.7$ t, burning 268 kg/s over 100 s; in 2024-25 Q2(ii) ($\Delta V = 5$ km/s, 450 s, $\delta = 0.08$, 2 t payload) it gives $\lambda = 0.242$, $m_0 = 8.26$ t and $m_p = 5.60$ t.
 
-The legacy papers (2016-17, 2017-18, 2018-19) use it to show that a single stage to orbit isn't feasible. With structural efficiency $\epsilon = m_{dw}/(m_{dw}+m_p)$ and no payload, $MR = 1/\epsilon$. With $\epsilon = 0.10$ and the best $I_{sp}$ of 450 s, $\Delta V_{ideal} = 4414\ln10 = 10{,}165$ m/s, which after 40 % losses leaves 6099 m/s, short of the 7788 m/s circular speed at 200 km. Reaching orbit would need $MR = 18.9$, or $\epsilon = 5.3\%$, which is structurally impractical; hence staging. The Year 1 version, discrete momentum exchange by throwing bricks off a wagon, is in [[FEEG1002 D4 - Linear Impulse and Momentum]].
+A single stage to orbit is not feasible (2016-17, 2017-18 and 2018-19 papers). With structural efficiency $\epsilon = m_{dw}/(m_{dw}+m_p)$ and no payload, $MR = 1/\epsilon$. With $\epsilon = 0.10$ and the best $I_{sp}$ of 450 s, $\Delta V_{ideal} = 4414\ln10 = 10{,}165$ m/s, which after 40 % losses leaves 6099 m/s, short of the 7788 m/s circular speed at 200 km. Reaching orbit would need $MR = 18.9$, or $\epsilon = 5.3\%$, which is structurally impractical; hence staging. The discrete version, momentum exchange by throwing bricks off a wagon, is in [[FEEG1002 D4 - Linear Impulse and Momentum]].
 
 ## Related
 

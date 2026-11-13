@@ -23,7 +23,7 @@ $$
 
 so its intercept is the open-circuit voltage and its slope is minus the source resistance. Batteries (through their ESR), power supplies and amplifier outputs are specified in this form. The method is to identify the network to be replaced, find $R_{TH}$, then $V_{TH}$, and attach the load. In AC circuits $R_{TH}$ becomes an impedance $Z_{TH}$.
 
-One network (Lecture 7a) reduces to 11 V and 5/3 Ω, so a 3 Ω load takes 2.36 A. Another (Week 6) gives 13.3 V and 6.67 Ω, so a 40 Ω load takes 0.286 A. Tutorial 2 Q3 gives 0.75 V and 8.5 Ω. In Tutorial 8 Q1 the loaded RC filter is a Thévenin source $KV_{in}$ with resistance $R_1\parallel R_L$ driving $C$.
+One network reduces to 11 V and 5/3 Ω, so a 3 Ω load takes 2.36 A. Another (Week 6) gives 13.3 V and 6.67 Ω, so a 40 Ω load takes 0.286 A. Tutorial 2 Q3 gives 0.75 V and 8.5 Ω. In Tutorial 8 Q1 the loaded RC filter is a Thévenin source $KV_{in}$ with resistance $R_1\parallel R_L$ driving $C$.
 
 ![[ee_a7_thevenin_example.png|700]]
 

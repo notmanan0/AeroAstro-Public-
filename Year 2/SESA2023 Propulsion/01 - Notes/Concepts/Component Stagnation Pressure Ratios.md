@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Week 04 - Gas Dynamics II - Friction, Heat Tran
 
 # Component Stagnation Pressure Ratios
 
-Losses in passive components, which do no work and are adiabatic, appear only as drops in stagnation pressure, measured by the stagnation pressure ratios
+The diffuser and nozzle do no work and are adiabatic, and the combustor does no work and has its heat addition accounted for separately through $T_{03}$, so in all three the loss appears as a drop in stagnation pressure, measured by the stagnation pressure ratios
 
 $$
 \Gamma_d = \frac{p_{02}}{p_{01}},\qquad\Gamma_c = \frac{p_{03}}{p_{02}},\qquad\Gamma_n = \frac{p_{04}}{p_{03}}\quad(\le1),
@@ -21,7 +21,7 @@ $$
 
 for the diffuser, combustor and nozzle. Incomplete combustion is counted separately through $\eta_b = LCV_{eff}/LCV$.
 
-In an adiabatic component $T_0$ is constant, so $\Delta s = -R\ln\Gamma$ and each $\Gamma$ is a direct measure of entropy generation. The diffuser loses stagnation pressure through shocks, friction and separation; the combustor through friction, flameholder drag and the Rayleigh loss of adding heat to a moving flow, which a larger contraction ratio or lower velocity reduces; the nozzle through friction, divergence and shocks. In a real ramjet they multiply together,
+In the diffuser and nozzle $T_0$ is constant, so $\Delta s = -R\ln\Gamma$ and $\Gamma$ measures the entropy generated directly. In the combustor $T_0$ rises from $T_{02}$ to $T_{03}$, so the entropy change is $\Delta s = c_p\ln(T_{03}/T_{02}) - R\ln\Gamma_c$, and $\Gamma_c$ measures only the part of it that is a loss. The diffuser loses stagnation pressure through shocks, friction and separation; the combustor through friction, flameholder drag and the Rayleigh loss of adding heat to a moving flow, which a larger contraction ratio or lower velocity reduces; the nozzle through friction, divergence and shocks. In a real ramjet they multiply together,
 
 $$
 \frac{p_{04}}{p_a} = \Gamma_d\Gamma_c\Gamma_n\Big(1+\tfrac{\gamma-1}{2}M^2\Big)^{\frac{\gamma}{\gamma-1}},\qquad V_e = \sqrt{2c_pT_{03}\big[1-(p_a/p_{04})^{(\gamma-1)/\gamma}\big]},

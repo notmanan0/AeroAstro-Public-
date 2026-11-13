@@ -19,7 +19,7 @@ $$
 K^\theta(T) = \frac{(p_C/p^\theta)^c(p_D/p^\theta)^d}{(p_A/p^\theta)^a(p_B/p^\theta)^b},\qquad p_i = \frac{n_i}{n_{tot}}p ,
 $$
 
-with $\ln K^\theta$ against $T$ listed in Data Book Table 5.
+with $\ln K^\theta$ against $T$ tabulated (Data Book Table 5).
 
 Le Chatelier's principle predicts the direction of a shift. A rise in temperature favours the endothermic, dissociating direction; a rise in pressure favours the side with fewer moles, so it suppresses dissociation; and adding a species shifts the equilibrium away from it. How fast a reaction gets there follows the Arrhenius rate $k = Ae^{-E_a/(\bar RT)}$, faster for a lower activation energy or a higher temperature. Dissociation matters because it lowers the flame temperature and efficiency and forms CO and NOₓ. The main fuel oxidation can be treated as one-way; only the product equilibria need this treatment.
 

@@ -26,25 +26,25 @@ sources: ["02 - Sources/Lectures/Lecture 1.01.pdf", "02 - Sources/Lectures/Lectu
 > A dynamic system has a state that evolves as $\dot{\mathbf x} = f(\mathbf x,\mathbf u)$. For a rigid aircraft, Newton's laws in six degrees of freedom are written in body axes, which adds the $\boldsymbol\omega\times\mathbf v$ and $\boldsymbol\omega\times\mathbf h$ terms. Symmetry about the $xz$-plane and small-perturbation linearisation about trim then split the equations into a longitudinal set in $u, w, q$ and a lateral set in $v, p, r$.
 
 > [!summary]- Exam use: quick path
-> - **Use it when:** a question asks you to name or sign body-axis quantities, justify the rigid-aircraft assumptions, rotate a vector between Earth and body axes, or say which terms survive linearisation. The derivation itself is not examined (L1.02, ll. 604–605; L1.03, l. 327).
+> - **Use it when:** a question asks you to name or sign body-axis quantities, justify the rigid-aircraft assumptions, rotate a vector between Earth and body axes, or say which terms survive linearisation. The derivation itself is not examined.
 > - **Assumptions:** rigid body, constant mass, flat Earth, cg origin; right-handed body axes ($x$ forward, $y$ starboard, $z$ down); stability axes at trim ($V=W=0$); symmetry about $xz$ ($I_{xy}=I_{yz}=0$); perturbations up to about ±10 % of trim; angles in radians.
 > - **Method:** 1. Draw the body axes and label $(U,V,W)$, $(p,q,r)$, $(X,Y,Z)$, $(L,M,N)$. 2. Earth to body: $\mathbf v_B=\mathbf R_x(\phi)\mathbf R_y(\theta)\mathbf R_z(\psi)\mathbf v_E$ (yaw, pitch, roll; multiply right to left). 3. Write $\mathbf F=m(\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v)$ and $\mathbf M=\dot{\mathbf h}+\boldsymbol\omega\times\mathbf h$ in components. 4. Substitute $U=U_\infty+u$, $V=v$, $W=w$. 5. Drop every product of two perturbations; keep products with $U_\infty$.
 > - **Common mistakes:** dropping $qU_\infty$ (it is first order because $U_\infty$ is large); multiplying the rotation matrices in the wrong order (roll is applied last, so $\mathbf R_x$ is on the left).
 > - **Practise:** [[#Worked example: gravity and velocity in body axes]] · [[SESA2027 Mock Questions#Q1. Body axes, rotation and linearisation|Mock Q1]]
 
-An aircraft is a rigid box that can move in three directions and turn about three axes, so six numbers describe its motion at any instant. Newton's laws hold only in a frame that is not accelerating. The Earth (flat, for a few seconds of flight) is such a frame, but the forces and the sensors live in the aircraft. So Newton's laws are written in body axes, at the cost of extra terms: as the aircraft turns, its own axes swing round, and a velocity that is constant in space appears to change when it is measured along moving axes. Those are the $\boldsymbol\omega\times\mathbf v$ and $\boldsymbol\omega\times\mathbf h$ terms.
+An aircraft is a rigid box that can move in three directions and turn about three axes, so it has six degrees of freedom, and its state at any instant takes twelve numbers: three position coordinates, three attitude angles and the six velocities $(U,V,W)$ and $(p,q,r)$. Newton's laws hold only in a frame that is not accelerating. The Earth (flat, for a few seconds of flight) is such a frame, but the forces and the sensors live in the aircraft. So Newton's laws are written in body axes, at the cost of extra terms: as the aircraft turns, its own axes swing round, and a velocity that is constant in space appears to change when it is measured along moving axes. Those are the $\boldsymbol\omega\times\mathbf v$ and $\boldsymbol\omega\times\mathbf h$ terms.
 
-The full equations are nonlinear and coupled. Near trim, though, every perturbation is small. Products of two small things vanish, and only products with the large trim speed $U_\infty$ survive. The six equations then split into two independent sets: longitudinal motion in the plane of symmetry ($u$, $w$, $q$) and lateral motion out of it ($v$, $p$, $r$). That split (DAP3, divide and conquer) is what makes the rest of Part A possible.
+The full equations are nonlinear and coupled. Near trim, though, every perturbation is small. Products of two small things vanish, and only products with the large trim speed $U_\infty$ survive. The six equations then split into two independent sets: longitudinal motion in the plane of symmetry ($u$, $w$, $q$) and lateral motion out of it ($v$, $p$, $r$). That split (DAP3, divide and conquer) lets the longitudinal motion be analysed on its own.
 
 ---
 
-## 1. Dynamic systems (L1.01)
+## 1. Dynamic systems
 
 A **dynamic system** is a system whose state changes over time according to specific rules or equations, and whose output is a function of both its current input and its history. Its **state** is the set of variables needed to describe the system at any instant (for example position and velocity), and its model is $\dot{\mathbf x}(t) = f(\mathbf x(t),\mathbf u(t))$, where $\mathbf u$ is the external input.
 
-As a block diagram (L1.01, ll. 231–245), $f$ takes the state and the input and gives $\dot{\mathbf x}$, an integrator turns $\dot{\mathbf x}$ into $\mathbf x$, and $\mathbf x$ is fed back into $f$. That internal feedback makes the output depend on the history and not just on the current input.
+As a block diagram, $f$ takes the state and the input and gives $\dot{\mathbf x}$, an integrator turns $\dot{\mathbf x}$ into $\mathbf x$, and $\mathbf x$ is fed back into $f$. That internal feedback makes the output depend on the history and not just on the current input.
 
-A controlled system has four components: the plant, sensors, actuators and controllers. Sensors include the sun sensor, star tracker, gyroscope, airspeed sensor, AoA vane and IMU. Actuators include the servomotor, thruster, reaction wheel, magnetic torquer, control surfaces and throttle. Controllers include the FCU, FCC, SAS and MCAS. Actuators are lumped into the plant (ll. 256–264): their dynamics are usually much faster than the aircraft's, so actuator and airframe are treated as one block.
+A controlled system has four components: the plant, sensors, actuators and controllers. Sensors include the sun sensor, star tracker, gyroscope, airspeed sensor, AoA vane and IMU. Actuators include the servomotor, thruster, reaction wheel, magnetic torquer, control surfaces and throttle. Controllers include the FCU, FCC, SAS and MCAS. Actuators are lumped into the plant: their dynamics are usually much faster than the aircraft's, so actuator and airframe are treated as one block.
 
 | Classification | Example | Notes |
 |---|---|---|
@@ -53,7 +53,7 @@ A controlled system has four components: the plant, sensors, actuators and contr
 | Time-varying | Rapid mass or configuration changes (rockets) | Coefficients depend on $t$ |
 | Time-invariant (LTI) | Slowly changing mass, fixed geometry (aircraft over short intervals) | Constant coefficients |
 
-Three questions frame the subject (L1.01, ll. 20–45, 180–191): what is being controlled (the dynamic system), why it needs control (stability, performance, handling), and how (sensors, controller, actuators). The model hierarchy runs from the full physics, a set of nonlinear PDEs for a flexible structure in unsteady flow, to nonlinear ODEs once the body is assumed rigid, and finally to the LTI state-space model obtained by linearising about trim, which Parts A and B work with.
+A control problem has three parts: the dynamic system being controlled, the reason it needs control (stability, performance, handling), and the means of control (sensors, controller, actuators). The model hierarchy runs from the full physics, a set of nonlinear PDEs for a flexible structure in unsteady flow, to nonlinear ODEs once the body is assumed rigid, and finally to the LTI state-space model obtained by linearising about trim.
 
 The analysis methods fall into three groups:
 
@@ -69,28 +69,28 @@ The analysis methods fall into three groups:
 
 Model accuracy rises with complexity, but with diminishing returns. Choose the simplest model that captures the behaviour you care about. See [[Design and Analysis Principles]].
 
-## 2. Setting up the 6-DoF model (L1.02)
+## 2. Setting up the 6-DoF model
 
-Each assumption can be checked against Airbus A380 figures (L1.02, slide 3):
+Each assumption can be checked against Airbus A380 figures:
 
-| Assumption | Reality check (A380, slide 3 figures) |
+| Assumption | Reality check (A380, recomputed below) |
 |---|---|
 | Rigid aircraft (no aeroelasticity) | Wing-tip deflection $\approx\pm4$ m on a 79.8 m span, $\delta/b\approx5\%$ |
-| Constant mass over short intervals | A 10 s flight burns $\approx25$ kg, which is $0.004\%$ of MTOW |
-| Flat Earth, constant $g$ and density | 10 s at 252 m/s covers 2.5 km; curvature drop is 0.315 m ($0.0126\%$) |
-| Sensor and controller dynamics neglected | Studied separately in Part C |
-| Loads act as point forces and point moments at the cg (L1.02, ll. 33–35) | Distributed aerodynamic loads are replaced by their resultants |
+| Constant mass over short intervals | A 10 s flight burns $\approx29$ kg, which is $0.005\%$ of MTOW |
+| Flat Earth, constant $g$ and density | 10 s at 252 m/s covers 2.5 km; curvature drop is 0.50 m ($0.020\%$) |
+| Sensor and controller dynamics neglected | Sensors are modelled in [[SESA2027 C2 - Sensor Characteristics, Dynamics and Design\|C2]] |
+| Loads act as point forces and point moments at the cg | Distributed aerodynamic loads are replaced by their resultants |
 
 > [!check] Re-computing the A380 figures from fuel flow and speed
 > - Fuel flow: $13\,000\ \text{L/h}\div3600 = 3.61$ L/s.
 > - Mass flow: $3.61\times0.8 = 2.89$ kg/s.
-> - In 10 s: $28.9$ kg, which is $28.9/575\,000 = 0.005\%$ of MTOW (the table's 25 kg and 0.004 % follow from a mass flow of 2.5 kg/s; see the slide slips).
-> - Curvature: $910\ \text{km/h} = 252.8$ m/s, so $d = 2.53$ km in 10 s. The table's fixed rate of 12.6 cm per km gives $\Delta y = 0.126\ \text{m/km}\times2.53\ \text{km} = 0.32$ m (0.315 m in the table) and $\Delta y/d = 0.0126\%$. That fixed rate is a rule of thumb; the geometric drop $d^2/(2R_E)$ is larger, 0.50 m (see the warning below).
+> - In 10 s: $28.9$ kg, which is $28.9/575\,000 = 0.005\%$ of MTOW.
+> - Curvature: $910\ \text{km/h} = 252.8$ m/s, so $d = 2.53$ km in 10 s. The drop below the tangent plane is $\Delta y = d^2/(2R_E) = 0.50$ m, which is $\Delta y/d = 0.020\%$ (see the warning below).
 
 Over a few seconds the mass is constant to better than 0.01 %. The curvature figure needs more care, because the drop does not scale linearly with distance.
 
 > [!warning] Curvature drop grows with distance squared
-> The drop below a tangent plane is $\Delta y\approx d^2/(2R_E)$ with $R_E=6371$ km, so it grows with the square of the distance. For $d=2.53$ km that is $\Delta y=0.50$ m, or $0.020\%$ of the distance, against 0.315 m from a fixed rate of 12.6 cm per km (see the slide slips). The conclusion does not change (the flat-Earth error is still tiny over 10 s), but a rate-per-km rule under-predicts the drop at longer distances. That matters in the 60 s exercise below.
+> The drop below a tangent plane is $\Delta y\approx d^2/(2R_E)$ with $R_E=6371$ km, so it grows with the square of the distance. For $d=2.53$ km that is $\Delta y=0.50$ m, or $0.020\%$ of the distance. The flat-Earth error is still tiny over 10 s, but a fixed rate per kilometre (such as 12.6 cm per km) under-predicts the drop at longer distances, as the 60 s exercise below shows.
 
 ### Worked example: when do the assumptions start to bite?
 
@@ -127,7 +127,7 @@ Right-handed, with $x$ forward, $y$ starboard and $z$ down.
 
 ![[amc_body_axes_notation.png|900]]
 
-Positive rotations follow the right-hand rule about each axis (slide 6): positive $q$ is nose up, positive $r$ is nose to starboard, positive $p$ is starboard wing down. Positive $W$ points down through the floor, so a nose-up angle of attack gives a positive $W$.
+Positive rotations follow the right-hand rule about each axis: positive $q$ is nose up, positive $r$ is nose to starboard, positive $p$ is starboard wing down. Positive $W$ points down through the floor, so a nose-up angle of attack gives a positive $W$.
 
 > [!warning] $y$ out of the page in a nose-right side view
 > With $x$ to the right and $z$ down the page, $\mathbf j=\mathbf k\times\mathbf i$ points out of the page. A nose-right side view is therefore seen from the starboard side. It is easy to draw $y$ into the page and then get the sign of $q$ wrong.
@@ -144,8 +144,8 @@ $$
 $$
 
 - Rotation matrices are orthogonal, so $\mathbf R^{-1} = \mathbf R^T$.
-- Body to Earth (L1.02, ll. 405–418): undo the rotations in reverse order with negated angles, $\mathbf R_{EB} = \mathbf R_z(-\psi)\,\mathbf R_y(-\theta)\,\mathbf R_x(-\phi)$. Since $\mathbf R_i(-\alpha) = \mathbf R_i(\alpha)^T$, this is $\mathbf R_{EB} = \mathbf R_{BE}^T$.
-- Mnemonic (ll. 460–492): in $\mathbf R_x$, $\mathbf R_y$ and $\mathbf R_z$ the 1 sits in that axis's own row and column, with zeros in the rest of that row and column; the cosines fill the other diagonal places.
+- Body to Earth: undo the rotations in reverse order with negated angles, $\mathbf R_{EB} = \mathbf R_z(-\psi)\,\mathbf R_y(-\theta)\,\mathbf R_x(-\phi)$. Since $\mathbf R_i(-\alpha) = \mathbf R_i(\alpha)^T$, this is $\mathbf R_{EB} = \mathbf R_{BE}^T$.
+- Mnemonic: in $\mathbf R_x$, $\mathbf R_y$ and $\mathbf R_z$ the 1 sits in that axis's own row and column, with zeros in the rest of that row and column; the cosines fill the other diagonal places.
 - Matrix multiplication is not commutative, so the order of rotations matters.
 - Gimbal lock limits the ranges: $\phi,\psi\in[-\pi,\pi]$ and $\theta\in[-\pi/2,\pi/2]$.
 
@@ -177,7 +177,7 @@ $$
 
 with $c_\theta=\cos\theta$, $s_\theta=\sin\theta$ and so on. Setting all angles to zero gives $\mathbf I$, as it must.
 
-The last column of $\mathbf R_{BE}$ is gravity in body axes. Gravity is $\mathbf g_E=(0,0,g)$ in Earth axes ($z$ down), so $\mathbf g_B=\mathbf R_{BE}\mathbf g_E$ is $g$ times the third column, $\mathbf g_B=g(-\sin\theta,\ \sin\phi\cos\theta,\ \cos\phi\cos\theta)$. Yaw drops out, as it should, since turning on the spot doesn't change which way is down. These are the gravitational terms that enter the longitudinal model in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#1. Gravitational contributions (L1.04)|A2 §1]].
+The last column of $\mathbf R_{BE}$ is gravity in body axes. Gravity is $\mathbf g_E=(0,0,g)$ in Earth axes ($z$ down), so $\mathbf g_B=\mathbf R_{BE}\mathbf g_E$ is $g$ times the third column, $\mathbf g_B=g(-\sin\theta,\ \sin\phi\cos\theta,\ \cos\phi\cos\theta)$. Yaw drops out, as it should, since turning on the spot doesn't change which way is down. These are the gravitational terms that enter the longitudinal model in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#1. Gravitational contributions|A2 §1]].
 
 ### Worked example: gravity and velocity in body axes
 
@@ -196,7 +196,7 @@ $$
 $$
 
 > [!check] Numerical check (Python)
-> $|\mathbf g_B|=9.810$ and $|\mathbf v_B|=250.0$ m/s: the rotation changes components, never length (L1.02, ll. 494–508). $\mathbf R\mathbf R^T=\mathbf I$ to machine precision. The body sees $W=18.9$ m/s, an angle of attack $\alpha=\arctan(W/U)=4.33°$, and $V=10.9$ m/s, a sideslip $\beta=\arcsin(V/V_\infty)=2.50°$. Pitch and bank together turn part of a horizontal velocity into the body $y$ and $z$ directions.
+> $|\mathbf g_B|=9.810$ and $|\mathbf v_B|=250.0$ m/s: the rotation changes components, never length. $\mathbf R\mathbf R^T=\mathbf I$ to machine precision. The body sees $W=18.9$ m/s, an angle of attack $\alpha=\arctan(W/U)=4.33°$, and $V=10.9$ m/s, a sideslip $\beta=\arcsin(V/V_\infty)=2.50°$. Pitch and bank together turn part of a horizontal velocity into the body $y$ and $z$ directions.
 
 ### Rates of change in a rotating frame
 
@@ -204,7 +204,7 @@ The body axes turn with the aircraft, so their unit vectors $\mathbf i,\mathbf j
 
 ![[amc_rotating_unit_vectors.png|820]]
 
-Adding the two small changes and dividing by $\delta t$ (slide 10):
+Adding the two small changes and dividing by $\delta t$:
 
 $$
 \frac{d\mathbf i}{dt}=r\,\mathbf j-q\,\mathbf k
@@ -218,7 +218,7 @@ $$
 
 Each of these is $\boldsymbol\omega\times(\text{unit vector})$ with $\boldsymbol\omega=p\mathbf i+q\mathbf j+r\mathbf k$. For example $\boldsymbol\omega\times\mathbf i=(p,q,r)\times(1,0,0)=(0,\ r,\ -q)$.
 
-Now differentiate $\mathbf v=U\mathbf i+V\mathbf j+W\mathbf k$ with the product rule (slide 11):
+Now differentiate $\mathbf v=U\mathbf i+V\mathbf j+W\mathbf k$ with the product rule:
 
 $$
 \frac{d\mathbf v}{dt}=\dot U\mathbf i+\dot V\mathbf j+\dot W\mathbf k+U\frac{d\mathbf i}{dt}+V\frac{d\mathbf j}{dt}+W\frac{d\mathbf k}{dt}
@@ -258,7 +258,7 @@ $$
 
 The moment equation follows from the same argument applied to $\mathbf h$ instead of $\mathbf v$. Both hold about the cg; the moment equation needs the cg as origin (or an inertially fixed point).
 
-## 3. Inertia tensor and full equations (L1.03)
+## 3. Inertia tensor and full equations
 
 $$
 \mathbf h = \int\mathbf r\times(\boldsymbol\omega\times\mathbf r)\,dm = \mathbf I\boldsymbol\omega,\qquad \mathbf I = \begin{pmatrix}I_{xx}&-I_{xy}&-I_{xz}\\-I_{xy}&I_{yy}&-I_{yz}\\-I_{xz}&-I_{yz}&I_{zz}\end{pmatrix}
@@ -302,7 +302,7 @@ $$
 
 These three lines are the rows of $\mathbf I\boldsymbol\omega$, with the matrix above. It is symmetric because $I_{xy}$ appears in both the $h_x$ and $h_y$ rows.
 
-The inertia matrix can be written in any frame, but in Earth axes its components change every time the aircraft changes attitude. In body axes the mass distribution doesn't move relative to the axes, so the components stay constant (L1.03, ll. 152–160). That is the second reason for writing the equations in body axes, after the first, that sensors and pilots measure in the body frame (L1.02, ll. 579–585).
+The inertia matrix can be written in any frame, but in Earth axes its components change every time the aircraft changes attitude. In body axes the mass distribution doesn't move relative to the axes, so the components stay constant. That is the second reason for writing the equations in body axes, after the first, that sensors and pilots measure in the body frame.
 
 This is DAP1 at work: the aircraft is treated as a rigid body with a fixed CG, which fuel sloshing and pumping violate. Concorde pumped fuel fore and aft to move its CG between subsonic and supersonic flight.
 
@@ -370,14 +370,14 @@ The equations are coupled through the state products ($qW$, $rV$, $pr$, …) and
 
    For example, $X = m(\dot U+qW-rV)$ becomes $\Delta X = m\dot u$.
 
-   $=_1$ means "equal to first order": it is a first-order Taylor expansion about trim. The general route is the Jacobian, $\mathbf A = \partial\mathbf f/\partial\mathbf x$ and $\mathbf B = \partial\mathbf f/\partial\mathbf u$ evaluated at trim; dropping products of perturbations by hand gives the same result (L1.03, ll. 305–318).
-4. Constant mass: true over seconds for an aircraft, but not for a rocket, whose mass falls quickly as it burns propellant (ll. 333–335). A rocket model is time-varying.
+   $=_1$ means "equal to first order": it is a first-order Taylor expansion about trim. The general route is the Jacobian, $\mathbf A = \partial\mathbf f/\partial\mathbf x$ and $\mathbf B = \partial\mathbf f/\partial\mathbf u$ evaluated at trim; dropping products of perturbations by hand gives the same result.
+4. Constant mass: true over seconds for an aircraft, but not for a rocket, whose mass falls quickly as it burns propellant. A rocket model is time-varying.
 
-Stability axes and wind axes share the body axes' origin but differ in what they follow (L1.03, ll. 217–239). Stability axes are fixed at trim, with $x$ along the trim flight direction, so $V$ and $W$ are zero at trim. Wind axes follow the instantaneous relative wind, which is why a sideslip angle is needed to describe them in yawed flight; aerodynamic forces are defined in wind axes.
+Stability axes and wind axes share the body axes' origin but differ in what they follow. Stability axes are fixed at trim, with $x$ along the trim flight direction, so $V$ and $W$ are zero at trim. Wind axes follow the instantaneous relative wind, which is why a sideslip angle is needed to describe them in yawed flight; aerodynamic forces are defined in wind axes.
 
-Only two products of inertia vanish because an aircraft has one plane of symmetry, the $xz$-plane (L1.03, ll. 240–260). It isn't symmetric top to bottom, so $I_{xz}\neq0$ in general. A rocket is close to a body of revolution, with more planes of symmetry, and its equations simplify further; the aircraft is the harder case and the one treated here.
+Only two products of inertia vanish because an aircraft has one plane of symmetry, the $xz$-plane. It isn't symmetric top to bottom, so $I_{xz}\neq0$ in general. A rocket is close to a body of revolution, with more planes of symmetry, and its equations simplify further; the aircraft is the harder case and the one treated here.
 
-All six equations linearise the same way: substitute the perturbed velocities, then drop products of perturbations (the linearisation itself was not lectured, L1.03, l. 199).
+All six equations linearise the same way: substitute the perturbed velocities, then drop products of perturbations (the linearisation itself was not lectured).
 
 *Normal force.* Start from the full equation:
 
@@ -458,25 +458,25 @@ $$
 \underbrace{\begin{aligned}\Delta X &= m\dot u\\ \Delta Z &= m(\dot w-qU_\infty)\\ \Delta M &= I_{yy}\dot q\end{aligned}}_{\text{longitudinal: }u,\ w,\ q}\qquad\qquad \underbrace{\begin{aligned}\Delta Y &= m(\dot v+rU_\infty)\\ \Delta L &= I_{xx}\dot p-I_{xz}\dot r\\ \Delta N &= -I_{xz}\dot p+I_{zz}\dot r\end{aligned}}_{\text{lateral: }v,\ p,\ r}
 $$
 
-This is DAP3 in action: two independent three-equation systems. The rest of Part A studies the longitudinal set, and the out-of-balance forces $\Delta X$, $\Delta Z$, $\Delta M$ are modelled in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives]].
+This is DAP3 in action: two independent three-equation systems. The out-of-balance forces and moment $\Delta X$, $\Delta Z$, $\Delta M$ of the longitudinal set are modelled in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives]].
 
 The trim point is an equilibrium, $\dot{\bar{\mathbf x}} = 0 = f(\bar{\mathbf x},\bar{\mathbf u})$, the same trim concept as in [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability]].
 
 ## Exam scope and intuition
 
-- The three DAPs are not examined (L1.01, l. 48). They are a way of working used all module.
-- The body-axis EOM derivation is not examined; it sets the scene (L1.02, ll. 604–605).
-- The full nonlinear moment equations and their linearisation are not examined (L1.03, l. 327).
-- Recommended reading: Cook, *Flight Dynamics Principles*, chapters 2 and 4 (L1.02, ll. 608–609).
+- The three DAPs are not examined. They are a way of working used all module.
+- The body-axis EOM derivation is not examined.
+- The full nonlinear moment equations and their linearisation are not examined.
+- Recommended reading: Cook, *Flight Dynamics Principles*, chapters 2 and 4.
 
 > [!tip] Intuition
-> - Every model is wrong, so note the assumption. The lift curve is linear only while the flow is attached, so a linear lift model is useful but never exact (L1.01, ll. 62–81).
-> - The body axes are always accelerating, so Newton's laws do not hold in them directly (L1.03, ll. 40–46). Newton's laws are applied in the Earth frame, and the $\boldsymbol\omega\times$ terms carry them into the body frame.
-> - The body frame is used because sensors and pilots measure in it, so body-frame quantities are the most direct ones to control. Spacecraft often use Earth axes instead, because they point at targets on Earth (L1.02, ll. 579–589).
-> - Gimbal lock is a property of the maths, not the aircraft. Fighters and spacecraft use quaternions for this reason (L1.02, ll. 526–537).
-> - Rotation matrices preserve length. Each entry is a sine or cosine, so they change only a vector's components, never its magnitude (L1.02, ll. 494–508). A quick check on any matrix you write down: set the angle to zero and you must get $\mathbf I$.
-> - Longitudinal motion is studied first because an airliner spends more than 80 % of its time in longitudinal flight, and its turns are coordinated (L1.03, ll. 340–369).
-> - Coupling needs both motions. The $qW$, $rV$ terms vanish if either the translation or the rotation is zero (L1.03, ll. 182–195).
+> - Every model is wrong, so note the assumption. The lift curve is linear only while the flow is attached, so a linear lift model is useful but never exact.
+> - The body axes are always accelerating, so Newton's laws do not hold in them directly. Newton's laws are applied in the Earth frame, and the $\boldsymbol\omega\times$ terms carry them into the body frame.
+> - The body frame is used because sensors and pilots measure in it, so body-frame quantities are the most direct ones to control. Spacecraft often use Earth axes instead, because they point at targets on Earth.
+> - Gimbal lock is a property of the maths, not the aircraft. Fighters and spacecraft use quaternions for this reason.
+> - Rotation matrices preserve length. Each entry is a sine or cosine, so they change only a vector's components, never its magnitude. A quick check on any matrix you write down: set the angle to zero and you must get $\mathbf I$.
+> - An airliner spends more than 80 % of its time in longitudinal flight and its turns are coordinated, so the longitudinal equations cover most of its motion.
+> - Coupling needs both motions. The $qW$, $rV$ terms vanish if either the translation or the rotation is zero.
 
 ## Terminology and alternative names
 
@@ -486,7 +486,7 @@ The trim point is an equilibrium, $\dot{\bar{\mathbf x}} = 0 = f(\bar{\mathbf x}
 | Earth reference frame (E) | inertial frame, NED (North-East-Down) axes, Earth axes | L1.02 slides 5, 8 | flat Earth, so treated as inertial |
 | Tait–Bryan angles: yaw $\psi$, pitch $\theta$, roll $\phi$ | Euler angles, 3-2-1 (z-y-x) sequence, heading/elevation/bank | L1.02 slides 8–9 | strictly, "Euler angles" repeat an axis (z-x-z); aerospace uses the name loosely |
 | rotation matrix $\mathbf R_{BE}$ | direction cosine matrix (DCM), $\mathbf C_{b/n}$, transformation matrix | L1.02 slide 8 | SESA3047 writes the DCM with frame subscripts ([[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles]]) |
-| $(U,V,W)$, $(p,q,r)$ | axial/lateral/normal velocity; roll/pitch/yaw rate | L1.02 slide 6 table | Cook's notation. Here $q$ is pitch rate, not dynamic pressure (L1.02, ll. 310–313) |
+| $(U,V,W)$, $(p,q,r)$ | axial/lateral/normal velocity; roll/pitch/yaw rate | L1.02 slide 6 table | Cook's notation. Here $q$ is pitch rate, not dynamic pressure |
 | $(X,Y,Z)$, $(L,M,N)$ | axial/side/normal force; rolling/pitching/yawing moment | L1.02 slide 6 table | $L$ here is rolling moment, not lift |
 | inertia matrix (tensor) $\mathbf I$ | inertia tensor, moment-of-inertia matrix | L1.03 slides 6–7 | |
 | products of inertia $I_{xy}$, $I_{xz}$, $I_{yz}$ | cross products of inertia | L1.03 slide 6 | the matrix carries minus signs on them with this definition |
@@ -526,7 +526,7 @@ No tasks were set in L1.01–L1.03. Derivation notes were promised for intereste
 ### Further practice
 
 - [ ] Derive $d\mathbf j/dt$ and $d\mathbf k/dt$ by the geometric argument, then confirm $d\mathbf v/dt=\dot{\mathbf v}+\boldsymbol\omega\times\mathbf v$. → [[#Rates of change in a rotating frame]]
-- [ ] Derive $h_y$, $h_z$ and the full $M$ and $N$ equations. → [[#3. Inertia tensor and full equations (L1.03)]]
+- [ ] Derive $h_y$, $h_z$ and the full $M$ and $N$ equations. → [[#3. Inertia tensor and full equations]]
 - [ ] Redo the A380 reality check for a 60 s interval. Which assumption fails first? → [[#Worked example: when do the assumptions start to bite?]]
 
 ## Transcript and slide slips
@@ -560,13 +560,13 @@ No tasks were set in L1.01–L1.03. Derivation notes were promised for intereste
 > | L1.03, l. 372 | "Math 2048" | MATH2048 |
 
 > [!warning] Transcript slip: the Earth-curvature number (L1.02, ll. 128–161)
-> Where: [[#2. Setting up the 6-DoF model (L1.02)]].
+> Where: [[#2. Setting up the 6-DoF model]].
 >
-> The drop was first given as "315 meters", "12.6 percent" of the distance in 10 s (ll. 128–131), then corrected (ll. 135–161): $12.6\ \text{cm/km}\times2.5\ \text{km}$ is only about 0.3 m. The filed slide 3 already shows the corrected values, which this table uses: $\Delta y\approx0.315$ m and $\Delta y/d\approx0.0126\%$.
+> The drop was first given as "315 meters", "12.6 percent" of the distance in 10 s (ll. 128–131), then corrected (ll. 135–161): $12.6\ \text{cm/km}\times2.5\ \text{km}$ is only about 0.3 m. The filed slide 3 already shows the corrected values, $\Delta y\approx0.315$ m and $\Delta y/d\approx0.0126\%$. The table in §2 uses the geometric drop instead, 0.50 m and $0.020\%$ (see the slide slip below).
 
 ### Slide slips
 
 > [!warning] Slide 3: the A380 reality-check numbers
-> Where: [[#2. Setting up the 6-DoF model (L1.02)]].
+> Where: [[#2. Setting up the 6-DoF model]].
 >
 > The slide prints a fuel flow of "~3.2 L/s", a mass flow of 2.5 kg/s and 25 kg burnt in 10 s (0.004 % of MTOW); from 13 000 L/h the values are 3.61 L/s, 2.89 kg/s and 28.9 kg (0.005 %). It also treats the curvature drop as a fixed 12.6 cm per km, which gives 0.315 m in 10 s; the drop grows with the square of the distance and is 0.50 m over 2.53 km. The conclusions do not change.

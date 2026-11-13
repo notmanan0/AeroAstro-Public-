@@ -40,7 +40,7 @@ The binomial and normal distributions are particular probability functions and d
 
 ---
 
-## 1. Sample spaces, events and set operations (James §13.3.2)
+## 1. Sample spaces, events and set operations
 
 An **experiment** is any process whose result depends on chance, such as throwing a die or drawing 10 fuses at random from a box of 100. One performance gives one **outcome**. The **sample space** $S$ is the set of all possible outcomes, and an **event** is any subset of $S$. An event occurs if the actual outcome lies in it.
 
@@ -85,7 +85,7 @@ A\cap B\cap\bar C&=\{\text{train}\}\cap\bar C=\{\text{train}\},\\
 \end{aligned}
 $$
 
-## 2. The axioms and the rules derived from them (James §13.3.3)
+## 2. The axioms and the rules derived from them
 
 The probability of an outcome is the proportion of times it is expected to occur in a long run of repetitions, the **frequency interpretation**. If the experiment is repeated $N$ times under the same conditions and outcome $e_1$ occurs $n_1$ times, $n_1/N$ is its relative frequency, and
 
@@ -185,7 +185,7 @@ $$
 > [!check] Exercise 11: a claim that breaks the addition rule
 > Of 400 employees, 312 are said to have had a pay rise ($R$), 248 increased pension benefits ($B$), 173 both and 43 neither. By the addition rule $|R\cup B|=312+248-173=387$, so the claim accounts for $387+43=430$ people out of 400. Equivalently $P(R\cup B)=0.9675$ forces $P(\text{neither})=0.0325$, which is 13 people, not 43. The figures are inconsistent.
 
-## 3. Conditional probability (James §13.3.4)
+## 3. Conditional probability
 
 Information often arrives in stages. Once event $A$ is known to have occurred, $A$ becomes the new sample space, and the chance of $B$ is the share of $A$ that also lies in $B$. In frequency terms, out of $N$ repetitions let $A$ occur $n_A$ times and $A\cap B$ occur $n_{AB}$ times. The proportion of the $A$-trials in which $B$ also occurs is
 
@@ -267,7 +267,7 @@ $$
 
 The second line is the multiplication rule with every probability conditioned on Thursday being rainy; the "previous day only" assumption lets $P(\text{Sat S}\mid\text{Fri S and Thu R})$ be written as $P(S\mid S)$. This splitting over the possible states of Friday is the law of total probability of Section 5.
 
-## 4. Independence (James §13.3.5)
+## 4. Independence
 
 Knowing that $A$ has occurred can raise the probability of $B$, lower it or leave it unchanged. If $B_1\subseteq A$ then $P(B_1\mid A)=P(B_1)/P(A)>P(B_1)$ whenever $P(A)<1$; if $B_2$ and $A$ are exclusive then $P(B_2\mid A)=0<P(B_2)$. The case where it is unchanged is the important one. Events $A$ and $B$ are **independent** when
 
@@ -467,7 +467,7 @@ $$
 > [!check] The valves drawn one at a time
 > The multiplication rule gives the same answers without counting. Both faulty: $\frac4{12}\cdot\frac3{11}=\frac1{11}$. Neither faulty: $\frac8{12}\cdot\frac7{11}=\frac{14}{33}$, so at least one faulty is $1-\frac{14}{33}=\frac{19}{33}$.
 
-## 7. Discrete random variables (James §13.4.1–13.4.2)
+## 7. Discrete random variables
 
 A **random variable** is a sample space of numerical values together with a probability over those values. It is written with a capital letter, $X$, and an observed value with the lower-case letter, $x$. A **discrete** random variable takes a list of values $v_1,v_2,\dots$ (finite or not), and is described by its **probability function**
 
@@ -505,7 +505,7 @@ James Exercise 33 gives the daily number of malfunctions of a computer; the same
 | $p_X(x)$ | 0.17 | 0.29 | 0.27 | 0.16 | 0.07 | 0.03 | 0.01 |
 | $F_X(x)$ | 0.17 | 0.46 | 0.73 | 0.89 | 0.96 | 0.99 | 1.00 |
 
-## 8. Continuous random variables (James §13.4.3–13.4.4)
+## 8. Continuous random variables
 
 A **continuous** random variable can take any value in an interval; outside that interval its probability is defined to be zero, so it lives on the whole real line. Its distribution function has the same definition, $F_X(x)=P(X\le x)$, but now there are no steps, $F_X$ is continuous, and where it is differentiable its derivative is the **probability density function**:
 
@@ -585,7 +585,7 @@ $$
 P(X>1)=1-F_X(1)=1-\tfrac12=\tfrac12 .
 $$
 
-## 9. Mean, median and mode (James §13.4.6)
+## 9. Mean, median and mode
 
 A distribution is often summarised by a measure of location (a typical value) and a measure of dispersion (the spread about it).
 
@@ -669,7 +669,7 @@ $$
 
 and $F_X(1)=0.46<0.5\le F_X(2)=0.73$, so the median is 2.
 
-## 10. Variance, standard deviation and quartiles (James §13.4.6–13.4.7)
+## 10. Variance, standard deviation and quartiles
 
 The **variance** is the probability-weighted mean of the squared distance from the mean,
 
@@ -879,7 +879,7 @@ The Module 24 work scheme sets James Exercises 7, 8 and 11 (p. 1020), 18, 19 and
 
 ### Core
 
-- [ ] Exercise 18 (Module 24 work scheme): $P(A\cap B)$, $P(A\cup B)$ and $P(B\mid\bar A)$ from $P(A)=0.3$, $P(B)=0.4$, $P(B\mid A)=0.5$. Answers $0.15$, $0.55$, $\frac5{14}$. → [[#3. Conditional probability (James §13.3.4)]] · [[MATH1054 M24 Solutions - Statistics I#Part B: Assigned exercises|solution (Part B)]]
+- [ ] Exercise 18 (Module 24 work scheme): $P(A\cap B)$, $P(A\cup B)$ and $P(B\mid\bar A)$ from $P(A)=0.3$, $P(B)=0.4$, $P(B\mid A)=0.5$. Answers $0.15$, $0.55$, $\frac5{14}$. → [[#3. Conditional probability]] · [[MATH1054 M24 Solutions - Statistics I#Part B: Assigned exercises|solution (Part B)]]
 - [ ] Exercise 22 (Module 24 work scheme): the probability that a potential customer buys, by total probability. Answer $0.149$. → [[MATH1054 M24 Solutions - Statistics I#Exercise 22: Advertising and purchases]]
 - [ ] Exercise 28 (Module 24 work scheme): $c$, $F_X$ and $P(X>1)$ for $f_X=c/\sqrt x$ on $(0,4)$. Answers $\frac14$, $\frac12\sqrt x$, $\frac12$. → [[#A density that is unbounded (Exercise 28)]] · [[MATH1054 M24 Solutions - Statistics I#Part B: Assigned exercises|solution (Part B)]]
 - [ ] Exercise 33 (Module 24 work scheme): mean, median and standard deviation of the daily malfunctions. Answers $1.80$, $2$, $1.342$. → [[MATH1054 M24 Solutions - Statistics I#Exercise 33: Daily computer malfunctions]]

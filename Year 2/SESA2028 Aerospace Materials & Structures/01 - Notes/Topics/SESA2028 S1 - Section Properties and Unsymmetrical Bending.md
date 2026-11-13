@@ -28,11 +28,11 @@ sources: ["02 - Sources/Structures Lectures/SL2 Bending stress and deflection.pd
 > - **Common mistakes:** checking only the top and bottom fibres; dropping $I_{yz}$ or getting its sign wrong.
 > - **Practise:** [[#Worked example: an angle-section cantilever]] · [[SESA2028 Structures Tutorial 2 - Bending Solutions#Q1.2 - Bending moment, neutral axis and extreme stress|Tutorial 2 Q1.2]]
 
-Wings, stringers and many optimised aircraft members are not symmetric. A wing idealised as a beam with an aerofoil-like section is the kind of model used for preliminary and dynamic analysis, and its section has no axis of symmetry, so the bending theory from Year 1, which assumed one, no longer applies directly.
+Wings, stringers and many optimised aircraft members are not symmetric. A wing idealised as a beam with an aerofoil-like section is the kind of model used for preliminary and dynamic analysis, and its section has no axis of symmetry, so bending theory that assumes a symmetric section no longer applies directly.
 
 A ruler held flat and pressed down at its tip bends straight down. Turned to 45° and pressed down again, it bends down and sideways, because it is far easier to bend about its thin direction, so the tip slides off that way. An unsymmetrical section behaves like the twisted ruler without being twisted. Its easy and hard bending directions, the principal axes, are not aligned with the load, so a vertical load produces a sideways deflection as well. The neutral axis tilts accordingly, and the most highly stressed fibre is the one furthest from that tilted line, not necessarily the top or bottom of the section.
 
-Two simplifications run through the topic. The neutral axis always passes through the centroid, so all section properties are taken about centroidal axes. And for linear elastic, small deformations, bending in two perpendicular planes can be superposed, which is what produces the general stress formula.
+For linear elastic, small deformations, bending in two perpendicular planes can be superposed, which is what produces the general stress formula. The neutral axis always passes through the centroid, so all section properties are taken about centroidal axes.
 
 ## 1. The tilted rectangle
 
@@ -70,13 +70,13 @@ $$
 (\delta_u-A)^2+\delta_v^2=B^2 .
 $$
 
-As the section is rotated, the tip traces a circle of radius $|B|$ centred at $(A,0)$, a Mohr's circle for displacement. The sign of $\delta_v$ depends only on which way $v$ is taken as positive (the slides write $+B\sin2\theta$). The sideways deflection is largest at $\theta=45°$, where $|\delta_v|=|B|$.
+As the section is rotated, the tip traces a circle of radius $|B|$ centred at $(A,0)$, a Mohr's circle for displacement. The sign of $\delta_v$ depends only on which way $v$ is taken as positive (the course convention writes $+B\sin2\theta$). The sideways deflection is largest at $\theta=45°$, where $|\delta_v|=|B|$.
 
-A pure moment on an unsymmetrical section causes no twist. A transverse load causes twist too unless it passes through the shear centre ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]). The structures lab measures exactly these coupled vertical and horizontal deflections on an unsymmetrical section.
+A pure moment on an unsymmetrical section causes no twist. A transverse load causes twist too unless it passes through the shear centre ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]). A vertical tip load on an unsymmetrical cantilever therefore produces a horizontal as well as a vertical tip deflection, and the two are coupled.
 
 ## 2. Sign convention
 
-The axes are $x$ along the beam, $y$ downward and $z$ across, with the origin at the centroid. A positive bending moment produces tensile (positive) stress on the positive side of the axis: positive $M_z$ gives tension at positive $y$, and positive $M_y$ gives tension at positive $z$, so both are positive when the quadrant of positive $y$ and $z$ is in tension. With $y$ downward a sagging moment is positive, and the hogging moment at the root of a downward-loaded cantilever is negative. Double-headed arrows denote moments and single arrows forces (slides).
+The axes are $x$ along the beam, $y$ downward and $z$ across, with the origin at the centroid. A positive bending moment produces tensile (positive) stress on the positive side of the axis: positive $M_z$ gives tension at positive $y$, and positive $M_y$ gives tension at positive $z$, so both are positive when the quadrant of positive $y$ and $z$ is in tension. With $y$ downward a sagging moment is positive, and the hogging moment at the root of a downward-loaded cantilever is negative. Double-headed arrows denote moments and single arrows forces.
 
 ## 3. The neutral axis passes through the centroid
 
@@ -298,7 +298,7 @@ $$
 
 ([[Principal Axes of a Section]]). Loading along a principal axis gives deflection only in the load's direction, with no cross-deflection, and bending about the $I_{max}$ axis gives the smallest deflection. To avoid sideways movement, use a symmetric section or load along a principal axis.
 
-The rotation formulae have the same form as the stress-transformation equations, so the second moments can be plotted on a Mohr's circle of centre $\tfrac12(I_y+I_z)$ and radius $\rho$: the point $(I_z,I_{yz})$ and the point $(I_y,-I_{yz})$ lie at the ends of a diameter, and the circle crosses the axis at $I_{max}$ and $I_{min}$. The worked example below draws it for an angle section.
+The rotation formulae have the same form as the stress-transformation equations, so the second moments can be plotted on a Mohr's circle of centre $\tfrac12(I_y+I_z)$ and radius $\rho$: the point $(I_z,I_{yz})$ and the point $(I_y,-I_{yz})$ lie at the ends of a diameter, and the circle crosses the axis at $I_{max}$ and $I_{min}$.
 
 ## Worked example: an angle-section cantilever
 
@@ -395,7 +395,7 @@ $$
 The vertical load moves the tip further sideways (towards the flange side) than down. For steel ($E=200$ GPa) the values are 0.38 and $-0.42$ mm.
 
 > [!check] Deflection perpendicular to the neutral axis
-> $w_{tip}/v_{tip}=-I_{yz}/I_y=-1.09$, so the tip moves along a line $42.5°$ below the $-z$ direction, while the neutral axis has slope $y/z=+1.09$. The two directions are perpendicular, as [[#6. Deflection]] predicts. A symmetric section of the same $I_z$ would deflect only $wL^4/8EI_z=0.74$ mm (aluminium), straight down.
+> $w_{tip}/v_{tip}=-I_{yz}/I_y=-1.09$, so the tip moves along a line $42.5°$ below the $-z$ direction, while the neutral axis has slope $y/z=+1.09$. The two directions are perpendicular, the general result of [[#6. Deflection]]. A symmetric section of the same $I_z$ would deflect only $wL^4/8EI_z=0.74$ mm (aluminium), straight down.
 
 ### Minimum-deflection orientation
 

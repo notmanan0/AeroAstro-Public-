@@ -41,7 +41,7 @@ For an engineer these are working tools. AC circuit analysis writes voltages and
 
 ---
 
-## 1. Circular and hyperbolic functions of a complex variable (James §3.2.9)
+## 1. Circular and hyperbolic functions of a complex variable
 
 ### Cosine and sine from Euler's formula
 
@@ -268,7 +268,7 @@ $$
 
 This is the cosine answer shifted by $\frac\pi2$, as $\sin z=\cos\big(z-\frac\pi2\big)$ requires. Substituting $z=1.3170\mathrm j$ and $z=\frac\pi2+1.3170\mathrm j$ back into `cmath.cos` and `cmath.sin` returns $2.0000$ to machine precision.
 
-## 2. The logarithm of a complex number (James §3.2.10)
+## 2. The logarithm of a complex number
 
 ### All values of the logarithm
 
@@ -374,7 +374,7 @@ Equivalently $z=\tanh^{-1}2=\frac12\ln\frac{1+2}{1-2}=\frac12\ln(-3)$, the real 
 > [!check] Substituting back
 > $\tanh\big(x+\mathrm j\frac\pi2\big)=\dfrac{\sinh x\cos\frac\pi2+\mathrm j\cosh x\sin\frac\pi2}{\cosh x\cos\frac\pi2+\mathrm j\sinh x\sin\frac\pi2}=\dfrac{\mathrm j\cosh x}{\mathrm j\sinh x}=\coth x$, and $\tanh\big(\frac12\ln3\big)=\frac{3-1}{3+1}=\frac12$, so $\coth\big(\frac12\ln3\big)=2$. `cmath.tanh(0.5493+1.5708j)` returns $2.0000$.
 
-## 3. De Moivre's theorem (James §3.3.1)
+## 3. De Moivre's theorem
 
 ### Proof from the exponential form
 
@@ -418,7 +418,7 @@ $$
 (\cos\theta+\mathrm j\sin\theta)^{-m}=\frac{1}{\cos m\theta+\mathrm j\sin m\theta}=\frac{\cos m\theta-\mathrm j\sin m\theta}{\cos^2m\theta+\sin^2m\theta}=\cos(-m\theta)+\mathrm j\sin(-m\theta).
 $$
 
-For non-integer powers the left-hand side has several values ([[#4. The nth roots of a complex number (James §3.3.1)|section 4]]).
+For non-integer powers the left-hand side has several values ([[#4. The nth roots of a complex number|section 4]]).
 
 ### Powers by De Moivre (Example 3.19)
 
@@ -440,7 +440,7 @@ $$
 
 Repeated squaring gives the same answer without polar form: $(1-\mathrm j)^2=1-2\mathrm j+\mathrm j^2=-2\mathrm j$, so $(1-\mathrm j)^{12}=(-2\mathrm j)^6=(-2)^6(\mathrm j^2)^3=64(-1)^3=-64$.
 
-## 4. The nth roots of a complex number (James §3.3.1)
+## 4. The nth roots of a complex number
 
 ### Deriving the root formula
 
@@ -668,7 +668,7 @@ $$
 
 In exact form, $z=\dfrac{3\pm\sqrt{2+\sqrt5}}2+\mathrm j\,\dfrac{5\mp\sqrt{\sqrt5-2}}2$. The roots sum to $3+5\mathrm j$ and multiply to $-5.00+8.00\mathrm j$, matching the coefficients.
 
-## 6. Powers and multiple angles (James §3.3.2)
+## 6. Powers and multiple angles
 
 Take $z=\cos\theta+\mathrm j\sin\theta$, so $|z|=1$. By De Moivre with $n$ and with $-n$,
 
@@ -704,7 +704,7 @@ $$
 
 using $\sin^2\theta=1-\cos^2\theta$ and $\cos^2\theta=1-\sin^2\theta$.
 
-## 7. Loci in the complex plane (James §3.4.1–3.4.2)
+## 7. Loci in the complex plane
 
 A **locus** is the set of points with a stated property. For a condition on $z$ it is a curve or region in the Argand diagram ([[Argand Diagram]]). The geometric reading comes from one fact: $|z-a|$ is the distance from the point $z$ to the point $a$, and $\arg(z-a)$ is the direction of $z$ seen from $a$.
 
@@ -940,7 +940,7 @@ the horizontal line through $\mathrm j$, with the point $z=\mathrm j$ removed. A
 
 - [ ] Specimen Test 22, Q1–Q5, timed: $\sin(\frac\pi2+\mathrm j)$, $\ln(-3)$, the cube roots of $4\sqrt2(1-\mathrm j)$, $z^n\pm z^{-n}$, and the locus $\left|\frac{z+2\mathrm j}{z-\mathrm j}\right|=2$. → [[MATH1054 M22 Solutions - Complex Numbers II#Part C: Specimen Test 22|solutions]]
 - [ ] Examples 3.17(a),(b),(d), 3.18–3.22 and 3.25–3.28 (Module 22 work scheme), reworked from the question alone. → [[MATH1054 M22 Solutions - Complex Numbers II#Part A: Worked examples|solutions]]
-- [ ] Expand $\cos^3\theta$ in multiple angles and $\cos3\theta$, $\sin3\theta$ as polynomials, using [[#6. Powers and multiple angles (James §3.3.2)|section 6]] (suggested, not set; compare James Exercises 35 and 36).
+- [ ] Expand $\cos^3\theta$ in multiple angles and $\cos3\theta$, $\sin3\theta$ as polynomials, using [[#6. Powers and multiple angles|section 6]] (suggested, not set; compare James Exercises 35 and 36).
 
 ## Transcript and slide slips
 

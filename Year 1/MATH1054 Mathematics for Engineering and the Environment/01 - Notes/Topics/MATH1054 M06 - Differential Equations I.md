@@ -41,7 +41,7 @@ Two exact methods cover the first equations. Separation of variables handles fir
 
 ---
 
-## 1. Variables, ordinary and partial equations, and order (James §10.3.1–10.3.2)
+## 1. Variables, ordinary and partial equations, and order
 
 The variables that are differentiated are the **dependent variables**; the variables they are differentiated with respect to are the **independent variables**. An **ordinary differential equation** (ODE) has a single independent variable, so all its derivatives are ordinary derivatives. A **partial differential equation** (PDE) has two or more independent variables and contains partial derivatives. In
 
@@ -65,7 +65,7 @@ $$
 
 is first order: the highest derivative is $\mathrm dx/\mathrm dt$, even though it is squared. The order matters because it predicts the number of arbitrary constants in the general solution (Section 3) and therefore the number of conditions needed to fix a single solution (Section 4).
 
-## 2. Linear and nonlinear, homogeneous and inhomogeneous (James §10.3.3–10.3.4)
+## 2. Linear and nonlinear, homogeneous and inhomogeneous
 
 ### Linear equations and the linear operator
 
@@ -144,7 +144,7 @@ The set exercises and the specimen test add the following.
 
 Ex 2(f) is the general first-order linear equation, which [[MATH1054 M12 - Differential Equations II|M12]] solves with an [[Integrating Factor Method|integrating factor]].
 
-## 3. Solutions, arbitrary constants and direct integration (James §10.4.1–10.4.2)
+## 3. Solutions, arbitrary constants and direct integration
 
 A **solution** of a differential equation is a function that satisfies it identically on some interval. Some equations can be solved by inspection, by recognising a derivative. For $\dot x=-4x$ (Example 10.6), try $x=e^{-4t}$:
 
@@ -209,7 +209,7 @@ x&=\tfrac16t^3+\tfrac14e^{2t}+At+B .
 \end{aligned}
 $$
 
-## 4. Initial and boundary conditions (James §10.4.3–10.4.4)
+## 4. Initial and boundary conditions
 
 Extra conditions on the solution fix the arbitrary constants. If all the conditions are given at the same value of the independent variable, as with $x(0)$ and $\dot x(0)$, they are **initial conditions** and the problem is an **initial-value problem** (IVP). If they are given at two or more different values, the problem is a **boundary-value problem** (BVP), usually a two-point BVP. In engineering usage "initial conditions" normally means conditions at the start of a process in time, and "boundary conditions" is normally used when the independent variable is a distance; the labels here follow the number of points instead. A first-order equation has one constant and needs one condition, so it can always be treated as an IVP. For higher-order equations the distinction matters, because IVPs are generally easier to solve than BVPs.
 
@@ -300,7 +300,7 @@ The counting rule says how many constants the conditions can remove, not that a 
 
 An **analytical solution** is a formula for the dependent variable in terms of the independent variable; it can be evaluated anywhere, and it shows how the solution depends on parameters such as $\lambda$ and on the arbitrary constants. A **numerical solution** is a table of values at discrete points, computed for one set of parameter values and one set of conditions. Analytical solutions are preferable when they exist, but many equations have none, and then numerical methods (James §10.6) are the only route.
 
-## 5. Direction fields and solution families (James §10.5.1)
+## 5. Direction fields and solution families
 
 Most first-order equations can be written as
 
@@ -320,7 +320,7 @@ The figure shows the field and the family for the separable equation $\dot x=4xt
 
 ![[m1054_m06_separable_family.png|900]]
 
-## 6. Separable first-order equations (James §10.5.3)
+## 6. Separable first-order equations
 
 ### Why separating the variables works
 
@@ -545,7 +545,7 @@ The logarithm needs $1+e^{-a}-e^t>0$, that is $t<t^*=\ln(1+e^{-a})$, and as $t\t
 
 ![[m1054_m06_blowup.png|900]]
 
-## 7. Second-order linear homogeneous equations with constant coefficients (James §10.9.1)
+## 7. Second-order linear homogeneous equations with constant coefficients
 
 The general equation of this type is
 
@@ -944,7 +944,7 @@ Specimen Test Q5, Example 10.36 and Exercise 59(a) give one solution from each r
 - [ ] Examples 10.1–10.5, classification (Module 06 work scheme, items 3–7). → [[MATH1054 M06 Solutions - Differential Equations I#Examples 10.1–10.4: The classification vocabulary]] · [[MATH1054 M06 Solutions - Differential Equations I#Example 10.5: Classify (10.3), (10.6), (10.7), (10.9)]]
 - [ ] Examples 10.6–10.11 and 10.13, general solutions, conditions and separation (Module 06 work scheme, items 9, 10 and 13). → [[MATH1054 M06 Solutions - Differential Equations I#Part A: Worked examples]]
 - [ ] Examples 10.34–10.36, the auxiliary equation (Module 06 work scheme, item 15). → [[MATH1054 M06 Solutions - Differential Equations I#Part A: Worked examples]] · [[#Repeated roots with initial conditions]]
-- [ ] Stroud, Programme 24 frames 1–21 (omitting Example 5 in frame 17) and Programme 25 frames 1–16 (Module 06 work scheme B); the worked answers are in the following frames. → [[#6. Separable first-order equations (James §10.5.3)]] · [[#7. Second-order linear homogeneous equations with constant coefficients (James §10.9.1)]]
+- [ ] Stroud, Programme 24 frames 1–21 (omitting Example 5 in frame 17) and Programme 25 frames 1–16 (Module 06 work scheme B); the worked answers are in the following frames. → [[#6. Separable first-order equations]] · [[#7. Second-order linear homogeneous equations with constant coefficients]]
 
 ## Transcript and slide slips
 

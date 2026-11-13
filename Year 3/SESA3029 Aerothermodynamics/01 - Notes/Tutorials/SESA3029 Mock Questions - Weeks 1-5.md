@@ -14,12 +14,12 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA3029 Formula Sheet.md", "02 - Sou
 # SESA3029 Mock Questions - Weeks 1-5
 
 > [!warning] Self-written mock questions, not lecturer-set
-> Self-written mock questions, not lecturer-set; written from lectured content up to Lecture 3.4 (23 Oct 2026). Nothing here comes from a past paper. The questions were written to practise the calculation types in the topic notes and the [[SESA3029 Aerothermodynamics Hub#Week 1 exam skills|hub's exam-skill lists]], with new numbers, so they do not repeat [[SESA3029 Example Sheet 1 - Solutions|Example Sheet 1]], [[SESA3029 Example Sheet 2 - Solutions|Example Sheet 2]], [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing|Tutorial Lecture 1]] or Tests [[SESA3029 Test 1 - Solutions|1]] and [[SESA3029 Test 2 - Solutions|2]].
+> Self-written mock questions, not lecturer-set; written from lectured content up to Lecture 3.4. Nothing here comes from a past paper. The questions were written to practise the calculation types in the topic notes and the [[SESA3029 Aerothermodynamics Hub#Week 1 exam skills|hub's exam-skill lists]], with new numbers, so they do not repeat [[SESA3029 Example Sheet 1 - Solutions|Example Sheet 1]], [[SESA3029 Example Sheet 2 - Solutions|Example Sheet 2]], [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing|Tutorial Lecture 1]] or Tests [[SESA3029 Test 1 - Solutions|1]] and [[SESA3029 Test 2 - Solutions|2]].
 
 > [!abstract] How to use this set
 > - **Eight questions, 127 marks.** Each shows its marks per part and a target time.
 > - **Timing assumption: 1.8 min per mark.** That is a typical rate for a written engineering paper (for example, 100 marks in 3 hours). The set as a whole is about two papers' worth, so pick three or four questions for a timed sitting.
-> - **Gas and data.** Air, $\gamma=1.4$, $R=287$ J/kg K. The exam provides the formula sheet, the IFT, the NST and the OSC ([[SESA3029 Formula Sheet#What the exam formula sheet gives you|what is and is not given]]). Exam questions name the method: nearest table value, average, linear interpolation or exact equations (L2-2, ll. 74–80). Here the solutions use the **exact relations**, and quote the **table-interpolated** value next to them wherever a table look-up is the normal route.
+> - **Gas and data.** Air, $\gamma=1.4$, $R=287$ J/kg K. The exam provides the formula sheet, the IFT, the NST and the OSC ([[SESA3029 Formula Sheet#What the exam formula sheet gives you|what is and is not given]]). Exam questions name the method: nearest table value, average, linear interpolation or exact equations. Here the solutions use the **exact relations**, and quote the **table-interpolated** value next to them wherever a table look-up is the normal route.
 > - **Verification.** Every number was computed in Python (SciPy root finders for θ–β–M, $\nu^{-1}$ and $A/A^*$ inversions). The key values are in each `[!check]` callout. The table-interpolated values were generated from the exact relations rounded to 4 d.p. at the tables' 0.02 spacing, which reproduces `IFT.pdf` and `NST.pdf`.
 
 | Q | Topic | Marks | Time | Theory |
@@ -470,7 +470,7 @@ $$
 A'=\frac t2\Big[(p_{1u}+p_{1l})-(p_{2u}+p_{2l})\Big]=0.05\big[69.000-36.315\big]=1.634\ \text{kN/m}.
 $$
 
-Rotate into wind axes ([[SESA3029 Formula Sheet#Shock-expansion method (Lecture 2.5)|formula sheet]]), with $\cos3^\circ=0.99863$ and $\sin3^\circ=0.05234$:
+Rotate into wind axes ([[SESA3029 Formula Sheet#Shock-expansion method|formula sheet]]), with $\cos3^\circ=0.99863$ and $\sin3^\circ=0.05234$:
 
 $$
 L'=N'\cos\alpha-A'\sin\alpha=8.712-0.086=\boxed{8.63\ \text{kN/m}}
@@ -523,7 +523,7 @@ A converging–diverging nozzle has throat area $A_t=100$ cm² and exit area $A_
 
 ### Q5 solution
 
-**(a) Design point** ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#2. The area–Mach relation (slide 5; Anderson §10.3)|W04 §2]]). The throat is sonic, so $A_e/A^*=A_e/A_t=3.0$. The supersonic root of the area–Mach relation is
+**(a) Design point** ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#2. The area–Mach relation|W04 §2]]). The throat is sonic, so $A_e/A^*=A_e/A_t=3.0$. The supersonic root of the area–Mach relation is
 
 $$
 \frac{A}{A^*}=\frac1M\left[\frac{2}{\gamma+1}\left(1+\frac{\gamma-1}{2}M^2\right)\right]^{3}=3.0
@@ -621,7 +621,7 @@ $$
 
 That is inside the nozzle ($100<234<300$ cm²) ✓. Behind it $M=0.526$, and the subsonic flow diffuses to $M_e=0.380$ at the exit.
 
-**(e) Sea level.** $p_{b6}=47.3<101.3<p_{b5}=376$ kPa, so the nozzle is **over-expanded**: the exit flow is supersonic and shock-free, but $p_e<p_a$. Oblique **lip shocks** raise the jet pressure to ambient ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (slides 3–4)|W04 §5]]):
+**(e) Sea level.** $p_{b6}=47.3<101.3<p_{b5}=376$ kPa, so the nozzle is **over-expanded**: the exit flow is supersonic and shock-free, but $p_e<p_a$. Oblique **lip shocks** raise the jet pressure to ambient ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds|W04 §5]]):
 
 $$
 \frac{p_a}{p_e}=\frac{101.3}{47.30}=2.1417.
@@ -670,7 +670,7 @@ The $C^+$ characteristic through A and the $C^-$ characteristic through B meet a
 
 ### Q6 solution
 
-**(a) Compatibility conditions** ([[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]]). In the course notation:
+**(a) Compatibility conditions** ([[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants|W05a §7]]). In the course notation:
 
 $$
 R^+=\nu-\theta\ \text{is constant along }C^+\ (\text{slope }\theta+\mu),
@@ -702,7 +702,7 @@ $$
 \theta_P=\tfrac12\left(R^-_B-R^+_A\right).
 $$
 
-**(b) State at P** ([[SESA3029 W05a - Method of Characteristics#10. The unit process (3.2 slides 7–9)|W05a §10]]). From the IFT (exact to 4 d.p. at these rows):
+**(b) State at P** ([[SESA3029 W05a - Method of Characteristics#10. The unit process|W05a §10]]). From the IFT (exact to 4 d.p. at these rows):
 
 $$
 \nu_A=\nu(2.00)=26.3798^\circ,\quad\mu_A=30.0000^\circ;
@@ -768,7 +768,7 @@ $$
 y_P=y_A+(x_P-x_A)\tan\alpha_{AP}=0.30+0.4309\times0.68148=\boxed{0.5936\ \text{m}}
 $$
 
-**(d) Wall point** (prescribed wall, BC 1; [[SESA3029 W05b - Minimum-Length Nozzle Design#BC 1: a prescribed wall reflects (slide 5)|W05b §11]]). The $C^+$ from P carries $R^+_P=R^+_A=23.3798^\circ$ to the wall, and the wall fixes $\theta_W=12^\circ$:
+**(d) Wall point** (prescribed wall, BC 1; [[SESA3029 W05b - Minimum-Length Nozzle Design#BC 1: a prescribed wall reflects|W05b §11]]). The $C^+$ from P carries $R^+_P=R^+_A=23.3798^\circ$ to the wall, and the wall fixes $\theta_W=12^\circ$:
 
 $$
 \nu_W=R^+_P+\theta_W=23.3798+12=35.3798^\circ.
@@ -780,7 +780,7 @@ $$
 M_W=2.34+0.02\times\frac{35.3798-35.2787}{35.7715-35.2787}=\boxed{2.3441}
 $$
 
-The reflected $C^-$ carries $R^+$ plus twice the wall angle (L3-3, ll. 62–63):
+The reflected $C^-$ carries $R^+$ plus twice the wall angle:
 
 $$
 R^-_W=R^+_P+2\theta_W=23.3798+24=\boxed{47.3798^\circ}
@@ -792,7 +792,7 @@ A reflection exists because the arriving flow ($\theta_P=8.68^\circ$) is not par
 > $\nu_A=26.37976^\circ$, $\nu_B=31.73250^\circ$, $\mu_B=27.03565^\circ$. $\nu_P=32.05613^\circ$, $\theta_P=8.67637^\circ$, $M_P=2.21252$, $\mu_P=26.87051^\circ$. $\alpha_{AP}=34.2735^\circ$, $\alpha_{BP}=-18.1149^\circ$, $P=(1.63089,\ 0.59365)$. Using unaveraged end slopes instead moves P to $(1.6460,\ 0.5896)$. Wall: $\nu_W=35.37976^\circ$, $M_W=2.34410$, $R^-_W=47.37976^\circ$.
 
 > [!warning] Two classic slips
-> - Degrees, not radians: $\sin^{-1}(1/2.2125)$ is $26.87^\circ$, not 0.469 (L3-2, ll. 411–421).
+> - Degrees, not radians: $\sin^{-1}(1/2.2125)$ is $26.87^\circ$, not 0.469.
 > - In the $x_P$ formula, A is the point whose $C^+$ reaches P (below) and B the one whose $C^-$ does (above). Swapping them swaps the slopes and gives nonsense.
 
 ---
@@ -803,7 +803,7 @@ A reflection exists because the arriving flow ($\theta_P=8.68^\circ$) is not par
 
 Design the upper half of a planar minimum-length nozzle for $M_e=2.6$, $\gamma=1.4$, by the method of characteristics. The expansion corner 0 at the throat is at $(0,\ 1)$, lengths are scaled by the throat half-width $r_a$, and the centreline is $y=0$. Represent the Prandtl–Meyer expansion fan at 0 by **three** characteristics 0a, 0b and 0c, with $\theta_{0a}=\theta_{max}-20^\circ$, $\theta_{0b}=\theta_{max}-10^\circ$ and $\theta_{0c}=\theta_{max}$.
 
-Number the points as in Lecture 3.3: 0a reaches the centreline at 1, then 2 and 3 are interior points on the $C^+$ from 1, and 4 is the wall point it reaches. Then 5 (centreline), 6 (interior) and 7 (wall); then 8 (centreline) and 9 (wall, the exit).
+Number the points as follows: 0a reaches the centreline at 1, then 2 and 3 are interior points on the $C^+$ from 1, and 4 is the wall point it reaches. Then 5 (centreline), 6 (interior) and 7 (wall); then 8 (centreline) and 9 (wall, the exit).
 
 - **(a)** Show that $\theta_{max}=\nu(M_e)/2$ and evaluate it. **[3]**
 - **(b)** Tabulate $\theta$, $\nu$, $R^-$, $M$ and $\mu$ on the three lines of the expansion fan. **[3]**
@@ -815,7 +815,7 @@ Number the points as in Lecture 3.3: 0a reaches the centreline at 1, then 2 and 
 
 ![[at_mock_mln_net.png|900]]
 
-**(a) Maximum slope** ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle (3.3 slide 10)|W05b §13]]).
+**(a) Maximum slope** ([[SESA3029 W05b - Minimum-Length Nozzle Design#13. The minimum-length nozzle|W05b §13]]).
 
 1. The throat is sonic: $\theta=0$ and $\nu(1)=0$, because $\nu(M)$ is an integral that starts at $M=1$.
 2. The expansion fan at the corner turns the wall flow through $\theta_{max}$. Every $C^+$ crossing the fan comes from the throat, where $R^+=0$, so $\nu=\theta$ in the fan. On the last line of the fan, $\nu_C=\theta_{max}$.
@@ -835,7 +835,7 @@ $$
 \theta_{max}=\boxed{20.707^\circ}
 $$
 
-The lines are therefore at $0.707^\circ$, $10.707^\circ$ and $20.707^\circ$: the "numerical convenience" choice of L3-3, ll. 240–243, with a small first angle that keeps line 0a off $M=1$.
+The lines are therefore at $0.707^\circ$, $10.707^\circ$ and $20.707^\circ$: the usual choice for numerical convenience, with a small first angle that keeps line 0a off $M=1$.
 
 **(b) Lines of the expansion fan.** $\nu=\theta$ and $R^-=2\theta$:
 
@@ -847,7 +847,7 @@ The lines are therefore at $0.707^\circ$, $10.707^\circ$ and $20.707^\circ$: the
 
 All angles are in degrees.
 
-**(c) The invariants, then the states** ([[SESA3029 W05b - Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4 (3.3 slides 11–21)|W05b §14]] procedure).
+**(c) The invariants, then the states** ([[SESA3029 W05b - Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4|W05b §14]] procedure).
 
 - **$R^-$ along each $C^-$:** 1 has 1.4147 (from 0a); 2 and 5 have 21.4147 (from 0b); 3, 6 and 8 have 41.4147 (from 0c).
 - **Centreline points** (BC 3) turn $R^-$ into an equal $R^+$: $R^+=1.4147$ on 1–2–3–4, $21.4147$ on 5–6–7, $41.4147$ on 8–9.
@@ -934,7 +934,7 @@ $$
 \frac{y_e}{r_a}=\frac{A_e}{A^*}(2.6)=2.8960.
 $$
 
-The three-line net gives $2.946$, **1.7 % high**. Three lines with $10^\circ$ steps are a very coarse model of a $20.7^\circ$ fan: each lumped wave carries a large, sudden change of $\theta$, and the straight segments between points miss the curvature of the characteristics. With more lines (first angle $\theta_{max}/n$) the exit converges to the 1D value, $y_e/r_a=2.819$, 2.881 and 2.895 for $n=5$, 20 and 200, while the length settles near $x_e/r_a\approx10.38$. 1D theory fixes the height but gives *"no clue"* about the length (3.3 slide 21). Only MoC does.
+The three-line net gives $2.946$, **1.7 % high**. Three lines with $10^\circ$ steps are a very coarse model of a $20.7^\circ$ fan: each lumped wave carries a large, sudden change of $\theta$, and the straight segments between points miss the curvature of the characteristics. With more lines (first angle $\theta_{max}/n$) the exit converges to the 1D value, $y_e/r_a=2.819$, 2.881 and 2.895 for $n=5$, 20 and 200, while the length settles near $x_e/r_a\approx10.38$. 1D theory fixes the height but gives *"no clue"* about the length. Only MoC does.
 
 > [!check] Python
 > $\nu(2.6)=41.41467^\circ$, $\theta_{max}=20.70734^\circ$. States as tabulated (e.g. $M_2=1.48325$, $M_6=2.18780$). Coordinates: 1 $(0.42270,\ 0)$; 2 $(0.74356,\ 0.52683)$; 3 $(0.93649,\ 0.78118)$; 4 $(1.52137,\ 1.56441)$; 5 $(1.5605,\ 0)$; 6 $(2.1855,\ 0.4413)$; 7 $(4.8349,\ 2.4522)$; 8 $(3.4039,\ 0)$; 9 $(10.4731,\ 2.9455)$. Wall segment slopes $20.354^\circ$, $15.000^\circ$, $5.000^\circ$. $A_e/A^*(2.6)=2.89598$. The figure's script (`generate_aerothermo_mock_figures.py`) uses the W05 unit-process functions and reproduces every value.
@@ -951,7 +951,7 @@ The three-line net gives $2.946$, **1.7 % high**. Three lines with $10^\circ$ st
 - **(a)** Show, with one number, why an "expansion shock" ($M_{n1}<1$) cannot exist. **[2]**
 - **(b)** A supersonic wind tunnel is to run at $M=2.5$. Find the minimum second-throat to first-throat area ratio for starting, and explain why the second throat is made variable. **[3]**
 - **(c)** In an over-expanded jet, the lip shock reaches the jet boundary. What does it reflect as, and why is this different from a shock meeting a solid wall? **[2]**
-- **(d)** In the Lecture 3.4 generic channel (upper wall turned up by $\theta_w$ at the corner, fan represented by two lines a and b), the table gives $\nu_4=\nu_a+2\theta_w$ on the centreline and $\nu_6=\nu_a+3\theta_w$ on the wall. A test measures $M_4=2.0$ and $M_6=2.2$. Find $\theta_w$ and the upstream Mach number $M_0$. **[3]**
+- **(d)** In the generic channel of [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]] (upper wall turned up by $\theta_w$ at the corner, fan represented by two lines a and b), the table gives $\nu_4=\nu_a+2\theta_w$ on the centreline and $\nu_6=\nu_a+3\theta_w$ on the wall. A test measures $M_4=2.0$ and $M_6=2.2$. Find $\theta_w$ and the upstream Mach number $M_0$. **[3]**
 - **(e)** In the same example, why does no characteristic reflect from wall point 3? **[2]**
 
 ### Q8 solution
@@ -980,7 +980,7 @@ $$
 
 An adiabatic process cannot reduce entropy (second law), so $M_{n1}<1$ "shocks", which would be expansion shocks, are impossible. **Shocks only compress**; expansions must happen isentropically through fans.
 
-**(b)** With the starting shock in the test section at $M=2.5$ ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#7. The supersonic wind tunnel (slides 8–11)|W04 §7]]):
+**(b)** With the starting shock in the test section at $M=2.5$ ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#7. The supersonic wind tunnel|W04 §7]]):
 
 $$
 \frac{A_{t2}}{A_{t1}}\ge\frac{p_{01}}{p_{02}}=\frac{1}{0.4990}=\boxed{2.004}
@@ -988,7 +988,7 @@ $$
 
 Equivalently, $A/A^*(2.5)\big/A/A^*(0.5130)=2.6367/1.3158=2.004$. The second throat must pass the same $\dot m$ at the lower $p_0$ behind the starting shock, so it must be larger. It is made **variable** because this size is only needed to swallow the shock. Once the test section is supersonic, closing it towards $A_{t1}$ makes the diffuser shock weaker and recovers more pressure.
 
-**(c)** The jet boundary is a **constant-pressure** [[Slip Line]]; it cannot support a pressure jump. So a shock arriving at it reflects as an **expansion fan**, which brings the pressure back down to ambient. A solid wall instead fixes the flow **direction**, so a shock reflects as a shock (Q3). Then the fans reflect from the boundary as compressions, and the cycle gives the shock diamonds ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds (slides 3–4)|W04 §5]]).
+**(c)** The jet boundary is a **constant-pressure** [[Slip Line]]; it cannot support a pressure jump. So a shock arriving at it reflects as an **expansion fan**, which brings the pressure back down to ambient. A solid wall instead fixes the flow **direction**, so a shock reflects as a shock (Q3). Then the fans reflect from the boundary as compressions, and the cycle gives the shock diamonds ([[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#5. Over-expanded jets: lip shocks and shock diamonds|W04 §5]]).
 
 **(d)** ([[SESA3029 W05b - Minimum-Length Nozzle Design#15. The generic MoC example|W05b §15]], the inverse problem with new numbers.) From the IFT, $\nu_4=\nu(2.0)=26.3798^\circ$ and $\nu_6=\nu(2.2)=31.7325^\circ$. Subtract the two table expressions:
 

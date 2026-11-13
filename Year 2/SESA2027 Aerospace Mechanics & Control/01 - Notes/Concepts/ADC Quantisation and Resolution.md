@@ -16,8 +16,10 @@ sources: ["02 - Sources/Lectures/Lecture 3.07.pdf"]
 An $n$-bit analogue-to-digital converter maps its input window onto $2^n$ integer codes, so it can only resolve the voltage to within one quantisation step $Q$:
 
 $$
-Q = \frac{V_{ADC,max}-V_{ADC,min}}{2^n},\qquad N[k] = \mathrm{round}\!\left(\frac{V_{out}[k]}{Q}\right),\qquad \hat V = NQ,\qquad |e_q|\le\frac Q2 .
+Q = \frac{V_{ADC,max}-V_{ADC,min}}{2^n},\qquad N[k] = \mathrm{round}\!\left(\frac{V_{out}[k]-V_{ADC,min}}{Q}\right),\qquad \hat V = V_{ADC,min}+NQ,\qquad |e_q|\le\frac Q2 ,
 $$
+
+with $N$ limited to $0\le N\le2^n-1$ (an input at the top of the window saturates at the top code). For a window that starts at 0 V this is the familiar $N = \mathrm{round}(V_{out}/Q)$, $\hat V = NQ$.
 
 Resolution in physical units is $Q$ divided by the sensitivity after conditioning. To get the best resolution the sensor voltage is range-mapped before the ADC, $V_{out} = A_vV_{in}+V_{os}$ with
 

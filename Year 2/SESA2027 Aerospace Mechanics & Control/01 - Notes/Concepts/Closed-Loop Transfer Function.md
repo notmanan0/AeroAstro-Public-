@@ -21,7 +21,7 @@ $$
 
 The closed-loop poles are the roots of $1+GCH = 0$, not the plant's own poles, so feedback can add stability or damping. With unity feedback ($H = 1$) and $G = B/A$, a proportional controller gives the closed-loop characteristic equation $A(s)+K_pB(s) = 0$. A double integrator under P control, $K_p/(s^2+K_p)$, is only marginally stable; adding derivative action gives $s^2+K_Ds+K_P$, which is stable ([[SESA2027 B2 - Root Locus Method]]). A second-order closed loop $s^2+bs+c$ is stable if and only if $b>0$ and $c>0$, and uncertainty in the plant's $\zeta$, $\omega_n$ or zero shifts $b$ and $c$, which is why margins are needed.
 
-The output splits into the response to the reference, to a disturbance at the plant input and to sensor noise (L2.07):
+The output splits into the response to the reference, to a disturbance at the plant input and to sensor noise:
 
 $$
 X = \underbrace{\frac{GC}{1+GCH}}_{\text{reference}}R+\underbrace{\frac{G}{1+GCH}}_{\text{disturbance}}U_P-\underbrace{\frac{GCH}{1+GCH}}_{\text{noise}}X_N
@@ -29,7 +29,7 @@ $$
 
 A high loop gain $|GCH|$ gives good tracking and rejects disturbances, but it also pushes the noise transfer function towards 1, so noise passes straight through. The loop gain should therefore be high at low frequency, where the signals are, and low at high frequency, where the noise is. For a step with unity feedback the steady-state error is $e_{ss} = 1/(1+G(0)C(0))$, which goes to zero once $C$ contains an integrator.
 
-If the plant gain is negative, as for $q/\eta$, the controller needs $K_p<0$ to keep the feedback negative. PS2 Q4 works the general case, $\dfrac{K_pK(s+z)}{s^2+(2\zeta\omega_n+K_pK)s+(\omega_n^2+K_pKz)}$ ([[SESA2027 Practice Problems 2 Solutions]]).
+If the plant gain is negative, as for $q/\eta$, the controller needs $K_p<0$ to keep the feedback negative. For a plant $K(s+z)/(s^2+2\zeta\omega_ns+\omega_n^2)$ under proportional control the closed loop is $\dfrac{K_pK(s+z)}{s^2+(2\zeta\omega_n+K_pK)s+(\omega_n^2+K_pKz)}$ (PS2 Q4; [[SESA2027 Practice Problems 2 Solutions]]).
 
 ## Related
 

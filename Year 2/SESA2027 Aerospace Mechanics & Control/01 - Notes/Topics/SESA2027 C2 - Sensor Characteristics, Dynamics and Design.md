@@ -28,7 +28,7 @@ sources: ["02 - Sources/Lectures/Lecture 3.04.pdf", "02 - Sources/Lectures/Lectu
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a question gives a sensor's order and parameters ($K$, $\tau$, or $\omega_n$ and $\zeta$) and asks for its step-response metrics, its reading at a given frequency, the RC cut-off and attenuation in dB, or a choice of sensor/damping; or asks to distinguish accuracy from precision.
-> - **Assumptions:** linear sensor inside its operating range (nonlinear behaviour is not examined, L3.05, l. 229); first-order $K/(\tau s+1)$ or second-order $K\omega_n^2/(s^2+2\zeta\omega_ns+\omega_n^2)$; settling to 1 %.
+> - **Assumptions:** linear sensor inside its operating range (nonlinear behaviour is not examined); first-order $K/(\tau s+1)$ or second-order $K\omega_n^2/(s^2+2\zeta\omega_ns+\omega_n^2)$; settling to 1 %.
 > - **Method:** 1. Classify the order for the frequency of interest. 2. First order: 63.2 % at $\tau$, $t_r=2.2\tau$, $t_s=4.6\tau$, $f_c=1/(2\pi\tau)$. 3. Second order: $t_r\approx1.8/\omega_n$, $t_s\approx4.6/(\zeta\omega_n)$ (underdamped only), $OS=100e^{-\zeta\pi/\sqrt{1-\zeta^2}}$ %. 4. At frequency $\omega$: $\lvert G\rvert/K=1/\sqrt{(1-r^2)^2+(2\zeta r)^2}$ with $r=\omega/\omega_n$. 5. Pick $\omega_n$ well above the signal and $\zeta\approx0.7$.
 > - **Common mistakes:** using $4.6/(\zeta\omega_n)$ for an overdamped sensor (it under-predicts); calling a bias a precision problem (bias is accuracy; noise is precision).
 > - **Practise:** [[#Worked example: choosing an accelerometer]] · [[SESA2027 Mock Questions#Q11. Second-order sensor design|Mock Q11]] · [[SESA2027 Part C Problem Sheet Solutions]] (Q4–Q6)
@@ -39,7 +39,7 @@ A sensor's behaviour depends on its speed relative to the signal. Well below its
 
 ---
 
-## 1. Universal limitations (L3.04)
+## 1. Universal limitations
 Every sensor has three limitations. It is bounded, measuring only within physical limits. It corrupts the signal with noise, offsets and environmental sensitivity. And it is not instantaneous: physics takes time, so the signal is always delayed.
 
 Two of these are the hardest. At design time it is the range: what the system will do must be known in advance, and the real operating range will not respect the design, so out-of-range events will happen and the task is to decide which are tolerable and guard against the catastrophic ones. In operation it is the time lag, which can move the closed-loop poles and destabilise the whole system. A loop that is stable with a perfect sensor can go unstable because the correction arrives late and feeds the oscillation instead of damping it.
@@ -53,19 +53,19 @@ See [[Accuracy and Precision]].
 | Lost through | Systematic error (bias/offset) | Random error (noise) |
 | Aircraft example | IMU reads +2° pitch when level | GPS jumps within 5 m when stationary |
 | Control impact | Steady-state deviation: the autopilot "levels" to the wrong attitude, causing altitude drift or a skewed approach | Actuation jitter: the controller chases noise, causing servo wear, extra energy use and excited structural modes |
-| Fix (L3.04, ll. 161–214) | Offset / recalibration: shift the cloud of readings back. Drifting sensors (gyros) need frequent recalibration, which in an IMU is done by another sensor | Filtering; even averaging is a type of filtering |
+| Fix | Offset / recalibration: shift the cloud of readings back. Drifting sensors (gyros) need frequent recalibration, which in an IMU is done by another sensor | Filtering; even averaging is a type of filtering |
 
-The two errors have different consequences in flight (L3.04, ll. 187–207). An IMU with a constant 2° pitch bias on landing makes the control system assume the wrong drag and braking capability, so the aircraft may need much more runway than predicted. A GPS altitude that jitters within a 5 m radius makes the controller chase altitude changes that never happened: a rough ride, overworked actuators and wasted fuel.
+The two errors have different consequences in flight. An IMU with a constant 2° pitch bias on landing makes the control system assume the wrong drag and braking capability, so the aircraft may need much more runway than predicted. A GPS altitude that jitters within a 5 m radius makes the controller chase altitude changes that never happened: a rough ride, overworked actuators and wasted fuel.
 
 ### Range, sensitivity and saturation
-The **span** is the upper limit minus the lower limit; a 5–100 PSI sensor has a 95 PSI span. The **operating range** is the part of the span where the output is linear, and the **sensitivity** is the slope there, $S = \Delta V/\Delta P$. Beyond the limits the output stops being proportional, and at **saturation** $S = 0$: the sensor is blind. Saturation has two origins. A physical limit is reached when the diaphragm or spring reaches maximum displacement. An electrical limit is reached when the amplifier hits its voltage rails, and this is usually in the conditioning, not the sensor; typical conditioning rails are ±5 V or ±10 V (ll. 263–268). **Clipping** loses the peak information, and it is often designed in deliberately, before the sensor itself saturates.
+The **span** is the upper limit minus the lower limit; a 5–100 PSI sensor has a 95 PSI span. The **operating range** is the part of the span where the output is linear, and the **sensitivity** is the slope there, $S = \Delta V/\Delta P$. Beyond the limits the output stops being proportional, and at **saturation** $S = 0$: the sensor is blind. Saturation has two origins. A physical limit is reached when the diaphragm or spring reaches maximum displacement. An electrical limit is reached when the amplifier hits its voltage rails, and this is usually in the conditioning, not the sensor; typical conditioning rails are ±5 V or ±10 V. **Clipping** loses the peak information, and it is often designed in deliberately, before the sensor itself saturates.
 
-At the low end many sensors have a **dead zone** (L3.04, ll. 230–249), a region of zero slope where they do not respond at all. A small but non-zero slope can be corrected by adjusting the sensitivity; a zero slope cannot.
+At the low end many sensors have a **dead zone**, a region of zero slope where they do not respond at all. A small but non-zero slope can be corrected by adjusting the sensitivity; a zero slope cannot.
 
 ### Noise and SNR
 Noise has three main sources: thermal noise (random electron motion), EMI from motors, radios and power lines, and quantisation noise from the ADC. With ADC bins of 2–2.5 V and 2.5–3 V, for example, a 2.3 V signal is recorded only as somewhere in the 2–2.5 V bin, and the lost detail behaves like noise; it is quantified in [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering|C3]]. The **SNR** is the signal strength relative to the noise, and a signal below the noise floor cannot be distinguished.
 
-To characterise noise, hold the measured quantity constant with a trusted reference, record many readings, then take the mean (bias) and standard deviation (precision) (ll. 399–421). For $N$ readings at constant input the time-domain statistics are
+To characterise noise, hold the measured quantity constant with a trusted reference, record many readings, then take the mean (bias) and standard deviation (precision). For $N$ readings at constant input the time-domain statistics are
 
 $$
 \mu = \frac1N\sum_{i=1}^Nx_i,\qquad \sigma^2 = \frac{1}{N-1}\sum_{i=1}^N(x_i-\mu)^2
@@ -73,17 +73,17 @@ $$
 
 With each $x_i$ taken as the error from the trusted reference, $\mu\neq0$ means bias, an accuracy problem, while $\sigma$ is the spread, a precision problem. For Gaussian noise, 95 % of readings fall within $\pm2\sigma$.
 
-In the frequency domain, take the Fourier transform of the reading of a constant input. White noise has equal power at all frequencies. Real sensors show band-limited white noise, flat up to the sensor bandwidth and then rolling off, often with EMI spikes such as motor harmonics. UK mains is 230–240 V at 50 Hz, and its field is picked up by almost every measurement chain, so a 50 Hz spike is expected in lab accelerometer spectra (ll. 293–318). Wi-Fi at 2.4 GHz is many orders of magnitude above aircraft dynamics (a few Hz or less), so low-pass filtering removes it; only noise inside the band that has to be measured is a real problem (ll. 433–475). As a rule of thumb, the bigger the object, the lower its natural frequencies: a bridge is around 1–5 Hz, aircraft rigid-body modes are a fraction of a hertz, and a MEMS microstructure can be in the MHz range (ll. 451–457).
+In the frequency domain, take the Fourier transform of the reading of a constant input. White noise has equal power at all frequencies. Real sensors show band-limited white noise, flat up to the sensor bandwidth and then rolling off, often with EMI spikes such as motor harmonics. UK mains is 230–240 V at 50 Hz, and its field is picked up by almost every measurement chain, so a 50 Hz spike is expected in lab accelerometer spectra. Wi-Fi at 2.4 GHz is many orders of magnitude above aircraft dynamics (a few Hz or less), so low-pass filtering removes it; only noise inside the band that has to be measured is a real problem. As a rule of thumb, the bigger the object, the lower its natural frequencies: a bridge is around 1–5 Hz, aircraft rigid-body modes are a fraction of a hertz, and a MEMS microstructure can be in the MHz range.
 
 ### Time lag and phase shift
 Lag has three physical causes: thermal inertia (a thermocouple must heat up), mechanical or fluid inertia (air in pitot tubing moving a diaphragm), and signal conditioning (low-pass filters deliberately slow the signal). The **time constant** $\tau$ is the time to reach 63.2 % of the final value after a step; piezo accelerometers have a small $\tau$ and fluid thermometers a large one. Under oscillatory input the lag appears as a phase shift, which grows with frequency.
 
-Lag isn't always unwanted (L3.05–3.06 recording, ll. 26–95). Small thermal sensors respond faster and large ones lag, but that thermal inertia is also natural filtering, and it can protect the sensor from damaging temperature peaks when only the average is wanted. Data acquisition adds delay even before any filter, because one processor scans several input channels in turn and reads each only once per scan. A constant time delay and a frequency-dependent phase shift are different things; the first- and second-order models describe the second.
+Lag isn't always unwanted. Small thermal sensors respond faster and large ones lag, but that thermal inertia is also natural filtering, and it can protect the sensor from damaging temperature peaks when only the average is wanted. Data acquisition adds delay even before any filter, because one processor scans several input channels in turn and reads each only once per scan. A constant time delay and a frequency-dependent phase shift are different things; the first- and second-order models describe the second.
 
 Improving one characteristic usually worsens another, and reducing noise increases delay.
 
-## 2. Sensors as dynamic systems (L3.05)
-A sensor has mass, inertia, friction and electromagnetic dynamics, so its output depends on the current input and its history. Part A neglected sensor dynamics (DAP3); a sensor model puts them back. In state-space form,
+## 2. Sensors as dynamic systems
+A sensor has mass, inertia, friction and electromagnetic dynamics, so its output depends on the current input and its history. The airframe models neglect sensor dynamics (DAP3); a sensor model puts them back. In state-space form,
 
 $$
 \dot{\mathbf x} = \mathbf A\mathbf x+\mathbf Bu,\quad y = \mathbf C\mathbf x+\mathbf Du
@@ -91,11 +91,11 @@ $$
 
 where $u$ is the aircraft state being measured, $\mathbf x$ is the internal sensor state (diaphragm displacement, voltage, ...) and $y$ is the reported signal.
 
-The ideal sensor would have an output that depends only on the input, $y = Ku$, and not on any internal state (L3.05, ll. 145–224). No real sensor achieves this everywhere, but many do within their linear regime; outside it a sensor needs the general form $\dot{\mathbf x} = \mathbf f(\mathbf x, u)$, which can contain terms such as $\sin x$ or $x^2$. Fast signals break the ideal because a fast-changing input means large accelerations of the sensor's own moving parts, and by $F = ma$ the forces needed to follow it become large, so the sensor's inertia shows up as lag: the faster the signal, the harder it is for a sensor to stay transparent. Nonlinear sensors are not examined (L3.05, ll. 226–236). Outside the linear range a sensor can show bifurcations and sensitivity to initial conditions, which is why designs keep it in the linear regime.
+The ideal sensor would have an output that depends only on the input, $y = Ku$, and not on any internal state. No real sensor achieves this everywhere, but many do within their linear regime; outside it a sensor needs the general form $\dot{\mathbf x} = \mathbf f(\mathbf x, u)$, which can contain terms such as $\sin x$ or $x^2$. Fast signals break the ideal because a fast-changing input means large accelerations of the sensor's own moving parts, and by $F = ma$ the forces needed to follow it become large, so the sensor's inertia shows up as lag: the faster the signal, the harder it is for a sensor to stay transparent. Nonlinear sensors are not examined. Outside the linear range a sensor can show bifurcations and sensitivity to initial conditions, which is why designs keep it in the linear regime.
 
 The internal matrices are hard to find. In practice the sensor is treated as a black box, $G(s) = Y(s)/U(s)$, and identified experimentally. Sine sweeps or broadband noise are fed through a spectrum analyser, which gives the Bode magnitude and phase directly. See [[Transfer Function]] and [[Frequency Response Function]].
 
-The choice of identification input matters (L3.05–3.06 recording, ll. 356–412). A sine gives one frequency, so one point of $G(i\omega)$ per test. An impulse or step excites all frequencies but gives only one record, and the step's corner, with its infinite slope, is exactly where a lagging sensor loses the signal (ll. 413–419). White noise has a flat spectrum that excites everything at once and can be averaged over many records, so it is preferred for sensor characterisation; a good spectrum analyser costs around £10 000. Substituting $s = i\omega$ in the Laplace-domain $G(s)$ then gives the frequency response, because on the imaginary axis $s$ is the frequency $i\omega$ (ll. 331–344).
+The choice of identification input matters. A sine gives one frequency, so one point of $G(i\omega)$ per test. An impulse or step excites all frequencies but gives only one record, and the step's corner, with its infinite slope, is exactly where a lagging sensor loses the signal. White noise has a flat spectrum that excites everything at once and can be averaged over many records, so it is preferred for sensor characterisation; a good spectrum analyser costs around £10 000. Substituting $s = i\omega$ in the Laplace-domain $G(s)$ then gives the frequency response, because on the imaginary axis $s$ is the frequency $i\omega$.
 
 ### Three model orders (DAP2, Occam's razor)
 See [[Sensor Dynamic Models]].
@@ -108,9 +108,9 @@ See [[Sensor Dynamic Models]].
 
 ![[amc_sensor_order_step.png|650]]
 
-The model order depends on the signal as well as the sensor (L3.05, ll. 431–464). The same temperature sensor can be zeroth order for a slowly varying temperature and first order for a fast one, so the frequency to be measured decides the model. A strain gauge is zeroth order for a bridge at 1 Hz or a wing at 10 Hz, but not at MHz.
+The model order depends on the signal as well as the sensor. The same temperature sensor can be zeroth order for a slowly varying temperature and first order for a fast one, so the frequency to be measured decides the model. A strain gauge is zeroth order for a bridge at 1 Hz or a wing at 10 Hz, but not at MHz.
 
-The $\omega_n^2$ on the right of the second-order sensor model comes from a base-excited mass–spring–damper (L3.05, ll. 498–514). For an accelerometer, a proof mass $m$ on a spring $k$ and damper $c$ sits inside a case that moves with acceleration $a(t)$, and $z$ is the displacement of the mass relative to the case. Newton's second law for the mass, in the inertial frame:
+The $\omega_n^2$ on the right of the second-order sensor model comes from a base-excited mass–spring–damper. For an accelerometer, a proof mass $m$ on a spring $k$ and damper $c$ sits inside a case that moves with acceleration $a(t)$, and $z$ is the displacement of the mass relative to the case. Newton's second law for the mass, in the inertial frame:
 
 $$
 m(\ddot z+a) = -c\dot z-kz
@@ -170,7 +170,7 @@ At low frequency the sensor is transparent: the output is the input scaled by $K
 
 Frequency-dependent sensor lag is distinct from frequency-independent delays (digitisation, storage, buses; see [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]]).
 
-## 3. Sensor system design (L3.06)
+## 3. Sensor system design
 ### Requirements
 A sensor specification starts with the range, with margin: a maximum pitch rate of ±20 °/s, for example, calls for a gyro range of about ±30 °/s. It also sets the resolution (the smallest detectable change) and the accuracy (static error). The dynamic requirements are a **bandwidth** giving accurate magnitude and phase over the frequencies of interest, and a maximum allowable lag before old data compromises closed-loop stability.
 
@@ -235,10 +235,10 @@ The filter sets up a conflict between noise and lag. A large $\tau$ gives a clea
 
 ## Exam scope
 
-- The transfer function as the output/input ratio in the $s$-domain, and the frequency response obtained from it, are exam-relevant (L3.05, ll. 309–344).
-- Nonlinear sensor behaviour is not examined (L3.05, l. 229).
-- The quantities here are used in the laboratory, where the time-domain metrics are computed with Python scripts (L3.04, ll. 54–56; L3.05, ll. 605–608).
-- Noise filtering is covered separately (L3.04, ll. 212–214): see [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]].
+- The transfer function as the output/input ratio in the $s$-domain, and the frequency response obtained from it, are exam-relevant.
+- Nonlinear sensor behaviour is not examined.
+- The quantities here are used in the laboratory, where the time-domain metrics are computed with Python scripts.
+- Noise filtering is in [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering]].
 
 ## Terminology and alternative names
 
@@ -267,7 +267,7 @@ The filter sets up a conflict between noise and lag. A large $\tau$ gives a clea
 
 ## Year 1 foundation
 - An accelerometer is the SDOF oscillator of [[FEEG1002 D6 - Single Degree of Freedom Vibration]], used below resonance.
-- The static vocabulary (sensitivity, resolution, precision, accuracy) and the RC filter first appear in [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]] and [[FEEG1004 D3 - AC Filters and Bode Plots]].
+- The static vocabulary (sensitivity, resolution, precision, accuracy) and the RC filter are set out in [[FEEG1004 E1 - Measurement Systems and Temperature Sensors]] and [[FEEG1004 D3 - AC Filters and Bode Plots]].
 
 ## Sources
 - Lectures 3.04–3.06 (Prof A. Cammarano): slides `Lecture 3.04.pdf`–`Lecture 3.06.pdf`
@@ -285,7 +285,7 @@ No tasks were set in the L3.04–L3.05 recordings (the Python scripts were for e
 - [ ] Derive $y=K(1-e^{-t/\tau})$ and from it the 63.2 %, $t_r=2.2\tau$ and $t_s=4.6\tau$ results. → [[#Time-domain metrics]]
 - [ ] For a second-order sensor with $\omega_n = 50$ rad/s, compare $t_r$, $t_s$ (1 %) and $OS$ for $\zeta = 0.3$, $0.7$ and $1.2$. → [[#Time-domain metrics]]
 - [ ] Choose $f_n$ and $\zeta$ for an accelerometer that must read a 20 Hz vibration within 2 %. → [[#Worked example: choosing an accelerometer]]
-- [ ] Explain why the step is a poor input for identifying a sensor's transfer function. → [[#2. Sensors as dynamic systems (L3.05)]]
+- [ ] Explain why the step is a poor input for identifying a sensor's transfer function. → [[#2. Sensors as dynamic systems]]
 - [ ] Part C sheet Q4–Q6. → [[SESA2027 Part C Problem Sheet Solutions]]
 - [ ] Mock exam question. → [[SESA2027 Mock Questions#Q11. Second-order sensor design|Mock Q11]]
 

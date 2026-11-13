@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Lecture 3.06.pdf", "02 - Sources/Lectures/Lectu
 
 # Digital Filtering
 
-A digital filter is an algorithm $\hat x[k] = F(y[k],y[k-1],\dots)$ that uses past samples to estimate the true signal from a measurement $y[k] = x[k]+b[k]+n[k]$, which is truth plus bias or drift plus noise. The two basic low-pass filters in the course are the FIR moving average and the first-order IIR filter:
+A digital filter is an algorithm $\hat x[k] = F(y[k],y[k-1],\dots)$ that uses past samples to estimate the true signal from a measurement $y[k] = x[k]+b[k]+n[k]$, which is truth plus bias or drift plus noise. The two basic low-pass filters are the FIR moving average and the first-order IIR filter:
 
 $$
 y_f[k] = \frac1N\sum_{i=0}^{N-1}y[k-i]\quad(\text{delay}\approx\tfrac{N-1}{2}T_s),\qquad y_f[k] = \alpha y[k]+(1-\alpha)y_f[k-1],\quad \alpha\approx\frac{T_s}{\tau+T_s}.
@@ -29,5 +29,5 @@ Some damage can't be undone in software. No filter recovers clipped peaks, undoe
 
 ## Related
 
-- Moving-average delay and the recursive filter from the RC filter: [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering#8. Digital processing after the ADC (L3.08)|C3 §8]]
+- Moving-average delay and the recursive filter from the RC filter: [[SESA2027 C3 - Signal Conditioning, Digitisation and Digital Filtering#8. Digital processing after the ADC|C3 §8]]
 - [[Complementary Filter]] · [[Nyquist Sampling and Aliasing]] · [[PID Controller]] · [[Accuracy and Precision]]

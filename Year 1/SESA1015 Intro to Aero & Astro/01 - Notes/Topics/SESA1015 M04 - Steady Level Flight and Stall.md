@@ -32,7 +32,7 @@ sources: ["02 - Sources/Mechanics of Flight/Mechanics of Flight - Course Notes.p
 > - **Assumptions:** steady, level, unaccelerated flight; thrust along the flight path; all forces through the CG; parabolic polar $C_D=C_{D0}+KC_L^2$; jet thrust independent of speed at a fixed altitude and, if needed, proportional to $\sigma$.
 > - **Method:** 1. Weight in newtons, $\rho=\sigma\rho_0$. 2. $C_L=2W/\rho V^2S$, or $V_S$ with $C_{L\max}$. 3. $A=\tfrac12\rho SC_{D0}$, $B=2KW^2/\rho S$. 4. $V^2=\big(T\pm\sqrt{T^2-4AB}\big)/2A$. 5. Reject a root below $V_S$; for EAS multiply true speeds by $\sqrt\sigma$.
 > - **Common mistakes:** using the mass in kg as $W$; reporting the low-speed root without checking it against the stalling speed.
-> - **Practise:** [[#Minimum and maximum level speeds of a light jet (Slides v2, pp. 90–94)]] · [[SESA1015 T01 - Stall and Level-Flight Solutions#Question 1]]
+> - **Practise:** [[#Minimum and maximum level speeds of a light jet]] · [[SESA1015 T01 - Stall and Level-Flight Solutions#Question 1]]
 
 Steady level flight is the reference condition of aircraft performance: the cruise of almost every flight is close to it, and climb, glide, turns and take-off are all departures from it. The aircraft moves at constant speed and height, so there is no acceleration and the forces balance. Treating the aircraft as a point mass at the CG, four forces act: lift up, weight down, thrust forward and drag back, and for the aircraft not to pitch the moment about the CG must also be zero.
 
@@ -42,7 +42,7 @@ The vertical balance carries most of the content. For a given weight, wing area 
 
 ## 1. Equilibrium of forces and moments
 
-For steady level flight at speed $V$, with thrust aligned with the flight path and all forces acting through the CG (Notes §4.1, p. 19), equilibrium gives
+For steady level flight at speed $V$, with thrust aligned with the flight path and all forces acting through the CG, equilibrium gives
 
 $$
 L=W,\qquad T=D,\qquad M_{CG}=0,
@@ -81,7 +81,7 @@ $$
 
 is the **wing loading** (N/m²; [[Wing Loading]]). Larger $C_L$ means lower speed.
 
-Dividing the thrust balance by the lift balance gives a useful ratio (Slides v2, p. 74):
+Dividing the thrust balance by the lift balance gives a useful ratio:
 
 $$
 \frac TW=\frac DL=\frac{\tfrac12\rho V^2SC_D}{\tfrac12\rho V^2SC_L}=\frac{C_D}{C_L}.
@@ -91,11 +91,11 @@ To stay airborne at a steady speed the thrust-to-weight ratio must equal the dra
 
 ![[mof_m04_cl_required_speed.png|850]]
 
-The figure shows $C_L=2w/\rho V^2$ for $w=5000$ N/m². Each curve falls as $1/V^2$, and at altitude, where $\rho$ is smaller, the same $C_L$ needs a higher true airspeed. The cruise sits at $C_L$ of 0.2 to 0.5; the approach to land sits just below the landing-flap $C_{L\max}$ line. The DC-9-30 data (Notes p. 20) follow the same curves: a landing stall at about 50 m/s at sea level with 50° flap and slats, and a clean stall near 135 m/s at 9000 m.
+The figure shows $C_L=2w/\rho V^2$ for $w=5000$ N/m². Each curve falls as $1/V^2$, and at altitude, where $\rho$ is smaller, the same $C_L$ needs a higher true airspeed. The cruise sits at $C_L$ of 0.2 to 0.5; the approach to land sits just below the landing-flap $C_{L\max}$ line. The DC-9-30 data follow the same curves: a landing stall at about 50 m/s at sea level with 50° flap and slats, and a clean stall near 135 m/s at 9000 m.
 
 ## 2. Stalling speed
 
-The **stalling speed** is the minimum speed at which the aircraft can fly level. It occurs where the lift coefficient needed for $L=W$ reaches its maximum, $C_L=C_{L\max}$ (Notes §4.2, pp. 19–20). Putting $C_L=C_{L\max}$ and $V=V_S$ in the lift balance,
+The **stalling speed** is the minimum speed at which the aircraft can fly level. It occurs where the lift coefficient needed for $L=W$ reaches its maximum, $C_L=C_{L\max}$. Putting $C_L=C_{L\max}$ and $V=V_S$ in the lift balance,
 
 $$
 \begin{aligned}
@@ -109,7 +109,7 @@ This holds for steady level flight only: in a turn or pull-up the wing must carr
 
 ### Aerodynamic stall and flight stall
 
-Aerodynamically, the stall is an angle-of-attack event: past $C_{L\max}$ the flow separates and $C_L$ falls as $\alpha$ rises, and that can happen at any speed if the angle is large enough. In flight terms the aircraft "stalls" when it can no longer produce $L=W$. The stalling speed links the two by assuming the pilot can hold the aircraft at the angle for $C_{L\max}$ (Slides v2, pp. 75–76). Operating there is costly: $C_{L\max}$ comes with high drag, and predicting $C_{L\max}$ reliably is difficult, which is why the measured stalling speed is the figure quoted in a pilot's manual.
+Aerodynamically, the stall is an angle-of-attack event: past $C_{L\max}$ the flow separates and $C_L$ falls as $\alpha$ rises, and that can happen at any speed if the angle is large enough. In flight terms the aircraft "stalls" when it can no longer produce $L=W$. The stalling speed links the two by assuming the pilot can hold the aircraft at the angle for $C_{L\max}$. Operating there is costly: $C_{L\max}$ comes with high drag, and predicting $C_{L\max}$ reliably is difficult, which is why the measured stalling speed is the figure quoted in a pilot's manual.
 
 ### How the stalling speed scales
 
@@ -127,7 +127,7 @@ $$
 \frac{C_{L\max,B}}{C_{L\max,A}}=\frac{w_B}{w_A}.
 $$
 
-Configuration: $V_S\propto1/\sqrt{C_{L\max}}$. In the clean configuration, used in the cruise where low drag matters, $C_{L\max}\approx1.2$. For landing, the lowest possible speed is wanted together with high drag, so all high-lift devices are deployed fully, which can more than double $C_{L\max}$. Take-off uses partial deployment as a compromise between high lift and low drag (Notes §4.2, p. 20). Doubling $C_{L\max}$ cuts the stalling speed by a factor $\sqrt2$, about 29%.
+Configuration: $V_S\propto1/\sqrt{C_{L\max}}$. In the clean configuration, used in the cruise where low drag matters, $C_{L\max}\approx1.2$. For landing, the lowest possible speed is wanted together with high drag, so all high-lift devices are deployed fully, which can more than double $C_{L\max}$. Take-off uses partial deployment as a compromise between high lift and low drag. Doubling $C_{L\max}$ cuts the stalling speed by a factor $\sqrt2$, about 29%.
 
 Altitude: $V_S\propto1/\sqrt\rho$ in true airspeed, so the true stalling speed rises with altitude. In equivalent airspeed it does not change. From [[SESA1015 M01 - Atmosphere, Airspeed and Mach Number|M01]], $\rho V^2=\rho_0V_e^2$ ([[Airspeed Measures]]), so applying this at the stall,
 
@@ -139,7 +139,7 @@ V_{e,S}&=V_S\sqrt{\frac{\rho}{\rho_0}}=\left(\frac{2W}{\rho SC_{L\max}}\cdot\fra
 \end{aligned}
 $$
 
-which contains no altitude-dependent quantity. The airspeed indicator reads close to EAS at low Mach number, so a pilot sees the same stalling speed at every height for a given weight and configuration (Notes §4.2, p. 20; Slides v2, p. 75).
+which contains no altitude-dependent quantity. The airspeed indicator reads close to EAS at low Mach number, so a pilot sees the same stalling speed at every height for a given weight and configuration.
 
 > [!tip] Stalling speed is a dynamic-pressure limit
 > At fixed weight and configuration the stall occurs at a fixed dynamic pressure, $q_S=\tfrac12\rho V_S^2=w/C_{L\max}$. The true stalling speed therefore rises with altitude to keep $q$ fixed, while EAS, which measures $q$ directly, does not move.
@@ -176,17 +176,17 @@ D&=\tfrac12\rho V^2SC_{D0}+\tfrac12\rho V^2S\,K\,\frac{4W^2}{\rho^2V^4S^2}\\
 \end{aligned}
 $$
 
-with constants, for flight at a fixed altitude and weight (Notes §4.3, p. 21),
+with constants, for flight at a fixed altitude and weight,
 
 $$
 A=\tfrac12\rho SC_{D0},\qquad B=\frac{2KW^2}{\rho S}=\frac{2W^2}{\pi eAR\,\rho S}.
 $$
 
-The term $AV^2$ is the profile drag, which rises with $V^2$; $B/V^2$ is the induced drag, which falls as $1/V^2$ because a faster aircraft needs a smaller $C_L$. Their sum, the total drag, is U-shaped with a minimum at the **minimum drag speed** $V_{MD}$ where the two parts are equal (finding $V_{MD}$ and $D_{min}$: [[SESA1015 M05 - Minimum Drag, Power and Performance Curves|M05]]). In steady level flight this drag is also the **thrust required**, since any excess thrust would accelerate the aircraft (Slides v2, p. 88).
+The term $AV^2$ is the profile drag, which rises with $V^2$; $B/V^2$ is the induced drag, which falls as $1/V^2$ because a faster aircraft needs a smaller $C_L$. Their sum, the total drag, is U-shaped with a minimum at the **minimum drag speed** $V_{MD}$ where the two parts are equal (finding $V_{MD}$ and $D_{min}$: [[SESA1015 M05 - Minimum Drag, Power and Performance Curves|M05]]). In steady level flight this drag is also the **thrust required**, since any excess thrust would accelerate the aircraft.
 
 ### Thrust equals drag: a quadratic in the square of the speed
 
-For a jet engine at a fixed altitude and r.p.m. setting the thrust is almost independent of speed (Notes §4.3, p. 21). Setting $T=D$,
+For a jet engine at a fixed altitude and r.p.m. setting the thrust is almost independent of speed. Setting $T=D$,
 
 $$
 T=AV^2+\frac{B}{V^2}.
@@ -207,7 +207,7 @@ $$
 V^2=\frac{T\pm\sqrt{T^2-4AB}}{2A} .
 $$
 
-The two positive roots are the level-flight speeds $V_i$ (minus sign) and $V_{ii}$ (plus sign) for the chosen thrust. Both roots of $x$ are positive when they are real, because their product $B/A$ and their sum $T/A$ are both positive. The higher root $V_{ii}$ is the maximum level speed at that thrust. The lower root $V_i$ is the minimum speed, but it may be less than the stalling speed, in which case it is not attainable and the real minimum is $V_S$ (Notes §4.3, p. 21; Slides v2, p. 91).
+The two positive roots are the level-flight speeds $V_i$ (minus sign) and $V_{ii}$ (plus sign) for the chosen thrust. Both roots of $x$ are positive when they are real, because their product $B/A$ and their sum $T/A$ are both positive. The higher root $V_{ii}$ is the maximum level speed at that thrust. The lower root $V_i$ is the minimum speed, but it may be less than the stalling speed, in which case it is not attainable and the real minimum is $V_S$.
 
 ![[mof_m04_thrust_drag_speeds.png|900]]
 
@@ -253,13 +253,13 @@ $$
 D=\tfrac12\rho_0SC_{D0}V_e^2+\frac{2KW^2}{\rho_0SV_e^2},
 $$
 
-which contains no altitude-dependent quantity. Plotted against EAS, one drag curve serves every altitude (Slides v2, pp. 91–92). The stalling speed in EAS is also fixed, so only the thrust changes with height. The simple model for a jet is that the available thrust falls in proportion to density (Slides v2, p. 91),
+which contains no altitude-dependent quantity. Plotted against EAS, one drag curve serves every altitude. The stalling speed in EAS is also fixed, so only the thrust changes with height. The simple model for a jet is that the available thrust falls in proportion to density,
 
 $$
 T_{alt}=T_{SL}\,\frac{\rho}{\rho_{SL}}=T_{SL}\,\sigma .
 $$
 
-As the aircraft climbs, the thrust line drops down the fixed EAS drag curve: $V_{e,i}$ rises, $V_{e,ii}$ falls, and they meet at $V_{MD}$ when $T_{SL}\sigma=D_{min}$. That height is the **ceiling** for this simple model. Converting the EAS roots back to true airspeed with $V=V_e/\sqrt\sigma$ returns to the aerodynamic and propulsion picture (Slides v2, p. 93).
+As the aircraft climbs, the thrust line drops down the fixed EAS drag curve: $V_{e,i}$ rises, $V_{e,ii}$ falls, and they meet at $V_{MD}$ when $T_{SL}\sigma=D_{min}$. That height is the **ceiling** for this simple model. Converting the EAS roots back to true airspeed with $V=V_e/\sqrt\sigma$ returns to the aerodynamic and propulsion picture.
 
 ![[mof_m04_flight_envelope.png|800]]
 
@@ -285,7 +285,7 @@ $$
 
 The true stalling speed is 16% higher at altitude and the equivalent stalling speed is unchanged. After burning fuel equal to 10% of the weight, $V_S$ at sea level falls by the factor $\sqrt{0.9}=0.9487$ to $28.26$ m/s.
 
-### Minimum and maximum level speeds of a light jet (Slides v2, pp. 90–94)
+### Minimum and maximum level speeds of a light jet
 
 The same aircraft has aspect ratio 7, $e=0.95$ and $C_{D0}=0.028$, and its jet engine gives 2500 N at sea level at all speeds. The maximum and minimum equivalent speeds at sea level and at 3050 m are wanted.
 
@@ -384,7 +384,7 @@ which in the ISA troposphere is at about 8840 m.
 - [ ] Revision Q40: required $C_{L\max}$ ratio for two wing loadings at the same stalling speed. → [[SESA1015 T02 - Take-off and Landing Solutions#Question 40]]
 - [ ] Revision Q30: cruise wing loading from Mach number, density ratio and $C_L$. → [[SESA1015 T01 - Stall and Level-Flight Solutions#Question 30]]
 - [ ] Revision Q42: lift-to-drag ratio from the lift balance. → [[SESA1015 T01 - Stall and Level-Flight Solutions#Question 42]]
-- [ ] Minimum and maximum level speeds at sea level and 3050 m (Slides v2, pp. 90–94), deriving the quadratic first. → [[#Minimum and maximum level speeds of a light jet (Slides v2, pp. 90–94)]]
+- [ ] Minimum and maximum level speeds at sea level and 3050 m (Slides v2, pp. 90–94), deriving the quadratic first. → [[#Minimum and maximum level speeds of a light jet]]
 
 ### Further practice
 
@@ -395,6 +395,6 @@ which in the ISA troposphere is at about 8840 m.
 ## Transcript and slide slips
 
 > [!warning] Slide slip (Slides v2, p. 94)
-> Where: [[#Minimum and maximum level speeds of a light jet (Slides v2, pp. 90–94)]].
+> Where: [[#Minimum and maximum level speeds of a light jet]].
 >
 > With the slide's own inputs ($W=13\,230$ N, $\rho=1.23$ kg/m³, $K=0.048$, $T=2500$ N) the quadratic gives $V_{min}=18.708$ m/s and $V_{max}=92.651$ m/s, against the printed 18.681 and 92.656 m/s; at altitude ($\rho=0.91$, $T=1850$ N) it gives 25.758 and 90.954 m/s against 25.779 and 90.937 m/s. The differences are in the third decimal place, which the question asks for.

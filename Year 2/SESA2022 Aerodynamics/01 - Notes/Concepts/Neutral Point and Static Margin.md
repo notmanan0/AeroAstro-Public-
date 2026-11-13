@@ -29,7 +29,7 @@ $$
 H_{s,fixed} = -Kk\frac{a_2}{a_1}\frac{d\eta}{dC_{L^*}},
 $$
 
-by plotting $d\eta/dC_{L^*}$ against CG position and extrapolating to zero. In SESA2027 the pitch-stiffness derivative $M_w = -H_sC_{L^*_\alpha}$ links the static margin to the short-period frequency ([[Short Period Oscillation]]). Practice: [[SESA2022 Examples Sheet 6 - Static Stability Solutions]] and [[SESA2022 Static Stability Past Paper Questions Solutions]].
+by plotting $d\eta/dC_{L^*}$ against CG position and extrapolating to zero. The pitch-stiffness derivative $M_w = -H_sC_{L^*_\alpha}$ links the static margin to the short-period frequency ([[Short Period Oscillation]], SESA2027). Practice: [[SESA2022 Examples Sheet 6 - Static Stability Solutions]] and [[SESA2022 Static Stability Past Paper Questions Solutions]].
 
 ## Related
 

@@ -14,7 +14,7 @@ $$
 P_E=\frac{\pi^2EI}{(KL)^2}.
 $$
 
-Use the least relevant second moment or solve about the principal axes for an unsymmetrical section. The effective-length factor $K$ represents end restraint, and because it is squared it is often more important than a small change in section area.
+Use the smaller principal second moment, $I_{min}$, which for a section with no symmetry axis means finding the principal axes first; if the end conditions differ about the two axes, check both. The effective-length factor $K$ represents end restraint, and because it is squared it is often more important than a small change in section area.
 
 Euler theory assumes a straight, slender, elastic member; a centric load; ideal end conditions; and negligible shear deformation. Always compare $P_E$ with crushing/yielding and with any prescribed design factor.
 

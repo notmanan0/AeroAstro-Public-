@@ -29,7 +29,7 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 07 - Strengthening Mechanisms
 > - **Common mistakes:** unloading vertically instead of parallel to the elastic line; thinking work hardening changes $E$ (it changes yield and ductility, not stiffness).
 > - **Practise:** [[#Worked example - Hall–Petch from two grain sizes]] · [[FEEG1002 Materials Tutorial 2 - Mechanical Properties and Strengthening Solutions]] Q3, Q5–Q7
 
-A blacksmith hammering a bar finds it gets harder to shape the more it is worked, and has to put it back in the fire to soften it before carrying on (L6, ll. 96–104). The hammering is work hardening and the fire is annealing, and between them they show the two levers a metallurgist pulls: making dislocations harder to move, and letting the crystal rebuild itself by diffusion.
+A blacksmith hammering a bar finds it gets harder to shape the more it is worked, and has to put it back in the fire to soften it before carrying on. The hammering is work hardening and the fire is annealing, and between them they show the two levers a metallurgist pulls: making dislocations harder to move, and letting the crystal rebuild itself by diffusion.
 
 Raising the yield strength means stopping the dislocations moving ([[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation|C4]]). There are four ways to do it, and each uses a different obstacle with a stress field or an interface that a dislocation cannot easily cross: dissolved solute atoms, other dislocations, the boundaries between grains, and particles of a second phase. The engineer chooses among them by what else they do. Grain refinement raises strength without much loss of toughness, but fine grains are a drawback at high temperature, where their boundaries speed up diffusion and creep. Work hardening is free during forming but uses up ductility. Precipitation hardening lets an aluminium alloy be machined soft and hardened afterwards.
 
@@ -39,7 +39,7 @@ Strength is not always what is wanted. A sheet that has been rolled until it is 
 
 ## 1. Why strengthening works
 
-The yield point is where dislocation motion starts, and a dislocation carries a compressive region on one side of its slip plane and a tensile region on the other ([[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#The stress field of an edge dislocation|C4]]). Those regions exist because the atoms around the dislocation are pushed together or pulled apart from the equilibrium spacing $r_0$ at which their net bond force is zero (L6, ll. 72–88). Any feature of the crystal that has its own stress field, or that a dislocation cannot pass through, interacts with these regions: compression against compression, or tension against tension, repels, and more applied stress is needed to push the dislocation on. Each strengthening mechanism is a way of putting such features in the dislocations' path (slide "Increasing the yield strength").
+The yield point is where dislocation motion starts, and a dislocation carries a compressive region on one side of its slip plane and a tensile region on the other ([[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#The stress field of an edge dislocation|C4]]). Those regions exist because the atoms around the dislocation are pushed together or pulled apart from the equilibrium spacing $r_0$ at which their net bond force is zero. Any feature of the crystal that has its own stress field, or that a dislocation cannot pass through, interacts with these regions: compression against compression, or tension against tension, repels, and more applied stress is needed to push the dislocation on. Each strengthening mechanism is a way of putting such features in the dislocations' path.
 
 The first mechanism, solid-solution strengthening by alloying, is in [[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#Solid-solution strengthening|C4]]. The other three are covered in the sections below.
 
@@ -47,27 +47,27 @@ The first mechanism, solid-solution strengthening by alloying, is in [[FEEG1002 
 
 ### Dislocations get in each other's way
 
-Once a metal has yielded, more stress is needed to deform it further, up to the UTS (slide "Work Hardening"; L6, ll. 105–185). In a perfect crystal containing a single dislocation the stress–strain curve after yield would be flat: the dislocation would glide on at constant stress, a **perfectly plastic** response. Real metals give a rising curve. Plastic deformation does not just move the existing dislocations; it generates many new ones, so the **dislocation density** (the total length of dislocation line per unit volume) climbs steeply. Dislocations on the same slip system repel one another, compression against compression, and dislocations on intersecting systems cut across and tangle with each other. Some meet opposite partners and annihilate, but most stay, and the tangle makes every further dislocation movement harder. This rise in resistance to plastic deformation is **work hardening**, also called strain hardening or cold working. A heavily worked metal, polished and etched, shows intense slip lines crossing its grains.
+Once a metal has yielded, more stress is needed to deform it further, up to the UTS. In a perfect crystal containing a single dislocation the stress–strain curve after yield would be flat: the dislocation would glide on at constant stress, a **perfectly plastic** response. Real metals give a rising curve. Plastic deformation does not just move the existing dislocations; it generates many new ones, so the **dislocation density** (the total length of dislocation line per unit volume) climbs steeply. Dislocations on the same slip system repel one another, compression against compression, and dislocations on intersecting systems cut across and tangle with each other. Some meet opposite partners and annihilate, but most stay, and the tangle makes every further dislocation movement harder. This rise in resistance to plastic deformation is **work hardening**, also called strain hardening or cold working. A heavily worked metal, polished and etched, shows intense slip lines crossing its grains.
 
-Cold work also changes the grain shape. The grains are stretched in the direction of working into elongated, deformed grains with a high dislocation density, so the properties are no longer the same in every direction: the worked metal is **anisotropic** (L6, ll. 226–231).
+Cold work also changes the grain shape. The grains are stretched in the direction of working into elongated, deformed grains with a high dislocation density, so the properties are no longer the same in every direction: the worked metal is **anisotropic**.
 
 ### Unloading and reloading
 
-Load a metal past yield, work-harden it, and unload before it breaks. The elastic part of the strain is still stored in the stretched bonds and is recovered on unloading. Young's modulus is set by the bonding ([[FEEG1002 C1 - Atoms and Bonding#Why the curve sets melting point and stiffness|C1]]), not by the dislocations, so work hardening leaves it unchanged, and the unloading line is straight with exactly the same slope $E$ as the original loading line (L6, ll. 186–225). If the bar is unloaded from stress $\sigma_1$ at total strain $\varepsilon_1$, the elastic strain recovered is $\sigma_1/E$ and the permanent strain left is
+Load a metal past yield, work-harden it, and unload before it breaks. The elastic part of the strain is still stored in the stretched bonds and is recovered on unloading. Young's modulus is set by the bonding ([[FEEG1002 C1 - Atoms and Bonding#Why the curve sets melting point and stiffness|C1]]), not by the dislocations, so work hardening leaves it unchanged, and the unloading line is straight with exactly the same slope $E$ as the original loading line. If the bar is unloaded from stress $\sigma_1$ at total strain $\varepsilon_1$, the elastic strain recovered is $\sigma_1/E$ and the permanent strain left is
 
 $$
 \varepsilon_p=\varepsilon_1-\frac{\sigma_1}{E}
 $$
 
-Reload it and it climbs back up the same line, elastically, until it reaches $\sigma_1$: the work-hardened bar has a new, higher yield strength. Nanoindentation uses the same fact to measure the modulus from the unloading curve of an indent. Unloading must follow the elastic slope, not drop vertically; questions on work hardening test exactly this, and a vertical line gives the wrong strain (L6, ll. 232–242).
+Reload it and it climbs back up the same line, elastically, until it reaches $\sigma_1$: the work-hardened bar has a new, higher yield strength. Nanoindentation uses the same fact to measure the modulus from the unloading curve of an indent. Unloading must follow the elastic slope, not drop vertically; questions on work hardening test exactly this, and a vertical line gives the wrong strain.
 
 ![[m5_work_hardening_unloading.png|900]]
 
 ### What it costs in ductility
 
-The total strain a metal can take before it fails does not change when it is worked, so every bit of plastic strain spent in work hardening is strain no longer available afterwards (L6, ll. 319–348). Cold work raises the yield strength and the tensile strength but reduces the remaining ductility (%EL), and enough of it makes a metal brittle. A paper clip bent back and forth snaps.
+The total strain a metal can take before it fails does not change when it is worked, so every bit of plastic strain spent in work hardening is strain no longer available afterwards. Cold work raises the yield strength and the tensile strength but reduces the remaining ductility (%EL), and enough of it makes a metal brittle. A paper clip bent back and forth snaps.
 
-A copper rod shows the effect clearly (L6, ll. 243–299). Bending it once work-hardens the bend. Trying to straighten it does not remove the original bend; instead the rod bends either side of it, because the hardened region now has a higher yield strength than the copper next to it, which has only ever been loaded elastically and yields first.
+A copper rod shows the effect clearly. Bending it once work-hardens the bend. Trying to straighten it does not remove the original bend; instead the rod bends either side of it, because the hardened region now has a higher yield strength than the copper next to it, which has only ever been loaded elastically and yields first.
 
 The amount of cold work is usually given as the **percentage cold work**, the reduction in cross-sectional area from $A_0$ to $A_d$:
 
@@ -81,13 +81,13 @@ The brass in the annealing example below is 33 % cold worked.
 
 ### Pile-ups at grain boundaries
 
-A metal is polycrystalline, and each grain is the same crystal structure rotated to a different orientation (L6, ll. 349–420). A grain boundary is the edge of a crystal. A dislocation gliding on a slip plane reaches the boundary and cannot carry straight on, because in the next grain the slip planes point in a different direction. It stops, and the dislocations following it on the same slip system pile up behind it, each pushing on the one in front. The **pile-up** concentrates stress at the boundary. When that stress is large enough it starts slip on a suitably oriented plane in the neighbouring grain, and the deformation spreads (slide "Grain Boundary Strengthening").
+A metal is polycrystalline, and each grain is the same crystal structure rotated to a different orientation. A grain boundary is the edge of a crystal. A dislocation gliding on a slip plane reaches the boundary and cannot carry straight on, because in the next grain the slip planes point in a different direction. It stops, and the dislocations following it on the same slip system pile up behind it, each pushing on the one in front. The **pile-up** concentrates stress at the boundary. When that stress is large enough it starts slip on a suitably oriented plane in the neighbouring grain, and the deformation spreads.
 
 The size of the grain decides how easy this is. In a large grain a long pile-up builds up, giving a large stress concentration at its head, and slip starts in the next grain at a low applied stress. In a small grain only a few dislocations fit in the pile-up, so the applied stress must be higher before slip can cross into the next grain. Finer grains therefore give a higher yield strength. Grain refinement is unusual among strengthening mechanisms because it raises toughness as well as strength.
 
 ### The Hall–Petch relation
 
-The dependence of yield strength on the average grain diameter $d$ is the **Hall–Petch relation** (slide "Hall-Petch Equation"; L6, ll. 452–474):
+The dependence of yield strength on the average grain diameter $d$ is the **Hall–Petch relation**:
 
 $$
 \boxed{\sigma_y=\sigma_0+k_yd^{-1/2}}
@@ -97,19 +97,19 @@ $k_y$ is a material-specific constant, and $\sigma_0$ is a material-specific con
 
 ![[m5_hall_petch.png|900]]
 
-The relation fails at both extremes. At very fine, nanometre grain sizes the grains are too small to hold dislocations at all; deformation switches to grain-boundary sliding and grain rotation, and the metal softens as the grains get smaller still, the **inverse Hall–Petch effect** (L6, ll. 496–519). At high temperature the grain boundaries are fast paths for diffusion ([[FEEG1002 C3 - Diffusion#Activation energy and the structure of the path|C3]]), so fine grains speed up creep; components that run hot need coarse grains, and the best turbine blades are single crystals with no grain boundaries at all (L6, ll. 474–495; [[FEEG1002 C9 - Fatigue, Creep and Corrosion#Designing against creep|C9]]).
+The relation fails at both extremes. At very fine, nanometre grain sizes the grains are too small to hold dislocations at all; deformation switches to grain-boundary sliding and grain rotation, and the metal softens as the grains get smaller still, the **inverse Hall–Petch effect**. At high temperature the grain boundaries are fast paths for diffusion ([[FEEG1002 C3 - Diffusion#Activation energy and the structure of the path|C3]]), so fine grains speed up creep; components that run hot need coarse grains, and the best turbine blades are single crystals with no grain boundaries at all ([[FEEG1002 C9 - Fatigue, Creep and Corrosion#Designing against creep|C9]]).
 
 ## 4. Precipitation hardening
 
 ### A second phase inside the grains
 
-If more of an alloying element is added than the host crystal can dissolve, the excess can come out of solution as small regions of a different phase with its own crystal structure: **precipitates** (slide "Precipitation Hardening"; L6, ll. 527–614). In steel these are particles of iron carbide (cementite) in the iron; in aluminium–copper alloys they are particles of a copper-rich intermetallic compound. The solute atoms scattered through the host are under strain, because their bond lengths do not match; given the chance by heating, they diffuse together into a cluster where they are less strained, a new phase. The cluster's different atomic spacing in turn distorts the crystal around it and surrounds it with a large stress field, which obstructs dislocations.
+If more of an alloying element is added than the host crystal can dissolve, the excess can come out of solution as small regions of a different phase with its own crystal structure: **precipitates**. In steel these are particles of iron carbide (cementite) in the iron; in aluminium–copper alloys they are particles of a copper-rich intermetallic compound. The solute atoms scattered through the host are under strain, because their bond lengths do not match; given the chance by heating, they diffuse together into a cluster where they are less strained, a new phase. The cluster's different atomic spacing in turn distorts the crystal around it and surrounds it with a large stress field, which obstructs dislocations.
 
-How much precipitate forms, and when, depends on solubility, which needs the phase diagrams of [[FEEG1002 C6 - Phase Diagrams|C6]]; the heat-treatment route is in [[FEEG1002 C7 - Steels and Precipitation Hardening#5. Precipitation hardening|C7]]. The processing sequence is that an aluminium alloy can be shaped and machined while it is soft, then heat-treated so that copper diffuses into precipitates and the yield strength rises (L6, ll. 624–645).
+How much precipitate forms, and when, depends on solubility, which needs the phase diagrams of [[FEEG1002 C6 - Phase Diagrams|C6]]; the heat-treatment route is in [[FEEG1002 C7 - Steels and Precipitation Hardening#5. Precipitation hardening|C7]]. The processing sequence is that an aluminium alloy can be shaped and machined while it is soft, then heat-treated so that copper diffuses into precipitates and the yield strength rises.
 
 ### Coherent and incoherent precipitates
 
-As a precipitate grows under heat treatment its relationship with the surrounding crystal changes (slide "Precipitation Hardening"; L6, ll. 615–675).
+As a precipitate grows under heat treatment its relationship with the surrounding crystal changes.
 
 A small **coherent** precipitate has lattice planes that run continuously into those of the matrix, strained to fit. It strengthens through its stress field, but a dislocation that is pushed hard enough can cut straight through it, shearing it.
 
@@ -121,24 +121,24 @@ As it grows, the strain of fitting becomes too great and the precipitate becomes
 
 ### Resetting a cold-worked metal
 
-A heavily worked metal has a high yield strength but little ductility left. **Annealing** reduces or removes the effects of cold working: the metal is heated, typically to around half its absolute melting temperature, $T\approx0.5T_m$, and held (slide "Annealing"; L6, ll. 679–707). A blacksmith working steel does the same thing by reheating the bar in the fire. (Working steel hot also helps for another reason: BCC iron deforms much more easily when hot, [[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#Temperature and the yield stress|C4]].) Annealing happens in three stages, all of which depend on diffusion.
+A heavily worked metal has a high yield strength but little ductility left. **Annealing** reduces or removes the effects of cold working: the metal is heated, typically to around half its absolute melting temperature, $T\approx0.5T_m$, and held. A blacksmith working steel does the same thing by reheating the bar in the fire. (Working steel hot also helps for another reason: BCC iron deforms much more easily when hot, [[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#Temperature and the yield stress|C4]].) Annealing happens in three stages, all of which depend on diffusion.
 
 ### Recovery
 
-In a cold-worked metal the dislocations are tangled in highly stressed, local arrangements. On heating, atoms can diffuse, and the dislocations rearrange to minimise their local stress fields: they line up in walls with the compressive region of each dislocation next to the tensile region of its neighbour, forming low-angle boundaries (slide "Annealing: Recovery"; L6, ll. 708–757). Between the walls the crystal is left almost free of dislocations and stress. The grain structure does not change, and neither do the mechanical properties much, but internal stresses are relieved.
+In a cold-worked metal the dislocations are tangled in highly stressed, local arrangements. On heating, atoms can diffuse, and the dislocations rearrange to minimise their local stress fields: they line up in walls with the compressive region of each dislocation next to the tensile region of its neighbour, forming low-angle boundaries. Between the walls the crystal is left almost free of dislocations and stress. The grain structure does not change, and neither do the mechanical properties much, but internal stresses are relieved.
 ### Recrystallisation
 
-In the dislocation-free regions left by recovery, new crystals nucleate and grow by atomic diffusion. They are free of strain and roughly equal in size in every direction (equiaxed), and as they grow they sweep away the old dislocations and ignore the old grain boundaries, until the whole of the worked structure has been replaced by a new set of fine grains (slide "Annealing: Recrystallisation"; L6, ll. 758–797). Brass, 33 % cold worked and held at 580 °C, shows new crystals after 3 s, growing crystals after 4 s, and is fully recrystallised after 8 s.
+In the dislocation-free regions left by recovery, new crystals nucleate and grow by atomic diffusion. They are free of strain and roughly equal in size in every direction (equiaxed), and as they grow they sweep away the old dislocations and ignore the old grain boundaries, until the whole of the worked structure has been replaced by a new set of fine grains. Brass, 33 % cold worked and held at 580 °C, shows new crystals after 3 s, growing crystals after 4 s, and is fully recrystallised after 8 s.
 
-The size of the recrystallised grains can be controlled (slide "Annealing: Controlling grain size"). More cold work stores more energy and gives more sites for new grains to start, so the recrystallised grains are finer. A higher annealing temperature speeds up diffusion and gives larger grains. Because the new grains are fine, the recrystallised metal keeps a fair part of its strength through grain-boundary strengthening, while most of its ductility returns.
+The size of the recrystallised grains can be controlled. More cold work stores more energy and gives more sites for new grains to start, so the recrystallised grains are finer. A higher annealing temperature speeds up diffusion and gives larger grains. Because the new grains are fine, the recrystallised metal keeps a fair part of its strength through grain-boundary strengthening, while most of its ductility returns.
 
 ### Grain growth
 
-If the metal is held at temperature after recrystallisation, the grains keep growing, larger grains consuming smaller ones (slide "Annealing: Further grain growth"; L6, ll. 826–844). Grain boundaries are regions of high energy, so the total energy falls as the boundary area falls, the same reason that small bubbles in a foam disappear while large ones grow. The brass that was fully recrystallised after 8 s at 580 °C has coarser grains after 15 min at 580 °C, and much coarser grains after 7 min at 700 °C.
+If the metal is held at temperature after recrystallisation, the grains keep growing, larger grains consuming smaller ones. Grain boundaries are regions of high energy, so the total energy falls as the boundary area falls, the same reason that small bubbles in a foam disappear while large ones grow. The brass that was fully recrystallised after 8 s at 580 °C has coarser grains after 15 min at 580 °C, and much coarser grains after 7 min at 700 °C.
 
 ### Properties against annealing temperature
 
-As the annealing temperature (for a fixed time) rises through the three stages, the properties change in a characteristic way (L6, ll. 798–825). In the recovery range the strength and ductility barely change. Through recrystallisation the tensile strength falls steeply and the ductility rises steeply. During grain growth the strength continues to fall slowly and the ductility to rise, as the Hall–Petch contribution shrinks with the growing grains.
+As the annealing temperature (for a fixed time) rises through the three stages, the properties change in a characteristic way. In the recovery range the strength and ductility barely change. Through recrystallisation the tensile strength falls steeply and the ductility rises steeply. During grain growth the strength continues to fall slowly and the ductility to rise, as the Hall–Petch contribution shrinks with the growing grains.
 
 ![[m5_annealing_properties.png|900]]
 
@@ -150,7 +150,7 @@ $$
 r=A\exp\left(-\frac{Q}{RT}\right)
 $$
 
-The time to reach a given state is inversely proportional to the rate, so a modest rise in temperature shortens the anneal enormously, as the brass series shows (seconds at 580 °C for recrystallisation, against hours at lower temperatures). Annealing is a time-and-temperature process: both have to be specified (L6, ll. 840–860).
+The time to reach a given state is inversely proportional to the rate, so a modest rise in temperature shortens the anneal enormously, as the brass series shows (seconds at 580 °C for recrystallisation, against hours at lower temperatures). Annealing is a time-and-temperature process: both have to be specified.
 
 ---
 

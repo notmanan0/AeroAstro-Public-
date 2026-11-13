@@ -32,28 +32,28 @@ sources: ["02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf", "02 - Sources/Le
 > - **Use it when:** given a flight condition, pressure ratio, turbine entry (or peak) temperature and component efficiencies, and asked for station temperatures and pressures, $f$, specific thrust, sfc or the efficiencies; or for the speed at which an ideal ramjet produces a given thrust.
 > - **Assumptions:** steady; perfect gas with cold-air properties up to the burner and product properties after it; adiabatic components; intake $\Gamma_d=1$ and fuel at $T_{ref}=298$ K unless stated; turbine work = compressor work (one spool, no power off-take); nozzle isentropic and fully expanded unless stated.
 > - **Method:** 1. ISA → $V=M\sqrt{\gamma RT}$, $T_{01}$, $p_{01}$. 2. Compressor: $T_{03s}$ from $r_c$, then $T_{03}$ from $\eta_c$; $w_c=c_{pa}(T_{03}-T_{02})$. 3. Burner: $f$ from the energy balance; $p_{04}=\Gamma_bp_{03}$. 4. Turbine: $T_{05}$ from $w_t=w_c$ with $(1+f)c_{pp}$, then $T_{05s}$ from $\eta_t$, then $p_{05}$ with $\gamma_p$. 5. Nozzle: $T_6$ from $p_a/p_{05}$, $V_j=\sqrt{2c_{pp}(T_{05}-T_6)}$; then $F/\dot m_a=(1+f)V_j-V$, sfc $=f/(F/\dot m_a)$.
-> - **Common mistakes:** using $\gamma_a$ instead of $\gamma_p$ in the turbine and nozzle pressure ratios (L19, ll. 281–286); forgetting the $(1+f)$ on the turbine mass flow.
+> - **Common mistakes:** using $\gamma_a$ instead of $\gamma_p$ in the turbine and nozzle pressure ratios; forgetting the $(1+f)$ on the turbine mass flow.
 > - **Practise:** [[#Worked example – turbojet at Mach 2 and 31,000 ft]] · [[SESA2023 Problem Sheet 7 Solutions]] · [[SESA2023 Problem Sheet 4 Solutions]] Q4.1
 
 A jet engine is a heat engine that pushes instead of turning a shaft. It compresses air, burns fuel in it at roughly constant pressure and expands the hot gas; in a turbojet the turbine takes back just enough work to drive the compressor, and everything left over goes into the jet. A higher pressure ratio raises the thermal efficiency, because the more the gas is compressed before heat is added, the larger the fraction of that heat that can later be turned back into work. A higher temperature ratio raises the specific work: the hotter the turbine entry relative to the intake, the more surplus work per kilogram, which is why blade cooling, letting the gas run hotter than the metal can bear, is so valuable.
 
-In flight, the intake compresses the air before it reaches the compressor. At Mach 3 ram compression in the intake alone gives a pressure ratio of about 40 (L18, ll. 153–155), so a compressor and the turbine to drive it are no longer worth carrying, and that is a ramjet. Real components fall short of the ideal: inefficient turbomachinery, pressure drops, the properties of hotter gas and cooling air each take a few points off the ideal efficiency. The simple model gets the trends right, not the exact numbers.
+In flight, the intake compresses the air before it reaches the compressor. At Mach 3 ram compression in the intake alone gives a pressure ratio of about 40, so a compressor and the turbine to drive it are no longer worth carrying, and that is a ramjet. Real components fall short of the ideal: inefficient turbomachinery, pressure drops, the properties of hotter gas and cooling air each take a few points off the ideal efficiency. The simple model gets the trends right, not the exact numbers.
 
 ---
 
-## 1. Design requirements and engine families (Lecture 16)
+## 1. Design requirements and engine families
 
 ### Requirements beyond thrust
 
-The basic requirements are enough thrust, good efficiency (fuel must be carried, so the two are linked) and a jet faster than the flight speed. Beyond these come safety and reliability, life-cycle cost and operations (L16, ll. 113–182; handout §6.2). For safety, an aircraft must complete a take-off after one engine fails at rotation, operate over water on fewer engines, relight at altitude and contain blade failures. A released turbine blade cannot be contained, so the A380's engines sit well ahead of the main spar, where such a blade misses the wing structure. Life-cycle cost covers development, materials, manufacture, fuel and maintenance. Fuel is only about a third of an airline's operating cost, but a 1 % fuel-burn saving is worth more than 1 % of payload, because the fuel must be lifted too (L16, ll. 148–162). Operational constraints include runway length and gate infrastructure (a much bigger fan raises the fuselage), maintenance intervals, noise and emissions.
+The basic requirements are enough thrust, good efficiency (fuel must be carried, so the two are linked) and a jet faster than the flight speed. Beyond these come safety and reliability, life-cycle cost and operations (handout §6.2). For safety, an aircraft must complete a take-off after one engine fails at rotation, operate over water on fewer engines, relight at altitude and contain blade failures. A released turbine blade cannot be contained, so the A380's engines sit well ahead of the main spar, where such a blade misses the wing structure. Life-cycle cost covers development, materials, manufacture, fuel and maintenance. Fuel is only about a third of an airline's operating cost, but a 1 % fuel-burn saving is worth more than 1 % of payload, because the fuel must be lifted too. Operational constraints include runway length and gate infrastructure (a much bigger fan raises the fuselage), maintenance intervals, noise and emissions.
 
 ### Climate impact
 
-Aviation contributes about 2.5 % of CO₂ emissions and about 3.5 % of effective radiative forcing; the difference is mainly contrails, which are short-lived and so potentially quick to tackle (L16, ll. 185–198). CORSIA, often cited as a regulatory requirement, lets aviation buy credits from other sectors without reducing its own emissions (ll. 199–208). Sustainable aviation fuels are about 0.1–0.5 % of supply, mostly from waste fats and used cooking oil (ll. 212–234).
+Aviation contributes about 2.5 % of CO₂ emissions and about 3.5 % of effective radiative forcing; the difference is mainly contrails, which are short-lived and so potentially quick to tackle. CORSIA, often cited as a regulatory requirement, lets aviation buy credits from other sectors without reducing its own emissions. Sustainable aviation fuels are about 0.1–0.5 % of supply, mostly from waste fats and used cooking oil.
 
 ### Efficiency and why different engines suit different speeds
 
-A propulsion system produces thrust, not shaft work, and burns fuel rather than receiving heat, so the relevant figure is the overall efficiency of W01 (L16, ll. 246–278):
+A propulsion system produces thrust, not shaft work, and burns fuel rather than receiving heat, so the relevant figure is the overall efficiency of W01:
 
 $$
 \eta_O = \frac{F_NV}{\dot m_f\,LCV} = \eta_P\,\eta_{th},\qquad \eta_P\approx\frac{2V}{V+V_j},\qquad F_N\approx\dot m_a(V_j-V)
@@ -67,17 +67,17 @@ $$
 | M ≈ 2.5–5 | ramjet | ram compression alone gives the pressure ratio; a compressor would overheat the air |
 | M > 5 | scramjet | slowing to subsonic would exceed temperature limits, so combustion stays supersonic |
 
-Operating limits: turbojet combustion to M < 2.3, ramjet to M < 4.2, scramjet above. The SR-71's J58 was a turbo-ramjet: a turbojet at take-off, with the geometry changing so most air bypassed the core at Mach 3+ (L16, ll. 465–470).
+Operating limits: turbojet combustion to M < 2.3, ramjet to M < 4.2, scramjet above. The SR-71's J58 was a turbo-ramjet: a turbojet at take-off, with the geometry changing so most air bypassed the core at Mach 3+.
 
-Propulsive efficiency isn't limited by Carnot (L16, ll. 282–321), because it is not a thermodynamic efficiency. The waste is the kinetic energy left in the jet, which ends up stirring the atmosphere and dissipating as heat. Kinetic energy goes with $V^2$ but thrust with $V$, so moving more air more slowly leaves less energy behind for the same thrust, hence the growth from the slim engines of the 1957 Boeing 707 to the 787's fans, where only about 10 % of the air goes through the core (ll. 298–327).
+Propulsive efficiency isn't limited by Carnot, because it is not a thermodynamic efficiency. The waste is the kinetic energy left in the jet, which ends up stirring the atmosphere and dissipating as heat. Kinetic energy goes with $V^2$ but thrust with $V$, so moving more air more slowly leaves less energy behind for the same thrust, hence the growth from the slim engines of the 1957 Boeing 707 to the 787's fans, where only about 10 % of the air goes through the core.
 
-Two further directions are distributed electric fans and scramjets (L16, ll. 328–350, 493–529). The Airbus/Rolls-Royce E-Thrust concept uses one gas turbine generating electricity for six wing-mounted fans. The fans can sit in the wing's thick upper-surface boundary layer; that air is already slower than the aircraft, so ingesting it means less ram drag and better propulsive efficiency, at the cost of generator, cable and motor weight. In a scramjet the supersonic flow must still be compressed (by shocks) before heat is added, and the fuel may autoignite, but stabilising a flame in flow at thousands of m/s, when a turbulent flame only travels tens of m/s, is the main difficulty. A NASA scramjet test vehicle was dropped from a bomber, boosted to about Mach 2 by a rocket, then reached Mach 9.6 on the scramjet.
+Two further directions are distributed electric fans and scramjets. The Airbus/Rolls-Royce E-Thrust concept uses one gas turbine generating electricity for six wing-mounted fans. The fans can sit in the wing's thick upper-surface boundary layer; that air is already slower than the aircraft, so ingesting it means less ram drag and better propulsive efficiency, at the cost of generator, cable and motor weight. In a scramjet the supersonic flow must still be compressed (by shocks) before heat is added, and the fuel may autoignite, but stabilising a flame in flow at thousands of m/s, when a turbulent flame only travels tens of m/s, is the main difficulty. A NASA scramjet test vehicle was dropped from a bomber, boosted to about Mach 2 by a rocket, then reached Mach 9.6 on the scramjet.
 
-The fighter context (L18, ll. 13–20): the F-35 tops out around M 1.6 (stealth and manoeuvrability matter more than speed), the F-22 at M 2.3, while the SR-71 flew above Mach 3 in the 1960s by switching to ramjet mode.
+The fighter context: the F-35 tops out around M 1.6 (stealth and manoeuvrability matter more than speed), the F-22 at M 2.3, while the SR-71 flew above Mach 3 in the 1960s by switching to ramjet mode.
 
 ---
 
-## 2. The ideal Brayton cycle (Lecture 17)
+## 2. The ideal Brayton cycle
 
 ### Thermal efficiency
 
@@ -113,13 +113,13 @@ $$
 
 The efficiency depends only on the pressure ratio (and $\gamma$). For $r_p=30$: $1-30^{-0.2857}=62.2$ %.
 
-- A higher $\gamma$ also raises it, which is why some closed-cycle plants use helium ($\gamma=1.66$) or the cheaper argon (L17, ll. 32–36).
-- $\eta_{th}\to100$ % as $r_p\to\infty$. That does not break the Second Law: an infinite pressure ratio also means an infinite temperature ratio, and Carnot allows 100 % for that (L17, ll. 171–176).
-- "Cold air standard" means $c_p$ and $\gamma$ taken at ambient temperature; real air's $c_p$ depends on temperature, so you must say which air you mean (L17, ll. 22–28).
+- A higher $\gamma$ also raises it, which is why some closed-cycle plants use helium ($\gamma=1.66$) or the cheaper argon.
+- $\eta_{th}\to100$ % as $r_p\to\infty$. That does not break the Second Law: an infinite pressure ratio also means an infinite temperature ratio, and Carnot allows 100 % for that.
+- "Cold air standard" means $c_p$ and $\gamma$ taken at ambient temperature; real air's $c_p$ depends on temperature, so you must say which air you mean.
 
 ### Why the turbine pressure ratio is smaller than the compressor's
 
-In a ground power plant the turbine expands back to ambient, so compressor and turbine have the same pressure ratio (L17, ll. 46–56). In a turbojet the turbine only has to supply the compressor's work, and work depends on a temperature difference, not a ratio (L17, ll. 57–77):
+In a ground power plant the turbine expands back to ambient, so compressor and turbine have the same pressure ratio. In a turbojet the turbine only has to supply the compressor's work, and work depends on a temperature difference, not a ratio:
 
 $$
 c_{pa}(T_{03}-T_{02}) = (1+f)c_{pp}(T_{04}-T_{05})
@@ -145,15 +145,15 @@ So the ideal cycle gives maximum specific work at $r_p=\theta^{\gamma/[2(\gamma-
 
 ![[prop_brayton_trends.png|760]]
 
-With irreversible turbomachinery ($\eta_c=\eta_t=0.9$, L17, ll. 200–240):
+With irreversible turbomachinery ($\eta_c=\eta_t=0.9$):
 
 - an optimum pressure ratio for efficiency appears, and it rises with $T_{04}/T_{02}$;
 - maximum specific work occurs at a much lower $r_p$ (about 8–16);
-- in the 1960s, with 85 % compressors and turbines, the optimum was about $r_p=25$; better turbomachinery (over 90 %) and hotter turbines now justify about 50 : 1 (L17, ll. 183–187, 232–234);
-- so fighters, which want thrust per unit size, use $r_p\approx15$; civil turbofans, which want range, use $r_p\approx45$. Civil engines are designed for efficiency rather than specific work because the fuel (about 100 t on a 787) outweighs the engines (about 30 t), so a heavier, more efficient engine pays (L17, ll. 235–241);
+- in the 1960s, with 85 % compressors and turbines, the optimum was about $r_p=25$; better turbomachinery (over 90 %) and hotter turbines now justify about 50 : 1;
+- so fighters, which want thrust per unit size, use $r_p\approx15$; civil turbofans, which want range, use $r_p\approx45$. Civil engines are designed for efficiency rather than specific work because the fuel (about 100 t on a 787) outweighs the engines (about 30 t), so a heavier, more efficient engine pays;
 - raising the TET raises both efficiency and specific work; irreversibility hurts most at high $r_p$.
 
-A gas turbine recycles work internally (L17, l. 191): the turbine sends work back to the compressor, and that work is harvested again in the turbine. In the turbojet example ([[#Worked example – turbojet at Mach 2 and 31,000 ft]]) the compressor absorbs 749 kJ/kg while the net jet power is only about 400 kJ/kg, and small percentage losses on those large recycled flows are why $\eta_c$ and $\eta_t$ matter so much.
+A gas turbine recycles work internally: the turbine sends work back to the compressor, and that work is harvested again in the turbine. In the turbojet example ([[#Worked example – turbojet at Mach 2 and 31,000 ft]]) the compressor absorbs 749 kJ/kg while the net jet power is only about 400 kJ/kg, and small percentage losses on those large recycled flows are why $\eta_c$ and $\eta_t$ matter so much.
 
 ### Why real engines differ from the ideal cycle
 
@@ -161,17 +161,17 @@ Real engines have pressure losses in intake, combustor and nozzle; non-isentropi
 
 ---
 
-## 3. Ramjets (Lecture 18)
+## 3. Ramjets
 
 ### Layout, pros and cons
 
-A ramjet is a gas turbine reduced to its simplest form, with no compressor or turbine (L18, l. 4): a supersonic diffuser (normal or oblique shocks, then a subsonic diffuser to M ≈ 0.2–0.3), a combustor, and a C–D nozzle.
+A ramjet is a gas turbine reduced to its simplest form, with no compressor or turbine: a supersonic diffuser (normal or oblique shocks, then a subsonic diffuser to M ≈ 0.2–0.3), a combustor, and a C–D nozzle.
 
 It is simple and reliable, has a high thrust/weight ratio, and can run a higher combustor-exit temperature because there is no turbine to protect. Against that, it must be boosted to speed, its efficiency is poor below M ≈ 2.5, and it suffers high thermal stress.
 
 ### Why compressors disappear at high Mach number
 
-Compressors stop paying off at high Mach number for these reasons (L18, ll. 28–92; L16, ll. 449–458):
+Compressors stop paying off at high Mach number for these reasons:
 
 1. The hottest the turbine and combustor materials can sustain long-term, with every cooling and coating trick, is roughly 1700 °C ≈ 2000 K.
 2. To leave headroom to add heat, the combustor inlet must stay below about 1000 K.
@@ -181,9 +181,9 @@ Compressors stop paying off at high Mach number for these reasons (L18, ll. 28�
 
 ### The ideal ramjet: exit Mach equals flight Mach
 
-Stations: 1 free stream (static $=p_a$), 2 diffuser exit, 3 combustor exit, 4 nozzle exit. Ideal: adiabatic; isentropic diffuser and nozzle; isobaric combustor ($\Gamma_d=\Gamma_c=\Gamma_n=1$); fully expanded, $p_4=p_a$ (L18, ll. 102–109).
+Stations: 1 free stream (static $=p_a$), 2 diffuser exit, 3 combustor exit, 4 nozzle exit. Ideal: adiabatic; isentropic diffuser and nozzle; isobaric combustor ($\Gamma_d=\Gamma_c=\Gamma_n=1$); fully expanded, $p_4=p_a$.
 
-1. Stagnation pressure is constant all the way through: $p_{04}=p_{03}=p_{02}=p_{01}$ (L18, ll. 439–443).
+1. Stagnation pressure is constant all the way through: $p_{04}=p_{03}=p_{02}=p_{01}$.
 2. The static pressure at entry and exit is the same, $p_4=p_1=p_a$.
 3. So the isentropic stagnation-to-static ratio is the same at both ends:
 
@@ -195,7 +195,7 @@ $$
 \boxed{M_4 = M_1}
 $$
 
-The velocities differ because the speed of sound is much higher in the hot jet (L18, ll. 443–449).
+The velocities differ because the speed of sound is much higher in the hot jet.
 
 **Jet velocity.** $T_{04}=T_{03}$ (adiabatic nozzle) and $T_4=T_{03}/(1+\tfrac{\gamma-1}{2}M_1^2)$, so
 
@@ -209,11 +209,11 @@ $$
 \frac{F}{\dot m_a} = (1+f)V_4-V = M_1\sqrt{\gamma RT_a}\left[(1+f)\sqrt{\frac{T_{03}}{T_{02}}}-1\right]
 $$
 
-The units are N s kg⁻¹, i.e. m/s: specific thrust is an "effective velocity increase" through the engine (L18, ll. 294–302).
+The units are N s kg⁻¹, i.e. m/s: specific thrust is an "effective velocity increase" through the engine.
 
 ### Worked example – ideal ramjet at Mach 3 and 51,000 ft
 
-The worked example (L18, ll. 95–302): 51,000 ft, M 3, cold-air properties, LCV 41 MJ/kg at 298 K with fuel injected at 298 K, complete combustion, $T_{03}=1800$ K, fully expanded.
+The worked example: 51,000 ft, M 3, cold-air properties, LCV 41 MJ/kg at 298 K with fuel injected at 298 K, complete combustion, $T_{03}=1800$ K, fully expanded.
 
 Station 1 (data book Table 24: $T_a=216.65$ K, $p_a=0.111$ bar):
 
@@ -225,7 +225,7 @@ $$
 T_{01} = 216.65\times(1+0.2\times9) = 606.6\ \mathrm K,\qquad p_{01} = 0.111\times2.8^{3.5} = 4.08\ \mathrm{bar}
 $$
 
-Ram compression alone gives a pressure ratio of about 37 ("about forty", L18, l. 154).
+Ram compression alone gives a pressure ratio of about 37 ("about forty").
 
 Diffuser 1→2 (no $q$, no $w$, isentropic): $T_{02}=T_{01}$, $p_{02}=p_{01}$.
 
@@ -254,10 +254,10 @@ $$
 $$
 
 > [!check] Numerical checks
-> - The reference answer is 686 (L18, l. 298). ✔
-> - $\eta_P=2V/(V+V_4)=0.73$ and $\eta_O=(F/\dot m_a)V/(f\,LCV)=0.49$: a very large excess velocity, so a modest propulsive efficiency (L18, ll. 302–308). A modern turbofan's specific thrust is under 100 m/s.
+> - The reference answer is 686. ✔
+> - $\eta_P=2V/(V+V_4)=0.73$ and $\eta_O=(F/\dot m_a)V/(f\,LCV)=0.49$: a very large excess velocity, so a modest propulsive efficiency. A modern turbofan's specific thrust is under 100 m/s.
 
-The ideal ramjet is exactly a Brayton cycle (L18, l. 324), with ram compression as its only compressor. Its pressure ratio is $p_{01}/p_a$ and the isentropic relation gives $(p_{01}/p_a)^{(\gamma-1)/\gamma}=T_{01}/T_a$, so
+The ideal ramjet is exactly a Brayton cycle, with ram compression as its only compressor. Its pressure ratio is $p_{01}/p_a$ and the isentropic relation gives $(p_{01}/p_a)^{(\gamma-1)/\gamma}=T_{01}/T_a$, so
 
 $$
 \eta_{th} = 1-\left(\frac{p_a}{p_{01}}\right)^{(\gamma-1)/\gamma} = 1-\frac{T_a}{T_{01}}
@@ -265,7 +265,7 @@ $$
 
 At M 3: $1-216.65/606.6=64$ %, the same as a Brayton cycle with $r_p=36.7$.
 
-Trends with flight Mach number (L18, ll. 312–348): with only $M$ and $T_{03}$ as free parameters,
+Trends with flight Mach number: with only $M$ and $T_{03}$ as free parameters,
 
 - at low $M$ there is little ram compression, so low efficiency and very low thrust;
 - at high $M$ the combustor inlet approaches $T_{03}$, so less and less heat can be added; for $T_{03}=2000$ K the thrust falls to zero near M 6;
@@ -275,14 +275,14 @@ Trends with flight Mach number (L18, ll. 312–348): with only $M$ and $T_{03}$ 
 
 ### The real ramjet
 
-Real components are modelled with stagnation-pressure ratios and a combustion efficiency (L18, ll. 355–378):
+Real components are modelled with stagnation-pressure ratios and a combustion efficiency:
 
 $$
 \Gamma_d = \frac{p_{02}}{p_{01}},\qquad \Gamma_c = \frac{p_{03}}{p_{02}},\qquad \Gamma_n = \frac{p_{04}}{p_{03}},\qquad \eta_b = \frac{LCV_{eff}}{LCV}
 $$
 
 - The supersonic diffuser cannot be isentropic (shocks, W04).
-- The combustor loses $p_0$ to viscous effects and, if the flow is not slowed below about M 0.3, to heat addition itself (W04 heating; not examinable, ll. 359–363).
+- The combustor loses $p_0$ to viscous effects and, if the flow is not slowed below about M 0.3, to heat addition itself (W04 heating; not examinable).
 - High combustor temperatures bring dissociation (W05), so $\eta_b<1$; use $\eta_b\,LCV$ in place of $LCV$.
 - Accelerating nozzle flow keeps boundary layers thin, so $\Gamma_n$ is close to 1.
 
@@ -292,9 +292,9 @@ $$
 \frac{p_{04}}{p_a} = \Gamma_d\Gamma_c\Gamma_n\,\frac{p_{01}}{p_a}
 $$
 
-and the jet expands through a smaller pressure ratio, so $M_4<M_1$ and the thrust falls. On a $T$–$s$ diagram, each real state lies on the reduced-$p_0$ isobar at the same $T_0$ as the ideal state, so it is shifted right (L18, ll. 415–434). See [[Component Stagnation Pressure Ratios]].
+and the jet expands through a smaller pressure ratio, so $M_4<M_1$ and the thrust falls. On a $T$–$s$ diagram, each real state lies on the reduced-$p_0$ isobar at the same $T_0$ as the ideal state, so it is shifted right. See [[Component Stagnation Pressure Ratios]].
 
-The $\Gamma$s and $\eta_b$ depend on the engine (L18, ll. 388–399). For subsonic gas turbines the intake and nozzle losses are small, the combustor loss is about 5 % and dissociation is small below 1800 K, so gas-turbine questions often give no $\Gamma$s and no combustion efficiency, and you assume 1. Ramjet questions usually add these extra coefficients.
+The $\Gamma$s and $\eta_b$ depend on the engine. For subsonic gas turbines the intake and nozzle losses are small, the combustor loss is about 5 % and dissociation is small below 1800 K, so gas-turbine questions often give no $\Gamma$s and no combustion efficiency, and you assume 1. Ramjet questions usually add these extra coefficients.
 
 > [!warning] Which energy balance for $f$?
 > - Lecture form (fuel at $T_{ref}$): $f=\dfrac{T_{03}-T_{02}}{LCV/c_p-(T_{03}-T_{ref})}$.
@@ -304,11 +304,11 @@ The $\Gamma$s and $\eta_b$ depend on the engine (L18, ll. 388–399). For subson
 
 ---
 
-## 4. Turbojet analysis (Lecture 19)
+## 4. Turbojet analysis
 
 ### Worked example – turbojet at Mach 2 and 31,000 ft
 
-Flight at M 2.0 and 31,000 ft ($T_1=226.73$ K, $p_1=28.7$ kPa, data book Table 24). Compressor $r_c=30$, $\eta_c=0.90$; fuel LCV 43 MJ/kg supplied at 298 K; combustor stagnation-pressure loss 4 % and $T_{04}=1500$ K; $\eta_t=0.90$; ideal, fully expanded nozzle. Air: $c_{pa}=1005$, $\gamma_a=1.40$; products: $c_{pp}=1100$, $\gamma_p=1.33$ (handout §6.5; L19, ll. 14–336).
+Flight at M 2.0 and 31,000 ft ($T_1=226.73$ K, $p_1=28.7$ kPa, data book Table 24). Compressor $r_c=30$, $\eta_c=0.90$; fuel LCV 43 MJ/kg supplied at 298 K; combustor stagnation-pressure loss 4 % and $T_{04}=1500$ K; $\eta_t=0.90$; ideal, fully expanded nozzle. Air: $c_{pa}=1005$, $\gamma_a=1.40$; products: $c_{pp}=1100$, $\gamma_p=1.33$ (handout §6.5).
 
 **Inlet 1 (flight condition):**
 
@@ -320,15 +320,15 @@ $$
 T_{01} = 226.73\times(1+0.2\times4) = 408.1\ \mathrm K,\qquad p_{01} = 28.7\times1.8^{3.5} = 224.6\ \mathrm{kPa}
 $$
 
-Because the flight is supersonic, the intake must really be a converging–diverging duct and the nozzle a C–D nozzle (L19, ll. 43–45). Subsonic gas-turbine examples usually take intakes and nozzles as isentropic (ll. 19–24).
+Because the flight is supersonic, the intake must really be a converging–diverging duct and the nozzle a C–D nozzle. Subsonic gas-turbine examples usually take intakes and nozzles as isentropic.
 
-Intake 1→2 (adiabatic, no work, taken as isentropic, L19, ll. 100–110):
+Intake 1→2 (adiabatic, no work, taken as isentropic):
 
 $$
 T_{02} = T_{01} = 408.1\ \mathrm K,\qquad p_{02} = p_{01} = 224.6\ \mathrm{kPa}
 $$
 
-Compressor 2→3 (pressure ratios in gas turbines are stagnation ratios by default, L19, ll. 113–116):
+Compressor 2→3 (pressure ratios in gas turbines are stagnation ratios by default):
 
 $$
 T_{03s} = 408.1\times30^{0.2857} = 1078.5\ \mathrm K
@@ -352,7 +352,7 @@ $$
 f = \frac{c_{pp}(T_{04}-T_{ref})-c_{pa}(T_{03}-T_{ref})}{LCV-c_{pp}(T_{04}-T_{ref})} = \frac{1100\times1202-1005\times855.0}{43\times10^6-1100\times1202} = 0.01111
 $$
 
-**Turbine 4→5.** The spool has zero net work (L19, ll. 243–250), so per kilogram of air
+**Turbine 4→5.** The spool has zero net work, so per kilogram of air
 
 $$
 c_{pa}(T_{03}-T_{02}) = (1+f)\,c_{pp}(T_{04}-T_{05})
@@ -402,27 +402,27 @@ $$
 
 > [!check] Numerical checks
 > - $T_{03}>T_{03s}$ and $T_{05}>T_{05s}$: real exits hotter than isentropic ones in both machines ✔ (W02 check).
-> - $\eta_{th}>\eta_O$ ✔ (the jet is not 100 % efficient at propelling the aircraft, L19, ll. 330–336).
+> - $\eta_{th}>\eta_O$ ✔ (the jet is not 100 % efficient at propelling the aircraft).
 > - $p_{05}/p_a=14$: the nozzle is far from choked-and-matched in reality (a convergent nozzle would choke at about 1.85), so "fully expanded" implies a C–D nozzle.
 
-Cold air is taken as $c_p = 1005$ J kg⁻¹ K⁻¹ here while the data book lists about 1010; either is accepted, so state your value (L19, ll. 36–39).
+Cold air is taken as $c_p = 1005$ J kg⁻¹ K⁻¹ here while the data book lists about 1010; either is accepted, so state your value.
 
-On the $T$–$s$ diagram, draw a real compression or expansion as a dotted line, because only its end states are equilibrium states and the path in between isn't defined (L19, ll. 122–128).
+On the $T$–$s$ diagram, draw a real compression or expansion as a dotted line, because only its end states are equilibrium states and the path in between isn't defined.
 
-> [!info] Exam technique (L19, ll. 460–477)
+> [!info] Exam technique
 > 1. State your assumptions.
 > 2. Draw the schematic with station numbers.
 > 3. Sketch the $T$–$s$ diagram.
 > 4. Write the SFEE in full, then cross out terms for each component.
 > 5. Check the real compressor and turbine exits are hotter than their isentropic values.
 >
-> Showing the reasoning limits the marks lost to a slip. An exam question may not ask for every step, but you need to be able to do them all (ll. 337–339).
+> Showing the reasoning limits the marks lost to a slip. An exam question may not ask for every step, but you need to be able to do them all.
 
 ---
 
-## 5. How much do the modelling assumptions matter? (Lecture 19, Table 2)
+## 5. How much do the modelling assumptions matter? (Table 2)
 
-Base case: $r_p=30$, $T_{04}=1500$ K, flight at M 0.8 and 31,000 ft. Each row adds one assumption to the one above (handout §6.6, Table 2; L19, ll. 341–459).
+Base case: $r_p=30$, $T_{04}=1500$ K, flight at M 0.8 and 31,000 ft. Each row adds one assumption to the one above (handout §6.6, Table 2).
 
 | Model | $\eta$ | Change |
 |---|---|---|
@@ -435,22 +435,22 @@ Base case: $r_p=30$, $T_{04}=1500$ K, flight at M 0.8 and 31,000 ft. Each row ad
 | + 4 % combustor $\Delta p_0$ | 57.8 % | −0.8 pts |
 | + 10 % cooling air | 55.7 % | −2.1 pts |
 
-The simple cold-air model gets the trends right, which is why it is used for hand calculations. It is not quantitatively accurate: the 1100 J kg⁻¹ K⁻¹ product value happens to give nearly the GasTurb answer here, but another value would not, and industrial performance work uses real-gas models instead (L19, ll. 430–436).
+The simple cold-air model gets the trends right, which is why it is used for hand calculations. It is not quantitatively accurate: the 1100 J kg⁻¹ K⁻¹ product value happens to give nearly the GasTurb answer here, but another value would not, and industrial performance work uses real-gas models instead.
 
 > [!check] The ram effect at M 0.8
-> $p_{01}/p_1=(1+0.2\times0.64)^{3.5}=1.52$, so the overall pressure ratio is $30\times1.52=45.6$ (L19, ll. 370–372), and the ideal Brayton value for 45.6 is $1-45.6^{-0.2857}=66.4$ %.
+> $p_{01}/p_1=(1+0.2\times0.64)^{3.5}=1.52$, so the overall pressure ratio is $30\times1.52=45.6$, and the ideal Brayton value for 45.6 is $1-45.6^{-0.2857}=66.4$ %.
 
 ---
 
-## 6. Turbine entry temperature and cooling (Lecture 17)
+## 6. Turbine entry temperature and cooling
 
-- TET limits efficiency improvement (L17, l. 242). It is set by turbine materials: single-crystal nickel superalloys melt at about 1500 K, and creep, oxidation and thermal fatigue set the working limit lower. Creep (slow elongation under load) is very sensitive to temperature: 10 K hotter roughly halves the creep life (L16, ll. 444–447).
-- Metallurgy (L17, ll. 244–281): conventional nickel alloys (Inconel), then directionally solidified (DS) blades with grain boundaries aligned with the centrifugal load, then single-crystal (SX) blades with no grain boundaries at all. Together these added only about 100–150 K in 60 years. Ceramic-matrix composites (CMCs) creep far less than metals at these temperatures but are brittle; the published forecast of CMC turbine blades by 2020 proved optimistic.
-- The overall gain from all technologies: from about 1200 K (900 °C) combustor outlet in the 1960s to about 1800 K sustainable now (Whittle's first engine was about 900 K) (L17, ll. 213–217, 282–286).
+- TET limits efficiency improvement. It is set by turbine materials: single-crystal nickel superalloys melt at about 1500 K, and creep, oxidation and thermal fatigue set the working limit lower. Creep (slow elongation under load) is very sensitive to temperature: 10 K hotter roughly halves the creep life.
+- Metallurgy: conventional nickel alloys (Inconel), then directionally solidified (DS) blades with grain boundaries aligned with the centrifugal load, then single-crystal (SX) blades with no grain boundaries at all. Together these added only about 100–150 K in 60 years. Ceramic-matrix composites (CMCs) creep far less than metals at these temperatures but are brittle; the published forecast of CMC turbine blades by 2020 proved optimistic.
+- The overall gain from all technologies: from about 1200 K (900 °C) combustor outlet in the 1960s to about 1800 K sustainable now (Whittle's first engine was about 900 K).
 - Typical high-bypass values: take-off 1750 K ($T_{04}/T_{02}=6.07$), top of climb 1600 K (6.52; highest rotational speed), cruise 1500 K (6.11; sets engine life).
 - Cooling uses compressor air at 800–900 K: convective (internal passages), film (holes and slots blanketing the surface) and thermal barrier coatings (worth about 100 K).
-- The combustor must have a pressure drop (3–5 %), or the compressor-delivery air could not be pushed out through the turbine-blade cooling holes (L19, ll. 30–33).
-- 10–25 % of compressor air goes to cooling (up to about 15 % from the HPC exit alone, L17, l. 331). It must come from the highest-pressure point and bypass the combustor, and feeding it into blades spinning at very high speed through drilled single-crystal passages is a major manufacturing feat (ll. 297–319). It costs compression work that a non-isentropic compressor cannot recover, and it rejoins the flow at lower pressure, so there is an optimum between the TET gain and the cooling loss (ll. 322–337).
+- The combustor must have a pressure drop (3–5 %), or the compressor-delivery air could not be pushed out through the turbine-blade cooling holes.
+- 10–25 % of compressor air goes to cooling (up to about 15 % from the HPC exit alone). It must come from the highest-pressure point and bypass the combustor, and feeding it into blades spinning at very high speed through drilled single-crystal passages is a major manufacturing feat. It costs compression work that a non-isentropic compressor cannot recover, and it rejoins the flow at lower pressure, so there is an optimum between the TET gain and the cooling loss.
 
 See [[Turbine Entry Temperature and Blade Cooling]].
 
@@ -458,11 +458,11 @@ See [[Turbine Entry Temperature and Blade Cooling]].
 
 ## 7. Reheat (afterburning)
 
-Burn extra fuel downstream of the turbine to raise $T_{06}$ (handout §6.9; L16, ll. 369–390). A hotter gas has a higher speed of sound, so the jet through the choked nozzle is faster and the thrust rises. It lets a military engine meet short extreme demands (carrier take-off, rapid acceleration) without being sized for them (ll. 354–368).
+Burn extra fuel downstream of the turbine to raise $T_{06}$ (handout §6.9). A hotter gas has a higher speed of sound, so the jet through the choked nozzle is faster and the thrust rises. It lets a military engine meet short extreme demands (carrier take-off, rapid acceleration) without being sized for them.
 
-**Flame holders.** The flow behind the turbine moves at about 100 m/s, but a turbulent flame can only propagate upstream at 10–50 m/s (a laminar one at under 1 m/s), so the flame would blow out. V-gutters create slow recirculating regions behind them where the flame can anchor (L16, ll. 374–383).
+**Flame holders.** The flow behind the turbine moves at about 100 m/s, but a turbulent flame can only propagate upstream at 10–50 m/s (a laminar one at under 1 m/s), so the flame would blow out. V-gutters create slow recirculating regions behind them where the flame can anchor.
 
-On the $T$–$s$ diagram the reheat adds a second, smaller Brayton-like loop (5→6, then expansion) to the cycle. Its area adds work, but its heat is added at a much lower pressure ratio than the main combustor's, so this "mini Brayton cycle" is much less efficient (L16, ll. 391–408).
+On the $T$–$s$ diagram the reheat adds a second, smaller Brayton-like loop (5→6, then expansion) to the cycle. Its area adds work, but its heat is added at a much lower pressure ratio than the main combustor's, so this "mini Brayton cycle" is much less efficient.
 
 **Why the nozzle area must open.** The engine upstream should not notice the afterburner: the turbine exit (nozzle entry) mass flow and $p_{06}$ must stay the same. For a choked nozzle (W03, compact form with product properties),
 
@@ -486,7 +486,7 @@ So a variable-area nozzle is needed. For example, raising $T_{06}$ by 50 % needs
 
 1. Draw the block diagram (diffuser, compressor, burner, turbine, nozzle) and number the stations 1–6 (W02 convention; the ramjet keeps the numbers without compressor and turbine).
 2. Sketch the $T$–$s$ diagram with the isobars $p_a$, $p_{02}$, $p_{03}\approx p_{04}$, $p_{05}$.
-3. Inlet: ISA, $V$, $T_{01}$, $p_{01}$. Work in stagnation quantities inside the engine (L18, ll. 168–174).
+3. Inlet: ISA, $V$, $T_{01}$, $p_{01}$. Work in stagnation quantities inside the engine.
 4. For each component write the SFEE and cross out terms; use $\eta_c$, $\eta_t$, $\Gamma$s where given; switch to product properties after the burner.
 5. Nozzle: fully expanded unless told otherwise; check for choking if it is convergent.
 6. Performance: $F/\dot m_a$, sfc, $\eta_O$, $\eta_{th}$, $\eta_P$; check $\eta_O=\eta_P\eta_{th}$.
@@ -534,12 +534,12 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 6 lectures; t
 
 - [ ] Derive $\eta_{th}=1-r_p^{-(\gamma-1)/\gamma}$ for the ideal Brayton cycle. → [[#Thermal efficiency]]
 - [ ] Derive the pressure ratio for maximum ideal specific work, $x=\sqrt\theta$; evaluate for 1500 K and 288 K. Target 17.9. → [[#Specific work and its optimum]]
-- [ ] Explain each row of Table 2 in one sentence. → [[#5. How much do the modelling assumptions matter? (Lecture 19, Table 2)]]
+- [ ] Explain each row of Table 2 in one sentence. → [[#5. How much do the modelling assumptions matter? (Table 2)]]
 - [ ] Show that the ideal ramjet is a Brayton cycle with $\eta_{th}=1-T_a/T_{01}$, and evaluate it at M 3. Target 64 %. → [[#The real ramjet]]
 - [ ] Explain why the turbojet's turbine pressure ratio is smaller than its compressor's. → [[#Why the turbine pressure ratio is smaller than the compressor's]]
 - [ ] Explain, with the 1000 K combustor-inlet limit, why turbojets give way to ramjets above about M 2.3 and ramjets to scramjets above about M 4.5. → [[#Why compressors disappear at high Mach number]]
 - [ ] Derive $A_8\propto\sqrt{T_{06}}$ for reheat and explain why reheat is inefficient. → [[#7. Reheat (afterburning)]]
-- [ ] Explain why a combustor must have a pressure drop when the turbine blades are cooled. → [[#6. Turbine entry temperature and cooling (Lecture 17)]]
+- [ ] Explain why a combustor must have a pressure drop when the turbine blades are cooled. → [[#6. Turbine entry temperature and cooling]]
 - [ ] *(set)* Use GasTurb for the propulsion lab (L19, ll. 417–420).
 
 ## Transcript and slide slips
@@ -560,16 +560,16 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 6 lectures; t
 > The lecturer introduces "the propulsive efficiency", writes out the kinetic-energy expression and then corrects himself: "this is not the propulsive efficiency, is it? This is the thermal efficiency." The thermal efficiency is the kinetic-energy rate over the fuel heat; $\eta_P$ is then $\eta_O/\eta_{th}$.
 
 > [!warning] Slide slip: 62.2 % or 62.6 %? (Lecture 19)
-> Where: [[#5. How much do the modelling assumptions matter? (Lecture 19, Table 2)]].
+> Where: [[#5. How much do the modelling assumptions matter? (Table 2)]].
 >
 > The Lecture 19 slide ("simple formula for efficiency") prints 62.6 % for the ideal cycle at $r_p=30$, while the handout's Table 2 gives 62.2 %. The formula gives $1-30^{-0.2857}=62.15$ %, so 62.2 % is right and the slide value is a slip.
 
 > [!warning] Transcript slip: inconsistent cooling-air number (L19, ll. 446, 457–458)
-> Where: [[#5. How much do the modelling assumptions matter? (Lecture 19, Table 2)]].
+> Where: [[#5. How much do the modelling assumptions matter? (Table 2)]].
 >
 > The cooling air is said to cost "another percent", then, at the summary slide, "it looks like two percent, I'm not sure these numbers are consistent with the previous slides". The handout's Table 2 value, −2.1 points, is used above.
 
 > [!warning] Handout slip: the ramjet section is a placeholder
-> Where: [[#3. Ramjets (Lecture 18)]].
+> Where: [[#3. Ramjets]].
 >
 > In `Week 06-07 - Jet Engines.pdf`, §6.8 "Ramjet engines" contains only the letters "sdf". The ramjet material is in the Lecture 18 slides and transcript, which §3 follows.

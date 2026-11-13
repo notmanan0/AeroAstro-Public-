@@ -26,9 +26,9 @@ sources: ["02 - Sources/Lectures/Lecture 2.04.pdf", "02 - Sources/Lectures/Lectu
 > The root locus plots how the closed-loop poles, the roots of $1+KG(s) = 0$, move through the $s$-plane as one parameter, usually the loop gain $K$, goes from 0 to ∞. Branches start at the open-loop poles and end at the open-loop zeros or at infinity along asymptotes. Because a pole's position gives its decay rate, frequency, $\omega_n$ and $\zeta = \cos\beta$, the locus links the gain directly to stability and transient response.
 
 > [!summary]- Exam use: quick path
-> - **Use it when:** a question gives an open-loop transfer function in ZPK form (it will be given, L2.04, l. 412) and asks for a root-locus sketch, the effect of a P or PD controller, the range of stable gain, or the gain for a target $\zeta$.
+> - **Use it when:** a question gives an open-loop transfer function in ZPK form (it will be given) and asks for a root-locus sketch, the effect of a P or PD controller, the range of stable gain, or the gain for a target $\zeta$.
 > - **Assumptions:** unity negative feedback, characteristic equation $1+KG(s)=0$; $K$ from 0 to $+\infty$ (for a negative-gain plant such as the SPO, run $K$ from 0 to $-\infty$ or absorb the sign into $G$); start from the open-loop TF.
-> - **Method:** 1. Mark poles (×) and zeros (○). 2. Real-axis segments: odd number of poles + zeros to the right. 3. $n-m$ asymptotes at $(2k+1)180°/(n-m)$ from $\sigma_a=(\Sigma p-\Sigma z)/(n-m)$. 4. Break-in/away from $A'B-AB'=0$; imaginary-axis crossing from Routh or $s=i\omega$. 5. Sketch symmetrically, label everything (the marking scheme, ll. 533–557).
+> - **Method:** 1. Mark poles (×) and zeros (○). 2. Real-axis segments: odd number of poles + zeros to the right. 3. $n-m$ asymptotes at $(2k+1)180°/(n-m)$ from $\sigma_a=(\Sigma p-\Sigma z)/(n-m)$. 4. Break-in/away from $A'B-AB'=0$; imaginary-axis crossing from Routh or $s=i\omega$. 5. Sketch symmetrically, label everything (the marking scheme).
 > - **Common mistakes:** drawing the locus from the closed-loop TF; forgetting that a negative plant gain flips the locus, so positive $K$ gives the complementary (unstable) locus.
 > - **Practise:** [[#Worked example: three poles, three asymptotes]] · [[SESA2027 Mock Questions#Q7. Root locus sketch and stable gain range|Mock Q7]] · [[SESA2027 Practice Problems 2 Solutions]] (Q6)
 
@@ -54,7 +54,7 @@ For $\lambda = \sigma\pm i\omega$:
 - $\zeta = -\sigma/\omega_n = \cos\beta$, where $\beta$ is the angle from the negative real axis.
 - Lines of constant $\zeta$ are rays from the origin: $\omega = \sqrt{\sigma^2/\zeta^2-\sigma^2}$.
 
-Constant-$\zeta$ line, line by line (L2.04, ll. 92–116). Start from $\zeta = -\sigma/\omega_n$ with $\sigma<0$:
+Constant-$\zeta$ line, line by line. Start from $\zeta = -\sigma/\omega_n$ with $\sigma<0$:
 
 $$
 \omega_n = -\frac{\sigma}{\zeta}
@@ -72,9 +72,9 @@ $$
 
 So $\omega/|\sigma|$ is fixed for a given $\zeta$: the line is a ray from the origin.
 
-The rays of constant damping are what make the s-plane useful for design (L2.04, ll. 121–142). To guarantee, say, $\zeta\ge0.5$, place the closed-loop poles on or inside the $\zeta = 0.5$ ray. Moving a pole only along its ray changes $\omega_n$ but not $\zeta$; to add damping you have to change the ratio of the imaginary part to the real part.
+The rays of constant damping are what make the s-plane useful for design. To guarantee, say, $\zeta\ge0.5$, place the closed-loop poles on or inside the $\zeta = 0.5$ ray. Moving a pole only along its ray changes $\omega_n$ but not $\zeta$; to add damping you have to change the ratio of the imaginary part to the real part.
 
-Marginal stability is mostly a textbook case (L2.04, ll. 53–71). Poles exactly on the imaginary axis are rare in real hardware, which is always slightly damped or slightly unstable because of imperfections and flexibility. A controller can, however, put closed-loop poles there, as the P-controlled double integrator below shows.
+Marginal stability is mostly a textbook case. Poles exactly on the imaginary axis are rare in real hardware, which is always slightly damped or slightly unstable because of imperfections and flexibility. A controller can, however, put closed-loop poles there: a P-controlled double integrator has poles at $\pm i\sqrt{K_P}$ (§2).
 
 ## 2. Double-integrator examples
 Plant: double integrator $G = 1/s^2$.
@@ -85,7 +85,7 @@ $$
 \frac{X}{R} = \frac{K_P}{s^2+K_P},\qquad s = \pm i\sqrt{K_P}
 $$
 
-The roots move only along the imaginary axis. The response is a sustained oscillation, i.e. marginally stable. This locus is the stated exam answer for the effect of a proportional controller (L2.04, ll. 258–265): raising $K_P$ raises the natural frequency $\omega_n = \sqrt{K_P}$, so the oscillation gets faster but never decays. This is also why a CubeSat attitude loop cannot be stabilised with P alone (ll. 216–236).
+The roots move only along the imaginary axis. The response is a sustained oscillation, i.e. marginally stable. This locus is the stated exam answer for the effect of a proportional controller: raising $K_P$ raises the natural frequency $\omega_n = \sqrt{K_P}$, so the oscillation gets faster but never decays. This is also why a CubeSat attitude loop cannot be stabilised with P alone.
 
 PD controller, $C = K_D(s+K_P/K_D)$:
 
@@ -105,9 +105,9 @@ With $K_P/K_D = 1$:
 The locus is a circle around the zero at $-1$. The system is now stable. Along the circle $\zeta$ rises from 0 (at $K_D = 0$) to 1 (at the break-in point, $K_D = 4$).
 
 > [!warning] What the $\zeta = 0.75$ line means
-> It is not the best damping on the circle. The $\zeta = 0.75$ ray is a design target: inside it the system is already heavily damped, so whether extra control effort is worth it is a design judgement (L2.04, ll. 386–392). On this circle $\zeta = \sqrt{K_D/4}$, so $\zeta = 0.75$ is reached at $K_D = 2.25$, with roots $-1.125\pm0.992i$ (computed). From the step responses for $K = 1, 2, 4, 8$, a sensible choice is about $K_D = 4$, the edge of the complex region, because beyond it the gains in performance are minimal (ll. 394–406).
+> It is not the best damping on the circle. The $\zeta = 0.75$ ray is a design target: inside it the system is already heavily damped, so whether extra control effort is worth it is a design judgement. On this circle $\zeta = \sqrt{K_D/4}$, so $\zeta = 0.75$ is reached at $K_D = 2.25$, with roots $-1.125\pm0.992i$ (computed). From the step responses for $K = 1, 2, 4, 8$, a sensible choice is about $K_D = 4$, the edge of the complex region, because beyond it the gains in performance are minimal.
 
-Changing the ratio $K_P/K_D$ is possible exam material (L2.04, ll. 307–317). With $K_P/K_D = r$ the characteristic equation is $s^2+K_Ds+rK_D = 0$, so
+Changing the ratio $K_P/K_D$ is possible exam material. With $K_P/K_D = r$ the characteristic equation is $s^2+K_Ds+rK_D = 0$, so
 
 $$
 s = \frac{-K_D\pm\sqrt{K_D^2-4rK_D}}{2}
@@ -142,7 +142,7 @@ $$
 \frac{dK}{ds} = -\frac{A'(s)B(s)-A(s)B'(s)}{B(s)^2}
 $$
 
-This is zero when the numerator is zero; the denominator only matters if it is zero, which would make $dK/ds$ infinite (L2.04, ll. 510–525):
+This is zero when the numerator is zero; the denominator only matters if it is zero, which would make $dK/ds$ infinite:
 
 $$
 A'(s)B(s)-A(s)B'(s) = 0
@@ -150,7 +150,7 @@ $$
 
 Keep only the roots that lie on a real-axis segment of the locus.
 
-The locus is built from the open-loop TF, never the closed loop (L2.04, ll. 424–426). In the exam the ZPK form is given; in the lab it has to be factored first (ll. 412–413). Asymptote angles are measured anticlockwise from the positive real axis, with $k$ numbered from 0, as in Python (ll. 500–506), and the imaginary parts of conjugate poles cancel in the centroid, so only real parts matter (ll. 494–497). A full-marks sketch has straight, labelled axes, a symmetric locus, the poles and zeros placed and labelled, the branches drawn, and the break point, pole and zero values and asymptotes annotated; each element missed loses marks (ll. 533–557).
+The locus is built from the open-loop TF, never the closed loop. In the exam the ZPK form is given; in the lab it has to be factored first. Asymptote angles are measured anticlockwise from the positive real axis, with $k$ numbered from 0, as in Python, and the imaginary parts of conjugate poles cancel in the centroid, so only real parts matter. A full-marks sketch has straight, labelled axes, a symmetric locus, the poles and zeros placed and labelled, the branches drawn, and the break point, pole and zero values and asymptotes annotated; each element missed loses marks.
 
 ### Where the rules come from
 
@@ -189,7 +189,7 @@ The centroid comes from expanding both polynomials, $A=s^n-(\Sigma p)s^{n-1}+\do
 For the departure angle, apply the angle condition at a test point a tiny distance from a complex pole $p_d$. All other arrows are as if drawn to $p_d$ itself, and the one unknown is the departure angle $\phi$: $\sum\angle(\text{to zeros})-\sum_{j\ne d}\angle(\text{to poles})-\phi=180°$, which rearranges to the step 5 formula.
 
 > [!warning] Negative gain: the complementary locus
-> If $K<0$ (or the plant's gain $k_0<0$, as for the SPO), $KG=-1$ needs $\angle G=0°+k\,360°$. Every rule above flips: real-axis segments have an even number to the right, asymptotes sit at $k\,360°/(n-m)$. This is why the SPO pitch-rate locus must be drawn for $K$ from 0 to $-\infty$ (L2.04, ll. 152–157, 573–579).
+> If $K<0$ (or the plant's gain $k_0<0$, as for the SPO), $KG=-1$ needs $\angle G=0°+k\,360°$. Every rule above flips: real-axis segments have an even number to the right, asymptotes sit at $k\,360°/(n-m)$. This is why the SPO pitch-rate locus must be drawn for $K$ from 0 to $-\infty$.
 
 ### Worked example: three poles, three asymptotes
 
@@ -228,8 +228,8 @@ $$
 
    The roots are $s=\left(-0.612\pm\sqrt{0.3745+4.3147}\right)/2=(-0.612\pm2.1655)/2$. At $s=-1.3887$: $A=2.1356$ and $B=1.5050$, so $K=-A/B=-1.419$.
 
-> [!warning] Why $K$ must be negative here (L2.04, ll. 152–157, 573–579)
-> The root-locus rules assume $K$ goes from 0 to $+\infty$. The SPO plant has a negative gain (negative elevator gives positive pitch), so negative $K$ is needed for stable, negative feedback and the analysis must run $K$ from 0 to $-\infty$. With positive $K$ the sketch is the complementary locus and the loop is unstable.
+> [!warning] Why $K$ must be negative here
+> The root-locus rules assume $K$ goes from 0 to $+\infty$. The SPO plant has a negative gain (negative elevator gives positive pitch), so negative $K$ is needed for stable, negative feedback and the analysis must run $K$ from 0 to $-\infty$. With positive $K$ the sketch is the complementary locus: the closed-loop polynomial is $s^2+(0.805-1.39K)s+(1.325-0.425K)$, so the poles move towards the imaginary axis, with the damping falling as $K$ rises, and cross it at $K=0.579$ ($s=\pm1.04i$). The loop is unstable for every larger positive $K$.
 
 The open loop has $\zeta\approx0.4$ (exactly $0.805/(2\sqrt{1.325}) = 0.35$), and $\zeta$ increases with $|K|$. At the break-in point $\zeta = 1$ (critically damped, reached at $K = -1.42$); beyond it, with larger $|K|$, the branches are highly overdamped. P alone gives a good rise time but a significant steady-state error, which motivates adding I.
 
@@ -263,13 +263,11 @@ The method also has limitations. It assumes a precise, known TF, it becomes unre
 
 ## Exam scope
 
-All line references are to L2.04.
-
-- Hand construction of the root locus may be needed in the exam (l. 14); the ZPK form will be given (l. 412).
-- Effect of a P controller, illustrated with the $1/s^2$ root locus (ll. 264–265).
-- Redo the PD design with a different $K_P/K_D$ ratio (ll. 307–317).
-- Sketch marking scheme (ll. 533–557).
-- Further reading: Franklin et al., sections 5.1–5.3 (ll. 604–605).
+- Hand construction of the root locus may be needed in the exam; the ZPK form will be given.
+- Effect of a P controller, illustrated with the $1/s^2$ root locus.
+- Redo the PD design with a different $K_P/K_D$ ratio.
+- Sketch marking scheme.
+- Further reading: Franklin et al., sections 5.1–5.3.
 
 ## Terminology and alternative names
 

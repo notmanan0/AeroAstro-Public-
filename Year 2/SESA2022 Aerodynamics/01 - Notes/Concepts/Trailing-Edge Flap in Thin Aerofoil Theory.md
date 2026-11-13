@@ -35,7 +35,7 @@ The flap effectiveness $\partial C_l/\partial\delta = 2(\pi-\theta_h+\sin\theta_
 | 25 % | 120° | 3.826 | −0.650 | −0.609 |
 | 30 % | 113.6° | 4.152 | −0.642 | −0.661 |
 
-The values were checked numerically, and $|\partial C_{m,c/4}/\partial\delta|$ peaks near a 25 % flap. A down-going flap raises $C_l$ at every $\alpha$, shifting $\alpha_{L=0}$ negative, and gives a nose-down $C_{m,c/4}$, while the lift slope stays $2\pi$. Thin aerofoil theory over-predicts flap effectiveness by about 20–40 %, because of viscous losses and the gap at the hinge. The same model gives the elevator and rudder derivatives and hinge moments used in stability work.
+The magnitude $|\partial C_{m,c/4}/\partial\delta|$ peaks near a 25 % flap. A down-going flap raises $C_l$ at every $\alpha$, shifting $\alpha_{L=0}$ negative, and gives a nose-down $C_{m,c/4}$, while the lift slope stays $2\pi$. Thin aerofoil theory over-predicts flap effectiveness by about 20–40 %, because of viscous losses and the gap at the hinge. The same model gives the elevator and rudder derivatives and hinge moments used in stability work.
 
 Past-paper uses: a 25 % flap in [[SESA2022 Exam 2013-14 Solutions]] Q3, [[SESA2022 Exam 2018-19 Solutions]] Q2 and [[SESA2022 Exam 2023-24 Solutions]] B Q1; also [[SESA2022 Examples Sheet 4 - Thin Aerofoil Theory Solutions]].
 

@@ -31,23 +31,23 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 21.txt", "02 - Sources/Lecture
 > - **Assumptions:** the curve given as $\mathbf r(t)$ with a direction; for the shortcut, $\mathbf F$ smooth on a region with no holes.
 > - **Method:** 1. Compute $\nabla\times\mathbf F$. 2. If it is zero, find $\phi$ and use $\phi(A)-\phi(B)$ (with $\mathbf F=-\nabla\phi$). 3. Otherwise read $x(t)$, $y(t)$, $z(t)$ off $\mathbf r(t)$ and substitute into $\mathbf F$. 4. Differentiate $\mathbf r(t)$ and form $\mathbf F\cdot\frac{d\mathbf r}{dt}$. 5. Integrate over the parameter range.
 > - **Common mistakes:** using the parameter's limits as coordinates; mixing the sign conventions $\mathbf F=\nabla\phi$ and $\mathbf F=-\nabla\phi$, which flips the answer.
-> - **Practise:** [[#Same field, two paths (L22)]] · [[#Finding a potential (L26)]] · [[#4. Past exam questions B1]]
+> - **Practise:** [[#Same field, two paths]] · [[#Finding a potential]] · [[#4. Past exam questions B1]]
 
-Lift on a wing, flow through a pipe, work moving a charge: the useful numbers from a field come from integrating it, and the simplest integral runs along a curve (L26, ll. 1–15). If a small particle moves along a curve through a force field, only the field on the curve affects it, so the work done is built from the field at each point of the curve and the direction of travel there (L22, ll. 9–18).
+Lift on a wing, flow through a pipe, work moving a charge: the useful numbers from a field come from integrating it, and the simplest integral runs along a curve. If a small particle moves along a curve through a force field, only the field on the curve affects it, so the work done is built from the field at each point of the curve and the direction of travel there.
 
 The answer usually depends on the route, which is what makes the special case so useful. For a field that is the gradient of a potential, the work is just the change in potential energy, as for gravity, and no integral is needed. The curl, from [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities|VC2]], tests for that case.
 
 ---
 
-## 1. The work integral (L21)
+## 1. The work integral
 
-For a constant force moving a particle along a straight segment, the work is the force dotted with the displacement (L21, ll. 322–329). For a curve through a varying field, split the curve into many short segments (ll. 330–348). Along the segment from $\mathbf r(t)$ to $\mathbf r(t+\Delta t)$, treat the force as constant, say $\mathbf F(\mathbf r(t))$, so the work along it is about
+For a constant force moving a particle along a straight segment, the work is the force dotted with the displacement. For a curve through a varying field, split the curve into many short segments. Along the segment from $\mathbf r(t)$ to $\mathbf r(t+\Delta t)$, treat the force as constant, say $\mathbf F(\mathbf r(t))$, so the work along it is about
 
 $$
 \mathbf F(\mathbf r(t))\cdot\big[\mathbf r(t+\Delta t)-\mathbf r(t)\big]\approx\mathbf F(\mathbf r(t))\cdot\frac{d\mathbf r}{dt}\,\Delta t .
 $$
 
-Adding the segments and letting $\Delta t\to0$ turns the sum into an integral, just as the Fourier series became the Fourier transform (ll. 343–366):
+Adding the segments and letting $\Delta t\to0$ turns the sum into an integral, just as the Fourier series became the Fourier transform:
 
 $$
 W=\int_C\mathbf F\cdot d\mathbf r=\int_a^b\mathbf F\big(\mathbf r(t)\big)\cdot\frac{d\mathbf r}{dt}\,dt .
@@ -55,39 +55,39 @@ $$
 
 Everything is now a function of the single parameter $t$, so this is an ordinary one-dimensional integral, and the result is one number.
 
-Three properties follow (ll. 367–384). The value doesn't depend on the parametrisation: speeding up the parameter shrinks $dt$ and enlarges $\frac{d\mathbf r}{dt}$ by the same factor. Reversing the direction of travel flips the sign. But a genuinely different curve samples the field at different places, so in general it gives a different answer; only special fields are path-independent.
+Three properties follow. The value doesn't depend on the parametrisation: speeding up the parameter shrinks $dt$ and enlarges $\frac{d\mathbf r}{dt}$ by the same factor. Reversing the direction of travel flips the sign. But a genuinely different curve samples the field at different places, so in general it gives a different answer; only special fields are path-independent.
 
-## 2. Computing line integrals (L22)
+## 2. Computing line integrals
 
-### Same field, two paths (L22)
+### Same field, two paths
 
-The field $\mathbf F=2xy\,\mathbf i+(x^2-z^2)\,\mathbf j-3xz^2\,\mathbf k$ is integrated from the origin to $(2,1,3)$ along two curves (ll. 28–46).
+The field $\mathbf F=2xy\,\mathbf i+(x^2-z^2)\,\mathbf j-3xz^2\,\mathbf k$ is integrated from the origin to $(2,1,3)$ along two curves.
 
-The curved path $C_1$ is $\mathbf r=2t\,\mathbf i+t^3\,\mathbf j+3t^2\,\mathbf k$, $0\leq t\leq1$. Read off $x=2t$, $y=t^3$, $z=3t^2$ and substitute (ll. 47–68):
+The curved path $C_1$ is $\mathbf r=2t\,\mathbf i+t^3\,\mathbf j+3t^2\,\mathbf k$, $0\leq t\leq1$. Read off $x=2t$, $y=t^3$, $z=3t^2$ and substitute:
 
 $$
 \mathbf F\big|_{C_1}=4t^4\,\mathbf i+(4t^2-9t^4)\,\mathbf j-54t^5\,\mathbf k .
 $$
 
-This is $\mathbf F$ only on this curve with this parameter, not anywhere else. The tangent is (ll. 69–76)
+This is $\mathbf F$ only on this curve with this parameter, not anywhere else. The tangent is
 
 $$
 \frac{d\mathbf r}{dt}=2\,\mathbf i+3t^2\,\mathbf j+6t\,\mathbf k .
 $$
 
-In an orthonormal basis the dot product multiplies matching components (ll. 77–85):
+In an orthonormal basis the dot product multiplies matching components:
 
 $$
 \mathbf F\cdot\frac{d\mathbf r}{dt}=8t^4+(12t^4-27t^6)-324t^6=20t^4-351t^6 .
 $$
 
-The parameter runs from 0 to 1, so (ll. 86–98)
+The parameter runs from 0 to 1, so
 
 $$
 \int_{C_1}\mathbf F\cdot d\mathbf r=\int_0^1(20t^4-351t^6)\,dt=4-\frac{351}7=-\frac{323}7\approx-46.1 .
 $$
 
-The straight path $C_2$ is $\mathbf r=2t\,\mathbf i+t\,\mathbf j+3t\,\mathbf k$ (ll. 114–171). A straight line is always start point plus (end minus start) times the parameter, so its tangent is a constant vector, $2\,\mathbf i+\mathbf j+3\,\mathbf k$. On it
+The straight path $C_2$ is $\mathbf r=2t\,\mathbf i+t\,\mathbf j+3t\,\mathbf k$. A straight line is always start point plus (end minus start) times the parameter, so its tangent is a constant vector, $2\,\mathbf i+\mathbf j+3\,\mathbf k$. On it
 
 $$
 \mathbf F\big|_{C_2}=4t^2\,\mathbf i-5t^2\,\mathbf j-54t^3\,\mathbf k ,
@@ -105,7 +105,7 @@ $$
 \int_{C_2}\mathbf F\cdot d\mathbf r=\Big[t^3-\frac{162}4t^4\Big]_0^1=1-\frac{81}2=-\frac{79}2=-39.5 .
 $$
 
-Same endpoints, different answers: this integral depends on the path (ll. 179–193).
+Same endpoints, different answers: this integral depends on the path.
 
 The parametrisation, on the other hand, does not matter. The same straight line can be traced as $\mathbf r=2s^2\,\mathbf i+s^2\,\mathbf j+3s^2\,\mathbf k$, $0\leq s\leq1$, which moves slowly at first and fast at the end. Then $\mathbf F=4s^4\,\mathbf i-5s^4\,\mathbf j-54s^6\,\mathbf k$ and $\frac{d\mathbf r}{ds}=4s\,\mathbf i+2s\,\mathbf j+6s\,\mathbf k$, so
 
@@ -117,7 +117,7 @@ exactly as before: substituting $t=s^2$, $dt=2s\,ds$ turns one integral into the
 
 ### Round a closed loop
 
-The loop goes out along $C_1$ and back along $C_2$ reversed (ll. 199–239). Reversing $C_2$ flips its sign, so
+The loop goes out along $C_1$ and back along $C_2$ reversed. Reversing $C_2$ flips its sign, so
 
 $$
 \oint\mathbf F\cdot d\mathbf r=-\frac{323}7+\frac{79}2=\frac{-646+553}{14}=-\frac{93}{14}\approx-6.6 .
@@ -129,7 +129,7 @@ A particle taken round the loop and returned to its start has had net work done 
 
 ### A gradient field on the same two paths
 
-The field $\mathbf F=y^2z\,\mathbf i+2xyz\,\mathbf j+xy^2\,\mathbf k$ is $\nabla(xy^2z)$ (ll. 240–316). On $C_1$,
+The field $\mathbf F=y^2z\,\mathbf i+2xyz\,\mathbf j+xy^2\,\mathbf k$ is $\nabla(xy^2z)$. On $C_1$,
 
 $$
 \mathbf F=3t^8\,\mathbf i+12t^6\,\mathbf j+2t^7\,\mathbf k,\qquad\mathbf F\cdot\frac{d\mathbf r}{dt}=6t^8+36t^8+12t^8=54t^8 ,
@@ -178,19 +178,19 @@ $$
 
 This field has curl $3\,\mathbf j\neq\mathbf 0$, so no shortcut was available. SymPy gives all three values.
 
-## 3. Conservative fields (L26)
+## 3. Conservative fields
 
-A **conservative** vector field is one that can be written as the gradient of a scalar field, its **potential** (ll. 22–35). This course uses the convention
+A **conservative** vector field is one that can be written as the gradient of a scalar field, its **potential**. This course uses the convention
 
 $$
 \mathbf F=-\nabla\phi ,
 $$
 
-with a minus sign, because $\phi$ is usually a potential energy and the force pushes towards lower energy, as with gravity or electrostatics (ll. 46–50). If the potential is an entropy, which increases, the sign is plus. The Lecture 22 example uses the plus sign, so the sign in each question needs checking. The potential is not unique: adding a constant leaves $\nabla\phi$ unchanged, just as the zero of potential energy can be the floor, the desk or the ceiling, since only differences matter (ll. 51–59).
+with a minus sign, because $\phi$ is usually a potential energy and the force pushes towards lower energy, as with gravity or electrostatics. If the potential is an entropy, which increases, the sign is plus. Some examples use the plus sign, so the sign in each question needs checking. The potential is not unique: adding a constant leaves $\nabla\phi$ unchanged, just as the zero of potential energy can be the floor, the desk or the ceiling, since only differences matter.
 
 ### The work is a difference of potentials
 
-For a curve from $A=\mathbf r(a)$ to $B=\mathbf r(b)$ (ll. 60–112):
+For a curve from $A=\mathbf r(a)$ to $B=\mathbf r(b)$:
 
 $$
 \mathbf F\cdot\frac{d\mathbf r}{dt}=-\Big(\frac{\partial\phi}{\partial x}\frac{dx}{dt}+\frac{\partial\phi}{\partial y}\frac{dy}{dt}+\frac{\partial\phi}{\partial z}\frac{dz}{dt}\Big).
@@ -210,23 +210,23 @@ $$
 \oint_C\mathbf F\cdot d\mathbf r=0 .
 $$
 
-It also follows the other way round (ll. 327–342): split the loop at two points into two paths from $A$ to $B$; path independence makes them equal, and going back along one of them flips its sign, so the two halves cancel.
+It also follows the other way round: split the loop at two points into two paths from $A$ to $B$; path independence makes them equal, and going back along one of them flips its sign, so the two halves cancel.
 
 ### When is a field conservative?
 
-The test uses the identity $\nabla\times\nabla\phi=\mathbf 0$ from [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities|VC2]] (ll. 118–127): a gradient field has zero curl, so compute $\nabla\times\mathbf F$, and if it isn't zero the field is not conservative and the line integral must be done in full. Zero curl is enough provided $\mathbf F$ is defined and differentiable everywhere in the region and the region has no holes (ll. 128–137). This fails, for example, at a point charge, where the potential goes like one over the distance and blows up, or around a perfect insulator inside which the potential means nothing.
+The test uses the identity $\nabla\times\nabla\phi=\mathbf 0$ from [[MATH2048 VC2 - Divergence, Curl, Laplacian and Vector Identities|VC2]]: a gradient field has zero curl, so compute $\nabla\times\mathbf F$, and if it isn't zero the field is not conservative and the line integral must be done in full. Zero curl is enough provided $\mathbf F$ is defined and differentiable everywhere in the region and the region has no holes. This fails, for example, at a point charge, where the potential goes like one over the distance and blows up, or around a perfect insulator inside which the potential means nothing.
 
-### Finding a potential (L26)
+### Finding a potential
 
-$\mathbf F=-\nabla\phi$ is three first-order PDEs (ll. 138–164):
+$\mathbf F=-\nabla\phi$ is three first-order PDEs:
 
 $$
 F_1=-\frac{\partial\phi}{\partial x},\qquad F_2=-\frac{\partial\phi}{\partial y},\qquad F_3=-\frac{\partial\phi}{\partial z}.
 $$
 
-Integrating in $x$ leaves a "constant" that can be any function of $y$ and $z$. Rather than integrate all three and match three sets of such functions, integrate the easiest one, then differentiate the result in another variable and compare (ll. 165–176).
+Integrating in $x$ leaves a "constant" that can be any function of $y$ and $z$. Rather than integrate all three and match three sets of such functions, integrate the easiest one, then differentiate the result in another variable and compare.
 
-The worked example (ll. 177–290) is
+The worked example is
 
 $$
 \mathbf F=\big(2xy+\cos2y\big)\,\mathbf i+\big(x^2-2x\sin2y+2y\big)\,\mathbf j .
@@ -256,7 +256,7 @@ $$
 \phi=-x^2y-x\cos2y-y^2+C .
 $$
 
-The constant $C$ doesn't matter (ll. 261–284). Either set it to zero, the usual choice, or choose it so the potential vanishes somewhere meaningful, such as at infinity for gravity.
+The constant $C$ doesn't matter. Either set it to zero, the usual choice, or choose it so the potential vanishes somewhere meaningful, such as at infinity for gravity.
 
 Starting from the $\mathbf j$ equation instead gives the same answer, which is a good check. $-\phi_y=x^2-2x\sin2y+2y$ integrates in $y$ to
 
@@ -271,7 +271,7 @@ using $\int\sin2y\,dy=-\frac12\cos2y$, so $-\int(-2x\sin2y)\,dy=-x\cos2y$. Then 
 
 ### Potential flow
 
-In fluids a velocity field with zero curl is irrotational: small fluid elements don't spin relative to each other, though the flow as a whole can still turn (ll. 291–311). Then $\mathbf u=\nabla\phi$, and if the flow is also incompressible, $\nabla\cdot\mathbf u=0$, so $\nabla^2\phi=0$: the whole flow follows from one solution of [[MATH2048 PDE5 - Laplace's Equation|Laplace's equation]]. This is potential flow, the basis of much of incompressible aerodynamics. Most real flows do have vorticity, and then the velocity has to be split into an irrotational part and a part with no divergence.
+In fluids a velocity field with zero curl is irrotational: small fluid elements don't spin relative to each other, though the flow as a whole can still turn. Then $\mathbf u=\nabla\phi$, and if the flow is also incompressible, $\nabla\cdot\mathbf u=0$, so $\nabla^2\phi=0$: the whole flow follows from one solution of [[MATH2048 PDE5 - Laplace's Equation|Laplace's equation]]. This is potential flow, the basis of much of incompressible aerodynamics. Most real flows do have vorticity, and then the velocity has to be split into an irrotational part and a part with no divergence.
 
 ## 4. Past exam questions B1
 
@@ -325,13 +325,13 @@ Lecture 22 expected line integrals to be routine by this point (l. 349), and Lec
 ### Core
 
 - [ ] PS8 Q7(a)–(c). Answers: $2$; $0$ (conservative, equal potentials at the ends); $4\pi+\frac{16\pi^2}3$. → [[#Problem Sheet 8, Q7]]
-- [ ] Rework both L22 paths for the first field and confirm the loop value $-\frac{93}{14}$. → [[#Same field, two paths (L22)]]
+- [ ] Rework both L22 paths for the first field and confirm the loop value $-\frac{93}{14}$. → [[#Same field, two paths]]
 - [ ] 2025/26 B1: show $\mathbf F$ is not conservative and integrate it. → [[#4. Past exam questions B1]]
 
 ### Further practice
 
 - [ ] 2024/25 B1(b)–(d): find $\phi$ with $\nabla\phi=-\mathbf G$ and use it. → [[#4. Past exam questions B1]]
-- [ ] Find the potential of the L26 example starting from the $\mathbf j$ equation instead, and check you get the same $\phi$ up to a constant (suggested, not lecturer-set). → [[#Finding a potential (L26)]]
+- [ ] Find the potential of the L26 example starting from the $\mathbf j$ equation instead, and check you get the same $\phi$ up to a constant (suggested, not lecturer-set). → [[#Finding a potential]]
 
 ## Transcript and slide slips
 

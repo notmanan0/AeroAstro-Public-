@@ -42,7 +42,7 @@ Repeated differentiation also runs the other way: the values $f(0),f'(0),f''(0),
 
 ---
 
-## 1. Stationary points and their nature (James §8.5.1)
+## 1. Stationary points and their nature
 
 A point $x=a$ is a **stationary point** (also called a critical point) of a differentiable function $f$ when
 
@@ -158,7 +158,7 @@ Q2: the stationary points of three functions and their nature.
 2. $f=x+e^x$: $f'=1+e^x>0$ for every $x$, so there are no stationary points.
 3. $f=x^3-3x+3$: $f'=3(x^2-1)=0$ at $x=\pm1$ and $f''=6x$. At $x=-1$, $f''=-6<0$, a maximum with $f=5$; at $x=1$, $f''=6>0$, a minimum with $f=1$.
 
-## 2. Optimisation (James §8.5)
+## 2. Optimisation
 
 An optimisation problem is a stationary-point problem with a model in front of it. Write the quantity to be minimised or maximised as a function of one variable (using any constraint to eliminate the others), set its derivative to zero and confirm the nature of the root. When the model has only one sensible root and the physical problem clearly has an optimum, that root is the optimum. Examples 8.34 to 8.36 are read-only (Module 8 work scheme, item 1).
 
@@ -265,7 +265,7 @@ If the running cost is instead accumulated continuously, $\int_0^t(917+163\tau)\
 
 ![[m1054_m08_optimisation.png|900]]
 
-## 3. Curve sketching (James §2.5.3)
+## 3. Curve sketching
 
 A sketch shows the major properties of a graph, each found by calculation. For $y=f(x)$:
 
@@ -401,7 +401,7 @@ and the quadratic gives the other roots $x=1\pm\sqrt3\approx-0.732,\ 2.732$. The
 
 ![[m1054_curve_sketches_stationary.png|800]]
 
-## 4. Parametric differentiation (James §8.3.14)
+## 4. Parametric differentiation
 
 A curve is given **parametrically** when both coordinates are functions of a parameter, $x=x(t)$, $y=y(t)$. Dots denote $t$-derivatives, $\dot x=dx/dt$. Where the curve is locally the graph of a differentiable function $y=f(x)$, write $y(t)=f(x(t))$ and apply the chain rule:
 
@@ -437,7 +437,7 @@ $$
 
 ![[m1054_m08_parametric_curves.png|900]]
 
-## 5. Implicit differentiation (James §8.3.14)
+## 5. Implicit differentiation
 
 An equation $F(x,y)=0$ links $x$ and $y$ **implicitly**. It often cannot be solved for $y$ (for example $y^4+\sin xy=0$), but near most points it still defines $y$ as a differentiable function of $x$. Treat $y$ as $y(x)$ and differentiate every term with respect to $x$. A term $g(y)$ is a composite function of $x$, so the chain rule gives
 
@@ -566,7 +566,7 @@ $$
 
 so $y'=-\tfrac43$ at $(1,1)$ and the tangent is $y-1=-\tfrac43(x-1)$, that is $4x+3y=7$.
 
-## 6. Logarithmic differentiation (James §8.3.14)
+## 6. Logarithmic differentiation
 
 Logarithmic differentiation is implicit differentiation applied to $\ln y$. For $y=f(x)>0$, take logarithms and differentiate both sides, using the chain rule on $\ln y$:
 
@@ -667,7 +667,7 @@ $$
 y'=\frac{5x(2x^2-5)}{3(1-x^2)^{1/2}(2x^2+3)^{7/3}}.
 $$
 
-## 7. Second derivatives of parametric and implicit curves (James §8.4.1)
+## 7. Second derivatives of parametric and implicit curves
 
 The concavity of a parametric or implicit curve, and hence the nature of its stationary points, needs $d^2y/dx^2$. The rule is to differentiate $dy/dx$ with respect to $x$, using the chain rule whenever $dy/dx$ is expressed in another variable.
 
@@ -779,7 +779,7 @@ $$
 \frac{dy}{dx}=\frac{3t^2}{2t}=\frac{3t}2,\qquad\frac{d^2y}{dx^2}=\frac{\frac{d}{dt}(3t/2)}{dx/dt}=\frac{3/2}{2t}=\frac3{4t}\qquad(t\neq0).
 $$
 
-## 8. Taylor and Maclaurin series (James §9.4.2)
+## 8. Taylor and Maclaurin series
 
 A **Maclaurin series** writes a function as a power series in $x$ whose coefficients come from the derivatives at $x=0$:
 

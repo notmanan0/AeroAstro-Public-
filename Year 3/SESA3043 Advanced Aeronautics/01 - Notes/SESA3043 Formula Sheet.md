@@ -11,7 +11,7 @@ sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 
 # SESA3043 Formula Sheet
 
-Current coverage: **Chapters 1–3**. Chapters 1–2, 3.1–3.2 and CH3-3 slides 1–26 are checked against transcripts; the rest of 3.3 and 3.4–3.6 are written from the slides, ahead of time.
+Current coverage: **Chapters 1–3**. Chapters 1–2, 3.1–3.2 and 3.3 up to the integral properties as functions of $\lambda$ are checked against transcripts; the rest of 3.3 and 3.4–3.6 are written from the slides, ahead of time.
 
 ## Which method? Given → method → predicts → main limitation
 
@@ -55,7 +55,7 @@ $$
 
 ## Continuity
 
-Conservation form, then non-conservation form (CH1-2 slides 27–34):
+Conservation form, then non-conservation form:
 
 $$
 \frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf u)=0,
@@ -201,7 +201,13 @@ $u-iv=\dfrac{\mathrm d\Phi/\mathrm d\bar z}{\mathrm dz/\mathrm d\bar z}$. Joukow
 - aerofoil: $a\cos\beta=b(1+\varepsilon)$, $\bar z_0=-\varepsilon b+ia\sin\beta$, $\dfrac bc=\dfrac{1+2\varepsilon}{4(1+\varepsilon)^2}$;
 - Kutta: $\Gamma=4\pi aU\sin(\alpha+\beta)$, $C_L=\dfrac{8\pi a}{c}\sin(\alpha+\beta)$.
 
-Kármán–Trefftz: $z=2b\dfrac{(\bar z+b)^p+(\bar z-b)^p}{(\bar z+b)^p-(\bar z-b)^p}$, $p=2-\tau/\pi$, $\dfrac bc=\dfrac{(1+\varepsilon)^p-\varepsilon^p}{4(1+\varepsilon)^p}$; far field $z\approx(2/p)\bar z$. Joukowski and KT are examined as logic, not calculation (9 Oct, ll. 490–495); $C_p=1-|\mathrm d\Phi/\mathrm dz|^2/U^2$; angles in radians in the code.
+Kármán–Trefftz: $z=2b\dfrac{(\bar z+b)^p+(\bar z-b)^p}{(\bar z+b)^p-(\bar z-b)^p}$, $p=2-\tau/\pi$, $\dfrac bc=\dfrac{(1+\varepsilon)^p-\varepsilon^p}{4(1+\varepsilon)^p}$; far field $z\approx(2/p)\bar z$. Joukowski and KT are examined as logic, not calculation; $C_p=1-|\mathrm d\Phi/\mathrm dz|^2/U^2$; angles in radians in the code.
+
+From the [[SESA3043 Deep Dive - Joukowski and Kármán-Trefftz Aerofoils, Full Derivation|Joukowski and KT deep dive]]: circle theorem $\Phi=f(\bar z)+\left[f\!\left(a^2/\bar z^*\right)\right]^*$ about the circle's centre. For KT the circle-plane stream is $\bar U_\infty=(2/p)U_\infty$, so $\Gamma=4\pi a\bar U_\infty\sin(\alpha+\beta)$ and
+$$
+C_L=\frac{16\pi a}{p\,c}\sin(\alpha+\beta)\qquad(p=2:\ \text{Joukowski}),\qquad C_p=1-\frac{16\left[\sin(\theta-\alpha)+\sin(\alpha+\beta)\right]^2}{p^2\left|\mathrm dz/\mathrm d\bar z\right|^2}.
+$$
+$\dfrac{\mathrm dz}{\mathrm d\bar z}=\dfrac{8b^2p\,AB}{(\bar z^2-b^2)(A-B)^2}$ with $A=(\bar z+b)^p$, $B=(\bar z-b)^p$. Near the trailing edge $z-2b\approx\dfrac{4b}{(2b)^p}(\bar z-b)^p$: included angle $\tau$, bisector at $-p\beta$. Coursework aerofoil ($\varepsilon=0.07$, $\beta=0.06$, $\tau=0.2$) at $\alpha=3^\circ$: $C_L=0.7760$ on ktreff's unit chord.
 
 ## Lumped vortex method
 
@@ -257,11 +263,17 @@ $$
 \delta^*=\xi\eta^*,\qquad\theta=\xi\theta^*,\qquad C_f=\frac{2\nu}{U_e\xi}f''(0).
 $$
 
-Blasius: $f''(0)=\theta^*=0.4696$, $\eta^*=1.217$, $\eta_{99}=3.47$ (slides 3.5);
-$\delta_{99}/x=4.91/\sqrt{Re_x}$ (slides 5.0), $\delta^*/x=1.721/\sqrt{Re_x}$, $\theta/x=C_f=0.664/\sqrt{Re_x}$, $H=2.59$.
+Blasius: $f''(0)=\theta^*=0.4696$, $\eta^*=1.217$, $\eta_{99}=3.47$;
+$\delta_{99}/x=4.91/\sqrt{Re_x}$, $\delta^*/x=1.721/\sqrt{Re_x}$, $\theta/x=C_f=0.664/\sqrt{Re_x}$, $H=2.59$.
 Separation: $\beta=-0.19884$, $m=-0.0904$. Stagnation ($\beta=1$): $\xi=\sqrt{\nu/c}$, $\eta_{99}\approx2.4$.
-Cylinder, near the front stagnation point ($x=R\theta$ along the surface, $\theta$ small, in radians): $U_e=2U_\infty\sin\theta\approx2U_\infty x/R$, so $c=2U_\infty/R$, $m=1$ and $\delta_{99}=\eta_{99}\sqrt{\nu R/(2U_\infty)}$, independent of $x$ (worked problem, slide 106: 0.374 mm).
+Cylinder, near the front stagnation point ($x=R\theta$ along the surface, $\theta$ small, in radians): $U_e=2U_\infty\sin\theta\approx2U_\infty x/R$, so $c=2U_\infty/R$, $m=1$ and $\delta_{99}=\eta_{99}\sqrt{\nu R/(2U_\infty)}$, independent of $x$ (worked problem: 0.374 mm).
 $\beta\pi$ is the included angle of a symmetric wedge. A single wall turned away by $\delta_w$ has $\beta=-2\delta_w/\pi$, so separation needs only $\delta_w=17.9^\circ$.
+
+From the [[SESA3043 Deep Dive - Falkner-Skan Similarity, Full Derivation|Falkner–Skan deep dive]]: $\xi\propto x^{(1-m)/2}$ with $\mathrm d\xi/\mathrm dx=\xi(1-m)/(2x)$; the wedge potential $\Phi=-kz^{m+1}$ gives $c=k(m+1)$. At the wall $f'''(0)=-\beta$, i.e. $\nu\,\partial^2u/\partial y^2|_0=-U_e\,\mathrm dU_e/\mathrm dx$. Integrating the Falkner–Skan equation across the layer gives the MIE in similarity form,
+$$
+f''(0)=(1+\beta)\,\theta^*+\beta\,\eta^*\qquad(\beta=0:\ \theta^*=f''(0)),
+$$
+so at separation $H=-(1+\beta)/\beta=4.029$. Local scalings: $\delta^*\sqrt{Re_x}/x=\eta^*\sqrt{2/(m+1)}$, $C_f\sqrt{Re_x}=2f''(0)\sqrt{(m+1)/2}$.
 
 ## Pohlhausen (3.3)
 
@@ -269,7 +281,7 @@ $$
 \frac u{U_e}=2\eta-2\eta^3+\eta^4+\frac\lambda6\eta(1-\eta)^3,\qquad\eta=\frac y\delta,\qquad\lambda=\frac{\delta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}=-\left.\frac{\mathrm d^2(u/U_e)}{\mathrm d\eta^2}\right|_0.
 $$
 
-$\delta^*/\delta=\frac{3}{10}-\frac{\lambda}{120}$, $\theta/\delta=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072}$, $\tau_w\delta/(\mu U_e)=2+\lambda/6$; separation $\lambda=-12$; valid $|\lambda|\le12$. Coefficients: $a_0=0$, $a_1=2+\lambda/6$, $a_2=-\lambda/2$, $a_3=-2+\lambda/2$, $a_4=1-\lambda/6$. Shape factor $H=\delta^*/\theta$: 2.25 at $\lambda=12$, 2.55 at $\lambda=0$ (Blasius 2.59), 3.50 at $\lambda=-12$; APG raises $H$, FPG lowers it. In terms of $Re_\delta=U_e\delta/\nu$ (Bernoulli at the edge): $\lambda=Re_\delta\frac{\delta}{U_e}\frac{\mathrm dU_e}{\mathrm dx}=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$, so at fixed station and with the other factors held fixed, separation is more likely with higher $Re$, a thicker layer, slower $U_e$ and a stronger APG. For geometrically similar laminar flow, $\delta^2\propto\nu L/U_\infty$ cancels the $1/\nu$, so $\lambda(x/L)$ and the laminar separation point do not depend on $Re$; $Re$ matters through transition.
+$\delta^*/\delta=\frac{3}{10}-\frac{\lambda}{120}$, $\theta/\delta=\frac{37}{315}-\frac{\lambda}{945}-\frac{\lambda^2}{9072}$, $\tau_w\delta/(\mu U_e)=2+\lambda/6$; separation $\lambda=-12$; valid $|\lambda|\le12$; $C_f=(4+\lambda/3)/Re_\delta$; $H=\dfrac{3/10-\lambda/120}{37/315-\lambda/945-\lambda^2/9072}$. Coefficients: $a_0=0$, $a_1=2+\lambda/6$, $a_2=-\lambda/2$, $a_3=-2+\lambda/2$, $a_4=1-\lambda/6$. Shape factor $H=\delta^*/\theta$: 2.25 at $\lambda=12$, 2.55 at $\lambda=0$ (Blasius 2.59), 3.50 at $\lambda=-12$; APG raises $H$, FPG lowers it. In terms of $Re_\delta=U_e\delta/\nu$ (Bernoulli at the edge): $\lambda=Re_\delta\frac{\delta}{U_e}\frac{\mathrm dU_e}{\mathrm dx}=-Re_\delta\frac{\delta}{\rho U_e^2}\frac{\mathrm dp_e}{\mathrm dx}$, so at fixed station and with the other factors held fixed, separation is more likely with higher $Re$, a thicker layer, slower $U_e$ and a stronger APG. For geometrically similar laminar flow, $\delta^2\propto\nu L/U_\infty$ cancels the $1/\nu$, so $\lambda(x/L)$ and the laminar separation point do not depend on $Re$; $Re$ matters through transition.
 
 ## Transition (3.4)
 
@@ -283,6 +295,12 @@ $$
 
 Spatial growth (complex $\alpha$, real $\omega$; boundary layers are convectively unstable): growth rate $-\alpha_i$, unstable for $\alpha_i<0$ with $e^{i(\alpha x-\omega t)}$. $c_{ph}=\omega/\alpha$, $\alpha=2\pi/\lambda$, $\omega=2\pi/T$. Thumb plot: $\log Re_{\delta^*}$ against $F$, neutral curve $\alpha_i=0$, tip = small $Re_{crit}$ (first instability, not transition). Transition where the envelope of the constant-frequency amplification curves reaches $n_{crit}=9$ (Smith & Gamberoni; van Ingen; the XFOIL/XFLR5 default), lower $n_{crit}$ for a noisier environment. Blasius: $Re_{\delta^*}=1.7208\sqrt{Re_x}$. APG: larger unstable region, lower $Re_{crit}$; FPG the opposite.
 
+From the [[SESA3043 Deep Dive - Linear Stability and the Orr-Sommerfeld Equation|Orr–Sommerfeld deep dive]] (lengths scaled by $\delta^*$, speeds by $U_e$; $\hat u=(i/\alpha)\,\mathrm d\hat v/\mathrm dy$; $\hat v=\mathrm d\hat v/\mathrm dy=0$ at the wall and as $y\to\infty$):
+$$
+\left(\tilde u-\tilde c\right)\left(\tilde{\mathrm D}^2-\tilde\alpha^2\right)\hat v-\tilde u''\hat v=-\frac{i}{\tilde\alpha\,Re_{\delta^*}}\left(\tilde{\mathrm D}^2-\tilde\alpha^2\right)^2\hat v,\qquad F=\frac{\omega\delta^*/U_e}{Re_{\delta^*}}.
+$$
+Blasius, computed: $Re_{\delta^*,crit}=519$, $\alpha_r\delta^*=0.304$, $c_{ph}=0.40U_e$, $F_{crit}=2.32\times10^{-4}$, $Re_{x,crit}=9.1\times10^4$. Envelope $n=9,\ 7,\ 5$ at $Re_x=3.2,\ 2.25,\ 1.45\times10^6$ ($Re_{\delta^*}=3083,\ 2581,\ 2074$).
+
 ## Momentum integral equation (3.5)
 
 $$
@@ -291,9 +309,17 @@ $$
 
 Conditions: 2-D, steady, incompressible boundary layer. One ODE with three unknowns ($\theta$, $H$ or $\delta^*$, $C_f$), so it needs a closure: an assumed similarity profile or an empirical correlation. Zero pressure gradient ($\mathrm dU_e/\mathrm dx=0$): $\mathrm d\theta/\mathrm dx=C_f/2$.
 
-Thwaites (extension; laminar only; outside the scope of CH3-5, BL6 ll. 343–351): $\theta^2=\dfrac{0.45\nu}{U_e^6}\displaystyle\int_0^xU_e^5\,\mathrm dx$.
+Dimensional form: $\dfrac{\mathrm d}{\mathrm dx}\left(U_e^2\theta\right)+U_e\dfrac{\mathrm dU_e}{\mathrm dx}\delta^*=\dfrac{\tau_w}{\rho}$.
 
-Mean skin friction of a flat plate of length $L$ (laminar or turbulent, but **zero pressure gradient**; ship example, slides 40–44): $\overline{C_f}=\dfrac{2\,\theta(L)}{L}$. Fully rough wall (extension): $\sqrt{2/C_f}=\kappa^{-1}\ln(\delta/k_s)+8.5+2\Pi/\kappa$, independent of $\nu$.
+Kármán–Pohlhausen march (extension, [[SESA3043 Deep Dive - Momentum Integral Equation and Pohlhausen Method|MIE and Pohlhausen deep dive]]): with $g=\theta/\delta$, $h=\delta^*/\delta$, $a_1=2+\lambda/6$,
+$$
+U_e\frac{\mathrm d}{\mathrm dx}\left(\frac{\theta^2}{\nu}\right)=F(K)=2\left[T-(2+H)K\right],\qquad K=\frac{\theta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}=g^2\lambda,\qquad T=\frac{\tau_w\theta}{\mu U_e}=a_1g.
+$$
+Flat plate $F(0)=148/315$: $\theta/x=C_f=0.685/\sqrt{Re_x}$, $\delta/x=5.84/\sqrt{Re_x}$, $\delta^*/x=1.751/\sqrt{Re_x}$. Stagnation start $F=0$: $\lambda_0=7.05$, $K_0=0.0770$. Separation $\lambda=-12$ is $K=-0.157$ (Thwaites: $K=-0.09$). Howarth flow $U_e=U_0(1-x/L)$: $x_s/L=0.157$ (Pohlhausen), 0.123 (Thwaites), 0.120 (exact).
+
+Thwaites (extension; laminar only; outside the scope of 3.5): $\theta^2=\dfrac{0.45\nu}{U_e^6}\displaystyle\int_0^xU_e^5\,\mathrm dx$.
+
+Mean skin friction of a flat plate of length $L$ (laminar or turbulent, but **zero pressure gradient**; ship example): $\overline{C_f}=\dfrac{2\,\theta(L)}{L}$. Fully rough wall (extension): $\sqrt{2/C_f}=\kappa^{-1}\ln(\delta/k_s)+8.5+2\Pi/\kappa$, independent of $\nu$.
 
 ## Viscous–inviscid interaction (3.6)
 
@@ -317,3 +343,4 @@ $$
 - [[SESA3043 3.4 - Transition to Turbulence]]
 - [[SESA3043 3.5 - Momentum Integral Equation]]
 - [[SESA3043 3.6 - Viscous-Inviscid Interaction]]
+- Deep dives: [[SESA3043 Deep Dive - Joukowski and Kármán-Trefftz Aerofoils, Full Derivation]] · [[SESA3043 Deep Dive - Falkner-Skan Similarity, Full Derivation]] · [[SESA3043 Deep Dive - Linear Stability and the Orr-Sommerfeld Equation]] · [[SESA3043 Deep Dive - Momentum Integral Equation and Pohlhausen Method]]

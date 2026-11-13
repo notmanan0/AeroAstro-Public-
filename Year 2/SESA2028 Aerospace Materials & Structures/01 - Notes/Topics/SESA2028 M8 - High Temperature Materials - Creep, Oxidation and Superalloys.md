@@ -29,7 +29,7 @@ sources: ["02 - Sources/Materials Lectures/High temperature materials 2025.pdf",
 > - **Common mistakes:** temperature in °C in the LMP; interpolating creep lives linearly in $t_r$ rather than $\log t_r$.
 > - **Example:** [[#Larson–Miller lives]]. **Exercise:** [[SESA2028 Materials Tutorial MT5 - High Temperature Materials Solutions]].
 
-High-temperature service brings every structural-performance problem of the earlier blocks, strength, toughness, fatigue, corrosion, and adds new ones. The first requirement is obvious, a high melting point, but not enough: the material must keep its strength, so the microstructure that gives it strength must survive, which is why precipitate-strengthened light alloys, whose precipitates dissolve or coarsen when hot, fail here. Diffusion speeds up, so creep appears, and oxidation accelerates, so a protective oxide is needed. And there is a catch in manufacture: the qualities wanted in service, not softening and not melting, make the material hard to shape, so cost matters, and only applications such as space missions can pay for the most exotic materials.
+High-temperature service keeps every structural-performance problem met at room temperature, strength, toughness, fatigue, corrosion, and adds new ones. The first requirement is obvious, a high melting point, but not enough: the material must keep its strength, so the microstructure that gives it strength must survive, which is why precipitate-strengthened light alloys, whose precipitates dissolve or coarsen when hot, fail here. Diffusion speeds up, so creep appears, and oxidation accelerates, so a protective oxide is needed. Manufacture suffers too: the qualities wanted in service, not softening and not melting, make the material hard to shape, so cost matters, and only applications such as space missions can pay for the most exotic materials.
 
 At room temperature a metal's atoms sit still and only dislocations carry deformation. Heated to a good fraction of its melting point, atoms and vacancies diffuse readily, especially along grain boundaries, so a loaded part slowly changes shape even at stresses far below yield, grain boundaries slide and open up, precipitates coarsen, and oxygen ions and metal ions migrate through any surface oxide. High-temperature alloy design is about making all those movements slow.
 
@@ -57,7 +57,7 @@ Both dependences are steep. At 1034 MPa the same alloy creeps very differently a
 
 ### Stress relaxation
 
-Fix the strain instead of the load, by stretching a bar between ceiling and floor, and the initial stress decays over time by the same creep process, faster at higher temperature and higher initial stress. The rate of relaxation is proportional to the stress that drives it:
+Fix the strain instead of the load, by stretching a bar between ceiling and floor, and the initial stress decays over time by the same creep process, faster at higher temperature and higher initial stress. For linear viscous creep ($n=1$ in the power law above) the rate of relaxation is proportional to the stress that drives it:
 
 $$
 \frac{d\sigma}{dt}=-\frac{\sigma}{\tau},
@@ -77,7 +77,13 @@ $$
 \sigma=\sigma_0e^{-t/\tau}.
 $$
 
-A bolted flange loses its preload this way.
+A bolted flange loses its preload this way. For a stress exponent $n>1$ the decay is a power law, not an exponential. With the total strain fixed, the elastic strain lost equals the creep strain gained, so $\dot\sigma=-EA\sigma^n\exp(-Q/RT)$, and separating variables gives
+
+$$
+\sigma^{1-n}=\sigma_0^{1-n}+(n-1)EA\exp\left(-\frac{Q}{RT}\right)t .
+$$
+
+The stress falls fast at first and then ever more slowly, so no single relaxation time describes it.
 
 ## 2. Creep mechanisms
 
@@ -157,7 +163,7 @@ The design list follows from the mechanisms:
 - few grain boundaries, or boundaries aligned with the load so they carry no resolved shear: columnar grains, or no boundaries at all;
 - dislocations pinned by precipitates or dispersoids so recovery is slow.
 
-Creep is useful once, as **superplasticity**. A nanometre-grained microstructure, made by extreme deformation such as high-pressure torsion or equal-channel angular pressing with only slight recovery, has so many grain boundaries that, at slow strain rates, grain-boundary sliding gives elongations of 335–604 %, far beyond any Part 1 tensile test. Gas pressure can then blow a sheet into a complex shape in one step, the superplastic forming used for hollow titanium fan blades in [[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium|M6]].
+Creep is useful once, as **superplasticity**. A nanometre-grained microstructure, made by extreme deformation such as high-pressure torsion or equal-channel angular pressing with only slight recovery, has so many grain boundaries that, at slow strain rates, grain-boundary sliding gives elongations of 335–604 %, far beyond the few tens of per cent of an ordinary tensile test. Gas pressure can then blow a sheet into a complex shape in one step, the superplastic forming used for hollow titanium fan blades in [[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium|M6]].
 
 ## 5. Oxidation
 
@@ -213,7 +219,7 @@ Chromium and aluminium protect because their oxides, chromia and alumina, are co
 
 ### Oxidation of a turbine blade
 
-A past-paper question, with the examiner's marking notes, asks why oxidation matters for a turbine blade and how to reduce it. Oxidation eats load-bearing metal, replacing it with oxide; it roughens the aerofoil and costs aerodynamic performance; spalled oxide is hard and brittle and erodes parts downstream when ingested. To reduce it, add chromium (and aluminium) for a coherent protective scale, lower the metal temperature with cooling and thermal barrier coatings, and apply protective coatings or deliberately thicken the oxide, as anodising does.
+Why oxidation matters for a turbine blade, and how to reduce it, is a past-paper question (ML15a). Oxidation eats load-bearing metal, replacing it with oxide; it roughens the aerofoil and costs aerodynamic performance; spalled oxide is hard and brittle and erodes parts downstream when ingested. To reduce it, add chromium (and aluminium) for a coherent protective scale, lower the metal temperature with cooling and thermal barrier coatings, and apply protective coatings or deliberately thicken the oxide, as anodising does.
 
 ## 6. Oxidation, creep and fatigue together
 
@@ -263,8 +269,6 @@ Finally the blade is coated. On the single-crystal superalloy goes an intermetal
 
 ## Worked examples
 
-The calculations are from tutorial MT5 and the past papers.
-
 ### How sensitive is creep?
 
 Illustrative values: with $Q=280$ kJ/mol, typical of nickel self-diffusion, raising the temperature from 1000 K to 1010 K multiplies the creep rate by
@@ -273,7 +277,7 @@ $$
 \exp\left[\frac{Q}{R}\left(\frac{1}{1000}-\frac{1}{1010}\right)\right]=\exp\left(33\,680\times9.90\times10^{-6}\right)=1.40,
 $$
 
-so 10 K costs 40 % of the life. With $n=5$, a 10 % rise in stress multiplies the rate by $1.1^5=1.61$. For stress relaxation with a relaxation time of 1000 h, after 500 h the stress has fallen to $e^{-0.5}=0.61$ of its initial value.
+so the life falls to $1/1.40=0.71$ of its value: 10 K costs 29 % of the life. With $n=5$, a 10 % rise in stress multiplies the rate by $1.1^5=1.61$. For linear ($n=1$) stress relaxation with a relaxation time of 1000 h, after 500 h the stress has fallen to $e^{-0.5}=0.61$ of its initial value.
 
 > [!check] Temperature against stress
 > Here $Q/R=280\,000/8.314=33\,680$ K. A 10 K rise at 1000 K costs as much life as a $1.40^{1/5}-1=7$ % rise in stress with $n=5$: for a hot-section part, a few degrees of extra metal temperature matter as much as a substantial overload, which is why cooling and coatings are worth so much. The relaxation half-life is $\tau\ln2=693$ h for $\tau=1000$ h.
@@ -308,7 +312,7 @@ The same equivalence underlies accelerated testing (illustrative): 1000 h at 900
 
 ### Creep life under changing conditions
 
-The past papers apply Miner's rule to creep, interpolating rupture lives on logarithmic axes. The results, from the solution notes:
+Rupture lives interpolated on logarithmic axes and summed with Miner's rule give these past-paper results:
 
 | Question | Conditions so far | Life used | Remaining life at final condition |
 |---|---|---:|---:|
@@ -394,6 +398,7 @@ ML14a (ll. 9–16) opens with a pause-and-think exercise: list the properties a 
 > |---|---|---|
 > | ML14a, l. 4 | "in lecture content block 4" | lecture content block 14 |
 > | ML14a, ll. 104, 106 | "arhenius" | Arrhenius |
+> | ML14a, ll. 113–128 | relaxation $\sigma=\sigma_0e^{-t/\tau}$ introduced straight after the power-law creep rate, with no condition | exponential decay holds only for linear viscous creep ($n=1$); for $n>1$ it is a power law ([[#Stress relaxation]]) |
 > | ML14a, ll. 124–125 | "my stress is a constant sort of threshold stress … times an exponential of minus t over tor" | $\sigma=\sigma_0e^{-t/\tau}$, with $\sigma_0$ the initial stress and $\tau$ the relaxation time (l. 128) |
 > | ML14b, l. 9 | "the Burgess vector and the Lyon vector" | the Burgers vector and the line vector |
 > | ML14b, l. 21 | "climb past the article" | climb past the particle |

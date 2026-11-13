@@ -333,7 +333,7 @@ A truss bar in compression is a pin-ended strut ([[FEEG1002 A2 - Pin-Jointed Tru
 
 ### Worked example - pin-ended I-section column
 
-Tutorial 6 Q1 (I-beam buckling direction, L12, l. 408) is a stainless steel column 5 m long, pinned at both ends, $E=213$ GPa, with flanges 40 × 10 mm and a web 5 × 30 mm, 50 mm deep overall. Find the minimum buckling load, and the factor by which it rises if a pin at mid-height prevents sideways movement.
+Tutorial 6 Q1 (I-beam buckling direction) is a stainless steel column 5 m long, pinned at both ends, $E=213$ GPa, with flanges 40 × 10 mm and a web 5 × 30 mm, 50 mm deep overall. Find the minimum buckling load, and the factor by which it rises if a pin at mid-height prevents sideways movement.
 
 The section is doubly symmetric. About the axis parallel to the flanges, the flanges' centroids are 20 mm from it:
 

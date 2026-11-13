@@ -42,6 +42,6 @@ The trap is at the edge. At $x=\pm R$ the ratio limit is exactly 1 and the endpo
 
 ## Related
 
-- Topics: [[MATH1054 M20 - Further Calculus II#5. Infinite series (James §7.6.1)|M20 §5]] · [[MATH1054 M20 - Further Calculus II#6. D'Alembert's ratio test (James §7.6.2)|M20 §6]] · [[MATH1054 M20 - Further Calculus II#7. Power series and the radius of convergence (James §7.7)|M20 §7]] · [[MATH1054 M20 Solutions - Further Calculus II]]
+- Topics: [[MATH1054 M20 - Further Calculus II#5. Infinite series|M20 §5]] · [[MATH1054 M20 - Further Calculus II#6. D'Alembert's ratio test|M20 §6]] · [[MATH1054 M20 - Further Calculus II#7. Power series and the radius of convergence|M20 §7]] · [[MATH1054 M20 Solutions - Further Calculus II]]
 - Concepts: [[Arithmetic and Geometric Series]] · [[Taylor and Maclaurin Series]] · [[Improper Integrals]] · [[Partial Fractions]] · [[Fourier's Theorem]] (convergence of Fourier series, MATH2048)
 - Sources: James, Modern Engineering Mathematics (6th ed.) §7.6–7.7; MATH1054 Module Booklet, Module 20.

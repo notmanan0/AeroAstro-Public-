@@ -228,7 +228,7 @@ The net volume pushed in is $Q_B-Q_A=\tfrac12Q_B>0$. The liquid cannot compress,
 
 $$\boxed{\text{piston C moves upward}},\qquad A_CV_C=\tfrac12A_BV_B.$$
 
-> [!note] Correction (2026-11-05)
+> [!note] Correction
 > The earlier reasoning said that piston A's "larger swept-volume contribution" was unbalanced. In fact A sweeps only half the volume rate of B: its area is a quarter of B's and its speed twice. The answer, C moves up, is unchanged.
 
 ## Related

@@ -29,13 +29,13 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L7)", "02 - Sources/L
 > - **Common mistakes:** forgetting that a multi-level scheme needs a starting step; choosing $\eta_{max}$ too small (4 is not enough).
 > - **Practise:** [[#2. The predictor–corrector scheme (RK2)]] · [[#RK4 in four lines]] · [[SESA2029 CFD Worked Examples#Q8: RK2 characteristic polynomial|CFD worked examples Q8]]
 
-The AIAA publication policy recommends that methods for PDEs be at least formally second order in space for smooth solutions and that time-difference methods for initial-value problems be at least formally second order (L7 slide 3). The space discretisations of A2 to A5 meet that; the explicit and implicit Euler time advances do not. The Blasius boundary-layer problem (§4) is the reference solution for the laminar profiles of coursework lab 3.
+The AIAA publication policy recommends that methods for PDEs be at least formally second order in space for smooth solutions and that time-difference methods for initial-value problems be at least formally second order. The space discretisations of A2 to A5 meet that; the explicit and implicit Euler time advances do not. The Blasius boundary-layer problem (§4) is the reference solution for the laminar profiles of coursework lab 3.
 
 Runge–Kutta methods sample the slope more than once per step. A first-order step takes the slope at the start of the interval and walks along it in a straight line, missing any curvature. A Runge–Kutta step tests the slope part-way along, uses that to improve its estimate, and combines several such samples so that the curvature, and then higher derivatives, are captured without ever computing them explicitly.
 
 ## 1. The three-point backward scheme in time
 
-The second-order backward difference from [[SESA2029 A2 - Discrete Data, Finite Differences and Taylor Tables|A2]], $(f_{j-2}-4f_{j-1}+3f_j)/2h$, works just as well in time, with $\Delta t$ in place of $h$ and the derivative taken at the new level $n+1$ (L7 slide 4). For $\mathrm df/\mathrm dt=R$,
+The second-order backward difference from [[SESA2029 A2 - Discrete Data, Finite Differences and Taylor Tables|A2]], $(f_{j-2}-4f_{j-1}+3f_j)/2h$, works just as well in time, with $\Delta t$ in place of $h$ and the derivative taken at the new level $n+1$. For $\mathrm df/\mathrm dt=R$,
 
 $$
 \frac{f^{n-1}-4f^n+3f^{n+1}}{2\Delta t}=R.
@@ -57,13 +57,13 @@ $$
 f^{n+1}=\frac{4f^n-f^{n-1}+2\Delta t\,R^n}{3},
 $$
 
-but then the left side is centred at $t_{n+1}$ and the right side at $t_n$, which costs a whole order. For the model equation $3G^2-(4+2z)G+1=0$, whose physical root is $G=1+z-\tfrac12z^2+\dots$: the $z^2$ coefficient is wrong, so this explicit form is only first order (the slides' second-order label is covered in [[#Transcript and slide slips]]).
+but then the left side is centred at $t_{n+1}$ and the right side at $t_n$, which costs a whole order. For the model equation $3G^2-(4+2z)G+1=0$, whose physical root is $G=1+z-\tfrac12z^2+\dots$: the $z^2$ coefficient is wrong, so this explicit form is only first order (it is sometimes mislabelled second order; see [[#Transcript and slide slips]]).
 
 Either way the scheme needs two stored past levels. At $n=0$ there is no $f^{-1}$, so a special starting method is needed: the first step is taken with a one-step method such as explicit Euler, after which two levels exist. A careless starter can inject a spurious mode, the second root of the quadratic for $G$.
 
 ## 2. The predictor–corrector scheme (RK2)
 
-A predictor estimates the solution at the half step with an explicit Euler half-step, and a corrector uses that estimate to evaluate the slope at the midpoint for the full step (L7 slide 5):
+A predictor estimates the solution at the half step with an explicit Euler half-step, and a corrector uses that estimate to evaluate the slope at the midpoint for the full step:
 
 $$
 \tilde f^{n+1/2}=f^n+\tfrac12\Delta t\,R(f^n),
@@ -99,7 +99,7 @@ The exact solution over one step is $f^{n+1}=e^{\lambda\Delta t}f^n=\left(1+\lam
 
 ## 3. The classical fourth-order Runge–Kutta scheme
 
-The classical RK4 builds three intermediate estimates and combines four slopes (L7 slide 6):
+The classical RK4 builds three intermediate estimates and combines four slopes:
 
 $$
 f^{*}=f^n+\tfrac{\Delta t}{2}R(t^n,f^n),
@@ -121,7 +121,7 @@ The first stage is an explicit half-step predictor, the second a corrector at th
 
 ### RK4 in four lines
 
-Set $R=\lambda f$ and $z=\lambda\Delta t$ (the exercise on L7 slide 6). Each stage multiplies $f^n$ by a polynomial in $z$:
+Set $R=\lambda f$ and $z=\lambda\Delta t$. Each stage multiplies $f^n$ by a polynomial in $z$:
 
 $$
 f^{*}=f^n\left(1+\tfrac z2\right),
@@ -155,7 +155,7 @@ The figure integrates the F-4C short-period mode $\lambda=-0.5+1.3i$ to $t=4$. T
 
 ### Stability regions
 
-The same gain analysis as in [[SESA2029 A5 - Numerical Stability - Von Neumann Analysis, Fourier and CFL Numbers|A5]], with $G=\sum_{m=0}^{p}z^m/m!$, gives growing stability regions (L7 slide 7):
+The same gain analysis as in [[SESA2029 A5 - Numerical Stability - Von Neumann Analysis, Fourier and CFL Numbers|A5]], with $G=\sum_{m=0}^{p}z^m/m!$, gives growing stability regions:
 
 | Scheme | Real-axis limit $\sigma\Delta t$ | Imaginary-axis limit $\omega\Delta t$ |
 |---|---|---|
@@ -170,7 +170,7 @@ The imaginary-axis entries follow from $z=i\omega\Delta t$. For RK2, $G=1-\tfrac
 
 ## 4. The Blasius boundary layer
 
-Ideal-flow theory predicts zero drag on any body, d'Alembert's paradox. Prandtl resolved it in 1904 with the boundary-layer concept: no slip at the wall and a thin layer where viscosity matters, governed by the boundary-layer equations, a simplification of Navier–Stokes. In 1907 his student Blasius solved the laminar flat-plate case by assuming the velocity profile has the same shape at every downstream station, a similarity solution (L7 slide 9). The result is
+Ideal-flow theory predicts zero drag on any body, d'Alembert's paradox. Prandtl resolved it in 1904 with the boundary-layer concept: no slip at the wall and a thin layer where viscosity matters, governed by the boundary-layer equations, a simplification of Navier–Stokes. In 1907 his student Blasius solved the laminar flat-plate case by assuming the velocity profile has the same shape at every downstream station, a similarity solution. The result is
 
 $$
 f'''+ff''=0,
@@ -192,7 +192,7 @@ $$
 
 so $f'=u/U_e$ is the velocity profile. Differentiating again, $\partial u/\partial y=U_ef''/\delta$, so $f''$ is proportional to the shear stress. The derivation of the equation itself is in SESA3043 ([[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions]]).
 
-The product $ff''$ makes the equation a nonlinear third-order ODE with no exact solution. The three boundary conditions are (L7 slide 10): the wall is a streamline, $f(0)=0$; no slip, $f'(0)=0$; and the free stream is recovered far away, $f'(\infty)=1$.
+The product $ff''$ makes the equation a nonlinear third-order ODE with no exact solution. The three boundary conditions are: the wall is a streamline, $f(0)=0$; no slip, $f'(0)=0$; and the free stream is recovered far away, $f'(\infty)=1$.
 
 ### Reformulation as a first-order system
 
@@ -210,7 +210,7 @@ The first two define the variables; the third is the Blasius equation.
 
 ### Shooting
 
-Two conditions are known at the wall and one at infinity, so the problem is solved by shooting (L7 slide 11): guess $f''(0)$, integrate outwards to a numerical "infinity" $\eta_{max}$ (6–8 should be enough), and compare $f'(\eta_{max})$ with 1. A guess of 0.3 gives $f'(8)=0.742$, too low; 0.6 gives 1.177, too high; trial and error converges on 0.4696.
+Two conditions are known at the wall and one at infinity, so the problem is solved by shooting: guess $f''(0)$, integrate outwards to a numerical "infinity" $\eta_{max}$ (6–8 should be enough), and compare $f'(\eta_{max})$ with 1. A guess of 0.3 gives $f'(8)=0.742$, too low; 0.6 gives 1.177, too high; trial and error converges on 0.4696.
 
 ```python
 import numpy as np
@@ -231,7 +231,7 @@ print(u[-1], dstar, theta, dstar/theta)
 
 `solve_ivp` uses RK45: a fourth-order and a fifth-order Runge–Kutta step whose difference estimates the error, so the step is shrunk when the error exceeds the tolerance and grown when it is comfortably below, which is adaptive step control. The name `trapz` used in the Blackboard code is `trapezoid` in newer SciPy.
 
-The trial and error can be automated (L7 slide 13) by putting the integration inside a root finder for $r(g)=f'(\eta_{max};g)-1$. The secant method, starting from 0.3 and 0.6, gives
+The trial and error can be automated by putting the integration inside a root finder for $r(g)=f'(\eta_{max};g)-1$. The secant method, starting from 0.3 and 0.6, gives
 
 | Iteration | $f''(0)$ | $f'(8)-1$ |
 |---|---|---|

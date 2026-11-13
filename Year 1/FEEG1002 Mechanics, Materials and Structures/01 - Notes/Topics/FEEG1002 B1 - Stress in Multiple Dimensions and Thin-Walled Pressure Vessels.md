@@ -29,7 +29,7 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 01 - Stress in Multiple Dimen
 > - **Common mistakes:** dividing by the wrong wall area (two walls of $tL$ in the hoop cut, not one); using a negative gauge pressure under external pressure and then forgetting that the stresses are compressive and buckling may govern.
 > - **Practise:** [[#Worked example - bolted spherical vessel]] · [[FEEG1002 Statics 2 Tutorial 1 - Stresses in Multiple Dimensions and Pressure Vessels Solutions]]
 
-For the long slender members of Statics 1, one stress component is enough: $F/A$ in a bar, $My/I$ in a beam, $Tr/J$ in a shaft. Many real components are not like that. A diving cylinder or a pressurised fuselage is pushed outwards round its circumference and along its length at the same time; a crankshaft is twisted and bent together; a gear tooth is too short to be a slender beam, so its shear stresses matter as much as its bending stress; the concrete at the foot of a dam is squeezed by the water on one side and by its own weight from above (Lecture 1, ll. 66–119). To decide whether such things are strong enough, stresses in several directions have to be described together.
+For the long slender members of Statics 1, one stress component is enough: $F/A$ in a bar, $My/I$ in a beam, $Tr/J$ in a shaft. Many real components are not like that. A diving cylinder or a pressurised fuselage is pushed outwards round its circumference and along its length at the same time; a crankshaft is twisted and bent together; a gear tooth is too short to be a slender beam, so its shear stresses matter as much as its bending stress; the concrete at the foot of a dam is squeezed by the water on one side and by its own weight from above. To decide whether such things are strong enough, stresses in several directions have to be described together.
 
 Cutting the body and drawing a free-body diagram exposes the internal forces needed for equilibrium on the cut. The force on a cut has components both normal and parallel to the surface, and the split between them changes with the angle of the cut. A point in a solid therefore has one physical state of stress but many sets of stress components, one for each orientation of the surface you look at. The stress element is the device that handles this.
 
@@ -41,7 +41,7 @@ The thin-walled pressure vessel is the first application. A low pressure acting 
 
 ### Normal and shear components
 
-A body loaded by external forces that balance each other, cut with a plane, still has each part in equilibrium, so the material on one side of the cut exerts forces on the material on the other side. These forces are internal: the left part pulls on the right part, and the right part pulls back equally and oppositely on the left (Lecture 1, ll. 126–145).
+A body loaded by external forces that balance each other, cut with a plane, still has each part in equilibrium, so the material on one side of the cut exerts forces on the material on the other side. These forces are internal: the left part pulls on the right part, and the right part pulls back equally and oppositely on the left.
 
 The force $d\vec F$ on a small patch $dA$ of the cut can be split into a component perpendicular to the surface and components parallel to it. Dividing by the area gives the stresses on that patch:
 
@@ -49,25 +49,25 @@ $$
 \sigma_{normal}=\frac{dF_{normal}}{dA},\qquad \sigma_{shear}=\frac{dF_{parallel}}{dA}
 $$
 
-In 3D the parallel part has two components, so a cut surface carries one normal stress and two shear stresses. Both kinds act equally and oppositely on the two faces of the cut. The shear components act like friction: if one face drags the other to the right, the other drags the first to the left (Lecture 1, ll. 165–180).
+In 3D the parallel part has two components, so a cut surface carries one normal stress and two shear stresses. Both kinds act equally and oppositely on the two faces of the cut. The shear components act like friction: if one face drags the other to the right, the other drags the first to the left.
 
 ### The stress depends on the cut
 
-The stress components depend on where the cut is made and on how it is oriented. A cut perpendicular to the local force vector carries a force that is entirely normal, with no shear at all; tilting the cut turns part of the force into shear. The physical state at the point has not changed, only its description (Lecture 1, ll. 198–216). A stress value is therefore meaningful only together with the surface it acts on, and the stress element of §2 always has a stated orientation. The change of the components with orientation is derived in [[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]].
+The stress components depend on where the cut is made and on how it is oriented. A cut perpendicular to the local force vector carries a force that is entirely normal, with no shear at all; tilting the cut turns part of the force into shear. The physical state at the point has not changed, only its description. A stress value is therefore meaningful only together with the surface it acts on, and the stress element of §2 always has a stated orientation. The change of the components with orientation is derived in [[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]].
 
 ## 2. The stress element
 
 ### Notation
 
-A tiny block of material isolated by cuts on all its sides (a square in 2D, a cube in 3D) has its faces normal to the $x$, $y$ and $z$ axes. Normal stresses act perpendicular to each face and shear stresses parallel to it. Because the block is in equilibrium and small enough for the stress to be uniform across it, every stress on one face is matched by an equal and opposite stress on the opposite face (Lecture 1, ll. 225–251).
+A tiny block of material isolated by cuts on all its sides (a square in 2D, a cube in 3D) has its faces normal to the $x$, $y$ and $z$ axes. Normal stresses act perpendicular to each face and shear stresses parallel to it. Because the block is in equilibrium and small enough for the stress to be uniform across it, every stress on one face is matched by an equal and opposite stress on the opposite face.
 
-Each stress needs two indices: one for the direction in which the stress acts, one for the direction of the normal to the face it acts on. In the FEEG1002 convention the **first index is the direction of the stress and the second is the face normal**. So $\sigma_{xx}$ acts in $x$ on the face whose normal is $x$, a normal stress, while $\sigma_{yx}$ acts in $y$ on the face whose normal is $x$, a shear stress. Equal indices mean a normal stress; different indices mean a shear stress (Lecture 1, ll. 296–316). Textbooks swap the two indices or write $\tau$ for shear; once complementary shear is established in [[#Moment balance and complementary shear]] the order no longer changes any value.
+Each stress needs two indices: one for the direction in which the stress acts, one for the direction of the normal to the face it acts on. In the FEEG1002 convention the **first index is the direction of the stress and the second is the face normal**. So $\sigma_{xx}$ acts in $x$ on the face whose normal is $x$, a normal stress, while $\sigma_{yx}$ acts in $y$ on the face whose normal is $x$, a shear stress. Equal indices mean a normal stress; different indices mean a shear stress. Textbooks swap the two indices or write $\tau$ for shear; once complementary shear is established in [[#Moment balance and complementary shear]] the order no longer changes any value.
 
 ![[s2_stress_element_notation.png|900]]
 
 ### Sign convention
 
-Normal stresses are positive in tension, pulling outwards on the face, and negative in compression. A shear stress is positive when it points in the positive $x$ or $y$ direction on a face whose outward normal is in the positive $x$ or $y$ direction: upwards on the right-hand face and to the right on the top face (Lecture 1, ll. 252–295). On the left and bottom faces the outward normal is negative, so a positive shear stress there points in the negative direction; two negatives make a positive. The practical rule is to read signs only from the right-hand and top faces.
+Normal stresses are positive in tension, pulling outwards on the face, and negative in compression. A shear stress is positive when it points in the positive $x$ or $y$ direction on a face whose outward normal is in the positive $x$ or $y$ direction: upwards on the right-hand face and to the right on the top face. On the left and bottom faces the outward normal is negative, so a positive shear stress there points in the negative direction; two negatives make a positive. The practical rule is to read signs only from the right-hand and top faces.
 
 > [!warning] Read the shear sign from the right-hand face
 > An element drawn with the shear arrow pointing down on the right-hand face and left on the top face has a negative $\sigma_{xy}$, even though the arrows look "natural". The sail in Tutorial 5 ($\sigma_{xy}=-1$ MPa) and Tutorial 8 Q4 ($\sigma_{xy}=-15$ MPa) are both drawn this way, and getting the sign wrong puts the principal direction on the wrong side ([[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]]).
@@ -76,7 +76,7 @@ Normal stresses are positive in tension, pulling outwards on the face, and negat
 
 ### Force balance with uniform stress
 
-If the stress is the same everywhere in a body, each element is surrounded by copies of itself. The normal stress on the right face is then equal and opposite to that on the left, and likewise for the shear stresses and for the top and bottom faces, so the forces on the element cancel in both directions (Lecture 1, ll. 318–339).
+If the stress is the same everywhere in a body, each element is surrounded by copies of itself. The normal stress on the right face is then equal and opposite to that on the left, and likewise for the shear stresses and for the top and bottom faces, so the forces on the element cancel in both directions.
 
 ### Moment balance and complementary shear
 
@@ -110,11 +110,11 @@ $$
 \boxed{\sigma_{xy}=\sigma_{yx}}
 $$
 
-This is **complementary shear**: the shear stresses on perpendicular faces are equal, and they point either both towards or both away from the corner they share. Only $\sigma_{xy}$ is written, being the value of the shear stress on both the $x$-face and the $y$-face (Lecture 1, ll. 340–376). The same pair occurs in a beam, where the shear stress on a horizontal plane equals that on the vertical section ([[FEEG1002 A9 - Shear Stresses in Beams]]).
+This is **complementary shear**: the shear stresses on perpendicular faces are equal, and they point either both towards or both away from the corner they share. Only $\sigma_{xy}$ is written, being the value of the shear stress on both the $x$-face and the $y$-face. The same pair occurs in a beam, where the shear stress on a horizontal plane equals that on the vertical section ([[FEEG1002 A9 - Shear Stresses in Beams]]).
 
 ### Stress in three dimensions
 
-A cube element has a normal stress on each of its three visible faces and two shear stresses on each. Complementary shear applies in each of the three planes, so $\sigma_{xy}=\sigma_{yx}$, $\sigma_{xz}=\sigma_{zx}$ and $\sigma_{yz}=\sigma_{zy}$, leaving six independent components: three normal stresses $\sigma_{xx}$, $\sigma_{yy}$, $\sigma_{zz}$ and three shear stresses $\sigma_{xy}$, $\sigma_{xz}$, $\sigma_{yz}$ (Lecture 1, ll. 378–397). They can be collected in a symmetric matrix, the stress tensor, whose row and column order matches the index convention above:
+A cube element has a normal stress on each of its three visible faces and two shear stresses on each. Complementary shear applies in each of the three planes, so $\sigma_{xy}=\sigma_{yx}$, $\sigma_{xz}=\sigma_{zx}$ and $\sigma_{yz}=\sigma_{zy}$, leaving six independent components: three normal stresses $\sigma_{xx}$, $\sigma_{yy}$, $\sigma_{zz}$ and three shear stresses $\sigma_{xy}$, $\sigma_{xz}$, $\sigma_{yz}$. They can be collected in a symmetric matrix, the stress tensor, whose row and column order matches the index convention above:
 
 $$
 \boldsymbol\sigma=\begin{bmatrix}\sigma_{xx}&\sigma_{xy}&\sigma_{xz}\\ \sigma_{xy}&\sigma_{yy}&\sigma_{yz}\\ \sigma_{xz}&\sigma_{yz}&\sigma_{zz}\end{bmatrix}
@@ -138,19 +138,19 @@ $$
 \boxed{\frac{\partial\sigma_{xx}}{\partial x}+\frac{\partial\sigma_{xy}}{\partial y}=0}
 $$
 
-and the same argument in $y$ gives $\partial\sigma_{xy}/\partial x+\partial\sigma_{yy}/\partial y=0$. A gradient in normal stress along $x$ must be balanced by a gradient in shear stress across $y$. This is the mechanism behind the shear stress in a beam: the bending stress grows along the beam, and the shear stress grows from the free surface inwards to keep each strip in equilibrium (Lecture 1, ll. 398–413).
+and the same argument in $y$ gives $\partial\sigma_{xy}/\partial x+\partial\sigma_{yy}/\partial y=0$. A gradient in normal stress along $x$ must be balanced by a gradient in shear stress across $y$. This is the mechanism behind the shear stress in a beam: the bending stress grows along the beam, and the shear stress grows from the free surface inwards to keep each strip in equilibrium.
 
 ## 4. Thin-walled pressure vessels
 
 ### Axes and the wall element
 
-A pressure vessel is thin-walled when its wall thickness $t$ is small compared with its radius $R$; the working rule is $t/R<0.1$ (Lecture 1, ll. 425–427). Put a 2D stress element on the wall with $x$ along the axis and $y$ round the circumference. Then $\sigma_{xx}$ is the **longitudinal stress** and $\sigma_{yy}$ is the **hoop stress**, named after the metal hoops that stop a wooden barrel bursting (Lecture 1, ll. 446–458). The load is axisymmetric and nothing twists the vessel, so there is no torsion and no shear stress on an element in this orientation: $\sigma_{xy}=0$, and the axial and hoop directions are already principal directions in the sense of [[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]].
+A pressure vessel is thin-walled when its wall thickness $t$ is small compared with its radius $R$; the working rule is $t/R<0.1$. Put a 2D stress element on the wall with $x$ along the axis and $y$ round the circumference. Then $\sigma_{xx}$ is the **longitudinal stress** and $\sigma_{yy}$ is the **hoop stress**, named after the metal hoops that stop a wooden barrel bursting. The load is axisymmetric and nothing twists the vessel, so there is no torsion and no shear stress on an element in this orientation: $\sigma_{xy}=0$, and the axial and hoop directions are already principal directions in the sense of [[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]].
 
 ![[s2_pressure_vessel_stresses.png|900]]
 
 ### Hoop stress
 
-The free body is a length $L$ of the cylinder cut along a horizontal diameter: the upper half, together with the fluid inside it. The fluid below pushes up on the flat cut face of the contents with pressure $p$ over the rectangle of area $2RL$. The wall is cut twice, each cut of area $tL$, and the hoop stress pulls down on both (Lecture 1, ll. 471–514). Vertical equilibrium gives
+The free body is a length $L$ of the cylinder cut along a horizontal diameter: the upper half, together with the fluid inside it. The fluid below pushes up on the flat cut face of the contents with pressure $p$ over the rectangle of area $2RL$. The wall is cut twice, each cut of area $tL$, and the hoop stress pulls down on both. Vertical equilibrium gives
 
 $$
 \sum F_v=0:\qquad pA_{h,inside}=\sigma_{yy}A_{h,wall}
@@ -172,7 +172,7 @@ Because $R/t>10$ for a thin wall, the hoop stress is always more than ten times 
 
 ### Longitudinal stress
 
-For the axial stress the free body is the left-hand part of the vessel cut across the axis, end cap and contents included. The fluid to the right pushes on the cut face of the contents with $p$ over the disc $\pi R^2$; the wall stress $\sigma_{xx}$ acts on the annulus of wall (Lecture 1, ll. 525–554). The exact annulus area is
+For the axial stress the free body is the left-hand part of the vessel cut across the axis, end cap and contents included. The fluid to the right pushes on the cut face of the contents with $p$ over the disc $\pi R^2$; the wall stress $\sigma_{xx}$ acts on the annulus of wall. The exact annulus area is
 
 $$
 A_{v,wall}=\pi\left[(R+t)^2-R^2\right]
@@ -218,7 +218,7 @@ $$
 F_v=2pRL
 $$
 
-which is the pressure times the projected area $2RL$ (Lecture 1, ll. 582–600). The same reasoning shows that the shape of the end caps does not affect $\sigma_{xx}$: the axial force on any cap, flat, hemispherical or pointed, is $p\pi R^2$. If a pointed cap pushed harder than a flat one, a sealed bottle would propel itself (Lecture 1, ll. 601–624).
+which is the pressure times the projected area $2RL$. The same reasoning shows that the shape of the end caps does not affect $\sigma_{xx}$: the axial force on any cap, flat, hemispherical or pointed, is $p\pi R^2$. If a pointed cap pushed harder than a flat one, a sealed bottle would propel itself.
 
 ### The radial stress
 
@@ -228,7 +228,7 @@ $$
 \frac{p}{\sigma_{yy}}=\frac{p}{pR/t}=\frac{t}{R}<0.1
 $$
 
-so it is neglected and the wall is treated as being in plane stress (Lecture 1, ll. 565–581). This is what lets the plane-stress form of Hooke's law be used for vessel strains in [[FEEG1002 B3 - Generalised Hooke's Law|B3]].
+so it is neglected and the wall is treated as being in plane stress. This is what lets the plane-stress form of Hooke's law be used for vessel strains in [[FEEG1002 B3 - Generalised Hooke's Law|B3]].
 
 ### Spherical vessels
 
@@ -242,11 +242,11 @@ $$
 \boxed{\sigma_{xx}=\sigma_{yy}=\frac{pR}{2t}}
 $$
 
-For the same $p$, $R$ and $t$, the peak stress in a sphere is half the hoop stress in a cylinder, or for the same allowable stress a sphere needs half the wall thickness. That is why deep-diving submersibles use spherical pressure hulls (Lecture 1, ll. 625–667). With equal stresses in every direction, the wall of a sphere carries no shear stress on any plane through the thickness.
+For the same $p$, $R$ and $t$, the peak stress in a sphere is half the hoop stress in a cylinder, or for the same allowable stress a sphere needs half the wall thickness. That is why deep-diving submersibles use spherical pressure hulls. With equal stresses in every direction, the wall of a sphere carries no shear stress on any plane through the thickness.
 
 ### When the thin-wall model holds
 
-The model needs $t/R<0.1$. Inner and outer radii are then nearly equal, and the difference is ignored; using the outer radius gives the larger stress and so is the conservative choice when sizing a wall, while the mean radius is more accurate (Lecture 1, ll. 649–661). Thicker walls need the Lamé thick-cylinder solution of Year 2 ([[SESA2028 S10 - Thick Cylinders and Shrink Fits]], [[Lame Thick-Cylinder Solution]]), whose hoop stress tends to $pR/t$ as $t\to0$. Under external pressure $p$ is negative, the stresses become compressive, and the wall can buckle long before it yields ([[FEEG1002 A7 - Euler Buckling of Struts]]); Tutorial 3 applies this to an acrylic submersible hull ([[FEEG1002 B3 - Generalised Hooke's Law#Worked example - submersible hull at 100 m|B3]]).
+The model needs $t/R<0.1$. Inner and outer radii are then nearly equal, and the difference is ignored; using the outer radius gives the larger stress and so is the conservative choice when sizing a wall, while the mean radius is more accurate. Thicker walls need the Lamé thick-cylinder solution of Year 2 ([[SESA2028 S10 - Thick Cylinders and Shrink Fits]], [[Lame Thick-Cylinder Solution]]), whose hoop stress tends to $pR/t$ as $t\to0$. Under external pressure $p$ is negative, the stresses become compressive, and the wall can buckle long before it yields ([[FEEG1002 A7 - Euler Buckling of Struts]]); Tutorial 3 applies this to an acrylic submersible hull ([[FEEG1002 B3 - Generalised Hooke's Law#Worked example - submersible hull at 100 m|B3]]).
 
 ---
 
@@ -294,7 +294,7 @@ Here $t/R=8\times10^{-4}$ and $p/\sigma_{yy}$ is the same tiny number, so the ra
 
 ### Worked example - sizing a diving cylinder
 
-A steel diving cylinder of radius 85 mm is charged to 200 bar (20 MPa). What wall thickness keeps the hoop stress at 400 MPa? (Suggested, not lecturer-set; the diving cylinder is the opening example at Lecture 1, ll. 68–74.)
+A steel diving cylinder of radius 85 mm is charged to 200 bar (20 MPa). What wall thickness keeps the hoop stress at 400 MPa? (Suggested, not lecturer-set.)
 
 $$
 t=\frac{pR}{\sigma_{yy}}=\frac{(20\times10^6)(0.085)}{400\times10^6}=4.25\ \mathrm{mm}

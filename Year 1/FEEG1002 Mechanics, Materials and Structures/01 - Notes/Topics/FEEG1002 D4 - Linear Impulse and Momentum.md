@@ -105,7 +105,7 @@ $$
 \int_{t_1}^{t_2}mg\,dt=mg(t_2-t_1)\approx0
 $$
 
-because $t_2-t_1\approx0$, whereas the contact force is so large that its impulse is finite. Forces that are present and unchanged before, during and after the impact are **non-impulsive** and can be neglected over the impact. This applies only to short events. Over a finite time every force counts: a rocket accelerating vertically for 6 s must include the impulse of its weight (L08, ll. 297–357), and for a block pushed up a rough incline for 3 s the weight, normal force and friction all contribute.
+because $t_2-t_1\approx0$, whereas the contact force is so large that its impulse is finite. Forces that are present and unchanged before, during and after the impact are **non-impulsive** and can be neglected over the impact. This applies only to short events. Over a finite time every force counts: a rocket accelerating vertically for 6 s must include the impulse of its weight, and for a block pushed up a rough incline for 3 s the weight, normal force and friction all contribute.
 
 > [!warning] Rigid ground breaks momentum conservation
 > A ball bouncing off the ground does not conserve its momentum: the ground, treated as having infinite mass, applies an external impulse. Momentum is conserved only for a system on which the external impulses cancel; perpendicular to rigid ground you need either the ground's impulse or information about the collision itself.
@@ -209,7 +209,7 @@ $$
 
 and with $e=1$ to the elastic one, $v_{A2}=[(m_A-m_B)v_{A1}+2m_Bv_{B1}]/(m_A+m_B)$ and $v_{B2}=[2m_Av_{A1}+(m_B-m_A)v_{B1}]/(m_A+m_B)$.
 
-The elastic result can also be reached from momentum and energy (slide p. 27). Write both with A's terms on the left:
+The elastic result can also be reached from momentum and energy. Write both with A's terms on the left:
 
 $$
 m_A(v_{A1}-v_{A2})=m_B(v_{B2}-v_{B1})
@@ -249,7 +249,7 @@ With equal masses and $e=1$, the elastic formulae give $v_{A2}=v_{B1}$ and $v_{B
 
 ## 3. Oblique impact
 
-Section 4.3 of the slides was declared optional and not assessed (slide p. 38; L07, ll. 25–27; L08, ll. 257–264). In outline: for a ball striking smooth ground obliquely, take $x$ along the plane of contact and $y$ along the line of impact. Momentum is conserved along $x$ (no impulse there), the ground's impulse acts along $y$, and $e$ applies to the $y$ components only. For two smooth particles, take $x$ along the line of impact; then the system's momentum is conserved along $x$, each particle's momentum is conserved separately along $y$, and $e$ applies along $x$: four equations for the four unknown velocity components. Tutorial 4 Q7 (billiard balls) is of this kind.
+Oblique impact is optional and not assessed. In outline: for a ball striking smooth ground obliquely, take $x$ along the plane of contact and $y$ along the line of impact. Momentum is conserved along $x$ (no impulse there), the ground's impulse acts along $y$, and $e$ applies to the $y$ components only. For two smooth particles, take $x$ along the line of impact; then the system's momentum is conserved along $x$, each particle's momentum is conserved separately along $y$, and $e$ applies along $x$: four equations for the four unknown velocity components. Tutorial 4 Q7 (billiard balls) is of this kind.
 
 ---
 
@@ -257,7 +257,7 @@ Section 4.3 of the slides was declared optional and not assessed (slide p. 38; L
 
 ### Tennis ball bouncing off the ground
 
-A 60 g tennis ball hits the ground at 6 m/s. The contact force rises linearly to $F_m=160$ N in 1 ms, stays there for 3 ms and falls linearly to zero in 1 ms. Find the rebound speed and the average force (slides pp. 12–13; DAMS4-1, ll. 98–128; L07, ll. 169–266).
+A 60 g tennis ball hits the ground at 6 m/s. The contact force rises linearly to $F_m=160$ N in 1 ms, stays there for 3 ms and falls linearly to zero in 1 ms. Find the rebound speed and the average force (DAMS4-1).
 
 Take up as positive. The weight is non-impulsive over 5 ms ($mg\,\Delta t=0.06\times9.81\times0.005=0.003$ N s, against an impulse of 0.64 N s), so it is neglected. The impulse is the area of the trapezium; moving one ramp triangle onto the other makes a rectangle of height $F_m$ and width 4 ms:
 
@@ -285,7 +285,7 @@ which is less than the 160 N peak. Momentum is not conserved here, because the g
 
 ### Collisions of a 2m and an m particle
 
-Particle A of mass $2m$ moving at $+1$ m/s collides centrally with particle B of mass $m$ moving at $-1$ m/s. Find the velocities after impact for $e=1$, $e=0$ and $e=0.4$, and the energy lost (slide p. 29; DAMS4-2, ll. 111–149).
+Particle A of mass $2m$ moving at $+1$ m/s collides centrally with particle B of mass $m$ moving at $-1$ m/s. Find the velocities after impact for $e=1$, $e=0$ and $e=0.4$, and the energy lost (DAMS4-2).
 
 With $m_A=2m$, $m_B=m$, $v_{A1}=1$ and $v_{B1}=-1$:
 
@@ -303,7 +303,7 @@ The energy loss from the formula is $\tfrac12\cdot\tfrac{2m\cdot m}{3m}(1-e^2)(2
 
 ### Galilean cannon
 
-A tennis ball B rests on top of a basketball A and the pair is dropped from height $h_0$. How high can the tennis ball bounce (slides pp. 31–37; DAMS4-2, ll. 174–218; L08, ll. 41–217; L08b, ll. 28–173)?
+A tennis ball B rests on top of a basketball A and the pair is dropped from height $h_0$. How high can the tennis ball bounce (DAMS4-2)?
 
 Treat the balls as particles with no size, take up as positive, and label the states: 0 at release; 1 just before A hits the ground; 2 just after A rebounds, before it meets B; 3 just after A and B collide; 4 with B at its highest point. From 0 to 1 both fall freely, so
 
@@ -353,7 +353,7 @@ The tennis ball gains its extra height at the basketball's expense: after the co
 
 ### Crash test
 
-A 1500 kg car hits a barrier at 3 m/s and rebounds at 1 m/s after 0.4 s of contact. Find the average force and average deceleration (Tutorial 4 Q1, used as a quiz in L08, ll. 371–394 and L08b, ll. 330–398).
+A 1500 kg car hits a barrier at 3 m/s and rebounds at 1 m/s after 0.4 s of contact. Find the average force and average deceleration (Tutorial 4 Q1).
 
 Take the approach direction as positive. The barrier's impulse changes the velocity from $+3$ to $-1$ m/s:
 

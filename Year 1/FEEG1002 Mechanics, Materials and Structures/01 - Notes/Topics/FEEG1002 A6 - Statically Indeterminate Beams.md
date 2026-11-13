@@ -119,7 +119,7 @@ $$
 0=0+0-0+C_1\quad\Rightarrow\quad C_1=0
 $$
 
-Each constant is zero because of a stated boundary condition, and that reasoning should always be written out, not assumed (L11, ll. 443–449).
+Each constant is zero because of a stated boundary condition, and that reasoning should always be written out, not assumed.
 
 **The extra condition.** The roller prevents deflection at $x=L$:
 

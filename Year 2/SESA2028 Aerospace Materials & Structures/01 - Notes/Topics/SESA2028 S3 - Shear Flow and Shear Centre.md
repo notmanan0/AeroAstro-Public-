@@ -56,7 +56,7 @@ $$
 \frac{\partial\sigma_{xx}}{\partial x}=\frac{y}{I_z}\frac{dM_z}{dx}=\frac{Qy}{I_z},
 $$
 
-using $dM_z/dx=Q$ (the slide sign convention). So
+using $dM_z/dx=Q$ (the course sign convention). So
 
 $$
 \tau=\frac{Q}{I_zt}\int_Ay\,dA=\frac{Q\bar yA}{I_zt},
@@ -97,7 +97,7 @@ For a slender beam, $L>10h$ as a rule of thumb, the shear stress is under 2.5 % 
 
 ## 3. Shear flow in thin-walled sections
 
-For a thin wall the shear stress is uniform across the thickness $t$ and parallel to the wall, and the shear flow $q=\tau t$, a force per unit length, is the natural variable. Measure $s$ along the wall from its start. The slice equilibrium of §2, applied to the strip of wall between $s=0$ and $s$, gives
+For a thin wall the shear stress is uniform across the thickness $t$ and parallel to the wall, and the shear flow $q=\tau t$, a force per unit length, is the natural variable. Measure $s$ along the wall from its start. Axial equilibrium of the strip of wall between $s=0$ and $s$, taken as for the slice of the rectangle, gives
 
 $$
 q(s)\,dx-q_{out}\,dx+\int_0^st\,\frac{\partial\sigma_{xx}}{\partial x}\,dx\,ds=0,
@@ -140,7 +140,7 @@ The angle-section cantilever of [[SESA2028 S1 - Section Properties and Unsymmetr
 With $Q_z=0$ the coefficients are
 
 $$
-\frac{Q_yI_y}{\Delta}=\frac{10^4\times6.6\times10^6}{107.9\times10^{12}}=6.12\times10^{-4},\qquad\frac{Q_yI_{yz}}{\Delta}=6.67\times10^{-4}\ \text{mm}^{-4}.
+\frac{Q_yI_y}{\Delta}=\frac{10^4\times6.6\times10^6}{107.9\times10^{12}}=6.12\times10^{-4}\ \text{N/mm}^{4},\qquad\frac{Q_yI_{yz}}{\Delta}=6.67\times10^{-4}\ \text{N/mm}^{4}.
 $$
 
 Model each leg by its centreline. The web centreline is at $z=20$ mm; measure $s$ up from its free bottom end at $y=130$ mm, so a point on the web is at $y=130-s$. The swept strip has $\int ty\,ds=20(130s-s^2/2)$ and $\int tz\,ds=20\times20\,s$, so
@@ -230,7 +230,7 @@ $$
 e=\frac{3\times100^2}{300+600}=33.3\text{ mm}
 $$
 
-outside the web. The structures lab measures this offset directly ([[SESA2028 S2 - Beam Deflection and Bending Design#Torsion test: locating the shear centre|S2]]).
+outside the web. A torsion test locates the same offset experimentally ([[SESA2028 S2 - Beam Deflection and Bending Design#Torsion test: locating the shear centre|S2]]).
 
 > [!check] Limits of the channel formula
 > As $b\to0$ the channel becomes a flat strip and $e\to0$: the shear centre returns to the web, as it must for a single straight wall. As $b\to\infty$, $e\to b/2$, the middle of the flanges.
@@ -286,7 +286,7 @@ $$
 at mid-height of the loaded web, against 12.5 MPa in the other web. Had the load acted through the centre, the maximum would have been $45/2=22.5$ MPa: the 50 mm offset raises it by 44 %.
 
 > [!check] The single-cut route
-> The slide solution cuts once, at the bottom-flange midpoint, and finds $q_0$ from moment equilibrium about the centre. It gives the same total distribution, since the superposition above is just $q_0$ split into its symmetric (zero) and torque (20 N/mm) parts.
+> Cutting the wall once, at the bottom-flange midpoint, and finding $q_0$ from moment equilibrium about the centre gives the same total distribution, since the superposition above is just $q_0$ split into its symmetric (zero) and torque (20 N/mm) parts.
 
 ## Links
 

@@ -37,7 +37,7 @@ A rigid body cannot stretch, so the distance between any two of its points is fi
 
 ## 1. Types of planar motion
 
-A rigid body in a plane has three degrees of freedom: two translations and one rotation. Its motion falls into one of three types (slides pp. 6–9). In **translation**, every line segment on the body stays parallel to its original direction. If the points move on straight lines it is rectilinear translation; on curves, curvilinear translation. The equations are the same for both. In **rotation about a fixed axis**, every particle off the axis moves on a circle in a plane perpendicular to the axis; the axis need not pass through the body's centre. **General plane motion** is translation plus rotation, the rotation being about an axis perpendicular to the plane.
+A rigid body in a plane has three degrees of freedom: two translations and one rotation. Its motion falls into one of three types. In **translation**, every line segment on the body stays parallel to its original direction. If the points move on straight lines it is rectilinear translation; on curves, curvilinear translation. The equations are the same for both. In **rotation about a fixed axis**, every particle off the axis moves on a circle in a plane perpendicular to the axis; the axis need not pass through the body's centre. **General plane motion** is translation plus rotation, the rotation being about an axis perpendicular to the plane.
 
 A crank-slider mechanism (an engine's piston and crankshaft) has all three: the crank rotates about a fixed axis, the piston translates in a straight line and the connecting rod is in general plane motion.
 
@@ -123,11 +123,11 @@ $$
 \mathbf a=\boldsymbol\alpha\times\mathbf r-\omega^2\mathbf r=\mathbf a_t+\mathbf a_n
 $$
 
-with magnitude $a=\sqrt{a_t^2+a_n^2}$. The vector derivation need not be memorised (L17b, ll. 305–310); the scalar results must be.
+with magnitude $a=\sqrt{a_t^2+a_n^2}$. The vector derivation need not be memorised; the scalar results must be.
 
 ## 3. Absolute motion analysis
 
-Many mechanisms have one degree of freedom: a geometric constraint ties the position $s$ of a point to the rotation $\theta$ of a line in the body. The method (slide p. 26) is:
+Many mechanisms have one degree of freedom: a geometric constraint ties the position $s$ of a point to the rotation $\theta$ of a line in the body. The method is:
 
 1. Choose the angle $\theta$ of a line fixed in the body and the coordinate $s$ of a point.
 2. Relate them through the geometry of the constraints.
@@ -155,7 +155,7 @@ valid only for rolling without slip. These look like the pure-rotation formulas 
 
 ### The relative velocity equation
 
-Let A and B be two points on a rigid body in general plane motion, and attach to A a frame $x'$-$y'$ that translates with A but does not rotate. In a time $dt$ the body's movement can be split into a translation, in which every point moves by $d\mathbf r_A$, and a rotation about A through $d\theta$, in which B moves by $d\mathbf r_{B/A}$ (slide p. 34):
+Let A and B be two points on a rigid body in general plane motion, and attach to A a frame $x'$-$y'$ that translates with A but does not rotate. In a time $dt$ the body's movement can be split into a translation, in which every point moves by $d\mathbf r_A$, and a rotation about A through $d\theta$, in which B moves by $d\mathbf r_{B/A}$:
 
 $$
 d\mathbf r_B=d\mathbf r_A+d\mathbf r_{B/A}
@@ -219,7 +219,7 @@ To locate it, take two points whose velocities are not parallel and whose lines 
 
 ## 5. Relative acceleration analysis
 
-Section 7.4 is optional and not assessed (L18b, ll. 228–237; DAMS7-4, ll. 3–9); accelerations in this module are found by absolute motion analysis instead. Differentiating the relative velocity equation with the product rule gives, in plane motion,
+Relative acceleration analysis is optional and not assessed; accelerations in this module are found by absolute motion analysis instead. Differentiating the relative velocity equation with the product rule gives, in plane motion,
 
 $$
 \frac{d}{dt}(\boldsymbol\omega\times\mathbf r_{B/A})=\boldsymbol\alpha\times\mathbf r_{B/A}+\boldsymbol\omega\times(\boldsymbol\omega\times\mathbf r_{B/A})
@@ -237,7 +237,7 @@ with a tangential relative part of magnitude $\alpha r_{B/A}$ and a normal (cent
 
 ### Gears driving a hoist
 
-Gear A ($r_A=75$ mm) starts from rest with a clockwise angular acceleration of 4.5 rad/s² and meshes with gear B ($r_B=225$ mm). Pulley D ($r_D=125$ mm) is fixed to gear B, and a cord wound round D carries cylinder C. Find C's acceleration, and its speed and the distance it rises in 3 s (slides pp. 20–23; DAMS7-1b).
+Gear A ($r_A=75$ mm) starts from rest with a clockwise angular acceleration of 4.5 rad/s² and meshes with gear B ($r_B=225$ mm). Pulley D ($r_D=125$ mm) is fixed to gear B, and a cord wound round D carries cylinder C. Find C's acceleration, and its speed and the distance it rises in 3 s (DAMS7-1b).
 
 At the meshing point the gear teeth do not slip, so the two contact points share their speed and their tangential acceleration (their normal accelerations differ, as the radii differ):
 
@@ -263,7 +263,7 @@ $$
 
 ### Cam and platform
 
-A circular cam of radius $r$, pinned at a point O on its rim, rotates at constant $\omega$ and lifts a platform P that moves in vertical guides. With $\theta$ the angle from the horizontal through O to the line from O to the cam's centre, find the platform's velocity and acceleration (slides pp. 31–32; DAMS7-2b; L17b, ll. 450–496).
+A circular cam of radius $r$, pinned at a point O on its rim, rotates at constant $\omega$ and lifts a platform P that moves in vertical guides. With $\theta$ the angle from the horizontal through O to the line from O to the cam's centre, find the platform's velocity and acceleration (DAMS7-2b).
 
 The platform rests on the top of the cam, a radius $r$ above the cam's centre, which is itself $r\sin\theta$ above O. So, measuring $y$ from O,
 
@@ -289,7 +289,7 @@ The platform moves fastest when $\theta=0$ or 180°, half-way up, and its accele
 
 ### Sliding bar between wall and floor
 
-A 1.5 m bar AB slides with end A on the floor and end B on a wall. At the instant when the bar makes 30° with the floor, A moves away from the wall at 3 m/s. Find the bar's angular velocity and the velocity of B, by relative velocity and by the IC (slides pp. 41–44; DAMS7-3b).
+A 1.5 m bar AB slides with end A on the floor and end B on a wall. At the instant when the bar makes 30° with the floor, A moves away from the wall at 3 m/s. Find the bar's angular velocity and the velocity of B, by relative velocity and by the IC (DAMS7-3b).
 
 Take $x$ along the floor away from the wall, $y$ up the wall and $\boldsymbol\omega=\omega\mathbf k$. A moves horizontally and B vertically. From A to B,
 

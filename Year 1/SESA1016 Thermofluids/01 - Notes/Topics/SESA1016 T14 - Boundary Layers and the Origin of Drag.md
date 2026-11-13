@@ -33,7 +33,7 @@ Air is not very viscous, and treating it as inviscid explains lift ([[SESA1016 T
 
 The boundary layer is where drag comes from, in two ways. The shear stress it exerts on the surface, summed over the whole wetted area, is skin-friction drag; on a wing at small incidence that is most of the drag. And when the pressure rises along the surface, the slow fluid near the wall may not have the momentum to push into it: the layer stops, reverses and separates, leaving behind a wide wake of low pressure. The pressure difference between the front and the back of the body is pressure drag, and on a bluff body such as a cylinder it dominates.
 
-A cylinder and an aerofoil 167 times longer can have the same drag at the same speed, the first almost all pressure drag and the second almost all skin friction (1 May, ll. 476–495). The aim of streamlining is to keep the boundary layer attached.
+A cylinder and an aerofoil 167 times longer can have the same drag at the same speed, the first almost all pressure drag and the second almost all skin friction. The aim of streamlining is to keep the boundary layer attached.
 
 ---
 
@@ -214,7 +214,7 @@ $$
 \frac{\delta}{L}=5\sqrt{\frac{\nu}{V_\infty L}}\sqrt{\frac{x}{L}}=\frac{5}{\sqrt{Re}}\sqrt{\frac xL}
 $$
 
-and equivalently, $\delta=5x/\sqrt{Re_x}$. The layer is thinner at higher Reynolds number, because momentum diffuses slowly compared with how fast it is carried downstream; at aerospace Reynolds numbers the layer is a small fraction of the body's size (1 May, l. 38), which is why inviscid methods work for lift. And the laminar layer grows as $\sqrt x$: quickly at first, then ever more slowly.
+and equivalently, $\delta=5x/\sqrt{Re_x}$. The layer is thinner at higher Reynolds number, because momentum diffuses slowly compared with how fast it is carried downstream; at aerospace Reynolds numbers the layer is a small fraction of the body's size, which is why inviscid methods work for lift. And the laminar layer grows as $\sqrt x$: quickly at first, then ever more slowly.
 
 ### Boundary layers on aerodynamic bodies
 
@@ -230,9 +230,9 @@ $$
 \frac{\partial p}{\partial x}=0\qquad\text{(zero pressure gradient)}
 $$
 
-A fluid particle in the boundary layer feels equal pressure on its front and back, so only the viscous force acts on it, slowing it (1 May, ll. 21–33). On a body of finite thickness the pressure varies along the surface, imposed by the outer flow. The layer is so thin that it does not alter that pressure; locally it sees a flat wall with a pressure that rises or falls along it.
+A fluid particle in the boundary layer feels equal pressure on its front and back, so only the viscous force acts on it, slowing it. On a body of finite thickness the pressure varies along the surface, imposed by the outer flow. The layer is so thin that it does not alter that pressure; locally it sees a flat wall with a pressure that rises or falls along it.
 
-A pressure gradient is a force per unit volume: Pa/m = N/m³ (1 May, ll. 95–111). So it pushes or holds back every particle in the layer.
+A pressure gradient is a force per unit volume: Pa/m = N/m³. So it pushes or holds back every particle in the layer.
 
 The two cases arise for a flat plate in a wind tunnel whose walls converge or diverge. With **converging** walls the area falls, so by continuity the outer flow speeds up and by Bernoulli its pressure falls along the plate:
 
@@ -260,11 +260,11 @@ $$
 \tau_w=0,\qquad\left.\frac{\partial v_x}{\partial y}\right|_{y=0}=0
 $$
 
-the profile leaves the wall vertically: this is the **separation point**. Beyond it the boundary layer lifts off the surface, and underneath it the higher pressure downstream drives a reversed flow back towards the separation point, a region of recirculation (1 May, ll. 188–218). Separated flow past ellipses, aerofoils and blunt shapes shows this (Album of Fluid Motion).
+the profile leaves the wall vertically: this is the **separation point**. Beyond it the boundary layer lifts off the surface, and underneath it the higher pressure downstream drives a reversed flow back towards the separation point, a region of recirculation. Separated flow past ellipses, aerofoils and blunt shapes shows this (Album of Fluid Motion).
 
 ### Separation on aerofoils
 
-The pressure distribution on an aerofoil is plotted as $C_p$ against $x/c$ with the $C_p$ axis reversed, suction upwards, as in XFOIL. $C_p=1$ at the stagnation point near the leading edge is the maximum possible. Over the front of the upper surface the flow accelerates and the pressure falls to a suction peak: a favourable gradient. Over the rear the pressure recovers towards the free-stream value: an adverse gradient. Separation, if it happens, happens there (1 May, ll. 238–302).
+The pressure distribution on an aerofoil is plotted as $C_p$ against $x/c$ with the $C_p$ axis reversed, suction upwards, as in XFOIL. $C_p=1$ at the stagnation point near the leading edge is the maximum possible. Over the front of the upper surface the flow accelerates and the pressure falls to a suction peak: a favourable gradient. Over the rear the pressure recovers towards the free-stream value: an adverse gradient. Separation, if it happens, happens there.
 
 As the angle of attack rises, the suction peak grows and the adverse gradient behind it gets steeper. At some angle the layer separates near the trailing edge; at higher angles the separation point moves forward until the flow separates near the leading edge, and the aerofoil **stalls**: the lift drops. Separation also makes the flow unsteady, loading structures unsteadily, and generates noise.
 
@@ -272,7 +272,7 @@ As the angle of attack rises, the suction peak grows and the adverse gradient be
 
 ### The circular cylinder
 
-A circular cylinder (a model for tall buildings, marine risers and other bluff, slender objects) shows pressure drag clearly (1 May, ll. 303–394). Measure the angle $\beta$ from the front. At $\beta=0$ there is a stagnation point and $C_p=1$. The flow accelerates round the sides and the pressure falls, to about $C_p=-3$ at $\beta=90°$ in inviscid theory ([[SESA1016 T10 - Euler and Bernoulli Equations#Worked example - flow round a cylinder|T10]]): a favourable gradient. In inviscid flow the pressure would recover symmetrically to $C_p=1$ at the back, and the net force would be zero.
+A circular cylinder (a model for tall buildings, marine risers and other bluff, slender objects) shows pressure drag clearly. Measure the angle $\beta$ from the front. At $\beta=0$ there is a stagnation point and $C_p=1$. The flow accelerates round the sides and the pressure falls, to about $C_p=-3$ at $\beta=90°$ in inviscid theory ([[SESA1016 T10 - Euler and Bernoulli Equations#Worked example - flow round a cylinder|T10]]): a favourable gradient. In inviscid flow the pressure would recover symmetrically to $C_p=1$ at the back, and the net force would be zero.
 
 In real flow, past about 90° the pressure rises, the adverse gradient separates the boundary layer from both sides, and a wide wake of recirculating flow at slightly below free-stream pressure forms behind. The front sees high pressure, the back low pressure: integrated over the surface, the net streamwise pressure force is the **pressure drag** $D_p$, and for a cylinder it is almost all of the drag.
 
@@ -280,11 +280,11 @@ In real flow, past about 90° the pressure rises, the adverse gradient separates
 
 ### Laminar and turbulent separation, and the drag crisis
 
-A turbulent layer, with its fuller profile, has more momentum near the wall, so it can push further into an adverse pressure gradient before separating (1 May, ll. 395–441). If the boundary layer on the front of a cylinder stays laminar, it separates just after 90° and leaves a wide wake. If it becomes turbulent first, separation moves well back, the wake narrows, the low-pressure area on the back shrinks, and the pressure drag falls.
+A turbulent layer, with its fuller profile, has more momentum near the wall, so it can push further into an adverse pressure gradient before separating. If the boundary layer on the front of a cylinder stays laminar, it separates just after 90° and leaves a wide wake. If it becomes turbulent first, separation moves well back, the wake narrows, the low-pressure area on the back shrinks, and the pressure drag falls.
 
 Which happens depends on the Reynolds number $Re=V_\infty d/\nu$. For a smooth cylinder or sphere there is a critical value, about $3$–$5\times10^5$, at which the layer turns turbulent before separating and $C_D$ drops by a factor of 4 or 5: the **drag crisis**. For a sphere, $C_D$ falls from about 0.45 to about 0.1.
 
-Dimples on a golf ball disturb the laminar layer and trigger transition at a lower Reynolds number, so the drag crisis comes at a lower speed, within the range of a struck ball, and the ball flies further with lower drag (1 May, ll. 496–516). Early golf balls were smooth; players noticed that scuffed ones went further. For streamlined aerospace bodies the opposite applies: roughness brings forward transition, and with no large separation to suppress, the turbulent layer's higher skin friction and the drag of the roughness elements themselves only add drag. Hence flush rivets and smooth skins.
+Dimples on a golf ball disturb the laminar layer and trigger transition at a lower Reynolds number, so the drag crisis comes at a lower speed, within the range of a struck ball, and the ball flies further with lower drag. Early golf balls were smooth; players noticed that scuffed ones went further. For streamlined aerospace bodies the opposite applies: roughness brings forward transition, and with no large separation to suppress, the turbulent layer's higher skin friction and the drag of the roughness elements themselves only add drag. Hence flush rivets and smooth skins.
 
 ## 8. Calculating drag from surface data
 

@@ -18,7 +18,7 @@ A total-life prediction counts $N_i+N_g$ from S-N or strain-life curves, combine
 
 The damage-tolerant approach accepts the almost inevitable presence of defects. It needs the initial defect size and position from non-destructive testing (dye penetrant, optical, X-ray or ultrasound), the final crack size (usually $a_c$ from $K_{Ic}$ at the peak stress, though a deflection limit or net-section yield could set it), the stress range, and the Paris constants. Integrating the [[Paris Law]] gives the remaining life and so a safe inspection interval. It suits inspectable structures that can tolerate a crack for a while: airframes, pressure vessels, welded offshore structures, turbine discs managed by inspection.
 
-The choice is the first part of most past-paper lifing questions, and the data list is often worth marks on its own.
+A lifing answer starts by choosing the approach and listing the data it needs.
 
 ## Related
 

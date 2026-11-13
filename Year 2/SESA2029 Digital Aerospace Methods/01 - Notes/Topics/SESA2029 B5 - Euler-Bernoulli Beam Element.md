@@ -29,19 +29,19 @@ sources: ["02 - Sources/FEM Lectures/Lecture_7_ FE_Beam_final.pdf", "02 - Source
 > - **Common mistakes:** ordering the forces as $(F_1,F_2,M_1,M_2)$ against a matrix built for $(F_1,M_1,F_2,M_2)$; fixing the rotation at a simple support.
 > - **Practise:** [[#Worked example: a propped cantilever with an overhang]] · [[SESA2029 FEA Worked Examples]]
 
-The matrix displacement and minimum-potential-energy methods are applied here to the beam (2026-02-20 09:59, ll. 1–10, 296–300).
+The matrix displacement and minimum-potential-energy methods are applied here to the beam (2026-02-20 09:59).
 
 A ruler bent between the hands has its outside fibres stretched and its inside fibres shortened, in proportion to the distance from the middle and to how sharply it is bent. All the stored energy is in that bending, so the beam's energy depends only on its curvature. A short beam element can bend into a gentle S-shape, which a straight line cannot describe; that is why it needs a cubic, and why each node needs a slope as well as a deflection so that neighbouring elements join smoothly.
 
 ## 1. Beams in aerospace
 
-Wings, fuselages and space trusses are long and thin, with high aspect ratios, and they are thin-walled because weight matters (ll. 21–40). Both beam and shell elements include bending in their formulation; a bar element only stretches. A beam element is a line between two (or three) nodes, with the cross-section described by constants such as the second moments of area about two axes, so any section can be represented, including one that varies along a wing's span; lab 1 chose among standard sections (ll. 41–50). Shell elements describe a curved surface with thickness at the nodes and are covered in [[SESA2029 B6 - 2D and 3D Elements|B6]].
+Wings, fuselages and space trusses are long and thin, with high aspect ratios, and they are thin-walled because weight matters. Both beam and shell elements include bending in their formulation; a bar element only stretches. A beam element is a line between two (or three) nodes, with the cross-section described by constants such as the second moments of area about two axes, so any section can be represented, including one that varies along a wing's span; lab 1 chose among standard sections. Shell elements describe a curved surface with thickness at the nodes and are covered in [[SESA2029 B6 - 2D and 3D Elements|B6]].
 
-Beam theory assumes plane sections remain plane, which requires a high aspect ratio (ll. 51–65). In a low-aspect-ratio structure such as a fan blade, shear and bending are coupled, and plate or solid models are needed.
+Beam theory assumes plane sections remain plane, which requires a high aspect ratio. In a low-aspect-ratio structure such as a fan blade, shear and bending are coupled, and plate or solid models are needed.
 
 ## 2. Bending theory and the beam's strain energy
 
-Engineer's bending theory applies to long, slender beams of linear elastic material (ll. 56–80). Plane sections remain plane and perpendicular to the neutral axis, so the beam deforms into a circular arc of radius $R$. The only strain is axial, varying linearly from the surfaces to zero at the neutral axis, and so is the only stress. Equilibrium, compatibility and the constitutive law combine into
+Engineer's bending theory applies to long, slender beams of linear elastic material. Plane sections remain plane and perpendicular to the neutral axis, so the beam deforms into a circular arc of radius $R$. The only strain is axial, varying linearly from the surfaces to zero at the neutral axis, and so is the only stress. Equilibrium, compatibility and the constitutive law combine into
 
 $$
 \frac MI=\frac\sigma y=\frac ER,
@@ -49,13 +49,13 @@ $$
 
 This is the relation to remember for estimating the deflection and stress of a wing or a bridge.
 
-The beam element neglects shear strain from the shear force, consistent with plane sections staying perpendicular to the axis, so only bending stresses and strains store energy (ll. 101–115). The strain energy is the energy density integrated over the volume, which here means over the cross-section and along the length:
+The beam element neglects shear strain from the shear force, consistent with plane sections staying perpendicular to the axis, so only bending stresses and strains store energy. The strain energy is the energy density integrated over the volume, which here means over the cross-section and along the length:
 
 $$
 U=\int_0^L\int_A\tfrac12\sigma\varepsilon\,dA\,dx .
 $$
 
-The bending theory simplifies the inner integral (ll. 116–170). The curvature is the reciprocal of the radius, and for small slopes it is the second derivative of the deflection:
+The bending theory simplifies the inner integral. The curvature is the reciprocal of the radius, and for small slopes it is the second derivative of the deflection:
 
 $$
 \rho=\frac1R=\frac{d^2v}{dx^2}.
@@ -97,19 +97,19 @@ The strain energy now depends only on $E$, $I$ and the curvature along the beam.
 
 ## 3. Degrees of freedom and cubic shape functions
 
-The beam element lies along $x$ with deflection $v$ in $y$ (ll. 81–100). Each node is loaded by a shear force $F$ and a bending moment $M$, and has two DOF: the transverse deflection $v$ and the rotation
+The beam element lies along $x$ with deflection $v$ in $y$. Each node is loaded by a shear force $F$ and a bending moment $M$, and has two DOF: the transverse deflection $v$ and the rotation
 
 $$
 \theta=\frac{dv}{dx}.
 $$
 
-There is no axial DOF in this element; adding one per node turns it into a frame element, with a $3\times3$ block per node instead of $2\times2$. The rotational DOF are what distinguish beams (and plates and shells) from bars and solids, whose nodes have only translations: a solid represents rotation through the relative movement of several nodes (ll. 91–100). The element displacement vector is
+There is no axial DOF in this element; adding one per node turns it into a frame element, with a $3\times3$ block per node instead of $2\times2$. The rotational DOF are what distinguish beams (and plates and shells) from bars and solids, whose nodes have only translations: a solid represents rotation through the relative movement of several nodes. The element displacement vector is
 
 $$
 \{d\}=\{v_1\ \ \theta_1\ \ v_2\ \ \theta_2\}^T .
 $$
 
-Four unknowns call for a polynomial with four coefficients, a cubic (ll. 166–200):
+Four unknowns call for a polynomial with four coefficients, a cubic:
 
 $$
 v=a+bx+cx^2+dx^3,
@@ -171,11 +171,11 @@ $$
 
 ![[dam_beam_hermite_shape_functions.png|900]]
 
-The shape functions are the basic deformations of the beam: each is the deflected shape when its own DOF is one and the other three are zero. $N_1$ and $N_3$ carry unit deflections with zero end slopes; $N_2$ and $N_4$ carry unit slopes with zero end deflections. These cubic Hermite functions are specific to this beam element; other elements have their own (ll. 241–250).
+The shape functions are the basic deformations of the beam: each is the deflected shape when its own DOF is one and the other three are zero. $N_1$ and $N_3$ carry unit deflections with zero end slopes; $N_2$ and $N_4$ carry unit slopes with zero end deflections. These cubic Hermite functions are specific to this beam element; other elements have their own.
 
 ## 4. The stiffness matrix by minimum potential energy
 
-Differentiate $v=[N]\{d\}$ twice to get the curvature (ll. 196–245):
+Differentiate $v=[N]\{d\}$ twice to get the curvature:
 
 $$
 \rho=\frac{d^2v}{dx^2}=\frac{d^2[N]}{dx^2}\{d\}=[B]\{d\},
@@ -185,13 +185,13 @@ $$
 [B]=\begin{bmatrix}-\dfrac{6}{L^2}+\dfrac{12x}{L^3}&\ -\dfrac4L+\dfrac{6x}{L^2}&\ \dfrac{6}{L^2}-\dfrac{12x}{L^3}&\ -\dfrac2L+\dfrac{6x}{L^2}\end{bmatrix}.
 $$
 
-Since $\rho$ is a scalar, $\rho^2=\rho^T\rho=\{d\}^T[B]^T[B]\{d\}$ (ll. 251–265). The nodal displacements do not depend on $x$, so they come outside the integral:
+Since $\rho$ is a scalar, $\rho^2=\rho^T\rho=\{d\}^T[B]^T[B]\{d\}$. The nodal displacements do not depend on $x$, so they come outside the integral:
 
 $$
 U=\frac12\{d\}^T\left(\int_0^L[B]^TEI[B]\,dx\right)\{d\}.
 $$
 
-The work potential of the nodal loads is force times deflection plus moment times rotation (ll. 266–275):
+The work potential of the nodal loads is force times deflection plus moment times rotation:
 
 $$
 V=-\left(F_1v_1+M_1\theta_1+F_2v_2+M_2\theta_2\right)=-\{d\}^T\{F\}.
@@ -203,7 +203,7 @@ $$
 \frac{\partial\Pi}{\partial\{d\}}=\left(\int_0^L[B]^TEI[B]\,dx\right)\{d\}-\{F\}=0,
 $$
 
-so $\{F\}=[K]\{d\}$ with $[K]=\int_0^L[B]^TEI[B]\,dx$ (ll. 276–285). Each entry is an integral of a product of two linear functions. For example, with $\xi=x/L$, $B_1=(12\xi-6)/L^2$ and
+so $\{F\}=[K]\{d\}$ with $[K]=\int_0^L[B]^TEI[B]\,dx$. Each entry is an integral of a product of two linear functions. For example, with $\xi=x/L$, $B_1=(12\xi-6)/L^2$ and
 
 $$
 K_{11}=EI\int_0^L B_1^2\,dx=\frac{EI}{L^3}\int_0^1(12\xi-6)^2\,d\xi=\frac{EI}{L^3}(48-72+36)=\frac{12EI}{L^3}.
@@ -225,13 +225,13 @@ $$
 [K]=\frac{EI}{L^3}\begin{bmatrix}12&6L&-12&6L\\6L&4L^2&-6L&2L^2\\-12&-6L&12&-6L\\6L&2L^2&-6L&4L^2\end{bmatrix}.
 $$
 
-It is symmetric, and each column is the set of nodal forces and moments needed to hold one DOF at unit value with the others at zero. This matrix will be given in the exam; it does not have to be memorised (ll. 301–305). More accuracy needs more nodes per element and a higher-order polynomial, with six generalised boundary conditions for three nodes instead of four (ll. 286–290). This matrix applies to anything modelled as a two-node Euler–Bernoulli beam; bars, shells and solids have their own matrices.
+It is symmetric, and each column is the set of nodal forces and moments needed to hold one DOF at unit value with the others at zero. This matrix will be given in the exam; it does not have to be memorised. More accuracy needs more nodes per element and a higher-order polynomial, with six generalised boundary conditions for three nodes instead of four. This matrix applies to anything modelled as a two-node Euler–Bernoulli beam; bars, shells and solids have their own matrices.
 
 ## Worked examples
 
 ### Worked example: a propped cantilever with an overhang
 
-The exercise (slides 19–24): a uniform beam, $EI=10^7$ N m², is clamped at node 1 ($x=0$), simply supported at node 2 ($x=2$ m), and carries 10 kN downward at its free end, node 3 ($x=3$ m). Discretise with two elements, write the equilibrium equation in the six global DOF, then apply the boundary conditions to reduce it to three unknowns. Nodes go at the ends and at the support, so element 1 spans 2 m and element 2 spans 1 m.
+The exercise: a uniform beam, $EI=10^7$ N m², is clamped at node 1 ($x=0$), simply supported at node 2 ($x=2$ m), and carries 10 kN downward at its free end, node 3 ($x=3$ m). Discretise with two elements, write the equilibrium equation in the six global DOF, then apply the boundary conditions to reduce it to three unknowns. Nodes go at the ends and at the support, so element 1 spans 2 m and element 2 spans 1 m.
 
 For element 1, $EI/L^3=10^7/8=1.25\times10^6$ N/m:
 
@@ -251,9 +251,9 @@ $$
 \begin{Bmatrix}F_1\\M_1\\F_2\\M_2\\F_3\\M_3\end{Bmatrix}=1.25\times10^6\begin{bmatrix}12&12&-12&12&0&0\\12&16&-12&8&0&0\\-12&-12&12+96&-12+48&-96&48\\12&8&-12+48&16+32&-48&16\\0&0&-96&-48&96&-48\\0&0&48&16&-48&32\end{bmatrix}\begin{Bmatrix}v_1\\\theta_1\\v_2\\\theta_2\\v_3\\\theta_3\end{Bmatrix}.
 $$
 
-Keep the order $(v,\theta)$ at each node, with forces $(F,M)$ in the same order; otherwise rows and columns of the element matrix must be swapped (ll. 336–345).
+Keep the order $(v,\theta)$ at each node, with forces $(F,M)$ in the same order; otherwise rows and columns of the element matrix must be swapped.
 
-The clamp gives $v_1=\theta_1=0$; the simple support stops deflection but allows rotation, so $v_2=0$ with $\theta_2$ free (ll. 366–375). The only applied load is $F_3=-10^4$ N, with $M_2=M_3=0$. Striking out rows and columns 1, 2 and 3 leaves
+The clamp gives $v_1=\theta_1=0$; the simple support stops deflection but allows rotation, so $v_2=0$ with $\theta_2$ free. The only applied load is $F_3=-10^4$ N, with $M_2=M_3=0$. Striking out rows and columns 1, 2 and 3 leaves
 
 $$
 \begin{Bmatrix}0\\-10^4\\0\end{Bmatrix}=1.25\times10^6\begin{bmatrix}48&-48&16\\-48&96&-48\\16&-48&32\end{bmatrix}\begin{Bmatrix}\theta_2\\v_3\\\theta_3\end{Bmatrix}.

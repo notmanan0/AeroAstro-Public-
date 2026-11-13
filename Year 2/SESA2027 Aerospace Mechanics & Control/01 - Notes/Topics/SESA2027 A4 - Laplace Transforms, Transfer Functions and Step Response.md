@@ -27,10 +27,10 @@ sources: ["02 - Sources/Lectures/Lecture 1.07.pdf", "02 - Sources/Lectures/Lectu
 > The Laplace transform turns linear ODEs into algebra in $s$, with the initial conditions built in and piecewise inputs such as steps easy to handle. Solving the SPO approximation for a step input leads to the transfer function $G(s) = X(s)/U(s)$, whose poles are the system's eigenvalues and whose zeros are the roots of its numerator. Partial fractions and inverse transforms then give $x(t)$, which is characterised by its rise time, overshoot and settling time.
 
 > [!summary]- Exam use: quick path
-> - **Use it when:** a question gives $\omega_n$ and $\zeta$ (or a second-order transfer function) and asks for $t_r$, $OS$, $t_s$, $t_p$, the final value of a step response, or a sketch. Laplace and partial fractions are not examined as calculations (L1.07, ll. 8–12, 720–727).
+> - **Use it when:** a question gives $\omega_n$ and $\zeta$ (or a second-order transfer function) and asks for $t_r$, $OS$, $t_s$, $t_p$, the final value of a step response, or a sketch. Laplace and partial fractions are not examined as calculations.
 > - **Assumptions:** linear, time-invariant, zero initial conditions; stable (for the final-value theorem); underdamped $0<\zeta<1$ for the overshoot and peak-time formulas; 1 % settling band in this module.
 > - **Method:** 1. Read $\omega_n^2$ and $2\zeta\omega_n$ off $s^2+2\zeta\omega_ns+\omega_n^2$. 2. Final value $=\lim_{s\to0}sX(s)$ = static gain × step size. 3. $OS=e^{-\zeta\pi/\sqrt{1-\zeta^2}}\times100\%$. 4. $t_s\approx4.6/(\zeta\omega_n)$, $t_p=\pi/(\omega_n\sqrt{1-\zeta^2})$, $t_r\approx1.8/\omega_n$. 5. Sketch: start at 0 with zero slope, peak at $t_p$, settle by $t_s$.
-> - **Common mistakes:** dropping the square root in the overshoot exponent (the PS1 Q3 sheet answer does this); giving overshoot as a fraction instead of a percentage (L1.07, l. 943).
+> - **Common mistakes:** dropping the square root in the overshoot exponent (the PS1 Q3 sheet answer does this); giving overshoot as a fraction instead of a percentage.
 > - **Practise:** [[#Worked example: PS1 Q3 specifications from first principles]] · [[SESA2027 Mock Questions#Q4. Step response of a second-order system|Mock Q4]] · [[SESA2027 Practice Problems 1 Solutions]]
 
 Moving the elevator to a new position and holding it there is a step input. The aircraft's pitch response is the SPO mass–spring–damper being pushed to a new equilibrium. It accelerates towards the new value, overshoots because nothing stops it in time, swings back, and settles. Three numbers describe that shape. Rise time says how fast it gets there and is set mainly by $\omega_n$, the stiffness. Overshoot says how far it misses and is set only by $\zeta$, the damping. Settling time says when it stops wobbling and is set by the decay rate $\zeta\omega_n$, the real part of the poles.
@@ -39,7 +39,7 @@ The Laplace transform gives that response without solving the ODE directly in th
 
 ---
 
-## 1. Purpose of the Laplace transform (L1.07, DAP3)
+## 1. Purpose of the Laplace transform (DAP3)
 The route is:
 1. ODE in the time domain.
 2. Transform to an algebraic equation in the $s$-domain.
@@ -52,10 +52,10 @@ $$
 \mathcal L\{g(t)\} = G(s) = \int_0^\infty g(t)e^{-st}dt,\qquad s = \sigma+i\omega,\qquad g(t) = 0\text{ for }t<0
 $$
 
-The integral starts at $t = 0$, so this is the one-sided (unilateral) Laplace transform, with $g(t)$ taken as zero for $t<0$. If an event before $t = 0$ matters, shift the time origin so that the whole input starts at or after zero (L1.07, ll. 48–53).
+The integral starts at $t = 0$, so this is the one-sided (unilateral) Laplace transform, with $g(t)$ taken as zero for $t<0$. If an event before $t = 0$ matters, shift the time origin so that the whole input starts at or after zero.
 
-> [!info] Exam scope (L1.07, ll. 6–12)
-> Solving Laplace transform problems is not examined, in the exam or the quiz; what is needed is an understanding of why the transform is useful for analysis. It may be needed in the lab report. When transforming by hand, a $t$ left in the final transform shows an error (l. 43).
+> [!info] Exam scope
+> Solving Laplace transform problems is not examined, in the exam or the quiz; what is needed is an understanding of why the transform is useful for analysis. It may be needed in the lab report. When transforming by hand, a $t$ left in the final transform shows an error.
 
 ## 2. Properties and standard transforms
 
@@ -74,7 +74,7 @@ The integral starts at $t = 0$, so this is the one-sided (unilateral) Laplace tr
 | $e^{\sigma t}\cos\omega t$ | $(s-\sigma)/[(s-\sigma)^2+\omega^2]$ |
 | $e^{\sigma t}\sin\omega t$ | $\omega/[(s-\sigma)^2+\omega^2]$ |
 
-Differentiation in time is multiplication by $s$, and integration is division by $s$. Both results are used later to design controllers: the D term of a PID is a factor $s$ and the I term a factor $1/s$.
+Differentiation in time is multiplication by $s$, and integration is division by $s$. The D term of a PID is therefore a factor $s$ and the I term a factor $1/s$.
 
 Integration by parts shows that differentiation becomes multiplication by $s$ (assuming $g(t)e^{-st}\to0$ as $t\to\infty$):
 
@@ -101,9 +101,9 @@ Apply it twice for $\ddot g$: $\mathcal L\{\ddot g\}=s\big(sG-g(0)\big)-\dot g(0
 >
 > $$\mathcal L\{\text{doublet}\}=\frac1s-\frac{2e^{-t_1s}}{s}+\frac{e^{-2t_1s}}{s}=\frac{(1-e^{-t_1s})^2}{s}$$
 >
-> As $s\to0$, $(1-e^{-t_1s})^2\approx(t_1s)^2$, so $s\cdot\mathcal L\{\cdot\}\to0$: the input has no lasting value, which is why the aircraft returns to trim (L1.07, ll. 89–224).
+> As $s\to0$, $(1-e^{-t_1s})^2\approx(t_1s)^2$, so $s\cdot\mathcal L\{\cdot\}\to0$: the input has no lasting value, which is why the aircraft returns to trim.
 
-Four standard inputs are used, each with a purpose (L1.07, ll. 89–224). A step is an elevator change from 0° to, say, 5° at $t = 0$, and a series of steps models a series of stick inputs. A ramp, the integral of a step, is a continuously increasing elevator input; adding a delayed negative ramp, $t\,u(t)-(t-t_1)\,u(t-t_1)$, stops the increase at $t_1$ and holds the deflection there (ll. 103–108), and a further pair of ramps with the opposite sign brings it back to zero. A doublet, $u(t)-2u(t-t_1)+u(t-2t_1)$, is built from time-shifted steps. It excites the dynamics but returns the aircraft to trim, adding no net energy, which is why flight testing uses it (see also L2.05 in [[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning|B3]]). An impulse models a gust. It is the difference of a step and a delayed step, scaled to unit area, in the limit of zero width, $\delta(t) = \lim_{t_0\to0}\,[u(t)-u(t-t_0)]/t_0$.
+Four standard inputs are used, each with a purpose. A step is an elevator change from 0° to, say, 5° at $t = 0$, and a series of steps models a series of stick inputs. A ramp, the integral of a step, is a continuously increasing elevator input; adding a delayed negative ramp, $t\,u(t)-(t-t_1)\,u(t-t_1)$, stops the increase at $t_1$ and holds the deflection there, and a further pair of ramps with the opposite sign brings it back to zero. A doublet, $u(t)-2u(t-t_1)+u(t-2t_1)$, is built from time-shifted steps. It excites the dynamics while leaving zero net elevator deflection (the area under the input is zero), so the aircraft returns to trim, which is why flight testing uses it (see also [[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning|B3]]). An impulse models a gust. It is the difference of a step and a delayed step, scaled to unit area, in the limit of zero width, $\delta(t) = \lim_{t_0\to0}\,[u(t)-u(t-t_0)]/t_0$.
 
 ## 3. SPO step response
 The SPO as a forced mass–spring–damper: $m\ddot x+c\dot x+kx = r(t)$. In terms of $\omega_n$ and $\zeta$:
@@ -123,7 +123,7 @@ The transfer function $G(s) = X(s)/U(s) = B(s)/A(s)$ describes the input–outpu
 
 ### Partial fractions for the F-4C SPO
 
-The F-4C SPO has $\omega_n = 1.4115$ rad/s and $\zeta = 0.2637$. The form of the expansion depends on the roots of the denominator (L1.07, ll. 525–536):
+The F-4C SPO has $\omega_n = 1.4115$ rad/s and $\zeta = 0.2637$. The form of the expansion depends on the roots of the denominator:
 
 | Roots | Terms in $X(s)$ | Terms in $x(t)$ |
 |---|---|---|
@@ -141,7 +141,7 @@ $$
 x(t) = r_1+r_2e^{\sigma t}\cos\omega t+r_3e^{\sigma t}\sin\omega t
 $$
 
-with the slide values $r_1 = 2.843\times10^{-5}$, $r_2 = -2.843\times10^{-5}$, $r_3 = -7.766\times10^{-6}$ ($\sigma=-0.372$, $\omega=1.362$), where $K$ collects the input scaling.
+with $r_1 = 2.843\times10^{-5}$, $r_2 = -2.843\times10^{-5}$, $r_3 = -7.766\times10^{-6}$ ($\sigma=-0.372$, $\omega=1.362$), where $K$ collects the input scaling.
 
 - $r_2 = -r_1$, so that $x(0) = 0$.
 - $r_3 = r_2\,\zeta/\sqrt{1-\zeta^2}$.
@@ -194,9 +194,9 @@ $$
 $$
 
 > [!check] Residues for the F-4C example
-> With $\omega_n^2 = 1.9925$ and $r_1 = 2.843\times10^{-5}$, $K = r_1\omega_n^2 = 5.665\times10^{-5}$. With $\zeta = 0.2637$, $\zeta/\sqrt{1-\zeta^2} = 0.2734$, so $r_3 = -2.843\times10^{-5}\times0.2734 = -7.77\times10^{-6}$, matching the slide.
+> With $\omega_n^2 = 1.9925$ and $r_1 = 2.843\times10^{-5}$, $K = r_1\omega_n^2 = 5.665\times10^{-5}$. With $\zeta = 0.2637$, $\zeta/\sqrt{1-\zeta^2} = 0.2734$, so $r_3 = -2.843\times10^{-5}\times0.2734 = -7.77\times10^{-6}$, which agrees with the $r_3$ above.
 
-Finding the residues by partial fractions is not examined (L1.07, ll. 712–727); knowing where the three terms come from is enough. The step response as time tends to infinity is a possible exam question (ll. 811–821). Its final value is set by the system's static gain (here $K/\omega_n^2$), not by the step size alone (ll. 883–911). Without working out $r_1$, the answer can be given for the normalised response, which tends to 1 (ll. 914–922).
+Finding the residues by partial fractions is not examined; knowing where the three terms come from is enough. The step response as time tends to infinity is a possible exam question. Its final value is set by the system's static gain (here $K/\omega_n^2$), not by the step size alone. Without working out $r_1$, the answer can be given for the normalised response, which tends to 1.
 
 ## 4. Time-domain specifications
 Normalise by the final value.
@@ -293,7 +293,7 @@ $\omega_n=3.65$ rad/s, $\zeta=0.40$:
 > [!check] Numerical check (Python, the figure above)
 > A simulated step gives a peak of 1.254 at 0.939 s and a 10–90 % rise time of 0.401 s. ✓ The rule-of-thumb rise time over-predicts by 23 % at $\zeta=0.4$, so quote it as approximate.
 
-Overshoot is given as a percentage (L1.07, l. 943). Settling time uses the 1 % band in this module, $4.6/|\sigma|$, where some texts use 5 % (ll. 953–955). Rise time measures speed, which is why the CubeSat project asks for it: a faster system reaches its pointing reference sooner (ll. 924–934). Overshoot measures how far a tracking system misses before coming back, and a missile or a tracking task wants it very small (ll. 944–950). Asking for the lowest $t_r$, $OS$ and $t_s$ at once means asking for a trade-off, and moving these numbers is what Part B (control) is about (ll. 956–965). The lab report asks for $t_r$, $OS$ and $t_s$ for your aircraft (ll. 972–973).
+Overshoot is given as a percentage. Settling time uses the 1 % band in this module, $4.6/|\sigma|$, where some texts use 5 %. Rise time measures speed, which is why the CubeSat project asks for it: a faster system reaches its pointing reference sooner. Overshoot measures how far a tracking system misses before coming back, and a missile or a tracking task wants it very small. Asking for the lowest $t_r$, $OS$ and $t_s$ at once means asking for a trade-off, because the three specifications pull against each other. The lab report asks for $t_r$, $OS$ and $t_s$ for your aircraft.
 
 > [!warning] The PS1 Q3 sheet answer drops the square root
 > With $\omega_n = 3.65$ rad/s and $\zeta = 0.40$, $t_r = 1.8/3.65 = 0.493$ s, $t_s = 4.6/(0.4\times3.65) = 3.151$ s, and
@@ -306,21 +306,21 @@ Overshoot is given as a percentage (L1.07, l. 943). Settling time uses the 1 % b
 
 ## Exam scope and intuition
 
-- Laplace transforms and partial fractions are not examined as calculations (L1.07, ll. 8–12, 720–727).
-- The final value of a step response is a possible exam question (L1.07, ll. 811–821).
-- The three time-domain specifications, $t_r$, $OS$ (as %) and $t_s$ (1 %), are used throughout Part B and in the lab report (L1.07, ll. 943, 953, 972).
-- Further reading: Franklin, Powell & Emami-Naeini, Ch. 3 (derivation of the specifications); Cook, Ch. 5 (L1.07, ll. 974–975).
+- Laplace transforms and partial fractions are not examined as calculations.
+- The final value of a step response is a possible exam question.
+- The three time-domain specifications, $t_r$, $OS$ (as %) and $t_s$ (1 %), are used throughout Part B and in the lab report.
+- Further reading: Franklin, Powell & Emami-Naeini, Ch. 3 (derivation of the specifications); Cook, Ch. 5.
 
 > [!tip] Intuition
-> - Laplace is DAP3 (divide and conquer): ODE → algebra → back to time, instead of one hard step (L1.07, ll. 23–37).
-> - All the coefficients in the SPO step-response equation are positive for a stable aircraft ($m$, $I_{yy}$, $\zeta$, $\omega_n$), which is what makes the complex-root solution form apply (ll. 402–418).
-> - Because the system is linear, the step response is the sum of a constant (the step), a decaying cosine and a decaying sine, and each part can be plotted on its own (ll. 762–803).
+> - Laplace is DAP3 (divide and conquer): ODE → algebra → back to time, instead of one hard step.
+> - All the coefficients in the SPO step-response equation are positive for a stable aircraft ($m$, $I_{yy}$, $\zeta$, $\omega_n$), which is what makes the complex-root solution form apply.
+> - Because the system is linear, the step response is the sum of a constant (the step), a decaying cosine and a decaying sine, and each part can be plotted on its own.
 
 ## Terminology and alternative names
 
 | Course term | Also called | Where the course uses it | Note |
 |---|---|---|---|
-| Laplace transform $\mathcal L$, $s=\sigma+i\omega$ | $s=\sigma+j\omega$ in engineering texts | L1.07 slide 3 | the course uses $i$ (lecturer's correction, l. 45) |
+| Laplace transform $\mathcal L$, $s=\sigma+i\omega$ | $s=\sigma+j\omega$ in engineering texts | L1.07 slide 3 | the course uses $i$ (lecturer's correction) |
 | unit step $u(t)$ | Heaviside function $H(t)$ | L1.07 | do not confuse with the speed perturbation $u$ or the input vector $\mathbf u$ |
 | transfer function $G(s)=B(s)/A(s)$ | system function, plant transfer function | L1.07 slide 9 | |
 | poles / zeros | roots of the denominator / numerator, natural modes (poles) | L1.07 | poles = eigenvalues of $\mathbf A$ |
@@ -393,6 +393,6 @@ No tasks were set in L1.07. The three specifications are required in the lab rep
 > | L1.07, l. 965 | "we withdrew the Laplace transform" | we went through the Laplace transform |
 
 > [!note] Slide slip: $i$, not $j$ (L1.07, ll. 45–46)
-> Where: [[#1. Purpose of the Laplace transform (L1.07, DAP3)]].
+> Where: [[#1. Purpose of the Laplace transform (DAP3)]].
 >
 > The slide writes $s = \sigma+j\omega$; it should use $i$, as in the rest of the module.

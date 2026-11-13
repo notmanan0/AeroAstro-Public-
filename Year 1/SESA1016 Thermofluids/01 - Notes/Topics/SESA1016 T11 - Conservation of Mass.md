@@ -29,11 +29,11 @@ sources: ["02 - Sources/Lectures/Chapter 11.pdf", "02 - Sources/Lectures/SESA101
 > - **Common mistakes:** equating volume flow rates for a gas whose density changes; using the maximum velocity of a profile instead of its mean.
 > - **Practise:** [[#Worked example - industrial heater]] · [[SESA1016 Problem Sheet 08 - Bernoulli and Mass Conservation Solutions]] Q8.4–Q8.6, Q8.10
 
-Measuring how much water comes out of a tap is easy: time how long it takes to fill a bucket. Doing it inside a pipe, where the flow is faster in the middle than at the walls, or through a vent where it leaves at an angle, needs a little more care. The area is cut into small pieces, the flow through each is taken, and the contributions are added up; in the limit this sum is the flow-rate integral (L22, ll. 77–81). Only the velocity across a surface carries fluid through it; flow sliding along the surface carries none.
+Measuring how much water comes out of a tap is easy: time how long it takes to fill a bucket. Doing it inside a pipe, where the flow is faster in the middle than at the walls, or through a vent where it leaves at an angle, needs a little more care. The area is cut into small pieces, the flow through each is taken, and the contributions are added up; in the limit this sum is the flow-rate integral. Only the velocity across a surface carries fluid through it; flow sliding along the surface carries none.
 
-A fixed lump of gas in a cylinder is a Lagrangian, closed-system view. In a jet engine, a nozzle or a radiator duct the fluid is continuously replaced, and following each particle is hopeless. A fixed box (a control volume) is drawn round the device instead, and what crosses its surface is tallied (L22, ll. 189–233). Mass is the first quantity tallied; momentum and energy ([[SESA1016 T12 - Conservation of Momentum|T12]], [[SESA1016 T13 - Conservation of Energy and Propulsion|T13]]) are treated in the same way.
+A fixed lump of gas in a cylinder is a Lagrangian, closed-system view. In a jet engine, a nozzle or a radiator duct the fluid is continuously replaced, and following each particle is hopeless. A fixed box (a control volume) is drawn round the device instead, and what crosses its surface is tallied. Mass is the first quantity tallied; momentum and energy ([[SESA1016 T12 - Conservation of Momentum|T12]], [[SESA1016 T13 - Conservation of Energy and Propulsion|T13]]) are treated in the same way.
 
-The answer for a steady duct is short: whatever enters each second must leave each second, so the mass flow rate is the same at every section. If five tonnes of oil per hour go into one end of a pipeline, five tonnes per hour come out of the other, whatever has happened to the velocity and density along the way (L22, ll. 402–406).
+The answer for a steady duct is short: whatever enters each second must leave each second, so the mass flow rate is the same at every section. If five tonnes of oil per hour go into one end of a pipeline, five tonnes per hour come out of the other, whatever has happened to the velocity and density along the way.
 
 ---
 
@@ -91,7 +91,7 @@ for any profile. A laminar and a turbulent profile in the same pipe look very di
 
 ### Flow at an angle to the surface
 
-If the flow leaves a vent at an angle $\theta$ to the unit normal $\vec n$ of the outlet surface, split the local velocity into a tangential component $V_t$, along the surface, and a normal component $V_n$, across it. The tangential component carries no fluid through the surface; only $V_n$ does (L22, ll. 94–136). It is given by the dot product,
+If the flow leaves a vent at an angle $\theta$ to the unit normal $\vec n$ of the outlet surface, split the local velocity into a tangential component $V_t$, along the surface, and a normal component $V_n$, across it. The tangential component carries no fluid through the surface; only $V_n$ does. It is given by the dot product,
 
 $$
 V_n=\vec V\cdot\vec n=|\vec V||\vec n|\cos\theta=|\vec V|\cos\theta
@@ -125,13 +125,13 @@ $$
 \boxed{\dot m=\rho VA}
 $$
 
-the form used most often (L22, ll. 182–186, 410–415).
+the form used most often.
 
 ## 3. The control volume
 
 A **control volume** (CV) is an imaginary region of space with a definite boundary, the **control surface** (CS). It encloses the device being studied (a nozzle, intake, pump, combustor or electric heater) and can have any shape; good choices make the problem easy, bad ones make it hard. In this module it is fixed in space, which makes it an Eulerian idea. Unlike the boundary of a closed system, the control surface is permeable: fluid crosses it freely, so the fluid inside keeps changing, and the analysis tracks the mass, momentum and energy crossing the boundary rather than any particular fluid.
 
-At every point of the control surface the unit normal $\vec n$ points **outwards**. This fixes the signs: at an outflow $\vec V$ and $\vec n$ point the same way, the angle between them is under 90° and $\vec V\cdot\vec n>0$; at an inflow the angle exceeds 90° and $\vec V\cdot\vec n<0$. So in every conservation law in this module, **outflows count positive and inflows negative** (L22, ll. 285–329).
+At every point of the control surface the unit normal $\vec n$ points **outwards**. This fixes the signs: at an outflow $\vec V$ and $\vec n$ point the same way, the angle between them is under 90° and $\vec V\cdot\vec n>0$; at an inflow the angle exceeds 90° and $\vec V\cdot\vec n<0$. So in every conservation law in this module, **outflows count positive and inflows negative**.
 
 ![[tf_cv_normal_sign.png|900]]
 
@@ -179,7 +179,7 @@ $$
 
 Whatever enters each second leaves each second. This also holds for a liquid that completely fills a pipe or channel.
 
-Apply it to a duct whose area changes from $A_1$ at the inlet to $A_2$ at the outlet, with a control volume whose end faces lie across sections 1 and 2 and whose sides follow the walls (L22, ll. 335–406). Nothing crosses the walls, so only the two ends contribute:
+Apply it to a duct whose area changes from $A_1$ at the inlet to $A_2$ at the outlet, with a control volume whose end faces lie across sections 1 and 2 and whose sides follow the walls. Nothing crosses the walls, so only the two ends contribute:
 
 $$
 \int_{A_1}\rho_1\vec V_1\cdot\vec n\,dA+\int_{A_2}\rho_2\vec V_2\cdot\vec n\,dA=0
@@ -207,7 +207,7 @@ the **pipe-flow form** of the continuity equation. Sections 1 and 2 were arbitra
 
 ### Mass is conserved, volume is not
 
-The statement $\dot{\mathcal V}_1=\dot{\mathcal V}_2$, or $V_1A_1=V_2A_2$, is in general false: if the fluid is heated or compressed between the two sections its density changes, and the same mass then occupies a different volume. Only when $\rho_1=\rho_2$, in incompressible flow, does continuity reduce to equal volume flow rates (L22, ll. 416–427). Remember $\dot m_1=\dot m_2$ and derive the volume form when it applies. This is the result that makes streamtubes behave as virtual pipes in [[SESA1016 T9 - Describing Flow and the Material Derivative#Streamtubes|T9]]: in incompressible flow the speed varies inversely with the streamtube's area.
+The statement $\dot{\mathcal V}_1=\dot{\mathcal V}_2$, or $V_1A_1=V_2A_2$, is in general false: if the fluid is heated or compressed between the two sections its density changes, and the same mass then occupies a different volume. Only when $\rho_1=\rho_2$, in incompressible flow, does continuity reduce to equal volume flow rates. Remember $\dot m_1=\dot m_2$ and derive the volume form when it applies. This is the result that makes streamtubes behave as virtual pipes in [[SESA1016 T9 - Describing Flow and the Material Derivative#Streamtubes|T9]]: in incompressible flow the speed varies inversely with the streamtube's area.
 
 ### Several inlets and outlets
 

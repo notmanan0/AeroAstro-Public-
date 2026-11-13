@@ -266,7 +266,7 @@ $$P = 3 V_L \left(\frac{I_L}{\sqrt{3}}\right) \cos\phi = \sqrt{3}\,V_L I_L \cos\
 
 ### Synchronous speeds of steam and hydro generators
 
-A high-speed steam-turbine generator has $N_p = 2$ poles and a low-head hydroelectric generator has $N_p = 80$ poles; both supply the $50\ \text{Hz}$ UK grid (`S2-W18-21 Electric Machines 02` slide 14; `Electric Machines 03` slide 2). The task is each rotor speed in $\text{rpm}$ and $\text{rad}\,\text{s}^{-1}$, and the speeds on a $60\ \text{Hz}$ grid as in North America.
+A high-speed steam-turbine generator has $N_p = 2$ poles and a low-head hydroelectric generator has $N_p = 80$ poles; both supply the $50\ \text{Hz}$ UK grid. The task is each rotor speed in $\text{rpm}$ and $\text{rad}\,\text{s}^{-1}$, and the speeds on a $60\ \text{Hz}$ grid as in North America.
 
 With $\text{rpm} = 120 f/N_p$ and $\omega = 2\pi\,\text{rpm}/60$, the $2$-pole steam-turbine generator at $50\ \text{Hz}$ runs at
 
@@ -291,7 +291,7 @@ $$\text{rpm}_{\text{steam},60} = \frac{120 \times 60}{2} = 3600\ \text{rpm}, \qq
 
 ### Phase EMF of a 2-pole turbo-alternator
 
-The cylindrical rotor of a $2$-pole turbo-generator has diameter $D = 0.7\ \text{m}$ and active axial length $L_{\text{rotor}} = 7.0\ \text{m}$; the peak radial air-gap flux density is $B_{\text{peak}} = 0.8\ \text{T}$ (`S2-W18-21 Electric Machines 03` slides 3–4; Sharkh p. 14). It runs at $3000\ \text{rpm}$ with $N = 2$ turns per phase coil. The task is to show that the voltage is at $50\ \text{Hz}$, find $E_{\text{peak}}$ and $E_{\text{rms}}$, and state $e_A(t)$ and the star-connected line voltage $V_L$.
+The cylindrical rotor of a $2$-pole turbo-generator has diameter $D = 0.7\ \text{m}$ and active axial length $L_{\text{rotor}} = 7.0\ \text{m}$; the peak radial air-gap flux density is $B_{\text{peak}} = 0.8\ \text{T}$. It runs at $3000\ \text{rpm}$ with $N = 2$ turns per phase coil. The task is to show that the voltage is at $50\ \text{Hz}$, find $E_{\text{peak}}$ and $E_{\text{rms}}$, and state $e_A(t)$ and the star-connected line voltage $V_L$.
 
 With $N_p = 2$ and $3000\ \text{rpm}$,
 

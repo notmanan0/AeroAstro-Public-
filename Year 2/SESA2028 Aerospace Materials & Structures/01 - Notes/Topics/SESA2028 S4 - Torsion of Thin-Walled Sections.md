@@ -28,7 +28,7 @@ sources: ["02 - Sources/Structures Lectures/SL4 Torsion 1 - Circular sections an
 > - **Common mistakes:** using the outer instead of the midline area; using $t_{max}$ for a closed section, where it is $t_{min}$ that governs.
 > - **Practise:** [[#A closed box and the same box with a slit]] · [[SESA2028 Structures Tutorial 3 - Torsion Solutions#Q4 - Closed tube versus the same tube with a slit|Tutorial 3 Q4]]
 
-Torsion arises whenever a shear load misses the shear centre ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]) or a torque is applied directly, as in wings, fuselages, struts and drive shafts. Solid circular shafts belong to Year 1 statics (reviewed in section 1); the sections treated here are arbitrary thin-walled shapes, open or closed.
+Torsion arises whenever a shear load misses the shear centre ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]) or a torque is applied directly, as in wings, fuselages, struts and drive shafts. The solid circular shaft is the familiar case; thin-walled shapes, open or closed, carry torque in quite different ways.
 
 A cardboard tube and the same tube slit along its length differ greatly in torsion. The intact tube is stiff in torsion because shear flows all the way round it, and the flow on the far side of the tube has a long lever arm about the axis: the enclosed area does the work. With the tube slit, that circulation is broken at the cut. The only way left to resist torque is a small circulation within the wall thickness itself, along one face of the wall and back along the other, whose lever arm is only the wall thickness. The slit tube twists like a sheet of paper.
 
@@ -62,13 +62,13 @@ $$
 \left(q+\frac{\partial q}{\partial s}ds\right)dx-q\,dx=0\quad\Longrightarrow\quad\frac{\partial q}{\partial s}=0 .
 $$
 
-Equilibrium along $s$ involves the flows on the two $ds$ edges in the same way:
+Equilibrium along $s$ involves the flows on the two $ds$ edges in the same way, in a segment with no distributed torque, so that $T$ is constant:
 
 $$
 \left(q+\frac{\partial q}{\partial x}dx\right)ds-q\,ds=0\quad\Longrightarrow\quad\frac{\partial q}{\partial x}=0 .
 $$
 
-So the shear flow is the same everywhere round the section and along it. Under bending shear it varied ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]) because the changing bending stress $\partial\sigma_{xx}/\partial x$ fed the wall; with no bending stress there is nothing to change it. With a constant thickness every point reaches the same shear stress; with a varying thickness the thinnest wall is worst.
+So the shear flow is the same everywhere round the section, and along the member too while the torque is constant. A distributed torque makes $T(x)$ vary, and $q$ with it, although $q$ stays constant round any one section. Under bending shear it varied ([[SESA2028 S3 - Shear Flow and Shear Centre|S3]]) because the changing bending stress $\partial\sigma_{xx}/\partial x$ fed the wall; with no bending stress there is nothing to change it. With a constant thickness every point reaches the same shear stress; with a varying thickness the thinnest wall is worst.
 
 ### Torque and shear flow
 
@@ -141,7 +141,7 @@ $$
 \tau(y)=\tau_{max}\frac{y}{t/2}=\tau_{max}\frac{2y}{t}.
 $$
 
-By §2, a closed loop with shear flow $\tau\,dy$ resists a torque
+By the closed-section result $T=2qA_m$, a closed loop with shear flow $\tau\,dy$ resists a torque
 
 $$
 dT=2A_m\,\tau\,dy=2(2yb)\,\tau_{max}\frac{2y}{t}\,dy=\frac{8b\,\tau_{max}}{t}y^2\,dy .

@@ -29,17 +29,17 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L11, pp. 143–164)",
 > - **Common mistakes:** treating pressure as if it had its own evolution equation in incompressible flow; blaming yourself for a poor drag coefficient on a coarse inviscid grid.
 > - **Practise:** [[#3. The pressure equation]] · [[#Why under-relaxation helps]]
 
-Fluent's pressure-based option rests on the choice of grid and on a pressure equation derived from incompressibility (2025-11-06, ll. 1–30); see [[SESA2029 A11 - CFD Errors, Verification, Validation and Mesh Quality|A11]] for the verification and validation of the results.
+Fluent's pressure-based option rests on the choice of grid and on a pressure equation derived from incompressibility; see [[SESA2029 A11 - CFD Errors, Verification, Validation and Mesh Quality|A11]] for the verification and validation of the results.
 
 Grid design is a question of where to put a limited number of points. The accuracy depends mostly on how dense the grid is where the flow is difficult, near walls, round leading edges and in wakes, and every point placed where nothing happens, in the uniform free stream, is wasted. Structured grids make the computer's job easy but force points where they are not needed; unstructured grids put points anywhere but cost more per point. The pressure problem is a different kind of constraint: in incompressible flow pressure is not carried along by the flow but is whatever field keeps the velocity divergence-free everywhere at once, so every pressure update reaches the whole domain.
 
 ## 1. Cell types and structured grids
 
-In 2D the cells are triangles or quadrilaterals; in 3D, tetrahedra ("tets"), hexahedra ("hexes"), prisms (wedges), pyramids to join hex and tet regions, and arbitrary polyhedra (ll. 41–55). The boundary-layer lab uses stretched quadrilaterals.
+In 2D the cells are triangles or quadrilaterals; in 3D, tetrahedra ("tets"), hexahedra ("hexes"), prisms (wedges), pyramids to join hex and tet regions, and arbitrary polyhedra. The boundary-layer lab uses stretched quadrilaterals.
 
-In a structured grid the grid lines of one family never cross each other and cross each line of the other family once, so every cell has an index $(i,j)$ or $(i,j,k)$ and a fixed set of neighbours, four in 2D and six in 3D (ll. 56–100). Loops over $i$ run through consecutive memory, which compilers and vector processors handle efficiently, and the matrix has a regular structure that fast solvers can exploit. Structured grids are also usually more accurate. Their drawbacks are that complex geometries are very hard to grid (structured gridding of a complete aircraft is a full-time job in an aerodynamics department) and that point distribution is hard to control: the clustering needed at an aerofoil surface carries dense lines far into the free stream where $u=U_\infty$ and nothing is happening.
+In a structured grid the grid lines of one family never cross each other and cross each line of the other family once, so every cell has an index $(i,j)$ or $(i,j,k)$ and a fixed set of neighbours, four in 2D and six in 3D. Loops over $i$ run through consecutive memory, which compilers and vector processors handle efficiently, and the matrix has a regular structure that fast solvers can exploit. Structured grids are also usually more accurate. Their drawbacks are that complex geometries are very hard to grid (structured gridding of a complete aircraft is a full-time job in an aerodynamics department) and that point distribution is hard to control: the clustering needed at an aerofoil surface carries dense lines far into the free stream where $u=U_\infty$ and nothing is happening.
 
-Three topologies are common round aerofoils (ll. 101–135):
+Three topologies are common round aerofoils:
 
 | Topology | Shape of the grid lines | Good for |
 |---|---|---|
@@ -51,25 +51,25 @@ Three topologies are common round aerofoils (ll. 101–135):
 
 Each maps to a rectangular block in computational space, with the boundary conditions applied along its edges: for the H-grid, no-slip on the blade segments and outflow at the downstream edge. For a C-grid the $\xi$ index runs from the bottom of the wake round the leading edge to the top, and $\eta$ runs away from the wall.
 
-A complete aircraft is gridded in blocks, possibly a hundred, each structured (ll. 136–175). Grid density need not change as abruptly between blocks as on the slide. Block interfaces may be point-matched or may need interpolation, and interpolation errors in an important region of the flow degrade the solution, so interfaces belong where little is happening. Overset (chimera) grids overlap and interpolate between each other, which suits moving parts such as a helicopter blade mesh rotating over a fuselage mesh.
+A complete aircraft is gridded in blocks, possibly a hundred, each structured. Grid density need not change abruptly between blocks. Block interfaces may be point-matched or may need interpolation, and interpolation errors in an important region of the flow degrade the solution, so interfaces belong where little is happening. Overset (chimera) grids overlap and interpolate between each other, which suits moving parts such as a helicopter blade mesh rotating over a fuselage mesh.
 
 ## 2. Unstructured, viscous and adapted grids
 
-Unstructured cells have no ordering and any number of neighbours (ll. 146–160). They fit any shape, refine easily and are generated automatically, as in the wing lab's single "generate mesh" click. In exchange the connectivity has to be stored explicitly and memory access jumps about, so the code is slower and vectorises badly, and triangles in a boundary layer give high truncation errors (ll. 31–40). As long as the flux leaving each cell enters its neighbour, conservation over the domain still holds.
+Unstructured cells have no ordering and any number of neighbours. They fit any shape, refine easily and are generated automatically, as in the wing lab's single "generate mesh" click. In exchange the connectivity has to be stored explicitly and memory access jumps about, so the code is slower and vectorises badly, and triangles in a boundary layer give high truncation errors. As long as the flux leaving each cell enters its neighbour, conservation over the domain still holds.
 
-A viscous grid is a different object from an inviscid one (ll. 176–205). A boundary layer is thin, and the cells must be stretched strongly to fit enough of them inside it; the wing lab's inviscid mesh is nowhere near the $y_1^+$ needed ([[First-Cell Height and y-plus]]). The popular answer is a hybrid grid: inflation layers of stretched cells on the walls, an unstructured fill outside, where there may not be much fluid mechanics going on.
+A viscous grid is a different object from an inviscid one. A boundary layer is thin, and the cells must be stretched strongly to fit enough of them inside it; the wing lab's inviscid mesh is nowhere near the $y_1^+$ needed ([[First-Cell Height and y-plus]]). The popular answer is a hybrid grid: inflation layers of stretched cells on the walls, an unstructured fill outside, where there may not be much fluid mechanics going on.
 
-The wing lab's optional grid adaptation shows where the automatic grid is short of points (ll. 206–265). Typical lab results put the lift within about 5 % of the lifting-line prediction, with the pitching moment also in good agreement, but the drag poor. That is not necessarily a user error. At small angles the induced drag is small, and with about ten cells across the section thickness and up to a million cells overall the CFD cannot resolve it; the lifting-line theory has limitations of its own, reducing the wing to a line. Three rounds of adaptation add cells round the leading edge and, above all, in the wake: the original grid does not resolve the trailing vortex sheet, so the downwash and the induced drag are wrong. The grid study in the report should show which coefficients are grid-sensitive; a 10-million-cell run on Iridis would test whether more cells fix the drag.
+The wing lab's optional grid adaptation shows where the automatic grid is short of points. Typical lab results put the lift within about 5 % of the lifting-line prediction, with the pitching moment also in good agreement, but the drag poor. That is not necessarily a user error. At small angles the induced drag is small, and with about ten cells across the section thickness and up to a million cells overall the CFD cannot resolve it; the lifting-line theory has limitations of its own, reducing the wing to a line. Three rounds of adaptation add cells round the leading edge and, above all, in the wake: the original grid does not resolve the trailing vortex sheet, so the downwash and the induced drag are wrong. The grid study in the report should show which coefficients are grid-sensitive; a 10-million-cell run on Iridis would test whether more cells fix the drag.
 
 ## 3. The pressure equation
 
-In incompressible flow the density equation does nothing, leaving four unknowns $u$, $v$, $w$, $p$, three momentum equations of the form $\partial(\cdot)/\partial t=\dots$, and continuity, which is only a constraint that the velocity be divergence-free at every step (ll. 266–285). That is why Fluent's pressure-based option is needed. Write the momentum equation in index form with backward Euler, the right side at $n+1$ (ll. 286–300):
+In incompressible flow the density equation does nothing, leaving four unknowns $u$, $v$, $w$, $p$, three momentum equations of the form $\partial(\cdot)/\partial t=\dots$, and continuity, which is only a constraint that the velocity be divergence-free at every step. That is why Fluent's pressure-based option is needed. Write the momentum equation in index form with backward Euler, the right side at $n+1$:
 
 $$
 (\rho u_i)^{n+1}-(\rho u_i)^n=\Delta t\left(-\frac{\partial(\rho u_iu_j)}{\partial x_j}-\frac{\partial p}{\partial x_i}+\frac{\partial\tau_{ij}}{\partial x_j}\right)^{n+1}.
 $$
 
-Here $i$ and $j$ each run independently over 1, 2, 3, so $\partial\tau_{ij}/\partial x_j$ stands for nine terms (ll. 301–320). Differentiate every term with respect to $x_i$ (summing over $i$):
+Here $i$ and $j$ each run independently over 1, 2, 3, so $\partial\tau_{ij}/\partial x_j$ stands for nine terms. Differentiate every term with respect to $x_i$ (summing over $i$):
 
 $$
 \frac{\partial(\rho u_i)^{n+1}}{\partial x_i}-\frac{\partial(\rho u_i)^n}{\partial x_i}=\Delta t\left(-\frac{\partial^2(\rho u_iu_j)}{\partial x_i\,\partial x_j}-\frac{\partial^2p}{\partial x_i\,\partial x_i}+\frac{\partial^2\tau_{ij}}{\partial x_i\,\partial x_j}\right)^{n+1}.
@@ -108,7 +108,7 @@ the middle term doubled because $i=1,j=2$ and $i=2,j=1$ give the same derivative
 
 ## 4. SIMPLE and the segregated and coupled solvers
 
-SIMPLE (Semi-Implicit Method for Pressure-Linked Equations) made this coupled nonlinear system tractable at the end of the 1960s (ll. 321–335). Its loop is:
+SIMPLE (Semi-Implicit Method for Pressure-Linked Equations) made this coupled nonlinear system tractable at the end of the 1960s. Its loop is:
 
 1. Start from the previous velocity field, which is divergence-free.
 2. Solve the momentum equations for a provisional velocity using the current pressure.
@@ -116,9 +116,9 @@ SIMPLE (Semi-Implicit Method for Pressure-Linked Equations) made this coupled no
 4. Correct the velocities and face mass fluxes with the new pressure.
 5. Repeat from step 2 until converged; the pressure and velocity then satisfy the original equations.
 
-SIMPLE, SIMPLEC and PISO are variants of this idea, all segregated algorithms: the $u$, $v$ and $w$ momentum equations, then the pressure equation, then any extra equations such as $k$ and $\varepsilon$ are solved one at a time in sequence, and the loop repeats if not converged (ll. 334–350). SIMPLE needs under-relaxation; SIMPLEC is a consistent variant that tolerates larger factors; PISO adds corrector steps and needs no under-relaxation (ll. 386–395).
+SIMPLE, SIMPLEC and PISO are variants of this idea, all segregated algorithms: the $u$, $v$ and $w$ momentum equations, then the pressure equation, then any extra equations such as $k$ and $\varepsilon$ are solved one at a time in sequence, and the loop repeats if not converged. SIMPLE needs under-relaxation; SIMPLEC is a consistent variant that tolerates larger factors; PISO adds corrector steps and needs no under-relaxation.
 
-A coupled solver instead solves the three momentum equations and the pressure equation together as one large matrix, then the turbulence equations separately (ll. 351–380). The advantage is fewer iterations; the disadvantage is about four times the storage and four times the matrix size. Which works better is problem-dependent: a set-up that suits a wing may not suit a supersonic intake, so switching between them is one of the things to try when convergence stalls.
+A coupled solver instead solves the three momentum equations and the pressure equation together as one large matrix, then the turbulence equations separately. The advantage is fewer iterations; the disadvantage is about four times the storage and four times the matrix size. Which works better is problem-dependent: a set-up that suits a wing may not suit a supersonic intake, so switching between them is one of the things to try when convergence stalls.
 
 | | Segregated (SIMPLE family) | Coupled |
 |---|---|---|
@@ -126,7 +126,7 @@ A coupled solver instead solves the three momentum equations and the pressure eq
 | Memory | low | about four times higher |
 | Iterations | more | fewer, each more work |
 
-Under-relaxation is the opposite of the SOR over-relaxation of A3 (ll. 376–395):
+Under-relaxation is the opposite of the SOR over-relaxation of A3:
 
 $$
 \phi_{new}=\phi_{old}+\alpha\,\Delta\phi,
@@ -136,11 +136,11 @@ $$
 
 accepting only part of each computed change. Fluent's panel shows eight separate factors (its defaults include about 0.3 for pressure, 0.7 for momentum and 0.8 for the turbulence quantities). If residuals oscillate or diverge, lower them, or lower the order of the turbulence equations as in [[SESA2029 A9 - Finite Volume Method|A9]].
 
-Pressure-based methods were developed for incompressible flow; density-based methods, which march $\partial\rho/\partial t$ and get pressure from the equation of state, for supersonic flow (ll. 391–410). Both have since been extended, so pressure-based solvers handle transonic flow and density-based solvers reach lower Mach numbers, but hypersonic problems such as re-entry still need a density-based solver. Pressure-based is the default starting point unless the flow is around Mach 4 or above.
+Pressure-based methods were developed for incompressible flow; density-based methods, which march $\partial\rho/\partial t$ and get pressure from the equation of state, for supersonic flow. Both have since been extended, so pressure-based solvers handle transonic flow and density-based solvers reach lower Mach numbers, but hypersonic problems such as re-entry still need a density-based solver. Pressure-based is the default starting point unless the flow is around Mach 4 or above.
 
 ## 5. Coursework report guidance
 
-The CFD report template (ll. 431–650) sets these requirements. Keep to the boxes, the margins, an easily read font of at least 11 pt, and the 10-page limit. The front page is one good picture of the OpenVSP wing, with name, ID and the Python parameters; if the original NACA section broke the CAD-to-ANSYS import (an amber rather than green tick), give both the original and the section actually used. Marks run at roughly ten per page, and perhaps half to 60 % of the space will be figures, since a well-chosen figure carries as much as a couple of hundred words.
+The CFD report template sets these requirements. Keep to the boxes, the margins, an easily read font of at least 11 pt, and the 10-page limit. The front page is one good picture of the OpenVSP wing, with name, ID and the Python parameters; if the original NACA section broke the CAD-to-ANSYS import (an amber rather than green tick), give both the original and the section actually used. Marks run at roughly ten per page, and perhaps half to 60 % of the space will be figures, since a well-chosen figure carries as much as a couple of hundred words.
 
 The wing sections are: grid generation (screenshots, a table of the coarse, medium and fine meshes with cell counts, and any improvement made with the mesh and face-sizing parameters); the convergence study, both grid convergence of $C_L$, $C_D$ and $C_m$ and convergence of the residuals, with one example residual plot; and the aerodynamic study, plotting $C_L$ against $\alpha$, $C_D$ against $C_L$ and $C_m$ against $\alpha$, and comparing the lift slope and aerodynamic centre with theory. The minimum is five runs: three meshes at one angle and three angles on one mesh, sharing a case. A case run with walls on the upper and lower far-field boundaries would show the sensitivity to the boundary condition.
 
@@ -176,7 +176,7 @@ In general the factor is $1+\alpha(g'-1)$, and convergence needs $|1+\alpha(g'-1
 
 ### Aerodynamic centre from three CFD cases
 
-The aerodynamic centre follows from the pitching moments (report template, ll. 541–570). It is where the moment does not change with lift, so with moments about the leading edge,
+The aerodynamic centre follows from the pitching moments (report template). It is where the moment does not change with lift, so with moments about the leading edge,
 
 $$
 \frac{x_{ac}}{c}=-\frac{dC_{m,LE}}{dC_L}.

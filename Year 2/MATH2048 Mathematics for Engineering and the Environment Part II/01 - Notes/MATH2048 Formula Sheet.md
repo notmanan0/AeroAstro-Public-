@@ -39,7 +39,7 @@ $$
 - Envelope: $c_1\cos\beta x+c_2\sin\beta x=R\cos(\beta x-\phi)$, $R=\sqrt{c_1^2+c_2^2}$, $\tan\phi=c_2/c_1$, so $|y|\leq Re^{\alpha x}$.
 - General solution of the inhomogeneous equation: $y=c_1y_1+c_2y_2+y_P$ for any particular integral $y_P$; apply conditions last.
 - Wronskian (background): $W=y_1y_2'-y_1'y_2$ obeys $W'=-pW$ for $y''+py'+qy=0$, so $W=W(x_0)e^{-\int p\,dx}$, zero everywhere or nowhere.
-- Mass–spring–damper (slides 10–12, background for SESA2027): $m\ddot y+2c\dot y+ky=0$, $\omega_0=\sqrt{k/m}$, roots $-\frac cm\pm\sqrt{\frac{c^2}{m^2}-\omega_0^2}$.
+- Mass–spring–damper (background for SESA2027): $m\ddot y+2c\dot y+ky=0$, $\omega_0=\sqrt{k/m}$, roots $-\frac cm\pm\sqrt{\frac{c^2}{m^2}-\omega_0^2}$.
   - Under-damped $c<m\omega_0$: $y=e^{-ct/m}(c_1\cos\omega t+c_2\sin\omega t)$, $\omega=\sqrt{\omega_0^2-c^2/m^2}$.
   - Critical $c=m\omega_0$: $y=(c_1+c_2t)e^{-ct/m}$, fastest return without oscillation.
   - Over-damped $c>m\omega_0$: two negative real roots; the root nearer zero sets the return time.
@@ -200,7 +200,7 @@ $$
 - Exists when $\int_{-\infty}^\infty|f|\,dt<\infty$ (a constant has no transform). The two normalising factors must multiply to $\frac1{2\pi}$ in any convention.
 - Limit of the complex series of period $T$: $F(k)=\lim_{T\to\infty}Tc_k/\sqrt{2\pi}$ at $k=2\pi n/T$.
 - Linearity; derivative rule $\mathcal F[f']=j\omega F$, $\mathcal F[f^{(n)}]=(j\omega)^nF$ (needs $f\to0$ as $t\to\pm\infty$).
-- Shift theorems (lecture-notes summary and appendix slides, not lectured): $\mathcal F[f(t-t_0)]=e^{-j\omega t_0}F(\omega)$, $\mathcal F[e^{j\omega_0t}f]=F(\omega-\omega_0)$.
+- Shift theorems (not lectured): $\mathcal F[f(t-t_0)]=e^{-j\omega t_0}F(\omega)$, $\mathcal F[e^{j\omega_0t}f]=F(\omega-\omega_0)$.
 - Real even $f$ gives real $F$; real odd $f$ gives purely imaginary $F$. Check separately any $\omega$ where the general answer is $0/0$.
 
 | $f(t)$ | $F(\omega)$ |

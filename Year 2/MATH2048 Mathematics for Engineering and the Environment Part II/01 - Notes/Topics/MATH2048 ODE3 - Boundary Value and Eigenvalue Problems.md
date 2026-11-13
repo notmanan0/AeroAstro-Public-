@@ -37,11 +37,11 @@ Two conditions are needed to fix the two constants of a second-order ODE, and fo
 
 The simple harmonic oscillator shows all three possibilities. With $y(0)=0$ every solution of $y''+y=0$ is a sine wave $c_2\sin x$ of adjustable height. Asking for $y(\pi/2)=1$ picks out exactly one height. Asking for $y(\pi)=1$ has no solution, because every sine wave returns to zero at $\pi$. And asking for $y(\pi)=0$ is satisfied by every height at once, so the conditions fix nothing.
 
-That last, degenerate case is the useful one (ll. 178–180). An eigenvalue problem asks which values of a parameter in the equation produce exactly that degeneracy, a non-zero solution that satisfies homogeneous conditions at both ends. For a string or a rod those solutions are the natural mode shapes, and the PDE block builds every solution out of them.
+That last, degenerate case is the useful one. An eigenvalue problem asks which values of a parameter in the equation produce exactly that degeneracy, a non-zero solution that satisfies homogeneous conditions at both ends. For a string or a rod those solutions are the natural mode shapes, and the PDE block builds every solution out of them.
 
 ---
 
-## 1. Initial against boundary value problems (L3)
+## 1. Initial against boundary value problems
 
 The general solution of a second-order linear ODE ([[MATH2048 ODE1 - Second-Order Linear ODEs with Constant Coefficients|ODE1]], [[MATH2048 ODE2 - Euler Equations and Inhomogeneous ODEs|ODE2]]) is
 
@@ -49,7 +49,7 @@ $$
 y=c_1y_1+c_2y_2+y_P,
 $$
 
-which is of limited use until $c_1$ and $c_2$ have values (ll. 29–38). Initial conditions are applied at one value of the independent variable, usually $t=0$ for problems in time: the value of $y$, its derivative, or a combination. Boundary conditions are applied at different values, usually the two ends of a spatial domain (ll. 39–52). An example of a boundary value problem is $y''+2y'+y=0$ with $y(0)+2y'(0)=0$ and $2y(1)-y'(1)=1$, conditions that mix the value and the derivative.
+which is of limited use until $c_1$ and $c_2$ have values. Initial conditions are applied at one value of the independent variable, usually $t=0$ for problems in time: the value of $y$, its derivative, or a combination. Boundary conditions are applied at different values, usually the two ends of a spatial domain. An example of a boundary value problem is $y''+2y'+y=0$ with $y(0)+2y'(0)=0$ and $2y(1)-y'(1)=1$, conditions that mix the value and the derivative.
 
 Solving it shows how mixed conditions are handled. The auxiliary equation $m^2+2m+1=(m+1)^2=0$ has the repeated root $m=-1$, so
 
@@ -85,9 +85,9 @@ Three types of boundary condition have standard names, and they become the vocab
 | Neumann | $y'=g$ | fixed heat flux; $y'=0$ is an insulated end (or a free string end) |
 | Robin (mixed) | $y+cy'=h$ | heat loss balanced against the end temperature |
 
-## 2. Three outcomes for the same ODE (L3)
+## 2. Three outcomes for the same ODE
 
-The same ODE, $y''+y=0$, serves for all three cases (ll. 57–183). Its auxiliary equation is $m^2+1=0$, so $m=\pm j$ and
+The same ODE, $y''+y=0$, serves for all three cases. Its auxiliary equation is $m^2+1=0$, so $m=\pm j$ and
 
 $$
 y=c_1\cos x+c_2\sin x.
@@ -115,7 +115,7 @@ $$
 c_1\cos\pi+c_2\sin\pi=1\quad\Longrightarrow\quad -c_1=1,
 $$
 
-which contradicts $c_1=0$. There is no solution: the general solution exists, but none of it satisfies both conditions (ll. 117–142).
+which contradicts $c_1=0$. There is no solution: the general solution exists, but none of it satisfies both conditions.
 
 With $y(\pi)=0$:
 
@@ -123,7 +123,7 @@ $$
 c_1\cos\pi+c_2\sin\pi=0\quad\Longrightarrow\quad -c_1=0,
 $$
 
-which repeats $c_1=0$ and says nothing about $c_2$. Every $y=c_2\sin x$ works: a one-parameter family of solutions (ll. 143–164).
+which repeats $c_1=0$ and says nothing about $c_2$. Every $y=c_2\sin x$ works: a one-parameter family of solutions.
 
 ![[m2048_ode_bvp_outcomes.png|900]]
 
@@ -149,15 +149,15 @@ At $x=\pi$ the half-angle values are $\cos\frac\pi2=0$ and $\sin\frac\pi2=1$, so
 
 The homogeneous problems explain the pattern. In (c) and (d), with the source and the right-hand data removed, $\sin\frac x2$ (for c) and $\cos\frac x2-\sin\frac x2$ (for d) satisfy the homogeneous conditions, so those two problems can't be uniquely solvable; (c) happens to be inconsistent and (d) consistent. In (a) and (b) the homogeneous problem has only the zero solution, so the answer is unique. SymPy's `solve` on the two linear conditions returns exactly these four outcomes.
 
-## 3. Eigenvalue problems (L3)
+## 3. Eigenvalue problems
 
-An eigenvalue problem is a boundary value problem whose ODE contains a parameter whose value isn't known in advance, with a completely specified set of homogeneous boundary conditions (ll. 188–197). The standard example is
+An eigenvalue problem is a boundary value problem whose ODE contains a parameter whose value isn't known in advance, with a completely specified set of homogeneous boundary conditions. The standard example is
 
 $$
 y''+\lambda y=0,\qquad y(0)=0,\qquad y'(1)+y(1)=0,
 $$
 
-a model of steady heat conduction in a bar: $y$ is the deviation from ambient temperature, the left end is held at ambient, and the right-hand condition balances the heat flux through the end against the end temperature (ll. 198–213). The task is to find every $\lambda$ that gives a solution other than $y\equiv0$, the trivial solution, which always works and is never interesting (ll. 222–226, 276–281).
+a model of steady heat conduction in a bar: $y$ is the deviation from ambient temperature, the left end is held at ambient, and the right-hand condition balances the heat flux through the end against the end temperature. The task is to find every $\lambda$ that gives a solution other than $y\equiv0$, the trivial solution, which always works and is never interesting.
 
 The auxiliary equation (with $m$ in place of $\lambda$, which is now taken) is
 
@@ -165,7 +165,7 @@ $$
 m^2+\lambda=0\quad\Longrightarrow\quad m=\pm\sqrt{-\lambda},
 $$
 
-so the form of the solution depends on the sign of $\lambda$, and there is no shortcut: each case has to be worked separately (ll. 231–241). Writing $\lambda=-k^2$ or $\lambda=k^2$ with $k>0$ is purely notation that keeps the square roots tidy; the answer is converted back to $\lambda$ at the end (ll. 287–292).
+so the form of the solution depends on the sign of $\lambda$, and there is no shortcut: each case has to be worked separately. Writing $\lambda=-k^2$ or $\lambda=k^2$ with $k>0$ is purely notation that keeps the square roots tidy; the answer is converted back to $\lambda$ at the end.
 
 | Case | Roots | General solution |
 |---|---|---|
@@ -177,7 +177,7 @@ Restricting to $k>0$ loses nothing: $\sin(-kx)=-\sin kx$ is just a rescaled eige
 
 ### Worked example: an eigenvalue problem
 
-**Case $\lambda=0$** (ll. 242–281). The roots are $0$ twice, so
+**Case $\lambda=0$**. The roots are $0$ twice, so
 
 $$
 y=c_1+c_2x,\qquad y'=c_2.
@@ -197,7 +197,7 @@ $$
 
 Only the trivial solution, so $\lambda=0$ is not an eigenvalue.
 
-**Case $\lambda=-k^2<0$** (slide 13). The roots are $\pm k$, so
+**Case $\lambda=-k^2<0$**. The roots are $\pm k$, so
 
 $$
 y=c_1e^{kx}+c_2e^{-kx},\qquad y'=k\big(c_1e^{kx}-c_2e^{-kx}\big).
@@ -221,7 +221,7 @@ $$
 
 For $k>0$ both $\cosh k$ and $\sinh k$ are positive, so the bracket is positive and $c_1=0$, then $c_2=0$. An argument without hyperbolic functions: for $k>0$, $e^k>1>e^{-k}$, so $e^k+e^{-k}$ and $e^k-e^{-k}$ are both positive. Only the trivial solution, so there are no negative eigenvalues.
 
-**Case $\lambda=k^2>0$** (ll. 357–416). The roots are $\pm jk$, so
+**Case $\lambda=k^2>0$**. The roots are $\pm jk$, so
 
 $$
 y=c_1\cos kx+c_2\sin kx,\qquad y'=k\big(-c_1\sin kx+c_2\cos kx\big).
@@ -245,7 +245,7 @@ $$
 \sin k+k\cos k=0\quad\Longleftrightarrow\quad k=-\tan k.
 $$
 
-This equation has no closed-form solution, but plotting $k$ and $-\tan k$ shows it has infinitely many: $-\tan k$ runs from $+\infty$ to $-\infty$ between successive asymptotes at $\frac\pi2,\frac{3\pi}2,\dots$, so it crosses the line $k$ once in each interval $\big((n-\tfrac12)\pi,\,n\pi\big)$, and the roots can be labelled $k_1<k_2<\dots$ by the integers (ll. 395–416).
+This equation has no closed-form solution, but plotting $k$ and $-\tan k$ shows it has infinitely many: $-\tan k$ runs from $+\infty$ to $-\infty$ between successive asymptotes at $\frac\pi2,\frac{3\pi}2,\dots$, so it crosses the line $k$ once in each interval $\big((n-\tfrac12)\pi,\,n\pi\big)$, and the roots can be labelled $k_1<k_2<\dots$ by the integers.
 
 ![[m2048_ode_eigen_tan.png|720]]
 
@@ -307,7 +307,7 @@ With Neumann conditions at both ends, $y'(0)=y'(L)=0$, the $\lambda=0$ case is n
 
 The table is a summary only: exam questions expect the three cases derived each time. Past papers also write the separated equation as $X''-\lambda X=0$ (2025/26 A2), in which case the oscillatory case is $\lambda=-k^2$ and the eigenvalues come out negative, $\lambda_n=-n^2$; read the given form before choosing signs.
 
-### Properties of the eigenvalues and eigenfunctions (lecture notes §1.2.1)
+### Properties of the eigenvalues and eigenfunctions
 
 For $y''+\lambda y=0$ with Dirichlet or Neumann conditions, the eigenvalues are real and increase without bound, $\lambda_1<\lambda_2<\dots\to\infty$; $y_n$ has $n-1$ zeros inside the interval; and eigenfunctions belonging to different eigenvalues are orthogonal. The orthogonality can be shown from the ODE alone. Take $y_m''=-\lambda_my_m$ and $y_n''=-\lambda_ny_n$ with the same homogeneous conditions. Multiply the first by $y_n$ and the second by $y_m$:
 
@@ -362,7 +362,7 @@ Lecture 3 set the $\lambda<0$ case as a slide exercise (then worked it), and poi
 ### Core
 
 - [ ] Lecturer-set (slide 13 exercise): show the case $\lambda=-k^2$ of $y''+\lambda y=0$, $y(0)=0$, $y'(1)+y(1)=0$ gives only the trivial solution. → [[#Worked example: an eigenvalue problem]]
-- [ ] Solve the slide's mixed-condition example $y''+2y'+y=0$, $y(0)+2y'(0)=0$, $2y(1)-y'(1)=1$ (suggested, not lecturer-set). Answer: $y=\frac18(x+2)e^{1-x}$. → [[#1. Initial against boundary value problems (L3)]]
+- [ ] Solve the slide's mixed-condition example $y''+2y'+y=0$, $y(0)+2y'(0)=0$, $2y(1)-y'(1)=1$ (suggested, not lecturer-set). Answer: $y=\frac18(x+2)e^{1-x}$. → [[#1. Initial against boundary value problems]]
 - [ ] PS2 Q2: for $y''+\tfrac14y=1$, decide which of the four boundary value problems has a unique solution, none, or a family. Answers: (a) unique, $y=4-4\cos\frac x2-2\sin\frac x2$; (b) unique, $y=4$; (c) none; (d) a family. → [[#Problem Sheet 2, Q2: the same three outcomes with a source]]
 - [ ] PS2 Q3(a)–(b), the Dirichlet and Dirichlet–Neumann eigenproblems on $[0,\pi]$. → [[MATH2048 Problem Sheets 1-2 Solutions - ODEs#Q3: Eigenvalue problems]]
 
@@ -370,7 +370,7 @@ Lecture 3 set the $\lambda<0$ case as a slide exercise (then worked it), and poi
 
 - [ ] Derive the Neumann–Neumann eigenproblem and explain why $\lambda=0$ is an eigenvalue (suggested, not lecturer-set). → [[#4. The standard eigenproblems (PS2 Q3, preview of the PDE block)]]
 - [ ] Find $k_1$ for $k=-\tan k$ to three decimal places by Newton's method or bisection on $(\pi/2,\pi)$, and check it against 2.029 (suggested, not lecturer-set). → [[#Worked example: an eigenvalue problem]]
-- [ ] Prove orthogonality of eigenfunctions from the ODE by integrating by parts (suggested, not lecturer-set). → [[#Properties of the eigenvalues and eigenfunctions (lecture notes §1.2.1)]]
+- [ ] Prove orthogonality of eigenfunctions from the ODE by integrating by parts (suggested, not lecturer-set). → [[#Properties of the eigenvalues and eigenfunctions]]
 
 ## Transcript and slide slips
 

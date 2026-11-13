@@ -21,7 +21,7 @@ where $\nu$ is the [[Prandtl-Meyer Function|Prandtl–Meyer angle]] and $\theta$
 
 ## Where they come from
 
-The full derivation is in [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants (3.1 slides 9–12)|W05a §7]], and every step is written out in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]]. Applying mass, $l$-momentum, homentropy and zero vorticity to a streamtube gives two PDEs in $\nu$ and $\theta$:
+The full derivation is in [[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants|W05a §7]], and every step is written out in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]]. Applying mass, $l$-momentum, homentropy and zero vorticity to a streamtube gives two PDEs in $\nu$ and $\theta$:
 
 $$\partial\nu/\partial l-\tan\mu\,\partial\theta/\partial n=0,\qquad\partial\theta/\partial l-\tan\mu\,\partial\nu/\partial n=0.$$
 
@@ -38,9 +38,9 @@ $$
 \nu=\tfrac12(R^++R^-),\qquad\theta=\tfrac12(R^--R^+).
 $$
 
-More generally, $R^+$, $R^-$, $\nu$ and $\theta$ are linked by two equations, so any two of them fix the other two (L3-3, ll. 32–36). At a wall, one invariant arrives along its line and the wall supplies $\theta$. On the centreline, $\theta=0$.
+More generally, $R^+$, $R^-$, $\nu$ and $\theta$ are linked by two equations, so any two of them fix the other two. At a wall, one invariant arrives along its line and the wall supplies $\theta$. On the centreline, $\theta=0$.
 
-Where one invariant is the same everywhere, for example $R^+$ throughout a Prandtl–Meyer fan fed by uniform flow, the region is a **simple flow region** (L3.3 slides 8 and 10; textbooks say simple-wave region). Then $\nu-\theta=\nu_1$, which is just $\nu_2=\nu_1+\theta$ from W03.
+Where one invariant is the same everywhere, for example $R^+$ throughout a Prandtl–Meyer fan fed by uniform flow, the region is a **simple flow region** (textbooks say simple-wave region). Then $\nu-\theta=\nu_1$, which is just $\nu_2=\nu_1+\theta$ from W03.
 
 Anderson uses $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$. The physics is the same; the SESA3029 signs follow Liepmann & Roshko. Pick one and stick to it.
 

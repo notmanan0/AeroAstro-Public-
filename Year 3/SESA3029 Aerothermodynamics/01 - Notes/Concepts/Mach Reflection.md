@@ -23,7 +23,7 @@ The regular-reflection limit comes from solving $\theta=\theta_{max}(M_2(\theta)
 |---|---:|---:|---:|---:|---:|---:|
 | $\theta_{RR}$ | $7.6^\circ$ | $12.9^\circ$ | $16.1^\circ$ | $21.5^\circ$ | $24.3^\circ$ | $27.8^\circ$ |
 
-The same failure of a regular shock crossing on the axis of an over-expanded axisymmetric jet produces a **Mach disc** (Lecture 2.7, slide 7).
+The same failure of a regular shock crossing on the axis of an over-expanded axisymmetric jet produces a **Mach disc**.
 
 ![[at_mach_reflection.png|760]]
 

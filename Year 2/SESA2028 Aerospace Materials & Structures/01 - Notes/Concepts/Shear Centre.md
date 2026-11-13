@@ -28,7 +28,7 @@ $$
 e=\frac{th^2b^2}{4I_z}=\frac{3b^2}{h+6b}
 $$
 
-from the web, on the side away from the flanges: 33.3 mm for the course example with $h=300$, $b=100$, $t=10$ mm. The structures lab measures $e$ directly as the load offset at which the two gauge readings cross.
+from the web, on the side away from the flanges: 33.3 mm for $h=300$, $b=100$, $t=10$ mm. Experimentally, $e$ is the load offset at which the two gauge readings cross.
 
 If a force acts a distance $e$ away from S, analyse it as a force through S plus a torque $T=Ve$.
 

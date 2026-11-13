@@ -41,7 +41,7 @@ An improper integral asks for the area under a curve that runs off to infinity, 
 
 ---
 
-## 1. Proper and improper rational functions (James §2.5.1)
+## 1. Proper and improper rational functions
 
 A rational function $P(x)/Q(x)$ is **proper** when $\deg P<\deg Q$ and **improper** otherwise. Partial fractions apply only to proper fractions, so an improper one is divided first: polynomial long division gives a quotient $r(x)$ and a remainder $s(x)$ with $\deg s<\deg Q$,
 
@@ -177,7 +177,7 @@ The cover-up rule is fast but covers only some of the constants, and for a fract
 > [!check] A spot value
 > Check a decomposition at a value of $x$ not used to find the constants. For James Example 2.32, $\frac{2x+1}{(x-2)(x+1)(x-3)}=-\frac{5/3}{x-2}-\frac{1/12}{x+1}+\frac{7/4}{x-3}$, and at $x=1$ both sides equal $\frac34$.
 
-## 3. Integrating each partial fraction (James §8.8.8)
+## 3. Integrating each partial fraction
 
 A simple linear term integrates to a logarithm. With $u=x-a$,
 
@@ -400,7 +400,7 @@ $$
 \int\Big(-\frac1x-\frac{1}{x^2}+\frac{1}{x-1}\Big)\mathrm dx=\ln\Big|\frac{x-1}{x}\Big|+\frac1x+C .
 $$
 
-(i) $\frac{2x^3}{x^3-1}$ is improper; [[#1. Proper and improper rational functions (James §2.5.1)]] gave $2+\frac{2}{x^3-1}$. Factorise $x^3-1=(x-1)(x^2+x+1)$; the quadratic has $b^2-4c=-3<0$, so it takes a linear numerator:
+(i) $\frac{2x^3}{x^3-1}$ is improper; [[#1. Proper and improper rational functions]] gave $2+\frac{2}{x^3-1}$. Factorise $x^3-1=(x-1)(x^2+x+1)$; the quadratic has $b^2-4c=-3<0$, so it takes a linear numerator:
 
 $$
 \frac{2}{(x-1)(x^2+x+1)}=\frac{A}{x-1}+\frac{Bx+C}{x^2+x+1},
@@ -484,7 +484,7 @@ $$
 \end{aligned}
 $$
 
-## 6. Improper integrals as limits (James §9.2)
+## 6. Improper integrals as limits
 
 The definite integral $\int_a^bf\,\mathrm dx$ of [[MATH1054 M04 - Integration I|M04]] assumes a finite range and a bounded, piecewise-continuous integrand. An **improper integral** breaks one of these: the integrand is unbounded at some point of the range (a singularity), or the range is infinite. Either way it is defined as a limit of proper integrals, and it **converges** if the limit exists and is finite, and **diverges** (is not defined) otherwise.
 
@@ -747,6 +747,6 @@ $$
 ## Transcript and slide slips
 
 > [!warning] James Example 9.3 (p. 706)
-> Where: [[#6. Improper integrals as limits (James §9.2)]].
+> Where: [[#6. Improper integrals as limits]].
 >
 > James evaluates the pendulum period for $\alpha=\frac\pi3$ as $T=8\sqrt{l/g}\int_0^{\pi/2}\frac{\mathrm d\phi}{\sqrt{3+\cos^2\phi}}$ and prints $13.4864\sqrt{l/g}$. The integral is $0.84288$, so $T=6.7430\sqrt{l/g}$; the four-interval trapezium rule James quotes also gives $6.7430$. The printed value is twice too large, as the comparison with the small-angle period $2\pi\sqrt{l/g}=6.283\sqrt{l/g}$ shows. The example is not set in the Module 10 work scheme.

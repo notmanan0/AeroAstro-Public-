@@ -162,7 +162,7 @@ Moving an impedance from the secondary side to the primary side multiplies it by
 
 ## 3. The transformer EMF equation
 
-The **transformer EMF equation** (Sharkh §3.5, Eq. 3.12) sets how many turns $N_1$ and what core area $A$ a transformer needs to support a given RMS supply voltage $V_1$ at frequency $f$ without saturating.
+The **transformer EMF equation** sets how many turns $N_1$ and what core area $A$ a transformer needs to support a given RMS supply voltage $V_1$ at frequency $f$ without saturating.
 
 Let the core flux vary sinusoidally at frequency $f$ (angular frequency $\omega = 2\pi f$) with peak $\Phi_m$:
 
@@ -209,7 +209,7 @@ Transport aircraft generate three-phase AC at $115\ \text{V}$, $400\ \text{Hz}$,
 
 ### Step-up transformer flux density and voltage
 
-A single-phase transformer has $N_1 = 400$ primary turns and $N_2 = 1000$ secondary turns, and the net cross-sectional area of its laminated core is $A = 60\ \text{cm}^2$ (`S2-W18-21 Electric Machines 04` slide 7; Sharkh pp. 18–19). The primary is connected to a $50\ \text{Hz}$ supply of RMS voltage $V_1 = 500\ \text{V}$. The task is the secondary voltage $V_2$, the peak flux $\Phi_m$ and peak flux density $B_m$ (and whether the core saturates), the time-domain $v_1(t)$ and $\Phi(t)$, and the effect on $B_m$ of applying the same $500\ \text{V}$ at $25\ \text{Hz}$.
+A single-phase transformer has $N_1 = 400$ primary turns and $N_2 = 1000$ secondary turns, and the net cross-sectional area of its laminated core is $A = 60\ \text{cm}^2$. The primary is connected to a $50\ \text{Hz}$ supply of RMS voltage $V_1 = 500\ \text{V}$. The task is the secondary voltage $V_2$, the peak flux $\Phi_m$ and peak flux density $B_m$ (and whether the core saturates), the time-domain $v_1(t)$ and $\Phi(t)$, and the effect on $B_m$ of applying the same $500\ \text{V}$ at $25\ \text{Hz}$.
 
 From the turns ratio,
 

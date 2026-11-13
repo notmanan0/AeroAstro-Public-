@@ -16,7 +16,7 @@ $$
 \kappa=\frac{M}{EI},\qquad \kappa=\frac{v''}{[1+(v')^2]^{3/2}}\approx\frac{d^2v}{dx^2},
 $$
 
-so
+so, with $v$ upward and sagging $M$ positive,
 
 $$
 EI\frac{d^2v}{dx^2}=M(x).
@@ -36,7 +36,7 @@ $$
 
 ## Good habits
 
-- Signs: the sign of $M$ and the positive direction of $v$ must match the convention you drew. With sagging-positive $M$ and $v$ positive upwards, $EIv''=+M$. If you choose $v$ downward, a minus sign appears. Consistency beats memorising one version.
+- Signs: the sign of $M$ and the positive direction of $v$ must match the convention you drew. With sagging-positive $M$ and $v$ positive upwards, $EIv''=+M$. With $v$ downward, as in S2, a minus sign appears.
 - Continuity: $v$ and $v'$ are continuous everywhere except at hinges (slope jump) or gaps. A point load gives a jump in $V$, so a kink in $M$. A point moment gives a jump in $M$.
 - Small slopes only: large-deflection problems (elastica) need the exact curvature.
 

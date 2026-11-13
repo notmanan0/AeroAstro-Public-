@@ -29,6 +29,6 @@ The 1940 Tacoma Narrows bridge collapse is the usual motivating example. Strictl
 
 ## Related
 
-- Derivation: [[MATH2048 ODE2 - Euler Equations and Inhomogeneous ODEs#Resonance (L3 slide 18)|ODE2]]
+- Derivation: [[MATH2048 ODE2 - Euler Equations and Inhomogeneous ODEs#Resonance|ODE2]]
 - [[Method of Undetermined Coefficients]] · [[Auxiliary Equation]]
 - Year 1: physical single-degree-of-freedom resonance in [[FEEG1002 D6 - Single Degree of Freedom Vibration]]

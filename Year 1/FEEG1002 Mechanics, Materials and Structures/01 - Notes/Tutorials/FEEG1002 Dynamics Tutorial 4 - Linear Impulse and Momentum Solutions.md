@@ -58,8 +58,6 @@ Both match the printed answers. The velocity change is 4 m/s, not 2, because the
 
 For part (c), the maximum acceleration cannot be found from these data. The impulse fixes only the area under the force-time curve, and many curves of different shape have the same area over 0.4 s. A half-sine pulse would peak at $\tfrac\pi2$ times the average (23.6 kN, $-15.7$ m/s²), a symmetric triangle at twice the average (30 kN, $-20$ m/s²). The force-time history, or a model of the bumper's stiffness, would be needed.
 
-The same problem was set as a lecture quiz (Dynamics 08 transcript, ll. 371–394), with $-10$ m/s² as the answer.
-
 Theory: [[FEEG1002 D4 - Linear Impulse and Momentum#Crash test]] · [[FEEG1002 D4 - Linear Impulse and Momentum#Impulse and average force]]
 
 ## Q2 - Tennis ball with a half-sine contact force
@@ -361,7 +359,7 @@ Theory: [[FEEG1002 D4 - Linear Impulse and Momentum#2. Conservation of linear mo
 
 Cue ball A moves at 2 m/s along $+y$ and strikes ball B (equal mass, at rest), knocking it straight into the corner pocket along the line at 45° up and to the left. Energy and momentum are conserved. Find both velocities after the impact.
 
-This is an oblique impact, which is outside the assessed scope (section 4.3 of the slides), but it follows from the same two ideas as a central impact. The balls are smooth, so the contact impulse acts along the line of impact, the line through the two centres at contact. B starts at rest and receives only that impulse, so B must move off along the line of impact; since it goes straight into the pocket, the line of impact is the 45° line. Take unit vectors along and across it:
+This is an oblique impact, which is outside the assessed scope, but it follows from the same two ideas as a central impact. The balls are smooth, so the contact impulse acts along the line of impact, the line through the two centres at contact. B starts at rest and receives only that impulse, so B must move off along the line of impact; since it goes straight into the pocket, the line of impact is the 45° line. Take unit vectors along and across it:
 
 $$
 \mathbf n=\frac{-\mathbf i+\mathbf j}{\sqrt2},\qquad\mathbf t=\frac{\mathbf i+\mathbf j}{\sqrt2}

@@ -65,7 +65,7 @@ $$\frac{d}{dt}\mathbf H=\frac{d}{dt}([\mathbf I]\boldsymbol\omega)=\mathbf T$$
 so the vehicle's response to any control torque is an explicit function of $[\mathbf I]$. You cannot size torquers without it.
 
 ## Q4. The four generic stabilisation types
-See [[Spacecraft Stabilisation Types]] (lecture slides 21–35).
+See [[Spacecraft Stabilisation Types]].
 
 | Type | Bias? | Mechanism | Examples |
 |---|---|---|---|

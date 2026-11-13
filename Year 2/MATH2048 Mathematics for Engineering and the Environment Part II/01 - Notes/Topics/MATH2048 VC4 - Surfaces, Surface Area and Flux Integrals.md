@@ -31,27 +31,27 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 27.txt", "02 - Sources/Lecture
 > - **Assumptions:** a parametrisation covering the surface once; the direction of the normal fixed by the question (up, outward) and checked.
 > - **Method:** 1. Parametrise, $\mathbf r(s,t)$, with parameter ranges. 2. Compute $\mathbf r_s$, $\mathbf r_t$ and $\mathbf N=\mathbf r_s\times\mathbf r_t$; check its direction at one point. 3. Area or scalar integral: use $|\mathbf N|\,ds\,dt$. 4. Flux: substitute $x(s,t)$, $y(s,t)$, $z(s,t)$ into $\mathbf F$ and form $\mathbf F\cdot\mathbf N$. 5. Integrate over the parameter rectangle.
 > - **Common mistakes:** not checking whether $\mathbf N$ points the required way (for the course's sphere, $\mathbf r_s\times\mathbf r_t$ points inwards); forgetting the factor $|\mathbf N|$ in $dA$.
-> - **Practise:** [[#Flux through a helicoid (L28)]] · [[#4. The 2023-24 exam, question B2(a)–(d)]]
+> - **Practise:** [[#Flux through a helicoid]] · [[#4. The 2023-24 exam, question B2(a)–(d)]]
 
-Line integrals add up a field along a one-dimensional curve. Most quantities of engineering interest live on surfaces instead: the lift on a wing integrates pressure over its skin, the flow out of a pipe is the flux of velocity through its cross-section, and heat or radiation transfer is a flux through a boundary (L28, ll. 124–126). The approach copies the line integral. A curve needed one parameter; a surface is intrinsically two-dimensional, so it needs two (L27, ll. 23–37).
+Line integrals add up a field along a one-dimensional curve. Most quantities of engineering interest live on surfaces instead: the lift on a wing integrates pressure over its skin, the flow out of a pipe is the flux of velocity through its cross-section, and heat or radiation transfer is a flux through a boundary. The approach copies the line integral. A curve needed one parameter; a surface is intrinsically two-dimensional, so it needs two.
 
 The parameters map a simple flat region, usually a rectangle, onto the curved surface. The work is in finding how much each small piece of the rectangle is stretched by the mapping, which is the length of a cross product. After that, every surface integral is an ordinary double integral over the rectangle.
 
 ---
 
-## 1. Describing a surface (L27)
+## 1. Describing a surface
 
-There are three ways (ll. 5–37). A graph, $z=f(x,y)$, suits something like terrain height on a map, but fails for a sphere, where each $(x,y)$ inside has two values of $z$. A level surface, such as $x^2+y^2+z^2=a^2$, handles the sphere, but is often awkward to work with. The general choice, used for the rest of the course, is a parametrisation
+There are three ways. A graph, $z=f(x,y)$, suits something like terrain height on a map, but fails for a sphere, where each $(x,y)$ inside has two values of $z$. A level surface, such as $x^2+y^2+z^2=a^2$, handles the sphere, but is often awkward to work with. The general choice, used for the rest of the course, is a parametrisation
 
 $$
 \mathbf r(s,t)=x(s,t)\,\mathbf i+y(s,t)\,\mathbf j+z(s,t)\,\mathbf k ,
 $$
 
-with $(s,t)$ ranging over a rectangle $a\leq s\leq b$, $c\leq t\leq d$. Not every surface maps nicely from a rectangle; a whole sphere can't be covered from a square without bad points at the poles, and some patches suit a triangle better (ll. 45–51). As with curves, the parametrisation is a matter of convenience and doesn't change the answer.
+with $(s,t)$ ranging over a rectangle $a\leq s\leq b$, $c\leq t\leq d$. Not every surface maps nicely from a rectangle; a whole sphere can't be covered from a square without bad points at the poles, and some patches suit a triangle better. As with curves, the parametrisation is a matter of convenience and doesn't change the answer.
 
 ### The cylinder
 
-A cylinder of radius $a$ and height $h$ about the $z$-axis is a stack of circles (ll. 63–91). Let $t$ be the height and $s$ the angle round each circle:
+A cylinder of radius $a$ and height $h$ about the $z$-axis is a stack of circles. Let $t$ be the height and $s$ the angle round each circle:
 
 $$
 \mathbf r(s,t)=a\cos s\,\mathbf i+a\sin s\,\mathbf j+t\,\mathbf k,\qquad-\pi\leq s\leq\pi,\quad0\leq t\leq h .
@@ -61,19 +61,19 @@ The horizontal part has length $\sqrt{a^2\cos^2s+a^2\sin^2s}=a$, so every point 
 
 ### The sphere
 
-A sphere of radius $a$ is sliced horizontally (ll. 92–127), with $t$ the angle down from the north pole, so $z=a\cos t$, which is $a$ at the pole $t=0$, $0$ on the equator and $-a$ at the south pole $t=\pi$. The slice at that height is a circle of radius $a\sin t$, zero at the poles and $a$ on the equator, parametrised by $s$:
+A sphere of radius $a$ is sliced horizontally, with $t$ the angle down from the north pole, so $z=a\cos t$, which is $a$ at the pole $t=0$, $0$ on the equator and $-a$ at the south pole $t=\pi$. The slice at that height is a circle of radius $a\sin t$, zero at the poles and $a$ on the equator, parametrised by $s$:
 
 $$
 \mathbf r(s,t)=a\cos s\sin t\,\mathbf i+a\sin s\sin t\,\mathbf j+a\cos t\,\mathbf k,\qquad0\leq s\leq2\pi,\quad0\leq t\leq\pi .
 $$
 
-Then $|\mathbf r|^2=a^2\sin^2t(\cos^2s+\sin^2s)+a^2\cos^2t=a^2$. This follows the formula sheet, but spherical coordinates vary between sources, in which angle is measured from where and with which letter, so always check (ll. 115–122).
+Then $|\mathbf r|^2=a^2\sin^2t(\cos^2s+\sin^2s)+a^2\cos^2t=a^2$. This follows the formula sheet, but spherical coordinates vary between sources, in which angle is measured from where and with which letter, so always check.
 
-## 2. Normals and the area element (L27)
+## 2. Normals and the area element
 
 ### The normal from two tangent vectors
 
-On the surface, the lines of constant $t$ and the lines of constant $s$ form a grid (ll. 130–171). Differentiating with $t$ held fixed moves along a line of constant $t$, so $\mathbf r_s=\frac{\partial\mathbf r}{\partial s}$ is tangent to it; likewise $\mathbf r_t$ is tangent to the lines of constant $s$. Both lie in the surface, so their cross product is normal to it:
+On the surface, the lines of constant $t$ and the lines of constant $s$ form a grid. Differentiating with $t$ held fixed moves along a line of constant $t$, so $\mathbf r_s=\frac{\partial\mathbf r}{\partial s}$ is tangent to it; likewise $\mathbf r_t$ is tangent to the lines of constant $s$. Both lie in the surface, so their cross product is normal to it:
 
 $$
 \mathbf N=\frac{\partial\mathbf r}{\partial s}\times\frac{\partial\mathbf r}{\partial t}.
@@ -81,7 +81,7 @@ $$
 
 Swapping the order reverses $\mathbf N$. One order gives the outward normal and the other the inward one, and which is which depends on the parametrisation, so draw a picture and check.
 
-For the cylinder (ll. 172–216), $\mathbf r_s=-a\sin s\,\mathbf i+a\cos s\,\mathbf j$ and $\mathbf r_t=\mathbf k$, so
+For the cylinder, $\mathbf r_s=-a\sin s\,\mathbf i+a\cos s\,\mathbf j$ and $\mathbf r_t=\mathbf k$, so
 
 $$
 \mathbf N=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\-a\sin s&a\cos s&0\\0&0&1\end{vmatrix}=a\cos s\,\mathbf i+a\sin s\,\mathbf j .
@@ -89,7 +89,7 @@ $$
 
 At $s=0$, the point $(a,0,t)$, it is $a\,\mathbf i$; at $s=\pi$, the point $(-a,0,t)$, it is $-a\,\mathbf i$; at $s=\frac\pi2$ it is $a\,\mathbf j$. It always points away from the axis: this order gives the outward normal of the curved side, and says nothing about the end caps, which this parametrisation doesn't cover.
 
-For the sphere (ll. 217–228), differentiate the parametrisation:
+For the sphere, differentiate the parametrisation:
 
 $$
 \mathbf r_s=-a\sin s\sin t\,\mathbf i+a\cos s\sin t\,\mathbf j,\qquad\mathbf r_t=a\cos s\cos t\,\mathbf i+a\sin s\cos t\,\mathbf j-a\sin t\,\mathbf k .
@@ -113,7 +113,7 @@ So the normal is parallel to $\hat{\mathbf r}$ with magnitude $a^2\sin t$ (non-n
 
 ### The area element
 
-The small patch between $(s,t)$, $(s+\Delta s,t)$ and $(s,t+\Delta t)$ (ll. 229–285) has edges, by a Taylor expansion,
+The small patch between $(s,t)$, $(s+\Delta s,t)$ and $(s,t+\Delta t)$ has edges, by a Taylor expansion,
 
 $$
 \mathbf r(s+\Delta s,t)-\mathbf r(s,t)=\frac{\partial\mathbf r}{\partial s}\Delta s+\dots,\qquad\mathbf r(s,t+\Delta t)-\mathbf r(s,t)=\frac{\partial\mathbf r}{\partial t}\Delta t+\dots
@@ -131,23 +131,23 @@ $$
 dA=|\mathbf N|\,ds\,dt .
 $$
 
-$|\mathbf N|$ says how much the mapping stretches each small square of the parameter rectangle: the bigger it is, the more that part of the surface counts. The sign of $\mathbf N$ is irrelevant here, because only its length enters (ll. 351–353).
+$|\mathbf N|$ says how much the mapping stretches each small square of the parameter rectangle: the bigger it is, the more that part of the surface counts. The sign of $\mathbf N$ is irrelevant here, because only its length enters.
 
 ### Areas of the cylinder and sphere
 
-For the cylinder $|\mathbf N|=a$ (ll. 286–310):
+For the cylinder $|\mathbf N|=a$:
 
 $$
 A=\int_0^h\int_{-\pi}^{\pi}a\,ds\,dt=\int_0^h2\pi a\,dt=2\pi ah ,
 $$
 
-as expected. For the sphere $|\mathbf N|=a^2\sin t$, and (ll. 336–344)
+as expected. For the sphere $|\mathbf N|=a^2\sin t$, and
 
 $$
 A=\int_0^{2\pi}\int_0^\pi a^2\sin t\,dt\,ds=2\pi a^2\Big[-\cos t\Big]_0^\pi=4\pi a^2 .
 $$
 
-The order of the two integrals doesn't matter; choose whichever makes the integration easier (ll. 345–350).
+The order of the two integrals doesn't matter; choose whichever makes the integration easier.
 
 ### The area of a cone (PS10 Q1)
 
@@ -183,11 +183,11 @@ $$
 
 That is $\pi a\ell$ with $\ell$ the slant height, the familiar result. As checks, $h\to0$ gives the flat disc $\pi a^2$, and unrolling the cone into a sector of radius $\ell$ and arc length $2\pi a$ gives area $\frac12\ell\cdot2\pi a$, the same.
 
-## 3. Integrals over surfaces (L28)
+## 3. Integrals over surfaces
 
-### A scalar field over the cylinder (L28)
+### A scalar field over the cylinder
 
-To integrate a scalar field $\phi$ over a surface, write it in terms of the parameters and multiply by $|\mathbf N|$ (L28, ll. 22–122). For $\phi=x^2z$ on the cylinder, $x=a\cos s$ and $z=t$, so $\phi=a^2t\cos^2s$, and with $|\mathbf N|=a$,
+To integrate a scalar field $\phi$ over a surface, write it in terms of the parameters and multiply by $|\mathbf N|$. For $\phi=x^2z$ on the cylinder, $x=a\cos s$ and $z=t$, so $\phi=a^2t\cos^2s$, and with $|\mathbf N|=a$,
 
 $$
 \iint_S\phi\,dA=\int_{-\pi}^{\pi}\int_0^ha^3t\cos^2s\,dt\,ds=a^3\int_{-\pi}^{\pi}\cos^2s\,ds\int_0^ht\,dt .
@@ -199,17 +199,17 @@ $$
 \iint_S x^2z\,dA=\frac{\pi a^3h^2}2 .
 $$
 
-The same steps for Lecture 27's $\phi=xy^2$ give $a^4h\int_{-\pi}^{\pi}\cos s\sin^2s\,ds=a^4h\big[\tfrac13\sin^3s\big]_{-\pi}^{\pi}=0$ (L27, ll. 312–333).
+The same steps for $\phi=xy^2$ give $a^4h\int_{-\pi}^{\pi}\cos s\sin^2s\,ds=a^4h\big[\tfrac13\sin^3s\big]_{-\pi}^{\pi}=0$.
 
 ### Flux and the vector area element
 
-The flux of $\mathbf F$ through a surface counts only the part of $\mathbf F$ crossing it (ll. 124–139). A field running along the surface carries nothing through, and $\mathbf F\cdot\hat{\mathbf n}=0$; a field straight through it carries its full magnitude. So the flux is
+The flux of $\mathbf F$ through a surface counts only the part of $\mathbf F$ crossing it. A field running along the surface carries nothing through, and $\mathbf F\cdot\hat{\mathbf n}=0$; a field straight through it carries its full magnitude. So the flux is
 
 $$
 \iint_S\mathbf F\cdot\hat{\mathbf n}\,dA .
 $$
 
-$\mathbf F\cdot\hat{\mathbf n}$ is a scalar field, so this is a surface integral of the previous kind. But it can be shortened (ll. 140–203). Define the vector area element $d\mathbf S=\hat{\mathbf n}\,dA$. Since $\hat{\mathbf n}=\mathbf N/|\mathbf N|$ and $dA=|\mathbf N|\,ds\,dt$, the magnitudes cancel:
+$\mathbf F\cdot\hat{\mathbf n}$ is a scalar field, so this is a surface integral of the previous kind. But it can be shortened. Define the vector area element $d\mathbf S=\hat{\mathbf n}\,dA$. Since $\hat{\mathbf n}=\mathbf N/|\mathbf N|$ and $dA=|\mathbf N|\,ds\,dt$, the magnitudes cancel:
 
 $$
 d\mathbf S=\hat{\mathbf n}\,dA=\frac{\mathbf N}{|\mathbf N|}\,|\mathbf N|\,ds\,dt=\mathbf N\,ds\,dt=\Big(\frac{\partial\mathbf r}{\partial s}\times\frac{\partial\mathbf r}{\partial t}\Big)ds\,dt .
@@ -217,7 +217,7 @@ $$
 
 No normalising is needed: compute $\mathbf N$, dot it with $\mathbf F$, integrate. The sign of $\mathbf N$ now matters, since reversing the normal reverses the flux, and it must be checked against the direction the question wants.
 
-### Flux through a helicoid (L28)
+### Flux through a helicoid
 
 Find the flux of $\mathbf F=x\,\mathbf i+y\,\mathbf j+(z-2y)\,\mathbf k$ through the helicoid
 
@@ -225,27 +225,27 @@ $$
 \mathbf r=s\cos t\,\mathbf i+s\sin t\,\mathbf j+t\,\mathbf k,\qquad0\leq s\leq1,\quad0\leq t\leq2\pi ,
 $$
 
-a twisted ribbon like a spring or a spiral staircase (ll. 204–223). It is neither a graph nor a convenient level surface: above each point of the plane it passes at many heights. Here $s$ is the distance from the axis and $t$ both the angle and the height.
+a twisted ribbon like a spring or a spiral staircase. It is neither a graph nor a convenient level surface: above each point of the plane it passes at many heights. Here $s$ is the distance from the axis and $t$ both the angle and the height.
 
-On the surface $x=s\cos t$, $y=s\sin t$, $z=t$, so (ll. 224–237)
+On the surface $x=s\cos t$, $y=s\sin t$, $z=t$, so
 
 $$
 \mathbf F=s\cos t\,\mathbf i+s\sin t\,\mathbf j+(t-2s\sin t)\,\mathbf k .
 $$
 
-The tangents are $\mathbf r_s=\cos t\,\mathbf i+\sin t\,\mathbf j$ and $\mathbf r_t=-s\sin t\,\mathbf i+s\cos t\,\mathbf j+\mathbf k$ (ll. 253–273), so
+The tangents are $\mathbf r_s=\cos t\,\mathbf i+\sin t\,\mathbf j$ and $\mathbf r_t=-s\sin t\,\mathbf i+s\cos t\,\mathbf j+\mathbf k$, so
 
 $$
 \mathbf N=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\\cos t&\sin t&0\\-s\sin t&s\cos t&1\end{vmatrix}=\sin t\,\mathbf i-\cos t\,\mathbf j+\big(s\cos^2t+s\sin^2t\big)\,\mathbf k=\sin t\,\mathbf i-\cos t\,\mathbf j+s\,\mathbf k .
 $$
 
-Its $\mathbf k$ component $s$ is never negative, so this order gives the upward normal, the one taken when the question doesn't say (ll. 240–282). The dot product (ll. 283–289):
+Its $\mathbf k$ component $s$ is never negative, so this order gives the upward normal, the one taken when the question doesn't say. The dot product:
 
 $$
 \mathbf F\cdot\mathbf N=s\sin t\cos t-s\sin t\cos t+s(t-2s\sin t)=st-2s^2\sin t .
 $$
 
-Integrate in $t$ first, since $\sin t$ integrates to zero over a full period (ll. 290–311):
+Integrate in $t$ first, since $\sin t$ integrates to zero over a full period:
 
 $$
 \iint_S\mathbf F\cdot d\mathbf S=\int_0^1\Big[\frac{st^2}2+2s^2\cos t\Big]_0^{2\pi}ds=\int_0^12\pi^2s\,ds=\pi^2 .
@@ -279,7 +279,7 @@ The swirl part $-y\,\mathbf i+x\,\mathbf j$ runs round the funnel and carries no
 
 ### When the surface is a graph
 
-If the surface is $z=f(x,y)$, use $x$ and $y$ themselves as the parameters, $\mathbf r=x\,\mathbf i+y\,\mathbf j+f(x,y)\,\mathbf k$ (ll. 318–362). Then $\mathbf r_x=\mathbf i+f_x\,\mathbf k$ and $\mathbf r_y=\mathbf j+f_y\,\mathbf k$, and
+If the surface is $z=f(x,y)$, use $x$ and $y$ themselves as the parameters, $\mathbf r=x\,\mathbf i+y\,\mathbf j+f(x,y)\,\mathbf k$. Then $\mathbf r_x=\mathbf i+f_x\,\mathbf k$ and $\mathbf r_y=\mathbf j+f_y\,\mathbf k$, and
 
 $$
 \mathbf N=\begin{vmatrix}\mathbf i&\mathbf j&\mathbf k\\1&0&f_x\\0&1&f_y\end{vmatrix}=-f_x\,\mathbf i-f_y\,\mathbf j+\mathbf k,\qquad d\mathbf S=\big(-f_x\,\mathbf i-f_y\,\mathbf j+\mathbf k\big)\,dx\,dy ,
@@ -292,7 +292,7 @@ an upward normal. The flux is then a double integral over the shadow of the surf
 
 ## 4. The 2023-24 exam, question B2(a)–(d)
 
-The north hemisphere of the unit sphere is $\mathbf r=\sin s\cos t\,\mathbf i+\sin s\sin t\,\mathbf j+\cos s\,\mathbf k$, $0\leq s\leq\frac\pi2$, $0\leq t\leq2\pi$. Here $s$ is the polar angle and $t$ the azimuth, the reverse of the slide letters. The tangents are
+The north hemisphere of the unit sphere is $\mathbf r=\sin s\cos t\,\mathbf i+\sin s\sin t\,\mathbf j+\cos s\,\mathbf k$, $0\leq s\leq\frac\pi2$, $0\leq t\leq2\pi$. Here $s$ is the polar angle and $t$ the azimuth, the reverse of the course's usual letters. The tangents are
 
 $$
 \mathbf r_s=\cos s\cos t\,\mathbf i+\cos s\sin t\,\mathbf j-\sin s\,\mathbf k,\qquad\mathbf r_t=-\sin s\sin t\,\mathbf i+\sin s\cos t\,\mathbf j ,
@@ -329,7 +329,7 @@ Nothing was explicitly set. Lecture 27 left the integral of $xy^2$ over the cyli
 
 ### Core
 
-- [ ] Lecturer-started (L27, ll. 312–333): finish $\iint xy^2\,dA$ over the cylinder. Answer: $0$. → [[#A scalar field over the cylinder (L28)]]
+- [ ] Lecturer-started (L27, ll. 312–333): finish $\iint xy^2\,dA$ over the cylinder. Answer: $0$. → [[#A scalar field over the cylinder]]
 - [ ] Derive the sphere's normal and check that $\mathbf r_t\times\mathbf r_s=a^2\sin t\,\hat{\mathbf r}$ points outward. → [[#The normal from two tangent vectors]]
 - [ ] PS10 Q1: the curved area of a cone of base radius $a$ and height $h$. Answer: $\pi a\sqrt{a^2+h^2}$. → [[#The area of a cone (PS10 Q1)]]
 - [ ] 2023/24 B2(a)–(d). → [[#4. The 2023-24 exam, question B2(a)–(d)]]
@@ -338,7 +338,7 @@ Nothing was explicitly set. Lecture 27 left the integral of $xy^2$ over the cyli
 
 - [ ] PS10 Q2: fluxes through the upper hemisphere $r=a$. Answers include $\frac{2\pi a^3}3$, $\pi a^2$ and $0$. → [[MATH2048 Problem Sheets 8-11 Solutions - Vector Calculus]]
 - [ ] PS10 Q4: flux through the funnel $x^2+y^2=z^2$, $0\leq z\leq9$, outward. Answer: $-486\pi$. → [[#Flux through a funnel (PS10 Q4)]]
-- [ ] Redo the helicoid flux integrating in $s$ first and check you still get $\pi^2$ (suggested, not lecturer-set). → [[#Flux through a helicoid (L28)]]
+- [ ] Redo the helicoid flux integrating in $s$ first and check you still get $\pi^2$ (suggested, not lecturer-set). → [[#Flux through a helicoid]]
 
 ## Transcript and slide slips
 

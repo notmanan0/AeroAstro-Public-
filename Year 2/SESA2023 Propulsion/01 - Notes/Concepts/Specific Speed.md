@@ -27,7 +27,7 @@ It is better thought of as a shape factor, because each type of machine has its 
 | ~0.4–2 | mixed flow |
 | > 2 | axial |
 
-Aero engines are axial because axial machines give the best efficiency at high mass flow per frontal area, and their stages can be stacked to reach a high pressure ratio at an acceptable weight; small helicopter engines use centrifugal stages instead, at a lower $N_s$, accepting the losses between stages. The legacy question comparing the two (2015-16 Q1(i)) expects the radial compressor's roughly 10:1 per stage, robustness, short length and damage tolerance against its large diameter and inter-stage losses, and the axial compressor's under 2:1 per stage, stackability, small frontal area and higher efficiency at high flow against its fragility and cost.
+Aero engines are axial because axial machines give the best efficiency at high mass flow per frontal area, and their stages can be stacked to reach a high pressure ratio at an acceptable weight; small helicopter engines use centrifugal stages instead, at a lower $N_s$, accepting the losses between stages. The radial compressor gives roughly 10:1 per stage and is robust, short and damage-tolerant, at the price of a large diameter and inter-stage losses; the axial compressor gives under 2:1 per stage, stacks easily, has a small frontal area and is more efficient at high flow, but is fragile and costly (2015-16 Q1(i)).
 
 ## Related
 

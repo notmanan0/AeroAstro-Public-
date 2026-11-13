@@ -29,37 +29,37 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L1–L2)", "02 - Sour
 > - **Common mistakes:** comparing the half-wing aspect ratio with lifting-line theory, which needs the full span (a factor of 2); putting the first cell in the buffer layer, $8<y_1^+<30$.
 > - **Practise:** [[#First-cell height for a turbulent flat plate]] · [[SESA2029 CFD Worked Examples#Q9: Blasius boundary-layer numbers|CFD worked examples Q9]]
 
-Research simulations now solve the full compressible Navier–Stokes equations for transonic flow over an aerofoil, with a shock wave sitting on a turbulent boundary layer and oscillating back and forth. That oscillation, buffet, makes the lift fluctuate and, if it couples into the structure, shakes the wing, so it marks the edge of the transonic flight envelope. The largest such calculations use around ten billion grid points on a supercomputer (2025-10-02, l. 22) and still only cover part of a wing section at wind-tunnel conditions. Computation is powerful enough to change how aircraft are designed, and still too expensive to be used without simplifications whose trustworthiness the engineer has to judge.
+Research simulations now solve the full compressible Navier–Stokes equations for transonic flow over an aerofoil, with a shock wave sitting on a turbulent boundary layer and oscillating back and forth. That oscillation, buffet, makes the lift fluctuate and, if it couples into the structure, shakes the wing, so it marks the edge of the transonic flight envelope. The largest such calculations use around ten billion grid points on a supercomputer and still only cover part of a wing section at wind-tunnel conditions. Computation is powerful enough to change how aircraft are designed, and still too expensive to be used without simplifications whose trustworthiness the engineer has to judge.
 
-SESA2029 covers computational fluid dynamics with finite-difference and finite-volume methods in Part A and finite element analysis of structures in Part B. Each part has a coursework worth 30 % and the one-hour, short-question final exam is worth 40 % (L1 slide 16). Lecture and coursework material are both examinable.
+SESA2029 covers computational fluid dynamics with finite-difference and finite-volume methods in Part A and finite element analysis of structures in Part B. Each part has a coursework worth 30 % and the one-hour, short-question final exam is worth 40 %. Lecture and coursework material are both examinable.
 
 ## 1. The design cycle and what changed around 1980
 
-A design starts with synthesis: brainstorming concepts to meet the customer's requirements, drawing on knowledge, experience and some bias. Analysis then tests the concepts against the requirements, collects information about each and weighs their pros and cons, traditionally with wind-tunnel and flight tests. Decision making closes the loop on cost, schedule, performance and the alternatives (L1 slide 4). CFD and FEA belong to the analysis step, in its two halves of fluids and solids, and the coupling between them.
+A design starts with synthesis: brainstorming concepts to meet the customer's requirements, drawing on knowledge, experience and some bias. Analysis then tests the concepts against the requirements, collects information about each and weighs their pros and cons, traditionally with wind-tunnel and flight tests. Decision making closes the loop on cost, schedule, performance and the alternatives. CFD and FEA belong to the analysis step, in its two halves of fluids and solids, and the coupling between them.
 
-The time spent testing aircraft in wind tunnels rose from the first flights to a peak around 1980 and has fallen since (L1 slide 5; 2025-10-02, ll. 113–139). Wind-tunnel programmes are very expensive: large facilities such as the European Transonic Wind Tunnel, stiff instrumented models, and long run times. What changed was computer-based analysis. Aerodynamics and structures are computed, coupled and fed to an optimiser, which was once a designer looking at results and is now increasingly an algorithm (the aerostructural loop of L1 slide 6). Design offices went from rows of drawing boards to screens, and the trend continues towards certification largely on the computer.
+The time spent testing aircraft in wind tunnels rose from the first flights to a peak around 1980 and has fallen since. Wind-tunnel programmes are very expensive: large facilities such as the European Transonic Wind Tunnel, stiff instrumented models, and long run times. What changed was computer-based analysis. Aerodynamics and structures are computed, coupled and fed to an optimiser, which was once a designer looking at results and is now increasingly an algorithm (as in an aerostructural optimisation loop). Design offices went from rows of drawing boards to screens, and the trend continues towards certification largely on the computer.
 
-Digitalisation is used in three ways (L1 slide 7). It can support the traditional approach, running CFD on the design variants that would once have gone into the tunnel, insofar as the CFD is trusted. It can create new approaches, such as multidisciplinary design optimisation with aerodynamics and structures inside an automatic optimiser. And it can improve operations and maintenance, for example by predicting when an engine needs attention. Full Navier–Stokes simulation of a whole aircraft is still out of reach for routine design (2025-10-02, ll. 151–154), so practical CFD uses simplified models, and the engineer decides when the numbers are good enough and when a physical test is needed, typically when something new is being tried.
+Digitalisation is used in three ways. It can support the traditional approach, running CFD on the design variants that would once have gone into the tunnel, insofar as the CFD is trusted. It can create new approaches, such as multidisciplinary design optimisation with aerodynamics and structures inside an automatic optimiser. And it can improve operations and maintenance, for example by predicting when an engine needs attention. Full Navier–Stokes simulation of a whole aircraft is still out of reach for routine design, so practical CFD uses simplified models, and the engineer decides when the numbers are good enough and when a physical test is needed, typically when something new is being tried.
 
-The digital design environment has six parts (L1 slide 8): the geometry, pre-processing (discretisation into a mesh), links to the analyses of each discipline, coupling between those analyses, a search method such as an optimiser, and post-processing. The disciplines in the loop are aerodynamics (surface pressure and skin friction, hence loads and performance), structures (deflections and strength), their coupling in aeroelasticity, and manufacturing cost. The results form large databases from which the best parameters are chosen. CFD and FEA supply the discipline tools; the optimisation itself is outside this module.
+The digital design environment has six parts: the geometry, pre-processing (discretisation into a mesh), links to the analyses of each discipline, coupling between those analyses, a search method such as an optimiser, and post-processing. The disciplines in the loop are aerodynamics (surface pressure and skin friction, hence loads and performance), structures (deflections and strength), their coupling in aeroelasticity, and manufacturing cost. The results form large databases from which the best parameters are chosen. CFD and FEA supply the discipline tools; the optimisation itself is outside this module.
 
 ## 2. Digital twin and digital thread
 
-A **digital twin** is a digital model of an intended or actual physical product, system or process that is, for practical purposes, indistinguishable from it, and is used for simulation, integration, testing, monitoring and maintenance (L1 slide 9). For an aircraft that means one particular airframe or engine in its current state: its full geometry, the wear on each engine part, even a dent left by a supply truck (2025-10-02, l. 235). Each vehicle has its own twin, used to predict when it needs inspection or overhaul and to learn how the design behaves in service.
+A **digital twin** is a digital model of an intended or actual physical product, system or process that is, for practical purposes, indistinguishable from it, and is used for simulation, integration, testing, monitoring and maintenance. For an aircraft that means one particular airframe or engine in its current state: its full geometry, the wear on each engine part, even a dent left by a supply truck. Each vehicle has its own twin, used to predict when it needs inspection or overhaul and to learn how the design behaves in service.
 
-A **digital thread** is the record of a product's lifetime from creation to removal (L1 slide 10). It follows the design through manufacture to service in one system, so that if one aircraft needs more maintenance than expected, or one batch is more efficient than another that was nominally identical, engineers can trace the cause back through manufacturing tolerances to the design. The twin is the present state; the thread is the history, and lessons learned along it feed back to the early stages of the next design ([[Digital Twin and Digital Thread]]).
+A **digital thread** is the record of a product's lifetime from creation to removal. It follows the design through manufacture to service in one system, so that if one aircraft needs more maintenance than expected, or one batch is more efficient than another that was nominally identical, engineers can trace the cause back through manufacturing tolerances to the design. The twin is the present state; the thread is the history, and lessons learned along it feed back to the early stages of the next design ([[Digital Twin and Digital Thread]]).
 
 ## 3. The CFD workflow used in the coursework
 
-The coursework follows a typical commercial workflow (L2 slides 2–6; CW1 videos). A Python program, `CW2025.py`, generates each student's own wing from their student number: a half-span aspect ratio $s/\bar c$, a taper ratio and a NACA four-digit aerofoil, all with mean chord $\bar c=1$ m, so that across the cohort there are some 250 different wings. The example student number 12345678 (L2 slides) gives $s/\bar c=6$, $TR=0.7$ and a NACA 2412 section.
+The coursework follows a typical commercial workflow (CW1 videos). A Python program, `CW2025.py`, generates each student's own wing from their student number: a half-span aspect ratio $s/\bar c$, a taper ratio and a NACA four-digit aerofoil, all with mean chord $\bar c=1$ m, so that across the cohort there are some 250 different wings. The example student number 12345678 gives $s/\bar c=6$, $TR=0.7$ and a NACA 2412 section.
 
 The wing is built in OpenVSP, NASA's open-source preliminary-design CAD tool, as a half wing on a symmetry plane, so only half the flow needs to be meshed (lab 1). ANSYS DesignModeler puts a bounding box round it to form the computational domain, which must extend far enough for free-stream conditions to hold at its boundaries, and ANSYS Meshing generates three unstructured meshes (coarse, medium and fine) for a grid study. ANSYS Fluent then solves the inviscid (Euler) flow at three angles of attack, enough to test whether the lift curve really is straight (lab 2). A separate study of laminar and turbulent boundary layers on a flat plate, on a structured mesh, is compared with the Blasius solution derived in [[SESA2029 A6 - Higher-Order Time Integration, Runge-Kutta and the Blasius Equation|A6]].
 
-The Workbench shows the steps as Geometry, Mesh, Setup and Solution, each gaining a green tick when complete; all the post-processing needed is done inside the Fluent solution step (L2 slide 6). Structured meshes, such as a C-mesh wrapped round an aerofoil, are organised in regular rows; unstructured meshes are made of triangles or tetrahedra ([[SESA2029 A10 - Grids and Pressure-Based Solution Algorithms|A10]]).
+The Workbench shows the steps as Geometry, Mesh, Setup and Solution, each gaining a green tick when complete; all the post-processing needed is done inside the Fluent solution step. Structured meshes, such as a C-mesh wrapped round an aerofoil, are organised in regular rows; unstructured meshes are made of triangles or tetrahedra ([[SESA2029 A10 - Grids and Pressure-Based Solution Algorithms|A10]]).
 
 ## 4. Background aerodynamics to judge the CFD
 
-A CFD answer needs an independent check, and for a wing the benchmark is lifting-line theory, derived in SESA2022 ([[SESA2022 T5 - Finite Wing Theory]]). The coursework's nomenclature (L2 slide 7) is span $b$, semi-span $s=b/2$, mean chord $\bar c$, wing area $S=b\bar c$, full aspect ratio $AR=b/\bar c$, half-wing aspect ratio $AR_s=s/\bar c$, and taper ratio $TR=c_t/c_r$; sweep is measured on the quarter-chord line.
+A CFD answer needs an independent check, and for a wing the benchmark is lifting-line theory, derived in SESA2022 ([[SESA2022 T5 - Finite Wing Theory]]). The coursework's nomenclature is span $b$, semi-span $s=b/2$, mean chord $\bar c$, wing area $S=b\bar c$, full aspect ratio $AR=b/\bar c$, half-wing aspect ratio $AR_s=s/\bar c$, and taper ratio $TR=c_t/c_r$; sweep is measured on the quarter-chord line.
 
 ![[dam_wing_nomenclature.png|900]]
 
@@ -81,7 +81,7 @@ c_r=\frac{2\bar c}{1+TR}=\frac{2\times1}{1.7}=1.176\ \mathrm m,
 c_t=TR\,c_r=0.824\ \mathrm m.
 $$
 
-In a NACA four-digit section such as the 2412, the last two digits are the maximum thickness (12 % of chord), the first is the maximum camber (2 %) and the second its chordwise position (40 % of chord). The two-dimensional lift curve is a straight line of slope $a_0$ up to stall, with $a_0=2\pi$ per radian from thin aerofoil theory and a zero-lift angle $\alpha_{L=0}$ supplied by the Python program (L2 slide 8). For a finite wing (L2 slide 9),
+In a NACA four-digit section such as the 2412, the last two digits are the maximum thickness (12 % of chord), the first is the maximum camber (2 %) and the second its chordwise position (40 % of chord). The two-dimensional lift curve is a straight line of slope $a_0$ up to stall, with $a_0=2\pi$ per radian from thin aerofoil theory and a zero-lift angle $\alpha_{L=0}$ supplied by the Python program. For a finite wing,
 
 $$
 a=\frac{\mathrm dC_L}{\mathrm d\alpha}=\frac{a_0}{1+\dfrac{a_0}{\pi AR}(1+\tau)},
@@ -93,7 +93,7 @@ $$
 
 where $\tau$ and $\delta$ are small corrections for a non-elliptic spanwise loading; $\delta$ is the span efficiency factor and $e$ the Oswald efficiency factor. The lift slope is always below $a_0$ and tends to it only as $AR\to\infty$. Both results say the same thing: a higher aspect ratio gives more lift slope and less induced drag, which is why designers push the span up to the limit set by the structure and by airport gates, and why folding wingtips are being tried. Even an inviscid CFD solution has induced drag, because the wing sheds trailing vortices.
 
-The Python program solves the lifting-line equation discretised at $N$ spanwise stations (L2 slide 10),
+The Python program solves the lifting-line equation discretised at $N$ spanwise stations,
 
 $$
 \sum_{n=1}^{N}B_n\sin(n\theta_{0,j})\left[\frac{4b}{a_0c(\theta_{0,j})}+\frac{n}{\sin\theta_{0,j}}\right]
@@ -107,7 +107,7 @@ An inviscid CFD solution on a reasonable grid usually reproduces the lift slope 
 
 ## 5. Resolving a boundary layer
 
-A boundary layer is thin: a few centimetres on a 10 m chord, and less on the coursework's plate (lab 3). Capturing it needs enough cells inside it, at least 10–20 (L2 slide 13), packed towards the wall with a strongly stretched mesh.
+A boundary layer is thin: a few centimetres on a 10 m chord, and less on the coursework's plate (lab 3). Capturing it needs enough cells inside it, at least 10–20, packed towards the wall with a strongly stretched mesh.
 
 ### Wall units from the wall shear stress
 
@@ -161,15 +161,15 @@ $$
 
 ### The law of the wall and the two ways to treat it
 
-Plotted as $u^+$ against $\log y^+$, measured turbulent boundary layers collapse on to one universal curve near the wall (L2 slide 12). The viscous sublayer, $y^+<8$ on the slide, has $u^+=y^+$; a logarithmic region runs from $y^+\approx30$ out to about 15 % of the boundary-layer thickness; the buffer layer lies between. The collapse, found in Göttingen around 1930, is why turbulent boundary layers are predictable even though turbulence has no closed-form solution, and it underlies the design of CFD grids.
+Plotted as $u^+$ against $\log y^+$, measured turbulent boundary layers collapse on to one universal curve near the wall. The viscous sublayer, $y^+<8$ in the course convention, has $u^+=y^+$; a logarithmic region runs from $y^+\approx30$ out to about 15 % of the boundary-layer thickness; the buffer layer lies between. The collapse, found in Göttingen around 1930, is why turbulent boundary layers are predictable even though turbulence has no closed-form solution, and it underlies the design of CFD grids.
 
 ![[dam_law_of_the_wall_y1plus.png|900]]
 
-There are two ways to capture the wall (L2 slide 13). If the first cell is in the viscous sublayer, $y_1^+<8$, the sublayer is resolved; depending on the turbulence model $y_1^+<5$ or $y_1^+<1$ may be needed, and the standard industrial target is $y_1^+=1$ everywhere on the surface (2025-10-03, ll. 474–478). If the first cell is in the log layer, $y_1^+>30$, the software may switch to a wall function, which imposes the log law there as a boundary condition. That is cheaper, but it fails where the log law fails, for example in separated flow near stall. The buffer layer, $8<y_1^+<30$, is to be avoided, because neither treatment is valid there.
+There are two ways to capture the wall. If the first cell is in the viscous sublayer, $y_1^+<8$, the sublayer is resolved; depending on the turbulence model $y_1^+<5$ or $y_1^+<1$ may be needed, and the standard industrial target is $y_1^+=1$ everywhere on the surface. If the first cell is in the log layer, $y_1^+>30$, the software may switch to a wall function, which imposes the log law there as a boundary condition. That is cheaper, but it fails where the log law fails, for example in separated flow near stall. The buffer layer, $8<y_1^+<30$, is to be avoided, because neither treatment is valid there.
 
 ### First-cell height before running
 
-Before any calculation, flat-plate correlations give an estimate of where the first cell should be (L2 slide 14):
+Before any calculation, flat-plate correlations give an estimate of where the first cell should be:
 
 $$
 \text{laminar: }\ \delta=4.91\,x\,Re_x^{-1/2},\quad C_f=0.664\,Re_x^{-1/2};
@@ -235,7 +235,7 @@ The procedure is iterative: mesh, run, read off the actual $y_1^+$ along the pla
 
 ### First-cell height for a turbulent flat plate
 
-*(Suggested, not lecturer-set; it follows the procedure of L2 slide 14.)* Air with $\nu=1.5\times10^{-5}\ \mathrm{m^2/s}$ flows at $U_\infty=30$ m/s over a flat plate. Find the first-cell height for $y_1^+=1$ at $x=1$ m, assuming a turbulent boundary layer.
+*(Suggested, not lecturer-set.)* Air with $\nu=1.5\times10^{-5}\ \mathrm{m^2/s}$ flows at $U_\infty=30$ m/s over a flat plate. Find the first-cell height for $y_1^+=1$ at $x=1$ m, assuming a turbulent boundary layer.
 
 The Reynolds number is
 

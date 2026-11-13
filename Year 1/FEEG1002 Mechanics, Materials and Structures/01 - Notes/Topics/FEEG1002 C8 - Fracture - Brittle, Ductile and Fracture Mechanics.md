@@ -29,11 +29,11 @@ sources: ["02 - Sources/Materials/Lectures/Lecture 12 - Failure of Materials 1 -
 > - **Common mistakes:** using the full length of an internal crack as $a$; mixing mm with MPa√m (convert $a$ to metres).
 > - **Practise:** [[#Worked example - the pressure vessel question]] · [[FEEG1002 Materials Tutorial 4 - Failure of Materials Solutions]] Q1–Q4
 
-The point of studying failure is to stop it happening. Statics gives the average stress in a member, and a designer keeps it below the yield strength with a safety factor ([[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#Using the properties in design|C4]]). Yet parts still break below their yield strength, and the reason is almost always a flaw: a hole, a sharp corner, a pore from casting, a quench crack. Around such a flaw the local stress can be many times the average. Whether the part then deforms and survives or cracks and fails depends on whether the material can yield at the crack tip, and that depends on the material, its microstructure and its temperature (L11, ll. 69–132).
+The point of studying failure is to stop it happening. Statics gives the average stress in a member, and a designer keeps it below the yield strength with a safety factor ([[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#Using the properties in design|C4]]). Yet parts still break below their yield strength, and the reason is almost always a flaw: a hole, a sharp corner, a pore from casting, a quench crack. Around such a flaw the local stress can be many times the average. Whether the part then deforms and survives or cracks and fails depends on whether the material can yield at the crack tip, and that depends on the material, its microstructure and its temperature.
 
 Fracture combines two ideas. The first is energy: a loaded component stores elastic strain energy like a spring, and a crack can grow only if growing releases enough of that energy to pay for the new surfaces it creates. That is Griffith's argument, and it gives a fracture stress that depends on the flaw size and two material constants. The second is the competition between yielding and fracture. If the yield stress is reached first, the material flows and blunts the crack; if the fracture stress is reached first, it cleaves. Because the yield stress of BCC iron climbs steeply as it gets colder ([[FEEG1002 C4 - Mechanical Properties, Dislocations and Plastic Deformation#Temperature and the yield stress|C4]]), steel that is ductile in summer can be brittle in winter.
 
-A fracture surface also records how a part failed, which is why failure investigators protect them: the surfaces should never be pushed back together, because that destroys the evidence (L11, ll. 195–243).
+A fracture surface also records how a part failed, which is why failure investigators protect them: the surfaces should never be pushed back together, because that destroys the evidence.
 
 ---
 
@@ -41,11 +41,11 @@ A fracture surface also records how a part failed, which is why failure investig
 
 ### What the tensile test shows
 
-A **ductile** material shows a large elongation to failure and absorbs a lot of energy, the area under its stress–strain curve; a **brittle** one fails at low elongation (below 5 %) with little energy absorbed, and a truly brittle ceramic is linear elastic right up to fracture (slide "Tensile Testing: Ductile and Brittle behaviour"; L11, ll. 133–194). In a brittle failure the stored elastic energy is released suddenly, as noise, heat and the recoil of the broken ends; in a ductile failure it is dissipated in moving dislocations. Ductile failure is slow and gradual, with a crack that grows only as the load increases; brittle failure is rapid and catastrophic. Toughness, the total energy absorbed, is measured directly in an impact test ([[#Toughness and the Charpy test]]).
+A **ductile** material shows a large elongation to failure and absorbs a lot of energy, the area under its stress–strain curve; a **brittle** one fails at low elongation (below 5 %) with little energy absorbed, and a truly brittle ceramic is linear elastic right up to fracture. In a brittle failure the stored elastic energy is released suddenly, as noise, heat and the recoil of the broken ends; in a ductile failure it is dissipated in moving dislocations. Ductile failure is slow and gradual, with a crack that grows only as the load increases; brittle failure is rapid and catastrophic. Toughness, the total energy absorbed, is measured directly in an impact test ([[#Toughness and the Charpy test]]).
 
 ### Cup-and-cone fracture
 
-A ductile tensile specimen necks down before it breaks, and usually breaks with a **cup-and-cone** appearance: one half has a rough, cratered centre and a raised rim, the other a matching cone (slide "Tensile Testing: Cup-cone formation"; L11, ll. 244–303). The sequence is:
+A ductile tensile specimen necks down before it breaks, and usually breaks with a **cup-and-cone** appearance: one half has a rough, cratered centre and a raised rim, the other a matching cone. The sequence is:
 
 1. Necking starts, and the stress concentrates in the neck, where the area is smallest.
 2. Small voids form around hard second-phase particles, such as carbides in steel or θ particles in an aluminium–copper alloy.
@@ -53,11 +53,11 @@ A ductile tensile specimen necks down before it breaks, and usually breaks with 
 4. The remaining outer ring of material shears, at about 45° to the load, as the internal crack grows by further void coalescence.
 5. The specimen fails.
 
-The voids form because the matrix is ductile and flows under stress while the hard particles keep their shape, so the matrix pulls away from them, like stretching putty with ball bearings in it. Under the scanning electron microscope a ductile fracture surface is covered in **dimples**, each the half of a void, often with the particle that started it still sitting at the bottom (slide "Ductile Fracture Surfaces"; L11, ll. 324–371). The dimples were not there before the test; they are made by the fracture.
+The voids form because the matrix is ductile and flows under stress while the hard particles keep their shape, so the matrix pulls away from them, like stretching putty with ball bearings in it. Under the scanning electron microscope a ductile fracture surface is covered in **dimples**, each the half of a void, often with the particle that started it still sitting at the bottom. The dimples were not there before the test; they are made by the fracture.
 
 ### Brittle fracture surfaces
 
-A brittle specimen shows little or no necking, and the two halves fit back together. There are two kinds of brittle surface (slide "Brittle Fracture Surfaces"; L11, ll. 372–453):
+A brittle specimen shows little or no necking, and the two halves fit back together. There are two kinds of brittle surface:
 
 - **Intergranular** fracture runs along the grain boundaries, giving a rugged, three-dimensional surface in which the grain shapes can be seen. It happens when the boundaries are weak or carry a brittle phase, such as grain-boundary cementite in a hypereutectoid steel ([[FEEG1002 C7 - Steels and Precipitation Hardening#4. Carbon content and properties|C7]]).
 - **Transgranular** fracture, or **cleavage**, passes through the grains by the successive breaking of atomic bonds along particular crystallographic planes, the cleavage planes: $\{100\}$ in steels. Each grain gives a flat facet at its own angle. Mica, which cleaves into atomically smooth sheets, is the extreme case.
@@ -73,13 +73,13 @@ A brittle specimen shows little or no necking, and the two halves fit back toget
 
 ### Flaws raise the local stress
 
-In a plain bar under tension, the lines along which force is carried run straight and evenly spaced. Put a hole or a crack in the bar and the lines cannot pass through it; they crowd round its edges, so the stress there is much higher than the average (slide "Stress Concentration"; L11, ll. 489–547). Every hole, corner, groove, pore, inclusion or crack in a real part is such a **stress concentration**. A copper rod can be bent back and forth repeatedly, but the same rod with a small notch filed in it cracks at the notch on the first bend: at the root of the notch the local stress exceeds the yield and tensile strengths, although the average stress is the same (L11, ll. 554–609).
+In a plain bar under tension, the lines along which force is carried run straight and evenly spaced. Put a hole or a crack in the bar and the lines cannot pass through it; they crowd round its edges, so the stress there is much higher than the average. Every hole, corner, groove, pore, inclusion or crack in a real part is such a **stress concentration**. A copper rod can be bent back and forth repeatedly, but the same rod with a small notch filed in it cracks at the notch on the first bend: at the root of the notch the local stress exceeds the yield and tensile strengths, although the average stress is the same.
 
 ![[m8_stress_concentration.png|900]]
 
 ### Flaw length: a and 2a
 
-A flaw at the surface has one tip, and its length is $a$. A flaw inside the material has two tips, and its length is $2a$ (L11, ll. 610–645; L12, ll. 66–82). The same formulas use $a$ in both cases, so the length of an internal crack must be halved. This halving is an exam question in its own right.
+A flaw at the surface has one tip, and its length is $a$. A flaw inside the material has two tips, and its length is $2a$. The same formulas use $a$ in both cases, so the length of an internal crack must be halved. This halving is an exam question in its own right.
 
 ### How much the stress is raised
 
@@ -89,13 +89,13 @@ $$
 \boxed{\sigma_m=2\sigma_0\left(\frac{a}{\rho_t}\right)^{1/2}}
 $$
 
-where $\sigma_0$ is the applied (nominal) stress, $a$ the length of a surface crack (half the length of an internal one) and $\rho_t$ the radius of curvature of the crack tip (slide "Stress Intensification"; L11, ll. 646–671). The ratio $\sigma_m/\sigma_0=2\sqrt{a/\rho_t}$ is the stress concentration factor. A long crack and a sharp tip both raise the stress: a crack 0.5 mm deep with a tip radius of 5 µm concentrates the stress 20 times. The formula is the sharp-crack limit ($a\gg\rho_t$) of the elliptical-hole result $\sigma_m=\sigma_0\left(1+2\sqrt{a/\rho_t}\right)$, and the full form is needed for a blunt notch: one of the same depth with a 1 mm radius concentrates the stress only about 2.4 times. Hence the design rule: avoid sharp 90° internal corners wherever possible, round them off, and keep surface flaws to a minimum.
+where $\sigma_0$ is the applied (nominal) stress, $a$ the length of a surface crack (half the length of an internal one) and $\rho_t$ the radius of curvature of the crack tip. The ratio $\sigma_m/\sigma_0=2\sqrt{a/\rho_t}$ is the stress concentration factor. A long crack and a sharp tip both raise the stress: a crack 0.5 mm deep with a tip radius of 5 µm concentrates the stress 20 times. The formula is the sharp-crack limit ($a\gg\rho_t$) of the elliptical-hole result $\sigma_m=\sigma_0\left(1+2\sqrt{a/\rho_t}\right)$, and the full form is needed for a blunt notch: one of the same depth with a 1 mm radius concentrates the stress only about 2.4 times. Hence the design rule: avoid sharp 90° internal corners wherever possible, round them off, and keep surface flaws to a minimum.
 
 ## 3. The Griffith energy balance
 
 ### Two energies
 
-Griffith's approach applies to brittle materials, with no plastic deformation, and considers energy rather than stress (slide "Griffith Approach"; L11, ll. 672–735). Two energies matter:
+Griffith's approach applies to brittle materials, with no plastic deformation, and considers energy rather than stress. Two energies matter:
 
 - The **elastic strain energy** $U_E$ stored in the loaded material, like the energy in a stretched spring. When a crack forms, the material next to its faces is unloaded and this energy is released. It drives crack growth.
 - The **surface energy** $U_S$ needed to create the two new crack faces. Atoms at a surface have lost some of their bonded neighbours, so a solid–gas interface has a higher energy than the bulk, by $\gamma_s$ per unit area (J/m²). It resists crack growth.
@@ -134,13 +134,13 @@ $$
 U=4a\gamma_s-\frac{\pi a^2\sigma^2}{E}
 $$
 
-(slide "Griffith Approach"; L11, ll. 736–822).
+.
 
 ![[m8_griffith_energy.png|900]]
 
 ### The critical condition
 
-$U_S$ grows in proportion to $a$, but $U_E$ grows with $a^2$, so for small cracks the surface term wins and $U$ rises with $a$, while for large cracks the strain-energy term wins and $U$ falls. $U$ has a maximum at a critical crack length $a_c$ (L11, ll. 823–887). A crack shorter than this would have to absorb energy to grow; a crack longer than this releases more energy than it uses, so it grows on its own, faster and faster. The crack therefore grows when the strain energy release rate is greater than or equal to the rate of increase of surface energy with crack length. At the maximum,
+$U_S$ grows in proportion to $a$, but $U_E$ grows with $a^2$, so for small cracks the surface term wins and $U$ rises with $a$, while for large cracks the strain-energy term wins and $U$ falls. $U$ has a maximum at a critical crack length $a_c$. A crack shorter than this would have to absorb energy to grow; a crack longer than this releases more energy than it uses, so it grows on its own, faster and faster. The crack therefore grows when the strain energy release rate is greater than or equal to the rate of increase of surface energy with crack length. At the maximum,
 
 $$
 \frac{dU}{da}=\frac{dU_S}{da}-\frac{dU_E}{da}=0
@@ -166,17 +166,17 @@ $$
 \boxed{\sigma_c=\sqrt{\frac{2E\gamma_s}{\pi a}}}
 $$
 
-The fracture stress depends on the modulus, the surface energy and the size of the flaw (L11, ll. 888–940). As $a$ increases, $\sigma_c$ falls, so as a crack grows the stress needed to drive it falls and the crack accelerates. For a brittle component this replaces the UTS in design: measure the largest flaw present (by X-ray computed tomography, or surface profilometry for surface flaws), and keep the stress below $\sigma_c$ for that flaw.
+The fracture stress depends on the modulus, the surface energy and the size of the flaw. As $a$ increases, $\sigma_c$ falls, so as a crack grows the stress needed to drive it falls and the crack accelerates. For a brittle component this replaces the UTS in design: measure the largest flaw present (by X-ray computed tomography, or surface profilometry for surface flaws), and keep the stress below $\sigma_c$ for that flaw.
 
 ### Limits of the Griffith result
 
-The result holds for thin plates in plane stress with no plastic deformation at the crack tip: it is part of **linear elastic fracture mechanics** (LEFM) (slide "Griffith Approach"; L11, ll. 941–980). Ceramics and glasses, and concrete, satisfy this well. Metals do not: plastic flow at the tip blunts it and absorbs far more energy than the surface energy, which is why Griffith's formula with the true surface energy greatly underestimates their fracture stress. Within the model, $E$ and $\gamma_s$ are material constants that hardly change with temperature, so the brittle fracture stress is taken to be independent of temperature; that assumption is used in [[#5. The ductile-to-brittle transition]].
+The result holds for thin plates in plane stress with no plastic deformation at the crack tip: it is part of **linear elastic fracture mechanics** (LEFM). Ceramics and glasses, and concrete, satisfy this well. Metals do not: plastic flow at the tip blunts it and absorbs far more energy than the surface energy, which is why Griffith's formula with the true surface energy greatly underestimates their fracture stress. Within the model, $E$ and $\gamma_s$ are material constants that hardly change with temperature, so the brittle fracture stress is taken to be independent of temperature; that assumption is used in [[#5. The ductile-to-brittle transition]].
 
 ## 4. The stress intensity factor
 
 ### The crack-tip stress field
 
-The second approach, more widely used in engineering, looks at the stress just ahead of the crack tip (slide "K: Stress Intensity Factor"; L12, ll. 83–176). For an infinite plate, whose edges are too far away to matter, at a distance $r$ ahead of the tip of a sharp crack, linear elasticity gives a local stress
+The second approach, more widely used in engineering, looks at the stress just ahead of the crack tip. For an infinite plate, whose edges are too far away to matter, at a distance $r$ ahead of the tip of a sharp crack, linear elasticity gives a local stress
 
 $$
 \sigma_{local}=\frac{K}{\sqrt{2\pi r}}
@@ -192,7 +192,7 @@ a separate result from the field expression, not derived from it. Doubling the a
 
 ### Fracture toughness
 
-As the applied stress rises, $K$ rises, and at some point the local stress reaches the value needed for fracture. The value of $K$ at that point is the critical stress intensity factor $K_c$, the **fracture toughness** (slide "K_C: Critical Stress Intensity Factor"; L12, ll. 177–226):
+As the applied stress rises, $K$ rises, and at some point the local stress reaches the value needed for fracture. The value of $K$ at that point is the critical stress intensity factor $K_c$, the **fracture toughness**:
 
 $$
 K_c=\sigma_f\sqrt{\pi a_c}
@@ -204,15 +204,15 @@ $$
 \boxed{K_c=Y\sigma_f\sqrt{\pi a_c}}
 $$
 
-$Y$ depends on the crack and specimen sizes and geometries and on how the load is applied, and is looked up in engineering data books; the infinite plate has $Y=1$ (L12, ll. 227–255).
+$Y$ depends on the crack and specimen sizes and geometries and on how the load is applied, and is looked up in engineering data books; the infinite plate has $Y=1$.
 
 ### KIC as a material property
 
-$K_c$ measured on a thin plate depends on the thickness. If the specimen is thick enough to be in **plane strain**, constrained so that it cannot strain through its thickness at the crack tip, $K_c$ falls to a minimum value that does not depend on the specimen: the **plane strain fracture toughness** $K_{IC}$, a material property as long as the linear elastic assumptions hold (slide "Caveats"; L12, ll. 255–283). The subscript I refers to **Mode I**, crack opening, with the load pulling the crack faces apart; this is the mode most commonly reported and easiest to test. Modes II and III load the crack in shear in different ways. Units are MPa√m.
+$K_c$ measured on a thin plate depends on the thickness. If the specimen is thick enough to be in **plane strain**, constrained so that it cannot strain through its thickness at the crack tip, $K_c$ falls to a minimum value that does not depend on the specimen: the **plane strain fracture toughness** $K_{IC}$, a material property as long as the linear elastic assumptions hold. The subscript I refers to **Mode I**, crack opening, with the load pulling the crack faces apart; this is the mode most commonly reported and easiest to test. Modes II and III load the crack in shear in different ways. Units are MPa√m.
 
 ### The link to Griffith
 
-The two approaches agree (slide "How does the Griffith energy balance approach relate to K?"; L12, ll. 284–319). From Griffith,
+The two approaches agree. From Griffith,
 
 $$
 \sigma_f=\sqrt{\frac{2E\gamma_s}{\pi a}}
@@ -234,7 +234,7 @@ Since $E$ and $\gamma_s$ are material constants, so is $K_c$, for an ideally bri
 
 ### Using fracture mechanics in design
 
-The equation $K_{IC}=Y\sigma\sqrt{\pi a}$ is used in two directions (slide "Uses of Fracture Mechanics"; L12, ll. 320–351). If the flaws left by manufacture are known, the stress that must not be approached in service is
+The equation $K_{IC}=Y\sigma\sqrt{\pi a}$ is used in two directions. If the flaws left by manufacture are known, the stress that must not be approached in service is
 
 $$
 \sigma_f=\frac{K_{IC}}{Y\sqrt{\pi a}}
@@ -252,7 +252,7 @@ The service stresses must include one-off shocks, not just the routine load: stu
 
 ### Two competing stresses
 
-Whether a metal fails in a ductile or a brittle way depends on which happens first as the load rises: yielding at the crack tip, which blunts it, or fracture (slide "Temperature and Failure"; L12, ll. 485–601).
+Whether a metal fails in a ductile or a brittle way depends on which happens first as the load rises: yielding at the crack tip, which blunts it, or fracture.
 
 The brittle fracture stress depends on $E$, $\gamma_s$ and the flaw size, all treated as independent of temperature, so $\sigma_f$ is roughly constant with temperature.
 
@@ -264,7 +264,7 @@ For an FCC metal the yield stress is below the fracture stress at every temperat
 
 ### Strengthening moves the transition
 
-Anything that changes $\sigma_y$ or $\sigma_f$ moves the crossing (slides "DBT Alteration", "DBT Enhancement"; L12, ll. 602–648).
+Anything that changes $\sigma_y$ or $\sigma_f$ moves the crossing.
 
 Work hardening, precipitation hardening and solid-solution strengthening all raise the yield stress but leave the fracture stress unchanged. The yield curve moves up, the crossing moves to a higher temperature, and the DBTT rises: the metal becomes more brittle.
 
@@ -272,11 +272,11 @@ Grain refinement is the exception. It raises the yield stress (Hall–Petch), bu
 
 ### Toughness and the Charpy test
 
-**Toughness**, the ability of a material to absorb energy up to fracture, is the area under the whole stress–strain curve; it is not the same as fracture toughness, $K_{IC}$ (slide "Toughness (Not Fracture Toughness)"; L12, ll. 649–660). Ductile failures absorb more energy, so ductile materials are tougher. Toughness is measured at high strain rate in the **Charpy impact test**: a weighted pendulum is released from a height $h$, strikes and breaks a notched specimen, and swings on to a lower height $h'$; the energy absorbed is the difference in potential energy, $mg(h-h')$ (slide "Impact Testing"). Plotted against temperature, the impact energy of a BCC steel drops sharply from a high upper shelf to a low lower shelf across the transition, while an FCC metal stays high at all temperatures.
+**Toughness**, the ability of a material to absorb energy up to fracture, is the area under the whole stress–strain curve; it is not the same as fracture toughness, $K_{IC}$. Ductile failures absorb more energy, so ductile materials are tougher. Toughness is measured at high strain rate in the **Charpy impact test**: a weighted pendulum is released from a height $h$, strikes and breaks a notched specimen, and swings on to a lower height $h'$; the energy absorbed is the difference in potential energy, $mg(h-h')$. Plotted against temperature, the impact energy of a BCC steel drops sharply from a high upper shelf to a low lower shelf across the transition, while an FCC metal stays high at all temperatures.
 
 ![[m8_impact_energy.png|900]]
 
-The *Titanic* is the classic case. Its hull steel was near or below its transition temperature in the near-freezing North Atlantic, so where the iceberg struck, the plates fractured with little plastic deformation and opened the hull in many places; warmer water would have let the plates deform instead (L12, ll. 661–688). Modern ship steels are made with much lower transition temperatures.
+The *Titanic* is the classic case. Its hull steel was near or below its transition temperature in the near-freezing North Atlantic, so where the iceberg struck, the plates fractured with little plastic deformation and opened the hull in many places; warmer water would have let the plates deform instead. Modern ship steels are made with much lower transition temperatures.
 
 ---
 
@@ -284,7 +284,7 @@ The *Titanic* is the classic case. Its hull steel was near or below its transiti
 
 ### Worked example - the pressure vessel question
 
-A nuclear pressure vessel has $K_{IC}=40$ MPa√m and $Y=1.2$, and the manufacturing process has left internal quench cracks about 3 mm long. What stress would cause fracture, and what is a sensible allowable stress? (The in-lecture Vevox question, L12, ll. 352–453.)
+A nuclear pressure vessel has $K_{IC}=40$ MPa√m and $Y=1.2$, and the manufacturing process has left internal quench cracks about 3 mm long. What stress would cause fracture, and what is a sensible allowable stress?
 
 The cracks are internal, so $2a=3$ mm and $a=1.5$ mm $=1.5\times10^{-3}$ m. Then
 

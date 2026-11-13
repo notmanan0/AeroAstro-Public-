@@ -29,9 +29,9 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 07 - Strain Measurement.pdf",
 > - **Common mistakes:** using $\gamma_{xy}$ instead of $\varepsilon_{xy}$ in the transformation equation or on Mohr's circle; matching the gauge labels to the wrong angles (in the 0/45/90 rosette used here, A is at 0°, C at 45° and B at 90°).
 > - **Practise:** [[#Worked example - prosthetic socket rosette]] · [[FEEG1002 Statics 2 Tutorial 6 - Strain Measurement Solutions]]
 
-Once a structure is designed and built, someone has to check that it behaves as the calculations said. Stresses are invisible, except in transparent models viewed under polarised light, so the practical route is to measure strains and convert them to stresses with Hooke's law (Lecture 7, ll. 1–19). In a tensile test that is easy: the strain is uniform and the extension of a long specimen is millimetres. In a real component the strain varies from point to point, and finding a local strain means measuring the difference in displacement between two points a millimetre apart, which is a few micrometres (Lecture 7, ll. 20–42).
+Once a structure is designed and built, someone has to check that it behaves as the calculations said. Stresses are invisible, except in transparent models viewed under polarised light, so the practical route is to measure strains and convert them to stresses with Hooke's law. In a tensile test that is easy: the strain is uniform and the extension of a long specimen is millimetres. In a real component the strain varies from point to point, and finding a local strain means measuring the difference in displacement between two points a millimetre apart, which is a few micrometres.
 
-The electrical strain gauge solves this by being bonded to the surface and reading the local strain directly as a change of resistance. Gauges are used on aircraft in flight, on vehicles and ships in service, and on cracked old buildings to see whether the cracks are growing (Lecture 7, ll. 43–63). Each gauge, however, measures only how much the surface stretches along one line. A complete picture of the in-plane strain needs three numbers, so it needs three gauges and the strain transformation equations to combine them, which are the equations of [[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]] in a new guise.
+The electrical strain gauge solves this by being bonded to the surface and reading the local strain directly as a change of resistance. Gauges are used on aircraft in flight, on vehicles and ships in service, and on cracked old buildings to see whether the cracks are growing. Each gauge, however, measures only how much the surface stretches along one line. A complete picture of the in-plane strain needs three numbers, so it needs three gauges and the strain transformation equations to combine them, which are the equations of [[FEEG1002 B4 - Stress Transformation and Mohr's Circle|B4]] in a new guise.
 
 ---
 
@@ -45,7 +45,7 @@ $$
 \boxed{\frac{\Delta R}{R}=k\,\varepsilon_{xx}}
 $$
 
-where $k$ is the **gauge factor** and $x$ is the gauge direction. A gauge is unidirectional: it measures the local normal strain along its own axis and nothing else (Lecture 7, ll. 64–82).
+where $k$ is the **gauge factor** and $x$ is the gauge direction. A gauge is unidirectional: it measures the local normal strain along its own axis and nothing else.
 
 ### Where the gauge factor comes from
 
@@ -69,7 +69,7 @@ The geometric part alone gives $k=1+2\nu\approx1.6$ for $\nu=0.3$; the small cha
 
 ### The Wheatstone bridge
 
-The resistance change is tiny, about 0.24 Ω for a 120 Ω gauge at 1000 με, so it is measured with a **Wheatstone bridge**: four resistors in a diamond, supply voltage $V_S$ across one diagonal and the output $V_G$ across the other, with the gauge as one arm, $R_x$ (Lecture 7, ll. 86–158). Each side of the bridge is a voltage divider. Taking the bottom node C as reference, the two output nodes sit at
+The resistance change is tiny, about 0.24 Ω for a 120 Ω gauge at 1000 με, so it is measured with a **Wheatstone bridge**: four resistors in a diamond, supply voltage $V_S$ across one diagonal and the output $V_G$ across the other, with the gauge as one arm, $R_x$. Each side of the bridge is a voltage divider. Taking the bottom node C as reference, the two output nodes sit at
 
 $$
 V_D=\frac{R_2}{R_1+R_2}V_S,\qquad V_B=\frac{R_x}{R_x+R_3}V_S
@@ -105,13 +105,13 @@ The output is linear in strain and very sensitive to small changes; resolutions 
 
 ## 2. Strain depends on direction
 
-Like stress, the strain you measure depends on the direction you measure it in. On a bar in uniaxial tension, gauge 1 along the bar reads a positive strain $\varepsilon$ and gauge 2 across it reads $-\nu\varepsilon$, although the strain state in the bar is one and the same (Lecture 7, ll. 160–182). A gauge at an angle in between reads something in between, changing gradually from positive to negative as it is turned. Working out what it reads, and conversely what a set of readings implies, requires strain transformation (Lecture 7, ll. 183–195).
+Like stress, the strain you measure depends on the direction you measure it in. On a bar in uniaxial tension, gauge 1 along the bar reads a positive strain $\varepsilon$ and gauge 2 across it reads $-\nu\varepsilon$, although the strain state in the bar is one and the same. A gauge at an angle in between reads something in between, changing gradually from positive to negative as it is turned. Working out what it reads, and conversely what a set of readings implies, requires strain transformation.
 
 ## 3. Strain transformation
 
 ### The transformation equations
 
-Strains transform with exactly the same equations as stresses, with $\varepsilon$ in place of $\sigma$ and the tensor shear strain $\varepsilon_{xy}$ in place of $\sigma_{xy}$. For axes $x'y'$ rotated anticlockwise by $\theta$ from $xy$ (Lecture 7, ll. 196–255):
+Strains transform with exactly the same equations as stresses, with $\varepsilon$ in place of $\sigma$ and the tensor shear strain $\varepsilon_{xy}$ in place of $\sigma_{xy}$. For axes $x'y'$ rotated anticlockwise by $\theta$ from $xy$:
 
 $$
 \boxed{\varepsilon_{x'x'}=\varepsilon_{xx}\cos^2\theta+\varepsilon_{yy}\sin^2\theta+2\varepsilon_{xy}\sin\theta\cos\theta}
@@ -125,7 +125,7 @@ $$
 \varepsilon_{x'y'}=-(\varepsilon_{xx}-\varepsilon_{yy})\sin\theta\cos\theta+\varepsilon_{xy}\left(\cos^2\theta-\sin^2\theta\right)
 $$
 
-The second follows from the first with $\theta+90^\circ$, using $\sin(\theta+90^\circ)=\cos\theta$ and $\cos(\theta+90^\circ)=-\sin\theta$ (Lecture 7, ll. 228–248). The first line is the one used for gauges, since a gauge at angle $\theta$ reads $\varepsilon_{x'x'}$.
+The second follows from the first with $\theta+90^\circ$, using $\sin(\theta+90^\circ)=\cos\theta$ and $\cos(\theta+90^\circ)=-\sin\theta$. The first line is the one used for gauges, since a gauge at angle $\theta$ reads $\varepsilon_{x'x'}$.
 
 ### Why strain transforms like stress
 
@@ -165,7 +165,7 @@ which falls from $\varepsilon$ along the bar to $-\nu\varepsilon$ across it, pas
 
 ### Construction
 
-Because the equations are the same, Mohr's circle works for strain exactly as for stress, provided the tensor shear strain $\varepsilon_{xy}=\tfrac12\gamma_{xy}$ is plotted on the shear axis, positive downwards (Lecture 7, ll. 256–285; Lecture 9, ll. 483–486). The centre is
+Because the equations are the same, Mohr's circle works for strain exactly as for stress, provided the tensor shear strain $\varepsilon_{xy}=\tfrac12\gamma_{xy}$ is plotted on the shear axis, positive downwards. The centre is
 
 $$
 \varepsilon_{average}=\frac{\varepsilon_{xx}+\varepsilon_{yy}}{2},\qquad R=\sqrt{\left(\frac{\varepsilon_{xx}-\varepsilon_{yy}}{2}\right)^2+\varepsilon_{xy}^2}
@@ -175,13 +175,13 @@ the point for $\theta=0$ is $(\varepsilon_{xx},\varepsilon_{xy})$, and a rotatio
 
 ### Principal strains
 
-The circle crosses the normal-strain axis at the **principal strains**, $\varepsilon_I=\varepsilon_{average}+R$ and $\varepsilon_{II}=\varepsilon_{average}-R$, on two perpendicular directions with no shear strain, where the material is only stretched or compressed (Lecture 7, ll. 286–328). The maximum shear strain in the plane is $\varepsilon_{x'y'}^{max}=R=(\varepsilon_I-\varepsilon_{II})/2$, or $\gamma^{max}=\varepsilon_I-\varepsilon_{II}$ in engineering terms.
+The circle crosses the normal-strain axis at the **principal strains**, $\varepsilon_I=\varepsilon_{average}+R$ and $\varepsilon_{II}=\varepsilon_{average}-R$, on two perpendicular directions with no shear strain, where the material is only stretched or compressed. The maximum shear strain in the plane is $\varepsilon_{x'y'}^{max}=R=(\varepsilon_I-\varepsilon_{II})/2$, or $\gamma^{max}=\varepsilon_I-\varepsilon_{II}$ in engineering terms.
 
 For an isotropic material the principal strains lie in the same directions as the principal stresses. In the principal stress axes $\sigma_{x'y'}=0$, and Hooke's law gives $\varepsilon_{x'y'}=\frac{1+\nu}{E}\sigma_{x'y'}=0$ there too, so the same axes are free of shear strain. This is what lets rosette results be converted to principal stresses directly.
 
 ## 5. Measuring shear in a shaft
 
-A shaft in torsion is in pure shear: the circles of the shaft rotate relative to one another, so a surface element distorts, but it is not stretched along or across the shaft ($\varepsilon_{xx}=\varepsilon_{yy}=0$). A gauge cannot sense angular distortion, so a gauge along or across the shaft reads nothing (Lecture 7, ll. 329–340). The strain circle is centred on the origin with radius $\varepsilon_{xy}$, so rotating 90° on the circle, 45° on the shaft, reaches the principal strains:
+A shaft in torsion is in pure shear: the circles of the shaft rotate relative to one another, so a surface element distorts, but it is not stretched along or across the shaft ($\varepsilon_{xx}=\varepsilon_{yy}=0$). A gauge cannot sense angular distortion, so a gauge along or across the shaft reads nothing. The strain circle is centred on the origin with radius $\varepsilon_{xy}$, so rotating 90° on the circle, 45° on the shaft, reaches the principal strains:
 
 $$
 \varepsilon_I=+\varepsilon_{xy}\ \text{at}\ +45^\circ,\qquad \varepsilon_{II}=-\varepsilon_{xy}\ \text{at}\ -45^\circ
@@ -193,7 +193,7 @@ $$
 \boxed{\varepsilon_{xy}=R=\frac{\varepsilon_I-\varepsilon_{II}}{2}}
 $$
 
-gives the shear strain, and with $\gamma=2\varepsilon_{xy}$ and $\tau=G\gamma$ the torque (Lecture 7, ll. 341–414). This is how torque transducers work.
+gives the shear strain, and with $\gamma=2\varepsilon_{xy}$ and $\tau=G\gamma$ the torque. This is how torque transducers work.
 
 ![[s2_mohr_pure_shear.png|900]]
 
@@ -201,13 +201,13 @@ gives the shear strain, and with $\gamma=2\varepsilon_{xy}$ and $\tau=G\gamma$ t
 
 ### Three gauges for three unknowns
 
-In general there are three unknown in-plane strain components, $\varepsilon_{xx}$, $\varepsilon_{yy}$ and $\varepsilon_{xy}$, and the principal directions are not known in advance, so the gauges cannot be placed along them. Each gauge gives one equation, the transformation equation at its own angle, so three gauges in three independent directions are enough. A **strain gauge rosette** is a single backing carrying three gauges at fixed angles (Lecture 7, ll. 415–440).
+In general there are three unknown in-plane strain components, $\varepsilon_{xx}$, $\varepsilon_{yy}$ and $\varepsilon_{xy}$, and the principal directions are not known in advance, so the gauges cannot be placed along them. Each gauge gives one equation, the transformation equation at its own angle, so three gauges in three independent directions are enough. A **strain gauge rosette** is a single backing carrying three gauges at fixed angles.
 
 ![[s2_strain_rosettes.png|900]]
 
 ### The 0/45/90 rosette
 
-In the labelling used here, gauge A lies along $x$, C at 45° and B at 90°. A and B read the normal strains directly (Lecture 7, ll. 441–462):
+In the labelling used here, gauge A lies along $x$, C at 45° and B at 90°. A and B read the normal strains directly:
 
 $$
 \varepsilon_{xx}=\varepsilon_A,\qquad \varepsilon_{yy}=\varepsilon_B
@@ -227,15 +227,15 @@ $$
 \boxed{\varepsilon_{xy}=\varepsilon_C-\frac12\left(\varepsilon_A+\varepsilon_B\right)}
 $$
 
-(Lecture 7, ll. 463–508). Labelling varies between sheets, so match each reading to its angle before substituting (Lecture 9, ll. 505–515).
+. Labelling varies between sheets, so match each reading to its angle before substituting.
 
 ### A gauge has no direction
 
-A gauge measures stretch along a line, and a line has no head or tail, so a gauge at $\theta$ is the same as one at $\theta\pm180^\circ$. The transformation equation agrees: $\cos^2$, $\sin^2$ and the product $\sin\theta\cos\theta$ are all unchanged when $\theta$ increases by 180°. A gauge drawn at $-120^\circ$ can be treated as $+60^\circ$, and one at $-60^\circ$ as $+120^\circ$ (Lecture 7, ll. 516–527).
+A gauge measures stretch along a line, and a line has no head or tail, so a gauge at $\theta$ is the same as one at $\theta\pm180^\circ$. The transformation equation agrees: $\cos^2$, $\sin^2$ and the product $\sin\theta\cos\theta$ are all unchanged when $\theta$ increases by 180°. A gauge drawn at $-120^\circ$ can be treated as $+60^\circ$, and one at $-60^\circ$ as $+120^\circ$.
 
 ### The 0/60/120 rosette
 
-With A along $x$, B at 60° and C at 120°, gauge A gives $\varepsilon_{xx}=\varepsilon_A$ and the other two give two equations in $\varepsilon_{yy}$ and $\varepsilon_{xy}$ (Lecture 7, ll. 509–597). With $\cos60^\circ=\tfrac12$, $\sin60^\circ=\tfrac{\sqrt3}{2}$, $\cos120^\circ=-\tfrac12$ and $\sin120^\circ=\tfrac{\sqrt3}{2}$:
+With A along $x$, B at 60° and C at 120°, gauge A gives $\varepsilon_{xx}=\varepsilon_A$ and the other two give two equations in $\varepsilon_{yy}$ and $\varepsilon_{xy}$. With $\cos60^\circ=\tfrac12$, $\sin60^\circ=\tfrac{\sqrt3}{2}$, $\cos120^\circ=-\tfrac12$ and $\sin120^\circ=\tfrac{\sqrt3}{2}$:
 
 $$
 \varepsilon_B=\frac14\varepsilon_A+\frac34\varepsilon_{yy}+\frac{\sqrt3}{2}\varepsilon_{xy}
@@ -269,15 +269,15 @@ The three gauges are spread evenly, which does not favour any direction.
 
 ### Rosettes in other axes
 
-The easiest manual method is to align $x$ with one gauge, which removes one unknown, solve as above, and then use the transformation equations to rotate the strains into whatever axes are wanted. Alternatively, write the transformation equation at all three gauge angles in the wanted axes and solve the three simultaneous equations, which is best done by software (Lecture 7, ll. 598–632). Tutorial 6 uses the first method.
+The easiest manual method is to align $x$ with one gauge, which removes one unknown, solve as above, and then use the transformation equations to rotate the strains into whatever axes are wanted. Alternatively, write the transformation equation at all three gauge angles in the wanted axes and solve the three simultaneous equations, which is best done by software. Tutorial 6 uses the first method.
 
 ## 7. From strain to stress
 
-The rosette gives the surface strains; the surface is free, so it is in plane stress, and the inverse plane-stress law of [[FEEG1002 B3 - Generalised Hooke's Law#Stresses from strains|B3]] gives $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$. A yield criterion then condenses them into one equivalent stress for comparison with the yield stress ([[FEEG1002 B6 - Yield Criteria|B6]]), and because the criterion is independent of orientation it does not matter how the rosette was stuck on (Lecture 9, ll. 516–530).
+The rosette gives the surface strains; the surface is free, so it is in plane stress, and the inverse plane-stress law of [[FEEG1002 B3 - Generalised Hooke's Law#Stresses from strains|B3]] gives $\sigma_{xx}$, $\sigma_{yy}$ and $\sigma_{xy}$. A yield criterion then condenses them into one equivalent stress for comparison with the yield stress ([[FEEG1002 B6 - Yield Criteria|B6]]), and because the criterion is independent of orientation it does not matter how the rosette was stuck on.
 
 ## 8. Digital image correlation
 
-Gauges give strains at points and need a lot of wiring when many points are wanted. **Digital image correlation** (DIC) instead sprays a random speckle pattern on the surface, films it as the structure is loaded, and tracks how small patches of the pattern move; differentiating the displacement field gives the strain field everywhere on the surface, and two cameras give 3D displacements by stereo vision. It is less sensitive than a gauge but shows the whole field, revealing, for example, that the strain in a "uniform" tensile test is not uniform near the grips (Lecture 7, ll. 641–661).
+Gauges give strains at points and need a lot of wiring when many points are wanted. **Digital image correlation** (DIC) instead sprays a random speckle pattern on the surface, films it as the structure is loaded, and tracks how small patches of the pattern move; differentiating the displacement field gives the strain field everywhere on the surface, and two cameras give 3D displacements by stereo vision. It is less sensitive than a gauge but shows the whole field, revealing, for example, that the strain in a "uniform" tensile test is not uniform near the grips.
 
 ---
 

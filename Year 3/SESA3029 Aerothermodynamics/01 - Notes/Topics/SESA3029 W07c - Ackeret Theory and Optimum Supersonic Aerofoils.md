@@ -11,7 +11,7 @@ status: written-ahead
 coverage: "Lecture 4.5 (§§1–5) lectured Thu 12 Nov, transcript folded in; Lecture 4.6 (§§6–10) written ahead from the slides, not yet lectured"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]]", "[[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]]", "[[SESA3029 W05a - Method of Characteristics]]"]
-next_topics: []
+next_topics: ["[[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]]"]
 key_concepts: ["[[Ackeret Theory]]", "[[Supersonic Wave Drag]]", "[[Linearised Compressible Potential Equation]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 2 - Solutions]]", "[[SESA3029 Example Sheet 1 - Solutions]]"]
 sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture 4-5.txt", "02 - Sources/Lectures/Lecture4-6.pdf"]
@@ -27,17 +27,17 @@ sources: ["02 - Sources/Lectures/Lecture4-5.pdf", "02 - Sources/Lectures/Lecture
 > - **Assumptions:** inviscid, shock-free to first order (weak waves), thin, small angles **in radians**, $M_\infty$ from about 1.2 up to 3–4; $\theta$ measured from the free-stream direction, positive for compression.
 > - **Method:** 1. $\lambda=\sqrt{M_\infty^2-1}$. 2. On each face, find $\theta$ relative to $\vec U_\infty$; for the sign, treat the face and a nearby streamline as a duct (converging: compression, $+$; diverging: expansion, $-$). 3. $C_p=2\theta/\lambda$, $p=p_\infty+q_\infty C_p$. 4. $C_l=4\alpha/\lambda$; $C_d=\frac4\lambda[\alpha^2+(t/c)^2]$ for a diamond. 5. Compare with shock-expansion if asked.
 > - **Common mistakes:** using degrees for $\theta$ and $\alpha$ (Remember #3: $\alpha=10$ instead of $0.1745$ gives $C_l=23$); getting the sign of $\theta$ wrong (on a plate at positive incidence the upper surface is an expansion, $\theta_u=-\alpha$, and the lower a compression, $\theta_l=+\alpha$).
-> - **Practise:** [[#Worked example: flat plate at M = 2, α = 10° (4.5 slide 7)|the flat-plate homework]] · [[SESA3029 Example Sheet 2 - Solutions#Q5. Diamond aerofoil by Ackeret theory|ES2 Q5]]
+> - **Practise:** [[#Worked example: flat plate at M = 2, α = 10°|the flat-plate homework]] · [[SESA3029 Example Sheet 2 - Solutions#Q5. Diamond aerofoil by Ackeret theory|ES2 Q5]]
 
-The sign of $1-M_\infty^2$ decides the character of the linear potential equation ([[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]]). Below $M_\infty=1$ it is elliptic: a disturbance is felt everywhere, and a stretch of the $y$-axis turns it into Laplace's equation (Prandtl–Glauert theory, labelled transonic aerofoil theory on the slides). Above $M_\infty=1$ the sign flips and the equation becomes the wave equation, which is hyperbolic. A disturbance can then only travel along Mach lines, downstream, which is the zone of influence of the MoC ([[SESA3029 W05a - Method of Characteristics|W05a]]). That makes the supersonic problem easier, not harder: the pressure at a point on the surface depends only on the local surface slope, so neither the potential nor the velocity field has to be solved for.
+The sign of $1-M_\infty^2$ decides the character of the linear potential equation ([[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]]). Below $M_\infty=1$ it is elliptic: a disturbance is felt everywhere, and a stretch of the $y$-axis turns it into Laplace's equation (Prandtl–Glauert theory, which the course calls transonic aerofoil theory). Above $M_\infty=1$ the sign flips and the equation becomes the wave equation, which is hyperbolic. A disturbance can then only travel along Mach lines, downstream, which is the zone of influence of the MoC ([[SESA3029 W05a - Method of Characteristics|W05a]]). That makes the supersonic problem easier, not harder: the pressure at a point on the surface depends only on the local surface slope, so neither the potential nor the velocity field has to be solved for.
 
-The theory is used for $M_\infty$ above about 1.2 and below about 3 or 4 (title slide; L4-5, ll. 4–5). The lower limit keeps clear of $M_\infty=1$, where the linear equation fails; towards the hypersonic range the terms dropped in the linearisation grow like $M_\infty^2u'/U_\infty$ (W07b §4) and the first-order answer drifts from the exact one. This is the speed range of supersonic aircraft wings, fighter jets among them.
+The theory is used for $M_\infty$ above about 1.2 and below about 3 or 4. The lower limit keeps clear of $M_\infty=1$, where the linear equation fails; towards the hypersonic range the terms dropped in the linearisation grow like $M_\infty^2u'/U_\infty$ (W07b §4) and the first-order answer drifts from the exact one. This is the speed range of supersonic aircraft wings, fighter jets among them.
 
 Ackeret theory is the small-angle limit of the exact shock-expansion method of [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]]. It gives up a few per cent of accuracy in exchange for closed-form lift and drag, and those formulas answer a design question the exact method cannot answer directly, namely which aerofoil shape has the least wave drag.
 
-## 1. The wave equation and its solution (4.5 slides 2–3)
+## 1. The wave equation and its solution
 
-Start from the potential equation with $M_\infty>1$ (slide 2) and move the $x$-term across:
+Start from the potential equation with $M_\infty>1$ and move the $x$-term across:
 
 $$
 (1-M_\infty^2)\frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\phi}{\partial y^2}=0
@@ -53,7 +53,7 @@ $$
 \lambda^2\frac{\partial^2\phi}{\partial x^2}=\frac{\partial^2\phi}{\partial y^2}.
 $$
 
-This is a wave equation, with $x$ playing the part of time. Its general solution is $f(x-\lambda y)+g(x+\lambda y)$ for any two functions $f$ and $g$. Above the aerofoil the disturbances can only run upwards and downstream, so only the first part is present, and $\phi$ is constant along particular lines, the characteristic lines (slide 2):
+This is a wave equation, with $x$ playing the part of time. Its general solution is $f(x-\lambda y)+g(x+\lambda y)$ for any two functions $f$ and $g$. Above the aerofoil the disturbances can only run upwards and downstream, so only the first part is present, and $\phi$ is constant along particular lines, the characteristic lines:
 
 $$
 \phi=f(\eta),\qquad \eta=x-\lambda y ,
@@ -71,7 +71,7 @@ $$
 \frac{\partial^2\phi}{\partial x^2}=\frac{\partial}{\partial x}\left(\frac{\mathrm df}{\mathrm d\eta}\right)=\frac{\mathrm d}{\mathrm d\eta}\left(\frac{\mathrm df}{\mathrm d\eta}\right)\frac{\partial\eta}{\partial x}=\frac{\mathrm d^2f}{\mathrm d\eta^2}.
 $$
 
-Since $\partial\eta/\partial y=-\lambda$ (slide 3),
+Since $\partial\eta/\partial y=-\lambda$,
 
 $$
 v'=\frac{\partial\phi}{\partial y}=\frac{\mathrm df}{\mathrm d\eta}\frac{\partial\eta}{\partial y}=-\lambda\frac{\mathrm df}{\mathrm d\eta},
@@ -83,7 +83,7 @@ $$
 
 So $\text{LHS}=\lambda^2\phi_{xx}=\lambda^2f''$ and $\text{RHS}=\phi_{yy}=\lambda^2f''$, and the equation is satisfied for **any** function $f$.
 
-## 2. Mach lines and the key result u′ = −v′/λ (4.5 slides 3–4)
+## 2. Mach lines and the key result u′ = −v′/λ
 
 Wherever $\eta=x-\lambda y$ has the same value, $\phi=f(\eta)$ has the same value, so every crest, every trough and every other level of $\phi$ runs across the $x$–$y$ plane as a straight line (figure below). Let one of these lines make an angle $\beta$ with the $x$-axis ($\beta$ is only a label for this angle, not the shock angle of W02 or the Prandtl–Glauert factor). Its equation is
 
@@ -111,7 +111,7 @@ $$
 \tan\beta=\frac1\lambda=\frac{1}{\sqrt{M_\infty^2-1}} .
 $$
 
-Equivalently (slide 3),
+Equivalently,
 
 $$
 \eta=x-\lambda y=C'
@@ -127,13 +127,13 @@ $$
 y=(\tan\mu)\,x+C .
 $$
 
-So $\beta=\mu$: the lines of constant $\phi$ are the free-stream Mach lines, inclined at the Mach angle to the flow, and the solutions are constant along the Mach lines (slide 4). Each line carries the disturbance made where it leaves the surface, unchanged, out to infinity. At $M_\infty=2$, $\lambda=\sqrt3=1.732$ and $\mu=30^\circ$.
+So $\beta=\mu$: the lines of constant $\phi$ are the free-stream Mach lines, inclined at the Mach angle to the flow, and the solutions are constant along the Mach lines. Each line carries the disturbance made where it leaves the surface, unchanged, out to infinity. At $M_\infty=2$, $\lambda=\sqrt3=1.732$ and $\mu=30^\circ$.
 
 ![[at_ackeret_corrugated_potential.png|900]]
 
 In the MoC the same Mach lines carry the Riemann invariants. Above the aerofoil the lines leaving the surface are $C^+$ lines, along which $R^+=\nu-\theta$ is constant ([[SESA3029 W05a - Method of Characteristics|W05a]]). The velocity potential $\phi$ is constant along them too, and so is everything that depends only on $\eta$.
 
-Because $u'$ and $v'$ are both multiples of the same $\mathrm df/\mathrm d\eta$, they are linked everywhere, and in particular along each Mach line (slide 4):
+Because $u'$ and $v'$ are both multiples of the same $\mathrm df/\mathrm d\eta$, they are linked everywhere, and in particular along each Mach line:
 
 $$
 u'=\frac{\mathrm df}{\mathrm d\eta},\quad v'=-\lambda\frac{\mathrm df}{\mathrm d\eta}
@@ -145,9 +145,9 @@ This holds above the aerofoil, where the Mach lines run up and downstream. Below
 
 ![[at_ackeret_mach_lines.png|900]]
 
-## 3. Ackeret's formula (4.5 slide 5)
+## 3. Ackeret's formula
 
-The surface slope $\theta$ of an aerofoil (slide 5) is measured from the free-stream direction. Wherever the surface turns the flow it sends out a Mach wave, across which the velocity and pressure change, so a smoothly curved surface sends out a closely spaced family of Mach lines (slide 5). There is no reflected wave and no shock, so in MoC terms the flow above the surface is a simple flow region.
+The surface slope $\theta$ of an aerofoil is measured from the free-stream direction. Wherever the surface turns the flow it sends out a Mach wave, across which the velocity and pressure change, so a smoothly curved surface sends out a closely spaced family of Mach lines. There is no reflected wave and no shock, so in MoC terms the flow above the surface is a simple flow region.
 
 On the surface the flow is tangent to it. The local velocity has components $U_\infty+u'$ along $x$ and $v'$ along $y$, so
 
@@ -175,7 +175,7 @@ $$
 
 Finding $C_p$ this way needs neither the potential nor the velocity field. The surface slope $\theta$ is known at every point as soon as the aerofoil is drawn, so the whole surface pressure distribution follows from one division per point, with no field solution, CFD or wind-tunnel test. For a circular-arc section the slope has a closed form; for a tabulated section (a NACA profile from its coordinates, say) the slopes come from differencing the coordinates and the loads from integrating $C_p$ numerically.
 
-On the lower surface the signs of both $u'=+v'/\lambda$ and the outward slope flip together, and the formula is the same once $\theta$ is defined by two rules (slide 6):
+On the lower surface the signs of both $u'=+v'/\lambda$ and the outward slope flip together, and the formula is the same once $\theta$ is defined by two rules:
 
 - *Remember #1:* $\theta$ is measured from the free-stream vector $\vec U_\infty$, not from the chord or the horizontal. If the free stream is inclined at $30^\circ$ to the horizontal, a surface at $20^\circ$ to the horizontal has $|\theta|=10^\circ$ (panel (b) of the figure in §4).
 - *Remember #2:* $\theta$ is positive if the surface compresses the flow (turns it into itself) and negative if it expands it.
@@ -183,15 +183,15 @@ On the lower surface the signs of both $u'=+v'/\lambda$ and the outward slope fl
 So a surface element facing forwards into the flow, on either side, has $C_p>0$, and one facing backwards has $C_p<0$. The sign is the usual source of error, and the duct test of §4 settles it.
 
 > [!tip] The same result from the method of characteristics
-> Above the aerofoil every $C^-$ characteristic comes from the uniform free stream, so the Riemann invariant $R^-=\nu+\theta$ is the same everywhere: $\nu+\theta=\nu_\infty$ ([[SESA3029 W05a - Method of Characteristics|W05a]]). A surface turning the flow by $\theta$ (upward, compression) therefore has $\nu=\nu_\infty-\theta$. For small changes $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ (W03 §5), so $-\theta=\lambda\,u'/U_\infty$: the same $u'/U_\infty=-\theta/\lambda$. Ackeret theory is the MoC in the limit of weak waves, and the flow over the surface is a simple flow region in MoC terms (slide 5). The full derivation of the invariants is in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]].
+> Above the aerofoil every $C^-$ characteristic comes from the uniform free stream, so the Riemann invariant $R^-=\nu+\theta$ is the same everywhere: $\nu+\theta=\nu_\infty$ ([[SESA3029 W05a - Method of Characteristics|W05a]]). A surface turning the flow by $\theta$ (upward, compression) therefore has $\nu=\nu_\infty-\theta$. For small changes $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ (W03 §5), so $-\theta=\lambda\,u'/U_\infty$: the same $u'/U_\infty=-\theta/\lambda$. Ackeret theory is the MoC in the limit of weak waves, and the flow over the surface is a simple flow region in MoC terms. The full derivation of the invariants is in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]].
 
 ![[at_ackeret_vs_exact.png|900]]
 
 At $M_\infty=2$ (left panel), for a compression the exact oblique-shock $C_p$ rises faster than $2\theta/\lambda$; for an expansion the exact Prandtl–Meyer $C_p$ falls more slowly. At $\theta=2^\circ$ the error is about 4.5 %; at $10^\circ$ it is 25 % on each surface. Both exact curves lie above the linear ones, so in the difference $C_{p,l}-C_{p,u}$ the two errors have opposite signs and largely cancel. That is why the plate's $C_l$ is only 1 % out.
 
-## 4. The flat plate at incidence (4.5 slides 6–7)
+## 4. The flat plate at incidence
 
-A thin flat plate at incidence $\alpha$ in a supersonic stream (slide 6) is the simplest case. Each side has a single slope, $|\theta|=\alpha$, so the only care needed is the sign.
+A thin flat plate at incidence $\alpha$ in a supersonic stream is the simplest case. Each side has a single slope, $|\theta|=\alpha$, so the only care needed is the sign.
 
 The sign follows from treating each side as a duct. A streamline a little above the plate, roughly parallel to the free stream, and the upper surface bound a channel whose area grows downstream, because the plate falls away from the streamline. Supersonic flow speeds up in a diverging duct (the area–velocity relation of [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow|W04]]), so its pressure falls: the upper surface is an expansion, which in the exact flow is the Prandtl–Meyer fan at the leading edge, and by Remember #2 $\theta_u=-\alpha$. Below the plate, the channel between the lower surface and a streamline beneath it narrows downstream. Supersonic flow slows down in a converging duct and its pressure rises, so the lower surface is a compression, carrying an oblique shock in the exact flow, and $\theta_l=+\alpha$. Turn the plate to negative incidence and the two sides swap. The same reasoning decides which side of the plate gets which wave in [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]].
 
@@ -229,16 +229,16 @@ $$
 C_n=\frac{N'}{\tfrac12\rho_\infty U_\infty^2c}=C_{p_l}-C_{p_u}=\frac{2\alpha}{\sqrt{M_\infty^2-1}}-\left(\frac{-2\alpha}{\sqrt{M_\infty^2-1}}\right)=\frac{4\alpha}{\sqrt{M_\infty^2-1}}.
 $$
 
-Resolve perpendicular and parallel to the free stream (slide 7). For small incidence $\cos\alpha\simeq1$ and $\sin\alpha\simeq\alpha$:
+Resolve perpendicular and parallel to the free stream. For small incidence $\cos\alpha\simeq1$ and $\sin\alpha\simeq\alpha$:
 
 $$
 C_l=C_n\cos\alpha\simeq\frac{4\alpha}{\sqrt{M_\infty^2-1}},\qquad
 C_d=C_n\sin\alpha\simeq\frac{4\alpha^2}{\sqrt{M_\infty^2-1}}.
 $$
 
-*Remember #3: you must use the radian values of $\theta$ and $\alpha$ here* (slide 7). The formulas came from $\tan\theta\simeq\theta$, which holds only with $\theta$ in radians; entering $\alpha=10$ instead of $0.1745$ at $M_\infty=2$ gives $C_l=23.1$ and $C_d=231$, which no thin plate can produce. The drag is pure **wave drag**: it exists in inviscid flow, with no boundary layer, because the plate's force is normal to it and there is no leading-edge suction at supersonic speed ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]]). For the plate $C_d=\alpha\,C_l$, and the uniform $\Delta C_p$ puts the centre of pressure at mid-chord, which is the $c/4\to c/2$ shift of W03.
+*Remember #3: you must use the radian values of $\theta$ and $\alpha$ here*. The formulas came from $\tan\theta\simeq\theta$, which holds only with $\theta$ in radians; entering $\alpha=10$ instead of $0.1745$ at $M_\infty=2$ gives $C_l=23.1$ and $C_d=231$, which no thin plate can produce. The drag is pure **wave drag**: it exists in inviscid flow, with no boundary layer, because the plate's force is normal to it and there is no leading-edge suction at supersonic speed ([[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]]). For the plate $C_d=\alpha\,C_l$, and the uniform $\Delta C_p$ puts the centre of pressure at mid-chord, which is the $c/4\to c/2$ shift of W03.
 
-### Worked example: flat plate at M = 2, α = 10° (4.5 slide 7)
+### Worked example: flat plate at M = 2, α = 10°
 
 *For $M_\infty=2$ and $\alpha=10^\circ$, calculate $C_l$ and $C_d$ using 1) the Ackeret theory and 2) the shock-expansion method, and compare the results (homework).*
 
@@ -248,9 +248,9 @@ $$
 C_l=\frac{4(0.17453)}{1.7321}=0.4031,\qquad C_d=\frac{4(0.17453)^2}{1.7321}=0.0703 .
 $$
 
-These are the small-angle values (slide 7); keeping $\cos\alpha$ and $\sin\alpha$ gives $0.3969$ and $0.0700$.
+These are the small-angle values; keeping $\cos\alpha$ and $\sin\alpha$ gives $0.3969$ and $0.0700$.
 
-**Shock-expansion.** This is the [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#Flat plate at incidence, step by step (slides 7–13): M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|W03 §6 flat plate]], the same case.
+**Shock-expansion.** This is the [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#Flat plate at incidence, step by step: M₁ = 2, α = 10°, p₁ = 30 kPa, c = 1 m|W03 §6 flat plate]], the same case.
 
 - Lower surface, an oblique shock with $\theta=10^\circ$ at $M=2$: $\beta=39.31^\circ$, $M_{n1}=2\sin39.31^\circ=1.267$, $p_l/p_\infty=1.7066$.
 - Upper surface, a Prandtl–Meyer expansion: $\nu(2)=26.38^\circ\to36.38^\circ$, so $M_u=2.385$ and $p_u/p_\infty=0.5480$.
@@ -260,11 +260,11 @@ $$
 C_l=C_n\cos\alpha=0.4075,\qquad C_d=C_n\sin\alpha=0.0719 .
 $$
 
-These match slide 7 ($0.4075$ and $0.0719$) ✓. With the pressure ratios interpolated from the tables, the same case gives $C_l=0.4074$ and $C_d=0.07183$ (2.5 slide 13); the unrounded relations give $0.40750$ and $0.07185$, so the two differ only by table rounding.
+These match the course values ($0.4075$ and $0.0719$) ✓. With the pressure ratios interpolated from the tables, the same case gives $C_l=0.4074$ and $C_d=0.07183$; the unrounded relations give $0.40750$ and $0.07185$, so the two differ only by table rounding.
 
 **Comparison.** Ackeret is 1.1 % low on lift and 2.1 % low on drag at $10^\circ$. On each surface separately the errors are much larger (the exact $C_{p_l}=0.252$ and $C_{p_u}=-0.161$, against Ackeret's $\pm0.202$), but in $C_{p_l}-C_{p_u}$ they almost cancel. The Ackeret answer is a single line, while the shock-expansion answer needs an oblique-shock solution, a Prandtl–Meyer inversion and two isentropic pressure ratios.
 
-## 5. Summary: the two linear theories together (4.5 slide 8; 4.6 slide 2)
+## 5. Summary: the two linear theories together
 
 For incompressible flow a symmetric thin aerofoil has $C_{l0}=2\pi\alpha$ ([[SESA2022 T4 - Thin Aerofoil Theory#4. Symmetric aerofoil (flat plate)|SESA2022 T4 §4]]). The two compressible theories give
 
@@ -273,11 +273,11 @@ $$
 \text{Ackeret }(M_\infty\gtrsim1.2):\ C_l=\frac{4\alpha}{\sqrt{M_\infty^2-1}} .
 $$
 
-The first is the transonic aerofoil theory of 4.4 (Prandtl–Glauert), the second the supersonic aerofoil theory of 4.5. The ratio $C_l/C_{l0}$ climbs to infinity as $M_\infty\to1$ from below and comes down from infinity above it, falling to $2/(\pi\lambda)=0.37$ at $M_\infty=2$ (see the right panel of the [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#7. The Prandtl–Glauert rule for Cp, Cl and Cm (4.4 slides 4–6)|W07b §7 figure]]). Inside their ranges both follow the lift found in experiments and CFD. Neither holds near $M_\infty=1$, where the real lift, from the 4.2 CFD, peaks at a finite value.
+The first is the transonic aerofoil theory of 4.4 (Prandtl–Glauert), the second the supersonic aerofoil theory of 4.5. The ratio $C_l/C_{l0}$ climbs to infinity as $M_\infty\to1$ from below and comes down from infinity above it, falling to $2/(\pi\lambda)=0.37$ at $M_\infty=2$ (see the right panel of the [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#7. The Prandtl–Glauert rule for Cp, Cl and Cm|W07b §7 figure]]). Inside their ranges both follow the lift found in experiments and CFD. Neither holds near $M_\infty=1$, where the real lift, from the 4.2 CFD, peaks at a finite value.
 
-## 6. A general thin aerofoil (4.6 slides 3–4)
+## 6. A general thin aerofoil
 
-Split a general thin aerofoil into three parts (slide 3): a symmetric thickness distribution $h(x)$, a camber line $y_c(x)$, and incidence $\alpha$, with the chord line tilted down by $\alpha x$:
+Split a general thin aerofoil into three parts: a symmetric thickness distribution $h(x)$, a camber line $y_c(x)$, and incidence $\alpha$, with the chord line tilted down by $\alpha x$:
 
 $$
 y_u(x)=h(x)+y_c(x)-\alpha x
@@ -295,7 +295,7 @@ Small perturbation means $\tan\theta_u\simeq\theta_u$ and $\tan\alpha\simeq\alph
 
 ![[at_aerofoil_decomposition.png|900]]
 
-**Signs** (slide 4). A wall with positive slope compresses flow above it and expands flow below it. So, with *Remember #2*,
+**Signs**. A wall with positive slope compresses flow above it and expands flow below it. So, with *Remember #2*,
 
 $$
 \theta_u\simeq\frac{\mathrm dy_u}{\mathrm dx},\qquad \theta_l\simeq-\frac{\mathrm dy_l}{\mathrm dx}.
@@ -315,7 +315,7 @@ C_{p_u}=\frac{2}{\sqrt{M_\infty^2-1}}\left(\frac{\mathrm dh}{\mathrm dx}+\frac{\
 C_{p_l}=\frac{2}{\sqrt{M_\infty^2-1}}\left(\frac{\mathrm dh}{\mathrm dx}-\frac{\mathrm dy_c}{\mathrm dx}+\alpha\right).
 $$
 
-## 7. Lift coefficient (4.6 slide 5)
+## 7. Lift coefficient
 
 The free stream is horizontal, and to first order each surface element's pressure acts vertically over its length $\mathrm dx$:
 
@@ -345,9 +345,9 @@ C_l=\frac{4}{c\sqrt{M_\infty^2-1}}\left(\alpha c-0\right)
 \boxed{C_l=\frac{4\alpha}{\sqrt{M_\infty^2-1}}}
 $$
 
-This is the flat-plate result (slide 5). In inviscid linear supersonic theory **neither camber nor thickness affects the lift**, only the incidence of the chord line. This differs from subsonic thin-aerofoil theory, where camber shifts the zero-lift angle. Here camber changes the local loading, but its integral is zero.
+This is the flat-plate result. In inviscid linear supersonic theory **neither camber nor thickness affects the lift**, only the incidence of the chord line. This differs from subsonic thin-aerofoil theory, where camber shifts the zero-lift angle. Here camber changes the local loading, but its integral is zero.
 
-## 8. Drag coefficient (4.6 slide 6)
+## 8. Drag coefficient
 
 Each surface element of length $\mathrm dx$ carries a pressure force normal to it. Its streamwise component is $p\sin\theta\,\mathrm ds\simeq p\,\theta\,\mathrm dx$, rearwards when the element faces forwards ($\theta>0$):
 
@@ -361,7 +361,7 @@ $$
 \int_0^c(\theta_l+\theta_u)\,\mathrm dx=\int_0^c2\frac{\mathrm dh}{\mathrm dx}\,\mathrm dx=2\left[h\right]_0^c=0 .
 $$
 
-So $p$ can be replaced by $C_p$ (slide 6):
+So $p$ can be replaced by $C_p$:
 
 $$
 C_d=\frac1c\int_0^c\left(C_{p_l}\theta_l+C_{p_u}\theta_u\right)\mathrm dx .
@@ -380,26 +380,26 @@ $$
 2s^2=2\left(y_c'-\alpha\right)^2=2y_c'^2-4\alpha y_c'+2\alpha^2 .
 $$
 
-The cross term integrates to zero, $\int_0^c-4\alpha y_c'\,\mathrm dx=-4\alpha[y_c]_0^c=0$. Hence (slide 6)
+The cross term integrates to zero, $\int_0^c-4\alpha y_c'\,\mathrm dx=-4\alpha[y_c]_0^c=0$. Hence
 
 $$
 \boxed{C_d=\frac{4}{c\sqrt{M_\infty^2-1}}\int_0^c\left[\alpha^2+\left(\frac{\mathrm dh}{\mathrm dx}\right)^2+\left(\frac{\mathrm dy_c}{\mathrm dx}\right)^2\right]\mathrm dx}
 $$
 
-All three components contribute to the wave drag, and each one adds a positive square: drag due to lift ($\alpha^2$), drag due to thickness, and drag due to camber. Camber adds drag without adding lift, so thin symmetric aerofoils are favoured for low drag in supersonic flight (slide 6). See [[Supersonic Wave Drag]].
+All three components contribute to the wave drag, and each one adds a positive square: drag due to lift ($\alpha^2$), drag due to thickness, and drag due to camber. Camber adds drag without adding lift, so thin symmetric aerofoils are favoured for low drag in supersonic flight. See [[Supersonic Wave Drag]].
 
 > [!check] The cost of a little camber (suggested)
 > A parabolic camber line $y_c=4\varepsilon x(c-x)/c^2$ with $\varepsilon=0.02c$ has $y_c'=4\varepsilon(1-2x/c)/c$ and $\frac1c\int_0^c y_c'^2\,\mathrm dx=\frac{16}{3}(\varepsilon/c)^2=0.00213$. On a 5 % diamond at $\alpha=2.86^\circ$, $M_\infty=2$ ($\alpha^2+(t/c)^2=0.0050$), this raises $C_d$ from $0.01155$ to $0.01647$, an extra 43 %, for no change in $C_l$.
 
-## 9. Thickness drag and the optimum section (4.6 slides 7–10)
+## 9. Thickness drag and the optimum section
 
-For a symmetric aerofoil ($y_c=0$) the drag is (slide 7)
+For a symmetric aerofoil ($y_c=0$) the drag is
 
 $$
 C_d=\frac{4}{\sqrt{M_\infty^2-1}}\left[\alpha^2+\frac1c\int_0^c\left(\frac{\mathrm dh}{\mathrm dx}\right)^2\mathrm dx\right].
 $$
 
-For a given thickness $t$, one shape $h(x)$ makes the integral smallest. To find it, let the half-thickness peak at $t/2$ at $x=k$, and write $h$ as a straight-line segment plus arbitrary functions $f$ and $g$ that are zero at their end points (slide 7):
+For a given thickness $t$, one shape $h(x)$ makes the integral smallest. To find it, let the half-thickness peak at $t/2$ at $x=k$, and write $h$ as a straight-line segment plus arbitrary functions $f$ and $g$ that are zero at their end points:
 
 $$
 x\le k:\quad h=\frac{tx}{2k}+f(x),\qquad f(0)=f(k)=0
@@ -413,7 +413,7 @@ x\ge k:\quad h=\frac{t(c-x)}{2(c-k)}+g(x),\qquad g(k)=g(c)=0
 \frac{\mathrm dh}{\mathrm dx}=-\frac{t}{2(c-k)}+\frac{\mathrm dg}{\mathrm dx}.
 $$
 
-Square and integrate each part (slide 8):
+Square and integrate each part:
 
 $$
 \int_0^c h'^2\,\mathrm dx=\int_0^k\left[\frac{t^2}{4k^2}+\frac tk\frac{\mathrm df}{\mathrm dx}+\left(\frac{\mathrm df}{\mathrm dx}\right)^2\right]\mathrm dx+\int_k^c\left[\frac{t^2}{4(c-k)^2}-\frac{t}{c-k}\frac{\mathrm dg}{\mathrm dx}+\left(\frac{\mathrm dg}{\mathrm dx}\right)^2\right]\mathrm dx .
@@ -425,9 +425,9 @@ $$
 \int_0^c h'^2\,\mathrm dx=\frac{t^2}{4}\left(\frac1k+\frac{1}{c-k}\right)+\int_0^k\left(\frac{\mathrm df}{\mathrm dx}\right)^2\mathrm dx+\int_k^c\left(\frac{\mathrm dg}{\mathrm dx}\right)^2\mathrm dx .
 $$
 
-The last two integrals are squares, so any non-zero $f$ or $g$ only adds drag. For least drag $f=g=0$: the faces should be straight, so faceted aerofoils are favoured in supersonic flight (slide 8).
+The last two integrals are squares, so any non-zero $f$ or $g$ only adds drag. For least drag $f=g=0$: the faces should be straight, so faceted aerofoils are favoured in supersonic flight.
 
-**Optimum $k$** (slide 9). With straight faces the integral is
+**Optimum $k$**. With straight faces the integral is
 
 $$
 F(k)=\frac{t^2}{4}\left(\frac1k+\frac1{c-k}\right).
@@ -449,7 +449,7 @@ $$
 \int_0^c\left(\frac{\mathrm dh}{\mathrm dx}\right)^2\mathrm dx=\frac{t^2}{4}\left(\frac2c+\frac2c\right)=\frac{t^2}{c}.
 $$
 
-The maximum thickness should be at half chord, and the section is a **diamond** (slide 10). Its lift and minimised drag are
+The maximum thickness should be at half chord, and the section is a **diamond**. Its lift and minimised drag are
 
 $$
 C_l=\frac{4\alpha}{\sqrt{M_\infty^2-1}},\qquad C_d=\frac{4}{\sqrt{M_\infty^2-1}}\left[\alpha^2+\left(\frac tc\right)^2\right].
@@ -459,11 +459,11 @@ $$
 
 Moving the peak to $k=0.3c$ costs 19 % more thickness drag (right panel). A biconvex section (two parabolic arcs, $h=2t\,x(c-x)/c^2$) has $\int h'^2\,\mathrm dx=4t^2/(3c)$, a third more than the diamond, the cost of the smooth surface.
 
-Three conclusions follow (slide 10): symmetric (uncambered) aerofoils are better, faceted ones are better still, and the symmetric faceted aerofoil with its thickest point at half chord is best.
+Three conclusions follow: symmetric (uncambered) aerofoils are better, faceted ones are better still, and the symmetric faceted aerofoil with its thickest point at half chord is best.
 
-## 10. The best angle of attack (4.6 slide 10)
+## 10. The best angle of attack
 
-To find the angle of attack that gives the highest lift-to-drag ratio (slide 10), write $\tau=t/c$. The $4/\lambda$ cancels in the ratio:
+To find the angle of attack that gives the highest lift-to-drag ratio, write $\tau=t/c$. The $4/\lambda$ cancels in the ratio:
 
 $$
 \frac LD=\frac{C_l}{C_d}=\frac{\alpha}{\alpha^2+\tau^2}.
@@ -488,7 +488,7 @@ At the optimum, drag due to lift equals drag due to thickness. The result does n
 > [!check] A 5 % diamond at $M_\infty=2$
 > $\alpha=t/c=0.05$ rad $=2.86^\circ$, $\lambda=1.7321$: $C_l=4(0.05)/1.7321=0.1155$, $C_d=\frac{4}{1.7321}(0.0025+0.0025)=0.01155$, so $L/D=10.0=1/(2\times0.05)$ ✓. The [[SESA3029 Example Sheet 2 - Solutions#Q5. Diamond aerofoil by Ackeret theory|ES2 Q5]] diamond (same $t/c$, $\alpha=2^\circ$) gets $L/D=9.39$, so it flies slightly below its best angle. Viscous skin friction, which Ackeret leaves out, lowers the real $L/D$ and moves the best angle up.
 
-Real supersonic wings use thin, nearly symmetric sections close to this ideal but with rounded noses for low-speed flight (slide 11). The X-1 used NACA 65-110 and 65-108 sections, and the X-1E a NACA 64A004. The F-22 uses NACA 64A005.92 at the root and 64A004.29 at the tip. Overlaid on a diamond (slide 11), the F-22 root section is almost indistinguishable from it.
+Real supersonic wings use thin, nearly symmetric sections close to this ideal but with rounded noses for low-speed flight. The X-1 used NACA 65-110 and 65-108 sections, and the X-1E a NACA 64A004. The F-22 uses NACA 64A005.92 at the root and 64A004.29 at the tip. Overlaid on a diamond, the F-22 root section is almost indistinguishable from it.
 
 ## Problem-solving workflow
 
@@ -515,10 +515,11 @@ Real supersonic wings use thin, nearly symmetric sections close to this ideal bu
 - Parent: [[SESA3029 Aerothermodynamics Hub]]
 - Previous: [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]]
 - New concepts: [[Ackeret Theory]] · [[Supersonic Wave Drag]]
+- General solution, sign rule, drag polar, the diamond by completing the square and checks against exact shock-expansion: [[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]]
 - Earlier: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#6. The shock-expansion method|W03 §6]] (the exact method) · [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow|W04]] (area–velocity relation, behind the duct test) · [[SESA3029 W05a - Method of Characteristics|W05a]] (Riemann invariants, simple flow region) · [[Riemann Invariants]] · [[Mach Waves and Mach Angle]] · [[Shock-Expansion Theory]]
 - Earlier years: [[SESA2022 T4 - Thin Aerofoil Theory]] (subsonic thin-aerofoil decomposition, $C_{l0}=2\pi\alpha$)
 - Worked sheets: [[SESA3029 Example Sheet 2 - Solutions#Q4. Flat plate by Ackeret theory|ES2 Q4]] · [[SESA3029 Example Sheet 2 - Solutions#Q5. Diamond aerofoil by Ackeret theory|ES2 Q5]] · exact versions in [[SESA3029 Example Sheet 1 - Solutions#Q4. Flat plate by shock-expansion theory|ES1 Q4]] and [[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|ES1 Q6]]
-- Formulae: [[SESA3029 Formula Sheet#Euler equations and compressible aerofoils (Lectures 4.1–4.6)|Formula sheet: Chapter 4]]
+- Formulae: [[SESA3029 Formula Sheet#Euler equations and compressible aerofoils|Formula sheet: Chapter 4]]
 
 ## Sources
 
@@ -534,32 +535,32 @@ Tasks citing L4-5 come from the Thu 12 Nov lecture. The 4.5 slide 7 homework and
 
 ### Core
 
-- [ ] **(4.5 slide 7, homework; L4-5, ll. 325–343)** $M_\infty=2$, $\alpha=10^\circ$: $C_l$ and $C_d$ by Ackeret and by shock-expansion, and compare. Answers 0.4031, 0.0703 and 0.4075, 0.0719. → [[#Worked example: flat plate at M = 2, α = 10° (4.5 slide 7)|§4]]
-- [ ] **(L4-5, ll. 23–160; slides 2–4)** Show that $\phi=f(x-\lambda y)$ solves $\lambda^2\phi_{xx}=\phi_{yy}$, that its lines of constant $\phi$ are Mach lines at $\mu$ (the line-equation argument), and that $u'=-v'/\lambda$. → [[#1. The wave equation and its solution (4.5 slides 2–3)|§§1–2]]
-- [ ] **(L4-5, ll. 170–216; slide 5)** Derive $C_p=2\theta/\sqrt{M_\infty^2-1}$ from flow tangency, $u'=-v'/\lambda$ and $C_p=-2u'/U_\infty$. → [[#3. Ackeret's formula (4.5 slide 5)|§3]]
-- [ ] **(L4-5, ll. 247–313; slides 6–7)** Use the duct test to fix the sign of $\theta$ on each side of a plate at incidence, then derive $C_n$, $C_l$ and $C_d$. → [[#4. The flat plate at incidence (4.5 slides 6–7)|§4]]
-- [ ] **(4.6 slide 10 question)** Find the angle of attack for maximum $L/D$ of a diamond. Answer $\alpha=t/c$, $(L/D)_{max}=c/(2t)$. → [[#10. The best angle of attack (4.6 slide 10)|§10]]
+- [ ] **(4.5 slide 7, homework; L4-5, ll. 325–343)** $M_\infty=2$, $\alpha=10^\circ$: $C_l$ and $C_d$ by Ackeret and by shock-expansion, and compare. Answers 0.4031, 0.0703 and 0.4075, 0.0719. → [[#Worked example: flat plate at M = 2, α = 10°|§4]]
+- [ ] **(L4-5, ll. 23–160; slides 2–4)** Show that $\phi=f(x-\lambda y)$ solves $\lambda^2\phi_{xx}=\phi_{yy}$, that its lines of constant $\phi$ are Mach lines at $\mu$ (the line-equation argument), and that $u'=-v'/\lambda$. → [[#1. The wave equation and its solution|§§1–2]]
+- [ ] **(L4-5, ll. 170–216; slide 5)** Derive $C_p=2\theta/\sqrt{M_\infty^2-1}$ from flow tangency, $u'=-v'/\lambda$ and $C_p=-2u'/U_\infty$. → [[#3. Ackeret's formula|§3]]
+- [ ] **(L4-5, ll. 247–313; slides 6–7)** Use the duct test to fix the sign of $\theta$ on each side of a plate at incidence, then derive $C_n$, $C_l$ and $C_d$. → [[#4. The flat plate at incidence|§4]]
+- [ ] **(4.6 slide 10 question)** Find the angle of attack for maximum $L/D$ of a diamond. Answer $\alpha=t/c$, $(L/D)_{max}=c/(2t)$. → [[#10. The best angle of attack|§10]]
 
 ### Further practice
 
-- [ ] **(L4-5, ll. 233–240)** A free stream is inclined at $30^\circ$ to the horizontal and a flat plate at $20^\circ$, $M_\infty=2$. Find $\theta$ on each side and $C_{p_u}$, $C_{p_l}$. Answer $\theta_u=-10^\circ$, $\theta_l=+10^\circ$, $C_p=\mp0.202$. → [[#4. The flat plate at incidence (4.5 slides 6–7)|§4, panel (b) of the figure]]
-- [ ] **(4.6 slides 5–6)** Derive $C_l=4\alpha/\lambda$ and the three-term $C_d$ for a general thin aerofoil. → [[#7. Lift coefficient (4.6 slide 5)|§§7–8]]
-- [ ] **(4.6 slides 7–10)** Show that the optimum symmetric section is the diamond ($f=g=0$, $k=c/2$). → [[#9. Thickness drag and the optimum section (4.6 slides 7–10)|§9]]
+- [ ] **(L4-5, ll. 233–240)** A free stream is inclined at $30^\circ$ to the horizontal and a flat plate at $20^\circ$, $M_\infty=2$. Find $\theta$ on each side and $C_{p_u}$, $C_{p_l}$. Answer $\theta_u=-10^\circ$, $\theta_l=+10^\circ$, $C_p=\mp0.202$. → [[#4. The flat plate at incidence|§4, panel (b) of the figure]]
+- [ ] **(4.6 slides 5–6)** Derive $C_l=4\alpha/\lambda$ and the three-term $C_d$ for a general thin aerofoil. → [[#7. Lift coefficient|§§7–8]]
+- [ ] **(4.6 slides 7–10)** Show that the optimum symmetric section is the diamond ($f=g=0$, $k=c/2$). → [[#9. Thickness drag and the optimum section|§9]]
 - [ ] Redo [[SESA3029 Example Sheet 2 - Solutions#Q4. Flat plate by Ackeret theory|ES2 Q4]] and [[SESA3029 Example Sheet 2 - Solutions#Q5. Diamond aerofoil by Ackeret theory|Q5]] using $\lambda$ for $\sqrt{M^2-1}$.
-- [ ] (suggested, not lecturer-set) Derive $u'=+v'/\lambda$ for the lower surface and confirm that $C_p=2\theta/\lambda$ still holds with the sign rule of Remember #2. → [[#2. Mach lines and the key result u′ = −v′/λ (4.5 slides 3–4)|§2]]
-- [ ] (suggested, not lecturer-set; the link is made in L4-5, ll. 133–144) Get the Ackeret formula from the Riemann invariant $R^-=\nu+\theta$. → [[#3. Ackeret's formula (4.5 slide 5)|§3, the tip]]
-- [ ] (suggested, not lecturer-set) Show that a biconvex section has $4/3$ of the diamond's thickness drag. → [[#9. Thickness drag and the optimum section (4.6 slides 7–10)|§9]]
-- [ ] (suggested, not lecturer-set) Explain why the slide 6 drag integral can use $C_p$ instead of $p$. → [[#8. Drag coefficient (4.6 slide 6)|§8]]
+- [ ] (suggested, not lecturer-set) Derive $u'=+v'/\lambda$ for the lower surface and confirm that $C_p=2\theta/\lambda$ still holds with the sign rule of Remember #2. → [[#2. Mach lines and the key result u′ = −v′/λ|§2]]
+- [ ] (suggested, not lecturer-set; the link is made in L4-5, ll. 133–144) Get the Ackeret formula from the Riemann invariant $R^-=\nu+\theta$. → [[#3. Ackeret's formula|§3, the tip]]
+- [ ] (suggested, not lecturer-set) Show that a biconvex section has $4/3$ of the diamond's thickness drag. → [[#9. Thickness drag and the optimum section|§9]]
+- [ ] (suggested, not lecturer-set) Explain why the slide 6 drag integral can use $C_p$ instead of $p$. → [[#8. Drag coefficient|§8]]
 
 ## Transcript and slide slips
 
 > [!warning] Two slips on 4.5 slide 3
-> Where: [[#1. The wave equation and its solution (4.5 slides 2–3)]].
+> Where: [[#1. The wave equation and its solution]].
 >
 > Slide 3 writes *"since $\partial\eta/\partial x=-\lambda$"* next to $v'$; it should be $\partial\eta/\partial y=-\lambda$ ($\partial\eta/\partial x=1$, as on slide 2). In the $\partial^2\phi/\partial y^2$ line, the middle step is printed as $\partial/\partial x(-\lambda\,\mathrm df/\mathrm d\eta)$ instead of $\partial/\partial y$. The final $\lambda^2f''$ is right.
 
 > [!warning] Slide 6 writes $\cos\theta$
-> Where: [[#8. Drag coefficient (4.6 slide 6)]].
+> Where: [[#8. Drag coefficient]].
 >
 > 4.6 slide 6 prints $D'=\int(p_l\cos\theta_l+p_u\cos\theta_u)\,\mathrm dx\simeq\int(p_l\theta_l+p_u\theta_u)\,\mathrm dx$. The horizontal component of a force normal to a surface at slope $\theta$ is $p\sin\theta$, not $p\cos\theta$; the approximation $\simeq p\theta$ that follows is the $\sin$ version.
 

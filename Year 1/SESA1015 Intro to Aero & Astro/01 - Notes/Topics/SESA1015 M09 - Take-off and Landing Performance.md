@@ -43,13 +43,13 @@ That is why take-off is the problem that high-lift devices are designed for. Fla
 
 ## 1. Take-off phases and critical speeds
 
-During take-off the aircraft accelerates from rest through a sequence of critical speeds (Notes §7.3, pp. 38–39; Slides v2, pp. 154–155).
+During take-off the aircraft accelerates from rest through a sequence of critical speeds.
 
 ![[mof_m09_takeoff_profile.png|900]]
 
-The **decision speed** $V_1$ is the speed up to which, if the critical engine fails, the aircraft can still decelerate to rest within the available runway; above $V_1$ the take-off must be continued. At the **rotation speed** $V_R$ the pilot raises the nose, increasing the angle of attack so that the lift rises rapidly. The aircraft continues to accelerate to the **lift-off speed** $V_{LOF}$, at which it leaves the ground, for example with lift 10 % greater than the weight, enough to unstick the aircraft from the runway (Slides v2, p. 154). A transition phase follows, curving the path into a constant climb angle, and the aircraft keeps accelerating to the **take-off safety speed** or screen speed $V_2$, reached at the imaginary screen height of 35 ft (10.7 m). The take-off distance is the total distance from the start of the run to the screen, $s_1+s_2$.
+The **decision speed** $V_1$ is the speed up to which, if the critical engine fails, the aircraft can still decelerate to rest within the available runway; above $V_1$ the take-off must be continued. At the **rotation speed** $V_R$ the pilot raises the nose, increasing the angle of attack so that the lift rises rapidly. The aircraft continues to accelerate to the **lift-off speed** $V_{LOF}$, at which it leaves the ground, for example with lift 10 % greater than the weight, enough to unstick the aircraft from the runway. A transition phase follows, curving the path into a constant climb angle, and the aircraft keeps accelerating to the **take-off safety speed** or screen speed $V_2$, reached at the imaginary screen height of 35 ft (10.7 m). The take-off distance is the total distance from the start of the run to the screen, $s_1+s_2$.
 
-The speeds are tied to each other and to the stall speed by certification rules (Notes §7.3, p. 39):
+The speeds are tied to each other and to the stall speed by certification rules:
 
 | Speed | Meaning | Condition |
 |---|---|---|
@@ -62,7 +62,7 @@ The speeds are tied to each other and to the stall speed by certification rules 
 | $V_{LOF}$ | lift-off speed | $V_{LOF}\ge1.1V_{mu}$ all engines, $1.05V_{mu}$ engine out |
 | $V_2$ | take-off climb speed at 35 ft | $V_2\ge1.1V_{mca}$ and $V_2\ge1.2V_s$ (jet), $1.15V_s$ (piston) |
 
-Strictly, $V_2$ is the speed a twin should reach at the screen after a critical engine failure at $V_1$. Here acceleration is taken to stop at lift-off, so that $V_2\approx V_{LOF}$, and the ground run $s_1$ is the distance to reach $V_2$ (Notes §7.3, p. 40).
+Strictly, $V_2$ is the speed a twin should reach at the screen after a critical engine failure at $V_1$. Here acceleration is taken to stop at lift-off, so that $V_2\approx V_{LOF}$, and the ground run $s_1$ is the distance to reach $V_2$.
 
 Throughout the run the flaps and slats are at their take-off settings. These give a greater $C_L$ than the clean wing and so a lower stall speed. Take-off flap angles are much smaller than landing flap angles, so the drag increase is modest.
 
@@ -76,7 +76,7 @@ $$
 F_{fr}=\mu_r(W-L).
 $$
 
-Newton's second law along the runway, with mass $m=W/g$, is (Notes §7.3, p. 40; Slides v2, p. 156)
+Newton's second law along the runway, with mass $m=W/g$, is
 
 $$
 T-D-\mu_r(W-L)=\frac{W}{g}\frac{dV}{dt}.
@@ -94,11 +94,11 @@ $$
 \boxed{\frac TW-\frac DW-\mu_r\left(1-\frac LW\right)=\frac Vg\frac{dV}{dx}} .
 $$
 
-Here $L$ and $D$ are the values on the ground run, functions of the angle of attack held on the runway and of the speed, $L=\frac12\rho V^2SC_L$ and $D=\frac12\rho V^2SC_D$. As the speed rises, drag grows and friction falls; the net accelerating force changes along the run, so the acceleration is not constant. Strictly the equation is integrated from $V=0$ to $V_2$ with these $L$ and $D$ substituted, a numerical task in general (Slides v2, p. 156); §4 gives a closed form for constant coefficients.
+Here $L$ and $D$ are the values on the ground run, functions of the angle of attack held on the runway and of the speed, $L=\frac12\rho V^2SC_L$ and $D=\frac12\rho V^2SC_D$. As the speed rises, drag grows and friction falls; the net accelerating force changes along the run, so the acceleration is not constant. Strictly the equation is integrated from $V=0$ to $V_2$ with these $L$ and $D$ substituted, a numerical task in general; §4 gives a closed form for constant coefficients.
 
 ## 3. Ground run with lift and drag neglected
 
-An approximate ground run follows from two assumptions (Notes §7.3, p. 40): $T/W$ is constant, and $D/W$ and $L/W$ are both very small during the ground run before lift-off. The equation of motion becomes
+An approximate ground run follows from two assumptions: $T/W$ is constant, and $D/W$ and $L/W$ are both very small during the ground run before lift-off. The equation of motion becomes
 
 $$
 \frac TW-\mu_r=\frac Vg\frac{dV}{dx}.
@@ -146,9 +146,9 @@ $$
 \boxed{s_1=\frac{1.44}{\rho g}\left(\frac WS\right)\left(\frac{1}{C_{L_{max}}}\right)\frac{1}{\left(\frac TW-\mu_r\right)}} .
 $$
 
-The last factor can also be written $\dfrac{W/T}{1-\mu_rW/T}$ (Notes §7.3); multiplying top and bottom by $T/W$ shows this is the same as $1/(T/W-\mu_r)$. $C_{L_{max}}$ is the maximum lift coefficient in the take-off configuration and in ground effect (Notes §7.3, p. 41).
+The last factor can also be written $\dfrac{W/T}{1-\mu_rW/T}$; multiplying top and bottom by $T/W$ shows this is the same as $1/(T/W-\mu_r)$. $C_{L_{max}}$ is the maximum lift coefficient in the take-off configuration and in ground effect.
 
-For a given $C_{L_{max}}$, the ground run depends on three groups (Notes §7.3, p. 41; Slides v2, p. 157):
+For a given $C_{L_{max}}$, the ground run depends on three groups:
 
 | Parameter | Effect on $s_1$ | Reason |
 |---|---|---|
@@ -167,7 +167,7 @@ a 23 % longer run. Since $s_1\propto1/\rho$, a fixed-thrust comparison between t
 
 ### Wind and runway slope
 
-All the above assumes still air and a level runway; taking off into wind or down a slope shortens the run (Notes §7.3, p. 41). Both effects follow from the same integration. Lift depends on airspeed, so the aircraft still needs airspeed $V_2$ to lift off; with a headwind $V_w$ it already has airspeed $V_w$ at rest, so the ground speed it must reach is only $V_2-V_w$. If the acceleration is unchanged,
+All the above assumes still air and a level runway; taking off into wind or down a slope shortens the run. Both effects follow from the same integration. Lift depends on airspeed, so the aircraft still needs airspeed $V_2$ to lift off; with a headwind $V_w$ it already has airspeed $V_w$ at rest, so the ground speed it must reach is only $V_2-V_w$. If the acceleration is unchanged,
 
 $$
 s_1=\frac{(V_2-V_w)^2}{2g\left(\frac TW-\mu_r\right)} .
@@ -183,7 +183,7 @@ A 1° downslope adds 0.0175 to the effective $T/W-\mu_r$ of 0.148, shortening th
 
 ### Thrust-to-weight ratio for a 1723 m runway
 
-A twin-engined aircraft must take off on a 1723 m runway at sea level, with $V_2=1.2V_s$, span 28.42 m, aspect ratio 12.8, $C_{L_{max}}=2.0$, $C_D=0.12$, take-off mass 27 330 kg and $\mu_r=0.02$ (Slides v2, p. 158). Find the $T/W$ required, assuming $T/W$ constant and $L/W$, $D/W$ small.
+A twin-engined aircraft must take off on a 1723 m runway at sea level, with $V_2=1.2V_s$, span 28.42 m, aspect ratio 12.8, $C_{L_{max}}=2.0$, $C_D=0.12$, take-off mass 27 330 kg and $\mu_r=0.02$. Find the $T/W$ required, assuming $T/W$ constant and $L/W$, $D/W$ small.
 
 The wing area and weight are
 
@@ -211,7 +211,7 @@ The drag coefficient is not needed in this model; it matters only when drag is i
 
 ### The same aircraft at Denver
 
-The aircraft, with $T/W=0.1671$, takes off from Denver at 1609 m (Slides v2, p. 159). The ISA density there is $\rho=1.047$ kg m⁻³ (from $\rho/\rho_0=(T/T_0)^{4.256}$ with $T=288.15-0.0065\times1609=277.7$ K; see [[SESA1015 M01 - Atmosphere, Airspeed and Mach Number|M01]]). Then
+The aircraft, with $T/W=0.1671$, takes off from Denver at 1609 m. The ISA density there is $\rho=1.047$ kg m⁻³ (from $\rho/\rho_0=(T/T_0)^{4.256}$ with $T=288.15-0.0065\times1609=277.7$ K; see [[SESA1015 M01 - Atmosphere, Airspeed and Mach Number|M01]]). Then
 
 $$
 V_s=\sqrt{\frac{2\times268\,107}{1.047\times63.10\times2.0}}=63.71\ \text{m s}^{-1},\qquad V_2=76.46\ \text{m s}^{-1},
@@ -253,7 +253,7 @@ $$
 \boxed{s_1=\frac{1}{2gb}\ln\left(\frac{a}{a-bV_2^2}\right)} .
 $$
 
-For small $bV_2^2/a$, $\ln\big(a/(a-bV_2^2)\big)\approx bV_2^2/a$ and the result returns to $V_2^2/(2ga)$, the §3 formula. When $T$ varies with speed, or $C_L$ changes at rotation, the integral is done numerically instead (Slides v2, pp. 164–165). Writing $G(V)=V/(gF)$ so that $dx/dV=G(V)$, the basic Euler method steps through speed:
+For small $bV_2^2/a$, $\ln\big(a/(a-bV_2^2)\big)\approx bV_2^2/a$ and the result returns to $V_2^2/(2ga)$, the §3 formula. When $T$ varies with speed, or $C_L$ changes at rotation, the integral is done numerically instead. Writing $G(V)=V/(gF)$ so that $dx/dV=G(V)$, the basic Euler method steps through speed:
 
 $$
 x_{n+1}=x_n+G(V_n)\,(V_{n+1}-V_n).
@@ -265,7 +265,7 @@ Integrating to any speed above $V_2$ and reading the distance at $V_2$ gives the
 
 ### Mexico City with lift and drag
 
-The same aircraft ($T/W=0.1671$, $C_D=0.12$) takes off at Mexico City, 2240 m, with $C_L=0.8C_{L_{max}}=1.6$ throughout the run (Slides v2, pp. 162–165). Find the take-off distance including lift and drag.
+The same aircraft ($T/W=0.1671$, $C_D=0.12$) takes off at Mexico City, 2240 m, with $C_L=0.8C_{L_{max}}=1.6$ throughout the run. Find the take-off distance including lift and drag.
 
 The ISA density at 2240 m is 0.9824 kg m⁻³, so
 
@@ -334,7 +334,7 @@ so $s_1=2466$ m, against $143.35^2/(2\times7.652)=1343$ m with both engines. Los
 
 ## 6. High-lift devices and ground effect
 
-Lift is $L=\frac12\rho V^2SC_L$, and during take-off and landing the speed is low, so the lift coefficient must be raised to carry the weight (Slides v2, p. 148). Flaps and slats do this by changing the effective camber of the aerofoil. A trailing-edge flap shifts the lift curve upwards, so the lift-curve slope is unchanged but $C_L$ at a given angle of attack is higher, $C_{L_{max}}$ increases significantly, and the stall angle shifts (Slides v2, pp. 148–153). The design aim is a large $C_{L_{max}}$ for a modest drag increase at take-off, and a large $C_{L_{max}}$ with high drag at landing, where drag helps.
+Lift is $L=\frac12\rho V^2SC_L$, and during take-off and landing the speed is low, so the lift coefficient must be raised to carry the weight. Flaps and slats do this by changing the effective camber of the aerofoil. A trailing-edge flap shifts the lift curve upwards, so the lift-curve slope is unchanged but $C_L$ at a given angle of attack is higher, $C_{L_{max}}$ increases significantly, and the stall angle shifts. The design aim is a large $C_{L_{max}}$ for a modest drag increase at take-off, and a large $C_{L_{max}}$ with high drag at landing, where drag helps.
 
 At a given stall speed, the lift equation fixes the ratio of wing loading to $C_{L_{max}}$:
 
@@ -344,11 +344,11 @@ $$
 
 Two aircraft with the same minimum landing speed at the same density therefore need $C_{L_{max}}$ in proportion to their wing loadings: an airliner with 40 % higher $W/S$ needs a 40 % higher $C_{L_{max}}$ (Revision Q40). The same equation gives the landing constraint on wing loading for a required approach speed, $W/S\le\frac12\rho V_A^2C_{L_{max}}$, used in [[SESA1015 M12 - Aircraft Constraint Analysis|constraint analysis]] (Revision Q39).
 
-Close to the ground the wing behaves as if it had a higher aspect ratio: the ground blocks the downwash, so the induced drag falls significantly and the lift rises (Slides v2, p. 168). This is why $C_{L_{max}}$ in the ground-run formula is the value in ground effect, and why an aircraft tends to float in the flare.
+Close to the ground the wing behaves as if it had a higher aspect ratio: the ground blocks the downwash, so the induced drag falls significantly and the lift rises. This is why $C_{L_{max}}$ in the ground-run formula is the value in ground effect, and why an aircraft tends to float in the flare.
 
 ## 7. Landing
 
-Landing, like take-off, has at least two parts (Slides v2, pp. 166–167): the approach over a 35 ft obstacle to touchdown, and the landing ground run. The approach is normally a powered descent rather than an unpowered glide; it is the powered climb of [[SESA1015 M08 - Glide and Climb Performance|M08]] with $dh/dt$ negative. The air distance divides into approach and flare, and the ground roll into free roll, reverse thrust and braking distance.
+Landing, like take-off, has at least two parts: the approach over a 35 ft obstacle to touchdown, and the landing ground run. The approach is normally a powered descent rather than an unpowered glide; it is the powered climb of [[SESA1015 M08 - Glide and Climb Performance|M08]] with $dh/dt$ negative. The air distance divides into approach and flare, and the ground roll into free roll, reverse thrust and braking distance.
 
 On the ground with no thrust and the lift dumped ($T=0$, $L=0$), the runway equation gives the deceleration:
 
@@ -380,7 +380,7 @@ $$
 \boxed{x_{stop}=\frac{1}{2gk}\ln\left(1+\frac{kV_L^2}{\mu_r}\right)} .
 $$
 
-For $kV_L^2\ll\mu_r$ (drag negligible) this returns to $V_L^2/(2g\mu_r)$. The integral can equally be done numerically, stepping $V$ in time and accumulating distance (Slides v2, p. 167).
+For $kV_L^2\ll\mu_r$ (drag negligible) this returns to $V_L^2/(2g\mu_r)$. The integral can equally be done numerically, stepping $V$ in time and accumulating distance.
 
 ![[mof_m09_landing_run.png|900]]
 

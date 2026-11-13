@@ -89,7 +89,7 @@ Even with good compliance, models of the LEO population show it continuing to gr
 
 The Sun releases more energy every 1.5 microseconds than humanity uses in a year, and a collector in space receives more than ten times the energy of the same array on the ground, with no night and no weather. The idea goes back to Asimov's story *Reason* (1941) and Peter Glaser's concept (1968, patented 1974); current work includes ESA's SOLARIS study, Caltech's SSPP demonstrator and Aetherflux's LEO laser concept.
 
-A modular GEO architecture assembles 10 cm tiles of 1–2 W into 2 by 60 m strips, then 60 by 60 m modules, then a system about 3 km square (about 10 km²) delivering 1–3 GW, with a peak power density at the ground receiver of about 1 kW/m² (slides). The photovoltaics have to reach more than 30 % efficiency and 2–10 kW/kg specific power, with ultralight panels that integrate the cells and the microwave transmitters.
+A modular GEO architecture assembles 10 cm tiles of 1–2 W into 2 by 60 m strips, then 60 by 60 m modules, then a system about 3 km square (about 10 km²) delivering 1–3 GW, with a peak power density at the ground receiver of about 1 kW/m². The photovoltaics have to reach more than 30 % efficiency and 2–10 kW/kg specific power, with ultralight panels that integrate the cells and the microwave transmitters.
 
 ## 6. NewSpace and the industrialisation of space
 

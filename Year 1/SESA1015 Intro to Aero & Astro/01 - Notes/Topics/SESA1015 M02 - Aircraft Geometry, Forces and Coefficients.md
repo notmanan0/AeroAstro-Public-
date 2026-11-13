@@ -32,7 +32,7 @@ sources: ["02 - Sources/Mechanics of Flight/Mechanics of Flight - Course Notes.p
 > - **Assumptions:** symmetric aircraft at zero sideslip and bank; coefficients referred to the gross wing area $S_G$ and, for moments, the mean aerodynamic chord; the same $\rho$ and $V$ pair as in [[SESA1015 M01 - Atmosphere, Airspeed and Mach Number|M01]] (local density with true airspeed); angles in radians inside formulae.
 > - **Method:** 1. Fix the reference area and length (gross area, MAC). 2. Compute $q=\tfrac12\rho V^2$. 3. Divide the force by $qS$ (moment by $qS\bar{\bar c}$), or multiply a coefficient by them. 4. For a planform, integrate $c(y)$ for $S$, then $AR=b^2/S$ and $\bar{\bar c}$. 5. For a model test, compare $Re=\rho Vc/\mu$ and $M=V/a$ with full scale.
 > - **Common mistakes:** using the net instead of the gross wing area, or $b$ for the semi-span $s$; resolving forces from the body axes instead of the relative wind.
-> - **Practise:** [[#An elliptic wing (Slides v2 p. 43)]] · [[SESA1015 T03 - Wind-Tunnel Data Reduction Solutions#Question 9|Revision Q9]]
+> - **Practise:** [[#An elliptic wing]] · [[SESA1015 T03 - Wind-Tunnel Data Reduction Solutions#Question 9|Revision Q9]]
 
 An aircraft in flight has air flowing over every part of its surface. At each point the air pushes normal to the skin with a pressure and drags along it with a shear stress, and these small forces add up to one resultant force and one moment. Flight mechanics does not work with the distribution; it needs only the resultant, split into lift, which supports the weight, and drag, which the engine has to overcome, plus the pitching moment that has to be trimmed.
 
@@ -42,7 +42,7 @@ The reference area and lengths come from the geometry of the wing. A wing whose 
 
 ---
 
-## 1. Flight path, relative wind and the aerodynamic forces (Notes §2.3–2.4, pp. 8–9)
+## 1. Flight path, relative wind and the aerodynamic forces
 
 ### Definitions
 
@@ -73,9 +73,9 @@ $$
 L=W,\qquad T=D,
 $$
 
-and in trimmed flight the moments about the CG balance, $M=0$ (Notes §1, p. 2). The forces do not act through one point, which is why the moment balance is a separate condition and leads to static stability ([[SESA1015 M11 - Longitudinal Trim and Static Stability]]). Climbing, gliding and turning flight resolve the same four forces with $\gamma$ or a bank angle in the geometry ([[SESA1015 M08 - Glide and Climb Performance]], [[SESA1015 M10 - Turning Flight and Manoeuvre Performance]]).
+and in trimmed flight the moments about the CG balance, $M=0$. The forces do not act through one point, which is why the moment balance is a separate condition and leads to static stability ([[SESA1015 M11 - Longitudinal Trim and Static Stability]]). Climbing, gliding and turning flight resolve the same four forces with $\gamma$ or a bank angle in the geometry ([[SESA1015 M08 - Glide and Climb Performance]], [[SESA1015 M10 - Turning Flight and Manoeuvre Performance]]).
 
-## 2. From surface pressure and friction to lift and drag (Slides v2 pp. 34–35)
+## 2. From surface pressure and friction to lift and drag
 
 ### Pressure and shear stress on the surface
 
@@ -116,7 +116,7 @@ At $\alpha=0$ these reduce to $L'=N'$ and $D'=A'$, as they must.
 > [!tip] Why the drag is so small
 > At incidence the large normal force tilts back and contributes $N'\sin\alpha$ to the drag. Near the leading edge, though, the low pressure on the rounded nose pulls forward along the chord, so $A'$ is negative (leading-edge suction) and nearly cancels that contribution. With $N'=500$ N/m, $A'=-45$ N/m and $\alpha=6^\circ$: $L'=500\cos6^\circ+45\sin6^\circ=502.0$ N/m and $D'=500\sin6^\circ-45\cos6^\circ=52.3-44.8=7.5$ N/m. On a 0.5 m chord at 40 m/s at sea level ($q=980$ Pa) that is $C_l=1.02$ and $C_d=0.015$.
 
-## 3. Dimensional analysis and the aerodynamic coefficients (Notes §2.4, p. 9; Slides v2 pp. 44–48)
+## 3. Dimensional analysis and the aerodynamic coefficients
 
 ### Lift from dimensional analysis
 
@@ -154,7 +154,7 @@ $$
 \boxed{L=\tfrac12\rho V^2SC_L,\qquad D=\tfrac12\rho V^2SC_D,\qquad M=\tfrac12\rho V^2S\,l\,C_M} ,
 $$
 
-which define the **lift coefficient** $C_L$, the **drag coefficient** $C_D$ and the **pitching-moment coefficient** $C_M$. The moment needs one more length, the reference length $l$, the wing mean chord (Notes §2.4, p. 9). For the whole aircraft $l$ is the mean aerodynamic chord $\bar{\bar c}$ of [[#Mean aerodynamic chord]] and $S$ is the gross wing area (Slides v2, p. 45).
+which define the **lift coefficient** $C_L$, the **drag coefficient** $C_D$ and the **pitching-moment coefficient** $C_M$. The moment needs one more length, the reference length $l$, the wing mean chord. For the whole aircraft $l$ is the mean aerodynamic chord $\bar{\bar c}$ of [[#Mean aerodynamic chord]] and $S$ is the gross wing area.
 
 ### Viscosity and compressibility: Reynolds and Mach numbers
 
@@ -170,7 +170,7 @@ $$
 C_L=f(\alpha,\ Re,\ M,\ \text{shape}) ,
 $$
 
-and likewise for $C_D$ and $C_M$ (Slides v2, p. 48). The **Reynolds number** is the ratio of inertial (pressure) forces to viscous forces. The inertial force on a body scales as the dynamic pressure times an area, $\rho V^2l^2$; the viscous force scales as a shear stress $\mu V/l$ times an area $l^2$, that is $\mu Vl$. Their ratio is
+and likewise for $C_D$ and $C_M$. The **Reynolds number** is the ratio of inertial (pressure) forces to viscous forces. The inertial force on a body scales as the dynamic pressure times an area, $\rho V^2l^2$; the viscous force scales as a shear stress $\mu V/l$ times an area $l^2$, that is $\mu Vl$. Their ratio is
 
 $$
 Re=\frac{\rho V^2l^2}{\mu Vl}=\frac{\rho Vl}{\mu}=\frac{Vl}{\nu},
@@ -188,12 +188,12 @@ with $\nu=\mu/\rho$ the kinematic viscosity ([[Reynolds Number]]).
 | wing or aircraft lift, drag | $C_L=\dfrac{L}{\frac12\rho V^2S}$, $C_D=\dfrac{D}{\frac12\rho V^2S}$ | $q\,S$ | N $=\text{MLT}^{-2}$ |
 | wing or aircraft moment | $C_M=\dfrac{M}{\frac12\rho V^2S\bar{\bar c}}$ | $q\,S\,\bar{\bar c}$ | N m $=\text{ML}^2\text{T}^{-2}$ |
 
-Lower-case subscripts ($C_l$, $C_d$, $C_m$) are section (two-dimensional) coefficients; upper-case subscripts are for the whole wing or aircraft (Slides v2, p. 45). Any coefficient is meaningful only with its reference area and length stated, which is why the gross wing area is fixed as the standard.
+Lower-case subscripts ($C_l$, $C_d$, $C_m$) are section (two-dimensional) coefficients; upper-case subscripts are for the whole wing or aircraft. Any coefficient is meaningful only with its reference area and length stated, which is why the gross wing area is fixed as the standard.
 
 ### Similarity
 
-Two flows are **geometrically similar** when the shapes differ only in scale (Slides v2, p. 44). They are **dynamically similar** when, in addition, every relevant dimensionless group is the same; then the coefficients are the same, whatever the size. Dividing a distance by a natural length removes the dependence on size in the same way: a 5 km journey is 167 body lengths for a 30 m whale, 3125 for a 1.6 m human and $10^6$ for a 5 mm ant.
-The Reynolds numbers of flying and swimming vehicles span four orders of magnitude (Slides v2, p. 58):
+Two flows are **geometrically similar** when the shapes differ only in scale. They are **dynamically similar** when, in addition, every relevant dimensionless group is the same; then the coefficients are the same, whatever the size. Dividing a distance by a natural length removes the dependence on size in the same way: a 5 km journey is 167 body lengths for a 30 m whale, 3125 for a 1.6 m human and $10^6$ for a 5 mm ant.
+The Reynolds numbers of flying and swimming vehicles span four orders of magnitude:
 
 | Vehicle | Medium | Speed | Length | $\nu$ (m²/s) | $Re=Vl/\nu$ |
 |---|---|---|---|---|---|
@@ -235,11 +235,11 @@ $$
 
 and with $a=\sqrt{1.4\times287.05\times275.15}=332.5$ m/s, $M=60/332.5=0.18$. The flow is turbulent over most of the wing and effectively incompressible.
 
-## 4. Wing geometry (Notes §2.5–2.6, pp. 9–10; Slides v2 pp. 38–43)
+## 4. Wing geometry
 
 ### Reference lengths, areas and shape parameters
 
-The geometric quantities fall into three groups (Notes §2.5, pp. 9–10; Slides v2, p. 39).
+The geometric quantities fall into three groups.
 
 | Group | Quantity | Symbol |
 |---|---|---|
@@ -254,11 +254,11 @@ The geometric quantities fall into three groups (Notes §2.5, pp. 9–10; Slides
 | | sweep | $\Lambda$ (leading edge $\Lambda_{LE}$, quarter chord $\Lambda_{c/4}$) |
 | | aspect ratio | $A$ or $AR$ |
 
-Two further shape features complete the description of a real wing (Slides v2, p. 40). Taper may be in planform, in thickness, or both. **Twist** rotates the sections along the span: **washout** sets the tip nose-down relative to the root, so that the root stalls first, and **washin** the reverse.
+Two further shape features complete the description of a real wing. Taper may be in planform, in thickness, or both. **Twist** rotates the sections along the span: **washout** sets the tip nose-down relative to the root, so that the root stalls first, and **washin** the reverse.
 
 ### Wing areas
 
-The **net wing area** $S_N$ is the projected planform area of the exposed wings only. The **gross wing area** $S_G$ is the projected area with the leading and trailing edges carried in to the aircraft centreline, so it includes the part of the wing inside the fuselage. The **wetted area** $S_W$ is the actual surface area of both the upper and lower surfaces; because of the thickness, $S_W>2S_N$. The gross area is normally used as the reference area $S$ in the coefficients (Notes §2.6, p. 10); the wetted area is the one on which skin friction acts, so it appears in the skin-friction drag coefficient ([[SESA1015 M03 - Aerodynamic Characteristics and the Drag Polar]]).
+The **net wing area** $S_N$ is the projected planform area of the exposed wings only. The **gross wing area** $S_G$ is the projected area with the leading and trailing edges carried in to the aircraft centreline, so it includes the part of the wing inside the fuselage. The **wetted area** $S_W$ is the actual surface area of both the upper and lower surfaces; because of the thickness, $S_W>2S_N$. The gross area is normally used as the reference area $S$ in the coefficients; the wetted area is the one on which skin friction acts, so it appears in the skin-friction drag coefficient ([[SESA1015 M03 - Aerodynamic Characteristics and the Drag Polar]]).
 
 ![[mof_m02_planform.png|1000]]
 
@@ -282,7 +282,7 @@ $$
 \boxed{AR=\frac{b^2}{S}=\frac{b^2}{\int_{-b/2}^{b/2}c\,dy}=\frac{4s^2}{2\int_0^s c\,dy}} ,
 $$
 
-and since $S=b\bar c$, also $AR=b/\bar c$, the span over the mean chord (Notes §2.5, p. 10). A rectangular wing has $\lambda=1$, $S=bc$, $AR=b/c$ and all mean chords equal to $c$. Aspect ratio controls the induced drag, $C_{D_i}=C_L^2/(\pi e\,AR)$, which is why gliders have $AR$ of 20–40 ([[SESA1015 M03 - Aerodynamic Characteristics and the Drag Polar]]). Many exam questions give the span and aspect ratio and expect $S=b^2/AR$.
+and since $S=b\bar c$, also $AR=b/\bar c$, the span over the mean chord. A rectangular wing has $\lambda=1$, $S=bc$, $AR=b/c$ and all mean chords equal to $c$. Aspect ratio controls the induced drag, $C_{D_i}=C_L^2/(\pi e\,AR)$, which is why gliders have $AR$ of 20–40 ([[SESA1015 M03 - Aerodynamic Characteristics and the Drag Polar]]). Many exam questions give the span and aspect ratio and expect $S=b^2/AR$.
 
 ### Mean aerodynamic chord
 
@@ -292,7 +292,7 @@ $$
 \boxed{\bar{\bar c}=\frac{\int_{-s}^{s}c^2\,dy}{\int_{-s}^{s}c\,dy}} .
 $$
 
-The reason for the extra factor of $c$ is the pitching moment. A strip of span $dy$ carries a section moment $\tfrac12\rho V^2c^2C_m\,dy$, proportional to $c^2$, so if every section has the same $C_m$, the whole-wing moment is $\tfrac12\rho V^2C_m\int c^2\,dy$. Writing this as $\tfrac12\rho V^2S\bar{\bar c}\,C_M$ with $C_M=C_m$ requires $\bar{\bar c}=\int c^2dy/S$, which is the definition above. The MAC is therefore the reference length for moments and for locating the CG and the aerodynamic centre, used for aerodynamics, while the SMC describes the geometry (Slides v2, p. 39). It is the chord of the equivalent rectangular wing that has the same area and the same pitching moment. The spanwise station of the MAC is the area centroid of the half-wing,
+The reason for the extra factor of $c$ is the pitching moment. A strip of span $dy$ carries a section moment $\tfrac12\rho V^2c^2C_m\,dy$, proportional to $c^2$, so if every section has the same $C_m$, the whole-wing moment is $\tfrac12\rho V^2C_m\int c^2\,dy$. Writing this as $\tfrac12\rho V^2S\bar{\bar c}\,C_M$ with $C_M=C_m$ requires $\bar{\bar c}=\int c^2dy/S$, which is the definition above. The MAC is therefore the reference length for moments and for locating the CG and the aerodynamic centre, used for aerodynamics, while the SMC describes the geometry. It is the chord of the equivalent rectangular wing that has the same area and the same pitching moment. The spanwise station of the MAC is the area centroid of the half-wing,
 
 $$
 \bar y=\frac{\int_0^s c\,y\,dy}{\int_0^s c\,dy} .
@@ -383,7 +383,7 @@ $$
 
 The quarter-chord sweep is $\tan\Lambda_{c/4}=\tan10^\circ-\frac{0.25\times2.0\times0.5}{5.5}=0.1763-0.0455=0.1309$, so $\Lambda_{c/4}=7.46^\circ$, and the trailing edge is almost unswept ($-0.3^\circ$). This is the wing in the figure above.
 
-### An elliptic wing (Slides v2 p. 43)
+### An elliptic wing
 
 The Supermarine Spitfire wing has an elliptical planform. The example takes a root chord $c_0=0.25$ m and a full span $b=1.1$ m, so $s=0.55$ m and
 
@@ -437,11 +437,11 @@ $$
 L=\int_{-b/2}^{b/2}L'(y)\,dy
 $$
 
-(Slides v2, p. 41). Different combinations of planform, section and twist can give the same total lift with different distributions (why some are better: [[SESA2022 T5 - Finite Wing Theory]]). The total lift divided by the area, $W/S$ in level flight, is the [[Wing Loading]], the main design variable of the performance chapters.
+. Different combinations of planform, section and twist can give the same total lift with different distributions (why some are better: [[SESA2022 T5 - Finite Wing Theory]]). The total lift divided by the area, $W/S$ in level flight, is the [[Wing Loading]], the main design variable of the performance chapters.
 
-## 5. The aerofoil (Notes §2.7, p. 10; Slides v2 pp. 36–37)
+## 5. The aerofoil
 
-An **aerofoil** is the cross-section of a wing (a section parallel to the plane of symmetry). Its geometry is described by a few lines (Slides v2, p. 36):
+An **aerofoil** is the cross-section of a wing (a section parallel to the plane of symmetry). Its geometry is described by a few lines:
 
 - the **chord line**, the straight line joining the leading edge (LE) to the trailing edge (TE), whose length is the **chord** $c$;
 - the **mean camber line**, the locus of points halfway between the upper and lower surfaces; the **camber** is its maximum distance from the chord line;
@@ -465,13 +465,13 @@ $$
 
 applied perpendicular to the camber line to give the upper and lower surfaces. The thickness is greatest at $x\approx0.30$, where $2y_t=t$, for every four-digit section, and the trailing edge is left very slightly open ($2y_t=0.021t$ at $x=1$).
 
-**NACA 4412 with a 1 m chord** (Slides v2, p. 37): M = 4, P = 4, XX = 12, so the maximum camber is $0.04c=0.04$ m, located $0.4c=0.4$ m behind the leading edge, and the maximum thickness is $0.12c=0.12$ m.
+**NACA 4412 with a 1 m chord**: M = 4, P = 4, XX = 12, so the maximum camber is $0.04c=0.04$ m, located $0.4c=0.4$ m behind the leading edge, and the maximum thickness is $0.12c=0.12$ m.
 
 ![[mof_m02_naca4412.png|900]]
 
-Aerofoil shape has followed speed: thin, highly cambered sections in the early 1900s, rounded subsonic sections, flatter-topped transonic (supercritical) sections and thin sharp-edged supersonic sections (Slides v2, p. 36). For how camber and thickness set the lift, see [[SESA2022 T4 - Thin Aerofoil Theory]].
+Aerofoil shape has followed speed: thin, highly cambered sections in the early 1900s, rounded subsonic sections, flatter-topped transonic (supercritical) sections and thin sharp-edged supersonic sections. For how camber and thickness set the lift, see [[SESA2022 T4 - Thin Aerofoil Theory]].
 
-## 6. Aircraft components (Notes §2.8, p. 11; Slides v2 pp. 11–14)
+## 6. Aircraft components
 
 | Component | Function |
 |---|---|
@@ -487,9 +487,9 @@ Aerofoil shape has followed speed: thin, highly cambered sections in the early 1
 | trim tab | small surface on a control surface that holds it at the trimmed position without stick force |
 | undercarriage (landing gear) | supports the aircraft on the ground; a tricycle layout has nose wheels and main wheels |
 
-The components are labelled on a twin-turboprop regional passenger aircraft with a tricycle undercarriage (Notes §2.8, p. 11). Inside the wing, spars and ribs carry the bending and torsion loads (Slides v2, p. 13).
+The components are labelled on a twin-turboprop regional passenger aircraft with a tricycle undercarriage. Inside the wing, spars and ribs carry the bending and torsion loads.
 
-A propeller is mounted either as a **tractor**, ahead of its engine and pulling the aircraft, or as a **pusher**, behind it (Slides v2, p. 64). A tractor propeller works in undisturbed air, and its slipstream blows over the wing roots and the tail, which helps control at low speed. A pusher leaves the air ahead of the wing and fuselage clean, but its propeller works in their wake and needs ground clearance when the aircraft rotates for take-off. Propeller layouts include a single nose-mounted tractor, wing-mounted twins and fours, a three-engine layout with a nose tractor, a twin-boom push-pull layout with a propeller at each end of the central nacelle, and wing-mounted pushers. Jet engines are hung in pods under the wing (twin- and four-engine transports), mounted on the rear fuselage (rear-mounted twin jets), combined with a third engine in the tail (tri-jets) or buried in the fuselage (single- and twin-engine fighters). Engines under the wing relieve its bending in flight, because their weight acts against the lift, and keep the engines accessible; rear-mounted engines leave the wing clean but move the centre of gravity aft. For how each kind of engine produces its thrust, and why a propeller's thrust falls with speed while a jet's does not, see [[SESA1015 M05 - Minimum Drag, Power and Performance Curves#Thrust as the rate of change of momentum]].
+A propeller is mounted either as a **tractor**, ahead of its engine and pulling the aircraft, or as a **pusher**, behind it. A tractor propeller works in undisturbed air, and its slipstream blows over the wing roots and the tail, which helps control at low speed. A pusher leaves the air ahead of the wing and fuselage clean, but its propeller works in their wake and needs ground clearance when the aircraft rotates for take-off. Propeller layouts include a single nose-mounted tractor, wing-mounted twins and fours, a three-engine layout with a nose tractor, a twin-boom push-pull layout with a propeller at each end of the central nacelle, and wing-mounted pushers. Jet engines are hung in pods under the wing (twin- and four-engine transports), mounted on the rear fuselage (rear-mounted twin jets), combined with a third engine in the tail (tri-jets) or buried in the fuselage (single- and twin-engine fighters). Engines under the wing relieve its bending in flight, because their weight acts against the lift, and keep the engines accessible; rear-mounted engines leave the wing clean but move the centre of gravity aft. For how each kind of engine produces its thrust, and why a propeller's thrust falls with speed while a jet's does not, see [[SESA1015 M05 - Minimum Drag, Power and Performance Curves#Thrust as the rate of change of momentum]].
 
 ## Terminology and alternative names
 
@@ -523,7 +523,7 @@ There is no lecturer-set problem list for this topic; the tasks are the slide ex
 
 ### Core
 
-- [ ] Gross area and aspect ratio of the elliptic (Spitfire) wing, and of the rectangular wing with the same area and root chord (Slides v2, p. 43). → [[#An elliptic wing (Slides v2 p. 43)]]
+- [ ] Gross area and aspect ratio of the elliptic (Spitfire) wing, and of the rectangular wing with the same area and root chord (Slides v2, p. 43). → [[#An elliptic wing]]
 - [ ] NACA 4412 with a 1 m chord: maximum camber, its position and the maximum thickness (Slides v2, p. 37). → [[#NACA four-digit sections]]
 - [ ] Revision Q9: lift-curve slope from wind-tunnel force readings, which needs $C_L=L/(qS)$. → [[SESA1015 T03 - Wind-Tunnel Data Reduction Solutions#Question 9]]
 - [ ] Revision Q42: lift-to-drag ratio, with the wing area from $S=b^2/AR$. → [[SESA1015 T01 - Stall and Level-Flight Solutions#Question 42]]

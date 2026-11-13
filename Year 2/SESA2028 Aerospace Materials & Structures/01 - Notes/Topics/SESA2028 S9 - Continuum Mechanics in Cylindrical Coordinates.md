@@ -94,7 +94,7 @@ $$
 \frac{\partial^2\varepsilon_{xx}}{\partial y^2}+\frac{\partial^2\varepsilon_{yy}}{\partial x^2}=\frac{\partial^2\gamma_{xy}}{\partial x\,\partial y}.
 $$
 
-Substituting Hooke's law and using equilibrium to eliminate the shear stress gives the 2D stress compatibility equation, which with no body forces is $\nabla^2(\sigma_{xx}+\sigma_{yy})=0$. The polar version of the same idea produces the Lamé solution in §5.
+Substituting Hooke's law and using equilibrium to eliminate the shear stress gives the 2D stress compatibility equation, which with no body forces is $\nabla^2(\sigma_{xx}+\sigma_{yy})=0$.
 
 ## 3. Equilibrium in polar coordinates
 
@@ -140,7 +140,13 @@ $$
 
 ### Equilibrium with axial symmetry
 
-Rings, cylinders and circular discs are axially symmetric about $z$. Nothing then varies with $\theta$, so $\partial/\partial\theta=0$, and there is no shear stress, $\sigma_{r\theta}=0$. The tangential equation is satisfied identically, and the radial one becomes an ordinary differential equation in $r$ ([[Axisymmetric Equilibrium]]):
+Rings, cylinders and circular discs under axisymmetric loading, with no torque and no tangential traction on their surfaces, have nothing that varies with $\theta$, so $\partial/\partial\theta=0$. With no tangential body force the tangential equation reduces to
+
+$$
+\frac{d\sigma_{r\theta}}{dr}+\frac{2\sigma_{r\theta}}{r}=0\quad\Longleftrightarrow\quad\frac{d}{dr}\left(r^2\sigma_{r\theta}\right)=0,
+$$
+
+so $\sigma_{r\theta}=C/r^2$, the shear stress of a twisted thick tube. It is nonzero only when a torque is applied, and without one $C=0$ and $\sigma_{r\theta}=0$. The tangential equation is then satisfied identically, and the radial one becomes an ordinary differential equation in $r$ ([[Axisymmetric Equilibrium]]):
 
 $$
 \boxed{\frac{d\sigma_{rr}}{dr}+\frac{\sigma_{rr}-\sigma_{\theta\theta}}{r}+f_r=0}
@@ -266,7 +272,7 @@ $$
 \sigma_{rr}=-p
 $$
 
-at that surface, and a free surface means $\sigma_{rr}=0$. [[SESA2028 S10 - Thick Cylinders and Shrink Fits|S10]] applies this to pressure vessels and shrink fits.
+at that surface, and a free surface means $\sigma_{rr}=0$.
 
 ## Worked example: a solid shaft and a hollow cylinder
 

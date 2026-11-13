@@ -38,3 +38,4 @@ At $\theta=0$ the two roots are $\beta=90^\circ$, the normal shock, and $\beta=\
 ## Related
 
 - [[Oblique-Shock Jump Relations]] · [[Weak and Strong Oblique Shocks]] · [[Mach Waves and Mach Angle]] · [[Oblique Shock Waves]] (SESA2023)
+- Full derivation, closed forms for $\theta_{max}$ and the sonic line, and the weak-shock limit: [[SESA3029 Deep Dive - Theta-Beta-Mach Relation, Full Derivation]]

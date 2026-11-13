@@ -29,21 +29,21 @@ sources: ["02 - Sources/FEM Lectures/Lecture_5_Mimimum_Potnetial_Energy.pdf", "0
 > - **Common mistakes:** writing $V=+Fu$ (the load potential falls as the load moves); taking the minimum stress in the plate as the bulk stress for $K_t$.
 > - **Practise:** [[#4. The two-node bar by minimum potential energy]] · [[#Worked example: the two-bar structure by energy]]
 
-Minimum potential energy underlies the Rayleigh–Ritz method and shape functions of [[SESA2029 B4 - Rayleigh-Ritz Method and Shape Functions|B4]], the general route that FE software implements (2026-02-13, ll. 1–20).
+Minimum potential energy underlies the Rayleigh–Ritz method and shape functions of [[SESA2029 B4 - Rayleigh-Ritz Method and Shape Functions|B4]], the general route that FE software implements.
 
 A loaded elastic body settles into the shape that minimises its total potential energy, as a ball settles at the bottom of a bowl. The body can be imagined in any shape that respects its supports; for each shape there is a total potential energy, made of the energy stored in the deformed material and the potential the loads have lost by moving. Stretching further stores more strain energy but lets the load fall further. The body comes to rest where the two trade off exactly, at the bottom of the energy bowl, so finding equilibrium becomes finding a minimum, which only needs first derivatives.
 
 ## 1. Strong and weak forms
 
-Real systems are governed by ordinary or partial differential equations with boundary conditions, and for dynamics initial conditions (ll. 11–40). The aeroelastic equation of motion, with mass, damping and stiffness matrices on the left and an aerodynamic force depending on displacement and velocity on the right, is one example; the Navier–Stokes equations of Part A are another. For a structure, equilibrium is first written in derivatives of stress, then, through the strain–displacement and stress–strain laws, as second-order differential equations in the displacement. This is the strong form: the second derivative of the displacement must exist and be continuous at every point in the body. Corners, changes of section and boundary conditions often make that impossible, and solutions exist for only the simplest configurations ([[Strong and Weak Forms]]).
+Real systems are governed by ordinary or partial differential equations with boundary conditions, and for dynamics initial conditions. The aeroelastic equation of motion, with mass, damping and stiffness matrices on the left and an aerodynamic force depending on displacement and velocity on the right, is one example; the Navier–Stokes equations of Part A are another. For a structure, equilibrium is first written in derivatives of stress, then, through the strain–displacement and stress–strain laws, as second-order differential equations in the displacement. This is the strong form: the second derivative of the displacement must exist and be continuous at every point in the body. Corners, changes of section and boundary conditions often make that impossible, and solutions exist for only the simplest configurations ([[Strong and Weak Forms]]).
 
-The way round is to restate the equations as integrals that need only be satisfied on average, the weak form, which also imposes some boundary conditions weakly (ll. 41–90). A weighted-residual method such as Galerkin's substitutes an approximate trial displacement into the differential equation, multiplies the residual (the amount by which the equation is not satisfied) by weighting functions and integrates to zero, so the error is minimised in a weighted-average sense. The finite element approximation then describes the trial displacement through values at a finite number of nodes and interpolating shape functions, turning infinitely many unknowns into a finite set of linear (or nonlinear) algebraic equations. The weak form loses nothing in principle (§3); the accuracy lost is that of the finite-element approximation, while speed and generality rise enormously.
+The way round is to restate the equations as integrals that need only be satisfied on average, the weak form, which also imposes some boundary conditions weakly. A weighted-residual method such as Galerkin's substitutes an approximate trial displacement into the differential equation, multiplies the residual (the amount by which the equation is not satisfied) by weighting functions and integrates to zero, so the error is minimised in a weighted-average sense. The finite element approximation then describes the trial displacement through values at a finite number of nodes and interpolating shape functions, turning infinitely many unknowns into a finite set of linear (or nonlinear) algebraic equations. The weak form loses nothing in principle (§3); the accuracy lost is that of the finite-element approximation, while speed and generality rise enormously.
 
-Weighted-residual and minimum-potential-energy methods both belong to the variational methods, built on the calculus of variations, which studies small changes $\delta$ in functionals (functions of functions) to find their stationary values (ll. 66–75).
+Weighted-residual and minimum-potential-energy methods both belong to the variational methods, built on the calculus of variations, which studies small changes $\delta$ in functionals (functions of functions) to find their stationary values.
 
 ## 2. Strain energy and the potential of the loads
 
-A bar of stiffness $k=EA/L$ is extended by $u$ under a force that grows with the extension, $F=ku$ (ll. 126–150). The work done in a further small extension $du$ is
+A bar of stiffness $k=EA/L$ is extended by $u$ under a force that grows with the extension, $F=ku$. The work done in a further small extension $du$ is
 
 $$
 dW=F\,du=ku\,du.
@@ -69,7 +69,7 @@ $$
 
 the area under the stress–strain line. For the uniform bar the stress and strain are constant; in general they vary, and $\bar U$ must be integrated over the volume, which lab 1's stress and strain results would allow.
 
-Perturb the equilibrium position by a small virtual displacement $\delta u$ (ll. 151–175). The load is effectively constant during so small a movement and does virtual work
+Perturb the equilibrium position by a small virtual displacement $\delta u$. The load is effectively constant during so small a movement and does virtual work
 
 $$
 \delta W=F\,\delta u.
@@ -85,15 +85,15 @@ The sum $\Pi=U+V$, a functional of the displacement field, is the total potentia
 
 ## 3. The principle
 
-Of all the deformations an elastic body can take that satisfy its displacement boundary conditions, the one in equilibrium makes the total potential energy stationary, and for stable equilibrium a minimum ([[Principle of Minimum Total Potential Energy]]; ll. 176–190):
+Of all the deformations an elastic body can take that satisfy its displacement boundary conditions, the one in equilibrium makes the total potential energy stationary, and for stable equilibrium a minimum ([[Principle of Minimum Total Potential Energy]]):
 
 $$
 \delta\Pi=\delta U+\delta V=0.
 $$
 
-The exact strong-form solution also minimises $\Pi$, so nothing is lost in principle (ll. 111–125). The benefits are that it is far less demanding than the strong form, only first derivatives need be finite, the force boundary conditions are satisfied automatically because the loads enter through $V$, and the trial displacement need only satisfy the displacement boundary conditions, which the shape functions of an element are built to do.
+The exact strong-form solution also minimises $\Pi$, so nothing is lost in principle. The benefits are that it is far less demanding than the strong form, only first derivatives need be finite, the force boundary conditions are satisfied automatically because the loads enter through $V$, and the trial displacement need only satisfy the displacement boundary conditions, which the shape functions of an element are built to do.
 
-For the single-DOF bar (ll. 186–215),
+For the single-DOF bar,
 
 $$
 \Pi(u)=\tfrac12ku^2-Fu .
@@ -123,7 +123,7 @@ $$
 i=1,\dots,n,
 $$
 
-gives $n$ linear algebraic equations, which collect into $\{F\}=[K]\{d\}$ (ll. 216–225). This is an alternative, and much more general, way of obtaining the element equations.
+gives $n$ linear algebraic equations, which collect into $\{F\}=[K]\{d\}$. This is an alternative, and much more general, way of obtaining the element equations.
 
 ### Two degrees of freedom: the stepped bar
 
@@ -168,7 +168,7 @@ At equilibrium the loads have lost twice the energy the structure has stored; th
 
 ## 4. The two-node bar by minimum potential energy
 
-A bar of length $L$ and axial stiffness $k=AE/L$ has nodes $i$ and $j$ with displacements $u_{xi}$, $u_{xj}$ and nodal forces $F_{xi}$, $F_{xj}$. Minimum potential energy gives the matrix displacement method's equation (ll. 226–270; an example-sheet 2 and exam skill). The extension is
+A bar of length $L$ and axial stiffness $k=AE/L$ has nodes $i$ and $j$ with displacements $u_{xi}$, $u_{xj}$ and nodal forces $F_{xi}$, $F_{xj}$. Minimum potential energy gives the matrix displacement method's equation (an example-sheet 2 and exam skill). The extension is
 
 $$
 \Delta L=u_{xj}-u_{xi}.
@@ -218,15 +218,15 @@ exactly the result of [[SESA2029 B1 - Introduction to FEA and the Matrix Displac
 
 ## 5. Stress concentration and factor of safety
 
-A plate with a hole, like a fuselage panel or wing rib, shows how close a hole can be placed to an edge before yield, what the stress concentration factor is, how the number of elements affects it (a convergence study), and how hole size and position affect the maximum stress and the factor of safety (lab 2; ll. 271–365; [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)|C3]]).
+A plate with a hole, like a fuselage panel or wing rib, shows how close a hole can be placed to an edge before yield, what the stress concentration factor is, how the number of elements affects it (a convergence study), and how hole size and position affect the maximum stress and the factor of safety (lab 2; [[SESA2029 C3 - APDL Workflow - Plate with a Hole (PLANE182 and PLANE183)|C3]]).
 
-A local discontinuity, a hole, a step or a sharp corner, causes a highly localised rise in stress (ll. 291–310). How much depends on the global configuration, the location of the discontinuity and its geometry and size, and the more abrupt the change, the larger the rise. At the step between two diameters of a shaft, neither $F/A_1$ nor $F/A_2$ gives the stress at the junction; a fillet radius reduces the concentration, a sharp corner increases it ([[Stress Concentration Factor and Factor of Safety]]). The stress concentration factor is
+A local discontinuity, a hole, a step or a sharp corner, causes a highly localised rise in stress. How much depends on the global configuration, the location of the discontinuity and its geometry and size, and the more abrupt the change, the larger the rise. At the step between two diameters of a shaft, neither $F/A_1$ nor $F/A_2$ gives the stress at the junction; a fillet radius reduces the concentration, a sharp corner increases it ([[Stress Concentration Factor and Factor of Safety]]). The stress concentration factor is
 
 $$
 K_t=\frac{\sigma_{max}}{\sigma_{bulk}},
 $$
 
-the maximum local stress (usually von Mises from the FE results) over the bulk stress far from the concentration (ll. 311–320). It can be measured, expensively, or computed by FE with a mesh refined where the stress is high, since without a converged mesh the peak is not accurate.
+the maximum local stress (usually von Mises from the FE results) over the bulk stress far from the concentration. It can be measured, expensively, or computed by FE with a mesh refined where the stress is high, since without a converged mesh the peak is not accurate.
 
 For an elliptical hole at the centre of a large plate, with semi-axis $a$ across the load and $b$ along it,
 
@@ -234,7 +234,7 @@ $$
 K_t=1+\frac{2a}{b},
 $$
 
-which gives $K_t=3$ for a circle (ll. 321–330). The formula assumes a hole far from any edge; for a hole near a boundary, or of arbitrary size and position, FE gives the answer. In the FE example with $a=2b$, the far-field stress is about 100 MPa and the peak at the end of the hole 503.7 MPa, so $K_t=5.037$ against the analytical 5, a very good validation. The full stress field round a circular hole is the Kirsch solution:
+which gives $K_t=3$ for a circle. The formula assumes a hole far from any edge; for a hole near a boundary, or of arbitrary size and position, FE gives the answer. In the FE example with $a=2b$, the far-field stress is about 100 MPa and the peak at the end of the hole 503.7 MPa, so $K_t=5.037$ against the analytical 5, a very good validation. The full stress field round a circular hole is the Kirsch solution:
 
 ![[dam_kirsch_hole_stress.png|740]]
 
@@ -244,7 +244,7 @@ $$
 FoS=\frac{\sigma_Y}{\sigma_{max}},
 $$
 
-and design standards usually require 1.5 or 2 (ll. 346–360). If it is too low, reduce the hole size, increase the plate thickness or reduce the load. In the lab-2 example the maximum von Mises stress is about 436 MPa against a yield stress of 460 MPa (Lecture 5 slide 27), so
+and design standards usually require 1.5 or 2. If it is too low, reduce the hole size, increase the plate thickness or reduce the load. In the lab-2 example the maximum von Mises stress is about 436 MPa against a yield stress of 460 MPa, so
 
 $$
 FoS=\frac{460}{436}=1.055,
@@ -252,7 +252,7 @@ $$
 
 too low for either standard. Because the analysis is linear and the in-plane stresses in a plate of thickness $t$ scale as $1/t$ for a fixed load, reaching $FoS=1.5$ needs the peak stress down to $460/1.5=307$ MPa: a thickness increase, or a load reduction, by a factor $436/307=1.42$.
 
-> [!warning] Choosing the bulk stress (ll. 351–360)
+> [!warning] Choosing the bulk stress
 > Take the bulk stress on the loaded boundary, well away from the hole, where force equilibrium fixes it at the applied traction. It is not the minimum stress anywhere in the plate: the example has a low-stress region beside the hole at about 37 MPa, and using that would inflate $K_t$ by a factor of about three.
 
 ## Worked example: the two-bar structure by energy

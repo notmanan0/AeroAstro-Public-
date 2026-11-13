@@ -21,7 +21,7 @@ $$
 
 A planar circuit has as many independent loops as it has windows, so one KVL equation per window gives a complete set and any further loop equation would only repeat information already in them. A resistor shared by meshes $j$ and $k$ carries $I_j - I_k$ in the direction of loop $j$, which is where the negative off-diagonal terms come from. The right-hand side of row $k$ is the net source rise round mesh $k$, taken in the loop direction. For a network of passive resistors the matrix is **symmetric**, and the method carries over unchanged to AC circuits with complex impedances in place of resistances.
 
-For the three-mesh circuit of Lecture 6,
+For a three-mesh example circuit,
 
 $$
 \begin{pmatrix}6&-4&-2\\-4&9&-2\\-2&-2&8\end{pmatrix}\mathbf I = \begin{pmatrix}10\\0\\0\end{pmatrix}

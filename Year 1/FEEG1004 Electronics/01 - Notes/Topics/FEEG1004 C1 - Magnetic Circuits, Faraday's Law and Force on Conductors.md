@@ -228,7 +228,7 @@ $$\omega = \frac{2\pi\,\text{rpm}}{60}\ \text{rad}\,\text{s}^{-1} \iff \text{rpm
 
 ### Soft-steel toroid
 
-A toroidal soft-steel core (`S2-W18-21 Electric Machines 02` slide 3) has mean circumference $l = 0.4\ \text{m}$, uniform cross-sectional area $A = 500\ \text{mm}^2$ and reluctance $\mathcal{R}_c = 1.68 \times 10^6\ \text{A}\,\text{Wb}^{-1}$. A coil of $N = 100$ turns carries a direct current $I = 4\ \text{A}$, entering over the outer top edge of the ring on the left side and wrapping behind the inner edge. The task is to find the direction of the flux, the MMF $\mathcal{F}$, the flux $\Phi$, the mean flux density $B$, the field intensity $H$, the relative permeability $\mu_r$ at this operating point, and the coil inductance $L$.
+A toroidal soft-steel core has mean circumference $l = 0.4\ \text{m}$, uniform cross-sectional area $A = 500\ \text{mm}^2$ and reluctance $\mathcal{R}_c = 1.68 \times 10^6\ \text{A}\,\text{Wb}^{-1}$. A coil of $N = 100$ turns carries a direct current $I = 4\ \text{A}$, entering over the outer top edge of the ring on the left side and wrapping behind the inner edge. The task is to find the direction of the flux, the MMF $\mathcal{F}$, the flux $\Phi$, the mean flux density $B$, the field intensity $H$, the relative permeability $\mu_r$ at this operating point, and the coil inductance $L$.
 
 For the direction, apply the right-hand grip rule to the coil on the left limb. Curling the fingers over the front of the core and behind the inner wall in the direction of the $4\ \text{A}$ current points the thumb upwards along the left side of the ring, so the flux circulates **clockwise** round the toroid.
 

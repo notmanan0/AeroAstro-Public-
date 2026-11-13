@@ -29,9 +29,9 @@ sources: ["02 - Sources/Lectures/Chapter 8.pdf", "02 - Sources/Lectures/SESA1016
 > - **Common mistakes:** the sign of $\Delta z$ (pressure always rises in the direction of $\vec g$); using one density across an interface between two fluids.
 > - **Practise:** [[#Worked example - oil and water in a tank]] · [[SESA1016 Problem Sheet 06 - Fluid Properties and Hydrostatics Solutions]] Q6.3, Q6.8
 
-A fluid at rest can only push on a surface. It cannot pull, and with nothing moving there is no shear stress, so the only stress left is pressure, acting perpendicular to every surface it touches. A diver therefore feels the water pressing from every side, not just from above, and a submarine is squeezed all round, not crushed from the top by the weight of the water overhead (4 Mar, ll. 84–94).
+A fluid at rest can only push on a surface. It cannot pull, and with nothing moving there is no shear stress, so the only stress left is pressure, acting perpendicular to every surface it touches. A diver therefore feels the water pressing from every side, not just from above, and a submarine is squeezed all round, not crushed from the top by the weight of the water overhead.
 
-Gravity adds structure. Each layer of fluid has to hold up the weight of everything above it, so pressure grows downwards at a rate given by the force balance on a thin slab (4 Mar, ll. 29–36). In a liquid the density is constant, so pressure rises linearly with depth, about one atmosphere for every 10 m of water. In the atmosphere the density itself falls as the pressure falls, so the decrease with height is exponential in an isothermal layer and a power law where the temperature falls steadily.
+Gravity adds structure. Each layer of fluid has to hold up the weight of everything above it, so pressure grows downwards at a rate given by the force balance on a thin slab. In a liquid the density is constant, so pressure rises linearly with depth, about one atmosphere for every 10 m of water. In the atmosphere the density itself falls as the pressure falls, so the decrease with height is exponential in an isothermal layer and a power law where the temperature falls steadily.
 
 The same balance answers practical questions: why a blimp floats, how Torricelli weighed the atmosphere with a tube of mercury, how a U-tube of coloured water measures the pressure on an aerofoil in a wind tunnel, and how thin the air is at the top of Everest or at airliner cruise altitude.
 
@@ -47,7 +47,7 @@ $$
 F=pA
 $$
 
-perpendicular to the surface and always compressive, pushing towards it. Pressure and shear stress are the only two ways a fluid can act on a surface, so every aerodynamic force, lift and drag included, is built from them (4 Mar, ll. 48–62).
+perpendicular to the surface and always compressive, pushing towards it. Pressure and shear stress are the only two ways a fluid can act on a surface, so every aerodynamic force, lift and drag included, is built from them.
 
 ### Absolute and gauge pressure
 
@@ -101,7 +101,7 @@ $$
 \boxed{F_2=F_1\frac{A_2}{A_1}}
 $$
 
-If $A_2$ is 100 times $A_1$, the force is multiplied by 100: a hydraulic lever. Aircraft use this to move control surfaces, deploy high-lift devices and raise the landing gear with a small pump (4 Mar, ll. 95–171).
+If $A_2$ is 100 times $A_1$, the force is multiplied by 100: a hydraulic lever. Aircraft use this to move control surfaces, deploy high-lift devices and raise the landing gear with a small pump.
 
 Energy is still conserved. Push the first piston down by $d_1$. The oil is incompressible, so the volume $A_1d_1$ leaving the first cylinder enters the second:
 
@@ -125,7 +125,7 @@ the work put in at the first. The large force moves a proportionally small dista
 
 ### The force balance on a slab
 
-Now include gravity. Take $z$ upwards, opposite to $\vec g$, and consider a thin horizontal slab of fluid with top and bottom area $A$ and height $\Delta z$ at height $z$. The density may vary with height, so call it $\rho(z)$. Three vertical forces act (4 Mar, ll. 185–228):
+Now include gravity. Take $z$ upwards, opposite to $\vec g$, and consider a thin horizontal slab of fluid with top and bottom area $A$ and height $\Delta z$ at height $z$. The density may vary with height, so call it $\rho(z)$. Three vertical forces act:
 
 - its weight, $\rho(z)A\,\Delta z\,g$, downwards;
 - the pressure force on the bottom face, $p(z)A$, upwards (pressure pushes towards the slab);
@@ -159,7 +159,7 @@ This is **Stevin's law**. The left-hand side is the **pressure gradient**, the r
 
 ### Height or depth
 
-The sign depends only on which way $z$ points. Measuring height $z$ up from the bottom of a lake gives $dp/dz=-\rho g$; measuring depth down from the surface, as a ship designer might, gives $dp/dz=+\rho g$ (4 Mar, ll. 295–321). The pressure in the lake is the same either way, rising from $p_{atm}$ at the surface to a maximum at the bottom. The rule to remember is that **pressure increases in the direction of $\vec g$**; choose the coordinate first and let the sign follow.
+The sign depends only on which way $z$ points. Measuring height $z$ up from the bottom of a lake gives $dp/dz=-\rho g$; measuring depth down from the surface, as a ship designer might, gives $dp/dz=+\rho g$. The pressure in the lake is the same either way, rising from $p_{atm}$ at the surface to a maximum at the bottom. The rule to remember is that **pressure increases in the direction of $\vec g$**; choose the coordinate first and let the sign follow.
 
 ## 4. Liquids
 
@@ -197,7 +197,7 @@ The pressure varies linearly with height because the pressure gradient is consta
 
 ### The hydrostatic paradox
 
-Two open containers stand side by side, filled with the same liquid to the same level. One is a narrow tank, the other a wide L-shaped vessel holding five times as much liquid. The pressures at the two bottoms are equal: both bottoms are the same distance $\Delta z$ below a free surface at $p_{atm}$, so $\Delta p=\rho g\Delta z$ is the same, even though the weights of liquid are very different (4 Mar, ll. 403–446). This is the **hydrostatic paradox**.
+Two open containers stand side by side, filled with the same liquid to the same level. One is a narrow tank, the other a wide L-shaped vessel holding five times as much liquid. The pressures at the two bottoms are equal: both bottoms are the same distance $\Delta z$ below a free surface at $p_{atm}$, so $\Delta p=\rho g\Delta z$ is the same, even though the weights of liquid are very different. This is the **hydrostatic paradox**.
 
 To see that it must be so, join the bottoms of the two containers with a thin tube. If the pressures differed, liquid would flow from the higher-pressure container to the other and the levels would change, which does not happen. The same holds at every height, not just the bottom: in a connected body of fluid at rest, **the pressure depends only on $z$**, whatever the shape of the container. Pascal's law, in the presence of gravity, becomes the statement that pressure is constant along any horizontal level within one continuous fluid. That is what makes complicated hydrostatic systems easy: only the heights matter.
 
@@ -211,7 +211,7 @@ $$
 
 where $\rho$ is the density of the fluid and $\mathcal V$ the volume of the body.
 
-The derivation follows from Stevin's law. A cube of side $L$ (a cubic blimp, 4 Mar, ll. 493–556) is fully submerged in fluid of density $\rho$, assumed not to vary noticeably over the height $L$. The side forces cancel. On the bottom face the fluid pushes up with $pL^2$; on the top face it pushes down with $(p+\Delta p)L^2$, where Stevin's law for the surrounding fluid gives $\Delta p=-\rho gL$. The net upward pressure force is
+The derivation follows from Stevin's law. A cube of side $L$ (a cubic blimp) is fully submerged in fluid of density $\rho$, assumed not to vary noticeably over the height $L$. The side forces cancel. On the bottom face the fluid pushes up with $pL^2$; on the top face it pushes down with $(p+\Delta p)L^2$, where Stevin's law for the surrounding fluid gives $\Delta p=-\rho gL$. The net upward pressure force is
 
 $$
 U=pL^2-(p+\Delta p)L^2
@@ -227,7 +227,7 @@ $$
 
 The upthrust contains the density of the fluid, not of the body. It exists only because the pressure on the bottom of the body is higher than on its top, which in turn exists only because of gravity: there are no blimps on the Moon, where there is no atmosphere to provide the pressure difference.
 
-For a body of general shape the pressure varies all round the surface and the force has to be found by integrating it over the surface, but the result is the same, $U=\rho g\mathcal V$ (6 Mar, ll. 41–67). A neater argument: replace the body by fluid of the same shape. That fluid is in equilibrium, so the surrounding pressure must support exactly its weight, $\rho g\mathcal V$; the pressure on the surface does not know what is inside it.
+For a body of general shape the pressure varies all round the surface and the force has to be found by integrating it over the surface, but the result is the same, $U=\rho g\mathcal V$. A neater argument: replace the body by fluid of the same shape. That fluid is in equilibrium, so the surrounding pressure must support exactly its weight, $\rho g\mathcal V$; the pressure on the surface does not know what is inside it.
 
 The net vertical force on a body of average density $\rho_m$ is upthrust minus weight:
 
@@ -243,7 +243,7 @@ If the body is less dense than the fluid it rises; if denser, it sinks. A blimp 
 
 ## 6. The barometer
 
-The pressure of the atmosphere was first measured by Torricelli, a student of Galileo, who filled a glass tube closed at one end with liquid, inverted it with the open end under the surface of a dish of the same liquid, and raised it. The liquid stays in the tube until the closed end is raised past a critical height $h$; above that, the column stops rising and a pocket of near-vacuum forms at the top, whose pressure is only the small vapour pressure of the liquid (6 Mar, ll. 85–135).
+The pressure of the atmosphere was first measured by Torricelli, a student of Galileo, who filled a glass tube closed at one end with liquid, inverted it with the open end under the surface of a dish of the same liquid, and raised it. The liquid stays in the tube until the closed end is raised past a critical height $h$; above that, the column stops rising and a pocket of near-vacuum forms at the top, whose pressure is only the small vapour pressure of the liquid.
 
 Apply Stevin's law between the free surface in the dish, which is at $p_{atm}$ (by Pascal's law, the same as the liquid in the tube at that level), and the top of the column, where $p\approx0$:
 
@@ -262,11 +262,11 @@ $$
 With mercury ($\rho=13\,600$ kg/m³) Torricelli found $h\approx760$ mm, varying by a few centimetres with the weather: lower when a storm approaches. One standard atmosphere is defined as 760 mm of mercury, $101\,325$ Pa, and 1/760 of it is the torr, 133.3 Pa. Mercury was used because it is dense: water is 13.6 times lighter, so a water barometer needs a column 13.6 times taller, 10.3 m.
 
 > [!tip] Ten metres of water is one atmosphere
-> $p_{atm}/(\rho_{water}g)=101\,325/(1000\times9.81)=10.3$ m. A suction pump cannot lift water more than about 10 m, because it can at best reduce the pressure above the water to zero; but a pump at the bottom can push water to any height if it supplies enough pressure. Pumping water to the top of a 100 m building needs about 10 bar, so very tall buildings use stages of pumps (6 Mar, ll. 178–188).
+> $p_{atm}/(\rho_{water}g)=101\,325/(1000\times9.81)=10.3$ m. A suction pump cannot lift water more than about 10 m, because it can at best reduce the pressure above the water to zero; but a pump at the bottom can push water to any height if it supplies enough pressure. Pumping water to the top of a 100 m building needs about 10 bar, so very tall buildings use stages of pumps.
 
 ## 7. The manometer
 
-The gauge pressure the lungs can produce is measured with a U-tube partly filled with a coloured liquid, both ends open to the atmosphere so the levels start equal. With the pressure $p_{lungs}$ applied to the left branch, the liquid falls on that side and rises on the other, until the difference in level is $h=z_1-z_0$ (6 Mar, ll. 222–257).
+The gauge pressure the lungs can produce is measured with a U-tube partly filled with a coloured liquid, both ends open to the atmosphere so the levels start equal. With the pressure $p_{lungs}$ applied to the left branch, the liquid falls on that side and rises on the other, until the difference in level is $h=z_1-z_0$.
 
 Points 0 and 0′, at the same height $z_0$ in the same connected liquid, are at the same pressure, and the pressure at 0 is $p_{lungs}$. Point 1, at the top of the right-hand column, is at $p_{atm}$. Stevin's law up the right-hand column:
 
@@ -282,7 +282,7 @@ $$
 \boxed{p_{lungs}-p_{atm}=\rho gh}
 $$
 
-The level difference measures the gauge pressure directly. This is a **liquid-column manometer**. A scale beside the tube makes the reading precise, tilting the reading tube at a small angle makes the liquid move further along it for the same pressure and so increases the sensitivity (Problem Sheet 6, Q6.4), and many tubes side by side give the pressures at many points at once. The multi-tube manometer in the second-year aerofoil lab works this way, connecting each tube to a pressure tap on the aerofoil surface (6 Mar, ll. 264–284).
+The level difference measures the gauge pressure directly. This is a **liquid-column manometer**. A scale beside the tube makes the reading precise, tilting the reading tube at a small angle makes the liquid move further along it for the same pressure and so increases the sensitivity (Problem Sheet 6, Q6.4), and many tubes side by side give the pressures at many points at once. The multi-tube manometer in the second-year aerofoil lab works this way, connecting each tube to a pressure tap on the aerofoil surface.
 
 ## 8. Stratification of the atmosphere
 
@@ -298,7 +298,7 @@ about a kilogram per square centimetre.
 
 ### Three equations for the atmosphere
 
-Air is compressible, so its density cannot be taken as constant; it changes with height along with the pressure. To find $p(z)$ and $\rho(z)$ three relations are combined (6 Mar, ll. 347–405):
+Air is compressible, so its density cannot be taken as constant; it changes with height along with the pressure. To find $p(z)$ and $\rho(z)$ three relations are combined:
 
 - the ideal-gas law at every height, $p(z)=\rho(z)RT(z)$, with $R=287$ J kg⁻¹ K⁻¹ for dry air;
 - Stevin's law, $dp/dz=-\rho(z)g$, treating the atmosphere as at rest;
@@ -350,7 +350,7 @@ $$
 T(z)=T_0-\Gamma_ez
 $$
 
-with the **environmental lapse rate** $\Gamma_e=6.5$ K/km on average. At sea level the ISA has $T_0=288.15$ K, $p_0=101\,325$ Pa and $\rho_0=1.225$ kg/m³. Fly 10 km up and it is about 65 K colder, around −50 °C (6 Mar, ll. 355–363).
+with the **environmental lapse rate** $\Gamma_e=6.5$ K/km on average. At sea level the ISA has $T_0=288.15$ K, $p_0=101\,325$ Pa and $\rho_0=1.225$ kg/m³. Fly 10 km up and it is about 65 K colder, around −50 °C.
 
 Now $\rho=p/(R(T_0-\Gamma_ez))$, and Stevin's law gives
 
@@ -358,7 +358,7 @@ $$
 \frac{dp}{p}=-\frac{g}{R}\frac{dz}{T_0-\Gamma_ez}
 $$
 
-This integral can be done by hand or with Wolfram Alpha (6 Mar, ll. 472–479). The right-hand integral is
+This integral can be done by hand or with Wolfram Alpha. The right-hand integral is
 
 $$
 \int_0^z\frac{dz'}{T_0-\Gamma_ez'}=-\frac{1}{\Gamma_e}\Big[\ln(T_0-\Gamma_ez')\Big]_0^z=-\frac{1}{\Gamma_e}\ln\frac{T_0-\Gamma_ez}{T_0}
@@ -387,7 +387,7 @@ a power law, with exponent $g/(\Gamma_eR)=9.81/(0.0065\times287)=5.26$. The dens
 
 ![[tf_atmosphere_models.png|900]]
 
-Assuming constant density (the isochoric model) makes the pressure fall linearly, $p=p_0-\rho_0gz$, reaching zero at $p_0/(\rho_0g)=8.4$ km and going negative above; the temperature $p/(\rho_0R)$ then falls below absolute zero. It is unphysical above a couple of kilometres, though not bad for the first kilometre. The isothermal model is reasonable for pressure and density over the first few kilometres. The lapse-rate model is the ISA troposphere (6 Mar, ll. 505–530).
+Assuming constant density (the isochoric model) makes the pressure fall linearly, $p=p_0-\rho_0gz$, reaching zero at $p_0/(\rho_0g)=8.4$ km and going negative above; the temperature $p/(\rho_0R)$ then falls below absolute zero. It is unphysical above a couple of kilometres, though not bad for the first kilometre. The isothermal model is reasonable for pressure and density over the first few kilometres. The lapse-rate model is the ISA troposphere.
 
 ---
 
@@ -395,7 +395,7 @@ Assuming constant density (the isochoric model) makes the pressure fall linearly
 
 ### Worked example - air on top of Everest
 
-Find the pressure and density at the summit of Everest, 8848 m, and at the 11 km tropopause, using the ISA troposphere (6 Mar, ll. 289–309, 531–543).
+Find the pressure and density at the summit of Everest, 8848 m, and at the 11 km tropopause, using the ISA troposphere.
 
 At 8848 m:
 

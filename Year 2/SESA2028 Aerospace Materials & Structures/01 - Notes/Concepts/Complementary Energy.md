@@ -32,7 +32,7 @@ $$
 
 ## Warning
 
-For a nonlinear material or geometry, $U\ne U^*$. Differentiating $U$ with respect to a load then gives the wrong displacement. This is a common "why" question: state that the method assumes linear elasticity.
+For a nonlinear material or geometry, $U\ne U^*$. Differentiating $U$ with respect to a load then gives the wrong displacement. Any use of $\delta_i=\partial U/\partial P_i$ therefore assumes linear elasticity, and the answer should say so.
 
 ## Related
 

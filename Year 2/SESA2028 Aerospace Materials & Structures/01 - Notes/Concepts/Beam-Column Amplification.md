@@ -22,7 +22,7 @@ $$
 
 As $P\to P_E$, the ideal linear model predicts unbounded amplification. Real members fail earlier through yielding, nonlinear geometry, local buckling or material damage.
 
-The design lesson is important: raising strength alone may do almost nothing if elastic stiffness controls $P_E$.
+Raising strength alone may do almost nothing if elastic stiffness controls $P_E$.
 
 ![[structures_beam_column_amplification.png|700]]
 

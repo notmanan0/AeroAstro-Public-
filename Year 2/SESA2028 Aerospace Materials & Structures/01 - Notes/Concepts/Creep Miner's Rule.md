@@ -18,7 +18,7 @@ It is the same damage-summation assumption as in fatigue, applied to time fracti
 
 ![[materials_creep_miner_budgets.png|800]]
 
-The past papers ask for it almost every year: 2013-14 B3(iv) leaves 155 h at 1000 °C after 22 % of an SRR99 blade's life is used; 2021-22 MQ1(d) leaves 70 h at 475 MPa for CM247LC. When the stress–rupture data are exact power laws, a fitted $t_r=B\sigma^{-n}$ can extrapolate beyond the data, but the answer should say it is extrapolating. The rule ignores the order of loading and interactions between conditions, and real creep damage is not strictly linear.
+Worked cases: 2013-14 B3(iv) leaves 155 h at 1000 °C after 22 % of an SRR99 blade's life is used; 2021-22 MQ1(d) leaves 70 h at 475 MPa for CM247LC. When the stress–rupture data are exact power laws, a fitted $t_r=B\sigma^{-n}$ can extrapolate beyond the data, but the answer should say it is extrapolating. The rule ignores the order of loading and interactions between conditions, and real creep damage is not strictly linear.
 
 ## Related
 

@@ -29,9 +29,9 @@ C_d=\frac{\Delta p\sin\alpha}{q_\infty},
 C_{m,LE}=-\frac{\Delta p}{2q_\infty},
 $$
 
-with $q_\infty=\tfrac12\gamma p_\infty M_\infty^2$. The centre of pressure is at mid-chord and $L/D=\cot\alpha$. For $M=2$ and $\alpha=10^\circ$ (Lecture 2.5), the theory gives $C_l=0.4075$, $C_d=0.0719$ and $C_{m,LE}=-0.2069$.
+with $q_\infty=\tfrac12\gamma p_\infty M_\infty^2$. The centre of pressure is at mid-chord and $L/D=\cot\alpha$. For $M=2$ and $\alpha=10^\circ$, the theory gives $C_l=0.4075$, $C_d=0.0719$ and $C_{m,LE}=-0.2069$.
 
-The plate has drag even without viscosity (L2-5, ll. 149–213). In subsonic flow, suction at the leading edge cancels the $N\sin\alpha$ component of the normal force, which is d'Alembert's paradox. In supersonic flow nothing can wrap round the edge, so $N\sin\alpha$ survives as wave drag. The aerodynamic centre also moves, from the subsonic quarter chord to mid-chord, which is a static-margin headache for aircraft that fly in both regimes (ll. 243–257).
+The plate has drag even without viscosity. In subsonic flow, suction at the leading edge cancels the $N\sin\alpha$ component of the normal force, which is d'Alembert's paradox. In supersonic flow nothing can wrap round the edge, so $N\sin\alpha$ survives as wave drag. The aerodynamic centre also moves, from the subsonic quarter chord to mid-chord, which is a static-margin headache for aircraft that fly in both regimes.
 
 ![[at_shock_expansion_plate.png|760]]
 

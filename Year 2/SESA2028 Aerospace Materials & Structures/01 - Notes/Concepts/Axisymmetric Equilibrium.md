@@ -38,7 +38,7 @@ $$
 
 One equation, two unknown stresses ($\sigma_r,\sigma_\theta$): the problem is statically indeterminate. [[Strain Compatibility]] ($\varepsilon_r=du/dr$, $\varepsilon_\theta=u/r$) and Hooke's law supply the missing relation, and together they produce the Lamé and spinning-disc solutions.
 
-The $(\sigma_r-\sigma_\theta)/r$ term is purely geometric: because the side faces are not parallel, the hoop stress has a radial component. This is why radial and hoop stresses cannot generally be equal through a thick wall (except at the centre of a solid disc).
+The $(\sigma_r-\sigma_\theta)/r$ term is purely geometric: because the side faces are not parallel, the hoop stress has a radial component. If $\sigma_r=\sigma_\theta$ at every radius, the term vanishes and $d\sigma_r/dr=-b_r$, so with no body force the stress is uniform. That happens in a solid shaft under external pressure $p$ and in a tube with the same pressure $p$ on both surfaces ($B=0$, $\sigma_r=\sigma_\theta=-p$). Otherwise the two stresses differ through the wall; in a spinning disc they are equal only at the centre of a solid disc.
 
 ## Related
 

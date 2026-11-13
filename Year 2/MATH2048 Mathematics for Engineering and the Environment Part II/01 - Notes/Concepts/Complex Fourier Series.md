@@ -34,5 +34,5 @@ The complex form is often easier than the real one, because one exponential inte
 
 ## Related
 
-- Derivation: [[MATH2048 FS3 - Calculus with Fourier Series and Complex Fourier Series#4. Complex Fourier series (L8)|FS3 §4]]
+- Derivation: [[MATH2048 FS3 - Calculus with Fourier Series and Complex Fourier Series#4. Complex Fourier series|FS3 §4]]
 - [[Fourier Series]] · [[Fourier Transform]]

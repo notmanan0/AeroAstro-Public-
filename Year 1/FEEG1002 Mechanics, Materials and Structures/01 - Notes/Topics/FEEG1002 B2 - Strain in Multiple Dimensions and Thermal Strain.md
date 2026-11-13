@@ -29,11 +29,11 @@ sources: ["02 - Sources/Statics 2/Lectures/Lecture 02 - Strain in Multiple Dimen
 > - **Common mistakes:** guessing the direction of the forces instead of taking both tensile and letting the sign come out; using $\gamma_{xy}$ where the tensor strain $\varepsilon_{xy}=\gamma_{xy}/2$ is required (Mohr's circle and the transformation equations).
 > - **Practise:** [[#Worked example - steel rail with a 3 mm gap]] · [[FEEG1002 Statics 2 Tutorial 2 - Strain in Multiple Directions and Thermal Strain Solutions]]
 
-When a lump of modelling clay is squeezed, two points inside it move relative to each other: the line joining them stretches or shortens, and it also turns. Strain measures this stretching of lines and the change of angle between them. Moving the whole lump without changing its shape produces no strain at all, so strain is not about displacement but about differences in displacement from one point to the next (Lecture 2, ll. 20–41).
+When a lump of modelling clay is squeezed, two points inside it move relative to each other: the line joining them stretches or shortens, and it also turns. Strain measures this stretching of lines and the change of angle between them. Moving the whole lump without changing its shape produces no strain at all, so strain is not about displacement but about differences in displacement from one point to the next.
 
-Strain has a practical advantage over stress: it can be observed. Stresses are invisible, but displacements can be measured, and from the displacements the strains follow. The difficulty is that in metals the strains are tiny, a few thousandths at most before yield, which is why strain gauges are needed to measure them ([[FEEG1002 B5 - Strain Measurement and Strain Rosettes|B5]]). Displacements and strains are assumed small throughout, which simplifies the algebra repeatedly (Lecture 2, ll. 42–48).
+Strain has a practical advantage over stress: it can be observed. Stresses are invisible, but displacements can be measured, and from the displacements the strains follow. The difficulty is that in metals the strains are tiny, a few thousandths at most before yield, which is why strain gauges are needed to measure them ([[FEEG1002 B5 - Strain Measurement and Strain Rosettes|B5]]). Displacements and strains are assumed small throughout, which simplifies the algebra repeatedly.
 
-Temperature gives a second source of strain. Heat a body uniformly and it grows by the same proportion in every direction, like a photographic enlargement, without any stress. Stress appears only when something stops the growth: two pin supports on a beam, a rail butting against the next rail, two bonded materials that want to expand by different amounts. Bridges carry expansion joints and process pipework has U-bends for this reason (Lecture 3, ll. 14–69).
+Temperature gives a second source of strain. Heat a body uniformly and it grows by the same proportion in every direction, like a photographic enlargement, without any stress. Stress appears only when something stops the growth: two pin supports on a beam, a rail butting against the next rail, two bonded materials that want to expand by different amounts. Bridges carry expansion joints and process pipework has U-bends for this reason.
 
 ---
 
@@ -47,7 +47,7 @@ $$
 \varepsilon=\frac{\Delta L}{L_0}>0,\qquad \varepsilon_w=\frac{\Delta w}{w_0}<0
 $$
 
-Lengthening is positive and shortening negative. The lateral strain is negative here because of the Poisson effect (Lecture 2, ll. 49–73).
+Lengthening is positive and shortening negative. The lateral strain is negative here because of the Poisson effect.
 
 ### Normal strains in three directions
 
@@ -57,7 +57,7 @@ $$
 \varepsilon_{xx}=\frac{\Delta L_x}{L_{x0}},\qquad \varepsilon_{yy}=\frac{\Delta L_y}{L_{y0}},\qquad \varepsilon_{zz}=\frac{\Delta L_z}{L_{z0}}
 $$
 
-The double index says that the elongation and the reference length are both in the same direction, mirroring $\sigma_{xx}$ for stress (Lecture 2, ll. 74–102).
+The double index says that the elongation and the reference length are both in the same direction, mirroring $\sigma_{xx}$ for stress.
 
 ### Volumetric strain
 
@@ -95,14 +95,14 @@ $$
 \boxed{\varepsilon_{vol}=\varepsilon_{xx}+\varepsilon_{yy}+\varepsilon_{zz}}
 $$
 
-The neglected products are the thin slabs and the small corner cube left over when a block grows in three directions (Lecture 2, ll. 103–195).
+The neglected products are the thin slabs and the small corner cube left over when a block grows in three directions.
 
 > [!check] How small is "small"?
 > With $\varepsilon_{xx}=\varepsilon_{yy}=\varepsilon_{zz}=10^{-3}$ the exact volumetric strain is $(1.001)^3-1=0.003003$ against $0.003$ from the sum, an error of 0.1 %. At 5 % strain in each direction it is $0.1576$ against $0.15$, an error of 5 %, which is why the linear result is a small-strain result.
 
 ### Local strain and displacement gradients
 
-In most components the strain is not uniform. A rubber sheet with a hole, printed with a grid and stretched, shows squares near the hole stretching far more than squares away from it, the strain counterpart of a stress concentration; near the clamped ends the sheet cannot contract sideways at all (Lecture 2, ll. 196–256). To describe strain at a point, consider a small element of length $dx$ whose left and right sides move by $u_{x,left}$ and $u_{x,right}$:
+In most components the strain is not uniform. A rubber sheet with a hole, printed with a grid and stretched, shows squares near the hole stretching far more than squares away from it, the strain counterpart of a stress concentration; near the clamped ends the sheet cannot contract sideways at all. To describe strain at a point, consider a small element of length $dx$ whose left and right sides move by $u_{x,left}$ and $u_{x,right}$:
 
 $$
 \varepsilon_{xx}=\frac{u_{x,right}-u_{x,left}}{dx}
@@ -112,7 +112,7 @@ $$
 \boxed{\varepsilon_{xx}=\frac{du_x}{dx}}
 $$
 
-and likewise $\varepsilon_{yy}=du_y/dy$. A **normal strain is a displacement gradient**. A rigid translation, with the same displacement everywhere, has zero gradient and therefore no strain (Lecture 2, ll. 257–306).
+and likewise $\varepsilon_{yy}=du_y/dy$. A **normal strain is a displacement gradient**. A rigid translation, with the same displacement everywhere, has zero gradient and therefore no strain.
 
 ### How small strains are
 
@@ -122,7 +122,7 @@ $$
 \varepsilon=\frac{\sigma}{E}=\frac{250\times10^6}{70\times10^9}=0.0036
 $$
 
-A 1 m bar yields after stretching only about 3.6 mm. Such strains are often written as a percentage, 0.36 %, or in **microstrain**, $1\ \mu\varepsilon=10^{-6}$, here 3600 με (Lecture 2, ll. 307–346).
+A 1 m bar yields after stretching only about 3.6 mm. Such strains are often written as a percentage, 0.36 %, or in **microstrain**, $1\ \mu\varepsilon=10^{-6}$, here 3600 με.
 
 ## 2. Shear strain
 
@@ -134,11 +134,11 @@ $$
 \gamma=\frac{\delta_s}{h}=\tan\alpha\approx\alpha
 $$
 
-with $\alpha$ in radians; the last step is the small-strain approximation. $\gamma$ is the reduction in the originally right angle between the left and bottom faces (Lecture 2, ll. 358–379).
+with $\alpha$ in radians; the last step is the small-strain approximation. $\gamma$ is the reduction in the originally right angle between the left and bottom faces.
 
 ### Shear does not change volume
 
-Unlike normal strain, shear strain changes shape but not volume. A pack of cards pushed sideways slides card over card, and each card keeps its length and thickness, so the pack keeps its volume (Lecture 2, ll. 380–387). In the small-strain formula this appears as the absence of any shear term in $\varepsilon_{vol}$.
+Unlike normal strain, shear strain changes shape but not volume. A pack of cards pushed sideways slides card over card, and each card keeps its length and thickness, so the pack keeps its volume. In the small-strain formula this appears as the absence of any shear term in $\varepsilon_{vol}$.
 
 ### Shear strain from displacement gradients
 
@@ -154,13 +154,13 @@ $$
 \boxed{\gamma_{xy}=\alpha+\beta=\frac{du_x}{dy}+\frac{du_y}{dx}}
 $$
 
-Like normal strain, it is made of displacement gradients, but now of sideways displacements: $u_x$ changing with $y$ and $u_y$ changing with $x$ (Lecture 2, ll. 388–435).
+Like normal strain, it is made of displacement gradients, but now of sideways displacements: $u_x$ changing with $y$ and $u_y$ changing with $x$.
 
 ![[s2_strain_definitions.png|900]]
 
 ### Sign of the shear strain
 
-When both gradients are positive, the element becomes "pointier": the angle between the left and bottom faces (and between the top and right faces) falls below 90°, and $\gamma_{xy}>0$. When both gradients are negative the angle opens beyond 90° and $\gamma_{xy}<0$ (Lecture 2, ll. 436–492). The corners that close are the corners where the positive shear stresses of [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels#Sign convention|B1]] point towards each other, so positive shear stress produces positive shear strain.
+When both gradients are positive, the element becomes "pointier": the angle between the left and bottom faces (and between the top and right faces) falls below 90°, and $\gamma_{xy}>0$. When both gradients are negative the angle opens beyond 90° and $\gamma_{xy}<0$. The corners that close are the corners where the positive shear stresses of [[FEEG1002 B1 - Stress in Multiple Dimensions and Thin-Walled Pressure Vessels#Sign convention|B1]] point towards each other, so positive shear stress produces positive shear strain.
 
 ### Rigid rotation produces no strain
 
@@ -170,7 +170,7 @@ $$
 \gamma_{xy}=\frac{du_x}{dy}+\frac{du_y}{dx}=-\beta+\beta=0
 $$
 
-The definition correctly reports no deformation for a pure rotation (Lecture 2, ll. 493–517).
+The definition correctly reports no deformation for a pure rotation.
 
 ### The tensor shear strain
 
@@ -180,7 +180,7 @@ $$
 \boxed{\varepsilon_{xy}=\frac12\gamma_{xy}=\frac12\left(\frac{du_x}{dy}+\frac{du_y}{dx}\right)}
 $$
 
-Both measures appear in textbooks, and the factor of 2 between them is a common source of errors (Lecture 2, ll. 518–548).
+Both measures appear in textbooks, and the factor of 2 between them is a common source of errors.
 
 The meaning of $\varepsilon_{xy}$ comes from separating rotation from deformation. Measure rotations anticlockwise. The bottom edge of the element rotates by $du_y/dx$ and the left edge by $-du_x/dy$, so the average rotation of the element is
 
@@ -200,14 +200,14 @@ $$
 -\frac{du_x}{dy}-\omega=-\frac12\left(\frac{du_x}{dy}+\frac{du_y}{dx}\right)=-\varepsilon_{xy}
 $$
 
-that is, $\varepsilon_{xy}$ clockwise. After the rotation is removed, each face has turned inwards by $\varepsilon_{xy}$, symmetrically about the diagonal, and the two together close the right angle by $2\varepsilon_{xy}=\gamma_{xy}$ (Lecture 2, ll. 549–568; Lecture 9, ll. 148–174).
+that is, $\varepsilon_{xy}$ clockwise. After the rotation is removed, each face has turned inwards by $\varepsilon_{xy}$, symmetrically about the diagonal, and the two together close the right angle by $2\varepsilon_{xy}=\gamma_{xy}$.
 
 > [!warning] Which shear strain goes where
 > $\tau=G\gamma$ and the torsion formulas use the engineering $\gamma_{xy}$. The strain transformation equations, Mohr's circle for strain and the rosette formulas use the tensor $\varepsilon_{xy}$ ([[FEEG1002 B5 - Strain Measurement and Strain Rosettes|B5]]). Generalised Hooke's law is written with $\varepsilon_{xy}=\frac{1+\nu}{E}\sigma_{xy}$, which already contains the factor of 2 ([[FEEG1002 B3 - Generalised Hooke's Law|B3]]).
 
 ### Six strain components
 
-In 3D there are three normal strains, $\varepsilon_{xx}$, $\varepsilon_{yy}$, $\varepsilon_{zz}$, and three shear strains, $\varepsilon_{xy}$, $\varepsilon_{xz}$, $\varepsilon_{yz}$. All six vanish for rigid translations and rotations; they describe deformation only (Lecture 2, ll. 569–575).
+In 3D there are three normal strains, $\varepsilon_{xx}$, $\varepsilon_{yy}$, $\varepsilon_{zz}$, and three shear strains, $\varepsilon_{xy}$, $\varepsilon_{xz}$, $\varepsilon_{yz}$. All six vanish for rigid translations and rotations; they describe deformation only.
 
 ## 3. Thermal strain
 
@@ -219,7 +219,7 @@ $$
 \boxed{\varepsilon_T=\frac{\delta_T}{L_{ref}}=\alpha(T-T_{ref})=\alpha\,\Delta T}
 $$
 
-where $\alpha$ is the coefficient of thermal expansion, in K⁻¹ or °C⁻¹ (Lecture 3, ll. 71–110). Doubling $\Delta T$ doubles the expansion.
+where $\alpha$ is the coefficient of thermal expansion, in K⁻¹ or °C⁻¹. Doubling $\Delta T$ doubles the expansion.
 
 ### Thermal expansion is isotropic and stress-free
 
@@ -229,11 +229,11 @@ $$
 \varepsilon_{xx}=\varepsilon_{yy}=\varepsilon_{zz}=\varepsilon_T
 $$
 
-with no thermal shear strain. The elongations differ, because the same strain over a longer dimension gives a larger change, but the strain does not (Lecture 3, ll. 111–142). A uniformly heated body of any shape is therefore just a scaled-up copy of itself: no angle changes, no part fights another, and there is no stress. Stress appears only when the temperature is not uniform, so that hot regions are held back by cold ones, or when the body is constrained (Lecture 3, ll. 143–162).
+with no thermal shear strain. The elongations differ, because the same strain over a longer dimension gives a larger change, but the strain does not. A uniformly heated body of any shape is therefore just a scaled-up copy of itself: no angle changes, no part fights another, and there is no stress. Stress appears only when the temperature is not uniform, so that hot regions are held back by cold ones, or when the body is constrained.
 
 ### A bar between two walls
 
-A bar fitted between two rigid walls and heated wants to expand, and the walls push back with a reaction force $F$ that keeps its length unchanged. The stress is found by superposition in three steps (Lecture 3, ll. 163–276).
+A bar fitted between two rigid walls and heated wants to expand, and the walls push back with a reaction force $F$ that keeps its length unchanged. The stress is found by superposition in three steps.
 
 ![[s2_thermal_superposition.png|900]]
 
@@ -271,9 +271,9 @@ The force and stress are negative because the bar is compressed. The stress depe
 
 ### Superposition for constrained assemblies
 
-The same steps solve any axially loaded assembly, provided the compatibility and force conditions are written down carefully before any algebra. Always take every unknown force as tensile and let the sign come out of the solution; deciding in advance which part is in compression is the easiest way to get lost (Lecture 3, ll. 584–604).
+The same steps solve any axially loaded assembly, provided the compatibility and force conditions are written down carefully before any algebra. Always take every unknown force as tensile and let the sign come out of the solution; deciding in advance which part is in compression is the easiest way to get lost.
 
-For two bars **in series** between rigid walls, for example steel of length $L_s$ joined end to end with brass of length $L_b$, the overall length is fixed and the same force passes through both (Lecture 3, ll. 446–561):
+For two bars **in series** between rigid walls, for example steel of length $L_s$ joined end to end with brass of length $L_b$, the overall length is fixed and the same force passes through both:
 
 $$
 \delta_s+\delta_b=0,\qquad F_s=F_b=F
@@ -295,7 +295,7 @@ $$
 
 Which way the joint moves depends on both $\alpha$ and the stiffness $EA/L$ of each part, which is why no part "wins" by inspection: a thin steel wire barely resists brass, however stiff steel is.
 
-For two parts **in parallel**, bonded side by side such as a rod inside a tube joined to common end plates, the parts must extend equally and, with no external load, their forces cancel (Lecture 3, ll. 562–614):
+For two parts **in parallel**, bonded side by side such as a rod inside a tube joined to common end plates, the parts must extend equally and, with no external load, their forces cancel:
 
 $$
 \delta_1=\delta_2,\qquad F_1+F_2=0
@@ -313,7 +313,7 @@ The part with the larger $\alpha$ ends up in compression and the other in tensio
 
 ### Where thermal stresses matter
 
-Compressive thermal stress is rarely high enough to yield a steel rail but can buckle it, which is why rails in hot weather snake sideways ([[FEEG1002 A7 - Euler Buckling of Struts]]). In electronics, a chip or board fixed at both ends and heated buckles in the same way, and repeated heating and cooling fatigues the solder joints; Tutorial 8 Q2 sizes those joints ([[FEEG1002 B3 - Generalised Hooke's Law#Worked example - chip held by solder joints|B3]]). In precision machines such as lithography steppers, temperature is held uniform and mechanisms are designed so that any expansion does not move critical parts (Lecture 3, ll. 618–645).
+Compressive thermal stress is rarely high enough to yield a steel rail but can buckle it, which is why rails in hot weather snake sideways ([[FEEG1002 A7 - Euler Buckling of Struts]]). In electronics, a chip or board fixed at both ends and heated buckles in the same way, and repeated heating and cooling fatigues the solder joints; Tutorial 8 Q2 sizes those joints ([[FEEG1002 B3 - Generalised Hooke's Law#Worked example - chip held by solder joints|B3]]). In precision machines such as lithography steppers, temperature is held uniform and mechanisms are designed so that any expansion does not move critical parts.
 
 ---
 
@@ -335,7 +335,7 @@ and the element also rotates by $\omega=\tfrac12(1\times10^{-4}-2\times10^{-4})=
 
 ### Worked example - steel rail with a 3 mm gap
 
-Steel rails ($E=200$ GPa, $\alpha=11.7\times10^{-6}$ °C⁻¹) 10 m long are laid at 6 °C with 3 mm gaps. Find the stress at 48 °C (Lecture 3, ll. 277–416).
+Steel rails ($E=200$ GPa, $\alpha=11.7\times10^{-6}$ °C⁻¹) 10 m long are laid at 6 °C with 3 mm gaps. Find the stress at 48 °C.
 
 Each rail can grow 1.5 mm at each end, or equivalently 3 mm in total, before touching its neighbours. Released, it would grow by
 

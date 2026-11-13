@@ -28,4 +28,4 @@ A **Ludwieg tube** is one such short-duration facility. Bursting a diaphragm sen
 ## Related
 
 - [[Isentropic Nozzle Flow]] · [[Critical Conditions and Choked Flow]] · [[Normal-Shock Jump Relations]] · [[SESA2022 Wind Tunnel Lab Summary]]
-- Detail: [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#7. The supersonic wind tunnel (slides 8–11)|W04 §7]]
+- Detail: [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow#7. The supersonic wind tunnel|W04 §7]]

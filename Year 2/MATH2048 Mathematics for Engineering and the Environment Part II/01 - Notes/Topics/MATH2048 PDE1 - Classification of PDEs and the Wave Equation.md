@@ -31,17 +31,17 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 14.txt", "02 - Sources/Lecture
 > - **Assumptions:** two independent variables; linear, so $a,\dots,f$ depend only on the independent variables; for the string, small displacements and purely vertical motion.
 > - **Method:** 1. Read $a$, $2b$, $c$ off the second-derivative terms (halve the mixed coefficient). 2. Compute $b^2-ac$. 3. If it depends on position, classify region by region. 4. Count conditions: one per derivative in each variable.
 > - **Common mistakes:** using the mixed coefficient itself as $b$, which quadruples it in $b^2$; mixing up the coefficient $c$ in the classification with the wave speed $c$.
-> - **Practise:** [[#The Tricomi equation changes type]] · [[#4. Deriving the wave equation for a string (L14)]]
+> - **Practise:** [[#The Tricomi equation changes type]] · [[#4. Deriving the wave equation for a string]]
 
-A PDE has an unknown depending on at least two independent variables, with derivatives in more than one of them (ll. 1–7). As with ODEs, whether a solution exists and is well behaved depends on the boundary conditions, and for PDEs that question is harder (ll. 48–85). With ODEs, initial value problems almost always have a solution and boundary value problems need not. For PDEs, where and how the conditions may be given depends on the coefficients of the equation, and sorting equations by that is called classification.
+A PDE has an unknown depending on at least two independent variables, with derivatives in more than one of them. As with ODEs, whether a solution exists and is well behaved depends on the boundary conditions, and for PDEs that question is harder. With ODEs, initial value problems almost always have a solution and boundary value problems need not. For PDEs, where and how the conditions may be given depends on the coefficients of the equation, and sorting equations by that is called classification.
 
 The three classes match three kinds of physics. Hyperbolic equations carry information from A to B at a finite speed: they describe theories where the small-scale cause and effect is resolved, such as Newton's laws applied to a gas, which is why gas dynamics and so much of aeronautics is hyperbolic. Parabolic equations appear when small-scale behaviour that is too complicated to follow is averaged over, such as the Brownian motion of every air molecule in a room, and describe diffusion. Elliptic equations describe things that are static.
 
 ---
 
-## 1. Linear PDEs and the three types (L14)
+## 1. Linear PDEs and the three types
 
-The most general linear, homogeneous, second-order PDE in two independent variables is (ll. 16–36)
+The most general linear, homogeneous, second-order PDE in two independent variables is
 
 $$
 a\,\frac{\partial^2u}{\partial x^2}+2b\,\frac{\partial^2u}{\partial x\,\partial y}+c\,\frac{\partial^2u}{\partial y^2}+d\,\frac{\partial u}{\partial x}+e\,\frac{\partial u}{\partial y}+f\,u=0,\qquad u=u(x,y).
@@ -51,7 +51,7 @@ It is **linear** because $a,\dots,f$ are given functions of $x$ and $y$ only, ne
 
 ### Hyperbolic: the wave equation
 
-The prototype is the wave equation, written with time and space as the independent variables (ll. 103–146):
+The prototype is the wave equation, written with time and space as the independent variables:
 
 $$
 \frac{\partial^2u}{\partial t^2}=c^2\frac{\partial^2u}{\partial x^2}.
@@ -64,7 +64,7 @@ Dimensional analysis says what $c$ is. Each derivative divides the dimensions by
 
 ### Parabolic: the heat equation
 
-The prototype is the heat equation (ll. 147–189),
+The prototype is the heat equation,
 
 $$
 \frac{\partial u}{\partial t}=k\,\frac{\partial^2u}{\partial x^2},
@@ -72,11 +72,11 @@ $$
 
 with one time derivative where the wave equation has two. So $k$ is no longer a speed; dimensionally it is a length squared over a time. With $k>0$, the solution smooths out: sharp corners in the initial data are rounded immediately, and after a while the solution is set mainly by the boundary conditions rather than the initial data (right panel). Nothing here travels at a definite speed: for a triangle of initial data surrounded by zeros, the exact solution is already non-zero everywhere at any time $t>0$, however small. This amounts to propagation at infinite speed, an artefact of the averaging that produced the equation.
 
-$k$ is often written $\kappa^2$ to stress that it is positive, but nothing forces that (ll. 170–179). A negative $k$ sharpens features instead of smoothing them and tends to blow up, which is sometimes the right model, for instance in combustion.
+$k$ is often written $\kappa^2$ to stress that it is positive, but nothing forces that. A negative $k$ sharpens features instead of smoothing them and tends to blow up, which is sometimes the right model, for instance in combustion.
 
 ### Elliptic: Laplace's equation
 
-The prototype is Laplace's equation (ll. 192–216),
+The prototype is Laplace's equation,
 
 $$
 \frac{\partial^2u}{\partial x^2}+\frac{\partial^2u}{\partial y^2}=0,
@@ -92,9 +92,9 @@ a static solution has $u_t=0$, so $u_{tt}=0$ and the left side vanishes. Since $
 
 ![[m2048_pde_wave_vs_heat.png|900]]
 
-## 2. How many conditions each type needs (L14)
+## 2. How many conditions each type needs
 
-Without boundary conditions there is no unique solution, because the integration "constants" of a PDE are whole functions (ll. 218–257). The rule of thumb is one condition for every derivative in each variable.
+Without boundary conditions there is no unique solution, because the integration "constants" of a PDE are whole functions. The rule of thumb is one condition for every derivative in each variable.
 
 The wave equation has two time derivatives, so it needs two conditions in time. The standard choice is the initial displacement $u(x,0)$ and the initial velocity $u_t(x,0)$. In principle you could give $u$ at two times instead, but that rarely gives a physically meaningful problem. It also has two space derivatives, so it needs one condition at each end of the domain, on the value (Dirichlet), the normal derivative (Neumann) or a combination. Fewer conditions leave arbitrary functions in the solution; more over-determine it, and there is no solution at all.
 
@@ -102,9 +102,9 @@ The heat equation has one time derivative, so only one condition in time, and th
 
 Laplace's equation is a boundary value problem on a closed region, with one condition on each part of the boundary. If every condition is on the normal derivative, the solution is again not unique, so at least part of the boundary must have the value given.
 
-## 3. The classification test (L14)
+## 3. The classification test
 
-The type depends only on the principal part, the terms with the highest derivatives, so only $a$, $b$ and $c$ matter (ll. 258–273):
+The type depends only on the principal part, the terms with the highest derivatives, so only $a$, $b$ and $c$ matter:
 
 $$
 b^2-ac\ \begin{cases}>0 & \text{hyperbolic,}\\=0 & \text{parabolic,}\\<0 & \text{elliptic.}\end{cases}
@@ -116,7 +116,7 @@ For the prototypes, with $t$ playing the part of $y$, the coefficients are const
 
 ### The Tricomi equation changes type
 
-When $a$, $b$ and $c$ depend on position, so can the type (ll. 274–299). The Tricomi equation, a model for transonic flow, is written
+When $a$, $b$ and $c$ depend on position, so can the type. The Tricomi equation, a model for transonic flow, is written
 
 $$
 y\,u_{xx}=u_{yy},
@@ -153,39 +153,39 @@ so the equation is hyperbolic for $|x|>1$, parabolic on the two lines $x=\pm1$ a
 > [!check] Each prototype from the general form
 > Writing the wave equation as $u_{tt}-c^2u_{xx}=0$ with $t$ as the first variable: $a=1$, $b=0$, $c_{\text{coef}}=-c^2$, $b^2-ac_{\text{coef}}=c^2>0$. The heat equation $ku_{xx}-u_t=0$ has $a=k$, $b=0$, $c_{\text{coef}}=0$, so $0$. Laplace gives $-1$. The sign of the answer does not depend on which variable is called first, because swapping $x$ and $y$ swaps $a$ and $c$ and leaves $b^2-ac$ unchanged.
 
-## 4. Deriving the wave equation for a string (L14)
+## 4. Deriving the wave equation for a string
 
-The wave equation is written in several equivalent forms (ll. 303–312): $y_{tt}=c^2y_{xx}$, $y_{tt}-c^2y_{xx}=0$ and $\frac1{c^2}y_{tt}=y_{xx}$. The derivation is for a guitar string, but $y$ could equally be the displacement of a water surface from flat (ll. 313–324).
+The wave equation is written in several equivalent forms: $y_{tt}=c^2y_{xx}$, $y_{tt}-c^2y_{xx}=0$ and $\frac1{c^2}y_{tt}=y_{xx}$. The derivation is for a guitar string, but $y$ could equally be the displacement of a water surface from flat.
 
-A string of mass per unit length $\rho$ under tension is displaced by $y(x,t)$ from its rest position $y=0$. The small piece between $x$ and $x+\Delta x$ (ll. 325–341) is pulled at its left end by a tension $T_1$ at angle $\alpha$ below the horizontal, and at its right end by a tension $T_2$ at angle $\beta$ above it. The model assumes the displacement is small and each point of the string moves only up and down, never sideways.
+A string of mass per unit length $\rho$ under tension is displaced by $y(x,t)$ from its rest position $y=0$. The small piece between $x$ and $x+\Delta x$ is pulled at its left end by a tension $T_1$ at angle $\alpha$ below the horizontal, and at its right end by a tension $T_2$ at angle $\beta$ above it. The model assumes the displacement is small and each point of the string moves only up and down, never sideways.
 
 ![[m2048_pde_string_element.png|640]]
 
-There is no horizontal motion, so no horizontal acceleration, and the horizontal forces balance (ll. 342–364):
+There is no horizontal motion, so no horizontal acceleration, and the horizontal forces balance:
 
 $$
 T_2\cos\beta-T_1\cos\alpha=0\quad\Longrightarrow\quad T_1\cos\alpha=T_2\cos\beta\equiv T .
 $$
 
-This common value $T$ is called the tension in the string. For small slopes $\cos\alpha=1-\tfrac12\alpha^2+\dots$ is $1$ to first order, so $T_1\approx T_2\approx T$: the tension is the same all along the string. Vertically, the mass of the piece is $\rho\,\Delta x$ and its acceleration is $y_{tt}$, so Newton's second law gives (ll. 365–379)
+This common value $T$ is called the tension in the string. For small slopes $\cos\alpha=1-\tfrac12\alpha^2+\dots$ is $1$ to first order, so $T_1\approx T_2\approx T$: the tension is the same all along the string. Vertically, the mass of the piece is $\rho\,\Delta x$ and its acceleration is $y_{tt}$, so Newton's second law gives
 
 $$
 \rho\,\Delta x\,\frac{\partial^2y}{\partial t^2}=T_2\sin\beta-T_1\sin\alpha .
 $$
 
-Replace each tension using the horizontal balance (ll. 380–389). $T_1=T/\cos\alpha$, so $T_1\sin\alpha=T\tan\alpha$, and likewise $T_2\sin\beta=T\tan\beta$:
+Replace each tension using the horizontal balance. $T_1=T/\cos\alpha$, so $T_1\sin\alpha=T\tan\alpha$, and likewise $T_2\sin\beta=T\tan\beta$:
 
 $$
 \rho\,\Delta x\,\frac{\partial^2y}{\partial t^2}=T(\tan\beta-\tan\alpha).
 $$
 
-The tangent of each angle is the slope of the string at that end, opposite over adjacent in the small triangle of sides $\Delta x$ and $\Delta y$, so as the piece shrinks (ll. 391–401)
+The tangent of each angle is the slope of the string at that end, opposite over adjacent in the small triangle of sides $\Delta x$ and $\Delta y$, so as the piece shrinks
 
 $$
 \tan\beta\approx\frac{\partial y}{\partial x}\Big|_{x+\Delta x},\qquad\tan\alpha\approx\frac{\partial y}{\partial x}\Big|_{x}.
 $$
 
-Substitute and divide by $\Delta x$ (ll. 402–412):
+Substitute and divide by $\Delta x$:
 
 $$
 \rho\,\frac{\partial^2y}{\partial t^2}\approx T\,\frac{y_x(x+\Delta x,t)-y_x(x,t)}{\Delta x}.
@@ -203,18 +203,18 @@ $$
 \rho\,\frac{\partial^2y}{\partial t^2}=T\,\frac{\partial^2y}{\partial x^2}.
 $$
 
-Divide by $\rho$ (ll. 413–418):
+Divide by $\rho$:
 
 $$
 \frac{\partial^2y}{\partial t^2}=c^2\frac{\partial^2y}{\partial x^2},\qquad c=\sqrt{\frac T\rho}.
 $$
 
-This makes sense as a wave speed only if $T/\rho>0$ (ll. 419–424). Density is always positive. A negative tension would mean the string is being compressed, and the small-displacement assumptions behind the derivation would break down.
+This makes sense as a wave speed only if $T/\rho>0$. Density is always positive. A negative tension would mean the string is being compressed, and the small-displacement assumptions behind the derivation would break down.
 
 > [!check] Numbers
 > A steel guitar string with $T=70\ \mathrm N$ and $\rho=1.0\times10^{-3}\ \mathrm{kg\,m^{-1}}$ has $c=\sqrt{70/0.001}=265\ \mathrm{m\,s^{-1}}$. Dimensionally, $\mathrm N/(\mathrm{kg\,m^{-1}})=\mathrm{kg\,m\,s^{-2}}\cdot\mathrm{m\,kg^{-1}}=\mathrm{m^2\,s^{-2}}$, the square of a speed.
 
-D'Alembert's general solution $y=f(x+ct)+g(x-ct)$ on an infinite string (lecture notes §5.3) is the pulse-splitting in the figure above written as a formula. It was not covered in the 2024-25 lectures and has not been examined in the last three papers.
+D'Alembert's general solution $y=f(x+ct)+g(x-ct)$ on an infinite string is the pulse-splitting in the figure above written as a formula. It was not covered in the 2024-25 lectures and has not been examined in the last three papers.
 
 ## Links
 
@@ -234,7 +234,7 @@ Nothing was set in Lecture 14; the slide on diffusion was left as reading (l. 19
 ### Core
 
 - [ ] Classify $u_{xx}+4u_{xy}+3u_{yy}=0$, $u_{xx}+2u_{xy}+u_{yy}=0$ and $u_{xx}+u_{xy}+u_{yy}=0$. Answers: $b=2$, $b^2-ac=1$, hyperbolic; $b=1$, $b^2-ac=0$, parabolic; $b=\frac12$, $b^2-ac=-\frac34$, elliptic (suggested, not lecturer-set). → [[#Worked classifications]]
-- [ ] Derive the wave equation for a string from Newton's second law, stating each assumption where it is used (suggested, not lecturer-set). → [[#4. Deriving the wave equation for a string (L14)]]
+- [ ] Derive the wave equation for a string from Newton's second law, stating each assumption where it is used (suggested, not lecturer-set). → [[#4. Deriving the wave equation for a string]]
 
 ### Further practice
 

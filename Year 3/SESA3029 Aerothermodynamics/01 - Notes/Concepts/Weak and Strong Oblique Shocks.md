@@ -38,4 +38,4 @@ The two branches meet at $\theta_{max}$, where $\mathrm d\theta/\mathrm d\beta=0
 ## Related
 
 - [[Theta-Beta-Mach Relation]] · [[Oblique-Shock Jump Relations]] · [[Intake Pressure Recovery]]
-- Detail: [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#6. The oblique-shock chart|W02 §6]]
+- Detail: [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#6. The oblique-shock chart|W02 §6]] · [[SESA3029 Deep Dive - Theta-Beta-Mach Relation, Full Derivation#9. Weak and strong branches|θ–β–M deep dive §9]] (why the strong branch is always subsonic)

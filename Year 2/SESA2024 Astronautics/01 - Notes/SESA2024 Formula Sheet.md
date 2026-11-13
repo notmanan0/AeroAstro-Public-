@@ -120,7 +120,7 @@ $V_{ex}$ is the effective exhaust velocity (pressure thrust lumped in); no gravi
 
 | | |
 |---|---|
-| Thrust | $T=\dot mV_{ex}+(p_e-p_a)A_e$; vacuum or ideal expansion: $T=\dot mV_{ex}$ ($\dot m$ is written $\sigma$ on the slides) |
+| Thrust | $T=\dot mV_{ex}+(p_e-p_a)A_e$; vacuum or ideal expansion: $T=\dot mV_{ex}$ ($\dot m$ is also written $\sigma$) |
 | Total impulse | $I=\int_0^{t_b}T\,dt=M_eV_{ex}$, $M_e$ the propellant (expellant) mass |
 | Specific impulse | $I_{sp}=\dfrac{I}{M_eg_0}=\dfrac{V_{ex}}{g_0}=\dfrac{T}{\dot mg_0}$, in s (per unit weight, not mass) |
 | Rocket equation (given) | $\Delta V=V_{ex}\ln\dfrac{M_0}{M_b}=g_0I_{sp}\ln\dfrac{M_0}{M_0-M_e}$ |
@@ -202,7 +202,7 @@ Steady state at one point in the orbit; uniform temperature; Earth infrared abso
 
 ## 12 Sun- and Earth-synchronous orbits ([[SESA2024 12 - Sun- and Earth-Synchronous Orbits|note 12]])
 
-Circular orbit; $J_2$ only. $N$ orbits in $M$ days (written $n$ orbits, $m$ days on the slides), integers with no common factor.
+Circular orbit; $J_2$ only. $N$ orbits in $M$ days (also written $n$ orbits, $m$ days), integers with no common factor.
 
 | | |
 |---|---|

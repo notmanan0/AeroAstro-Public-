@@ -40,7 +40,7 @@ A big fan needs a big nacelle, which adds drag, and weighs more, which adds lift
 
 ---
 
-## 1. Architectures (Lecture 20)
+## 1. Architectures
 
 ![[prop_w07_turbofan_stations.png|860]]
 
@@ -48,7 +48,7 @@ A big fan needs a big nacelle, which adds drag, and weighs more, which adds lift
 |---|---|---|
 | Turbojet (single spool) | RR Viper (target drones, trainers) | light and cheap; high $V_j$; suits supersonic flight |
 | Twin-spool turbojet | RR Olympus 593 (Concorde, M 2) | the HP spool spins faster; better off-design operation and starting |
-| Low-bpr turbofan | P&W JT8D (727/737/DC-9; bpr 0.3, later 1.5) | first step to higher $\eta_P$ (L20, ll. 131–138) |
+| Low-bpr turbofan | P&W JT8D (727/737/DC-9; bpr 0.3, later 1.5) | first step to higher $\eta_P$ |
 | High-bpr, two-spool + booster | GE GEnx (bpr ≈ 9.5) | fan × booster ≈ 2.5, HPC ≈ 20, OPR ≈ 45; two-stage HPT, seven-stage LPT |
 | High-bpr, three-spool | RR Trent 1000 (bpr ≈ 9.5) | fan ≈ 1.5, IPC ≈ 7, HPC ≈ 4; more flexible off-design and at start-up, but more complex |
 | Geared turbofan | P&W GTF / GT1524 (bpr 12) | a 2.5 : 1 gearbox lets a small, fast LPT drive a slow, large fan |
@@ -62,11 +62,11 @@ $$
 BPR = \frac{\dot m_b}{\dot m_c}
 $$
 
-In a GEnx-class engine about 85–92 % of the air goes down the bypass duct, so the core is in effect a gas generator that drives the fan (L20, ll. 148–151; L21, ll. 115–117).
+In a GEnx-class engine about 85–92 % of the air goes down the bypass duct, so the core is in effect a gas generator that drives the fan.
 
 Station numbering (two-spool turbofan, handout §7.3.3): 2 fan face; 13 bypass after the fan; 19 bypass nozzle exit; 23 core after the fan root and booster; 3 HPC exit; 4 HPT entry; 45 LPT entry; 5 LPT exit; 9 core nozzle exit.
 
-The station numbers follow the industry convention (L21, ll. 26–79). Station 1 is upstream of the intake and 2 the compressor or fan inlet, so the engine analysis starts at 2; 3 is the combustor inlet, 4 the turbine inlet and 5 the turbine exit. Stations 6, 7 and 8 are reserved for an afterburner, so a dry engine jumps straight to 9, the nozzle. An intermediate station gets a two-digit number halfway between its neighbours (23 between 2 and 3, 45 between 4 and 5), and the bypass, the "first additional stream", has its stations prefixed with 1: 13 after the fan and 19 at its nozzle. The turbojet examples in W02 and W06 number the nozzle exit 6 instead.
+The station numbers follow the industry convention. Station 1 is upstream of the intake and 2 the compressor or fan inlet, so the engine analysis starts at 2; 3 is the combustor inlet, 4 the turbine inlet and 5 the turbine exit. Stations 6, 7 and 8 are reserved for an afterburner, so a dry engine jumps straight to 9, the nozzle. An intermediate station gets a two-digit number halfway between its neighbours (23 between 2 and 3, 45 between 4 and 5), and the bypass, the "first additional stream", has its stations prefixed with 1: 13 after the fan and 19 at its nozzle. The turbojet examples in W02 and W06 number the nozzle exit 6 instead.
 
 ### One core, several engines
 
@@ -95,17 +95,17 @@ $$
 G = 2.5\qquad\Longrightarrow\qquad G^2 = 6.25
 $$
 
-That is about six times more power per stage (L20, l. 200): fewer, smaller stages and a much lighter turbine. The drawback is a gearbox that has to transmit nearly the whole engine power. At 50 MW, even 1 % loss is 500 kW of heat to reject through the oil system (L20, ll. 203–213).
+That is about six times more power per stage: fewer, smaller stages and a much lighter turbine. The drawback is a gearbox that has to transmit nearly the whole engine power. At 50 MW, even 1 % loss is 500 kW of heat to reject through the oil system.
 
 ### Open rotors and containment
 
-An open rotor removes the nacelle's weight and drag and can reach a very high effective bypass ratio. Stator blades behind the rotor remove the swirl, which would otherwise be kinetic energy that produces no thrust (the same job the outlet guide vanes do behind a turbofan's fan). But a released fan blade cannot be contained by a Kevlar band in the casing, as it is in a turbofan, so a blade release would be catastrophic. And noise is harder: a turbofan's intake liners absorb the noise of the fan blades chopping the air, and an open rotor has no nacelle to put them in (L20, ll. 265–273).
+An open rotor removes the nacelle's weight and drag and can reach a very high effective bypass ratio. Stator blades behind the rotor remove the swirl, which would otherwise be kinetic energy that produces no thrust (the same job the outlet guide vanes do behind a turbofan's fan). But a released fan blade cannot be contained by a Kevlar band in the casing, as it is in a turbofan, so a blade release would be catastrophic. And noise is harder: a turbofan's intake liners absorb the noise of the fan blades chopping the air, and an open rotor has no nacelle to put them in.
 
 ---
 
 ## 2. Spool power balances
 
-In steady operation the net shaft work on each spool is zero (L21, ll. 175–212).
+In steady operation the net shaft work on each spool is zero.
 
 HP spool (HPC driven by HPT):
 
@@ -131,11 +131,11 @@ $$
 
 ---
 
-## 3. The fan pressure ratio sets the bypass jet (Lecture 21)
+## 3. The fan pressure ratio sets the bypass jet
 
 ### Bypass jet velocity
 
-Engines are often compared by bypass ratio, but the fan pressure ratio is the more meaningful indication of how suitable an engine is for a particular application (L21, ll. 134–137).
+Engines are often compared by bypass ratio, but the fan pressure ratio is the more meaningful indication of how suitable an engine is for a particular application.
 
 Intake (isentropic):
 
@@ -161,7 +161,7 @@ $$
 \boxed{V_{jb} = \sqrt{2c_pT_{013}\left[1-\left(\frac{p_a}{fpr\,p_{02}}\right)^{(\gamma-1)/\gamma}\right]}}
 $$
 
-The pressure ratio across the bypass nozzle is the product of the ram ratio $p_{02}/p_a$ (set by the flight Mach number) and the fan ratio (L21, ll. 145–149). For a given flight condition and fan efficiency, $V_{jb}$, and so $\eta_P$, depends only on fpr.
+The pressure ratio across the bypass nozzle is the product of the ram ratio $p_{02}/p_a$ (set by the flight Mach number) and the fan ratio. For a given flight condition and fan efficiency, $V_{jb}$, and so $\eta_P$, depends only on fpr.
 
 ### Why matched jets
 
@@ -188,13 +188,13 @@ $$
 X = \frac{F_N}{\dot m_{air}} = V_j-V
 $$
 
-It describes an engine better than bpr does: the RB211 kept the same bypass ratio while its thrust and propulsive efficiency changed a lot (L21, ll. 152–174).
+It describes an engine better than bpr does: the RB211 kept the same bypass ratio while its thrust and propulsive efficiency changed a lot.
 
-The RB211 shows the trade in practice (L21, ll. 152–171). Launched in 1971 at bpr 5 and fpr 1.5, it was asked for more thrust as its airframes were stretched, from 44,000 to about 60,000 lbf, with no more room under the wing, so Rolls-Royce raised the fpr and accepted a lower $\eta_P$. Its sfc still improved over the period, because a higher core pressure ratio and turbine temperature raised $\eta_{th}$ by more than $\eta_P$ fell.
+The RB211 shows the trade in practice. Launched in 1971 at bpr 5 and fpr 1.5, it was asked for more thrust as its airframes were stretched, from 44,000 to about 60,000 lbf, with no more room under the wing, so Rolls-Royce raised the fpr and accepted a lower $\eta_P$. Its sfc still improved over the period, because a higher core pressure ratio and turbine temperature raised $\eta_{th}$ by more than $\eta_P$ fell.
 
 ### Worked example – the PS8 fan-pressure-ratio sweep
 
-A like-for-like comparison at M 0.78 at 35,000 ft, OPR 45, TET 1500 K, all component efficiencies 0.9, the same core in every case and matched jets ([[SESA2023 Problem Sheet 8 Turbofans Solutions]] Q8.3; L21, ll. 213–276).
+A like-for-like comparison at M 0.78 at 35,000 ft, OPR 45, TET 1500 K, all component efficiencies 0.9, the same core in every case and matched jets ([[SESA2023 Problem Sheet 8 Turbofans Solutions]] Q8.3).
 
 | fpr | $V_j$ (m/s) | $\eta_P$ | bpr | $X=F_N/\dot m_a$ (m/s) | sfc bare (g s⁻¹ kN⁻¹) | sfc with nacelle drag |
 |---|---|---|---|---|---|---|
@@ -206,24 +206,24 @@ A pure turbojet with the same core (PS8 Q8.2) has $V_j=975$ m/s, $\eta_P=0.38$ a
 
 ![[prop_turbofan_fpr.png|760]]
 
-Trends (L21, ll. 223–276):
+Trends:
 
 - Lower fpr gives a higher bpr for the same core: with a given turbine power the fan can move more air if it accelerates it less. The LPT then does proportionally more of the work.
-- Net thrust rises only modestly as fpr falls, because the larger fan swallows more air and so pays more ram drag $\dot m_aV$ (L21, ll. 240–248).
-- Gross thrust rises strongly as fpr falls (more air), which matters at take-off: with one engine failed at M 0.25, gross thrust is what lets a twin complete the take-off (L21, ll. 249–264).
+- Net thrust rises only modestly as fpr falls, because the larger fan swallows more air and so pays more ram drag $\dot m_aV$.
+- Gross thrust rises strongly as fpr falls (more air), which matters at take-off: with one engine failed at M 0.25, gross thrust is what lets a twin complete the take-off.
 - Thermal efficiency is unchanged (same core), so the bare sfc improves through $\eta_P$ alone.
 
 > [!check] Numerical checks on reducing the fpr
-> - Reducing fpr from 1.8 to 1.5 cuts the bare sfc by about 6 % (handout §7.3, from Fig. 19). The same model gives 13.24 → 12.47 g s⁻¹ kN⁻¹, −5.8 % ✔.
-> - Specific thrust falls from 151 to 109 m/s, so for the same thrust the air mass flow must rise by $151/109=1.39$, i.e. 39 % in this model (36 % when read from Fig. 19 of the handout).
+> - Reducing fpr from 1.8 to 1.5 cuts the bare sfc by about 6 % on the course handout's chart. The same model gives 13.24 → 12.47 g s⁻¹ kN⁻¹, −5.8 % ✔.
+> - Specific thrust falls from 151 to 109 m/s, so for the same thrust the air mass flow must rise by $151/109=1.39$, i.e. 39 % in this model (36 % when read from the handout's chart).
 
 ---
 
-## 4. The installed engine: nacelle drag and weight (Lecture 21)
+## 4. The installed engine: nacelle drag and weight
 
 ### Nacelle drag
 
-The "bare engine" thrust counts only the momentum fluxes in and out. The nacelle's outer surface and the bypass-duct walls add drag (L21, ll. 277–316). Drag scales with density, wetted area $A_w$ and velocity squared:
+The "bare engine" thrust counts only the momentum fluxes in and out. The nacelle's outer surface and the bypass-duct walls add drag. Drag scales with density, wetted area $A_w$ and velocity squared:
 
 $$
 D_{nac}\propto\rho A_wV^2 = (\rho A_wV)\,V
@@ -241,11 +241,11 @@ $$
 \boxed{F_{N,eff} = F_{N,bare}\left(1-\frac{kV}{X}\right)\approx F_{N,bare}\left(1-\frac{9.25}{X}\right)}
 $$
 
-with $kV\approx9$ m/s from typical data. At $X\approx100$ m/s this is about a 10 % loss (L21, ll. 313–316). Low fpr (low $X$) is hit hardest, because a lot of air is moved for little velocity increase.
+with $kV\approx9$ m/s from typical data. At $X\approx100$ m/s this is about a 10 % loss. Low fpr (low $X$) is hit hardest, because a lot of air is moved for little velocity increase.
 
 ### Engine weight
 
-A bigger engine is heavier. Pure geometric scaling would give mass ∝ length³ (ll. 335–338); real engine families are lighter than that because big engines get the best technology, so empirically the mass scales between the square and the cube of the fan diameter (ll. 347–352). A typical fit is
+A bigger engine is heavier. Pure geometric scaling would give mass ∝ length³; real engine families are lighter than that because big engines get the best technology, so empirically the mass scales between the square and the cube of the fan diameter. A typical fit is
 
 $$
 W_{eng} = 12\left(\frac{d}{3\ \mathrm m}\right)^{2.4}\ \mathrm{tonne}
@@ -259,19 +259,19 @@ $$
 
 ### The result
 
-- Drag and weight turn the steady improvement in bare sfc into a real optimum: a large penalty below fpr ≈ 1.5, and a flat plateau above it (L21, ll. 362–369). The corrected sfc is about 40 % above the bare value.
+- Drag and weight turn the steady improvement in bare sfc into a real optimum: a large penalty below fpr ≈ 1.5, and a flat plateau above it. The corrected sfc is about 40 % above the bare value.
 - Rolls-Royce sits at the low-fpr end of the plateau, so something else must favour low fpr: noise.
-- Very large fans also bring problems with blade stresses, ground and wing clearance, and air-freighting the engine (ll. 373–378).
+- Very large fans also bring problems with blade stresses, ground and wing clearance, and air-freighting the engine.
 - fpr ≈ 1.5 matches current industry practice.
 
 ### Noise
 
-The most restrictive airport sets the design: London Heathrow for noise, probably Zurich for NOₓ (L21, ll. 381–391). Because jet noise rises so steeply with jet velocity, a high fpr carries a very large noise penalty; on modern engines jet noise has been cut so far that turbomachinery noise now competes with it (ll. 393–400).
+The most restrictive airport sets the design: London Heathrow for noise, probably Zurich for NOₓ. Because jet noise rises so steeply with jet velocity, a high fpr carries a very large noise penalty; on modern engines jet noise has been cut so far that turbomachinery noise now competes with it.
 
 > [!warning] Exponent of jet velocity in jet noise
-> Jet noise intensity (mean-square sound pressure, which sets the level in dB) scales with the seventh power of jet velocity (L1, l. 439; L21, l. 397), and the radiated acoustic power with the eighth power (Lighthill's law, handout §7.2.3). The conclusion is the same either way; state which quantity the exponent refers to.
+> Jet noise intensity (mean-square sound pressure, which sets the level in dB) scales with the seventh power of jet velocity, and the radiated acoustic power with the eighth power (Lighthill's law, handout §7.2.3). The conclusion is the same either way; state which quantity the exponent refers to.
 
-The exam angle is the trade-off itself: "explain how a greater bypass ratio affects fpr and fuel consumption" ([[SESA2023 Exam 2021-22 Solutions]] Q3(iii)). Like most engineering choices it is a trade-off, so write a few bullet points on each side (L21, ll. 406–411). A high fpr gives a smaller, lighter engine that is easier to manufacture and has less nacelle drag. A low fpr gives a higher $\eta_P$, a lower bare sfc, much less noise and more gross thrust at take-off. At a fixed overall pressure ratio and core, a higher bypass ratio needs a lower fpr and more LPT work, so more stages or a gearbox.
+The exam angle is the trade-off itself: "explain how a greater bypass ratio affects fpr and fuel consumption" ([[SESA2023 Exam 2021-22 Solutions]] Q3(iii)). Like most engineering choices it is a trade-off, so write a few bullet points on each side. A high fpr gives a smaller, lighter engine that is easier to manufacture and has less nacelle drag. A low fpr gives a higher $\eta_P$, a lower bare sfc, much less noise and more gross thrust at take-off. At a fixed overall pressure ratio and core, a higher bypass ratio needs a lower fpr and more LPT work, so more stages or a gearbox.
 
 ---
 
@@ -330,7 +330,7 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 7 lectures; t
 - [ ] Derive $F_{N,eff}=F_N(1-kV/X)$ from the drag scaling. → [[#Nacelle drag]]
 - [ ] Explain why a 2.5 : 1 gearbox gives about six times the work per LPT stage. → [[#Why the fan cannot just get bigger]]
 - [ ] Explain the RB211's growth from 44,000 to 60,000 lbf at constant bpr. → [[#Specific thrust]]
-- [ ] Number the stations of a two-spool turbofan from memory and explain the convention (why 9, 23, 45, 13, 19). → [[#1. Architectures (Lecture 20)]]
+- [ ] Number the stations of a two-spool turbofan from memory and explain the convention (why 9, 23, 45, 13, 19). → [[#1. Architectures]]
 - [ ] Explain why the Viper needs 17 compressor stages but only 3 turbine stages, and what a second spool buys. → [[#The examples in detail]]
 - [ ] Check the 6 % sfc gain from fpr 1.8 → 1.5 and the extra air flow needed. Targets −5.8 %, +39 %. → [[#Worked example – the PS8 fan-pressure-ratio sweep]]
 
@@ -347,6 +347,6 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 7 lectures; t
 > "About 85 % of the flow is going down the bypass duct… a 12 to 1 bypass ratio, which actually means it's probably 92 %." The correction is right: $12/13=92$ %.
 
 > [!warning] Transcript slip: the JT8D was not a 707 engine (L20, ll. 116–117; L21, l. 375)
-> Where: [[#1. Architectures (Lecture 20)]].
+> Where: [[#1. Architectures]].
 >
 > Both lectures place "the JT8 engine" on the Boeing 707. The JT8D powered the 727, 737 and DC-9; the 707 used the JT3D. The point being made, slim early engines against today's large fans, is unaffected.

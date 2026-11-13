@@ -44,7 +44,7 @@ The curves of drag and power required against speed from [[SESA1015 M05 - Minimu
 
 ## 1. Steady glide without thrust
 
-The aircraft flies along a straight path inclined at $\theta$ below the horizontal at constant true airspeed $V$ (Notes §7.1, p. 36). With no thrust, three forces act: lift $L$ normal to the flight path, drag $D$ opposite to the velocity, and weight $W$ vertically down.
+The aircraft flies along a straight path inclined at $\theta$ below the horizontal at constant true airspeed $V$. With no thrust, three forces act: lift $L$ normal to the flight path, drag $D$ opposite to the velocity, and weight $W$ vertically down.
 
 ![[mof_m08_glide_climb_forces.png|900]]
 
@@ -80,7 +80,7 @@ $$
 \boxed{R=h\,\frac{L}{D}} .
 $$
 
-A glider with $L/D=40$ covers 40 km for each kilometre of height. For comparison, $(L/D)_{max}$ is about 4 for a house sparrow, 10 for a seagull, 20 for an albatross, 15–20 for a light aircraft and 30–60 for a sailplane (Slides v2, p. 63).
+A glider with $L/D=40$ covers 40 km for each kilometre of height. For comparison, $(L/D)_{max}$ is about 4 for a house sparrow, 10 for a seagull, 20 for an albatross, 15–20 for a light aircraft and 30–60 for a sailplane.
 
 Lift in a glide is slightly less than the weight, $L=W\cos\theta$. For the glide angles of real aircraft (a few degrees) $\cos\theta>0.99$, which is why the flight speed is found from $L\approx W$ in the shallow-glide approximation used throughout §7.1:
 
@@ -90,7 +90,7 @@ $$
 
 ## 2. Flattest glide: the minimum-drag condition
 
-Since $\tan\theta=C_D/C_L$, the flattest glide is flown at the $C_L$ that minimises $C_D/C_L$, which is the condition for maximum $L/D$ and, in level flight, minimum drag. With the parabolic polar $C_D=C_{D0}+KC_L^2$ (written $a+bC_L^2$ in Notes §7.1, so $a=C_{D0}$, $b=K$),
+Since $\tan\theta=C_D/C_L$, the flattest glide is flown at the $C_L$ that minimises $C_D/C_L$, which is the condition for maximum $L/D$ and, in level flight, minimum drag. With the parabolic polar $C_D=C_{D0}+KC_L^2$ (written $a+bC_L^2$ in the course notes, so $a=C_{D0}$, $b=K$),
 
 $$
 \frac{C_D}{C_L}=\frac{C_{D0}}{C_L}+KC_L .
@@ -136,11 +136,11 @@ $$
 \boxed{\theta_{min}\approx2\sqrt{KC_{D0}}}\quad\text{(radians, shallow glide)},
 $$
 
-or $\theta_{min}=2(ab)^{1/2}$ in the $a$, $b$ notation (Notes §7.1, p. 36). Weight does not appear: a heavier glider of the same shape glides at the same angle, but faster, since $V_{MD}=\sqrt{2W/(\rho SC_{L_{MD}})}$ grows as $\sqrt{W/S}$. Altitude does not appear either; the same angle is flown at a higher true airspeed in thinner air.
+or $\theta_{min}=2(ab)^{1/2}$ in the $a$, $b$ notation. Weight does not appear: a heavier glider of the same shape glides at the same angle, but faster, since $V_{MD}=\sqrt{2W/(\rho SC_{L_{MD}})}$ grows as $\sqrt{W/S}$. Altitude does not appear either; the same angle is flown at a higher true airspeed in thinner air.
 
 ### Engine-out glide after a bird strike
 
-A twin-engined airliner loses both engines at 975 m above the ground. It has $(L/D)_{max}=18.1$ and $C_D=0.017+0.045C_L^2$ (Slides v2, p. 144). Find the minimum glide angle and the still-air distance over the ground.
+A twin-engined airliner loses both engines at 975 m above the ground. It has $(L/D)_{max}=18.1$ and $C_D=0.017+0.045C_L^2$. Find the minimum glide angle and the still-air distance over the ground.
 
 The polar is consistent with the stated ratio: $1/(2\sqrt{0.045\times0.017})=18.08$. The minimum glide angle is
 
@@ -159,7 +159,7 @@ $$
 
 ## 3. Rate of descent and minimum sink
 
-The rate of descent is the vertical component of the velocity (Notes §7.1, p. 37):
+The rate of descent is the vertical component of the velocity:
 
 $$
 -\frac{dh}{dt}=-\dot h=V\sin\theta .
@@ -191,7 +191,7 @@ $$
 -\dot h\approx\sqrt{\frac{2W}{\rho S}}\;\frac{C_D}{C_L^{3/2}} .
 $$
 
-For a given aircraft at a given altitude only $C_D/C_L^{3/2}$ varies, so the minimum sink comes where that ratio is least (Slides v2, p. 143). Write it out with the parabolic polar:
+For a given aircraft at a given altitude only $C_D/C_L^{3/2}$ varies, so the minimum sink comes where that ratio is least. Write it out with the parabolic polar:
 
 $$
 \frac{C_D}{C_L^{3/2}}=C_{D0}C_L^{-3/2}+KC_L^{1/2}.
@@ -265,7 +265,7 @@ The hodograph plots sink rate against horizontal speed for every $C_L$. A straig
 
 ### Best glide and minimum sink of a 15-tonne jet
 
-The jet of Slides v2, p. 139 with its engines off has $m=15\,000$ kg, $S=50$ m², $C_D=0.013+0.157C_L^2$, at sea level ($\rho=1.225$ kg m⁻³), so $W=147\,150$ N and $2W/(\rho S)=4805$ m² s⁻².
+A jet with its engines off has $m=15\,000$ kg, $S=50$ m², $C_D=0.013+0.157C_L^2$, at sea level ($\rho=1.225$ kg m⁻³), so $W=147\,150$ N and $2W/(\rho S)=4805$ m² s⁻².
 
 At minimum drag, $C_{L_{MD}}=\sqrt{0.013/0.157}=0.2878$ and $C_{D_{MD}}=0.026$, so
 
@@ -294,7 +294,7 @@ From 975 m the aircraft stays up $975/10.19=95.7$ s at minimum sink but only $97
 
 ## 4. Steady climbing flight
 
-In a climb the flight path is inclined at $\theta$ above the horizontal and the thrust line is inclined at the thrust vector angle $\gamma$ to the flight path (Notes §7.2, p. 37; Slides v2, p. 133). Here $\theta$ is the path angle and $\gamma$ the thrust angle, the reverse of many textbooks.
+In a climb the flight path is inclined at $\theta$ above the horizontal and the thrust line is inclined at the thrust vector angle $\gamma$ to the flight path. Here $\theta$ is the path angle and $\gamma$ the thrust angle, the reverse of many textbooks.
 
 Newton's second law along the flight path, allowing the speed to change, and equilibrium normal to it give
 
@@ -324,7 +324,7 @@ $$
 \boxed{\frac{(T\cos\gamma-D)V}{W}=\frac{dh}{dt}+\frac{V}{g}\frac{dV}{dt}} .
 $$
 
-With $TV=P_{av}$ and $DV=P_{req}$ the left side is $(P_{av}\cos\gamma-P_{req})/W$, the specific excess power, a velocity. The equation says excess power can be spent on climbing, on accelerating, or on a mix of the two (Slides v2, p. 134). With the thrust along the path ($\gamma=0$), dividing instead by $V$ gives the specific excess thrust form:
+With $TV=P_{av}$ and $DV=P_{req}$ the left side is $(P_{av}\cos\gamma-P_{req})/W$, the specific excess power, a velocity. The equation says excess power can be spent on climbing, on accelerating, or on a mix of the two. With the thrust along the path ($\gamma=0$), dividing instead by $V$ gives the specific excess thrust form:
 
 $$
 \frac{T-D}{W}=\frac1V\frac{dh}{dt}+\frac1g\frac{dV}{dt}.
@@ -336,9 +336,9 @@ $$
 \Delta h=\frac{90^2-60^2}{2\times9.81}=\frac{4500}{19.62}=229\ \text{m}
 $$
 
-of height (Slides v2, p. 134), a useful reserve in an emergency.
+of height, a useful reserve in an emergency.
 
-For a steady climb $dV/dt=0$, and the boxed equation becomes (Notes §7.2, p. 38)
+For a steady climb $dV/dt=0$, and the boxed equation becomes
 
 $$
 \boxed{\frac{dh}{dt}=V\sin\theta=\frac{V\,(T\cos\gamma-D)}{W}},\qquad\sin\theta=\frac{T\cos\gamma-D}{W}.
@@ -352,7 +352,7 @@ $$
 
 ### The shallow-climb method
 
-For a shallow climb with zero thrust angle ($\gamma=0$, $\cos\theta\approx1$, so $L\approx W$), the climb angle at a given speed $V$ is found in four steps (Notes §7.2, p. 38). First the lift coefficient from $L=W$:
+For a shallow climb with zero thrust angle ($\gamma=0$, $\cos\theta\approx1$, so $L\approx W$), the climb angle at a given speed $V$ is found in four steps. First the lift coefficient from $L=W$:
 
 $$
 C_L=\frac{2W}{\rho V^2S}.
@@ -368,7 +368,7 @@ or for small angles $\theta\approx(T-D)/W$ in radians, with rate of climb $dh/dt
 
 ### Thrust for a steady climb at 400 knots
 
-An aircraft with wing loading 4700 N m⁻², wing area 78 m² and $C_D=0.018+0.06C_L^2$ is to climb steadily at 6 m s⁻¹ at 400 kn at sea level, with a small thrust angle (Slides v2, pp. 132 and 135). Find the thrust.
+An aircraft with wing loading 4700 N m⁻², wing area 78 m² and $C_D=0.018+0.06C_L^2$ is to climb steadily at 6 m s⁻¹ at 400 kn at sea level, with a small thrust angle. Find the thrust.
 
 The weight and speed are
 
@@ -410,7 +410,7 @@ The climb angle is $\sin^{-1}(6/205.76)=1.67^\circ$, comfortably shallow. About 
 
 ## 5. Best climb rate and best climb angle at constant thrust
 
-A jet's thrust varies little with speed at a given altitude, so take $T$ constant and $\gamma=0$ (Slides v2, p. 140). With $L\approx W$ ("quasi-level flight") the speed is $V=\sqrt{2W/(\rho SC_L)}$ and $D/W\approx C_D/C_L$, so
+A jet's thrust varies little with speed at a given altitude, so take $T$ constant and $\gamma=0$. With $L\approx W$ ("quasi-level flight") the speed is $V=\sqrt{2W/(\rho SC_L)}$ and $D/W\approx C_D/C_L$, so
 
 $$
 \frac{dh}{dt}=V\left(\frac TW-\frac DW\right)
@@ -466,7 +466,7 @@ If instead the power available is roughly constant with speed, as for a propelle
 
 ### Best climb rate and angle of a jet
 
-A jet of mass 15 000 kg and wing area 50 m² has $C_D=0.013+0.157C_L^2$ and $T/W=0.429$. Find the climb angle at the best climb rate and the corresponding equivalent climb rate, then the best climb angle (unaccelerated shallow climb, zero thrust angle; Slides v2, pp. 139 and 141).
+A jet of mass 15 000 kg and wing area 50 m² has $C_D=0.013+0.157C_L^2$ and $T/W=0.429$. Find the climb angle at the best climb rate and the corresponding equivalent climb rate, then the best climb angle (unaccelerated shallow climb, zero thrust angle).
 
 The weight is $W=15\,000\times9.81=147\,150$ N. The lift coefficient for best rate is
 
@@ -513,7 +513,7 @@ That steepest climb is flown at $V_{MD}=129.2$ m s⁻¹ EAS, where the rate of c
 
 ## 6. Limits of the steady analysis
 
-The results above hold for shallow climbs at modest rates (Notes §7.2, p. 38). Many high-performance aircraft have $T/W$ above 1, and can then climb vertically, which a steady analysis with $L\approx W$ cannot describe at all: in a vertical climb $\cos\theta=0$ and the wing carries no load. At very high climb rates the density changes appreciably during the climb, so neither $T$ nor $D$ is constant and the climb is no longer steady; optimum climb schedules then become an energy-height problem beyond this steady analysis. The same caution applies to the glide: the glide angle is fixed by $L/D$, but the true airspeed for that angle falls as the aircraft descends into denser air if the pilot holds $C_L$ constant, which is what "flying at $(L/D)_{max}$" means.
+The results above hold for shallow climbs at modest rates. Many high-performance aircraft have $T/W$ above 1, and can then climb vertically, which a steady analysis with $L\approx W$ cannot describe at all: in a vertical climb $\cos\theta=0$ and the wing carries no load. At very high climb rates the density changes appreciably during the climb, so neither $T$ nor $D$ is constant and the climb is no longer steady; optimum climb schedules then become an energy-height problem beyond this steady analysis. The same caution applies to the glide: the glide angle is fixed by $L/D$, but the true airspeed for that angle falls as the aircraft descends into denser air if the pilot holds $C_L$ constant, which is what "flying at $(L/D)_{max}$" means.
 
 ## Links
 

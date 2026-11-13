@@ -40,7 +40,7 @@ De Moivre's theorem, roots of complex numbers, loci in the plane, and the trigon
 
 ---
 
-## 1. Complex numbers, j and the Argand diagram (James §3.1, §3.2.1)
+## 1. Complex numbers, j and the Argand diagram
 
 Define $\mathrm j=\sqrt{-1}$, so that $\mathrm j^2=-1$. The square root of any negative number is then a real multiple of $\mathrm j$: for a positive real $b$,
 
@@ -75,7 +75,7 @@ x&=\frac{-2\pm\sqrt{4-8}}{2}\\
 \end{aligned}
 $$
 
-Every quadratic that is irreducible over the reals therefore splits into two complex factors, for instance $x^2+2x+5=(x+1+2\mathrm j)(x+1-2\mathrm j)$. The **fundamental theorem of algebra**, whose proof is beyond this module, extends this to every degree: a polynomial equation of degree $n$ has exactly $n$ roots, counted with multiplicity, real or complex. The seventh-degree equation $x^7-7x^5-6x^4+4x^3-28x-24=0$ has the seven roots $-1$, $-2$, $3$, $1\pm\mathrm j$ and $-1\pm\mathrm j$. When the coefficients are real, the non-real roots come in conjugate pairs ([[#3. The complex conjugate (James §3.2.3)|§3]] proves this).
+Every quadratic that is irreducible over the reals therefore splits into two complex factors, for instance $x^2+2x+5=(x+1+2\mathrm j)(x+1-2\mathrm j)$. The **fundamental theorem of algebra**, whose proof is beyond this module, extends this to every degree: a polynomial equation of degree $n$ has exactly $n$ roots, counted with multiplicity, real or complex. The seventh-degree equation $x^7-7x^5-6x^4+4x^3-28x-24=0$ has the seven roots $-1$, $-2$, $3$, $1\pm\mathrm j$ and $-1\pm\mathrm j$. When the coefficients are real, the non-real roots come in conjugate pairs ([[#3. The complex conjugate|§3]] proves this).
 
 For the cubic $x^3+8=0$ (Exercise 8(b)), $x=-2$ is a root by inspection, so $x+2$ is a factor:
 
@@ -103,7 +103,7 @@ The number $x+\mathrm jy$ is plotted as the point $(x,y)$, with the real axis ho
 
 Example 3.1 plots $3+2\mathrm j$, $-5+3\mathrm j$, $8-5\mathrm j$ and $-2-3\mathrm j$ at $(3,2)$, $(-5,3)$, $(8,-5)$ and $(-2,-3)$, one in each quadrant. Exercise 1 plots $1+\mathrm j$, $\sqrt3-\mathrm j$, $-3+4\mathrm j$, $1-\mathrm j\sqrt3$, $-1+\mathrm j\sqrt3$ and $-1-\mathrm j\sqrt3$. Of these, $\sqrt3-\mathrm j$, $1-\mathrm j\sqrt3$, $-1+\mathrm j\sqrt3$ and $-1-\mathrm j\sqrt3$ all have modulus 2, so they lie on the circle $|z|=2$, at angles $-30°$, $-60°$, $120°$ and $-120°$.
 
-## 2. Cartesian arithmetic (James §3.2.2)
+## 2. Cartesian arithmetic
 
 ### Equality
 
@@ -254,7 +254,7 @@ $$
 
 The real parts give $2+x=3x-2y$, so $x-y=1$. The imaginary parts give $-y=6x+y$, so $y=-3x$. Then $x+3x=1$, so $x=\frac14$ and $y=-\frac34$.
 
-## 3. The complex conjugate (James §3.2.3)
+## 3. The complex conjugate
 
 The **complex conjugate** of $z=x+\mathrm jy$ is $z^*=x-\mathrm jy$: the sign of the imaginary part changes, so on the Argand diagram $z^*$ is the reflection of $z$ in the real axis. Adding and subtracting $z$ and $z^*$ isolates the two parts,
 
@@ -308,7 +308,7 @@ $$
 
 using $a_k^*=a_k$ for real coefficients. So $z_0^*$ is a root as well: $3\pm2\mathrm j$ for $x^2-6x+13$, and $1\pm\mathrm j\sqrt3$ for $x^3+8$. The argument fails when the coefficients are complex.
 
-## 4. Modulus and argument (James §3.2.4)
+## 4. Modulus and argument
 
 A point of the plane is fixed equally well by its distance from the origin and its direction. The **modulus** $|z|=r$ is the length of $OP$, and the **argument** $\arg z=\theta$ is the angle from the positive real axis to $OP$, anticlockwise positive. Pythagoras gives
 
@@ -316,7 +316,7 @@ $$
 r=|z|=\sqrt{x^2+y^2},
 $$
 
-the square root of $x^2+y^2$, never of $x^2+(\mathrm jy)^2$. Comparing with [[#3. The complex conjugate (James §3.2.3)|§3]], $zz^*=|z|^2$.
+the square root of $x^2+y^2$, never of $x^2+(\mathrm jy)^2$. Comparing with [[#3. The complex conjugate|§3]], $zz^*=|z|^2$.
 
 Adding any multiple of $2\pi$ to $\theta$ gives the same direction and so the same number, so the argument is fixed by a convention. The **principal argument** is the one value in
 
@@ -355,7 +355,7 @@ Example 3.10 has one point in each quadrant:
 | $-1+\mathrm j$ | 2 | $\sqrt2=1.414$ | $\frac\pi4$ | $\pi-\frac\pi4=\frac{3\pi}4$ |
 | $-\sqrt6-\mathrm j\sqrt2$ | 3 | $\sqrt{6+2}=2\sqrt2=2.828$ | $\tan^{-1}\frac{\sqrt2}{\sqrt6}=\tan^{-1}\frac1{\sqrt3}=\frac\pi6$ | $-\big(\pi-\frac\pi6\big)=-\frac{5\pi}6$ |
 
-## 5. Polar form (James §3.2.6)
+## 5. Polar form
 
 From the triangle with hypotenuse $r$ and angle $\theta$,
 
@@ -383,7 +383,7 @@ Because $\cos(-t)=\cos t$ and $\sin(-t)=-\sin t$, the last can also be written $
 
 Exercise 24 includes the points on the axes, where no inverse tangent is needed: $\mathrm j=1\angle\frac\pi2$ and $-1=1\angle\pi$ (the principal range includes $+\pi$ and excludes $-\pi$). The others are $\sqrt3-\mathrm j\sqrt3=\sqrt6\angle\big(-\frac\pi4\big)$, then $-3-2\mathrm j=\sqrt{13}\angle\big(-(\pi-\tan^{-1}\frac23)\big)=\sqrt{13}\angle(-2.554)$, and $(2-\mathrm j)(2+\mathrm j)=4+1=5=5\angle0$.
 
-## 6. Multiplication, division and powers in polar form (James §3.2.6)
+## 6. Multiplication, division and powers in polar form
 
 ### Multiplication
 
@@ -442,7 +442,7 @@ multiplying by $\mathrm j$ keeps the modulus and turns the vector through $90°$
 
 ![[m1054_m05_rotation_square.png|900]]
 
-The left panel shows $z=2-3\mathrm j$ with its successive quarter-turns and its conjugate; $1/z=z^*/13$ points the same way as $z^*$ but has length $1/\sqrt{13}$. The right panel is Example 4.15 ([[#8. Complex numbers as vectors (James §4.2.6)|§8]]).
+The left panel shows $z=2-3\mathrm j$ with its successive quarter-turns and its conjugate; $1/z=z^*/13$ points the same way as $z^*$ but has length $1/\sqrt{13}$. The right panel is Example 4.15 ([[#8. Complex numbers as vectors|§8]]).
 
 ### Division
 
@@ -515,7 +515,7 @@ $$
 
 which already lies in $(-\pi,\pi]$. Converting back, $z=\frac{\sqrt5}{25}\angle(-2.0344)=-\frac1{25}-\frac2{25}\mathrm j$, the same value as expanding every bracket directly. Specimen Test 5, Q4 uses only the modulus rule: $|2+\mathrm j|=|-1-2\mathrm j|=\sqrt5$, so $\left|\dfrac{(2+\mathrm j)^{11}}{(-1-2\mathrm j)^9}\right|=\dfrac{(\sqrt5)^{11}}{(\sqrt5)^9}=5$.
 
-## 7. Euler's formula and exponential form (James §3.2.7, §3.2.9)
+## 7. Euler's formula and exponential form
 
 **Euler's formula** is
 
@@ -644,7 +644,7 @@ $$
 
 [[MATH1054 M22 - Complex Numbers II|M22]] uses these to define the trigonometric, hyperbolic and logarithmic functions of a complex variable.
 
-## 8. Complex numbers as vectors (James §4.2.6)
+## 8. Complex numbers as vectors
 
 The point $P$ representing $z$ can equally be read as the vector $\vec{OP}$, and then complex addition is vector addition. Adding real and imaginary parts separately is adding components, so $z_1+z_2$ is the diagonal of the parallelogram with sides $\vec{Oz_1}$ and $\vec{Oz_2}$. Subtraction is addition of $-z_2$, the reflection of $z_2$ through the origin; equivalently, since $z_2+(z_1-z_2)=z_1$, the difference $z_1-z_2$ is the vector from the point $z_2$ to the point $z_1$, translated to start at $O$. Its length
 
@@ -730,7 +730,7 @@ The vertices are $(0,0)$, $(1,2)$, $(-2,1)$ and $(-1,3)$. Turning the other way,
 - [ ] Exercise 1 (Module 05 work scheme): plot the six points and find each modulus and argument. → [[MATH1054 M05 Solutions - Complex Numbers I#Example 3.1 and Exercise 1: Argand diagrams]]
 - [ ] Exercises 8(a), (b) and 10(a)–(c) (Module 05 work scheme): complex roots of polynomials, and $\mathrm jz$, $z^*$, $1/z$. → [[MATH1054 M05 Solutions - Complex Numbers I#Exercise 8: Roots of polynomials]]
 - [ ] Examples 3.12 and 3.14 (Module 05 work scheme) without notes, checking each in cartesian form. → [[#Powers and long products]] · [[MATH1054 M05 Solutions - Complex Numbers I#Example 3.14: Modulus and argument of a product and quotient]]
-- [ ] Example 4.15 (Module 05 work scheme): the square on OP by rotation through j. → [[#8. Complex numbers as vectors (James §4.2.6)]]
+- [ ] Example 4.15 (Module 05 work scheme): the square on OP by rotation through j. → [[#8. Complex numbers as vectors]]
 - [ ] James Exercise 19, $z_1=1+\mathrm j$, $z_2=\sqrt3+\mathrm j$ (suggested, not in the work scheme). Answer: $z_1z_2=2\sqrt2\angle\frac{5\pi}{12}$, $z_1/z_2=\frac1{\sqrt2}\angle\frac\pi{12}$. → [[#Multiplication]]
 
 ## Transcript and slide slips

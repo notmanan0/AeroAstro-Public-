@@ -39,7 +39,7 @@ Flows are also classified, because the right model depends on the class: steady 
 
 ## 1. The fluid particle
 
-A **fluid particle** is a small quantity of fluid with a fixed identity: it is always made of the same molecules, as if they had been tagged, so its mass is fixed, but its shape and volume may change as it moves and its pressure, density and temperature change (10 Mar, ll. 42–80). Its size $dl$ is small compared with any length scale of the flow (the size of the vortices shed by an aerofoil scale with the chord $c$, say), so properties are uniform across it. But it is still much larger than the mean free path $\ell$, so it contains enough molecules for the continuum averages of [[SESA1016 T1 - Thermodynamic Systems, Properties and State#3. The continuum assumption|T1]] to make sense:
+A **fluid particle** is a small quantity of fluid with a fixed identity: it is always made of the same molecules, as if they had been tagged, so its mass is fixed, but its shape and volume may change as it moves and its pressure, density and temperature change. Its size $dl$ is small compared with any length scale of the flow (the size of the vortices shed by an aerofoil scale with the chord $c$, say), so properties are uniform across it. But it is still much larger than the mean free path $\ell$, so it contains enough molecules for the continuum averages of [[SESA1016 T1 - Thermodynamic Systems, Properties and State#3. The continuum assumption|T1]] to make sense:
 
 $$
 \ell\ll dl\ll c
@@ -47,13 +47,13 @@ $$
 
 ## 2. Lagrangian and Eulerian viewpoints
 
-In the **Lagrangian** viewpoint (after Lagrange) the flow is divided into many fluid particles, each is tracked, and its properties are recorded along its path: a particle might be at 25 °C at time $t_0$ and at 40 °C at $t_1$ further along. This is the approach of particle mechanics. It is useful in some measurements, such as Lagrangian particle tracking, which follows thousands of tracer particles, but a complete description of a flow this way is impractical (10 Mar, ll. 83–142).
+In the **Lagrangian** viewpoint (after Lagrange) the flow is divided into many fluid particles, each is tracked, and its properties are recorded along its path: a particle might be at 25 °C at time $t_0$ and at 40 °C at $t_1$ further along. This is the approach of particle mechanics. It is useful in some measurements, such as Lagrangian particle tracking, which follows thousands of tracer particles, but a complete description of a flow this way is impractical.
 
-In the **Eulerian** viewpoint (after Euler) the particles are forgotten. Every quantity is given as a field over a fixed region of space, such as $T(x,y)$, the temperature at each point $(x,y)$. Different particles may occupy the same point at different times; that does not matter. CFD works this way: the domain is divided into many small cells (billions, for complex flows) and the temperature, velocity and pressure are solved for in each, so finer cells resolve finer detail (10 Mar, ll. 143–192).
+In the **Eulerian** viewpoint (after Euler) the particles are forgotten. Every quantity is given as a field over a fixed region of space, such as $T(x,y)$, the temperature at each point $(x,y)$. Different particles may occupy the same point at different times; that does not matter. CFD works this way: the domain is divided into many small cells (billions, for complex flows) and the temperature, velocity and pressure are solved for in each, so finer cells resolve finer detail.
 
 ### Scalar fields
 
-Temperature, pressure and density are **scalar fields**: one number at each point. They are visualised as a **heat map** (colour map), where each colour stands for a value read from a colour bar, or as a **contour plot**, where each line joins points with the same value, often labelled or coloured (10 Mar, ll. 193–214).
+Temperature, pressure and density are **scalar fields**: one number at each point. They are visualised as a **heat map** (colour map), where each colour stands for a value read from a colour bar, or as a **contour plot**, where each line joins points with the same value, often labelled or coloured.
 
 ### Vector fields
 
@@ -77,7 +77,7 @@ $$
 
 It says how fast particles move through each point, but not in which direction.
 
-A vector field is drawn as a **quiver plot** (vector plot): an arrow at each point of a grid, pointing along the flow, with length proportional to the speed. The arrows can be coloured by speed or another quantity, and heat maps of $v_x$ or $v_y$ alone show, for example, where fluid moves up and where down (10 Mar, ll. 275–304).
+A vector field is drawn as a **quiver plot** (vector plot): an arrow at each point of a grid, pointing along the flow, with length proportional to the speed. The arrows can be coloured by speed or another quantity, and heat maps of $v_x$ or $v_y$ alone show, for example, where fluid moves up and where down.
 
 ### Steady and unsteady flow
 
@@ -87,11 +87,11 @@ $$
 \frac{\partial V_A}{\partial t}=0
 $$
 
-at every point. Steady does not mean at rest: a fluid at rest has $V=0$, while a steady flow can be fast. At a large angle of attack the aerofoil stalls, vortices are shed and $V_A$ fluctuates: the flow is **unsteady**, and the velocity field depends on time as well as position, $\vec V(x,y,t)$ (10 Mar, ll. 306–352).
+at every point. Steady does not mean at rest: a fluid at rest has $V=0$, while a steady flow can be fast. At a large angle of attack the aerofoil stalls, vortices are shed and $V_A$ fluctuates: the flow is **unsteady**, and the velocity field depends on time as well as position, $\vec V(x,y,t)$.
 
 ## 3. Rates of change in space and time
 
-A field such as the temperature in a nozzle during engine start-up, $T(x,t)$, can change with position and with time, so its rates of change are partial derivatives, written with $\partial$ (10 Mar, ll. 354–412).
+A field such as the temperature in a nozzle during engine start-up, $T(x,t)$, can change with position and with time, so its rates of change are partial derivatives, written with $\partial$.
 
 Put one thermometer at a fixed $x$ and read it at $t$ and $t+\Delta t$. The **local rate of change** is
 
@@ -139,7 +139,7 @@ The same operator applied to the velocity itself gives the acceleration of a par
 
 ### Pathlines
 
-A **pathline** is the trajectory of one fluid particle. Experimentally, seed the flow with neutrally buoyant tracer particles and take a long-exposure photograph: each particle draws its path, just as stars draw trails across a long-exposure photograph of the night sky. A short exposure shows only dots (10 Mar, ll. 416–440).
+A **pathline** is the trajectory of one fluid particle. Experimentally, seed the flow with neutrally buoyant tracer particles and take a long-exposure photograph: each particle draws its path, just as stars draw trails across a long-exposure photograph of the night sky. A short exposure shows only dots.
 
 To compute one, start a particle at $\vec x_{P0}$ at time $t_0$ and solve the initial value problem
 
@@ -151,7 +151,7 @@ which says the particle moves with the local flow velocity. Given the velocity f
 
 ### Streaklines
 
-A **streakline** joins all the particles that have passed through one fixed point. Inject smoke or dye continuously at a point: at any instant the smoke trail is a streakline. The particle furthest from the source was released earliest. A single ordinary photograph shows it, because it is the set of particles at one instant (10 Mar, ll. 466–487). Smoke lines in a wind tunnel are streaklines.
+A **streakline** joins all the particles that have passed through one fixed point. Inject smoke or dye continuously at a point: at any instant the smoke trail is a streakline. The particle furthest from the source was released earliest. A single ordinary photograph shows it, because it is the set of particles at one instant. Smoke lines in a wind tunnel are streaklines.
 
 ### Streamlines
 
@@ -163,11 +163,11 @@ $$
 
 with the field frozen at the chosen time. In unsteady flow the streamline picture changes from instant to instant, and streamlines do not then show where a particle will go.
 
-Streamlines cannot cross. At a crossing point the velocity would have two directions at once. The only exception is where the velocity is exactly zero. Near the front of an aerofoil the **dividing streamline** separates fluid passing over the upper surface from fluid passing below; it ends on the surface at the **stagnation point**, where the fluid has been brought to rest, since it cannot pass through the surface (10 Mar, ll. 541–560).
+Streamlines cannot cross. At a crossing point the velocity would have two directions at once. The only exception is where the velocity is exactly zero. Near the front of an aerofoil the **dividing streamline** separates fluid passing over the upper surface from fluid passing below; it ends on the surface at the **stagnation point**, where the fluid has been brought to rest, since it cannot pass through the surface.
 
 ### When the lines coincide
 
-In **steady** flow all three are the same. Every particle released from a point follows the same trajectory, so the streakline from that point coincides with the pathline; and a particle always moves along the local velocity, which does not change, so the pathline is also a streamline. In **unsteady** flow they differ: particles released at different times follow different pathlines, and the streakline joining them looks like none of them (10 Mar, ll. 503–532).
+In **steady** flow all three are the same. Every particle released from a point follows the same trajectory, so the streakline from that point coincides with the pathline; and a particle always moves along the local velocity, which does not change, so the pathline is also a streamline. In **unsteady** flow they differ: particles released at different times follow different pathlines, and the streakline joining them looks like none of them.
 
 ![[tf_path_streak_lines.png|900]]
 
@@ -175,15 +175,15 @@ The figure shows this for a simple unsteady flow, $v_x=U$, $v_y=V_0\cos\omega t$
 
 ### Streamtubes
 
-A **streamtube** is a region bounded by streamlines (in 2D, the strip between two of them). No fluid crosses its walls, because the flow is everywhere tangent to them, so it behaves like a virtual pipe: all the fluid that enters it leaves through its far end (11 Mar, ll. 118–138).
+A **streamtube** is a region bounded by streamlines (in 2D, the strip between two of them). No fluid crosses its walls, because the flow is everywhere tangent to them, so it behaves like a virtual pipe: all the fluid that enters it leaves through its far end.
 
-That makes streamlines a speedometer. For incompressible flow (liquids, or gases at low Mach number), the velocity in a streamtube varies inversely with its cross-section, ([[SESA1016 T11 - Conservation of Mass|T11]]): where streamlines converge the fluid speeds up, where they spread out it slows down. Around an aerofoil, streamtubes narrow sharply over the leading edge of the suction side, where the speed peaks, and widen towards the stagnation point, where it falls to zero (11 Mar, ll. 139–212). For supersonic flow the relationship reverses.
+That makes streamlines a speedometer. For incompressible flow (liquids, or gases at low Mach number), the velocity in a streamtube varies inversely with its cross-section, ([[SESA1016 T11 - Conservation of Mass|T11]]): where streamlines converge the fluid speeds up, where they spread out it slows down. Around an aerofoil, streamtubes narrow sharply over the leading edge of the suction side, where the speed peaks, and widen towards the stagnation point, where it falls to zero. For supersonic flow the relationship reverses.
 
 ## 5. Classifying flows
 
 ### Uniform and non-uniform
 
-In **uniform** flow the velocity (magnitude and direction), and also the density, pressure and temperature if they are mentioned, is the same throughout a region: far upstream of an aerofoil, or across the inlet of an engine intake. Viscous flow in a thin pipe or a syringe needle is **non-uniform**: no-slip makes the velocity zero at the wall and largest on the axis (11 Mar, ll. 217–250).
+In **uniform** flow the velocity (magnitude and direction), and also the density, pressure and temperature if they are mentioned, is the same throughout a region: far upstream of an aerofoil, or across the inlet of an engine intake. Viscous flow in a thin pipe or a syringe needle is **non-uniform**: no-slip makes the velocity zero at the wall and largest on the axis.
 
 ### Internal and external
 
@@ -191,17 +191,17 @@ In **uniform** flow the velocity (magnitude and direction), and also the density
 
 ### One-dimensional and quasi-one-dimensional
 
-In a straight duct with parallel walls the velocity can be exactly along the axis, with no transverse component: **one-dimensional** (parallel) flow, which may still be non-uniform across the section. In a gently converging or diverging duct the velocity near the walls tilts with them, so $v_y\ne0$, but $v_y\ll v_x$. Neglecting $v_y$ and keeping only the axial velocity, while still allowing it to change along the duct as the area changes, is the **quasi-one-dimensional** assumption used for nozzles and intakes (11 Mar, ll. 274–308). It fails where the area changes abruptly.
+In a straight duct with parallel walls the velocity can be exactly along the axis, with no transverse component: **one-dimensional** (parallel) flow, which may still be non-uniform across the section. In a gently converging or diverging duct the velocity near the walls tilts with them, so $v_y\ne0$, but $v_y\ll v_x$. Neglecting $v_y$ and keeping only the axial velocity, while still allowing it to change along the duct as the area changes, is the **quasi-one-dimensional** assumption used for nozzles and intakes. It fails where the area changes abruptly.
 
 ### Two- and three-dimensional
 
-Real flows are three-dimensional, like the flow round a golf ball, where $v_x$, $v_y$ and $v_z$ all matter. For a long slender body, such as a high-aspect-ratio wing, a tall building or a marine riser, the flow over most of the span (away from the tips) hardly varies in the spanwise direction $z$ and $v_z$ is small, so it can be treated as **two-dimensional**: the aerofoil section problem, as solved by XFOIL (11 Mar, ll. 309–361).
+Real flows are three-dimensional, like the flow round a golf ball, where $v_x$, $v_y$ and $v_z$ all matter. For a long slender body, such as a high-aspect-ratio wing, a tall building or a marine riser, the flow over most of the span (away from the tips) hardly varies in the spanwise direction $z$ and $v_z$ is small, so it can be treated as **two-dimensional**: the aerofoil section problem, as solved by XFOIL.
 
 ### Laminar and turbulent
 
 In **laminar** flow the fluid moves in smooth layers (Latin *laminae*) sliding over each other. It is typically steady, mass, momentum and heat move between layers only by slow molecular diffusion, and many laminar flows have exact analytical solutions, Couette flow among them. A slowly pouring jet of thick oil is laminar. Lubrication, blood flow, microfluidics and laminar-flow wings depend on it.
 
-In **turbulent** flow the motion is disordered and always unsteady, with eddies over a wide range of sizes. Turbulence mixes heat, mass and momentum very effectively: stirring milk into tea quickly makes turbulence and mixes them fast, stirring slowly does not (11 Mar, ll. 463–475). It is rarely tractable analytically and is studied by experiment and simulation. Most flows of interest in aerospace are turbulent.
+In **turbulent** flow the motion is disordered and always unsteady, with eddies over a wide range of sizes. Turbulence mixes heat, mass and momentum very effectively: stirring milk into tea quickly makes turbulence and mixes them fast, stirring slowly does not. It is rarely tractable analytically and is studied by experiment and simulation. Most flows of interest in aerospace are turbulent.
 
 Which one occurs is decided by the **Reynolds number**,
 
@@ -217,7 +217,7 @@ $$
 \frac{\rho V^2L^2}{\mu VL}=\frac{\rho VL}{\mu}=Re
 $$
 
-When $Re$ is small, viscosity is strong enough to damp disturbances and the flow stays smooth; when it is large, viscosity cannot kill the small eddies and the flow becomes turbulent (11 Mar, ll. 581–615).
+When $Re$ is small, viscosity is strong enough to damp disturbances and the flow stays smooth; when it is large, viscosity cannot kill the small eddies and the flow becomes turbulent.
 
 ### Viscous and inviscid
 
@@ -265,7 +265,7 @@ $$
 \frac{\Delta\rho}{\rho}\sim\frac{\rho V_\infty^2}{\rho c^2}=\frac{V_\infty^2}{c^2}=Ma^2
 $$
 
-Accepting density changes of up to 10 % means $Ma^2\le0.1$, $Ma\le0.3$. This is the usual threshold below which a flow is treated as incompressible: about 100 m/s in air at sea level. A Formula 1 car at 360 km/h (100 m/s) is right at that limit, with density changes of about 9 % round its wings (11 Mar, ll. 671–679).
+Accepting density changes of up to 10 % means $Ma^2\le0.1$, $Ma\le0.3$. This is the usual threshold below which a flow is treated as incompressible: about 100 m/s in air at sea level. A Formula 1 car at 360 km/h (100 m/s) is right at that limit, with density changes of about 9 % round its wings.
 
 ---
 
@@ -320,7 +320,7 @@ The same airspeed is a lower Mach number at sea level because the speed of sound
 
 ### Worked example - laminar or turbulent
 
-Estimate the Reynolds numbers of a golf ball in flight and of a volcanic plume (golf ball set as a task at 11 Mar, ll. 573–580; volcano at ll. 537–566).
+Estimate the Reynolds numbers of a golf ball in flight and of a volcanic plume.
 
 Golf ball: diameter 42.7 mm, speed about 70 m/s, $\nu=1.5\times10^{-5}$ m²/s:
 

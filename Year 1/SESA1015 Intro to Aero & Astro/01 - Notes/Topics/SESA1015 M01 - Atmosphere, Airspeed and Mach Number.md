@@ -32,7 +32,7 @@ sources: ["02 - Sources/Mechanics of Flight/Mechanics of Flight - Course Notes.p
 > - **Assumptions:** ISA with $g$ constant; troposphere 0–11 km with $T=T_{SL}-c_0h$; lower stratosphere 11–20 km at constant $T_S=216.5$ K; perfect gas $p=\rho RT$, $R=287$ J/(kg K), $\gamma=1.4$; incompressible Bernoulli for the airspeed formulae ($M\lesssim0.3$); temperatures in kelvin.
 > - **Method:** 1. Find $T$ at the altitude. 2. Get $p$ from the layer formula, then $\rho=p/(RT)$ or $\sigma=(T/T_{SL})^{g/(c_0R)-1}$. 3. Convert speeds with $V=V_E/\sqrt\sigma$. 4. Find $a=\sqrt{\gamma RT}$ and $M=V/a$ from the true airspeed. 5. Check that $M$ is low enough for the incompressible pitot formula.
 > - **Common mistakes:** dividing by $\sqrt\sigma$ the wrong way (true airspeed is the larger one above sea level); using $^\circ$C, or the sea-level temperature, in $a=\sqrt{\gamma RT}$.
-> - **Practise:** [[#True and equivalent airspeed at 1000 m (Slides v2 p. 24)]] · [[SESA1015 T04 - Range and Endurance Solutions#Question 20|Revision Q20]]
+> - **Practise:** [[#True and equivalent airspeed at 1000 m]] · [[SESA1015 T04 - Range and Endurance Solutions#Question 20|Revision Q20]]
 
 An aircraft flies through air whose density and temperature change by large factors between take-off and cruise. At 11 km the density is about 30% of its sea-level value, so a wing at a fixed angle of attack must move through the air about $1/\sqrt{0.3}\approx1.8$ times faster to produce the same lift. The temperature is about 70 K lower, so the speed of sound, and with it the Mach number at which compressibility matters, changes too. Engines are affected in the same way, since the mass of air they swallow each second scales with density.
 
@@ -42,17 +42,17 @@ The speed that matters for the aerodynamic forces is the speed relative to the a
 
 ---
 
-## 1. The atmosphere and the International Standard Atmosphere (Notes §2.1, pp. 3–5)
+## 1. The atmosphere and the International Standard Atmosphere
 
 ### Layers and standard values
 
-The ISA gives the mean pressure, density, temperature and speed of sound as functions of height above sea level. Up to 90 km the temperature profile is a chain of straight lines. In the **troposphere**, from sea level to the **tropopause** at 11 km, the temperature falls at the **lapse rate** $c_0=6.5$ K/km. From 11 to 20 km, the lower **stratosphere**, it is constant at $-56.5\,^\circ$C. Above 20 km it rises again, at 1 K/km and then 2.8 K/km, to about $-2.5\,^\circ$C near 50 km, and falls through the mesosphere to about $-86\,^\circ$C. The aircraft in this course stay below 20 km (Notes §2.1, p. 3).
+The ISA gives the mean pressure, density, temperature and speed of sound as functions of height above sea level. Up to 90 km the temperature profile is a chain of straight lines. In the **troposphere**, from sea level to the **tropopause** at 11 km, the temperature falls at the **lapse rate** $c_0=6.5$ K/km. From 11 to 20 km, the lower **stratosphere**, it is constant at $-56.5\,^\circ$C. Above 20 km it rises again, at 1 K/km and then 2.8 K/km, to about $-2.5\,^\circ$C near 50 km, and falls through the mesosphere to about $-86\,^\circ$C. The aircraft in this course stay below 20 km.
 
 ![[mof_m01_isa_temperature.png|900]]
 
 The ISA sea-level values are rounded differently in different places: $\rho_{SL}=1.225$ kg/m³ (workbook), $1.226$ (course notes) and $1.23$ (slides); any of them is accepted, but one value should be used throughout a calculation.
 
-| Quantity | Slides v2 (pp. 16–18) | ISA | Note |
+| Quantity | Slides v2 | ISA | Note |
 |---|---|---|---|
 | $T_{SL}$ | 288 K | 288.15 K | 15 °C |
 | $p_{SL}$ | $1.013\times10^5$ Pa | 101 325 Pa | |
@@ -89,7 +89,7 @@ $$
 p=\rho RT ,
 $$
 
-with $R=287$ J/(kg K) for air. These are two equations in three unknowns, $p$, $\rho$ and $T$, so a third relation is needed: the ISA temperature profile $T(h)$ (Slides v2, p. 16). Eliminating $\rho$ with the gas law gives the form that is integrated in each layer:
+with $R=287$ J/(kg K) for air. These are two equations in three unknowns, $p$, $\rho$ and $T$, so a third relation is needed: the ISA temperature profile $T(h)$. Eliminating $\rho$ with the gas law gives the form that is integrated in each layer:
 
 $$
 \frac{dp}{dh}=-\frac{pg}{RT}\quad\Rightarrow\quad\frac{dp}{p}=-\frac{g}{RT}\,dh .
@@ -139,7 +139,7 @@ $$
 \boxed{\frac{\rho}{\rho_{SL}}=\left(\frac{T}{T_{SL}}\right)^{(g-c_0R)/(c_0R)}}
 $$
 
-With the course constants, $g/(c_0R)=9.8/(0.0065\times287)=5.253$, so the density exponent is $4.253$ (ISA values give 5.256 and 4.256). The two lines above are the working for the density result (Slides v2, p. 18).
+With the course constants, $g/(c_0R)=9.8/(0.0065\times287)=5.253$, so the density exponent is $4.253$ (ISA values give 5.256 and 4.256). The two lines above are the working for the density result.
 
 ### The lower stratosphere: constant temperature
 
@@ -174,7 +174,7 @@ $$
 \sigma=\frac{\rho}{\rho_{SL}},\qquad\delta=\frac{p}{p_{SL}},\qquad\theta=\frac{T}{T_{SL}} ,
 $$
 
-where $\sigma$ is the **relative density** (Notes §2.2, p. 7). Dividing $p=\rho RT$ by $p_{SL}=\rho_{SL}RT_{SL}$ gives
+where $\sigma$ is the **relative density**. Dividing $p=\rho RT$ by $p_{SL}=\rho_{SL}RT_{SL}$ gives
 
 $$
 \sigma=\frac{\delta}{\theta} ,
@@ -200,7 +200,7 @@ The table uses exact ISA constants; the course constants change the fourth signi
 
 On a non-standard day the ISA formulae do not apply, and the density comes straight from the gas law with the actual pressure and temperature. At sea-level pressure and 35 °C, $\rho=101\,325/(287\times308.15)=1.146$ kg/m³, $\sigma=0.935$, which lengthens the take-off run (Revision Q28 compares a 5 °C and a 46 °C day).
 
-### ISA at 1000 m (Slides v2 p. 20)
+### ISA at 1000 m
 
 With the course constants:
 
@@ -219,7 +219,7 @@ $$
 > [!check] The course constants are not exactly consistent
 > The gas law with $p=89\,852$ Pa and $T=281.5$ K gives $\rho=89\,852/(287\times281.5)=1.112$ kg/m³, 0.4% below the 1.116 from the density ratio. The gap is inherited from sea level, where $p_{SL}/(RT_{SL})=101\,300/(287\times288)=1.2256$, not 1.23. Either value is acceptable; quoting three significant figures hides the difference.
 
-## 2. Measuring airspeed with a pitot-static tube (Notes §2.2, pp. 5–7)
+## 2. Measuring airspeed with a pitot-static tube
 
 ### Bernoulli's equation along a streamline
 
@@ -238,7 +238,7 @@ p+\tfrac12\rho V^2&=\text{const}=p_0 .
 \end{aligned}
 $$
 
-This is **Bernoulli's equation**: static pressure plus dynamic pressure equals the **total pressure** $p_0$, constant along a streamline (Slides v2, p. 19). The term
+This is **Bernoulli's equation**: static pressure plus dynamic pressure equals the **total pressure** $p_0$, constant along a streamline. The term
 
 $$
 q=\tfrac12\rho V^2
@@ -248,7 +248,7 @@ is the **dynamic pressure**. The constant-density assumption holds for air only 
 
 ### The pitot-static tube
 
-A **pitot-static tube** has a forward-facing open central tube and a sealed outer annulus with small holes drilled through its wall some distance behind the nose. On the streamline that meets the nose the air is brought to rest ($V=0$) at the stagnation point, so the central tube senses the **pitot pressure** $p_0$. The side holes face across the flow and sense the **static pressure** $p$ of the surrounding air. Alternatively a single pitot tube measures $p_0$, and $p$ is taken from a static vent on the fuselage at a point where the pressure is close to free-stream (Notes §2.2, p. 6). For the oncoming streamline, Bernoulli between the free stream and the stagnation point gives
+A **pitot-static tube** has a forward-facing open central tube and a sealed outer annulus with small holes drilled through its wall some distance behind the nose. On the streamline that meets the nose the air is brought to rest ($V=0$) at the stagnation point, so the central tube senses the **pitot pressure** $p_0$. The side holes face across the flow and sense the **static pressure** $p$ of the surrounding air. Alternatively a single pitot tube measures $p_0$, and $p$ is taken from a static vent on the fuselage at a point where the pressure is close to free-stream. For the oncoming streamline, Bernoulli between the free stream and the stagnation point gives
 
 $$
 p+\tfrac12\rho V^2=p_0+0\quad\Rightarrow\quad\boxed{p_0-p=\tfrac12\rho V^2} .
@@ -302,11 +302,11 @@ The equivalent airspeed is the useful one for loads and handling, because it is 
 
 ### Indicated airspeed and instrument errors
 
-The airspeed indicator shows $V_E$ only if it is fed the true pitot and static pressures. The pitot pressure is easy to measure accurately, but the static pressure sensed depends on where the holes or vents are on the aircraft, on the angle of attack and on the configuration (flaps up or down). The reading without allowance for these errors, and for errors in the instrument itself, is the **indicated airspeed** $V_{ind}$ (Notes §2.2, p. 7). In this course $V_{ind}$ and $V_E$ are taken as equal unless a correction is given. Industry inserts calibrated airspeed between the two (full chain: [[Airspeed Measures]]).
+The airspeed indicator shows $V_E$ only if it is fed the true pitot and static pressures. The pitot pressure is easy to measure accurately, but the static pressure sensed depends on where the holes or vents are on the aircraft, on the angle of attack and on the configuration (flaps up or down). The reading without allowance for these errors, and for errors in the instrument itself, is the **indicated airspeed** $V_{ind}$. In this course $V_{ind}$ and $V_E$ are taken as equal unless a correction is given. Industry inserts calibrated airspeed between the two (full chain: [[Airspeed Measures]]).
 
-### True and equivalent airspeed at 1000 m (Slides v2 p. 24)
+### True and equivalent airspeed at 1000 m
 
-An aircraft flies at 1000 m and the measured total pressure is $p_0=95\,435$ Pa. From [[#ISA at 1000 m (Slides v2 p. 20)]], $p=89\,852$ Pa and $\rho=1.116$ kg/m³, so
+An aircraft flies at 1000 m and the measured total pressure is $p_0=95\,435$ Pa. From [[#ISA at 1000 m]], $p=89\,852$ Pa and $\rho=1.116$ kg/m³, so
 
 $$
 p_0-p=95\,435-89\,852=5583\ \text{Pa}.
@@ -327,7 +327,7 @@ $$
 > [!check] Consistency
 > $V\sqrt\sigma=100.02\times\sqrt{1.116/1.23}=100.02\times0.9526=95.28$ m/s, the same $V_E$. At 1000 m the true airspeed is only 5% higher; the gap grows to 83% at 11 km.
 
-## 3. Speed of sound and Mach number (Notes §2.3, p. 7)
+## 3. Speed of sound and Mach number
 
 ### The speed of a weak pressure wave
 
@@ -383,11 +383,11 @@ $$
 \boxed{M=\frac{V}{a}} .
 $$
 
-It must be built from the true airspeed and the temperature at the aircraft's altitude, not from $V_E$ or sea-level values. Two thresholds are used (Slides v2, p. 19). Above $M\approx0.3$ the flow is treated as compressible: the isentropic relation $\rho_0/\rho=\big(1+\tfrac{\gamma-1}{2}M^2\big)^{1/(\gamma-1)}$ gives a density change of 4.6% between free stream and stagnation at $M=0.3$, and the constant-density Bernoulli equation starts to lose accuracy. Above $M\approx0.8$ compressibility is important: locally supersonic flow and shock waves appear on the wing, which is the transonic regime ([[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]).
+It must be built from the true airspeed and the temperature at the aircraft's altitude, not from $V_E$ or sea-level values. Two thresholds are used. Above $M\approx0.3$ the flow is treated as compressible: the isentropic relation $\rho_0/\rho=\big(1+\tfrac{\gamma-1}{2}M^2\big)^{1/(\gamma-1)}$ gives a density change of 4.6% between free stream and stagnation at $M=0.3$, and the constant-density Bernoulli equation starts to lose accuracy. Above $M\approx0.8$ compressibility is important: locally supersonic flow and shock waves appear on the wing, which is the transonic regime ([[SESA2023 W03 - Compressible Flow, Normal Shocks and Nozzles]]).
 
 ### The compressible pitot reading
 
-For compressible isentropic flow brought to rest, the total-to-static pressure ratio is (Slides v2, p. 19)
+For compressible isentropic flow brought to rest, the total-to-static pressure ratio is
 
 $$
 \frac{p_0}{p}=\left(1+\frac{\gamma-1}{2}M^2\right)^{\gamma/(\gamma-1)} .
@@ -418,11 +418,11 @@ The leading 1 is the incompressible result $p_0-p=\tfrac12\rho V^2$; the $M^2/4$
 
 ![[mof_m01_pitot_compressibility.png|800]]
 
-### Local Mach number on an aerofoil (Slides v2 p. 20)
+### Local Mach number on an aerofoil
 
 An aerofoil flies at 1000 m with a free stream of 100 m/s; at a point on its upper surface the flow is at 150 m/s. The local Mach number, the total pressure and the static pressure at that point are wanted.
 
-The free-stream conditions are those of [[#ISA at 1000 m (Slides v2 p. 20)]]: $T=281.5$ K, $p=89\,852$ Pa, $\rho=1.116$ kg/m³. The speed of sound is
+The free-stream conditions are those of [[#ISA at 1000 m]]: $T=281.5$ K, $p=89\,852$ Pa, $\rho=1.116$ kg/m³. The speed of sound is
 
 $$
 a=\sqrt{1.4\times287\times281.5}=336.3\ \text{m/s},
@@ -494,11 +494,11 @@ There is no lecturer-set problem list for this topic; the tasks are the revision
 
 ### Core
 
-- [ ] Rework the ISA state at 1000 m, then the true and equivalent airspeed from $p_0=95\,435$ Pa (Slides v2, pp. 20 and 24). → [[#ISA at 1000 m (Slides v2 p. 20)]] · [[#True and equivalent airspeed at 1000 m (Slides v2 p. 24)]]
+- [ ] Rework the ISA state at 1000 m, then the true and equivalent airspeed from $p_0=95\,435$ Pa (Slides v2, pp. 20 and 24). → [[#ISA at 1000 m]] · [[#True and equivalent airspeed at 1000 m]]
 - [ ] Revision Q1(b): true stalling speed at relative density $\sigma=0.75$. → [[SESA1015 T01 - Stall and Level-Flight Solutions#Question 1]]
 - [ ] Revision Q20: seasonal flight-time difference at fixed Mach number from the cruise temperature. → [[SESA1015 T04 - Range and Endurance Solutions#Question 20]]
 - [ ] Revision Q30: cruise wing loading from Mach number, density ratio and temperature ratio. → [[SESA1015 T01 - Stall and Level-Flight Solutions#Question 30]]
-- [ ] Local Mach number and surface pressure on an aerofoil (Slides v2, p. 20). → [[#Local Mach number on an aerofoil (Slides v2 p. 20)]]
+- [ ] Local Mach number and surface pressure on an aerofoil (Slides v2, p. 20). → [[#Local Mach number on an aerofoil]]
 
 ### Further practice
 
@@ -515,12 +515,12 @@ There is no lecturer-set problem list for this topic; the tasks are the revision
 > The constants box gives the lapse rate as $c_0=6.5$ K/m. It is 6.5 K/km, that is $0.0065$ K/m, as pp. 18, 20 and 24 have it.
 
 > [!warning] Slide slip (Slides v2, p. 24)
-> Where: [[#True and equivalent airspeed at 1000 m (Slides v2 p. 24)]].
+> Where: [[#True and equivalent airspeed at 1000 m]].
 >
 > The question gives $p_0=95\,435$ Pa, but the working substitutes $92\,435-89\,852$ and drops the factor 2 under both square roots; as printed it would give 48.2 and 45.8 m/s. The answers $V=100.02$ m/s and $V_E=95.28$ m/s are right for $p_0-p=95\,435-89\,852=5583$ Pa with the factor 2, and the true airspeed needs $\rho=1.116$ kg/m³ (the value on the same slide), not the 1.11 written under the root, which gives 100.30 m/s.
 
 > [!warning] Slide slip (Slides v2, p. 20)
-> Where: [[#Local Mach number on an aerofoil (Slides v2 p. 20)]].
+> Where: [[#Local Mach number on an aerofoil]].
 >
 > The speed of sound is computed as 336.31 m/s but divided as 336.13 m/s in $M=150/336.13$. Both round to $M=0.45$ (more precisely 0.446).
 

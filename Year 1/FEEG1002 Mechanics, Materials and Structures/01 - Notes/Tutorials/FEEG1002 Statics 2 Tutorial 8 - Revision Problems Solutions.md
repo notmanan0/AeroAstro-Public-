@@ -14,7 +14,7 @@ sources: ["02 - Sources/Statics 2/Tutorials/Tutorial Sheet 08 - Revision Problem
 # FEEG1002 Statics 2 Tutorial 8 - Revision Problems Solutions
 
 > [!abstract] Sheet info
-> Four exam-style questions that chain the Statics 2 topics: rosette, Hooke's law, von Mises and safety factor; restrained thermal expansion; pressure vessel, yield and strain Mohr's circle; stress Mohr's circle. All answers match the official solutions, checked numerically. These were the revision problems set for the Easter break (Lecture 8, ll. 637–640).
+> Four exam-style questions that chain the Statics 2 topics: rosette, Hooke's law, von Mises and safety factor; restrained thermal expansion; pressure vessel, yield and strain Mohr's circle; stress Mohr's circle. All answers match the official solutions, checked numerically. These were the revision problems set for the Easter break.
 
 ## Q1 Rosette on a hydraulic press frame
 

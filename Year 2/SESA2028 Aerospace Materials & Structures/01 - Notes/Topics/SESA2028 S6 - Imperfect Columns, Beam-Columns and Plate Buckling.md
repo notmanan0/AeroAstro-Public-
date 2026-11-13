@@ -43,13 +43,13 @@ Every case follows the steps used for the perfect column:
 
 ## 2. Eccentric load: the secant formula
 
-A column of length $L$ is clamped at its base and free at its top, where a load $P$ acts at eccentricity $e$ from the axis. Measure $x$ down from the top, with $v(x)$ the lateral deflection and $a=v(0)$ the unknown tip deflection. At a cut at $x$, the load's lever arm about the section is $e+a-v$, so
+A column of length $L$ is clamped at its base and free at its top, where a load $P$ acts at eccentricity $e$ from the axis. Measure $x$ down from the top, with $v(x)$ the lateral deflection and $a=v(0)$ the unknown tip deflection. At a cut at $x$, the load's lever arm about the section is $e+a-v$, so the moment that bends the column further is
 
 $$
-M(x)=P\left(e+a-v\right).
+P\left(e+a-v\right).
 $$
 
-With $M=-EIv''$ in the sense that bends the column further, and $\mu^2=P/EI$,
+In the convention of $M=-EIv''$ (sagging positive, $v$ measured towards the side the column bends to) this moment is hogging, so $M(x)=-P(e+a-v)$ and $EIv''=P(e+a-v)$. With $\mu^2=P/EI$,
 
 $$
 EI\frac{d^2v}{dx^2}=P(e+a-v)\quad\Longrightarrow\quad\frac{d^2v}{dx^2}+\mu^2v=\mu^2(e+a).
@@ -311,7 +311,7 @@ a factor of only $384/200=1.92$, which governs.
 
 ## 6. Plate buckling
 
-Plate buckling of skin panels between stiffeners was not lectured in 2025–26. Slides from an earlier version of the course exist (`SL13 Buckling 5 - Plate Buckling.pdf`), and local skin buckles appear only as photographs ([[SESA2028 S5 - Euler Buckling and Effective Length#Why buckling matters|S5]]). The concept note [[Plate Buckling]] gives the background.
+Plate buckling of skin panels between stiffeners was not lectured in 2025–26. Local skin buckling is met only as a failure example ([[SESA2028 S5 - Euler Buckling and Effective Length#Why buckling matters|S5]]), and the concept note [[Plate Buckling]] gives the background.
 
 ## Links
 
@@ -321,7 +321,7 @@ Plate buckling of skin panels between stiffeners was not lectured in 2025–26. 
 
 ## Sources
 
-- Slides: `SL7 buckling of beams with imperfection.pdf` (eccentric, initially curved and laterally loaded columns; examples on slides 23, 37 and 50) and `Structures Additional session_buckling.pdf` (the dog-toy post with full data and the bisection, slides 18–24).
+- Slides: `SL7 buckling of beams with imperfection.pdf` (eccentric, initially curved and laterally loaded columns; examples on slides 23, 37 and 50) and `Structures Additional session_buckling.pdf` (the dog-toy post with full data and the bisection, slides 18–24); `SL13 Buckling 5 - Plate Buckling.pdf` from an earlier version of the course (plate buckling, not lectured in 2025–26).
 - Transcripts: `SESA2028 Lecture 2026-04-24.txt` (ll. 200–660), the two buckling tutorials of 2026-04-27 (`… - 0901.txt`, `… - 1400.txt`) and `SESA2028 Lecture 2026-04-30.txt` (ll. 1–100).
 - All examples recomputed in Python (bisection with SciPy `brentq`); the beam-column particular integral checked symbolically. Figures: `generate_structures_s6_figures.py` and `generate_structures_figures.py` (amplification factor).
 

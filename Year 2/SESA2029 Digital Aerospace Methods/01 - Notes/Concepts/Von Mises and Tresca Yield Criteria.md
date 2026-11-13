@@ -22,7 +22,7 @@ $$\text{Tresca: }\max\left(|\sigma_1-\sigma_2|,|\sigma_2-\sigma_3|,|\sigma_3-\si
 - Linear scaling: in a linear elastic analysis stress ∝ load, so the load at first yield follows from one run: $P_Y = P\,\sigma_Y/\sigma_{e,max}$.
 - Linear FEA predicts where and when yield starts. It cannot model plastic flow beyond that ([[SESA2029 B9 - Nonlinear FE Analysis]]).
 
-- Nozzle intersection with $\sigma_Y = 340$ MPa and $P = 2.5$ MPa: von Mises $\sigma_e = 238.6$ MPa gives $P_Y = 3.56$ MPa; Tresca $SI = 256.1$ MPa gives $P_Y = 3.32$ MPa (the slide prints 3.20).
+- Nozzle intersection with $\sigma_Y = 340$ MPa and $P = 2.5$ MPa: von Mises $\sigma_e = 238.6$ MPa gives $P_Y = 3.56$ MPa; Tresca $SI = 256.1$ MPa gives $P_Y = 3.32$ MPa (a printed value of 3.20 is an arithmetic slip).
 - Uniaxial $\sigma$: both criteria give $\sigma$. Pure shear $\tau$: von Mises gives $\sqrt3\tau$ and Tresca gives $2\tau$.
 
 ## Related

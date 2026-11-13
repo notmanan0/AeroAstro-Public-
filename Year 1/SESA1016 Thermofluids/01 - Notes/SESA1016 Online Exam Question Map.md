@@ -54,7 +54,7 @@ Then check the answer against physics: expansion work is positive under the cour
 | C | PS7 Q2–3, PS8 Q1, Q3, Q7 | particle acceleration, Euler, Bernoulli and continuity |
 | D | PS9 Q2–5, Q9, Q11 | control-volume momentum and energy |
 | E | PS10 Q1–3, Q5–7; PS11 Q6, Q9–10 | viscous losses |
-| F | mock Q1–Q3 (13 May) | timed, mixed: cycles, momentum, pipe flow |
+| F | mock Q1–Q3 | timed, mixed: cycles, momentum, pipe flow |
 
 ## Printed answers that disagree with a recalculation
 

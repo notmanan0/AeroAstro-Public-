@@ -15,7 +15,7 @@ sources: ["02 - Sources/Lectures/Lecture 2.04.pdf", "Evans (1948)", "Franklin, P
 
 The root locus is the path of the closed-loop poles, the roots of $1+KG(s) = 0$, as a gain $K$ goes from 0 to ∞. Branches start at the open-loop poles ($K = 0$) and end at the open-loop zeros or at infinity ($K\to\infty$).
 
-The construction rules from L2.04 are:
+The construction rules are:
 
 1. Write $G$ in ZPK form and plot the poles (×) and zeros (○).
 2. A point on the real axis is on the locus if the number of real poles plus zeros to its right is odd.

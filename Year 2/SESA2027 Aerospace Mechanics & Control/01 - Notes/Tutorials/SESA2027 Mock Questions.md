@@ -20,7 +20,7 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA2027 Formula Sheet.md", "02 - Sou
 > [!warning] Self-written mock questions, not lecturer-set
 > **These questions were written from the lectured content of all three parts. They are not the real SESA2027 paper**, and the format, marks and timings are guesses.
 >
-> **What was checked first (28 Oct 2026):** `03 - Exams & Past Papers` is empty, so there is no past or specimen paper. The three lecturer sheets ([[SESA2027 Practice Problems 1 Solutions|PP1]], [[SESA2027 Practice Problems 2 Solutions|PP2]], [[SESA2027 Part C Problem Sheet Solutions|Part C]]) are already solved; every number here is different from them. The question styles follow what the lecturers said could be asked (collected on the [[SESA2027 Aerospace Mechanics & Control Hub|hub]]): stability from the real part, Routh–Hurwitz in words, the negligible derivatives, the final value of a step, a pole–zero map, GM and PM from a Bode plot, a full-marks root-locus sketch, ZN against other tuning methods.
+> **What was checked first:** `03 - Exams & Past Papers` is empty, so there is no past or specimen paper. The three lecturer sheets ([[SESA2027 Practice Problems 1 Solutions|PP1]], [[SESA2027 Practice Problems 2 Solutions|PP2]], [[SESA2027 Part C Problem Sheet Solutions|Part C]]) are already solved; every number here is different from them. The question styles follow what the lecturers said could be asked (collected on the [[SESA2027 Aerospace Mechanics & Control Hub|hub]]): stability from the real part, Routh–Hurwitz in words, the negligible derivatives, the final value of a step, a pole–zero map, GM and PM from a Bode plot, a full-marks root-locus sketch, ZN against other tuning methods.
 
 > [!info] How to use this sheet
 > - **Timing:** about **1.8 min per mark**, so each 10-mark question is about 18 minutes. The whole sheet is 120 marks (about 3.5 hours): do three or four questions per sitting.
@@ -85,7 +85,7 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA2027 Formula Sheet.md", "02 - Sou
 (d) For $\mathbf A=\begin{bmatrix}-1.2&150\\-0.03&-1.5\end{bmatrix}$, $\mathbf B=\begin{bmatrix}-0.1\\-6\end{bmatrix}$, $\mathbf C=[0\ 1]$, find $q(s)/\eta(s)$ and its poles. **[3]**
 
 > [!example]- Solution
-> **(a)** $\Delta X_g=-mg\theta\cos3°=-0.9986\,mg\theta$, $\Delta Z_g=-mg\theta\sin3°=-0.0523\,mg\theta$. *[1 + 1]* ([[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#1. Gravitational contributions (L1.04)|A2 §1]])
+> **(a)** $\Delta X_g=-mg\theta\cos3°=-0.9986\,mg\theta$, $\Delta Z_g=-mg\theta\sin3°=-0.0523\,mg\theta$. *[1 + 1]* ([[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#1. Gravitational contributions|A2 §1]])
 >
 > **(b)** $\tfrac12\rho U_\infty S=2250$ kg/s.
 > - $\mathring Z_w=-4.5\times2250=-10\,125$ N s/m.
@@ -95,7 +95,7 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA2027 Formula Sheet.md", "02 - Sou
 >
 > *[2 for values, 1 for units]* ([[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Dimensional vs dimensionless derivatives|A2 table]])
 >
-> **(c)** $\mathring X_q$ and $\mathring X_{\dot w}$: pitch rate and normal acceleration barely change the drag. At low Mach also $\mathring M_u$. This is the stated exam answer (L1.04, ll. 166–169). *[2]*
+> **(c)** $\mathring X_q$ and $\mathring X_{\dot w}$: pitch rate and normal acceleration barely change the drag. At low Mach also $\mathring M_u$. This is the stated exam answer. *[2]*
 >
 > **(d)** $\lvert s\mathbf I-\mathbf A\rvert=(s+1.2)(s+1.5)+150\times0.03=s^2+2.7s+6.3$. The second row of the adjoint is $[-0.03,\ s+1.2]$, so $\mathbf C\,\mathrm{adj}\,\mathbf B=0.003-6(s+1.2)=-6s-7.197$:
 >
@@ -130,7 +130,7 @@ $$
 >
 > **(c)** Mode 1 (larger $\omega_n$) is the **short-period oscillation**: stable and reasonably damped. Mode 2 is the **phugoid**: slightly unstable, $\zeta<0$ because $\sigma>0$. The amplitude doubles only every 347 s, about 4 cycles, which a pilot easily corrects; CS-25 allows a lightly damped (even mildly unstable) phugoid. *[1 + 1]*
 >
-> **(d)** All coefficients of the quartic positive **and** the Routh discriminant positive. Here multiplying out gives $\lambda^4+1.596\lambda^3+6.3985\lambda^2-0.0178\lambda+0.0314$: the $\lambda$ coefficient is negative, so the test fails at the first condition, consistent with the unstable phugoid. *[1 + 1]* ([[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid#1. General solution (L1.05)|A3 §1]])
+> **(d)** All coefficients of the quartic positive **and** the Routh discriminant positive. Here multiplying out gives $\lambda^4+1.596\lambda^3+6.3985\lambda^2-0.0178\lambda+0.0314$: the $\lambda$ coefficient is negative, so the test fails at the first condition, consistent with the unstable phugoid. *[1 + 1]* ([[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid#1. General solution|A3 §1]])
 
 ---
 
@@ -189,7 +189,7 @@ $$
 >
 > **(b)** Flat at $20\log_{10}5=13.98$ dB to the corner at 1 rad/s, then −20 dB/dec to the corner at 10 rad/s, then −40 dB/dec. Phase 0 → −90° around 1 rad/s and another −90° around 10 rad/s, tending to −180°. *[2]*
 >
-> **(c)** $\lvert L\rvert=1$: $(\omega^2+1)(\omega^2+100)=2500\Rightarrow\omega^4+101\omega^2-2400=0\Rightarrow\omega^2=19.86$, $\omega_{gc}=4.46$ rad/s. $\angle L=-\tan^{-1}4.46-\tan^{-1}0.446=-101.4°$, so $PM=78.6°$. The phase only tends to −180°, so the phase crossover is at infinity and **GM is infinite** (the stated exam case, L2.05, l. 476). *[2 + 1 + 1]* ([[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#1. Margins and design approach (L2.05)|B3 §1]])
+> **(c)** $\lvert L\rvert=1$: $(\omega^2+1)(\omega^2+100)=2500\Rightarrow\omega^4+101\omega^2-2400=0\Rightarrow\omega^2=19.86$, $\omega_{gc}=4.46$ rad/s. $\angle L=-\tan^{-1}4.46-\tan^{-1}0.446=-101.4°$, so $PM=78.6°$. The phase only tends to −180°, so the phase crossover is at infinity and **GM is infinite** (the stated exam case). *[2 + 1 + 1]* ([[SESA2027 B3 - Frequency-Response PID Design and Ziegler-Nichols Tuning#1. Margins and design approach|B3 §1]])
 
 ---
 
@@ -212,9 +212,9 @@ Plant $G(s)=\dfrac{2}{(s+1)(s+4)}$, unity feedback.
 >
 > **(b)** $2\zeta\omega_n=5$ with $\zeta=0.5\Rightarrow\omega_n=5$, so $4+2K_P=25$, $K_P=10.5$. Poles $-2.5\pm4.33i$; $OS=e^{-0.5\pi/\sqrt{0.75}}=16.3\,\%$. *[1 + 1 + 1]*
 >
-> **(c)** $e_\infty=1/(1+K_PG(0))=1/(1+10.5\times0.5)=0.16$. *[2]* ([[SESA2027 B1 - Control System Fundamentals and PID Control#4. PID control (L2.03)|B1 §4]])
+> **(c)** $e_\infty=1/(1+K_PG(0))=1/(1+10.5\times0.5)=0.16$. *[2]* ([[SESA2027 B1 - Control System Fundamentals and PID Control#4. PID control|B1 §4]])
 >
-> **(d)** An integrator makes $C(0)\to\infty$, so $e_\infty=0$. It adds a closed-loop pole (and $-90°$ of phase at low frequency), so the response becomes slower and can overshoot more, with a risk of integrator wind-up. Model-based control needs an accurate model and is sensitive to model error (L2.02, ll. 184–187). *[2 + 1]*
+> **(d)** An integrator makes $C(0)\to\infty$, so $e_\infty=0$. It adds a closed-loop pole (and $-90°$ of phase at low frequency), so the response becomes slower and can overshoot more, with a risk of integrator wind-up. Model-based control needs an accurate model and is sensitive to model error. *[2 + 1]*
 
 ---
 
@@ -281,7 +281,7 @@ $G(s)=\dfrac{K(s+z)}{s^2+2\zeta\omega_ns+\omega_n^2}$ with $K=-2$, $z=0.5$, $\om
 (d) Write the disturbance and noise transfer functions and explain why one controller cannot make both small at the same frequency. **[2]**
 
 > [!example]- Solution
-> **(a)** The plant's static gain $Kz/\omega_n^2$ is negative, so a negative $K_p$ restores **negative** feedback ($KK_p>0$). Negative $T_D$ gives anti-damping and negative $T_I$ integrates the wrong way and diverges (L2.07). *[1 + 1]*
+> **(a)** The plant's static gain $Kz/\omega_n^2$ is negative, so a negative $K_p$ restores **negative** feedback ($KK_p>0$). Negative $T_D$ gives anti-damping and negative $T_I$ integrates the wrong way and diverges. *[1 + 1]*
 >
 > **(b)** $s^2+(KK_p+2\zeta\omega_n)s+(\omega_n^2+KK_pz)=s^2+4.2s+5.5$. Both coefficients positive, so stable (Routh for $n=2$). *[2 + 1]*
 >

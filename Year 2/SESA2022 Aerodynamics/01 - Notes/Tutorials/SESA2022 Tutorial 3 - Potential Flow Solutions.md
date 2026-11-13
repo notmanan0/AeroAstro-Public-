@@ -126,7 +126,7 @@ $$
 V_\infty H+\frac{Q}{\pi}\tan^{-1}\frac Hb-\frac Q2 = 0
 $$
 
-**Minimum $C_p$** is at the top (slides):
+**Minimum $C_p$** is at the top:
 
 $$
 C_{p,min} = -\frac{2Q}{\pi V_\infty b(1+H^2/b^2)}-\frac{Q^2}{\pi^2V_\infty^2b^2(1+H^2/b^2)^2}

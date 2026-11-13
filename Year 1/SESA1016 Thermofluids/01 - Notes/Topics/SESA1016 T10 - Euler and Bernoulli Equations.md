@@ -143,7 +143,7 @@ The pressure increases away from the core. Each particle is pushed slightly hard
 
 ### Statement of the Bernoulli equation
 
-The Euler equation is local. To link pressure and velocity at different places, integrate it along a streamline (Lecture 21, ll. 20–27). Assume the flow is
+The Euler equation is local. To link pressure and velocity at different places, integrate it along a streamline. Assume the flow is
 
 - steady, $\partial/\partial t=0$, so the streamline is also the particle's pathline;
 - incompressible, $\rho$ constant along the motion;
@@ -155,7 +155,7 @@ $$
 \boxed{p+\tfrac12\rho V^2+\rho gz=\text{const}}
 $$
 
-The particle's speed, pressure and height can all vary in complicated ways, but this sum, the **Bernoulli constant** or Bernoulli integral, stays fixed along its streamline (L21, ll. 56–65). The terms are named:
+The particle's speed, pressure and height can all vary in complicated ways, but this sum, the **Bernoulli constant** or Bernoulli integral, stays fixed along its streamline. The terms are named:
 
 - $\tfrac12\rho V^2$, the **dynamic pressure**, often written $q$;
 - $p$, the **static pressure**, the thermodynamic pressure of T1 and T8;
@@ -197,11 +197,11 @@ so the bracket does not change along $s$, which is the Bernoulli equation. Each 
 
 ### Energy interpretation
 
-All three terms have the dimensions of pressure, but also of energy per unit volume, J/m³ = N/m² (L21, ll. 81–116). A mass $m$ moving at $V$ has kinetic energy $\tfrac12mV^2$; per unit volume that is $\tfrac12\rho V^2$. Likewise $\rho gz$ is gravitational potential energy per unit volume. The static pressure $p$ is best read as the work done on the particle by pressure forces per unit volume. The Bernoulli equation then says that pressure forces do work on the particle, and that work shows up as a change in its kinetic plus potential energy: it is a statement of **conservation of mechanical energy**. A particle that speeds up must lose pressure or height.
+All three terms have the dimensions of pressure, but also of energy per unit volume, J/m³ = N/m². A mass $m$ moving at $V$ has kinetic energy $\tfrac12mV^2$; per unit volume that is $\tfrac12\rho V^2$. Likewise $\rho gz$ is gravitational potential energy per unit volume. The static pressure $p$ is best read as the work done on the particle by pressure forces per unit volume. The Bernoulli equation then says that pressure forces do work on the particle, and that work shows up as a change in its kinetic plus potential energy: it is a statement of **conservation of mechanical energy**. A particle that speeds up must lose pressure or height.
 
 ### Heads
 
-Dividing by $\rho g$ gives the hydraulic form used in civil engineering, dams and hydroelectric plant (L21, ll. 117–131):
+Dividing by $\rho g$ gives the hydraulic form used in civil engineering, dams and hydroelectric plant:
 
 $$
 \frac{V^2}{2g}+\frac{p}{\rho g}+z=\text{const}
@@ -215,7 +215,7 @@ With $V=0$ the equation reduces to $p+\rho gz=$ const, which is Stevin's law int
 
 ### When to keep the gravity term
 
-For aerodynamic flows the changes in $\rho gz$ are tiny compared with the changes in $\tfrac12\rho V^2$ and $p$. Air of density 1.2 kg/m³ falling 1 m changes $\rho gz$ by about 12 Pa, while air at 100 m/s brought to rest changes $\tfrac12\rho V^2$ by 6000 Pa (L21, ll. 153–169). For gas flows, then,
+For aerodynamic flows the changes in $\rho gz$ are tiny compared with the changes in $\tfrac12\rho V^2$ and $p$. Air of density 1.2 kg/m³ falling 1 m changes $\rho gz$ by about 12 Pa, while air at 100 m/s brought to rest changes $\tfrac12\rho V^2$ by 6000 Pa. For gas flows, then,
 
 $$
 p+\tfrac12\rho V^2=\text{const}
@@ -229,11 +229,11 @@ For liquids, dense and usually slow, the piezometric term matters and dropping i
 
 ### Pressure taps and static pressure
 
-The **static pressure** is the pressure in the moving fluid measured without disturbing it. A small hole drilled in a surface, connected by a tube to a manometer or a pressure sensor, is a **pressure tap**; it barely disturbs the flow over it and reads the static pressure there. An aerofoil model may have dozens of taps, each piped to a pressure scanner, to measure the pressure distribution and hence the lift (L21, ll. 177–204). In a liquid-filled pipe a vertical tube on the tap (a **piezometer**) rises to a height that measures $p+\rho gz$ at the tap.
+The **static pressure** is the pressure in the moving fluid measured without disturbing it. A small hole drilled in a surface, connected by a tube to a manometer or a pressure sensor, is a **pressure tap**; it barely disturbs the flow over it and reads the static pressure there. An aerofoil model may have dozens of taps, each piped to a pressure scanner, to measure the pressure distribution and hence the lift. In a liquid-filled pipe a vertical tube on the tap (a **piezometer**) rises to a height that measures $p+\rho gz$ at the tap.
 
 ### The stagnation tube
 
-A **stagnation tube** (total-pressure probe) is a tube bent through 90°, with its open end facing upstream and the other end closed by a manometer, so no fluid flows through it (L21, ll. 205–258). One streamline, starting at A far upstream, ends on the tube's mouth at B, where the fluid is brought to rest. Apply Bernoulli from A to B, dropping $\rho gz$:
+A **stagnation tube** (total-pressure probe) is a tube bent through 90°, with its open end facing upstream and the other end closed by a manometer, so no fluid flows through it. One streamline, starting at A far upstream, ends on the tube's mouth at B, where the fluid is brought to rest. Apply Bernoulli from A to B, dropping $\rho gz$:
 
 $$
 p_A+\tfrac12\rho V_A^2=p_B+\tfrac12\rho V_B^2
@@ -249,11 +249,11 @@ The tube reads the static pressure plus the dynamic pressure: the **stagnation p
 
 ![[tf_pitot_static.png|900]]
 
-A stagnation tube alone cannot give the velocity, because its reading contains the unknown $p_A$ as well as $V_A$ (L21, ll. 263–270).
+A stagnation tube alone cannot give the velocity, because its reading contains the unknown $p_A$ as well as $V_A$.
 
 ### The Pitot-static tube
 
-The **Pitot-static tube** (Pitot tube for short, after Henri Pitot) puts two tubes one inside the other (L21, ll. 271–336). The inner tube is open at the tip and reads the stagnation pressure $p_B=p_A+\tfrac12\rho V_A^2$. The outer tube has a ring of small holes in its side a few diameters behind the tip, where the flow has recovered from the disturbance of the tip and $V_C\approx V_A$, so by Bernoulli $p_C\approx p_A$: they act as pressure taps and read the static pressure. Connecting the two to a differential gauge, or to the two limbs of a U-tube manometer, gives
+The **Pitot-static tube** (Pitot tube for short, after Henri Pitot) puts two tubes one inside the other. The inner tube is open at the tip and reads the stagnation pressure $p_B=p_A+\tfrac12\rho V_A^2$. The outer tube has a ring of small holes in its side a few diameters behind the tip, where the flow has recovered from the disturbance of the tip and $V_C\approx V_A$, so by Bernoulli $p_C\approx p_A$: they act as pressure taps and read the static pressure. Connecting the two to a differential gauge, or to the two limbs of a U-tube manometer, gives
 
 $$
 \Delta p=p_B-p_C=\left(p_A+\tfrac12\rho V_A^2\right)-p_A=\tfrac12\rho V_A^2
@@ -267,13 +267,13 @@ $$
 
 The density comes from a barometer and a thermometer via $\rho=p/(RT)$; this is how wind-tunnel speeds are measured in air.
 
-This analysis needs incompressible flow. At $Ma=0.5$ density changes of order $Ma^2\approx25$ % make Bernoulli invalid (L21, ll. 337–346). Aircraft Pitot tubes, often heated to prevent icing, use a compressible-flow theory that gives airspeed and Mach number from the same two pressures through a different formula.
+This analysis needs incompressible flow. At $Ma=0.5$ density changes of order $Ma^2\approx25$ % make Bernoulli invalid. Aircraft Pitot tubes, often heated to prevent icing, use a compressible-flow theory that gives airspeed and Mach number from the same two pressures through a different formula.
 
 ## 5. Aerodynamic flows and the pressure coefficient
 
 ### Pressure and velocity round an aerofoil
 
-Consider steady, inviscid, incompressible flow past an aerofoil at incidence, with free-stream speed $V_\infty$, pressure $p_\infty$ and density $\rho$ (L21, ll. 364–427). The dividing streamline ends at the stagnation point B on the lower surface near the leading edge, where Bernoulli gives $p_B=p_\infty+\tfrac12\rho V_\infty^2$: high pressure where the flow has been slowed. A neighbouring streamline that curves up round the leading edge must speed up sharply to get round it; at its fastest point B′ Bernoulli,
+Consider steady, inviscid, incompressible flow past an aerofoil at incidence, with free-stream speed $V_\infty$, pressure $p_\infty$ and density $\rho$. The dividing streamline ends at the stagnation point B on the lower surface near the leading edge, where Bernoulli gives $p_B=p_\infty+\tfrac12\rho V_\infty^2$: high pressure where the flow has been slowed. A neighbouring streamline that curves up round the leading edge must speed up sharply to get round it; at its fastest point B′ Bernoulli,
 
 $$
 p_\infty+\tfrac12\rho V_\infty^2=p_{B'}+\tfrac12\rho V_{B'}^2
@@ -299,7 +299,7 @@ $$
 \boxed{C_p=1-\left(\frac{V}{V_\infty}\right)^2}
 $$
 
-This makes the special cases immediate (L21, ll. 443–473):
+This makes the special cases immediate:
 
 - undisturbed flow, $V=V_\infty$: $C_p=0$;
 - stagnation point, $V=0$: $C_p=1$, its maximum possible value, since no pressure exceeds the stagnation pressure;

@@ -26,25 +26,25 @@ sources: ["02 - Sources/Airfoils and Wings/Topic 4 Thin airfoil theory_v3.pdf", 
 > Thin aerofoil theory replaces a thin, lightly cambered aerofoil at small $\alpha$ by a vortex sheet $\gamma(\xi)$ on its chord line, then enforces flow tangency to the camber line and the Kutta condition $\gamma(TE)=0$. Writing $\gamma$ as a Fourier series in $\theta$ gives closed-form results, $c_l = 2\pi(\alpha-\alpha_{L=0}) = \pi(2A_0+A_1)$ and $c_{m,c/4} = \frac\pi4(A_2-A_1)$. Within its assumptions the lift slope is $2\pi$ per radian, the quarter chord is the aerodynamic centre, and camber only shifts $\alpha_{L=0}$ and adds a constant pitching moment (nose-down for positive camber).
 
 > [!summary]- Exam use: quick path
-> - **Use it when:** you are given a camber line $z(x)$ (typically $\propto x(1-x)$) or a trailing-edge flap and asked for $c_l$, $\alpha_{L=0}$, $c_{m,c/4}$, $c_{m,le}$, $x_{cp}$, ideal $\alpha$ or the loading $\Delta C_p$. These are the two question types in the past papers (28 Oct–5 Nov lectures: 31 Oct, ll. 1–2, 405–412).
+> - **Use it when:** you are given a camber line $z(x)$ (typically $\propto x(1-x)$) or a trailing-edge flap and asked for $c_l$, $\alpha_{L=0}$, $c_{m,c/4}$, $c_{m,le}$, $x_{cp}$, ideal $\alpha$ or the loading $\Delta C_p$. These are the two question types in the past papers.
 > - **Assumptions:** inviscid, incompressible, irrotational; thin aerofoil with small camber; small $\alpha$ in radians; unit chord unless stated; $\eta$ (flap) positive trailing edge down.
 > - **Method:** 1. Write $dz/dx$ and transform with $x = \tfrac c2(1-\cos\theta_0)$. 2. $A_0 = \alpha-\frac1\pi\int_0^\pi\frac{dz}{dx}d\theta_0$, $A_n = \frac2\pi\int_0^\pi\frac{dz}{dx}\cos n\theta_0\,d\theta_0$. 3. $c_l = \pi(2A_0+A_1)$; check $dc_l/d\alpha = 2\pi$. 4. $c_{m,c/4} = \frac\pi4(A_2-A_1)$, $c_{m,le} = -\frac{c_l}{4}+c_{m,c/4}$. 5. $x_{cp}/c = \frac14-c_{m,c/4}/c_l$, $\alpha_{L=0}$ from $c_l = 0$.
 > - **Common mistakes:** working in degrees inside $2\pi\alpha$; mixing up $\cos\theta_0 = 1-2x/c$ (LE at $\theta_0 = 0$) when finding the hinge angle $\theta_h$.
-> - **Exam format:** you need not reproduce the whole theory (28 Oct, ll. 43–48); the Glauert integrals are given (29 Oct, ll. 489–493). The full NACA 4-digit camber line is too long for a sit-down exam (31 Oct, ll. 61–66).
-> - Exam technique (7 Jan revision, ll. 124–284): you will have to evaluate Fourier coefficients. Only two question types appear, a simple differentiable camber line or a trailing-edge flap; there are no quartic or NACA camber lines in an exam. The orthogonality integrals are on the formula sheet. The most likely error is the degrees-to-radians conversion (l. 175). $c_m$ is usually small and negative for positive camber; reflex sections differ. Worked example: [[SESA2022 Exam 2024-25 Solutions|2024-25]] Q3 ($\epsilon = 0.0894$ from rounded values, $0.0893$ unrounded).
+> - **Exam format:** you need not reproduce the whole theory; the Glauert integrals are given. The full NACA 4-digit camber line is too long for a sit-down exam.
+> - Exam technique: you will have to evaluate Fourier coefficients. Only two question types appear, a simple differentiable camber line or a trailing-edge flap; there are no quartic or NACA camber lines in an exam. The orthogonality integrals are on the formula sheet. The most likely error is the degrees-to-radians conversion. $c_m$ is usually small and negative for positive camber; reflex sections differ. Worked example: [[SESA2022 Exam 2024-25 Solutions|2024-25]] Q3 ($\epsilon = 0.0894$ from rounded values, $0.0893$ unrounded).
 > - **Practise:** [[#NACA 6500 aerofoil]] · [[#Effectiveness of a 20% flap]] · [[SESA2022 Examples Sheet 4 - Thin Aerofoil Theory Solutions]]
 
 Lift needs circulation, $L' = \rho V_\infty\Gamma$ ([[SESA2022 T3 - Potential Flow]]), but potential flow leaves $\Gamma$ undetermined. Thin aerofoil theory determines it.
 
 Air goes faster over the top of a lifting aerofoil than under it. A sheet of tiny vortices laid along the chord does exactly that: each clockwise vortex speeds the flow above it and slows the flow below it, so the jump in speed across the sheet is its strength $\gamma$, and through Bernoulli the pressure jump is $\rho V_\infty\gamma$. The theory has to find how much vorticity there is and where it sits along the chord.
 
-Two rules fix it. First, the aerofoil is solid: at every point the sheet must turn the oncoming flow so that it follows the camber line with no flow through the surface (tangency). Second, real air cannot whip round a sharp trailing edge, so the flow leaves the trailing edge smoothly and the speed jump there is zero (Kutta). With those two rules the vortex distribution, and so the lift, is unique. Three general results follow, none of them obvious from experiment alone (4 Nov, ll. 285–295): every thin aerofoil has the same lift slope, $2\pi$ per radian; camber only shifts the lift curve sideways; and there is one point, the quarter chord, about which the pitching moment does not change with $\alpha$.
+Two rules fix it. First, the aerofoil is solid: at every point the sheet must turn the oncoming flow so that it follows the camber line with no flow through the surface (tangency). Second, real air cannot whip round a sharp trailing edge, so the flow leaves the trailing edge smoothly and the speed jump there is zero (Kutta). With those two rules the vortex distribution, and so the lift, is unique. Three general results follow, none of them obvious from experiment alone: every thin aerofoil has the same lift slope, $2\pi$ per radian; camber only shifts the lift curve sideways; and there is one point, the quarter chord, about which the pitching moment does not change with $\alpha$.
 
 ---
 
 ## 1. Aerofoil basics
 
-The chord line joins the leading and trailing edges and has length $c$ (28 Oct lecture). The **camber line** is the locus of points midway between the upper and lower surfaces, and the camber is its maximum distance from the chord line. Thickness is measured normal to the chord line, and the angle of attack $\alpha$ is the angle between the relative wind and the chord line. Lower-case $c_l$, $c_m$ are used for 2D sections and capitals for 3D wings (28 Oct, ll. 126–130). Past papers write the camber line as capital $Z$; Anderson uses lower-case $z$ (29 Oct, ll. 63–66).
+The chord line joins the leading and trailing edges and has length $c$. The **camber line** is the locus of points midway between the upper and lower surfaces, and the camber is its maximum distance from the chord line. Thickness is measured normal to the chord line, and the angle of attack $\alpha$ is the angle between the relative wind and the chord line. Lower-case $c_l$, $c_m$ are used for 2D sections and capitals for 3D wings. Past papers write the camber line as capital $Z$; Anderson uses lower-case $z$.
 
 In the NACA 4-digit series (e.g. 2412) the digits give a maximum camber $m = 0.02c$ at $p = 0.4c$ and a thickness of $0.12c$; a NACA 6502, for example, has 6% camber at mid-chord and is 2% thick. In the 5-digit series (e.g. 23012) the design $C_l$ is $2\times3/20 = 0.3$, the maximum camber is at $30/2 = 15\%c$ and the thickness is 12%. A 6-series section such as 65-218 has its minimum pressure at $0.5c$ for the symmetric section, a design $C_l$ of 0.2 and 18% thickness.
 
@@ -62,7 +62,7 @@ $$
 \frac zc = 4m\left[\frac xc-\left(\frac xc\right)^2\right] = 4m\,\frac xc\left(1-\frac xc\right).
 $$
 
-For NACA 6500 ($m = 0.06$): $z = 0.24x(1-x)$ (unit chord). At least three past exam questions start from this camber line (31 Oct, ll. 55–62).
+For NACA 6500 ($m = 0.06$): $z = 0.24x(1-x)$ (unit chord). At least three past exam questions start from this camber line.
 
 ## 2. Three key concepts
 
@@ -87,8 +87,6 @@ Drop the second-order term and divide by $\tfrac12\rho V_\infty^2$:
 $$
 \boxed{C_p \approx -\frac{2v}{V_\infty}}
 $$
-
-(28 Oct, l. 284.)
 
 ### Vortex sheet and loading
 
@@ -118,20 +116,20 @@ The minus sign makes nose-up positive: upward loading at $x>0$ gives a nose-down
 
 ### Kutta condition
 
-Two cases for the flow at a sharp trailing edge (28 Oct, ll. 338–380). Potential flow alone allows the flow to go round the edge from below, with infinite speed there; real (viscous) flow does not. Instead it leaves smoothly. At a finite-angle trailing edge both surface velocities must then vanish (a stagnation point); at a cusped edge they are equal. Either way, Bernoulli with the same pressure $p_a$ on both sides of the edge gives $V_1 = V_2$, so
+Two cases for the flow at a sharp trailing edge. Potential flow alone allows the flow to go round the edge from below, with infinite speed there; real (viscous) flow does not. Instead it leaves smoothly. At a finite-angle trailing edge both surface velocities must then vanish (a stagnation point); at a cusped edge they are equal. Either way, Bernoulli with the same pressure $p_a$ on both sides of the edge gives $V_1 = V_2$, so
 
 $$
 \boxed{\gamma(TE) = V_1-V_2 = 0}
 $$
 
-Why the flow cannot go round the edge: a real boundary layer would have to climb from the very low pressure at the sharp edge into a steep adverse pressure gradient, and it separates instead (28 Oct, ll. 342–350). Too little circulation puts the rear stagnation point on the upper surface, too much puts it on the lower surface; only one value puts it at the trailing edge (ll. 351–358).
+Why the flow cannot go round the edge: a real boundary layer would have to climb from the very low pressure at the sharp edge into a steep adverse pressure gradient, and it separates instead. Too little circulation puts the rear stagnation point on the upper surface, too much puts it on the lower surface; only one value puts it at the trailing edge.
 
-This is how viscosity is accounted for without modelling it: it fixes the circulation and hence the lift. With curved trailing edges (some turbine blades) it is not obvious how to apply it, and CFD is needed (28 Oct, ll. 454–457). See [[Kutta Condition]].
+This is how viscosity is accounted for without modelling it: it fixes the circulation and hence the lift. With curved trailing edges (some turbine blades) it is not obvious how to apply it, and CFD is needed. See [[Kutta Condition]].
 
-> [!warning] Bogus explanations of lift (28 Oct, ll. 413–452)
+> [!warning] Bogus explanations of lift
 > Equal transit time ("the air over the top must arrive at the trailing edge at the same time") is completely wrong: experiments show the upper flow arrives first. "It is just Newton's law" is true but useless: Newton's law only says the pressure below exceeds the pressure above, not by how much. Bernoulli is correct, provided you do not apply it across the rotational boundary layer, but it does not tell you the velocities. A real theory needs the Kutta condition to fix $\Gamma$.
 >
-> The streamline-curvature picture is the sound alternative: curved streamlines need a pressure gradient towards their centre of curvature, $\partial p/\partial n = \rho V^2/R$, so the flow curving over the upper surface sits at low pressure (L1, ll. 330–365; L4, ll. 330–400). That is correct physics, and long established (e.g. Babinsky, *Physics Education*, 2003). It is also descriptive: like the others, it does not give the value of the lift.
+> The streamline-curvature picture is the sound alternative: curved streamlines need a pressure gradient towards their centre of curvature, $\partial p/\partial n = \rho V^2/R$, so the flow curving over the upper surface sits at low pressure. That is correct physics, and long established (e.g. Babinsky, *Physics Education*, 2003). It is also descriptive: like the others, it does not give the value of the lift.
 
 ## 3. The fundamental equation
 
@@ -201,7 +199,7 @@ $$
 
 ### Improper integrals
 
-The integrand blows up at $\theta = \theta_0$, so the integrals are principal values: cut out a symmetric gap $\pm\epsilon$ round the singularity and let $\epsilon\to0$ (29 Oct, ll. 375–457). A warm-up, for $0<x_0<1$:
+The integrand blows up at $\theta = \theta_0$, so the integrals are principal values: cut out a symmetric gap $\pm\epsilon$ round the singularity and let $\epsilon\to0$. A warm-up, for $0<x_0<1$:
 
 $$
 I = \lim_{\epsilon\to0}\left[-\int_0^{x_0-\epsilon}\frac{dx}{x_0-x}+\int_{x_0+\epsilon}^1\frac{dx}{x-x_0}\right]
@@ -219,11 +217,11 @@ $$
 I = \ln\frac{1-x_0}{x_0}.
 $$
 
-The integral is improper but converges (29 Oct, ll. 624–626).
+The integral is improper but converges.
 
 ### Glauert integrals
 
-These are singular at $\theta=\theta_0$ and taken as principal values. You will be given them in an exam (29 Oct, ll. 485–493):
+These are singular at $\theta=\theta_0$ and taken as principal values. You will be given them in an exam:
 
 $$
 \text{(G1)}\;\int_0^\pi\frac{\cos n\theta\,d\theta}{\cos\theta-\cos\theta_0} = \frac{\pi\sin n\theta_0}{\sin\theta_0},\qquad \text{(G2)}\;\int_0^\pi\frac{\sin n\theta\sin\theta\,d\theta}{\cos\theta-\cos\theta_0} = -\pi\cos n\theta_0
@@ -254,7 +252,7 @@ $$
 
 ## 4. Symmetric aerofoil (flat plate)
 
-With $dz/dx=0$ the equation is $\frac{1}{2\pi}\int_0^\pi\frac{\gamma\sin\theta\,d\theta}{\cos\theta-\cos\theta_0} = V_\infty\alpha$. Integral equations like this are solved by proposing a solution and checking it, not by a procedure (29 Oct, ll. 510–527). The proposal:
+With $dz/dx=0$ the equation is $\frac{1}{2\pi}\int_0^\pi\frac{\gamma\sin\theta\,d\theta}{\cos\theta-\cos\theta_0} = V_\infty\alpha$. Integral equations like this are solved by proposing a solution and checking it, not by a procedure. The proposal:
 
 $$
 \boxed{\gamma(\theta) = 2V_\infty\alpha\frac{1+\cos\theta}{\sin\theta}}
@@ -280,10 +278,10 @@ $$
 \gamma(x) = 2V_\infty\alpha\sqrt{\frac{c-x}{x}}
 $$
 
-The leading-edge suction peak is infinite at the LE (a real aerofoil's rounded nose makes it finite), and the loading is zero at the TE. The adverse pressure gradient behind the peak drives [[Boundary Layer Separation]] and laminar separation bubbles; the separated shear layer has an inflection point, is very unstable and usually triggers transition (30 Oct, ll. 146–185; §8).
+The leading-edge suction peak is infinite at the LE (a real aerofoil's rounded nose makes it finite), and the loading is zero at the TE. The adverse pressure gradient behind the peak drives [[Boundary Layer Separation]] and laminar separation bubbles; the separated shear layer has an inflection point, is very unstable and usually triggers transition (§8).
 
 > [!check] How good is $2\pi$?
-> Real sections give about $5.8$–$6.0$ per radian, even at 12% thickness (30 Oct, ll. 108–121); XFLR5 gives $6.1$ for a 12% section including boundary layers (5 Nov, ll. 733–739). This agreement was one of the first big successes of the theory. TAT is good to at least 6% camber and roughly 10% thickness, wherever $\cos$ of the surface angle is close to 1 (31 Oct, ll. 239–248).
+> Real sections give about $5.8$–$6.0$ per radian, even at 12% thickness; XFLR5 gives $6.1$ for a 12% section including boundary layers. This agreement was one of the first big successes of the theory. TAT is good to at least 6% camber and roughly 10% thickness, wherever $\cos$ of the surface angle is close to 1.
 
 **Moment.** $c_{m,le} = -\frac{1}{2V_\infty}\int_0^\pi2V_\infty\alpha(1+\cos\theta)(1-\cos\theta)\,d\theta = -\alpha\int_0^\pi\sin^2\theta\,d\theta = -\frac{\pi\alpha}{2} = -\frac{c_l}{4}$. So the lift acts at the quarter chord: $x_{cp} = c/4$ for a flat plate.
 
@@ -309,7 +307,7 @@ $$
 \frac{V_\infty}{\pi}\left[A_0\pi-\sum_{n=1}^\infty A_n\pi\cos n\theta_0\right] = V_\infty\left(\alpha-\frac{dz}{dx}\right).
 $$
 
-Divide by $V_\infty$ (30 Oct, ll. 305–312):
+Divide by $V_\infty$:
 
 $$
 A_0 - \sum_{n=1}^\infty A_n\cos n\theta_0 = \alpha - \frac{dz}{dx}
@@ -325,7 +323,7 @@ $$
 \int_0^\pi\frac{dz}{dx}d\theta_0 = (\alpha-A_0)\pi\quad\Rightarrow\quad A_0 = \alpha-\frac1\pi\int_0^\pi\frac{dz}{dx}d\theta_0.
 $$
 
-**$A_m$.** Multiply by $\cos m\theta_0$ and integrate; only $n = m$ survives, with $\int_0^\pi\cos^2m\theta_0\,d\theta_0 = \pi/2$, the only integral value to remember (31 Oct, l. 117):
+**$A_m$.** Multiply by $\cos m\theta_0$ and integrate; only $n = m$ survives, with $\int_0^\pi\cos^2m\theta_0\,d\theta_0 = \pi/2$, the only integral value to remember:
 
 $$
 \int_0^\pi\frac{dz}{dx}\cos m\theta_0\,d\theta_0 = A_m\frac\pi2\quad\Rightarrow\quad A_m = \frac2\pi\int_0^\pi\frac{dz}{dx}\cos m\theta_0\,d\theta_0.
@@ -335,7 +333,7 @@ $$
 \boxed{A_0 = \alpha-\frac1\pi\int_0^\pi\frac{dz}{dx}d\theta_0,\qquad A_n = \frac2\pi\int_0^\pi\frac{dz}{dx}\cos n\theta_0\,d\theta_0\;(n\ge1)}
 $$
 
-Only $A_0$ depends on $\alpha$. For a smooth camber line the $A_n$ decay to zero; for a NACA 4-digit section they can be found numerically by the trapezoidal rule, as in the SESA2029 coursework code (31 Oct, ll. 14–29).
+Only $A_0$ depends on $\alpha$. For a smooth camber line the $A_n$ decay to zero; for a NACA 4-digit section they can be found numerically by the trapezoidal rule, as in the SESA2029 coursework code.
 
 ### Lift
 
@@ -365,7 +363,7 @@ The lift slope is still $2\pi$; positive camber makes $\alpha_{L=0}$ negative an
 
 ### Ideal angle of attack
 
-At the ideal (design) angle, the flow joins the leading edge smoothly: $\gamma(0) = 0$, a "Kutta condition at the leading edge" (31 Oct, ll. 160–195). Every $A_n\sin n\theta$ term is zero at $\theta = 0$, so only the $A_0$ term can be singular there, and the condition is $A_0 = 0$:
+At the ideal (design) angle, the flow joins the leading edge smoothly: $\gamma(0) = 0$, a "Kutta condition at the leading edge". Every $A_n\sin n\theta$ term is zero at $\theta = 0$, so only the $A_0$ term can be singular there, and the condition is $A_0 = 0$:
 
 $$
 \alpha_{ideal} = \frac1\pi\int_0^\pi\frac{dz}{dx}\,d\theta_0
@@ -400,7 +398,7 @@ $$
 
 ### Moment about the quarter chord
 
-The same loading can be represented as lift plus moment at the LE, or lift plus moment at $c/4$ (4 Nov, ll. 176–200). Taking moments about the LE (nose-up positive), lift at $c/4$ gives a nose-down contribution:
+The same loading can be represented as lift plus moment at the LE, or lift plus moment at $c/4$. Taking moments about the LE (nose-up positive), lift at $c/4$ gives a nose-down contribution:
 
 $$
 M'_{LE} = M'_{c/4}-\frac c4L'\quad\Rightarrow\quad c_{m,le} = c_{m,c/4}-\frac{c_l}{4}.
@@ -412,7 +410,7 @@ $$
 \boxed{c_{m,c/4} = c_{m,le}+\frac{c_l}{4} = \frac\pi4(A_2-A_1)}\quad\text{independent of }\alpha
 $$
 
-- The aerodynamic centre is the point where $dc_m/d\alpha = 0$. In thin-aerofoil theory it is the quarter chord, for any camber line (4 Nov, ll. 257–286).
+- The aerodynamic centre is the point where $dc_m/d\alpha = 0$. In thin-aerofoil theory it is the quarter chord, for any camber line.
 - Symmetric aerofoil: $c_{m,c/4}=0$. Positive camber: $A_1>A_2$ typically, so $c_{m,c/4}<0$ (nose-down).
 
 ### Centre of pressure
@@ -423,7 +421,7 @@ $$
 \frac{x_{cp}}{c} = -\frac{c_{m,le}}{c_l} = \frac14\left[1+\frac{\pi(A_1-A_2)}{c_l}\right] = \frac14-\frac{c_{m,c/4}}{c_l}
 $$
 
-For a flat plate $x_{cp} = c/4$. For a cambered aerofoil it moves with $\alpha$, towards $\pm\infty$ as $c_l\to0$, so the centre of pressure need not even lie on the wing (4 Nov, ll. 321–331). That is why the AC, not the CP, is the reference point. See [[Aerodynamic Centre and Centre of Pressure]].
+For a flat plate $x_{cp} = c/4$. For a cambered aerofoil it moves with $\alpha$, towards $\pm\infty$ as $c_l\to0$, so the centre of pressure need not even lie on the wing. That is why the AC, not the CP, is the reference point. See [[Aerodynamic Centre and Centre of Pressure]].
 
 ![[tat_loading.png|560]]
 
@@ -437,11 +435,11 @@ $z = 0.24x(1-x)$, unit chord.
 4. $c_l = \pi(2\alpha+0.24)$; $dc_l/d\alpha = 2\pi$ ✔.
 5. $\alpha_{L=0} = -0.12$ rad $= -6.88^\circ$.
 6. $\alpha_{ideal} = \frac{0.24}{\pi}\int_0^\pi\cos\theta_0\,d\theta_0 = 0$.
-7. $c_{m,c/4} = \frac\pi4(0-0.24) = -0.06\pi = -0.188$, the key number for this aerofoil (4 Nov, ll. 400–404).
+7. $c_{m,c/4} = \frac\pi4(0-0.24) = -0.06\pi = -0.188$, the key number for this aerofoil.
 8. $\dfrac{x_{cp}}{c} = \dfrac14\left(1+\dfrac{0.24}{2\alpha+0.24}\right)$: at $\alpha=0$, $x_{cp} = 0.5c$ (the loading is symmetric about mid-chord); as $\alpha\to\alpha_{L=0}$, $x_{cp}\to\pm\infty$.
 9. Loading: $\Delta C_p = \frac{2\gamma}{V_\infty} = 4\alpha\dfrac{1+\cos\theta}{\sin\theta}+0.96\sin\theta$. At $\alpha = 0$ only the $\sin\theta$ hump remains: no LE loading.
 
-> [!check] Python check and XFOIL comparison (5 Nov, ll. 420–525; 31 Oct, ll. 204–236)
+> [!check] Python check and XFOIL comparison
 > Trapezoidal integration of $dz/dx = 0.24\cos\theta_0$ on 2001 points: $A_0-\alpha = 0$, $A_1 = 0.2400$, $A_2 = 0$ to $10^{-6}$; $c_{m,c/4} = -0.1885$ ✔.
 >
 > | Quantity | TAT (NACA 6500) | XFOIL, NACA 6510, $Re = 3\times10^6$ |
@@ -498,14 +496,14 @@ $$
 
 ### Effectiveness of a 20% flap
 
-Find the flap effectiveness for $E=0.2$ (31 Oct, ll. 375–404).
+Find the flap effectiveness for $E=0.2$.
 
 1. $\cos\theta_h = 2(0.2)-1 = -0.6$, so $\theta_h = 2.214$ rad, $\sin\theta_h = 0.8$.
 2. $\partial c_l/\partial\eta = 2(\pi-2.214+0.8) = 3.455$ per radian.
 3. $\partial c_{m,c/4}/\partial\eta = \tfrac12(0.8)(-0.6-1) = -0.640$.
 4. $\partial\alpha_{L=0}/\partial\eta = -3.455/(2\pi) = -0.550$.
 
-Check: $\partial c_l/\partial\alpha = 2\pi$ still; any other value would mean an error (31 Oct, ll. 393–394). The same derivative models elevators, rudders and ailerons in [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability|T6]] (31 Oct, ll. 276–286).
+Check: $\partial c_l/\partial\alpha = 2\pi$ still; any other value would mean an error. The same derivative models elevators, rudders and ailerons in [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability|T6]].
 
 ### 25% flap
 
@@ -523,7 +521,7 @@ A small flap carries a large share of the effect: a 20 % flap gives 3.455/6.283 
 
 Full derivation and other hinge positions: [[Trailing-Edge Flap in Thin Aerofoil Theory]]. Hinge moments of the elevator ($b_1$, $b_2$) used in [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability]] come from the same model.
 
-### High-lift devices (31 Oct, ll. 414–464)
+### High-lift devices
 
 $V_{stall} = \sqrt{2W/(\rho_\infty S C_{L,max})}$.
 - TE flaps make $\alpha_{L=0}$ more negative and raise $C_{L,max}$. Small settings for take-off (less drag, faster acceleration), large for landing (more $C_{L,max}$, and drag is welcome).
@@ -534,11 +532,11 @@ $V_{stall} = \sqrt{2W/(\rho_\infty S C_{L,max})}$.
 
 ### Kelvin's circulation theorem and the starting vortex
 
-[[Kelvin's Circulation Theorem]] says that in inviscid flow with conservative body forces, the circulation round a closed curve moving with the fluid is constant, $D\Gamma/Dt = 0$ (28 Oct, ll. 458–500). Start an aerofoil from rest: a curve enclosing the aerofoil and its wake has $\Gamma = 0$ before and after. When the aerofoil develops circulation $\Gamma$, a starting vortex of $-\Gamma$ is shed from the trailing edge, so the total stays zero.
+[[Kelvin's Circulation Theorem]] says that in inviscid flow with conservative body forces, the circulation round a closed curve moving with the fluid is constant, $D\Gamma/Dt = 0$. Start an aerofoil from rest: a curve enclosing the aerofoil and its wake has $\Gamma = 0$ before and after. When the aerofoil develops circulation $\Gamma$, a starting vortex of $-\Gamma$ is shed from the trailing edge, so the total stays zero.
 
-- A sudden start sheds a discrete vortex; a gradual one sheds a sheet of vorticity that rolls up (5 Nov, ll. 107–111). In a viscous flow the circulation slowly dissipates (ll. 77–79).
-- Every change of lift sheds one: a manoeuvre, an elevator movement on the tailplane, or starting a wind tunnel, where it circulates round the circuit (5 Nov, ll. 134–150).
-- Wake turbulence behind a heavy aircraft is mainly its trailing (tip) vortices, plus the wing wake and engine jets (5 Nov, ll. 113–129; [[SESA2022 T5 - Finite Wing Theory|T5]]), not chiefly the starting vortex (see [[#Transcript and slide slips]] for 28 Oct, ll. 495–499).
+- A sudden start sheds a discrete vortex; a gradual one sheds a sheet of vorticity that rolls up. In a viscous flow the circulation slowly dissipates.
+- Every change of lift sheds one: a manoeuvre, an elevator movement on the tailplane, or starting a wind tunnel, where it circulates round the circuit.
+- Wake turbulence behind a heavy aircraft is mainly its trailing (tip) vortices, plus the wing wake and engine jets ([[SESA2022 T5 - Finite Wing Theory|T5]]), not chiefly the starting vortex (see [[#Transcript and slide slips]]).
 
 ### Stall types
 
@@ -550,11 +548,11 @@ See [[Aerofoil Stall]].
 | Leading-edge stall | Moderately thin, $t/c \lesssim 15\%$ (e.g. NACA 4412) | Sudden separation from the LE over the whole upper surface, with a sharp drop in $c_l$ |
 | Thin-aerofoil stall | Flat plate, very thin sections | Separation bubble even at low $\alpha$ that grows and moves downstream; lower $c_{l,max}$, gentle stall |
 
-(5 Nov, ll. 170–330.) The laminar separation bubble links back to [[SESA2022 T2 - Boundary Layers#8. Pressure gradients and separation|T2 §8]].
+The laminar separation bubble links back to [[SESA2022 T2 - Boundary Layers#8. Pressure gradients and separation|T2 §8]].
 
 ### Panel methods
 
-Cover both surfaces with panels, each carrying a constant-strength vortex (and, in a source–vortex panel method, a source) sheet. Apply tangency at the centre of every panel, with the full $V_\infty\sin(\beta-\alpha)$ normal component (no small angles, since thickness is now included), and the Kutta condition, giving a linear system $\mathbf{A}\mathbf{x} = \mathbf{B}$ for the strengths; $\mathbf A$ holds geometric influence coefficients (5 Nov, ll. 336–375). Lift follows either by integrating the pressures or from $L' = \rho V_\infty\Gamma$ (ll. 382–388). Used in industry since the 1960s. XFOIL and XFLR5 add viscous boundary-layer coupling, so they predict profile drag, separation bubbles and stall. More in [[SESA3043 2.3 - Panel Methods]] and [[SESA3043 3.6 - Viscous-Inviscid Interaction]].
+Cover both surfaces with panels, each carrying a constant-strength vortex (and, in a source–vortex panel method, a source) sheet. Apply tangency at the centre of every panel, with the full $V_\infty\sin(\beta-\alpha)$ normal component (no small angles, since thickness is now included), and the Kutta condition, giving a linear system $\mathbf{A}\mathbf{x} = \mathbf{B}$ for the strengths; $\mathbf A$ holds geometric influence coefficients. Lift follows either by integrating the pressures or from $L' = \rho V_\infty\Gamma$. Used in industry since the 1960s. XFOIL and XFLR5 add viscous boundary-layer coupling, so they predict profile drag, separation bubbles and stall. More in [[SESA3043 2.3 - Panel Methods]] and [[SESA3043 3.6 - Viscous-Inviscid Interaction]].
 
 ## Assumptions and summary
 
@@ -566,11 +564,11 @@ Cover both surfaces with panels, each carrying a constant-strength vortex (and, 
 
 ### XFOIL results for NACA 6510 and NACA 2412
 
-XFOIL, rather than CFD, is the tool for aerofoils because its coupled boundary-layer method has a physically based $e^N$ transition model; RANS CFD usually does not, and rarely resolves small separation bubbles (5 Nov, ll. 403–417, 675–679). If XFOIL has convergence trouble near transition, reinitialise the boundary layer (ll. 500–511).
+XFOIL, rather than CFD, is the tool for aerofoils because its coupled boundary-layer method has a physically based $e^N$ transition model; RANS CFD usually does not, and rarely resolves small separation bubbles. If XFOIL has convergence trouble near transition, reinitialise the boundary layer.
 
-For NACA 6510 at $Re = 3\times10^6$, laminar $c_f$ is low, jumps at transition, then the turbulent $c_f$ falls in the adverse gradient; $H$ is about 2.6–2.8 in the laminar part and about 1.4 in the turbulent part, rising again towards the TE. $c_f<0$ means separation (ll. 529–566). On NACA 2412 at $Re = 3\times10^5$ and $5^\circ$ a laminar separation bubble shows up as $c_f$ dipping below zero and laminar $H$ exceeding 4, followed by transition, reattachment and turbulent $H\approx1.5$. At $10^\circ$ the bubble moves to the LE; at $15^\circ$ a flat spot in $C_p$ near the TE marks turbulent separation at $0.65c$, and at $17^\circ$ at $0.40c$: trailing-edge stall (ll. 594–672).
+For NACA 6510 at $Re = 3\times10^6$, laminar $c_f$ is low, jumps at transition, then the turbulent $c_f$ falls in the adverse gradient; $H$ is about 2.6–2.8 in the laminar part and about 1.4 in the turbulent part, rising again towards the TE. $c_f<0$ means separation. On NACA 2412 at $Re = 3\times10^5$ and $5^\circ$ a laminar separation bubble shows up as $c_f$ dipping below zero and laminar $H$ exceeding 4, followed by transition, reattachment and turbulent $H\approx1.5$. At $10^\circ$ the bubble moves to the LE; at $15^\circ$ a flat spot in $C_p$ near the TE marks turbulent separation at $0.65c$, and at $17^\circ$ at $0.40c$: trailing-edge stall.
 
-Separation and transition are different things. Separation is reverse flow; transition is the growth of disturbances into turbulence. Transition often follows laminar separation, and the turbulent mixing then reattaches the layer (ll. 691–720). Designers use this: keep the flow laminar over about 60% of the chord, then trip it with an engineered bubble so the turbulent layer resists separation (human-powered aircraft, gliders and laminar transonic wings) (ll. 572–593).
+Separation and transition are different things. Separation is reverse flow; transition is the growth of disturbances into turbulence. Transition often follows laminar separation, and the turbulent mixing then reattaches the layer. Designers use this: keep the flow laminar over about 60% of the chord, then trip it with an engineered bubble so the turbulent layer resists separation (human-powered aircraft, gliders and laminar transonic wings).
 
 ## Terminology and alternative names
 
@@ -583,7 +581,7 @@ Separation and transition are different things. Separation is reverse flow; tran
 | Glauert integrals | Glauert's integral | 29 Oct, ll. 470–493 | |
 | zero-lift angle $\alpha_{L=0}$ ($\alpha_0$ in T6) | angle of zero lift | 30 Oct, l. 586; 31 Oct, l. 150 | T6 writes $\alpha_0$ |
 | ideal angle of attack | design angle, optimum angle, Theodorsen angle | 31 Oct, ll. 170–195 | |
-| flap effectiveness $\partial c_l/\partial\eta$ | flap lift derivative, $c_{l_\delta}$, $a_2$ in T6 | 31 Oct, ll. 275–405 | "aerodynamic derivative" (l. 277) |
+| flap effectiveness $\partial c_l/\partial\eta$ | flap lift derivative, $c_{l_\delta}$, $a_2$ in T6 | 31 Oct, ll. 275–405 | "aerodynamic derivative" |
 | aerodynamic centre | neutral point of the section, AC | 4 Nov, ll. 257–286 | |
 | centre of pressure | CP | 4 Nov, ll. 302–335 | |
 | trailing-edge, leading-edge, thin-aerofoil stall | | 5 Nov, ll. 170–330 | |
@@ -625,7 +623,7 @@ The whole theory need not be reproduced in an exam, but each step should be foll
 ### Further practice
 
 - [ ] Derive $c_{m,le} = -\frac\pi2(A_0+A_1-A_2/2)$ and the transfer to $c/4$ (4 Nov, ll. 337–338). → [[#6. Moments, aerodynamic centre, centre of pressure]]
-- [ ] Explain why slats do not change $\alpha_{L=0}$ but raise the stall angle, using boundary-layer ideas (31 Oct, ll. 442–462). → [[#High-lift devices (31 Oct, ll. 414–464)]]
+- [ ] Explain why slats do not change $\alpha_{L=0}$ but raise the stall angle, using boundary-layer ideas (31 Oct, ll. 442–462). → [[#High-lift devices]]
 - [ ] Run XFOIL/XFLR5 on NACA 0012 and NACA 4412: compare $dc_l/d\alpha$, $\alpha_{L=0}$ and $c_{m,c/4}$ with TAT, and identify the stall type (5 Nov lecture and the XFOIL/XFLR5 videos in `02 - Sources/Lectures/`). → [[#8. Real flow effects]]
 - [ ] *(Optional, not lectured)* Derive G1 and G2 from $I_0 = 0$ and the recursion. → [[#Glauert integrals]]
 - [ ] *(Suggested, not lecturer-set)* Show that a 10% flap gives $\partial c_l/\partial\eta = 2.49$ and $\partial c_{m,c/4}/\partial\eta = -0.54$. → [[#General hinge position]]

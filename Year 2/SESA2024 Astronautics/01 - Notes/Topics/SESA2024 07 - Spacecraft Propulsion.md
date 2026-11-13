@@ -29,15 +29,15 @@ sources: ["02 - Sources/Lectures/Chapter 7/Chapter 7 - Propulsion - original sli
 > - **Common mistakes:** thinking high $I_{sp}$ means high thrust; dividing total impulse by propellant mass instead of propellant weight when finding $I_{sp}$ (Quiz 1).
 > - **Practise:** [[#Power for a 50 mN thruster]] · [[SESA2024 Workbook Ch7 - Propulsion Solutions#Q12. Pluto orbiter by electric propulsion|Workbook Q12, the Pluto orbiter]]
 
-Every spacecraft propulsion system works by momentum transfer: it throws mass out behind the spacecraft as efficiently as possible, and the reaction pushes the spacecraft forwards (2025-10-16, ll. 326–340). Two numbers describe how well it does that. The thrust says how hard it pushes, and so how quickly a manoeuvre is done. The specific impulse says how much push you get from each kilogram of propellant, and so how much propellant a manoeuvre costs. Chemical rockets are good at the first, electric thrusters at the second, and the trade between them recurs from the Hohmann transfer to station-keeping against drag.
+Every spacecraft propulsion system works by momentum transfer: it throws mass out behind the spacecraft as efficiently as possible, and the reaction pushes the spacecraft forwards. Two numbers describe how well it does that. The thrust says how hard it pushes, and so how quickly a manoeuvre is done. The specific impulse says how much push you get from each kilogram of propellant, and so how much propellant a manoeuvre costs. Chemical rockets are good at the first, electric thrusters at the second, and the trade between them recurs from the Hohmann transfer to station-keeping against drag.
 
-The propulsion available also limits which missions are possible at all, and so what can be done in the solar system (ll. 326–335). The engines themselves are treated in depth in [[SESA2023 Propulsion Hub]].
+The propulsion available also limits which missions are possible at all, and so what can be done in the solar system. The engines themselves are treated in depth in [[SESA2023 Propulsion Hub]].
 
 ## 1. Types of propulsion
 
-Propulsion is classified first by principle (slides; 2025-10-16, ll. 300–330): rockets (thermal, electric or nuclear, and thermal rockets subdivided into chemical, nuclear, solar and laser heating), photon ejection, solar sails using the momentum of sunlight, and technologies not yet developed. In practice spacecraft use chemical rockets and, increasingly, electric propulsion.
+Propulsion is classified first by principle: rockets (thermal, electric or nuclear, and thermal rockets subdivided into chemical, nuclear, solar and laser heating), photon ejection, solar sails using the momentum of sunlight, and technologies not yet developed. In practice spacecraft use chemical rockets and, increasingly, electric propulsion.
 
-They are also classified by job (ll. 335–425):
+They are also classified by job:
 
 - Primary propulsion is the high-thrust kind: launch vehicles and spacecraft orbit transfers, with thrust from hundreds of newtons upwards and burns of roughly 100–500 s. A burn of a minute or more still counts as impulsive because it is short compared with the orbital period. An electric thruster doing the same manoeuvre would burn for hours or longer.
 - Secondary propulsion is attitude and orbit control: thrust from millinewtons to about 10 N, short and often pulsed burns.
@@ -55,7 +55,7 @@ They are also classified by job (ll. 335–425):
 
 ### The thrust equation
 
-The thrust follows from the Year 1 momentum analysis of a rocket (pre-recorded lecture, ll. 1–25). A rocket of mass $M$ moving at $V$ in free space, with no external force, ejects mass $dm_e$ backwards over a short time $dt$ at exhaust velocity $V_{ex}$ relative to itself, and its own speed rises to $V+dV$. The momentum before is
+The thrust follows from the Year 1 momentum analysis of a rocket (pre-recorded lecture). A rocket of mass $M$ moving at $V$ in free space, with no external force, ejects mass $dm_e$ backwards over a short time $dt$ at exhaust velocity $V_{ex}$ relative to itself, and its own speed rises to $V+dV$. The momentum before is
 
 $$
 p_1=MV.
@@ -85,7 +85,7 @@ $$
 M\,dV=V_{ex}\,dm_e.
 $$
 
-Divide by $dt$. The left side is the rocket's mass times its acceleration, which is the force on it, and $dm_e/dt=\dot m$ is the propellant mass flow rate (written $\sigma$ on the slides):
+Divide by $dt$. The left side is the rocket's mass times its acceleration, which is the force on it, and $dm_e/dt=\dot m$ is the propellant mass flow rate (also written $\sigma$):
 
 $$
 T=M\frac{dV}{dt}=\dot m\,V_{ex}.
@@ -97,11 +97,11 @@ $$
 T=\dot m\,V_{ex}+(p_e-p_a)A_e.
 $$
 
-If $p_a>p_e$ the nozzle is over-expanded and the pressure thrust is negative; the Shuttle lost about 20 % of its thrust this way at sea level. If $p_e>p_a$ it is under-expanded: the pressure term is positive, but less of the exhaust's energy has gone into velocity, so the net effect is still a loss. The ideal is $p_e=p_a$, which a launcher cannot hold as it climbs (ll. 1–35). The pressure term can be lumped into an effective exhaust velocity, which is exact in a vacuum with the right nozzle.
+If $p_a>p_e$ the nozzle is over-expanded and the pressure thrust is negative; the Shuttle lost about 20 % of its thrust this way at sea level. If $p_e>p_a$ it is under-expanded: the pressure term is positive, but less of the exhaust's energy has gone into velocity, so the net effect is still a loss. The ideal is $p_e=p_a$, which a launcher cannot hold as it climbs. The pressure term can be lumped into an effective exhaust velocity, which is exact in a vacuum with the right nozzle.
 
 ### Total impulse
 
-Real thrust rises, wobbles and falls rather than switching on and off, so the quantity to use is the area under the thrust–time curve, the total impulse (ll. 26–70):
+Real thrust rises, wobbles and falls rather than switching on and off, so the quantity to use is the area under the thrust–time curve, the total impulse:
 
 $$
 I=\int_0^{t_b}T\,dt.
@@ -123,7 +123,7 @@ where $M_e=M_0-M_b$ is the propellant mass. Propulsion engineers use subscript $
 
 ### Specific impulse
 
-Specific impulse is the impulse per unit weight of propellant (ll. 51–100):
+Specific impulse is the impulse per unit weight of propellant:
 
 $$
 I_{sp}=\frac{I}{M_eg_0}=\frac{M_eV_{ex}}{M_eg_0}=\frac{V_{ex}}{g_0},
@@ -135,9 +135,9 @@ $$
 I_{sp}=\frac{T}{\dot m g_0}.
 $$
 
-The definition is per unit weight, not per unit mass; a definition per unit mass is false (Quiz 1 true-or-false, walk-through, ll. 1–25, 51–80).
+The definition is per unit weight, not per unit mass; a definition per unit mass is false (Quiz 1 true-or-false, walk-through).
 
-High specific impulse does not mean high thrust. Electric thrusters reach thousands of seconds with millinewtons of thrust; chemical engines reach 300–450 s and get their high thrust from a high mass flow rate (ll. 76–100; 2025-10-16, ll. 500–520). In a chemical engine, specific impulse rises with the combustion chamber temperature and falls with the mean molecular weight of the exhaust, roughly $I_{sp}\propto\sqrt{T_c/\bar M}$, which is why hydrogen fuels score well.
+High specific impulse does not mean high thrust. Electric thrusters reach thousands of seconds with millinewtons of thrust; chemical engines reach 300–450 s and get their high thrust from a high mass flow rate. In a chemical engine, specific impulse rises with the combustion chamber temperature and falls with the mean molecular weight of the exhaust, roughly $I_{sp}\propto\sqrt{T_c/\bar M}$, which is why hydrogen fuels score well.
 
 ### The rocket equation and propellant mass
 
@@ -167,7 +167,7 @@ $$
 
 The ratio inside the logarithm is always the larger mass over the smaller, so $\Delta V$ comes out positive.
 
-Invert it for the propellant fraction (pre-recorded lecture, ll. 101–125):
+Invert it for the propellant fraction (pre-recorded lecture):
 
 $$
 \frac{M_0}{M_0-M_e}=e^{\Delta V/V_{ex}}
@@ -177,7 +177,7 @@ $$
 
 As $\Delta V/V_{ex}$ grows the fraction approaches 1 asymptotically, because a rocket cannot be made entirely of propellant. This is how chemical systems are sized: the mission analysis gives ΔV, the propellant choice gives $I_{sp}$, and the equation gives the propellant mass.
 
-The equation can also be run the other way: given the masses and the ΔV of a chemical burn, find the specific impulse (Quiz 1 walk-through, ll. 51–100). With illustrative values of a 1000 kg spacecraft that uses 150 kg of propellant for $\Delta V=500$ m/s, the burnout mass is $M_b=1000-150=850$ kg and
+The equation can also be run the other way: given the masses and the ΔV of a chemical burn, find the specific impulse (Quiz 1 walk-through). With illustrative values of a 1000 kg spacecraft that uses 150 kg of propellant for $\Delta V=500$ m/s, the burnout mass is $M_b=1000-150=850$ kg and
 
 $$
 I_{sp}=\frac{\Delta V}{g_0\ln(M_0/M_b)}=\frac{500}{9.81\ln(1000/850)}=\frac{500}{9.81\times0.1625}=314\ \mathrm s.
@@ -192,21 +192,21 @@ $$
 
 ### Liquid monopropellants
 
-A single liquid is decomposed exothermically on a catalyst bed and expanded through a nozzle (pre-recorded lecture, ll. 126–170). Hydrazine is the standard: it decomposes into ammonia, nitrogen and hydrogen. An optional electric heater raises the specific impulse from about 240 s to about 290 s at the cost of power. Thrust is 1–10 N, so monopropellants are used for secondary propulsion (attitude control thrusters), not primary. Hydrazine is carcinogenic, and there is a move to "green" propellants, but the industry's handling procedures are built around hydrazine and its performance is hard to match.
+A single liquid is decomposed exothermically on a catalyst bed and expanded through a nozzle (pre-recorded lecture). Hydrazine is the standard: it decomposes into ammonia, nitrogen and hydrogen. An optional electric heater raises the specific impulse from about 240 s to about 290 s at the cost of power. Thrust is 1–10 N, so monopropellants are used for secondary propulsion (attitude control thrusters), not primary. Hydrazine is carcinogenic, and there is a move to "green" propellants, but the industry's handling procedures are built around hydrazine and its performance is hard to match.
 
 ### Liquid bipropellants
 
-A fuel and an oxidiser meet in a combustion chamber (ll. 170–205). Hydrogen with oxygen, or with fluorine for about 410 s, gives the highest performance, but both oxidisers are cryogenic (boiling points about 90 K and 85 K) and fluorine is highly corrosive. Hypergolic pairs ignite on contact with no spark, so they must never meet before they are wanted. Monomethylhydrazine with nitrogen tetroxide is hypergolic and storable (boiling point about 294 K), which makes it the usual choice for spacecraft. A bipropellant system needs a pressurant (helium), separate fuel and oxidiser tanks, and two feed lines to every thruster: with twelve attitude thrusters, redundant spares and a main engine, the plumbing gets complicated. Thrust is 1–400 N and specific impulse a little over 300 s.
+A fuel and an oxidiser meet in a combustion chamber. Hydrogen with oxygen, or with fluorine for about 410 s, gives the highest performance, but both oxidisers are cryogenic (boiling points about 90 K and 85 K) and fluorine is highly corrosive. Hypergolic pairs ignite on contact with no spark, so they must never meet before they are wanted. Monomethylhydrazine with nitrogen tetroxide is hypergolic and storable (boiling point about 294 K), which makes it the usual choice for spacecraft. A bipropellant system needs a pressurant (helium), separate fuel and oxidiser tanks, and two feed lines to every thruster: with twelve attitude thrusters, redundant spares and a main engine, the plumbing gets complicated. Thrust is 1–400 N and specific impulse a little over 300 s.
 
-A spacecraft dropped in its final low orbit by the launcher may need no primary engine at all. A GEO satellite is dropped in GTO and needs its own engine to circularise (ll. 201–215).
+A spacecraft dropped in its final low orbit by the launcher may need no primary engine at all. A GEO satellite is dropped in GTO and needs its own engine to circularise.
 
 ### Solids
 
-A solid motor, once ignited, burns to completion and cannot be stopped (ll. 201–250). The propellant is cast as a solid grain, and the grain geometry sets the thrust curve: burning from the end like a cigarette gives constant thrust, a star-shaped bore gives high thrust that falls, and burning from the inside out gives rising thrust. Solids give high thrust from a high mass flow rate and a smooth start, which suits first stages (the Shuttle and SLS boosters, built from stacked segments burning outwards from the bore). A small solid motor can serve as a satellite's one-shot apogee motor, removing the need for bipropellant feed lines; a typical one gives 60 kN for tens of seconds at just under 300 s. Workbook Q9 asks why solids are not used for attitude control.
+A solid motor, once ignited, burns to completion and cannot be stopped. The propellant is cast as a solid grain, and the grain geometry sets the thrust curve: burning from the end like a cigarette gives constant thrust, a star-shaped bore gives high thrust that falls, and burning from the inside out gives rising thrust. Solids give high thrust from a high mass flow rate and a smooth start, which suits first stages (the Shuttle and SLS boosters, built from stacked segments burning outwards from the bore). A small solid motor can serve as a satellite's one-shot apogee motor, removing the need for bipropellant feed lines; a typical one gives 60 kN for tens of seconds at just under 300 s. Workbook Q9 asks why solids are not used for attitude control.
 
 ### Hybrids and cold gas
 
-A hybrid keeps one component solid and the other liquid, easing storage while keeping some throttle and restart ability; they matured between roughly 2010 and 2025 (ll. 251–260). A cold-gas thruster releases stored inert gas: low thrust and finite, but clean, with no contaminating exhaust near delicate sensors, which suits fine pointing (ll. 251–275).
+A hybrid keeps one component solid and the other liquid, easing storage while keeping some throttle and restart ability; they matured between roughly 2010 and 2025. A cold-gas thruster releases stored inert gas: low thrust and finite, but clean, with no contaminating exhaust near delicate sensors, which suits fine pointing.
 
 ### Two architectures for a GEO spacecraft
 
@@ -218,13 +218,13 @@ A hybrid keeps one component solid and the other liquid, easing storage while ke
 | lower overall $I_{sp}$ | higher $I_{sp}$ |
 | apogee motor cannot be throttled or restarted | throttle and restart |
 
-Both are flown; the choice depends on the mission drivers (pre-recorded lecture, ll. 276–300).
+Both are flown; the choice depends on the mission drivers (pre-recorded lecture).
 
 ## 4. Electric propulsion
 
 ### The thruster types
 
-Electric propulsion (EP) uses electrical power to accelerate the propellant (2025-10-16, ll. 526–660). The three classes are:
+Electric propulsion (EP) uses electrical power to accelerate the propellant. The three classes are:
 
 - Electrothermal: the propellant is heated and expanded through a nozzle. A resistojet heats it with a resistive element to about 1600–2500 °C, giving 5 mN to 0.5 N at up to about 700 s with an efficiency of about 0.9; it is simple and cheap and Surrey Satellite Technology uses it on small satellites, with propellants such as xenon, water or butane. An arcjet heats the propellant with an electric arc between anode and cathode, giving 0.5–5 N at 450–1500 s, but the hundreds of amps erode the electrodes, and the efficiency is only about 0.3.
 - Electromagnetic: crossed electric and magnetic fields give a Lorentz force that accelerates a plasma. High accelerations, but short lifetimes, so rarely used.
@@ -248,7 +248,7 @@ For a fixed thrust, power rises in proportion to specific impulse, so the most e
 
 ### Sizing an EP spacecraft: the characteristic velocity
 
-Split the spacecraft into propellant (expellant) $M_e$, power plant $M_W$ and everything else, the payload $M_p$ (ll. 300–450):
+Split the spacecraft into propellant (expellant) $M_e$, power plant $M_W$ and everything else, the payload $M_p$:
 
 $$
 M_0=M_e+M_W+M_p.
@@ -304,7 +304,7 @@ $$
 
 ![[ast_ep_optimisation.png|650]]
 
-For a chemical rocket, raising the exhaust velocity always raises the ΔV. Here it does not: each curve has a peak (ll. 400–430). Below the peak the rocket equation starves the vehicle of propellant; above it the power plant, whose mass grows as $V_{ex}^2$, eats into everything else. An EP system must therefore be optimised. The peak is where the slope of $\Delta V/V_c$ with respect to $x$ is zero. Write $f(x)=x\ln(1+x^2)-x\ln(x^2+p)$ and differentiate with the product and chain rules:
+For a chemical rocket, raising the exhaust velocity always raises the ΔV. Here it does not: each curve has a peak. Below the peak the rocket equation starves the vehicle of propellant; above it the power plant, whose mass grows as $V_{ex}^2$, eats into everything else. An EP system must therefore be optimised. The peak is where the slope of $\Delta V/V_c$ with respect to $x$ is zero. Write $f(x)=x\ln(1+x^2)-x\ln(x^2+p)$ and differentiate with the product and chain rules:
 
 $$
 \frac{df}{dx}=\ln\frac{1+x^2}{x^2+p}+x\left(\frac{2x}{1+x^2}-\frac{2x}{x^2+p}\right).
@@ -330,11 +330,11 @@ which has no closed-form solution, so it is solved numerically (or read off the 
 | 0.25 | 0.737 | 0.491 |
 | 0.5 | 0.849 | 0.291 |
 
-So the optimum exhaust velocity is of the order of the characteristic velocity (roughly 1; the curves put it at 0.6–0.85). A large $V_c$ needs a high efficiency, which cannot exceed 1, a high specific power, which is physically limited, or a long burn time. The burn time is the free variable, which is why EP missions thrust for months or years at low thrust (ll. 430–450). For $p=0.1$ the peak happens to have $\Delta V/V_c\approx V_{ex}/V_c\approx0.65$; that equality is a coincidence, and easy to over-read.
+So the optimum exhaust velocity is of the order of the characteristic velocity (roughly 1; the curves put it at 0.6–0.85). A large $V_c$ needs a high efficiency, which cannot exceed 1, a high specific power, which is physically limited, or a long burn time. The burn time is the free variable, which is why EP missions thrust for months or years at low thrust. For $p=0.1$ the peak happens to have $\Delta V/V_c\approx V_{ex}/V_c\approx0.65$; that equality is a coincidence, and easy to over-read.
 
 ## 5. Impact on the spacecraft
 
-The propulsion choice constrains the mass budget most of all: the rocket equation means large ΔVs carry large propellant penalties (2025-10-16, ll. 651–690). It affects the ACS through burn stabilisation, thrust misalignment and the number of manoeuvres ([[SESA2024 06 - Attitude Control#External disturbance torques|thrust misalignment as a disturbance]]). It needs thermal control of tanks, valves and lines, and a heat sink away from the main engine. EP adds a large power demand, and with it array area, mass and, in low orbit, drag.
+The propulsion choice constrains the mass budget most of all: the rocket equation means large ΔVs carry large propellant penalties. It affects the ACS through burn stabilisation, thrust misalignment and the number of manoeuvres ([[SESA2024 06 - Attitude Control#External disturbance torques|thrust misalignment as a disturbance]]). It needs thermal control of tanks, valves and lines, and a heat sink away from the main engine. EP adds a large power demand, and with it array area, mass and, in low orbit, drag.
 
 ## Worked examples
 
@@ -366,7 +366,7 @@ The ion thruster needs about 1.6 kW for the same 50 mN. The arcjet has a lower $
 
 ### Pluto orbiter by electric propulsion
 
-Workbook Q12 (also 2025-10-16, ll. 513–540): ΔV = 17 km/s to orbit Pluto, payload fraction 0.1, efficiency 1, burn time 2 years, $M_0=3000$ kg.
+Workbook Q12 (also 2025-10-16): ΔV = 17 km/s to orbit Pluto, payload fraction 0.1, efficiency 1, burn time 2 years, $M_0=3000$ kg.
 
 A chemical system with $V_{ex}\approx3$ km/s would need $M_e/M_0=1-e^{-17/3}=0.9965$: almost the entire spacecraft would be propellant. With EP, read the optimum at $p=0.1$: $x=0.633$ and $\Delta V/V_c=0.651$. Then
 
@@ -378,7 +378,7 @@ V_{ex}=0.633\,V_c=16\,530\ \mathrm{m/s},
 I_{sp}=\frac{16\,530}{9.81}=1685\ \mathrm s,
 $$
 
-which is beyond an arcjet, so an ion thruster. The burn time is $t_b=2\times365.25\times86\,400=6.312\times10^7$ s (365.25 days a year, the quarter day included; Quiz 1 walk-through, ll. 201–226), so
+which is beyond an arcjet, so an ion thruster. The burn time is $t_b=2\times365.25\times86\,400=6.312\times10^7$ s (365.25 days a year, the quarter day included; Quiz 1 walk-through), so
 
 $$
 \beta=\frac{V_c^2}{2\eta t_b}=\frac{26\,110^2}{2\times6.312\times10^7}=5.40\ \mathrm{W/kg},
@@ -411,7 +411,7 @@ Reading the graph as 0.65 for both ratios (Workbook Q12) gives $V_{ex}=17$ km/s,
 
 - Parent: [[SESA2024 Astronautics Hub]]
 - Previous: [[SESA2024 06 - Attitude Control]]
-- Next: [[SESA2024 02 - Kepler's Laws and the Orbit Equation]] (2025-10-21) and [[SESA2024 08 - Electrical Power Subsystem]]
+- Next: [[SESA2024 02 - Kepler's Laws and the Orbit Equation]] and [[SESA2024 08 - Electrical Power Subsystem]]
 - Concepts: [[Tsiolkovsky Rocket Equation]] · [[Rocket Performance Parameters]] · [[Thrust Equation]] (SESA2023) · [[Chemical Propulsion Systems]] · [[Electric Propulsion Sizing]]
 - Workbook: [[SESA2024 Workbook Ch7 - Propulsion Solutions]]
 - Where ΔV comes from: [[SESA2024 05 - Orbital Transfers and the Hohmann Transfer]] · [[SESA2024 14 - Orbit Control, Drag and Payload Data Rate]]

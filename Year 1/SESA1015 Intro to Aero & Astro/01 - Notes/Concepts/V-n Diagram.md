@@ -22,7 +22,7 @@ $$
 n=\pm\frac{\tfrac12\rho V^2SC_{L,max}}{W},
 $$
 
-a parabola through the origin; the negative branch here uses the same magnitude of $C_{L,max}$, although real wings reach a smaller magnitude at negative incidence. Read the other way, $V=\sqrt{2nW/(\rho SC_{L,max})}$ is the stall speed at load factor $n$, which crosses $n=1$ at the ordinary stall speed. The horizontal boundaries are structural: the limit load factors $n_{max}$ and $n_{min}$ fixed by the certification authority, roughly $-1.5\le n\le3.8$ for transport aircraft and $-10\le n\le12$ for military aircraft (Slides v2 p. 178). The right-hand boundary is a maximum speed, $V_{NE}$ in service; in the worked example it is the level-flight maximum speed from $T=D$ with the parabolic polar, $V_{max}^2=\big(T+\sqrt{T^2-4AB}\big)/(2A)$ with $A=\tfrac12\rho SC_{D0}$ and $B=2KW^2/(\rho S)$.
+a parabola through the origin; the negative branch here uses the same magnitude of $C_{L,max}$, although real wings reach a smaller magnitude at negative incidence. Read the other way, $V=\sqrt{2nW/(\rho SC_{L,max})}$ is the stall speed at load factor $n$, which crosses $n=1$ at the ordinary stall speed. The horizontal boundaries are structural: the limit load factors $n_{max}$ and $n_{min}$ fixed by the certification authority, roughly $-1.5\le n\le3.8$ for transport aircraft and $-10\le n\le12$ for military aircraft. The right-hand boundary is a maximum speed, $V_{NE}$ in service; in the worked example it is the level-flight maximum speed from $T=D$ with the parabolic polar, $V_{max}^2=\big(T+\sqrt{T^2-4AB}\big)/(2A)$ with $A=\tfrac12\rho SC_{D0}$ and $B=2KW^2/(\rho S)$.
 
 The positive stall parabola meets $n_{max}$ at the corner speed
 

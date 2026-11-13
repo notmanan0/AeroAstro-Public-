@@ -21,7 +21,7 @@ A shrink fit puts the inner tube into hoop compression and the outer tube into h
 ## Procedure
 
 1. Residual (shrink) field: find the contact pressure $p_c$ from the interference ([[Shrink Fit]]). Then solve the inner tube under external $p_c$ and the outer tube under internal $p_c$ with [[Lame Equations]].
-2. Service field: solve the *compound* cylinder as a single thick tube ($a$ to $b$) under the service pressure.
+2. Service field: when both tubes have the same $E$ and $\nu$, the assembly acts as a single thick tube ($a$ to $b$) under the service pressure, so solve it as one. For dissimilar materials each tube has its own Lamé constants, and the interface pressure under service loading comes from equal radial displacement of the two tubes at $r=c$.
 3. Superpose the two fields (valid while elastic and while the interface stays in contact).
 4. Check the resultant hoop stress at the inner bore *and* at the inner surface of the outer tube (the jump at $r=c$). Either can govern.
 

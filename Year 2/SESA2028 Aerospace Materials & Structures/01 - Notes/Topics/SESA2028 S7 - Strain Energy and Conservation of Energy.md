@@ -28,7 +28,7 @@ sources: ["02 - Sources/Structures Lectures/SL1 Introduction, motivation & Revie
 > - **Common mistakes:** dropping the $\tfrac12$ on a load ramped from zero; trying to get a deflection where no load acts, which needs virtual work ([[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]).
 > - **Practise:** [[#Shear deflection of a cantilever]] · [[SESA2028 Structures Tutorial 1 - Energy Methods Solutions#Q1 - Simply supported beam with a point moment|Tutorial 1 Q1]]
 
-Structural design checks strength, stability (buckling) and stiffness, which also governs vibration. A finite-element model of a whole aircraft takes years of iteration with testing, whereas an idealised beam model gives the cross-section, deflections and stresses in days, together with the physical insight that tells you whether a later FE answer makes sense. So industry idealises first and models in detail later. The idealised methods of the structures half are energy methods, unsymmetrical bending, shear and torsion of thin-walled beams, buckling, and continuum mechanics in cylindrical coordinates.
+Structural design checks strength, stability (buckling) and stiffness, which also governs vibration. A finite-element model of a whole aircraft takes years of iteration with testing, whereas an idealised beam model gives the cross-section, deflections and stresses in days, together with the physical insight that tells you whether a later FE answer makes sense. So industry idealises first and models in detail later. The idealised methods are energy methods, unsymmetrical bending, shear and torsion of thin-walled beams, buckling, and continuum mechanics in cylindrical coordinates.
 
 Every structural problem is solved with three tools: equilibrium (free-body diagrams give the internal forces), geometric compatibility (the deformed pieces must still fit together) and the constitutive law (Hooke's law turns stress into strain). For a truss of two bars this already means two quadratic equations for the new position of the loaded joint; for a truss of ten bars it is hours of algebra. Conservation of energy is a fourth tool that sidesteps the geometry.
 
@@ -92,7 +92,7 @@ $$
 U_\rho=\frac UV=\tfrac12\boldsymbol\sigma:\boldsymbol\varepsilon ,
 $$
 
-with units of MPa $=$ N/m² $=$ J/m³; $U$ itself is in MPa·m³ $=$ J. Energy is a scalar, so all components and all members add, which is what makes the method efficient.
+with units of J/m³. Since 1 MPa $=10^6$ N/m² $=10^6$ J/m³, stresses in MPa give $U_\rho$ in MJ/m³, and $U$ in MPa·m³ is in megajoules ($1\ \text{MPa·m}^3=10^6$ J). Energy is a scalar, so all components and all members add, which is what makes the method efficient.
 
 ## 2. External work of forces and moments
 
@@ -206,7 +206,7 @@ $$
 
 This gives the displacement of the loaded joint, in the load's direction, with no quadratics. Keep tension positive and compression negative consistently: the square removes the sign here, but it matters as soon as two load cases are combined. For the three-bay truss of [[SESA2028 S8 - Virtual Work and Castigliano Theorems#Example: the three-bay truss|S8]] (10 kN at D, every member 1000 mm² and 200 GPa), $\sum P_i\Delta_i=12.66$ kN·mm, so $v_D=12.66/10=1.27$ mm.
 
-What this cannot give is the displacement in a direction where no load acts, such as the horizontal movement of that joint under its vertical load, because no external work is done in that direction. And with two or more loads, the left-hand side contains several unknown displacements but there is only one equation. Both gaps lead to virtual work in [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]].
+What this cannot give is the displacement in a direction where no load acts, such as the horizontal movement of that joint under its vertical load, because no external work is done in that direction. And with two or more loads, the left-hand side contains several unknown displacements but there is only one equation. A dummy unit load, as in virtual work ([[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]), removes both limits.
 
 ## Worked examples
 
@@ -248,7 +248,7 @@ $$
 
 A cantilever of rectangular section $b\times h$ and length $L$ carries $F$ at its tip. Show that the bending deflection is $FL^3/3EI$, the shear deflection is $6FL/5bhG$, and the total is their sum.
 
-The bending part follows as above, with $M=-Fx$ measured from the tip:
+The bending part is the bending energy of section 3 with $M=-Fx$ measured from the tip:
 
 $$
 \tfrac12Fv_b=\int_0^L\frac{F^2x^2}{2EI}\,dx=\frac{F^2L^3}{6EI}\quad\Longrightarrow\quad v_b=\frac{FL^3}{3EI}.
@@ -348,7 +348,7 @@ Polypropylene is the cheapest by a factor of 3.7 over nylon and 71 over steel. N
 
 ### Offset crank: combined bending and torsion
 
-This review problem uses only statics and the stress formulae, but it is the kind of combined stress state the energy methods later sum. An offset crank in a gas-turbine control system is a hollow titanium shaft ABC (outer diameter 10 mm, wall 1 mm, so inner diameter 8 mm) joined at C to a rigid link CD of 10 mm offset. A vertical load of 500 N acts at D. Bearings at A and B, 20 mm apart, act as simple supports, and C is a further 20 mm beyond B; A is restrained against rotation about the shaft axis. With $\sigma_y=800$ MPa, what is the safety factor against yield (Tresca)?
+An offset crank in a gas-turbine control system is a hollow titanium shaft ABC (outer diameter 10 mm, wall 1 mm, so inner diameter 8 mm) joined at C to a rigid link CD of 10 mm offset. A vertical load of 500 N acts at D. Bearings at A and B, 20 mm apart, act as simple supports, and C is a further 20 mm beyond B; A is restrained against rotation about the shaft axis. With $\sigma_y=800$ MPa, what is the safety factor against yield (Tresca)?
 
 The load at D is 10 mm off the shaft axis, so moving it onto the axis at C adds a torque $T=500\times10=5000$ N·mm, carried from C back to the restraint at A. The vertical 500 N at C, 20 mm beyond B, makes the shaft an overhanging beam. Taking moments about A gives $R_B=1000$ N up and $R_A=500$ N down, and the largest bending moment is at B:
 

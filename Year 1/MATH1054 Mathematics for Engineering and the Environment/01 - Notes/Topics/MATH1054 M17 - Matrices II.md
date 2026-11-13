@@ -41,7 +41,7 @@ The homogeneous case $\mathbf{AX}=\mathbf0$ leads to eigenvalues. Asking for whi
 
 ---
 
-## 1. The inverse matrix (James §5.4)
+## 1. The inverse matrix
 
 ### Definition and uniqueness
 
@@ -181,7 +181,7 @@ $$
 
 which undoes "add the last coordinate to each of the others". Complex entries change nothing in the method: for $\begin{bmatrix}1&\mathrm j\\-\mathrm j&2\end{bmatrix}$ the determinant is $2-(\mathrm j)(-\mathrm j)=2+\mathrm j^2=1$, so the inverse is $\begin{bmatrix}2&-\mathrm j\\\mathrm j&1\end{bmatrix}$; and $\begin{bmatrix}1&2&3\\0&1&2\\2&3&1\end{bmatrix}$ has determinant $-3$ and inverse $-\frac13\begin{bmatrix}-5&7&1\\4&-5&-2\\-2&1&1\end{bmatrix}$ (Exercise 52(c) and (d)).
 
-## 2. Inverses of products and transposes (James §5.4)
+## 2. Inverses of products and transposes
 
 The inverse of a product reverses the order:
 
@@ -235,7 +235,7 @@ $$
 > [!tip] Why the order reverses
 > $\mathbf{AB}$ acting on a vector applies $\mathbf B$ first and $\mathbf A$ second. Undoing it must undo the last operation first, so $\mathbf A^{-1}$ acts first and $\mathbf B^{-1}$ second, which in matrix order is $\mathbf B^{-1}\mathbf A^{-1}$: socks then shoes on, shoes then socks off.
 
-## 3. Sets of linear equations and when they have solutions (James §5.5.1)
+## 3. Sets of linear equations and when they have solutions
 
 $n$ linear equations in $n$ unknowns,
 
@@ -427,7 +427,7 @@ $$
 
 For $\lambda=1$ both rows reduce to $2x+y=0$, so $\mathbf X=\alpha(1,-2)^{\mathrm T}$. For $\lambda=2$ both reduce to $x+y=0$, so $\mathbf X=\beta(1,-1)^{\mathrm T}$. These $\lambda$ and $\mathbf X$ are the eigenvalues and eigenvectors of [[Eigenvalues and Eigenvectors|M18]].
 
-## 4. Cramer's rule (James §5.5.1)
+## 4. Cramer's rule
 
 The adjoint also gives each unknown separately. For three equations $\mathbf{AX}=\mathbf b$, multiply equation 1 by the cofactor $A_{11}$, equation 2 by $A_{21}$, equation 3 by $A_{31}$, and add:
 
@@ -463,7 +463,7 @@ and the other two determinants are 4 and 6, giving $y=2$ and $z=3$. For Exercise
 > [!warning] Cramer's rule is a formula, not a method
 > Each unknown needs its own $n\times n$ determinant, so the work grows like that of $n+1$ determinants. Ten equations solved this way need of order $4\times10^8$ multiplications, while elimination needs a few hundred. The rule is also numerically unstable. Use it for a $2\times2$, for a single unknown of a small system, or for theory (it shows the solution depends continuously on the data while $|\mathbf A|\neq0$); solve real systems by elimination.
 
-## 5. Gaussian elimination and back-substitution (James §5.5.2)
+## 5. Gaussian elimination and back-substitution
 
 ### Row operations and why they are safe
 
@@ -682,7 +682,7 @@ $$
 
 consistent with $|\mathbf A|=2$ and $|\mathbf A^{-1}|=\frac12$.
 
-## 7. Ill-conditioning (James §5.5.2)
+## 7. Ill-conditioning
 
 A system is **ill-conditioned** when a small change in its coefficients produces a large change in its solution. **Example 5.36** solves
 
@@ -755,4 +755,4 @@ A small determinant is one warning sign, though it must be judged relative to th
 - [ ] Specimen Test 17, Q4: a singular but consistent system by elimination. → [[MATH1054 M17 Solutions - Matrices II#Q4: Elimination]]
 - [ ] Examples 5.27 and 5.28, filling in the determinant expansions (Module 17 work scheme, item 4). → [[#Worked examples: homogeneous systems with a parameter]]
 - [ ] Examples 5.33 and 5.34 by elimination without looking (Module 17 work scheme, item 6). → [[#Worked examples: elimination]]
-- [ ] Example 5.36 and the ill-conditioning section (Module 17 work scheme, item 8). → [[#7. Ill-conditioning (James §5.5.2)]]
+- [ ] Example 5.36 and the ill-conditioning section (Module 17 work scheme, item 8). → [[#7. Ill-conditioning]]

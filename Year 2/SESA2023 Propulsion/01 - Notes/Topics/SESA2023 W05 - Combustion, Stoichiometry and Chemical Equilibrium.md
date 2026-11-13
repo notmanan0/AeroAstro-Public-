@@ -25,7 +25,7 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf", "02 - Sources/Lectur
 # SESA2023 W05 - Combustion, Stoichiometry and Chemical Equilibrium
 
 > [!abstract] Summary
-> In a real engine fuel is burned and chemical energy becomes thermal energy, rather than heat being added to air as in the cycle models (L1, ll. 20–25). Balancing atoms gives the stoichiometric air requirement, the air–fuel ratio and the equivalence ratio; the lower calorific value (the heat released by isothermal combustion at 298 K) then gives the adiabatic flame temperature, or the fuel flow for a given burner exit temperature, by a three-step path through 298 K. At high temperature the products dissociate (CO₂ ⇌ CO + ½O₂), with Le Chatelier's principle giving the trends and equilibrium constants the composition.
+> In a real engine fuel is burned and chemical energy becomes thermal energy, rather than heat being added to air as in the cycle models. Balancing atoms gives the stoichiometric air requirement, the air–fuel ratio and the equivalence ratio; the lower calorific value (the heat released by isothermal combustion at 298 K) then gives the adiabatic flame temperature, or the fuel flow for a given burner exit temperature, by a three-step path through 298 K. At high temperature the products dissociate (CO₂ ⇌ CO + ½O₂), with Le Chatelier's principle giving the trends and equilibrium constants the composition.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a question names a fuel and asks for the air needed, $\phi$, the product composition, the flame temperature, the fuel–air ratio for a given $T_{04}$, or an equilibrium composition (CO, NO, H₂).
@@ -36,15 +36,15 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf", "02 - Sources/Lectur
 
 Combustion conserves atoms: every carbon, hydrogen and oxygen atom that goes in comes out, and only the molecules change, so balancing atoms tells you how much air a kilogram of fuel needs. For every molecule of oxygen, air carries 3.76 molecules of nitrogen, which are treated as inert but still have to be heated, so they keep the flame temperature down.
 
-The chemical energy is stored in the bonds. Reactants have a high formation enthalpy and products a low one, and in an adiabatic burner the total enthalpy is fixed, so the chemical enthalpy that disappears comes back as sensible enthalpy and the gas gets hot (24 Feb, ll. 376–402). The data book gives values only at 298 K, because the calorific value is measured by burning at 25 °C and removing the heat. For a hot engine the reactants are taken down to 298 K, burned there and the products heated to the exit temperature; energy is a state property, so the detour gives the right answer. Finally, at 2500–3000 K some of the products dissociate: collisions are violent enough to split CO₂ back into CO and O₂, and the products settle at a balance between forming and breaking up that is set by temperature and pressure.
+The chemical energy is stored in the bonds. Reactants have a high formation enthalpy and products a low one, and in an adiabatic burner the total enthalpy is fixed, so the chemical enthalpy that disappears comes back as sensible enthalpy and the gas gets hot. The data book gives values only at 298 K, because the calorific value is measured by burning at 25 °C and removing the heat. For a hot engine the reactants are taken down to 298 K, burned there and the products heated to the exit temperature; energy is a state property, so the detour gives the right answer. Finally, at 2500–3000 K some of the products dissociate: collisions are violent enough to split CO₂ back into CO and O₂, and the products settle at a balance between forming and breaking up that is set by temperature and pressure.
 
 ---
 
-## 1. Combustion chemistry (Lecture 13)
+## 1. Combustion chemistry
 
 ### Conservation of atoms and mass
 
-Mass and elements are conserved through a reaction; molecules and moles are not (24 Feb, ll. 101–129). For
+Mass and elements are conserved through a reaction; molecules and moles are not. For
 
 $$
 \mathrm{2CO+O_2\to2CO_2}
@@ -52,7 +52,7 @@ $$
 
 carbon: 2 = 2; oxygen: 2 + 2 = 4; mass: $2\times28+32=56+32=88=2\times44$ kg. The coefficients are relative kmol numbers and can be scaled; only their ratios matter.
 
-Two ways to balance (24 Feb, ll. 131–158):
+Two ways to balance:
 
 - *By inspection* for a few species: put 1 in front of the fuel, then balance C, then H, then O.
 - *Systematically* for many species: give each product an unknown coefficient and write one equation per element.
@@ -71,11 +71,11 @@ $$
 
 ### Global and elementary reactions
 
-The equation above is a global reaction: it links the starting reactants to the final products. What actually happens is a network of elementary reactions, each a real collision, each reversible (24 Feb, ll. 159–195; 27 Feb, ll. 50–81). Hydrogen–oxygen combustion runs through H, O, OH and others; methane–air needs the GRI mechanism with 53 species and more than 300 reactions (27 Feb, ll. 176–184). The intermediate species live in a flame front only micrometres thick.
+The equation above is a global reaction: it links the starting reactants to the final products. What actually happens is a network of elementary reactions, each a real collision, each reversible. Hydrogen–oxygen combustion runs through H, O, OH and others; methane–air needs the GRI mechanism with 53 species and more than 300 reactions. The intermediate species live in a flame front only micrometres thick.
 
 ### Combustion in air
 
-Air is modelled as 21 % O₂ and 79 % atmospheric nitrogen N₂* by volume (23.2 % and 76.8 % by mass). N₂* lumps nitrogen with the argon and trace gases and is treated as inert (24 Feb, ll. 221–243). In reality some nitrogen does react at high temperature to form NO and NO₂, which are pollutants; inert nitrogen is a pencil-and-paper simplification.
+Air is modelled as 21 % O₂ and 79 % atmospheric nitrogen N₂* by volume (23.2 % and 76.8 % by mass). N₂* lumps nitrogen with the argon and trace gases and is treated as inert. In reality some nitrogen does react at high temperature to form NO and NO₂, which are pollutants; inert nitrogen is a pencil-and-paper simplification.
 
 Per kmol of O₂ there are
 
@@ -99,7 +99,7 @@ $$
 
 ### Complete combustion
 
-**Complete combustion**: all the carbon goes to CO₂ and all the hydrogen to H₂O, so no fuel and no oxidiser remain in stoichiometric conditions, and the heat release is the maximum possible (24 Feb, ll. 254–262). Incomplete combustion leaves fuel, CO, soot or H₂, either because there is not enough oxygen or because of poor mixing, flow or temperature conditions.
+**Complete combustion**: all the carbon goes to CO₂ and all the hydrogen to H₂O, so no fuel and no oxidiser remain in stoichiometric conditions, and the heat release is the maximum possible. Incomplete combustion leaves fuel, CO, soot or H₂, either because there is not enough oxygen or because of poor mixing, flow or temperature conditions.
 
 ### Air–fuel ratio
 
@@ -107,7 +107,7 @@ $$
 AFR = \frac{m_a}{m_f}\quad\left(=\frac{\dot m_a}{\dot m_f}\text{ in steady flow}\right),\qquad f = \frac{1}{AFR}
 $$
 
-A closed reactor uses masses; a burner in an engine uses mass flow rates. The ratio is the same because the burner sees a continuous stream of each (24 Feb, ll. 271–318).
+A closed reactor uses masses; a burner in an engine uses mass flow rates. The ratio is the same because the burner sees a continuous stream of each.
 
 For methane, mass of air over mass of fuel from the balanced equation:
 
@@ -115,7 +115,7 @@ $$
 AFR_{st} = \frac{2\times32+2\times3.762\times28.15}{1\times16} = \frac{2\times137.9}{16} = 17.24
 $$
 
-So 1 kg/s of methane needs 17.24 kg/s of air entering the burner (24 Feb, ll. 320–324).
+So 1 kg/s of methane needs 17.24 kg/s of air entering the burner.
 
 ### Equivalence ratio
 
@@ -123,11 +123,9 @@ $$
 \boxed{\phi = \frac{AFR_{st}}{AFR} = \frac{n_{a,st}}{n_a}}\qquad\begin{cases}\phi>1 & \text{fuel-rich (unburned fuel)}\\ \phi=1 & \text{stoichiometric}\\ \phi<1 & \text{fuel-lean (excess O}_2\text{ in the products)}\end{cases}
 $$
 
-The mass and molar forms agree because the fuel amount is fixed and only the air changes, so the air mass is proportional to the air moles (24 Feb, ll. 336–341).
+The mass and molar forms agree because the fuel amount is fixed and only the air changes, so the air mass is proportional to the air moles.
 
 ### Worked example – methane at φ = 0.5
-
-(24 Feb, ll. 342–354.)
 
 $$
 AFR = \frac{AFR_{st}}{\phi} = \frac{17.24}{0.5} = 34.48
@@ -143,7 +141,7 @@ Check from the masses: $4\times137.9/16=34.48$ ✔.
 
 ### Worked example – kerosene at φ = 0.2
 
-Notes §5.3.5. Kerosene is modelled as C₁₀H₂₁ ($M=141$ kg/kmol).
+Kerosene is modelled as C₁₀H₂₁ ($M=141$ kg/kmol).
 
 **Stoichiometric.** $\mathrm{C_{10}H_{21}}+a_{st}(\mathrm{O_2}+3.762\mathrm{N_2^*})\to b_1\mathrm{CO_2}+b_2\mathrm{H_2O}+3.762a_{st}\mathrm{N_2^*}$:
 
@@ -165,11 +163,11 @@ Gas turbines run so lean because a stoichiometric kerosene flame is far too hot 
 
 ---
 
-## 2. Combustion thermodynamics (Lecture 14)
+## 2. Combustion thermodynamics
 
 ### Formation and sensible enthalpy
 
-Each species' enthalpy has two parts (24 Feb, ll. 376–402): a formation enthalpy $h_f^\circ$ (chemical bonds, tabulated at 298 K) and a sensible part that depends on temperature:
+Each species' enthalpy has two parts: a formation enthalpy $h_f^\circ$ (chemical bonds, tabulated at 298 K) and a sensible part that depends on temperature:
 
 $$
 h_i(T) = h_{f,i}^\circ+\int_{T_0}^{T}c_{p,i}\,dT,\qquad T_0 = 298\ \mathrm K
@@ -179,7 +177,7 @@ Reactants have a higher total formation enthalpy than products.
 
 ### Two model processes
 
-Both at constant pressure with no shaft work (notes §5.4.1). The SFEE is $\dot Q-\dot W_x=\dot m(h_{out}-h_{in})$.
+Both at constant pressure with no shaft work. The SFEE is $\dot Q-\dot W_x=\dot m(h_{out}-h_{in})$.
 
 - Adiabatic ($\dot Q=0$): $h_{out}=h_{in}$. The total enthalpy does not change, but the temperature rises, because the drop in formation enthalpy is exactly matched by a rise in sensible enthalpy. On an $h$–$T$ diagram: a horizontal line from the reactant curve to the product curve.
 - Isothermal ($T_{out}=T_{in}$): heat $\dot Q=\dot m(h_{out}-h_{in})<0$ must be removed. On an $h$–$T$ diagram: a vertical line.
@@ -188,7 +186,7 @@ Both at constant pressure with no shaft work (notes §5.4.1). The SFEE is $\dot 
 
 ### Calorific value
 
-The calorific value is the heat released per kilogram of fuel by isothermal combustion at the reference state, $T_0=298.15$ K and $p_0=1$ bar (notes §5.4.1; 24 Feb, ll. 431–445). That is how it is measured.
+The calorific value is the heat released per kilogram of fuel by isothermal combustion at the reference state, $T_0=298.15$ K and $p_0=1$ bar. That is how it is measured.
 
 - LCV (lower calorific value): the water in the products stays as vapour. Propulsion always uses the LCV.
 - HCV (higher): the water condenses, releasing its latent heat, so HCV > LCV.
@@ -197,7 +195,7 @@ Data book Table 1: H₂ 120, CH₄ 50.01, C₃H₈ 46.36, n-octane 44.43 MJ/kg; 
 
 ### Steady-flow adiabatic combustion: the three-step path
 
-The real burner takes reactants at $T_1$ to products at $T_2$ adiabatically. The LCV is only known at $T_0=298$ K, so replace the process with three hypothetical steps that start and end at the same states (notes §5.4.2, Fig. 5.3; 24 Feb, ll. 446–479):
+The real burner takes reactants at $T_1$ to products at $T_2$ adiabatically. The LCV is only known at $T_0=298$ K, so replace the process with three hypothetical steps that start and end at the same states:
 
 1. Bring the reactants from $T_1$ to $T_0$ (heat $\dot Q_{10}$, negative if $T_1>T_0$):
 
@@ -217,7 +215,7 @@ $$
 \dot Q_{02} = \sum_{prod}\dot m_j\left(h_{j,2}-h_{j,0}\right)
 $$
 
-The overall process is adiabatic with no net work, so the three heats sum to zero (notes eq. 5.22):
+The overall process is adiabatic with no net work, so the three heats sum to zero:
 
 $$
 \sum_{react}\dot m_i\left(h_{i,0}-h_{i,1}\right)-\dot m_f\,LCV+\sum_{prod}\dot m_j\left(h_{j,2}-h_{j,0}\right) = 0
@@ -249,7 +247,7 @@ $$
 
 ### Worked example – stoichiometric methane flame temperature
 
-The worked example (24 Feb, ll. 480–508): stoichiometric CH₄–air, reactants at $T_1=400$ K; $c_{p,r}=1072$ and $c_{p,p}=1116$ J kg⁻¹ K⁻¹ (both from the data book); $LCV=50.01$ MJ/kg; $AFR=17.24$.
+The worked example: stoichiometric CH₄–air, reactants at $T_1=400$ K; $c_{p,r}=1072$ and $c_{p,p}=1116$ J kg⁻¹ K⁻¹ (both from the data book); $LCV=50.01$ MJ/kg; $AFR=17.24$.
 
 **Chemical term:**
 
@@ -305,27 +303,27 @@ This is the formula used for every engine in [[SESA2023 W06 - Jet Engine Cycle A
 
 ---
 
-## 3. Chemical equilibrium (Lecture 15)
+## 3. Chemical equilibrium
 
 ### Reversible reactions
 
-Molecules in a gas keep colliding. A collision can form a product, and a later collision can break it up again. The rate of each depends on how much of each species is present and on the activation energy (27 Feb, ll. 28–38). When forward and backward rates match, the composition stops changing: chemical equilibrium, which is dynamic, not static.
+Molecules in a gas keep colliding. A collision can form a product, and a later collision can break it up again. The rate of each depends on how much of each species is present and on the activation energy. When forward and backward rates match, the composition stops changing: chemical equilibrium, which is dynamic, not static.
 
 - The oxidation of the fuel itself (CH₄ + O₂) releases so much energy that it is effectively one-way.
-- Its products do equilibrate: CO₂ ⇌ CO + ½O₂, H₂O ⇌ H₂ + ½O₂, and N₂ + O₂ ⇌ 2NO (notes §5.5).
-- Dissociation matters because it makes pollutants (CO, NOₓ) and lowers the heat actually released, so the efficiency and the flame temperature fall (notes §5.5).
+- Its products do equilibrate: CO₂ ⇌ CO + ½O₂, H₂O ⇌ H₂ + ½O₂, and N₂ + O₂ ⇌ 2NO.
+- Dissociation matters because it makes pollutants (CO, NOₓ) and lowers the heat actually released, so the efficiency and the flame temperature fall.
 
-The rate of an elementary reaction follows an Arrhenius form, $k\propto\exp(-E_a/(\bar RT))$: a high activation energy makes a reaction unlikely, and a high temperature makes it more likely (27 Feb, ll. 123–130). Pressure matters too: more molecules in the same volume means more collisions (ll. 87–89).
+The rate of an elementary reaction follows an Arrhenius form, $k\propto\exp(-E_a/(\bar RT))$: a high activation energy makes a reaction unlikely, and a high temperature makes it more likely. Pressure matters too: more molecules in the same volume means more collisions.
 
 ### Le Chatelier's principle
 
-> "If a chemical system at equilibrium experiences a change in concentration, temperature or pressure, then the equilibrium shifts to counteract the imposed change and a new equilibrium is established." (notes §5.5.1)
+> "If a chemical system at equilibrium experiences a change in concentration, temperature or pressure, then the equilibrium shifts to counteract the imposed change and a new equilibrium is established."
 
-For $\mathrm{CO+\tfrac12O_2\to CO_2}$, Table 4 gives $\Delta h<0$, so the forward reaction is exothermic and raising $T$ favours the endothermic direction, i.e. dissociation of CO₂. The same forward reaction goes from 1.5 kmol to 1 kmol of gas, so raising $p$ favours the side with fewer moles, i.e. less dissociation. NO formation ($\mathrm{N_2+O_2\to2NO}$) is endothermic at all temperatures, so NO appears only in the hottest regions (27 Feb, ll. 188–190).
+For $\mathrm{CO+\tfrac12O_2\to CO_2}$, Table 4 gives $\Delta h<0$, so the forward reaction is exothermic and raising $T$ favours the endothermic direction, i.e. dissociation of CO₂. The same forward reaction goes from 1.5 kmol to 1 kmol of gas, so raising $p$ favours the side with fewer moles, i.e. less dissociation. NO formation ($\mathrm{N_2+O_2\to2NO}$) is endothermic at all temperatures, so NO appears only in the hottest regions.
 
 ### Equilibrium constant
 
-For $a\,\mathrm A+b\,\mathrm B\rightleftharpoons c\,\mathrm C+d\,\mathrm D$ (notes eq. 5.27):
+For $a\,\mathrm A+b\,\mathrm B\rightleftharpoons c\,\mathrm C+d\,\mathrm D$:
 
 $$
 \boxed{K^\theta = \frac{(p_C/p^\theta)^c\,(p_D/p^\theta)^d}{(p_A/p^\theta)^a\,(p_B/p^\theta)^b}}
@@ -336,9 +334,9 @@ $$
 - $K^\theta$ depends on temperature only; data book Table 5 lists $\ln K^\theta$.
 - Partial pressures come from Dalton's law (W02), $p_i=y_ip=(n_i/n)p$.
 
-How it behaves: start with only A and B and the numerator is zero; as products form, the numerator grows and the denominator shrinks until the ratio reaches $K^\theta$ (27 Feb, ll. 162–170).
+How it behaves: start with only A and B and the numerator is zero; as products form, the numerator grows and the denominator shrinks until the ratio reaches $K^\theta$.
 
-Method (notes §5.5.3):
+Method:
 
 1. Write the global reaction with unknown product moles.
 2. Use atom balances to reduce to one unknown.
@@ -348,7 +346,7 @@ Method (notes §5.5.3):
 
 ### Worked example – CO equilibrium at 2600 K and 3 bar
 
-Notes §5.5.3: start with 2 kmol CO and 3 kmol O₂; find the equilibrium composition at 2600 K and 3 bar.
+Start with 2 kmol CO and 3 kmol O₂; find the equilibrium composition at 2600 K and 3 bar.
 
 **Step 1, global reaction:**
 
@@ -397,7 +395,7 @@ $$
 
 ### Worked example – carbon in pure oxygen at φ = 0.25
 
-The worked example (27 Feb, ll. 191–244): carbon burns in pure O₂ at $\phi=0.25$; the products CO, CO₂ and O₂ are at 3000 K and 2 bar. Find the volume fraction of CO.
+The worked example: carbon burns in pure O₂ at $\phi=0.25$; the products CO, CO₂ and O₂ are at 3000 K and 2 bar. Find the volume fraction of CO.
 
 **Air–fuel ratio.** Stoichiometric $\mathrm{C+O_2\to CO_2}$ gives $AFR_{st}=32/12$; at $\phi=0.25$ the oxygen is quadrupled, $AFR=4\times32/12$, so
 
@@ -423,7 +421,7 @@ $$
 3.034 = \frac{1-a}{a\,(3+a/2)^{1/2}}\left(\frac{4+a/2}{2}\right)^{1/2}
 $$
 
-Cleared of fractions this is a cubic in $a$; its roots are two negative values and $a=0.211$ (27 Feb, ll. 238–241). Keep the positive one:
+Cleared of fractions this is a cubic in $a$; its roots are two negative values and $a=0.211$. Keep the positive one:
 
 $$
 a = 0.211,\qquad c = 0.789,\qquad b = 3.106,\qquad n = 4.106
@@ -464,7 +462,7 @@ $$
 ## Links
 
 - Parent: [[SESA2023 Propulsion Hub]] · Previous: [[SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and Intakes]] · Next: [[SESA2023 W06 - Jet Engine Cycle Analysis - Brayton, Ramjet, Turbojet and Reheat]]
-- Mixtures and Dalton's law: [[SESA2023 W02 - Thermodynamics, Mixtures, SFEE and Isentropic Efficiency#2. Mixtures (Lecture 5)|W02 §2]]
+- Mixtures and Dalton's law: [[SESA2023 W02 - Thermodynamics, Mixtures, SFEE and Isentropic Efficiency#2. Mixtures|W02 §2]]
 - Worked sheet: [[SESA2023 Problem Sheet 5 Solutions]] (propane, flame temperature, NO equilibrium) · Formula list: [[SESA2023 Formula Sheet]]
 - Exams: [[SESA2023 Exam 2013-14 Solutions]] Q4 (H₂O dissociation), [[SESA2023 Exam 2021-22 Solutions]] Q2(vi) (kerosene products), [[SESA2023 Exam 2023-24 Solutions]] Q1 (propane ramjet), [[SESA2023 Exam 2022-23 Solutions]] Q3(iv) (combustor with heat loss)
 - Rocket propellants and $T_c$: [[SESA2023 W10 - Rocket Performance, Staging and Power Cycles]]

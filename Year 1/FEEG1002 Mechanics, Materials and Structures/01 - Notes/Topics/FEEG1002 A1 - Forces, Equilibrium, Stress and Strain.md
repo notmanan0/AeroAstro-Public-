@@ -271,7 +271,7 @@ On a general cut through a loaded body the force per unit area has both a normal
 
 ### Worked example - equally strong rod and pin
 
-Tutorial 1 Q2 joins two round steel rods with a pin through a fork, and asks for rod and pin diameters that fail at the same working load $F=5000$ N, given an allowable tensile stress of 400 MPa and an allowable shear stress of 240 MPa (L2, ll. 220–229).
+Tutorial 1 Q2 joins two round steel rods with a pin through a fork, and asks for rod and pin diameters that fail at the same working load $F=5000$ N, given an allowable tensile stress of 400 MPa and an allowable shear stress of 240 MPa.
 
 The rod is in tension and must have area $A=F/\sigma$. For a circle $A=\pi D^2/4$:
 
@@ -411,7 +411,7 @@ Leg B, nearer the load, carries three times as much as leg A, and $F_A/F_B=c/b=1
 
 ### Worked example - crane tipping
 
-Tutorial 1 Q1 is a mobile crane of mass 5000 kg with a box hanging 4 m in front of the front axle A; the crane's centre of gravity is 3 m behind A and the rear axle B is 5 m behind A (L1, ll. 839–851). Find the largest box mass before it tips, and the axle loads for a 1000 kg box.
+Tutorial 1 Q1 is a mobile crane of mass 5000 kg with a box hanging 4 m in front of the front axle A; the crane's centre of gravity is 3 m behind A and the rear axle B is 5 m behind A. Find the largest box mass before it tips, and the axle loads for a 1000 kg box.
 
 ![[s1_crane_tipping_fbd.png|900]]
 
@@ -448,7 +448,7 @@ $$
 
 ### Worked example - bolt clamping force
 
-Tutorial 1 Q3: a steel bolt of diameter 6 mm and length 350 mm, $E=209$ GPa, clamps two plates assumed perfectly rigid; the thread has a pitch of 0.5 mm per turn. How many turns of the nut produce a clamping force of 4000 N? (L2, ll. 570–577.)
+Tutorial 1 Q3: a steel bolt of diameter 6 mm and length 350 mm, $E=209$ GPa, clamps two plates assumed perfectly rigid; the thread has a pitch of 0.5 mm per turn. How many turns of the nut produce a clamping force of 4000 N?
 
 The bolt is a bar in uniaxial tension. Its area and stress are
 

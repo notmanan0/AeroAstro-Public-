@@ -239,15 +239,15 @@ The bracket is the difference from the Otto cycle. For $r_c>1$ it is greater tha
 
 ### The gas turbine engine
 
-A gas turbine has a compressor and a turbine on a common shaft, with a combustion chamber between them. Air from the atmosphere is compressed, fuel is burnt in it at nearly constant pressure, and the hot gas expands through the turbine, which drives the compressor. What happens to the rest of the turbine's output depends on the application: in a power station about half drives a generator; in a jet engine almost all of it drives the compressor (apart from a little electrical power for the aircraft) and the useful output is the exhaust jet leaving through a nozzle (20 Feb, ll. 18–45). Gas turbines also power ships, and they are valued for high power, quick changes of power output and high efficiency (20 Feb, ll. 4–12). Most run on an **open cycle**: the exhaust leaves to atmosphere and fresh air enters.
+A gas turbine has a compressor and a turbine on a common shaft, with a combustion chamber between them. Air from the atmosphere is compressed, fuel is burnt in it at nearly constant pressure, and the hot gas expands through the turbine, which drives the compressor. What happens to the rest of the turbine's output depends on the application: in a power station about half drives a generator; in a jet engine almost all of it drives the compressor (apart from a little electrical power for the aircraft) and the useful output is the exhaust jet leaving through a nozzle. Gas turbines also power ships, and they are valued for high power, quick changes of power output and high efficiency. Most run on an **open cycle**: the exhaust leaves to atmosphere and fresh air enters.
 
-A compressor differs from the closed systems of T1–T4 in one important way. A piston compressor squeezes a fixed mass, which has a single $p$ and $T$ at each instant. In a rotating compressor air flows continuously in at low pressure and out at high pressure, so the pressure and temperature vary through the machine; it is a **control volume**, not a closed system (20 Feb, ll. 53–97). Analysing it properly needs the control-volume methods of [[SESA1016 T13 - Conservation of Energy and Propulsion|T13]]. Only the states at each component's inlet and outlet are tracked here, and work and heat are given per kilogram of air passing through ($w$, $q$). The amount of air is set by the mass flow rate $\dot m$ (kg/s) rather than a volume, and power follows as
+A compressor differs from the closed systems of T1–T4 in one important way. A piston compressor squeezes a fixed mass, which has a single $p$ and $T$ at each instant. In a rotating compressor air flows continuously in at low pressure and out at high pressure, so the pressure and temperature vary through the machine; it is a **control volume**, not a closed system. Analysing it properly needs the control-volume methods of [[SESA1016 T13 - Conservation of Energy and Propulsion|T13]]. Only the states at each component's inlet and outlet are tracked here, and work and heat are given per kilogram of air passing through ($w$, $q$). The amount of air is set by the mass flow rate $\dot m$ (kg/s) rather than a volume, and power follows as
 
 $$
 \dot W=\dot m\,w_{net}
 $$
 
-(20 Feb, ll. 100–123).
+.
 
 ### The Brayton cycle
 
@@ -264,7 +264,7 @@ $$
 r_p=\frac{p_2}{p_1}=\frac{p_3}{p_4}
 $$
 
-(20 Feb, ll. 171–182).
+.
 
 ![[tf_ideal_cycles_pv.png|900]]
 
@@ -296,11 +296,11 @@ $$
 \boxed{\eta_{Brayton}=1-\frac{T_1}{T_2}=1-\frac{1}{r_p^{(\gamma-1)/\gamma}}}
 $$
 
-(20 Feb, ll. 290–332). The efficiency rises with pressure ratio, which shaped the development of jet engines: the earliest had pressure ratios under 10, the latest exceed 40 (20 Feb, l. 359). Power-station gas turbines use more moderate ratios.
+. The efficiency rises with pressure ratio, which shaped the development of jet engines: the earliest had pressure ratios under 10, the latest exceed 40. Power-station gas turbines use more moderate ratios.
 
 ### Comparing the four cycles on one T–s diagram
 
-Put all four cycles between the same two temperature extremes, with the same inlet state 1 and the same peak state 3 (highest temperature and highest pressure) (20 Feb, ll. 192–268).
+Put all four cycles between the same two temperature extremes, with the same inlet state 1 and the same peak state 3 (highest temperature and highest pressure).
 
 ![[tf_cycle_comparison_ts.png|900]]
 
@@ -315,7 +315,7 @@ Of the three practical cycles, Brayton hugs the Carnot rectangle most closely: i
 | Brayton | $r_p=65.1$ | 69.7 % |
 | Carnot | $T_C/T_H=293/1908$ | 84.6 % |
 
-A second reason gas turbines reach high efficiency is that many techniques exist to raise the turbine inlet temperature, the upper corner of the cycle (20 Feb, ll. 276–285).
+A second reason gas turbines reach high efficiency is that many techniques exist to raise the turbine inlet temperature, the upper corner of the cycle.
 
 ### Pressure ratio for maximum specific work
 
@@ -444,9 +444,9 @@ Limited to the same peak pressure and temperature, the Diesel cycle beats the Ot
 
 ### Worked example - Brayton cycle power
 
-A gas turbine is modelled as an ideal Brayton cycle on air. The inlet is at 300 K and 1 bar, the pressure ratio is 20 and the turbine inlet temperature is 1000 K. Find the net specific work, the power for a mass flow of 100 kg/s, and the efficiency (20 Feb, ll. 353–406).
+A gas turbine is modelled as an ideal Brayton cycle on air. The inlet is at 300 K and 1 bar, the pressure ratio is 20 and the turbine inlet temperature is 1000 K. Find the net specific work, the power for a mass flow of 100 kg/s, and the efficiency.
 
-The compressor and turbine works cannot be found separately without the control-volume energy equation ([[SESA1016 T13 - Conservation of Energy and Propulsion|T13]]), but energy conservation for the cycle still gives $w_{net}=q_{in}-q_{out}$ (20 Feb, ll. 374–379). Isentropic compression and expansion with $a=0.4/1.4=0.2857$:
+The compressor and turbine works cannot be found separately without the control-volume energy equation ([[SESA1016 T13 - Conservation of Energy and Propulsion|T13]]), but energy conservation for the cycle still gives $w_{net}=q_{in}-q_{out}$. Isentropic compression and expansion with $a=0.4/1.4=0.2857$:
 
 $$
 T_2=T_1r_p^a=300\times20^{0.2857}=706.1\ \mathrm K
@@ -517,7 +517,7 @@ Carnot between 300 and 1000 K gives 70 %; a Brayton cycle between 1 and 16.7 bar
 
 ### Worked example - solar furnace and a Stirling engine
 
-A solar furnace reaches 3500 K with a peak thermal power of 1 MW; a propane flame reaches about 2000 K. A heat engine rejecting heat at 300 K drives a generator of efficiency 80 %. Compare the Carnot limits, find the largest possible electrical power, then the efficiency and power of a Stirling engine, modelled as two isochoric processes joined by two isotherms, with $V_{max}/V_{min}=10$ and air as the working fluid (mock exam, 13 May, ll. 12–198).
+A solar furnace reaches 3500 K with a peak thermal power of 1 MW; a propane flame reaches about 2000 K. A heat engine rejecting heat at 300 K drives a generator of efficiency 80 %. Compare the Carnot limits, find the largest possible electrical power, then the efficiency and power of a Stirling engine, modelled as two isochoric processes joined by two isotherms, with $V_{max}/V_{min}=10$ and air as the working fluid (mock exam).
 
 The Carnot limits are
 
@@ -543,7 +543,7 @@ $$
 \eta=1-\frac{2496}{4611}=45.9\ \%,\qquad P_{el}=1\ \mathrm{MW}\times0.459\times0.8=367\ \mathrm{kW}
 $$
 
-On a $p$–$V$ diagram the Stirling cycle looks like the Otto cycle, but its curved legs are isotherms, not isentropes, so the Otto formula $1-r^{1-\gamma}$ does not apply (13 May, ll. 194–197, 475–487). The large isochoric heat input is why it falls so far short of Carnot.
+On a $p$–$V$ diagram the Stirling cycle looks like the Otto cycle, but its curved legs are isotherms, not isentropes, so the Otto formula $1-r^{1-\gamma}$ does not apply. The large isochoric heat input is why it falls so far short of Carnot.
 
 ---
 

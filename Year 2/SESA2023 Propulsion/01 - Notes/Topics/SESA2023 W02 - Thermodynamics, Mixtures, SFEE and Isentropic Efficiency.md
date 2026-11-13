@@ -25,7 +25,7 @@ sources: ["02 - Sources/Lectures/Week 02 - Thermodynamics.pdf", "02 - Sources/Le
 # SESA2023 W02 - Thermodynamics, Mixtures, SFEE and Isentropic Efficiency
 
 > [!abstract] Summary
-> The thermodynamics is that of Part 1 with nothing added (3 Feb, ll. 29–30): two independent intensive properties fix the state of a simple gas, a perfect gas turns every enthalpy change into $c_p\Delta T$, and mixtures use mass fractions for specific properties and mole fractions for partial pressures. The steady flow energy equation, applied to each component of a turbojet in turn, gives the station-by-station method used for every engine in the module, and isentropic efficiency measures how far real compressors and turbines depart from the ideal.
+> The thermodynamics is that of Part 1 with nothing added: two independent intensive properties fix the state of a simple gas, a perfect gas turns every enthalpy change into $c_p\Delta T$, and mixtures use mass fractions for specific properties and mole fractions for partial pressures. The steady flow energy equation, applied to each component of a turbojet in turn, gives the station-by-station method used for every engine in the module, and isentropic efficiency measures how far real compressors and turbines depart from the ideal.
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a component (diffuser, compressor, burner, turbine, nozzle) has known inlet conditions and you need an exit temperature, pressure, work or heat; or a mixture's composition or properties are asked for.
@@ -40,24 +40,24 @@ In a real machine, friction and turbulence turn some of the work into heat insid
 
 ---
 
-## 1. Fundamentals (Lecture 4)
+## 1. Fundamentals
 
 ### Equilibrium, state and properties
 
-- Thermodynamic equilibrium needs thermal (uniform $T$), mechanical (no net force), phase (no spontaneous phase change) and chemical (no change of composition) equilibrium, on a macroscopic scale (3 Feb, ll. 32–44). Chemical equilibrium does not mean reactions stop, only that the composition stops changing (see [[SESA2023 W05 - Combustion, Stoichiometry and Chemical Equilibrium|W05]]).
+- Thermodynamic equilibrium needs thermal (uniform $T$), mechanical (no net force), phase (no spontaneous phase change) and chemical (no change of composition) equilibrium, on a macroscopic scale. Chemical equilibrium does not mean reactions stop, only that the composition stops changing (see [[SESA2023 W05 - Combustion, Stoichiometry and Chemical Equilibrium|W05]]).
 - **Zeroth Law**: if A and B are each in thermal equilibrium with C, they are in thermal equilibrium with each other.
-- A state is the set of values of the properties; a process is the path between two states (3 Feb, ll. 51–64, 123–130).
+- A state is the set of values of the properties; a process is the path between two states.
 - Property types:
   - intensive (independent of amount): $T$, $p$;
   - extensive (proportional to amount): $U$, $H$, $S$, $V$;
-  - specific (per kilogram, lower case): $u$, $h$, $s$, $v$. In this course "specific" always means per unit mass, so specific properties behave as intensive ones (3 Feb, ll. 111–122).
+  - specific (per kilogram, lower case): $u$, $h$, $s$, $v$. In this course "specific" always means per unit mass, so specific properties behave as intensive ones.
 - $c_p$ is sometimes written $C_p$. Always check the units.
 
 ### Two-property rule (state postulate)
 
-> The state of a simple compressible system is completely specified by two independent intensive properties (notes §2.2.3).
+> The state of a simple compressible system is completely specified by two independent intensive properties.
 
-"Simple" means no body forces, surface tension, magnetic or electric effects (3 Feb, l. 70). The two properties must be independent:
+"Simple" means no body forces, surface tension, magnetic or electric effects. The two properties must be independent:
 
 - For an ideal gas $u=u(T)$ and $h=h(T)$, so $(T,h)$ or $(T,u)$ do not fix the state: knowing $T$ already tells you $h$.
 - During a phase change (evaporating rocket propellant), $p$ and $T$ are tied by the saturation curve, so $(p,T)$ are not independent either.
@@ -68,7 +68,7 @@ $$
 \Delta U = Q-W
 $$
 
-with $Q>0$ for heat added to the system and $W>0$ for work done by the system (6 Feb, ll. 56–68). $\Delta U$ depends only on the end states; $Q$ and $W$ depend on the path (3 Feb, ll. 142–145).
+with $Q>0$ for heat added to the system and $W>0$ for work done by the system. $\Delta U$ depends only on the end states; $Q$ and $W$ depend on the path.
 
 | Process | Constant | Consequence |
 |---|---|---|
@@ -81,7 +81,7 @@ with $Q>0$ for heat added to the system and $W>0$ for work done by the system (6
 
 Isobaric and isentropic are the two that matter for propulsion.
 
-"Isentropic = adiabatic + reversible" only works one way (L19, ll. 83–89). A reversible adiabatic process is isentropic, but an isentropic process needn't be adiabatic: an irreversible process that generates entropy and is cooled at just the right rate keeps $s$ constant. In this module every isentropic component is also adiabatic, so the distinction rarely matters. The displacement work is the area under the process on a $p$–$V$ diagram, so two different paths between the same states do different work (notes Fig. 2.1; 3 Feb, ll. 163–170).
+"Isentropic = adiabatic + reversible" only works one way. A reversible adiabatic process is isentropic, but an isentropic process needn't be adiabatic: an irreversible process that generates entropy and is cooled at just the right rate keeps $s$ constant. In this module every isentropic component is also adiabatic, so the distinction rarely matters. The displacement work is the area under the process on a $p$–$V$ diagram, so two different paths between the same states do different work.
 
 ### Specific heats, ideal gas and perfect gas
 
@@ -91,7 +91,7 @@ $$
 h = u+pv,\qquad c_v = \left(\frac{\partial u}{\partial T}\right)_v,\qquad c_p = \left(\frac{\partial h}{\partial T}\right)_p
 $$
 
-Ideal gas (elastic collisions, negligible molecular volume, no intermolecular forces; 3 Feb, ll. 235–243). The equation of state in its three equivalent forms:
+Ideal gas (elastic collisions, negligible molecular volume, no intermolecular forces). The equation of state in its three equivalent forms:
 
 $$
 pV = n\bar RT,\qquad pV = mRT,\qquad p = \rho RT,\qquad R = \frac{\bar R}{M}
@@ -103,7 +103,7 @@ $$
 \Delta h = \int_{T_1}^{T_2}c_p(T)\,dT,\qquad \Delta u = \int_{T_1}^{T_2}c_v(T)\,dT
 $$
 
-The ideal-gas model fails near phase changes and as $p$ approaches the critical pressure (38 bar for air). Up to 20 bar the density error for air is about 1 % (3 Feb, ll. 231–234).
+The ideal-gas model fails near phase changes and as $p$ approaches the critical pressure (38 bar for air). Up to 20 bar the density error for air is about 1 %.
 
 **Perfect gas:** $c_p$ and $c_v$ are constant, so the integrals collapse:
 
@@ -119,10 +119,10 @@ $$
 
 For air: $R=287$, $c_p=1005$ J kg⁻¹ K⁻¹, $\gamma=1.4$.
 
-- A monatomic gas (argon) has constant $c_p$ at all temperatures. CO₂ and air do not: air's $c_p$ rises by about 200 J kg⁻¹ K⁻¹ (20 %) over a 1500 K range (3 Feb, ll. 207–216).
-- From 300 K to 1000 K a single constant $c_p$ is fine. Across a combustor (say 250 → 1700 K) it is not; either use a higher constant value for the hot part, or split the process and use a different constant $c_p$ in each part (3 Feb, ll. 218–222, 263–269). Hence the cycle analysis uses separate $c_{pa}$ and $c_{pg}$ for air and combustion products.
+- A monatomic gas (argon) has constant $c_p$ at all temperatures. CO₂ and air do not: air's $c_p$ rises by about 200 J kg⁻¹ K⁻¹ (20 %) over a 1500 K range.
+- From 300 K to 1000 K a single constant $c_p$ is fine. Across a combustor (say 250 → 1700 K) it is not; either use a higher constant value for the hot part, or split the process and use a different constant $c_p$ in each part. Hence the cycle analysis uses separate $c_{pa}$ and $c_{pg}$ for air and combustion products.
 
-> [!example] Adiabatic work on air (3 Feb, ll. 171–194)
+> [!example] Adiabatic work on air
 > Air at $T_1=300$ K receives 100 kJ/kg of work adiabatically. Find $T_2$.
 >
 > First Law per unit mass, with $q=0$ and work done on the gas ($w_{12}=-100$ kJ/kg):
@@ -133,7 +133,7 @@ For air: $R=287$, $c_p=1005$ J kg⁻¹ K⁻¹, $\gamma=1.4$.
 
 ---
 
-## 2. Mixtures (Lecture 5)
+## 2. Mixtures
 
 ### Mass and mole fractions
 
@@ -161,7 +161,7 @@ $$
 x_i = \frac{n_iM_i}{nM} = y_i\frac{M_i}{M}
 $$
 
-> [!example] H₂/O₂ rocket mixture (3 Feb, ll. 332–353, 388–395)
+> [!example] H₂/O₂ rocket mixture
 > 1 kg of H₂ burns with 7.94 kg of O₂.
 >
 > Mass fraction:
@@ -176,11 +176,11 @@ $$
 >
 > An 11 % mass fraction is a 67 % mole fraction: light species dominate the mole count.
 
-Data tables quote molar masses in either kg/kmol or g/mol (3 Feb, ll. 345–348). They are numerically equal, but keep the units consistent with $\bar R$, 8.3145 kJ kmol⁻¹ K⁻¹ or J mol⁻¹ K⁻¹.
+Data tables quote molar masses in either kg/kmol or g/mol. They are numerically equal, but keep the units consistent with $\bar R$, 8.3145 kJ kmol⁻¹ K⁻¹ or J mol⁻¹ K⁻¹.
 
 ### Partial pressure, partial volume and Dalton's law
 
-Partial pressure $p_i$: the pressure species $i$ would exert alone in the full volume $V$ at temperature $T$. Partial volume $V_i$: the volume it would occupy alone at the mixture's $p$ and $T$ (notes §2.3.1).
+Partial pressure $p_i$: the pressure species $i$ would exert alone in the full volume $V$ at temperature $T$. Partial volume $V_i$: the volume it would occupy alone at the mixture's $p$ and $T$.
 
 Derivation for an ideal gas. Write the equation of state for species $i$ alone in $V$, and for the mixture:
 
@@ -216,20 +216,20 @@ $$
 u = \sum x_iu_i,\qquad h = \sum x_ih_i,\qquad s = \sum x_is_i,\qquad c_p = \sum x_ic_{p,i},\qquad c_v = \sum x_ic_{v,i}
 $$
 
-Specific properties are mass-weighted averages (3 Feb, ll. 396–412).
+Specific properties are mass-weighted averages.
 
-> [!example] $c_p$ of air (3 Feb, ll. 415–427)
+> [!example] $c_p$ of air
 > Air is 23.2 % O₂ and 76.8 % "atmospheric nitrogen" N₂* by mass (21/79 by volume). With $c_{p,O_2}=0.92$ and $c_{p,N_2^*}=1.03$ kJ kg⁻¹ K⁻¹:
 >
 > $$c_p = 0.232\times0.92+0.768\times1.03 = 0.213+0.791 = 1.004\ \mathrm{kJ\,kg^{-1}K^{-1}}$$
 
 ---
 
-## 3. Steady Flow Energy Equation (Lecture 6)
+## 3. Steady Flow Energy Equation
 
 ### From the First Law to the SFEE
 
-The SFEE is the First Law applied to a steady control volume (notes §2.4). The fluid carries specific total energy
+The SFEE is the First Law applied to a steady control volume. The fluid carries specific total energy
 
 $$
 e_T = u+e_P+e_k+e_g = u+\frac p\rho+\tfrac12V^2+gz
@@ -259,7 +259,7 @@ The combination $h+\tfrac12V^2$ is the stagnation enthalpy $h_0$ (see [[SESA2023
 
 ### The turbojet, component by component
 
-Stations (6 Feb, ll. 136–147): 1 free stream, 2 diffuser exit / compressor inlet, 3 compressor exit / burner inlet, 4 burner exit / turbine inlet, 5 turbine exit / nozzle inlet, 6 nozzle exit. The same numbers are kept for the ramjet (no compressor or turbine) in W06.
+Stations: 1 free stream, 2 diffuser exit / compressor inlet, 3 compressor exit / burner inlet, 4 burner exit / turbine inlet, 5 turbine exit / nozzle inlet, 6 nozzle exit. The same numbers are kept for the ramjet (no compressor or turbine) in W06.
 
 Diffuser 1→2 (no heat, no work, exit KE negligible):
 
@@ -305,15 +305,15 @@ $$
 | Turbine 4→5 | $q$, KE | $w_t=h_4-h_5=w_c$ | $h_5<h_4$ |
 | Nozzle 5→6 | $q$, $w$, $V_5$ | $\tfrac12V_6^2=h_5-h_6$ | $h_6<h_5$ |
 
-The sign column above is a free first check on every component: a compressor exit enthalpy lower than the inlet value means something has gone wrong (6 Feb, ll. 184–186).
+The sign column above is a free first check on every component: a compressor exit enthalpy lower than the inlet value means something has gone wrong.
 
-Perfect gas and reversibility (notes §2.4.2). $\Delta h=c_p\Delta T$, and every reversible adiabatic process is isentropic, so (derived in §4)
+Perfect gas and reversibility. $\Delta h=c_p\Delta T$, and every reversible adiabatic process is isentropic, so (derived in §4)
 
 $$
 \frac{T_2}{T_1} = \left(\frac{p_2}{p_1}\right)^{(\gamma-1)/\gamma}\qquad\Longleftrightarrow\qquad \frac{p_2}{p_1} = \left(\frac{T_2}{T_1}\right)^{\gamma/(\gamma-1)}
 $$
 
-> [!example] Intake temperature and pressure rise (6 Feb, ll. 222–235)
+> [!example] Intake temperature and pressure rise
 > A turbojet flies at $V_1=200$ m/s through air at $T_1=250$ K, $p_1=50$ kPa. Find the compressor inlet state (station 2).
 >
 > Diffuser SFEE with $\Delta h=c_p\Delta T$:
@@ -332,15 +332,15 @@ $$
 
 ### Definition and the TdS equations
 
-Macroscopically, entropy changes with reversible heat transfer at temperature $T$ (notes eq. 2.58–2.59):
+Macroscopically, entropy changes with reversible heat transfer at temperature $T$:
 
 $$
 dS = \frac{\delta Q_{rev}}{T},\qquad ds = \frac{\delta q_{rev}}{T}
 $$
 
-It is a state property, so $\Delta s$ between two states does not depend on the path. Only for isothermal heat transfer can you write $\Delta S=Q/T$ directly (6 Feb, ll. 237–248); otherwise you need the TdS equations.
+It is a state property, so $\Delta s$ between two states does not depend on the path. Only for isothermal heat transfer can you write $\Delta S=Q/T$ directly; otherwise you need the TdS equations.
 
-Start from three relations (notes eqs. 2.60–2.62): the First Law, displacement work and the entropy definition,
+Start from three relations: the First Law, displacement work and the entropy definition,
 
 $$
 dU = \delta Q-\delta W,\qquad \delta W = p\,dV,\qquad \delta Q = T\,dS
@@ -392,13 +392,13 @@ $$
 \boxed{s_2-s_1 = c_p\ln\frac{T_2}{T_1}-R\ln\frac{p_2}{p_1}}
 $$
 
-The $T$–$v$ form (notes eq. 2.74). Start from the first TdS equation $T\,ds=du+p\,dv$ with $du=c_v\,dT$ and $p=RT/v$:
+The $T$–$v$ form. Start from the first TdS equation $T\,ds=du+p\,dv$ with $du=c_v\,dT$ and $p=RT/v$:
 
 $$
 ds = c_v\frac{dT}{T}+R\frac{dv}{v}\quad\Longrightarrow\quad s_2-s_1 = c_v\ln\frac{T_2}{T_1}+R\ln\frac{v_2}{v_1}
 $$
 
-The $p$–$v$ form (notes eq. 2.75). From $pv=RT$, $\ln(T_2/T_1)=\ln(p_2/p_1)+\ln(v_2/v_1)$. Substitute into the $T$–$v$ form:
+The $p$–$v$ form. From $pv=RT$, $\ln(T_2/T_1)=\ln(p_2/p_1)+\ln(v_2/v_1)$. Substitute into the $T$–$v$ form:
 
 $$
 s_2-s_1 = c_v\ln\frac{p_2}{p_1}+(c_v+R)\ln\frac{v_2}{v_1}
@@ -456,17 +456,17 @@ $$
 
 ## 5. Isentropic efficiency
 
-Real compressors and turbines have friction and turbulence, which generate heat inside the gas and raise its entropy (6 Feb, ll. 276–299). On a $T$–$s$ diagram the real exit lies to the right of the isentropic exit on the same exit isobar, and because isobars slope upwards, higher.
+Real compressors and turbines have friction and turbulence, which generate heat inside the gas and raise its entropy. On a $T$–$s$ diagram the real exit lies to the right of the isentropic exit on the same exit isobar, and because isobars slope upwards, higher.
 
 ![[prop_isentropic_efficiency_Ts.png|760]]
 
-Compressor (notes eqs. 2.76–2.77): isentropic work over actual work,
+Compressor: isentropic work over actual work,
 
 $$
 \eta_c = \frac{w_{c,s}}{w_c} = \frac{h_{2s}-h_1}{h_2-h_1} = \frac{T_{2s}-T_1}{T_2-T_1}
 $$
 
-Turbine (notes eqs. 2.78–2.79): actual work over isentropic work,
+Turbine: actual work over isentropic work,
 
 $$
 \eta_t = \frac{w_t}{w_{t,s}} = \frac{h_1-h_2}{h_1-h_{2s}} = \frac{T_1-T_2}{T_1-T_{2s}}
@@ -474,7 +474,7 @@ $$
 
 The ideal work sits on the side that makes $\eta<1$: it is the numerator for a compressor (the ideal compressor needs less work than the real one) and the denominator for a turbine (the ideal turbine gives more work than the real one).
 
-Four sanity checks (notes §2.5.4):
+Four sanity checks:
 
 - $\eta<1$ for both machines;
 - the real exit temperature is higher than the isentropic one, in both machines;

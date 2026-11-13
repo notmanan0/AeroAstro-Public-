@@ -33,7 +33,7 @@ A boundary layer on a flat plate keeps growing for as long as the plate goes on.
 
 Moving fluid through a pipe costs energy. Friction at the wall would slow the flow down unless the pressure behind it is higher than the pressure ahead, so the pressure falls steadily along the pipe, and a pump (or a head of water in a tank) has to supply the difference. How much pressure is lost depends on whether the flow is laminar or turbulent, which Osborne Reynolds showed in the 1880s depends on a single number, and in turbulent flow on how rough the pipe wall is.
 
-Real pipe systems also have bends, valves, junctions and entrances, each of which loses a little more pressure in a short distance; those minor losses are added to the friction losses. The engineering question is then either how much pressure (and so pump power) a given flow rate needs, or how much flow a given pressure or pump will deliver; the second needs iteration, because the friction itself depends on the flow (8 May, ll. 455–590).
+Real pipe systems also have bends, valves, junctions and entrances, each of which loses a little more pressure in a short distance; those minor losses are added to the friction losses. The engineering question is then either how much pressure (and so pump power) a given flow rate needs, or how much flow a given pressure or pump will deliver; the second needs iteration, because the friction itself depends on the flow.
 
 ---
 
@@ -295,7 +295,7 @@ $$
 \boxed{\frac{1}{\sqrt f}+2\log_{10}\left(\frac{\epsilon}{3.7D}+\frac{2.51}{\sqrt f\,Re_D}\right)=0}
 $$
 
-It cannot be solved for $f$ algebraically, so it is solved with a root finder, for example bisection (`scipy.optimize.bisect`) on the bracket $[10^{-8},1]$, or read from the **Moody chart**, which plots $f$ against $Re_D$ for the laminar line and a family of curves of constant $\epsilon/D$ (8 May; Chapter 15, §15.6).
+It cannot be solved for $f$ algebraically, so it is solved with a root finder, for example bisection (`scipy.optimize.bisect`) on the bracket $[10^{-8},1]$, or read from the **Moody chart**, which plots $f$ against $Re_D$ for the laminar line and a family of curves of constant $\epsilon/D$ (Chapter 15, §15.6).
 
 ![[tf_moody_chart.png|900]]
 
@@ -308,13 +308,13 @@ At high $Re_D$ each rough curve flattens: the flow is **fully rough**, $f$ depen
 
 ### The loss coefficient
 
-A component such as a partly open valve, a bend, a junction or a pipe entrance causes a local pressure drop on top of the steady fall along the pipe, because the flow through it separates, swirls and dissipates mechanical energy as heat (8 May, ll. 117–148). To characterise a component, force a range of known flow rates through it and measure $\Delta p$ across it. Plotted against $\dot{\mathcal V}$ the points curve; plotted against $\tfrac12\rho\bar V^2$ they fall on a straight line through the origin, because pressure changes in fluids scale with $\rho V^2$. Its slope (from `numpy.polyfit`, say) is the **minor loss coefficient**
+A component such as a partly open valve, a bend, a junction or a pipe entrance causes a local pressure drop on top of the steady fall along the pipe, because the flow through it separates, swirls and dissipates mechanical energy as heat. To characterise a component, force a range of known flow rates through it and measure $\Delta p$ across it. Plotted against $\dot{\mathcal V}$ the points curve; plotted against $\tfrac12\rho\bar V^2$ they fall on a straight line through the origin, because pressure changes in fluids scale with $\rho V^2$. Its slope (from `numpy.polyfit`, say) is the **minor loss coefficient**
 
 $$
 \boxed{K=\frac{\Delta p}{\tfrac12\rho\bar V^2}}
 $$
 
-with $\bar V$ the bulk velocity through the component (8 May, ll. 149–197). $K$ comes from experiment, tables or manufacturers' data. A partly closed valve has a large $K$, a fully open one a small $K$.
+with $\bar V$ the bulk velocity through the component. $K$ comes from experiment, tables or manufacturers' data. A partly closed valve has a large $K$, a fully open one a small $K$.
 
 For a pipe entrance, $K$ depends on how rounded the edge is, $r/D$. A sharp edge ($r=0$) gives $K\approx0.5$, because the flow separates at the corner and the streamlines contract; a well-rounded entrance gives $K$ close to zero. For a sudden contraction, $K$ depends on the area ratio $A_2/A_1$, large when it is small and tending to zero as it approaches 1.
 
@@ -326,13 +326,13 @@ $$
 \boxed{\Delta p=\sum_{pipes}f\frac LD\tfrac12\rho\bar V^2+\sum_{components}K\tfrac12\rho\bar V^2}
 $$
 
-(8 May, ll. 198–217). A rise in elevation adds $\rho g\Delta z$.
+. A rise in elevation adds $\rho g\Delta z$.
 
 ## 8. Pumping power
 
 ### The SFEE for a pump
 
-A pump (centrifugal, vane, gear, screw, piston) uses rotating blades, vanes or gears to raise the pressure of the fluid, which the pipe system then loses. To find the power it needs, apply the SFEE of [[SESA1016 T13 - Conservation of Energy and Propulsion|T13]] to a control volume round the pump (8 May, ll. 265–430):
+A pump (centrifugal, vane, gear, screw, piston) uses rotating blades, vanes or gears to raise the pressure of the fluid, which the pipe system then loses. To find the power it needs, apply the SFEE of [[SESA1016 T13 - Conservation of Energy and Propulsion|T13]] to a control volume round the pump:
 
 $$
 \dot Q-\dot W_x=\int_{CS}\rho\left(e+\frac p\rho\right)(\vec V\cdot\vec n)\,dA,\qquad e=\tfrac12V^2+gz+u
@@ -374,11 +374,11 @@ $$
 
 #### Type 1 - flow rate given
 
-When the flow rate is given and the pressure drop and power are wanted, the calculation is explicit: compute $\bar V=\dot{\mathcal V}/A$, then $Re_D$ and the regime, then $f$ (formula or chart), then $\Delta p$ from the friction and minor-loss sum, then the ideal power $\dot{\mathcal V}\Delta p$ and, with the efficiency, the real power. This is the typical exam problem (8 May, ll. 572–579).
+When the flow rate is given and the pressure drop and power are wanted, the calculation is explicit: compute $\bar V=\dot{\mathcal V}/A$, then $Re_D$ and the regime, then $f$ (formula or chart), then $\Delta p$ from the friction and minor-loss sum, then the ideal power $\dot{\mathcal V}\Delta p$ and, with the efficiency, the real power. This is the typical exam problem.
 
 #### Type 2 - pressure drop given
 
-When the pressure drop (or the pump power) is given and the flow rate is wanted, the unknown appears on both sides of $\Delta p=f(Re_D,\epsilon/D)\tfrac LD\tfrac12\rho\bar V^2$, because $f$ depends on $\bar V$ through $Re_D$; so $\bar V$ cannot be written explicitly. Iterate (8 May, ll. 464–570):
+When the pressure drop (or the pump power) is given and the flow rate is wanted, the unknown appears on both sides of $\Delta p=f(Re_D,\epsilon/D)\tfrac LD\tfrac12\rho\bar V^2$, because $f$ depends on $\bar V$ through $Re_D$; so $\bar V$ cannot be written explicitly. Iterate:
 
 - guess $\bar V$;
 - compute $Re_D$ and the regime;
@@ -386,7 +386,7 @@ When the pressure drop (or the pump power) is given and the flow rate is wanted,
 - compute $\Delta p$ for the guess and compare with the given value;
 - if it is too low, increase the guess (say by 10 %); if too high, decrease it; repeat until they agree.
 
-A root finder such as bisection does the same job automatically, and the same idea, iterating because the equations are non-linear and implicit, is what a CFD solver does when it runs (8 May, ll. 564–570).
+A root finder such as bisection does the same job automatically, and the same idea, iterating because the equations are non-linear and implicit, is what a CFD solver does when it runs.
 
 ![[tf_pump_power_iteration.png|900]]
 
@@ -483,7 +483,7 @@ $$
 
 ### Worked example - liquid-hydrogen pipeline
 
-Liquid hydrogen ($\rho=70.9$ kg/m³, $\mu=1.3\times10^{-5}$ Pa s) must flow at 2 L/s through a 1 km, well-insulated pipeline of diameter 20 mm and roughness 0.004 mm. Pumps deliver 1 kW each. How many are needed? (Mock exam, 13 May, ll. 300–373.)
+Liquid hydrogen ($\rho=70.9$ kg/m³, $\mu=1.3\times10^{-5}$ Pa s) must flow at 2 L/s through a 1 km, well-insulated pipeline of diameter 20 mm and roughness 0.004 mm. Pumps deliver 1 kW each. How many are needed? (Mock exam.)
 
 $$
 \bar V=\frac{0.002}{\tfrac\pi4\times0.02^2}=6.37\ \mathrm{m/s}

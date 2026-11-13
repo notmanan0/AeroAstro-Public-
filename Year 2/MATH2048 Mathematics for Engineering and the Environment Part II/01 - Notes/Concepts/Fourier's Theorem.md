@@ -27,5 +27,5 @@ Smoothness also sets the convergence rate. A jump in the periodic extension (saw
 
 ## Related
 
-- [[MATH2048 FS2 - Even and Odd Functions, Half-Range Series and Convergence#4. When does a Fourier series converge? (L6)|FS2 §4]] · [[MATH2048 FS3 - Calculus with Fourier Series and Complex Fourier Series#2. Differentiating a Fourier series (L7)|FS3 §2]]
+- [[MATH2048 FS2 - Even and Odd Functions, Half-Range Series and Convergence#4. When does a Fourier series converge?|FS2 §4]] · [[MATH2048 FS3 - Calculus with Fourier Series and Complex Fourier Series#2. Differentiating a Fourier series|FS3 §2]]
 - [[Fourier Series]] · [[Half-Range Expansions]]

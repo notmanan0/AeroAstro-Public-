@@ -19,7 +19,7 @@ It is not a function but a functional, something that takes a function and retur
 
 Inside a product, $g(x)\delta(x-a)=g(a)\delta(x-a)$, so $\delta(x-2\pi)\cos x$ is just $\delta(x-2\pi)$ (PS5 Q3(h)). For $\alpha y''+\beta y'+\gamma y=\delta(x-a)$ with zero initial conditions, $\tilde y=e^{-as}/(\alpha s^2+\beta s+\gamma)$, so the solution is the impulse response $h=\mathcal L^{-1}[1/(\alpha s^2+\beta s+\gamma)]$, delayed to start at $x=a$. At the impulse $y$ stays continuous and $y'$ jumps by $1/\alpha$. The 2025/26 exam's $y''+2y'+2y=\delta(x-13)$ gives $y=H(x-13)e^{-(x-13)}\sin(x-13)$.
 
-A train of impulses is handled term by term. Lecture 13's pendulum struck every $\pi$, $\ddot y+y=\sum_{n\geq0}\delta(t-n\pi)$, gives $y=\sum H(t-n\pi)\sin(t-n\pi)$: alternate strikes start and stop it. Strikes a whole period $2\pi$ apart would add in phase and the amplitude would grow by 1 with each.
+A train of impulses is handled term by term. A pendulum struck every $\pi$, $\ddot y+y=\sum_{n\geq0}\delta(t-n\pi)$, gives $y=\sum H(t-n\pi)\sin(t-n\pi)$: alternate strikes start and stop it. Strikes a whole period $2\pi$ apart would add in phase and the amplitude would grow by 1 with each.
 
 ## Related
 

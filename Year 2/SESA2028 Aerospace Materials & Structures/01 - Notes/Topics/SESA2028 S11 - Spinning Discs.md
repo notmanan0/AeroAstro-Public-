@@ -184,7 +184,7 @@ $$
 n=\frac{60}{0.101}=594 .
 $$
 
-A DVD is in no danger from its own rotation; the stress is a few hundredths of a percent of its strength.
+A DVD is in no danger from its own rotation; the stress is 0.17 % of its strength ($0.101/60$).
 
 > [!check] Where the von Mises stress peaks, and the factor of 2
 > Evaluating $\sqrt{\sigma_{rr}^2+\sigma_{\theta\theta}^2-\sigma_{rr}\sigma_{\theta\theta}}$ across the disc confirms the maximum is at the bore, 0.101 MPa. A solid DVD would peak at $\tfrac{3+\nu}{8}\rho\omega^2r_o^2=0.050$ MPa at its centre, so the 15 mm hole raises the peak by a factor of 2.01, close to the pinhole limit of 2 because $r_i/r_o=0.125$ is small. The largest radial stress, 0.039 MPa, is at $r=\sqrt{r_ir_o}=21$ mm.

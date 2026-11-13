@@ -43,4 +43,4 @@ To get the signs right: for a rotation about axis $k$ with $(i,j,k)$ cyclic, $C_
 
 - [[Aerospace 3-2-1 Euler Sequence]] · [[Cross-Product Matrix]] · [[Euler Angles and Rotation Matrices]] (SESA2027 notation $\mathbf R_{BE}$)
 - Other names and library conventions (attitude matrix, $\mathbf L_{BE}$, `angle2dcm` versus `eul2rotm`): [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#Terminology and alternative names|2.2, terminology]]
-- Derivations: [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#3. Properties of a DCM (§2.3.2), with the reasons|2.2 §3]]
+- Derivations: [[SESA3047 2.2 - Direction Cosine Matrices and Euler Angles#3. Properties of a DCM, with the reasons|2.2 §3]]

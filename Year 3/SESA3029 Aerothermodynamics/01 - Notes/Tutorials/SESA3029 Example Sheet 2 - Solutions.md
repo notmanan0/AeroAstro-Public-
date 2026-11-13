@@ -14,17 +14,17 @@ sources: ["03 - Exams & Past Papers/ExamplesSheet2.pdf"]
 
 > [!abstract] Sheet info
 > Six questions from **Sections 3–4**:
-> - **Q1–Q3: the method of characteristics.** The theory began on Fri 16 Oct (Lecture 3.1: compatibility conditions and Riemann invariants). The unit process (3.2) is in [[SESA3029 W05a - Method of Characteristics]], and the boundary conditions (3.3) are in [[SESA3029 W05b - Minimum-Length Nozzle Design]]; both are now lectured.
-> - **Q4–Q6: Ackeret and Prandtl–Glauert linear theory.** The theory is in [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]] (Q6; lectured 6 and 9 Nov, and the Q6 method agrees with the 4.4 lecture) and [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] (Q4–Q5). Q4 is lectured (4.5, Thu 12 Nov); Q5 uses the same face-by-face $C_p$, and its closed-form drag check comes from 4.6, written ahead from the slides.
+> - **Q1–Q3: the method of characteristics.** The compatibility conditions, Riemann invariants and unit process are in [[SESA3029 W05a - Method of Characteristics]], and the boundary conditions are in [[SESA3029 W05b - Minimum-Length Nozzle Design]].
+> - **Q4–Q6: Ackeret and Prandtl–Glauert linear theory.** The theory is in [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]] (Q6) and [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] (Q4–Q5). Q5 uses the same face-by-face $C_p$ as Q4, and its closed-form drag check comes from the optimum-aerofoil part of W07c.
 >
-> Notation: Q4–Q5 below write $\beta=\sqrt{M^2-1}$, as Anderson does. The course writes $\lambda=\sqrt{M_\infty^2-1}$ for Ackeret theory and keeps $\beta=\sqrt{1-M_\infty^2}$ for Prandtl–Glauert (4.4 slide 2, 4.5 slide 2). Use $\lambda$ in the exam.
+> Notation: Q4–Q5 below write $\beta=\sqrt{M^2-1}$, as Anderson does. The course writes $\lambda=\sqrt{M_\infty^2-1}$ for Ackeret theory and keeps $\beta=\sqrt{1-M_\infty^2}$ for Prandtl–Glauert. Use $\lambda$ in the exam.
 >
 > Each section first derives the result it needs, so the solutions stand alone. All numbers are verified in Python. $\gamma=1.4$.
 
-> [!warning] Two sign conventions: lecture vs Anderson
+> [!warning] Two sign conventions: course vs Anderson
 > These solutions were first written in **Anderson's** notation (§§11.11–11.12, §13): $K^+=\theta-\nu$ along $C^+$ and $K^-=\theta+\nu$ along $C^-$.
 >
-> **The course uses** $R^+=\nu-\theta$ along $C^+$ and $R^-=\nu+\theta$ along $C^-$ (3.1 slide 12). So $R^+=-K^+$ and $R^-=K^-$. The characteristic directions ($\theta\pm\mu$) and every number are the same either way. Q2 and Q3 now give the working in both notations; use the course's in the exam.
+> **The course uses** $R^+=\nu-\theta$ along $C^+$ and $R^-=\nu+\theta$ along $C^-$. So $R^+=-K^+$ and $R^-=K^-$. The characteristic directions ($\theta\pm\mu$) and every number are the same either way. Q2 and Q3 now give the working in both notations; use the course's in the exam.
 
 ---
 
@@ -122,7 +122,7 @@ $$
 
 The sheet gives 3.04 and 9.15°; the difference is table rounding ✓.
 
-**(d) In the course notation** (3.2 slide 7, [[SESA3029 W05a - Method of Characteristics#10. The unit process (3.2 slides 7–9)|W05a §10]]). P is above R (role B, its $C^-$ reaches R) and Q is below R (role A, its $C^+$ reaches R):
+**(d) In the course notation** ([[SESA3029 W05a - Method of Characteristics#10. The unit process|W05a §10]]). P is above R (role B, its $C^-$ reaches R) and Q is below R (role A, its $C^+$ reaches R):
 
 $$
 R^-_P=\nu_P+\theta_P=49.757+10=59.757^\circ,
@@ -192,12 +192,12 @@ The sheet gives 14.34°, 1.558, 1.256 and 1.606 ✓.
 - E: $\nu_E=R^-_B=4.988^\circ$ (BC 3).
 
 > [!check] The sheet uses a straight characteristic to the wall
-> The answer key's C comes from the $C^+$ leaving A at A's own slope, $\theta_A+\mu_A=60.72^\circ$. The course's unit process instead averages the slopes at both ends, $\alpha_{AC}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_C]$ (3.2 slide 8). Because $\theta_C$ depends on where the line meets the wall, this needs iterating. It converges in about six passes to:
+> The answer key's C comes from the $C^+$ leaving A at A's own slope, $\theta_A+\mu_A=60.72^\circ$. The course's unit process instead averages the slopes at both ends, $\alpha_{AC}=\tfrac12[(\theta+\mu)_A+(\theta+\mu)_C]$. Because $\theta_C$ depends on where the line meets the wall, this needs iterating. It converges in about six passes to:
 >
 > | | $\alpha_{AC}$ | $x_C$ | $\theta_C$ | $M_C$ | $\theta_F$ | $M_F$ |
 > |---|---:|---:|---:|---:|---:|---:|
 > | straight (sheet) | 60.72° | 0.1557 | 14.34° | 1.558 | 12.92° | 1.606 |
-> | averaged (lecture) | 57.50° | 0.1813 | 15.71° | 1.604 | 14.29° | 1.653 |
+> | averaged (course) | 57.50° | 0.1813 | 15.71° | 1.604 | 14.29° | 1.653 |
 >
 > The difference is large because $\mu$ falls from $56.4^\circ$ at A to about $39^\circ$ at C. Near $M=1$ the characteristics curve strongly. D and E are unaffected: interior and centreline **states** never depend on geometry. Match the method the question asks for. If it gives no method, use the averaged slope, as in the course.
 

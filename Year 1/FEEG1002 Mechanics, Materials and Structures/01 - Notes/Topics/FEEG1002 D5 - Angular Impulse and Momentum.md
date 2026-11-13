@@ -97,7 +97,7 @@ where $v'=v\sin\theta$ is the component of the velocity perpendicular to $\mathb
 
 The direction of a cross product follows the right-hand rule: with the thumb along $\mathbf r$ and the index finger along $m\mathbf v$ (or $\mathbf F$), the middle finger gives $\mathbf H_O$ (or $\mathbf M_O$); equivalently, curl the fingers of the right hand from $\mathbf r$ towards $m\mathbf v$ and the thumb points along the result. In plane problems the $z$ axis ($\mathbf k$) points out of the page and anticlockwise moments and angular momenta are positive; clockwise ones point into the page and are negative.
 
-A particle moving in a straight line at constant speed has constant angular momentum about any fixed point O, even as it moves away, because $mv$ and the perpendicular distance $d$ from O to its line of motion are both constant. About a point on its line of motion, its angular momentum is zero (L10b quizzes, ll. 517–545).
+A particle moving in a straight line at constant speed has constant angular momentum about any fixed point O, even as it moves away, because $mv$ and the perpendicular distance $d$ from O to its line of motion are both constant. About a point on its line of motion, its angular momentum is zero.
 
 ## 2. The moment equation
 
@@ -155,7 +155,7 @@ $$
 
 for a particle or a system of particles. Forces may be acting, provided their moment about the chosen point is zero. The most important case is a **central force**, one that always points towards (or away from) a fixed point. Taking O at that point, $\mathbf F$ is parallel to $\mathbf r$ and $\mathbf r\times\mathbf F=\mathbf 0$. Examples are a cord pulling a particle towards a fixed pivot, a spring pinned at one end, and the gravitational attraction of a planet on a satellite.
 
-Conservation is always about a named point. A satellite's angular momentum is conserved about the centre of the Earth, but about any other point gravity has a moment and it is not. "Is angular momentum conserved?" has no answer until the point is given (L10b, ll. 318–379).
+Conservation is always about a named point. A satellite's angular momentum is conserved about the centre of the Earth, but about any other point gravity has a moment and it is not. "Is angular momentum conserved?" has no answer until the point is given.
 
 > [!tip] Choosing the point
 > The point O is yours to choose. Put it where the unknown forces act (a pivot) or where they point (a centre of attraction), so that they have no moment; the equation then contains only the quantities you want.
@@ -170,7 +170,7 @@ For central forces the work done is easiest to find from the work-energy princip
 
 ### Amusement-park ride pulled in on a cable
 
-A 120 kg car moves in a horizontal circle of radius 3.6 m at 1.2 m/s, held by a cable to a central pivot. The cable is then pulled in at a constant 0.15 m/s. Neglecting friction and treating the car as a particle, find its speed after 3 s and the work done by the pulling force (slides pp. 21–25; DAMS6-2; L10b, ll. 46–298).
+A 120 kg car moves in a horizontal circle of radius 3.6 m at 1.2 m/s, held by a cable to a central pivot. The cable is then pulled in at a constant 0.15 m/s. Neglecting friction and treating the car as a particle, find its speed after 3 s and the work done by the pulling force (DAMS6-2).
 
 ![[d_central_force_ride.png|900]]
 
@@ -202,7 +202,7 @@ $$
 
 ### Satellite in an elliptical orbit
 
-A satellite is at perigee A, $r_A=6.976\times10^6$ m from the centre of the Earth, moving at $v_A=8333.3$ m/s perpendicular to $\mathbf r_A$. With $M=5.976\times10^{24}$ kg and $G=66.73\times10^{-12}$ m³/(kg s²), find its speed and distance at apogee B (slides pp. 30–33; DAMS6-3; L10b, ll. 302–463).
+A satellite is at perigee A, $r_A=6.976\times10^6$ m from the centre of the Earth, moving at $v_A=8333.3$ m/s perpendicular to $\mathbf r_A$. With $M=5.976\times10^{24}$ kg and $G=66.73\times10^{-12}$ m³/(kg s²), find its speed and distance at apogee B (DAMS6-3).
 
 ![[d_elliptical_orbit_example.png|900]]
 
@@ -247,7 +247,7 @@ $$
 
 ### Fun-fair game with an elastic cord
 
-A puck of mass $m$ on a horizontal table is tied by an elastic cord to a fixed point O. The cord's natural length equals the radius $R$ of a rough circular region centred on O (kinetic friction $\mu_k$); outside the circle the table is frictionless and the cord is taut, inside it the cord is slack. The puck is struck at A on the edge of the circle, leaving with speed $v_A$ at angle $\theta$ between $\mathbf r_A$ and $\mathbf v_A$ ($-90°<\theta<90°$, so it moves outwards). It swings round outside the circle, re-enters at B and slides across the rough region. Find $v_A(\theta)$ for it to stop exactly at C on the far edge (L11, ll. 412–629, adapted from an assignment).
+A puck of mass $m$ on a horizontal table is tied by an elastic cord to a fixed point O. The cord's natural length equals the radius $R$ of a rough circular region centred on O (kinetic friction $\mu_k$); outside the circle the table is frictionless and the cord is taut, inside it the cord is slack. The puck is struck at A on the edge of the circle, leaving with speed $v_A$ at angle $\theta$ between $\mathbf r_A$ and $\mathbf v_A$ ($-90°<\theta<90°$, so it moves outwards). It swings round outside the circle, re-enters at B and slides across the rough region. Find $v_A(\theta)$ for it to stop exactly at C on the far edge (adapted from an assignment).
 
 From A to B the puck is outside the circle, in a top view with no friction. The only horizontal force is the cord tension, which is conservative and central about O. At A and B the cord is at its natural length $R$, so $V_e=0$ at both, and energy conservation gives
 
@@ -283,7 +283,7 @@ $$
 v_A=2\sqrt{\mu_kgR\cos\theta}
 $$
 
-The mass cancels, so a 3 kg and a 9 kg puck struck at the same angle need the same speed. Their paths outside the circle differ, because the same cord acts on different masses, so they re-enter at different points B; each still stops exactly on the edge of the circle (L11, ll. 618–628). A radial strike ($\theta=0$) needs the most speed, crossing a full diameter; a tangential one ($\theta\to90°$) needs none.
+The mass cancels, so a 3 kg and a 9 kg puck struck at the same angle need the same speed. Their paths outside the circle differ, because the same cord acts on different masses, so they re-enter at different points B; each still stops exactly on the edge of the circle. A radial strike ($\theta=0$) needs the most speed, crossing a full diameter; a tangential one ($\theta\to90°$) needs none.
 
 ---
 

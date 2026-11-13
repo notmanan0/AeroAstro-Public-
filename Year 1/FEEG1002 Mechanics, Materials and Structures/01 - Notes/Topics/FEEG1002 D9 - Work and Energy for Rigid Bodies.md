@@ -185,7 +185,7 @@ A bar thrown upwards while spinning shows this. Gravity acts at G, so $\sum M_G=
 
 ### Disc turned by a couple and a cord
 
-A 30 kg uniform disc of radius 0.2 m, pinned at its centre O, starts from rest. A constant couple of 5 N m and a constant 10 N pull on a cord wrapped round its rim both turn it the same way. How many revolutions does it make before reaching 20 rad/s (slides pp. 36–38; DAMS9-3)?
+A 30 kg uniform disc of radius 0.2 m, pinned at its centre O, starts from rest. A constant couple of 5 N m and a constant 10 N pull on a cord wrapped round its rim both turn it the same way. How many revolutions does it make before reaching 20 rad/s (DAMS9-3)?
 
 The disc rotates about a fixed axis through G:
 
@@ -209,7 +209,7 @@ $$
 
 ### Rod sliding in two slots
 
-A uniform 10 kg rod of length 0.8 m has its ends A and B in a vertical and a horizontal slot respectively, with light blocks and no friction. It starts from rest vertical ($\theta=0$, measured from the vertical) and a constant 50 N force pulls B horizontally. Find $\omega$ when $\theta=45°$, with the mechanism in a vertical plane and in a horizontal plane (slides pp. 40–45; DAMS9-4).
+A uniform 10 kg rod of length 0.8 m has its ends A and B in a vertical and a horizontal slot respectively, with light blocks and no friction. It starts from rest vertical ($\theta=0$, measured from the vertical) and a constant 50 N force pulls B horizontally. Find $\omega$ when $\theta=45°$, with the mechanism in a vertical plane and in a horizontal plane (DAMS9-4).
 
 ![[d_rod_in_slots_example.png|900]]
 
@@ -241,7 +241,7 @@ The vertical-plane answer is larger because gravity does positive work as the ro
 
 ### Rod and spring released from rest
 
-A uniform 10 kg rod AB, 0.4 m long, has end A in a horizontal slot and end B in a vertical slot, with light pistons. A spring of stiffness 800 N/m on B is unstretched when the rod is horizontal ($\theta=0$, measured from the horizontal). The rod is released from rest at $\theta=30°$. Find $\omega$ as it passes $\theta=0$, in a vertical and in a horizontal plane (slides pp. 47–52; DAMS9-5).
+A uniform 10 kg rod AB, 0.4 m long, has end A in a horizontal slot and end B in a vertical slot, with light pistons. A spring of stiffness 800 N/m on B is unstretched when the rod is horizontal ($\theta=0$, measured from the horizontal). The rod is released from rest at $\theta=30°$. Find $\omega$ as it passes $\theta=0$, in a vertical and in a horizontal plane (DAMS9-5).
 
 Only the weight and the spring do work, both conservative, so energy is conserved. The datum is the rod's position at $\theta=0$, so $V_{g2}=V_{e2}=0$. At $\theta_1=30°$, G is $\tfrac12L\sin30°$ below the datum and the spring is stretched by the drop of B, $L\sin30°$:
 
@@ -275,7 +275,7 @@ larger, because the spring does not have to lift the rod. The motion carries on 
 
 ### Rolling race down a slope
 
-A solid cylinder, a thin-walled hollow cylinder and a frictionless block are released together down the same slope and drop through a height $h$. Which arrives first, and how is the energy shared (L18b, ll. 248–321)?
+A solid cylinder, a thin-walled hollow cylinder and a frictionless block are released together down the same slope and drop through a height $h$. Which arrives first, and how is the energy shared?
 
 Each round body rolls without slip, so friction does no work and energy is conserved. With radius $r$, radius of gyration $k$ and $v=r\omega$:
 

@@ -30,7 +30,7 @@ sources: ["02 - Sources/Lectures/Lecture 1.05.pdf", "02 - Sources/Lectures/Lectu
 > - **Use it when:** a question gives a factorised (or factorisable) quartic, a matrix to find eigenvalues of, or the dimensional derivatives, and asks for roots, stability, $\omega_n$, $\zeta$, $T$, $t_{1/2}$ or $t_2$, or which mode is which.
 > - **Assumptions:** stick fixed, unforced ($\dot{\mathbf x}=\mathbf A\mathbf x$), linear about trim; for the SPO approximation also $u=0$, $\gamma_0=0$, $\mathring Z_{\dot w}\ll m$, $\mathring Z_q\ll mU_\infty$.
 > - **Method:** 1. Roots of each quadratic $\lambda^2+a\lambda+b$: $\lambda=\sigma\pm i\omega$. 2. Stable if $\sigma<0$ (equivalently $\zeta>0$). 3. $\omega_n=\sqrt b=\sqrt{\sigma^2+\omega^2}$, $\zeta=a/(2\sqrt b)=-\sigma/\omega_n$. 4. $T=2\pi/\omega$; $t_{1/2}=\ln2/\lvert\sigma\rvert$ if stable, else $t_2=\ln2/\sigma$. 5. Larger $\omega_n$ = SPO, smaller = phugoid.
-> - **Common mistakes:** dividing by the damped frequency $\omega$ instead of $\omega_n$ when finding $\zeta$ (the slide 14 slip); quoting a half-life for an unstable mode.
+> - **Common mistakes:** dividing by the damped frequency $\omega$ instead of $\omega_n$ when finding $\zeta$; quoting a half-life for an unstable mode.
 > - **Practise:** [[#Worked example: an unstable oscillatory mode]] · [[SESA2027 Mock Questions#Q3. Modes from a factorised quartic|Mock Q3]] · [[SESA2027 Practice Problems 1 Solutions]]
 
 A trimmed aircraft that is disturbed and left alone responds on two very different time-scales. Within a few seconds the nose bobs: the angle of attack overshoots, the static stability ($M_w$) pulls it back, and the tailplane's pitch damping ($M_q$) kills the bobbing within a cycle or two. The speed has no time to change. This is the short-period oscillation, and it is what you feel in turbulence.
@@ -41,8 +41,8 @@ Mathematically, each mode is one complex-conjugate pair of eigenvalues of $\math
 
 ---
 
-## 1. General solution (L1.05)
-$\mathbf A$ is called the characteristic matrix: it ties the states to the aircraft's physical parameters (mass, inertia, derivatives, trim climb angle), and its eigenvalues are the modes (L1.05, ll. 44–52).
+## 1. General solution
+$\mathbf A$ is called the characteristic matrix: it ties the states to the aircraft's physical parameters (mass, inertia, derivatives, trim climb angle), and its eigenvalues are the modes.
 
 Try $\mathbf x = \mathbf x_0e^{\lambda t}$, which gives $(\mathbf A-\lambda\mathbf I)\mathbf x_0 = 0$. A non-trivial solution needs
 
@@ -50,13 +50,13 @@ $$
 \det(\mathbf A-\lambda\mathbf I) = 0\quad\Rightarrow\quad A\lambda^4+B\lambda^3+C\lambda^2+D\lambda+E = 0
 $$
 
-Each root is $\lambda = \sigma\pm i\omega$, where $\sigma$ is the growth or decay rate ($\sigma<0$ is stable, $\sigma>0$ is unstable) and $\omega$ is the damped angular frequency (rad/s). That a negative real part means a stable solution is a possible exam question (L1.05, ll. 89–96).
+Each root is $\lambda = \sigma\pm i\omega$, where $\sigma$ is the growth or decay rate ($\sigma<0$ is stable, $\sigma>0$ is unstable) and $\omega$ is the damped angular frequency (rad/s). That a negative real part means a stable solution is a possible exam question.
 
-The [[Routh-Hurwitz Stability Criterion]] says the aircraft is stable if all the coefficients are positive and the Routh discriminant $R = D(BC-AD)-B^2E$ is positive too. In practice aircraft are stable if $E>0$ and $R>0$. In an exam the criterion is stated in words (ll. 190–194): the formula for $R$ need not be memorised, and stating that the Routh discriminant must be greater than zero earns the mark (ll. 196–203). Given a quartic already factorised into two quadratics, the expected answer is the roots, the stability of each mode, $t_{1/2}$ and $T$ (ll. 237–256), and a sketch of the roots in the complex plane, where placement matters, not precision (ll. 266–271).
+The [[Routh-Hurwitz Stability Criterion]] says the aircraft is stable if all the coefficients are positive and the Routh discriminant $R = D(BC-AD)-B^2E$ is positive too. In practice aircraft are stable if $E>0$ and $R>0$. In an exam the criterion is stated in words: the formula for $R$ need not be memorised, and stating that the Routh discriminant must be greater than zero earns the mark. Given a quartic already factorised into two quadratics, the expected answer is the roots, the stability of each mode, $t_{1/2}$ and $T$, and a sketch of the roots in the complex plane, where placement matters, not precision.
 
-A 4×4 determinant expands fastest along the row or column with the most zeros (L1.05, ll. 127–144). In the example below the bottom row of $\mathbf A$ is $[0,0,1,0]$, so the bottom row of $\lambda\mathbf I-\mathbf A$ is $[0,0,-1,\lambda]$: only two cofactors survive, and one of them reduces to a single product. Expanding along the first column, as on slides 6–10, works but takes longer.
+A 4×4 determinant expands fastest along the row or column with the most zeros. In the example the bottom row of $\mathbf A$ is $[0,0,1,0]$, so the bottom row of $\lambda\mathbf I-\mathbf A$ is $[0,0,-1,\lambda]$: only two cofactors survive, and one of them reduces to a single product. Expanding along the first column works but takes longer.
 
-### Worked numerical example (L1.05 slides 6–10)
+### Worked numerical example
 
 $$
 \mathbf A = \begin{bmatrix}0&0.16&0&-9.81\\-0.125&-0.5&212&0\\0&-0.0082&-0.5&0\\0&0&1&0\end{bmatrix}
@@ -109,7 +109,7 @@ $$
 $$
 
 > [!check] Factorisation check
-> $(\lambda^2+\lambda+2)(\lambda^2+0.0025\lambda+0.005)=\lambda^4+1.0025\lambda^3+2.0075\lambda^2+0.0100\lambda+0.0100$. Every coefficient agrees with the quartic to within 0.3 %, so the two quadratics are a good approximation. Whenever the roots are far apart, a quartic splits like this: the big coefficients belong to the fast mode, the tiny ones to the slow mode.
+> $(\lambda^2+\lambda+2)(\lambda^2+0.0025\lambda+0.005)=\lambda^4+1.0025\lambda^3+2.0075\lambda^2+0.0100\lambda+0.0100$. Every coefficient agrees with the quartic to within 0.6 % (the largest gaps are the constant term, $0.0100$ against $0.01006$, and the $\lambda^3$ coefficient, $1.0025$ against $1$), so the two quadratics are a good approximation. Whenever the roots are far apart, a quartic splits like this: the big coefficients belong to the fast mode, the tiny ones to the slow mode.
 
 | | Mode 1: $\lambda^2+\lambda+2$ | Mode 2: $\lambda^2+0.0025\lambda+0.005$ |
 |---|---|---|
@@ -120,7 +120,7 @@ $$
 | $\zeta = -\sigma/\omega_n$ | 0.35 | 0.018 |
 | Identity | SPO (strongly damped) | Phugoid (very lightly damped) |
 
-Mode 1's period is longer than its half-life (4.76 s against 1.39 s), so the oscillation has mostly died away before one cycle is complete: it is well damped (ll. 257–263). Mode 2 is closer to instability, because its roots sit almost on the imaginary axis (ll. 379–386). And the modes can be identified from the eigenvalues alone: the pair with the larger magnitude is the SPO and the smaller one is the phugoid (ll. 439–441; L1.06, ll. 228–236).
+Mode 1's period is longer than its half-life (4.76 s against 1.39 s), so the oscillation has mostly died away before one cycle is complete: it is well damped. Mode 2 is closer to instability, because its roots sit almost on the imaginary axis. And the modes can be identified from the eigenvalues alone: the pair with the larger magnitude is the SPO and the smaller one is the phugoid.
 
 Python cross-check: `np.linalg.eig(A)` gives $-0.4988\pm1.3237i$ (SPO) and $-0.0012\pm0.0709i$ (phugoid).
 
@@ -148,7 +148,7 @@ The time characteristics are:
 See [[Damping Ratio and Natural Frequency]].
 
 ### From the roots to the natural frequency and damping ratio
-This step was set as a task (L1.05, l. 351). Assume $0<\zeta<1$ (an oscillatory mode). Solve $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2 = 0$ with the quadratic formula:
+Assume $0<\zeta<1$ (an oscillatory mode). Solve $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2 = 0$ with the quadratic formula:
 
 $$
 \lambda = \frac{-2\zeta\omega_n\pm\sqrt{4\zeta^2\omega_n^2-4\omega_n^2}}{2}
@@ -190,10 +190,10 @@ $$
 
 So $\omega_n$ is the distance of the root from the origin, and $\zeta$ is the cosine of the angle between the root and the negative real axis.
 
-Since $\omega_n>0$, $\zeta>0$ exactly when $\sigma<0$, so the sign of the damping ratio is the stability test. This is a likely quiz or exam question (L1.05, ll. 344–350).
+Since $\omega_n>0$, $\zeta>0$ exactly when $\sigma<0$, so the sign of the damping ratio is the stability test. This is a likely quiz or exam question.
 
-> [!info] Unstable roots: half-life does not exist (L1.06, ll. 269–299)
-> If $\sigma>0$ the amplitude doubles instead of halving. Asked for the half-life of an unstable mode, say that it does not exist because the mode is unstable (ll. 285–289). If the question asks for the half-life *or the time to double*, give $t_2 = \ln2/\sigma$. The period $T = 2\pi/\omega$ is computed the same way whether or not the mode is stable.
+> [!info] Unstable roots: half-life does not exist
+> If $\sigma>0$ the amplitude doubles instead of halving. Asked for the half-life of an unstable mode, say that it does not exist because the mode is unstable. If the question asks for the half-life *or the time to double*, give $t_2 = \ln2/\sigma$. The period $T = 2\pi/\omega$ is computed the same way whether or not the mode is stable.
 
 ### Worked example: an unstable oscillatory mode
 
@@ -224,7 +224,7 @@ Dynamic motion comes in three types:
 
 ![[amc_f4c_spo_time_history.png|720]]
 
-*F-4C full 4×4 model (L1.06 matrices), free response to $w_0=5$ m/s. The oscillation in $\alpha$, $\theta$ and $q$ has almost gone after one period. The slow drift in $u$ and $\theta$ that remains is the phugoid starting, which the SPO approximation deliberately ignores.*
+*F-4C full 4×4 model, free response to $w_0=5$ m/s. The oscillation in $\alpha$, $\theta$ and $q$ has almost gone after one period. The slow drift in $u$ and $\theta$ that remains is the phugoid starting, which the SPO approximation deliberately ignores.*
 
 ### Phugoid
 
@@ -245,11 +245,11 @@ $$
 
 *F-4C full model, free response to $u_0=10$ m/s. Speed and pitch attitude swing with a period of about 81 s while $\alpha$ hardly moves, so $\theta\approx\gamma$: the nose follows the flight path. The brief wiggle in $\alpha$ in the first few seconds is the short-period mode, excited because the initial condition is not a pure phugoid shape.*
 
-Which mode a disturbance excites depends on its frequency, as with resonance in a mass–spring–damper (L1.05, ll. 413–431). A short, sharp disturbance such as turbulence or a gust excites the SPO, so the bumps felt in turbulence are short-period motion. A slow change, such as a gradual change in wind, excites the phugoid, which is usually too slow to notice (88.9 s in the example). Both are demonstrated in the summer Cranfield flight lab.
+Which mode a disturbance excites depends on its frequency, as with resonance in a mass–spring–damper. A short, sharp disturbance such as turbulence or a gust excites the SPO, so the bumps felt in turbulence are short-period motion. A slow change, such as a gradual change in wind, excites the phugoid, which is usually too slow to notice (88.9 s in the example).
 
-There are two modes longitudinally but three laterally because complex roots of a real polynomial come in conjugate pairs (L1.06, ll. 6–20). The longitudinal quartic gives two complex pairs, so two oscillatory modes. The lateral quartic gives one complex pair (Dutch roll) and two separate real roots (spiral and roll subsidence), so three modes. Lateral dynamics come in [[SESA3047 Advanced Aerospace Mechanics & Control Hub|SESA3047 Advanced Aerospace Mechanics & Control]].
+There are two modes longitudinally but three laterally because complex roots of a real polynomial come in conjugate pairs. The longitudinal quartic gives two complex pairs, so two oscillatory modes. The lateral quartic gives one complex pair (Dutch roll) and two separate real roots (spiral and roll subsidence), so three modes. The lateral modes are treated in [[SESA3047 Advanced Aerospace Mechanics & Control Hub|SESA3047 Advanced Aerospace Mechanics & Control]].
 
-## 4. Example: McDonnell Douglas F-4C Phantom II (L1.06)
+## 4. Example: McDonnell Douglas F-4C Phantom II
 Data: $m = 17642$ kg, $I_{yy} = 165669$ kg m², $U_\infty = 178$ m/s. The dimensional state equation has
 
 $$
@@ -262,11 +262,11 @@ $\mathbf A = \mathbf M^{-1}\mathbf A'$ has eigenvalues:
 
 The eigenvector (mode shape) of the SPO is dominated by $w$ and $\theta$. The $u$ component is negligible ($0.0165+0.0308i$ versus $0.9993$ for $w$).
 
-Assembling $\mathbf M$ and $\mathbf A'$ from the data tables is not examined; exam questions give the values and ask for simplifications instead (L1.06, ll. 128–130). Converting a dimensionless derivative to dimensional form with the table in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Dimensional vs dimensionless derivatives|A2]], and stating its units, is a possible exam or quiz question (ll. 108–117). For example $\mathring M_w = M_w\cdot\tfrac12\rho U_\infty S\bar c$ has units $\text{kg m}^{-3}\cdot\text{m s}^{-1}\cdot\text{m}^2\cdot\text{m} = \text{kg m s}^{-1} = \text{N s}$.
+Assembling $\mathbf M$ and $\mathbf A'$ from the data tables is not examined; exam questions give the values and ask for simplifications instead. Converting a dimensionless derivative to dimensional form with the table in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Dimensional vs dimensionless derivatives|A2]], and stating its units, is a possible exam or quiz question. For example $\mathring M_w = M_w\cdot\tfrac12\rho U_\infty S\bar c$ has units $\text{kg m}^{-3}\cdot\text{m s}^{-1}\cdot\text{m}^2\cdot\text{m} = \text{kg m s}^{-1} = \text{N s}$.
 
-Getting $\alpha$ from an eigenvector is another possible exam question. Index 1 of the state vector is $w$ (Python counts from 0), so $\alpha_0\approx w_0/U_\infty$, and index 3 is $\theta_0$ directly (ll. 174–192). The flight-path angle follows from $\gamma = \theta-\alpha$ (l. 168). A sketch of the SPO response shows an oscillation in $q$, $\theta$ and $\alpha$ that decays in a few seconds (ll. 158–169); the calculation uses radians, converted to degrees only for display (ll. 194–202).
+Getting $\alpha$ from an eigenvector is another possible exam question. Index 1 of the state vector is $w$ (Python counts from 0), so $\alpha_0\approx w_0/U_\infty$, and index 3 is $\theta_0$ directly. The flight-path angle follows from $\gamma = \theta-\alpha$. A sketch of the SPO response shows an oscillation in $q$, $\theta$ and $\alpha$ that decays in a few seconds; the calculation uses radians, converted to degrees only for display.
 
-## 5. The SPO approximation (L1.06)
+## 5. The SPO approximation
 Because the SPO is fast:
 1. $u = \dot u = 0$ (no speed change), so the $X$ equation is not needed.
 2. Set $\gamma_0 = 0$, so there are no $\theta$ terms in the $Z$ or $M$ equations and the $\dot\theta$ equation is not needed.
@@ -325,13 +325,13 @@ $$
 >
 > $$2\zeta\omega_n=\frac{50\,798+178\times132.47}{165\,669}+\frac{5215.44}{17\,642}=0.4490+0.2956=0.7446$$
 >
-> so $\omega_n=1.4115$ rad/s and $\zeta=0.7446/(2\times1.4115)=0.2638$ (the slide's 0.2637 is a rounding difference). The two terms of $2\zeta\omega_n$, $-0.2956$ and $-0.4490$, are the diagonal entries of the PS2 Q3 matrix: that sheet uses the F-4C SPO, see the warning in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Worked example: SPO state space to transfer function (PS2 Q3)|A2]].
+> so $\omega_n=1.4115$ rad/s and $\zeta=0.7446/(2\times1.4115)=0.2638$ (0.2637 if intermediate values are rounded). The two terms of $2\zeta\omega_n$, $-0.2956$ and $-0.4490$, are the diagonal entries of the PS2 Q3 matrix: that sheet uses the F-4C SPO, see the warning in [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Worked example: SPO state space to transfer function (PS2 Q3)|A2]].
 
 In practice the approximation means:
 
 - Two equations and seven parameters are enough for design.
 - The model relates directly to regulations: FAR/CS-25.181 requires a heavily damped short period, and MIL-F-8785C gives flying-qualities limits on $\zeta_{sp}$ and $\omega_{sp}$.
-- Sensitivity (L1.06 slide 17 and ll. 417–430): mass mainly changes $\zeta$; pitch inertia mainly changes $\omega_n$. Increasing either lowers both, but by very different amounts (see the check below). So to move $\omega_n$, change the pitch inertia; to move $\zeta$, change the mass (l. 430).
+- Sensitivity: mass mainly changes $\zeta$; pitch inertia mainly changes $\omega_n$. Increasing either lowers both, but by very different amounts (see the check below). So to move $\omega_n$, change the pitch inertia; to move $\zeta$, change the mass.
 - The SPO is equivalent to a mass–spring–damper: $m\ddot x+c\dot x+kx = r(t)$. Forced responses are solved with Laplace transforms. See [[SESA2027 A4 - Laplace Transforms, Transfer Functions and Step Response]].
 
 > [!check] F-4C sensitivity to $\pm10\%$ mass and inertia (SPO approximation, computed)
@@ -346,7 +346,7 @@ In practice the approximation means:
 >
 > Why: in $\omega_n^2 = \mathring M_q\mathring Z_w/(mI_{yy})-U_\infty\mathring M_w/I_{yy}$ the second term is about 95 % of the total and does not contain $m$, so $\omega_n\propto1/\sqrt{I_{yy}}$ almost exactly. In $2\zeta\omega_n = -(\mathring M_q+U_\infty\mathring M_{\dot w})/I_{yy}-\mathring Z_w/m$ the mass term is about 40 % of the total, so $m$ moves $\zeta$.
 
-How much SPO damping is wanted depends on the aircraft (L1.06, ll. 44–66). Airliners are heavily damped for comfort, which the lab's Boeing 747 data should confirm. Fighters from the 1920s to the 1950s were stable but lightly damped so they could change attitude quickly, since heavy damping feels sluggish. From the 1980s computers stabilise the aircraft, so fighters are designed marginally stable or unstable; the tailless B-2 is unstable, with redundant flight computers voting on the control action. The regulations follow the same logic: CS-25/FAR-25 require a heavily damped SPO but allow a lightly damped phugoid, and MIL-F-8785C sets flying-quality limits on $\zeta_{sp}$ (ll. 408–416).
+How much SPO damping is wanted depends on the aircraft. Airliners are heavily damped for comfort, which the lab's Boeing 747 data should confirm. Fighters from the 1920s to the 1950s were stable but lightly damped so they could change attitude quickly, since heavy damping feels sluggish. From the 1980s computers stabilise the aircraft, so fighters are designed marginally stable or unstable; the tailless B-2 is unstable, with redundant flight computers voting on the control action. The regulations follow the same logic: CS-25/FAR-25 require a heavily damped SPO but allow a lightly damped phugoid, and MIL-F-8785C sets flying-quality limits on $\zeta_{sp}$.
 
 > [!example] PS1 Q2: SPO approximation
 > With $m=17642$, $I_{yy}=165669$, $U_\infty=356$, $\mathring M_{\dot w}=-132.47$, $\mathring Z_w=-12809.54$, $\mathring M_w=-13465.56$, $\mathring M_q=-123272.02$:
@@ -359,23 +359,23 @@ How much SPO damping is wanted depends on the aircraft (L1.06, ll. 44–66). Air
 
 ## Exam scope and intuition
 
-- Stability from the sign of the real part (L1.05, l. 96); state Routh–Hurwitz in words (ll. 190–203).
-- Factorised quartic → roots, stability, $t_{1/2}$, $T$, complex-plane sketch (L1.05, ll. 237–271).
-- $\zeta>0\Leftrightarrow\sigma<0$ (L1.05, l. 350).
-- Quiz format: given a matrix, compute eigenvalues and say which pair is the SPO and which the phugoid (L1.05, ll. 434–441). The larger-magnitude pair is the SPO, the smaller the phugoid.
-- Hand calculations are limited to 2×2 matrices (L1.05, ll. 167–168).
-- Larger eigenvalue calculations are left to Python for self-study (L1.05, l. 442).
-- Dimensional conversion and units of a derivative (L1.06, ll. 108–117); $\alpha$ from an eigenvector (ll. 187–190); half-life vs time to double (ll. 285–291).
-- When all the parameters are given and the short-period approximation is asked for, use the two closed-form results, not the full matrix (L1.06, ll. 368–371).
-- The mass and inertia sensitivity is a worked example, so the exam may ask a more complicated version (L1.06, l. 431).
-- The quiz is open book: lecture notes and books are allowed (L1.06, l. 118).
-- Lab report: compare your simulated aircraft with CS-25/FAR-25 and MIL-F-8785C (L1.06, ll. 414–416).
+- Stability from the sign of the real part; state Routh–Hurwitz in words.
+- Factorised quartic → roots, stability, $t_{1/2}$, $T$, complex-plane sketch.
+- $\zeta>0\Leftrightarrow\sigma<0$.
+- Quiz format: given a matrix, compute eigenvalues and say which pair is the SPO and which the phugoid. The larger-magnitude pair is the SPO, the smaller the phugoid.
+- Hand calculations are limited to 2×2 matrices.
+- Larger eigenvalue calculations are left to Python for self-study.
+- Dimensional conversion and units of a derivative; $\alpha$ from an eigenvector; half-life vs time to double.
+- When all the parameters are given and the short-period approximation is asked for, use the two closed-form results, not the full matrix.
+- The mass and inertia sensitivity is a worked example, so the exam may ask a more complicated version.
+- The quiz is open book: lecture notes and books are allowed.
+- Lab report: compare your simulated aircraft with CS-25/FAR-25 and MIL-F-8785C.
 
 > [!tip] Intuition
-> - Simplifying is DAP3 at work: the quartic factors into two quadratics, so each mode can be studied on its own (L1.05, ll. 216–230).
-> - Linear-model stability predictions are approximations, so a design has to be verified before anything is built (L1.05, ll. 387–396).
-> - With the SPO approximation, two equations and seven parameters reproduce the 4×4 result to within 0.5 % (L1.06, ll. 343–381).
-> - The constant-mass and flat-Earth assumptions still hold to better than 1 % over the simulation times used (L1.06, ll. 383–395).
+> - Simplifying is DAP3 at work: the quartic factors into two quadratics, so each mode can be studied on its own.
+> - Linear-model stability predictions are approximations, so a design has to be verified before anything is built.
+> - With the SPO approximation, two equations and seven parameters reproduce the 4×4 result to within 0.5 %.
+> - The constant-mass and flat-Earth assumptions still hold to better than 1 % over the simulation times used.
 
 ## Terminology and alternative names
 
@@ -415,23 +415,23 @@ Three tasks were set in L1.05–L1.06 (marked lecturer-set below, with transcrip
 ### Core
 
 - [ ] Lecturer-set (L1.05, l. 351): starting from $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2 = 0$, show $\omega_n = \sqrt{\sigma^2+\omega^2}$ and $\zeta = -\sigma/\omega_n$. → [[#From the roots to the natural frequency and damping ratio]]
-- [ ] Lecturer-set (L1.06, ll. 115–117): do the dimensional analysis of the dimensional derivatives, e.g. show $\mathring M_w$ is in N s. → [[#4. Example: McDonnell Douglas F-4C Phantom II (L1.06)]] and [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Dimensional vs dimensionless derivatives|A2 table]]
-- [ ] Lecturer-set (L1.06, ll. 372–374): from the F-4C data, reproduce $\omega_n\approx1.4$ rad/s and $\zeta\approx0.26$ with the SPO approximation. → [[#5. The SPO approximation (L1.06)]]
-- [ ] Redo the L1.05 mode table and confirm $\omega_n = 1.414$, $\zeta = 0.354$ for mode 1 (suggested). → [[#Worked numerical example (L1.05 slides 6–10)]]
+- [ ] Lecturer-set (L1.06, ll. 115–117): do the dimensional analysis of the dimensional derivatives, e.g. show $\mathring M_w$ is in N s. → [[#4. Example: McDonnell Douglas F-4C Phantom II]] and [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives#Dimensional vs dimensionless derivatives|A2 table]]
+- [ ] Lecturer-set (L1.06, ll. 372–374): from the F-4C data, reproduce $\omega_n\approx1.4$ rad/s and $\zeta\approx0.26$ with the SPO approximation. → [[#5. The SPO approximation]]
+- [ ] Redo the L1.05 mode table and confirm $\omega_n = 1.414$, $\zeta = 0.354$ for mode 1 (suggested). → [[#Worked numerical example]]
 - [ ] PS1 Q1–Q2. → [[SESA2027 Practice Problems 1 Solutions]]
 - [ ] Mock exam question. → [[SESA2027 Mock Questions#Q3. Modes from a factorised quartic|Mock Q3]]
 
 ### Further practice
 
 - [ ] For roots $+0.05\pm1.2i$, give $T$ and $t_2$, and say why $t_{1/2}$ does not exist (suggested). → [[#Worked example: an unstable oscillatory mode]]
-- [ ] Expand the L1.05 determinant along the bottom row and check the quartic (suggested). → [[#Worked numerical example (L1.05 slides 6–10)]]
-- [ ] Derive the SPO characteristic equation from the 2×2 matrix form, then the closed-form $\omega_n$ and $\zeta$ (suggested). → [[#5. The SPO approximation (L1.06)]]
+- [ ] Expand the L1.05 determinant along the bottom row and check the quartic (suggested). → [[#Worked numerical example]]
+- [ ] Derive the SPO characteristic equation from the 2×2 matrix form, then the closed-form $\omega_n$ and $\zeta$ (suggested). → [[#5. The SPO approximation]]
 - [ ] Explain from the figures why $u$ is negligible in the SPO and $\alpha$ is nearly constant in the phugoid (suggested). → [[#3. Physical description of the modes]]
 
 ## Transcript and slide slips
 
 > [!warning] Slide slip: the mode damping ratios and the mode-1 natural frequency (L1.05 slide 14)
-> Where: [[#Worked numerical example (L1.05 slides 6–10)]].
+> Where: [[#Worked numerical example]].
 >
 > Slide 14 lists $\zeta = 0.378$ and $0.035$ for the two modes, but the roots in the table give 0.35 and 0.018 from $\zeta=-\sigma/\omega_n$; use the definitions, not the slide values. Slide 14 also prints $\omega_n = 1.22$ rad/s for mode 1, and the lecture read these out (L1.05, l. 357). For $\lambda^2+\lambda+2$ the correct values are $\omega_n = \sqrt2 = 1.414$ rad/s and $\zeta = 1/(2\sqrt2) = 0.354$. The slide's 0.378 equals $|\sigma|/\omega = 0.5/1.32$, i.e. it divides by the damped frequency instead of $\omega_n$. The same slip occurs aloud in L1.06 (l. 241) and is corrected at once (ll. 242–243).
 >

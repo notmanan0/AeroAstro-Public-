@@ -11,11 +11,11 @@ parent: ["[[SESA2028 Aerospace Materials & Structures Hub]]"]
 
 # SESA2028 Formula Sheet
 
-The structural and materials equations are collected here because exam design questions often move directly from a stress or stiffness calculation to failure, life or material selection. The topic notes contain the assumptions and derivations.
+Structural and materials equations with their conditions beside them. The assumptions and derivations are in the topic notes.
 
 ## Structural analysis
 
-Notation follows the structures lectures: $x$ along the beam, $\sigma_{xx}$ the bending stress, $Q_y$ and $Q_z$ the shear forces, and a positive $M_z$ giving tension at positive $y$ ([[SESA2028 S1 - Section Properties and Unsymmetrical Bending|S1]]). The topic notes hold the assumptions and derivations.
+Notation: $x$ along the beam, $y$ downward, $\sigma_{xx}$ the bending stress, $Q_y$ and $Q_z$ the shear forces, and a positive $M_z$ giving tension at positive $y$ ([[SESA2028 S1 - Section Properties and Unsymmetrical Bending|S1]]).
 
 ### Section properties
 
@@ -59,7 +59,7 @@ v''=-\frac{M_zI_y-M_yI_{yz}}{E\left(I_yI_z-I_{yz}^2\right)},\qquad
 w''=-\frac{M_yI_z-M_zI_{yz}}{E\left(I_yI_z-I_{yz}^2\right)}
 $$
 
-The beam deflects perpendicular to its neutral axis. A tilted rectangle's tip deflection traces a circle as the section is rotated, which is what the structures lab measures ([[SESA2028 S2 - Beam Deflection and Bending Design#Bending test: a circle of compliances|S2]]).
+The beam deflects perpendicular to its neutral axis. A tilted rectangle's tip deflection traces a circle as the section is rotated (the circle of compliances, [[SESA2028 S2 - Beam Deflection and Bending Design#Bending test: a circle of compliances|S2]]).
 
 ### Beam curvature and standard deflections
 
@@ -104,7 +104,7 @@ $$
 J=\frac13\sum b_it_i^3,\qquad \tau_{max}=\frac{Tt_{max}}{J}
 $$
 
-$A_m$ is the area enclosed by the wall midline. Slitting a thin tube of radius $R$: $\phi_{open}/\phi_{closed}=3(R/t)^2$ and $\tau_{open}/\tau_{closed}=3R/t$. Multi-cell sections ($T=2\sum A_iq_i$, equal twist rate in every cell) are on the slides but were not lectured in 2025–26 ([[SESA2028 S4 - Torsion of Thin-Walled Sections|S4]]).
+$A_m$ is the area enclosed by the wall midline. Slitting a thin tube of radius $R$: $\phi_{open}/\phi_{closed}=3(R/t)^2$ and $\tau_{open}/\tau_{closed}=3R/t$. Multi-cell sections ($T=2\sum A_iq_i$, equal twist rate in every cell) are in the course material but were not covered in 2025–26 ([[SESA2028 S4 - Torsion of Thin-Walled Sections|S4]]).
 
 ### Euler buckling
 
@@ -147,7 +147,7 @@ $$
 
 Check Euler buckling about the weak axis too. Sizing problems (the section inside $\sec\mu L$) are solved by plotting or bisection ([[SESA2028 S6 - Imperfect Columns, Beam-Columns and Plate Buckling|S6]]).
 
-Plate buckling, $\sigma_{cr}=k\pi^2E(t/b)^2/12(1-\nu^2)$, is on the slides but was not lectured in 2025–26.
+Plate buckling, $\sigma_{cr}=k\pi^2E(t/b)^2/12(1-\nu^2)$, is in the course material but was not covered in 2025–26.
 
 ### Strain energy and energy methods
 
@@ -166,13 +166,13 @@ u_j=\frac{\partial U}{\partial F_j},\qquad
 \right)dx
 $$
 
+where $n$, $m$, $t$ are the internal actions from a unit load at the point and in the direction of $\delta$.
+
 $$
 F_j=\frac{\partial U}{\partial u_j}\ (\text{first theorem}),\qquad u_j=\frac{\partial C}{\partial F_j},\qquad U+C=P\Delta,\qquad U=C\text{ only if linear}
 $$
 
-Truss: $u=\sum p_iP_iL_i/E_iA_i$. Dummy load $Q$ where the displacement is wanted: $u=\partial U/\partial Q|_{Q=0}$. Redundant $R$: $\partial U/\partial R=0$. Shear deflection of a rectangular cantilever: $v_s=6FL/5bhG$. Proving ring: $u=(\pi/4-2/\pi)FR^3/EI$, $K=6.72\,EI/R^3$, $M_0=\tfrac{FR}{2}(1-\tfrac2\pi)$. Propped cantilever under $w$: prop $3wL/8$, midspan $wL^4/192EI$.
-
-where $n$, $m$, $t$ are the internal actions from a unit load at the point and in the direction of $\delta$ ([[SESA2028 S7 - Strain Energy and Conservation of Energy|S7]], [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]).
+Truss: $u=\sum p_iP_iL_i/E_iA_i$. Dummy load $Q$ where the displacement is wanted: $u=\partial U/\partial Q|_{Q=0}$. Redundant $R$: $\partial U/\partial R=0$. Shear deflection of a rectangular cantilever: $v_s=6FL/5bhG$. Proving ring: $u=(\pi/4-2/\pi)FR^3/EI$, $K=6.72\,EI/R^3$, $M_0=\tfrac{FR}{2}(1-\tfrac2\pi)$. Propped cantilever under $w$: prop $3wL/8$, midspan $wL^4/192EI$ ([[SESA2028 S7 - Strain Energy and Conservation of Energy|S7]], [[SESA2028 S8 - Virtual Work and Castigliano Theorems|S8]]).
 
 ### Continuum mechanics in cylindrical coordinates
 
@@ -231,7 +231,7 @@ $$
 
 Internal pressure only, $k=r_o/r_i$: bore hoop $p_i(k^2+1)/(k^2-1)$, Tresca limit $p_{i,max}=\tfrac{\sigma_Y}{2}(1-1/k^2)$, wall-average hoop $p_ir_i/t$. Check whether a question gives radial or diametral interference. Tresca at the bore uses $(\sigma_{\theta\theta}-\sigma_{rr})/2$ because $\sigma_{zz}$ is the intermediate stress ([[SESA2028 S10 - Thick Cylinders and Shrink Fits|S10]]).
 
-### Spinning discs (written from the slides; not lectured in 2025–26)
+### Spinning discs (not lectured in 2025–26)
 
 $$
 \sigma_{rr}=A-\frac{B}{r^2}-\frac{3+\nu}{8}\rho\omega^2r^2,\qquad
@@ -246,8 +246,6 @@ Solid disc $B=0$, peak $\frac{3+\nu}{8}\rho\omega^2r_o^2$ at the centre. With a 
 - [[SESA2028 Past Paper Map]]
 
 ## Materials, failure and selection
-
-Everything numerical that the materials half examines, on one page. Each block links to the note with the derivation.
 
 ### Fracture mechanics ([[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|M1]])
 
@@ -324,7 +322,7 @@ $$
 $$
 
 $$
-\text{Nernst: }E=E^0+\frac{0.0592}{n}\log_{10}[\mathrm{M^{n+}}]\quad(25^\circ\text{C; the slide's }0.592\text{ and minus sign are slips})
+\text{Nernst: }E=E^0+\frac{0.0592}{n}\log_{10}[\mathrm{M^{n+}}]\quad(25^\circ\text{C; reduction potential})
 $$
 
 $$
@@ -336,7 +334,7 @@ $$
 \mathrm{CR\,[g\,m^{-2}day^{-1}]}=8.95\frac{MI}{nA}\quad(I\ \text{mA},\ A\ \text{cm}^2)
 $$
 
-Zn-Cu cell: $E_{cell}=E_{cathode}-E_{anode}=0.34-(-0.76)=+1.10$ V (the course writes −1.1 V, "most negative minus least negative"). The more negative metal is the anode. Stainless needs Cr > 12 %.
+Zn-Cu cell: $E_{cell}=E_{cathode}-E_{anode}=0.34-(-0.76)=+1.10$ V (subtracting the other way round gives −1.10 V, the wrong sign for a spontaneous cell). The more negative metal is the anode. Stainless needs Cr > 12 %.
 
 ### Composites and lightweighting ([[SESA2028 M4 - Polymer Matrix Composites|M4]], [[SESA2028 M5 - Metal and Ceramic Matrix Composites and Hybrid Laminates|M5]])
 
@@ -395,7 +393,7 @@ $$
 $$
 
 $$
-\text{Stress relaxation: }\sigma=\sigma_0e^{-t/\tau}
+\text{Stress relaxation, linear viscous creep }(n=1)\text{: }\sigma=\sigma_0e^{-t/\tau};\quad n>1:\ \sigma^{1-n}=\sigma_0^{1-n}+(n-1)EAe^{-Q/RT}t
 $$
 
 $$

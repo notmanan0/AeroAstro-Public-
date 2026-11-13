@@ -21,13 +21,15 @@ I_{1,2}=\frac{I_y+I_z}{2}
 \pm\sqrt{\left(\frac{I_y-I_z}{2}\right)^2+I_{yz}^2}.
 $$
 
-On principal axes, $I_{12}=0$, so bending uncouples. The angle obeys
+On principal axes, $I_{12}=0$, so bending uncouples. The angle, measured from $z$ towards $y$, obeys
 
 $$
 \tan2\theta_p=\frac{2I_{yz}}{I_y-I_z}.
 $$
 
-The factor of two means two perpendicular physical axes correspond to one point on Mohr's circle. Use `atan2` or inspect the transformed product of inertia; a plain arctangent can put the axis in the wrong quadrant.
+Measured from $y$ towards $z$, as in S1, the sign flips: $\tan2\theta_1=2I_{yz}/(I_z-I_y)$ ([[Principal Axes of a Section]]).
+
+The factor of two means a $90^\circ$ turn of the physical axes is a $180^\circ$ turn on Mohr's circle, so the two principal axes sit at the two ends of a diameter, at $I_1$ and $I_2$. Use `atan2` or inspect the transformed product of inertia; a plain arctangent can put the axis in the wrong quadrant.
 
 ![[structures_principal_inertia_mohr_circle.png|700]]
 

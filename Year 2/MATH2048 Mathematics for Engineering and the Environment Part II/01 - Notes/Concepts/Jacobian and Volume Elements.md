@@ -21,5 +21,5 @@ The point of changing variables is to make the limits simple: a ball, a cone or 
 
 ## Related
 
-- Derivation: [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem#1. Volume integrals and the Jacobian (L29)|VC5 §1]]
+- Derivation: [[MATH2048 VC5 - Volume Integrals, the Divergence Theorem and Stokes' Theorem#1. Volume integrals and the Jacobian|VC5 §1]]
 - [[Flux Integrals]] · [[Divergence Theorem]]

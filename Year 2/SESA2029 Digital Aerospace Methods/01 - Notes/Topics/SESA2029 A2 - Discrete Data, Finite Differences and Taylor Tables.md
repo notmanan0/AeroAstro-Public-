@@ -35,9 +35,9 @@ Suppose a smooth curve is known only at a row of points. Any derivative calculat
 
 ## 1. Discrete data and the trapezoid rule
 
-A continuous function $f(x)$ is stored as values $f_j=f(x_j)$ at grid points $x_j$, $j=0,1,\dots,N$: $N$ intervals and $N+1$ points, like arrays in Python (L3 slide 3). For the analysis the spacing is uniform, $x_j=jh$; on a non-uniform grid $h$ is replaced by the local $\Delta x_j$.
+A continuous function $f(x)$ is stored as values $f_j=f(x_j)$ at grid points $x_j$, $j=0,1,\dots,N$: $N$ intervals and $N+1$ points, like arrays in Python. For the analysis the spacing is uniform, $x_j=jh$; on a non-uniform grid $h$ is replaced by the local $\Delta x_j$.
 
-The trapezoid rule adds up the areas of the trapezia between neighbouring points (L3 slide 4). The panel between points 1 and 2 has average height $\tfrac12(f_1+f_2)$ and width $h$, so
+The trapezoid rule adds up the areas of the trapezia between neighbouring points. The panel between points 1 and 2 has average height $\tfrac12(f_1+f_2)$ and width $h$, so
 
 $$
 A_{12}=\frac{f_1+f_2}{2}h.
@@ -59,7 +59,7 @@ The two forms are equal; the first is the more useful because it carries straigh
 
 ## 2. Three ways to take a derivative
 
-To estimate $f'$ at point $j$ there are three obvious choices (L3 slide 5). Looking forwards to the next point gives the forward difference, looking back gives the backward difference, and looking both ways gives the central difference:
+To estimate $f'$ at point $j$ there are three obvious choices. Looking forwards to the next point gives the forward difference, looking back gives the backward difference, and looking both ways gives the central difference:
 
 $$
 f'_j\approx\frac{f_{j+1}-f_j}{h},
@@ -93,7 +93,7 @@ $$
 
 ## 3. Accuracy from the Taylor series
 
-The Taylor series about $x_j$ gives the value one step away (L3 slide 6):
+The Taylor series about $x_j$ gives the value one step away:
 
 $$
 f_{j+1}=f_j+hf'_j+\frac{h^2}{2}f''_j+\frac{h^3}{6}f'''_j+\frac{h^4}{24}f''''_j+\dots
@@ -201,7 +201,7 @@ The leading error term carries two pieces of information. The power of $h$ is th
 
 ## 4. Seeing the order in convergence data
 
-Differentiating $\sin2\pi x$ on $0\le x<1$ with $N$ periodic points and comparing with the exact $2\pi\cos2\pi x$ gives the following RMS error divided by $2\pi$ (L3 slide 7):
+Differentiating $\sin2\pi x$ on $0\le x<1$ with $N$ periodic points and comparing with the exact $2\pi\cos2\pi x$ gives the following RMS error divided by $2\pi$:
 
 | $N$ | First-order forward | Second-order central |
 |---|---|---|
@@ -232,7 +232,7 @@ CFD should therefore be at least second order. In Fluent it is sometimes necessa
 
 ## 5. The Taylor-table method
 
-The general problem (L3 slides 8–10): find the best approximation to $f'_j$ from the three points $f_{j-2}$, $f_{j-1}$, $f_j$, a one-sided upwind stencil. Write it as approximation plus error, with unknown coefficients:
+The general problem: find the best approximation to $f'_j$ from the three points $f_{j-2}$, $f_{j-1}$, $f_j$, a one-sided upwind stencil. Write it as approximation plus error, with unknown coefficients:
 
 $$
 f'_j=\frac{af_{j-2}+bf_{j-1}+cf_j}{h}+\varepsilon.
@@ -316,7 +316,7 @@ $$
 \boxed{f'_j=\frac{f_{j-2}-4f_{j-1}+3f_j}{2h}+\frac{h^2}{3}f'''_j}
 $$
 
-a second-order upwind scheme: halve $h$ and the error falls by four. Its mirror image, found the same way on $f_j,f_{j+1},f_{j+2}$, is the second-order forward scheme $(-3f_j+4f_{j+1}-f_{j+2})/2h$ with the same error term $+\tfrac{h^2}{3}f'''_j$, because the error is even in $h$ (L3 slide 11).
+a second-order upwind scheme: halve $h$ and the error falls by four. Its mirror image, found the same way on $f_j,f_{j+1},f_{j+2}$, is the second-order forward scheme $(-3f_j+4f_{j+1}-f_{j+2})/2h$ with the same error term $+\tfrac{h^2}{3}f'''_j$, because the error is even in $h$.
 
 > [!check] The scheme is exact for a quadratic
 > Its error contains $f'''$, so it should differentiate $f=x^2$ exactly. At $x_j=0$ with $h=1$: $f_{j-2}=4$, $f_{j-1}=1$, $f_j=0$, so $(4-4\times1+0)/2=0=f'(0)$. At $x_j=1$: $f=1,0,1$ at $x=-1,0,1$, giving $(1-0+3)/2=2=f'(1)$. Both exact.
@@ -325,7 +325,7 @@ The method works for any stencil and any derivative. With $n$ unknown coefficien
 
 ## 6. Non-uniform grids
 
-On a stretched grid the same ideas hold with local spacings (L3 slide 11):
+On a stretched grid the same ideas hold with local spacings:
 
 $$
 f'_j\approx\frac{f_{j+1}-f_j}{x_{j+1}-x_j},

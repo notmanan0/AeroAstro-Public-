@@ -23,11 +23,11 @@ $$
 \phi=\mu_1-\mu_2+\theta.
 $$
 
-For $M_1=3$ turned through $\theta=13^\circ$ (Lecture 2.4 example), the fan gives $M_2=3.78$, $p_2/p_1=0.326$ (a 67.4% drop) and a fan angle of $17.1^\circ$.
+For $M_1=3$ turned through $\theta=13^\circ$ (the W03 worked example), the fan gives $M_2=3.78$, $p_2/p_1=0.326$ (a 67.4% drop) and a fan angle of $17.1^\circ$.
 
 ![[at_expansion_fan.png|760]]
 
 ## Related
 
 - [[Prandtl-Meyer Function]] · [[Mach Waves and Mach Angle]] · [[Shock-Expansion Theory]]
-- Detail: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#Worked example (slides 9–11): M₁ = 3, θ = 13°|W03 §5 example]]
+- Detail: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#Worked example: M₁ = 3, θ = 13°|W03 §5 example]]

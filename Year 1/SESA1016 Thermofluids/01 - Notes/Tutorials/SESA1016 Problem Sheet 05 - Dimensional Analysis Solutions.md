@@ -166,7 +166,7 @@ $$
 
 using air at 20 °C ($\mu=1.81\times10^{-5}$ Pa s, $\rho=1.204$ kg/m³, $\nu=1.50\times10^{-5}$ m²/s) and water at 20 °C ($\mu=1.002\times10^{-3}$ Pa s, $\rho=998.2$ kg/m³, $\nu=1.00\times10^{-6}$ m²/s). The ratio is 2.995 in Python. Water's kinematic viscosity is 15 times smaller than air's, so a model one fifth of the size needs only one third of the full-size speed.
 
-> [!note] Correction (2026-11-05)
+> [!note] Correction
 > An earlier version of this answer described the object as a car and $s$ as surface roughness. The sheet's question is about an aerofoil of length $L$ and width $s$, so $s/L$ is the aspect ratio, matched by geometric similarity. The numerical answer, 3.0, was and is correct.
 
 ## Exam-ready checklist

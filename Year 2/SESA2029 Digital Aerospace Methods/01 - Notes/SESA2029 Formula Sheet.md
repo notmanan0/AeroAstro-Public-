@@ -222,7 +222,7 @@ $$
 u_\tau = \sqrt{\tau_w/\rho},\quad u^+ = \frac{u}{u_\tau},\quad y^+ = \frac{yu_\tau}{\nu},\quad u^+ = y^+\ (y^+\lesssim5),\quad u^+ = 2.5\ln y^++5.24\ (\text{log law},\ \kappa=0.4)
 $$
 
-Buffer layer $8<y^+<30$ on the slides (from about 5 in many references): no first cell there. In the log layer $\nu_t=\kappa u_\tau y$, so $\nu_t/\nu=\kappa y^+$. Plot $y_1^+$ after solving and refine if needed.
+Buffer layer $8<y^+<30$ in the course convention (from about 5 in many references): no first cell there. In the log layer $\nu_t=\kappa u_\tau y$, so $\nu_t/\nu=\kappa y^+$. Plot $y_1^+$ after solving and refine if needed.
 
 ### Finite volumes ([[SESA2029 A9 - Finite Volume Method]])
 

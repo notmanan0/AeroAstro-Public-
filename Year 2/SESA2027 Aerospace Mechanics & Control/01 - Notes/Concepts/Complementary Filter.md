@@ -23,7 +23,7 @@ usually implemented recursively as $\hat\theta[k] = \alpha(\hat\theta[k-1]+T_sq[
 
 Each sensor is trusted only in the band where it is good. A MEMS (Coriolis) gyroscope measures angular rate accurately at high frequency, but integrating its bias gives drift that grows without limit. An accelerometer senses gravity through the specific force, so it gives an absolute, drift-free tilt at low frequency, but manoeuvre accelerations and vibration corrupt it. Simple averaging would weight both equally at every frequency and inherit both sets of errors.
 
-$\alpha$ sets the crossover between the two. The equivalent time constant is $\tau\approx\alpha T_s/(1-\alpha)$, so $\alpha = 0.98$ at 100 Hz gives $\tau\approx0.49$ s. Pushing $\alpha$ towards 1 makes the estimate smooth but lets it drift; towards 0 it becomes noisy and picks up manoeuvre errors. PS C Q13 works an example ([[SESA2027 Part C Problem Sheet Solutions]]). The complementary filter is the simplest fusion method; the Kalman filter in Year 3 chooses the blend optimally from the noise statistics.
+$\alpha$ sets the crossover between the two. The equivalent time constant is $\tau\approx\alpha T_s/(1-\alpha)$, so $\alpha = 0.98$ at 100 Hz gives $\tau\approx0.49$ s. Pushing $\alpha$ towards 1 makes the estimate smooth but lets it drift; towards 0 it becomes noisy and picks up manoeuvre errors. PS C Q13 works an example ([[SESA2027 Part C Problem Sheet Solutions]]). The complementary filter is the simplest fusion method; a Kalman filter chooses the blend optimally from the noise statistics.
 
 ![[amc_complementary_filter.png|650]]
 

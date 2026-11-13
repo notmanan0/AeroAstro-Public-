@@ -35,7 +35,7 @@ The instrument reading itself is the indicated airspeed $V_{ind}$. It equals $V_
 | true, $V$ | $\sqrt{2(p_0-p)/\rho}$ | Mach number, range, time, kinematics |
 | ground speed | $V$ plus the wind | navigation |
 
-Worked example (Slides v2, p. 24): at 1000 m, $p=89\,852$ Pa and $\rho=1.116$ kg/m³; a total pressure of 95 435 Pa gives $p_0-p=5583$ Pa, so $V=\sqrt{2\times5583/1.116}=100.0$ m/s and $V_E=\sqrt{2\times5583/1.23}=95.3$ m/s.
+Worked example: at 1000 m, $p=89\,852$ Pa and $\rho=1.116$ kg/m³; a total pressure of 95 435 Pa gives $p_0-p=5583$ Pa, so $V=\sqrt{2\times5583/1.116}=100.0$ m/s and $V_E=\sqrt{2\times5583/1.23}=95.3$ m/s.
 
 The common trap is to correct in the wrong direction. At altitude the true airspeed must come out larger than the equivalent airspeed, so divide by $\sqrt\sigma$ to go from $V_E$ to $V$.
 

@@ -46,7 +46,7 @@ A failed dinghy mast shows all of this on one real part. The aluminium-alloy mas
 
 ### What the surface says about the loading
 
-A chart from the Metals Handbook, used in the coursework, sets out how the surface changes with the type of loading, the nominal stress and the stress concentration.
+A Metals Handbook chart sets out how the surface changes with the type of loading, the nominal stress and the stress concentration.
 
 ![[materials_fatigue_surface_chart.png|900]]
 
@@ -230,7 +230,7 @@ $$
 The numerator shows where the life is spent. With $m=3$, $a^{-1/2}$ is dominated by its value at the smallest crack, so when $a_c\gg a_i$ the life hardly depends on $a_c$ (and so on $K_{Ic}$) but depends strongly on $a_i$. Inspection resolution matters more than toughness.
 
 > [!tip] Where the cycles go
-> In the tutorial plate below, growing from 1 mm to 2 mm takes 34 % of the whole life to a 44.8 mm critical crack. A crack found early is worth far more than a slightly tougher alloy.
+> In the tutorial plate ([[#A tutorial plate grown from 1 mm]]), growing from 1 mm to 2 mm takes 34 % of the whole life to a 44.8 mm critical crack. A crack found early is worth far more than a slightly tougher alloy.
 
 In the fatigue lab, $a_i$, the growth rate and the applied stress range are measured on a real specimen, giving the Paris curve used in the integration.
 
@@ -256,7 +256,7 @@ S-N curves for an aluminium alloy fall from air to water to salt water. Corrosio
 
 ### Welds
 
-A weld brings together almost everything bad for fatigue. Its shape and any lack of fusion or undercut are macroscopic and mesoscopic stress raisers; slag, porosity and small cracks are microscopic ones; the rapid heating and cooling varies the microstructure and the hardness across the weld, the heat-affected zone and the parent plate; and contraction on cooling leaves a tensile residual stress. The aluminium weld research in [[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium|M6]] shows these effects measured.
+A weld brings together almost everything bad for fatigue. Its shape and any lack of fusion or undercut are macroscopic and mesoscopic stress raisers; slag, porosity and small cracks are microscopic ones; the rapid heating and cooling varies the microstructure and the hardness across the weld, the heat-affected zone and the parent plate; and contraction on cooling leaves a tensile residual stress. These effects have been measured in aluminium welds ([[SESA2028 M6 - Light Alloys - Aluminium, Magnesium, Beryllium and Titanium#5. Welding aluminium: a research case study|M6]]).
 
 ## Worked examples
 
@@ -358,7 +358,7 @@ The mini-lectures set two pause-and-think exercises: list what you need to calcu
 - [ ] List the data needed for a damage-tolerant life (ML2b, ll. 54–78). → [[#6. Total life against damage tolerance]]
 - [ ] Derive the Paris-law life formula, then do the tutorial plate (ML2b, ll. 86–116; MT2 Q4). → [[#7. Damage tolerance: integrating the Paris law]] · [[#A tutorial plate grown from 1 mm]]
 - [ ] Read the dinghy-mast surface: origins, ratchets, beach marks, final fracture and the loading (dinghy mast, ll. 1–35). → [[#1. Reading a fatigue fracture surface]]
-- [ ] Judge the weld for fatigue resistance (ML2c, ll. 104–125). → [[#Welds]]
+- [ ] Say whether a welded joint resists fatigue well, from its stress raisers, microstructure and residual stress (ML2c, ll. 104–125, where a picture of a defective weld was shown for this; it is not reproduced here). → [[#Welds]]
 - [ ] Miner's rule for the turbine blade (MT2 Q2). → [[#Combined low- and high-cycle fatigue on a blade]]
 
 ### Further practice

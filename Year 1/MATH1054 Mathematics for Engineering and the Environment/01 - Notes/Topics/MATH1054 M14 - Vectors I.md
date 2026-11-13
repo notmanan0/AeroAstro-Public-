@@ -41,7 +41,7 @@ This is the working language of statics and dynamics: [[Free Body Diagram and Eq
 
 ---
 
-## 1. Coordinates, length and direction cosines (James §4.2.1)
+## 1. Coordinates, length and direction cosines
 
 Points are located by rectangular Cartesian axes $Oxyz$, taken **right-handed**: turning a right-handed screw from $Ox$ towards $Oy$ drives it along $Oz$, and likewise $Oy\to Oz$ drives it along $Ox$ and $Oz\to Ox$ along $Oy$. If $y$ and $z$ lie in the plane of the paper, $x$ points out of it. The convention matters for the vector product in §6, where swapping it would flip every answer.
 
@@ -112,7 +112,7 @@ $$
 
 and $\angle\mathrm{TO}y=\cos^{-1}0.73344=42.82°$. The height gives the distance, $r=35/n=64.26$ m, and then $x=rl=26.14$ m and $y=rm=47.13$ m, so $\mathrm T=(26.14,\,47.13,\,35)$.
 
-## 2. Vectors and how they combine (James §4.2.2–4.2.3)
+## 2. Vectors and how they combine
 
 A vector is represented by a directed line segment whose length is its magnitude and whose arrow gives its sense. The starting point is irrelevant: two segments of equal length, direction and sense represent the same vector. In print a vector is bold, $\mathbf a$; in handwriting it is underlined, $\underline a$, and the written work must always distinguish the vector $\mathbf a$ from its magnitude $a=|\mathbf a|$.
 
@@ -287,7 +287,7 @@ blowing towards the south-east, which is a wind **from the north-west**.
 
 ![[m1054_relative_velocity.png|760]]
 
-## 4. Cartesian components (James §4.2.5)
+## 4. Cartesian components
 
 Let $\mathbf i$, $\mathbf j$, $\mathbf k$ be unit vectors along $Ox$, $Oy$, $Oz$. For $\mathrm P=(x,y,z)$ let X be $(x,0,0)$ and M be $(x,y,0)$. The triangle law in triangle OXM and then in triangle OMP gives
 
@@ -403,7 +403,7 @@ $$
 
 so $\overrightarrow{\mathrm{PQ}}=1\cdot\overrightarrow{\mathrm{QR}}$: P, Q, R are collinear, $\mathrm{PQ}:\mathrm{QR}=1:1$, and Q is the midpoint of PR.
 
-## 5. The scalar product (James §4.2.8)
+## 5. The scalar product
 
 The component of a vector $\mathbf a$ in a direction OP is $|\mathbf a|\cos\theta$, where $\theta$ is the angle between them. The work done by a constant force $\mathbf F$ whose point of application moves through the displacement $\mathbf a$ is the distance moved times the component of the force along it, $|\mathbf F||\mathbf a|\cos\theta$. That expression defines the **scalar product** (dot product):
 
@@ -597,7 +597,7 @@ the cosine rule for the side $\mathrm{BD}=|\mathbf b+\mathbf c|$ of triangle BCD
 
 The remaining Example 4.17 values are direct arithmetic with $\mathbf a=(1,-1,2)$, $\mathbf b=(-2,0,2)$, $\mathbf c=(3,2,1)$: $\mathbf a\cdot\mathbf c=3$, $\mathbf b\cdot\mathbf c=-4$, $(\mathbf a+\mathbf b)\cdot\mathbf c=-1=3+(-4)$, $\mathbf a\cdot(2\mathbf b+3\mathbf c)=2(2)+3(3)=13$ using $\mathbf a\cdot\mathbf b=2$, and $(\mathbf a\cdot\mathbf b)\mathbf c=(6,4,2)$, which is a vector parallel to $\mathbf c$.
 
-## 6. The vector product (James §4.2.10)
+## 6. The vector product
 
 The **vector product** (cross product) of $\mathbf a$ and $\mathbf b$ is the vector
 

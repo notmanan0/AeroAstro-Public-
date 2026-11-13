@@ -40,13 +40,13 @@ Lift, drag and pitching moment reduce to coefficients ([[SESA1015 M02 - Aircraft
 
 Lift grows linearly with angle of attack because the flow stays attached and the circulation round the wing is set by the Kutta condition; it stops growing when the boundary layer separates from the upper surface and the wing stalls. Drag has a part that is present even at zero lift, from skin friction and the pressure imbalance caused by the boundary layer, and a part that exists only because the wing lifts: the trailing vortices push down on the air at the wing, which tilts the lift vector back. The moment is linear in lift because, below the stall, adding lift amounts to adding a force at one fixed point of the wing, the aerodynamic centre.
 
-The values here are typical of a conventional aircraft with an unswept wing and a conventional tailplane in subsonic flight, below the speeds where compressibility matters (Notes §3, p. 12). Compressibility, the drag rise and the transonic case are outside this module apart from the brief remarks in [[SESA1015 M07 - Propeller Aircraft Range and Endurance|M07]].
+The values here are typical of a conventional aircraft with an unswept wing and a conventional tailplane in subsonic flight, below the speeds where compressibility matters. Compressibility, the drag rise and the transonic case are outside this module apart from the brief remarks in [[SESA1015 M07 - Propeller Aircraft Range and Endurance|M07]].
 
 ---
 
 ## 1. How a wing generates lift
 
-Lift is the resultant of the pressure and shear stress over the whole surface resolved perpendicular to the free stream ([[SESA1015 M02 - Aircraft Geometry, Forces and Coefficients|M02]]), and the shear stress contributes almost nothing to it. Any explanation of lift is therefore an explanation of why the pressure on the upper surface is below the pressure on the lower surface. Three popular explanations are widely quoted (Slides v2, pp. 26–30). Two contain something true and one is wrong; the explanation that holds up is the curvature of the flow (Slides v2, p. 33).
+Lift is the resultant of the pressure and shear stress over the whole surface resolved perpendicular to the free stream ([[SESA1015 M02 - Aircraft Geometry, Forces and Coefficients|M02]]), and the shear stress contributes almost nothing to it. Any explanation of lift is therefore an explanation of why the pressure on the upper surface is below the pressure on the lower surface. Three popular explanations are widely quoted. Two contain something true and one is wrong; the explanation that holds up is the curvature of the flow.
 
 ![[mof_m03_lift_curvature.png|900]]
 
@@ -102,7 +102,7 @@ and if this pressure difference acted over the whole chord, $C_l=\Delta C_p$. Fo
 
 ### Curved streamlines and the pressure across them
 
-A wing at a small angle of attack, with a rounded leading edge and a sharp trailing edge, turns the flow that passes it: the flow follows the surface and leaves the trailing edge smoothly. Any fluid parcel moving on a curved path accelerates towards the centre of curvature, and a centripetal acceleration needs a force, $F=mV^2/R$ (Slides v2, p. 33). Outside the thin boundary layer friction is negligible, and gravity changes the pressure only hydrostatically, by an amount far below the dynamic pressures here, so the force must come from a pressure difference across the streamlines.
+A wing at a small angle of attack, with a rounded leading edge and a sharp trailing edge, turns the flow that passes it: the flow follows the surface and leaves the trailing edge smoothly. Any fluid parcel moving on a curved path accelerates towards the centre of curvature, and a centripetal acceleration needs a force, $F=mV^2/R$. Outside the thin boundary layer friction is negligible, and gravity changes the pressure only hydrostatically, by an amount far below the dynamic pressures here, so the force must come from a pressure difference across the streamlines.
 
 Take a small element of fluid on a streamline of local radius of curvature $R$ (panel (a) of the figure), of length $\delta s$ along the streamline, thickness $\delta n$ across it and unit depth. Let $n$ be measured along the normal, away from the centre of curvature. The element's mass and its acceleration towards the centre are
 
@@ -183,7 +183,7 @@ $$
 C_{L\max}\approx1.2,
 $$
 
-and this is the number to carry into any first design estimate; taking $C_{L\max}=1$ is a conservative start (Notes §3.1, p. 12). Values from 1.2 to about 2.5 cover most aircraft, and sophisticated flaps and slats reach 3.0 or more.
+and this is the number to carry into any first design estimate; taking $C_{L\max}=1$ is a conservative start. Values from 1.2 to about 2.5 cover most aircraft, and sophisticated flaps and slats reach 3.0 or more.
 
 ![[mof_m03_lift_curve.png|900]]
 
@@ -201,7 +201,7 @@ $$
 C_L=a(\alpha-\alpha_0).
 $$
 
-A typical aircraft in the clean configuration has (Notes §3.1, pp. 12–13)
+A typical aircraft in the clean configuration has
 
 $$
 C_L=0.09(\alpha+2)\qquad(\alpha\ \text{in degrees}),
@@ -270,7 +270,7 @@ $$
 \alpha_i=\frac{C_L}{\pi AR}(1+\tau),
 $$
 
-where $\tau\ge0$ depends on the planform and its spanwise lift distribution, with $\tau=0$ for the elliptic distribution and $\tau\approx0$ to $0.3$ in practice (Slides v2, p. 49). The sections work at the effective angle $\alpha-\alpha_i$, so
+where $\tau\ge0$ depends on the planform and its spanwise lift distribution, with $\tau=0$ for the elliptic distribution and $\tau\approx0$ to $0.3$ in practice. The sections work at the effective angle $\alpha-\alpha_i$, so
 
 $$
 C_L=a_0(\alpha-\alpha_0-\alpha_i).
@@ -299,7 +299,7 @@ which is always less than $a_0$ and tends to it as $AR\to\infty$ (right-hand pan
 
 ## 3. The drag coefficient and the drag polar
 
-Plotted against angle of attack, $C_D$ has a minimum near the no lift angle and rises on both sides until the stall (Notes Fig. 3.2, p. 13). The value of $C_D$ at $C_L=0$ is the **profile drag coefficient** $C_{D0}$, and the rest is the **induced drag coefficient** $C_{Di}$:
+Plotted against angle of attack, $C_D$ has a minimum near the no lift angle and rises on both sides until the stall. The value of $C_D$ at $C_L=0$ is the **profile drag coefficient** $C_{D0}$, and the rest is the **induced drag coefficient** $C_{Di}$:
 
 $$
 C_D=C_{D0}+C_{Di}.
@@ -307,21 +307,21 @@ $$
 
 ### Profile drag
 
-Profile drag comes from the boundary layer, the thin layer next to the surface in which viscosity acts, so it is also called boundary-layer drag. It has two parts. **Skin friction drag** is the tangential shear stress of the air on every wetted surface. **Form drag** (boundary-layer normal pressure drag) is a pressure effect: without viscosity the pressures on forward- and rearward-facing surfaces would balance exactly and there would be no net pressure drag ([[D'Alembert's Paradox]]), but the boundary layer thickens towards the rear, and separates on a bluff body, which changes the effective shape so that the pressures no longer balance. Form drag therefore depends strongly on how streamlined the body is (Notes §3.2, pp. 13–14; [[SESA1016 T14 - Boundary Layers and the Origin of Drag]]).
+Profile drag comes from the boundary layer, the thin layer next to the surface in which viscosity acts, so it is also called boundary-layer drag. It has two parts. **Skin friction drag** is the tangential shear stress of the air on every wetted surface. **Form drag** (boundary-layer normal pressure drag) is a pressure effect: without viscosity the pressures on forward- and rearward-facing surfaces would balance exactly and there would be no net pressure drag ([[D'Alembert's Paradox]]), but the boundary layer thickens towards the rear, and separates on a bluff body, which changes the effective shape so that the pressures no longer balance. Form drag therefore depends strongly on how streamlined the body is ([[SESA1016 T14 - Boundary Layers and the Origin of Drag]]).
 
-Skin friction is estimated from the flat-plate coefficient based on the wetted area $S_w$ (Slides v2, p. 53):
+Skin friction is estimated from the flat-plate coefficient based on the wetted area $S_w$:
 
 $$
 C_F=\frac{D_F}{\tfrac12\rho V^2S_w},\qquad C_F=\frac{1.328}{\sqrt{Re_L}}\ \text{(laminar)},\qquad C_F=\frac{0.074}{Re_L^{0.2}}\ \text{(turbulent)},
 $$
 
-with $Re_L=\rho VL/\mu$ and laminar flow only for $Re_L<5\times10^5$. Because $C_F$ is based on $S_w$, it is scaled by $S_w/S$ before it is added to coefficients based on the wing area. The complete build-up is (Slides v2, p. 57)
+with $Re_L=\rho VL/\mu$ and laminar flow only for $Re_L<5\times10^5$. Because $C_F$ is based on $S_w$, it is scaled by $S_w/S$ before it is added to coefficients based on the wing area. The complete build-up is
 
 $$
 C_D=C_{Di}+C_{Dw}+C_F\frac{S_w}{S}+C_{DP}+C_{Dint}+C_{De},
 $$
 
-with wave drag $C_{Dw}$ (zero in subsonic flow), form drag $C_{DP}$, interference drag $C_{Dint}$ from components whose wakes interact, and excrescence drag $C_{De}$ from small items not counted elsewhere. Everything except $C_{Di}$ is lumped into $C_{D0}$, which in the cruise configuration is about 0.01 to 0.025 for a streamlined aircraft and up to about 0.055 for a small aircraft with a fixed undercarriage (Notes §3.2, p. 14).
+with wave drag $C_{Dw}$ (zero in subsonic flow), form drag $C_{DP}$, interference drag $C_{Dint}$ from components whose wakes interact, and excrescence drag $C_{De}$ from small items not counted elsewhere. Everything except $C_{Di}$ is lumped into $C_{D0}$, which in the cruise configuration is about 0.01 to 0.025 for a streamlined aircraft and up to about 0.055 for a small aircraft with a fixed undercarriage.
 
 ### Induced drag
 
@@ -340,13 +340,13 @@ C_{Di}&=C_L\cdot\frac{C_L}{\pi AR}\\
 \end{aligned}
 $$
 
-Any other planform does worse. The penalty is written either as a factor $1+\delta$ with $\delta\ge0$ or through the span efficiency (Oswald) factor $e=1/(1+\delta)$, typically 0.6 to 1, and both are absorbed into a single **induced drag factor** $K$ (Slides v2, pp. 51 and 62; [[Oswald Efficiency Factor]]):
+Any other planform does worse. The penalty is written either as a factor $1+\delta$ with $\delta\ge0$ or through the span efficiency (Oswald) factor $e=1/(1+\delta)$, typically 0.6 to 1, and both are absorbed into a single **induced drag factor** $K$ ([[Oswald Efficiency Factor]]):
 
 $$
 C_{Di}=KC_L^2,\qquad K=\frac{1+\delta}{\pi AR}=\frac{1}{\pi eAR}.
 $$
 
-The elliptic planform has $\delta=0$ and $e=1$, the least induced drag of all. The planform factor $1+\delta=1/e$ is somewhat above 1 for practical wings and exactly 1 for the elliptic planform (Notes §3.2, p. 14; the course notes' alternative $k$ and $K$ are in the terminology table).
+The elliptic planform has $\delta=0$ and $e=1$, the least induced drag of all. The planform factor $1+\delta=1/e$ is somewhat above 1 for practical wings and exactly 1 for the elliptic planform (the course notes' alternative $k$ and $K$ are in the terminology table).
 
 Induced drag grows with the square of $C_L$ because both the vortex strength and the tilt angle are proportional to the lift, and it falls as $1/AR$ because a long, slender wing spreads the lift over more span and needs a weaker downwash. See [[Downwash and Induced Drag]].
 
@@ -358,7 +358,7 @@ $$
 C_D=C_{D0}+KC_L^2=C_{D0}+\frac{C_L^2}{\pi eAR} .
 $$
 
-A typical cruise-configuration polar is $C_D=0.02+0.055C_L^2$ (Notes §3.2, p. 14). Plotted as $C_L$ against $C_D$ it is a parabola with its nose at $(C_{D0},0)$; plotted against $C_L^2$ it is a straight line with intercept $C_{D0}$ and slope $K$, which is how polar constants are read from data. The real polar of an aircraft departs from the parabola near the stall and at high Mach number, and every configuration change (flaps, undercarriage) gives a different pair of constants, so a clean $C_{D0}$ is never combined with a landing $C_{L\max}$ unless the question sets it up that way.
+A typical cruise-configuration polar is $C_D=0.02+0.055C_L^2$. Plotted as $C_L$ against $C_D$ it is a parabola with its nose at $(C_{D0},0)$; plotted against $C_L^2$ it is a straight line with intercept $C_{D0}$ and slope $K$, which is how polar constants are read from data. The real polar of an aircraft departs from the parabola near the stall and at high Mach number, and every configuration change (flaps, undercarriage) gives a different pair of constants, so a clean $C_{D0}$ is never combined with a landing $C_{L\max}$ unless the question sets it up that way.
 
 ![[mof_m03_drag_polar.png|900]]
 
@@ -392,7 +392,7 @@ $$
 
 ## 4. The pitching moment coefficient
 
-The pitching moment of the wing plus fuselage without the tailplane depends on the axis it is taken about. Taken about the leading edge it falls as $\alpha$ rises, because the lift acts behind the leading edge and turns the nose down more strongly as the lift grows; about the trailing edge it rises; about one particular point it does not change at all (Notes Fig. 3.3, p. 15). Moments are positive nose up.
+The pitching moment of the wing plus fuselage without the tailplane depends on the axis it is taken about. Taken about the leading edge it falls as $\alpha$ rises, because the lift acts behind the leading edge and turns the nose down more strongly as the lift grows; about the trailing edge it rises; about one particular point it does not change at all. Moments are positive nose up.
 
 ![[mof_m03_moment_reference.png|900]]
 
@@ -419,15 +419,15 @@ $$
 C_m=C_{mo}-hC_L ,
 $$
 
-where $h$ is a constant whose value and sign depend on the axis position: positive for an axis forward of the aerodynamic centre, negative for one aft of it (Notes §3.3, eq. (1), p. 15). Comparing the two forms, $h=-x_{AC}/c$. At $C_L=0$ every axis gives the same moment, because a pure couple is the same about every point, so $C_{mo}$, the **pitching moment coefficient at zero lift**, does not depend on the axis. It depends on the shape: it is zero for an aircraft that is symmetric about its datum line, and usually negative (nose down) for a cambered wing.
+where $h$ is a constant whose value and sign depend on the axis position: positive for an axis forward of the aerodynamic centre, negative for one aft of it. Comparing the two forms, $h=-x_{AC}/c$. At $C_L=0$ every axis gives the same moment, because a pure couple is the same about every point, so $C_{mo}$, the **pitching moment coefficient at zero lift**, does not depend on the axis. It depends on the shape: it is zero for an aircraft that is symmetric about its datum line, and usually negative (nose down) for a cambered wing.
 
 ### Trim needs a tailplane
 
-For trimmed steady flight at a given speed, and hence at a given $C_L$, the moment about the CG must be zero, so the $C_{m,CG}$ line must cross zero at that $C_L$. For static stability the slope $dC_{m,CG}/dC_L$ must be negative, so that a gust which raises $\alpha$ produces a nose-down moment that restores it. With the CG aft of the aerodynamic centre, the wing and body alone have a positive slope (unstable) and a negative $C_{mo}$, so they can be trimmed only at the one positive $C_L$ where the line crosses zero, and that trim is unstable. The tailplane supplies a moment that makes the complete aircraft's line cross zero with a negative slope; the moment it must supply changes with the trimmed $C_L$, which is what the trim tab, elevator or all-moving tailplane provides (Notes §3.3, pp. 15–16, Fig. 3.4). The full analysis is in [[SESA1015 M11 - Longitudinal Trim and Static Stability|M11]].
+For trimmed steady flight at a given speed, and hence at a given $C_L$, the moment about the CG must be zero, so the $C_{m,CG}$ line must cross zero at that $C_L$. For static stability the slope $dC_{m,CG}/dC_L$ must be negative, so that a gust which raises $\alpha$ produces a nose-down moment that restores it. With the CG aft of the aerodynamic centre, the wing and body alone have a positive slope (unstable) and a negative $C_{mo}$, so they can be trimmed only at the one positive $C_L$ where the line crosses zero, and that trim is unstable. The tailplane supplies a moment that makes the complete aircraft's line cross zero with a negative slope; the moment it must supply changes with the trimmed $C_L$, which is what the trim tab, elevator or all-moving tailplane provides. The full analysis is in [[SESA1015 M11 - Longitudinal Trim and Static Stability|M11]].
 
 ## 5. The centre of pressure
 
-The **centre of pressure** is the axis position about which the pitching moment is zero, $M_{cp}=0$: the point at which the resultant lift of the wing plus body appears to act with no moment (Notes §3.4, p. 16). Let $x_{cp}$ be its distance forward of the CG. Placing the whole lift there (figure below, panel (a)) gives the moment about the CG,
+The **centre of pressure** is the axis position about which the pitching moment is zero, $M_{cp}=0$: the point at which the resultant lift of the wing plus body appears to act with no moment. Let $x_{cp}$ be its distance forward of the CG. Placing the whole lift there (figure below, panel (a)) gives the moment about the CG,
 
 $$
 M_{CG}=x_{cp}L .
@@ -455,7 +455,7 @@ which says the centre of pressure sits a distance $c\,C_{mo}/C_L$ from the aerod
 
 ## 6. The aerodynamic centre
 
-The **aerodynamic centre** is the axis position about which the pitching moment coefficient does not vary with angle of attack (Notes §3.5, p. 17):
+The **aerodynamic centre** is the axis position about which the pitching moment coefficient does not vary with angle of attack:
 
 $$
 \frac{dM_{AC}}{d\alpha}=0 .
@@ -487,7 +487,7 @@ $$
 \frac{x_{AC}}{c}=\frac{dC_{m,CG}}{dC_L}=-h .
 $$
 
-Since $h$ is a constant, the aerodynamic centre is at a fixed position, and it is found from the slope of the moment curve about any known point. Classical (thin aerofoil) theory places it at the **quarter chord**, measured from the leading edge, and the moment about it equals the zero-lift moment, $C_{m,AC}=C_{mo}$. For a wing-body combination the aerodynamic centre need not be exactly at the quarter chord; with no other information, assume it is (Slides v2, p. 197). See [[Aerodynamic Centre and Centre of Pressure]].
+Since $h$ is a constant, the aerodynamic centre is at a fixed position, and it is found from the slope of the moment curve about any known point. Classical (thin aerofoil) theory places it at the **quarter chord**, measured from the leading edge, and the moment about it equals the zero-lift moment, $C_{m,AC}=C_{mo}$. For a wing-body combination the aerodynamic centre need not be exactly at the quarter chord; with no other information, assume it is. See [[Aerodynamic Centre and Centre of Pressure]].
 
 The stability condition of Section 4 reads directly off this result: $dC_{m,CG}/dC_L=x_{AC}/c<0$ requires the aerodynamic centre to be aft of the CG, that is the CG ahead of the aerodynamic centre, for the wing-body alone. With a tailplane the same argument applies with the neutral point of the whole aircraft in place of the wing-body aerodynamic centre ([[Static Margin and Tail Volume]]).
 
@@ -503,7 +503,7 @@ $$
 
 The linear law reaches $C_{L\max}=1.2$ at $\alpha=1.2/0.09-2=11.3^\circ$, inside the 10 to 15 degree range where the stall begins. The same line per radian is $C_L=5.157(\alpha+0.0349)$: at $\alpha=3.56^\circ=0.0621$ rad it gives $5.157\times0.0970=0.500$.
 
-### Lift and drag of a rectangular wing (Slides v2, p. 59)
+### Lift and drag of a rectangular wing
 
 A rectangular wing of chord 0.6 m and span 8 m flies at 90 m/s at 1000 m ($\rho=1.116$ kg/m³, $\mu=1.761\times10^{-5}$ Pa s) at a geometric angle of $4^\circ$. The zero-lift angle is $-1^\circ$, the lift-curve slope factor is $\tau=0.1$ and $e=0.9$. Treating the wing as a flat plate, with drag limited to induced drag and skin friction, the lift and the total drag are wanted.
 
@@ -577,7 +577,7 @@ The two parts are equal at $C_L=\sqrt{0.02/0.055}=0.603$, the minimum-drag condi
 
 ### Locating the aerodynamic centre from tunnel data
 
-A wing-body model has zero lift at $\alpha=-1.5^\circ$ and $C_L=0.52$ at $5^\circ$. About the CG, at $0.35c$ behind the leading edge, the moment coefficient is $-0.01$ at $1^\circ$ and $0.05$ at $7.88^\circ$. The aerodynamic centre and $C_{mo}$ are wanted (Slides v2, p. 200).
+A wing-body model has zero lift at $\alpha=-1.5^\circ$ and $C_L=0.52$ at $5^\circ$. About the CG, at $0.35c$ behind the leading edge, the moment coefficient is $-0.01$ at $1^\circ$ and $0.05$ at $7.88^\circ$. The aerodynamic centre and $C_{mo}$ are wanted.
 
 The lift-curve slope is
 
@@ -666,7 +666,7 @@ It passes the CG at $C_L=-C_{mo}/(x_{AC}/c)=0.032/0.109=0.29$, which is the only
 ### Further practice
 
 - [ ] Show that particle impact gives $C_L=2\sin^2\alpha\cos\alpha$ for a flat plate and that equal transit gives $C_l=(s_u/s_l)^2-1$; evaluate both (at $5^\circ$, and for the NACA 4412 at zero incidence) against thin aerofoil theory (Slides v2, pp. 26–28; suggested, not lecturer-set). → [[#Momentum deflection: the skipping-stone picture]] · [[#Equal transit is false]]
-- [ ] Rectangular-wing lift and drag (Slides v2, p. 59). → [[#Lift and drag of a rectangular wing (Slides v2, p. 59)]]
+- [ ] Rectangular-wing lift and drag (Slides v2, p. 59). → [[#Lift and drag of a rectangular wing]]
 - [ ] Derive $x_{AC}/c=-h$ and $x_{cp}/c=C_{mo}/C_L-h$ from moments about the CG (Notes §3.4–3.5, pp. 16–17). → [[#5. The centre of pressure]] · [[#6. The aerodynamic centre]]
 - [ ] Revision Q41: tunnel load-cell capacity under Reynolds-number scaling. → [[SESA1015 T03 - Wind-Tunnel Data Reduction Solutions#Question 41]]
 

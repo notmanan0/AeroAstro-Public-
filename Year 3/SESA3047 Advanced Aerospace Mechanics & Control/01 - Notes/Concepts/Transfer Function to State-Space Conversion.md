@@ -18,7 +18,7 @@ A strictly proper transfer function $G(s)=N(s)/D(s)$ is put in state-space form 
 
 Each step is a cross-multiplication followed by an inverse Laplace transform, using the rule that each factor of $s$ is one time derivative (zero initial conditions). The number of states equals the order of the highest derivative. The simplest case, $1/(s-T_1)$, gives $\dot w=T_1w+r$, so $\mathbf A=T_1$, $\mathbf B=1$: a pole at $s=T_1$, unstable for $T_1>0$ because $w=w_0e^{T_1t}$.
 
-For $G=(5s^2+2s+2)/(s^3+6s^2+9s+3)$ (handout Eq. 5.30) this gives
+For $G=(5s^2+2s+2)/(s^3+6s^2+9s+3)$ this gives
 
 $$
 \mathbf A=\begin{bmatrix}0&1&0\\0&0&1\\-3&-9&-6\end{bmatrix},\quad\mathbf B=\begin{bmatrix}0\\0\\1\end{bmatrix},\quad\mathbf C=\begin{bmatrix}2&2&5\end{bmatrix}.

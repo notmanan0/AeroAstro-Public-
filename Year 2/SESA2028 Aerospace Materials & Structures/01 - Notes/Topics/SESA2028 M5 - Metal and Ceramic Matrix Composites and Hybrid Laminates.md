@@ -85,9 +85,7 @@ See [[MMC vs CMC]].
 
 ## Worked examples
 
-These are past-paper versions of the rule-of-mixtures design from [[SESA2028 M4 - Polymer Matrix Composites#Designing to a requirement|M4]], now with density.
-
-The density follows from the same volume fractions. A volume $V$ of composite contains $V_fV$ of fibre and $V_mV$ of matrix, so its mass is $\rho_fV_fV+\rho_mV_mV$, and dividing by $V$,
+The density follows from the same volume fractions as the rule-of-mixtures design of [[SESA2028 M4 - Polymer Matrix Composites#Designing to a requirement|M4]]. A volume $V$ of composite contains $V_fV$ of fibre and $V_mV$ of matrix, so its mass is $\rho_fV_fV+\rho_mV_mV$, and dividing by $V$,
 
 $$
 \rho_c=V_f\rho_f+V_m\rho_m=V_f\rho_f+\left(1-V_f\right)\rho_m .

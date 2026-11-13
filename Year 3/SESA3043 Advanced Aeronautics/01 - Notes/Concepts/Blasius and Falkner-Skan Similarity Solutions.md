@@ -38,7 +38,7 @@ SESA2029 and 1.4 use a different scaling, $\eta_o=y\sqrt{U/\nu x}$ with $f_o'''+
 
 $\beta$ labels the pressure gradient. Positive $\beta$ is an accelerating (favourable) outer flow with a fuller profile; negative $\beta$ is decelerating (adverse) with an emptier one. At $\beta=-0.19884$ ($m=-0.0904$) the wall shear vanishes and the layer separates. Since $\beta\pi$ is the included angle of a symmetric wedge, a single wall turned away by $\delta_w$ has $\beta=-2\delta_w/\pi$, so separation needs only $17.9^\circ$ of turn.
 
-Over a bump, $\beta$ runs positive on the front, through zero at the crest, then negative towards separation. That is a local-similarity picture rather than an exact solution (lectured 23 Oct; [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#What β means physically: a boundary layer over a bump (slide 97)|3.2]]).
+Over a bump, $\beta$ runs positive on the front, through zero at the crest, then negative towards separation. That is a local-similarity picture rather than an exact solution (lectured 23 Oct; [[SESA3043 3.2 - Blasius and Falkner-Skan Similarity Solutions#What β means physically: a boundary layer over a bump|3.2]]).
 
 ## Related
 

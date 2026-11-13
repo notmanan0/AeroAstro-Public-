@@ -20,8 +20,6 @@ That is why the critical stress intensity measured on thin specimens is higher t
 
 ![[materials_thickness_effect_kcrit.png|800]]
 
-The constitutive definitions of plane stress and plane strain are in [[Plane Stress and Plane Strain]].
-
 ## Related
 
 - Topic: [[SESA2028 M1 - Fracture, Toughness and Fracture Mechanics|M1]]

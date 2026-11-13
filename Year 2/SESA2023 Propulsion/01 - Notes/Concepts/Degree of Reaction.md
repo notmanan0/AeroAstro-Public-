@@ -25,7 +25,7 @@ $$
 R = -\frac{\phi}{2}(\tan\alpha_{1,rel}+\tan\alpha_{2,rel}) = 1-\frac{\phi}{2}(\tan\alpha_1+\tan\alpha_2) .
 $$
 
-The lectures themselves speak of mirror blading and repeating stages (L24, ll. 327–346); the phrase "degree of reaction" appears on [[SESA2023 Problem Sheet 8 Turbomachinery Solutions|Problem Sheet 8]] Q8.3, so in the exam describe a 50 % stage as mirror blading and give the reaction definition alongside.
+A 50 % stage is described as mirror blading and a stage whose triangles repeat from one stage to the next as a repeating stage. The term "degree of reaction" itself appears only on [[SESA2023 Problem Sheet 8 Turbomachinery Solutions|Problem Sheet 8]] Q8.3, so in the exam describe a 50 % stage as mirror blading and give the reaction definition alongside.
 
 A 50 % reaction stage has mirror-image blading: the stator is the rotor reflected, so $\alpha_1 = -\alpha_{2,rel}$ and $\alpha_2 = -\alpha_{1,rel}$, the velocity triangles are symmetric and the static pressure rise is shared equally between the rows. That balances the blade loading and makes it a good starting point for axial compressors, though real machines needn't use it. Its first rotor needs inlet swirl, so inlet guide vanes are required. For incompressible, loss-free flow in a blade row, $\Delta p/(\rho U^2) = \Delta h/U^2$. A 50 % stage is solved from $\phi$ and $\psi$ with
 

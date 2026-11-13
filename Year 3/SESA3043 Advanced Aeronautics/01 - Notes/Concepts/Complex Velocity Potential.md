@@ -30,7 +30,7 @@ The derivative of a complex function only exists, independent of direction, if t
 | cylinder | $U(z+R^2/z)$ |
 | wedge/corner | $-kz^{m+1}$ |
 
-The slide tables mix vortex sign conventions, so state yours when you use one.
+Tables of complex potentials mix vortex sign conventions, so state yours when you use one.
 
 ## Related
 

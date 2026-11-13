@@ -34,15 +34,15 @@ sources: ["02 - Sources/Lectures/Week 03 - Gas Dynamics I - Compressible Flow, S
 > - **Common mistakes:** applying isentropic relations straight across a shock; using the reservoir $p_0$ downstream of a shock.
 > - **Practise:** [[#Worked example – shock in the diverging section]] · [[SESA2023 Problem Sheet 3 Solutions]] Q3.3–Q3.4
 
-Above about Mach 0.3 the pressure changes in a flow are large enough to change its density appreciably, and density, pressure and temperature then move together; that coupling is what "compressible" means (Lecture 1, ll. 13–19). Small disturbances move through the gas at the speed of sound $a$, so if the flow itself moves faster than $a$ they can't travel upstream, and the flow ahead of an obstacle can't adjust gradually. Instead, successive compression waves travel faster than the ones ahead of them, catch up and steepen into a shock, a jump a few micrometres thick, which conserves mass, momentum and energy but not entropy, so stagnation pressure is lost.
+Above about Mach 0.3 the pressure changes in a flow are large enough to change its density appreciably, and density, pressure and temperature then move together; that coupling is what "compressible" means. Small disturbances move through the gas at the speed of sound $a$, so if the flow itself moves faster than $a$ they can't travel upstream, and the flow ahead of an obstacle can't adjust gradually. Instead, successive compression waves travel faster than the ones ahead of them, catch up and steepen into a shock, a jump a few micrometres thick, which conserves mass, momentum and energy but not entropy, so stagnation pressure is lost.
 
 Nozzles behave the other way round above Mach 1. Subsonic gas speeds up in a narrowing duct and supersonic gas in a widening one, and the changeover can only happen at a throat, where $M=1$. Once the throat is sonic, no disturbance from downstream can travel upstream through it, so the mass flow depends only on the reservoir conditions and the throat area, and whatever happens after the throat, a shock or an under- or over-expanded jet, affects only the diverging section.
 
 ---
 
-## 1. The simplified equations (Lecture 7)
+## 1. The simplified equations
 
-The full compressible Navier–Stokes equations (mass, momentum, energy with density inside the derivatives, plus $p=\rho RT$) are simplified for a whole-engine "block" analysis (10 Feb, ll. 26–83; notes §3.2.2) by assuming:
+The full compressible Navier–Stokes equations (mass, momentum, energy with density inside the derivatives, plus $p=\rho RT$) are simplified for a whole-engine "block" analysis by assuming:
 
 - 1-D flow along $x$ (one momentum equation, not three);
 - steady flow (all $\partial/\partial t$ terms vanish);
@@ -85,15 +85,15 @@ $$
 \rho_1U_1 = \rho_2U_2,\qquad \tfrac12U_2^2+\int_1^2\frac{dp}{\rho} = \tfrac12U_1^2,\qquad h_1+\tfrac12U_1^2 = h_2+\tfrac12U_2^2
 $$
 
-The pressure integral cannot be done until the dependence of $\rho$ on $p$ is known. In incompressible flow $\rho$ is constant and it gives Bernoulli, $p/\rho+\tfrac12U^2$ = const. In compressible flow $p$, $\rho$ and $T$ are coupled (10 Feb, ll. 123–134).
+The pressure integral cannot be done until the dependence of $\rho$ on $p$ is known. In incompressible flow $\rho$ is constant and it gives Bernoulli, $p/\rho+\tfrac12U^2$ = const. In compressible flow $p$, $\rho$ and $T$ are coupled.
 
-Derivations can be examined, but don't memorise every step (10 Feb, ll. 295–308). Start from conservation of mass and momentum (and energy), and work towards the result, which is in the data book.
+Derivations can be examined, but don't memorise every step. Start from conservation of mass and momentum (and energy), and work towards the result, which is in the data book.
 
 ---
 
 ## 2. Stagnation properties
 
-Bring the flow to rest reversibly and adiabatically (an imaginary wall, 10 Feb, ll. 135–158). The energy equation says $h+\tfrac12U^2$ is the same at every point, and at the wall $U=0$, so all the kinetic energy has become enthalpy:
+Bring the flow to rest reversibly and adiabatically (an imaginary wall). The energy equation says $h+\tfrac12U^2$ is the same at every point, and at the wall $U=0$, so all the kinetic energy has become enthalpy:
 
 $$
 h_0 = h+\tfrac12U^2
@@ -105,7 +105,7 @@ $$
 T_0 = T+\frac{U^2}{2c_p}
 $$
 
-In terms of Mach number (10 Feb, ll. 239–250). Divide by $T$:
+In terms of Mach number. Divide by $T$:
 
 $$
 \frac{T_0}{T} = 1+\frac{U^2}{2c_pT}
@@ -131,16 +131,16 @@ $$
 
 - $T_0$ is constant in any adiabatic, no-work flow, even an irreversible one (it comes from energy alone).
 - $p_0$ and $\rho_0$ are constant only if the flow is also isentropic (they used the isentropic relation).
-- "Pressure" with no qualifier means static pressure (10 Feb, ll. 145–147).
+- "Pressure" with no qualifier means static pressure.
 - Static and stagnation values coincide only when the fluid is at rest in the chosen frame.
 
 ---
 
 ## 3. Speed of sound and Mach number
 
-### Derivation (Lecture 7)
+### Derivation
 
-Consider still gas ($p$, $\rho$, $T$, $U=0$) through which a weak wave moves to the right at speed $a$. Behind the wave the gas has been nudged to $p+dp$, $\rho+d\rho$ and a small velocity $dU$ (10 Feb, ll. 159–179; notes §3.3.1).
+Consider still gas ($p$, $\rho$, $T$, $U=0$) through which a weak wave moves to the right at speed $a$. Behind the wave the gas has been nudged to $p+dp$, $\rho+d\rho$ and a small velocity $dU$.
 
 ![[prop_sound_wave_cv.png|820]]
 
@@ -202,9 +202,9 @@ $$
 \boxed{a = \sqrt{\gamma RT},\qquad M = \frac{U}{a}}
 $$
 
-The speed of sound depends on the gas (through $\gamma$ and $R$) and on its temperature only (10 Feb, ll. 231–234).
+The speed of sound depends on the gas (through $\gamma$ and $R$) and on its temperature only.
 
-### Worked example – same speed, different Mach number (10 Feb, ll. 258–270)
+### Worked example – same speed, different Mach number
 
 A jet flies at M 1.1 where $T=220$ K. Air: $\gamma=1.4$, $R=287$.
 
@@ -224,7 +224,7 @@ The aircraft is subsonic: Mach number depends on temperature as well as speed.
 
 ## 4. Critical properties (Mach 1)
 
-Put $M=1$ in the stagnation relations. Starred quantities are the static values where $M=1$ (10 Feb, ll. 271–285):
+Put $M=1$ in the stagnation relations. Starred quantities are the static values where $M=1$:
 
 $$
 \frac{T^*}{T_0} = \frac{2}{\gamma+1},\qquad \frac{p^*}{p_0} = \left(\frac{2}{\gamma+1}\right)^{\frac{\gamma}{\gamma-1}},\qquad \frac{\rho^*}{\rho_0} = \left(\frac{2}{\gamma+1}\right)^{\frac{1}{\gamma-1}}
@@ -236,15 +236,15 @@ The number to remember is 0.528: a converging nozzle fed from a reservoir of air
 
 ---
 
-## 5. Normal shocks (Lecture 8)
+## 5. Normal shocks
 
 ### What a shock is
 
-A sequence of weak compression waves: each later wave travels through gas that is already slightly hotter and faster, so it catches up with the one ahead. They merge into a finite jump of thickness of order micrometres, treated as a discontinuity (10 Feb, ll. 347–363). A normal shock is perpendicular to the flow, like the centre of the bow shock in front of a sphere (Van Dyke, notes Fig. 3.4). The key property: a shock is not isentropic (10 Feb, ll. 381–383).
+A sequence of weak compression waves: each later wave travels through gas that is already slightly hotter and faster, so it catches up with the one ahead. They merge into a finite jump of thickness of order micrometres, treated as a discontinuity. A normal shock is perpendicular to the flow, like the centre of the bow shock in front of a sphere (Van Dyke). The key property: a shock is not isentropic.
 
 ### Jump conditions
 
-Across the thin shock there is no area change (notes eqs. 3.53–3.55):
+Across the thin shock there is no area change:
 
 $$
 \rho_1U_1 = \rho_2U_2,\qquad p_1+\rho_1U_1^2 = p_2+\rho_2U_2^2,\qquad h_1+\tfrac12U_1^2 = h_2+\tfrac12U_2^2
@@ -274,7 +274,7 @@ $$
 h_2-h_1 = \frac{\gamma R}{\gamma-1}\left(\frac{p_2}{\rho_2R}-\frac{p_1}{\rho_1R}\right) = \frac{\gamma}{\gamma-1}\left(\frac{p_2}{\rho_2}-\frac{p_1}{\rho_1}\right)
 $$
 
-Substitute into the energy equation, $h_2-h_1=\tfrac12(U_1^2-U_2^2)$ (notes eq. 3.59):
+Substitute into the energy equation, $h_2-h_1=\tfrac12(U_1^2-U_2^2)$:
 
 $$
 \boxed{\frac{\gamma}{\gamma-1}\left(\frac{p_2}{\rho_2}-\frac{p_1}{\rho_1}\right) = \tfrac12\left(U_1^2-U_2^2\right)}
@@ -282,7 +282,7 @@ $$
 
 ### From the jump conditions to the Mach-number relations
 
-The four Rankine–Hugoniot relations are in the data book and need not be memorised (l. 472); they follow from the jump conditions as below.
+The four Rankine–Hugoniot relations are in the data book and need not be memorised; they follow from the jump conditions as below.
 
 **Step 1: energy with the critical speed.** Write the energy equation with $h=c_pT=a^2/(\gamma-1)$. At the (imaginary) sonic state of the same $T_0$, $U=a=a^*$, so
 
@@ -386,7 +386,7 @@ $$
 
 ### Entropy, the Second Law and stagnation pressure
 
-From the W02 entropy relation in dimensionless form (notes eq. 3.65):
+From the W02 entropy relation in dimensionless form:
 
 $$
 \frac{\Delta s}{R} = \frac{\gamma}{\gamma-1}\ln\frac{T_2}{T_1}-\ln\frac{p_2}{p_1}
@@ -394,7 +394,7 @@ $$
 
 - $\Delta s=0$ at $M_1=1$: the infinitesimal sound wave is recovered.
 - $\Delta s>0$ for $M_1>1$.
-- $\Delta s<0$ for $M_1<1$: forbidden by the Second Law, so an expansion shock (subsonic → supersonic) cannot exist (10 Feb, ll. 492–509).
+- $\Delta s<0$ for $M_1<1$: forbidden by the Second Law, so an expansion shock (subsonic → supersonic) cannot exist.
 
 **Stagnation temperature is unchanged**: the shock is adiabatic with no work, so $h_0$ and hence $T_0$ are conserved.
 
@@ -416,16 +416,16 @@ $$
 
 ![[prop_normal_shock.png|760]]
 
-Properties to remember (10 Feb, ll. 475–491; 17 Feb, ll. 51–62):
+Properties to remember:
 
 - $M_2<1$ always, tending to $\sqrt{(\gamma-1)/(2\gamma)}=0.378$ as $M_1\to\infty$.
 - $\rho_2/\rho_1$ rises to a plateau, $(\gamma+1)/(\gamma-1)=6$.
 - $p_2/p_1$ grows fastest and without limit; $T_2/T_1$ also grows without limit.
 - $T_0$ unchanged; $p_0$ falls.
 
-The formula and the normal-shock table are both in the data book and give "exactly the same" answer (10 Feb, ll. 536–561). Use the table when $M_1$ is a round number and the formula when you would otherwise have to interpolate; a small Python code on Blackboard gives the same values.
+The formula and the normal-shock table are both in the data book and give "exactly the same" answer. Use the table when $M_1$ is a round number and the formula when you would otherwise have to interpolate; a small Python code on Blackboard gives the same values.
 
-### Worked example – normal shock at Mach 2 (10 Feb, ll. 510–535)
+### Worked example – normal shock at Mach 2
 
 Air at $T_1=250$ K, $p_1=0.5$ bar, $U_1=634$ m/s meets a normal shock. Find the stagnation conditions before and after.
 
@@ -464,11 +464,11 @@ $$
 
 ---
 
-## 6. Duct flow and nozzles (Lecture 9)
+## 6. Duct flow and nozzles
 
 ### The area–velocity relation
 
-Assume quasi-1D flow: the area $A(x)$ changes slowly enough that the flow is still one-dimensional; steady, frictionless, adiabatic, isentropic except across shocks (13 Feb, ll. 50–57).
+Assume quasi-1D flow: the area $A(x)$ changes slowly enough that the flow is still one-dimensional; steady, frictionless, adiabatic, isentropic except across shocks.
 
 **Mass:** $\rho UA$ is constant, so its $x$-derivative is zero. By the product rule, then dividing by $\rho UA$:
 
@@ -509,7 +509,7 @@ Supersonic flow speeds up in a widening duct because in supersonic flow a 1 % ri
 
 ### Converging nozzle and choking
 
-A converging nozzle fed by a large reservoir at $p_0$, discharging into a back pressure $p_b$ (13 Feb, ll. 113–147; notes Fig. 3.8):
+A converging nozzle fed by a large reservoir at $p_0$, discharging into a back pressure $p_b$:
 
 - $p_b=p_0$: no flow.
 - $p^*<p_b<p_0$: subsonic everywhere, exit pressure $p_e=p_b$; lowering $p_b$ raises the flow.
@@ -518,7 +518,7 @@ A converging nozzle fed by a large reservoir at $p_0$, discharging into a back p
 
 ### Converging–diverging (de Laval) nozzle: eight regimes
 
-As $p_b$ falls (notes Fig. 3.9; 13 Feb, ll. 152–207; reviewed 17 Feb, ll. 100–130):
+As $p_b$ falls:
 
 1. $p_b=p_0$: no flow.
 2. Subsonic everywhere; the throat is not sonic.
@@ -531,11 +531,11 @@ As $p_b$ falls (notes Fig. 3.9; 13 Feb, ll. 152–207; reviewed 17 Feb, ll. 100�
 
 ![[prop_cd_nozzle_regimes.png|680]]
 
-See [[Converging-Diverging Nozzle Operating Regimes]]. A rocket climbing through the atmosphere sweeps through regimes 6–8 as $p_b$ falls with altitude (13 Feb, ll. 195–199).
+See [[Converging-Diverging Nozzle Operating Regimes]]. A rocket climbing through the atmosphere sweeps through regimes 6–8 as $p_b$ falls with altitude.
 
 ### Mass flow rate
 
-Start from $\dot m=\rho AU$ and replace $U$ with the stagnation-temperature relation $U=\sqrt{2c_p(T_0-T)}$ (notes eqs. 3.75–3.76):
+Start from $\dot m=\rho AU$ and replace $U$ with the stagnation-temperature relation $U=\sqrt{2c_p(T_0-T)}$:
 
 $$
 \dot m = \rho A\sqrt{2c_pT_0}\left(1-\frac{T}{T_0}\right)^{1/2}
@@ -583,7 +583,7 @@ Every area ratio above 1 has two solutions, one subsonic and one supersonic; the
 
 After a shock the reference area changes. $A^*$ is tied to $p_0$: for a fixed $\dot m$ and $T_0$, $A^*\propto1/p_0$, so a shock, which lowers $p_0$, makes the flow behind it behave as if it came from a larger imaginary throat, $A_2^*=A_t\,(p_{01}/p_{02})$. Use $A_2^*$ to march on to the exit.
 
-### Worked example – isentropic nozzle and thrust (13 Feb, ll. 208–267)
+### Worked example – isentropic nozzle and thrust
 
 $p_0=10$ bar, $T_0=400$ K, $M_e=2$, $A_t=0.1$ m²; air.
 
@@ -614,9 +614,9 @@ $$
 
 ### Worked example – shock in the diverging section
 
-A C–D nozzle runs off-design with a normal shock in the diverging section. Reservoir air at $p_0=400$ kPa, $T_0=800$ K; $A_t=0.2$ m²; $M_1=2.44$ just upstream of the shock; $A_e=0.7$ m². Find the area at the shock (17 Feb, ll. 145–205; Week 4 slides 11–16).
+A C–D nozzle runs off-design with a normal shock in the diverging section. Reservoir air at $p_0=400$ kPa, $T_0=800$ K; $A_t=0.2$ m²; $M_1=2.44$ just upstream of the shock; $A_e=0.7$ m². Find the area at the shock.
 
-The flow is isentropic from the reservoir to the shock and from the shock to the exit; only the shock itself is not (17 Feb, ll. 161–166).
+The flow is isentropic from the reservoir to the shock and from the shock to the exit; only the shock itself is not.
 
 **Throat (choked, $M=1$):**
 
@@ -684,7 +684,7 @@ and that $p_e$ is the back pressure that holds the shock at $A=0.499$ m².
 3. Choked: $\dot m=0.0404A_tp_0/\sqrt{T_0}$ for air (or $\rho^*a^*A_t$). Not choked: the general $\dot m(p)$ with $p_e=p_b$.
 4. March isentropically with $A/A^*$, $T_0/T$, $p_0/p$; at a shock switch to the normal-shock relations, then restart with $p_{02}$ and $A_2^*$.
 5. Thrust from $F=\dot mU_e+A_e(p_e-p_b)$.
-6. Sanity checks: $M_2<1$; $T_0$ constant; $p_0$ never rises; $\Delta s\ge0$ (17 Feb, ll. 70–72).
+6. Sanity checks: $M_2<1$; $T_0$ constant; $p_0$ never rises; $\Delta s\ge0$.
 
 ## Terminology and alternative names
 
@@ -721,9 +721,9 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 3 lectures; t
 ### Core
 
 - [ ] *(set)* Reproduce and comment on the normal-shock property plot ($M_2$, $p_2/p_1$, $\rho_2/\rho_1$, $T_2/T_1$ against $M_1$): "in last year's exam, there was to reproduce this graph and comment it" (10 Feb, l. 491). → [[#Entropy, the Second Law and stagnation pressure]]
-- [ ] *(set)* Derivations may be examined (10 Feb, ll. 295–305): derive $a=\sqrt{\gamma RT}$ from mass and momentum on a moving wave. → [[#Derivation (Lecture 7)]]
+- [ ] *(set)* Derivations may be examined (10 Feb, ll. 295–305): derive $a=\sqrt{\gamma RT}$ from mass and momentum on a moving wave. → [[#Derivation]]
 - [ ] *(set)* Derive the energy equation across a shock in the $p/\rho$ form (10 Feb, ll. 396–463). → [[#Energy equation in pressure–density form]]
-- [ ] *(set)* Normal shock at $U_1=634$ m/s (10 Feb, ll. 510–535). Targets $M_2=0.577$, $p_{02}=2.82$ bar. → [[#Worked example – normal shock at Mach 2 (10 Feb, ll. 510–535)]]
+- [ ] *(set)* Normal shock at $U_1=634$ m/s (10 Feb, ll. 510–535). Targets $M_2=0.577$, $p_{02}=2.82$ bar. → [[#Worked example – normal shock at Mach 2]]
 - [ ] *(set)* Shock in the diverging section (17 Feb, ll. 145–205). Target $A=0.499$ m². → [[#Worked example – shock in the diverging section]]
 - [ ] *(set)* Work [[SESA2023 Problem Sheet 3 Solutions|Problem Sheet 3]]: "the problem[s] are on the same style that are in the exam. So do that" (17 Feb, ll. 12–21).
 
@@ -735,7 +735,7 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 3 lectures; t
 - [ ] Derive $p_2/p_1$, $\rho_2/\rho_1$ and $M_2$ from the jump conditions (beyond the lecture). → [[#From the jump conditions to the Mach-number relations]]
 - [ ] Show why $p_{02}/p_{01}=e^{-\Delta s/R}$. → [[#Entropy, the Second Law and stagnation pressure]]
 - [ ] Continue the shock-in-nozzle example to the exit. Targets $M_e=0.338$, $p_e=193$ kPa. → [[#Worked example – shock in the diverging section]]
-- [ ] Add the pressure thrust to the 10-bar nozzle example for a 1 bar back pressure. Target 125 kN. → [[#Worked example – isentropic nozzle and thrust (13 Feb, ll. 208–267)]]
+- [ ] Add the pressure thrust to the 10-bar nozzle example for a 1 bar back pressure. Target 125 kN. → [[#Worked example – isentropic nozzle and thrust]]
 - [ ] *(set)* Read the nozzle-lab notebook on Blackboard before the lab: "after Friday lecture, you should also be able to completely understand it" (10 Feb, ll. 338–342).
 - [ ] *(set)* Week 3 Blackboard quiz (13 Feb, ll. 1–5); the shock code on Blackboard "can be useful to solve the quiz" (10 Feb, ll. 536–537).
 
@@ -747,7 +747,7 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 3 lectures; t
 > "All the kinetic energy has been transformed to entropy. And we consider this quantity as the stagnation entropy." Both words should be enthalpy: the kinetic energy becomes enthalpy, giving the stagnation enthalpy $h_0$. (The entropy does *not* change in this reversible, adiabatic deceleration.)
 
 > [!warning] Transcript slips in the derivation (10 Feb, ll. 171, 198–199)
-> Where: [[#Derivation (Lecture 7)]].
+> Where: [[#Derivation]].
 >
 > - l. 171: "Let's make some assumption that this process is adiabatic and irreversible". It must be reversible (isentropic), which is what lets the lecture use $p\propto\rho^\gamma$ at l. 228.
 > - ll. 198–199: the mass result is transcribed as "rho du is equal to the product A du". It is $\rho\,dU=a\,d\rho$ (speed of sound $a$, not area $A$).
@@ -758,7 +758,7 @@ Tasks marked *(set)* were set or explicitly pointed to in the Week 3 lectures; t
 > "The Mach number after a shock is always negative." It is always less than one.
 
 > [!warning] Transcript slips in this example (10 Feb, ll. 530–535)
-> Where: [[#Worked example – normal shock at Mach 2 (10 Feb, ll. 510–535)]].
+> Where: [[#Worked example – normal shock at Mach 2]].
 >
 > - "The temperature after the shock is lower… is 250 and now becomes 442." The temperature rises, to 422 K ($250\times1.6875$).
 > - "You see the static temperature is the same… while the static pressure is lower because it is isentropic." It is the stagnation temperature that is the same, and the stagnation pressure that is lower, because the shock is not isentropic.

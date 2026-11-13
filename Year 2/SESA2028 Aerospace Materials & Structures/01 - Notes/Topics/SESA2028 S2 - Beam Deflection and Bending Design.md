@@ -90,8 +90,6 @@ with $w$ the distributed load per unit length (positive downward). Point loads m
 
 ## 3. Standard cases by integration
 
-These are checks on the method, not substitutes for it.
-
 ### Cantilever with a tip load
 
 A cantilever fixed at $x=0$ carries a downward load $F$ at $x=L$. Cutting at $x$ and taking moments of the free part beyond the cut, the load acts at lever arm $L-x$ and bends the beam hogging, so
@@ -173,9 +171,9 @@ The slope there is $EIv'(L/2)=-wL^3/16+wL^3/48+wL^3/24=0$, as symmetry requires.
 > [!check] Same answer by energy
 > Castigliano's theorem with a dummy load at midspan gives the same $5wL^4/384EI$ ([[SESA2028 S8 - Virtual Work and Castigliano Theorems#Midspan deflection under a uniform load|S8]]). The integration route needs boundary conditions; the energy route needs only the moment distribution.
 
-### Other cases used in the module
+### Other standard cases
 
-The cantilever under a uniform load $w$ has $M=-w(L-x)^2/2$, and the same double integration (done in [[SESA2028 S1 - Section Properties and Unsymmetrical Bending#Tip deflection|S1]]) gives $v_{tip}=wL^4/8EI$. Under a tip moment $M_0$ the moment is constant, $EIv''=-M_0$ with a hogging (negative) $M_0$ giving $v=|M_0|x^2/2EI$ and $v_{tip}=M_0L^2/2EI$. The simply supported beam with a central load gives $FL^3/48EI$ ([[SESA2028 S7 - Strain Energy and Conservation of Energy#Central load on a simply supported beam|S7]]).
+The cantilever under a uniform load $w$ has $M=-w(L-x)^2/2$, and the same double integration gives $v_{tip}=wL^4/8EI$ ([[SESA2028 S1 - Section Properties and Unsymmetrical Bending#Tip deflection|S1]]). Under a tip moment $M_0$ the moment is constant, $EIv''=-M_0$, so with the root conditions $v=-M_0x^2/2EI$ and $v_{tip}=-M_0L^2/2EI$. A hogging (negative) $M_0$ therefore deflects the tip downward, by $|M_0|L^2/2EI$. The simply supported beam with a central load gives $FL^3/48EI$ ([[SESA2028 S7 - Strain Energy and Conservation of Energy#Central load on a simply supported beam|S7]]).
 
 ## 4. The two design checks
 
@@ -243,7 +241,7 @@ $$
 The VDAS software does this conversion.
 
 > [!check] The demonstration reading
-> In the set-up video, at $0°$ the gauges read $\delta_1=-0.93$ mm and $\delta_2=-0.82$ mm. Then $\delta_u=(-0.93-0.82)/\sqrt2=-1.24$ mm and $|\delta_v|=0.11/\sqrt2=0.08$ mm, matching the software's $-1.2$ mm and 0.08 mm. The small horizontal value at $0°$ is measurement error for a section loaded along a principal axis.
+> In the demonstration, at $0°$ the gauges read $\delta_1=-0.93$ mm and $\delta_2=-0.82$ mm. Then $\delta_u=(-0.93-0.82)/\sqrt2=-1.24$ mm and $|\delta_v|=0.11/\sqrt2=0.08$ mm, matching the software's $-1.2$ mm and 0.08 mm. The small horizontal value at $0°$ is measurement error for a section loaded along a principal axis.
 
 Dividing by the load gives the compliances $u=\delta_u/W$ and $v=\delta_v/W$. From the tilted-beam analysis of [[SESA2028 S1 - Section Properties and Unsymmetrical Bending#1. The tilted rectangle|S1]], with principal second moments $I_{xp}$, $I_{yp}$ and the angle $\theta$ between the load and a principal axis,
 
@@ -269,7 +267,7 @@ $$
 I_{max}=\frac{L^3}{3E(OC-R)},\qquad I_{min}=\frac{L^3}{3E(OC+R)} .
 $$
 
-The angle on the circle from the starting point to a crossing is $2\theta$; on the beam it is $\theta$, which locates the principal axes relative to the chuck. In the lab's notation $u$ is vertical and $v$ horizontal, the reverse of some lecture slides.
+The angle on the circle from the starting point to a crossing is $2\theta$; on the beam it is $\theta$, which locates the principal axes relative to the chuck. In the lab's notation $u$ is vertical and $v$ horizontal (the opposite assignment also appears in some course material).
 
 ![[structures_s2_lab_compliance_circle.png|760]]
 

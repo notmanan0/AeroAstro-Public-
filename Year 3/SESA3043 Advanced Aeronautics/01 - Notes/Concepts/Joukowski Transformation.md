@@ -34,10 +34,10 @@ $$C_L=\frac{8\pi a}{c}\sin(\alpha+\beta),\qquad\alpha_{L=0}=-\beta.$$
 
 The trailing edge is cusped, with zero included angle, which is why the coursework uses the [[Kármán–Trefftz Transformation|Kármán–Trefftz]] map instead. In the demo sweep at $\alpha=3^\circ$, raising $\varepsilon$ from 0 to 0.1 takes $C_L$ from 0.329 to 0.359, while raising $\beta$ from 0 to 0.1 rad takes it to 1.045 ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#The Joukowski demo reproduced|2.1]]).
 
-In the exam this is examined as logic rather than calculation: know the steps from cylinder to aerofoil, but you won't be asked to compute a Joukowski or KT flow by hand (9 Oct, ll. 490–495).
+In the exam this is examined as logic rather than calculation: know the steps from cylinder to aerofoil, but you won't be asked to compute a Joukowski or KT flow by hand.
 
 ![[aa_joukowski_aerofoil.png|700]]
 
 ## Related
 
-- [[SESA3043 2.1 - Complex Functions and Conformal Mapping#4. The Joukowski aerofoil (slides 15–18)]] · [[Kutta Condition]] · [[Kutta-Joukowski Theorem]]
+- [[SESA3043 2.1 - Complex Functions and Conformal Mapping#4. The Joukowski aerofoil]] · [[Kutta Condition]] · [[Kutta-Joukowski Theorem]]

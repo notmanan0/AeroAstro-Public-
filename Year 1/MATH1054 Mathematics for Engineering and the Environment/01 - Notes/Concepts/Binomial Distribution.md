@@ -39,7 +39,7 @@ The common trap is the tail. "At least 3" includes 3, so its complement is "at m
 
 ## Related
 
-- Topics: [[MATH1054 M25 - Statistics II#4. The binomial distribution (James §13.5.1)|MATH1054 M25 - Statistics II]]
+- Topics: [[MATH1054 M25 - Statistics II#4. The binomial distribution|MATH1054 M25 - Statistics II]]
 - Concepts: [[Probability Rules and Conditional Probability]] · [[Mean, Median and Variance of a Distribution]] · [[Normal Distribution and Standardisation]]
 - Worked solutions: [[MATH1054 M25 Solutions - Statistics II#Example 13.25: 3 items out of stock in an order of 20]]
 - Sources: James, *Modern Engineering Mathematics* (6th ed.) §13.5.1 (Example 13.25, Exercises 50–51); MATH1054 Module Booklet, Module 25.

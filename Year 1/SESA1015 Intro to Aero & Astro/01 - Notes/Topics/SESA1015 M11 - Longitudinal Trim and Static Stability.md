@@ -32,11 +32,11 @@ sources: ["02 - Sources/Mechanics of Flight/Mechanics of Flight - Course Notes.p
 > - **Assumptions:** controls fixed (stick fixed); thrust and drag through the CG; tailplane's own pitching moment neglected; linear lift curves $C_L=a_1\alpha$, $C_{L_T}=a_{1T}\alpha_T+a_{2T}\eta$; downwash $\varepsilon=(d\varepsilon/d\alpha)\alpha$; distances as fractions of $\bar c$ from the wing leading edge; slopes per radian or per degree, consistently.
 > - **Method:** 1. Write $h$, $h_0$ (quarter chord if not given), $\bar V=S_Tl_T/(S\bar c)$. 2. $h_n=h_0+\bar V(a_{1T}/a_1)(1-d\varepsilon/d\alpha)$. 3. $K_n=h_n-h$, $dC_{m_G}/d\alpha=-a_1K_n$. 4. For trim set $C_{m_G}=0$ and solve for $\alpha$, $\eta$ or $\alpha_s$. 5. For sizing, invert step 2 for $\bar V$, then $S_T=\bar VS\bar c/l_T$.
 > - **Common mistakes:** measuring $l_T$ from the CG when it is defined from the wing aerodynamic centre (it makes no difference only when they coincide); forgetting the factor $(1-d\varepsilon/d\alpha)$, which makes the tail look more effective than it is.
-> - **Practise:** [[#Tail area for a given static margin (Slides v2 p. 211)]] · [[SESA1015 T07 - Trim and Static Stability Solutions#Question 8]]
+> - **Practise:** [[#Tail area for a given static margin]] · [[SESA1015 T07 - Trim and Static Stability Solutions#Question 8]]
 
-Treating the aircraft as a point at which lift, drag, thrust and weight balance ignores moments. A real aircraft also has to balance moments, and keep them balanced when it is disturbed. Three separate requirements follow (Notes §8.1). **Trim**: in a steady flight condition (which may include a steady acceleration such as a correctly banked turn, a steady climb or a dive) all forces and moments balance, which in the pitching plane means zero moment about the centre of gravity, $M_G=0$. **Static stability**: when a small disturbance such as a gust moves the aircraft away from that condition, the forces and moments it causes initially tend to return it. **Control**: the pilot can move from one trimmed condition to another and correct for disturbances. An aircraft can be trimmed but unstable, like a pencil balanced on its point, and stable but not trimmed at the current elevator setting.
+Treating the aircraft as a point at which lift, drag, thrust and weight balance ignores moments. A real aircraft also has to balance moments, and keep them balanced when it is disturbed. Three separate requirements follow. **Trim**: in a steady flight condition (which may include a steady acceleration such as a correctly banked turn, a steady climb or a dive) all forces and moments balance, which in the pitching plane means zero moment about the centre of gravity, $M_G=0$. **Static stability**: when a small disturbance such as a gust moves the aircraft away from that condition, the forces and moments it causes initially tend to return it. **Control**: the pilot can move from one trimmed condition to another and correct for disturbances. An aircraft can be trimmed but unstable, like a pencil balanced on its point, and stable but not trimmed at the current elevator setting.
 
-Static stability is about the initial tendency only. Whether the aircraft then actually settles back, or overshoots and oscillates with growing amplitude, is dynamic stability, which also depends on inertia and damping; a dynamically stable aircraft is statically stable, but not the other way round (Slides v2 pp. 186–188). On a finned rocket the fins move the centre of pressure behind the CG, and a gust that increases the angle of attack makes a moment that reduces it; without fins the centre of pressure is near the nose and the moment increases the angle, which finless rockets correct with thrust vectoring (Slides v2 pp. 189–191).
+Static stability is about the initial tendency only. Whether the aircraft then actually settles back, or overshoots and oscillates with growing amplitude, is dynamic stability, which also depends on inertia and damping; a dynamically stable aircraft is statically stable, but not the other way round. On a finned rocket the fins move the centre of pressure behind the CG, and a gust that increases the angle of attack makes a moment that reduces it; without fins the centre of pressure is near the nose and the moment increases the angle, which finless rockets correct with thrust vectoring.
 
 For an aircraft in pitch the corresponding condition is on the slope of the pitching moment about the CG. With nose-up moments positive, a positive change in $\alpha$ must produce a negative change in $M_G$:
 
@@ -48,7 +48,7 @@ A wing on its own usually fails this test or cannot trim, and the job of the tai
 
 ## 1. Moments about the CG: wing and body alone
 
-The lift of the wing and body acts at the aerodynamic centre (AC), about which the pitching moment does not change with incidence ([[Aerodynamic Centre and Centre of Pressure]], [[SESA1015 M03 - Aerodynamic Characteristics and the Drag Polar|M03]]). Measure positions from the wing leading edge as fractions of the reference chord $\bar c$: the AC at $h_0\bar c$ and the CG at $h\bar c$. With the CG a distance $(h-h_0)\bar c$ behind the AC, the lift $L_w$ at the AC has a nose-up moment arm about the CG, so (Slides v2 p. 199)
+The lift of the wing and body acts at the aerodynamic centre (AC), about which the pitching moment does not change with incidence ([[Aerodynamic Centre and Centre of Pressure]], [[SESA1015 M03 - Aerodynamic Characteristics and the Drag Polar|M03]]). Measure positions from the wing leading edge as fractions of the reference chord $\bar c$: the AC at $h_0\bar c$ and the CG at $h\bar c$. With the CG a distance $(h-h_0)\bar c$ behind the AC, the lift $L_w$ at the AC has a nose-up moment arm about the CG, so
 
 $$
 M_G=M_0+L_w\,(h-h_0)\bar c .
@@ -66,11 +66,11 @@ $$
 \frac{dC_{m_G}}{d\alpha}=a_1\,(h-h_0).
 $$
 
-This is negative only if the CG is ahead of the AC ($h<h_0$). But then trim, $C_{m_G}=0$, needs $C_{m0}=-C_L(h-h_0)>0$, a nose-up moment at zero lift, and a cambered wing has $C_{m0}<0$. A conventional cambered wing alone therefore cannot be both trimmed and stable at positive lift; it needs a tailplane (Slides v2 p. 199), or a reflexed or swept-and-twisted wing that makes $C_{m0}$ positive, as on flying wings and hang gliders.
+This is negative only if the CG is ahead of the AC ($h<h_0$). But then trim, $C_{m_G}=0$, needs $C_{m0}=-C_L(h-h_0)>0$, a nose-up moment at zero lift, and a cambered wing has $C_{m0}<0$. A conventional cambered wing alone therefore cannot be both trimmed and stable at positive lift; it needs a tailplane, or a reflexed or swept-and-twisted wing that makes $C_{m0}$ positive, as on flying wings and hang gliders.
 
 ## 2. Moments about the CG with a tailplane
 
-Add a horizontal tailplane whose lift $P$ acts a distance $l_T$ behind the wing AC (Notes §8.1.3, p. 50). Thrust and drag are taken to act through the CG, so they contribute no moment (symbols as in the course notes):
+Add a horizontal tailplane whose lift $P$ acts a distance $l_T$ behind the wing AC. Thrust and drag are taken to act through the CG, so they contribute no moment (symbols as in the course notes):
 
 | Symbol | Meaning |
 |---|---|
@@ -97,7 +97,7 @@ $$
 
 ### Coefficient form and the tail volume coefficient
 
-Divide by $\tfrac12\rho V^2S\bar c$. The tailplane lift coefficient is defined on the tailplane's own area, $P=\tfrac12\rho V^2S_TC_{L_T}$ (the tailplane's own pitching moment, $\propto S_T\bar c_T$, is small and neglected; Notes p. 51):
+Divide by $\tfrac12\rho V^2S\bar c$. The tailplane lift coefficient is defined on the tailplane's own area, $P=\tfrac12\rho V^2S_TC_{L_T}$ (the tailplane's own pitching moment, $\propto S_T\bar c_T$, is small and neglected):
 
 $$
 C_{m_G}=C_{m0}+(h-h_0)\left(C_{L_w}+C_{L_T}\frac{S_T}{S}\right)-\frac{S_Tl_T}{S\bar c}\,C_{L_T}.
@@ -109,7 +109,7 @@ $$
 \boxed{\,\bar V=\frac{S_Tl_T}{S\bar c}\,},
 $$
 
-the tail area times its moment arm, made non-dimensional by the wing area times the wing chord (Slides v2 p. 203). Vertical equilibrium in level flight gives
+the tail area times its moment arm, made non-dimensional by the wing area times the wing chord. Vertical equilibrium in level flight gives
 
 $$
 L=L_w+P=W=\tfrac12\rho V^2SC_L\quad\Rightarrow\quad C_L=C_{L_w}+C_{L_T}\frac{S_T}{S},
@@ -124,7 +124,7 @@ $$
 The trim conditions are then $C_{m_G}=0$ (from $M_G=0$) together with $C_L=C_{L_w}+C_{L_T}S_T/S$ (from $W=L_w+P$). Both have to be satisfied at once: the tail load changes the lift the wing must carry.
 
 > [!tip] Where the tail force goes
-> With $l_T$ measured between the two aerodynamic centres and $l_{CG}$ from the wing AC to the CG, the moment is $M_{CG}=L_wl_{CG}+M_W-L_T(l_T-l_{CG})+M_T$, and regrouping gives $(L_w+L_T)l_{CG}+M_W-L_Tl_T+M_T$ (Slides v2 p. 203). This and the derivation above both lead to $C_{m_G}=C_L(h-h_0)+C_{m0}-\bar VC_{L_T}$: the tail lift appears once inside $C_L$, acting at the wing AC, and once as a pure couple $-\bar VC_{L_T}$.
+> With $l_T$ measured between the two aerodynamic centres and $l_{CG}$ from the wing AC to the CG, the moment is $M_{CG}=L_wl_{CG}+M_W-L_T(l_T-l_{CG})+M_T$, and regrouping gives $(L_w+L_T)l_{CG}+M_W-L_Tl_T+M_T$. This and the derivation above both lead to $C_{m_G}=C_L(h-h_0)+C_{m0}-\bar VC_{L_T}$: the tail lift appears once inside $C_L$, acting at the wing AC, and once as a pure couple $-\bar VC_{L_T}$.
 
 ### Downwash and the tailplane angle of attack
 
@@ -140,7 +140,7 @@ $$
 \varepsilon=\frac{d\varepsilon}{d\alpha}\,\alpha,
 $$
 
-with $d\varepsilon/d\alpha$ usually between 0.25 and 0.5, depending on where the tailplane sits (Notes p. 53). A downwash $\varepsilon_0$ at zero wing lift can be included, $\varepsilon=\varepsilon_0+(d\varepsilon/d\alpha)\alpha$, and is usually taken as $\varepsilon_0=0$ (Slides v2 pp. 204, 206).
+with $d\varepsilon/d\alpha$ usually between 0.25 and 0.5, depending on where the tailplane sits. A downwash $\varepsilon_0$ at zero wing lift can be included, $\varepsilon=\varepsilon_0+(d\varepsilon/d\alpha)\alpha$, and is usually taken as $\varepsilon_0=0$.
 
 The tailplane is set at a rigging (setting) angle $\alpha_s$ to the wing datum (the slides' $i_H$), and carries an elevator deflected by $\eta$, positive trailing edge down (the slides' $\delta_e$). Measured from the local, deflected flow, the tailplane angle of attack is
 
@@ -164,23 +164,23 @@ $$
 C_{L_T}=a_{1T}\,\alpha_T+a_{2T}\,\eta,\qquad a_{1T}=\frac{\partial C_{L_T}}{\partial\alpha_T}\ (\eta\text{ fixed}),\quad a_{2T}=\frac{\partial C_{L_T}}{\partial\eta}\ (\alpha_T\text{ fixed}).
 $$
 
-$a_{1T}$ is the tailplane lift-curve slope and $a_{2T}$ the elevator effectiveness (the slides' $dC_{L_T}/d\delta_e$, normally constant for a given elevator; Slides v2 p. 215). For the complete aircraft $C_L=a_1\alpha$ with $a_1=dC_L/d\alpha$.
+$a_{1T}$ is the tailplane lift-curve slope and $a_{2T}$ the elevator effectiveness (the slides' $dC_{L_T}/d\delta_e$, normally constant for a given elevator). For the complete aircraft $C_L=a_1\alpha$ with $a_1=dC_L/d\alpha$.
 
 ### The full moment equation
 
-Substitute $C_L=a_1\alpha$ and the tailplane lift into $C_{m_G}=C_{m0}+(h-h_0)C_L-\bar VC_{L_T}$ (Notes p. 53):
+Substitute $C_L=a_1\alpha$ and the tailplane lift into $C_{m_G}=C_{m0}+(h-h_0)C_L-\bar VC_{L_T}$:
 
 $$
 \boxed{\,C_{m_G}=C_{m0}+(h-h_0)\,a_1\alpha-\bar V\left\{a_{1T}\left[\alpha_s+\alpha\left(1-\frac{d\varepsilon}{d\alpha}\right)\right]+a_{2T}\,\eta\right\}\,}.
 $$
 
-The wing-plus-body part rises with $\alpha$ when the CG is aft of the AC (destabilising), and the tailplane part falls with $\alpha$ (stabilising), starting from a nose-up value at zero lift when the tail is set at negative incidence. Their sum is the complete-aircraft line, and where it crosses zero is the trimmed lift coefficient (Notes p. 51). A different tailplane or elevator angle shifts the tailplane line up or down and so moves the trim point without changing the slope.
+The wing-plus-body part rises with $\alpha$ when the CG is aft of the AC (destabilising), and the tailplane part falls with $\alpha$ (stabilising), starting from a nose-up value at zero lift when the tail is set at negative incidence. Their sum is the complete-aircraft line, and where it crosses zero is the trimmed lift coefficient. A different tailplane or elevator angle shifts the tailplane line up or down and so moves the trim point without changing the slope.
 
 ![[mof_m11_cm_components.png|900]]
 
 ## 3. Trim: elevator angle and tailplane angle
 
-At trim $C_{m_G}=0$. Solving the full moment equation for the elevator angle (Notes p. 54):
+At trim $C_{m_G}=0$. Solving the full moment equation for the elevator angle:
 
 $$
 \bar Va_{2T}\,\eta=C_{m0}+(h-h_0)\,a_1\alpha-\bar Va_{1T}\left[\alpha_s+\alpha\left(1-\frac{d\varepsilon}{d\alpha}\right)\right].
@@ -196,13 +196,13 @@ The angle of attack $\alpha$ in these equations is the one the flight condition 
 
 ### Trim in terms of the zero-lift moment
 
-Grouping the terms that do not depend on $\alpha$ gives a zero-lift moment about the CG. With the wing and body at zero incidence from their zero-lift line ($\alpha_{wb}=0$) the wing lift is zero, so only $C_M$ and the tail lift at zero wing incidence remain (Slides v2 p. 206):
+Grouping the terms that do not depend on $\alpha$ gives a zero-lift moment about the CG. With the wing and body at zero incidence from their zero-lift line ($\alpha_{wb}=0$) the wing lift is zero, so only $C_M$ and the tail lift at zero wing incidence remain:
 
 $$
 C_{M_0}=C_M+V_{HT}\,a_T\,(\varepsilon_0-i_H).
 $$
 
-With $C_M<0$, $\varepsilon_0\approx0$ and the tail set at negative incidence ($i_H<0$), the tail produces a download at zero lift and $C_{M_0}$ becomes positive, which is what a stable aircraft needs to trim at positive lift. With the elevator term $C_{L_T}=a_T\alpha_T+(dC_{L_T}/d\delta_e)\delta_e$, the moment becomes (Slides v2 p. 216)
+With $C_M<0$, $\varepsilon_0\approx0$ and the tail set at negative incidence ($i_H<0$), the tail produces a download at zero lift and $C_{M_0}$ becomes positive, which is what a stable aircraft needs to trim at positive lift. With the elevator term $C_{L_T}=a_T\alpha_T+(dC_{L_T}/d\delta_e)\delta_e$, the moment becomes
 
 $$
 C_{M_{CG}}=C_{M_0}+\frac{dC_{M_{CG}}}{d\alpha}\,\alpha_{wb}-V_{HT}\frac{dC_{L_T}}{d\delta_e}\,\delta_e,
@@ -218,11 +218,11 @@ A negative $\delta_e$ is trailing edge up. This is the earlier elevator equation
 
 ### Trim drag and the forward CG limit
 
-The design case for the largest up-elevator angle is the highest-$C_L$ condition, $\alpha=\alpha_{stall}$, and the most forward CG is set by the largest negative elevator angle available at maximum $C_L$ (Notes p. 54). When the tailplane carries a download, the wing must carry the weight plus that download, so both surfaces produce extra induced drag. This is **trim drag**, and it is one reason not to put the CG further forward than stability needs.
+The design case for the largest up-elevator angle is the highest-$C_L$ condition, $\alpha=\alpha_{stall}$, and the most forward CG is set by the largest negative elevator angle available at maximum $C_L$. When the tailplane carries a download, the wing must carry the weight plus that download, so both surfaces produce extra induced drag. This is **trim drag**, and it is one reason not to put the CG further forward than stability needs.
 
 ## 4. Static stability, the neutral point and the static margin
 
-With the controls held fixed ($\eta$ and $\alpha_s$ constant, "stick fixed"), differentiate the full moment equation with respect to $\alpha$ (Notes §8.2, p. 55):
+With the controls held fixed ($\eta$ and $\alpha_s$ constant, "stick fixed"), differentiate the full moment equation with respect to $\alpha$:
 
 $$
 \frac{dC_{m_G}}{d\alpha}=(h-h_0)\,a_1-\bar Va_{1T}\left(1-\frac{d\varepsilon}{d\alpha}\right).
@@ -246,7 +246,7 @@ $$
 \boxed{\,K_n=h_n-h\,},
 $$
 
-which must be positive. Subtracting the neutral-point condition from the slope equation (Slides v2 p. 210),
+which must be positive. Subtracting the neutral-point condition from the slope equation,
 
 $$
 \frac{dC_{m_G}}{d\alpha}-0=(h-h_0)a_1-(h_n-h_0)a_1
@@ -256,15 +256,15 @@ $$
 \boxed{\,\frac{dC_{m_G}}{d\alpha}=-a_1\,(h_n-h)=-a_1K_n\,}.
 $$
 
-Dividing by $dC_L/d\alpha=a_1$ gives the equivalent form $dC_{m_G}/dC_L=-K_n$. The static margin is a direct measure of longitudinal static stability: the larger it is, the stronger the restoring moment per unit change in lift coefficient, and the more elevator is needed to change the trimmed condition, so a very stable aircraft is also less manoeuvrable (Slides v2 p. 210). The stick-free case is added in [[Neutral Point and Static Margin]] (SESA2022).
+Dividing by $dC_L/d\alpha=a_1$ gives the equivalent form $dC_{m_G}/dC_L=-K_n$. The static margin is a direct measure of longitudinal static stability: the larger it is, the stronger the restoring moment per unit change in lift coefficient, and the more elevator is needed to change the trimmed condition, so a very stable aircraft is also less manoeuvrable. The stick-free case is added in [[Neutral Point and Static Margin]] (SESA2022).
 
 ![[mof_m11_cg_sweep.png|900]]
 
-The figure shows the same aircraft with the CG at four positions. The zero-lift moment $C_{M_0}$ does not depend on the CG (at zero lift there is no wing lift to have a moment arm), so every line passes through the same point and the CG changes only the slope. Moving the CG aft rotates the line anticlockwise through neutral ($K_n=0$, horizontal) to unstable. Moving the CG is therefore one way to change trim; the elevator, which shifts the line up or down, is the other (Slides v2 pp. 212–214).
+The figure shows the same aircraft with the CG at four positions. The zero-lift moment $C_{M_0}$ does not depend on the CG (at zero lift there is no wing lift to have a moment arm), so every line passes through the same point and the CG changes only the slope. Moving the CG aft rotates the line anticlockwise through neutral ($K_n=0$, horizontal) to unstable. Moving the CG is therefore one way to change trim; the elevator, which shifts the line up or down, is the other.
 
 ## 5. Trim and C of G margin, elevator angle against speed
 
-In level flight $L=W$, so $\tfrac12\rho V^2SC_L$ is constant and $V^2C_L$ is constant (Notes §8.2.1, p. 55). Differentiating with respect to $V$,
+In level flight $L=W$, so $\tfrac12\rho V^2SC_L$ is constant and $V^2C_L$ is constant. Differentiating with respect to $V$,
 
 $$
 \frac{d(V^2C_L)}{dV}=V^2\frac{dC_L}{dV}+2VC_L=0
@@ -296,23 +296,23 @@ $$
 \boxed{\,\frac{d\eta}{dV}=\frac{2C_L}{V}\,\frac{K_n}{\bar Va_{2T}}\,}.
 $$
 
-For a stable aircraft ($K_n>0$) the elevator angle to trim increases (more trailing edge down) as speed rises, and more up-elevator is needed to fly slower. The rate is largest when the speed is low (high $C_L$, and $V$ in the denominator) and when the static margin is large, that is with the CG well forward (Notes p. 56). With $K_n=0$ the elevator angle does not change with speed at all, and with $K_n<0$ the gradient reverses, which a pilot would feel as the aircraft trying to diverge from any trimmed speed. See also [[Elevator Angle to Trim]].
+For a stable aircraft ($K_n>0$) the elevator angle to trim increases (more trailing edge down) as speed rises, and more up-elevator is needed to fly slower. The rate is largest when the speed is low (high $C_L$, and $V$ in the denominator) and when the static margin is large, that is with the CG well forward. With $K_n=0$ the elevator angle does not change with speed at all, and with $K_n<0$ the gradient reverses, which a pilot would feel as the aircraft trying to diverge from any trimmed speed. See also [[Elevator Angle to Trim]].
 
 ![[mof_m11_elevator_trim_speed.png|900]]
 
 ## 6. Tailplane and control design
 
-The tailplane must give adequate pitch stability in every configuration and must not need an excessive $C_{L_T}$ in the forward-CG, flaps-extended case (Notes §8.3, p. 56). To save weight and drag it should be as small as possible, so the ideal CG range is the one for which the stability requirement (aft CG limit) and the control requirement (forward CG limit) call for the same tailplane size. Where possible the tailplane should be kept out of strong downwash (high $d\varepsilon/d\alpha$ reduces its effectiveness through $1-d\varepsilon/d\alpha$), out of the wake of flaps and dive brakes, and out of intense propeller slipstream.
+The tailplane must give adequate pitch stability in every configuration and must not need an excessive $C_{L_T}$ in the forward-CG, flaps-extended case. To save weight and drag it should be as small as possible, so the ideal CG range is the one for which the stability requirement (aft CG limit) and the control requirement (forward CG limit) call for the same tailplane size. Where possible the tailplane should be kept out of strong downwash (high $d\varepsilon/d\alpha$ reduces its effectiveness through $1-d\varepsilon/d\alpha$), out of the wake of flaps and dive brakes, and out of intense propeller slipstream.
 
-The elevator must be able to trim and manoeuvre the aircraft in all configurations, stall it in all configurations, land it in a tail-down attitude, and lift the nose wheel on take-off below the stalling speed; the last three usually size it, and the critical case is usually the forward CG (Notes §8.4.1, p. 57). The aileron is usually sized by the landing approach, for example to roll to 60° of bank in 7 seconds, and must allow cross-wind landings in gusty conditions. The rudder is sized to counter an engine failure on take-off or to allow safe cross-wind landings (Notes §8.4.2–8.4.3).
+The elevator must be able to trim and manoeuvre the aircraft in all configurations, stall it in all configurations, land it in a tail-down attitude, and lift the nose wheel on take-off below the stalling speed; the last three usually size it, and the critical case is usually the forward CG. The aileron is usually sized by the landing approach, for example to roll to 60° of bank in 7 seconds, and must allow cross-wind landings in gusty conditions. The rudder is sized to counter an engine failure on take-off or to allow safe cross-wind landings.
 
-Directional (yaw) stability is provided by the fin in the same way as pitch stability by the tailplane, with a vertical tail volume coefficient based on span instead of chord, $V_{VT}=l_{VT}S_{VT}/(bS)$, whose typical values are much smaller than those of $V_{HT}$ (Slides v2 p. 218). In roll, dihedral provides a restoring moment, anhedral reduces roll stability for manoeuvrability, and a vertical offset between the CG and the centre of pressure (a high wing) also helps (Slides v2 p. 219); see [[Lateral and Directional Stability]].
+Directional (yaw) stability is provided by the fin in the same way as pitch stability by the tailplane, with a vertical tail volume coefficient based on span instead of chord, $V_{VT}=l_{VT}S_{VT}/(bS)$, whose typical values are much smaller than those of $V_{HT}$. In roll, dihedral provides a restoring moment, anhedral reduces roll stability for manoeuvrability, and a vertical offset between the CG and the centre of pressure (a high wing) also helps; see [[Lateral and Directional Stability]].
 
-A canard puts the horizontal lifting surface ahead of the wing. Its lift then acts ahead of the CG and is destabilising, which makes the aircraft manoeuvrable but harder to balance, places the CG awkwardly on large aircraft, and disturbs the flow over the main wing (Slides v2 p. 207).
+A canard puts the horizontal lifting surface ahead of the wing. Its lift then acts ahead of the CG and is destabilising, which makes the aircraft manoeuvrable but harder to balance, places the CG awkwardly on large aircraft, and disturbs the flow over the main wing.
 
 ## Worked examples
 
-### Aerodynamic centre from wind-tunnel moments (Slides v2 p. 200)
+### Aerodynamic centre from wind-tunnel moments
 
 A wing-body model has zero lift at $\alpha=-1.5°$ and $C_L=0.52$ at $5°$. The moment coefficients about the CG are $-0.01$ at $1°$ and $0.05$ at $7.88°$, and the CG is at $0.35\bar c$. Find the AC position and $C_M$.
 
@@ -346,7 +346,7 @@ $$
 
 close to the quarter chord, as thin-aerofoil theory predicts. The slope $dC_{m_G}/d\alpha=a\,\tilde l_{CG}=+0.0087$/deg is positive: the wing-body alone with this CG is unstable.
 
-### Moment about the CG of a model with a tailplane (Slides v2 p. 208)
+### Moment about the CG of a model with a tailplane
 
 A wind-tunnel model has $S=0.1$ m², $\bar c=0.1$ m, $S_T=0.02$ m², tail setting $i_H=-2.7°$ relative to the wing, $a_T=0.1$/deg, $d\varepsilon/d\alpha=0.35$, $a=0.08$/deg and $C_M=-0.032$. The wing AC is 0.011 m ahead of the CG and the CG is 0.17 m ahead of the tail AC. Find $C_{M_{CG}}$ at $\alpha=7.88°$.
 
@@ -384,7 +384,7 @@ $$
 
 and $-aK_n=-0.08\times0.184=-0.01473$ per degree, as before.
 
-### Tail area for a given static margin (Slides v2 p. 211)
+### Tail area for a given static margin
 
 A small UAV has a rectangular wing of aspect ratio 6 and area 1.2 m², $C_L=5(\alpha+2/57.3)$, a tailplane with $C_{L_T}=5\alpha_T$ placed 1 m behind the wing (between aerodynamic centres), $d\varepsilon/d\alpha=0.2$, and the CG at mid-chord. The aerodynamic centres are at the quarter chord. Find the tailplane area for a static margin of 0.15.
 
@@ -403,7 +403,7 @@ $$
 > [!check] Back-substitution
 > $V_{HT}=0.268\times1/0.5367=0.500$, and $h_n=0.25+0.5\times1\times0.8=0.65$, so $K_n=0.65-0.5=0.15$.
 
-### Elevator angle to trim (Slides v2 p. 217)
+### Elevator angle to trim
 
 A full-scale aircraft has $S=19$ m², $W=22.7$ kN, elevator effectiveness $dC_{L_T}/d\delta_e=0.04$/deg, $a=0.08$/deg, $C_{M_0}=0.06$, $dC_{M_{CG}}/d\alpha=-0.0133$/deg and $V_{HT}=0.34$. Find the elevator angle to trim at 61 m/s at sea level.
 
@@ -467,21 +467,21 @@ The course notes and the slides use different symbols for the same quantities; b
 
 - [ ] Revision Q8: tailplane area for a static margin of 0.18 ("there will be a static margin question in the exam", workbook sheet Q8). → [[SESA1015 T07 - Trim and Static Stability Solutions#Question 8]]
 - [ ] Revision Q13: stabiliser trim angle with the CG at the wing-body AC. → [[SESA1015 T07 - Trim and Static Stability Solutions#Question 13]]
-- [ ] Slides v2 p. 211 example: tail area for a static margin of 0.15. → [[#Tail area for a given static margin (Slides v2 p. 211)]]
-- [ ] Slides v2 p. 208 example: moment about the CG of the model, deriving the equation and stating the assumptions. → [[#Moment about the CG of a model with a tailplane (Slides v2 p. 208)]]
+- [ ] Slides v2 p. 211 example: tail area for a static margin of 0.15. → [[#Tail area for a given static margin]]
+- [ ] Slides v2 p. 208 example: moment about the CG of the model, deriving the equation and stating the assumptions. → [[#Moment about the CG of a model with a tailplane]]
 - [ ] Derive the neutral point and $dC_{m_G}/d\alpha=-a_1K_n$ from the moment equation without notes. → [[#4. Static stability, the neutral point and the static margin]]
 
 ### Further practice
 
-- [ ] Slides v2 p. 200 example: aerodynamic centre and $C_M$ from two wind-tunnel moment readings. → [[#Aerodynamic centre from wind-tunnel moments (Slides v2 p. 200)]]
-- [ ] Slides v2 p. 217 example: elevator angle to trim at 61 m/s. → [[#Elevator angle to trim (Slides v2 p. 217)]]
+- [ ] Slides v2 p. 200 example: aerodynamic centre and $C_M$ from two wind-tunnel moment readings. → [[#Aerodynamic centre from wind-tunnel moments]]
+- [ ] Slides v2 p. 217 example: elevator angle to trim at 61 m/s. → [[#Elevator angle to trim]]
 - [ ] Derive $d\eta/dV=2C_LK_n/(V\bar Va_{2T})$ (Notes §8.2.1) and check it on the p. 217 aircraft (suggested, not lecturer-set). → [[#5. Trim and C of G margin, elevator angle against speed]]
 - [ ] Once SESA2022 Topic 6 is reached: [[SESA2022 Examples Sheet 6 - Static Stability Solutions]] extends the same model to stick-free and manoeuvre margins.
 
 ## Transcript and slide slips
 
 > [!warning] Slide slip (Slides v2 p. 217)
-> Where: [[#Elevator angle to trim (Slides v2 p. 217)]].
+> Where: [[#Elevator angle to trim]].
 >
 > The incidence is rounded to $\alpha_{req}=6.5°$ before it is used, which gives $\delta_e=(0.06-0.0133\times6.5)/0.0136=-1.94°$. The unrounded value is $\alpha_{req}=0.5242/0.08=6.55°$, which gives $\delta_e=-2.00°$. The numerator is a small difference of two similar numbers, so the rounding moves the answer by 3 %.
 

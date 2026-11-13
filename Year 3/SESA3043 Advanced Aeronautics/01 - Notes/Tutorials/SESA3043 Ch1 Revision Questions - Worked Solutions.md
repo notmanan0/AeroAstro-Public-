@@ -13,7 +13,7 @@ sources: ["03 - Exams & Past Papers/Ch1_Revision_Questions.pdf"]
 # SESA3043 Ch1 Revision Questions - Worked Solutions
 
 > [!abstract] Sheet info
-> Blackboard revision questions for Chapter 1 (updated 10 Sep 2026). Choose which questions to go through in the Friday tutorial and say so by email or on the discussion board (L4, ll. 9–16, 1 Oct). Short-answer questions are answered here in full; derivation questions link to the full derivation in the topic notes, with the key steps summarised.
+> Blackboard revision questions for Chapter 1 (updated 10 Sep 2026). Choose which questions to go through in the Friday tutorial and say so by email or on the discussion board. Short-answer questions are answered here in full; derivation questions link to the full derivation in the topic notes, with the key steps summarised.
 
 > [!info] The 2 Oct tutorial
 > The tutorial worked **§1.3 Q2 and Q3**. For Q2:
@@ -49,14 +49,14 @@ A specific quantity is what you integrate against $\rho\,\mathrm dV$: any extens
 
 **Q4. Physical meaning.**
 
-- (a) $\boldsymbol\Omega=\nabla\times\mathbf u$ is the **vorticity**: twice the local angular velocity of a fluid element about its own axis. Zero in potential flow. Irrotational does not mean "not going round": a parcel in a point vortex circulates but does not spin (L4, ll. 66–70; [[SESA3043 1.1 - Mathematical Tools and Flow Description#Curl and vorticity|1.1]]).
+- (a) $\boldsymbol\Omega=\nabla\times\mathbf u$ is the **vorticity**: twice the local angular velocity of a fluid element about its own axis. Zero in potential flow. Irrotational does not mean "not going round": a parcel in a point vortex circulates but does not spin ([[SESA3043 1.1 - Mathematical Tools and Flow Description#Curl and vorticity|1.1]]).
 - (b) $\mathbf u\times\boldsymbol\omega$ is the **Lamb vector** (vortex force per unit mass). It is the rotational part of the convective acceleration: $(\mathbf u\cdot\nabla)\mathbf u=\nabla\left(\tfrac12|\mathbf u|^2\right)-\mathbf u\times\boldsymbol\omega$. It is perpendicular to both the velocity and the vorticity, and it vanishes in irrotational flow. That is why Bernoulli holds everywhere there, not just along streamlines ([[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#8. The unsteady Bernoulli equation|1.3 §8]]).
 
 **Q5. Direction of a cross product.** Right-hand rule: curl the fingers of the right hand from the first vector to the second through the smaller angle; the thumb gives the direction. The result is perpendicular to both, with magnitude $|\mathbf a||\mathbf b|\sin\alpha$.
 
 **Q6.** No: $\mathbf u\times\boldsymbol\omega=-\boldsymbol\omega\times\mathbf u$. The cross product is anti-commutative.
 
-**Q7. The Laplace operator is linear:** $\nabla^2(a\phi_1+b\phi_2)=a\nabla^2\phi_1+b\nabla^2\phi_2$ for constants $a,b$, because differentiation is linear. Hence the principle of superposition for potential flow (L4, ll. 88–95). (The *Navier–Stokes* equations are nonlinear because of $(\mathbf u\cdot\nabla)\mathbf u$, so solutions cannot be superposed.)
+**Q7. The Laplace operator is linear:** $\nabla^2(a\phi_1+b\phi_2)=a\nabla^2\phi_1+b\nabla^2\phi_2$ for constants $a,b$, because differentiation is linear. Hence the principle of superposition for potential flow. (The *Navier–Stokes* equations are nonlinear because of $(\mathbf u\cdot\nabla)\mathbf u$, so solutions cannot be superposed.)
 
 **Q8 (extended).** Yes. $\dfrac{\partial u_i}{\partial x_i}=\dfrac{\partial u_j}{\partial x_j}=\dfrac{\partial u_1}{\partial x_1}+\dfrac{\partial u_2}{\partial x_2}+\dfrac{\partial u_3}{\partial x_3}=\nabla\cdot\mathbf u$. A repeated (dummy) index is summed and can be renamed freely; only free indices must match on both sides ([[SESA3043 1.1 - Mathematical Tools and Flow Description#3. Einstein summation and free indices|1.1 §3]]).
 
@@ -96,21 +96,21 @@ $$
 
 ## 1.3 Potential flow
 
-- **Q1** Complex potentials of uniform flow, source/sink and point vortex (doublet on the slides). → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#4. Complex potentials of the elementary flows (revision 1.3 Q1)]]
-- **Q2** Cylinder from uniform flow + doublet, velocity field and $C_p=1-4\sin^2\theta$. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#6. The cylinder again, in one line (revision 1.3 Q2)]]
-- **Q3** Wall velocity $U_e=k(m+1)s^m$ and gradient $mU_e/s$ for wedge flow. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Velocity and its gradient along the wall (revision 1.3 Q3)]]
+- **Q1** Complex potentials of uniform flow, source/sink and point vortex (plus the doublet). → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#4. Complex potentials of the elementary flows]]
+- **Q2** Cylinder from uniform flow + doublet, velocity field and $C_p=1-4\sin^2\theta$. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#6. The cylinder again, in one line]]
+- **Q3** Wall velocity $U_e=k(m+1)s^m$ and gradient $mU_e/s$ for wedge flow. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Velocity and its gradient along the wall]]
 - **Q4** (extended) Plot $\phi$ and $\psi$ contours: see the generator function `cylinder_flow` in `generate_aero_ch1b_figures.py`. → ![[aa_cylinder_flow.png|500]]
-- **Q5** (extended) Lifting cylinder: $\Phi=U(z+R^2/z)-\dfrac{i\Gamma}{2\pi}\ln z$, $\sin\theta_s=\Gamma/4\pi UR$, $L'=\rho U|\Gamma|$. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Lifting cylinder: uniform flow plus doublet plus point vortex (revision 1.3 Q5)]]
+- **Q5** (extended) Lifting cylinder: $\Phi=U(z+R^2/z)-\dfrac{i\Gamma}{2\pi}\ln z$, $\sin\theta_s=\Gamma/4\pi UR$, $L'=\rho U|\Gamma|$. → [[SESA3043 1.3 - Complex Potential, Wedge Flows and Unsteady Bernoulli#Lifting cylinder: uniform flow plus doublet plus point vortex]]
 
 ## 1.4 Two-dimensional incompressible boundary layers
 
 All six are answered in [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers]]:
 
 - **Q1** scales; **Q2** order-of-magnitude derivation → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#3. Order-of-magnitude analysis, step by step]]
-- **Q3** $\partial p/\partial y=0$: pressure imposed by the outer flow → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#y-momentum (slides 25–31)]]
-- **Q4** $-\tfrac1\rho\,\mathrm dp/\mathrm dx=U_e\,\mathrm dU_e/\mathrm dx$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Bernoulli at the edge (slides 33–37; revision §1.4 Q4)]]
-- **Q5** $\delta/L\sim Re^{-1/2}$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#x-momentum, term by term (slides 17–24)]]
-- **Q6** parabolic, marching solution → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Why parabolic matters (revision §1.4 Q6)]]
+- **Q3** $\partial p/\partial y=0$: pressure imposed by the outer flow → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#y-momentum]]
+- **Q4** $-\tfrac1\rho\,\mathrm dp/\mathrm dx=U_e\,\mathrm dU_e/\mathrm dx$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Bernoulli at the edge]]
+- **Q5** $\delta/L\sim Re^{-1/2}$ → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#x-momentum, term by term]]
+- **Q6** parabolic, marching solution → [[SESA3043 1.4 - Two-Dimensional Incompressible Boundary Layers#Why parabolic matters]]
 
 ## Links
 

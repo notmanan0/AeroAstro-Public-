@@ -33,7 +33,7 @@ the equations of the course spreadsheet. Every four-digit section is thickest at
 
 ![[mof_m02_naca4412.png|800]]
 
-Worked example (Slides v2, p. 37): NACA 4412 with a 1 m chord has maximum camber $0.04c=0.04$ m at $0.4c=0.4$ m from the leading edge and maximum thickness $0.12c=0.12$ m. NACA 0012 is the symmetric 12% section.
+Worked example: NACA 4412 with a 1 m chord has maximum camber $0.04c=0.04$ m at $0.4c=0.4$ m from the leading edge and maximum thickness $0.12c=0.12$ m. NACA 0012 is the symmetric 12% section.
 
 The common trap is to read P as a percentage: in NACA 4412 the second 4 means 0.4 of the chord, not 4%.
 

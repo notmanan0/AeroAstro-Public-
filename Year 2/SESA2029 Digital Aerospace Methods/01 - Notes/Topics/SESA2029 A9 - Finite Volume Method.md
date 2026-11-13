@@ -29,13 +29,13 @@ sources: ["02 - Sources/CFD/All_lectures_as_delivered.pdf (L10, pp. 130–142)",
 > - **Common mistakes:** taking the upwind value from the wrong side when the flow reverses (unstable); calling an inviscid wall different from a symmetry plane (they are the same condition).
 > - **Practise:** [[#Interpolating a face value]] · [[SESA2029 CFD Worked Examples#Q11: QUICK coefficients|CFD worked examples Q11]] · [[SESA2029 CFD Worked Examples#Q12: Midpoint-rule surface integral error|Q12]]
 
-Finite elements are the standard tool for solid mechanics (Part B); for fluids the standard is the finite volume method, built from the finite-difference tools of A2 to A6 (2025-10-31, ll. 1–20). Fluent is a finite volume code, and knowing its notation helps when choosing options, especially when a case will not converge (ll. 21–30).
+Finite elements are the standard tool for solid mechanics (Part B); for fluids the standard is the finite volume method, built from the finite-difference tools of A2 to A6. Fluent is a finite volume code, and knowing its notation helps when choosing options, especially when a case will not converge.
 
-The finite volume method gives the control volume of [[SESA2029 A7 - Governing Equations - Euler and Navier-Stokes|A7]] a finite size. Each cell stores how much of each conserved quantity it holds; what one cell exports through a face is the amount its neighbour imports through the same face, so however crude the estimate of that flux, nothing is created or lost between cells. Summed over the grid, the internal fluxes cancel in pairs and only the boundary fluxes remain, just as the exact equations require. That built-in conservation is also a safety feature: a scheme that balances momentum against applied forces in every cell is less likely to diverge (ll. 76–90).
+The finite volume method gives the control volume of [[SESA2029 A7 - Governing Equations - Euler and Navier-Stokes|A7]] a finite size. Each cell stores how much of each conserved quantity it holds; what one cell exports through a face is the amount its neighbour imports through the same face, so however crude the estimate of that flux, nothing is created or lost between cells. Summed over the grid, the internal fluxes cancel in pairs and only the boundary fluxes remain, just as the exact equations require. That built-in conservation is also a safety feature: a scheme that balances momentum against applied forces in every cell is less likely to diverge.
 
 ## 1. The integral conservation law
 
-For a volume $V$ bounded by a surface $S$ with outward unit normal $\mathbf n$, mass conservation reads (ll. 21–40)
+For a volume $V$ bounded by a surface $S$ with outward unit normal $\mathbf n$, mass conservation reads
 
 $$
 \frac{\partial}{\partial t}\int_V\rho\,dV+\int_S\rho\,\mathbf v\cdot\mathbf n\,dS=0,
@@ -53,11 +53,11 @@ $$
 \int_V\left(\frac{\partial\rho}{\partial t}+\nabla\cdot(\rho\mathbf v)\right)dV=0.
 $$
 
-This holds for every volume, however small, so the integrand itself is zero, which is the differential form of A7 (ll. 41–60). Finite differences discretise the differential form; finite volumes work with the integral form, with rates of change of cell contents and fluxes across cell faces, but use the same numerical tools.
+This holds for every volume, however small, so the integrand itself is zero, which is the differential form of A7. Finite differences discretise the differential form; finite volumes work with the integral form, with rates of change of cell contents and fluxes across cell faces, but use the same numerical tools.
 
 ## 2. The procedure and the notation
 
-The method runs as follows (ll. 61–100):
+The method runs as follows:
 
 1. Divide the domain into a finite number of cells: the automatic triangles or tetrahedra of the wing lab, or quadrilaterals, hexahedra, prisms.
 2. Apply the integral conservation equations to each cell.
@@ -66,7 +66,7 @@ The method runs as follows (ll. 61–100):
 5. Apply the boundary conditions.
 6. Solve the resulting sparse system, typically with library iterative solvers such as GMRES ([[SESA2029 A3 - Iterative Solution of the Steady Heat Equation|A3]]).
 
-Neighbours are named by compass points (ll. 101–120). The cell centre is P; its neighbours are N, S, E and W, then NE, NW, SE, SW, and further out EE, WW. Lower-case letters mark the faces: e is the centre of the east face, n of the north face, and so on, with corners ne, nw, se, sw. The main task is to find the flux through each face.
+Neighbours are named by compass points. The cell centre is P; its neighbours are N, S, E and W, then NE, NW, SE, SW, and further out EE, WW. Lower-case letters mark the faces: e is the centre of the east face, n of the north face, and so on, with corners ne, nw, se, sw. The main task is to find the flux through each face.
 
 ![[dam_fv_compass_stencil.png|820]]
 
@@ -86,7 +86,7 @@ which on a uniform grid is the central difference of $\partial(\rho u)/\partial 
 
 ## 3. Surface integrals and the midpoint rule
 
-Put the origin at the east-face centre e, with $y$ along the face of length $\Delta y$ (ll. 121–200). The flux $f$ (convective $\rho\phi\,\mathbf v\cdot\mathbf n$ or diffusive $\Gamma\nabla\phi\cdot\mathbf n$) varies along the face but only $f_e$ will be known. Expand about e:
+Put the origin at the east-face centre e, with $y$ along the face of length $\Delta y$. The flux $f$ (convective $\rho\phi\,\mathbf v\cdot\mathbf n$ or diffusive $\Gamma\nabla\phi\cdot\mathbf n$) varies along the face but only $f_e$ will be known. Expand about e:
 
 $$
 f(y)=f_e+y\left(\frac{\partial f}{\partial y}\right)_e+\frac{y^2}{2}\left(\frac{\partial^2f}{\partial y^2}\right)_e+\dots
@@ -104,13 +104,13 @@ $$
 \int_{-\Delta y/2}^{\Delta y/2}f\,dy=f_e\,\Delta y+\frac{\Delta y^3}{24}\left(\frac{\partial^2f}{\partial y^2}\right)_e+\dots
 $$
 
-Keeping only the first term, the midpoint rule $\int_{S_e}f\,dS\approx f_e\,\Delta y$, leaves an error of order $\Delta y^3$ per face, which is second-order accuracy. Most finite volume codes are therefore second order: on any cell shape, they take the value at the middle of each face and multiply by its area (ll. 186–200). Fourth order would need extra information along the face, such as values at ne and se.
+Keeping only the first term, the midpoint rule $\int_{S_e}f\,dS\approx f_e\,\Delta y$, leaves an error of order $\Delta y^3$ per face, which is second-order accuracy. Most finite volume codes are therefore second order: on any cell shape, they take the value at the middle of each face and multiply by its area. Fourth order would need extra information along the face, such as values at ne and se.
 
-The unknowns are at cell centres, not face centres, so $f_e$ must still be interpolated (ll. 201–225). Volume integrals are easier, since the centre value times the cell volume, $\int_Vq\,dV\approx q_P\,\Delta V$, is already second order (ll. 346–350).
+The unknowns are at cell centres, not face centres, so $f_e$ must still be interpolated. Volume integrals are easier, since the centre value times the cell volume, $\int_Vq\,dV\approx q_P\,\Delta V$, is already second order.
 
 ## 4. Interpolating the face values
 
-Expanding about P gives $\phi_e=\phi_P+(x_e-x_P)(\partial\phi/\partial x)_P+\dots$; keeping only the first term is the simplest choice (ll. 226–260).
+Expanding about P gives $\phi_e=\phi_P+(x_e-x_P)(\partial\phi/\partial x)_P+\dots$; keeping only the first term is the simplest choice.
 
 The upwind differencing scheme (UDS) takes the value from the side the flow comes from:
 
@@ -120,7 +120,7 @@ $$
 
 It is first order, bounded and the most stable choice. The donor is set by the sign of the face-normal velocity, so for the east face it is P or E even when the flow arrives at an angle. Looking in the wrong direction makes the scheme unstable, as in [[SESA2029 A5 - Numerical Stability - Von Neumann Analysis, Fourier and CFL Numbers|A5]]. Upwinding is necessary but not sufficient for stability: with explicit time stepping it still needs a Courant number $C\le1$. Switching Fluent from second-order to first-order upwind is a standard way to get a difficult case to converge. The cost in code is an `if` on the flow direction, and branches are slow on modern processors.
 
-The second-order upwind scheme draws a straight line through W and P and extends it to e (ll. 266–285). On a uniform grid e is half a spacing beyond P and W is a whole spacing behind it:
+The second-order upwind scheme draws a straight line through W and P and extends it to e. On a uniform grid e is half a spacing beyond P and W is a whole spacing behind it:
 
 $$
 \phi_e=\phi_P+\tfrac12(\phi_P-\phi_W)=\tfrac12(3\phi_P-\phi_W).
@@ -128,7 +128,7 @@ $$
 
 On a non-uniform grid the coefficients differ and have to be derived for the actual spacings, the same Taylor-table work as for finite differences.
 
-The central differencing scheme (CDS) interpolates linearly between P and E (ll. 286–295):
+The central differencing scheme (CDS) interpolates linearly between P and E:
 
 $$
 \phi_e=\lambda_e\phi_E+(1-\lambda_e)\phi_P,
@@ -138,7 +138,7 @@ $$
 
 which is $\tfrac12(\phi_P+\phi_E)$ on a uniform grid. It is second order and independent of flow direction, and stable with implicit time stepping, but it can produce oscillations and converge less easily. Fluent's standard set-up uses either this or second-order upwind. Diffusive fluxes use the central gradient $(\partial\phi/\partial x)_e\approx(\phi_E-\phi_P)/(x_E-x_P)$.
 
-QUICK (Leonard's quadratic upstream interpolation for convective kinematics, also called quadratic upwind interpolation) fits a parabola through two upstream nodes and one downstream (ll. 296–315). For flow to the right those are W, P and E; for flow to the left, EE, E and P. With D, U and UU the downstream, upstream and second-upstream nodes,
+QUICK (Leonard's quadratic upstream interpolation for convective kinematics, also called quadratic upwind interpolation) fits a parabola through two upstream nodes and one downstream. For flow to the right those are W, P and E; for flow to the left, EE, E and P. With D, U and UU the downstream, upstream and second-upstream nodes,
 
 $$
 \phi_e=\phi_U+g_1(\phi_D-\phi_U)+g_2(\phi_U-\phi_{UU}),
@@ -206,13 +206,13 @@ The figure shows the trade-off on the convection equation: first-order upwind st
 
 ### Choosing schemes in Fluent
 
-A typical solver panel mixes orders: second-order upwind for momentum, where accuracy in Newton's second law matters most, second order for pressure, and first-order upwind for the turbulence kinetic energy and dissipation rate (ll. 316–330). The balance is between convergence and grid dependence (ll. 331–350). With second order everywhere, doubling the grid in every direction should cut the error by four, which is what a grid study wants; dropping equations to first order helps the residuals fall but slows convergence with grid refinement. Fluent's defaults are the starting point, the turbulence equations are the first to relax since their model error is larger anyway, and the cause of poor convergence is often the grid, which is the first place to look.
+A typical solver panel mixes orders: second-order upwind for momentum, where accuracy in Newton's second law matters most, second order for pressure, and first-order upwind for the turbulence kinetic energy and dissipation rate. The balance is between convergence and grid dependence. With second order everywhere, doubling the grid in every direction should cut the error by four, which is what a grid study wants; dropping equations to first order helps the residuals fall but slows convergence with grid refinement. Fluent's defaults are the starting point, the turbulence equations are the first to relax since their model error is larger anyway, and the cause of poor convergence is often the grid, which is the first place to look.
 
 ## 5. Boundary conditions
 
-At an inflow, the fluxes $\rho u$, $\rho v$, $\rho w$ are specified on the inflow faces and dotted with the normal (ll. 351–360). At a no-slip wall the velocity components are set to zero on the wall face. A ghost cell is a fictitious cell outside the domain, filled by extrapolation from inside (for a south boundary, linearly from N and P), so the interior stencil can be used unchanged at the boundary; codes often surround the whole domain with them (ll. 356–365).
+At an inflow, the fluxes $\rho u$, $\rho v$, $\rho w$ are specified on the inflow faces and dotted with the normal. At a no-slip wall the velocity components are set to zero on the wall face. A ghost cell is a fictitious cell outside the domain, filled by extrapolation from inside (for a south boundary, linearly from N and P), so the interior stencil can be used unchanged at the boundary; codes often surround the whole domain with them.
 
-A symmetry plane mirrors the flow (ll. 366–380, 421–450). The velocity component normal to the plane changes sign across it, so it must be zero on it; the tangential component is the same on both sides, so its normal derivative is zero. For a plane $y=0$:
+A symmetry plane mirrors the flow. The velocity component normal to the plane changes sign across it, so it must be zero on it; the tangential component is the same on both sides, so its normal derivative is zero. For a plane $y=0$:
 
 $$
 v=0,
@@ -222,9 +222,9 @@ $$
 
 This is the image method of aerodynamics: mirror the velocity vector. A pressure outlet fixes the static pressure and extrapolates everything else from the interior.
 
-The coursework conditions all fit this list (ll. 391–420). The inviscid wall of the wing lab has zero normal velocity and zero normal gradient of the tangential velocity, which is the same as a symmetry condition, and that is also why a "free-stream" boundary on which the normal velocity is set to zero in an incompressible simulation behaves as a wall: the conditions are identical. The boundary-layer lab uses an inflow, an outlet and a symmetry plane, and its upper boundary can alternatively be set to zero stress, a separate free-stream condition for the Navier–Stokes equations ([[CFD Boundary Conditions]]).
+The coursework conditions all fit this list. The inviscid wall of the wing lab has zero normal velocity and zero normal gradient of the tangential velocity, which is the same as a symmetry condition, and that is also why a "free-stream" boundary on which the normal velocity is set to zero in an incompressible simulation behaves as a wall: the conditions are identical. The boundary-layer lab uses an inflow, an outlet and a symmetry plane, and its upper boundary can alternatively be set to zero stress, a separate free-stream condition for the Navier–Stokes equations ([[CFD Boundary Conditions]]).
 
-The examinable points (ll. 376–395) are: a CFD solver solves the integral conservation laws; how the surface integrals are built; why interpolation is needed, with QUICK as the common second-order scheme; and the common boundary conditions used in the coursework.
+The examinable points are: a CFD solver solves the integral conservation laws; how the surface integrals are built; why interpolation is needed, with QUICK as the common second-order scheme; and the common boundary conditions used in the coursework.
 
 ## Worked examples
 

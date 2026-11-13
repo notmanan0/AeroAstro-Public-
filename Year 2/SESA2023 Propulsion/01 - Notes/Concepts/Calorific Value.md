@@ -15,7 +15,7 @@ sources: ["02 - Sources/Lectures/Week 05 - Combustion.pdf"]
 
 The calorific value is the heat released per kg of fuel when the reactants and products are both at the reference state (298.15 K, 1 bar), that is, in isothermal, constant-pressure combustion: $\dot Q_{out} = \dot m_f\,LCV$. The lower calorific value (LCV) leaves the product water as vapour; the higher value (HCV) condenses it, so HCV > LCV. Propulsion uses the LCV.
 
-Adiabatic combustion keeps $h$ constant and raises $T$, whereas the isothermal combustion that defines the LCV keeps $T$ constant and releases heat; on an $h$–$T$ plot the products' curve lies below the reactants' curve by the LCV at 298 K. The pressure dependence is negligible, but the temperature reference matters, which is why the three-step path for the [[Adiabatic Flame Temperature]] returns the reactants to 298 K first. The Data Book (Table 1) gives:
+Adiabatic combustion keeps $h$ constant and raises $T$, whereas the isothermal combustion that defines the LCV keeps $T$ constant and releases heat; on an $h$–$T$ plot the products' curve lies below the reactants' curve by the LCV at 298 K. The pressure dependence is negligible, but the temperature reference matters, which is why the three-step path for the [[Adiabatic Flame Temperature]] returns the reactants to 298 K first. Typical values (Data Book Table 1):
 
 | Fuel | LCV (MJ/kg) |
 |---|---|

@@ -31,21 +31,21 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 13.txt", "02 - Sources/Lecture
 > - **Assumptions:** $a>0$, so the switch or impulse happens inside $0<x<\infty$; $\mathrm{Re}\,s>0$; initial conditions at $x=0$.
 > - **Method:** 1. Rewrite each source term in the form $g(x-a)H(x-a)$. 2. Transform; substitute the initial conditions. 3. Solve for $\tilde y$ and group terms by their $e^{-as}$ factor. 4. Partial-fraction each group, ignoring the exponential. 5. Invert each group, replace $x$ by $x-a$ and multiply by $H(x-a)$.
 > - **Common mistakes:** treating $f(x)H(x-a)$ as if it were $f(x-a)H(x-a)$; inverting $e^{-as}\tilde f$ to $f(x)H(x-a)$ without shifting the argument of $f$.
-> - **Practise:** [[#Switching on a constant force (L13)]] · [[#The 2025-26 exam, question A1]] · [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms|PS5 Q3(e)–(h), Q4]]
+> - **Practise:** [[#Switching on a constant force]] · [[#The 2025-26 exam, question A1]] · [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms|PS5 Q3(e)–(h), Q4]]
 
-Two kinds of source suit the Laplace transform (ll. 1–29). Some do nothing and then suddenly do something, or the reverse, like a current switched on or off. Others act at a single instant, like the force on a ball as it bounces off a wall: the velocity flips sign instantly, so the force that does it acts only at the moment of contact. That second kind is the derivative of the first. The methods of ODE1–ODE2 assume the source is smooth enough to differentiate, and these sources are not. An integral transform doesn't care, because integration smooths things out: it adds regularity where differentiation removes it.
+Two kinds of source suit the Laplace transform. Some do nothing and then suddenly do something, or the reverse, like a current switched on or off. Others act at a single instant, like the force on a ball as it bounces off a wall: the velocity flips sign instantly, so the force that does it acts only at the moment of contact. That second kind is the derivative of the first. The methods of ODE1–ODE2 assume the source is smooth enough to differentiate, and these sources are not. An integral transform doesn't care, because integration smooths things out: it adds regularity where differentiation removes it.
 
-Two functions cover both kinds of source. The Heaviside function is a unit step, and by scaling, shifting and multiplying it any piecewise-continuous source can be built; the Dirac delta is a unit impulse. Once their transforms are known, the only new tool needed is the second shift theorem, and the delta then needs no extra work at all (ll. 321–354).
+Two functions cover both kinds of source. The Heaviside function is a unit step, and by scaling, shifting and multiplying it any piecewise-continuous source can be built; the Dirac delta is a unit impulse. Once their transforms are known, the only new tool needed is the second shift theorem, and the delta then needs no extra work at all.
 
 ---
 
-## 1. The Heaviside function (L13)
+## 1. The Heaviside function
 
 $$
 H(x-a)=\begin{cases}0,&x<a,\\1,&x>a.\end{cases}
 $$
 
-It is named after Oliver Heaviside, the nineteenth-century engineer (ll. 38–52). Changing the argument from $x$ to $x-a$ moves the switch to $x=a$, multiplying by a constant changes the height, and from there any discontinuous function can be assembled (ll. 53–116):
+It is named after Oliver Heaviside, the nineteenth-century engineer. Changing the argument from $x$ to $x-a$ moves the switch to $x=a$, multiplying by a constant changes the height, and from there any discontinuous function can be assembled:
 
 | Construction | What it does |
 |---|---|
@@ -58,7 +58,7 @@ In the first row, left of $-1$ both functions are 0, between $-1$ and $1$ only t
 
 ### Its Laplace transform
 
-Take $a>0$, so the switch is inside the range of integration (ll. 151–178). For $x<a$ the integrand is zero, and for $x>a$ the Heaviside function is 1, so
+Take $a>0$, so the switch is inside the range of integration. For $x<a$ the integrand is zero, and for $x>a$ the Heaviside function is 1, so
 
 $$
 \mathcal L[H(x-a)]=\int_0^\infty H(x-a)e^{-sx}\,dx=\int_a^\infty e^{-sx}\,dx .
@@ -78,17 +78,17 @@ $$
 
 With $a=0$ this is $\mathcal L[1]=\frac1s$, as it should be, since $H(x)=1$ for all $x>0$.
 
-## 2. The second shift theorem (L13)
+## 2. The second shift theorem
 
 $$
 \mathcal L[f(x-a)H(x-a)]=e^{-as}\tilde f(s),\qquad a>0 .
 $$
 
-Both arguments are $x-a$ (ll. 186–192). That is the natural way to state it, and other forms can be reduced to it by redefining the variable.
+Both arguments are $x-a$. That is the natural way to state it, and other forms can be reduced to it by redefining the variable.
 
 ### Proof
 
-This is the proof asked for in 2025/26 A1(a). Start from the definition (ll. 193–220):
+This is the proof asked for in 2025/26 A1(a). Start from the definition:
 
 $$
 \mathcal L[f(x-a)H(x-a)]=\int_0^\infty f(x-a)H(x-a)e^{-sx}\,dx .
@@ -114,7 +114,7 @@ $$
 
 ### Using it to invert
 
-The theorem matters most in reverse (ll. 222–239):
+The theorem matters most in reverse:
 
 $$
 \mathcal L^{-1}\big[e^{-as}\tilde f(s)\big]=f(x-a)H(x-a).
@@ -129,9 +129,9 @@ Questions often give a source as $f(x)H(x-a)$ instead, with an unshifted $f$. Re
 > [!check] SymPy
 > `laplace_transform` gives $\frac{e^{-2s}}{s}$ for $H(x-2)$, $\frac{e^{1-s}}{s-1}$ for $e^xH(x-1)$, $\frac{e^{-s}}{s^2+1}$ for $\sin(x-1)H(x-1)$ and $-\frac{e^{-\pi s}}{s^2+1}$ for $\sin x\,H(x-\pi)$.
 
-### Switching on a constant force (L13)
+### Switching on a constant force
 
-Solve $y''+y=H(x-1)$ with $y(0)=0$, $y'(0)=1$ (ll. 240–313). Before $x=1$ this is the unforced oscillator kicked from rest, whose solution is $\sin x$ (TR2). At $x=1$ a constant force switches on. The pendulum should keep swinging with the same period, but now about a displaced position.
+Solve $y''+y=H(x-1)$ with $y(0)=0$, $y'(0)=1$. Before $x=1$ this is the unforced oscillator kicked from rest, whose solution is $\sin x$ (TR2). At $x=1$ a constant force switches on. The pendulum should keep swinging with the same period, but now about a displaced position.
 
 Transform both sides:
 
@@ -151,7 +151,7 @@ $$
 \tilde y=\frac1{s^2+1}+e^{-s}\,\frac1{s(s^2+1)} .
 $$
 
-Partial fractions on the second fraction, ignoring the exponential (ll. 268–271). The denominator has a linear factor and an irreducible quadratic:
+Partial fractions on the second fraction, ignoring the exponential. The denominator has a linear factor and an irreducible quadratic:
 
 $$
 \frac1{s(s^2+1)}=\frac As+\frac{Bs+C}{s^2+1}\quad\Longrightarrow\quad1=A(s^2+1)+(Bs+C)s .
@@ -163,20 +163,20 @@ $$
 \tilde y=\frac1{s^2+1}+e^{-s}\Big(\frac1s-\frac s{s^2+1}\Big).
 $$
 
-Term by term, with the formula sheet (ll. 272–306), $\frac1{s^2+1}$ is $\mathcal L[\sin x]$. The bracket is $\mathcal L[1-\cos x]$, and the factor $e^{-s}$ means $a=1$, so by the second shift theorem the whole second term is $\mathcal L\big[(1-\cos(x-1))H(x-1)\big]$. Hence
+Term by term, with the formula sheet, $\frac1{s^2+1}$ is $\mathcal L[\sin x]$. The bracket is $\mathcal L[1-\cos x]$, and the factor $e^{-s}$ means $a=1$, so by the second shift theorem the whole second term is $\mathcal L\big[(1-\cos(x-1))H(x-1)\big]$. Hence
 
 $$
 y=\sin x+H(x-1)\big[1-\cos(x-1)\big].
 $$
 
-For $x<1$ this is $\sin x$, the expected free swing. After $x=1$ the extra term oscillates with the same period but a phase lag, starting the moment the force switches on (ll. 307–313).
+For $x<1$ this is $\sin x$, the expected free swing. After $x=1$ the extra term oscillates with the same period but a phase lag, starting the moment the force switches on.
 
 ![[m2048_tr_lecture13_solutions.png|900]]
 
 > [!check] Continuity at the switch
 > For $x>1$, $y''+y=1$ is satisfied exactly, and the extra term $1-\cos(x-1)$ and its derivative $\sin(x-1)$ are both zero at $x=1$. So $y$ and $y'$ are continuous through the switch; only $y''$ jumps, by the size of the step. SymPy's `inverse_laplace_transform` gives the same $y$.
 
-Transforming the ODE turns each Heaviside source into an exponential on the right-hand side; after solving for $\tilde y$, some terms keep their exponentials; inverting those terms needs the second shift theorem and produces Heaviside functions in the answer (ll. 314–319).
+Transforming the ODE turns each Heaviside source into an exponential on the right-hand side; after solving for $\tilde y$, some terms keep their exponentials; inverting those terms needs the second shift theorem and produces Heaviside functions in the answer.
 
 ### A force switched on and then off (PS5 Q3f)
 
@@ -212,9 +212,9 @@ The response rises towards the steady value $\frac12$ (where $2y=1$) while the f
 
 ![[m2048_tr_pulse_response.png|760]]
 
-## 3. The Dirac delta (L13)
+## 3. The Dirac delta
 
-The Dirac delta is badly named, because it is not a function (ll. 118–143). It is a functional: something that acts on a function and returns a number, and it only makes sense inside an integral. Its definition is what it does there:
+The Dirac delta is badly named, because it is not a function. It is a functional: something that acts on a function and returns a number, and it only makes sense inside an integral. Its definition is what it does there:
 
 $$
 \int_a^b\delta(x-c)f(x)\,dx=\begin{cases}f(c),&a<c<b,\\0,&c\text{ outside }[a,b].\end{cases}
@@ -222,25 +222,25 @@ $$
 
 It picks out the value of the function it multiplies at the point where its argument is zero, provided that point is inside the range of integration. This is called the sifting property.
 
-$\delta$ is often described as zero everywhere except at the origin, where it is infinite, but that description misleads. A better picture is a sequence of narrower and taller rectangles, each with area 1, so that integrating any of them against $f$ gives approximately $f(0)$, and taking the limit (ll. 136–140). That picture suits intuition but not calculation, which should use the definition (ll. 141–143). The delta is the derivative of the Heaviside function in this sense, which is what makes it the model of an impulse, such as a hammer blow that changes momentum in an instant.
+$\delta$ is often described as zero everywhere except at the origin, where it is infinite, but that description misleads. A better picture is a sequence of narrower and taller rectangles, each with area 1, so that integrating any of them against $f$ gives approximately $f(0)$, and taking the limit. That picture suits intuition but not calculation, which should use the definition. The delta is the derivative of the Heaviside function in this sense, which is what makes it the model of an impulse, such as a hammer blow that changes momentum in an instant.
 
 ### Its Laplace transform
 
-With $a>0$, the argument $x-a$ is zero somewhere in $0<x<\infty$, so the sifting property applies straight away, with no integral left to do (ll. 325–339):
+With $a>0$, the argument $x-a$ is zero somewhere in $0<x<\infty$, so the sifting property applies straight away, with no integral left to do:
 
 $$
 \mathcal L[\delta(x-a)]=\int_0^\infty\delta(x-a)e^{-sx}\,dx=e^{-sa}.
 $$
 
-More generally, $\mathcal L[\delta(x-a)f(x)]=f(a)e^{-sa}$, because the delta picks out the value of everything else in the integrand (ll. 341–343). If $a<0$ the argument never vanishes in the range and the transform is just zero (ll. 344–346). The formula sheet's entry $\mathcal L[\delta(x)]=1$ is the convention for $a=0$.
+More generally, $\mathcal L[\delta(x-a)f(x)]=f(a)e^{-sa}$, because the delta picks out the value of everything else in the integrand. If $a<0$ the argument never vanishes in the range and the transform is just zero. The formula sheet's entry $\mathcal L[\delta(x)]=1$ is the convention for $a=0$.
 
 The same sifting idea simplifies a source before transforming: $g(x)\delta(x-a)=g(a)\delta(x-a)$. PS5 Q3(h) uses this to replace $\delta(x-2\pi)\cos x$ by $\delta(x-2\pi)$.
 
-Compared with the Heaviside function, this is the same exponential without the $\frac1s$, and it is exactly the kind of term the second shift theorem already inverts (ll. 347–354). So delta sources need no new mathematics, even though the solutions they produce behave quite differently.
+Compared with the Heaviside function, this is the same exponential without the $\frac1s$, and it is exactly the kind of term the second shift theorem already inverts. So delta sources need no new mathematics, even though the solutions they produce behave quite differently.
 
-### A pendulum struck by a hammer (L13)
+### A pendulum struck by a hammer
 
-A pendulum hangs at rest, $y(0)=\dot y(0)=0$ (ll. 355–436). At $t=0$ a hammer strikes it from the left, giving it a positive velocity. It is left alone until $t=\pi$, when the hammer strikes again, and again at $2\pi$, $3\pi$ and so on:
+A pendulum hangs at rest, $y(0)=\dot y(0)=0$. At $t=0$ a hammer strikes it from the left, giving it a positive velocity. It is left alone until $t=\pi$, when the hammer strikes again, and again at $2\pi$, $3\pi$ and so on:
 
 $$
 \ddot y+y=\sum_{n=0}^\infty\delta(t-n\pi).
@@ -264,10 +264,10 @@ $$
 y=\sum_{n=0}^\infty H(t-n\pi)\sin(t-n\pi).
 $$
 
-Every time $t$ passes a multiple of $\pi$, another sine switches on, with the same period but a different phase lag (ll. 415–430). Using $\sin(t-n\pi)=(-1)^n\sin t$, the sum is $\sin t$ on $(0,\pi)$; on $(\pi,2\pi)$ the new term $-\sin t$ cancels it and $y=0$; on $(2\pi,3\pi)$ another $+\sin t$ switches on, and so on. The strikes are perfectly timed: the second blow arrives just as the pendulum swings back through the bottom with velocity $-1$, and the impulse of $+1$ stops it dead. The next blow starts it again (right panel of the figure above).
+Every time $t$ passes a multiple of $\pi$, another sine switches on, with the same period but a different phase lag. Using $\sin(t-n\pi)=(-1)^n\sin t$, the sum is $\sin t$ on $(0,\pi)$; on $(\pi,2\pi)$ the new term $-\sin t$ cancels it and $y=0$; on $(2\pi,3\pi)$ another $+\sin t$ switches on, and so on. The strikes are perfectly timed: the second blow arrives just as the pendulum swings back through the bottom with velocity $-1$, and the impulse of $+1$ stops it dead. The next blow starts it again (right panel of the figure above).
 
 > [!warning] Mistimed strikes don't make it diverge
-> Slightly mistimed strikes are sometimes said to give constructive interference and a solution that diverges to infinity (ll. 433–435). That is only true for strikes about a whole period apart. With spacing $\tau$, the first $N$ strikes give $\sum_{n<N}\sin(t-n\tau)$, whose amplitude is $\big|\sin\frac{N\tau}2\big|/\big|\sin\frac\tau2\big|\leq1/\big|\sin\frac\tau2\big|$. For $\tau$ near $\pi$ that bound is about 1, so the motion stays bounded. The amplitude grows without bound only when $\tau$ is a multiple of $2\pi$, when every strike arrives in phase: resonance with an impulsive source. A simulation of 60 periods gives a peak of 1.00 for $\tau=0.95\pi$, 6.39 for $\tau=1.9\pi$ and 30 (one per strike) for $\tau=2\pi$.
+> Slightly mistimed strikes are sometimes said to give constructive interference and a solution that diverges to infinity. That is only true for strikes about a whole period apart. With spacing $\tau$, the first $N$ strikes give $\sum_{n<N}\sin(t-n\tau)$, whose amplitude is $\big|\sin\frac{N\tau}2\big|/\big|\sin\frac\tau2\big|\leq1/\big|\sin\frac\tau2\big|$. For $\tau$ near $\pi$ that bound is about 1, so the motion stays bounded. The amplitude grows without bound only when $\tau$ is a multiple of $2\pi$, when every strike arrives in phase: resonance with an impulsive source. A simulation of 60 periods gives a peak of 1.00 for $\tau=0.95\pi$, 6.39 for $\tau=1.9\pi$ and 30 (one per strike) for $\tau=2\pi$.
 
 ### The 2025-26 exam, question A1
 
@@ -359,7 +359,7 @@ Nothing was explicitly set in Lecture 13; the tools it relies on are the trigono
 ### Core
 
 - [ ] Prove the second shift theorem from the definition, as in 2025/26 A1(a). → [[#Proof]]
-- [ ] Rework $y''+y=H(x-1)$, $y(0)=0$, $y'(0)=1$ without notes and check that $y$ and $y'$ are continuous at $x=1$. → [[#Switching on a constant force (L13)]]
+- [ ] Rework $y''+y=H(x-1)$, $y(0)=0$, $y'(0)=1$ without notes and check that $y$ and $y'$ are continuous at $x=1$. → [[#Switching on a constant force]]
 - [ ] PS5 Q3(g): $2y''+y'+2y=\delta(x-5)$, $y(0)=y'(0)=0$. Answer: $y=\frac2{\sqrt{15}}H(x-5)e^{-(x-5)/4}\sin\big(\frac{\sqrt{15}}4(x-5)\big)$. → [[#An impulse with a non-unit leading coefficient (PS5 Q3g)]]
 - [ ] 2025/26 A1(b): $y''+2y'+2y=\delta(x-13)$, zero initial data. → [[#The 2025-26 exam, question A1]]
 
@@ -367,7 +367,7 @@ Nothing was explicitly set in Lecture 13; the tools it relies on are the trigono
 
 - [ ] PS5 Q3(e), (f) and (h): a sine switched off at $2\pi$, a unit force on for $0<x<10$, and $y''+y=\delta(x-2\pi)\cos x$. Answers: $\big(\frac13\sin x-\frac16\sin2x\big)[1-H(x-2\pi)]$; $g(x)-H(x-10)g(x-10)$ with $g=\frac12-e^{-x}+\frac12e^{-2x}$; $\sin x\,[1+H(x-2\pi)]$. (f) is worked here. → [[#A force switched on and then off (PS5 Q3f)]] · [[MATH2048 Problem Sheet 4-5 Solutions - Fourier and Laplace Transforms]]
 - [ ] PS5 Q4: the damped impulse response $y''+\gamma y'+y=k\delta(x-1)$ and the kick $k_1$ needed for a peak of 2. Answers: $k_1=2.8108$, $2.3995$, $2$ for $\gamma=\frac12,\frac14,0$. → [[#How hard to strike for a given peak (PS5 Q4)]]
-- [ ] Redo the hammer problem with strikes every $2\pi$ and show the amplitude after $N$ strikes is $N$ (suggested, not lecturer-set). → [[#A pendulum struck by a hammer (L13)]]
+- [ ] Redo the hammer problem with strikes every $2\pi$ and show the amplitude after $N$ strikes is $N$ (suggested, not lecturer-set). → [[#A pendulum struck by a hammer]]
 
 ## Transcript and slide slips
 

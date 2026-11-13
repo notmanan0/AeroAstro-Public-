@@ -37,19 +37,19 @@ A guitar string or a diving board, once disturbed, vibrates at a few particular 
 
 Three examples: an engine shaking its wing, because a rotating engine has a wide range of excitation frequencies; tail flutter, a self-excited flow–structure interaction in which, above the flutter speed, the system's damping becomes negative and the oscillation grows until the structure fails; and a highly flexible wing in a wind tunnel settling into limit-cycle oscillations because of nonlinearity.
 
-Aerospace structures see time-varying loads from gusts, from engines whose rotation speed sets the excitation frequency, and from turbulence and flow separation (ll. 36–60). Vibration is oscillation about an equilibrium, so the usual procedure is a static analysis for the equilibrium, then the dynamic loads on top. When an excitation frequency matches a natural frequency, a large response occurs that affects fatigue life, noise, performance and safety. The Tacoma Narrows bridge, which tore itself apart in a steady 35 mph wind in 1940, is the classic example; the destructive motion was a torsional mode, probably the third rather than the first (ll. 61–100). For a fan blade, the natural frequencies are computed first and the operating speeds chosen so that the excitation does not match any of them (ll. 76–90).
+Aerospace structures see time-varying loads from gusts, from engines whose rotation speed sets the excitation frequency, and from turbulence and flow separation. Vibration is oscillation about an equilibrium, so the usual procedure is a static analysis for the equilibrium, then the dynamic loads on top. When an excitation frequency matches a natural frequency, a large response occurs that affects fatigue life, noise, performance and safety. The Tacoma Narrows bridge, which tore itself apart in a steady 35 mph wind in 1940, is the classic example; the destructive motion was a torsional mode, probably the third rather than the first. For a fan blade, the natural frequencies are computed first and the operating speeds chosen so that the excitation does not match any of them.
 
-Modal analysis has two aims: the natural frequencies at which the structure tends to vibrate, and the mode shapes, the deformed shape at each (ll. 86–100). Two modes close together, such as a bending and a torsion mode, are dangerous for aeroelastic stability, and lightweight composite structures make this common, because low mass makes the natural-frequency spectrum dense (ll. 101–110). Vibration can also be put to use, as in energy harvesters tuned to vibrate at a chosen frequency (ll. 111–120).
+Modal analysis has two aims: the natural frequencies at which the structure tends to vibrate, and the mode shapes, the deformed shape at each. Two modes close together, such as a bending and a torsion mode, are dangerous for aeroelastic stability, and lightweight composite structures make this common, because low mass makes the natural-frequency spectrum dense. Vibration can also be put to use, as in energy harvesters tuned to vibrate at a chosen frequency.
 
 ## 2. The eigenvalue problem
 
-Assume a linear elastic structure, so $[M]$ and $[K]$ are constant, with no applied loads, in free, undamped vibration (ll. 121–130):
+Assume a linear elastic structure, so $[M]$ and $[K]$ are constant, with no applied loads, in free, undamped vibration:
 
 $$
 [M]\{\ddot u\}+[K]\{u\}=\{0\}.
 $$
 
-For two DOF, $[M]$ is $2\times2$ with the masses on the diagonal, and $[K]$ is the stiffness matrix of the static analyses. Assume harmonic motion with amplitude vector $\{\phi\}_i$, circular frequency $\omega_i$ and phase $\theta_i$ (ll. 131–140):
+For two DOF, $[M]$ is $2\times2$ with the masses on the diagonal, and $[K]$ is the stiffness matrix of the static analyses. Assume harmonic motion with amplitude vector $\{\phi\}_i$, circular frequency $\omega_i$ and phase $\theta_i$:
 
 $$
 \{u\}=\{\phi\}_i\sin(\omega_it+\theta_i).
@@ -81,32 +81,32 @@ f_i=\frac{\omega_i}{2\pi}\ \text{(Hz)},
 T_i=\frac1{f_i}
 $$
 
-(ll. 136–150). A model with $n$ DOF has $n$ natural frequencies, but usually only the first few, typically six, matter because they represent most of the dynamic motion. The eigenvector $\{\phi\}_i$ is the mode shape at $f_i$ ([[Natural Frequencies and Mode Shapes]]). MATLAB and Python libraries solve the problem directly, and FE matrices are often exported to them so that the modes can be used for control, vibration mitigation and reduced-order models (ll. 151–165).
+. A model with $n$ DOF has $n$ natural frequencies, but usually only the first few, typically six, matter because they represent most of the dynamic motion. The eigenvector $\{\phi\}_i$ is the mode shape at $f_i$ ([[Natural Frequencies and Mode Shapes]]). MATLAB and Python libraries solve the problem directly, and FE matrices are often exported to them so that the modes can be used for control, vibration mitigation and reduced-order models.
 
-The eigenvector's amplitude is arbitrary, so it is normalised (ll. 166–185): to the mass matrix, $\{\phi\}_i^T[M]\{\phi\}_i=1$, which is what ANSYS reports, or to unity, with the largest component set to one. The shape, first bending, second bending or torsion, is what is interpreted, not the numbers. A first estimate of the lowest frequency treats the structure as a single spring and mass, $\omega_0\approx\sqrt{k/m}$ (ll. 211–215).
+The eigenvector's amplitude is arbitrary, so it is normalised: to the mass matrix, $\{\phi\}_i^T[M]\{\phi\}_i=1$, which is what ANSYS reports, or to unity, with the largest component set to one. The shape, first bending, second bending or torsion, is what is interpreted, not the numbers. A first estimate of the lowest frequency treats the structure as a single spring and mass, $\omega_0\approx\sqrt{k/m}$.
 
-The damped single-DOF system $m\ddot x+c\dot x+kx=f(t)$ (appendix slides 22–25, not lectured) is written as $\ddot x+2\zeta\omega_0\dot x+\omega_0^2x=0$ with $\omega_0=\sqrt{k/m}$ and damping ratio $\zeta=c/(2m\omega_0)$ (written $\varepsilon$ on the slides); for $\zeta<1$ the roots are $-\zeta\omega_0\pm i\omega_0\sqrt{1-\zeta^2}$, with damped natural frequency $\omega_d=\omega_0\sqrt{1-\zeta^2}$, and the pair $(\omega_0,\zeta)$ is the system's modal model ([[Damping Ratio and Natural Frequency]]).
+The damped single-DOF system $m\ddot x+c\dot x+kx=f(t)$ (appendix material, not lectured) is written as $\ddot x+2\zeta\omega_0\dot x+\omega_0^2x=0$ with $\omega_0=\sqrt{k/m}$ and damping ratio $\zeta=c/(2m\omega_0)$ (also written $\varepsilon$); for $\zeta<1$ the roots are $-\zeta\omega_0\pm i\omega_0\sqrt{1-\zeta^2}$, with damped natural frequency $\omega_d=\omega_0\sqrt{1-\zeta^2}$, and the pair $(\omega_0,\zeta)$ is the system's modal model ([[Damping Ratio and Natural Frequency]]).
 
 ## 3. What controls the natural frequencies
 
-Natural frequencies and mode shapes depend on stiffness, mass and boundary conditions (ll. 246–270). Stiffness depends on geometry and material, so changing a beam's section or material changes its frequencies, and higher stiffness means higher frequencies. More mass means lower frequencies; for the first mode it is the ratio $k/m$ that counts. Lightweight structures are flexible as well as light and typically have closely spaced natural frequencies at low frequency (a dense spectrum), which is why modal analysis is so important for modern aircraft and spacecraft. A clamped support restrains more than a simple support, which still allows rotation, so a clamped structure is stiffer and has higher natural frequencies, as the lab 1 beam models can show.
+Natural frequencies and mode shapes depend on stiffness, mass and boundary conditions. Stiffness depends on geometry and material, so changing a beam's section or material changes its frequencies, and higher stiffness means higher frequencies. More mass means lower frequencies; for the first mode it is the ratio $k/m$ that counts. Lightweight structures are flexible as well as light and typically have closely spaced natural frequencies at low frequency (a dense spectrum), which is why modal analysis is so important for modern aircraft and spacecraft. A clamped support restrains more than a simple support, which still allows rotation, so a clamped structure is stiffer and has higher natural frequencies, as the lab 1 beam models can show.
 
-A highly flexible research wing has an aluminium plate spar, a 3D-printed aerofoil shell and tip rods, and is mounted on an optical table for ground vibration testing (ll. 186–215). The FE model of the assembly gives:
+A highly flexible research wing has an aluminium plate spar, a 3D-printed aerofoil shell and tip rods, and is mounted on an optical table for ground vibration testing. The FE model of the assembly gives:
 
 | Mode | Frequency (Hz) |
 |---|---|
 | 1st bending | 4.2 |
-| 2nd bending | 28.5 (slide) |
+| 2nd bending | 28.5 |
 | 1st torsion | 40.7 |
 | 3rd bending | 82.3 |
 
 For aeroelasticity the second bending and first torsion modes matter most: as the airspeed increases, aerodynamic stiffness and damping move their frequencies together until they merge and the overall damping becomes negative, and flutter starts. The linear modal properties must be right and validated first.
 
-Validation uses vibration tests (ll. 221–250). In a hammer test, the structure is struck at many points, the response is transformed by FFT into a spectrum whose peaks are the resonances, and the responses at the different points are joined into the experimental mode shapes. In a shaker test, a signal generator drives an electrodynamic shaker through a sweep of frequencies, and the wing visibly resonates at each mode. If test and FE differ, the model is updated ([[Model Updating]]; [[SESA2029 B10 - FE Verification, Validation and Model Updating|B10]]).
+Validation uses vibration tests. In a hammer test, the structure is struck at many points, the response is transformed by FFT into a spectrum whose peaks are the resonances, and the responses at the different points are joined into the experimental mode shapes. In a shaker test, a signal generator drives an electrodynamic shaker through a sweep of frequencies, and the wing visibly resonates at each mode. If test and FE differ, the model is updated ([[Model Updating]]; [[SESA2029 B10 - FE Verification, Validation and Model Updating|B10]]).
 
 ## 4. Participation factor and effective mass
 
-The participation factor measures how strongly a mode contributes to the response in a given direction (ll. 266–280; [[Participation Factor and Effective Mass]]):
+The participation factor measures how strongly a mode contributes to the response in a given direction ([[Participation Factor and Effective Mass]]):
 
 $$
 \gamma_i=\{\phi\}_i^T[M]\{D\},
@@ -118,19 +118,19 @@ $$
 M_{\mathrm{eff},i}=\frac{\gamma_i^2}{\{\phi\}_i^T[M]\{\phi\}_i},
 $$
 
-which is just $\gamma_i^2$ for mass-normalised modes (ll. 306–315). Modes with a high effective mass are readily excited by base excitation, and summed over all modes the effective masses equal the total mass. That answers how many modes to extract: a structure with 200 DOF has 200 modes, but extraction can stop once the cumulative effective mass exceeds about 90 % of the total (ll. 316–330).
+which is just $\gamma_i^2$ for mass-normalised modes. Modes with a high effective mass are readily excited by base excitation, and summed over all modes the effective masses equal the total mass. That answers how many modes to extract: a structure with 200 DOF has 200 modes, but extraction can stop once the cumulative effective mass exceeds about 90 % of the total.
 
-The uses are in design (ll. 281–310). For spacecraft, the participation factors identify the modes most likely to be excited, by launch random vibration from engines and shock waves, by deployment actuators, or by micro-vibration from attitude manoeuvres, and changing the geometry, boundary conditions or mass distribution can reduce them. For aero-engines, the modes most likely to radiate noise can be identified and their participation reduced to make the engine quieter.
+The uses are in design. For spacecraft, the participation factors identify the modes most likely to be excited, by launch random vibration from engines and shock waves, by deployment actuators, or by micro-vibration from attitude manoeuvres, and changing the geometry, boundary conditions or mass distribution can reduce them. For aero-engines, the modes most likely to radiate noise can be identified and their participation reduced to make the engine quieter.
 
 ## 5. Modal analysis in ANSYS
 
-Change the analysis type from static to modal (`ANTYPE,MODAL`) and set the number of modes to extract and expand, or a frequency range, in the pop-up window; six modes is the usual choice (ll. 356–375). The output needs care (ll. 371–390). Mode-shape displacements are not real deflections, only the shape matters. Stresses and strains can be computed from a mode, but they show only the relative stress distribution, not real values. No modal result predicts the response to a specific load, since none is applied; that needs a forced (harmonic or transient) analysis built on the modes, which also feed reduced-order models. The material density must be defined, otherwise the mass matrix is zero and there are no modes ([[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]).
+Change the analysis type from static to modal (`ANTYPE,MODAL`) and set the number of modes to extract and expand, or a frequency range, in the pop-up window; six modes is the usual choice. The output needs care. Mode-shape displacements are not real deflections, only the shape matters. Stresses and strains can be computed from a mode, but they show only the relative stress distribution, not real values. No modal result predicts the response to a specific load, since none is applied; that needs a forced (harmonic or transient) analysis built on the modes, which also feed reduced-order models. The material density must be defined, otherwise the mass matrix is zero and there are no modes ([[SESA2029 C4 - APDL Workflow - Shell Wing Static and Modal (SHELL181 and SHELL281)|C4]]).
 
 ## Worked examples
 
 ### Worked example: a two-DOF spring–mass system
 
-The example (slide 16): $m_1=2$ kg is connected to the ground by $k_1=1000$ N/m, $m_2=1$ kg to the ground by $k_2=2000$ N/m, and $k_3=3000$ N/m connects the two masses. The matrices are derived from the spring layout. The mass matrix is diagonal, and the coupling spring appears off the diagonal of the stiffness matrix:
+The example: $m_1=2$ kg is connected to the ground by $k_1=1000$ N/m, $m_2=1$ kg to the ground by $k_2=2000$ N/m, and $k_3=3000$ N/m connects the two masses. The matrices are derived from the spring layout. The mass matrix is diagonal, and the coupling spring appears off the diagonal of the stiffness matrix:
 
 $$
 [M]=\begin{bmatrix}2&0\\0&1\end{bmatrix},

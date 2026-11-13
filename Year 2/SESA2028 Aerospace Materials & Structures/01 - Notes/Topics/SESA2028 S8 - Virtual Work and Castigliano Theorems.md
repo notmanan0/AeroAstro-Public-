@@ -54,7 +54,7 @@ $$
 W^*=\left(\sum_{k=1}^n\mathbf F_k\right)\cdot\boldsymbol\Delta=\mathbf F_R\cdot\boldsymbol\Delta=0 .
 $$
 
-The converse holds too: if $\mathbf F_R\cdot\boldsymbol\Delta=0$ for every possible $\boldsymbol\Delta\neq\mathbf 0$, then $\mathbf F_R=\mathbf 0$ and the particle is in equilibrium. So the principle of virtual work is an equilibrium statement: for quasi-static loading, a system of forces in equilibrium does zero net work in any virtual displacement. In scalar form (as on the slides), with $u_k$ the displacement components along the forces, $F_1u_1+F_2u_2+\dots+F_nu_n=0$.
+The converse holds too: if $\mathbf F_R\cdot\boldsymbol\Delta=0$ for every possible $\boldsymbol\Delta\neq\mathbf 0$, then $\mathbf F_R=\mathbf 0$ and the particle is in equilibrium. So the principle of virtual work is an equilibrium statement: for quasi-static loading, a system of forces in equilibrium does zero net work in any virtual displacement. In scalar form, with $u_k$ the displacement components along the forces, $F_1u_1+F_2u_2+\dots+F_nu_n=0$.
 
 A deformable body in equilibrium has every particle in equilibrium. Summing the zero virtual work of every particle, the forces split into external loads, which act on the boundary, and internal forces, which act between particles and do work through the relative movement of neighbouring particles, that is, through the strain. Hence
 
@@ -124,7 +124,7 @@ Any other value of $F^*$ gives the same $u_B$ once it is divided out, since ever
 
 ### Example: the three-bay truss
 
-The truss below is pinned to a wall at B and F, with 2 m bays; every member has $A=1000$ mm² and $E=200$ GPa, and D carries 10 kN downwards. Find the displacements of D and G.
+A truss is pinned to a wall at B and F, with 2 m bays; every member has $A=1000$ mm² and $E=200$ GPa, and D carries 10 kN downwards. Find the displacements of D and G.
 
 ![[structures_s8_truss_real_and_unit.png|900]]
 
@@ -327,7 +327,7 @@ $$
 v=\int_0^L\frac{M}{EI}\frac{\partial M}{\partial F}\,dx .
 $$
 
-The second form is usually less algebra, and it shows why the methods agree: $\partial M/\partial F$ is the moment produced by a unit value of $F$, which is $M^*$, so this is the unit-load formula of §3 again.
+The second form is usually less algebra, and it shows why the methods agree: $\partial M/\partial F$ is the moment produced by a unit value of $F$, which is $M^*$, so this is the unit-load formula.
 
 ### Castigliano or the PVW?
 
@@ -341,7 +341,7 @@ The dummy load goes where the displacement is wanted, never automatically at the
 
 ## 6. Statically indeterminate structures
 
-A structure is statically determinate when the equilibrium equations are as many as the unknown reactions. A propped cantilever has three unknowns (the wall moment, the wall force and the prop force) but only two independent equilibrium equations for vertical loading, so one reaction is redundant. The missing equation is a compatibility condition from the physical picture: the prop does not move, the clamped end does not rotate, a symmetric section does not rotate.
+A structure is statically determinate when the equilibrium equations are as many as the unknown reactions. A propped cantilever has three unknowns (the wall moment, the wall force and the prop force) but only two independent equilibrium equations for vertical loading, so one reaction is redundant. The missing equation is a compatibility condition from the physical picture: the prop does not move, the clamped end does not rotate, and a section lying in a plane of symmetry of both the structure and its loading does not rotate.
 
 Energy methods express such a condition as a derivative. Treat the redundant reaction $R$ as an external load, write $U(R,\text{loads})$, and apply the second theorem at the support:
 
@@ -663,7 +663,7 @@ $$
 Castigliano is used twice: once with respect to the moment, to find the redundant, and once with respect to the force, to find the displacement.
 
 > [!check] Holding $M_0$ or not makes no difference
-> If $M_0(F)$ is substituted first, $M=\tfrac{FR}{2}(\cos\phi-\tfrac2\pi)$ and $\partial M/\partial F=\tfrac R2(\cos\phi-\tfrac2\pi)$. Then $u=\frac{FR^3}{EI}\int_0^{\pi/2}(\cos\phi-\tfrac2\pi)^2d\phi=\frac{FR^3}{EI}\left(\frac\pi4-\frac4\pi+\frac2\pi\right)$, the same $0.149\,FR^3/EI$. The extra term from $\partial M_0/\partial F$ is multiplied by $\partial U/\partial M_0$, which is zero. SymPy gives the same coefficient, $(\pi^2-8)/4\pi=0.1488$.
+> If $M_0(F)$ is substituted first, $M=\tfrac{FR}{2}(\cos\phi-\tfrac2\pi)$ and $\partial M/\partial F=\tfrac R2(\cos\phi-\tfrac2\pi)$. Then $u=\frac{FR^3}{EI}\int_0^{\pi/2}(\cos\phi-\tfrac2\pi)^2d\phi=\frac{FR^3}{EI}\left(\frac\pi4-\frac4\pi+\frac2\pi\right)$, the same $0.149\,FR^3/EI$. The extra term from $\partial M_0/\partial F$ is multiplied by $\partial U/\partial M_0$, which is zero. The coefficient is $\pi/4-2/\pi=(\pi^2-8)/4\pi=0.1488$.
 
 The same method handles any curved beam or closed frame: write $M$ round the member with $ds=R\,d\phi$, use symmetry for the compatibility conditions, and differentiate. Curved fuselage frames and engine rings are analysed this way, and the principles carry over to plates, shells and composite structures.
 

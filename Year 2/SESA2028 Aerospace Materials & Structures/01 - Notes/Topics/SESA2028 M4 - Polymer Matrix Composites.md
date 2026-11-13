@@ -38,7 +38,7 @@ Sailing dinghies, racing yachts and the America's Cup work of Southampton's Wolf
 
 A 1980s forecast of the car of 2000 assumed aluminium in places, a little plastic and mostly high-strength low-alloy steel; nobody foresaw the small electric city car or the fashion for large SUVs. The market and society's priorities, now including the green agenda, set the performance envelope as much as engineering does. Lightweighting has also driven steels: modern high-strength steels are so strong that a thin section is competitive on specific strength, and they are cheap at enormous scale. The Reliant Robin relied on a composite body, the Sinclair C5 was a lightweight electric vehicle that never took off, and the carbon bonnet of an Aston Martin DB9 is more marketing than structure, since a bonnet is essentially a lid.
 
-Aircraft are where composites have taken over major structure. Very large aircraft such as the A380 and the Dreamliner could only be made to fly with composite wings and other large composite parts. On the A380, carbon fibre composite is used in the outer wing, nacelle cowlings, tail, stabiliser, tail cone, central torsion box, radome and fairings, with aluminium alloys still joined to it, so hybrid metal–composite joints are a challenge in their own right.
+Aircraft are where composites have taken over major structure. The Dreamliner has composite wings, and the weight saved from large composite parts was a big part of what made very large aircraft such as it and the A380 practical. On the A380, carbon fibre composite is used in the outer wing, nacelle cowlings, tail, stabiliser, tail cone, central torsion box, radome and fairings, with aluminium alloys still joined to it, so hybrid metal–composite joints are a challenge in their own right.
 
 ### Specific properties
 
@@ -106,7 +106,7 @@ The two common thermoset resins compare as follows: polyester is about ten times
 
 Unidirectional composites are extremely directional. At 50 % fibre by volume, glass–polyester has a tensile strength of about 700 MPa along the fibres but only 20 MPa across them; high-modulus carbon–epoxy about 1000 MPa against 35 MPa; Kevlar–epoxy about 1200 MPa against 20 MPa. Steel ranges from about 300 to 1000 MPa, comparable along the fibres, but at about three times the density, so the composite's specific strength along the fibres is far higher.
 
-The properties depend on the fibre, the matrix, how much of each, and how they are laid up. The rule of mixtures, revised from Part 1, also works for density and electrical resistivity, but not for toughness, because composite failure mechanisms are far too complicated. Exam tip: the rules of mixtures are asked for often.
+The properties depend on the fibre, the matrix, how much of each, and how they are laid up. The rule of mixtures also works for density and electrical resistivity, but not for toughness, because composite failure mechanisms are far too complicated. Exam tip: the rules of mixtures are asked for often.
 
 ![[materials_isostrain_isostress.png|900]]
 
@@ -192,11 +192,11 @@ Do it for each requirement and take the larger fraction. Above about 0.65 is har
 
 ### Laminates, fabrics and hybrids
 
-The strength of composites is that a lay-up can put the properties in the directions the loads need. They are rarely used unidirectionally; plies are stacked in a laminate. A 0/90 lay-up is good along both ply directions but weak at 45°, so if the part sees shear, ±45° plies are added. The choice depends on knowing the stresses in the structure, which is where the structures lectures feed in. The lay-up must also suit manufacture: when the resin cures and the part cools, plies contract differently along and across their fibres, so the stacking must balance those contractions to avoid distortion, residual stress and lost tolerance. Woven fabrics, including carbon–Kevlar hybrids and robot-knitted three-dimensional shapes, give a ready-made fibre architecture that is much easier to handle than loose fibres. A hybrid of two fibres follows the rule of mixtures with an extra term, $E=V_{f1}E_{f1}+V_{f2}E_{f2}+V_mE_m$. Laminate theory itself is left to later specialist modules.
+The strength of composites is that a lay-up can put the properties in the directions the loads need. They are rarely used unidirectionally; plies are stacked in a laminate. A 0/90 lay-up is good along both ply directions but weak at 45°, so if the part sees shear, ±45° plies are added. The choice depends on knowing the stresses in the structure. The lay-up must also suit manufacture: when the resin cures and the part cools, plies contract differently along and across their fibres, so the stacking must balance those contractions to avoid distortion, residual stress and lost tolerance. Woven fabrics, including carbon–Kevlar hybrids and robot-knitted three-dimensional shapes, give a ready-made fibre architecture that is much easier to handle than loose fibres. A hybrid of two fibres follows the rule of mixtures with an extra term, $E=V_{f1}E_{f1}+V_{f2}E_{f2}+V_mE_m$. Laminate theory is not covered in this module.
 
 ## 4. Short fibres and the critical length
 
-The rule of mixtures assumes continuous fibres, and short fibres are "nearly all end". Chopped fibres are cheaper and flow into shapes easily, but give smaller benefits. At a fibre end there is no fibre to carry stress, so the fibre stress is zero there; load is fed in from the matrix by shear along the interface, the shear-lag model, so the fibre stress builds up from each end and peaks at the middle.
+The rule of mixtures assumes continuous fibres. Chopped fibres are cheaper and flow into shapes easily, but give smaller benefits, because so much of a short fibre lies close to an end. At a fibre end there is no fibre to carry stress, so the fibre stress is zero there; load is fed in from the matrix by shear along the interface, the shear-lag model, so the fibre stress builds up from each end and peaks at the middle.
 
 The **critical fibre length** $l_c$ is the shortest fibre whose midpoint can reach the fibre's breaking stress $\sigma_f^*$. It is set by the load transfer between matrix and fibre, and the usual force balance gives its value. For a fibre of diameter $d$ whose interface carries a shear stress $\tau$ (its shear strength, or the matrix yield stress in shear), the shear force on the fibre surface over a length $x$ from the end is $\tau\pi dx$, and it must equal the tensile force in the fibre at $x$:
 
@@ -377,6 +377,7 @@ No problems were set in these mini-lectures. ML5c (l. 21) flags the rule of mixt
 > | ML5a, ll. 37–38 | "Wilson Unit Maritime Technology … WMTIA" | Wolfson Unit for Marine Technology and Industrial Aerodynamics (WUMTIA) |
 > | ML5a, l. 65 | "radar and lines" | radar and mines |
 > | ML5a, l. 85 | "sports UV cars" | SUVs |
+> | ML5a, ll. 139–145 | the very large aircraft could "only" be got off the ground with "all composite wings" | composite wings are a weight-saving design choice, not a physical necessity; the A380 wing is largely aluminium alloy, with carbon fibre in parts of the outer wing and in the other components listed in [[#1. Why lightweight, and with what]] |
 > | ML5a, l. 127 | "Aston Monat DB9 … made by Guret" | Aston Martin DB9; the bonnet maker is Gurit |
 > | ML5b, l. 86 | "tungsten boroid carbide substrate" | a tungsten boride core, formed where the boron reacts with the tungsten wire |
 > | ML5b, l. 92 | carbon fibres "made by a physical vapor deposition or chemical vapor deposition process" | carbon fibres are made by pyrolysing a precursor fibre (PAN or pitch); vapour deposition is the boron-fibre route just described |

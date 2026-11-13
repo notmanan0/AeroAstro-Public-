@@ -31,7 +31,7 @@ sources: ["02 - Sources/Lectures/MATH2048 Lecture 17.txt", "02 - Sources/Lecture
 > - **Assumptions:** constant $\kappa^2>0$; homogeneous linear boundary conditions; one initial condition, on $y$ only.
 > - **Method:** 1. Separate: $X''-\lambda X=0$ and $\dot T-\lambda\kappa^2T=0$. 2. Solve the eigenvalue problem for $X$ with the boundary conditions, all three cases. 3. Solve $\dot T_n=\lambda_n\kappa^2T_n$ to get $e^{\lambda_n\kappa^2t}$. 4. Superpose. 5. Match $y(x,0)$ with a half-range series, or by inspection if it is already a sum of eigenfunctions.
 > - **Common mistakes:** copying the wave equation's $\cos$ and $\sin$ in time, when the heat equation gives a decaying exponential; dropping the $\lambda=0$ constant mode with insulated ends.
-> - **Practise:** [[#Separating the insulated rod (L17)]] · [[#3. The 2023-24 exam, question A2]]
+> - **Practise:** [[#Separating the insulated rod]] · [[#3. The 2023-24 exam, question A2]]
 
 Parabolic equations ([[MATH2048 PDE1 - Classification of PDEs and the Wave Equation|PDE1]]) are what averaging over small-scale behaviour too complicated to follow gives, and the prototype is diffusion: heat spreading through a rod, or a dye spreading through water. The separation of variables of [[MATH2048 PDE2 - Separation of Variables for the Wave Equation|PDE2]] carries over with a single change.
 
@@ -39,17 +39,17 @@ That change is in the time equation. The heat equation has one time derivative, 
 
 ---
 
-## 1. Deriving the heat equation from a random walk (L17)
+## 1. Deriving the heat equation from a random walk
 
-The model is of gas particles in a pipe that can only sit at grid points $x$, $x\pm\Delta x,\dots$ and only move at times $t$, $t+\Delta t,\dots$ (ll. 40–49). Let $y(x,t)$ be the number of particles at $x$ at time $t$. At each time step every particle flips two coins. If they differ it stays put, with probability $\frac12$; two heads move it one step left and two tails one step right, each with probability $\frac14$ (ll. 50–59).
+The model is of gas particles in a pipe that can only sit at grid points $x$, $x\pm\Delta x,\dots$ and only move at times $t$, $t+\Delta t,\dots$. Let $y(x,t)$ be the number of particles at $x$ at time $t$. At each time step every particle flips two coins. If they differ it stays put, with probability $\frac12$; two heads move it one step left and two tails one step right, each with probability $\frac14$.
 
-Particles arrive at $x$ at time $t+\Delta t$ in only three ways: half of those already at $x$ stay, a quarter of those at $x-\Delta x$ step right, and a quarter of those at $x+\Delta x$ step left (ll. 60–70). So, exactly on the grid,
+Particles arrive at $x$ at time $t+\Delta t$ in only three ways: half of those already at $x$ stay, a quarter of those at $x-\Delta x$ step right, and a quarter of those at $x+\Delta x$ step left. So, exactly on the grid,
 
 $$
 y(x,t+\Delta t)=\tfrac14\,y(x+\Delta x,t)+\tfrac14\,y(x-\Delta x,t)+\tfrac12\,y(x,t).
 $$
 
-On scales much larger than $\Delta x$ and $\Delta t$, Taylor-expand both sides (ll. 71–98). The left side, in time:
+On scales much larger than $\Delta x$ and $\Delta t$, Taylor-expand both sides. The left side, in time:
 
 $$
 y(x,t+\Delta t)=y+\Delta t\,y_t+\tfrac12\Delta t^2\,y_{tt}+\dots
@@ -61,19 +61,19 @@ $$
 \tfrac14\Big[\big(y+\Delta x\,y_x+\tfrac12\Delta x^2y_{xx}\big)+\big(y-\Delta x\,y_x+\tfrac12\Delta x^2y_{xx}\big)+2y\Big]+\dots
 $$
 
-Inside the bracket the four copies of $y$ make $4y$, which the $\frac14$ turns back into $y$; the first derivatives cancel; and the two half second-derivative terms add to $\Delta x^2y_{xx}$ (ll. 99–110). So the right side is
+Inside the bracket the four copies of $y$ make $4y$, which the $\frac14$ turns back into $y$; the first derivatives cancel; and the two half second-derivative terms add to $\Delta x^2y_{xx}$. So the right side is
 
 $$
 y+\frac{\Delta x^2}{4}\,y_{xx}+\dots
 $$
 
-Cancel $y$ from both sides and divide by $\Delta t$ (ll. 111–116):
+Cancel $y$ from both sides and divide by $\Delta t$:
 
 $$
 y_t+\tfrac12\Delta t\,y_{tt}+\dots=\frac{\Delta x^2}{4\,\Delta t}\,y_{xx}+\dots
 $$
 
-Let $\Delta x$ and $\Delta t$ go to zero together with $\Delta x^2/\Delta t$ held fixed (ll. 118–128). The $\Delta t\,y_{tt}$ term and the higher-order terms vanish, and with $\kappa^2=\lim\frac{\Delta x^2}{4\Delta t}>0$,
+Let $\Delta x$ and $\Delta t$ go to zero together with $\Delta x^2/\Delta t$ held fixed. The $\Delta t\,y_{tt}$ term and the higher-order terms vanish, and with $\kappa^2=\lim\frac{\Delta x^2}{4\Delta t}>0$,
 
 $$
 \frac{\partial y}{\partial t}=\kappa^2\frac{\partial^2y}{\partial x^2}.
@@ -84,15 +84,15 @@ $$
 
 ![[m2048_pde_random_walk.png|820]]
 
-In the limit $\Delta x^2/\Delta t$ stays constant (ll. 131–137); for the wave equation it was $\Delta x/\Delta t$, a speed. Diffusion over a distance $\ell$ therefore takes a time of order $\ell^2/\kappa^2$, so doubling the distance quadruples the time, and diffusion problems live on long time scales compared with their length scales. There are many other derivations, from conservation of heat for example, and they all lead to the same equation (ll. 129–130).
+In the limit $\Delta x^2/\Delta t$ stays constant; for the wave equation it was $\Delta x/\Delta t$, a speed. Diffusion over a distance $\ell$ therefore takes a time of order $\ell^2/\kappa^2$, so doubling the distance quadruples the time, and diffusion problems live on long time scales compared with their length scales. There are many other derivations, from conservation of heat for example, and they all lead to the same equation.
 
-## 2. Separation of variables for the heat equation (L17)
+## 2. Separation of variables for the heat equation
 
-### Separating the insulated rod (L17)
+### Separating the insulated rod
 
-Solve $y_t=\kappa^2y_{xx}$ on $0<x<1$ with insulated ends, $y_x(0,t)=y_x(1,t)=0$, and initial temperature $y(x,0)=x(1-x)$ (ll. 139–159). This is the Neumann problem from [[MATH2048 PDE2 - Separation of Variables for the Wave Equation#Changing to Neumann ends (L16)|PDE2]] with two changes: one time derivative instead of two, and so only one initial condition (ll. 151–155). Insulated means no heat flows through the ends, and the heat flux is proportional to $-y_x$.
+Solve $y_t=\kappa^2y_{xx}$ on $0<x<1$ with insulated ends, $y_x(0,t)=y_x(1,t)=0$, and initial temperature $y(x,0)=x(1-x)$. This is the Neumann problem from [[MATH2048 PDE2 - Separation of Variables for the Wave Equation#Changing to Neumann ends|PDE2]] with two changes: one time derivative instead of two, and so only one initial condition. Insulated means no heat flows through the ends, and the heat flux is proportional to $-y_x$.
 
-**Step 1.** Substitute $y=X(x)T(t)$ (ll. 160–186):
+**Step 1.** Substitute $y=X(x)T(t)$:
 
 $$
 X\dot T=\kappa^2X''T .
@@ -110,9 +110,9 @@ $$
 X''-\lambda X=0,\qquad\dot T-\lambda\kappa^2T=0 .
 $$
 
-The $X$ equation is identical to the wave case; the $T$ equation is not, because the PDE has changed (ll. 188–192).
+The $X$ equation is identical to the wave case; the $T$ equation is not, because the PDE has changed.
 
-**Steps 2 and 3.** The boundary conditions give $X'(0)T=0$ and $X'(1)T=0$, so $X'(0)=X'(1)=0$, exactly as before, since this depends only on the boundary conditions and the ansatz (ll. 194–204). The eigenvalue problem is therefore the same as PDE2's Neumann problem (ll. 205–257), which is one reason to keep the constants on the time side: the spatial problem then looks the same whatever the PDE (ll. 214–215). The three cases are run again, as in every eigenvalue problem:
+**Steps 2 and 3.** The boundary conditions give $X'(0)T=0$ and $X'(1)T=0$, so $X'(0)=X'(1)=0$, exactly as before, since this depends only on the boundary conditions and the ansatz. The eigenvalue problem is therefore the same as PDE2's Neumann problem, which is one reason to keep the constants on the time side: the spatial problem then looks the same whatever the PDE. The three cases are run again, as in every eigenvalue problem:
 
 - $\lambda=0$: $X=Ax+B$, $X'=A=0$, so $X_0=$ constant is a mode.
 - $\lambda=k^2>0$: $X'=k(Ce^{kx}-De^{-kx})$; $X'(0)=0$ gives $C=D$, then $X'(1)=kC(e^k-e^{-k})=0$ forces $C=0$, and only the zero solution remains.
@@ -120,7 +120,7 @@ The $X$ equation is identical to the wave case; the $T$ equation is not, because
 
 So $\lambda_n=-(n\pi)^2$ with $X_n=\cos n\pi x$ for $n=0,1,2,\dots$, where $n=0$ is the constant mode.
 
-**Step 4.** Now the time equation (ll. 258–300). For $\lambda=0$, $\dot T_0=0$, so $T_0$ is a constant. For $\lambda_n=-(n\pi)^2$,
+**Step 4.** Now the time equation. For $\lambda=0$, $\dot T_0=0$, so $T_0$ is a constant. For $\lambda_n=-(n\pi)^2$,
 
 $$
 \dot T_n+(n\pi\kappa)^2T_n=0 .
@@ -144,21 +144,21 @@ $$
 T_n=G_n\,e^{-(n\pi\kappa)^2t}.
 $$
 
-**Step 5.** Multiply matching modes and add them up, writing the constant mode as $\frac12a_0$ in anticipation of a Fourier series (ll. 302–325):
+**Step 5.** Multiply matching modes and add them up, writing the constant mode as $\frac12a_0$ in anticipation of a Fourier series:
 
 $$
 y(x,t)=\tfrac12a_0+\sum_{n=1}^\infty a_n\cos n\pi x\;e^{-(n\pi\kappa)^2t}.
 $$
 
-Compared with the wave equation, the only differences come from the $T$ equation (ll. 327–338): $T_0$ is a constant rather than $Gt+H$, and each $T_n$ is a decaying exponential rather than a cosine and a sine.
+Compared with the wave equation, the only differences come from the $T$ equation: $T_0$ is a constant rather than $Gt+H$, and each $T_n$ is a decaying exponential rather than a cosine and a sine.
 
-**Step 6.** At $t=0$ every exponential is 1, so $x(1-x)$ must equal the cosine series $\frac12a_0+\sum a_n\cos n\pi x$ (ll. 339–351). The constant term:
+**Step 6.** At $t=0$ every exponential is 1, so $x(1-x)$ must equal the cosine series $\frac12a_0+\sum a_n\cos n\pi x$. The constant term:
 
 $$
 a_0=2\int_0^1x(1-x)\,dx=2\Big[\frac{x^2}2-\frac{x^3}3\Big]_0^1=2\Big(\frac12-\frac13\Big)=\frac13 .
 $$
 
-For $a_n$, integrate by parts twice, differentiating the polynomial (ll. 363–395):
+For $a_n$, integrate by parts twice, differentiating the polynomial:
 
 $$
 a_n=2\int_0^1x(1-x)\cos n\pi x\,dx=2\left(\Big[x(1-x)\frac{\sin n\pi x}{n\pi}\Big]_0^1-\int_0^1(1-2x)\frac{\sin n\pi x}{n\pi}\,dx\right).
@@ -292,12 +292,12 @@ Nothing was explicitly set in Lecture 17. The problem-sheet and past-paper quest
 
 - [ ] PS7 Q1: $u_t=\frac14u_{xx}$ on $[0,\pi]$, insulated ends, $u(x,0)=7+5\cos2x$. Answer: $u=7+5\cos2x\,e^{-t}$, by inspection. → [[#By inspection (PS7 Q1)]]
 - [ ] 2023/24 A2: insulated rod with $u(x,0)=\cos^3x$, all four parts. → [[#3. The 2023-24 exam, question A2]]
-- [ ] Rederive the heat equation from the random walk without notes, and say why $\Delta x^2/\Delta t$ is held fixed (suggested, not lecturer-set). → [[#1. Deriving the heat equation from a random walk (L17)]]
+- [ ] Rederive the heat equation from the random walk without notes, and say why $\Delta x^2/\Delta t$ is held fixed (suggested, not lecturer-set). → [[#1. Deriving the heat equation from a random walk]]
 
 ### Further practice
 
 - [ ] PS7 Q2: the heat equation with a decay term, $u_t=h^2u_{xx}-ku$. → [[#A decay term removed by a substitution (PS7 Q2)]]
-- [ ] Solve the insulated-rod example again with fixed ends $y(0,t)=y(1,t)=0$ and compare with the left panel of the figure. Answer: $y=\sum\frac{4(1-(-1)^n)}{(n\pi)^3}\sin n\pi x\,e^{-(n\pi\kappa)^2t}$ (suggested, not lecturer-set). → [[#Separating the insulated rod (L17)]]
+- [ ] Solve the insulated-rod example again with fixed ends $y(0,t)=y(1,t)=0$ and compare with the left panel of the figure. Answer: $y=\sum\frac{4(1-(-1)^n)}{(n\pi)^3}\sin n\pi x\,e^{-(n\pi\kappa)^2t}$ (suggested, not lecturer-set). → [[#Separating the insulated rod]]
 
 ## Transcript and slide slips
 

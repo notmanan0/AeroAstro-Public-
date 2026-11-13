@@ -177,7 +177,7 @@ $$
 
 The speed cancels, as for the propeller. Range is linear in the battery mass fraction, $E^*$, $\eta_t$ and $L/D$; there is no logarithm because the aircraft lands as heavy as it took off.
 
-Comparing like with like, a fuel with $c_p=g/E^*$ gives $R=\eta\frac{L}{D}\frac{E^*}{g}\ln(1+W_f/W_s)$, while the battery gives $\eta\frac{L}{D}\frac{E^*}{g}\frac{x}{1+x}$ with $x=W_{bat}/W_s$. For small $x$ both are $\approx x$, so at energy-store fractions up to about 10 % there is little difference; at larger fractions burning off the energy store wins (1.22 times the range at $x=0.5$). The real gap is in $E^*$: kerosene holds about 43 MJ/kg ([[Calorific Value]]) against a few hundred watt hours (about 1 MJ) per kilogram for current batteries, so electric aircraft need much lighter structures and better aerodynamics before they match fuel-burning ones over long ranges (Slides v2, p. 128). Hybrid-electric aircraft combine the two.
+Comparing like with like, a fuel with $c_p=g/E^*$ gives $R=\eta\frac{L}{D}\frac{E^*}{g}\ln(1+W_f/W_s)$, while the battery gives $\eta\frac{L}{D}\frac{E^*}{g}\frac{x}{1+x}$ with $x=W_{bat}/W_s$. For small $x$ both are $\approx x$, so at energy-store fractions up to about 10 % there is little difference; at larger fractions burning off the energy store wins (1.22 times the range at $x=0.5$). The real gap is in $E^*$: kerosene holds about 43 MJ/kg ([[Calorific Value]]) against a few hundred watt hours (about 1 MJ) per kilogram for current batteries, so electric aircraft need much lighter structures and better aerodynamics before they match fuel-burning ones over long ranges. Hybrid-electric aircraft combine the two.
 
 ![[mof_m07_battery_vs_fuel.png|900]]
 
@@ -191,7 +191,7 @@ $$
 \frac{dx}{-dW}=\frac{V}{c_tW}\frac{L}{D}=\frac{a}{c_tW}\left(M\frac{L}{D}\right),
 $$
 
-so at a given weight and $c_t$ the specific range is proportional to $ML/D$. For a wide-body trijet, $L/D$ and $ML/D$ plotted against $C_L$ peak at different Mach numbers (course notes Fig. 6.1, from Shevell, *Fundamentals of Flight*). The best $L/D$, 16.4, occurs at $M=0.75$ and $C_L=0.46$, but the best $ML/D$, about 13, occurs at $M=0.825$ at the same $C_L$: range rewards speed as well as aerodynamic efficiency. Reducing $C_L$ to 0.405 costs only about 1 % of range; since for a given weight a change of $C_L$ is a change of altitude, the range is fairly insensitive to the cruise height near the optimum. Raising the Mach number to 0.85 costs about 3 % of range but 9 % of $L/D$, because the drag rise has begun.
+so at a given weight and $c_t$ the specific range is proportional to $ML/D$. For a wide-body trijet, $L/D$ and $ML/D$ plotted against $C_L$ peak at different Mach numbers (from Shevell, *Fundamentals of Flight*). The best $L/D$, 16.4, occurs at $M=0.75$ and $C_L=0.46$, but the best $ML/D$, about 13, occurs at $M=0.825$ at the same $C_L$: range rewards speed as well as aerodynamic efficiency. Reducing $C_L$ to 0.405 costs only about 1 % of range; since for a given weight a change of $C_L$ is a change of altitude, the range is fairly insensitive to the cruise height near the optimum. Raising the Mach number to 0.85 costs about 3 % of range but 9 % of $L/D$, because the drag rise has begun.
 
 The engine adds a further correction. The assumption of constant $c_t$ is good for turbojets, but the specific fuel consumption of a turbofan rises slightly with Mach number, which moves the best-range condition to a somewhat lower Mach number than constant $c_t$ would give.
 
@@ -223,7 +223,7 @@ Every one of these speeds must also be checked against the stall speed ([[SESA10
 
 ### Minimum fuel for a 1112 km flight
 
-A propeller-driven aircraft weighs 8000 N dry and must fly 1112 km. The propeller efficiency is 85 %, $c_p=2.7$ N/(kW h) and $C_D=0.025+0.07C_L^2$. Find the minimum weight of fuel (Slides v2, pp. 123–126).
+A propeller-driven aircraft weighs 8000 N dry and must fly 1112 km. The propeller efficiency is 85 %, $c_p=2.7$ N/(kW h) and $C_D=0.025+0.07C_L^2$. Find the minimum weight of fuel.
 
 The least fuel for a given distance is the same problem as the greatest distance for a given fuel, so the aircraft flies at $(L/D)_{max}$:
 
@@ -266,7 +266,7 @@ against 1275 km at minimum power. At 3050 m ($\rho=0.9082$ kg/m³) the best endu
 
 ### Battery mass for a 100 km UAV
 
-A battery-powered UAV has mass 10 kg, $S=0.25$ m², $AR=7$, $e=0.9$, $C_{D0}=0.03$ and cruises at 20 m/s for 100 km with total efficiency 0.75. Find the battery mass for $E^*=250$ Wh/kg (Slides v2, p. 110, with $\rho=1.23$ kg/m³ and $g=9.8$ m/s²).
+A battery-powered UAV has mass 10 kg, $S=0.25$ m², $AR=7$, $e=0.9$, $C_{D0}=0.03$ and cruises at 20 m/s for 100 km with total efficiency 0.75. Find the battery mass for $E^*=250$ Wh/kg (with $\rho=1.23$ kg/m³ and $g=9.8$ m/s²).
 
 $$
 \begin{aligned}

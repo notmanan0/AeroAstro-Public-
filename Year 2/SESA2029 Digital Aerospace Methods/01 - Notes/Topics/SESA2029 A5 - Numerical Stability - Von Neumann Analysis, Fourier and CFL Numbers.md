@@ -35,11 +35,11 @@ Any error pattern on the grid can be decomposed into sines and cosines of differ
 
 ## 1. Stability of the model equation
 
-The model equation is $\mathrm df/\mathrm dt=\lambda f$ with exact solution $f=f_0e^{\lambda t}$ and $\lambda=\sigma+i\omega$ a growth rate and a frequency (L6 slide 3). The F-4C's short-period response to a sudden pitch-up follows it with $\lambda=-0.5+1.3i$, a decaying oscillation; it covers every dynamic mode in flight mechanics, which is why it is a fair test.
+The model equation is $\mathrm df/\mathrm dt=\lambda f$ with exact solution $f=f_0e^{\lambda t}$ and $\lambda=\sigma+i\omega$ a growth rate and a frequency. The F-4C's short-period response to a sudden pitch-up follows it with $\lambda=-0.5+1.3i$, a decaying oscillation; it covers every dynamic mode in flight mechanics, which is why it is a fair test.
 
 ### Explicit Euler
 
-Use a forward difference with the right-hand side at level $n$ (L6 slide 4):
+Use a forward difference with the right-hand side at level $n$:
 
 $$
 \frac{f^{n+1}-f^n}{\Delta t}=\lambda f^n.
@@ -99,7 +99,7 @@ $$
 1=(1-\sigma\Delta t)^2+(\omega\Delta t)^2,
 $$
 
-a unit circle centred at $(+1,0)$, where $G$ is infinite. Implicit Euler has $G<1$ everywhere outside that circle (L6 slide 5).
+a unit circle centred at $(+1,0)$, where $G$ is infinite. Implicit Euler has $G<1$ everywhere outside that circle.
 
 ![[dam_euler_stability_circles.png|900]]
 
@@ -107,7 +107,7 @@ The correct, real-world answer is $G<1$ exactly when $\sigma<0$, the left half-p
 
 ## 2. Von Neumann analysis of the heat equation
 
-For a PDE the analysis is called von Neumann's method. The explicit heat scheme is (L6 slide 6)
+For a PDE the analysis is called von Neumann's method. The explicit heat scheme is
 
 $$
 T_j^{n+1}=T_j^n+F\left(T_{j-1}^n-2T_j^n+T_{j+1}^n\right),\qquad F=\frac{\alpha\Delta t}{h^2}.
@@ -151,7 +151,7 @@ $$
 G=\left|1-2F(1-\cos kh)\right|.
 $$
 
-The factor $1-\cos kh$ lies between 0 and 2, so the bracket lies between $1$ (at $kh=0$) and $1-4F$ (at $kh=\pi$). The worst case, which sets the stability limit, is $kh=\pi$, the shortest wave the grid can represent: two points per wavelength, a saw-tooth that alternates in sign from point to point; anything shorter cannot be resolved. There $\cos kh=-1$ and (L6 slide 7)
+The factor $1-\cos kh$ lies between 0 and 2, so the bracket lies between $1$ (at $kh=0$) and $1-4F$ (at $kh=\pi$). The worst case, which sets the stability limit, is $kh=\pi$, the shortest wave the grid can represent: two points per wavelength, a saw-tooth that alternates in sign from point to point; anything shorter cannot be resolved. There $\cos kh=-1$ and
 
 $$
 G=|1-4F|.
@@ -195,7 +195,7 @@ $$
 \frac{\partial f}{\partial t}+c\frac{\partial f}{\partial x}=0
 $$
 
-has the general solution $f(x,t)=f_0(x-ct)$, a fixed initial shape $f_0(x)$ moving from left to right at speed $c$ without change (L6 slide 8). It is the model for the convective left-hand side of the Euler and Navier–Stokes equations, as the heat equation models their viscous right-hand side.
+has the general solution $f(x,t)=f_0(x-ct)$, a fixed initial shape $f_0(x)$ moving from left to right at speed $c$ without change. It is the model for the convective left-hand side of the Euler and Navier–Stokes equations, as the heat equation models their viscous right-hand side.
 
 Discretise with explicit Euler in time and an upwind difference in space, which for $c>0$ is the backward difference:
 
@@ -209,7 +209,7 @@ $$
 f_j^{n+1}=f_j^n-C\left(f_j^n-f_{j-1}^n\right).
 $$
 
-Substitute $f_{j-1}=f_je^{-ikh}$ and divide by $f_j^n$ (L6 slide 9):
+Substitute $f_{j-1}=f_je^{-ikh}$ and divide by $f_j^n$:
 
 $$
 \frac{f_j^{n+1}}{f_j^n}=1-C\left(1-e^{-ikh}\right).
@@ -277,13 +277,13 @@ for every $C>0$ and every $kh\ne0$: unconditionally unstable. The explicit centr
 | Diffusion $T_t=\alpha T_{xx}$, central | $F=\alpha\Delta t/h^2$ | $\le\tfrac12$ |
 | Viscous momentum ($\nu$ in place of $\alpha$) | $\mathrm{CFL}_\nu=\nu\Delta t/h^2$ | $\le\tfrac12$ by analogy |
 
-These three dimensionless numbers are the key parameters for a stable explicit solution of a PDE (L6 slide 10). Because the diffusive limit scales with $h^2$, halving the grid spacing cuts the allowable explicit time step by four, which makes explicit schemes very expensive on fine near-wall meshes; that is a major reason steady solvers are implicit. Time-accurate unsteady runs in Fluent still expose the Courant number as a control, and explicit time-accurate work typically needs $C\lesssim1$.
+These three dimensionless numbers are the key parameters for a stable explicit solution of a PDE. Because the diffusive limit scales with $h^2$, halving the grid spacing cuts the allowable explicit time step by four, which makes explicit schemes very expensive on fine near-wall meshes; that is a major reason steady solvers are implicit. Time-accurate unsteady runs in Fluent still expose the Courant number as a control, and explicit time-accurate work typically needs $C\lesssim1$.
 
 ## Worked examples
 
 ### Largest stable step for the F-4C short-period mode
 
-*(Suggested, not lecturer-set; it uses the L6 slide 3 eigenvalue.)* For $\lambda=-0.5+1.3i$, find the largest explicit Euler step that is stable. Set $G=1$:
+*(Suggested, not lecturer-set.)* For $\lambda=-0.5+1.3i$, find the largest explicit Euler step that is stable. Set $G=1$:
 
 $$
 (1-0.5\Delta t)^2+(1.3\Delta t)^2=1.

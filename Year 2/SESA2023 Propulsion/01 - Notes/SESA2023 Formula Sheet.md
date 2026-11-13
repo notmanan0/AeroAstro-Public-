@@ -13,7 +13,7 @@ sources: ["02 - Sources/Data Book.pdf", "01 - Notes/Topics", "01 - Notes/Concept
 
 Coverage: W01–W11, one section per topic note. Items marked ★ are not printed in the Thermofluids Data Book (2022 edition), which is provided in the exam; everything else is in it, sometimes under a different symbol (see the table of symbols below).
 
-> [!info] What the Data Book gives you
+> [!info] Contents of the Data Book
 > - Perfect gas: $c_p-c_v=R$, $a=\sqrt{\gamma RT}$, $s_2-s_1$ in its three forms, the isentropic relations; Dalton's law and mixture enthalpy and entropy.
 > - The SFEE and the steady-flow momentum equation.
 > - Compressible flow: stagnation-to-static ratios, $V/\sqrt{c_pT_0}$ and the flow functions $\dot m\sqrt{c_pT_0}/(Ap_0)$ and $\dot m\sqrt{c_pT_0}/(Ap)$, $A/A^*$, the general and choked $\dot m/[\rho_0(2c_pT_0)^{1/2}]$, the normal-shock relations (subscript $s$ for the state behind the shock), Prandtl–Meyer, and the Fanno $4c_fL_{max}/D$ relation, which this course does not use.
@@ -162,7 +162,7 @@ $$
 
 Note: [[SESA2023 W04 - Friction, Heat Addition, Oblique Shocks and Intakes]]
 
-★ Constant-area duct, perfect gas, steady 1-D. $f$ is the wall friction force divided by $p_1A$; $q$ is the heat added per unit mass divided by $h_1$ ($q<0$ is cooling). The names Fanno and Rayleigh are not used for these flows.
+★ Constant-area duct, perfect gas, steady 1-D. $f$ is the wall friction force divided by $p_1A$; $q$ is the heat added per unit mass divided by $h_1$ ($q<0$ is cooling). Friction alone ($q=0$) is Fanno flow and heating alone ($f=0$) is Rayleigh flow.
 
 $$
 p_1\left(1+\gamma M_1^2-f\right)=p_2\left(1+\gamma M_2^2\right),\qquad h_1\left(1+\frac{\gamma-1}2M_1^2+q\right)=h_2\left(1+\frac{\gamma-1}2M_2^2\right)
@@ -207,7 +207,7 @@ $$
 T_2=T_0+\frac{\dfrac{LCV}{AFR+1}-c_{p,r}(T_0-T_1)}{c_{p,p}},\qquad c_{p,r}=\frac{AFR\,c_{p,a}+c_{p,f}}{AFR+1}
 $$
 
-The Data Book's combustion balance is the general form; the result ignores dissociation, so it overestimates real flame temperatures.
+This is the general combustion balance of the Data Book. It ignores dissociation, so it overestimates real flame temperatures.
 
 ★ Gas-turbine burner (turbojet stations 3→4), per kilogram of air, adiabatic, air $c_{pa}$, products $c_{pp}$, fuel supplied at $T_{ref}=298$ K:
 
@@ -217,7 +217,7 @@ $$
 
 - One $c_p$: $f=(T_{04}-T_{03})/[LCV/c_p-(T_{04}-T_{ref})]$.
 - Incomplete combustion (ramjets): replace $LCV$ by $\eta_bLCV$. A heat loss $q_{loss}$ per kilogram of fuel makes the denominator $LCV-q_{loss}-c_{pp}(T_{04}-T_{ref})$.
-- Problem Sheet 4 and the pre-2020 papers set $T_{ref}=0$: $(1+f)c_pT_{04}=c_pT_{03}+f\,LCV$, so $f=c_p(T_{04}-T_{03})/(LCV-c_pT_{04})$. The two conventions differ by about 1 %; state which you use.
+- With $T_{ref}=0$ (Problem Sheet 4, pre-2020 papers), $(1+f)c_pT_{04}=c_pT_{03}+f\,LCV$, so $f=c_p(T_{04}-T_{03})/(LCV-c_pT_{04})$. The two conventions differ by about 1 %; state which you use.
 - For a ramjet, the combustor runs 2→3, so $T_{03}\to T_{02}$ and $T_{04}\to T_{03}$ in the formulae above.
 
 Chemical equilibrium for $a\,\mathrm A+b\,\mathrm B\rightleftharpoons c\,\mathrm C+d\,\mathrm D$, partial pressures in bar, $p^\theta=1$ bar, $K^\theta$ a function of $T$ only (Data Book Table 5 gives $\ln K^\theta$ for the reaction in the direction printed):
@@ -350,7 +350,7 @@ Note: [[SESA2023 W09 - Turbomachinery Characteristics - Coefficients, Similarity
 ★ Flow and stage-loading coefficients, mean line (state the radius, usually mid-span):
 
 $$
-\phi=\frac{V_x}{U},\qquad \psi=\frac{|\Delta h_0|}{U^2}=\frac{\Delta V_\theta}{U}\ \ (\text{constant }r),\qquad n_{stages}\ge\frac{\Delta h_{0,overall}}{\psi_{max}U^2}
+\phi=\frac{V_x}{U},\qquad \psi=\frac{|\Delta h_0|}{U^2}=\frac{|\Delta V_\theta|}{U}\ \ (\text{constant }r),\qquad n_{stages}\ge\frac{\Delta h_{0,overall}}{\psi_{max}U^2}
 $$
 
 Round the stage count up and recompute the actual $\psi$; equal work per stage. Loading limits: compressor $\psi\le0.65$ (typically 0.35–0.5), turbine $\psi\le2.5$. Per stage, the pressure ratio is limited to about 2 (axial compressor) or 10 (centrifugal); equal stages give $\pi=\pi_{stage}^n$.
