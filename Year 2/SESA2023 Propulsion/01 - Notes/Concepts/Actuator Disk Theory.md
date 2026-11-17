@@ -3,7 +3,7 @@ title: "Actuator Disk Theory"
 module: "SESA2023 Propulsion"
 type: concept
 stream: "Section 4: Turbomachinery and Propellers"
-aliases: ["momentum theory", "Froude theory", "propeller", "advance ratio"]
+aliases: ["momentum theory", "Froude theory", "propeller", "advance ratio", "actuator disc theory", "ADT"]
 tags: [sesa2023, concept, turbomachinery, propellers]
 status: complete
 parent_lectures: ["[[SESA2023 W09 - Turbomachinery Characteristics - Coefficients, Similarity and Maps]]"]
@@ -34,3 +34,4 @@ For blade-element work the advance ratio is $J = V_\infty/(nD)$, with $n$ in rev
 ## Related
 
 - [[Propulsive Efficiency]] · [[Velocity Triangles]] · [[Thrust Equation]]
+- Rotor forms in SESA3043, where the theory is spelt "actuator disc": the static limit $V_\infty=0$ is the hovering rotor, with $v_2=2v_i$ and $v_0=\sqrt{T/2\rho A}$ ([[SESA3043 4.1 - Rotor in Hover]], [[Hover Induced Velocity and Disc Loading]]); $V_{disk}=\tfrac12(V_\infty+V_j)$ with $V_\infty=V_C$ is the rotor in a vertical climb ([[Induced Velocity in Axial Flight]]). The rotor advance ratio $\mu=V/V_T$ of [[SESA3043 4.3 - Rotor in Forward Flight]] is a different quantity from the propeller $J$.

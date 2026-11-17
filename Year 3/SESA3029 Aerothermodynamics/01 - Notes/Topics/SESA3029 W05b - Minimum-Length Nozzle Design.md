@@ -36,7 +36,7 @@ Section numbers continue from [[SESA3029 W05a - Method of Characteristics|W05a]]
 The boundary conditions and nozzle design of this note underpin both the coursework and the final exam. The nozzle-design table of §14 is the coursework task.
 
 > [!important] The MoC coursework (brief: `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`; L3-4, ll. 361–425)
-> - Due 23:59, Sunday 15 November 2026, on Blackboard, worth 10% of the module (the module guide agrees). An earlier date of 6 November has been superseded.
+> - Due 23:59, Sunday 15 November 2026, on Blackboard, worth 10% of the module (the module guide agrees). **Submitted** 12:01 on Sun 15 Nov ($M_{des}=3.4$; report in `04 - Labs & Coursework/MoC Coursework/`).
 > - Design Mach number $M_{des}=3.x$, where $x$ is the last digit of your student ID.
 > - The gas is carbon dioxide at room temperature, $\gamma=1.289$, not air (given in the brief only). The IFT, NST and OSC are all for $\gamma=1.4$, so none of them work for your numbers; every $\nu$, $M$ and $A/A^*$ has to come from your own code.
 > - Part A: a spreadsheet or Python function giving $\mu$ and $\nu$ for any $M$ and $\gamma$, verified against an alternative method.
@@ -71,7 +71,7 @@ Validate the MoC code on the worked case of §14 first: $\gamma=1.4$, $M_e=2.4$ 
 
 ---
 
-Supersonic flow reduces to arithmetic on a mesh of Mach lines ([[SESA3029 W05a - Method of Characteristics|W05a]]). Boundaries add the edges of the mesh, and with them a way to design a wall. An interior point gets both invariants from its two incoming lines. A boundary point has only one incoming line, and the wall or centreline supplies the missing number, the flow angle $\theta$, since any two of the four numbers fix the rest.
+In [[SESA3029 W05a - Method of Characteristics|W05a]] the flow is found at the points where a $C^+$ and a $C^-$ Mach line cross, each line bringing one number ($\nu-\theta$ or $\nu+\theta$) from upstream. A wall or the centreline is where this criss-cross network of lines ends, and treating it properly also gives a way to design a wall. An interior point gets both invariants from its two incoming lines. A boundary point has only one incoming line, and the wall or centreline supplies the missing number, the flow angle $\theta$, since any two of the four numbers fix the rest.
 
 Boundaries also decide what happens to a line that arrives. A prescribed wall reflects it, so a new line leaves; a designed wall is shaped to absorb it, so nothing leaves; the centreline acts as a mirror. A wall designed to absorb every wave that reaches it gives a uniform, shock-free exit flow. Putting all the expansion into a sharp corner at the throat makes the nozzle as short as it can be, and in that minimum-length nozzle the wall's maximum slope at the throat fixes the exit Mach number, $\theta_{max}=\nu(M_e)/2$. The 1D area ratio checks the exit height, but only MoC gives the length.
 
@@ -517,14 +517,14 @@ Textbooks (Anderson in particular), other universities and CFD software often us
 - Tasks citing `L3-3` or `L3-4` were set or worked in the lectures of Thu 22 and Fri 23 Oct. L3-4 set the symbolic table as an independent exercise (ll. 201–203), and the coursework. The 3.1–3.2 tasks, including the point 3 homework, are in [[SESA3029 W05a - Method of Characteristics#Self-study tasks|W05a]].
 - The rest are *suggested, not lecturer-set*.
 
-Deadlines: Test 2 closed at midnight on Sun 25 Oct (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). The MoC coursework (10 %) is due Sun 15 Nov (L3-4, ll. 415–418; [[#Coursework and deadlines]]).
+Deadlines: Test 2 closed at midnight on Sun 25 Oct (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). The MoC coursework (10 %) was due Sun 15 Nov (L3-4, ll. 415–418; [[#Coursework and deadlines]]) and was submitted that day.
 
 ### Core
 
 - [ ] **(L3-3, ll. 132, 221–222)** Fill in the $M_e=2.4$ template yourself. This is the coursework procedure. → [[#14. Worked example: minimum-length nozzle for Me = 2.4|§14]]
 - [ ] **(L3-4, ll. 198–203)** Fill in the symbolic table of the generic example in under a minute; this type of question has appeared in past papers. → [[#15. The generic MoC example|§15]]
 - [ ] **(L3-4, ll. 298–348)** Recover $\theta_w=5.014^\circ$ and $M_0=1.834$ from $M_4=2.2$ and $M_6=2.4$. → [[#15. The generic MoC example|§15, the inverse problem]]
-- [ ] **MoC coursework** (brief in `04 - Labs & Coursework/MoC Coursework/`; L3-4, ll. 361–418): minimum-length nozzle for $M_{des}=3.x$ ($x$ = last digit of your student ID), **CO₂, $\gamma=1.289$**, five characteristics from $0.125^\circ$, 20 points, four significant figures, sections i–vi, at most six A4 pages. **Due 23:59, Sun 15 Nov.** → [[#Coursework and deadlines]] and [[#14. Worked example: minimum-length nozzle for Me = 2.4|§14]]
+- [x] **MoC coursework** (submitted 12:01, Sun 15 Nov; brief in `04 - Labs & Coursework/MoC Coursework/`; L3-4, ll. 361–418): minimum-length nozzle for $M_{des}=3.x$ ($x$ = last digit of your student ID), **CO₂, $\gamma=1.289$**, five characteristics from $0.125^\circ$, 20 points, four significant figures, sections i–vi, at most six A4 pages. **Due 23:59, Sun 15 Nov.** → [[#Coursework and deadlines]] and [[#14. Worked example: minimum-length nozzle for Me = 2.4|§14]]
 - [ ] Derive $\theta_{max}=\nu(M_e)/2$, including why $\nu(1)=0$ (L3-3, ll. 168–200). → [[#13. The minimum-length nozzle|§13]]
 
 ### Further practice

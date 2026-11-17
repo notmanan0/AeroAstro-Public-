@@ -284,7 +284,7 @@ $$
 
 **(c)** $x_{cp}=-C_{m,LE}/C_l=\boxed{0.50}$. (Linear theory takes $C_n=C_l$ at small $\alpha$, so this is also the chordwise position.)
 
-The sheet gives 52.3, 37.1, 62.9 and 47.7 kPa; 10.5 kN/m; 1.13 kN/m; −5.29 kN; 0.50 ✓.
+The sheet gives 52.3, 37.1, 62.9 and 47.7 kPa; 10.5 kN/m; 1.13 kN/m; −5.29 kN; 0.50 ✓. The face-by-face route (normal and chordwise forces, then $L'=N'\cos\alpha-A'\sin\alpha=10.55$ kN/m) and the proof that $x_{AC}=c/2$ are in [[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory|Tutorial Lecture 2]].
 
 > [!tip] Linear versus exact (Example Sheet 1 Q6)
 > Linear theory gets the lift (10.58 against 10.64 kN/m) and the drag (1.126 against 1.133 kN/m) within 1%. It misses the forward shift of the centre of pressure (0.47 exact against 0.50 linear), which comes from the nonlinear difference between the shock and the fan.

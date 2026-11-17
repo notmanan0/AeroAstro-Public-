@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3047 formulae", "Advanced Mechanics and Control formula sheet"]
 tags: [sesa3047, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–5 lectured in full (L2–L16); Chapter 6 §§6.1–6.5 from L17 (Mon 9 Nov); §6.6 phugoid approximations written ahead"
-sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt"]
+coverage: "Chapters 1–5 lectured in full (L2–L16); Chapter 6 §§6.1–6.5 from L17 (Mon 9 Nov); §6.6 phugoid approximations from L18 (Mon 16 Nov)"
+sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt", "02 - Sources/Lectures/16 November 2026 at 11_51_48.txt"]
 ---
 
 # SESA3047 Formula Sheet
 
-Current coverage: **Chapters 1–5 and Chapter 6 §§6.1–6.5**. Chapter 4 was lectured in full (L11–L13, 19 and 22 Oct), Chapter 5 in L14–L16 (2 and 5 Nov), Chapter 6 §§6.1–6.4 in L17; §6.5 was set as reading; the §6.6 phugoid approximations are written ahead of Mon 16 Nov and marked so. Handout-only pieces are marked where they appear. The official exam formula sheet goes on Blackboard in mid-November 2026.
+Current coverage: **Chapters 1–5 and Chapter 6 §§6.1–6.6**. Chapter 4 was lectured in full (L11–L13, 19 and 22 Oct), Chapter 5 in L14–L16 (2 and 5 Nov), Chapter 6 §§6.1–6.4 in L17; §6.5 was set as reading; §6.6 was lectured in L18 (Mon 16 Nov). Handout-only pieces are marked where they appear. The official exam formula sheet goes on Blackboard in mid-November 2026.
 
 ## Control-system notation
 
@@ -555,16 +555,44 @@ Linearising the 6-DOF model ([[SESA3047 Deep Dive - From the 6-DOF Equations to 
 
 Quartic $\lambda^4+a_3\lambda^3+a_2\lambda^2+a_1\lambda+a_0$ with well-separated modes: fast $\approx\lambda^2+a_3\lambda+a_2$, slow $\approx\lambda^2+\dfrac{a_1a_2-a_0a_3}{a_2^2}\lambda+\dfrac{a_0}{a_2}$. Eigenvector by hand: set $\theta=1$, then $q=\lambda$, solve rows 1–2 for $u,w$; row 3 is the check. Compare in angle units $u/U_\infty$, $\alpha=w/U_\infty$, $\theta$, $\gamma=\theta-\alpha$. F-4C: SPO $\alpha\approx\theta$, $|\gamma|=0.22|\theta|$, $|u|/U_\infty=0.04|\theta|$; phugoid $\gamma\approx\theta$, $|\alpha|=0.10|\theta|$, $|\theta|=1.414\,|u|/U_\infty$.
 
-Phugoid approximations (§6.6, written ahead of Mon 16 Nov): Lanchester, constant energy and $C_L$ (Eqs. 6.28–6.33), and the improved form with $\dot q=0$, $\gamma_0=0$, $\mathring Z_q=\mathring Z_{\dot w}=\mathring M_q=\mathring M_{\dot w}=0$ (Eq. 6.38):
-
-$$
-\ddot h+\frac{2g^2}{U_\infty^2}h=0,\ \ \omega_n=\frac{\sqrt2\,g}{U_\infty},\ \zeta=0;\qquad
-\omega_n^2=\frac{g}{mU_\infty}\left(\frac{\mathring M_u\mathring Z_w}{\mathring M_w}-\mathring Z_u\right),\ \ \zeta=\frac{1}{2\omega_nm}\left[\frac{\mathring M_u}{\mathring M_w}\left(\mathring X_w-\frac{mg}{U_\infty}\right)-\mathring X_u\right].
-$$
-
-F-4C: Lanchester $\omega_n=0.0779$; Eq. 6.38 $\omega_n=0.0796$, $\zeta=0.0949$ (full model $0.0781$, $0.0825$). At fixed $C_L$, $\mathring Z_u=-2mg/U_\infty$, and with $\mathring M_u=0$ Eq. 6.38 reduces to Lanchester's $\omega_n$.
-
 Unity feedback, gain $K$, plant $1/(s^2+2\zeta\omega_ns+\omega_n^2)$: $\omega_{cl}=\sqrt{\omega_n^2+K}$, $\zeta_{cl}=\zeta\omega_n/\omega_{cl}$, step final value $K/(\omega_n^2+K)$ (stable loop).
+
+## Phugoid approximations
+
+Lectured L18 (Mon 16 Nov), Chapter 6 §6.6; Eq. 6.38 is handout only. Details: [[SESA3047 6.2 - Phugoid Approximation|6.2]].
+
+Lanchester (Eqs. 6.28–6.33): total energy constant (thrust balances drag), $\alpha$ and $C_L$ fixed at trim, lift vertical (shallow path), $h$ up from the trim height where $U=U_\infty$:
+
+$$
+U_\infty^2=U^2+2gh,\qquad C_L=\frac{mg}{\tfrac12\rho U_\infty^2S},\qquad m\ddot h=L-mg=-\rho SC_Lgh,
+$$
+
+$$
+\ddot h+\frac{2g^2}{U_\infty^2}h=0,\qquad\omega_n=\frac{\sqrt2\,g}{U_\infty},\qquad\zeta=0,\qquad T=\frac{\sqrt2\,\pi U_\infty}{g}.\qquad(6.33)
+$$
+
+Mode shape (small $u$): $u=-gh/U_\infty$ (antiphase with height), $h_0=U_\infty u_0/g$, $|\theta|\approx|\gamma|=\sqrt2\,|u|/U_\infty$, $\theta$ a quarter cycle ahead of $h$ and behind $u$.
+
+Improved approximation (Eqs. 6.34–6.38): level trim $\gamma_0=0$, $\dot q=0$, $\mathring Z_q=\mathring Z_{\dot w}=\mathring M_q=\mathring M_{\dot w}=0$. The moment row becomes $0=\mathring M_uu+\mathring M_ww$; $q=\dot\theta$ removes the kinematic row; $mU_\infty\dot\theta$ moves left:
+
+$$
+\begin{bmatrix}m&0&0\\0&m&-mU_\infty\\0&0&0\end{bmatrix}\begin{bmatrix}\dot u\\\dot w\\\dot\theta\end{bmatrix}=\begin{bmatrix}\mathring X_u&\mathring X_w&-mg\\\mathring Z_u&\mathring Z_w&0\\\mathring M_u&\mathring M_w&0\end{bmatrix}\begin{bmatrix}u\\w\\\theta\end{bmatrix},\qquad
+\begin{bmatrix}m\lambda-\mathring X_u&-\mathring X_w&mg\\-\mathring Z_u&m\lambda-\mathring Z_w&-mU_\infty\lambda\\-\mathring M_u&-\mathring M_w&0\end{bmatrix}\begin{bmatrix}u_0\\w_0\\\theta_0\end{bmatrix}=\mathbf 0.\qquad(6.36,\ 6.37)
+$$
+
+$\mathbf M$ is singular (rank 2): two eigenvalues, from $\det(\lambda\mathbf M-\mathbf A')=0$. Dimensional derivatives, level trim:
+
+$$
+\omega_n^2=\frac{g}{mU_\infty}\left(\frac{\mathring M_u\mathring Z_w}{\mathring M_w}-\mathring Z_u\right),\qquad\zeta=\frac{1}{2\omega_nm}\left[\frac{\mathring M_u}{\mathring M_w}\left(\mathring X_w-\frac{mg}{U_\infty}\right)-\mathring X_u\right].\qquad(6.38)
+$$
+
+At fixed $C_L$, $\mathring Z_u=-2mg/U_\infty$; with $\mathring M_u=0$ as well, Eq. 6.38 reduces to Lanchester's $\omega_n$ and $2\zeta\omega_n=-\mathring X_u/m$.
+
+| F-4C, 178 m/s, level | $\omega_n$ (rad/s) | $\zeta$ | $T$ (s) |
+|---|---|---|---|
+| full model | 0.0781 | 0.0825 | 80.7 |
+| Lanchester | 0.0779 | 0 | 80.6 |
+| improved (Eq. 6.38) | 0.0797 | 0.0949 | 79.2 |
 
 ## Related
 
@@ -586,4 +614,5 @@ Unity feedback, gain $K$, plant $1/(s^2+2\zeta\omega_ns+\omega_n^2)$: $\omega_{c
 - [[SESA3047 5.4 - Time-Domain Solution and Stability]]
 
 - [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]] · [[Eigenvectors as Mode Shapes]]
+- [[SESA3047 6.2 - Phugoid Approximation]] · [[Lanchester's Phugoid Approximation]] · [[Separation of Time Scales]] · [[State Coupling]]
 - Deep dives: [[SESA3047 Deep Dive - Euler-Angle Rates and Gimbal Lock]] · [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes]]

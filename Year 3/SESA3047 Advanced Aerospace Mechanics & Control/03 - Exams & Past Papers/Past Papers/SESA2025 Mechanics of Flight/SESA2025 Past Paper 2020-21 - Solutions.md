@@ -18,7 +18,7 @@ sources: ["03 - Exams & Past Papers/Past Papers/SESA2025 Mechanics of Flight/SES
 |---|---:|---|---|
 | 1 | 30 | Stick-fixed neutral point from two-speed, two-CG trim flights; tail lift-curve slope from $h_n$ | [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#5. Neutral point from flight tests\|SESA2022 T6 §5]], [[Neutral Point and Static Margin]], [[SESA1015 M11 - Longitudinal Trim and Static Stability\|SESA1015 M11]] |
 | 2 | 20 | Canard and wing lift-curve slopes with canard downwash inboard and upwash outboard | [[SESA2022 T5 - Finite Wing Theory\|SESA2022 T5]], [[Downwash and Induced Drag]], [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability\|T6]] |
-| 3 | 25 | Longitudinal state space: assumptions, dimensional derivatives, eigenvalues, SPO and phugoid, effect of halving $H_s$ | [[SESA3047 5.2 - Longitudinal State-Space Model\|5.2]], [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation\|6.1]], [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives\|SESA2027 A2]]; the phugoid approximation is §6.6, lectured Mon 16 Nov ([[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes\|Deep Dive §9]], written ahead) |
+| 3 | 25 | Longitudinal state space: assumptions, dimensional derivatives, eigenvalues, SPO and phugoid, effect of halving $H_s$ | [[SESA3047 5.2 - Longitudinal State-Space Model\|5.2]], [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation\|6.1]], [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives\|SESA2027 A2]]; the phugoid approximation is §6.6, lectured Mon 16 Nov ([[SESA3047 6.2 - Phugoid Approximation\|6.2]]) |
 | 4 | 25 | Lateral state space: dimensional derivatives, eigenvalues, roll subsidence, fin-area reduction | Not yet lectured: lateral modes are Chapter 6 §§6.7–6.10 ([[Lecture Notes - Chapter 6.pdf]]), lectured from Thu 19 Nov; qualitative background in [[Lateral and Directional Stability]] |
 
 ---
@@ -376,7 +376,7 @@ $$
 \zeta=\frac{0.00652}{0.07801}=0.084.
 $$
 
-$\omega_n$ agrees with Lanchester's $\sqrt2\,g/U_\infty=0.0779$ rad/s ([[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes|Deep Dive §9]]). Without $\mathring Z_{\dot w}$, $\mathring Z_q$ and $\mathring M_{\dot w}$ the SPO damping is $0.212$ against $0.263$ for the full F-4C model of [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1 §7]]: the downwash-lag term $\mathring M_{\dot w}$ is a real part of the SPO damping. The phugoid is almost unaffected.
+$\omega_n$ agrees with Lanchester's $\sqrt2\,g/U_\infty=0.0779$ rad/s ([[SESA3047 6.2 - Phugoid Approximation#2. Lanchester's approximation (6.28–6.33)|6.2 §2]]). Without $\mathring Z_{\dot w}$, $\mathring Z_q$ and $\mathring M_{\dot w}$ the SPO damping is $0.212$ against $0.263$ for the full F-4C model of [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1 §7]]: the downwash-lag term $\mathring M_{\dot w}$ is a real part of the SPO damping. The phugoid is almost unaffected.
 
 ### (vi) Halving the static margin [6 marks]
 

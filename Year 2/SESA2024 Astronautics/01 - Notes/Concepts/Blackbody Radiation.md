@@ -3,7 +3,7 @@ title: "Blackbody Radiation"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["black body", "blackbody", "Planck's law", "Wien's displacement law", "Stefan-Boltzmann law", "grey body"]
+aliases: ["black body", "blackbody"]
 tags: [sesa2024, concept, thermal-control]
 status: lectured
 parent_lectures: ["[[SESA2024 10 - Thermal Control]]"]
@@ -27,3 +27,4 @@ A grey body absorbs and emits a constant fraction of the black-body value at all
 
 - [[SESA2024 10 - Thermal Control#2. Emission|Emission in the topic note]]
 - [[Absorptance and Emittance]] · [[Spacecraft Thermal Balance Equation]]
+- The individual laws, derived in SESA3029: [[Planck's Law]] · [[Wien's Displacement Law]] · [[Stefan-Boltzmann Law]] · [[Kirchhoff's Law of Thermal Radiation]] · [[Emissivity]] (grey bodies) · [[SESA3029 W09d - Thermal Radiation]]

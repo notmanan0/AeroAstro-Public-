@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3047 Advanced Aerospace Mechanics & Control"]
 tags: [sesa3047, hub, moc]
 status: in-progress
-coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 lectured in L14 (Mon 2 Nov) and L15–L16 (Thu 5 Nov), Dr Sean Symon, except §5.6 (MIMO block diagram, not examinable) and the derivative appendix; Chapter 6 §§6.1–6.4 lectured in L17 (Mon 9 Nov), §6.5 set as reading; Labs 1–2 filed; Coursework 1 submitted Thu 29 Oct"
+coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 lectured in L14 (Mon 2 Nov) and L15–L16 (Thu 5 Nov), Dr Sean Symon, except §5.6 (MIMO block diagram, not examinable) and the derivative appendix; Chapter 6 §§6.1–6.4 lectured in L17 (Mon 9 Nov), §6.5 set as reading, §6.6 (phugoid approximations) lectured in L18 (Mon 16 Nov); Labs 1–2 filed, lab report due Mon 30 Nov; Coursework 1 submitted Thu 29 Oct"
 ---
 
 # SESA3047 Advanced Aerospace Mechanics & Control Hub
@@ -13,7 +13,7 @@ coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 lectured in L14 (M
 > [!abstract] Module at a glance
 > Chapter 1 sets up the language of six-degree-of-freedom mechanics and control (dynamic systems, control architectures, models, states and reference frames). Chapter 2 builds the kinematic toolkit: vector products, the transport theorem, direction cosine matrices and Euler angles. Chapter 3 turns it into the first state equations (Euler-angle rates, motion in moving frames, position from body velocity, the inertia matrix and the rotational dynamic equation), and Chapter 4 completes the 12-state flat-Earth model with inertia coupling, rotors and translational dynamics.
 >
-> Chapters 1–4 are all lectured (L2–L13, finishing in the Thu 22 Oct double) and written up from the transcripts. Chapter 5 (state-space models) is lectured and written up: 5.1 from L14 (Mon 2 Nov), the first lecture of **Dr Sean Symon**, who teaches the rest of the module, and 5.2–5.4 from the Thu 5 Nov double (L15–L16). Chapter 6 (aircraft flight dynamics and the interpretation of eigenvectors) started in L17 (Mon 9 Nov): [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]] covers §§6.1–6.5. Labs 1 and 2 are filed, the lab report (Labs 1–2) is released on Mon 16 Nov, and Coursework 1 was submitted on Thu 29 October ([[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
+> Chapters 1–4 are all lectured (L2–L13, finishing in the Thu 22 Oct double) and written up from the transcripts. Chapter 5 (state-space models) is lectured and written up: 5.1 from L14 (Mon 2 Nov), the first lecture of **Dr Sean Symon**, who teaches the rest of the module, and 5.2–5.4 from the Thu 5 Nov double (L15–L16). Chapter 6 (aircraft flight dynamics and the interpretation of eigenvectors) started in L17 (Mon 9 Nov): [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]] covers §§6.1–6.5, and [[SESA3047 6.2 - Phugoid Approximation|6.2]] covers §6.6, the phugoid approximations, from L18 (Mon 16 Nov). Labs 1 and 2 are filed. The lab report (Labs 1–2) was released on Mon 16 Nov and, after a class vote, is due **Mon 30 Nov** (L18 ll. 36–37, 125–130). Coursework 1 was submitted on Thu 29 October ([[#Labs and coursework]]). Quick reference: [[SESA3047 Formula Sheet]].
 >
 > Chapters 1–4 were taught by Dr Cristiano Martinelli; Chapter 5 onwards by Dr Sean Symon.
 
@@ -76,13 +76,17 @@ coverage: "Chapters 1–4, all lectured (L2–L13); Chapter 5 lectured in L14 (M
    - eigenvectors as mode shapes: dominant states (in comparable units), phases ($\theta$ lags $q$ by $90^\circ+\arcsin\zeta$), the eigenvector initial condition exciting one mode (Fig. 6.1), the phugoid height and energy exchange;
    - the F-4C SPO approximation (Eqs. 6.22–6.27) by formula and by $2\times2$ trace and determinant; the L17 Simulink feedback demonstration for Lab 2.
    - all twelve states and the 6 + 6 split, solver evaluation, full derivative example and an exact ballistic integration check.
+17. [[SESA3047 6.2 - Phugoid Approximation]] (Chapter 6 §6.6; **lectured**, L18 Mon 16 Nov; Eq. 6.38 handout only)
+   - Lanchester's approximation from constant energy at fixed $C_L$: $\ddot h+(2g^2/U_\infty^2)h=0$, $\omega_n=\sqrt2\,g/U_\infty$, $\zeta=0$, the mode shape ($u=-gh/U_\infty$, $|\theta|=\sqrt2|u|/U_\infty$);
+   - dominant states, coupling and the separation of time scales; the improved approximation reduced from Eq. 6.34 to the eigenvalue problem Eq. 6.37 and, by cofactors, Eq. 6.38;
+   - F-4C: Lanchester 0.0779 rad/s; Eq. 6.38 0.0797 rad/s and $\zeta=0.095$; full model 0.0781 and 0.083; the Lab 2 feedback loop for the lab report.
 
 ### Deep dives
 
 Longer derivations that run across several notes, with every number recomputed:
 
 - [[SESA3047 Deep Dive - Euler-Angle Rates and Gimbal Lock]] (Chapters 2–3; after 3.1): the three elemental rotation rates added and resolved into FRD, $\mathbf E=\mathbf C_x(\phi)\mathbf E_\theta$, the same $\mathbf E$ from $\dot{\mathbf C}=-\tilde{\boldsymbol\omega}\mathbf C$, $\mathbf H$ by cofactors; at $\theta=\pm90^\circ$ the parallel columns, the missing axis $\mathbf x_1$, the null space $[1,0,\pm1]^T$ and $\sigma_{max}(\mathbf H)=1/\sqrt{1-|\sin\theta|}$; a pull-up past the vertical integrated both ways; quaternions named as the course's remedy.
-- [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes]] (Chapters 4–6; after 6.1; §9 **written ahead**): the 6-DOF model linearised term by term about steady straight flight (trim balance, gravity with $\phi$, kinematics, height), $\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x$ and $\mathbf M^{-1}$ for the F-4C, the quartic and its approximate quadratic factors, eigenvectors by hand read in angle units ($\gamma=\theta-\alpha$), the SPO approximation's error split, and the §6.6 Lanchester and improved phugoid approximations ahead of the Mon 16 Nov lecture.
+- [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes]] (Chapters 4–6; after 6.1): the 6-DOF model linearised term by term about steady straight flight (trim balance, gravity with $\phi$, kinematics, height), $\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x$ and $\mathbf M^{-1}$ for the F-4C, the quartic and its approximate quadratic factors, eigenvectors by hand read in angle units ($\gamma=\theta-\alpha$), the SPO approximation's error split, and where the §6.6 Lanchester and improved phugoid approximations fit in the chain (§9; derived in full in [[SESA3047 6.2 - Phugoid Approximation|6.2]]).
 
 ## Week 1 concept map
 
@@ -133,11 +137,12 @@ Longer derivations that run across several notes, with every number recomputed:
 | [[Characteristic Equation and Eigenvalues]] (SESA2027) | [[Eigenvectors as Mode Shapes]] | [[Short Period Oscillation]] (SESA2027) |
 | [[Damping Ratio and Natural Frequency]] (SESA2027) | [[Matrix Exponential and Modal Solution]] (Ch. 5) | [[Phugoid Mode]] (SESA2027) |
 | [[Eigenvalue Decomposition]] (Ch. 5) | [[Eigenvalues and Eigenvectors]] (MATH1054) | [[Aerodynamic Stability Derivatives]] (SESA2027) |
+| [[State Coupling]] | [[Separation of Time Scales]] | [[Lanchester's Phugoid Approximation]] |
 | | | [[PID Controller]] (SESA2027; Lab 2) |
 
 ## Coverage boundary
 
-The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assembled 12-state model, Eq. 4.42, so **Chapter 4 is fully lectured**. A few handout equations were not lectured: Eq. 4.25 (changing rotor momentum), Eq. 4.31 (effective gravity), and Eqs. 4.38–4.40 (the $X,Y,Z$ convention). They are marked "handout only" in the notes. Chapter 5 (state-space models, Dr Sean Symon) started in L14 (Mon 2 Nov), which covered §§5.1–5.2 and the gravity terms of §5.3, and finished in the Thu 5 Nov double (L15–L16). Only §5.6, the MIMO block diagram, was skipped, and it is not on the exam (L16 ll. 426–427); the derivative appendix was not lectured either. Chapter 6 started in L17 (Mon 9 Nov) with §§6.1–6.4; §6.5, the SPO approximation, repeats SESA2027 and was set as reading (L17 ll. 397–400). The Thu 12 Nov double slot was a lab, not a lecture, so L17 is still the latest lecture. The phugoid approximation (§6.6) is due on Mon 16 Nov and the lateral modes (§§6.7–6.10) on Thu 19 Nov (L17 ll. 401–406); the rest of the handout is filed, awaiting those lectures. Controllability, observability (around week 10, L16 l. 133) and control design (Chapters 7–8) remain outside current coverage.
+The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assembled 12-state model, Eq. 4.42, so **Chapter 4 is fully lectured**. A few handout equations were not lectured: Eq. 4.25 (changing rotor momentum), Eq. 4.31 (effective gravity), and Eqs. 4.38–4.40 (the $X,Y,Z$ convention). They are marked "handout only" in the notes. Chapter 5 (state-space models, Dr Sean Symon) started in L14 (Mon 2 Nov), which covered §§5.1–5.2 and the gravity terms of §5.3, and finished in the Thu 5 Nov double (L15–L16). Only §5.6, the MIMO block diagram, was skipped, and it is not on the exam (L16 ll. 426–427); the derivative appendix was not lectured either. Chapter 6 started in L17 (Mon 9 Nov) with §§6.1–6.4; §6.5, the SPO approximation, repeats SESA2027 and was set as reading (L17 ll. 397–400). The Thu 12 Nov double slot was a lab, not a lecture, so the next lecture after L17 was L18 (Mon 16 Nov), which covered §6.6, the phugoid approximations, up to the eigenvalue problem Eq. 6.37 ([[SESA3047 6.2 - Phugoid Approximation|6.2]]; the cofactor expansion and Eq. 6.38 are handout only, ll. 657–658). The lateral modes (§§6.7–6.10) follow on Thu 19 Nov (L17 ll. 401–406; L18 ll. 237–239); the rest of the handout is filed, awaiting that lecture. Controllability, observability (around week 10, L16 l. 133) and control design (Chapters 7–8) remain outside current coverage.
 
 | Material | Vault status |
 |---|---|
@@ -160,10 +165,11 @@ The current sources are **Chapters 1–4**. L13 (Thu 22 Oct) ends with the assem
 | Chapter 5 §5.8 practice problems | Solved → [[SESA3047 Chapter 5 Practice Problems - Solutions]] |
 | Chapter 6 §§6.1–6.4 | **Complete**, lectured in L17 (Mon 9 Nov) ll. 62–392 → [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation\|6.1]] §§1–6 |
 | Chapter 6 §6.5 (SPO approximation) | Set as reading, not re-lectured (L17 ll. 397–400) → 6.1 §7 |
-| Chapter 6 §§6.6–6.10 (phugoid approximation, lateral modes) | Slides filed, awaiting lectures (Mon 16 and Thu 19 Nov, L17 ll. 401–406); §6.6 written ahead in [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes#9. The phugoid approximations (written ahead)\|the longitudinal deep dive §9]] |
+| Chapter 6 §6.6 (phugoid approximations) | **Complete**, lectured in L18 (Mon 16 Nov) ll. 233–658 → [[SESA3047 6.2 - Phugoid Approximation\|6.2]]; the cofactor expansion and Eq. 6.38 are handout only (ll. 657–658) |
+| Chapter 6 §§6.7–6.10 (lateral modes) | Slides filed, awaiting lectures (Thu 19 Nov, L18 ll. 237–239) |
 | Later chapters | Awaiting material (Chapter 7: the other state-space matrices and pole placement; Chapter 8: MIMO control and LQR, per the module guide; most of the module is about $\mathbf A$, the last few weeks about $\mathbf B$, L16 l. 138) |
 
-Chapter 4 was written from the lecture-note handout on 19 October and updated from L12–L13 on 23 October. Chapter 5 was written on 3 November from the handout (released Sat 31 Oct) and L14, and backfilled from L15–L16 on 5 November. Chapter 6 §§6.1–6.5 were written on 11 November from the handout and L17.
+Chapter 4 was written from the lecture-note handout on 19 October and updated from L12–L13 on 23 October. Chapter 5 was written on 3 November from the handout (released Sat 31 Oct) and L14, and backfilled from L15–L16 on 5 November. Chapter 6 §§6.1–6.5 were written on 11 November from the handout and L17, and §6.6 on 16 November from the handout and L18.
 
 ## Labs and coursework
 
@@ -202,7 +208,13 @@ Chapter 4 was written from the lecture-note handout on 19 October and updated fr
 > - Simulink traps: the Step block switches at $t=1$ s by default; raise the Stop Time when the response is slow; State-Space matrix dimensions must agree.
 
 > [!important] Lab report (Labs 1–2) and Coursework 2
-> The lab report is worth 20 % of the module and covers **Labs 1 and 2 only**. It is released on **Mon 16 Nov** (week 9) (L17 ll. 38–46); the module guide lists it as set 12 Nov and due **Thu 26 Nov**, so check the due date on Blackboard. Its timing is set to avoid the Advanced Aeronautics coursework (due Thu 3 Dec) and to have it marked before the winter break (ll. 51–60). Lab 3 is assessed instead inside the final coursework, which joins it to Coursework 2 (ll. 47–50): set Thu 3 Dec, due Thu 10 Dec per the module guide.
+> The lab report is worth 20 % of the module and covers **Labs 1 and 2 only**. It was released on **Mon 16 Nov** (week 9) as a 3-page instruction PDF on Blackboard (L17 ll. 38–46; L18 ll. 9–16, 228–231; not filed here). It is due **Mon 30 Nov**: the module guide's Thu 26 Nov was moved by a class vote (L18 ll. 36–37, 125–130), and the student office is being told. Early submission is fine, attempts are unlimited, and the portal stays open after the deadline for extensions (ll. 131–139).
+> - **Format:** at most five pages as one PDF, with no cover page (ll. 17–23, 60–65). Roughly one page for the introduction, methods and conclusions, kept high level (the purpose of the labs and the lecture concepts they illustrate), and four pages discussing results (ll. 25–27, 71–82). Results and discussion go in two separate sections, one per lab, because the labs were not integrated (ll. 78–80).
+> - **Figures:** any format, EPS or PNG, but not screen captures (ll. 97–104). A figure with two plots is labelled 1a and 1b, and figures and sub-figures are discussed in numerical order (ll. 105–116).
+> - **Content:** in Lab 2, Task 1 is the plant $G_p$ (state space and transfer function give the same response), Task 2 the closed loop with three controllers; the report should explain why the three controllers behave differently, an open-ended question (ll. 160–226). Lab 1 illustrates coupling between states (ll. 422–425). Background: [[SESA3047 6.2 - Phugoid Approximation#6. The feedback loop of Lab 2|6.2 §6]].
+> - **Help:** office hours Thu 5–6 pm in a Boldrewood meeting room, Thu 19 and Thu 26 Nov (ll. 29–34); questions on the lab-report discussion board; email Dr Symon, not Dr Martinelli, only about personal circumstances or submission problems (ll. 140–146).
+>
+> Its timing is set to avoid the Advanced Aeronautics coursework (due Thu 3 Dec) and to have it marked before the winter break (ll. 51–60). Lab 3 is assessed instead inside the final coursework, which joins it to Coursework 2 (ll. 47–50): set Thu 3 Dec, due Thu 10 Dec per the module guide.
 
 > [!important] Coursework 1: submitted Thu 29 Oct
 > Submitted on time as a 14-page handwritten scan: [[SESA3047 Coursework 1 Submission.pdf]]. The folder `04 - Labs & Coursework/Coursework 1/` holds the submission at the top level, with `Brief/` (brief, template, guide), `Working Notes/` (typed draft and explainers), `MATLAB/` (`cw1_q1a_ode45.m`, `cw1_figures.m`) and `Figures/`.
@@ -244,10 +256,12 @@ SESA3047 has no past papers of its own (it is a new module). The SESA2025 Mechan
 > - The MIMO block diagram, §5.6, is not on the exam (L16 ll. 426–427).
 > - Dynamics derivations are expected only for mass–spring–damper-type systems with the assumptions given; the satellite equations themselves need not be derived (L15 ll. 355–360).
 
-> [!important] Exam pointers (L17, Mon 9 Nov)
-> - Eigenvalues by hand are expected for a $2\times2$ matrix only, not $3\times3$ or $4\times4$ (ll. 132–142); the $4\times4$ cofactor expansion of §6.2 is optional (ll. 339–344).
-> - Remember $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2=0$ and what $\omega_n$ and $\zeta$ mean (ll. 346–368).
-> - The SPO approximation (§6.5) is set as reading (ll. 397–400).
+> [!important] Exam pointers (L17–L18, Mon 9 and 16 Nov)
+> - Eigenvalues by hand are expected for a $2\times2$ matrix only, not $3\times3$ or $4\times4$ (L17 ll. 132–142); the $4\times4$ cofactor expansion of §6.2 is optional (L17 ll. 339–344).
+> - Remember $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2=0$ and what $\omega_n$ and $\zeta$ mean (L17 ll. 346–368).
+> - The SPO approximation (§6.5) is set as reading (L17 ll. 397–400).
+> - The phugoid derivations need not be memorised for the exam (L18 ll. 402–404, 642–647). What matters is the energy-exchange idea behind Lanchester's approximation and the assumptions, especially which variables dominate each mode (L18 ll. 397–420).
+> - $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2=0$ is on the exam formula sheet (L18 l. 352). Coupling between states, through off-diagonal terms, is a central idea of the module (L18 ll. 426–436).
 
 - [[SESA3047 Chapter 5 Practice Problems - Solutions]]: **lecturer-set** (handout §5.8), five problems with my worked solutions; no answer key issued.
 
@@ -333,7 +347,7 @@ All of Chapter 5 is now lectured (L14–L16), except the block diagram of §5.6,
 
 ## Chapter 6 exam skills
 
-Chapter 6 §§6.1–6.5 are written up (L17); the phugoid approximation and the lateral modes follow.
+Chapter 6 §§6.1–6.6 are written up (L17–L18); the lateral modes follow.
 
 - form $\mathbf A=\mathbf M^{-1}\mathbf A'$ from the longitudinal model and say why $\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x$ is not yet state-space form;
 - find the eigenvalues of a $2\times2$ by hand, and read $\omega_n=|\lambda|$, $\zeta=-\sigma/\omega_n$, $t_{1/2}=\ln0.5/\sigma$, $T=2\pi/\omega$ off a complex pair (exam scope, L17 ll. 132–142);
@@ -343,7 +357,10 @@ Chapter 6 §§6.1–6.5 are written up (L17); the phugoid approximation and the 
 - show that starting on an eigenvector excites only its mode, $e^{\mathbf At}\mathbf v_k=e^{\lambda_kt}\mathbf v_k$ (L17 ll. 216–258);
 - read phases from an eigenvector: $u$ and $q$ in phase in the phugoid, $\theta$ lagging $q$ by $90^\circ+\arcsin\zeta$, height out of phase with speed;
 - derive the SPO approximation, state its two assumptions, and evaluate it for the F-4C ($\omega_n=1.41$, $\zeta=0.264$ against $1.405$, $0.2626$ for the full model);
-- set up unity negative feedback in Simulink and explain the proportional-gain trade-off (L17 ll. 501–563; Lab 2).
+- set up unity negative feedback in Simulink and explain the proportional-gain trade-off (L17 ll. 501–563; Lab 2);
+- derive Lanchester's $\ddot h+(2g^2/U_\infty^2)h=0$ from constant energy at fixed $C_L$, list its assumptions and explain why $\zeta=0$ is still a fair estimate (L18 ll. 287–372);
+- say which states dominate the SPO ($w$, $q$) and the phugoid ($u$, $\theta$), and explain coupling through off-diagonal terms (L18 ll. 405–436);
+- state the assumptions of the improved approximation, reduce Eq. 6.34 to Eq. 6.37 explaining each row and column removed, and evaluate Eq. 6.38 for the F-4C ($\omega_n=0.0797$, $\zeta=0.095$ against 0.0781 and 0.083) (L18 ll. 437–658).
 
 ## All notes
 
@@ -374,6 +391,7 @@ SORT type ASC, file.name ASC
 - `05 November 2026 at 14_53_19.txt` = **L15** (Thu 5 Nov, first half of the double; 597 lines; Whisper large-v3-turbo; a decoder loop at 38:47–39:00 and break-silence "Okay." lines at the end were removed): aerodynamic terms, Eq. 5.18, satellite example, simple lag → [[SESA3047 5.2 - Longitudinal State-Space Model|5.2]], [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams|5.3]].
 - Lecture Notes - Chapter 6.pdf (14 pages, Dr Sean Symon: longitudinal model, numerical example, damping and natural frequency, eigenvectors and modes, SPO and phugoid approximations, lateral modes and their approximations). Filed on 11 Nov.
 - `09 November 2026 at 11_54_07.txt` = **L17** (Mon 9 Nov; 573 lines): lab and lab-report announcements, eigenvalues and eigenvectors of Eq. 6.4 in MATLAB, the eigenvector initial-condition demonstration, Eq. 6.16, Simulink feedback demonstration → [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]]. `09 November 2026 at 11_51_49.txt` is a one-line false start with no content.
+- `16 November 2026 at 11_51_48.txt` = **L18** (Mon 16 Nov; 658 lines): lab-report briefing and the deadline vote (ll. 4–147), Lab 2 feedback block diagram (ll. 148–231), §6.6 phugoid approximations by energy exchange (ll. 233–401) and from the longitudinal matrices (ll. 402–658), stopping before the eigenvalues. The Simulink animation did not play and moves to Thu 19 Nov (ll. 2–3, 148–150). → [[SESA3047 6.2 - Phugoid Approximation|6.2]]; the lab-report briefing is in [[#Labs and coursework]].
 - `05 November 2026 at 15_56_57.txt` = **L16** (Thu 5 Nov, second half; 444 lines; Whisper large-v3-turbo, clean): Eq. 5.30, the observation matrix, $e^{\mathbf At}$, eigenvalue decomposition, the triangular example → [[SESA3047 5.3 - Building State-Space Models from ODEs, Transfer Functions and Block Diagrams|5.3]], [[SESA3047 5.4 - Time-Domain Solution and Stability|5.4]].
 
 - `02 - Sources/Lectures/Chapter 1.pdf`

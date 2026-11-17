@@ -18,7 +18,7 @@ sources: ["03 - Exams & Past Papers/Past Papers/SESA2025 Mechanics of Flight/SES
 |---|---:|---|---|
 | 1 | 25 | Sweep and lateral stability, induced drag and span loading, adverse yaw, wave drag; tail arm for a stick-free manoeuvre margin $H_m=0.3$ | [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#4. Manoeuvre stability|SESA2022 T6 §4]], [[Lateral and Directional Stability]], [[Downwash and Induced Drag]] |
 | 2 | 25 | Winglets, drag polar at the minimum-trim-drag CG, stick-free static margin, trim $\alpha$, $\eta$, $\beta$ and speed | [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#2. Trim: stick fixed and stick free|SESA2022 T6 §2–3]], [[SESA1015 M11 - Longitudinal Trim and Static Stability|SESA1015 M11]]; trim drag is derived below |
-| 3 | 25 | Longitudinal eigenvalues, SPO approximation, Lanchester phugoid | [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|SESA3047 6.1]], [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes#Lanchester's energy argument (6.28–6.33)|Deep Dive §9]] (§6.6, due Mon 16 Nov) |
+| 3 | 25 | Longitudinal eigenvalues, SPO approximation, Lanchester phugoid | [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|SESA3047 6.1]], [[SESA3047 6.2 - Phugoid Approximation#2. Lanchester's approximation (6.28–6.33)|6.2 §2]] (§6.6, due Mon 16 Nov) |
 | 4 | 25 | Lateral modes, controls for a coordinated turn, pure-roll approximation | SESA3047 §§6.7–6.10 (lateral modes, due Thu 19 Nov 2026; no note yet), [[Longitudinal and Lateral Dynamics]] |
 
 ---
@@ -451,7 +451,7 @@ The approximation is almost exact because the coupling into the fast pair throug
 
 ### (c) Lanchester's phugoid approximation [10 marks]
 
-**Assumptions** ([[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes#Lanchester's energy argument (6.28–6.33)|Deep Dive §9]]): the total energy is constant (thrust balances drag throughout, no dissipation); the incidence, and so $C_L$, stay at the trim value; the flight path stays close to horizontal so lift acts vertically; $h$ is measured from the trim height, where the speed is $U_\infty$.
+**Assumptions** ([[SESA3047 6.2 - Phugoid Approximation#2. Lanchester's approximation (6.28–6.33)|6.2 §2]]): the total energy is constant (thrust balances drag throughout, no dissipation); the incidence, and so $C_L$, stay at the trim value; the flight path stays close to horizontal so lift acts vertically; $h$ is measured from the trim height, where the speed is $U_\infty$.
 
 Constant energy:
 

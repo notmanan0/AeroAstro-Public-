@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3029 formulae", "Aerothermodynamics formula sheet"]
 tags: [sesa3029, formula, exam-prep]
 status: in-progress
-coverage: "Week 1, Lectures 2.1–2.7, 3.1–3.4, 4.1–4.5 (4.6 written ahead)"
+coverage: "Week 1 and Lectures 2.1–2.7, 3.1–3.4, 4.1–4.6 (lectured); Lectures 5.1–5.10, heat transfer, written ahead from the slides"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.5**, plus **4.6 written ahead**. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6** (lectured), plus **Lectures 5.1–5.10, heat transfer, written ahead** from the slides. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Which relation? Given → choose → check
 
@@ -435,7 +435,7 @@ Four-variable rule: any two of $R^+$, $R^-$, $\nu$, $\theta$ fix the other two. 
 
 ## Euler equations and compressible aerofoils
 
-4.1–4.5 lectured; 4.6 written ahead ([[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|W07a]], [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]], [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]]).
+4.1–4.6 and Tutorial 2 lectured ([[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory|Tutorial 2]], [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils|W07a]], [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]], [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]]).
 
 2D Euler equations (inviscid, no heat conduction, unit span; perfect gas):
 
@@ -527,7 +527,238 @@ Flat plate: $C_d=4\alpha^2/\lambda$, $x_{cp}=c/2$. Diamond (thickest at $c/2$, t
 
 $M_\infty=2$, $\alpha=10^\circ$ flat plate: Ackeret $C_l=0.4031$, $C_d=0.0703$; shock-expansion $0.4075$, $0.0719$.
 
+Diamond face by face (Tutorial 2; chord $c$, thickness $t$ at $c/2$, half vertex angle $\phi=\tan^{-1}(t/c)$, faces 1 front and 2 rear, u upper and l lower; $\theta$ from $\vec U_\infty$, valid as written for $0\le\alpha<\phi$):
+
+$$
+\theta_{1u}=+(\phi-\alpha),\quad\theta_{1l}=+(\phi+\alpha),\quad\theta_{2u}=-(\phi+\alpha),\quad\theta_{2l}=-(\phi-\alpha),\qquad p=p_\infty\left(1+\tfrac12\gamma M_\infty^2C_p\right),
+$$
+
+$$
+N'=(p_{1l}-p_{1u}+p_{2l}-p_{2u})\frac c2,\quad A'=(p_{1u}+p_{1l}-p_{2u}-p_{2l})\frac t2,\quad L'=N'\cos\alpha-A'\sin\alpha,\quad D'=A'\cos\alpha+N'\sin\alpha,
+$$
+
+$$
+M'_{LE}=(p_{1u}-p_{1l})\frac{c^2}{8}+(p_{2u}-p_{2l})\frac{3c^2}{8}\quad(\text{nose-up }+),\qquad \frac{x_{CP}}{c}=-\frac{M'_{LE}}{L'c}.
+$$
+
+ES2 Q5 ($t/c=0.05$, $\alpha=2^\circ$, $M_\infty=1.8$, $p_\infty=50$ kPa, $c=1$ m): 52.3, 62.9, 37.1, 47.7 kPa; $L'=10.55$, $D'=1.13$ kN/m; $M'_{LE}=-5.29$ kN m/m; $x_{CP}=0.50c$.
+
+Aerodynamic centre in Ackeret theory (thin, small $\alpha$, $L'\simeq N'$): $C_{m,LE}=-\tfrac12C_l-\dfrac{4}{\lambda c^2}\displaystyle\int_0^cy_c\,\mathrm dx$, so $x_{AC}=c/2$ for every thin aerofoil; symmetric sections also have $x_{CP}=c/2$.
+
+Weak oblique shock, small deflection $\theta$ (radians), perfect gas: $M_{n1}^2-1\simeq\dfrac{(\gamma+1)M_1^2\theta}{2\lambda}$ and $1-\dfrac{p_{02}}{p_{01}}\simeq\dfrac{\gamma(\gamma+1)M_1^6\theta^3}{12\lambda^3}$ (third order, against Ackeret's first-order relative error). $p_{02}/p_{01}$: 0.9986 at $M_{n1}=1.11$, 0.99 at 1.23, 0.979 at 1.3, 0.930 at 1.5.
+
 Wing sweep (simple sweep theory): the section sees $M_\infty\cos\Lambda$, with $\Lambda$ the leading-edge sweep (written $\beta$ in the course).
+
+## Heat transfer (Block 5)
+
+Lectures 5.1–5.10 are written ahead from the slides; no transcripts yet. The official exam sheet gives only the four thermal resistances ([[#What the exam formula sheet gives you]]); everything else in this block has to be known or derived.
+
+## Conduction and thermal resistance (Lectures 5.1–5.2)
+
+5.1–5.2 written ahead from the slides ([[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]]); no transcript yet.
+
+Heat flux and Fourier's law ($x$ along the heat flow; minus sign: heat flows down the gradient; 3-D form for an isotropic material) ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#2. Fourier's law of heat conduction|W09a §2]]):
+
+$$
+\dot q=\frac{\dot Q}{A}\ (\text{W/m}^2),\qquad \dot Q=-kA\frac{\mathrm dT}{\mathrm dx},\qquad \dot{\mathbf q}=-k\nabla T,\qquad k\ \text{in W/(m K)}.
+$$
+
+Plane wall (steady, 1-D, constant $k$, no heat generation; linear profile) ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#4. Conduction through a plane wall|W09a §4]]):
+
+$$
+T(x)=T_1-(T_1-T_2)\frac xL,\qquad \dot Q=\frac{kA}{L}(T_1-T_2)=\frac{\Delta T}{R_\text{th}},\qquad R_\text{th}=\frac{L}{kA}\ (\text{K/W}).
+$$
+
+Electrical analogy ($\Delta T\sim$ voltage, $\dot Q\sim$ current). Series: $R_\text{total}=\sum R_j$, same $\dot Q$ through each, $\Delta T_j=\dot QR_j$. Parallel (no sideways exchange between paths): $1/R_\text{total}=\sum 1/R_j$, same $\Delta T$ across each. Per unit area of plane layers: $R''=RA=L/k$ (m² K/W), $\dot q=\Delta T/R''$ ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#5. The electrical analogy and thermal resistance|W09a §5]]).
+
+Long hollow cylinder, length $L$ (steady, radial, constant $k$; logarithmic profile) ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#6. Radial conduction in a long hollow cylinder|W09a §6]]):
+
+$$
+\dot Q_r=\frac{2\pi kL(T_i-T_o)}{\ln(r_o/r_i)},\qquad R_\text{th}=\frac{\ln(r_o/r_i)}{2\pi kL},\qquad T(r)=T_i-(T_i-T_o)\frac{\ln(r/r_i)}{\ln(r_o/r_i)}.
+$$
+
+Thin wall $t\ll r_i$: $R_\text{th}\to t/(kA_i)$ (+10 % at $r_o/r_i=1.2$; mean-radius area −0.3 %).
+
+Spherical shell (steady, radial, constant $k$) ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#8. Conduction in a spherical shell|W09a §8]]):
+
+$$
+\dot Q_r=\frac{4\pi k(T_i-T_o)}{1/r_i-1/r_o},\qquad R_\text{th}=\frac{1}{4\pi k}\left(\frac1{r_i}-\frac1{r_o}\right)=\frac{r_o-r_i}{4\pi kr_ir_o}.
+$$
+
+Newton's law of cooling (forced and free convection; $A_s$ the surface in contact with the fluid, $T_\infty$ far from it) and convection resistance ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#9. Convection heat transfer|W09a §9]]):
+
+$$
+\dot Q=hA_s(T_s-T_\infty),\qquad R_\text{th}=\frac{1}{hA_s},\qquad h\ \text{in W/(m}^2\text{ K)}.
+$$
+
+Wall or tube between two fluids (series; each convection term uses its own surface: $2\pi r_1L$ inside, $2\pi r_3L$ outside for a tube) ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#10. Walls and tubes with convection on both sides|W09a §10]]):
+
+$$
+\text{plane: }R_\text{total}=\frac1{h_1A}+\sum\frac{L_j}{k_jA}+\frac1{h_2A},\qquad
+\text{tube: }R_\text{total}=\frac{1}{h_12\pi r_1L}+\sum\frac{\ln(r_{j+1}/r_j)}{2\pi k_jL}+\frac{1}{h_22\pi r_NL},\qquad \dot Q=\frac{T_{\infty,1}-T_{\infty,2}}{R_\text{total}}.
+$$
+
+Nusselt number ($k$ of the **fluid**; $L$ a characteristic length): $\text{Nu}=hL/k$. For a fluid layer of thickness $L$, $\text{Nu}=\dot Q_\text{conv}/\dot Q_\text{cond}$, and $\text{Nu}=1$ is pure conduction (no bulk motion) ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#11. The Nusselt number|W09a §11]]).
+
+L5.1 insulated block (3 + 10 + 3 cm; $k=0.048$, 0.69, 0.048; 150 → 10 °C): $R''=1.3949$ m² K/W, $\dot q=100.36$ W/m², $T_2=87.27$ °C, $T_3=72.73$ °C; block B alone 966 W/m². With steel bolts (ES3 Q1): 127.8 W/m².
+
+## Convection (Lecture 5.3)
+
+Newton's law of cooling (defines $h$, W m⁻² K⁻¹; $A_s$ the wetted area; °C differences = K differences), and $h$ from the wall gradient ($k$ of the **fluid**, $y$ into the fluid) ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#2. The thermal boundary layer|W09b §2]]):
+
+$$
+\dot Q=hA_s(T_s-T_\infty),\qquad h=\frac{-k\,(\partial T/\partial y)_{y=0}}{T_s-T_\infty}.
+$$
+
+Boundary-layer thicknesses: $\delta$ at $u=0.99V$; $\delta_t$ at $T-T_s=0.99(T_\infty-T_s)$. Laminar flat plate, zero pressure gradient, $0.6\lesssim\mathrm{Pr}\lesssim50$: $\delta_{99}=4.91x/\sqrt{\mathrm{Re}_x}$, $\delta_t/\delta\approx\mathrm{Pr}^{-1/3}$.
+
+Dimensionless groups ($L$ the correlation's length: $x$ along a plate, $D$ for a pipe or a cylinder in cross-flow) ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#4. Nusselt and Stanton numbers|W09b §§3–4]]):
+
+$$
+\mathrm{Re}=\frac{\rho VL}{\mu},\quad \mathrm{Pr}=\frac{\mu c_p}{k}=\frac{\nu}{\alpha},\quad \mathrm{Nu}=\frac{hL}{k},\quad \mathrm{St}=\frac{h}{\rho Vc_p},\qquad \mathrm{Nu}=\mathrm{St}\,\mathrm{Re}\,\mathrm{Pr}.
+$$
+
+Correlations (constant properties; local $\mathrm{Nu}_x$ on plates; laminar plate $\mathrm{Re}_x<3\times10^5$, laminar pipe $\mathrm{Re}_D<2000$) ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#5. Correlations for the Nusselt number|W09b §5]]):
+
+| Flow | Uniform wall heat flux | Uniform wall temperature |
+|---|---|---|
+| Laminar pipe, fully developed | $\mathrm{Nu}_D=4.364$ | $\mathrm{Nu}_D=3.658$ |
+| Laminar plate | $0.453\,\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}$ | $0.332\,\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}$ |
+| Turbulent pipe ($\mathrm{Re}_D>2000$ on the slides; usually quoted $\gtrsim10^4$) | $0.023\,\mathrm{Re}_D^{4/5}\mathrm{Pr}^n$, $n=0.3$ fluid cooled, 0.4 heated | (same) |
+| Turbulent plate, $\mathrm{Re}_x>3\times10^5$ | $0.0308\,\mathrm{Re}_x^{4/5}\mathrm{Pr}^{1/3}$ | $0.0296\,\mathrm{Re}_x^{4/5}\mathrm{Pr}^{1/3}$ |
+| Cylinder in cross-flow, average, $4\times10^4<\mathrm{Re}_D<4\times10^5$ | | $\overline{\mathrm{Nu}}_D=0.027\,\mathrm{Re}_D^{0.805}\mathrm{Pr}^{1/3}$ |
+
+General form $\mathrm{Nu}_x=C\,\mathrm{Re}_x^n\mathrm{Pr}^m$ ("Reynolds analogy" in the course). Averages: $\bar h=\frac1L\int_0^Lh\,\mathrm dx$; laminar plate $\bar h=2h(L)$, $\overline{\mathrm{Nu}}_L=0.664\,\mathrm{Re}_L^{1/2}\mathrm{Pr}^{1/3}$; plate turbulent from the leading edge $\bar h=\tfrac54h(L)$, $\overline{\mathrm{Nu}}_L=0.037\,\mathrm{Re}_L^{4/5}\mathrm{Pr}^{1/3}$.
+
+Reynolds analogy (flat plate, zero pressure gradient, low speed) ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#7. The Reynolds analogy|W09b §7]]): $\mathrm{St}=c_f/2$ for $\mathrm{Pr}=1$; Chilton–Colburn $\mathrm{St}\,\mathrm{Pr}^{2/3}=c_f/2$ for $0.6<\mathrm{Pr}<60$. With $c_{f,x}=0.664\,\mathrm{Re}_x^{-1/2}$ (laminar) it gives $0.332\,\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}$; with $0.0592\,\mathrm{Re}_x^{-1/5}$ (turbulent) $0.0296\,\mathrm{Re}_x^{4/5}\mathrm{Pr}^{1/3}$.
+
+Examples: pipe in cross-flow ($D=0.1$ m, 8 m/s, 110 °C/10 °C): $\mathrm{Re}=4.219\times10^4$, $\mathrm{Nu}=128$, $h=35.94$, 1128.5 W/m. Parallel plates (2 bar, 15 °C, 8 m/s, $L=0.15$, $W=0.1$, 40 °C): $\rho=2.42$, $\mathrm{Re}_L=1.63\times10^5$ laminar, $\bar h=39.74$, 14.9 W per plate.
+
+## Critical radius and fins (Lecture 5.4)
+
+Critical radius of insulation (cylinder, steady, radial, constant $k$ of the insulation and $h$ outside; $\dot Q$ is a **maximum** there) ([[SESA3029 W09c - Critical Thickness of Insulation and Fins#1. Critical thickness of insulation|W09c §1]]):
+
+$$
+\dot Q=\frac{2\pi L(T_i-T_\infty)}{\ln(r_o/r_i)/k+1/(r_oh)},\qquad r_{cr}=\frac kh\quad(\text{sphere: }2k/h).
+$$
+
+$r_i>r_{cr}$: insulation always reduces the loss; $r_i<r_{cr}$: it raises the loss up to $r_o=r_{cr}$.
+
+Fin of constant cross-section (steady, 1-D along $x$, constant $k$ and $h$; $p$ perimeter, $A_c$ cross-section; $\theta=T-T_\infty$, $\theta_b=T_b-T_\infty$) ([[SESA3029 W09c - Critical Thickness of Insulation and Fins#2. Fins: the energy balance|W09c §§2–5]]):
+
+$$
+\frac{\mathrm d^2\theta}{\mathrm dx^2}-a^2\theta=0,\qquad a^2=\frac{hp}{kA_c},\qquad \theta=C_1e^{ax}+C_2e^{-ax}.
+$$
+
+| Tip | $\theta/\theta_b$ | $\dot Q_{\mathrm{fin}}$ | $\eta_{\mathrm{fin}}$ ($A_{\mathrm{fin}}=pL$) | $\epsilon_{\mathrm{fin}}$ ($A_b=A_c$) |
+|---|---|---|---|---|
+| infinitely long ($aL\gtrsim2.65$) | $e^{-ax}$ | $\sqrt{hpkA_c}\,\theta_b$ | $1/(aL)$ | $\sqrt{kp/hA_c}$ |
+| insulated tip | $\cosh a(L-x)/\cosh aL$ | $\sqrt{hpkA_c}\,\theta_b\tanh aL$ | $\tanh(aL)/aL$ | $\sqrt{kp/hA_c}\,\tanh aL$ |
+
+$\eta_{\mathrm{fin}}=\dot Q_{\mathrm{fin}}/hA_{\mathrm{fin}}\theta_b$, $\epsilon_{\mathrm{fin}}=\dot Q_{\mathrm{fin}}/hA_b\theta_b=(A_{\mathrm{fin}}/A_b)\eta_{\mathrm{fin}}$ ([[SESA3029 W09c - Critical Thickness of Insulation and Fins#6. Fin efficiency|W09c §§6–7]]). $1/(aL)>1$ for $aL<1$: the long-fin forms apply only to long fins. Pin fin: $p=\pi D$, $A_c=\pi D^2/4$; rectangular: $p=2(w+t)$, $A_c=wt$.
+
+## Thermal radiation (Lectures 5.5–5.6)
+
+Temperatures in kelvin throughout. Surfaces diffuse and opaque ($\tau=0$) unless stated; no absorbing gas between surfaces. Derivations: [[SESA3029 W09d - Thermal Radiation]].
+
+Pathways at a surface (energy conservation): $\rho+\alpha+\tau=1$; opaque: $\alpha=1-\rho$ ([[SESA3029 W09d - Thermal Radiation#2. Reflection, absorption and transmission|W09d §2]]).
+
+Kirchhoff (equilibrium; spectral form always, totals for a grey surface or same-temperature source): $\alpha=\epsilon$ ([[SESA3029 W09d - Thermal Radiation#3. Kirchhoff's law of thermal radiation|§3]]).
+
+Planck (blackbody, $\lambda$ in μm, $T$ in K):
+
+$$
+E_{b,\lambda}=\frac{C_1}{\lambda^5\left[\exp(C_2/\lambda T)-1\right]}\ \ [\mathrm{W\,m^{-2}\,\mu m^{-1}}],\qquad C_1=2\pi hc_0^2=3.742\times10^8\ \mathrm{W\,\mu m^4\,m^{-2}},\quad C_2=hc_0/k_B=1.439\times10^4\ \mathrm{\mu m\,K}
+$$
+
+([[SESA3029 W09d - Thermal Radiation#4. The blackbody and Planck's law|§4]]). $E=h\nu$, $h=6.626\times10^{-34}$ J s.
+
+Wien (peak of the blackbody spectrum; from $x=5(1-e^{-x})$, $x=4.9651$): $\lambda_{max}T=2897.8$ μm K ([[SESA3029 W09d - Thermal Radiation#5. Wien's displacement law|§5]]). Sun 5800 K → 0.50 μm; 300 K → 9.66 μm.
+
+Stefan–Boltzmann (blackbody, all wavelengths): $E_b=\sigma T^4$, $\sigma=\pi^4C_1/(15C_2^4)=5.67\times10^{-8}$ W m⁻² K⁻⁴; emission from area $A$: $\dot Q=\sigma AT^4$ (emitted, not net) ([[SESA3029 W09d - Thermal Radiation#6. The Stefan–Boltzmann law|§6]]).
+
+Emissivity: $\epsilon=E/E_b$; grey body ($\epsilon_\lambda$ independent of $\lambda$): $E=\epsilon\sigma T^4$ ([[SESA3029 W09d - Thermal Radiation#7. Emissivity and grey bodies|§7]]). Small body in large surroundings: $\dot Q_{net}=\epsilon\sigma A(T_1^4-T_2^4)$.
+
+Solid angle: $\omega=S/r^2$ (sr); sphere $4\pi$, hemisphere $2\pi$; $\mathrm d\omega=\sin\theta\,\mathrm d\theta\,\mathrm d\phi=\mathrm dA\cos\theta/R^2$ ([[SESA3029 W09d - Thermal Radiation#8. Solid angle|§8]]).
+
+Shape factor $F_{ij}$ = fraction of radiation leaving $i$ that reaches $j$ (diffuse surfaces): $F_{12}=\dfrac{1}{A_1}\displaystyle\int_{A_1}\!\int_{A_2}\frac{\cos\theta_1\cos\theta_2}{\pi R^2}\,\mathrm dA_2\,\mathrm dA_1$; reciprocity $A_iF_{ij}=A_jF_{ji}$; summation rule (enclosure, openings as black imaginary surfaces) $\sum_jF_{ij}=1$; $F_{ii}=0$ for flat or convex $i$ ([[SESA3029 W09d - Thermal Radiation#9. The shape factor|§§9–11]]).
+
+Net exchange between two black surfaces (no other reflecting surface): $\dot Q_{1-2}=A_1F_{12}\sigma(T_1^4-T_2^4)$ ([[SESA3029 W09d - Thermal Radiation#10. Reciprocity relation|§10]]).
+
+Standard cases: infinite parallel plates $F_{12}=F_{21}=1$; concentric spheres $F_{12}=1$, $F_{21}=(r_1/r_2)^2$, $F_{22}=1-(r_1/r_2)^2$; element facing coaxial disk of radius $a$ at distance $H$: $a^2/(a^2+H^2)$; small distant sphere seen from a source sphere: $F_{S\to E}=R_E^2/(4d^2)$ ([[SESA3029 W09d - Thermal Radiation#12. Worked example: two concentric spheres|§§12–13]]).
+
+Black, airless planet in steady state ($d$ centre to centre, uniform $T_E$): $T_E=T_S\sqrt{R_S/2d}$; with albedo $a$: $\times(1-a)^{1/4}$. Earth: 278.75 K (5.60 °C); $a=0.3$: 255.0 K (−18.2 °C) ([[SESA3029 W09d - Thermal Radiation#13. Worked example: steady temperature of the Earth|§13]]).
+
+## Numerical methods in conduction (Lecture 5.7)
+
+Constant $k$, $\rho$, $c_p$; uniform grid. Derivations: [[SESA3029 W09e - Numerical Methods in Conduction]].
+
+Heat diffusion equation (2-D/3-D, generation $\dot g$ in W/m³): $\nabla^2T+\dot g/k=(1/\alpha)\,\partial T/\partial t$, thermal diffusivity $\alpha=k/(\rho c_p)$ [m²/s] ([[SESA3029 W09e - Numerical Methods in Conduction#1. The heat conduction equation in 2-D|W09e §§1–2]]). Diffusion time across $L$: $\sim L^2/\alpha$.
+
+Boundary conditions at $x=0$, solid in $x\ge0$: $T(0,t)=T_s$; $-k\,\partial T/\partial x=\dot q_x$; $\partial T/\partial x=0$ (insulated, symmetry); $-k\,\partial T/\partial x=h(T_\infty-T)$; $-k\,\partial T/\partial x=\epsilon\sigma(T_{surr}^4-T_0^4)$ (K) ([[SESA3029 W09e - Numerical Methods in Conduction#3. Boundary conditions|§3]]).
+
+Differences (Taylor series): $T'_i=(T_{i+1}-T_i)/\Delta x+\mathcal O(\Delta x)$; $T''_i=(T_{i+1}-2T_i+T_{i-1})/\Delta x^2+\mathcal O(\Delta x^2)$ (leading error $-\Delta x^2T''''/12$). Error $\sim\Delta x^p$: doubling the points divides the error by $2^p$ ([[SESA3029 W09e - Numerical Methods in Conduction#5. Order of accuracy|§5]]).
+
+Steady interior nodes: 1-D $T_i=(T_{i+1}+T_{i-1})/2$; 2-D square grid $T_P=\tfrac14(T_E+T_W+T_N+T_S)+\dot g\Delta x^2/(4k)$ ([[SESA3029 W09e - Numerical Methods in Conduction#4. Discretising the heat equation|§4]]).
+
+Transient, Fourier number $\mathcal F=\alpha\Delta t/\Delta x^2$ ([[SESA3029 W09e - Numerical Methods in Conduction#8. Transient conduction: explicit and implicit schemes|§8]]):
+explicit $T_i^{n+1}=T_i^n+\mathcal F(T_{i+1}^n-2T_i^n+T_{i-1}^n)$; implicit $T_{i+1}^{n+1}-(2+1/\mathcal F)T_i^{n+1}+T_{i-1}^{n+1}=-T_i^n/\mathcal F$ (tridiagonal). Both $\mathcal O(\Delta t,\Delta x^2)$.
+
+Stability (uniform grid, constant $\alpha$, fixed-temperature ends): explicit 1-D $\mathcal F\le\tfrac12$, 2-D square grid $\mathcal F\le\tfrac14$; explicit 1-D convective end node $\mathcal F(1+\mathrm{Bi})\le\tfrac12$, $\mathrm{Bi}=h\Delta x/k$; implicit unconditionally stable. Von Neumann: explicit $G=1-4\mathcal F\sin^2(k\Delta x/2)$, implicit $G=1/[1+4\mathcal F\sin^2(k\Delta x/2)]$ ([[SESA3029 W09e - Numerical Methods in Conduction#9. Stability of the explicit scheme|§9]]).
+
+Boundary nodes by energy balance on the node's control volume (half cell inside the solid; unit depth; flows into P positive): conduction $k\,(\text{face length})(T_{nb}-T_P)/\Delta x$, convection $h\,(\text{exposed length})(T_\infty-T_P)$. Square grid, $\mathrm{Bi}=h\Delta x/k$: plane surface with convection $T_P=(2T_W+T_N+T_S+2\mathrm{Bi}\,T_\infty)/(4+2\mathrm{Bi})$ (insulated: $\mathrm{Bi}=0$); exterior corner, convection on both faces $T_P=(T_W+T_S+2\mathrm{Bi}\,T_\infty)/(2+2\mathrm{Bi})$; internal corner with flux $\dot q$ on both edges $6T_P=2T_N+2T_W+T_E+T_S+2\dot q\Delta x/k$ ([[SESA3029 W09e - Numerical Methods in Conduction#11. Boundary and corner nodes by energy balance|§11]]).
+
+Rod $T_L$ at $x=0$, $T_R$ at $x=L$, initially at $T_L$: $T=T_L+(T_R-T_L)\dfrac xL+\displaystyle\sum_{n\ge1}\frac{2(T_R-T_L)(-1)^n}{n\pi}\sin\frac{n\pi x}{L}\,e^{-\alpha(n\pi/L)^2t}$ ([[SESA3029 W09e - Numerical Methods in Conduction#10. Worked example: 1-D transient conduction|§10]]).
+
+## Heat exchangers (Lectures 5.8–5.10)
+
+5.8–5.10, written ahead from the slides ([[SESA3029 W09f - Heat Exchangers|W09f]]). Steady flow; constant $\dot m$, $c_p$ and $U$; outer surface insulated; axial conduction negligible. None of this is on the official exam sheet (it gives only the thermal resistances), so memorise or derive it.
+
+Overall heat transfer coefficient (resistances in series; $U$ always tied to an area, [[SESA3029 W09f - Heat Exchangers#1. The overall heat transfer coefficient|W09f §1]]):
+
+$$
+\frac{1}{UA_s}=\frac{1}{U_iA_i}=\frac{1}{U_oA_o}=\frac{1}{h_iA_i}+\frac{\ln(r_o/r_i)}{2\pi kL}+\frac{1}{h_oA_o},
+\qquad
+\frac1U\approx\frac1{h_i}+\frac1{h_o}\quad(\text{thin wall, }A_i\approx A_o=A_s).
+$$
+
+Energy balance and heat capacity rate (W K⁻¹; condensing or boiling stream: $C\to\infty$, [[SESA3029 W09f - Heat Exchangers#3. Energy balance and the heat capacity rate|W09f §3]]):
+
+$$
+\dot Q=C_h\left(T_{h,\rm in}-T_{h,\rm out}\right)=C_c\left(T_{c,\rm out}-T_{c,\rm in}\right),\qquad C=\dot mc_p .
+$$
+
+LMTD method (parallel and counter flow, same formula; [[SESA3029 W09f - Heat Exchangers#4. The log mean temperature difference method|W09f §4]]):
+
+$$
+\dot Q=UA_s\Delta T_{\rm lm},\qquad \Delta T_{\rm lm}=\frac{\Delta T_1-\Delta T_2}{\ln(\Delta T_1/\Delta T_2)}\quad(\to\Delta T\text{ when }\Delta T_1=\Delta T_2),
+$$
+
+| | $\Delta T_1$ | $\Delta T_2$ |
+|---|---|---|
+| parallel flow | $T_{h,\rm in}-T_{c,\rm in}$ | $T_{h,\rm out}-T_{c,\rm out}$ |
+| counter flow | $T_{h,\rm in}-T_{c,\rm out}$ | $T_{h,\rm out}-T_{c,\rm in}$ |
+
+Same four terminal temperatures (both streams changing temperature): $\Delta T_{\rm lm,CF}>\Delta T_{\rm lm,PF}$, so counter flow needs less area; equal when one stream is at constant temperature.
+
+Effectiveness–NTU ($c=C_{\min}/C_{\max}$, written $C_r$ in textbooks and ES3; [[SESA3029 W09f - Heat Exchangers#5. Effectiveness and the number of heat transfer units|W09f §5]]):
+
+$$
+\epsilon=\frac{\dot Q}{\dot Q_{\max}},\quad \dot Q_{\max}=C_{\min}\left(T_{h,\rm in}-T_{c,\rm in}\right),\quad \mathrm{NTU}=\frac{UA_s}{C_{\min}},
+$$
+
+$$
+\epsilon_{\text{parallel-flow}}=\frac{1-\exp\left[-\mathrm{NTU}(1+c)\right]}{1+c},\qquad
+\epsilon_{\text{counter-flow}}=\frac{1-\exp\left[-\mathrm{NTU}(1-c)\right]}{1-c\exp\left[-\mathrm{NTU}(1-c)\right]} .
+$$
+
+Limits ([[SESA3029 W09f - Heat Exchangers#5.5 Limiting cases|W09f §5.5]]): $c=0$ (condenser/boiler, **any** arrangement) $\epsilon=1-e^{-\mathrm{NTU}}$, $\mathrm{NTU}=-\ln(1-\epsilon)$; counter flow $c=1$ (formula $0/0$, $\Delta T$ constant) $\epsilon=\mathrm{NTU}/(1+\mathrm{NTU})$; parallel flow $c=1$: $\epsilon=\tfrac12(1-e^{-2\mathrm{NTU}})\le\tfrac12$; $\mathrm{NTU}\to\infty$: PF $\to1/(1+c)$, CF $\to1$; $\mathrm{NTU}\to0$: $\epsilon\approx\mathrm{NTU}$.
+
+Inversions for sizing ([[SESA3029 W09f - Heat Exchangers#6. Choosing the method|W09f §6]]): $\mathrm{NTU}_{\rm PF}=-\ln[1-\epsilon(1+c)]/(1+c)$; $\mathrm{NTU}_{\rm CF}=\dfrac{1}{c-1}\ln\dfrac{\epsilon-1}{\epsilon c-1}$ ($c\ne1$).
+
+Annulus hydraulic diameter: $D_h=4A_c/P=D_o-D_i$. Tube length: $A_s=N\pi DL'$, pass length $L'/n_{\rm passes}$.
+
+Course examples: counter flow $C_c=1500$, $C_h=3000$ W K⁻¹, $U=162.96$ W m⁻² K⁻¹: $A_s=10.06$ m² ($\Delta T_{\rm lm}=73.19$ K) and back again by NTU ($\mathrm{NTU}=1.093$, $c=0.5$, $\epsilon=0.5926$, outlets 110 and 95 °C). Oil–water concentric tube: $U=38.25$, $\Delta T_{\rm lm}=43.2$ K, $L=65.67$ m. Condenser (30 000 tubes, 2 passes, $\dot Q=2$ GW): $T_{c,o}=35.95$ °C, $\epsilon=0.5318$, $\mathrm{NTU}=0.7588$, $L=4.512$ m per pass.
 
 ## What the exam formula sheet gives you
 
@@ -544,7 +775,7 @@ The official `Aerothermodynamics Formula Sheet.pdf` (3 pages, filed on 6 Oct) is
 | Prandtl–Meyer $\nu(M)$ | $\nu(M_2)=\nu(M_1)+\theta$ |
 | Riemann invariants $R^\pm=\nu\mp\theta$; MoC intersection formulae $\alpha_{AP}$, $\alpha_{BP}$, $x_P$, $y_P$ | MoC procedure (Block 3) |
 | $(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0$; $C_p=-2u'/U_\infty$; Prandtl–Glauert; Ackeret $C_p=2\theta/\sqrt{M_\infty^2-1}$ | $C_l$, $C_d$ for thin aerofoils (Block 4) |
-| thermal resistances: plane $L/kA$, cylinder $\ln(r_o/r_i)/2\pi kL$, sphere $\tfrac{1}{4\pi k}(1/r_i-1/r_o)$, convection $1/hA$ | Nusselt correlations are given in the question if needed |
+| thermal resistances: plane $L/kA$, cylinder $\ln(r_o/r_i)/2\pi kL$, sphere $\tfrac{1}{4\pi k}(1/r_i-1/r_o)$, convection $1/hA$ | Nusselt correlations are given in the question if needed. Not given: $r_{cr}=k/h$ and the fin results; $E_b=\sigma T^4$, Wien, the shape-factor rules; finite-difference node equations and $\mathcal F\le\tfrac12$; $1/U=1/h_i+1/h_o$, the LMTD, $\epsilon$–NTU and $\dot Q_{\max}=C_{\min}\Delta T_{\max}$ (Block 5) |
 
 **Not on the sheet at all:** $A/A^*(M)$ (use the IFT column), choked mass flow $\dot m=\dfrac{p_0A^*}{\sqrt{T_0}}\sqrt{\dfrac{\gamma}{R}}\left(\dfrac{2}{\gamma+1}\right)^{(\gamma+1)/(2(\gamma-1))}$, the entropy jump, and the over-expanded lip-shock relation above.
 
@@ -559,5 +790,11 @@ The official `Aerothermodynamics Formula Sheet.pdf` (3 pages, filed on 6 Oct) is
 - [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils]]
 - [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]]
 - [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]]
+- [[SESA3029 W09a - Heat Conduction and Thermal Resistance]]
+- [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]]
+- [[SESA3029 W09c - Critical Thickness of Insulation and Fins]]
+- [[SESA3029 W09d - Thermal Radiation]]
+- [[SESA3029 W09e - Numerical Methods in Conduction]]
+- [[SESA3029 W09f - Heat Exchangers]]
 - [[SESA3029 Aerothermodynamics Hub]]
 

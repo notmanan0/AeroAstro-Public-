@@ -5,7 +5,7 @@ type: tutorial
 stream: "Section 5: heat transfer (Weeks 9–12)"
 tags: [sesa3029, tutorial-solutions, example-sheet, heat-transfer, conduction, convection, radiation, heat-exchanger]
 sheet: "Tutorial 3 (Example Sheet 3)"
-theory_notes: []
+theory_notes: ["[[SESA3029 W09a - Heat Conduction and Thermal Resistance]]", "[[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]]", "[[SESA3029 W09d - Thermal Radiation]]", "[[SESA3029 W09f - Heat Exchangers]]"]
 status: complete
 sources: ["03 - Exams & Past Papers/ExampleSheet3(1).pdf"]
 ---
@@ -15,7 +15,9 @@ sources: ["03 - Exams & Past Papers/ExampleSheet3(1).pdf"]
 > [!abstract] Sheet info
 > "Tutorial 3" covers **heat transfer**, the Weeks 9–12 block, which has **not been lectured yet**. Each solution states the model it uses (thermal resistances, Newton cooling, Nusselt correlations, radiation balance, ε–NTU) and derives what is needed. Every number is verified in Python.
 >
-> Results: Q1 and Q2 reproduce the printed answers exactly. Q4 does too, to rounding. **Q3 and Q6 do not**, and **Q5's answers are printed in swapped order**. Each case is explained below.
+> Results: Q1 and Q2 reproduce the printed answers exactly. Q4 does too, to rounding. Q3 reproduces the printed answer when the diameter is the length scale, **Q6 does not**, and **Q5's answers are printed in swapped order**. Each case is explained below.
+>
+> The theory is now written ahead from the Lecture 5.1–5.10 slides: Q1 uses [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]], Q2–Q4 [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] (Q4 also [[SESA3029 W09d - Thermal Radiation|W09d]]), and Q5–Q6 [[SESA3029 W09f - Heat Exchangers|W09f]]. The course writes the capacity ratio as $c$ and the effectiveness as $\epsilon$ where Q5–Q6 below use $C_r$ and $\varepsilon$.
 
 ![[at_es3_heat_transfer.png|900]]
 
@@ -95,7 +97,7 @@ $$
 The sheet gives 122 and 47.5 kW/m² ✓.
 
 > [!note] "Reynolds analogy"
-> The sheet's phrase really means **dynamic similarity**: equal $Re$ and $Pr$ give equal $Nu$. Reynolds' analogy proper, $St=C_f/2$, links heat transfer to skin friction and would give the same scaling here.
+> The course uses this name for the general correlation form $Nu_x=C\,Re_x^n\,Pr^m$ ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#5. Correlations for the Nusselt number|W09b §5]]), so the sheet's wording follows the slides: with equal $Re$ and $Pr$ that form gives equal $Nu$, which is dynamic similarity. Most textbooks keep the name for $St=C_f/2$, which links heat transfer to skin friction ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#7. The Reynolds analogy|W09b §7]]) and gives the same scaling here.
 
 ## Q3. Rocket instrument bay
 
@@ -132,7 +134,7 @@ T_{in}=T_\infty+\dot Q\,(R_o+R_{wall}+R_i)=280+400\times0.016498=\boxed{286.6\ \
 $$
 
 > [!warning] Printed answer 286.48 K
-> I cannot reproduce 286.48 K exactly. Basing $Re$ and $Nu$ on the diameter, and using the outer area for the inner film, gives 286.49 K, which suggests that is what the answer key did. Either way, **the inner free-convection film is 97% of the resistance**, so the answer is about 286.5 K whichever reasonable choices are made.
+> The answer depends on the length scale in the correlation. The same correlation, $Nu=0.027\,Re^{0.805}Pr^{1/3}$, is used in the Lecture 5.3 pipe-cooling example with the **diameter** as the length ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#Example 1 - pipe cooling|W09b, Example 1]]). With $D_o=1$ m here, $Re_D=9.09\times10^6$, $Nu=9625$ and $h_o=250.3$ W/m² K; taking one area $\pi D_oL$ for both films (thin wall), $R_o=3.18\times10^{-4}$ and $R_i=1.592\times10^{-2}$ K/W, so $T_{in}=280+400\times0.016236=286.49$ K, the printed 286.48 K to rounding. The key therefore uses the diameter. That $Re_D$ is far above the correlation's usual range of about $4\times10^4$ to $4\times10^5$, and the flow here is along the body, which is why Step 1 uses the length. Either way, **the inner free-convection film is 97% of the resistance**, so the answer is about 286.5 K whichever choice is made.
 >
 > A further aerothermodynamic caveat: at 150 m/s the stagnation temperature rise is $V^2/2c_p=11.2$ K. Strictly, the outside of the skin sees a recovery temperature of about 290 K, not 280 K, which would raise $T_{in}$ by about 10 K. The sheet ignores this.
 
@@ -302,5 +304,6 @@ $$
 ## Links
 
 - Previous sheet: [[SESA3029 Example Sheet 2 - Solutions]]
+- Theory (written ahead from the slides): [[SESA3029 W09a - Heat Conduction and Thermal Resistance]] · [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]] · [[SESA3029 W09c - Critical Thickness of Insulation and Fins]] · [[SESA3029 W09d - Thermal Radiation]] · [[SESA3029 W09e - Numerical Methods in Conduction]] · [[SESA3029 W09f - Heat Exchangers]]
 - Related earlier notes: [[Blackbody Radiation]] · [[Reynolds Number]] · [[Spacecraft Thermal Balance Equation]] · [[Turbine Entry Temperature and Blade Cooling]]
 - Hub: [[SESA3029 Aerothermodynamics Hub]] (heat-transfer block, Weeks 9–12)

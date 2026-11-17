@@ -25,7 +25,7 @@ $$\frac{\mathrm d}{\mathrm dm}\left(\frac{\Delta s}{c_v}\right)=\frac{2\gamma(\g
 
 so $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$.
 
-Two consequences follow. For $M_{n1}<1$ the jump would be negative, which the second law forbids, so expansion shocks cannot exist and a supersonic stream has to expand through an isentropic fan instead. And because the jump grows like $m^3$, weak shocks are very nearly isentropic: halving the strength cuts the loss by a factor of eight. That is why intakes compress through several weak shocks rather than one strong one.
+Two consequences follow. For $M_{n1}<1$ the jump would be negative, which the second law forbids, so expansion shocks cannot exist and a supersonic stream has to expand through an isentropic fan instead. And because the jump grows like $m^3$, weak shocks are very nearly isentropic: halving the strength cuts the loss by a factor of eight. That is why intakes compress through several weak shocks rather than one strong one. For an oblique shock of small deflection $\theta$, $m\simeq(\gamma+1)M_1^2\theta/(2\sqrt{M_1^2-1})$, so the loss is third order in $\theta$; that is why Ackeret theory, which assumes isentropic flow, still matches shocked flow over thin supersonic aerofoils.
 
 The entropy jump sets the stagnation-pressure loss through $p_{02}/p_{01}=e^{-\Delta s/R}$. At $M=2$, $\Delta s=93.9$ J/kg K and $p_{02}/p_{01}=0.721$, matching the normal-shock table.
 
@@ -35,3 +35,4 @@ The entropy jump sets the stagnation-pressure loss through $p_{02}/p_{01}=e^{-\D
 
 - [[Normal-Shock Jump Relations]] · [[Oblique-Shock Jump Relations]] · [[Intake Pressure Recovery]]
 - Full derivation: [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method#4. Entropy across a shock and why shocks compress|W03 §4]]
+- The $\theta^3$ law and Ackeret theory's validity: [[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory#6. Why Ackeret theory works across the shocks|Tutorial 2 §6]]

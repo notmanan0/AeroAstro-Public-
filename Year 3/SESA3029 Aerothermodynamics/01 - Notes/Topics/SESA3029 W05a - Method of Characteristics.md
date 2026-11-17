@@ -36,11 +36,11 @@ Boundary conditions, nozzle design, the generic MoC example, the axisymmetric no
 > [!important] Test 2 and the MoC coursework
 > Blackboard Test 2 opened on Monday 19 October and closed at midnight on Sunday 25 October. It allowed two attempts, with the questions and answers visible afterwards.
 >
-> The MoC coursework is worth 10% of the module and is due on Sunday 15 November, the date in the Week 1 module guide. The full brief is in [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]].
+> The MoC coursework is worth 10% of the module; it was due on Sunday 15 November and was submitted that day. The full brief is in [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b]].
 
 ---
 
-Supersonic flow is a mesh of Mach lines. Through every point pass two of them, one at $+\mu$ to the local flow ($C^+$, the left-running line) and one at $-\mu$ ($C^-$, the right-running line), and information travels only along these lines, never upstream. A $C^+$ line carries the number $\nu-\theta$ unchanged, and a $C^-$ line carries $\nu+\theta$. Where two lines cross, the two numbers fix both $\nu$ (and so $M$) and $\theta$, so the flow is built up by arithmetic at mesh points rather than by integrating a PDE.
+In supersonic flow a small disturbance cannot spread in every direction. The flow sweeps it downstream faster than sound can carry it upstream, so its effect is confined to a wedge bounded by two Mach lines at $\pm\mu$ to the local flow direction, with $\mu=\sin^{-1}(1/M)$. Every point in the flow therefore has two Mach lines through it, one at $+\mu$ ($C^+$, the left-running line) and one at $-\mu$ ($C^-$, the right-running line), and these two lines are the only routes by which upstream information reaches it. Each line also carries one number unchanged along its length: $\nu-\theta$ on a $C^+$ and $\nu+\theta$ on a $C^-$, where $\nu$ is the Prandtl–Meyer function and $\theta$ the flow angle. A point where a $C^+$ and a $C^-$ cross receives one number from each, and two numbers are enough to solve for both $\nu$ (and so $M$) and $\theta$ there. Drawing a family of each kind covers the flow with a criss-cross network of lines, and the whole field is found by this arithmetic at the crossing points rather than by integrating a PDE.
 
 Two known points therefore give a third, which is the unit process, and the solution marches downstream point by point. Walls, the centreline and nozzle design are in [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]]. None of this works below $M=1$: only supersonic flow has real Mach lines to march along, and in subsonic flow every point influences every other.
 

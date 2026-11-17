@@ -23,3 +23,4 @@ The example mode $\lambda = -0.00125\pm0.0707i$ has $T = 88.9$ s, $t_{1/2} = 554
 
 - F-4C phugoid time history: [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid#3. Physical description of the modes|A3 §3]]
 - [[Short Period Oscillation]] · [[Damping Ratio and Natural Frequency]] · [[Characteristic Equation and Eigenvalues]] · [[Routh-Hurwitz Stability Criterion]]
+- Approximations (SESA3047 Chapter 6 §6.6): [[SESA3047 6.2 - Phugoid Approximation]] · [[Lanchester's Phugoid Approximation]]

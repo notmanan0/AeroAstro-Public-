@@ -3,7 +3,7 @@ title: "EIRP and G-T"
 module: "SESA2024 Astronautics"
 type: concept
 stream: "Spacecraft Subsystems"
-aliases: ["EIRP", "equivalent isotropic radiated power", "G/T", "figure of merit", "ground station figure of merit", "power-gain trade-off"]
+aliases: ["EIRP", "equivalent isotropic radiated power", "G/T", "ground station figure of merit", "power-gain trade-off"]
 tags: [sesa2024, concept, communications]
 status: lectured
 parent_lectures: ["[[SESA2024 09 - Communications]]"]

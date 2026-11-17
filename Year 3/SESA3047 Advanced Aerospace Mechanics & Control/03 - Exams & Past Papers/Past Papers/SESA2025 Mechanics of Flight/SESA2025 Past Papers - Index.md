@@ -43,7 +43,7 @@ State-space and eigenvalue parts need [[SESA3047 5.4 - Time-Domain Solution and 
 | --- | --- |
 | State space, linearisation and dimensional derivatives (Chapter 5) | 2020-21 Q3; 2022-23 Q3; 2023-24 Q3; 2024-25 Q3; 2015-16 Q3 (simulating the free response) |
 | Longitudinal modes from a matrix or quartic; SPO approximation (6.1) | 2013-14 Q3; 2014-15 Q3; 2016-17 Q2; 2017-18 Q2; 2018-19 Q3; 2021-22 Q3; 2023-24 Q3 |
-| Phugoid approximations, Lanchester and pitch equilibrium (§6.6, Mon 16 Nov) | 2013-14 Q3(c); 2014-15 Q3(iv); 2016-17 Q2; 2017-18 Q2; 2022-23 Q3; 2024-25 Q3 |
+| Phugoid approximations, Lanchester and pitch equilibrium (§6.6, [[SESA3047 6.2 - Phugoid Approximation|6.2]]) | 2013-14 Q3(c); 2014-15 Q3(iv); 2016-17 Q2; 2017-18 Q2; 2022-23 Q3; 2024-25 Q3 |
 | Lateral modes: roll subsidence, spiral, Dutch roll (§§6.7–6.10, Thu 19 Nov) | The last question of every paper (Q4, or Q3 in 2016-17 and 2017-18); also 2015-16 Q3 |
 | Static stability, trim, trim drag, manoeuvre margin (SESA2027 and SESA2022 T6 revision) | Q1 and Q2 of every paper (Q1 only in 2016-17 and 2017-18) |
 

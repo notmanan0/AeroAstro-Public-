@@ -5,7 +5,7 @@ type: hub
 aliases: ["SESA3043 Advanced Aeronautics"]
 tags: [sesa3043, hub, moc]
 status: in-progress
-coverage: "Chapters 1–3, all lectured (Ch3 22 Oct–13 Nov, ending with CH3-6 viscous–inviscid interaction and the coursework briefing on Fri 13 Nov)"
+coverage: "Chapters 1–3, all lectured (Ch3 22 Oct–13 Nov, ending with CH3-6 viscous–inviscid interaction and the coursework briefing on Fri 13 Nov); Chapter 4 (4.1–4.3, rotor aerodynamics) written ahead from the slides on 17 Nov, awaiting lectures"
 ---
 
 # SESA3043 Advanced Aeronautics Hub
@@ -13,7 +13,7 @@ coverage: "Chapters 1–3, all lectured (Ch3 22 Oct–13 Nov, ending with CH3-6 
 > [!abstract] Module at a glance
 > Conservation laws and governing equations → potential flow (superposition, complex potential, conformal mapping) → lumped-vortex and panel methods → viscous boundary layers → rotor aerodynamics → environmental impact.
 >
-> Chapters 1 and 2 are fully lectured and written up with transcript line references (Chapter 2 by Dr Zhiwei Hu). Chapter 3 (Dr Dea Wangsawijaya) was written ahead from the slides and Blackboard notes; 3.1 and 3.2 are fully lectured (22–23 Oct, worked problem 5 Nov), 3.3 (5–6 Nov) and 3.4, transition (Fri 6 Nov), likewise; 3.5, the momentum integral equation, was lectured on Thu 12 Nov (BL6), and 3.6, viscous–inviscid interaction, on Fri 13 Nov (BL7) after a panel-method refresher, which completes Chapter 3. BL7 ended with the coursework briefing; a new chapter starts in the week of 16 Nov.
+> Chapters 1 and 2 are fully lectured and written up with transcript line references (Chapter 2 by Dr Zhiwei Hu). Chapter 3 (Dr Dea Wangsawijaya) was written ahead from the slides and Blackboard notes; 3.1 and 3.2 are fully lectured (22–23 Oct, worked problem 5 Nov), 3.3 (5–6 Nov) and 3.4, transition (Fri 6 Nov), likewise; 3.5, the momentum integral equation, was lectured on Thu 12 Nov (BL6), and 3.6, viscous–inviscid interaction, on Fri 13 Nov (BL7) after a panel-method refresher, which completes Chapter 3. BL7 ended with the coursework briefing; a new chapter starts in the week of 16 Nov. Chapter 4, rotor aerodynamics, is written ahead from the CH4 slides (filed 17 Nov) in [[SESA3043 4.1 - Rotor in Hover|4.1]] (hover), [[SESA3043 4.2 - Rotor in Axial Flight|4.2]] (axial flight) and [[SESA3043 4.3 - Rotor in Forward Flight|4.3]] (forward flight); it has not been lectured yet, and each note is `written-ahead` until its transcript arrives. Chapter 5 (environmental impact) has no material yet.
 >
 > The coursework code (`dpan`, `ktreff`) was posted on 16 October and is tested in [[SESA3043 2.3 - Panel Methods#10. The Blackboard coursework code (dpan and ktreff)|2.3 §10]]. The Python `dpan.py` crashes on NumPy 2 and `ktreff.py` gives a bad point count for some $n$; fixed copies are in `04 - Labs & Coursework/Panel Method Coursework/`.
 >
@@ -53,6 +53,12 @@ coverage: "Chapters 1–3, all lectured (Ch3 22 Oct–13 Nov, ending with CH3-6 
     - Deep dive (with 3.3): [[SESA3043 Deep Dive - Momentum Integral Equation and Pohlhausen Method]]: the MIE derived in full, the Pohlhausen quartic and its integrals as functions of $\lambda$, the coupled Kármán–Pohlhausen march, and separation predicted for Howarth's retarded flow and the cylinder against Thwaites and exact values.
 14. [[SESA3043 3.6 - Viscous-Inviscid Interaction]] (**lectured Fri 13 Nov**, BL7): SDM and STM, $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; XFOIL's closures (compressible MIE with Thwaites, Falkner–Skan laminar closure, $e^n$ transition); why VII fails at separation and stall; wind-tunnel VII example; the coursework methods (camber-normal thickness, order of accuracy from a log–log fit, new figure); BL7 slips. The first hour of BL7, a panel-method refresher, is folded into [[SESA3043 2.3 - Panel Methods|2.3]].
 
+**Chapter 4: Rotor aerodynamics** (written ahead from the CH4 slides on 17 Nov; lectures expected from the week of 16 Nov)
+
+15. [[SESA3043 4.1 - Rotor in Hover]] (**written ahead**, CH4 slides 1–40): actuator disc theory from Bernoulli, mass and momentum ($v_2=2v_i$, $v_0=\sqrt{T/2\rho A}$, $P_i=Tv_0$, wake contraction to $A/2$, energy check); disc loading across vehicles; $\lambda_i$, $C_T$ and $C_{P_i}$ in the course's convention with $\tfrac12$; the Westland Lynx example; annular wake division and $k_i=(n+1)^{3/2}/(1+3n/2)\geq1$; ground effect, wake recirculation and brownout; blade element theory (thrust, torque, induced and profile power), $C_T/sa$, $C_P$ and the figure of merit; linear twist and the three-quarter-radius result; annulus theory and ideal twist; a blade-element estimate for the Lynx with assumed blade data.
+16. [[SESA3043 4.2 - Rotor in Axial Flight]] (**written ahead**, CH4 slides 41–68): climb and descent actuator disc theory, both quadratics and their physical roots, the gap $0<V_D<2v_0$ where momentum theory has no solution, the working states (normal working, vortex ring, turbulent wake, windmill brake), axial power, autorotation ($\bar V_D\approx1.7$–$1.8$ and $2/\sqrt{C_D}$); Lynx climb, descent and autorotation examples.
+17. [[SESA3043 4.3 - Rotor in Forward Flight]] (**written ahead**, CH4 slides 69–90): co-ordinate system and disc tilt, advancing and retreating blades and the reverse-flow circle, the forward-flight induced velocity with mass flow $\rho AV'$ and its hover, axial and high-speed limits, Newton–Raphson, the level-flight force balance, induced, parasite and profile power and the power bucket; the Lynx at 60 m/s with an assumed drag area.
+
 **Worked solutions:** [[SESA3043 Ch1 Revision Questions - Worked Solutions]] · [[SESA3043 Ch2 Revision Questions - Worked Solutions]] · [[SESA3043 Ch3 Revision Questions - Worked Solutions]]
 
 **Mock questions:** [[SESA3043 Mock Questions - Chapters 1-3]]: eight self-written, exam-style questions (20 marks each) on everything lectured up to 23 Oct, with full worked solutions checked in Python. They are not lecturer-set.
@@ -90,6 +96,21 @@ coverage: "Chapters 1–3, all lectured (Ch3 22 Oct–13 Nov, ending with CH3-6 
 | [[Boundary Layer Separation]] (SESA2022) | [[Momentum Integral Equation]] (SESA2022) | [[Linear Stability and Transition Prediction]] |
 | [[Prandtl Boundary-Layer Equations]] | [[Shooting Method and the Blasius Solution]] (SESA2029) | [[Law of the Wall]] (SESA2022) |
 
+## Chapter 4 concept map
+
+Written ahead from the slides; not lectured yet.
+
+| Builds on | New concept |
+|---|---|
+| [[Actuator Disk Theory]] (SESA2023) · [[Bernoulli Equation]] | [[Hover Induced Velocity and Disc Loading]] · [[Rotor Thrust and Power Coefficients]] |
+| [[Hover Induced Velocity and Disc Loading]] | [[Induced Power Factor]] |
+| [[Method of Images]] (SESA2022) · [[SESA3043 2.2 - Lumped Vortex Method\|2.2]] | [[Rotor Ground Effect]] |
+| aerofoil lift slope and drag (SESA2022) | [[Blade Element Theory]] · [[Figure of Merit]] · [[Blade Twist and Annulus Theory]] |
+| [[Hover Induced Velocity and Disc Loading]] · [[Momentum Flux]] | [[Induced Velocity in Axial Flight]] |
+| [[Induced Velocity in Axial Flight]] | [[Rotor Working States in Axial Flight]] · [[Vortex Ring State]] · [[Windmill Brake State]] · [[Autorotation]] |
+| [[Downwash and Induced Drag]] (SESA2022) · [[Direct Substitution and Newton-Raphson]] (SESA2029) | [[Disc Tilt]] · [[Induced Velocity in Forward Flight]] |
+| [[Blade Element Theory]] · [[Minimum Drag and Minimum Power]] (SESA1015) | [[Rotor Power Consumption]] |
+
 ## Module roadmap
 
 | Block | Material | Vault status |
@@ -106,7 +127,9 @@ coverage: "Chapters 1–3, all lectured (Ch3 22 Oct–13 Nov, ending with CH3-6 
 | Chapter 3.4 | Transition to turbulence | **Complete** (lectured Fri 6 Nov, two transcripts) |
 | Chapter 3.5 | Momentum integral equation | **Lectured Thu 12 Nov** (BL6), slides 3–45 |
 | Chapter 3.6 | Viscous–inviscid interaction | **Complete** (lectured Fri 13 Nov, BL7, after a panel-method refresher; coursework briefing) |
-| Later chapters | Rotor aerodynamics, environmental impact (Chapters 4–5) | Awaiting material; Chapters 4 and 5 start in the week of 16 Nov (BL6, ll. 23–25) |
+| Chapter 4.1 | Rotor in hover: actuator disc, annular wake, ground effect, blade element theory, figure of merit, twist | **Written ahead** from CH4 slides 1–40 (17 Nov); awaiting lectures |
+| Chapter 4.2–4.3 | Rotor in axial flight and in forward flight | **Written ahead** from CH4 slides 41–90 (17 Nov); awaiting lectures |
+| Chapter 5 | Environmental impact: introduction, fundamental acoustics, propagation of sound waves (syllabus) | Awaiting material |
 | Revision | Tutorials, exam and practice questions | The last one or two weeks before the Christmas break, with tutorial solutions released afterwards (BL6, ll. 25–29) |
 
 > [!info] Animated source decks
@@ -195,6 +218,17 @@ Check Blackboard for authoritative dates and later changes.
 - follow (SESA6087: reproduce) the MIE derivation (BL6, ll. 75–78); reduce it for a flat plate; say why it holds for laminar and turbulent layers and why it needs a closure (BL6, ll. 313–341);
 - compare SDM and STM; derive $v_s=\mathrm d(U_e\delta^*)/\mathrm dx$; iterate a simple VII problem; explain why VII (and XFOIL) is unreliable once the layer separates.
 
+**Chapter 4** (written ahead from the slides; to be checked against the lectures)
+
+- state the six actuator-disc assumptions and derive $T=\tfrac12\rho v_2^2A$ (Bernoulli above and below the disc, not across it), $v_2=2v_i$, $v_0=\sqrt{T/2\rho A}$ and $P_i=Tv_0$; sketch velocity and pressure along the axis and the contracting wake ($A_2=A/2$);
+- explain why low disc loading means efficient hover ($T/P_i=1/v_0$); non-dimensionalise with $V_T=\Omega R$ and $A=\pi R^2$ in the course's convention with $\tfrac12$: $\lambda_i=\sqrt{C_T}/2$, $C_{P_i}=C_T^{3/2}/2$; work the Lynx example;
+- integrate the annular-wake thrust and power for $v_i\propto(r/R)^n$ and derive $k_i$; describe ground effect, wake recirculation and brownout;
+- derive the blade-element thrust, torque and power (induced plus profile), $C_T/sa=\theta_0/3-\lambda_i/2$, $C_P=C_T\lambda_i+sC_{D0}/4$ and FM; include linear twist ($-\kappa/4$) and the annulus-theory downwash equation;
+- derive the climb and descent quadratics from Bernoulli and the streamtube momentum balance, normalise by $v_0$, and justify the physical root in each (sign of the mass flow in climb, direction of the far wake in descent);
+- say why momentum theory has no solution for $0<V_D<2v_0$ and name the working states across the range of $\bar V_C$; compute $P=T(V_C+v_i)$ and $T(-V_D+v_i)$; explain why ideal autorotation lies outside momentum theory and derive $\bar V_D=2/\sqrt{C_D}$;
+- resolve $V$ into $V_x$ and $V_z$ with the disc tilt and get $\gamma$ and $T$ from the level-flight force balance; derive $v_i=(T/2\rho A)/\sqrt{V_x^2+(V_z+v_i)^2}$, solve it by Newton–Raphson and check its hover, axial and high-speed limits;
+- split the forward-flight power into induced, parasite ($TV_z=DV$) and profile parts and sketch the power-against-speed bucket.
+
 ## All notes
 
 ```dataview
@@ -228,6 +262,7 @@ SORT type ASC, file.name ASC
 - Coursework brief: `04 - Labs & Coursework/Panel Method Coursework/AdvAeronautics 2026-27 Coursework.pdf` (filed 11 Nov)
 - `02 - Sources/Lectures/CH3-1 Introduction(1).pdf`, `CH3-2 Blasius and Falkner-Skan(1).pdf`, `CH3-3 Pohlhausen.pdf`, `CH3-4 Transition to Turbulence(1).pdf`, `CH3-5 Momentum Integral Eqn(1).pdf`, `CH3-6 Viscous Inviscid Interaction.pdf`
 - `02 - Sources/Lectures/Ch3_Notes_Blasius.pdf`, `Ch3_Notes_Falkner-Skan.pdf`, `Ch3_Notes_Pohlhausen.pdf`, `Ch3_Notes_Momentum Integral Eq.pdf` (filed 19 Oct)
+- `02 - Sources/Lectures/CH4 Rotor Aerodynamics.pdf` (Hu and Wangsawijaya, Nov 2026; 90 slides, filed 17 Nov: 4.1 hover slides 4–40, 4.2 axial flight 41–68, 4.3 forward flight 69–90; slides 57–63 and 65 are from Dr S.J.I. Walker's *Powered Lift*; no transcript yet) → [[SESA3043 4.1 - Rotor in Hover|4.1]], [[SESA3043 4.2 - Rotor in Axial Flight|4.2]], [[SESA3043 4.3 - Rotor in Forward Flight|4.3]]
 - `03 - Exams & Past Papers/Ch3_Revision_Questions.pdf`
 - `03 - Exams & Past Papers/Ch1_Revision_Questions.pdf`, `Ch2_Revision_Questions.pdf`
 

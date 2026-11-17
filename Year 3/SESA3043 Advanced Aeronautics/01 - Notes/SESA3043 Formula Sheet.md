@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3043 formulae", "Advanced Aeronautics formula sheet"]
 tags: [sesa3043, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–3 (Ch 3.1–3.2 lectured 22–23 Oct; 3.3–3.6 from the slides)"
+coverage: "Chapters 1–3; Chapter 4 (4.1–4.3, rotor aerodynamics) written ahead from the slides"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
 # SESA3043 Formula Sheet
 
-Current coverage: **Chapters 1–3**. Chapters 1–2, 3.1–3.2 and 3.3 up to the integral properties as functions of $\lambda$ are checked against transcripts; the rest of 3.3 and 3.4–3.6 are written from the slides, ahead of time.
+Current coverage: **Chapters 1–4**. Chapters 1–2, 3.1–3.2 and 3.3 up to the integral properties as functions of $\lambda$ are checked against transcripts; the rest of 3.3 and 3.4–3.6 are written from the slides, ahead of time. Chapter 4 (rotor aerodynamics, 4.1–4.3) is written ahead from the slides; no transcript yet.
 
 ## Which method? Given → method → predicts → main limitation
 
@@ -337,6 +337,122 @@ $$
 
 $\varepsilon$ is the relative $C_L$ error against the exact conformal-mapping value; fit only the straight-line (asymptotic) range of $N$.
 
+## Chapter 4: rotor in hover (4.1)
+
+Actuator disc in hover (steady, incompressible, irrotational outside the disc; uniform $v_i$; no swirl; $p_\infty$ far up- and downstream; air at rest far upstream) ([[SESA3043 4.1 - Rotor in Hover#2. Rotor thrust from Bernoulli|4.1 §2]]–[[SESA3043 4.1 - Rotor in Hover#4. Induced power and rotor efficiency|§4]]):
+
+$$
+T=A(p_l-p_u)=\tfrac12\rho v_2^2A=\rho Av_iv_2,\qquad v_2=2v_i,\qquad A_2=\tfrac12A,
+$$
+
+$$
+v_0=v_i=\left(\frac{T}{2\rho A}\right)^{1/2},\qquad P_i=Tv_0=T\left(\frac{T}{2\rho A}\right)^{1/2},\qquad\frac{T}{P_i}=\frac1{v_0}\ \text{(rotor efficiency, N/W)}.
+$$
+
+$v_0$ is the hover induced velocity at the same thrust, the reference for 4.2 and 4.3. Disc loading $T/A$; in hover $T=mg$.
+
+Standard parameters ([[SESA3043 4.1 - Rotor in Hover#6. Standard parameters|4.1 §6]]); $V_T=\Omega R$ (rad/s), $A=\pi R^2$, **course convention with $\tfrac12$** (US texts use $T/\rho A(\Omega R)^2$, half of this):
+
+$$
+\lambda_i=\frac{v_i}{V_T}=\frac{C_T^{1/2}}{2},\qquad C_T=\frac{T}{\tfrac12\rho V_T^2A}=4\lambda_i^2,\qquad C_P=\frac{P}{\tfrac12\rho V_T^3A},\qquad C_{P_i}=C_T\lambda_i=\frac{C_T^{3/2}}{2}\ \text{(hover, uniform inflow)}.
+$$
+
+Annular wake division (each annulus an independent actuator disc with $v_2=2v_i(r)$; $v_i=v_i^{T_s}(r/R)^n$, $v_i^{T_s}$ the tip value) ([[SESA3043 4.1 - Rotor in Hover#8. Annular wake division|4.1 §8]]):
+
+$$
+T=4\pi\rho\int_0^Rv_i^2r\,\mathrm dr=\frac{2\rho A\left(v_i^{T_s}\right)^2}{n+1},\qquad P_i=4\pi\rho\int_0^Rv_i^3r\,\mathrm dr=\frac{4\rho A\left(v_i^{T_s}\right)^3}{3n+2},\qquad v_i^{T_s}=\sqrt{n+1}\,v_0,
+$$
+
+$$
+k_i=\frac{P_i}{P_{iIDEAL}}=\frac{(n+1)^{3/2}}{1+3n/2}\geq1:\quad n=0,\,0.5,\,1,\,2,\,3,\,5\ \to\ 1.00,\,1.05,\,1.13,\,1.30,\,1.45,\,1.73.
+$$
+
+Blade element theory (small $\phi\approx v_i/r\Omega$ in radians, so not near the root; $C_L=a\alpha$, $\alpha=\theta-\phi$; $U\approx\Omega r$; constant chord; blades to the centre; uniform $v_i$; $C_D$ constant) ([[SESA3043 4.1 - Rotor in Hover#10. Blade element theory|4.1 §10]]–[[SESA3043 4.1 - Rotor in Hover#11. Coefficients and the figure of merit|§11]]):
+
+$$
+s=\frac{Nc}{\pi R},\qquad T=\tfrac12\rho V_T^2NcRa\left(\frac{\theta_0}{3}-\frac{\lambda_i}{2}\right),\qquad\frac{C_T}{sa}=\frac{\theta_0}{3}-\frac{\lambda_i}{2},
+$$
+
+$$
+Q=\tfrac12\rho\Omega^2NcR^4a\left(\frac{\theta_0}{3}-\frac{\lambda_i}{2}\right)\lambda_i+\tfrac18\rho\Omega^2NcR^4C_D,\qquad P=Q\Omega=Tv_i+\tfrac18\rho V_T^3NcRC_D,
+$$
+
+$$
+C_P=C_T\lambda_i+\tfrac14sC_{D0},\qquad\mathrm{FM}=\frac{C_T\lambda_i}{C_T\lambda_i+sC_{D0}/4}=\frac{C_T^{3/2}}{C_T^{3/2}+sC_{D0}/2}\ \text{(typically 0.7–0.8)}.
+$$
+
+Induced power from the disc area, profile power from the blade area. FM rises with $C_T$; compare rotors at the same disc loading.
+
+Linear twist $\theta=\theta_0-\kappa r/R$ (radians, $\kappa>0$ washout) ([[SESA3043 4.1 - Rotor in Hover#12. Blade twist|4.1 §12]]): $\dfrac{C_T}{sa}=\dfrac{\theta_0}{3}-\dfrac\kappa4-\dfrac{\lambda_i}{2}=\dfrac{\theta_{0.75}}{3}-\dfrac{\lambda_i}{2}$.
+
+Annulus theory (momentum = BET on each annulus) ([[SESA3043 4.1 - Rotor in Hover#13. Annulus theory|4.1 §13]]):
+
+$$
+v_i^2(r)=\frac18V_T^2\frac{Nc(r)}{\pi R}a(r)\left(\frac{\theta r}{R}-\frac{v_i(r)}{V_T}\right);\quad\text{constant }c,a:\ \lambda_i(x)=\frac{sa}{16}\left[\sqrt{1+\frac{32\theta x}{sa}}-1\right].
+$$
+
+Uniform inflow ($k_i=1$) needs the ideal twist $\theta=\theta_{tip}R/r$.
+
+Lynx in hover ([[SESA3043 4.1 - Rotor in Hover#7. Worked example: Westland Lynx in hover|4.1 §7]]; $R=6.4$ m, $V_T=218.69$ m/s, $\rho=1.2256$): max take-off 5330 kg → $T/A=406$ N/m², $C_T=0.01386$, $\lambda_i=0.0589$, $v_0=12.9$ m/s, $C_{P_i}=8.16\times10^{-4}$, $P_i=673$ kW, $T/P_i=77.7$ N/kW; empty 3291 kg → $C_T=0.00856$, $v_0=10.1$ m/s, $P_i=327$ kW, 98.8 N/kW.
+
+## Rotor in axial flight (4.2)
+
+Notation: $v_i$, $v_2$ positive downward through the disc; climb speed $V_C$ (relative stream down), descent speed $V_D$ (relative stream up), both positive; $v_0=\sqrt{T/2\rho A}$ is the hover induced velocity at the same thrust; $\bar v_i=v_i/v_0$, $\bar V_C=V_C/v_0$, $\bar V_D=V_D/v_0$. Actuator-disc assumptions of 4.1 (steady, incompressible, uniform $v_i$, no swirl, $p_\infty$ at both ends of the streamtube); axial flight only.
+
+$$
+v_2=2v_i\qquad\text{(climb and descent, as in hover).}
+$$
+
+Climb ([[SESA3043 4.2 - Rotor in Axial Flight#2. Climb|4.2 §2]]), valid for $V_C\geq0$:
+$$
+T=\rho A(V_C+v_i)\,2v_i,\qquad \bar v_i^2+\bar V_C\bar v_i-1=0,\qquad \bar v_i=-\frac{\bar V_C}{2}+\sqrt{\frac{\bar V_C^2}{4}+1}\ \ (\text{positive root}).
+$$
+
+Descent, windmill brake state ([[SESA3043 4.2 - Rotor in Axial Flight#4. Descent at high rate: the windmill brake slipstream|4.2 §4]]), valid only for $\bar V_D\geq2$:
+$$
+T=\rho A(V_D-v_i)\,2v_i,\qquad \bar v_i^2-\bar V_D\bar v_i+1=0,\qquad \bar v_i=\frac{\bar V_D}{2}-\sqrt{\frac{\bar V_D^2}{4}-1}\ \ (\text{smaller root; the larger reverses the wake}).
+$$
+
+No momentum solution for $0<V_D<2v_0$ ($-2<\bar V_C<0$): vortex ring and turbulent wake states ([[SESA3043 4.2 - Rotor in Axial Flight#5. Where momentum theory fails|4.2 §5]]). Fast climb or descent: $\bar v_i\approx1/|\bar V|$.
+
+Power ([[SESA3043 4.2 - Rotor in Axial Flight#7. Power for axial motion of the disc|4.2 §7]]), profile power excluded:
+$$
+P=T(V_C+v_i)\ \text{(climb)},\qquad P=T(-V_D+v_i)\ \text{(descent)},\qquad \frac{P}{Tv_0}=\bar V_C+\bar v_i,\qquad \frac{C_P}{C_T}=\mu_z+\lambda_i,\ \mu_z=\frac{V_C}{V_T}.
+$$
+Slow climb: $P/(Tv_0)\approx1+\bar V_C/2$. Windmill brake: $P\leq-Tv_0$.
+
+Autorotation (zero power): $\bar v_i=\bar V_D$, outside momentum theory; $\bar V_D\approx1.7$ (ideal), $1.8$ (real). Drag model $T=\tfrac12\rho V_D^2AC_D$: $\bar V_D=2/\sqrt{C_D}$ ([[SESA3043 4.2 - Rotor in Axial Flight#Autorotation|4.2 §7]]).
+
+## Rotor in forward flight (4.3)
+
+Disc axes: $x$ forward in the disc plane, $z$ normal to the disc; disc tilt $\gamma$ forward from the horizontal ([[SESA3043 4.3 - Rotor in Forward Flight#1. Co-ordinate system and disc tilt|4.3 §1]]).
+$$
+V_x=V\cos\gamma,\qquad V_z=V\sin\gamma\ (\text{down through the disc}),\qquad V'=\sqrt{V_x^2+(V_z+v_i)^2}.
+$$
+$\mu=V/V_T$, $\mu_x=V_x/V_T$, $\mu_z=V_z/V_T$, $\lambda_i=v_i/V_T$, $\mu_{zD}=\mu_z+\lambda_i$.
+
+Induced velocity ([[SESA3043 4.3 - Rotor in Forward Flight#3. Actuator disc theory in forward flight|4.3 §3]]); assumes mass flow $\rho AV'$, uniform $v_i$ normal to the disc, $v_2=2v_i$:
+$$
+T=\rho AV'\cdot2v_i,\qquad v_i=\left(\frac{T}{2\rho A}\right)\frac{1}{\sqrt{V_x^2+(V_z+v_i)^2}},\qquad \lambda_i=\frac{C_T}{4}\frac{1}{\sqrt{\mu_x^2+(\mu_z+\lambda_i)^2}}.
+$$
+High speed ($V\gg v_0$): $v_i\approx T/(2\rho AV)$. Zero tilt: $\bar v_i^2=\left(-\bar V^2+\sqrt{\bar V^4+4}\right)/2$.
+
+Newton–Raphson ([[SESA3043 4.3 - Rotor in Forward Flight#4. Solving for the induced velocity by Newton–Raphson|4.3 §4]]), $k=T/2\rho A$, start from $v_0$:
+$$
+v_{i,n+1}=v_{i,n}-\frac{v_{i,n}-k/V'_n}{1+k\,(V_z+v_{i,n})/V'^3_n}.
+$$
+
+Disc tilt, steady level flight, thrust normal to the disc, drag horizontal ([[SESA3043 4.3 - Rotor in Forward Flight#5. Disc tilt from the force balance|4.3 §5]]):
+$$
+\tan\gamma=\frac DW,\qquad T=\sqrt{W^2+D^2}.
+$$
+
+Power ([[SESA3043 4.3 - Rotor in Forward Flight#6. Power consumption|4.3 §6]]):
+$$
+P=\underbrace{Tv_i}_{\text{induced}}+\underbrace{TV_z}_{\text{parasite}\,=\,DV\ \text{(level)}}+\underbrace{\tfrac18\rho V_T^3NcRC_D}_{\text{profile (BET, hover value)}},\qquad C_P=C_T(\lambda_i+\mu_z)+\tfrac14sC_{D0}.
+$$
+Reverse-flow region: circle of diameter $\mu_xR$ on the retreating side (azimuth from the tail, textbook convention).
+
 ## Related
 
 - [[SESA3043 1.1 - Mathematical Tools and Flow Description]]
@@ -353,4 +469,7 @@ $\varepsilon$ is the relative $C_L$ error against the exact conformal-mapping va
 - [[SESA3043 3.4 - Transition to Turbulence]]
 - [[SESA3043 3.5 - Momentum Integral Equation]]
 - [[SESA3043 3.6 - Viscous-Inviscid Interaction]]
+- [[SESA3043 4.1 - Rotor in Hover]]
+- [[SESA3043 4.2 - Rotor in Axial Flight]]
+- [[SESA3043 4.3 - Rotor in Forward Flight]]
 - Deep dives: [[SESA3043 Deep Dive - Joukowski and Kármán-Trefftz Aerofoils, Full Derivation]] · [[SESA3043 Deep Dive - Falkner-Skan Similarity, Full Derivation]] · [[SESA3043 Deep Dive - Linear Stability and the Orr-Sommerfeld Equation]] · [[SESA3043 Deep Dive - Momentum Integral Equation and Pohlhausen Method]]

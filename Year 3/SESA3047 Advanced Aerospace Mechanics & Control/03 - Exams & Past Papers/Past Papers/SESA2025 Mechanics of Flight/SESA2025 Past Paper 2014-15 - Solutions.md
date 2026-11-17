@@ -18,7 +18,7 @@ sources: ["03 - Exams & Past Papers/Past Papers/SESA2025 Mechanics of Flight/SES
 |---|---:|---|---|
 | 1 | 25 | Aileron reversal; induced-drag ratio; static-margin derivation; mass for a stick-free manoeuvre margin $H_m=0.2$ | [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#3. Longitudinal static stability|SESA2022 T6 §3–4]], [[Neutral Point and Static Margin]], [[Manoeuvre Point and Manoeuvre Margin]] |
 | 2 | 25 | Winglet drag derivation, drag polar at minimum trim drag, cruise exponent $x$ for $h_{opt}=0.685$, stick-fixed trim | [[SESA2025 Past Paper 2013-14 - Solutions#Q2. Winglets, trim drag and stick-free trim (25 marks)|2013-14 Q2]] (trim-drag derivation), [[SESA1015 M05 - Minimum Drag, Power and Performance Curves|SESA1015 M05]] |
-| 3 | 25 | Longitudinal modes; SPO approximation with pitch damping $\mu$; pitch-equilibrium phugoid approximation | [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|SESA3047 6.1]], [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes#The improved approximation (6.34–6.38)|Deep Dive §9]] (§6.6, due Mon 16 Nov) |
+| 3 | 25 | Longitudinal modes; SPO approximation with pitch damping $\mu$; pitch-equilibrium phugoid approximation | [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|SESA3047 6.1]], [[SESA3047 6.2 - Phugoid Approximation#4. The improved approximation (6.34–6.38)|6.2 §4]] (§6.6, due Mon 16 Nov) |
 | 4 | 25 | Lateral modes, effect of dihedral, yaw-only wind-tunnel oscillation, pure-roll step response | SESA3047 §§6.7–6.10 (lateral modes, due Thu 19 Nov 2026; no note yet), [[Lateral and Directional Stability]] |
 
 ---
@@ -415,7 +415,7 @@ Raising $\mu$ moves the SPO roots to the left and towards the real axis. At $\mu
 
 ### (iv) Pitch-equilibrium phugoid [9 marks]
 
-The phugoid is so slow that the fast pitching dynamics are always in balance: at each instant the pitching moment is close to zero and $\dot q\approx0$. This is **pitch equilibrium**, the assumption behind the improved phugoid approximation of [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes#The improved approximation (6.34–6.38)|Deep Dive §9]], which also neglects $M_q$. With $\mu=0$ and the $(3,3)$ entry set to zero, the $\dot q$ row becomes an algebraic constraint:
+The phugoid is so slow that the fast pitching dynamics are always in balance: at each instant the pitching moment is close to zero and $\dot q\approx0$. This is **pitch equilibrium**, the assumption behind the improved phugoid approximation of [[SESA3047 6.2 - Phugoid Approximation#4. The improved approximation (6.34–6.38)|6.2 §4]], which also neglects $M_q$. With $\mu=0$ and the $(3,3)$ entry set to zero, the $\dot q$ row becomes an algebraic constraint:
 
 $$
 0=0.006u-0.2w\quad\Rightarrow\quad w=0.03u,\qquad\dot w=0.03\dot u.

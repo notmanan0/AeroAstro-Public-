@@ -7,14 +7,14 @@ order: 15.5
 tags: [sesa3047, deep-dive, derivation, 6dof, linearisation, state-space, eigenvalues, eigenvectors, longitudinal-modes, spo, phugoid]
 aliases: ["6-DOF to longitudinal modes", "Longitudinal modes deep dive", "F-4C longitudinal modes", "Linearising the 6-DOF model"]
 date: 2026-11-12
-status: written-ahead
-coverage: "One chain from the flat-Earth 6-DOF model (Ch. 4 §4.3) through the trim point, the term-by-term linearisation (Ch. 5 §§5.2–5.3), M ẋ = A′x and A = M⁻¹A′, to the eigenvalues, eigenvectors and SPO approximation of the F-4C (Ch. 6 §§6.1–6.5, lectured L13–L17 and §6.5 set as reading); §9 covers the phugoid approximations of Ch. 6 §6.6, written ahead of the Mon 16 Nov lecture"
+status: lectured
+coverage: "One chain from the flat-Earth 6-DOF model (Ch. 4 §4.3) through the trim point, the term-by-term linearisation (Ch. 5 §§5.2–5.3), M ẋ = A′x and A = M⁻¹A′, to the eigenvalues, eigenvectors and SPO approximation of the F-4C (Ch. 6 §§6.1–6.5, lectured L13–L17 and §6.5 set as reading), and the phugoid approximations of Ch. 6 §6.6 (§9, lectured L18, Mon 16 Nov; derived in full in note 6.2)"
 parent: ["[[SESA3047 Advanced Aerospace Mechanics & Control Hub]]"]
 prerequisites: ["[[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]]", "[[SESA3047 5.1 - State-Space Form and Linearisation]]", "[[SESA3047 5.2 - Longitudinal State-Space Model]]", "[[SESA3047 5.4 - Time-Domain Solution and Stability]]", "[[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]]"]
-next_topics: []
+next_topics: ["[[SESA3047 6.2 - Phugoid Approximation]]"]
 key_concepts: ["[[Six-Degree-of-Freedom State Model]]", "[[Linearisation about an Equilibrium Point]]", "[[Longitudinal and Lateral Dynamics]]", "[[Aerodynamic Stability Derivatives]]", "[[Eigenvectors as Mode Shapes]]", "[[Short Period Oscillation]]", "[[Phugoid Mode]]"]
 tutorial_sheets: ["[[SESA3047 Chapter 5 Practice Problems - Solutions]]"]
-sources: ["02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/05 November 2026 at 14_53_19.txt", "02 - Sources/Lectures/05 November 2026 at 15_56_57.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt"]
+sources: ["02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/05 November 2026 at 14_53_19.txt", "02 - Sources/Lectures/05 November 2026 at 15_56_57.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt", "02 - Sources/Lectures/16 November 2026 at 11_51_48.txt"]
 ---
 
 # SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes
@@ -33,7 +33,7 @@ The 6-DOF model of [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model|4.3]] is exa
 
 That motion is two oscillations with very different time scales. The aircraft first pitches about its centre of gravity and settles within a few seconds, with speed and flight path hardly moving: the short-period oscillation (SPO). Then, over a minute or more, it exchanges speed for height along a gentle wave at almost constant angle of attack: the phugoid. Both are eigenvalue pairs of the same matrix, and both eigenvectors are readable once the states are put into comparable units.
 
-The aircraft throughout is the McDonnell Douglas F-4C Phantom II of Chapter 6 Table 6.1, in level flight at $U_\infty=178$ m/s, and every number is computed for it. The separate steps are lectured in [[SESA3047 5.1 - State-Space Form and Linearisation|5.1]], [[SESA3047 5.2 - Longitudinal State-Space Model|5.2]], [[SESA3047 5.4 - Time-Domain Solution and Stability|5.4]] and [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]]. The phugoid approximations of Chapter 6 §6.6 (§9) are written ahead of their lecture on Mon 16 Nov.
+The aircraft throughout is the McDonnell Douglas F-4C Phantom II of Chapter 6 Table 6.1, in level flight at $U_\infty=178$ m/s, and every number is computed for it. The separate steps are lectured in [[SESA3047 5.1 - State-Space Form and Linearisation|5.1]], [[SESA3047 5.2 - Longitudinal State-Space Model|5.2]], [[SESA3047 5.4 - Time-Domain Solution and Stability|5.4]] and [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|6.1]]. The phugoid approximations of Chapter 6 §6.6 (§9) are lectured in L18 and derived in full in [[SESA3047 6.2 - Phugoid Approximation|6.2]].
 
 ## 1. The complete 6-DOF model and the trim point (4.3, 5.1)
 
@@ -497,145 +497,34 @@ $$
 
 The SPO frequency is set almost entirely (95 %) by the static pitch stiffness $\mathring M_w<0$, which is the static margin; the damping comes in nearly equal parts from the tail's pitch damping, the lift-curve slope and the downwash lag ([[Short Period Oscillation]]).
 
-## 9. The phugoid approximations (written ahead)
+## 9. The phugoid approximations (6.28–6.38)
 
-*Written ahead from Chapter 6 §6.6, due to be lectured on Mon 16 Nov; to be checked against the lecture.*
-
-The phugoid evolves slowly, on the time scale where $u$ and $\theta$ (or $h$) are the important variables and $w$ and $q$ have long since settled. Chapter 6 gives two approximations.
+Chapter 6 §6.6, lectured in L18 (Mon 16 Nov), gives two approximations to the phugoid. Both are derived step by step in [[SESA3047 6.2 - Phugoid Approximation|6.2]]; this section places them in the F-4C chain and tests them against the full-model pair of §6, $-0.00645\pm0.0779j$.
 
 ### Lanchester's energy argument (6.28–6.33)
 
-Lanchester's approximation assumes the total energy is constant, with $h$ measured from the trim height, where the speed is $U_\infty$ (Eq. 6.28):
+With the total energy constant, $U_\infty^2=U^2+2gh$, and $C_L$ fixed at its trim value, the lift is exactly linear in height, $L=mg-\rho SC_Lgh$. Newton's law vertically then gives $\ddot h+(2g^2/U_\infty^2)h=0$, so $\omega_n=\sqrt2\,g/U_\infty$ and $\zeta=0$ ([[SESA3047 6.2 - Phugoid Approximation#Derivation|6.2, derivation]]). For the F-4C, $\omega_n=\sqrt2\times9.81/178=0.0779$ rad/s and $T=80.6$ s, against $0.0781$ rad/s and $80.7$ s from the full model. The frequency is almost exact; the damping is lost, because constant energy means nothing is dissipated.
+
+The same argument reproduces the phugoid eigenvector of §7. To first order Eq. 6.29 gives $u=-gh/U_\infty$, so speed is in antiphase with height, and with $\gamma\approx\dot h/U_\infty$,
 
 $$
-\tfrac12mU_\infty^2=\tfrac12mU^2+mgh .
-$$
-
-Divide by $\tfrac12m$ (Eq. 6.29):
-
-$$
-U_\infty^2=U^2+2gh .
-$$
-
-The angle of attack, and with it $C_L$, are assumed fixed, at the trim value of Eq. 6.30, $C_L=mg/(\tfrac12\rho U_\infty^2S)$. Multiply Eq. 6.29 by $\tfrac12\rho SC_L$:
-
-$$
-\tfrac12\rho U^2SC_L=\tfrac12\rho U_\infty^2SC_L-\rho SC_Lgh .
-$$
-
-The left side is the lift $L$ at speed $U$, and the first term on the right is $mg$ by Eq. 6.30 (Eq. 6.31):
-
-$$
-L=mg-\rho SC_Lgh .
-$$
-
-With the flight path close to horizontal, the lift acts almost vertically, and Newton's law for the height is (Eq. 6.32)
-
-$$
-m\ddot h=L-mg=-\rho SC_Lgh .
-$$
-
-Substitute $C_L$ from Eq. 6.30:
-
-$$
-\rho SC_Lg=\rho Sg\,\frac{mg}{\tfrac12\rho U_\infty^2S}=\frac{2mg^2}{U_\infty^2}.
-$$
-
-Divide by $m$ (Eq. 6.33):
-
-$$
-\ddot h+\frac{2g^2}{U_\infty^2}h=0,\qquad\omega_n=\frac{\sqrt2\,g}{U_\infty},\qquad\zeta=0 .
-$$
-
-For the F-4C, $\omega_n=\sqrt2\times9.81/178=0.0779$ rad/s and $T=80.6$ s, against $0.0781$ rad/s and $80.7$ s from the full model. The frequency is almost exact; the damping is lost, because constant energy means nothing is dissipated, so this approximation cannot say whether the phugoid is stable.
-
-The same argument reproduces the phugoid eigenvector of §7. To first order Eq. 6.29 gives $U_\infty^2=(U_\infty+u)^2+2gh\approx U_\infty^2+2U_\infty u+2gh$, so $u=-gh/U_\infty$: speed is in antiphase with height. With $h=h_0\cos\omega_nt$, the flight-path angle is $\gamma=\dot h/U_\infty=-\omega_nh_0\sin\omega_nt/U_\infty$, so
-
-$$
-\frac{|\gamma|}{|u|/U_\infty}=\frac{\omega_nh_0/U_\infty}{gh_0/U_\infty^2}=\frac{\omega_nU_\infty}{g}=\sqrt2,
+\frac{|\gamma|}{|u|/U_\infty}=\frac{\omega_nU_\infty}{g}=\sqrt2,
 $$
 
 with $u$ leading $\gamma$ by $90^\circ$. The full F-4C eigenvector gives 1.414 and $95.7^\circ$.
 
 ### The improved approximation (6.34–6.38)
 
-The improved approximation simplifies the linearised equations instead. It assumes level trim ($\gamma_0=0$), $\dot q=0$ (the pitching moment is in quasi-static balance, as found at the end of §7), and $\mathring Z_q=\mathring Z_{\dot w}=\mathring M_q=\mathring M_{\dot w}=0$. Eq. 6.1 becomes (Eq. 6.34)
+At level trim, with $\dot q=0$ and $\mathring Z_q=\mathring Z_{\dot w}=\mathring M_q=\mathring M_{\dot w}=0$, the pitching-moment equation of §4 loses its derivative and becomes the balance $0=\mathring M_uu+\mathring M_ww$. The kinematic row is used to replace $q$ by $\dot\theta$ and then removed, leaving three equations in $[u,w,\theta]$ with a singular $\mathbf M$ (Eq. 6.36). The determinant of Eq. 6.37 is quadratic in $\lambda$ and gives Eq. 6.38,
 
 $$
-\begin{bmatrix}m&0&0&0\\0&m&0&0\\0&0&J_{yy}&0\\0&0&0&1\end{bmatrix}\begin{bmatrix}\dot u\\\dot w\\0\\\dot\theta\end{bmatrix}=\begin{bmatrix}\mathring X_u&\mathring X_w&0&-mg\\\mathring Z_u&\mathring Z_w&mU_\infty&0\\\mathring M_u&\mathring M_w&0&0\\0&0&1&0\end{bmatrix}\begin{bmatrix}u\\w\\q\\\theta\end{bmatrix}.
+\omega_n^2=\frac{g}{mU_\infty}\left(\frac{\mathring M_u\mathring Z_w}{\mathring M_w}-\mathring Z_u\right),\qquad
+\zeta=\frac{1}{2\omega_n}\,\frac1m\left[\frac{\mathring M_u}{\mathring M_w}\left(\mathring X_w-\frac{mg}{U_\infty}\right)-\mathring X_u\right].
 $$
 
-$J_{yy}$ multiplies $\dot q=0$ and drops out. Row 4 says $q=\dot\theta$, so $q$ is replaced by $\dot\theta$ in row 2 and row 4 is removed (Eq. 6.35). Moving $mU_\infty\dot\theta$ to the left puts the system in the form $\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x$ in $[u,w,\theta]$ (Eq. 6.36):
+For the F-4C the bracket in $\omega_n^2$ is $817.5+1214.0=2031.6$ kg/s, so $\omega_n=0.0797$ rad/s, and $2\zeta\omega_n=0.01511$ s⁻¹ gives $\zeta=0.0949$: roots $-0.00756\pm0.0793j$ against $-0.00645\pm0.0779j$. The reduction row by row, the cofactor expansion and the damping budget are in [[SESA3047 6.2 - Phugoid Approximation#4. The improved approximation (6.34–6.38)|6.2 §4]].
 
-$$
-\begin{bmatrix}m&0&0\\0&m&-mU_\infty\\0&0&0\end{bmatrix}\begin{bmatrix}\dot u\\\dot w\\\dot\theta\end{bmatrix}=\begin{bmatrix}\mathring X_u&\mathring X_w&-mg\\\mathring Z_u&\mathring Z_w&0\\\mathring M_u&\mathring M_w&0\end{bmatrix}\begin{bmatrix}u\\w\\\theta\end{bmatrix}.
-$$
-
-Row 3 is the moment balance $0=\mathring M_uu+\mathring M_ww$. Set $u=u_0e^{\lambda t}$, $w=w_0e^{\lambda t}$, $\theta=\theta_0e^{\lambda t}$ and collect on the left (Eq. 6.37):
-
-$$
-\begin{bmatrix}m\lambda-\mathring X_u&-\mathring X_w&mg\\-\mathring Z_u&m\lambda-\mathring Z_w&-mU_\infty\lambda\\-\mathring M_u&-\mathring M_w&0\end{bmatrix}\begin{bmatrix}u_0\\w_0\\\theta_0\end{bmatrix}=\mathbf 0 .
-$$
-
-Expanding along row 3, which has a zero in the last place, keeps the algebra short. The cofactor signs for (3,1) and (3,2) are $+$ and $-$:
-
-$$
-\det=(-\mathring M_u)\begin{vmatrix}-\mathring X_w&mg\\m\lambda-\mathring Z_w&-mU_\infty\lambda\end{vmatrix}-(-\mathring M_w)\begin{vmatrix}m\lambda-\mathring X_u&mg\\-\mathring Z_u&-mU_\infty\lambda\end{vmatrix}.
-$$
-
-The first $2\times2$ is
-
-$$
-(-\mathring X_w)(-mU_\infty\lambda)-mg\left(m\lambda-\mathring Z_w\right)=mU_\infty\mathring X_w\lambda-m^2g\lambda+mg\mathring Z_w .
-$$
-
-The second is
-
-$$
-\left(m\lambda-\mathring X_u\right)(-mU_\infty\lambda)-mg(-\mathring Z_u)=-m^2U_\infty\lambda^2+mU_\infty\mathring X_u\lambda+mg\mathring Z_u .
-$$
-
-Substitute both:
-
-$$
-\det=-\mathring M_u\left(mU_\infty\mathring X_w\lambda-m^2g\lambda+mg\mathring Z_w\right)+\mathring M_w\left(-m^2U_\infty\lambda^2+mU_\infty\mathring X_u\lambda+mg\mathring Z_u\right).
-$$
-
-Group by powers of $\lambda$:
-
-$$
-\det=-m^2U_\infty\mathring M_w\lambda^2+m\left(-U_\infty\mathring M_u\mathring X_w+mg\mathring M_u+U_\infty\mathring M_w\mathring X_u\right)\lambda-mg\left(\mathring M_u\mathring Z_w-\mathring M_w\mathring Z_u\right).
-$$
-
-Set it to zero and divide by $-m^2U_\infty\mathring M_w$:
-
-$$
-\lambda^2+\frac{U_\infty\mathring M_u\mathring X_w-mg\mathring M_u-U_\infty\mathring M_w\mathring X_u}{mU_\infty\mathring M_w}\lambda+\frac{g\left(\mathring M_u\mathring Z_w-\mathring M_w\mathring Z_u\right)}{mU_\infty\mathring M_w}=0 .
-$$
-
-Split the $\lambda$ coefficient term by term:
-
-$$
-\frac{U_\infty\mathring M_u\mathring X_w-mg\mathring M_u-U_\infty\mathring M_w\mathring X_u}{mU_\infty\mathring M_w}=\frac1m\left[\frac{\mathring M_u}{\mathring M_w}\left(\mathring X_w-\frac{mg}{U_\infty}\right)-\mathring X_u\right].
-$$
-
-Matching with $\lambda^2+2\zeta\omega_n\lambda+\omega_n^2=0$ gives Eq. 6.38:
-
-$$
-\boxed{\omega_n^2=\frac{g}{mU_\infty}\left(\frac{\mathring M_u\mathring Z_w}{\mathring M_w}-\mathring Z_u\right),\qquad
-\zeta=\frac{1}{2\omega_n}\,\frac1m\left[\frac{\mathring M_u}{\mathring M_w}\left(\mathring X_w-\frac{mg}{U_\infty}\right)-\mathring X_u\right].}
-$$
-
-For the F-4C the bracket in $\omega_n^2$ is $817.5+1214.0=2031.6$ kg/s, so
-
-$$
-\omega_n^2=\frac{9.81}{17642\times178}\times2031.6=6.346\times10^{-3}\ \text{s}^{-2},\qquad\omega_n=0.0797\ \text{rad/s}.
-$$
-
-The $\lambda$ coefficient is $2\zeta\omega_n=-0.00072+0.00864+0.00719=0.01511$ s⁻¹, so $\zeta=0.01511/(2\times0.0797)=0.0949$. These are the handout's $\omega_n=0.0796$ and $\zeta=0.0949$, against $0.0781$ and $0.0825$ for the full model (roots $-0.00756\pm0.0793j$ against $-0.00645\pm0.0779j$). The same roots come from a numerical $3\times3$ determinant, and Eq. 6.38 was confirmed symbolically.
-
-> [!tip] How the two approximations connect
-> With $\mathring M_u=0$ and a lift that changes with speed at fixed $C_L$, Eq. 6.38 reduces to Lanchester's result. At fixed $C_L$, $Z_a\approx-\tfrac12\rho U^2SC_L$, so $\mathring Z_u=-\rho U_\infty SC_L=-2mg/U_\infty$, and then $\omega_n^2=(g/mU_\infty)(2mg/U_\infty)=2g^2/U_\infty^2$. For the F-4C $2mg/U_\infty=1944.6$ kg/s, while $-\mathring Z_u$ is only 1214.0; the speed-stability term $\mathring M_u\mathring Z_w/\mathring M_w=817.5$ makes up the difference, which is why Lanchester's frequency still lands within 0.3 %. The damping, $-\mathring X_u/m$ plus the $\mathring M_u$ terms, is exactly what the constant-energy argument leaves out.
+The error splits as the SPO approximation's did in §8. Along the full phugoid eigenvector, the largest term the approximation drops is $\mathring M_qq$, 11 % of $\mathring M_uu$; putting it back gives $\omega_n=0.0779$ and $\zeta=0.089$. Lanchester's result is the special case $\mathring M_u=0$, $\mathring Z_u=-2mg/U_\infty$ of Eq. 6.38; for the F-4C the real $-\mathring Z_u=1214.0$ falls short of $2mg/U_\infty=1944.6$, and the speed-stability term $817.5$ makes up the difference, which is why Lanchester's frequency lands within 0.3 % ([[SESA3047 6.2 - Phugoid Approximation#Lanchester as a special case of Eq. 6.38|6.2]]).
 
 ## 10. Common mistakes
 
@@ -652,7 +541,7 @@ Most errors in this chain are bookkeeping rather than physics:
 ## Links
 
 - Parent: [[SESA3047 Advanced Aerospace Mechanics & Control Hub]]
-- Lecture notes: [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]] (the starting model) · [[SESA3047 5.1 - State-Space Form and Linearisation]] (the $\epsilon$ method and Eqs. 5.7–5.8) · [[SESA3047 5.2 - Longitudinal State-Space Model]] (gravity, derivatives, Eq. 5.18) · [[SESA3047 5.4 - Time-Domain Solution and Stability]] (eigenvalues and stability) · [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]] (the Eq. 6.4 example, Eqs. 6.13–6.27)
+- Lecture notes: [[SESA3047 4.3 - Complete Flat-Earth 6-DOF Model]] (the starting model) · [[SESA3047 5.1 - State-Space Form and Linearisation]] (the $\epsilon$ method and Eqs. 5.7–5.8) · [[SESA3047 5.2 - Longitudinal State-Space Model]] (gravity, derivatives, Eq. 5.18) · [[SESA3047 5.4 - Time-Domain Solution and Stability]] (eigenvalues and stability) · [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]] (the Eq. 6.4 example, Eqs. 6.13–6.27) · [[SESA3047 6.2 - Phugoid Approximation]] (Eqs. 6.28–6.38, derived in full)
 - Companion deep dive: [[SESA3047 Deep Dive - Euler-Angle Rates and Gimbal Lock]] (the $\dot{\boldsymbol\Phi}=\mathbf H\boldsymbol\omega$ row of the 6-DOF model)
 - Concepts: [[Six-Degree-of-Freedom State Model]] · [[Linearisation about an Equilibrium Point]] · [[Longitudinal and Lateral Dynamics]] · [[Aerodynamic Stability Derivatives]] · [[Eigenvectors as Mode Shapes]] · [[Matrix Exponential and Modal Solution]] · [[Damping Ratio and Natural Frequency]] · [[Short Period Oscillation]] · [[Phugoid Mode]]
 - Earlier years: [[SESA2027 A2 - Longitudinal State-Space Model and Aerodynamic Derivatives]] · [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid]]
@@ -663,7 +552,7 @@ Most errors in this chain are bookkeeping rather than physics:
 - `Chapter_4.pdf` (Dr Cristiano Martinelli), §4.3, Eqs. 4.41–4.42: the 6-DOF model. Shown at the end of L13 (Thu 22 Oct), `L13 - SESA3047.txt` ll. 310–344.
 - `Chapter_5.pdf` (Dr Sean Symon), §§5.2–5.3, Eqs. 5.2–5.18, and the appendix Eqs. 5.51–5.56. Lectured in L14 (Mon 2 Nov, `02 November 2026 at 11_53_51.txt`: force linearisation ll. 236–317, gravity ll. 373–509) and L15 (Thu 5 Nov, `05 November 2026 at 14_53_19.txt`: derivatives and assembly ll. 1–308).
 - `05 November 2026 at 15_56_57.txt` (L16): the matrix exponential and stability from the eigenvalues, ll. 148–311.
-- `Lecture Notes - Chapter 6.pdf` (Dr Sean Symon), §§6.1–6.6, Eqs. 6.1–6.38 and Table 6.1. §§6.1–6.4 lectured in L17 (Mon 9 Nov, `09 November 2026 at 11_54_07.txt`, ll. 62–392); §6.5 set as reading (ll. 395–400); §6.6 due on Mon 16 Nov (ll. 401–403) and covered here from the handout.
+- `Lecture Notes - Chapter 6.pdf` (Dr Sean Symon), §§6.1–6.6, Eqs. 6.1–6.38 and Table 6.1. §§6.1–6.4 lectured in L17 (Mon 9 Nov, `09 November 2026 at 11_54_07.txt`, ll. 62–392); §6.5 set as reading (ll. 395–400); §6.6 lectured in L18 (Mon 16 Nov, `16 November 2026 at 11_51_48.txt`, ll. 233–658), up to the eigenvalue problem Eq. 6.37.
 - Computation: `generate_amc_deepdive_figures.py` in `01 - Notes/Figures/` (`--check` prints and asserts every number in this note: dimensional derivatives, $\mathbf M^{-1}$, $\mathbf A$, the quartic and its exact and approximate factors, the by-hand eigenvectors, phases, heights and energies, the SPO and phugoid approximations, Eq. 6.38 symbolically, the Jacobian of the nonlinear model and the nonlinear-versus-linear runs).
 
 ## Self-study tasks
@@ -680,21 +569,14 @@ Tasks citing a line were worked or flagged in the lectures; the longitudinal der
 
 ### Further practice
 
-- [ ] **(L17 ll. 401–403; due Mon 16 Nov)** Derive Lanchester's $\omega_n=\sqrt2g/U_\infty$ and Eq. 6.38, and evaluate both for the F-4C. → [[#9. The phugoid approximations (written ahead)|§9]]
+- [ ] **(L18 ll. 287–381, 437–658)** Derive Lanchester's $\omega_n=\sqrt2g/U_\infty$ and Eq. 6.38, and evaluate both for the F-4C. → [[#9. The phugoid approximations (6.28–6.38)|§9]] and [[SESA3047 6.2 - Phugoid Approximation|6.2]]
 - [ ] (suggested, not lecturer-set) Find the SPO eigenvector of the F-4C by hand from rows 1, 2 and 4 with $\theta=1$, and check row 3. → [[#7. Eigenvectors by hand and the mode shapes (6.17–6.21)|§7]]
 - [ ] (suggested, not lecturer-set) Derive the approximate quadratic factors $b_1\approx a_3$, $b_0\approx a_2$, $c_0\approx a_0/a_2$, $c_1\approx(a_1a_2-a_0a_3)/a_2^2$ and recover Eq. 6.10. → [[#Why the quartic splits into two quadratics]]
 - [ ] (suggested, not lecturer-set) Code the nonlinear longitudinal rows of §1 and confirm that their Jacobian at trim is $\mathbf A$. → [[#5. From A′ to A for the F-4C (6.3)|§5]]
 
 ## Transcript and slide slips
 
-> [!warning] Handout slips in §6.6 (`Lecture Notes - Chapter 6.pdf`, p. 7)
-> Where: [[#9. The phugoid approximations (written ahead)]].
->
-> - *"It should be noted that $U\le U_\infty$ as kinetic energy is being transferred to potential energy during the instability."* With $h$ measured from the trim height, $h$ is negative for half of each cycle and then $U>U_\infty$. The phugoid is also not an instability in general: the F-4C's has $\zeta=0.083$ and Lanchester's has $\zeta=0$.
-> - *"At some point the aircraft does not have enough airspeed to maintain lift which results in the aircraft stalling."* The approximation holds $\alpha$ and $C_L$ fixed, and the full eigenvector confirms $\alpha$ changes by only 0.1 rad per rad of $\theta$. Lift falls below weight because the speed falls at constant $C_L$; nothing stalls.
-> - Eq. 6.32 treats the lift as vertical, which needs the flight-path angle to stay small; the handout does not state it.
->
-> None of these changes Eqs. 6.33 or 6.38.
+The handout slips in §6.6 (pp. 7–8) are listed with the lectured note: [[SESA3047 6.2 - Phugoid Approximation#Transcript and slide slips|6.2, slips]].
 
 ### Rounding in Eq. 6.22
 

@@ -17,7 +17,7 @@ sources: ["03 - Exams & Past Papers/Past Papers/SESA2025 Mechanics of Flight/SES
 | Q | Marks | Topic | Theory |
 |---|---:|---|---|
 | 1 | 40 | Effective tail incidence in curved flight; load factor; stick-fixed manoeuvre margin; elevator angle in a pull-up; trim drag | [[SESA2022 T6 - Aircraft Aerodynamics and Static Stability#4. Manoeuvre stability|SESA2022 T6 §4]], [[Manoeuvre Point and Manoeuvre Margin]], [[SESA2025 Past Paper 2013-14 - Solutions#Q2. Winglets, trim drag and stick-free trim (25 marks)|2013-14 Q2]] (trim drag) |
-| 2 | 30 | Longitudinal modes, SPO approximation, Lanchester phugoid, handling qualities | [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|SESA3047 6.1]], [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes#Lanchester's energy argument (6.28–6.33)|Deep Dive §9]] (§6.6, due Mon 16 Nov), [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid|SESA2027 A3]] |
+| 2 | 30 | Longitudinal modes, SPO approximation, Lanchester phugoid, handling qualities | [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation|SESA3047 6.1]], [[SESA3047 6.2 - Phugoid Approximation#2. Lanchester's approximation (6.28–6.33)|6.2 §2]] (§6.6, due Mon 16 Nov), [[SESA2027 A3 - Longitudinal Dynamic Modes - SPO and Phugoid|SESA2027 A3]] |
 | 3 | 30 | Coordinated turn at given bank; Dutch roll approximation; flight-test excitation; yaw damping $N_r$ | SESA3047 §§6.7–6.10 (lateral modes, due Thu 19 Nov 2026; no note yet), [[Lateral and Directional Stability]] |
 
 ---
