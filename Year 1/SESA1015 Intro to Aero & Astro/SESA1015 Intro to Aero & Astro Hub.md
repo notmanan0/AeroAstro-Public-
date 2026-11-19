@@ -122,7 +122,7 @@ Most Mechanics of Flight questions are short numerical chains: convert mass to w
 - Mechanics of Flight: `02 - Sources/Mechanics of Flight/` (Course Notes PDF, Lecture Slides version 2 and the older deck, the Constraint Analysis spreadsheet, the equation solver and NACA tools).
 - Astronautics: `02 - Sources/Astronautics/` Parts 1–3.
 - Revision workbook: `04 - Labs & Coursework/Revision & Spreadsheets/SESA1015 - Revision Questions (Original).xlsx`.
-- Figures: one generator script per topic in `01 - Notes/Figures/`, using `Year 3/_shared/year3_style.py`.
+- Figures: one generator script per topic in `01 - Notes/Figures/`, using `vault_style.py` at the vault root.
 
 ## Cambridge practice
 

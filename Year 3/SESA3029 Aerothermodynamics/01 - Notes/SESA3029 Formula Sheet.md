@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3029 formulae", "Aerothermodynamics formula sheet"]
 tags: [sesa3029, formula, exam-prep]
 status: in-progress
-coverage: "Week 1 and Lectures 2.1–2.7, 3.1–3.4, 4.1–4.6 (lectured); Lectures 5.1–5.10, heat transfer, written ahead from the slides"
+coverage: "Week 1 and Lectures 2.1–2.7, 3.1–3.4, 4.1–4.6 (lectured); Lectures 5.1–5.10, heat transfer, written ahead from the slides (5.1 checked against last year's recording; this year's awaited)"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
 # SESA3029 Formula Sheet
 
-Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6** (lectured), plus **Lectures 5.1–5.10, heat transfer, written ahead** from the slides. For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
+Current coverage: **Week 1, Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6** (lectured), plus **Lectures 5.1–5.10, heat transfer, written ahead** from the slides (5.1 checked against last year's recording; this year's recordings awaited). For what the **official** exam sheet provides, see [[#What the exam formula sheet gives you]].
 
 ## Which relation? Given → choose → check
 
@@ -30,6 +30,12 @@ The official sheet gives equations, not the decisions between them. This table l
 | MoC point on a wall or the centreline | Wall: the one arriving invariant plus $\theta_W$. Centreline: $\theta_P=0$ plus the arriving $R^-$ | A wall reflects only if $\theta_A\neq\theta_W$ |
 | Thin aerofoil, subsonic $M_\infty$, incompressible $C_{p0}$ or $C_{l0}$ known | Prandtl–Glauert: divide by $\sqrt{1-M_\infty^2}$ (Kármán–Tsien if asked) | $M_\infty$ below about 0.8 and below $M_{crit}$ ([[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation\|W07b]]) |
 | Thin aerofoil, supersonic, small angles, "linear" or "Ackeret" | $C_p=2\theta/\lambda$ face by face; $C_l=4\alpha/\lambda$ | Radians; $\theta$ from $\vec U_\infty$, + for compression (face and nearby streamline form a converging duct), − for expansion (diverging duct). "Exact" means shock-expansion instead ([[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]]) |
+| Steady 1-D conduction through composite walls, pipes or insulation | Thermal resistance network in series/parallel; check $r_{cr}=k/h$ (cylinder) or $2k/h$ (sphere) when adding insulation | Units of $R_{\rm th}$ are K/W; cylindrical wall uses $\ln(r_o/r_i)/(2\pi kL)$; adding insulation raises $\dot Q$ while $r_o<r_{cr}$ ([[SESA3029 W09a - Heat Conduction and Thermal Resistance\|W09a]], [[SESA3029 W09c - Critical Thickness of Insulation and Fins\|W09c]]) |
+| Flat plate in external flow (forced convection) | Check $\mathrm{Re}_L$ against $\mathrm{Re}_{cr}=3\times10^5$ (slides; or tripped $x_t$): all-laminar ($\overline{\mathrm{Nu}}_L=2\mathrm{Nu}_L$), all-turbulent ($\overline{\mathrm{Nu}}_L=1.25\mathrm{Nu}_L$), or split the integral at $x_t$ | Properties at $T_f=(T_s+T_\infty)/2$; use the correlation the paper prints if it differs from $0.0296\,\mathrm{Re}_x^{4/5}\mathrm{Pr}^{1/3}$ ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy\|W09b]]) |
+| Fin heat transfer and tip condition | Compute $a=\sqrt{hp/(kA_c)}$ and $aL$: adiabatic tip if insulated/thin ($\tanh aL$), infinite fin if $aL\gtrsim2.65$, or exact tip convection | Check whether $\eta_{\mathrm{fin}}$ and $\epsilon_{\mathrm{fin}}$ are asked; fin only helps if $\epsilon_{\mathrm{fin}}>1$ ([[SESA3029 W09c - Critical Thickness of Insulation and Fins\|W09c]]) |
+| Thermal radiation between surfaces or to space | Temperatures in kelvin; small grey body in large surroundings $\epsilon\sigma A(T_1^4-T_2^4)$, or two black surfaces $A_1F_{12}\sigma(T_1^4-T_2^4)$ via reciprocity and $\sum_jF_{ij}=1$ | °C in $T^4$ gives a wrong answer even for a temperature difference; $F_{ii}=0$ for flat/convex surfaces; openings count as imaginary black surfaces ([[SESA3029 W09d - Thermal Radiation\|W09d]]) |
+| Finite-difference conduction node (steady or explicit transient) | Interior: check $\Delta x=\Delta y$ vs non-square $s=(\Delta y/\Delta x)^2$, or 1-D radial $(i\pm\tfrac12)/(2i)$. Boundary/corner: control-volume energy balance (half cell inside solid) | Steady face inflows sum to 0; explicit stability needs every old-$T$ coefficient $\ge0$ ($\mathcal F\le\tfrac12$ in 1-D, $\tfrac14$ in 2-D, $\mathcal F(1+\mathrm{Bi})\le\tfrac12$ at convective end) ([[SESA3029 W09e - Numerical Methods in Conduction\|W09e]]) |
+| Heat exchanger: sizing vs rating | All 4 temperatures known (or 2 + energy balance) → LMTD for $A_s$ or $L$. Hardware $UA_s$ and inlets known → $\epsilon$–NTU for outlets | Use $c=0$ ($\epsilon=1-e^{-\mathrm{NTU}}$) for condensers/boilers and $\epsilon=\mathrm{NTU}/(1+\mathrm{NTU})$ for counter-flow $c=1$; use counter-flow relations on multi-pass exam questions when the paper prescribes them or gives no $F$-chart ([[SESA3029 W09f - Heat Exchangers\|W09f]]) |
 
 ## Mach number and gas properties
 
@@ -551,11 +557,11 @@ Wing sweep (simple sweep theory): the section sees $M_\infty\cos\Lambda$, with $
 
 ## Heat transfer (Block 5)
 
-Lectures 5.1–5.10 are written ahead from the slides; no transcripts yet. The official exam sheet gives only the four thermal resistances ([[#What the exam formula sheet gives you]]); everything else in this block has to be known or derived.
+Lectures 5.1–5.10 are written ahead from the slides. Lecture 5.1 is checked against last year's (2025–26) recording, which differs from this year's lecture; the others have no transcripts yet. The official exam sheet gives only the four thermal resistances ([[#What the exam formula sheet gives you]]); everything else in this block has to be known or derived.
 
 ## Conduction and thermal resistance (Lectures 5.1–5.2)
 
-5.1–5.2 written ahead from the slides ([[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]]); no transcript yet.
+5.1–5.2 written ahead from the slides ([[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]]); 5.1 checked against last year's recording.
 
 Heat flux and Fourier's law ($x$ along the heat flow; minus sign: heat flows down the gradient; 3-D form for an isotropic material) ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#2. Fourier's law of heat conduction|W09a §2]]):
 
@@ -697,18 +703,18 @@ Heat diffusion equation (2-D/3-D, generation $\dot g$ in W/m³): $\nabla^2T+\dot
 
 Boundary conditions at $x=0$, solid in $x\ge0$: $T(0,t)=T_s$; $-k\,\partial T/\partial x=\dot q_x$; $\partial T/\partial x=0$ (insulated, symmetry); $-k\,\partial T/\partial x=h(T_\infty-T)$; $-k\,\partial T/\partial x=\epsilon\sigma(T_{surr}^4-T_0^4)$ (K) ([[SESA3029 W09e - Numerical Methods in Conduction#3. Boundary conditions|§3]]).
 
-Differences (Taylor series): $T'_i=(T_{i+1}-T_i)/\Delta x+\mathcal O(\Delta x)$; $T''_i=(T_{i+1}-2T_i+T_{i-1})/\Delta x^2+\mathcal O(\Delta x^2)$ (leading error $-\Delta x^2T''''/12$). Error $\sim\Delta x^p$: doubling the points divides the error by $2^p$ ([[SESA3029 W09e - Numerical Methods in Conduction#5. Order of accuracy|§5]]).
+Differences (Taylor series): $T'_i=(T_{i+1}-T_i)/\Delta x+\mathcal O(\Delta x)$; $T''_i=(T_{i+1}-2T_i+T_{i-1})/\Delta x^2+\mathcal O(\Delta x^2)$ (leading error $-\Delta x^2T''''/12$). Error $\sim\Delta x^p$: doubling the points divides the error by $2^p$. Richardson extrapolation (grid refinement ratio $r$, spacings $r^2h,rh,h$): observed order $p=\ln[(T_{r^2h}-T_{rh})/(T_{rh}-T_h)]/\ln r$, extrapolated value $T_{\rm exact}\approx T_h+(T_h-T_{rh})/(r^p-1)$ ([[SESA3029 W09e - Numerical Methods in Conduction#7. Order of accuracy|§7]]).
 
-Steady interior nodes: 1-D $T_i=(T_{i+1}+T_{i-1})/2$; 2-D square grid $T_P=\tfrac14(T_E+T_W+T_N+T_S)+\dot g\Delta x^2/(4k)$ ([[SESA3029 W09e - Numerical Methods in Conduction#4. Discretising the heat equation|§4]]).
+Steady interior nodes: 1-D planar $T_i=(T_{i+1}+T_{i-1})/2$; 1-D radial cylindrical ($r_i=i\,\Delta r$) $T_i=[(i-\tfrac12)T_{i-1}+(i+\tfrac12)T_{i+1}]/(2i)$; 2-D non-square grid ($s=(\Delta y/\Delta x)^2$) $T_P=[s(T_E+T_W)+T_N+T_S]/[2(1+s)]+\dot g\Delta y^2/[2k(1+s)]$, reducing for a square grid ($\Delta x=\Delta y$) to $T_P=\tfrac14(T_E+T_W+T_N+T_S)+\dot g\Delta x^2/(4k)$ ([[SESA3029 W09e - Numerical Methods in Conduction#4. Discretising the heat equation|§4]], [[SESA3029 W09e - Numerical Methods in Conduction#5. Boundary and corner nodes by energy balance|§5]]).
 
-Transient, Fourier number $\mathcal F=\alpha\Delta t/\Delta x^2$ ([[SESA3029 W09e - Numerical Methods in Conduction#8. Transient conduction: explicit and implicit schemes|§8]]):
+Transient, Fourier number $\mathcal F=\alpha\Delta t/\Delta x^2$ ([[SESA3029 W09e - Numerical Methods in Conduction#9. Transient conduction: explicit and implicit schemes|§9]]):
 explicit $T_i^{n+1}=T_i^n+\mathcal F(T_{i+1}^n-2T_i^n+T_{i-1}^n)$; implicit $T_{i+1}^{n+1}-(2+1/\mathcal F)T_i^{n+1}+T_{i-1}^{n+1}=-T_i^n/\mathcal F$ (tridiagonal). Both $\mathcal O(\Delta t,\Delta x^2)$.
 
-Stability (uniform grid, constant $\alpha$, fixed-temperature ends): explicit 1-D $\mathcal F\le\tfrac12$, 2-D square grid $\mathcal F\le\tfrac14$; explicit 1-D convective end node $\mathcal F(1+\mathrm{Bi})\le\tfrac12$, $\mathrm{Bi}=h\Delta x/k$; implicit unconditionally stable. Von Neumann: explicit $G=1-4\mathcal F\sin^2(k\Delta x/2)$, implicit $G=1/[1+4\mathcal F\sin^2(k\Delta x/2)]$ ([[SESA3029 W09e - Numerical Methods in Conduction#9. Stability of the explicit scheme|§9]]).
+Stability (uniform grid, constant $\alpha$, fixed-temperature ends): explicit 1-D $\mathcal F\le\tfrac12$, 2-D square grid $\mathcal F\le\tfrac14$; explicit 1-D convective end node $\mathcal F(1+\mathrm{Bi})\le\tfrac12$, $\mathrm{Bi}=h\Delta x/k$; implicit unconditionally stable. Von Neumann: explicit $G=1-4\mathcal F\sin^2(k\Delta x/2)$, implicit $G=1/[1+4\mathcal F\sin^2(k\Delta x/2)]$ ([[SESA3029 W09e - Numerical Methods in Conduction#10. Stability of the explicit scheme|§10]]).
 
-Boundary nodes by energy balance on the node's control volume (half cell inside the solid; unit depth; flows into P positive): conduction $k\,(\text{face length})(T_{nb}-T_P)/\Delta x$, convection $h\,(\text{exposed length})(T_\infty-T_P)$. Square grid, $\mathrm{Bi}=h\Delta x/k$: plane surface with convection $T_P=(2T_W+T_N+T_S+2\mathrm{Bi}\,T_\infty)/(4+2\mathrm{Bi})$ (insulated: $\mathrm{Bi}=0$); exterior corner, convection on both faces $T_P=(T_W+T_S+2\mathrm{Bi}\,T_\infty)/(2+2\mathrm{Bi})$; internal corner with flux $\dot q$ on both edges $6T_P=2T_N+2T_W+T_E+T_S+2\dot q\Delta x/k$ ([[SESA3029 W09e - Numerical Methods in Conduction#11. Boundary and corner nodes by energy balance|§11]]).
+Boundary nodes by energy balance on the node's control volume (half cell inside the solid; unit depth; flows into P positive): conduction $k\,(\text{face length})(T_{nb}-T_P)/\Delta x$, convection $h\,(\text{exposed length})(T_\infty-T_P)$. Square grid, $\mathrm{Bi}=h\Delta x/k$: plane surface with convection $T_P=(2T_W+T_N+T_S+2\mathrm{Bi}\,T_\infty)/(4+2\mathrm{Bi})$ (insulated: $\mathrm{Bi}=0$); exterior corner, convection on both faces $T_P=(T_W+T_S+2\mathrm{Bi}\,T_\infty)/(2+2\mathrm{Bi})$; internal corner with flux $\dot q$ on both edges $6T_P=2T_N+2T_W+T_E+T_S+2\dot q\Delta x/k$ ([[SESA3029 W09e - Numerical Methods in Conduction#5. Boundary and corner nodes by energy balance|§5]]).
 
-Rod $T_L$ at $x=0$, $T_R$ at $x=L$, initially at $T_L$: $T=T_L+(T_R-T_L)\dfrac xL+\displaystyle\sum_{n\ge1}\frac{2(T_R-T_L)(-1)^n}{n\pi}\sin\frac{n\pi x}{L}\,e^{-\alpha(n\pi/L)^2t}$ ([[SESA3029 W09e - Numerical Methods in Conduction#10. Worked example: 1-D transient conduction|§10]]).
+Rod $T_L$ at $x=0$, $T_R$ at $x=L$, initially at $T_L$: $T=T_L+(T_R-T_L)\dfrac xL+\displaystyle\sum_{n\ge1}\frac{2(T_R-T_L)(-1)^n}{n\pi}\sin\frac{n\pi x}{L}\,e^{-\alpha(n\pi/L)^2t}$ ([[SESA3029 W09e - Numerical Methods in Conduction#11. Worked example: 1-D transient conduction|§11]]).
 
 ## Heat exchangers (Lectures 5.8–5.10)
 

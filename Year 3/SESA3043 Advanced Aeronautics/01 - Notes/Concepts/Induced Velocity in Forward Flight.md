@@ -3,7 +3,7 @@ title: "Induced Velocity in Forward Flight"
 module: "SESA3043 Advanced Aeronautics"
 type: concept
 stream: "Chapter 4: Rotor Aerodynamics"
-aliases: ["Glauert's inflow formula", "Glauert's hypothesis", "forward-flight momentum theory", "forward flight induced velocity"]
+aliases: ["Glauert's inflow formula", "Glauert's hypothesis", "forward-flight momentum theory", "forward flight induced velocity", "edgewise flight"]
 tags: [sesa3043, concept, rotor, forward-flight, actuator-disc]
 status: complete
 parent_lectures: ["[[SESA3043 4.3 - Rotor in Forward Flight]]"]

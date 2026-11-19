@@ -486,7 +486,7 @@ Untwisted, $AR=8$, $\lambda = 0.8$, thin symmetric section ($\alpha_{L=0} = 0$, 
 |---|---|---|---|
 | lifting-line theory | Prandtl lifting-line theory, LLT | 11 Nov | |
 | induced angle of attack $\alpha_i$ | downwash angle at the wing | 7 Nov; 11 Nov | T6's $\epsilon$ is the downwash angle at the tail |
-| $\delta$ (induced drag factor) | span efficiency factor (as in the lecture) | 11 Nov, ll. 403–432 | |
+| $\delta$ (induced drag factor) | span efficiency factor | 11 Nov, ll. 403–432 | The course also gives the name span efficiency factor to the Oswald factor $e=1/(1+\delta)$, so check which symbol a question means |
 | $e = 1/(1+\delta)$ | span efficiency factor, Oswald efficiency factor | 11 Nov, ll. 423–429 | Oswald $e$ in a drag polar also includes profile-drag effects |
 | $\tau$ (lift slope factor) | slope correction factor | 12 Nov, ll. 170–193 | |
 | $B_n$ | Fourier coefficients of the circulation, $A_n$ in Anderson | 11 Nov | Not the same as the TAT $A_n$ |

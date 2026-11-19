@@ -238,6 +238,8 @@ $$
 
 The same steps with $h\propto x^{-1/5}$ give $\int_0^Lx^{-1/5}\,\mathrm dx=\tfrac54L^{4/5}$, so for a plate turbulent from the leading edge $\bar h=\tfrac54h(L)$ and $\overline{\mathrm{Nu}}_L=0.037\,\mathrm{Re}_L^{4/5}\mathrm{Pr}^{1/3}$.
 
+**Mixed (tripped) plate.** When the layer is laminar up to transition or a trip wire at $x_t$ and turbulent thereafter, split the integral at $x_t$: use $\bar h_{\mathrm{lam}}=2h_{\mathrm{lam}}(x_t)$ over $0\le x\le x_t$, and integrate the turbulent $h(x)=Kx^{-1/5}$ over $x_t\le x\le L$, which gives $\int_{x_t}^Lx^{-1/5}\,\mathrm dx=\tfrac54\left(L^{4/5}-x_t^{4/5}\right)$ (with $x$ measured from the leading edge). Where a paper prints its own turbulent correlation, that one replaces the slide correlation: for example, [[SESA3029 Past Paper 2016-17 - Solutions#(ii) Heat transfer from the tripped flat plate [17 marks]|2016–17 Q4(ii)]] prescribes $\mathrm{Nu}_x=0.029\,\mathrm{Re}_x^{0.8}\mathrm{Pr}^{0.6}$ rather than $0.0296\,\mathrm{Re}_x^{4/5}\mathrm{Pr}^{1/3}$.
+
 ![[at_w09b_local_h.png|900]]
 
 Panel (a) shows $h(x)$ on the plate of §6 and its average $\bar h=2h(L)$. Panel (b) shows the jump at transition: at $\mathrm{Re}_x=3\times10^5$ the turbulent $\mathrm{Nu}_x$ is about 3.9 times the laminar value, because turbulent mixing thins the near-wall layer that the heat has to cross by conduction.
@@ -483,7 +485,7 @@ The figure checks this against the exact solution of the thermal boundary-layer 
 ## Sources
 
 - `Lecture5.3.pdf`: Lecture 5.3, convective heat transfer (boundary layer, other dimensionless numbers, Reynolds analogy, example problems), 15 slides; slide 9 repeats slide 10. No lecturer is named on the deck. Slides 2–4 the velocity and thermal boundary layers (figures after Çengel); slide 5 the Prandtl number; slide 6 Re, Pr, Nu, St and $\mathrm{Nu}=\mathrm{St}\,\mathrm{Re}\,\mathrm{Pr}$; slides 7–8 the correlations and the general form; slides 10–11 the pipe-cooling example; slides 12–15 the parallel-plates example.
-- This note is written ahead from the slides. No transcript exists yet; it will be reconciled with the transcript once the lecture has been given. Lectures for the heat-transfer block are expected from Thu 19 Nov 2026.
+- This note is written ahead from the slides. No transcript exists yet; it will be reconciled with the transcript once the lecture has been given. The heat-transfer lectures started on Thu 19 Nov 2026.
 - Additions not on the slides, each derived here: $h$ from the wall gradient (§2), the average $\bar h=2h(L)$ in closed form and the turbulent $\tfrac54$ (§5, slide 15 does the laminar integral numerically), and the derivation of $\mathrm{St}=c_f/2$ and the Chilton–Colburn form, with the 0.332 and 0.0296 constants recovered from the skin friction (§7).
 - Figures: `generate_aerothermo_w09bc_figures.py` (`at_w09b_boundary_layers.png`, `at_w09b_local_h.png`, `at_w09b_reynolds_analogy.png`). The profiles and the exact $\mathrm{Nu}_x/\sqrt{\mathrm{Re}_x}$ come from numerical solutions of the Blasius equation and the thermal similarity equation ($f''(0)=0.33206$ in the $\eta=y\sqrt{V/\nu x}$ scaling).
 - Textbooks cited on the slides: Holman, *Heat Transfer*, 10th ed.; Çengel, *Heat Transfer: A Practical Approach*, 2nd ed. (external forced convection and the Chilton–Colburn analogy).

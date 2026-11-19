@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3043 formulae", "Advanced Aeronautics formula sheet"]
 tags: [sesa3043, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–3; Chapter 4 (4.1–4.3, rotor aerodynamics) written ahead from the slides"
+coverage: "Chapters 1–3; Chapter 4 (4.1–4.3, rotor aerodynamics) written ahead from the slides, with 4.1 slides 1–22 (lectured 19 Nov) checked against the transcript"
 sources: ["01 - Notes/Topics", "02 - Sources/Lectures"]
 ---
 
 # SESA3043 Formula Sheet
 
-Current coverage: **Chapters 1–4**. Chapters 1–2, 3.1–3.2 and 3.3 up to the integral properties as functions of $\lambda$ are checked against transcripts; the rest of 3.3 and 3.4–3.6 are written from the slides, ahead of time. Chapter 4 (rotor aerodynamics, 4.1–4.3) is written ahead from the slides; no transcript yet.
+Current coverage: **Chapters 1–4**. Chapters 1–3 are checked against the transcripts. Chapter 4 (rotor aerodynamics, 4.1–4.3) is written ahead from the slides; the 4.1 actuator-disc, standard-parameter and annular-wake formulae (CH4 slides 1–22) are checked against the first Chapter 4 transcript (19 Nov), and the rest awaits its lectures.
 
 ## Which method? Given → method → predicts → main limitation
 

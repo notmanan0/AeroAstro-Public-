@@ -219,7 +219,7 @@ Chromium and aluminium protect because their oxides, chromia and alumina, are co
 
 ### Oxidation of a turbine blade
 
-Why oxidation matters for a turbine blade, and how to reduce it, is a past-paper question (ML15a). Oxidation eats load-bearing metal, replacing it with oxide; it roughens the aerofoil and costs aerodynamic performance; spalled oxide is hard and brittle and erodes parts downstream when ingested. To reduce it, add chromium (and aluminium) for a coherent protective scale, lower the metal temperature with cooling and thermal barrier coatings, and apply protective coatings or deliberately thicken the oxide, as anodising does.
+Why oxidation matters for a turbine blade, and how to reduce it, is a past-paper question. Oxidation eats load-bearing metal, replacing it with oxide; it roughens the aerofoil and costs aerodynamic performance; spalled oxide is hard and brittle and erodes parts downstream when ingested. To reduce it, add chromium (and aluminium) for a coherent protective scale, lower the metal temperature with cooling and thermal barrier coatings, and apply protective coatings or deliberately thicken the oxide, as anodising does.
 
 ## 6. Oxidation, creep and fatigue together
 

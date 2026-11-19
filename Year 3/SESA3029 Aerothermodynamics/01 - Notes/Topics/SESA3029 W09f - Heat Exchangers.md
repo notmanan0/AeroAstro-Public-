@@ -61,7 +61,7 @@ $$
 \frac{1}{UA_s}=\frac{1}{U_iA_i}=\frac{1}{U_oA_o}=R_{\rm th}.
 $$
 
-$U$ on its own is ambiguous until an area is named: $U_i$ goes with the inner area and $U_o$ with the outer, and only the product $UA$ is unique. Dividing $R_{\rm th}$ by the inner area $A_i=2\pi r_iL$ gives the inner-surface value with a wall of finite thickness:
+$U$ on its own is ambiguous until an area is named: $U_i$ goes with the inner area and $U_o$ with the outer, and only the product $UA$ is unique. Multiplying $R_{\rm th}$ by the inner area $A_i=2\pi r_iL$ gives the inner-surface value with a wall of finite thickness:
 
 $$
 \frac{1}{U_i}=A_iR_{\rm th}=\frac{1}{h_i}+\frac{2\pi r_iL\ln(r_o/r_i)}{2\pi kL}+\frac{2\pi r_iL}{h_o\,2\pi r_oL}
@@ -138,6 +138,15 @@ $$
 
 so the stream with the larger heat capacity rate has the smaller temperature change, and the one with the smaller $C$ the larger. In the sizing example of §4, $C_h=3000$ and $C_c=1500$ W K⁻¹: the hot stream falls by 40 K and the cold one rises by 80 K. A stream that condenses or boils at constant pressure absorbs or releases heat with no temperature change at all, which is the limit $C\to\infty$ ([[Heat Capacity Rate]]).
 
+The two methods of §§4–5 come from the same differential energy balance, rearranged for different unknowns. LMTD suits sizing, where the temperatures are known and the area is wanted; $\epsilon$–NTU suits rating, where the hardware is known and the outlet temperatures are wanted:
+
+| Method | Use it for | Given | Unknown | Core equation |
+|---|---|---|---|---|
+| LMTD (§4) | Sizing (find $A_s$ or tube length $L$) | Duty $\dot Q$ and all four terminal temperatures (two given, two from the energy balance) | $A_s$ (or $L$) | $\dot Q = U A_s \Delta T_{\rm lm}$ |
+| $\epsilon$–NTU (§5) | Rating (predict the performance of an existing unit) | Hardware $UA_s$, flow rates and both inlet temperatures | $\dot Q$ and both outlet temperatures | $\dot Q = \epsilon(\mathrm{NTU}, c)\,C_{\min}(T_{h,\rm in}-T_{c,\rm in})$ |
+
+§6 collects the inverted NTU relations (for sizing with NTU) and the exam convention for multi-pass shell-and-tube units.
+
 ## 4. The log mean temperature difference method
 
 The LMTD method is used to select a heat exchanger that will achieve a specified temperature range in a fluid stream of known mass flow rate. By analogy with Newton's law of cooling, the rate is written
@@ -158,7 +167,7 @@ This assumes $U$ is the same all along the exchanger, which in turn needs the fl
 
 ### 4.1 Parallel flow
 
-Both fluids move from end 1 to end 2. Over the element the hot fluid loses heat, so its temperature falls ($\mathrm dT_h<0$), and the cold fluid gains it ($\mathrm dT_c>0$):
+Integrating the element balance across a parallel-flow exchanger gives $\dot Q=UA_s\Delta T_{\rm lm}$ with end differences $\Delta T_1=T_{h,\rm in}-T_{c,\rm in}$ and $\Delta T_2=T_{h,\rm out}-T_{c,\rm out}$. Both fluids move from end 1 to end 2. Over the element the hot fluid loses heat, so its temperature falls ($\mathrm dT_h<0$), and the cold fluid gains it ($\mathrm dT_c>0$):
 
 $$
 \delta\dot Q=-\dot m_hc_{ph}\,\mathrm dT_h
@@ -247,7 +256,7 @@ $\Delta T_{\rm lm}$ is the **log mean temperature difference**. Equation (4.1) a
 
 ### 4.2 Counter flow
 
-Keep end 1 at the hot inlet and $A_s$ increasing towards end 2, the hot outlet. The cold fluid now enters at end 2 and flows back towards end 1, so the cold inlet is at end 2 and the cold outlet at end 1. Following $A_s$ from 1 to 2 the cold temperature therefore decreases, even though the cold fluid is being heated in its own direction of motion. The hot side is unchanged, but the cold-side balance changes sign:
+Counter flow yields the **same** LMTD formula, $\dot Q=UA_s\Delta T_{\rm lm}$, with the end differences paired at each physical end: $\Delta T_1=T_{h,\rm in}-T_{c,\rm out}$ and $\Delta T_2=T_{h,\rm out}-T_{c,\rm in}$. Keep end 1 at the hot inlet and $A_s$ increasing towards end 2, the hot outlet. The cold fluid now enters at end 2 and flows back towards end 1, so the cold inlet is at end 2 and the cold outlet at end 1. Following $A_s$ from 1 to 2 the cold temperature therefore decreases, even though the cold fluid is being heated in its own direction of motion. The hot side is unchanged, but the cold-side balance changes sign:
 
 $$
 \delta\dot Q=-\dot m_hc_{ph}\,\mathrm dT_h
@@ -435,7 +444,7 @@ Effectiveness is a function of the number of heat transfer units and the capacit
 
 ### 5.3 Parallel-flow effectiveness
 
-Start from the parallel-flow result (4.1), written with the capacity rates:
+Eliminating the outlet temperatures from (4.1) gives $\epsilon_{\text{parallel-flow}}=\{1-\exp[-\mathrm{NTU}(1+c)]\}/(1+c)$, whichever stream is $C_{\min}$. Start from the parallel-flow result (4.1), written with the capacity rates:
 
 $$
 \ln\frac{T_{h,\rm out}-T_{c,\rm out}}{T_{h,\rm in}-T_{c,\rm in}}=-UA_s\left(\frac{1}{C_h}+\frac{1}{C_c}\right).
@@ -483,7 +492,7 @@ Taking $C_c$ as $C_{\min}$ and $C_h$ as $C_{\max}$ from the start writes the bra
 
 ### 5.4 Counter-flow effectiveness
 
-Start from the counter-flow result (4.2):
+Eliminating the outlet temperatures from (4.2) gives $\epsilon_{\text{counter-flow}}=\{1-\exp[-\mathrm{NTU}(1-c)]\}/\{1-c\exp[-\mathrm{NTU}(1-c)]\}$ for $c\neq1$ (with the $c=1$ limit $\mathrm{NTU}/(1+\mathrm{NTU})$ in §5.5). Start from the counter-flow result (4.2):
 
 $$
 \ln\frac{T_{h,\rm out}-T_{c,\rm in}}{T_{h,\rm in}-T_{c,\rm out}}=-UA_s\left(\frac{1}{C_h}-\frac{1}{C_c}\right).
@@ -637,7 +646,7 @@ T_{h,\rm out}=T_{h,\rm in}-\frac{\dot Q}{C_h}=150-\frac{120\,000}{3000}=\boxed{1
 T_{c,\rm out}=T_{c,\rm in}+\frac{\dot Q}{C_c}=15+\frac{120\,000}{1500}=\boxed{95\ ^\circ\text{C}}.
 $$
 
-These are the temperatures the sizing example started from, as they must be. In kelvin, $(150+273)-40=383$ K $=110$ °C; differences are the same in either unit. With the unrounded $\dot Q=119\,991$ W the outlets are 110.003 °C and 94.994 °C.
+These are the temperatures the sizing example started from, as they must be. In kelvin, $423\ \text{K}-40\ \text{K}=383\ \text{K}=110\ ^\circ\text{C}$; differences are the same in either unit. With the unrounded $\dot Q=119\,991$ W the outlets are 110.003 °C and 94.994 °C.
 
 > [!check] The same hardware in parallel flow
 > With the same NTU and $c$ the parallel-flow formula gives $\epsilon=[1-e^{-1.09294\times1.5}]/1.5=0.53727$, so $\dot Q=108.8$ kW, $T_{h,\rm out}=113.7$ °C and $T_{c,\rm out}=87.5$ °C. A numerical integration of the element balance reproduces all three values. Turning the cold stream round gains 11.2 kW (10 %) for nothing.
@@ -652,6 +661,9 @@ $$
 $$
 
 and with $c=0$ both become $\mathrm{NTU}=-\ln(1-\epsilon)$, which is how the condenser of §7 is sized. For the rating example of §5, $\epsilon=0.59255$ and $c=0.5$ in the counter-flow inversion return $\mathrm{NTU}=1.09294$. A rating problem with LMTD needs a guessed outlet temperature, an area check and iteration.
+
+> [!note] Multi-pass shell-and-tube exchangers on exams
+> For a multi-pass shell-and-tube exchanger with two sensible streams ($c>0$), textbook analyses multiply the counter-flow LMTD by a geometry correction factor $F<1$ or use a shell-and-tube $\epsilon$–NTU correlation. In this course, use the counter-flow relation whenever the paper prescribes it or supplies no $F$-chart or shell-and-tube formula: [[SESA3029 Past Paper 2022-23 - Solutions#Q5. Counterflow oil-water heat exchanger via LMTD (18 marks)|2022–23 Q5]] names an 8-pass exchanger "counterflow" with no $F$-chart (so $F=1$, versus $F=0.878$ from the chart), and [[SESA3029 Past Paper 2024-25 A - Solutions#Q4. Shell-and-tube heat exchanger (20 marks)|2024–25 A/B Q4]] print the counter-flow effectiveness formula for a double-pass shell-and-tube unit ($\epsilon=0.818$, versus $0.784$ for one shell pass and two tube passes). For a condenser or boiler ($c=0$), the arrangement does not matter and $\epsilon=1-e^{-\mathrm{NTU}}$ is exact (§5.5).
 
 ## 7. Heat exchanger examples
 

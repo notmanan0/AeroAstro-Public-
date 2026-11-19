@@ -662,7 +662,7 @@ $$
 C_L=\frac{2\Gamma}{U_\infty c}=\frac{8\pi a\sin\alpha}{4a}=2\pi\sin\alpha=\boxed{0.438.}
 $$
 
-**(e)** The Joukowski map has critical points at $\bar z=\pm b$, where $\mathrm dz/\mathrm d\bar z=0$ and angles are not preserved ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#Building the shape|2.1 §4]]; the exam asks for this logic, not the calculation: L-b, ll. 486–495).
+**(e)** The Joukowski map has critical points at $\bar z=\pm b$, where $\mathrm dz/\mathrm d\bar z=0$ and angles are not preserved ([[SESA3043 2.1 - Complex Functions and Conformal Mapping#Building the shape|2.1 §4]]; the exam asks for this logic, not the calculation).
 - **Symmetric aerofoil.** Shift the centre **left** to $-\varepsilon b$ and enlarge the circle so that it still passes through $\bar z=+b$ but encloses $\bar z=-b$. The point through $+b$ maps to a sharp (cusped) TE. The LE is now away from a critical point, so it is round. $\varepsilon$ sets the thickness.
 - **Cambered aerofoil.** Also shift the centre **up**, by $a\sin\beta$, still through $\bar z=b$ ($a\cos\beta=b(1+\varepsilon)$). The upper and lower arcs now differ, which gives camber, and $\alpha_{L=0}=-\beta$.
 - **Why sharp.** Only a circle that passes through a critical point gets a corner there. The Kutta condition then fixes $\Gamma=4\pi aU_\infty\sin(\alpha+\beta)$.

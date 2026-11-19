@@ -35,7 +35,7 @@ Section numbers continue from [[SESA3029 W05a - Method of Characteristics|W05a]]
 
 The boundary conditions and nozzle design of this note underpin both the coursework and the final exam. The nozzle-design table of §14 is the coursework task.
 
-> [!important] The MoC coursework (brief: `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`; L3-4, ll. 361–425)
+> [!important] The MoC coursework (brief: `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`)
 > - Due 23:59, Sunday 15 November 2026, on Blackboard, worth 10% of the module (the module guide agrees). **Submitted** 12:01 on Sun 15 Nov ($M_{des}=3.4$; report in `04 - Labs & Coursework/MoC Coursework/`).
 > - Design Mach number $M_{des}=3.x$, where $x$ is the last digit of your student ID.
 > - The gas is carbon dioxide at room temperature, $\gamma=1.289$, not air (given in the brief only). The IFT, NST and OSC are all for $\gamma=1.4$, so none of them work for your numbers; every $\nu$, $M$ and $A/A^*$ has to come from your own code.
@@ -475,14 +475,14 @@ Textbooks (Anderson in particular), other universities and CFD software often us
 | complex region (crossing characteristics) | kernel; non-simple region; non-simple wave region | Supplementary Note p. 10: *"complex zones (with crossing characteristics)"* | "Kernel" is the usual textbook name for the crossing region behind the expansion corner of a minimum-length nozzle. The slides draw it but do not label it |
 | simple flow region (characteristics from one direction only) | simple-wave region; simple region; simple wave | L3.3 slides 8 and 10; Supplementary Note p. 9 ("'simple' regions") | One family of characteristics only, so one Riemann invariant is the same everywhere |
 | uniform flow region | uniform region; exit core flow | L3.3 slides 8 and 10; L3-3, l. 196 | No characteristics cross it: $M=M_e$, $\theta=0$ |
-| non-reflecting wall; wave cancellation (no reflection); designed geometry | cancelling wall; wave-cancelling wall; contoured wall | L3.3 slides 6 and 8; L3-3, ll. 46, 65–87, 115–142, 277–287 | The lecturer says "non-reflecting" throughout. The Supplementary Note (pp. 8–9) says the line is "cancelled" at the wall and calls it "the cancelling approach" |
+| non-reflecting wall; wave cancellation (no reflection); designed geometry | cancelling wall; wave-cancelling wall; contoured wall | L3.3 slides 6 and 8; L3-3, ll. 46, 65–87, 115–142, 277–287 | "Non-reflecting" is the course term throughout L3-3. The Supplementary Note (pp. 8–9) has the line "cancelled" at the wall and names the method "the cancelling approach" |
 | reflecting wall; prescribed geometry | solid wall; wall point (Anderson) | L3.3 slides 5 and 8 | BC 1. A reflection occurs only when $\theta_A\neq\theta_W$ |
-| symmetry plane; centreline | axis of symmetry; symmetry boundary (CFD) | L3.3 slide 7; Supplementary Note p. 9 | The lecturer's *"mirror or image effect"* |
-| $r_a$, the nozzle throat's half-width | throat half-height; throat radius (axisymmetric); $y^*$ | L3.3 slide 21 | Slide 9 marks the same length as $y^*$. The lecturer said *"throat height"* |
+| symmetry plane; centreline | axis of symmetry; symmetry boundary (CFD) | L3.3 slide 7; Supplementary Note p. 9 | Also *"mirror or image effect"* (L3-3) |
+| $r_a$, the nozzle throat's half-width | throat half-height; throat radius (axisymmetric); $y^*$ | L3.3 slide 21 | Slide 9 marks the same length as $y^*$; L3-3 also has *"throat height"* |
 | exit half-width $y_e/r_a$ | exit half-height; exit area ratio | L3.3 slide 21 | Equals $A_e/A^*$ for a planar nozzle |
 | maximum slope $\theta_{max}$ (of the wall) | maximum wall angle; throat wall angle; $\theta_{w,max}$ (Anderson) | L3.3 slide 9, *"Maximum Slope ($\theta$max)"*; L3-3, ll. 137–142 | Not the oblique-shock $\theta_{max}$ of W02 |
 | Prandtl–Meyer (PM) expansion fan; lines of the expansion fan | centred expansion fan; Prandtl–Meyer fan; expansion wave; fan rays | L3.3 slide 10 ("PM expansion fan at C"); L3.4 slide 2; L3-3, ll. 160–175, 216, 239 | 0a–0d are *"the last line of the expansion fan"* and the ones before it |
-| expansion corner (point C on slide 10, point 0 in the examples) | sharp corner; throat corner; sharp throat | Coursework brief ("the expansion corner (x=0, y=1)"); L3.3 slides 10–11 | The lecturer describes it as a *"discontinuity of the slope"* |
+| expansion corner (point C on slide 10, point 0 in the examples) | sharp corner; throat corner; sharp throat | Coursework brief ("the expansion corner (x=0, y=1)"); L3.3 slides 10–11 | Also *"discontinuity of the slope"* (L3-3) |
 | Template for MoC Calculation | MoC table; characteristic table; MoC spreadsheet | L3.3 slides 12–14 | Columns Point, $R^+$, $R^-$, $\theta$, $\nu$, $M$, $\mu$, $\theta+\mu$, $\theta-\mu$, $x$, $y$; "N/A" where no line arrives or leaves |
 | Riemann invariants $R^+=\nu-\theta$, $R^-=\nu+\theta$ | $K^+$, $K^-$ (Anderson), with $K^+=-R^+=\theta-\nu$ and $K^-=R^-=\theta+\nu$ | L3.1 slide 12; Supplementary Note p. 5 | Same physics, different sign of $K^+$; do not mix the two in one table |
 | minimum-length nozzle | sharp-corner nozzle; MLN | L3.3 slide 10 | |

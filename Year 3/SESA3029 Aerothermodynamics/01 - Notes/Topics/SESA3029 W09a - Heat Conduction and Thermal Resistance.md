@@ -8,13 +8,13 @@ tags: [sesa3029, heat-transfer, conduction, fourier-law, thermal-resistance, ele
 aliases: ["SESA3029 Lecture 5.1", "SESA3029 Lecture 5.2", "SESA3029 W09a"]
 date: 2026-11-17
 status: written-ahead
-coverage: "Lectures 5.1 (20 slides) and 5.2 (19 slides) written ahead from the slides; no transcript yet, lectures expected from Thu 19 Nov"
+coverage: "Lectures 5.1 (§§1–5) and 5.2 (§§6–11) written ahead from the slides; §§1–5 checked against last year's 5.1 recording (2025–26), which differs from this year's lecture of Thu 19 Nov; this year's recordings awaited"
 parent: ["[[SESA3029 Aerothermodynamics Hub]]"]
 prerequisites: ["[[SESA1016 T2 - Work, Heat and the First Law]]", "[[Heat Equation]]", "[[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]]"]
 next_topics: ["[[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]]"]
 key_concepts: ["[[Modes of Heat Transfer]]", "[[Fourier's Law of Heat Conduction]]", "[[Thermal Conductivity]]", "[[Thermal Resistance]]", "[[Radial Conduction in Cylinders and Spheres]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 3 - Solutions]]"]
-sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture5.2.pdf", "03 - Exams & Past Papers/ExampleSheet3(1).pdf"]
+sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture 5-1 (2025-26 version).txt", "02 - Sources/Lectures/Lecture5.2.pdf", "03 - Exams & Past Papers/ExampleSheet3(1).pdf"]
 ---
 
 # SESA3029 W09a - Heat Conduction and Thermal Resistance
@@ -29,7 +29,7 @@ sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture
 > - **Common mistakes:** using one area for both convection resistances of a tube (the inner surface is $2\pi r_1L$, the outer $2\pi r_3L$); forgetting the factor that turns cm into m in $L/k$, or mixing the per-area resistance $R''=L/k$ (m²K/W) with $R=L/kA$ (K/W).
 > - **Practise:** [[#Worked example - the insulated plane block|the insulated plane block]] · [[SESA3029 Example Sheet 3 - Solutions#Q1. Composite wall pierced by steel bolts|ES3 Q1, the same block pierced by steel bolts]]
 
-Estimating a rate of heat transfer is a practical problem with a wide range of uses: clothing that sets how fast a body rejects heat, pans and ovens, refrigerators that keep their contents cold by rejecting heat, and quantum processors held near absolute zero. The aerospace cases are more severe. A gas-turbine combustor runs at around 1500 °C while its blade alloys melt at around 1250 °C, so the blades survive only because cooling air carries the heat away. A capsule entering the atmosphere at $M\approx20$ has an average surface temperature of about 1600 °C and a peak near 3000 °C, above the melting point of most metals and alloys, so its heat shield has to limit how much of that heat reaches the inside.
+Estimating a rate of heat transfer is a practical problem with a wide range of uses: clothing that sets how fast a body rejects heat, pans and ovens, refrigerators that keep their contents cold by rejecting heat, vehicle brakes that must dissipate friction heat, house radiators acting as heat exchangers, and quantum processors held near absolute zero, where the thermal vibration of atoms and electrons is small enough not to disturb the qubits. The aerospace cases are more severe. A gas-turbine combustor runs at around 1500 °C while its blade alloys melt at around 1250 °C, so the blades survive only because cooling air carries the heat away. A lunar-return capsule entering the atmosphere at $M\approx20$ has an average surface temperature of about 1600 °C and a peak near 3000 °C, above the melting point of most metals and alloys, so its heat shield has to limit how much of that heat reaches the inside.
 
 The same capsule shows all three modes of heat transfer. Heat passes **through** the shield wall by conduction. It reaches the wall **from** the hot shock-layer gas by convection, which is conduction combined with the motion of the fluid in the boundary layer. The hot surface and the glowing gas also exchange energy by radiation, which needs no medium at all. Conduction is treated in full below, with convection entering as a boundary condition on a wall; the convective heat transfer coefficient itself, the Reynolds analogy and radiation are in [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] and [[SESA3029 W09d - Thermal Radiation|W09d]].
 
@@ -37,11 +37,11 @@ Everything here is steady and one-dimensional. Under those two conditions the he
 
 ## 1. Modes of heat transfer
 
-**Conduction** is the transfer of heat from the more energetic particles of a substance to the adjacent, less energetic ones as a result of interactions between the particles. It needs a medium but no motion of the medium: a pan heating on a hot plate, or heat crossing the wall of a capsule from the hot outside to the cooler inside.
+**Conduction** is the transfer of heat from the more energetic particles of a substance to the adjacent, less energetic ones as a result of interactions between the particles: warmer particles vibrate more vigorously and pass energy to their neighbours. It needs a medium but no motion of the medium: a pan heating on a hot plate, or heat crossing the wall of a capsule from the hot outside to the cooler inside.
 
-**Convection** is the mode of energy transfer between a solid surface and an adjacent fluid that is in motion. It is conduction combined with fluid motion: right at the wall the fluid is at rest relative to the surface and heat crosses into it by conduction, and the moving fluid then carries that heat away. A cup of tea cooling down is convection. In the absence of bulk fluid motion the same fluid transfers heat by conduction only (§10).
+**Convection** is the mode of energy transfer between a solid surface and an adjacent fluid that is in motion. It is conduction combined with fluid motion: right at the wall the fluid is at rest relative to the surface and heat crosses into it by conduction, and the moving fluid then carries that heat away. A cup of tea cooling down is convection, whether it is left to stand or put in front of a fan to cool faster. In the absence of bulk fluid motion the same fluid transfers heat by conduction only (§11).
 
-**Radiation** is energy emitted by matter in the form of electromagnetic waves. Unlike conduction and convection, no intervening medium is necessary, which is how the Sun's heat reaches the Earth. Radiation is the subject of [[SESA3029 W09d - Thermal Radiation|W09d]]; the black-body background is in [[Blackbody Radiation]] (SESA2024).
+**Radiation** is energy emitted in the form of electromagnetic waves by any body at a temperature above absolute zero (0 K). Unlike conduction and convection, no intervening medium is necessary, so radiation crosses a vacuum, which is how the Sun's heat reaches the Earth. Radiation is the subject of [[SESA3029 W09d - Thermal Radiation|W09d]]; the black-body background is in [[Blackbody Radiation]] (SESA2024).
 
 ![[at_w09a_modes.png|900]]
 
@@ -113,7 +113,7 @@ $$
 
 Check the units: $\dot Q$ in W, $A$ in m² and $\mathrm dT/\mathrm dx$ in K/m give $k$ in $\text{W}/(\text{m}^2\cdot\text{K/m})=\text{W/(m K)}$. This is the **thermal conductivity**: the rate of heat transfer through a unit thickness of the material, per unit area, per unit temperature difference. It measures a material's ability to conduct heat.
 
-Water has $k=0.607$ W/(m K) and iron $k=80.2$ W/(m K), so iron conducts heat $80.2/0.607=132$ times faster than water. Metals conduct heat well for the same reason they conduct electricity: free electrons carry energy as well as charge. The insulation layers of the next sections have $k\approx0.05$ W/(m K), and still air about $0.026$ W/(m K).
+Water has $k=0.607$ W/(m K) and iron $k=80.2$ W/(m K), so iron conducts heat $80.2/0.607=132$ times faster than water. Denser packing means more frequent particle interactions, which is part of why solids generally conduct better than liquids and liquids better than gases. Most of iron's advantage over water comes from its free electrons, which carry energy as well as charge; that is why good electrical conductors such as copper and iron are also good thermal conductors. The insulation layers of the next sections have $k\approx0.05$ W/(m K), and still air about $0.026$ W/(m K).
 
 ## 4. Conduction through a plane wall
 
@@ -251,7 +251,7 @@ $$
 \dot q=\frac{T_1-T_4}{R_\text{total}A}=\frac{150-10}{1.3949}=100.36\ \text{W/m}^2 .
 $$
 
-The temperature difference is in kelvin, but a difference is the same in K and °C.
+A temperature difference has the same value in K and °C, though not in °F.
 
 Every layer carries the same $\dot q$, so Fourier's law across layer A gives its temperature drop:
 
@@ -627,9 +627,9 @@ Which mode dominates depends on whether the fluid can move. In water boiling in 
 
 ## Sources
 
-- `Lecture5.1.pdf` (L5.1): Aerothermodynamics – heat transfer, Lecture 5.1, 20 slides. Why heat transfer matters (slide 2), modes of heat transfer on a re-entry capsule (3–6), direction of heat transfer (7), heat transfer rate and flux (8), conduction, Fourier's law and thermal conductivity (9–12), the electrical resistance analogy and plane walls in series and parallel (13–14), the insulated plane block example (15–20).
+- `Lecture5.1.pdf` (L5.1, 20 slides) and `Lecture 5-1 (2025-26 version).txt` (L5-1, 470 lines; filed Thu 19 Nov; last year's recording of the same deck, not of this year's lecture, covering all 20 slides; the file starts mid-sentence, so the opening of the recording is missing): why heat transfer matters (slide 2; ll. 9–48), modes of heat transfer on a re-entry capsule (slides 3–6; ll. 49–108), direction of heat transfer and thermal equilibrium (slide 7; ll. 109–134), heat transfer rate and flux (slide 8; ll. 135–148), conduction, Fourier's law and thermal conductivity (slides 9–12; ll. 149–251), the electrical resistance analogy and plane walls in series and parallel (slides 13–14; ll. 252–302), the insulated plane block example (slides 15–20; ll. 303–469).
 - `Lecture5.2.pdf` (L5.2): Lecture 5.2, 19 slides. Recap of 5.1 (slide 1), conduction in cylinders, multiple cylindrical layers and spheres with the solid-rocket and cryogenic-tank examples (3–8), convection heat transfer, Newton's law of cooling and the convection resistance (9–14), the plane wall and composite tube with convection boundaries (15–16), the Nusselt number (17–18) and conduction against convection (19).
-- No lecturer is named on either deck. This note is **written ahead from the slides**: the decks are last year's files re-issued, the lectures are expected from Thu 19 Nov 2026, and no transcript exists yet. It will be reconciled with the transcripts once the lectures have been given, and its scope (both decks in full) narrowed or extended to match.
+- Dr Nader Karimi teaches Section 5 (no lecturer is named on either deck). §§1–5 are checked against `Lecture 5-1 (2025-26 version).txt`, last year's recording; this year's lecture (Thu 19 Nov) differed from it and will be reconciled when its recording is available. §§6–11 remain **written ahead from the slides** (`Lecture5.2.pdf`, no transcript yet). The note stays `written-ahead` until both lectures are reconciled with this year's recordings.
 - Worked examples marked "suggested, not lecturer-set" use numbers chosen here to exercise the slide 5.2 formulas, which carry no numerical example of their own. Every number in the note was checked in Python.
 - `ExampleSheet3(1).pdf`, Q1 (composite wall pierced by steel bolts, answer 127.8 W/m²): the block of L5.1 slide 15 with a parallel path added; the sheet agrees with the slides.
 - Figures: `generate_aerothermo_w09a_figures.py` (`at_w09a_modes.png`, `at_w09a_fourier_sign.png`, `at_w09a_insulated_block.png`, `at_w09a_series_parallel.png`, `at_w09a_radial_setup.png`, `at_w09a_radial_profiles.png`, `at_w09a_convection_wall.png`, `at_w09a_composite_tube.png`). Every number on a figure is computed in the script from the same data as the worked examples.
@@ -637,11 +637,11 @@ Which mode dominates depends on whether the fluid can move. In water boiling in 
 
 ## Self-study tasks
 
-No homework is set on these decks; the tasks below cite the slide where each question or example appears. Tasks marked so are suggested, not lecturer-set.
+Tasks citing L5-1 come from `Lecture 5-1 (2025-26 version).txt` (last year's recording of the same deck); the verification check on $T_4$ is set in that recording (L5-1, ll. 434–443). The L5.2 tasks are taken from its slides until it is lectured. Tasks marked so are suggested, not lecturer-set.
 
 ### Core
 
-- [ ] **(L5.1 slides 15–20)** Insulated plane block: find $\dot q$, $T_2$ and $T_3$, and compare with block B alone. Answers 100.36 W/m², 87.27 °C, 72.73 °C; 966 W/m² without insulation. → [[#Worked example - the insulated plane block]]
+- [ ] **(L5.1 slides 15–20; L5-1, ll. 303–465; $T_4$ check set at ll. 434–443)** Insulated plane block: find $\dot q$, $T_2$ and $T_3$, check $T_4$ from $T_3$ and $\Delta T_C=\Delta T_A$, and compare with block B alone. Answers 100.36 W/m², 87.27 °C, 72.73 °C, $T_4=10.00$ °C; 966 W/m² without insulation. → [[#Worked example - the insulated plane block]]
 - [ ] **(ES3 Q1)** The same block pierced by steel bolts, 10 per m². Answer 127.8 W/m². → [[SESA3029 Example Sheet 3 - Solutions#Q1. Composite wall pierced by steel bolts|ES3 Q1]]
 - [ ] **(L5.2 slide 4)** Integrate Fourier's law for a long hollow cylinder and derive $\dot Q_r$ and $R_\text{th}=\ln(r_o/r_i)/2\pi kL$, then the temperature profile. → [[#6. Radial conduction in a long hollow cylinder]]
 - [ ] **(L5.2 slide 7)** The same for a spherical shell: $\dot Q_r=4\pi k(T_i-T_o)/(1/r_i-1/r_o)$. → [[#8. Conduction in a spherical shell]]
@@ -649,10 +649,10 @@ No homework is set on these decks; the tasks below cite the slide where each que
 
 ### Further practice
 
-- [ ] **(L5.1 slides 10–11)** Derive Fourier's law from $\dot Q\propto A(T_1-T_2)/L$ and explain the minus sign. → [[#2. Fourier's law of heat conduction]]
-- [ ] **(L5.1 slide 7)** Two blocks at 70 °C joined by a rod: what happens? Answer: no heat flows; they are in thermal equilibrium. → [[#Direction and rate]]
-- [ ] **(L5.1 slide 12)** Water or iron, which has the higher $k$, and by how much? Answer: iron, 132 times. → [[#3. Thermal conductivity]]
-- [ ] **(L5.1 slide 14)** Derive the series and parallel rules for thermal resistances. → [[#5. The electrical analogy and thermal resistance]]
+- [ ] **(L5.1 slides 10–11; L5-1, ll. 150–187)** Derive Fourier's law from $\dot Q\propto A(T_1-T_2)/L$ and explain the minus sign. → [[#2. Fourier's law of heat conduction]]
+- [ ] **(L5.1 slide 7; L5-1, ll. 125–134)** Two blocks at 70 °C joined by a rod: what happens? Answer: no heat flows; they are in thermal equilibrium. → [[#Direction and rate]]
+- [ ] **(L5.1 slide 12; L5-1, ll. 223–244)** Water or iron, which has the higher $k$, and by how much? Answer: iron, 132 times. → [[#3. Thermal conductivity]]
+- [ ] **(L5.1 slide 14; L5-1, ll. 276–302)** Derive the series and parallel rules for thermal resistances. → [[#5. The electrical analogy and thermal resistance]]
 - [ ] **(L5.2 slides 12–13)** Which cools a coffee cup faster, forced or free convection, and why is the area in Newton's law a surface area? → [[#9. Convection heat transfer]]
 - [ ] **(L5.2 slides 17–18)** Show that $\text{Nu}=\dot Q_\text{conv}/\dot Q_\text{cond}$ for a fluid layer, and say why the fluid's $k$ appears. → [[#11. The Nusselt number]]
 - [ ] **(L5.2 slide 19)** For a boiling pot, a radiator, a fan-cooled processor and double glazing, say whether conduction or convection dominates. → [[#11. The Nusselt number]]
@@ -664,7 +664,7 @@ No homework is set on these decks; the tasks below cite the slide where each que
 > [!warning] L5.1 slides 17–20: two values of the heat flux, and a wrong $T_2$
 > Where: [[#Worked example - the insulated plane block]].
 >
-> Slide 17 gives $\dot q=140/1.3949=100.39$ W/m², and slide 20 repeats 100.39; the quotient is 100.36 W/m², the value slides 18–19 use. Slide 18 then writes $T_2=150-62.73=82.27$ °C; the subtraction gives 87.27 °C, which is the value slide 19 uses to get $T_3=72.73$ °C. On slide 20, $k_B$ is printed as "0.69 W m⁻¹ K" in the block-alone line; it is W m⁻¹ K⁻¹.
+> Slide 17 gives $\dot q=140/1.3949=100.39$ W/m², and slide 20 repeats 100.39; the quotient is 100.36 W/m², the value slides 18–19 use. Slide 18 then writes $T_2=150-62.73=82.27$ °C; the subtraction gives 87.27 °C, which is the value slide 19 uses to get $T_3=72.73$ °C. Both slips are read aloud in `Lecture 5-1 (2025-26 version).txt` (see table below). On slide 20, $k_B$ is printed as "0.69 W m⁻¹ K" in the block-alone line; it is W m⁻¹ K⁻¹.
 
 > [!warning] L5.2 slide 3: "thin cylinder"
 > Where: [[#6. Radial conduction in a long hollow cylinder]].
@@ -675,3 +675,18 @@ No homework is set on these decks; the tasks below cite the slide where each que
 > Where: [[#Composite tubes]].
 >
 > The slide writes the convection resistances as $1/h_1A$ and $1/h_2A$ and the conduction terms as $\ln(r_2/r_1)/2\pi k_AL_A$ and $\ln(r_3/r_2)/2\pi k_BL_B$. The two convection areas differ: $2\pi r_1L$ inside and $2\pi r_3L$ outside (using one area for both gives 11.4 instead of 14.3 W/m in the pipe example). Both conduction terms use the same tube length $L$; $L_A$ and $L_B$ in the plane-wall slide before it are layer thicknesses, which have no place in the cylindrical formula.
+
+### Transcript slips (L5-1, 2025–26 recording)
+
+These slips are from last year's recording, not this year's lecture, and will be replaced by the slips of this year's recording when it is available. Whisper writes *"15 degrees Celsius"* for 1500 °C (ll. 27–28), *"12-50 degrees Celsius"* for 1250 °C (l. 29), *"16 degrees Celsius"* for 1600 °C (ll. 32, 59), *"processes"* for processors (ll. 35, 38), *"pan"* for fan (l. 91), *"dou T by dou xi"* for $\partial T/\partial x_i$ (l. 199), *"playing balls"* for plane walls (l. 276), *"panel case"* for parallel case (l. 292) and *"SA unit"* for SI units (l. 366). These are not listed below.
+
+> [!warning] Slips in `Lecture 5-1 (2025-26 version).txt` (L5-1, 2025–26 recording)
+> | Where | Said | Correct |
+> |---|---|---|
+> | ll. 296–297 | *"the total resistance is 1 by R1 plus 1 by R2"* | $1/R_\text{total}=1/R_1+1/R_2$: the reciprocal of the total resistance, not $R_\text{total}$ itself (§5) |
+> | l. 326 | *"temperature difference T3"* | interface temperature $T_3$ between block B and insulation layer C (§5) |
+> | l. 352 | *"Lb by Kb into B"* | $L_B/(k_B A)$: cross-sectional area $A$, not $B$ (the following term $k_C A$ is self-corrected on the same line) |
+> | ll. 357–359 | *"R total by R"* | $R_\text{total}A$, multiplying $R_\text{total}$ by $A$ to form the area-specific resistance $R''=1.3949$ m² K/W (§5) |
+> | ll. 381, 405 | *"100.39"* W/m² | $140/1.3949=100.36$ W/m² (repeats the slide 17 slip above) |
+> | ll. 425–426 | *"150 minus 62.73 and that gives us around 82 degrees Celsius"* | $T_2=150-62.73=87.27$ °C (repeats the slide 18 slip, 82.27 °C; the next step $T_3=72.73$ °C uses 87.27 °C) |
+> | l. 452 | *"966 watt per meter"* | $966$ W/m² (heat flux, per square metre) |

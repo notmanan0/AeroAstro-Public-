@@ -8,7 +8,7 @@ tags: [sesa3029, concept, heat-transfer, conduction, material-property]
 status: complete
 parent_lectures: ["[[SESA3029 W09a - Heat Conduction and Thermal Resistance]]"]
 related_concepts: ["[[Fourier's Law of Heat Conduction]]", "[[Thermal Resistance]]"]
-sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture5.2.pdf"]
+sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture 5-1 (2025-26 version).txt", "02 - Sources/Lectures/Lecture5.2.pdf"]
 ---
 
 # Thermal Conductivity
@@ -26,5 +26,4 @@ $k$ is a property of the material, and in general it varies with temperature; th
 
 ## Sources
 
-- Sources: L5.1 slides 11–12; L5.2 slides 1, 17.
-- Notes: written ahead from the slides, before the lecture.
+- Sources: L5.1 slides 11–12 and L5-1 (2025–26 recording), ll. 203–251; L5.2 slides 1, 17 (written ahead).

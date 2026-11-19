@@ -115,12 +115,12 @@ $$
 |---|---|---|
 | Roots | $-0.5\pm1.32i$ | $-0.00125\pm0.0707i$ |
 | Half-life $t_{1/2}=\ln2/\vert\sigma\vert$ | 1.39 s | 554 s |
-| Period $T = 2\pi/\omega$ | 4.76 s | 88.9 s |
+| Period $T = 2\pi/\omega$ | 4.75 s | 88.9 s |
 | $\omega_n = \sqrt{\sigma^2+\omega^2}$ | 1.41 rad/s | 0.0707 rad/s |
 | $\zeta = -\sigma/\omega_n$ | 0.35 | 0.018 |
 | Identity | SPO (strongly damped) | Phugoid (very lightly damped) |
 
-Mode 1's period is longer than its half-life (4.76 s against 1.39 s), so the oscillation has mostly died away before one cycle is complete: it is well damped. Mode 2 is closer to instability, because its roots sit almost on the imaginary axis. And the modes can be identified from the eigenvalues alone: the pair with the larger magnitude is the SPO and the smaller one is the phugoid.
+Mode 1's period is longer than its half-life (4.75 s against 1.39 s), so the oscillation has mostly died away before one cycle is complete: it is well damped. Mode 2 is closer to instability, because its roots sit almost on the imaginary axis. And the modes can be identified from the eigenvalues alone: the pair with the larger magnitude is the SPO and the smaller one is the phugoid.
 
 Python cross-check: `np.linalg.eig(A)` gives $-0.4988\pm1.3237i$ (SPO) and $-0.0012\pm0.0709i$ (phugoid).
 

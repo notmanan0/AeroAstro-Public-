@@ -11,7 +11,7 @@ status: complete
 > [!abstract] Module at a glance
 > Viscous flow (boundary layers) → inviscid flow (potential flow) → aerofoils (thin aerofoil theory) → wings (lifting line) → aircraft (trim and static stability).
 >
-> Semester 1, 2025-26. Topics 2–3 taught by the module lead; Topics 4–6 by Prof. Neil Sandham (L16, ll. 654–657). Topic 1 (Lecture 2: non-dimensionalisation, Taylor series) is background and not examined (L1, l. 376).
+> Semester 1, 2025-26. Topics 2–3 taught by the module lead; Topics 4–6 by Prof. Neil Sandham. Topic 1 (Lecture 2: non-dimensionalisation, Taylor series) is background and not examined.
 >
 > Quick reference: [[SESA2022 Formula Sheet]] · exam strategy: [[SESA2022 Past Paper Map]] · recordings: [[SESA2022 Transcript Index]]
 
@@ -58,19 +58,19 @@ Legacy compressible-flow content (examined up to 2019-20, now [[SESA2023 Propuls
 
 ## Assessment
 
-In-person exam 60%, Blackboard quizzes 20% (one each for Topic 2, Topic 3 and Topics 4–6, two attempts each), wind-tunnel lab report 15%, potential-flow computing lab 5% (L1, ll. 423–437). There are no tutorial sessions: the tutorial and examples sheets, with written solutions, are for independent work (L1, ll. 441–452). The exam's formula pages cover all topics, including static stability (21 Nov, ll. 12–37).
+In-person exam 60%, Blackboard quizzes 20% (one each for Topic 2, Topic 3 and Topics 4–6, two attempts each), wind-tunnel lab report 15%, potential-flow computing lab 5%. There are no tutorial sessions: the tutorial and examples sheets, with written solutions, are for independent work. The exam's formula pages cover all topics, including static stability.
 
-2025-26 exam format (Revision 1, ll. 25–52; 7 Jan revision, ll. 15–45): two hours, in person, five questions. Part A (50): Q1 boundary layers and Q2 potential flow, 25 marks each with 4–5 parts. Part B (50): Q3 thin aerofoils, Q4 finite wings, Q5 static stability, about 17/16/17 marks with three parts each, so about two-thirds the length of older Part B questions. Full working is required; all numerical answers to 4 decimal places; approved calculators only; no scrap paper; pen, not pencil, and not red or green ink (examiners' colours). The examples sheets are mostly past exam questions; for Q5, use Examples Sheet 6 and Q2 of past SESA2025 papers, ignoring trim drag.
+2025-26 exam format: two hours, in person, five questions. Part A (50): Q1 boundary layers and Q2 potential flow, 25 marks each with 4–5 parts. Part B (50): Q3 thin aerofoils, Q4 finite wings, Q5 static stability, about 17/16/17 marks with three parts each, so about two-thirds the length of older Part B questions. Full working is required; all numerical answers to 4 decimal places; approved calculators only; no scrap paper; pen, not pencil, and not red or green ink (examiners' colours). The examples sheets are mostly past exam questions; for Q5, use Examples Sheet 6 and Q2 of past SESA2025 papers, ignoring trim drag.
 
 ## Exam skills
 
-Exam technique (both revision lectures):
-- Know the formula sheet before the exam; read the question fully and list what is given and what is asked; reading the question properly is half the battle (Revision 1, ll. 53–78).
-- Give units (a 98/100 script lost a mark for them), sanity-check magnitudes, and show each substitution: for a "show that", the final line alone earns nothing (Revision 1, ll. 81–113, 288–299).
-- At least one question will ask for a sketch: label the axes and add legends (Revision 1, ll. 126–142).
-- Substitute every value given; do not assume quantities; if an earlier part failed, carry its result as a variable (Revision 1, ll. 143–174, 398–402).
-- Marks come for correct equations even if unsolved. A single arithmetic slip costs little; an answer that is wrong only in the 4th decimal place gets full credit (Revision 1, ll. 186–193, 252–255; 7 Jan revision, ll. 251–264).
-- Degrees to radians is the commonest error (7 Jan revision, l. 175).
+Exam technique:
+- Know the formula sheet before the exam; read the question fully and list what is given and what is asked; reading the question properly is half the battle.
+- Give units (a 98/100 script lost a mark for them), sanity-check magnitudes, and show each substitution: for a "show that", the final line alone earns nothing.
+- At least one question will ask for a sketch: label the axes and add legends.
+- Substitute every value given; do not assume quantities; if an earlier part failed, carry its result as a variable.
+- Marks come for correct equations even if unsolved. A single arithmetic slip costs little; an answer that is wrong only in the 4th decimal place gets full credit.
+- Degrees to radians is the commonest error.
 
 T2 Boundary layers
 - compute $\delta_{99}$ (interpolate), $\delta^*$, $\theta$, $H$ from a profile or data, and classify laminar ($H>2$) or turbulent ($H<2$);
@@ -85,7 +85,7 @@ T3 Potential flow
 - integrate $C_p$ for lift and drag; state D'Alembert and Kutta–Joukowski;
 - enforce a wall with images (source same sign, vortex opposite sign).
 
-T4 Thin aerofoil theory (two question types, 31 Oct, ll. 1–2, 405–412)
+T4 Thin aerofoil theory (two question types)
 - given a camber line: $A_n$, $c_l$, $\alpha_{L=0}$, $\alpha_{ideal}$, $c_{m,c/4}$, $c_{m,le}$, $x_{cp}$, loading;
 - given a flap: $\theta_h$, $A_n$, $\partial c_l/\partial\eta$, $\partial c_{m,c/4}/\partial\eta$;
 - explain the Kutta condition, Kelvin's theorem and the starting vortex, stall types, slats versus flaps.
@@ -111,7 +111,7 @@ T6 Static stability
 - [[SESA2022 Examples Sheet 6 - Static Stability Solutions]]
 - [[SESA2022 Static Stability Past Paper Questions Solutions]]
 
-The example sheets for sections 3, 4 and 5 are close to what the exam asks, except the NACA 2412 thin-aerofoil question, which is longer than an exam question (25 Nov, ll. 407–414). Static stability was part A of the former flight-mechanics module SESA2025; its past papers are relevant (25 Nov, ll. 415–419).
+The example sheets for sections 3, 4 and 5 are close to what the exam asks, except the NACA 2412 thin-aerofoil question, which is longer than an exam question. Static stability was part A of the former flight-mechanics module SESA2025; its past papers are relevant.
 
 ## Past papers (all 12 solved)
 

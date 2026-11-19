@@ -14,7 +14,7 @@ prerequisites: ["[[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoi
 next_topics: []
 key_concepts: ["[[Ackeret Theory]]", "[[Entropy Change Across a Shock]]", "[[Aerodynamic Centre and Centre of Pressure]]", "[[Supersonic Wave Drag]]"]
 tutorial_sheets: ["[[SESA3029 Example Sheet 2 - Solutions]]", "[[SESA3029 Example Sheet 1 - Solutions]]"]
-sources: ["02 - Sources/Lectures/Tutorial Lecture #2.txt", "03 - Exams & Past Papers/ExamplesSheet2.pdf", "03 - Exams & Past Papers/ExamplesSheet1.pdf"]
+sources: ["02 - Sources/Lectures/Tutorial Lecture #2.txt", "02 - Sources/Lectures/Class Tutorial #2.txt", "03 - Exams & Past Papers/ExamplesSheet2.pdf", "03 - Exams & Past Papers/ExamplesSheet1.pdf"]
 ---
 
 # SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory
@@ -33,7 +33,7 @@ A diamond aerofoil is four flat faces, so in Ackeret theory each face carries a 
 
 The calculation runs from angles to pressure coefficients, then to pressures, to forces normal and parallel to the chord, and finally to lift, drag and moment. The same four faces solved exactly, with an oblique shock or a Prandtl–Meyer fan at each corner, are [[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|Example Sheet 1 Q6]]. Comparing the two answers is the most common compressible-flow exam question ([[SESA3029 Past Papers - Question Map#R2. Shock-expansion against Ackeret theory on supersonic aerofoils|question map, R2]]).
 
-Example Sheet 2 Q3 is a method-of-characteristics question in mock-exam form. It differs from the MoC coursework only in that the wall shape, $y=1+0.1x+0.5x^2$, is given; it asks for the flow at points A, B, C, D and F and is left as your own work (T2, ll. 3–12). It is solved in [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]].
+Example Sheet 2 Q3 is a method-of-characteristics question in mock-exam form. It differs from the MoC coursework only in that the wall shape, $y=1+0.1x+0.5x^2$, is given; it asks for the flow at points A, B, C, D and F and is left as your own work. It is solved in [[SESA3029 Example Sheet 2 - Solutions#Q3. Flow in a symmetric 2D duct|ES2 Q3]].
 
 ## 1. The four face angles
 
@@ -61,7 +61,7 @@ In radians, $\phi-\alpha=0.01505$ and $\phi+\alpha=0.08486$.
 ![[at_tut2_diamond_faces.png|900]]
 
 > [!warning] The angles carry the rest of the question
-> About half of last year's candidates got at least one of the four angles wrong (T2, ll. 115–117), and an angle error at the start costs most of the marks that follow (ll. 124–125). Incidence adds to one face's angle and subtracts from the other's, so neither front face has angle $\phi$. Once $\alpha>\phi$ the upper front face turns away from the flow and becomes an expansion, and the lower rear face becomes a compression: at $\alpha=3^\circ$, $\theta_{1u}=-0.138^\circ$ and $\theta_{2l}=+0.138^\circ$.
+> About half of last year's candidates got at least one of the four angles wrong, and an angle error at the start costs most of the marks that follow. Incidence adds to one face's angle and subtracts from the other's, so neither front face has angle $\phi$. Once $\alpha>\phi$ the upper front face turns away from the flow and becomes an expansion, and the lower rear face becomes a compression: at $\alpha=3^\circ$, $\theta_{1u}=-0.138^\circ$ and $\theta_{2l}=+0.138^\circ$.
 
 ## 2. Pressure on each face
 
@@ -304,7 +304,7 @@ The exact theory moves the point forward slightly. Shock-expansion theory at $\a
 
 Ackeret theory comes from the linearised potential equation, which assumes isentropic, irrotational flow everywhere ([[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]]). The diamond's front faces carry oblique shocks, across which the entropy rises and the isentropic relations no longer hold, and a shock is a jump rather than a small perturbation. Strictly the theory is wrong for this flow, and the shock-expansion method is the valid one. Yet the two answers for ES1 Q6 and ES2 Q5 differ by under 1 % in lift and drag.
 
-The explanation is the size of the stagnation-pressure loss across these shocks, read from the normal-shock table (T2, ll. 252–293). Take the stronger shock, on the lower front face, which turns the flow by $\phi+\alpha=4.862^\circ$ at $M_\infty=1.8$; the upper front face turns it by only $0.862^\circ$. The oblique-shock chart gives $\beta\approx38^\circ$ ($38.30^\circ$ exactly), so
+The explanation is the size of the stagnation-pressure loss across these shocks, read from the normal-shock table. Take the stronger shock, on the lower front face, which turns the flow by $\phi+\alpha=4.862^\circ$ at $M_\infty=1.8$; the upper front face turns it by only $0.862^\circ$. The oblique-shock chart gives $\beta\approx38^\circ$ ($38.30^\circ$ exactly), so
 
 $$
 M_{n1}=M_\infty\sin\beta=1.8\sin38.30^\circ=1.116 .
@@ -385,6 +385,7 @@ Ackeret theory itself is only first order: the terms it drops are of order $\the
 ## Sources
 
 - `02 - Sources/Lectures/Tutorial Lecture #2.txt` (T2): Mon 16 Nov, 298 lines copied from the Panopto captions, each line prefixed with its timestamp; Prof. Jae-Wook Kim. Ll. 1–25: ES2 Q3 as own work and the Blackboard resources; ll. 29–113: ES2 Q5 angles, $C_p$, pressures and forces; ll. 114–125: the exam warning on the angles; ll. 126–136: moment and centre of pressure; ll. 137–219: the proof that $x_{AC}=c/2$; ll. 220–297: why Ackeret theory survives the shocks. This was Prof. Kim's last lecture of the module; heat transfer starts on Thu 19 Nov (ll. 220–223).
+- `02 - Sources/Lectures/Class Tutorial #2.txt`: 363-line un-timestamped Whisper transcript of the same Mon 16 Nov recording (filed 19 Nov). It cleans up several Panopto caption mis-transcriptions (`example sheet`, $\phi$, $C_p$, $\cos\alpha$, $c^2$, $38^\circ$) and adds no new content, while omitting the spoken *"0.998"* at T2 l. 279, so `Tutorial Lecture #2.txt` remains the primary line-referenced source.
 - The tutorial slides are on Blackboard (Lecture slides → Tutorial lectures) and are not filed; the working here follows the transcript and the example sheets.
 - `03 - Exams & Past Papers/ExamplesSheet2.pdf`, Q3 and Q5; `ExamplesSheet1.pdf`, Q6.
 - Figures: `01 - Notes/Figures/generate_aerothermo_tutorial_figures.py` (`tut2_diamond_faces`, `tut2_weak_shock_loss`).
@@ -413,7 +414,7 @@ Blackboard's *Example questions and solutions* folder also holds the three examp
 
 ### Transcript slips (Tutorial 2)
 
-Whisper writes Ackeret as *"accurate"*/*"occurs"*, aerofoil as *"air force"*/*"L4"*/*"office"*/*"airflow"*, chord as *"code"*/*"court"*, shock as *"shop"*/*"show"*/*"choke"*, expansion fan as *"extension fan"*, stagnation as *"Spanish"*/*"station"*/*"tension"*, free stream as *"friction"* (l. 81), lift and drag as *"left hand drag"* (l. 111), and moment arm as *"momentum"*; these are not listed below.
+The Panopto captions (T2) write Ackeret as *"accurate"*/*"occurs"*, aerofoil as *"air force"*/*"L4"*/*"office"*/*"airflow"*, chord as *"code"*/*"court"*, shock as *"shop"*/*"show"*/*"choke"*, expansion fan as *"extension fan"*, stagnation as *"Spanish"*/*"station"*/*"tension"*, free stream as *"friction"* (l. 81), lift and drag as *"left hand drag"* (l. 111), and moment arm as *"momentum"*; these are not listed below. Cross-checking against the Whisper transcript (`Class Tutorial #2.txt`) resolves the caption-only mis-transcriptions at ll. 3, 37/63–64/77/163/167, 57, 98, 112–113, 182, 201–204 and 266–268, and confirms the spoken slips at ll. 58, 134, 154, 253, 270 and 286–288.
 
 | Line | Said | Correct | Where |
 |---|---|---|---|

@@ -536,7 +536,7 @@ $$
 
 ### Mine car hoisted by its own motor
 
-A 100 kg mine car C on an incline is hoisted by a motor M mounted on the car itself, which pulls in the cable with a relative acceleration $a_{P/C}=1.2$ m/s², where P is the point of the cable entering the motor. Find the car's acceleration (DAMS2-3; Tutorial 2 Q9).
+A 100 kg mine car C on an incline is hoisted by a motor M mounted on the car itself, which pulls in the cable with a relative acceleration $a_{P/C}=1.2$ m/s², where P is the point of the cable entering the motor. Find the car's acceleration (Tutorial 2 Q9).
 
 Measure positions down the incline from the fixed point at the top. In the arrangement of the sheet the car hangs on two strands of the cable and the third length runs to P, so the constant cable length gives $s_P+2s_C=\text{const}$ and
 

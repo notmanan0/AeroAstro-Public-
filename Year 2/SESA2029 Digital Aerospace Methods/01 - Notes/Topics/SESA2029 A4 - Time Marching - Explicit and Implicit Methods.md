@@ -202,7 +202,7 @@ For real $f_0$ the real part is $f_0e^{\sigma t}\cos\omega t$. So $\sigma$ is a 
 
 ### One explicit and one implicit step by hand
 
-*(Flagged for the exam, 2025-10-16, l. 269.)* For $\alpha=0.1$, $h=0.125$ and $\Delta t=0.06$,
+*(Flagged for the exam.)* For $\alpha=0.1$, $h=0.125$ and $\Delta t=0.06$,
 
 $$
 F=\frac{0.1\times0.06}{0.125^2}=\frac{0.006}{0.015625}=0.384.

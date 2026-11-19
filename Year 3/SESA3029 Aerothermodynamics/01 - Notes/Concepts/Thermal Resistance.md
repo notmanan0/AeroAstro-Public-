@@ -8,7 +8,7 @@ tags: [sesa3029, concept, heat-transfer, conduction, convection, electrical-anal
 status: complete
 parent_lectures: ["[[SESA3029 W09a - Heat Conduction and Thermal Resistance]]"]
 related_concepts: ["[[Fourier's Law of Heat Conduction]]", "[[Thermal Conductivity]]", "[[Radial Conduction in Cylinders and Spheres]]"]
-sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture5.2.pdf"]
+sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture 5-1 (2025-26 version).txt", "02 - Sources/Lectures/Lecture5.2.pdf"]
 ---
 
 # Thermal Resistance
@@ -40,5 +40,4 @@ For plane layers of a common area it is convenient to use the area-specific resi
 
 ## Sources
 
-- Sources: L5.1 slides 13–17; L5.2 slides 4–7 and 14–16.
-- Notes: written ahead from the slides, before the lecture.
+- Sources: L5.1 slides 13–17 and L5-1 (2025–26 recording), ll. 252–465; L5.2 slides 4–7 and 14–16 (written ahead).

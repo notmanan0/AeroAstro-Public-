@@ -222,7 +222,7 @@ Every numerical answer was reproduced in Python: matrix solves for the mesh prob
 
 ## Figures
 
-77 figures live in `01 - Notes/Figures`. Every plotted number is computed in the generator scripts, which share one style module (`feeg1004_style.py`: schematic primitives, logic gates, CVD-checked colours):
+77 figures live in `01 - Notes/Figures`. Every plotted number is computed in the generator scripts, which share one module (`feeg1004_style.py`: schematic primitives and logic gates, built on the vault-wide `vault_style.py` for colours and plot defaults):
 
 - `generate_fundamentals_figures.py` (Part A, Tutorials 1–2);
 - `generate_electronics_figures.py` (Part B, Tutorials 3–4);

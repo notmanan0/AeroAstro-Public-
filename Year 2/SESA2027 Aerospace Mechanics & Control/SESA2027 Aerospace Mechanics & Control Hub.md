@@ -18,7 +18,7 @@ coverage: "All 28 lectures (L1.01–L1.11, L2.01–L2.09, L3.01–L3.08) in twel
 
 ## Current coverage
 
-All twelve topic notes are at status `lectured`. The module was delivered in 2025/26 and every lecture took place; where a recording survives, its transcript sets the scope and supplies the line references, and where it does not, the note follows the slides. Line references cite the recording file (for example L2.05, l. 412). Promote a note to `revised` or `exam-ready` yourself once it has been worked through.
+All twelve topic notes are at status `lectured`. The module was delivered in 2025/26 and every lecture took place; where a recording survives, its transcript sets the scope, and where it does not, the note follows the slides. Self-study tasks and slips cite the recording file (for example L2.05) and the transcript line. Promote a note to `revised` or `exam-ready` yourself once it has been worked through.
 
 | Topic | Status | Recordings used | From the slides only |
 |---|---|---|---|
@@ -157,8 +157,8 @@ No SESA2027 papers are filed. The worked lecture examples that carry the most ex
 - **Lab 1**: compare your SPO approximation with the full model and experimental data; report $t_r$, $OS$ (%) and $t_s$ (1 %); compare with CS-25/FAR-25 and MIL-F-8785C. Parameter sets (JetStar, Boeing 747, F-4C) are interpolated from historical data over Mach and altitude.
 - **Lab 2 (control)**: closed-loop SPO transfer functions; negative $K_p$ is fine; robustness to about ±5 % parameter changes and a gust; cite MIL-F-9490D for margins and Cook Ch. 10 for handling qualities.
 - **Lab 3**: measurement-noise simulation; the Part C lab uses the sensor dynamics from C2.
-- **Part C lab report**: six pages with guiding questions; a summary and critical assessment of the Jupyter notebooks and what you observed (L3.02–3.03, ll. 607–619).
-- **Self-study notebooks**: a Python Jupyter notebook for the A3 eigenvalue calculations (L1.05, l. 442) and Python scripts for the C2 time-domain metrics (L3.05, ll. 605–606).
+- **Part C lab report**: six pages with guiding questions; a summary and critical assessment of the Jupyter notebooks and what you observed.
+- **Self-study notebooks**: a Python Jupyter notebook for the A3 eigenvalue calculations and Python scripts for the C2 time-domain metrics.
 - **CubeSat/gimbal projects**: rise time and tracking objectives; P alone cannot stabilise a double integrator; sample at about 10× the signal frequency when logging data.
 - **Summer**: the Cranfield flight lab demonstrates the SPO and phugoid.
 
@@ -168,7 +168,7 @@ No SESA2027 papers are filed. The worked lecture examples that carry the most ex
 - Transcripts (speech-to-text, 2025/26 delivery), same folder: `Lecture 1.01 recording.txt`–`Lecture 1.11 recording.txt`, `Lecture 2.01 recording.txt`–`Lecture 2.09 recording.txt`, `Lecture 3.02-3.03 recording.txt`, `Lecture 3.04 recording.txt`, `Lecture 3.05-3.06 recording.txt`. There is no recording of L3.01, L3.07 or L3.08, and the `3.05-3.06` recording stops at the break, so it covers L3.05 only.
 - Problem sheets, `02 - Sources/Problem Sheets/`: `SESA2027 practice problems 1.pdf`, `SESA2027 practice problems 2.pdf`, `Problem Sheet-Part C Questions.pdf`.
 - Past papers: Cambridge 2P1 and 2P6 only (see [[#Past papers]]).
-- Figures: one generator script per topic note in `01 - Notes/Figures/` (`generate_amc_a1_figures.py` … `generate_amc_c3_figures.py`, plus `generate_amc_extra_figures.py`), using the shared style `Year 3/_shared/year3_style.py`. The older `amc_ps*`, `amc_psc_*` and Part A–C overview PNGs predate these scripts.
+- Figures: one generator script per topic note in `01 - Notes/Figures/` (`generate_amc_a1_figures.py` … `generate_amc_c3_figures.py`, plus `generate_amc_extra_figures.py`), using the shared style `vault_style.py` at the vault root. The older `amc_ps*`, `amc_psc_*` and Part A–C overview PNGs predate these scripts.
 
 ## Transcript and slide slips
 

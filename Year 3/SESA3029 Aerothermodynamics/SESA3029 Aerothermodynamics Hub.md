@@ -5,29 +5,29 @@ type: hub
 aliases: ["SESA3029 Aerothermodynamics"]
 tags: [sesa3029, hub, moc]
 status: in-progress
-coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6 lectured with transcripts (Chapter 4 complete, Fri 13 Nov); Tutorial Lectures 1–2 (Tutorial 2, Mon 16 Nov, ends Sections 1–4); Example Sheets 1–3; Tests 1–2; Lectures 5.1–5.10 (heat transfer) written ahead from the slides as W09a–W09f on 17 Nov, awaiting lectures from Thu 19 Nov"
+coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6 lectured with transcripts (Chapter 4 complete, Fri 13 Nov); Tutorial Lectures 1–2 (Tutorial 2, Mon 16 Nov, ends Sections 1–4); Example Sheets 1–3; Tests 1–2; Lectures 5.1–5.10 (heat transfer, started Thu 19 Nov) written ahead from the slides as W09a–W09f; W09a §§1–5 checked against last year's 5.1 recording, which differs from this year's lecture; this year's recordings awaited"
 ---
 
 # SESA3029 Aerothermodynamics Hub
 
 > [!abstract] Module at a glance
-> Compressible-flow toolkit → oblique shocks and expansions → supersonic nozzles and the method of characteristics → high-speed aerodynamics → heat transfer. Module lead: Prof. Jae-Wook Kim (Sections 1–4).
+> Compressible-flow toolkit → oblique shocks and expansions → supersonic nozzles and the method of characteristics → high-speed aerodynamics → heat transfer. Module lead: Prof. Jae-Wook Kim (Sections 1–4). Dr Nader Karimi teaches Section 5, heat transfer.
 >
-> Everything lectured so far is written up: Week 1, Lectures 2.1–2.7 and 3.1–3.4 (the whole MoC block), Tutorial Lecture 1, Lecture 4.1 (Euler equations, Mon 2 Nov), Lecture 4.2 (effect of Mach number on aerofoil flow, Thu 5 Nov), Lecture 4.3 (compressible potential flow equations, Fri 6 Nov) Lecture 4.4 (Prandtl–Glauert transformation and critical Mach number, Mon 9 Nov) Lecture 4.5 (Ackeret theory, Thu 12 Nov) and Lecture 4.6 (optimum supersonic aerofoils, Fri 13 Nov), all from their transcripts (the 2.5 recording on Blackboard is last year's; the 4.2 recording was repaired and stops at slide 17). That completes Chapter 4. [[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory|Tutorial Lecture 2]] (Mon 16 Nov) works ES2 Q5, the diamond aerofoil by Ackeret theory, face by face, proves that $x_{AC}=c/2$ for any thin section, and shows why Ackeret theory still works across weak shocks ($p_{02}/p_{01}=0.998$). It was Prof. Kim's last lecture of the module; heat transfer starts Thu 19 Nov (Tutorial 2, ll. 220–223). The whole heat-transfer block, Lectures 5.1–5.10, is written ahead from the slides (decks filed 17 Nov) in [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]] (conduction and thermal resistance), [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] (convection), [[SESA3029 W09c - Critical Thickness of Insulation and Fins|W09c]] (insulation and fins), [[SESA3029 W09d - Thermal Radiation|W09d]] (radiation), [[SESA3029 W09e - Numerical Methods in Conduction|W09e]] (numerical conduction) and [[SESA3029 W09f - Heat Exchangers|W09f]] (heat exchangers). None of it has been lectured yet; each note is `written-ahead` and will be reconciled with its transcript. The Riemann-invariant derivation is written out in full, step by step, in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]]. There are worked solutions to Example Sheets 1–3 and Blackboard Tests 1–2. Quick reference: [[SESA3029 Formula Sheet]].
+> Everything lectured so far is written up: Week 1, Lectures 2.1–2.7 and 3.1–3.4 (the whole MoC block), Tutorial Lecture 1, Lecture 4.1 (Euler equations, Mon 2 Nov), Lecture 4.2 (effect of Mach number on aerofoil flow, Thu 5 Nov), Lecture 4.3 (compressible potential flow equations, Fri 6 Nov) Lecture 4.4 (Prandtl–Glauert transformation and critical Mach number, Mon 9 Nov) Lecture 4.5 (Ackeret theory, Thu 12 Nov) and Lecture 4.6 (optimum supersonic aerofoils, Fri 13 Nov), all from their transcripts (the 2.5 recording on Blackboard is last year's; the 4.2 recording was repaired and stops at slide 17). That completes Chapter 4. [[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory|Tutorial Lecture 2]] (Mon 16 Nov) works ES2 Q5, the diamond aerofoil by Ackeret theory, face by face, proves that $x_{AC}=c/2$ for any thin section, and shows why Ackeret theory still works across weak shocks ($p_{02}/p_{01}=0.998$). It was Prof. Kim's last lecture of the module; heat transfer started Thu 19 Nov. The recording posted for it, `Lecture 5-1 (2025-26 version).txt`, is last year's Lecture 5.1 and differs from this year's lecture, so [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]] §§1–5 are checked against it and await this year's recording. Lectures 5.1–5.2 ([[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]]) and Lectures 5.3–5.10 in [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] (convection), [[SESA3029 W09c - Critical Thickness of Insulation and Fins|W09c]] (insulation and fins), [[SESA3029 W09d - Thermal Radiation|W09d]] (radiation), [[SESA3029 W09e - Numerical Methods in Conduction|W09e]] (numerical conduction) and [[SESA3029 W09f - Heat Exchangers|W09f]] (heat exchangers) are written ahead from the slides (`written-ahead`) and will be reconciled with each transcript as it arrives. The Riemann-invariant derivation is written out in full, step by step, in [[SESA3029 Deep Dive - Riemann Invariants, Full Derivation]]. There are worked solutions to Example Sheets 1–3 and Blackboard Tests 1–2. Quick reference: [[SESA3029 Formula Sheet]].
 
 > [!important] Deadlines
-> - **Weekend homework (Tutorial 1, ll. 232–235):** triangular wing at a second $\alpha$, check $x_{ac}\approx c/2$. Solved: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre|Tutorial 1]].
-> - ~~Blackboard Test 1, due Sun 11 Oct, 23:59~~ (closed; L2-4, ll. 1–3). Worked: [[SESA3029 Test 1 - Solutions]].
-> - **Test 2:** open since Mon 19 Oct, two attempts, closes **Sun 25 Oct, midnight** (L3-1, ll. 3–5; L3-2, ll. 2–8; L3-4, l. 6). Done; worked: [[SESA3029 Test 2 - Solutions]].
-> - ~~MoC coursework (10 %): due 23:59, Sun 15 Nov~~ on Blackboard (brief; L3-4, ll. 415–418). **Submitted** Sun 15 Nov, 12:01 GMT (6-page PDF, 548.6 KB; confirmation f8ab65ae80e24d03830f46023d45074f).
+> - **Weekend homework:** triangular wing at a second $\alpha$, check $x_{ac}\approx c/2$. Solved: [[SESA3029 Tutorial Lecture 1 - Shock Reflection and a Triangular Wing#Weekend homework: the aerodynamic centre|Tutorial 1]].
+> - ~~Blackboard Test 1, due Sun 11 Oct, 23:59~~ (closed). Worked: [[SESA3029 Test 1 - Solutions]].
+> - **Test 2:** open since Mon 19 Oct, two attempts, closes **Sun 25 Oct, midnight**. Done; worked: [[SESA3029 Test 2 - Solutions]].
+> - ~~MoC coursework (10 %): due 23:59, Sun 15 Nov~~ on Blackboard. **Submitted** Sun 15 Nov, 12:01 GMT (6-page PDF, 548.6 KB; confirmation f8ab65ae80e24d03830f46023d45074f).
 >   - Brief: `04 - Labs & Coursework/MoC Coursework/MoC Coursework 2026-27.pdf`.
 >   - Report files (self-made; no template was issued), in `04 - Labs & Coursework/MoC Coursework/`: `SESA3029 MoC Coursework Report (M3.4).pdf` (the submitted report, $M_{des}=3.4$) and its source `.docx`, `SESA3029 MoC Coursework Report Template.docx` (blank) and `SESA3029 MoC Coursework Guide.docx` (marks, page plan, equations, checklist).
 >   - A minimum-length nozzle for $M_{des}=3.x$, where $x$ is the last digit of your student ID, for **CO₂ ($\gamma=1.289$), not air**, so the $\gamma=1.4$ tables cannot be used. Use five characteristics from $0.125^\circ$ to $\theta_{max}$ (20 points) and four significant figures.
 >   - The report has sections i–vi (marks 5/15/10/25/20/25) in at most six A4 pages: summary, method, verified $\mu$ and $\nu$ code, template, steps for points 1, 2 and the last wall point, then the plot with an $A/A^*$ comparison and limitations.
->   - The method is the §14 table in [[SESA3029 W05b - Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4|W05b]] (L3-3, ll. 132, 221–222). The brief and checks are in [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b, coursework and deadlines]].
-> - ~~Reading week w/c 26 Oct~~ (L3-4, ll. 4–5, 418). Lectures resumed Mon 2 Nov with 4.1 and the mid-module survey (L4-1, ll. 1–8).
-> - **Homework from L4-1** (ll. 76–78): derive mass conservation on paper. Worked: [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#2. Mass conservation|W07a §2]]. On the 4.5 and 4.6 slides: the $M_\infty=2$, $\alpha=10^\circ$ flat plate by Ackeret and shock-expansion (worked in L4-5, ll. 325–343), and the best-$L/D$ angle of a diamond ([[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] §§4 and 10).
-> - **Reading from L4-4** (ll. 180–186): how drag relates between the incompressible and compressible solutions (it does not scale with $1/\beta$). Worked: [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#Drag does not follow the rule|W07b §7, drag]].
+>   - The method is the §14 table in [[SESA3029 W05b - Minimum-Length Nozzle Design#14. Worked example: minimum-length nozzle for Me = 2.4|W05b]]. The brief and checks are in [[SESA3029 W05b - Minimum-Length Nozzle Design#Coursework and deadlines|W05b, coursework and deadlines]].
+> - ~~Reading week w/c 26 Oct~~. Lectures resumed Mon 2 Nov with 4.1 and the mid-module survey.
+> - **Homework from L4-1**: derive mass conservation on paper. Worked: [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils#2. Mass conservation|W07a §2]]. On the 4.5 and 4.6 slides: the $M_\infty=2$, $\alpha=10^\circ$ flat plate by Ackeret and shock-expansion (a worked example), and the best-$L/D$ angle of a diamond ([[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] §§4 and 10).
+> - **Reading from L4-4**: how drag relates between the incompressible and compressible solutions (it does not scale with $1/\beta$). Worked: [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation#Drag does not follow the rule|W07b §7, drag]].
 > - Test 3: 29 Nov. Test 4: 13 Dec.
 
 ## Current coverage
@@ -47,10 +47,10 @@ coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6 lectured with tra
    - every step written out in [[SESA3029 Deep Dive - Theta-Beta-Mach Relation, Full Derivation]]: the density jump from the Prandtl relation, the θ–β–M algebra line by line, the cubic in $\tan\beta$, closed forms for $\theta_{max}$ ($\to\sin^{-1}(1/\gamma)=45.58^\circ$) and the sonic line, the weak-shock limit $\beta-\mu\propto\theta$ that becomes Ackeret's $C_p$, and why the strong branch is always subsonic.
 3. [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method]] (Lectures 2.3–2.5, all with transcripts)
    - regular and Mach reflection, and the regular-reflection limit; transcript slips flagged (e.g. $\phi$ said as 7.5°, correct 17.5°);
-   - shock–shock interaction and slip lines (**last year's exam question**, L2-3, ll. 317–390);
+   - shock–shock interaction and slip lines (**last year's exam question**);
    - entropy across a shock: why shocks compress and weak shocks are isentropic;
    - the Prandtl–Meyer function, derived and integrated; expansion fans;
-   - the shock-expansion method for a flat plate and a diamond; which side gets which wave; leading-edge suction vs wave drag; the ac shift from $c/4$ to $c/2$ and its static-margin consequence (L2-5).
+   - the shock-expansion method for a flat plate and a diamond; which side gets which wave; leading-edge suction vs wave drag; the ac shift from $c/4$ to $c/2$ and its static-margin consequence.
 4. [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow]] (Lectures 2.6 and 2.7 with transcripts, Mon 12 and Thu 15 Oct)
    - the area–velocity and area–Mach relations; choked mass flow;
    - back-pressure regimes and locating a normal shock in the nozzle;
@@ -74,11 +74,11 @@ coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6 lectured with tra
 7. [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils]] (Lectures 4.1, Mon 2 Nov, and 4.2, Thu 5 Nov, with transcripts)
    - the 2D Euler equations from a control volume: mass, $x$- and $y$-momentum, energy with pressure work; the vector form, and slide 12's energy-flux slip;
    - shock buffeting on a supercritical aerofoil;
-   - 4.2: Euler CFD at $M_\infty=0.6$–$1.4$ and residual convergence; the critical Mach number and flow regimes; why the leading-edge shock is a bow shock, from the θ–β–M chart at $\theta=0$ (new figure); $C_L$ against lift; drag divergence and the transonic lift rise by the converging–diverging nozzle picture; supercritical sections, sweep, area rule (the last two from the slide, as the recording stops). Why there are oblique shocks at the trailing edge at $M_\infty>1$ (Kutta condition and slip line, answered at the start of L4-3; new figure).
+   - 4.2: Euler CFD at $M_\infty=0.6$–$1.4$ and residual convergence; the critical Mach number and flow regimes; why the leading-edge shock is a bow shock, from the θ–β–M chart at $\theta=0$ (new figure); $C_L$ against lift; drag divergence and the transonic lift rise by the converging–diverging nozzle picture; supercritical sections, sweep, area rule (the last two from the slide, as the recording stops). Why there are oblique shocks at the trailing edge at $M_\infty>1$ (Kutta condition and slip line, from L4-3; new figure).
 8. [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation]] (Lectures 4.3, Fri 6 Nov, and 4.4, Mon 9 Nov, **lectured** with transcripts)
-   - steady Euler → $(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0$ and $C_p=-2u'/U_\infty$, every step; why it fails near $M_\infty=1$; why the first-order $a^2$ is kept for $C_p$; the $C_p=\frac{2}{\gamma M_\infty^2}(p/p_\infty-1)$ step, a past exam question (L4-3, ll. 414–417);
+   - steady Euler → $(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0$ and $C_p=-2u'/U_\infty$, every step; why it fails near $M_\infty=1$; why the first-order $a^2$ is kept for $C_p$; the $C_p=\frac{2}{\gamma M_\infty^2}(p/p_\infty-1)$ step, a past exam question;
    - the Prandtl–Glauert transformation (both routes, including the slide's divide-by-$\beta$ step), the boundary-condition check that it is the same aerofoil, $C_p=C_{p0}/\beta$; the subscript 0 means incompressible, not stagnation;
-   - $C_l$ and $C_m$ from the chordwise integrals (normal force against lift, small $\alpha$); why drag does not scale (the L4-4 reading); the transonic lift and drag rise against the 4.2 CFD;
+   - $C_l$ and $C_m$ from the chordwise integrals (normal force against lift, small $\alpha$); why drag does not scale (set as reading); the transonic lift and drag rise against the 4.2 CFD;
    - $M_{crit}$ for $C_{p0,min}=-0.4$: 0.747 (P–G), 0.733 (Kármán–Tsien), each with a trial-value table; slips tables for L4-3 and L4-4.
    - the whole chain in depth in [[SESA3029 Deep Dive - From the Euler Equations to Prandtl-Glauert]]: steady Euler → the exact full potential equation and its type (local $M$), the exact perturbation equation, an order-of-magnitude argument for which terms survive (subsonic $(\gamma+1)M_\infty^2\tau\ll(1-M_\infty^2)^{3/2}$, transonic, supersonic $(\gamma+1)M_\infty^4\tau\ll(M_\infty^2-1)^{3/2}$, hypersonic $M_\infty\tau\sim1$), $C_p$ to second order, and Prandtl–Glauert with a general potential scaling and the wavy-wall check.
 9. [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils]] (Lecture 4.5, Thu 12 Nov, §§1–5, and Lecture 4.6, Fri 13 Nov, §§6–10, both **lectured** with transcripts)
@@ -87,10 +87,10 @@ coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6 lectured with tra
    - general thin aerofoil: $C_l=4\alpha/\lambda$ regardless of camber and thickness, with the $p_\infty$ step; three-term wave drag; the diamond as optimum (straight facets, unlike subsonic streamlining); best $L/D$ at $\alpha=t/c$; slips table for L4-6.
    - every step written out in [[SESA3029 Deep Dive - Ackeret Theory and Optimum Supersonic Aerofoils]] (4.6 parts checked against L4-6): the general solution $f(x-\lambda y)+g(x+\lambda y)$ and which family survives, the sign rule derived for both surfaces, lift, the three-part wave drag and the drag polar, the diamond by completing the square, best $L/D$, and checks against exact shock-expansion (thickness drag within 1 % for $t/c\le0.1$ at $M_\infty=2$).
 
-10. [[SESA3029 W09a - Heat Conduction and Thermal Resistance]] (Lectures 5.1–5.2, **written ahead** from the slides; no transcript yet)
+10. [[SESA3029 W09a - Heat Conduction and Thermal Resistance]] (Lectures 5.1–5.2, **written ahead** from the slides; §§1–5 checked against last year's 5.1 recording, this year's awaited)
    - modes of heat transfer; Fourier's law and $k$; the plane wall, long cylinder and spherical shell derived in full;
    - the electrical analogy: series and parallel resistances, the convection resistance $1/hA_s$, walls and tubes between two fluids; the Nusselt number as convection over conduction;
-   - the L5.1 insulated block (100.36 W/m², 87.27 °C, 72.73 °C) and ES3 Q1 with the bolts; slide slips (100.39 printed for 100.36, $T_2$ printed as 82.27 °C, one area for both convection terms on the tube).
+   - the L5.1 insulated block (100.36 W/m², 87.27 °C, 72.73 °C) and ES3 Q1 with the bolts; slide slips (100.39 printed for 100.36, $T_2$ printed as 82.27 °C, one area for both convection terms on the tube), and the spoken slips of last year's 5.1 recording.
 11. [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]] (Lecture 5.3, **written ahead**)
    - velocity and thermal boundary layers, $h$ from the wall gradient, Pr, Nu, St and $\mathrm{Nu}=\mathrm{St}\,\mathrm{Re}\,\mathrm{Pr}$;
    - the Nusselt correlations (their general form $C\,\mathrm{Re}^n\mathrm{Pr}^m$ is what the course calls the Reynolds analogy); local against average $h$, with $\bar h=2h(L)$ on a laminar plate; the pipe-cooling (1128.5 W/m) and parallel-plates (14.9 W) examples;
@@ -118,13 +118,15 @@ coverage: "Week 1; Lectures 2.1–2.7, 3.1–3.4 and 4.1–4.6 lectured with tra
 - [[SESA3029 Example Sheet 2 - Solutions]]: eigenvectors, MoC, Ackeret, Prandtl–Glauert. Q2–Q3 are now also in the course's $R^\pm$ notation, and Q3 gets an averaged-slope check ($M_C=1.604$ vs the key's 1.558). Q6 (Prandtl–Glauert) is now lectured (4.4), and so is Q4 (Ackeret flat plate, 4.5); Q5 (diamond) uses the 4.5 face-by-face $C_p$, with the 4.6 drag formula as a check.
 - [[SESA3029 Test 1 - Solutions]]: Blackboard Test 1 (stagnation temperature, Mach number, isentropic density, mass flow, Pitot with the static tapping behind the shock).
 - [[SESA3029 Test 2 - Solutions]]: Blackboard Test 2 ($M_1$ from a 38.1 % $p_0$ loss, the supersonic Pitot test, reading the OSC backwards, a flat plate's upper surface, and the L2-3 slide 7 interaction at $M_1=3.1$: $\Delta\theta=5.815^\circ$).
-- [[SESA3029 Example Sheet 3 - Solutions]]: heat transfer (Weeks 9–12; the theory is written ahead in W09a–W09f). Discrepancies in the answer key are flagged for Q3, Q5 and Q6.
+- [[SESA3029 Example Sheet 3 - Solutions]]: heat transfer (Weeks 9–12; the theory is in W09a–W09f, written from the slides, with W09a §§1–5 checked against the 2025–26 recording of Lecture 5.1). Discrepancies in the answer key are flagged for Q3, Q5 and Q6.
 - [[SESA3029 Mock Questions - Weeks 1-5]]: **self-written, not lecturer-set**. Eight exam-style questions (127 marks, timed at 1.8 min/mark) on lectured content up to L3.4: normal shock and Pitot, an intake ramp, regular reflection, a diamond aerofoil, a nozzle off design, an MoC unit process with a wall point, a three-line minimum-length nozzle ($M_e=2.6$), and short conceptual questions. Every answer is checked in Python.
 - [[SESA3029 Past Papers - Question Map]]: all 51 questions in the twelve Southampton papers (2014-15 to 2024-25 A and B) by topic, with repeat clusters and links to the worked solutions, one note per paper (e.g. [[SESA3029 Past Paper 2024-25 A - Solutions]]). The heat-transfer questions (Weeks 9–12) are solved too, flagged as outside current lecture coverage until those weeks are written up.
 
 - [[SESA3029 Cambridge Question Map]]: every question in the Cambridge 3A3 (compressible flow) and 3A6 (heat transfer) example and Tripos papers, sorted as in scope, partly in scope or out of scope against this syllabus, with when each becomes doable and a shortlist to start from. The papers are in `03 - Exams & Past Papers/Past Papers/Cambridge/`.
 
 - [[SESA3029 Cambridge Practice by Topic]]: the same Cambridge questions sorted under each topic note, best ones first, to practise a topic straight after its lecture.
+
+- **Cambridge worked solutions:** [[SESA3029 Cambridge Solutions - W01-W02 Normal and Oblique Shocks|W01-W02 Normal and Oblique Shocks]] · [[SESA3029 Cambridge Solutions - W03 Reflections, Expansions and Shock-Expansion|W03 Reflections, Expansions and Shock-Expansion]] · [[SESA3029 Cambridge Solutions - W04 Laval Nozzles and Wind Tunnels|W04 Laval Nozzles and Wind Tunnels]] · [[SESA3029 Cambridge Solutions - W05-W07 Characteristics, Potential Flow and Ackeret|W05-W07 Characteristics, Potential Flow and Ackeret]] · [[SESA3029 Cambridge Solutions - W09a and W09c Conduction, Insulation and Fins|W09a and W09c Conduction, Insulation and Fins]] · [[SESA3029 Cambridge Solutions - W09b, W09e and W09f Convection, Numerical Conduction and Heat Exchangers|W09b, W09e and W09f Convection, Numerical Conduction and Heat Exchangers]] · [[SESA3029 Cambridge Solutions - W09d Thermal Radiation|W09d Thermal Radiation]] · [[SESA3029 Cambridge Solutions - Ducts, Turbojet Inlets and Cascades|Ducts, Turbojet Inlets and Cascades]] · [[SESA3029 Cambridge Solutions - Moving Shocks, Pistons and Nozzle Flows|Moving Shocks, Pistons and Nozzle Flows]] · [[SESA3029 Cambridge Solutions - Expansions, Strong Shocks and Small-Disturbance Potential|Expansions, Strong Shocks and Small-Disturbance Potential]] · [[SESA3029 Cambridge Solutions - Finite Differences and Diffusion Schemes|Finite Differences and Diffusion Schemes]] · [[SESA3029 Cambridge Solutions - Finite-Volume Schemes, Relaxation and Turbomachinery|Finite-Volume Schemes, Relaxation and Turbomachinery]] · [[SESA3029 Cambridge Solutions - Conduction with Generation and Transient Conduction|Conduction with Generation and Transient Conduction]] · [[SESA3029 Cambridge Solutions - Radiation Exchange, Planck's Law and Pyrometry|Radiation Exchange, Planck's Law and Pyrometry]] · [[SESA3029 Cambridge Solutions - Transport Equations, Integral Methods and Internal Flow|Transport Equations, Integral Methods and Internal Flow]] · [[SESA3029 Cambridge Solutions - Channel Flow, Lumped Cooling and Exchangers|Channel Flow, Lumped Cooling and Exchangers]]. Together these solve all 183 in-scope and partly-in-scope questions in the map; off-syllabus parts are solved and flagged.
 
 ## Week 1 concept map
 
@@ -189,7 +191,7 @@ The first three rows are introduced in [[SESA3029 W05a - Method of Characteristi
 
 ## Week 9 concept map (Lectures 5.1–5.10)
 
-5.1–5.10 are written ahead from the slides; none is lectured yet.
+5.1–5.10 are written ahead from the slides; 5.1 is checked against last year's recording, and this year's recordings are awaited.
 
 | Foundations | New SESA3029 concepts |
 |---|---|
@@ -214,7 +216,7 @@ The first three rows are introduced in [[SESA3029 W05a - Method of Characteristi
 | 4–5 | Nozzles and MoC | 2.6 Laval nozzle and back pressure; 2.7 under/over-expanded nozzles, supersonic wind tunnel; 3.1–3.4 method of characteristics, minimum-length nozzles | **Complete**: 2.6, 2.7 and 3.1–3.4 lectured (12, 15, 16, 19, 22 and 23 Oct, transcripts). Notes: W04, [[SESA3029 W05a - Method of Characteristics\|W05a]] (3.1–3.2), [[SESA3029 W05b - Minimum-Length Nozzle Design\|W05b]] (3.3–3.4). MoC coursework submitted Sun 15 Nov |
 | 6 | Reading week (w/c 26 Oct) | Consolidation, coursework | — |
 | 7–8 | High-speed aerodynamics | 4.1 Euler equations; 4.2 effect of Mach number on aerofoil flow; 4.3 compressible potential flow equations; 4.4 Prandtl–Glauert transformation; 4.5 Ackeret theory; 4.6 optimum supersonic aerofoils | **4.1–4.4 lectured** (Mon 2, Thu 5, Fri 6 and Mon 9 Nov, transcripts) → [[SESA3029 W07a - Euler Equations and the Effect of Mach Number on Aerofoils\|W07a]] and [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation\|W07b]] (complete, `lectured`). **4.5 lectured** (Thu 12 Nov, transcript) → [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]] §§1–5. **4.6 lectured** (Fri 13 Nov, transcript) → W07c §§6–10; W07c is now `lectured`. **Tutorial Lecture 2** (Mon 16 Nov, transcript) → [[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory\|Tutorial 2]]: ES2 Q5 diamond aerofoil, $x_{AC}=c/2$, Ackeret theory across weak shocks. ES2 Q6 belongs to 4.4, Q4–Q5 to 4.5–4.6 |
-| 9–12 | Heat transfer | 5.1–5.2 conduction and thermal resistance; 5.3 convection and the Reynolds analogy; 5.4 critical thickness of insulation and fins; 5.5–5.6 thermal radiation; 5.7 numerical methods in conduction; 5.8–5.10 heat exchangers | **Written ahead** from the slides on 17 Nov (all ten decks filed that day): [[SESA3029 W09a - Heat Conduction and Thermal Resistance\|W09a]], [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy\|W09b]], [[SESA3029 W09c - Critical Thickness of Insulation and Fins\|W09c]], [[SESA3029 W09d - Thermal Radiation\|W09d]], [[SESA3029 W09e - Numerical Methods in Conduction\|W09e]], [[SESA3029 W09f - Heat Exchangers\|W09f]]. No transcripts yet: lectures start Thu 19 Nov, and Tutorial 2 was Prof. Kim's last lecture (ll. 222–223). No lecturer is named on the decks. ES3 solved in full |
+| 9–12 | Heat transfer | 5.1–5.2 conduction and thermal resistance; 5.3 convection and the Reynolds analogy; 5.4 critical thickness of insulation and fins; 5.5–5.6 thermal radiation; 5.7 numerical methods in conduction; 5.8–5.10 heat exchangers | **Written ahead** from the slides on 17 Nov (all ten decks filed that day): [[SESA3029 W09a - Heat Conduction and Thermal Resistance\|W09a]], [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy\|W09b]], [[SESA3029 W09c - Critical Thickness of Insulation and Fins\|W09c]], [[SESA3029 W09d - Thermal Radiation\|W09d]], [[SESA3029 W09e - Numerical Methods in Conduction\|W09e]], [[SESA3029 W09f - Heat Exchangers\|W09f]]. Lectures started Thu 19 Nov; the recording posted for 5.1 is last year's and differs from this year's lecture, so W09a §§1–5 are checked against it and await this year's recording. Section 5 is taught by Dr Nader Karimi; the decks themselves name no lecturer. ES3 solved in full |
 
 The decks for 2.3–2.7 and 3.2–3.4 were written up ahead of their lectures and then reconciled with the transcripts. On 24 October W05 was split into [[SESA3029 W05a - Method of Characteristics|W05a]] (3.1–3.2, §§1–10) and [[SESA3029 W05b - Minimum-Length Nozzle Design|W05b]] (3.3–3.4 and the coursework, §§11–17), keeping the section numbers.
 
@@ -226,7 +228,7 @@ The Week 1 module guide lists:
 - **10%** Method of Characteristics nozzle-design exercise;
 - **10%** from four Blackboard tests at **2.5% each**, with up to two attempts and the highest mark counting.
 
-Test due dates: Test 1 11 Oct, **Test 2 25 Oct**, Test 3 29 Nov, Test 4 13 Dec. The MoC coursework was due Sun 15 Nov (L3-4, ll. 415–418) and was submitted that day. Exam questions say which method to use: nearest table value, the average of two lines, linear interpolation, or the exact equations (L2-2, ll. 74–80).
+Test due dates: Test 1 11 Oct, **Test 2 25 Oct**, Test 3 29 Nov, Test 4 13 Dec. The MoC coursework was due Sun 15 Nov and was submitted that day. Exam questions say which method to use: nearest table value, the average of two lines, linear interpolation, or the exact equations.
 
 Always check Blackboard for any later change to dates or assessment rules.
 
@@ -254,21 +256,21 @@ Always check Blackboard for any later change to dates or assessment rules.
 ## Week 3 exam skills (Lectures 2.3–2.5)
 
 - solve a regular reflection (two θ–β–M solves) and test for Mach reflection, $\theta>\theta_{max}(M_2)$;
-- state the slip-line conditions and iterate a shock–shock interaction; last year's exam gave the first guess of $\Delta\theta$ and asked for a second guess and an interpolation (L2-3, ll. 379–382);
-- explain why a "shock" with $M_{n1}<1$ or a pressure drop is impossible, and why near-sonic Mach waves are isentropic (L2-3, ll. 416–442);
+- state the slip-line conditions and iterate a shock–shock interaction; last year's exam gave the first guess of $\Delta\theta$ and asked for a second guess and an interpolation;
+- explain why a "shock" with $M_{n1}<1$ or a pressure drop is impossible, and why near-sonic Mach waves are isentropic;
 - derive $\Delta s(M_{n1})$, show $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$, and argue that expansion shocks are impossible;
 - derive $\mathrm d\nu=\sqrt{M^2-1}\,\mathrm dU/U$ and use $\nu(M_2)=\nu(M_1)+\theta$ with the isentropic ratios;
 - apply the shock-expansion method to a flat plate or diamond: pressures, then $L$, $D$, $M_{LE}$ and $x_{cp}$;
-- explain which surface gets a shock and which a fan from the streamline (duct) picture (L2-5, ll. 15–27);
-- derive $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up convention, and $x_{cp}$ and $x_{ac}$; explain the $c/4\to c/2$ ac shift and why it threatens the static margin (L2-5, ll. 215–257);
-- explain leading-edge suction and why supersonic inviscid flow has wave drag (L2-5, ll. 149–213);
-- for a thick section, resolve each face's force (not $D=N\sin\alpha$), and estimate $x_{ac}$ from two angles of attack (Tutorial 1);
-- find the regular-reflection limit by two guesses and interpolation (Tutorial 1, ll. 63–113).
+- explain which surface gets a shock and which a fan from the streamline (duct) picture;
+- derive $C_{m,LE}=-\Delta p/(2q_\infty)$ with the nose-up convention, and $x_{cp}$ and $x_{ac}$; explain the $c/4\to c/2$ ac shift and why it threatens the static margin;
+- explain leading-edge suction and why supersonic inviscid flow has wave drag;
+- for a thick section, resolve each face's force (not $D=N\sin\alpha$), and estimate $x_{ac}$ from two angles of attack;
+- find the regular-reflection limit by two guesses and interpolation.
 
 ## Week 4 exam skills (Lectures 2.6–2.7)
 
-- derive $\mathrm dA/A=(M^2-1)\,\mathrm dU/U$ the course's way: a control volume including the side-wall force $(p+\tfrac12\mathrm dp)\,\mathrm dA$, then $p=C\rho^\gamma$ (L2-6, ll. 12–76);
-- derive $A/A^*(M)$ (homework, L2-6, l. 153) and choked $\dot m$; quote $p^*/p_0=0.528$ and say what it applies to (L2-6, l. 223);
+- derive $\mathrm dA/A=(M^2-1)\,\mathrm dU/U$ the course's way: a control volume including the side-wall force $(p+\tfrac12\mathrm dp)\,\mathrm dA$, then $p=C\rho^\gamma$;
+- derive $A/A^*(M)$ (homework) and choked $\dot m$; quote $p^*/p_0=0.528$ and say what it applies to;
 - explain why only a throat, never a bulge, can be sonic, and why exit velocity sets the thrust;
 - find $p_{b3}$, $p_{b5}$ and $p_{b6}$ for a nozzle and place a given $p_b$ in its regime;
 - locate a normal shock in the diverging section from $p_b$;
@@ -277,34 +279,34 @@ Always check Blackboard for any later change to dates or assessment rules.
 
 ## Week 5 exam skills (Lectures 3.1–3.4)
 
-- derive the streamtube relations: $\partial\theta/\partial n=\frac{1}{\Delta n}\partial\Delta n/\partial l$, mass, $l$-momentum with $(\partial p/\partial\rho)_s=a^2$, giving $(M^2-1)\frac1u u_l=\theta_n$, and $\theta_l-\frac1u u_n=0$ (L3-1);
+- derive the streamtube relations: $\partial\theta/\partial n=\frac{1}{\Delta n}\partial\Delta n/\partial l$, mass, $l$-momentum with $(\partial p/\partial\rho)_s=a^2$, giving $(M^2-1)\frac1u u_l=\theta_n$, and $\theta_l-\frac1u u_n=0$;
 - substitute $\mathrm du/u=\tan\mu\,\mathrm d\nu$ to get Eq. 1 and Eq. 2; add and subtract; interpret the brackets as derivatives along $\pm\mu$; state $R^\pm$ and Anderson's $K^\pm$;
 - diagonalise $\underline A$ (eigenvalues $\pm\tan\mu$, eigenvectors $[1,-1]^T$ and $[1,1]^T$) and explain why $M>1$ is needed;
-- explain why the eigenvector route is the general method, and why $\underline E^{-1}$ goes on the left (L3-2, ll. 16–19, 115–166);
-- run the unit process with averaged slopes; reproduce $M_3=1.7039$, $(1.3591,\ 0.2814)$ (the coordinates were L3-2 homework); keep the calculator in degrees;
-- explain why the characteristics bend: $\mu=\sin^{-1}(1/M)$ changes from point to point (L3-2, ll. 299–318);
-- apply the reflecting-wall, non-reflecting-wall and symmetry conditions, with their coordinate rules; at a reflecting wall $R^-_W=R^+_A+2\theta_W$ (L3-3, ll. 62–63); any two of $R^+,R^-,\nu,\theta$ fix the rest (ll. 32–36);
-- derive $\theta_{max}=\nu(M_e)/2$ (with $\nu(1)=0$) and fill the minimum-length-nozzle template; check $y_e/r_a$ against $A_e/A^*$. This is the coursework (L3-3, ll. 132, 221–222);
-- read $M_e$ off the maximum slope $\theta_{max}$ at a sharp expansion corner, and know that it fails for gradual nozzles; do not confuse this $\theta_{max}$ with the oblique-shock one (L3-3, ll. 133–139, 204–214);
-- work a symbolic MoC table (3.4) in under a minute (a past-paper question type, L3-4, ll. 198–203), spot a non-reflecting wall point by checking the physics, not just the rules (ll. 206–281), and invert measured Mach numbers for $\theta_w$ and $M_0$ (ll. 298–348).
+- explain why the eigenvector route is the general method, and why $\underline E^{-1}$ goes on the left;
+- run the unit process with averaged slopes; reproduce $M_3=1.7039$, $(1.3591,\ 0.2814)$ (the coordinates were set as homework); keep the calculator in degrees;
+- explain why the characteristics bend: $\mu=\sin^{-1}(1/M)$ changes from point to point;
+- apply the reflecting-wall, non-reflecting-wall and symmetry conditions, with their coordinate rules; at a reflecting wall $R^-_W=R^+_A+2\theta_W$; any two of $R^+,R^-,\nu,\theta$ fix the rest;
+- derive $\theta_{max}=\nu(M_e)/2$ (with $\nu(1)=0$) and fill the minimum-length-nozzle template; check $y_e/r_a$ against $A_e/A^*$. This is the coursework;
+- read $M_e$ off the maximum slope $\theta_{max}$ at a sharp expansion corner, and know that it fails for gradual nozzles; do not confuse this $\theta_{max}$ with the oblique-shock one;
+- work a symbolic MoC table (3.4) in under a minute (a past-paper question type), spot a non-reflecting wall point by checking the physics, not just the rules, and invert measured Mach numbers for $\theta_w$ and $M_0$.
 
 ## Week 7 exam skills (Lectures 4.1–4.6)
 
-- derive mass, $x$-momentum, $y$-momentum and energy for a 2D control volume by flux in − flux out (+ pressure force or work), and assemble the vector form (L4-1);
+- derive mass, $x$-momentum, $y$-momentum and energy for a 2D control volume by flux in − flux out (+ pressure force or work), and assemble the vector form;
 - define $M_{crit}$ (a **free-stream** value) and describe the flow regimes from subsonic to $M_\infty>1$ (4.2);
-- explain from the θ–β–M chart why the shock ahead of the leading edge is a normal (bow) shock on the centre line, and why it leans back further at higher $M_\infty$ (L4-2); explain the trailing-edge oblique shocks with the Kutta condition and the slip line (L4-3, ll. 6–34);
+- explain from the θ–β–M chart why the shock ahead of the leading edge is a normal (bow) shock on the centre line, and why it leans back further at higher $M_\infty$; explain the trailing-edge oblique shocks with the Kutta condition and the slip line;
 - explain drag divergence with the converging–diverging duct picture, and why supercritical sections, sweep ($M_\infty\cos\Lambda$) and the area rule help (4.2);
-- derive $(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0$ and $C_p=-2u'/U_\infty$, saying where isentropic, irrotational and small-disturbance enter, and why it fails near $M_\infty=1$ (4.3); write $C_p=\frac{2}{\gamma M_\infty^2}(p/p_\infty-1)$ from the definition without slips, a past exam question (L4-3, ll. 414–417);
-- apply the Prandtl–Glauert transformation and $C_p=C_{p0}/\sqrt{1-M_\infty^2}$; derive $C_l=C_{l0}/\beta$ and $C_m=C_{m0}/\beta$ from the chordwise integrals, saying why $\int(p_l-p_u)\,\mathrm dx$ is the normal force (L4-4, ll. 141–179); explain why $C_d$ does not follow the rule (L4-4, ll. 180–186); find $M_{crit}$ from two trial Mach numbers and linear interpolation (L4-4, ll. 263–265), with P–G or Kármán–Tsien (4.4);
+- derive $(1-M_\infty^2)\phi_{xx}+\phi_{yy}=0$ and $C_p=-2u'/U_\infty$, saying where isentropic, irrotational and small-disturbance enter, and why it fails near $M_\infty=1$ (4.3); write $C_p=\frac{2}{\gamma M_\infty^2}(p/p_\infty-1)$ from the definition without slips, a past exam question;
+- apply the Prandtl–Glauert transformation and $C_p=C_{p0}/\sqrt{1-M_\infty^2}$; derive $C_l=C_{l0}/\beta$ and $C_m=C_{m0}/\beta$ from the chordwise integrals, saying why $\int(p_l-p_u)\,\mathrm dx$ is the normal force; explain why $C_d$ does not follow the rule; find $M_{crit}$ from two trial Mach numbers and linear interpolation, with P–G or Kármán–Tsien (4.4);
 - show that $\phi=f(x-\lambda y)$ solves the wave equation and that its lines of constant $\phi$ are Mach lines; derive Ackeret's $C_p=2\theta/\sqrt{M_\infty^2-1}$ from tangency, in radians; measure $\theta$ from $\vec U_\infty$ and get its sign from the duct test; do a flat plate ($C_n=C_{p_l}-C_{p_u}$) and compare with shock-expansion (4.5);
 - derive $C_l=4\alpha/\lambda$ and the three-term $C_d$ for a general thin aerofoil; show the diamond is optimal and that $(L/D)_{max}$ is at $\alpha=t/c$ (4.6);
-- get all four diamond face angles right from $\vec U_\infty$, including the switch when $\alpha>\phi$ (about half of last year's candidates got at least one wrong; Tutorial 2, ll. 115–125); then $N'$ and $A'$ face by face, $L'=N'\cos\alpha-A'\sin\alpha$, $D'=A'\cos\alpha+N'\sin\alpha$, and $M'_{LE}$ with arms $c/4$ and $3c/4$;
-- show $C_{m,LE}=-C_l/2$ and hence $x_{AC}=c/2$ for a thin diamond (Tutorial 2, ll. 137–219);
-- explain why Ackeret theory works across weak shocks, with numbers from the normal-shock table ($M_{n1}=1.11$: $p_{02}/p_{01}=0.9986$; Tutorial 2, ll. 220–293).
+- get all four diamond face angles right from $\vec U_\infty$, including the switch when $\alpha>\phi$ (about half of last year's candidates got at least one wrong); then $N'$ and $A'$ face by face, $L'=N'\cos\alpha-A'\sin\alpha$, $D'=A'\cos\alpha+N'\sin\alpha$, and $M'_{LE}$ with arms $c/4$ and $3c/4$;
+- show $C_{m,LE}=-C_l/2$ and hence $x_{AC}=c/2$ for a thin diamond;
+- explain why Ackeret theory works across weak shocks, with numbers from the normal-shock table ($M_{n1}=1.11$: $p_{02}/p_{01}=0.9986$).
 
 ## Week 9 exam skills (Lectures 5.1–5.10)
 
-Written ahead from the slides; to be checked against the lectures. The official exam sheet gives only the four thermal resistances.
+Written ahead from the slides (5.1 checked against last year's recording), to be checked against this year's lectures. The official exam sheet gives only the four thermal resistances.
 
 - build a resistance network (plane, cylindrical or spherical layers in series or parallel, with $1/hA_s$ at each fluid boundary and the right area in each term) and find $\dot Q$ and every interface temperature (W09a);
 - derive Fourier's law, the plane-wall, cylinder and sphere results, and explain $\mathrm{Nu}$ as convection over conduction (W09a);
@@ -360,8 +362,9 @@ SORT type ASC, file.name ASC
 - `02 - Sources/Lectures/Lecture4-4.pdf` and `Lecture 4-4.txt` (Mon 9 Nov: Prandtl–Glauert transformation, $C_l$ and $C_m$, critical Mach number, Kármán–Tsien) → [[SESA3029 W07b - Compressible Potential Flow and the Prandtl-Glauert Transformation|W07b]] §§6–9
 - `02 - Sources/Lectures/Lecture4-5.pdf` and `Lecture 4-5.txt` (Thu 12 Nov: Ackeret theory, the flat plate and the comparison with shock-expansion) → [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] §§1–5
 - `02 - Sources/Lectures/Lecture4-6.pdf` and `Lecture 4-6.txt` (Fri 13 Nov: optimum supersonic aerofoils, the diamond) → [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils|W07c]] §§6–10
-- `02 - Sources/Lectures/Tutorial Lecture #2.txt` (Mon 16 Nov; 298 lines, copied from the Panopto captions with each line's timestamp: ES2 Q3 MoC mock set as own work, ll. 1–25; ES2 Q5 diamond aerofoil by Ackeret theory, ll. 29–136; $x_{AC}=c/2$ for a thin diamond, ll. 137–219; why Ackeret theory holds across weak shocks, ll. 220–297) → [[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory|Tutorial 2]]. The tutorial slides are on Blackboard under Lecture slides → Tutorial lectures and are not filed.
-- `02 - Sources/Lectures/Lecture5.1.pdf` (20 slides) and `Lecture5.2.pdf` (19 slides): conduction, the electrical analogy, radial conduction, convection as a boundary condition, the Nusselt number (filed 17 Nov; last year's decks re-issued, no transcript yet) → [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]]
+- `02 - Sources/Lectures/Tutorial Lecture #2.txt` and `Class Tutorial #2.txt` (Mon 16 Nov; `Tutorial Lecture #2.txt` is 298 lines copied from the Panopto captions with each line's timestamp: ES2 Q3 MoC mock set as own work, ll. 1–25; ES2 Q5 diamond aerofoil by Ackeret theory, ll. 29–136; $x_{AC}=c/2$ for a thin diamond, ll. 137–219; why Ackeret theory holds across weak shocks, ll. 220–297; `Class Tutorial #2.txt` is a 363-line un-timestamped Whisper transcript of the same recording, filed 19 Nov, with no additional content) → [[SESA3029 Tutorial Lecture 2 - Diamond Aerofoil by Ackeret Theory|Tutorial 2]]. The tutorial slides are on Blackboard under Lecture slides → Tutorial lectures and are not filed.
+- `02 - Sources/Lectures/Lecture5.1.pdf` (20 slides) and `Lecture 5-1 (2025-26 version).txt` (filed Thu 19 Nov; last year's recording of the same deck, posted for this year's lecture but differing from it: modes of heat transfer, Fourier's law, thermal conductivity, electrical resistance analogy, insulated plane block) → [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]] §§1–5
+- `02 - Sources/Lectures/Lecture5.2.pdf` (19 slides): radial conduction in cylinders and spheres, convection as a boundary condition, the Nusselt number (written ahead, no transcript yet) → W09a §§6–11
 - `02 - Sources/Lectures/Lecture5.3.pdf` (15 slides): convective heat transfer, dimensionless numbers, Reynolds analogy, two examples (no transcript yet) → [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]]
 - `02 - Sources/Lectures/Lecture5.4(1).pdf` (25 slides): critical thickness of insulation and fins (no transcript yet) → [[SESA3029 W09c - Critical Thickness of Insulation and Fins|W09c]]
 - `02 - Sources/Lectures/Lecture5.5(1).pdf` (13 slides) and `Lecture5.6(1).pdf` (15 slides): thermal radiation, Kirchhoff, Planck, Wien, Stefan–Boltzmann, solid angle, shape factor, the Sun–Earth example (no transcript yet) → [[SESA3029 W09d - Thermal Radiation|W09d]]

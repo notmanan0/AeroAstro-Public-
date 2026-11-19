@@ -13,11 +13,11 @@ sources: ["03 - Exams & Past Papers/ExampleSheet3(1).pdf"]
 # SESA3029 Example Sheet 3 - Solutions
 
 > [!abstract] Sheet info
-> "Tutorial 3" covers **heat transfer**, the Weeks 9–12 block, which has **not been lectured yet**. Each solution states the model it uses (thermal resistances, Newton cooling, Nusselt correlations, radiation balance, ε–NTU) and derives what is needed. Every number is verified in Python.
+> "Tutorial 3" covers **heat transfer**, the Weeks 9–12 block (lectures started Thu 19 Nov; this year's recordings are not yet available). Each solution states the model it uses (thermal resistances, Newton cooling, Nusselt correlations, radiation balance, ε–NTU) and derives what is needed. Every number is verified in Python.
 >
 > Results: Q1 and Q2 reproduce the printed answers exactly. Q4 does too, to rounding. Q3 reproduces the printed answer when the diameter is the length scale, **Q6 does not**, and **Q5's answers are printed in swapped order**. Each case is explained below.
 >
-> The theory is now written ahead from the Lecture 5.1–5.10 slides: Q1 uses [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]], Q2–Q4 [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] (Q4 also [[SESA3029 W09d - Thermal Radiation|W09d]]), and Q5–Q6 [[SESA3029 W09f - Heat Exchangers|W09f]]. The course writes the capacity ratio as $c$ and the effectiveness as $\epsilon$ where Q5–Q6 below use $C_r$ and $\varepsilon$.
+> The theory is written from the Lecture 5.1–5.10 slides, with W09a §§1–5 checked against the 2025–26 recording of Lecture 5.1: Q1 uses [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]], Q2–Q4 [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] (Q4 also [[SESA3029 W09d - Thermal Radiation|W09d]]), and Q5–Q6 [[SESA3029 W09f - Heat Exchangers|W09f]]. The course writes the capacity ratio as $c$ and the effectiveness as $\epsilon$ where Q5–Q6 below use $C_r$ and $\varepsilon$.
 
 ![[at_es3_heat_transfer.png|900]]
 
@@ -304,6 +304,6 @@ $$
 ## Links
 
 - Previous sheet: [[SESA3029 Example Sheet 2 - Solutions]]
-- Theory (written ahead from the slides): [[SESA3029 W09a - Heat Conduction and Thermal Resistance]] · [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]] · [[SESA3029 W09c - Critical Thickness of Insulation and Fins]] · [[SESA3029 W09d - Thermal Radiation]] · [[SESA3029 W09e - Numerical Methods in Conduction]] · [[SESA3029 W09f - Heat Exchangers]]
+- Theory (from the slides; W09a §§1–5 checked against the 2025–26 recording of Lecture 5.1): [[SESA3029 W09a - Heat Conduction and Thermal Resistance]] · [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]] · [[SESA3029 W09c - Critical Thickness of Insulation and Fins]] · [[SESA3029 W09d - Thermal Radiation]] · [[SESA3029 W09e - Numerical Methods in Conduction]] · [[SESA3029 W09f - Heat Exchangers]]
 - Related earlier notes: [[Blackbody Radiation]] · [[Reynolds Number]] · [[Spacecraft Thermal Balance Equation]] · [[Turbine Entry Temperature and Blade Cooling]]
 - Hub: [[SESA3029 Aerothermodynamics Hub]] (heat-transfer block, Weeks 9–12)

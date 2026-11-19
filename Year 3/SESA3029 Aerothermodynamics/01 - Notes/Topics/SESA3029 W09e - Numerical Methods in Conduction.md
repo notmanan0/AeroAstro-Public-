@@ -24,14 +24,14 @@ sources: ["02 - Sources/Lectures/Lecture5.7.pdf"]
 
 > [!summary]- Exam use: quick path
 > - **Use it when:** a question asks for the finite-difference equation at a node (interior, surface, corner, with convection or heat flux), for one or two explicit time steps, or for a stable time step.
-> - **Assumptions:** constant $k$, $\rho$, $c_p$; uniform grid ($\Delta x=\Delta y$ unless stated); unit depth in 2-D; explicit stability limits assume a uniform 1-D or 2-D grid with fixed-temperature ends.
+> - **Assumptions:** constant $k$, $\rho$, $c_p$; uniform grid in each direction (check whether $\Delta x=\Delta y$: "equidistant" in a question can mean uniform in $x$ and uniform in $y$ with $\Delta x\neq\Delta y$, as in [[SESA3029 Past Paper 2019-20 - Solutions#(b) Stencils at nodes 5 and 11, and the check at node 8 [10 marks]|2019–20 Q4(iii)]]); unit depth in 2-D; explicit stability limits assume a uniform 1-D or 2-D grid with fixed-temperature ends.
 > - **Method:** 1. Draw the node's control volume: half a cell in every direction that stays inside the solid. 2. Write each face's conduction as $k\times(\text{face length})\times(T_{nb}-T_P)/(\text{spacing})$, all counted into the node; add convection $h\times(\text{exposed length})\times(T_\infty-T_P)$, heat flux and generation. 3. Steady: set the sum to zero and solve for $T_P$. Transient explicit: set the sum equal to $\rho c_p\,(\text{volume})(T_P^{n+1}-T_P^n)/\Delta t$. 4. Check stability: every coefficient of an old temperature must be $\ge0$ ($\mathcal F\le\tfrac12$ interior in 1-D, $\le\tfrac14$ in 2-D, tighter at convective boundaries). 5. Check that the face flows sum to zero with the answer.
-> - **Common mistakes:** giving a boundary face its full length instead of $\Delta x/2$; taking a time step with $\mathcal F>\tfrac12$ and getting oscillating, growing temperatures.
+> - **Common mistakes:** assuming $\Delta x=\Delta y$ on a rectangular grid; giving a boundary face its full length instead of $\Delta x/2$; taking a time step with $\mathcal F>\tfrac12$ and getting oscillating, growing temperatures.
 > - **Practise:** [[#Worked example: one explicit and one implicit step by hand|explicit and implicit steps by hand]] · [[SESA3029 Past Paper 2024-25 A - Solutions#Q5. Finite-difference stencil at an internal corner with boundary heat flux (10 marks)|2024–25 A Q5]] (internal-corner stencil)
 
 The conduction results of [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]] cover a plane wall, a cylinder and a sphere, each steady and one-dimensional, where the heat rate comes from a closed-form thermal resistance such as $L/kA$ or $\ln(r_o/r_i)/2\pi kL$. A real object, such as a whole aircraft heated by its engines, the Sun and its own skin friction, has no such formula. Approximating it by a cylinder gives only a crude answer, and anything more needs a three-dimensional solution of the governing equation.
 
-Numerical methods supply it. The object is divided into small elements (a mesh), the temperature is stored at the nodes, and every derivative in the heat equation is replaced by a difference between neighbouring nodal values. The partial differential equation becomes a set of algebraic equations, one per node, which a computer can solve for any shape. This is how thermal analysis software computes the temperature field over a vehicle. A transient problem adds time as a further coordinate to be stepped through, and the size of that step is limited by stability as well as accuracy. Exam questions mostly ask for node equations at boundaries and corners, which come from an energy balance on each node's own share of the solid (§11).
+Numerical methods supply it. The object is divided into small elements (a mesh), the temperature is stored at the nodes, and every derivative in the heat equation is replaced by a difference between neighbouring nodal values. The partial differential equation becomes a set of algebraic equations, one per node, which a computer can solve for any shape. This is how thermal analysis software computes the temperature field over a vehicle. A transient problem adds time as a further coordinate to be stepped through, and the size of that step is limited by stability as well as accuracy. Exam questions mostly ask for node equations at boundaries and corners, which come from an energy balance on each node's own share of the solid (§5).
 
 ## 1. The heat conduction equation in 2-D
 
@@ -201,7 +201,17 @@ $$
 \frac{T_{i+1,j}-2T_{i,j}+T_{i-1,j}}{\Delta x^2}+\frac{T_{i,j+1}-2T_{i,j}+T_{i,j-1}}{\Delta y^2}+\frac{\dot g_{i,j}}{k}=0 .
 $$
 
-For a square grid, $\Delta x=\Delta y$, multiply by $\Delta x^2$ and collect $T_{i,j}$; with compass labels P for the node and E, W, N, S for its neighbours,
+Multiplying by $\Delta y^2$ and setting $s=(\Delta y/\Delta x)^2$ gives the general **non-square uniform grid** stencil (compass labels P for the node and E, W, N, S for its neighbours):
+
+$$
+s\left(T_E+T_W\right)+T_N+T_S-2(1+s)\,T_P+\frac{\dot g\,\Delta y^2}{k}=0
+\quad\Rightarrow\quad
+T_P=\frac{s\left(T_E+T_W\right)+T_N+T_S}{2(1+s)}+\frac{\dot g\,\Delta y^2}{2k(1+s)}.
+$$
+
+Do not assume $s=1$ when a question calls a rectangular mesh "equidistant": in [[SESA3029 Past Paper 2019-20 - Solutions#(b) Stencils at nodes 5 and 11, and the check at node 8 [10 marks]|2019–20 Q4(iii)]], $\Delta x=0.20$ m and $\Delta y=0.05$ m give $s=1/16$, so $T_P=[T_W+T_E+16(T_N+T_S)]/34$ rather than the four-neighbour average.
+
+For a **square grid**, $\Delta x=\Delta y$ ($s=1$), this simplifies to
 
 $$
 T_E+T_W+T_N+T_S-4T_P+\frac{\dot g\,\Delta x^2}{k}=0
@@ -211,7 +221,119 @@ $$
 
 Without generation each interior node is the average of its four neighbours.
 
-## 5. Order of accuracy
+## 5. Boundary and corner nodes by energy balance
+
+The difference formulas of §4 need a neighbour on each side, which a node on a boundary does not have. The general way to get a node equation anywhere, and the one that past exam questions use, is an energy balance on the node's own control volume, as in §1 but with finite cells. The control volume around node P extends half a cell in every direction that stays inside the solid (dashed in the figure). Count every heat flow **into** it as positive:
+
+- conduction from a neighbour across a face: $k\times(\text{face length})\times\dfrac{T_{nb}-T_P}{\text{node spacing}}$ (unit depth);
+- convection through an exposed boundary: $h\times(\text{exposed length})\times(T_\infty-T_P)$;
+- a prescribed heat flux $\dot q$ into the solid: $\dot q\times(\text{boundary length})$;
+- generation: $\dot g\times(\text{control-volume area})$.
+
+In steady state these sum to zero. For a transient explicit scheme they sum to $\rho c_p\times(\text{control-volume area})\times(T_P^{n+1}-T_P^n)/\Delta t$, with every right-hand temperature at level $n$ (§10 applies this to a 1-D convective end node).
+
+![[at_w09e_boundary_nodes.png|900]]
+
+**Interior node** (panel (a)), square grid. All four faces have full length $\Delta x$ and spacing $\Delta x$:
+
+$$
+k(T_E-T_P)+k(T_W-T_P)+k(T_N-T_P)+k(T_S-T_P)+\dot g\,\Delta x^2=0,
+$$
+
+which is the §4 stencil again: the energy balance and the Taylor-series route agree.
+
+**Plane surface with convection** (panel (b)), surface facing $+x$, square grid. The control volume is a half cell $\Delta x/2$ wide and $\Delta y$ tall. The west face has length $\Delta y$; the north and south faces have length $\Delta x/2$; the exposed surface has length $\Delta y$:
+
+$$
+k\,\Delta y\,\frac{T_W-T_P}{\Delta x}+k\,\frac{\Delta x}{2}\,\frac{T_N-T_P}{\Delta y}+k\,\frac{\Delta x}{2}\,\frac{T_S-T_P}{\Delta y}+h\,\Delta y\,(T_\infty-T_P)=0 .
+$$
+
+With $\Delta x=\Delta y$, multiply by $2/k$ and write $\mathrm{Bi}=h\Delta x/k$ (a grid Biot number):
+
+$$
+2(T_W-T_P)+(T_N-T_P)+(T_S-T_P)+2\,\mathrm{Bi}\,(T_\infty-T_P)=0 .
+$$
+
+Collect $T_P$:
+
+$$
+\boxed{T_P=\frac{2T_W+T_N+T_S+2\,\mathrm{Bi}\,T_\infty}{4+2\,\mathrm{Bi}}}\qquad\left(\mathrm{Bi}=\frac{h\Delta x}{k}\right).
+$$
+
+An **insulated surface** is the case $h=0$: $T_P=(2T_W+T_N+T_S)/4$. That is the interior stencil with a mirror-image node $T_E=T_W$, which is why an insulated wall and a plane of symmetry are treated the same way.
+
+**Exterior corner with convection on both faces** (panel (c)). The control volume is a quarter cell. The west face has length $\Delta y/2$, the south face $\Delta x/2$, and the exposed boundary is $\Delta x/2+\Delta y/2$:
+
+$$
+k\,\frac{\Delta y}{2}\,\frac{T_W-T_P}{\Delta x}+k\,\frac{\Delta x}{2}\,\frac{T_S-T_P}{\Delta y}+h\left(\frac{\Delta x}{2}+\frac{\Delta y}{2}\right)(T_\infty-T_P)=0 .
+$$
+
+With $\Delta x=\Delta y$, multiply by $2/k$:
+
+$$
+(T_W-T_P)+(T_S-T_P)+2\,\mathrm{Bi}\,(T_\infty-T_P)=0
+\quad\Rightarrow\quad
+T_P=\frac{T_W+T_S+2\,\mathrm{Bi}\,T_\infty}{2+2\,\mathrm{Bi}}.
+$$
+
+A heat-flux boundary replaces $h(T_\infty-T_P)$ by $\dot q$.
+
+**Internal (re-entrant) corner with a prescribed heat flux** on both boundary edges. The solid fills three quadrants around P, so the control volume is an L-shaped three-quarter cell: the north face (length $\Delta x$) and west face (length $\Delta y$) are full, the east face (length $\Delta y/2$) and south face (length $\Delta x/2$) are half, and the flux $\dot q$ enters through both boundary segments ($\Delta x/2+\Delta y/2$):
+
+$$
+k\,\Delta x\,\frac{T_N-T_P}{\Delta y}+k\,\Delta y\,\frac{T_W-T_P}{\Delta x}+k\,\frac{\Delta y}{2}\,\frac{T_E-T_P}{\Delta x}+k\,\frac{\Delta x}{2}\,\frac{T_S-T_P}{\Delta y}+\dot q\left(\frac{\Delta x}{2}+\frac{\Delta y}{2}\right)=0 .
+$$
+
+With $\Delta x=\Delta y$, multiply by $2/k$ and collect $T_P$ ($2+2+1+1=6$):
+
+$$
+\boxed{6T_P=2T_N+2T_W+T_E+T_S+\frac{2\dot q\,\Delta x}{k}}
+$$
+
+(tested directly in [[SESA3029 Past Paper 2024-25 A - Solutions#Q5. Finite-difference stencil at an internal corner with boundary heat flux (10 marks)|2024–25 A Q5]] and [[SESA3029 Past Paper 2024-25 B - Solutions#Q5. Finite-difference stencils for 2D internal corner and 1D radial cylindrical conduction (16 marks)|2024–25 B Q5(i)]]).
+
+**1-D radial cylindrical node** (steady, no generation). Place nodes at $r_i=i\,\Delta r$ ($i\ge1$); the control volume around node $i$ is an annular ring of unit axial length bounded by the mid-point radii $r_{i-1/2}=(i-\tfrac12)\Delta r$ and $r_{i+1/2}=(i+\tfrac12)\Delta r$. The radial heat flow per unit length is $\dot q_r=-2\pi k r\,\partial T/\partial r$, so steady state ($\dot q_{r,\,i-1/2}-\dot q_{r,\,i+1/2}=0$) gives
+
+$$
+-2\pi k\left(i-\tfrac12\right)\Delta r\,\frac{T_i-T_{i-1}}{\Delta r}+2\pi k\left(i+\tfrac12\right)\Delta r\,\frac{T_{i+1}-T_i}{\Delta r}=0 .
+$$
+
+Dividing by $2\pi k$ and solving for $T_i$:
+
+$$
+\left(i-\tfrac12\right)T_{i-1}-2i\,T_i+\left(i+\tfrac12\right)T_{i+1}=0
+\quad\Rightarrow\quad
+\boxed{T_i=\frac{\left(i-\tfrac12\right)T_{i-1}+\left(i+\tfrac12\right)T_{i+1}}{2i}}.
+$$
+
+The outer neighbour carries the larger weight because the outer cylindrical face has the larger area; far from the axis ($i\gg1$) both weights approach $\tfrac12$, recovering the planar average. Regrouping as $i(T_{i+1}-2T_i+T_{i-1})+\tfrac12(T_{i+1}-T_{i-1})=0$ and dividing by $i\,\Delta r^2$ with $r_i=i\,\Delta r$ gives $(T_{i+1}-2T_i+T_{i-1})/\Delta r^2+(1/r_i)(T_{i+1}-T_{i-1})/(2\Delta r)=0$, the second-order central-difference form of $\tfrac{1}{r}\frac{\mathrm d}{\mathrm dr}(r\frac{\mathrm dT}{\mathrm dr})=0$ (tested in [[SESA3029 Past Paper 2023-24 - Solutions#(ix) 1D radial cylindrical finite-difference equation [6 marks]|2023–24 Q1(ix)]] and [[SESA3029 Past Paper 2024-25 B - Solutions#Q5. Finite-difference stencils for 2D internal corner and 1D radial cylindrical conduction (16 marks)|2024–25 B Q5(ii)]]).
+
+### Worked example: a surface node with convection
+
+*A steel wall, $k=15$ W/m K, on a square grid $\Delta x=\Delta y=0.01$ m, faces a fluid at $T_\infty=20$ °C with $h=100$ W/m² K. A surface node has $T_W=80$, $T_N=90$ and $T_S=70$ °C. Find the steady $T_P$ (suggested, not lecturer-set).*
+
+$\mathrm{Bi}=100\times0.01/15=0.0667$, so
+
+$$
+T_P=\frac{2(80)+90+70+2(0.0667)(20)}{4+2(0.0667)}=\frac{322.67}{4.1333}=78.06\ \text{°C}.
+$$
+
+> [!check] Face-by-face balance, per metre depth
+> West: $15\times0.01\times(80-78.06)/0.01=+29.0$ W/m. North: $15\times0.005\times(90-78.06)/0.01=+89.5$ W/m. South: $15\times0.005\times(70-78.06)/0.01=-60.5$ W/m. Convection: $100\times0.01\times(20-78.06)=-58.1$ W/m. Sum $=0$ ✓.
+
+## 6. Worked example: 1-D steady conduction
+
+*A rod of length $L=1$ m has its left end held at $T_L=T(0,t)=50$ °C and its right end at $T_R=T(L,t)=100$ °C. Find the steady temperature distribution analytically and by finite differences.*
+
+Analytically, $\mathrm d^2T/\mathrm dx^2=0$ integrates twice to $T=Ax+B$. The left boundary gives $B=T_L$ and the right gives $A=(T_R-T_L)/L$, so
+
+$$
+T(x)=T_L+\left(T_R-T_L\right)\frac{x}{L}=50+50x\quad(\text{°C},\ x\text{ in m}).
+$$
+
+Numerically, every interior node satisfies $T_i=(T_{i+1}+T_{i-1})/2$ with $T_0=50$ and $T_I=100$. The linear profile satisfies these equations exactly: $T_{i\pm1}=T_i\pm50\Delta x$, so the average of the neighbours is $T_i$. The finite-difference solution therefore lies on the analytical line at every node, for any $\Delta x$. That is the truncation error of §7 at work: it is proportional to $\partial^4T/\partial x^4$, which is zero for a straight line, so this example cannot show the error of the scheme. The transient example of §11 can.
+
+## 7. Order of accuracy
 
 The approximations above drop the higher terms of the Taylor series; what is dropped is the **truncation error**. For the forward difference, expand $T_{i+1}$ about node $i$:
 
@@ -262,25 +384,21 @@ with $\Delta x$ the grid size and $p$ the **order of accuracy**. Doubling the nu
 > [!check] Errors for $T=\sin x$ at $x=1$
 > Forward difference for $T'$: errors $-0.0429$, $-0.0213$, $-0.0106$ at $\Delta x=0.1$, $0.05$, $0.025$, halving each time; the leading term $-T''\Delta x/2=0.0421\,\Delta x/0.1$ predicts them. Central difference for $T''$: errors $7.01\times10^{-4}$, $1.753\times10^{-4}$, $4.383\times10^{-5}$, falling by 4.00 each time, matching $T''''\Delta x^2/12$ to three figures. The slopes in the figure are 1 and 2.
 
-Grid-convergence studies use this behaviour backwards: with results on two or three grids and a known (or measured) order $p$, Richardson extrapolation estimates the grid-independent answer. Several past papers ask for it, for example [[SESA3029 Past Paper 2021-22 - Solutions#Q3. Transient 1D rod cooling by explicit finite difference (30 marks)|2021–22 Q3]].
-
-## 6. Accuracy in 2-D and 3-D
-
-The 2-D stencil of §4 has error $\mathcal O(\Delta x^2,\Delta y^2)$, since each direction contributes its own central second difference with the error of §5. In 3-D on a cubic grid the interior equation adds the two $z$-neighbours, $T_P=\tfrac16\sum T_{nb}+\dot g\Delta x^2/(6k)$, with the same order. The 1-D analysis therefore carries over direction by direction.
-
-## 7. Worked example: 1-D steady conduction
-
-*A rod of length $L=1$ m has its left end held at $T_L=T(0,t)=50$ °C and its right end at $T_R=T(L,t)=100$ °C. Find the steady temperature distribution analytically and by finite differences.*
-
-Analytically, $\mathrm d^2T/\mathrm dx^2=0$ integrates twice to $T=Ax+B$. The left boundary gives $B=T_L$ and the right gives $A=(T_R-T_L)/L$, so
+Grid-convergence studies use this behaviour backwards. On three grids with constant refinement ratio $r$ (spacings $r^2h$, $rh$, $h$; commonly $r=2$, halving the spacing each time), the leading error $Ch^p$ makes successive differences shrink by $r^p$, giving the observed order $p$ and the **Richardson extrapolation** estimate of the grid-independent value:
 
 $$
-T(x)=T_L+\left(T_R-T_L\right)\frac{x}{L}=50+50x\quad(\text{°C},\ x\text{ in m}).
+p=\frac{\ln\!\left[(T_{r^2h}-T_{rh})/(T_{rh}-T_h)\right]}{\ln r},
+\qquad
+\boxed{T_{\text{exact}}\approx T_h+\frac{T_h-T_{rh}}{r^p-1}}.
 $$
 
-Numerically, every interior node satisfies $T_i=(T_{i+1}+T_{i-1})/2$ with $T_0=50$ and $T_I=100$. The linear profile satisfies these equations exactly: $T_{i\pm1}=T_i\pm50\Delta x$, so the average of the neighbours is $T_i$. The finite-difference solution therefore lies on the analytical line at every node, for any $\Delta x$. That is the truncation error of §5 at work: it is proportional to $\partial^4T/\partial x^4$, which is zero for a straight line, so this example cannot show the error of the scheme. The transient example of §10 can.
+When $p$ is already known (for example $p=2$ for a central-difference scheme), two grids ($rh$ and $h$) suffice for the second formula; with three grids the first formula checks that the meshes lie in the asymptotic range. Past papers test both: [[SESA3029 Past Paper 2019-20 - Solutions#(iv) Order of accuracy and extrapolation [6 marks]|2019–20 Q4(iv)]] finds $p\approx1.97$ from three grids with $r=2$ before extrapolating, and [[SESA3029 Past Paper 2021-22 - Solutions#Q3. Transient 1D rod cooling by explicit finite difference (30 marks)|2021–22 Q3]], [[SESA3029 Past Paper 2014-15 - Solutions#Q4. Laminar boundary-layer heat transfer, lunar re-entry and Richardson extrapolation (30 marks)|2014–15 Q4(iii)]], [[SESA3029 Past Paper 2015-16 - Solutions#Q4. Dimensionless heat-transfer numbers, laminar plate, lunar re-entry and CFD checks (30 marks)|2015–16 Q4(iv)]] ($p=3$) and [[SESA3029 Past Paper 2017-18 - Solutions#Q5. 1D isentropic Euler characteristics and Richardson extrapolation (16 marks)|2017–18 Q5(ii)]] apply the two-grid formula.
 
-## 8. Transient conduction: explicit and implicit schemes
+## 8. Accuracy in 2-D and 3-D
+
+The 2-D stencil of §4 has error $\mathcal O(\Delta x^2,\Delta y^2)$, since each direction contributes its own central second difference with the error of §7. In 3-D on a cubic grid the interior equation adds the two $z$-neighbours, $T_P=\tfrac16\sum T_{nb}+\dot g\Delta x^2/(6k)$, with the same order. The 1-D analysis therefore carries over direction by direction.
+
+## 9. Transient conduction: explicit and implicit schemes
 
 In 1-D, for transient conduction without a heat source, the heat diffusion equation is
 
@@ -320,7 +438,7 @@ $$
 T_i^{n+1}=\mathcal F\,T_{i-1}^n+\left(1-2\mathcal F\right)T_i^n+\mathcal F\,T_{i+1}^n,
 $$
 
-which §9 uses for stability.
+which §10 uses for stability.
 
 **Implicit scheme.** Evaluate the second derivative at the new time level $n+1$ instead:
 
@@ -340,9 +458,9 @@ $$
 \boxed{T_{i+1}^{n+1}-\left(2+\frac{1}{\mathcal F}\right)T_i^{n+1}+T_{i-1}^{n+1}=-\frac{1}{\mathcal F}T_i^n}
 $$
 
-It is **implicit in time** because each equation contains the unknown new values at three nodes. The equations for all interior nodes have to be solved together as a tridiagonal system, by the Thomas algorithm or any linear solver, once per step. Each step costs more than an explicit step, but §9 shows the step can be much larger. The same two schemes for the model heat problem are in [[SESA2029 A4 - Time Marching - Explicit and Implicit Methods|SESA2029 A4]] and [[Explicit and Implicit Time Integration]].
+It is **implicit in time** because each equation contains the unknown new values at three nodes. The equations for all interior nodes have to be solved together as a tridiagonal system, by the Thomas algorithm or any linear solver, once per step. Each step costs more than an explicit step, but §10 shows the step can be much larger. The same two schemes for the model heat problem are in [[SESA2029 A4 - Time Marching - Explicit and Implicit Methods|SESA2029 A4]] and [[Explicit and Implicit Time Integration]].
 
-**Order of accuracy.** The forward difference in time has the error of §5 with $t$ in place of $x$: expand $T_i^{n+1}$ about $t^n$,
+**Order of accuracy.** The forward difference in time has the error of §7 with $t$ in place of $x$: expand $T_i^{n+1}$ about $t^n$,
 
 $$
 T_i^{n+1}=T_i^n+\left(\frac{\partial T}{\partial t}\right)_i^n\Delta t+\frac12\left(\frac{\partial^2T}{\partial t^2}\right)_i^n\Delta t^2+\dots
@@ -352,9 +470,9 @@ $$
 
 With the $\mathcal O(\Delta x^2)$ spatial difference, the truncation error of either scheme is $\mathcal O(\Delta t,\Delta x^2)$: second order in space, first order in time, so first order overall. If $\mathcal F$ is held fixed while the grid is refined, $\Delta t\propto\Delta x^2$ and both parts of the error fall as $\Delta x^2$.
 
-## 9. Stability of the explicit scheme
+## 10. Stability of the explicit scheme
 
-Nothing in §8 restricts the size of the time step, but the explicit scheme fails if it is too large. Two short arguments give the limit. Both assume a uniform grid, constant $\alpha$, no generation and fixed-temperature (or periodic) boundaries.
+Nothing in §9 restricts the size of the time step, but the explicit scheme fails if it is too large. Two short arguments give the limit. Both assume a uniform grid, constant $\alpha$, no generation and fixed-temperature (or periodic) boundaries.
 
 **Positive coefficients.** In the collected form
 
@@ -386,13 +504,39 @@ which lies between 0 and 1 for every $\mathcal F>0$: the implicit scheme is **un
 
 ![[at_w09e_stability.png|900]]
 
-The left panel uses the rod of §10 with $\Delta x=0.05$ m. At $\mathcal F=0.40$ and $0.50$ the explicit solution lies on the exact one; at $\mathcal F=0.55$ a sawtooth appears after 22 steps and grows without limit. In 2-D on a square grid the explicit interior coefficient is $1-4\mathcal F$, so the limit is $\mathcal F\le\tfrac14$, and boundary nodes with convection are stricter still (§11). Because $\Delta t\le\Delta x^2/(2\alpha)$, halving the mesh size quarters the allowed time step, which is the price of the explicit scheme on fine grids. Stability is not accuracy: the implicit scheme gives a bounded answer at any $\mathcal F$, but a large $\Delta t$ still gives a large $\mathcal O(\Delta t)$ error.
+The left panel uses the rod of §11 with $\Delta x=0.05$ m. At $\mathcal F=0.40$ and $0.50$ the explicit solution lies on the exact one; at $\mathcal F=0.55$ a sawtooth appears after 22 steps and grows without limit. In 2-D on a square grid the explicit interior coefficient is $1-4\mathcal F$, so the limit is $\mathcal F\le\tfrac14$, and boundary nodes with convection are stricter still, as shown below. Because $\Delta t\le\Delta x^2/(2\alpha)$, halving the mesh size quarters the allowed time step, which is the price of the explicit scheme on fine grids. Stability is not accuracy: the implicit scheme gives a bounded answer at any $\mathcal F$, but a large $\Delta t$ still gives a large $\mathcal O(\Delta t)$ error.
 
-## 10. Worked example: 1-D transient conduction
+**Explicit transient boundary node, 1-D, with convection.** Node 0 at a surface facing a fluid owns a half cell $\Delta x/2$ long (per unit cross-sectional area):
 
-*The rod of §7 ($L=1$ m) is initially at 50 °C throughout. From $t=0$ its left end stays at $T_L=50$ °C and its right end is held at $T_R=100$ °C. Find $T(x,t)$ analytically and by the explicit scheme with $\Delta x=0.025$ m and $\Delta t=2.5$ s.*
+$$
+\rho c_p\,\frac{\Delta x}{2}\,\frac{T_0^{n+1}-T_0^n}{\Delta t}=k\,\frac{T_1^n-T_0^n}{\Delta x}+h\left(T_\infty-T_0^n\right).
+$$
 
-**Analytical solution.** Split $T$ into the steady profile of §7 and a transient part $u$ that decays:
+Multiply by $2\Delta t/(\rho c_p\Delta x)$ and use $\mathcal F=\alpha\Delta t/\Delta x^2$, $\mathrm{Bi}=h\Delta x/k$:
+
+$$
+T_0^{n+1}-T_0^n=2\mathcal F\left(T_1^n-T_0^n\right)+2\mathcal F\,\mathrm{Bi}\left(T_\infty-T_0^n\right).
+$$
+
+Collect the old temperatures:
+
+$$
+T_0^{n+1}=2\mathcal F\,T_1^n+\left(1-2\mathcal F-2\mathcal F\,\mathrm{Bi}\right)T_0^n+2\mathcal F\,\mathrm{Bi}\,T_\infty .
+$$
+
+The coefficient of $T_0^n$ must be non-negative, so at this node
+
+$$
+\mathcal F\left(1+\mathrm{Bi}\right)\le\frac12 ,
+$$
+
+stricter than the interior limit $\mathcal F\le\tfrac12$. The time step for the whole mesh is set by the most restrictive node. A rod cooled along its length as well adds a side-convection term to every node; that is [[SESA3029 Past Paper 2021-22 - Solutions#Q3. Transient 1D rod cooling by explicit finite difference (30 marks)|2021–22 Q3]].
+
+## 11. Worked example: 1-D transient conduction
+
+*The rod of §6 ($L=1$ m) is initially at 50 °C throughout. From $t=0$ its left end stays at $T_L=50$ °C and its right end is held at $T_R=100$ °C. Find $T(x,t)$ analytically and by the explicit scheme with $\Delta x=0.025$ m and $\Delta t=2.5$ s.*
+
+**Analytical solution.** Split $T$ into the steady profile of §6 and a transient part $u$ that decays:
 
 $$
 T(x,t)=T_L+\left(T_R-T_L\right)\frac xL+u(x,t).
@@ -481,108 +625,12 @@ Solving gives $T_1^1=50.61$, $T_2^1=52.74$, $T_3^1=61.72$ °C. Every node feels 
 | 750 | 1, 2, 3 | 53.20, 61.20, 78.00 | 53.02, 59.34, 73.73 | 52.58, 59.83, 75.93 |
 
 > [!check] Checks
-> The implicit values satisfy the three equations to within $2\times10^{-4}$ (rounding). The series values are confirmed by an explicit run on a grid four times finer ($\Delta x=0.0125$ m, $\mathcal F=0.16$), which gives 52.58, 59.83, 75.93 at 750 s. On this coarse grid the explicit scheme runs ahead of the exact solution near the hot end and the implicit lags behind it: the two first-order time errors have opposite signs.
-
-## 11. Boundary and corner nodes by energy balance
-
-The difference formulas of §4 need a neighbour on each side, which a node on a boundary does not have. The general way to get a node equation anywhere, and the one that past exam questions use, is an energy balance on the node's own control volume, as in §1 but with finite cells. The control volume around node P extends half a cell in every direction that stays inside the solid (dashed in the figure). Count every heat flow **into** it as positive:
-
-- conduction from a neighbour across a face: $k\times(\text{face length})\times\dfrac{T_{nb}-T_P}{\text{node spacing}}$ (unit depth);
-- convection through an exposed boundary: $h\times(\text{exposed length})\times(T_\infty-T_P)$;
-- a prescribed heat flux $\dot q$ into the solid: $\dot q\times(\text{boundary length})$;
-- generation: $\dot g\times(\text{control-volume area})$.
-
-In steady state these sum to zero. For a transient explicit scheme they sum to $\rho c_p\times(\text{control-volume area})\times(T_P^{n+1}-T_P^n)/\Delta t$, with every right-hand temperature at level $n$.
-
-![[at_w09e_boundary_nodes.png|900]]
-
-**Interior node** (panel (a)), square grid. All four faces have full length $\Delta x$ and spacing $\Delta x$:
-
-$$
-k(T_E-T_P)+k(T_W-T_P)+k(T_N-T_P)+k(T_S-T_P)+\dot g\,\Delta x^2=0,
-$$
-
-which is the §4 stencil again: the energy balance and the Taylor-series route agree.
-
-**Plane surface with convection** (panel (b)), surface facing $+x$, square grid. The control volume is a half cell $\Delta x/2$ wide and $\Delta y$ tall. The west face has length $\Delta y$; the north and south faces have length $\Delta x/2$; the exposed surface has length $\Delta y$:
-
-$$
-k\,\Delta y\,\frac{T_W-T_P}{\Delta x}+k\,\frac{\Delta x}{2}\,\frac{T_N-T_P}{\Delta y}+k\,\frac{\Delta x}{2}\,\frac{T_S-T_P}{\Delta y}+h\,\Delta y\,(T_\infty-T_P)=0 .
-$$
-
-With $\Delta x=\Delta y$, multiply by $2/k$ and write $\mathrm{Bi}=h\Delta x/k$ (a grid Biot number):
-
-$$
-2(T_W-T_P)+(T_N-T_P)+(T_S-T_P)+2\,\mathrm{Bi}\,(T_\infty-T_P)=0 .
-$$
-
-Collect $T_P$:
-
-$$
-\boxed{T_P=\frac{2T_W+T_N+T_S+2\,\mathrm{Bi}\,T_\infty}{4+2\,\mathrm{Bi}}}\qquad\left(\mathrm{Bi}=\frac{h\Delta x}{k}\right).
-$$
-
-An **insulated surface** is the case $h=0$: $T_P=(2T_W+T_N+T_S)/4$. That is the interior stencil with a mirror-image node $T_E=T_W$, which is why an insulated wall and a plane of symmetry are treated the same way.
-
-**Exterior corner with convection on both faces** (panel (c)). The control volume is a quarter cell. The west face has length $\Delta y/2$, the south face $\Delta x/2$, and the exposed boundary is $\Delta x/2+\Delta y/2$:
-
-$$
-k\,\frac{\Delta y}{2}\,\frac{T_W-T_P}{\Delta x}+k\,\frac{\Delta x}{2}\,\frac{T_S-T_P}{\Delta y}+h\left(\frac{\Delta x}{2}+\frac{\Delta y}{2}\right)(T_\infty-T_P)=0 .
-$$
-
-With $\Delta x=\Delta y$, multiply by $2/k$:
-
-$$
-(T_W-T_P)+(T_S-T_P)+2\,\mathrm{Bi}\,(T_\infty-T_P)=0
-\quad\Rightarrow\quad
-T_P=\frac{T_W+T_S+2\,\mathrm{Bi}\,T_\infty}{2+2\,\mathrm{Bi}}.
-$$
-
-A heat-flux boundary replaces $h(T_\infty-T_P)$ by $\dot q$, and an internal (re-entrant) corner has a three-quarter cell; that case, with a heat flux on both edges, is [[SESA3029 Past Paper 2024-25 A - Solutions#Q5. Finite-difference stencil at an internal corner with boundary heat flux (10 marks)|2024–25 A Q5]], with the result $6T_P=2T_N+2T_W+T_E+T_S+2\dot q\Delta x/k$.
-
-**Explicit transient boundary node, 1-D, with convection.** Node 0 at a surface facing a fluid owns a half cell $\Delta x/2$ long (per unit cross-sectional area):
-
-$$
-\rho c_p\,\frac{\Delta x}{2}\,\frac{T_0^{n+1}-T_0^n}{\Delta t}=k\,\frac{T_1^n-T_0^n}{\Delta x}+h\left(T_\infty-T_0^n\right).
-$$
-
-Multiply by $2\Delta t/(\rho c_p\Delta x)$ and use $\mathcal F=\alpha\Delta t/\Delta x^2$, $\mathrm{Bi}=h\Delta x/k$:
-
-$$
-T_0^{n+1}-T_0^n=2\mathcal F\left(T_1^n-T_0^n\right)+2\mathcal F\,\mathrm{Bi}\left(T_\infty-T_0^n\right).
-$$
-
-Collect the old temperatures:
-
-$$
-T_0^{n+1}=2\mathcal F\,T_1^n+\left(1-2\mathcal F-2\mathcal F\,\mathrm{Bi}\right)T_0^n+2\mathcal F\,\mathrm{Bi}\,T_\infty .
-$$
-
-The coefficient of $T_0^n$ must be non-negative, so at this node
-
-$$
-\mathcal F\left(1+\mathrm{Bi}\right)\le\frac12 ,
-$$
-
-stricter than the interior limit $\mathcal F\le\tfrac12$. The time step for the whole mesh is set by the most restrictive node. A rod cooled along its length as well adds a side-convection term to every node; that is [[SESA3029 Past Paper 2021-22 - Solutions#Q3. Transient 1D rod cooling by explicit finite difference (30 marks)|2021–22 Q3]].
-
-### Worked example: a surface node with convection
-
-*A steel wall, $k=15$ W/m K, on a square grid $\Delta x=\Delta y=0.01$ m, faces a fluid at $T_\infty=20$ °C with $h=100$ W/m² K. A surface node has $T_W=80$, $T_N=90$ and $T_S=70$ °C. Find the steady $T_P$ (suggested, not lecturer-set).*
-
-$\mathrm{Bi}=100\times0.01/15=0.0667$, so
-
-$$
-T_P=\frac{2(80)+90+70+2(0.0667)(20)}{4+2(0.0667)}=\frac{322.67}{4.1333}=78.06\ \text{°C}.
-$$
-
-> [!check] Face-by-face balance, per metre depth
-> West: $15\times0.01\times(80-78.06)/0.01=+29.0$ W/m. North: $15\times0.005\times(90-78.06)/0.01=+89.5$ W/m. South: $15\times0.005\times(70-78.06)/0.01=-60.5$ W/m. Convection: $100\times0.01\times(20-78.06)=-58.1$ W/m. Sum $=0$ ✓.
+> The implicit values satisfy the three equations to within $2\times10^{-4}$ (rounding). The series values are confirmed by an explicit run on a grid twenty times finer ($\Delta x=0.0125$ m, $\mathcal F=0.16$), which gives 52.58, 59.83, 75.93 at 750 s. On this coarse grid the explicit scheme runs ahead of the exact solution near the hot end and the implicit lags behind it: the two first-order time errors have opposite signs.
 
 ## Problem-solving workflow
 
 1. Draw the grid and label each node by type: interior, surface (with what condition), corner (exterior or internal).
-2. For each node type, draw its control volume and write the energy balance of §11; for interior nodes on a square grid, use the four-neighbour average directly.
+2. For each node type, draw its control volume and write the energy balance of §5; for interior nodes on a square grid, use the four-neighbour average directly.
 3. Steady problems: collect into a linear system and solve (by hand for a few nodes, or by Gauss–Seidel iteration).
 4. Transient problems: choose explicit or implicit. For explicit, find the largest $\mathcal F$ allowed by every node type ($\tfrac12$ interior 1-D, $\tfrac14$ interior 2-D, $\tfrac12(1+\mathrm{Bi})^{-1}$ at a 1-D convective end) and pick $\Delta t$ below it.
 5. Check: face flows sum to zero (steady); temperatures stay within the boundary and initial values (diffusion cannot create new extremes); grid refinement changes the answer by the factor the order of accuracy predicts.
@@ -613,7 +661,7 @@ $$
 
 - `Lecture5.7.pdf`: Lecture 5.7, Numerical methods in conduction, 20 slides: the 2-D heat conduction equation from an element energy balance (slides 2–6), thermal diffusivity (7), the heat diffusion equation and its boundary conditions (8), why numerical methods (9), discretising the heat equation (10–11), order of accuracy (12–13), transient conduction, explicit scheme and Fourier number (14–15), implicit scheme (16), order of accuracy in time (17), the 1-D steady example (18), the 1-D transient example with its series solution and an explicit-scheme animation (19–20).
 - The deck is last year's file re-issued, with no lecturer named on it. The lecture is expected in early December 2026. This note is written from the slides alone, with no transcript yet, and will be reconciled with the transcript once the lecture has been given.
-- Beyond the slides: the truncation error of the central second difference (§5), the series solution's derivation (§10), the stability limits (§9; the slides introduce the Fourier number but state no limit), the boundary and corner nodes (§11, which the past papers test), and both hand-worked examples. The value $\alpha=1.0\times10^{-4}$ m²/s in §10 is inferred by matching the plotted curves; the slides do not give it.
+- Beyond the slides: the truncation error of the central second difference (§7), the series solution's derivation (§11), the stability limits (§10; the slides introduce the Fourier number but state no limit), the boundary and corner nodes (§5, which the past papers test), and both hand-worked examples. The value $\alpha=1.0\times10^{-4}$ m²/s in §11 is inferred by matching the plotted curves; the slides do not give it.
 - Figures: `generate_aerothermo_w09de_figures.py` (`at_w09e_control_volume_and_stencils.png`, `at_w09e_order_of_accuracy.png`, `at_w09e_transient_example.png`, `at_w09e_stability.png`, `at_w09e_boundary_nodes.png`); every curve is computed, the series with 1500 terms.
 - Çengel and Ghajar, *Heat and Mass Transfer*, Ch. 5 (numerical methods in heat conduction); Incropera et al., *Fundamentals of Heat and Mass Transfer*, §§4.4–4.5 and 5.10.
 
@@ -624,16 +672,16 @@ No transcript yet; the tasks below cite the slide where each derivation or examp
 ### Core
 
 - [ ] **(5.7 slides 4–6)** Derive the 2-D heat diffusion equation from the energy balance on a $\delta x\times\delta y$ element with generation. → [[#1. The heat conduction equation in 2-D|§1]]
-- [ ] **(5.7 slides 10–11)** Derive $\partial^2T/\partial x^2\approx(T_{i+1}-2T_i+T_{i-1})/\Delta x^2$ from the half-point gradients, and show by Taylor series that its error is $\mathcal O(\Delta x^2)$. → [[#4. Discretising the heat equation|§§4–5]]
-- [ ] **(5.7 slides 14–16)** Derive the explicit iteration rule and the implicit equation in terms of $\mathcal F$. → [[#8. Transient conduction: explicit and implicit schemes|§8]]
-- [ ] (suggested, not lecturer-set) Show that the explicit scheme needs $\mathcal F\le\tfrac12$, and find the limit at a convective end node. Answer $\mathcal F(1+\mathrm{Bi})\le\tfrac12$. → [[#9. Stability of the explicit scheme|§9]] · [[#11. Boundary and corner nodes by energy balance|§11]]
+- [ ] **(5.7 slides 10–11)** Derive $\partial^2T/\partial x^2\approx(T_{i+1}-2T_i+T_{i-1})/\Delta x^2$ from the half-point gradients, and show by Taylor series that its error is $\mathcal O(\Delta x^2)$. → [[#4. Discretising the heat equation|§4]] · [[#7. Order of accuracy|§7]]
+- [ ] **(5.7 slides 14–16)** Derive the explicit iteration rule and the implicit equation in terms of $\mathcal F$. → [[#9. Transient conduction: explicit and implicit schemes|§9]]
+- [ ] (suggested, not lecturer-set) Show that the explicit scheme needs $\mathcal F\le\tfrac12$, and find the limit at a convective end node. Answer $\mathcal F(1+\mathrm{Bi})\le\tfrac12$. → [[#10. Stability of the explicit scheme|§10]]
 - [ ] **(past papers)** Internal-corner stencil with a heat flux: [[SESA3029 Past Paper 2024-25 A - Solutions#Q5. Finite-difference stencil at an internal corner with boundary heat flux (10 marks)|2024–25 A Q5]]. Answer $T_P=300$ °C.
 
 ### Further practice
 
-- [ ] **(5.7 slide 19)** Derive the series solution of the transient rod and check that it gives 50 °C inside the rod at $t=0$. → [[#10. Worked example: 1-D transient conduction|§10]]
-- [ ] **(5.7 slide 18)** Explain why the finite-difference solution of the steady rod is exact on any grid. → [[#7. Worked example: 1-D steady conduction|§7]]
-- [ ] **(5.7 slide 13)** By how much does the error of a second-order scheme fall when the number of grid points is doubled? Of a fourth-order scheme? Answers 4, 16. → [[#5. Order of accuracy|§5]]
+- [ ] **(5.7 slide 19)** Derive the series solution of the transient rod and check that it gives 50 °C inside the rod at $t=0$. → [[#11. Worked example: 1-D transient conduction|§11]]
+- [ ] **(5.7 slide 18)** Explain why the finite-difference solution of the steady rod is exact on any grid. → [[#6. Worked example: 1-D steady conduction|§6]]
+- [ ] **(5.7 slide 13)** By how much does the error of a second-order scheme fall when the number of grid points is doubled? Of a fourth-order scheme? Answers 4, 16. → [[#7. Order of accuracy|§7]]
 - [ ] (suggested, not lecturer-set) Three explicit and three implicit steps on the four-interval rod with $\mathcal F=0.4$. → [[#Worked example: one explicit and one implicit step by hand|worked example]]
 - [ ] (suggested, not lecturer-set) Surface node with convection: $T_P=78.06$ °C. → [[#Worked example: a surface node with convection|worked example]]
 - [ ] Past papers: transient rod by explicit FD with Richardson extrapolation, [[SESA3029 Past Paper 2021-22 - Solutions#Q3. Transient 1D rod cooling by explicit finite difference (30 marks)|2021–22 Q3]]; 2-D blocks, [[SESA3029 Past Paper 2019-20 - Solutions#Q4. High-temperature block convection, 2D finite difference and grid convergence (32 marks)|2019–20 Q4]] and [[SESA3029 Past Paper 2022-23 - Solutions|2022–23 Q4]]; radial stencil, [[SESA3029 Past Paper 2023-24 - Solutions#(ix) 1D radial cylindrical finite-difference equation [6 marks]|2023–24 Q1(ix)]].
@@ -641,21 +689,21 @@ No transcript yet; the tasks below cite the slide where each derivation or examp
 ## Transcript and slide slips
 
 > [!warning] Numerical and analytical curves start from different temperatures (5.7 slide 20)
-> Where: [[#10. Worked example: 1-D transient conduction]].
+> Where: [[#11. Worked example: 1-D transient conduction]].
 >
 > The series on slide 19 starts the rod at 50 °C (it sums to $T_L$ at $t=0$), but the "Numerical" curve on slide 20 at $t=125$ s falls to about 0 °C mid-rod, which is the explicit scheme started from 0 °C. With $\alpha=1.0\times10^{-4}$ m²/s the 0 °C run gives 10.4 °C at $x=0.2$ and 20.8 °C at $x=0.8$, matching the plotted curve; started from 50 °C the same scheme agrees with the series to within 0.13 °C. The large gap on the slide is the initial condition, not the scheme.
 
 > [!warning] "Minimal difference (~23 °C)" cannot be checked (5.7 slide 20)
-> Where: [[#10. Worked example: 1-D transient conduction]].
+> Where: [[#11. Worked example: 1-D transient conduction]].
 >
 > The slide states that the minimal difference, about 23 °C, occurs at $\Delta x=0.063$, $\Delta t=0.0391$. Neither $\alpha$ nor the measure of difference is given, and with the mismatched initial condition above the difference is dominated by the initial temperature, not by $\Delta x$ or $\Delta t$ (the mean absolute difference at 125 s is about 36 °C and the maximum about 50 °C on the 0.025/2.5 grid). The pair has $\Delta t/\Delta x^2=10.0$ s/m² (with $\Delta x=1/16$), so $\mathcal F=10\alpha$ with $\alpha$ in m²/s. To be settled from the lecture.
 
 > [!warning] Order of accuracy and the function (5.7 slide 13)
-> Where: [[#5. Order of accuracy]].
+> Where: [[#7. Order of accuracy]].
 >
 > "Does not depend on the function being approximated" holds for the order $p$, the rate at which the error falls. The size of the error does depend on the function through the derivative in the leading term ($T''''$ for the central second difference), and it is zero for the straight-line profile of the steady example.
 
 > [!warning] Smaller points
-> Where: [[#8. Transient conduction: explicit and implicit schemes]].
+> Where: [[#9. Transient conduction: explicit and implicit schemes]].
 >
-> Slide 17 is headed "Taylore series expansion" (Taylor). Slides 15–16 introduce the Fourier number without the stability limit $\mathcal F\le\tfrac12$ of the explicit scheme (§9). The same symbol $\alpha$ is thermal diffusivity here and absorptivity in Lecture 5.5.
+> Slide 17 is headed "Taylore series expansion" (Taylor). Slides 15–16 introduce the Fourier number without the stability limit $\mathcal F\le\tfrac12$ of the explicit scheme (§10). The same symbol $\alpha$ is thermal diffusivity here and absorptivity in Lecture 5.5.

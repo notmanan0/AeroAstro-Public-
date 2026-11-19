@@ -5,13 +5,13 @@ type: formula
 aliases: ["SESA3047 formulae", "Advanced Mechanics and Control formula sheet"]
 tags: [sesa3047, formula, exam-prep]
 status: in-progress
-coverage: "Chapters 1–5 lectured in full (L2–L16); Chapter 6 §§6.1–6.5 from L17 (Mon 9 Nov); §6.6 phugoid approximations from L18 (Mon 16 Nov)"
-sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt", "02 - Sources/Lectures/16 November 2026 at 11_51_48.txt"]
+coverage: "Chapters 1–5 lectured in full (L2–L16); Chapter 6 §§6.1–6.5 from L17 (Mon 9 Nov); §6.6 phugoid approximations from L18 (Mon 16 Nov); §§6.7–6.9 lateral modes from L19–L20 (Thu 19 Nov); Chapter 7 written ahead"
+sources: ["01 - Notes/Topics", "02 - Sources/Lectures/Chapter 1.pdf", "02 - Sources/Lectures/Chapter 2.pdf", "02 - Sources/Lectures/Chapter-3.pdf", "02 - Sources/Lectures/Chapter_4.pdf", "02 - Sources/Lectures/Chapter_5.pdf", "02 - Sources/Lectures/Lecture Notes - Chapter 6.pdf", "02 - Sources/Lectures/L11 - SESA3047.txt", "02 - Sources/Lectures/L12 - SESA3047.txt", "02 - Sources/Lectures/L13 - SESA3047.txt", "02 - Sources/Lectures/02 November 2026 at 11_53_51.txt", "02 - Sources/Lectures/09 November 2026 at 11_54_07.txt", "02 - Sources/Lectures/16 November 2026 at 11_51_48.txt", "02 - Sources/Lectures/19 November 2026 at 15_02_48.txt", "02 - Sources/Lectures/19 November 2026 at 16_00_12.txt", "02 - Sources/Lectures/Lecture Notes - Chapter 7.pdf"]
 ---
 
 # SESA3047 Formula Sheet
 
-Current coverage: **Chapters 1–5 and Chapter 6 §§6.1–6.6**. Chapter 4 was lectured in full (L11–L13, 19 and 22 Oct), Chapter 5 in L14–L16 (2 and 5 Nov), Chapter 6 §§6.1–6.4 in L17; §6.5 was set as reading; §6.6 was lectured in L18 (Mon 16 Nov). Handout-only pieces are marked where they appear. The official exam formula sheet goes on Blackboard in mid-November 2026.
+Current coverage: **Chapters 1–6**, with Chapter 7 written ahead. Chapter 4 was lectured in full (L11–L13, 19 and 22 Oct), Chapter 5 in L14–L16 (2 and 5 Nov), Chapter 6 §§6.1–6.4 in L17; §6.5 was set as reading; §6.6 was lectured in L18 (Mon 16 Nov) and §§6.7–6.9 in L19–L20 (Thu 19 Nov). Handout-only pieces are marked where they appear. The official exam formula sheet is final and is expected on Blackboard in the week of 23 Nov 2026.
 
 ## Control-system notation
 
@@ -594,6 +594,76 @@ At fixed $C_L$, $\mathring Z_u=-2mg/U_\infty$; with $\mathring M_u=0$ as well, E
 | Lanchester | 0.0779 | 0 | 80.6 |
 | improved (Eq. 6.38) | 0.0797 | 0.0949 | 79.2 |
 
+## Lateral modes and approximations
+
+Lectured L19–L20 (Thu 19 Nov), Chapter 6 §§6.7–6.9; the Dutch-roll approximation (Eqs. 6.55–6.58) is handout only. Details: [[SESA3047 6.3 - Lateral Modes and their Approximations|6.3]].
+
+Lateral model, level trim, FRD, $\mathbf x=[v,p,r,\phi]^T$ (Eq. 6.39), $\mathbf A=\mathbf M^{-1}\mathbf A'$:
+
+$$
+\begin{bmatrix}m&0&0&0\\0&J_{xx}&-J_{xz}&0\\0&-J_{xz}&J_{zz}&0\\0&0&0&1\end{bmatrix}\dot{\mathbf x}=\begin{bmatrix}\mathring Y_v&\mathring Y_p&\mathring Y_r-mU_\infty&mg\\\mathring L_v&\mathring L_p&\mathring L_r&0\\\mathring N_v&\mathring N_p&\mathring N_r&0\\0&1&0&0\end{bmatrix}\mathbf x.\qquad(6.39)
+$$
+
+Table 6.2 is non-dimensional: multiply $Y_v$ by $\tfrac12\rho U_0S$, $L_v$, $N_v$ by $\tfrac12\rho U_0Sb$, and $L_p,L_r,N_p,N_r$ by $\tfrac12\rho U_0Sb^2$. Navion: $(\lambda+0.0087)(\lambda+8.44)(\lambda^2+0.974\lambda+5.70)=0$ (Eq. 6.40). Compare eigenvector entries in like units, $\beta=v/U_\infty$.
+
+| Mode | Eigenvalue | Dominant states |
+|---|---|---|
+| roll subsidence | large negative real | $p$ |
+| spiral | real, near zero (either sign) | $\phi$ (with $r\approx g\phi/U_\infty$) |
+| Dutch roll | lightly damped complex pair | $\beta$, yaw, $\phi$ together |
+
+Roll subsidence ($\mathring L_pp$ only, $J_{xz}=0$):
+
+$$
+J_{xx}\dot p=\mathring L_pp,\qquad p(t)=p(0)e^{\mathring L_pt/J_{xx}},\qquad\lambda\approx\frac{\mathring L_p}{J_{xx}},\qquad\tau_\text{roll}=-\frac{J_{xx}}{\mathring L_p}.\qquad(6.41\text{–}6.43)
+$$
+
+Spiral ($\dot v=\dot p=\dot r=0$, $\mathring Y_v=\mathring Y_p=\mathring Y_r=0$, level trim; dimensional or non-dimensional derivatives):
+
+$$
+\lambda_\text{sp}=-\frac{g}{U_\infty}\,\frac{L_vN_r-L_rN_v}{L_vN_p-L_pN_v};\qquad\text{stable if }L_vN_r>L_rN_v\ \ (\text{denominator}>0).\qquad(6.54)
+$$
+
+Exact in the full model at level trim: $\det\mathbf A'=mg(\mathring L_v\mathring N_r-\mathring L_r\mathring N_v)$.
+
+Dutch roll ($p=\phi=0$, $\mathring Y_r\ll mU_\infty$, $J_{xz}=0$):
+
+$$
+mJ_{zz}\lambda^2-\left(m\mathring N_r+J_{zz}\mathring Y_v\right)\lambda+\mathring Y_v\mathring N_r+mU_\infty\mathring N_v=0,\qquad\omega_n^2=\frac{\mathring Y_v\mathring N_r+mU_\infty\mathring N_v}{mJ_{zz}},\qquad\zeta=-\frac{1}{2\omega_n}\left(\frac{\mathring N_r}{J_{zz}}+\frac{\mathring Y_v}{m}\right).\qquad(6.57,\ 6.58)
+$$
+
+| Navion, 53.75 m/s | Full model | Approximation |
+|---|---|---|
+| roll subsidence | $-8.444$ s⁻¹ | $-8.412$ s⁻¹ |
+| spiral | $-0.00875$ s⁻¹ | $-0.00968$ s⁻¹ |
+| Dutch roll | $-0.487\pm2.338j$ ($\omega_n=2.39$, $\zeta=0.204$) | $-0.508\pm2.108j$ ($\omega_n=2.17$, $\zeta=0.234$) |
+
+Phase of an integrator: $\Theta/Q=1/s$, $s=j\omega$ gives $-j/\omega$, phase $-90^\circ$; $\theta$ lags $q$ by $90^\circ$ (undamped), $90^\circ+\arcsin\zeta$ in a damped mode. A real eigenvalue never oscillates; overshoot needs a second-order mode.
+
+## Controllability, observability and pole placement
+
+Chapter 7, written ahead from the handout (not yet lectured). Details: [[SESA3047 7.1 - Controllability and Observability|7.1]], [[SESA3047 7.2 - Pole Placement|7.2]].
+
+$\dot{\mathbf x}=\mathbf A\mathbf x+\mathbf B\mathbf u$, $\mathbf y=\mathbf C\mathbf x$; $\mathbf A$ is $n\times n$, $\mathbf B$ is $n\times m$, $\mathbf C$ is $p\times n$. Aircraft: $\mathbf M\dot{\mathbf x}=\mathbf A'\mathbf x+\mathbf B'\mathbf u$, $\mathbf B=\mathbf M^{-1}\mathbf B'$; longitudinal $\mathbf u=[\Delta\eta,\Delta T,u_g,w_g]^T$ (Eq. 7.5), lateral $\mathbf u=[v_g,\delta_A,\delta_R]^T$ (Eq. 7.6); the kinematic row of $\mathbf B'$ is zero.
+
+Rank: number of linearly independent columns (= rows), at most $\min(p,q)$ for $p\times q$; a square matrix has full rank iff $\det\neq0$.
+
+$$
+\mathcal C=\begin{bmatrix}\mathbf B&\mathbf A\mathbf B&\cdots&\mathbf A^{n-1}\mathbf B\end{bmatrix},\qquad\mathcal O=\begin{bmatrix}\mathbf C\\\mathbf C\mathbf A\\\vdots\\\mathbf C\mathbf A^{n-1}\end{bmatrix};\qquad\text{fully controllable iff }\operatorname{rank}\mathcal C=n,\ \text{fully observable iff }\operatorname{rank}\mathcal O=n.\qquad(7.1,\ 7.9)
+$$
+
+Air data (Eq. 7.8): $u=V\cos\alpha\cos\beta$, $v=V\sin\beta$, $w=V\sin\alpha\cos\beta$.
+
+Pole placement (proportional state feedback, all states available):
+
+$$
+\mathbf u=-\mathbf K\mathbf x,\qquad\dot{\mathbf x}=(\mathbf A-\mathbf B\mathbf K)\mathbf x,\qquad\det\big(\lambda\mathbf I-(\mathbf A-\mathbf B\mathbf K)\big)=\prod_i(\lambda-\lambda_i).\qquad(7.10)
+$$
+
+$\mathbf K$ is $m\times n$. Single input and fully controllable: unique $\mathbf K$ for any poles that are real or in conjugate pairs. Companion form $\mathbf A_c=\begin{bmatrix}0&1\\-a_0&-a_1\end{bmatrix}$, $\mathbf B_c=[0\ 1]^T$: $k_1=a_0'-a_0$, $k_2=a_1'-a_1$. General single input ($n=2$): $\mathbf T=\mathcal C\begin{bmatrix}a_1&1\\1&0\end{bmatrix}$, $\mathbf K=\mathbf K_c\mathbf T^{-1}$; Ackermann $\mathbf K=[0\ \cdots\ 0\ 1]\,\mathcal C^{-1}\varphi_d(\mathbf A)$ (not in the handout). Several inputs: more gains than equations, $\mathbf K$ not unique, use LQR (Chapter 8).
+
+Eq. 7.11: $\mathbf A=\begin{bmatrix}0&1\\-2&-3\end{bmatrix}$, $\mathbf B=[0\ 1]^T$: $\lambda^2+(3+k_2)\lambda+(2+k_1)$; poles $-2,-3$ need $\mathbf K=[4\ \ 2]$.
+
 ## Related
 
 - [[SESA3047 1.1 - Dynamic Systems and Control Architectures]]
@@ -615,4 +685,8 @@ At fixed $C_L$, $\mathring Z_u=-2mg/U_\infty$; with $\mathring M_u=0$ as well, E
 
 - [[SESA3047 6.1 - Longitudinal Modes, Eigenvectors and the SPO Approximation]] · [[Eigenvectors as Mode Shapes]]
 - [[SESA3047 6.2 - Phugoid Approximation]] · [[Lanchester's Phugoid Approximation]] · [[Separation of Time Scales]] · [[State Coupling]]
+- [[SESA3047 6.3 - Lateral Modes and their Approximations]] · [[Roll Subsidence Mode]] · [[Spiral Mode]] · [[Dutch Roll Mode]]
+
+- [[SESA3047 7.1 - Controllability and Observability]] · [[Controllability]] · [[Observability]]
+- [[SESA3047 7.2 - Pole Placement]] · [[Pole Placement]]
 - Deep dives: [[SESA3047 Deep Dive - Euler-Angle Rates and Gimbal Lock]] · [[SESA3047 Deep Dive - From the 6-DOF Equations to the Longitudinal Modes]]

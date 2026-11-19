@@ -119,7 +119,7 @@ $$
 where $c_0=2.998\times10^8$ m/s is the speed of light in vacuum and $k_B=1.38065\times10^{-23}$ J/K is Boltzmann's constant.
 
 > [!check] The two constants
-> $2\pi hc_0^2=2\pi(6.6256\times10^{-34})(2.998\times10^8)^2=2.3415\times10^{-16}$ W m², and $1\ \mathrm{m^2}=10^{24}\ \mathrm{\mu m^4\,m^{-2}}$, so $C_1=3.7415\times10^8$ W μm⁴/m² ✓. $hc_0/k_B=1.4387\times10^{-2}$ m K $=1.439\times10^4$ μm K ✓. With the current value $h=6.62607\times10^{-34}$ J s, $C_1=3.7418\times10^8$; the difference is in the fifth figure.
+> $2\pi hc_0^2=2\pi(6.6256\times10^{-34})(2.998\times10^8)^2=3.7417\times10^{-16}$ W m² ($3.7415\times10^{-16}$ with exact $c_0=2.99792458\times10^8$ m/s), and $1\ \mathrm{m^2}=10^{24}\ \mathrm{\mu m^4\,m^{-2}}$, so $C_1=3.742\times10^8$ W μm⁴/m² ✓. $hc_0/k_B=1.4387\times10^{-2}$ m K $=1.439\times10^4$ μm K ✓. With the current value $h=6.62607\times10^{-34}$ J s and exact $c_0$, $C_1=3.7418\times10^8$; the difference is in the fifth figure.
 
 The two limits of Planck's law show where the classical theory went wrong. Write $x=C_2/\lambda T$.
 
@@ -147,7 +147,7 @@ The curves have four features (log axes above). Emission is a continuous functio
 
 ## 5. Wien's displacement law
 
-To find the peak, write Planck's law in terms of $x=C_2/\lambda T$. Since $\lambda=C_2/(xT)$,
+The wavelength of peak blackbody emission shifts inversely with temperature, $(\lambda T)_{\max\text{ power}}=2897.8\ \mathrm{\mu m\,K}$. To derive this constant from Planck's law, write the spectrum in terms of $x=C_2/\lambda T$. Since $\lambda=C_2/(xT)$,
 
 $$
 \frac{1}{\lambda^5}=\frac{x^5T^5}{C_2^5}
@@ -210,7 +210,7 @@ The Sun's peak at 0.5 μm sits in the visible range (0.40–0.76 μm), which is 
 
 ## 6. The Stefan–Boltzmann law
 
-The **total emissive power** $E_b$ is the energy emitted by a blackbody per unit time and per unit area, over all wavelengths:
+A blackbody's **total emissive power** $E_b$ (emitted per unit time and unit area over all wavelengths) grows as the fourth power of absolute temperature, $E_b=\sigma T^4$ with $\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}$. Integrating Planck's law over all wavelengths derives both the $T^4$ scaling and $\sigma$:
 
 $$
 E_b(T)=\int_0^\infty E_{b,\lambda}(\lambda,T)\,\mathrm d\lambda=\int_0^\infty\frac{C_1}{\lambda^5\left[\exp(C_2/\lambda T)-1\right]}\,\mathrm d\lambda .

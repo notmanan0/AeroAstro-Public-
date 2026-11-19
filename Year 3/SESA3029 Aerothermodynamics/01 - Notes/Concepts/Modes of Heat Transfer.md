@@ -8,7 +8,7 @@ tags: [sesa3029, concept, heat-transfer, conduction, convection, radiation]
 status: complete
 parent_lectures: ["[[SESA3029 W09a - Heat Conduction and Thermal Resistance]]"]
 related_concepts: ["[[Fourier's Law of Heat Conduction]]", "[[Thermal Resistance]]", "[[Blackbody Radiation]]"]
-sources: ["02 - Sources/Lectures/Lecture5.1.pdf"]
+sources: ["02 - Sources/Lectures/Lecture5.1.pdf", "02 - Sources/Lectures/Lecture 5-1 (2025-26 version).txt"]
 ---
 
 # Modes of Heat Transfer
@@ -28,5 +28,4 @@ The **heat transfer rate** $\dot Q$ is in watts and the **heat flux** $\dot q=\d
 
 ## Sources
 
-- Sources: L5.1 slides 2–8; L5.2 slides 9–12.
-- Notes: written ahead from the slides, before the lecture.
+- Sources: L5.1 slides 2–8 and L5-1 (2025–26 recording), ll. 1–148; L5.2 slides 9–12 (written ahead).

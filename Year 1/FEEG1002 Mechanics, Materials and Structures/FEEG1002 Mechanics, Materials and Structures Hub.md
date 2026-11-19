@@ -226,14 +226,14 @@ Lecture 9 (12 May 2025) is a revision lecture and is cited in every B note.
 
 ### Dynamics
 
-- Draw the free-body diagram and the kinetic diagram first; most questions award marks for them (L01, ll. 340–342; Mock, l. 169).
+- Draw the free-body diagram and the kinetic diagram first; most questions award marks for them.
 - Decide what $a$ depends on ($t$, $s$ or $v$) before integrating; use SUVAT only for constant acceleration.
 - Never write $F_s = \mu_sN$ in an equation of motion: find static friction from the equations, then check it.
 - Pick the principle from the quantities: forces–speeds–distances → work–energy; forces–speeds–times or impacts → impulse–momentum; moments about a fixed point or a centre of attraction → angular momentum.
 - Name the point when claiming conservation of angular momentum.
 - For vibration, compare $\omega$ with $\omega_n$ first and use the matching approximation of $X/F$; keep $\omega$ (rad/s) and $f$ (Hz) apart.
 - For rigid bodies, take moments about a fixed pivot ($I_O$) or a contact point to remove unknown reactions; for rolling, assume no slip, then check $F \le \mu_sN$.
-- Give units with every numerical answer (Mock, ll. 443–445) and check answers dimensionally.
+- Give units with every numerical answer and check answers dimensionally.
 
 ## Tutorial sheets: full worked solutions
 
@@ -300,7 +300,7 @@ SORT type ASC, file.name ASC
 - Transcripts (`02 - Sources/Lectures/`): `FEEG1002 Lecture 1 - Statics 2 - …` to `FEEG1002 Lecture 9 - Statics 2 - Revision - …` (27 Jan – 12 May 2025; Lecture 9 is revision).
 - Slides (`02 - Sources/Statics 2/Lectures/`): `Lecture 01 - Stress in Multiple Dimensions and Pressure Vessels.pdf` to `Lecture 08 - Yield Criteria.pdf`.
 - Tutorial sheets with official solutions (`02 - Sources/Statics 2/Tutorials/`): sheets 01–08; solution notes in `01 - Notes/Tutorials/FEEG1002 Statics 2 Tutorial 1–8`, every answer re-checked numerically and linked to the teaching section.
-- Figures: `01 - Notes/Figures/generate_statics2_figures.py` (shared `year3_style`), outputs `s2_*.png`.
+- Figures: `01 - Notes/Figures/generate_statics2_figures.py` (shared `vault_style`), outputs `s2_*.png`.
 
 ### Materials
 

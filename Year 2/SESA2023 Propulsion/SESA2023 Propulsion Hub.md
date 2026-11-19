@@ -142,7 +142,7 @@ There is no 2019-20 paper. The topic-by-year grid, recurring bookwork and the tr
 ## Scripts (`04 - Scripts/`)
 
 - `prop.py`: the shared toolkit (isentropic, shocks, choked flow, data-book ISA, oblique shocks, rockets).
-- `make_figures.py`: regenerates all 30 figures in `01 - Notes/Figures` from 27 figure functions. The five added in the Year 3 upgrade (sound-wave control volume, W03 shock in a nozzle, oblique-shock geometry, W05 $h$–$T$ combustion paths, W07 turbofan stations) are in the block at the end of the script. It still uses its own styling rather than `Year 3/_shared/year3_style.py`; switch it over when it is next edited.
+- `make_figures.py`: regenerates all 30 figures in `01 - Notes/Figures` from 27 figure functions. The five added in the Year 3 upgrade (sound-wave control volume, W03 shock in a nozzle, oblique-shock geometry, W05 $h$–$T$ combustion paths, W07 turbofan stations) are in the block at the end of the script. It uses the shared house style, `vault_style.py` at the vault root.
   - `python make_figures.py` regenerates everything.
   - `python make_figures.py fig_isa --out preview/` renders one figure to a scratch folder.
 - `verify_tutorials.py`: reproduces the answers in the problem-sheet notes, Sheets 1–5 and 7–10.
