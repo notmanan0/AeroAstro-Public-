@@ -8,7 +8,7 @@ tags: [sesa3043, concept, rotor, hover, blade-element]
 status: complete
 parent_lectures: ["[[SESA3043 4.1 - Rotor in Hover]]"]
 related_concepts: ["[[Rotor Thrust and Power Coefficients]]", "[[Figure of Merit]]", "[[Blade Twist and Annulus Theory]]", "[[Hover Induced Velocity and Disc Loading]]"]
-sources: ["02 - Sources/Lectures/CH4 Rotor Aerodynamics.pdf"]
+sources: ["02 - Sources/Lectures/CH4 Rotor Aerodynamics.pdf", "02 - Sources/Lectures/20 November 2026 at 14_51_19.txt"]
 ---
 
 # Blade Element Theory

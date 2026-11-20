@@ -21,7 +21,7 @@ The construction rules are:
 2. A point on the real axis is on the locus if the number of real poles plus zeros to its right is odd.
 3. There are $n-m$ asymptotes, at angles $\theta_k = (2k+1)\pi/(n-m)$, meeting at the centroid $\sigma_a = (\sum p-\sum z)/(n-m)$.
 4. Break-away and break-in points solve $dK/ds = 0$ with $K = -A(s)/B(s)$; keep only the roots that lie on the locus.
-5. Departure and arrival angles are $\phi = \pi+\sum\angle(\text{zeros})-\sum\angle(\text{poles})$.
+5. The departure angle from a complex pole is $\phi_d = \pi+\sum\angle(\text{zeros})-\sum\angle(\text{other poles})$; the arrival angle at a complex zero is $\phi_a = \pi-\sum\angle(\text{other zeros})+\sum\angle(\text{poles})$.
 6. Sketch, then check numerically.
 
 Reading a design off the locus uses the s-plane geometry: the distance from the origin gives $\omega_n$, the angle from the negative real axis gives $\zeta = \cos\beta$, and the real part gives the decay rate, so you choose $K$ by where you want the poles to sit. Adding a zero (PD control) pulls the locus to the left, adding phase lead and damping; adding a pole (integral action) pushes it to the right.

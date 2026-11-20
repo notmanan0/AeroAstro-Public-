@@ -1026,7 +1026,7 @@ $$
 \delta_w=-\frac{\beta\pi}{2}=0.09\pi=\boxed{16.2^\circ}\ \text{away from the flow}.
 $$
 
-Station values, using $Re_x=8\times0.3/1.5\times10^{-5}=1.6\times10^5$ ($\sqrt{Re_x}=400$):
+Station values, using $Re_x=8\times0.3/(1.5\times10^{-5})=1.6\times10^5$ ($\sqrt{Re_x}=400$):
 
 $$
 \sqrt{\frac{2}{m+1}}=\sqrt{\frac{2}{0.91743}}=1.4765.
@@ -1171,7 +1171,7 @@ $\theta/x$ and $C_f$ come out equal, as for Blasius. Since $\theta\propto\sqrt x
 
 A good guess of the profile shape gives integral quantities within about 1 % (the straight line of revision 3.1 Q4 is 13 % low in $C_f$). $\theta$ is an integral, so it averages out the local errors in the profile.
 
-**(c)** $Re_x=10\times0.5/1.5\times10^{-5}=3.333\times10^5$, so $\sqrt{Re_x}=577.4$:
+**(c)** $Re_x=10\times0.5/(1.5\times10^{-5})=3.333\times10^5$, so $\sqrt{Re_x}=577.4$:
 
 $$
 \delta=\frac{4.795\times0.5}{577.4}=\boxed{4.15\ \text{mm}}\quad(\text{Blasius }\delta_{99}=4.25\ \text{mm}),

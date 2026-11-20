@@ -33,7 +33,7 @@ and since $p_0$ and $T_0$ are constant through the fan, $p$, $T$ and $\rho$ foll
 
 As $M\to\infty$, $\nu\to\nu_{max}=90^\circ\left(\sqrt{(\gamma+1)/(\gamma-1)}-1\right)$. That is $130.45^\circ$ for $\gamma=1.4$, but $163.3^\circ$ for the CO₂ ($\gamma=1.289$) in the MoC coursework.
 
-In the [[Method of Characteristics]], $\nu$ is half of each [[Riemann Invariants|Riemann invariant]]: $R^+=\nu-\theta$ is constant along $C^+$ and $R^-=\nu+\theta$ along $C^-$ ([[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants|W05a §7]]; Anderson writes $K^\pm=\theta\mp\nu$). A Prandtl–Meyer fan is a simple flow region with one invariant uniform throughout, and $\nu(M_2)=\nu(M_1)+\theta$ is just that statement. Practice: [[SESA3029 Example Sheet 2 - Solutions#Q2. Characteristics and Riemann invariants|ES2 Q2]].
+In the [[Method of Characteristics]], $\nu$ is half the sum of the two [[Riemann Invariants|Riemann invariants]], $\nu=\tfrac12(R^++R^-)$: $R^+=\nu-\theta$ is constant along $C^+$ and $R^-=\nu+\theta$ along $C^-$ ([[SESA3029 W05a - Method of Characteristics#7. Compatibility conditions and Riemann invariants|W05a §7]]; Anderson writes $K^\pm=\theta\mp\nu$). A Prandtl–Meyer fan is a simple flow region with one invariant uniform throughout, and $\nu(M_2)=\nu(M_1)+\theta$ is just that statement. Practice: [[SESA3029 Example Sheet 2 - Solutions#Q2. Characteristics and Riemann invariants|ES2 Q2]].
 
 ![[at_prandtl_meyer_function.png|760]]
 

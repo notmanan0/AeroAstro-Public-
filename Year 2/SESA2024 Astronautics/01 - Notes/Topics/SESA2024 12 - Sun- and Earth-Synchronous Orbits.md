@@ -164,7 +164,7 @@ $$
 the rate above, in radians per second when $\mu$, $R_E$ and $a$ share one length unit. The same expression is often written $\dot\Omega=-\tfrac32nJ_2(R_E/a)^2\cos i$, since $\sqrt\mu\,a^{-7/2}=n/a^2$. The surviving $\cos i$ sets the sign of the regression.
 
 > [!check] An 800 km Sun-synchronous orbit from the radian form
-> At $a=7178$ km, $n=\sqrt{398\,600.4/7178^3}=1.0382\times10^{-3}$ rad/s and $(R_E/a)^2=(6378.1/7178)^2=0.78954$, so $\tfrac32nJ_2(R_E/a)^2=1.5\times1.0382\times10^{-3}\times1.0826\times10^{-3}\times0.78954=1.3311\times10^{-6}$ rad/s. The required rate is $2\pi/(365.25\times86\,400)=1.9910\times10^{-7}$ rad/s, so $\cos i=-1.9910\times10^{-7}/1.3311\times10^{-6}=-0.14958$ and $i=98.60^\circ$. The degrees-per-day constant gives the same: $a^{-7/2}=3.1914\times10^{-14}$, $\cos i=0.9856/(-2.0647\times10^{14}\times3.1914\times10^{-14})=-0.14957$, $i=98.60^\circ$, as in the table in [[#Inclination for 700 to 900 km]].
+> At $a=7178$ km, $n=\sqrt{398\,600.4/7178^3}=1.0382\times10^{-3}$ rad/s and $(R_E/a)^2=(6378.1/7178)^2=0.78954$, so $\tfrac32nJ_2(R_E/a)^2=1.5\times1.0382\times10^{-3}\times1.0826\times10^{-3}\times0.78954=1.3311\times10^{-6}$ rad/s. The required rate is $2\pi/(365.25\times86\,400)=1.9910\times10^{-7}$ rad/s, so $\cos i=-1.9910\times10^{-7}/(1.3311\times10^{-6})=-0.14958$ and $i=98.60^\circ$. The degrees-per-day constant gives the same: $a^{-7/2}=3.1914\times10^{-14}$, $\cos i=0.9856/(-2.0647\times10^{14}\times3.1914\times10^{-14})=-0.14957$, $i=98.60^\circ$, as in the table in [[#Inclination for 700 to 900 km]].
 
 ### Which inclination
 

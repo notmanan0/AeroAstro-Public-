@@ -8,7 +8,7 @@ tags: [sesa3043, concept, rotor, hover, ground-effect]
 status: complete
 parent_lectures: ["[[SESA3043 4.1 - Rotor in Hover]]"]
 related_concepts: ["[[Hover Induced Velocity and Disc Loading]]", "[[Method of Images]]", "[[Lumped Vortex Method]]"]
-sources: ["02 - Sources/Lectures/CH4 Rotor Aerodynamics.pdf"]
+sources: ["02 - Sources/Lectures/CH4 Rotor Aerodynamics.pdf", "02 - Sources/Lectures/20 November 2026 at 14_51_19.txt"]
 ---
 
 # Rotor Ground Effect

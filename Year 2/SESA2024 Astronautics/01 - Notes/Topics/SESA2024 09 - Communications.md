@@ -103,7 +103,7 @@ N=kTB,
 N_0=kT,
 $$
 
-with Boltzmann's constant $k=1.38\times10^{-23}$ J/K, so $10\log k=-228.6$ dB.
+with Boltzmann's constant $k=1.38\times10^{-23}$ J/K, so $10\log k=-228.6$ dBW/(Hz K).
 
 ## 5. Antenna gain and beamwidth
 
@@ -181,7 +181,7 @@ $$
 \boxed{10\log\frac{C}{N_0}=10\log(P_TG_T)+10\log\frac{G_R}{T_R}-20\log\frac{4\pi\rho}{\lambda}-10\log L_a-10\log k}
 $$
 
-with $-10\log k=+228.6$ dB. Term by term: the carrier-to-noise-density ratio relates to the BER; $P_TG_T$ is the equivalent isotropic radiated power (EIRP); $G_R/T_R$ is the ground station's figure of merit, its sensitivity; then the free-space loss, the additional losses and the constant.
+with $-10\log k=+228.6$, since $10\log k=-228.6$ dBW/(Hz K). Term by term: the carrier-to-noise-density ratio relates to the BER; $P_TG_T$ is the equivalent isotropic radiated power (EIRP); $G_R/T_R$ is the ground station's figure of merit, its sensitivity; then the free-space loss, the additional losses and the constant.
 
 The losses are fixed by geometry and atmosphere and the figure of merit by the ground station, so on the spacecraft the designer controls only the EIRP. It is the power an isotropic radiator would need to give the same flux at the receiver. The same EIRP can come from high power and low gain or low power and high gain, and that is the power–gain trade-off. A bigger dish saves power but adds mass, may not fit in the fairing without a deployment mechanism (and its risk), may shadow arrays or block payload views, and narrows the beam, tightening the ACS pointing requirement.
 
@@ -201,16 +201,16 @@ For a given modulation, $E_b/N_0$ fixes the BER: more energy per bit, fewer erro
 
 ## Worked examples
 
-Constants: $c=3\times10^8$ m/s and $10\log k=-228.6$ dB.
+Constants: $c=3\times10^8$ m/s and $10\log k=-228.6$ dBW/(Hz K).
 
 ### GEO TV broadcast satellite
 
 An old past-paper question (pre-recorded lecture): a GEO satellite broadcasts TV at 92 Mbit/s to users at a slant range of 38 400 km, at C band, 4 GHz. A user's dish is 0.4 m in diameter with a system noise temperature of 150 K. A BER of $10^{-6}$ is required, and there are 5 dB of additional losses. Estimate the satellite EIRP and, if the spacecraft dish is 2 m and the transponders are 50 % efficient, the transponder electrical power.
 
-$\lambda=3\times10^8/4\times10^9=0.075$ m. Term by term:
+$\lambda=3\times10^8/(4\times10^9)=0.075$ m. Term by term:
 
 $$
-10\log\frac{C}{N_0}=10+10\log(92\times10^6)=10+79.64=89.64\ \mathrm{dB},
+10\log\frac{C}{N_0}=10+10\log(92\times10^6)=10+79.64=89.64\ \mathrm{dB\text{-}Hz},
 $$
 
 using $E_b/N_0\approx10$ dB read from the curve for BER $10^{-6}$;
@@ -220,7 +220,7 @@ G_R=0.65\left(\frac{\pi\times0.4}{0.075}\right)^2=0.65\times16.755^2=182.5,
 $$
 
 $$
-10\log\frac{G_R}{T_R}=10\log182.5-10\log150=22.61-21.76=0.85\ \mathrm{dB};
+10\log\frac{G_R}{T_R}=10\log182.5-10\log150=22.61-21.76=0.85\ \mathrm{dB/K};
 $$
 
 with the slant range in metres, $\rho=3.84\times10^7$ m,
@@ -254,7 +254,7 @@ $$
 and at 50 % efficiency the transponders draw 600 W. The slant range must be in metres to match the wavelength.
 
 > [!check] Closing the budget
-> Putting the answer back in, $61.36+0.85-196.17-5+228.6=89.64$ dB, the required $C/N_0$. A slant range left in kilometres would cut the free-space loss by exactly $20\log1000=60$ dB and give an EIRP of 1.36 dBW, about 1.4 W, which is far too little to reach a 0.4 m dish from GEO.
+> Putting the answer back in, $61.36+0.85-196.17-5+228.6=89.64$ dB-Hz, the required $C/N_0$. A slant range left in kilometres would cut the free-space loss by exactly $20\log1000=60$ dB and give an EIRP of 1.36 dBW, about 1.4 W, which is far too little to reach a 0.4 m dish from GEO.
 
 ### Voyager at Saturn (2017/18 B3)
 
@@ -273,7 +273,7 @@ In the second part, Voyager stored 0.5 Gbit at the Saturn fly-by and downlinked 
 $$
 G_R=3962.5\times70^2=1.94\times10^7,
 \qquad
-10\log\frac{G_R}{T_R}=72.89-13.98=58.90\ \mathrm{dB}.
+10\log\frac{G_R}{T_R}=72.89-13.98=58.90\ \mathrm{dB/K}.
 $$
 
 With $\rho=9.5\times1.5\times10^{11}=1.425\times10^{12}$ m, the free-space loss is
@@ -285,11 +285,11 @@ $$
 Then
 
 $$
-10\log\frac{C}{N_0}=61.2+58.90-294.10-3+228.6=51.60\ \mathrm{dB},
+10\log\frac{C}{N_0}=61.2+58.90-294.10-3+228.6=51.60\ \mathrm{dB\text{-}Hz},
 $$
 
 $$
-10\log R_b=51.60-10=41.60\ \mathrm{dB},
+10\log R_b=51.60-10=41.60\ \mathrm{dB\text{-}bit/s},
 \qquad
 R_b=1.44\times10^4\ \mathrm{bit/s},
 $$
@@ -301,7 +301,7 @@ $$
 The rounded reference values, 14 421 bit/s and 9.631 h, use 1 AU = $1.5\times10^8$ km, with the small remaining difference most likely from rounding the intermediate dB values; carried unrounded, the same inputs give 14 437 bit/s and 9.62 h, and with 1 AU = $1.496\times10^8$ km, 14 510 bit/s and 9.57 h. A 0.01 dB rounding is a 0.2 % change, so these differences are all rounding.
 
 > [!check] Why the data rate is so low
-> The free-space loss at 9.5 AU is $20\log(9.5\times1.5\times10^{8}/3.84\times10^{4})=91.4$ dB more than at GEO range for the same wavelength. The 70 m DSN dish ($G_R/T_R=58.9$ dB against 0.85 dB for the TV dish) recovers 58 dB of that, and the rest shows up as a data rate of kilobits rather than megabits per second.
+> The free-space loss at 9.5 AU is $20\log(9.5\times1.5\times10^{8}/(3.84\times10^{4}))=91.4$ dB more than at GEO range for the same wavelength. The 70 m DSN dish ($G_R/T_R=58.9$ dB/K against 0.85 dB/K for the TV dish) recovers 58 dB of that, and the rest shows up as a data rate of kilobits rather than megabits per second.
 
 ## Links
 

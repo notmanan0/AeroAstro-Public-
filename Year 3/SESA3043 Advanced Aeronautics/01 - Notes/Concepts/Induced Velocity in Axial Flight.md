@@ -8,7 +8,7 @@ tags: [sesa3043, concept, rotor, actuator-disc, axial-flight]
 status: complete
 parent_lectures: ["[[SESA3043 4.2 - Rotor in Axial Flight]]"]
 related_concepts: ["[[Rotor Working States in Axial Flight]]", "[[Windmill Brake State]]", "[[Vortex Ring State]]", "[[Autorotation]]", "[[Actuator Disk Theory]]"]
-sources: ["02 - Sources/Lectures/CH4 Rotor Aerodynamics.pdf"]
+sources: ["02 - Sources/Lectures/CH4 Rotor Aerodynamics.pdf", "02 - Sources/Lectures/20 November 2026 at 14_51_19.txt"]
 ---
 
 # Induced Velocity in Axial Flight
@@ -35,4 +35,4 @@ For the Lynx at 5330 kg ($v_0=12.88$ m/s), a 5 m/s climb gives $\bar v_i=0.8245$
 ## Sources
 
 - Sources: CH4 Rotor Aerodynamics, slides 43–56, 64, 67–68.
-- Notes: written ahead from the slides, 17 Nov 2026.
+- Notes: written ahead from the slides, 17 Nov 2026; the climb and descent equations lectured Fri 20 Nov 2026 (`20 November 2026 at 14_51_19.txt`, ll. 391–590).

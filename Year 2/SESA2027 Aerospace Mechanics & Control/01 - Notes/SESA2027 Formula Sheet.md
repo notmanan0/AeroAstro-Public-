@@ -285,7 +285,7 @@ $$
 - Branches: start at the $n$ open-loop poles ($K = 0$), end at the $m$ zeros or at infinity ($K\to\infty$).
 - Real axis: on the locus where the number of real poles plus zeros to the right is odd.
 - Asymptotes: $n-m$ of them, at $\theta_k = \dfrac{(2k+1)\pi}{n-m}$ ($k = 0,1,\dots$, anticlockwise from $+$real axis), from $\sigma_a = \dfrac{\sum p-\sum z}{n-m}$ (real parts only).
-- Departure/arrival angle: $\phi = \pi+\sum\angle(\text{to zeros})-\sum\angle(\text{to poles})$.
+- Departure angle from a pole: $\phi_d = \pi+\sum\angle(\text{to zeros})-\sum\angle(\text{to other poles})$. Arrival angle at a zero: $\phi_a = \pi-\sum\angle(\text{to other zeros})+\sum\angle(\text{to poles})$.
 - Break-in/away: $\dfrac{dK}{ds} = 0$ with $K = -A/B$, i.e. $A'B-AB' = 0$; keep roots on a real-axis segment.
 - Imaginary-axis crossing: Routh on $A+KB$, or substitute $s = i\omega$. Cubic $s^3+a_2s^2+a_1s+a_0$: marginal at $a_2a_1 = a_0$, with $\omega = \sqrt{a_1}$.
 - Negative gain ($K<0$ or plant gain $<0$, as for the SPO): $\angle G = k\,360^\circ$, even count to the right, asymptotes at $k\,360^\circ/(n-m)$; run $K$ from 0 to $-\infty$.

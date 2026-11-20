@@ -301,13 +301,13 @@ $$
 
 So weak shocks are nearly isentropic: halve the strength and the loss falls eightfold.
 
-> [!check] Numbers ($\gamma=1.4$, $c_v=717.5$ J/kg K)
+> [!check] Numbers ($\gamma=1.4$, $c_v=717.5$ J/(kg K))
 >
 > | $M_{n1}$ | exact $(s_2-s_1)/c_v$ | cubic estimate | $s_2-s_1$ |
 > |---:|---:|---:|---:|
-> | 1.05 | $5.9\times10^{-5}$ | $7.0\times10^{-5}$ | 0.04 J/kg K |
-> | 1.2 | 0.00289 | 0.00552 | 2.1 J/kg K |
-> | 2 | 0.1309 | (cubic invalid) | 94 J/kg K |
+> | 1.05 | $5.9\times10^{-5}$ | $7.0\times10^{-5}$ | 0.04 J/(kg K) |
+> | 1.2 | 0.00289 | 0.00552 | 2.1 J/(kg K) |
+> | 2 | 0.1309 | (cubic invalid) | 94 J/(kg K) |
 >
 > Cross-check with $p_{02}/p_{01}=e^{-\Delta s/R}$ at $M=2$: $e^{-93.9/287}=0.7209$, the table value ✓.
 
@@ -459,7 +459,7 @@ The pressure drops by 67.4%.
 > [!warning] Table precision
 > Four-figure $p/p_0$ entries near 0.009 carry only two significant figures. That is why the table route gives 67.3% and the exact result 67.4%. If the question allows it, use the formula for $p/p_0$.
 
-Using the nearest table row, $M_2=3.78$, gives a 67.3% drop; interpolation or the exact equation is more precise. A turn of only $13^\circ$ drops the pressure by about two thirds, so 1 bar becomes about 0.33 bar. The fan angle, $17.2^\circ$, is not the deflection angle. The IFT's $\nu$ column is blank below $M=1$ and starts at $\nu=0$ at $M=1$.
+Using the nearest table row, $M_2=3.78$, gives a 67.3% drop; interpolation or the exact equation is more precise. A turn of only $13^\circ$ drops the pressure by about two thirds, so 1 bar becomes about 0.33 bar. The fan angle, $17.1^\circ$, is not the deflection angle. The IFT's $\nu$ column is blank below $M=1$ and starts at $\nu=0$ at $M=1$.
 
 On a smooth concave wall the same construction makes the Mach waves converge instead, coalescing into a shock some distance from the wall. Close to the wall the compression is isentropic and follows the same $\nu$ relation with the sign of $\theta$ reversed. This is the Concorde intake idea from [[SESA3029 W02 - Oblique Shock Relations and Mach Waves#10.2 Example 2: a supersonic intake at M₁ = 3|W02 §10.2]].
 

@@ -19,7 +19,7 @@ The three control architectures differ in what information they use:
 |---|---:|---|
 | Open loop | No | executes a command or schedule |
 | Feedback | Yes | corrects measured error after it appears |
-| Feedforward | Not necessarily | anticipates a known command or measured disturbance |
+| Feedforward | No | anticipates a known command or measured disturbance |
 | Combined | Yes, plus preview/disturbance information | anticipates first, then corrects residual error |
 
 Negative feedback acts on the error $e=r-y_m$. It improves robustness, but it can destabilise a system if there is delay, noise or saturation, or the controller is poorly designed. Feedforward acts early, but only as well as the disturbance measurement and model allow.

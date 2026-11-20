@@ -17,7 +17,7 @@ sources: ["03 - Exams & Past Papers/ExampleSheet3(1).pdf"]
 >
 > Results: Q1 and Q2 reproduce the printed answers exactly. Q4 does too, to rounding. Q3 reproduces the printed answer when the diameter is the length scale, **Q6 does not**, and **Q5's answers are printed in swapped order**. Each case is explained below.
 >
-> The theory is written from the Lecture 5.1–5.10 slides, with W09a §§1–5 checked against the 2025–26 recording of Lecture 5.1: Q1 uses [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]], Q2–Q4 [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] (Q4 also [[SESA3029 W09d - Thermal Radiation|W09d]]), and Q5–Q6 [[SESA3029 W09f - Heat Exchangers|W09f]]. The course writes the capacity ratio as $c$ and the effectiveness as $\epsilon$ where Q5–Q6 below use $C_r$ and $\varepsilon$.
+> W09a (Lectures 5.1–5.2) is lectured; the rest of the theory is written from the Lecture 5.3–5.10 slides: Q1 uses [[SESA3029 W09a - Heat Conduction and Thermal Resistance|W09a]], Q2–Q4 [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]] (Q4 also [[SESA3029 W09d - Thermal Radiation|W09d]]), and Q5–Q6 [[SESA3029 W09f - Heat Exchangers|W09f]]. The course writes the capacity ratio as $c$ and the effectiveness as $\epsilon$ where Q5–Q6 below use $C_r$ and $\varepsilon$.
 
 ![[at_es3_heat_transfer.png|900]]
 
@@ -25,7 +25,7 @@ sources: ["03 - Exams & Past Papers/ExampleSheet3(1).pdf"]
 
 ## Q1. Composite wall pierced by steel bolts
 
-Layers: A (3 cm, $k=0.048$), B (10 cm, $k=0.69$) and C (3 cm, $k=0.048$), all in W/m K. The faces are at $150^\circ$C and $10^\circ$C. Steel bolts ($d=1$ cm, $k=40$) run through the whole 16 cm at 10 per m².
+Layers: A (3 cm, $k=0.048$), B (10 cm, $k=0.69$) and C (3 cm, $k=0.048$), all in W/(m K). The faces are at $150^\circ$C and $10^\circ$C. Steel bolts ($d=1$ cm, $k=40$) run through the whole 16 cm at 10 per m².
 
 **Model.** 1D conduction with two **parallel** paths per unit wall area: the layered insulation, area fraction $1-f$, and the bolts, area fraction $f$. Ignore lateral heat exchange between them.
 
@@ -101,7 +101,7 @@ The sheet gives 122 and 47.5 kW/m² ✓.
 
 ## Q3. Rocket instrument bay
 
-Aluminium skin: $k=160$ W/m K, $L=4$ m, $D_o=1$ m, thickness 5 mm. $V=150$ m/s; ambient $T_\infty=280$ K with $k_a=0.026$, $\nu=1.65\times10^{-5}$ and $Pr=0.71$. Inside, $h_i=5$ W/m² K and $\dot Q=400$ W. External correlation $Nu=0.027\,Re^{0.805}Pr^{1/3}$ (turbulent).
+Aluminium skin: $k=160$ W/(m K), $L=4$ m, $D_o=1$ m, thickness 5 mm. $V=150$ m/s; ambient $T_\infty=280$ K with $k_a=0.026$, $\nu=1.65\times10^{-5}$ and $Pr=0.71$. Inside, $h_i=5$ W/(m² K) and $\dot Q=400$ W. External correlation $Nu=0.027\,Re^{0.805}Pr^{1/3}$ (turbulent).
 
 **Step 1. External convection**, using the length $L$ as the length scale along the body:
 
@@ -134,7 +134,7 @@ T_{in}=T_\infty+\dot Q\,(R_o+R_{wall}+R_i)=280+400\times0.016498=\boxed{286.6\ \
 $$
 
 > [!warning] Printed answer 286.48 K
-> The answer depends on the length scale in the correlation. The same correlation, $Nu=0.027\,Re^{0.805}Pr^{1/3}$, is used in the Lecture 5.3 pipe-cooling example with the **diameter** as the length ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#Example 1 - pipe cooling|W09b, Example 1]]). With $D_o=1$ m here, $Re_D=9.09\times10^6$, $Nu=9625$ and $h_o=250.3$ W/m² K; taking one area $\pi D_oL$ for both films (thin wall), $R_o=3.18\times10^{-4}$ and $R_i=1.592\times10^{-2}$ K/W, so $T_{in}=280+400\times0.016236=286.49$ K, the printed 286.48 K to rounding. The key therefore uses the diameter. That $Re_D$ is far above the correlation's usual range of about $4\times10^4$ to $4\times10^5$, and the flow here is along the body, which is why Step 1 uses the length. Either way, **the inner free-convection film is 97% of the resistance**, so the answer is about 286.5 K whichever choice is made.
+> The answer depends on the length scale in the correlation. The same correlation, $Nu=0.027\,Re^{0.805}Pr^{1/3}$, is used in the Lecture 5.3 pipe-cooling example with the **diameter** as the length ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy#Example 1 - pipe cooling|W09b, Example 1]]). With $D_o=1$ m here, $Re_D=9.09\times10^6$, $Nu=9625$ and $h_o=250.3$ W/(m² K); taking one area $\pi D_oL$ for both films (thin wall), $R_o=3.18\times10^{-4}$ and $R_i=1.592\times10^{-2}$ K/W, so $T_{in}=280+400\times0.016236=286.49$ K, the printed 286.48 K to rounding. The key therefore uses the diameter. That $Re_D$ is far above the correlation's usual range of about $4\times10^4$ to $4\times10^5$, and the flow here is along the body, which is why Step 1 uses the length. Either way, **the inner free-convection film is 97% of the resistance**, so the answer is about 286.5 K whichever choice is made.
 >
 > A further aerothermodynamic caveat: at 150 m/s the stagnation temperature rise is $V^2/2c_p=11.2$ K. Strictly, the outside of the skin sees a recovery temperature of about 290 K, not 280 K, which would raise $T_{in}$ by about 10 K. The sheet ignores this.
 
@@ -142,7 +142,7 @@ $$
 
 Sphere: $d=0.1$ m, $V=9000$ m/s, altitude 70 km. Air: $T=217$ K, $Pr=0.71$, $\rho=10^{-4}$ kg/m³, $\mu=1.79\times10^{-5}$ N s/m². Surface emissivity $\varepsilon=0.6$. Stagnation correlation $Nu=0.763\,Re_d^{0.5}Pr^{0.4}$.
 
-**(a) Total (stagnation) temperature.** Adiabatic, with $c_p=\gamma R/(\gamma-1)=1004.5$ J/kg K (W01 §4):
+**(a) Total (stagnation) temperature.** Adiabatic, with $c_p=\gamma R/(\gamma-1)=1004.5$ J/(kg K) (W01 §4):
 
 $$
 T_0=T+\frac{V^2}{2c_p}=217+\frac{9000^2}{2\times1004.5}=\boxed{40\,536\ \text{K}}.
@@ -159,7 +159,7 @@ $$
 The conductivity comes from the Prandtl number:
 
 $$
-k=\frac{\mu c_p}{Pr}=0.02532\ \text{W/m K},
+k=\frac{\mu c_p}{Pr}=0.02532\ \text{W/(m K)},
 \qquad
 Re_d=\frac{\rho Vd}{\mu}=5028,
 $$
@@ -183,7 +183,7 @@ It has one positive real root, one negative real root ($-1966$ K) and a complex 
 | 0 | 2000.0 | $8.40\times10^4$ | 1100.7 |
 | 1 | 1923.7 | $4.63\times10^3$ | 980.8 |
 | 2 | 1919.0 | 16.8 | 973.7 |
-| 3 | **1918.97** | 0 | |
+| 3 | **1919.01** | 0 | |
 
 $$
 \boxed{T_s=1919\ \text{K}}\quad(\text{sheet: }1919\text{ K ✓}).
@@ -199,7 +199,7 @@ This equals $\varepsilon\sigma T_s^4$, as it must. See [[Blackbody Radiation]] f
 
 ## Q5. Parallel-flow heat exchanger
 
-Hot water: $\dot m=0.3$ kg/s, $c_p=4200$ J/kg K, in at $90^\circ$C, so $C_h=1260$ W/K. Cold water: $\dot m=0.4$ kg/s, $c_p=4180$, in at $10^\circ$C, so $C_c=1672$ W/K. $h_h=40$, $h_c=800$ W/m² K, $A=8.5$ m², wall resistance neglected.
+Hot water: $\dot m=0.3$ kg/s, $c_p=4200$ J/(kg K), in at $90^\circ$C, so $C_h=1260$ W/K. Cold water: $\dot m=0.4$ kg/s, $c_p=4180$, in at $10^\circ$C, so $C_c=1672$ W/K. $h_h=40$, $h_c=800$ W/(m² K), $A=8.5$ m², wall resistance neglected.
 
 **Overall coefficient** (two films in series):
 
@@ -241,7 +241,7 @@ LMTD check: $(80-50.98)/\ln(80/50.98)=64.40$ K, and $UA\times\text{LMTD}=20.85$ 
 
 ## Q6. Minimum condenser-pipe length
 
-$D=20$ mm, $\dot m=0.1$ kg/s, inside properties $k=0.686$ W/m K, $c_p=4239$ J/kg K, $\mu=2.37\times10^{-4}$ N s/m², $Pr=1.47$. Outside: air at $20^\circ$C with $h_c=12\,000$ W/m² K. The fluid enters at 140°C and must reach 60°C. Wall conduction is neglected.
+$D=20$ mm, $\dot m=0.1$ kg/s, inside properties $k=0.686$ W/(m K), $c_p=4239$ J/(kg K), $\mu=2.37\times10^{-4}$ N s/m², $Pr=1.47$. Outside: air at $20^\circ$C with $h_c=12\,000$ W/(m² K). The fluid enters at 140°C and must reach 60°C. Wall conduction is neglected.
 
 > [!warning] This is a conditional answer, not the condenser problem as stated
 > The sheet says *"the water vapour enters at 140°C and is assumed to condensate at 60°C"* and asks for the length *"to function as a condenser"*. Condensing releases latent heat, which the data do not give, while the listed $k$, $c_p$, $\mu$ and $Pr$ are **liquid-water** values. The question is therefore under-specified. Steps 1–3 solve one reading: sensible cooling of a single-phase fluid. The [[#Model B: including the latent heat|latent-heat model]] below solves the other, and it lands on the printed key.
@@ -292,18 +292,18 @@ $$
 
 | Coefficient used for $U'$ | $L$ (m) |
 |---|---|
-| $U=2460$ W/m² K (both resistances) | 38.1 |
-| $h_i=3094$ W/m² K only (outside resistance dropped) | **30.3** |
+| $U=2460$ W/(m² K) (both resistances) | 38.1 |
+| $h_i=3094$ W/(m² K) only (outside resistance dropped) | **30.3** |
 | $h_i$ with $Pr^{0.4}$ | 29.2 |
 
 (Python-checked. Adding the desuperheating from 140°C to Model B with $U$ gives 39.5 m.)
 
 > [!warning] Printed answer 30.2 m
-> The key's 30.2 m is **not** consistent with Model A, and calling it a decimal slip is not justified. It **is** consistent, to 0.4%, with Model B using the latent heat and $h_i$ alone at a 40 K difference. That is a plausible reconstruction of the key, not a confirmed one: it drops the 12 000 W/m² K outside coefficient that the question supplies, and a condensing film coefficient would differ from the single-phase Dittus–Boelter $h_i$ anyway. In an exam, **state the model** before solving: sensible cooling (3.0 m) or condensation with $h_{fg}$ (30–38 m depending on $U$). Ask in the tutorial which model is intended.
+> The key's 30.2 m is **not** consistent with Model A, and calling it a decimal slip is not justified. It **is** consistent, to 0.4%, with Model B using the latent heat and $h_i$ alone at a 40 K difference. That is a plausible reconstruction of the key, not a confirmed one: it drops the 12 000 W/(m² K) outside coefficient that the question supplies, and a condensing film coefficient would differ from the single-phase Dittus–Boelter $h_i$ anyway. In an exam, **state the model** before solving: sensible cooling (3.0 m) or condensation with $h_{fg}$ (30–38 m depending on $U$). Ask in the tutorial which model is intended.
 
 ## Links
 
 - Previous sheet: [[SESA3029 Example Sheet 2 - Solutions]]
-- Theory (from the slides; W09a §§1–5 checked against the 2025–26 recording of Lecture 5.1): [[SESA3029 W09a - Heat Conduction and Thermal Resistance]] · [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]] · [[SESA3029 W09c - Critical Thickness of Insulation and Fins]] · [[SESA3029 W09d - Thermal Radiation]] · [[SESA3029 W09e - Numerical Methods in Conduction]] · [[SESA3029 W09f - Heat Exchangers]]
+- Theory (W09a lectured; W09b–W09f from the slides): [[SESA3029 W09a - Heat Conduction and Thermal Resistance]] · [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]] · [[SESA3029 W09c - Critical Thickness of Insulation and Fins]] · [[SESA3029 W09d - Thermal Radiation]] · [[SESA3029 W09e - Numerical Methods in Conduction]] · [[SESA3029 W09f - Heat Exchangers]]
 - Related earlier notes: [[Blackbody Radiation]] · [[Reynolds Number]] · [[Spacecraft Thermal Balance Equation]] · [[Turbine Entry Temperature and Blade Cooling]]
 - Hub: [[SESA3029 Aerothermodynamics Hub]] (heat-transfer block, Weeks 9–12)

@@ -27,7 +27,7 @@ so $\mathrm ds/\mathrm dM_{n1}=0$ at $M_{n1}=1$.
 
 Two consequences follow. For $M_{n1}<1$ the jump would be negative, which the second law forbids, so expansion shocks cannot exist and a supersonic stream has to expand through an isentropic fan instead. And because the jump grows like $m^3$, weak shocks are very nearly isentropic: halving the strength cuts the loss by a factor of eight. That is why intakes compress through several weak shocks rather than one strong one. For an oblique shock of small deflection $\theta$, $m\simeq(\gamma+1)M_1^2\theta/(2\sqrt{M_1^2-1})$, so the loss is third order in $\theta$; that is why Ackeret theory, which assumes isentropic flow, still matches shocked flow over thin supersonic aerofoils.
 
-The entropy jump sets the stagnation-pressure loss through $p_{02}/p_{01}=e^{-\Delta s/R}$. At $M=2$, $\Delta s=93.9$ J/kg K and $p_{02}/p_{01}=0.721$, matching the normal-shock table.
+The entropy jump sets the stagnation-pressure loss through $p_{02}/p_{01}=e^{-\Delta s/R}$. At $M=2$, $\Delta s=93.9$ J/(kg K) and $p_{02}/p_{01}=0.721$, matching the normal-shock table.
 
 ![[at_entropy_jump.png|760]]
 

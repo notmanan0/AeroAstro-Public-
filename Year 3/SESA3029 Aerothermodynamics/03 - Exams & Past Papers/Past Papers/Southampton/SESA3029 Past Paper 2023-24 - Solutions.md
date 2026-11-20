@@ -246,25 +246,25 @@ $$
 Re_x=\frac{\rho Ux}{\mu}=\frac{0.8711\times30\times0.3}{1.79\times10^{-5}}=4.380\times10^5.
 $$
 
-This is below the transition value $5\times10^5$, so the boundary layer is laminar. The formula-sheet correlation for a laminar boundary layer with uniform wall heat flux gives the local Nusselt number,
+This is above the course's flat-plate transition value $3\times10^5$, so the boundary layer at $x=0.3$ m is turbulent. The formula-sheet correlation for a turbulent boundary layer with uniform wall heat flux gives the local Nusselt number,
 
 $$
-Nu_x=0.453\,Re_x^{1/2}\,\text{Pr}^{1/3}=0.453\times(4.380\times10^5)^{0.5}\times0.7^{1/3}=0.453\times661.80\times0.8879=266.2.
+Nu_x=0.0308\,Re_x^{4/5}\,\text{Pr}^{1/3}=0.0308\times(4.380\times10^5)^{0.8}\times0.7^{1/3}=0.0308\times32\,596\times0.8879=891.4.
 $$
 
 The local heat transfer coefficient is
 
 $$
-h_x=\frac{Nu_x\,k}{x}=\frac{266.2\times0.02570}{0.3}=22.80\ \text{W/(m}^2\text{ K)}.
+h_x=\frac{Nu_x\,k}{x}=\frac{891.4\times0.02570}{0.3}=76.36\ \text{W/(m}^2\text{ K)}.
 $$
 
 The air cools the plate, so heat flows from the wall into the stream and $T_w>T_\infty$,
 
 $$
-T_w=T_\infty+\frac{\dot q_w}{h_x}=800+\frac{60\,000}{22.80}=800+2631=\boxed{3431\ \text{K}}.
+T_w=T_\infty+\frac{\dot q_w}{h_x}=800+\frac{60\,000}{76.36}=800+786=\boxed{1586\ \text{K}}.
 $$
 
-The result is far hotter than any real plate could survive, which comes from the large flux and the room-temperature properties; see [[#Paper slips and ambiguities]].
+The answer depends strongly on the regime. $Re_x$ is only 46 % above the transition value, and the laminar correlation $Nu_x=0.453\,Re_x^{1/2}\text{Pr}^{1/3}=266.2$ would give $h_x=22.80$ W/(m² K) and $T_w=3431$ K. The property choice can flip the regime as well; see [[#Paper slips and ambiguities]].
 
 ### (ix) 1D radial cylindrical finite-difference equation [6 marks]
 
@@ -630,13 +630,13 @@ $$
 With the unrounded $N=190.4$ this becomes $\dot m_s/\varepsilon=2.3/0.14266=16.1$ kg/s.
 
 > [!check] Water-side energy balance
-> With 191 tubes the water flow is $191\times0.5377=102.7$ kg/s. Heating it by $12.13$ K takes $102.7\times4181\times12.13=5.21\times10^6$ W, enough to condense $5.21\times10^6/2.257\times10^6=2.31$ kg/s, just above the required 2.3 kg/s.
+> With 191 tubes the water flow is $191\times0.5377=102.7$ kg/s. Heating it by $12.13$ K takes $102.7\times4181\times12.13=5.21\times10^6$ W, enough to condense $5.21\times10^6/(2.257\times10^6)=2.31$ kg/s, just above the required 2.3 kg/s.
 
 ---
 
 ## Paper slips and ambiguities
 
-- Q1(viii): no air properties at 800 K are given, so the front-page $\mu=1.79\times10^{-5}$ N s/m² and $\text{Pr}=0.7$ (room-temperature values) are used with the ideal-gas density at 2 bar and 800 K, which gives $T_w=3431$ K. Sutherland's law gives $\mu(800\ \text{K})=3.62\times10^{-5}$ N s/m². With that viscosity, $k=\mu c_p/\text{Pr}=0.052$ W/(m K), $Re_x=2.16\times10^5$ (still laminar), $h_x=32.4$ W/(m² K), $\Delta T=1849$ K and $T_w=2649$ K. Either way the wall is impossibly hot, so the 60 kW/m² flux is not realistic for this flow. The wording "cooling air" means the air removes heat from a hotter wall, so $T_w>T_\infty$.
+- Q1(viii): no air properties at 800 K are given, so the front-page $\mu=1.79\times10^{-5}$ N s/m² and $\text{Pr}=0.7$ (room-temperature values) are used with the ideal-gas density at 2 bar and 800 K, which gives $Re_x=4.38\times10^5$, turbulent by the course's $3\times10^5$ criterion, and $T_w=1586$ K. Sutherland's law gives $\mu(800\ \text{K})=3.62\times10^{-5}$ N s/m². With that viscosity, $k=\mu c_p/\text{Pr}=0.052$ W/(m K) and $Re_x=2.17\times10^5$, which is laminar, so the laminar correlation applies: $h_x=32.4$ W/(m² K), $\Delta T=1850$ K and $T_w=2650$ K. The result is this sensitive because $Re_x$ sits close to transition, and the laminar wall temperatures are far hotter than a real plate could survive. The wording "cooling air" means the air removes heat from a hotter wall, so $T_w>T_\infty$.
 - Q3(i): $y_{AB}\sqrt{M_1^2-1}=0.289\sqrt3=0.5006$ m, so the point $(0.5,0.289)$ is 0.6 mm ahead of the first Mach wave if the numbers are taken literally. The intended value is $y_{AB}=0.5/\sqrt3$, which puts the point on the jump from $C_p=0$ to $C_p=+0.0435$.
 - Q4(ii): the paper prints the parallel-flow relation $\varepsilon=[1-\exp(-\text{NTU}(1+C_r))]/(1+C_r)$ for a one-shell, two-pass exchanger. With condensing steam $C_r=0$, and every exchanger type reduces to $\varepsilon=1-e^{-\text{NTU}}$, so the mismatch does not change the answer.
 - Corrections to the earlier draft of this note: in Q2(iii) the generator angle above which regular reflection is impossible at $M_1=2.0$ was given as $15.1^\circ$; the correct value is $12.9^\circ$ (where $\theta_{\max}(M_2)=\theta_g$ with $M_2=1.53$). In Q4(i) the intermediate values are $Re_D^{0.8}=5834.5$ and $\text{Pr}^{0.4}=2.1298$, not 5828.4 and 2.1322 ($Nu_D=285.8$ was right). In Q4(iii) the boxed $\dot m_{s,\max}$ now uses the 191 tubes actually fitted (16.2 kg/s; the earlier 16.1 kg/s used the unrounded 190.4).

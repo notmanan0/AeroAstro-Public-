@@ -95,7 +95,7 @@ Orbit control ($\rho = 5.18\times10^{-14}$ kg/m³ at 620 km):
 - $\delta a = -2\pi(5.18\times10^{-14})(1)(2.2)(6.997\times10^6)^2/150 = -0.234$ m/orbit;
 - $V$ = 7.548 km/s, so $\delta\tau = 3\pi\delta a/V = -2.92\times10^{-4}$ s/orbit;
 - $\delta\lambda$ = 0.00898°, $\Delta t_0$ = 2.15 s;
-- $k = \sqrt{2(2.15)/2.92\times10^{-4}}$ = 121.4 → 121;
+- $k = \sqrt{2(2.15)/(2.92\times10^{-4})}$ = 121.4 → 121;
 - cycle $2k$ = 242 orbits = 16.3 days; height lost $2k\lvert\delta a\rvert$ = 56.6 m;
 - boost by Hohmann between $r = a\mp28.3$ m: $\Delta V_1 = \Delta V_2 = 1.525\times10^{-5}$ km/s, so 0.031 m/s per cycle;
 - over 3 years: 67.2 cycles, $\Delta V_{tot}$ = 2.05 m/s;

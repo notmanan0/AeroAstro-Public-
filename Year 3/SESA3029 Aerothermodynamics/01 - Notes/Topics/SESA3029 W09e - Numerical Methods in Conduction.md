@@ -121,7 +121,7 @@ $$
 
 The thermal conductivity $k$ says how well a material conducts heat, and the heat capacity per unit volume $\rho c_p$ says how much energy it stores per kelvin. A material with high conductivity or low heat capacity has a large thermal diffusivity: it passes heat on rather than storing it, so its temperature responds quickly to a change in its environment. Thermal diffusivity is therefore the property that sets the speed of transient conduction, while $k$ alone sets the steady heat flow.
 
-| Material (about 300 K) | $k$ (W/m K) | $\rho$ (kg/m³) | $c_p$ (J/kg K) | $\alpha$ (m²/s) |
+| Material (about 300 K) | $k$ (W/(m K)) | $\rho$ (kg/m³) | $c_p$ (J/(kg K)) | $\alpha$ (m²/s) |
 |---|---:|---:|---:|---:|
 | Copper | 401 | 8933 | 385 | $1.17\times10^{-4}$ |
 | Aluminium | 237 | 2702 | 903 | $9.71\times10^{-5}$ |
@@ -310,7 +310,7 @@ The outer neighbour carries the larger weight because the outer cylindrical face
 
 ### Worked example: a surface node with convection
 
-*A steel wall, $k=15$ W/m K, on a square grid $\Delta x=\Delta y=0.01$ m, faces a fluid at $T_\infty=20$ °C with $h=100$ W/m² K. A surface node has $T_W=80$, $T_N=90$ and $T_S=70$ °C. Find the steady $T_P$ (suggested, not lecturer-set).*
+*A steel wall, $k=15$ W/(m K), on a square grid $\Delta x=\Delta y=0.01$ m, faces a fluid at $T_\infty=20$ °C with $h=100$ W/(m² K). A surface node has $T_W=80$, $T_N=90$ and $T_S=70$ °C. Find the steady $T_P$ (suggested, not lecturer-set).*
 
 $\mathrm{Bi}=100\times0.01/15=0.0667$, so
 
@@ -382,7 +382,7 @@ with $\Delta x$ the grid size and $p$ the **order of accuracy**. Doubling the nu
 ![[at_w09e_order_of_accuracy.png|900]]
 
 > [!check] Errors for $T=\sin x$ at $x=1$
-> Forward difference for $T'$: errors $-0.0429$, $-0.0213$, $-0.0106$ at $\Delta x=0.1$, $0.05$, $0.025$, halving each time; the leading term $-T''\Delta x/2=0.0421\,\Delta x/0.1$ predicts them. Central difference for $T''$: errors $7.01\times10^{-4}$, $1.753\times10^{-4}$, $4.383\times10^{-5}$, falling by 4.00 each time, matching $T''''\Delta x^2/12$ to three figures. The slopes in the figure are 1 and 2.
+> Forward difference for $T'$: errors $-0.0429$, $-0.0213$, $-0.0106$ at $\Delta x=0.1$, $0.05$, $0.025$, halving each time; the leading term $T''\Delta x/2=-0.0421\,\Delta x/0.1$ predicts them. Central difference for $T''$: errors $7.01\times10^{-4}$, $1.753\times10^{-4}$, $4.383\times10^{-5}$, falling by 4.00 each time, matching $T''''\Delta x^2/12$ to three figures. The slopes in the figure are 1 and 2.
 
 Grid-convergence studies use this behaviour backwards. On three grids with constant refinement ratio $r$ (spacings $r^2h$, $rh$, $h$; commonly $r=2$, halving the spacing each time), the leading error $Ch^p$ makes successive differences shrink by $r^p$, giving the observed order $p$ and the **Richardson extrapolation** estimate of the grid-independent value:
 

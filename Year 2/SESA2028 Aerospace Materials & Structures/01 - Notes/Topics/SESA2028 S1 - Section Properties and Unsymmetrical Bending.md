@@ -317,19 +317,19 @@ So the centroid is 70 mm below the top and 30 mm in from the web's outer face. I
 About $z$ (lever arm $y$):
 
 $$
-I_z=\frac{100\times20^3}{12}+2000\times60^2+\frac{20\times200^3}{12}+4000\times30^2=0.067+7.2+13.333+3.6=24.2\times10^6\text{ mm}^4 .
+I_z=\frac{100\times20^3}{12}+2000\times60^2+\frac{20\times200^3}{12}+4000\times30^2=(0.067+7.2+13.333+3.6)\times10^6=24.2\times10^6\text{ mm}^4 .
 $$
 
 About $y$ (lever arm $z$):
 
 $$
-I_y=\frac{20\times100^3}{12}+2000\times40^2+\frac{200\times20^3}{12}+4000\times20^2=1.667+3.2+0.133+1.6=6.6\times10^6\text{ mm}^4 .
+I_y=\frac{20\times100^3}{12}+2000\times40^2+\frac{200\times20^3}{12}+4000\times20^2=(1.667+3.2+0.133+1.6)\times10^6=6.6\times10^6\text{ mm}^4 .
 $$
 
 The product, with both parts' own $I_{yz}^{(i)}=0$:
 
 $$
-I_{yz}=2000(-60)(-40)+4000(30)(20)=4.8+2.4=7.2\times10^6\text{ mm}^4 .
+I_{yz}=2000(-60)(-40)+4000(30)(20)=(4.8+2.4)\times10^6=7.2\times10^6\text{ mm}^4 .
 $$
 
 Both parts lie in the $(-,-)$ and $(+,+)$ quadrants, so $I_{yz}$ is positive. The denominator of the stress formula is

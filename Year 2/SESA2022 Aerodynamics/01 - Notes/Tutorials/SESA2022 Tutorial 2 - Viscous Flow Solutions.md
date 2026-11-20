@@ -138,7 +138,7 @@ $$
 With the $0.036$ coefficient (as used in exam papers), $\theta_{TE}/c = 1.82\times10^{-3}$, giving $\boxed{C_F = 0.0073}$ ✔ (matches the given answer).
 
 > [!tip] Sanity check
-> Fully laminar gives $C_F = 2\times1.328/\sqrt{6\times10^5} = 0.0034$. Fully turbulent gives $2\times0.074/(6\times10^5)^{0.2} = 0.0105$. The transitional answer sits in between ✔.
+> Fully laminar gives $C_F = 2\times1.328/\sqrt{6\times10^5} = 0.0034$. Fully turbulent gives $2\times0.074/(6\times10^5)^{0.2} = 0.0103$. The transitional answer sits in between ✔.
 
 ## Q5: Drag from a wake survey
 

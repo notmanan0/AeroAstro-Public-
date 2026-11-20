@@ -17,7 +17,7 @@ One section per topic note, in note order; each heading links to its note. Notes
 > - $R_E=6378$ km; $\mu_E=398\,600\ \mathrm{km^3/s^2}=3.986\times10^{14}\ \mathrm{m^3/s^2}$; $g_0=9.81\ \mathrm{m/s^2}$; $J_2=1.0826\times10^{-3}$
 > - $r_{GEO}=42\,164$ km $=6.611R_E$; sidereal day $T_{sid}=86\,164$ s; solar day 86 400 s; year $T_{yr}=365.25$ d $=3.1558\times10^7$ s; $\omega_E=360^\circ/86\,164\ \mathrm s=0.004178^\circ$/s
 > - $\mu_{Sun}=1.327\times10^{11}\ \mathrm{km^3/s^2}$; 1 AU $=1.496\times10^8$ km
-> - $k=1.38\times10^{-23}$ J/K ($10\log k=-228.6$ dB); $c=3\times10^8$ m/s; $\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}$
+> - $k=1.38\times10^{-23}$ J/K ($10\log k=-228.6$ dBW/(Hz K)); $c=3\times10^8$ m/s; $\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}$
 > - $Q_S\approx1350\text{–}1400\ \mathrm{W/m^2}$ at 1 AU; $Q_E=240\ \mathrm{W/m^2}$; albedo $a=0.34$
 >
 > Recent papers give the energy equation, the rocket equation, the ellipse equation and sometimes the drag $\delta a$. Everything else must be known.

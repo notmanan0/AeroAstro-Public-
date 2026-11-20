@@ -13,7 +13,7 @@ sources: ["02 - Sources/Lectures/Week 06-07 - Jet Engines.pdf"]
 
 # Brayton Cycle
 
-The ideal cold-air-standard **Brayton** (Joule) cycle is isentropic compression, constant-pressure heating, isentropic expansion and constant-pressure cooling of a perfect gas ($c_p = 1005$ J/kg K, $\gamma = 1.4$), with efficiency
+The ideal cold-air-standard **Brayton** (Joule) cycle is isentropic compression, constant-pressure heating, isentropic expansion and constant-pressure cooling of a perfect gas ($c_p = 1005$ J/(kg K), $\gamma = 1.4$), with efficiency
 
 $$
 \eta_{th} = \frac{w_{net}}{q_{in}} = 1-\frac{1}{r_p^{(\gamma-1)/\gamma}} .

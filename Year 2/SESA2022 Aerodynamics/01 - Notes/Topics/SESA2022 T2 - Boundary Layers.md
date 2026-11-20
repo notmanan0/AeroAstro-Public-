@@ -631,8 +631,8 @@ See [[Boundary Layer Separation]] and [[D'Alembert's Paradox]].
 
 Wing chord $c = 0.2$ m, span $b = 1.2$ m, speeds 6–15 m/s, fully laminar, flat-plate model, two sides. $\rho = 1.225$ kg/m³, $\nu = 1.5\times10^{-5}$ m²/s.
 
-1. Range: $Re_c = Uc/\nu$ from $6(0.2)/1.5\times10^{-5} = 8\times10^4$ to $2\times10^5$, laminar ✔.
-2. At 12 m/s: $Re_c = 12(0.2)/1.5\times10^{-5} = 1.6\times10^5$.
+1. Range: $Re_c = Uc/\nu$ from $6(0.2)/(1.5\times10^{-5}) = 8\times10^4$ to $2\times10^5$, laminar ✔.
+2. At 12 m/s: $Re_c = 12(0.2)/(1.5\times10^{-5}) = 1.6\times10^5$.
 3. $C_F = 1.328/\sqrt{1.6\times10^5} = 1.328/400 = 0.00332$ per side.
 4. $D = 2\times\tfrac12\rho U^2(bc)\,C_F = 2(0.5)(1.225)(144)(0.24)(0.00332) = 0.141$ N.
 
@@ -657,13 +657,13 @@ Tutorial 2 Q4: symmetric thin foil at $\alpha = 0$, $Re_c = 6\times10^5$, transi
 6. Both sides: $C_F = 2\times2\theta_{TE}/c = 0.0074$. With the $0.036$ coefficient used in the tutorial, $0.0073$ (the given answer).
 
 > [!check] Bracketing check
-> Fully laminar both sides: $2(1.328)/\sqrt{6\times10^5} = 0.0034$. Fully turbulent: $2(0.074)/(6\times10^5)^{0.2} = 0.0105$. The transitional value $0.0074$ sits between them ✔. Python: $x_0 = 0.3369c$, $\theta_{TE} = 1.861\times10^{-3}c$, $C_F = 0.00745$.
+> Fully laminar both sides: $2(1.328)/\sqrt{6\times10^5} = 0.0034$. Fully turbulent: $2(0.074)/(6\times10^5)^{0.2} = 0.0103$. The transitional value $0.0074$ sits between them ✔. Python: $x_0 = 0.3369c$, $\theta_{TE} = 1.861\times10^{-3}c$, $C_F = 0.00745$.
 
 ### Riblet sizing (2023-24 Part A Q1v)
 
 Riblets 10 wall units high on a plate: $U_0 = 15$ m/s, $X = 3$ m, $\nu = 1.5\times10^{-5}$ m²/s, turbulent.
 
-1. $Re = 15(3)/1.5\times10^{-5} = 3\times10^6$.
+1. $Re = 15(3)/(1.5\times10^{-5}) = 3\times10^6$.
 2. $c_f = 0.059(3\times10^6)^{-0.2} = 0.002988$.
 3. $U_\tau = 15\sqrt{0.002988/2} = 0.580$ m/s.
 4. $h = 10\nu/U_\tau = 10(1.5\times10^{-5})/0.580 = 258.7\ \mu$m.

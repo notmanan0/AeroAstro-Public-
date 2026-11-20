@@ -82,7 +82,7 @@ Each assumption can be checked against Airbus A380 figures:
 | Loads act as point forces and point moments at the cg | Distributed aerodynamic loads are replaced by their resultants |
 
 > [!check] Re-computing the A380 figures from fuel flow and speed
-> - Fuel flow: $13\,000\ \text{L/h}\div3600 = 3.61$ L/s.
+> - Fuel flow: $13\,000\ \text{L/h}\times(1\ \text{h}/3600\ \text{s}) = 3.61$ L/s.
 > - Mass flow: $3.61\times0.8 = 2.89$ kg/s.
 > - In 10 s: $28.9$ kg, which is $28.9/575\,000 = 0.005\%$ of MTOW.
 > - Curvature: $910\ \text{km/h} = 252.8$ m/s, so $d = 2.53$ km in 10 s. The drop below the tangent plane is $\Delta y = d^2/(2R_E) = 0.50$ m, which is $\Delta y/d = 0.020\%$ (see the warning below).

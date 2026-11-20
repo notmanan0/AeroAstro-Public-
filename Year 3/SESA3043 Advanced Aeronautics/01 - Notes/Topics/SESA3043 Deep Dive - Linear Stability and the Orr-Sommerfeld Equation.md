@@ -443,7 +443,7 @@ $$
 Two features of the computed curve match the sketched thumb plot. The band of unstable $F$ narrows and moves to lower frequency as $Re_{\delta^*}$ rises, because both branches fall roughly as a power of $Re_{\delta^*}$. And the upper branch closes towards the lower one at high $Re$: the Blasius profile is stable to every wave in the limit $Re\to\infty$, so its instability is viscous in origin and needs a finite Reynolds number, which is also why an adverse pressure gradient changes the picture so much.
 
 > [!check] The tip of the thumb in metres (Python)
-> At $U_e=50$ m/s and $\nu=1.5\times10^{-5}$ m²/s, the unit Reynolds number is $U_e/\nu=3.333\times10^6$ m⁻¹, so $x_{crit}=9.10\times10^4/3.333\times10^6=27.3$ mm. There $\delta^*=519.06\nu/U_e=0.156$ mm, the critical wavelength is $20.7\delta^*=3.22$ mm and the critical frequency is $\omega=\tilde\omega U_e/\delta^*=3.87\times10^4$ rad/s, or $f=6.16$ kHz. The first unstable waves are short, high-pitched ripples a few centimetres from the leading edge, yet the layer stays laminar for most of a metre (§10).
+> At $U_e=50$ m/s and $\nu=1.5\times10^{-5}$ m²/s, the unit Reynolds number is $U_e/\nu=3.333\times10^6$ m⁻¹, so $x_{crit}=9.10\times10^4/(3.333\times10^6)=27.3$ mm. There $\delta^*=519.06\nu/U_e=0.156$ mm, the critical wavelength is $20.7\delta^*=3.22$ mm and the critical frequency is $\omega=\tilde\omega U_e/\delta^*=3.87\times10^4$ rad/s, or $f=6.16$ kHz. The first unstable waves are short, high-pitched ripples a few centimetres from the leading edge, yet the layer stays laminar for most of a metre (§10).
 
 ## 10. From growth rates to transition - the eⁿ envelope
 

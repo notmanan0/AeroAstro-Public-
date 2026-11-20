@@ -143,7 +143,7 @@ Stability: $|1+z+z^2/2|\le1$ gives the real-axis limit $z = -2$.
 *Air with $U_e = 10$ m/s and $\nu = 1.5\times10^{-5}$ m²/s, at $x = 0.5$ m: find $\delta_{99}$, $\delta^*$, $\theta$, $H$ and $C_f$.*
 
 ### Solution
-$Re_x = 10\times0.5/1.5\times10^{-5} = 3.33\times10^5$ (laminar), so $\sqrt{Re_x} = 577.4$.
+$Re_x = 10\times0.5/(1.5\times10^{-5}) = 3.33\times10^5$ (laminar), so $\sqrt{Re_x} = 577.4$.
 
 | Quantity | Formula | Value |
 |---|---|---|

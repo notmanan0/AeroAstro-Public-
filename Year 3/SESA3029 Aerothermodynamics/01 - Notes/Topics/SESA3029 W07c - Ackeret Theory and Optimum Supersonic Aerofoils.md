@@ -187,7 +187,7 @@ So a surface element facing forwards into the flow, on either side, has $C_p>0$,
 
 ![[at_ackeret_vs_exact.png|900]]
 
-At $M_\infty=2$ (left panel), for a compression the exact oblique-shock $C_p$ rises faster than $2\theta/\lambda$; for an expansion the exact Prandtl–Meyer $C_p$ falls more slowly. At $\theta=2^\circ$ the error is about 4.5 %; at $10^\circ$ it is 25 % on each surface. Both exact curves lie above the linear ones, so in the difference $C_{p,l}-C_{p,u}$ the two errors have opposite signs and largely cancel. That is why the plate's $C_l$ is only 1 % out.
+At $M_\infty=2$ (left panel), for a compression the exact oblique-shock $C_p$ rises faster than $2\theta/\lambda$; for an expansion the exact Prandtl–Meyer $C_p$ falls more slowly. At $\theta=2^\circ$ the error is about 4.5 %; at $10^\circ$ it is about 25 % on the compression side and 20 % on the expansion side, each measured against Ackeret's value. Both exact curves lie above the linear ones, so in the difference $C_{p,l}-C_{p,u}$ the two errors have opposite signs and largely cancel. That is why the plate's $C_l$ is only 1 % out.
 
 ## 4. The flat plate at incidence
 

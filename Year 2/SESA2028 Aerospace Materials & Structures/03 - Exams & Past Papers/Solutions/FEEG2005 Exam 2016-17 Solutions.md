@@ -74,15 +74,15 @@ Requirement: $E\ge375$ GPa and strength ≥ 3.6 (the table's strength column is 
 
 Data: 200 MPa 15,625 h; 300 MPa 1,372 h; 400 MPa 244 h; 500 MPa 64 h; 600 MPa 21.4 h.
 
-**Method:** Miner's rule for creep, $\sum t_i/t_{r,i}=1$. Interpolate on a **log-log** plot of $t_r$ against $\sigma$ (the data fit $t_r=1.006\times10^{18}\sigma^{-6.00}$ exactly).
+**Method:** Miner's rule for creep, $\sum t_i/t_{r,i}=1$. Interpolate on a **log-log** plot of $t_r$ against $\sigma$ (the data fit $t_r/\text{h}\approx10^{18}(\sigma/\text{MPa})^{-6}$ to within 0.3 %; a least-squares fit gives $1.006\times10^{18}\sigma^{-6.001}$).
 
 - 325 MPa (between 300 and 400): $t_r=848.6$ h, so $500/848.6=0.589$.
 - 250 MPa (between 200 and 300): $t_r=4096$ h, so $1100/4096=0.269$.
 - Used: $0.858$; remaining fraction: $0.142$.
-- 650 MPa (extrapolated beyond 600): $t_r=1.006\times10^{18}\times650^{-6}=13.2$ h.
+- 650 MPa (extrapolated beyond 600): $t_r=10^{18}\times650^{-6}=13.3$ h.
 
 $$
-t_{remaining}=0.142\times13.2=\boxed{1.9\ \text{h}}\quad(\text{SF 2: about 1 h}).
+t_{remaining}=0.142\times13.3=\boxed{1.9\ \text{h}}\quad(\text{SF 2: about 1 h}).
 $$
 
 **Comment:** this is an **extrapolation** beyond the data (650 > 600 MPa), and 650 MPa is probably close to yield at 600 °C, so the mechanism may change. In practice the blade should be retired, not run at 650 MPa.

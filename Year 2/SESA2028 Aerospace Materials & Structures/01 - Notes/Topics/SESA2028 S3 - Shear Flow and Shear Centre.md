@@ -253,7 +253,7 @@ $$
 I_z=2\times\frac{2\times100^3}{12}+2\times(100\times2)\times50^2=0.333\times10^6+1.0\times10^6=1.333\times10^6\text{ mm}^4,
 $$
 
-so $Q_y/I_z=8000/1.333\times10^6=0.006$ N/mm⁴. By symmetry the flow is zero at the middle of each flange, so take the cuts there. Along a half flange from its middle, the swept area $2s$ sits at $|y|=50$ mm, and at the corner ($s=50$ mm)
+so $Q_y/I_z=8000/(1.333\times10^6)=0.006$ N/mm⁴. By symmetry the flow is zero at the middle of each flange, so take the cuts there. Along a half flange from its middle, the swept area $2s$ sits at $|y|=50$ mm, and at the corner ($s=50$ mm)
 
 $$
 q_{corner}=0.006\times(2\times50)\times50=30\text{ N/mm}.

@@ -194,7 +194,7 @@ $$
 
 and with the chord-normal force, $-M'_{LE}/(N'c)=5.290/10.579=0.500$ exactly. The sheet's answer is 0.50.
 
-Shock-expansion theory on the same section ([[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|ES1 Q6]]) gives $L'=10.64$ kN/m, $D'=1.13$ kN/m, $M'_{LE}=-5.01$ kN m/m and $x_{CP}=0.47c$. Lift and drag agree within 1 %, the moment within 6 %. The exact centre of pressure lies further forward because the front faces' shock on 1l compresses more than the linear formula allows, while the rear faces' fan on 2u expands less: the exact pressure difference is 11.96 kPa on the front half and 9.39 kPa on the rear (panel (c) of the figure), against 10.58 kPa on both in Ackeret theory.
+Shock-expansion theory on the same section ([[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|ES1 Q6]]) gives $L'=10.64$ kN/m, $D'=1.13$ kN/m, $M'_{LE}=-5.02$ kN m/m and $x_{CP}=0.47c$. Lift and drag agree within 1 %, the moment within 6 %. The exact centre of pressure lies further forward because the front faces' shock on 1l compresses more than the linear formula allows, while the rear faces' fan on 2u expands less: the exact pressure difference is 11.96 kPa on the front half and 9.39 kPa on the rear (panel (c) of the figure), against 10.58 kPa on both in Ackeret theory.
 
 ## 5. The aerodynamic centre of a thin diamond is at half chord
 
@@ -400,7 +400,7 @@ Blackboard's *Example questions and solutions* folder also holds the three examp
 - [ ] **(T2, ll. 115–125)** Practise the four angles until they are automatic, since an early angle error loses most of the question. Same diamond at $\alpha=1^\circ$, $3^\circ$ and $-2^\circ$ (these angles are suggested): give $\theta$ and compression or expansion for faces 1u, 2u, 1l, 2l. Answers: $1^\circ$: $+1.862^\circ$, $-3.862^\circ$, $+3.862^\circ$, $-1.862^\circ$; $3^\circ$: $-0.138^\circ$ (1u expands), $-5.862^\circ$, $+5.862^\circ$, $+0.138^\circ$ (2l compresses); $-2^\circ$: $+4.862^\circ$, $-0.862^\circ$, $+0.862^\circ$, $-4.862^\circ$. → [[#1. The four face angles|§1]]
 - [ ] **(T2, ll. 137–219)** Derive $C_l=4\alpha/\lambda$ and $C_{m,LE}=-2\alpha/\lambda$ for a thin diamond, and show that $x_{AC}=c/2$. → [[#5. The aerodynamic centre of a thin diamond is at half chord|§5]]
 - [ ] **(T2, ll. 220–244; answered ll. 252–293)** Explain why Ackeret theory, derived for isentropic flow, still works on a section carrying shocks. Use the table: $M_{n1}=1.11$ gives $p_{02}/p_{01}=0.9986$. → [[#6. Why Ackeret theory works across the shocks|§6]]
-- [ ] **(T2, ll. 29–35)** ES1 Q6, the same diamond by shock-expansion theory, and compare. Answers 52.3, 38.4, 64.3, 47.8 kPa; $L'=10.6$ kN/m, $D'=1.13$ kN/m; $M'_{LE}=-5.01$ kN m/m; $x_{CP}=0.47c$. → [[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|ES1 Q6]], comparison in [[#4. Pitching moment and centre of pressure|§4]]
+- [ ] **(T2, ll. 29–35)** ES1 Q6, the same diamond by shock-expansion theory, and compare. Answers 52.3, 38.4, 64.3, 47.8 kPa; $L'=10.6$ kN/m, $D'=1.13$ kN/m; $M'_{LE}=-5.02$ kN m/m; $x_{CP}=0.47c$. → [[SESA3029 Example Sheet 1 - Solutions#Q6. Diamond aerofoil by shock-expansion theory|ES1 Q6]], comparison in [[#4. Pitching moment and centre of pressure|§4]]
 
 ### Further practice
 

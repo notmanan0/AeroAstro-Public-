@@ -315,7 +315,7 @@ Kármán–Pohlhausen march (extension, [[SESA3043 Deep Dive - Momentum Integral
 $$
 U_e\frac{\mathrm d}{\mathrm dx}\left(\frac{\theta^2}{\nu}\right)=F(K)=2\left[T-(2+H)K\right],\qquad K=\frac{\theta^2}{\nu}\frac{\mathrm dU_e}{\mathrm dx}=g^2\lambda,\qquad T=\frac{\tau_w\theta}{\mu U_e}=a_1g.
 $$
-Flat plate $F(0)=148/315$: $\theta/x=C_f=0.685/\sqrt{Re_x}$, $\delta/x=5.84/\sqrt{Re_x}$, $\delta^*/x=1.751/\sqrt{Re_x}$. Stagnation start $F=0$: $\lambda_0=7.05$, $K_0=0.0770$. Separation $\lambda=-12$ is $K=-0.157$ (Thwaites: $K=-0.09$). Howarth flow $U_e=U_0(1-x/L)$: $x_s/L=0.157$ (Pohlhausen), 0.123 (Thwaites), 0.120 (exact).
+Flat plate $F(0)=148/315$: $\theta/x=C_f=0.685/\sqrt{Re_x}$, $\delta/x=5.84/\sqrt{Re_x}$, $\delta^*/x=1.751/\sqrt{Re_x}$. Stagnation start $F=0$: $\lambda_0=7.05$, $K_0=0.0770$. Separation $\lambda=-12$ is $K=-0.157$ (Thwaites: $K=-0.09$). Howarth flow $U_e=U_0(1-x/L)$: $x_s/L=0.156$ (Pohlhausen), 0.123 (Thwaites), 0.120 (exact).
 
 Thwaites (extension; laminar only; outside the scope of 3.5): $\theta^2=\dfrac{0.45\nu}{U_e^6}\displaystyle\int_0^xU_e^5\,\mathrm dx$.
 

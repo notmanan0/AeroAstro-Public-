@@ -20,7 +20,7 @@ It rests on four assumptions: total energy constant (thrust balances drag, nothi
 
 The same energy balance fixes the mode shape. To first order $u=-gh/U_\infty$, so speed is in antiphase with height, and the flight-path angle $\gamma\approx\dot h/U_\infty$ has amplitude $\sqrt2\,|u|/U_\infty$ and leads $h$ by a quarter cycle. At constant $\alpha$ the pitch attitude moves with $\gamma$.
 
-The frequency is usually close: 0.0779 rad/s for the F-4C at 178 m/s against 0.0781 rad/s from the full model. The damping is lost by construction, because the change of drag with speed is what damps a real phugoid, so the approximation cannot say whether the mode is stable. It is the special case $\mathring M_u=0$, $\mathring Z_u=-2mg/U_\infty$ of the improved approximation, Eq. 6.38. For aircraft whose $\mathring Z_u$ and $\mathring M_u$ depart a long way from those values it can be well off: about 11 % high for the SESA2025 2013-14 aircraft.
+The frequency is usually close: 0.0779 rad/s for the F-4C at 178 m/s against 0.0781 rad/s from the full model. The damping is lost by construction, because the change of drag with speed is what damps a real phugoid, so the approximation cannot say whether the mode is stable. It is the special case $\mathring M_u=0$, $\mathring Z_u=-2mg/U_\infty$ of the improved approximation, Eq. 6.38. It can still be well off: about 11 % high for the SESA2025 2013-14 aircraft (0.231 against 0.208 rad/s). The cause there is the pitch-damping term $\mathring M_qq$, which both approximations drop. Eq. 6.38 is no better for that aircraft, at 0.277 rad/s, and keeping $\mathring M_q$ in the moment balance recovers 0.208 rad/s.
 
 ## Related
 

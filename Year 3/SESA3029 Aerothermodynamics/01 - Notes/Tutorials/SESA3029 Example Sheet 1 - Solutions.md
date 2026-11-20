@@ -13,7 +13,7 @@ sources: ["03 - Exams & Past Papers/ExamplesSheet1.pdf"]
 # SESA3029 Example Sheet 1 - Solutions
 
 > [!abstract] Sheet info
-> Eight questions covering Weeks 1–4: normal shocks, the low-Mach limit, shock reflection, shock-expansion theory, the Mach cone, a diamond aerofoil and a wind-tunnel nozzle. All answers use $\gamma=1.4$ and $R=287$ J/kg K, and every number has been verified in Python. Where the sheet quotes both exact and "nearest value" answers, both are reproduced. Discrepancies with the printed answers are flagged.
+> Eight questions covering Weeks 1–4: normal shocks, the low-Mach limit, shock reflection, shock-expansion theory, the Mach cone, a diamond aerofoil and a wind-tunnel nozzle. All answers use $\gamma=1.4$ and $R=287$ J/(kg K), and every number has been verified in Python. Where the sheet quotes both exact and "nearest value" answers, both are reproduced. Discrepancies with the printed answers are flagged.
 
 | Q | Topic | Theory |
 |---|---|---|

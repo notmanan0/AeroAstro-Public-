@@ -643,10 +643,10 @@ This is the boundary-layer equation at the wall, where $u=v=0$ and the pressure 
 - $\beta=0$: $f'''(0)=0$ and the Blasius shear profile is flat at the wall;
 - $\beta<0$ (adverse): $f'''(0)>0$, so the shear rises away from the wall, peaks inside the layer and then decays. The peak of $f''$ is where $f'''=0$, an inflection point of $u(y)$.
 
-Every adverse-gradient profile has an inflection point. Computed by shooting, it lies at $\eta_i=1.098$, $1.579$, $1.804$ and $2.343$ for $\beta=-0.1$, $-0.16$, $-0.18$ and $-0.19884$, where $u/U_e=0.402$, $0.475$, $0.491$ and $0.503$. These are the open circles in the figure of §9. An inflection point matters for stability: it makes the profile inviscidly unstable by Rayleigh's criterion, which is one reason an adverse gradient brings transition forward ([[SESA3043 3.4 - Transition to Turbulence#8. The effect of pressure gradients|3.4 §8]]).
+Every adverse-gradient profile has an inflection point. Computed by shooting, it lies at $\eta_i=1.098$, $1.579$, $1.804$ and $2.343$ for $\beta=-0.1$, $-0.16$, $-0.18$ and $-0.19884$, where $u/U_e=0.402$, $0.475$, $0.491$ and $0.503$. These are the open circles in the figure of §9. An inflection point matters for stability. Rayleigh's criterion makes it a necessary condition for inviscid instability, not a sufficient one, so the inflection point allows inviscid instability without proving it. Eigenvalue calculations confirm that the adverse-gradient profiles are unstable, which is one reason an adverse gradient brings transition forward ([[SESA3043 3.4 - Transition to Turbulence#8. The effect of pressure gradients|3.4 §8]]).
 
 > [!check] Wall curvature in numbers
-> For the 90° wedge of §10 at $x=0.1$ m ($U_e=20$ m/s, $\nu=1.5\times10^{-5}$ m²/s, $\xi=3.354\times10^{-4}$ m), $-\beta U_e/\xi^2=-0.5\times20/(3.354\times10^{-4})^2=-8.889\times10^7$ s⁻¹m⁻¹, and $-U_e(\mathrm dU_e/\mathrm dx)/\nu=-20\times66.67/1.5\times10^{-5}=-8.889\times10^7$ s⁻¹m⁻¹.
+> For the 90° wedge of §10 at $x=0.1$ m ($U_e=20$ m/s, $\nu=1.5\times10^{-5}$ m²/s, $\xi=3.354\times10^{-4}$ m), $-\beta U_e/\xi^2=-0.5\times20/(3.354\times10^{-4})^2=-8.889\times10^7$ s⁻¹m⁻¹, and $-U_e(\mathrm dU_e/\mathrm dx)/\nu=-20\times66.67/(1.5\times10^{-5})=-8.889\times10^7$ s⁻¹m⁻¹.
 
 The wall shear is the first derivative instead:
 
@@ -897,7 +897,7 @@ $$
 \delta_{99}=2.750\xi=0.922\ \text{mm},\qquad\delta^*=0.80455\xi=0.270\ \text{mm},\qquad\theta=0.35027\xi=0.1175\ \text{mm}.
 $$
 
-The local Reynolds number is $Re_x=20\times0.1/1.5\times10^{-5}=1.333\times10^5$, so
+The local Reynolds number is $Re_x=20\times0.1/(1.5\times10^{-5})=1.333\times10^5$, so
 
 $$
 C_f=\frac{2\nu f''(0)}{U_e\xi}=\frac{2\times1.5\times10^{-5}\times0.92768}{20\times3.354\times10^{-4}}=4.149\times10^{-3},
@@ -966,7 +966,7 @@ BL2 left the Falkner–Skan derivatives and the simplification for home study wi
 > [!warning] Slips in the slides and notes
 > Where: [[#2. The edge velocity of a wedge]] and [[#5. Substitution and the Falkner–Skan equation]].
 >
-> - `Ch3_Notes_Falkner-Skan.pdf` p. 3: the last two lines, including the boxed Eq. 8, print $f'''+f'f''+\beta(1-f'^2)=0$. The line above and slide 94 have $ff''$, which is correct; with $f'f''$ the equation would not reduce to Blasius.
+> - `Ch3_Notes_Falkner-Skan.pdf` p. 3: the last three lines, from $(m+1)f'''+(m+1)f'f''+2m(1-f'^2)=0$ down to the boxed Eq. 8, $f'''+f'f''+\beta(1-f'^2)=0$, print $f'f''$. The line above them, $2mf'^2-(m+1)ff''=(m+1)f'''+2m$, and slide 94 have $ff''$, which is correct; with $f'f''$ the equation would not reduce to Blasius.
 > - Slides 76–77 mark $\beta\pi$ at the expansion corner, where a single wall turns away by $-\beta\pi/2$; $\beta\pi$ is the included angle of a symmetric wedge.
 > - Slide 96 (White & Majdalani): five entries differ from the shooting values in the fifth decimal (§9). They are roundings, not errors.
 

@@ -19,7 +19,7 @@ sources: ["01 - Notes/Topics", "01 - Notes/SESA3029 Formula Sheet.md", "02 - Sou
 > [!abstract] How to use this set
 > - **Eight questions, 127 marks.** Each shows its marks per part and a target time.
 > - **Timing assumption: 1.8 min per mark.** That is a typical rate for a written engineering paper (for example, 100 marks in 3 hours). The set as a whole is about two papers' worth, so pick three or four questions for a timed sitting.
-> - **Gas and data.** Air, $\gamma=1.4$, $R=287$ J/kg K. The exam provides the formula sheet, the IFT, the NST and the OSC ([[SESA3029 Formula Sheet#What the exam formula sheet gives you|what is and is not given]]). Exam questions name the method: nearest table value, average, linear interpolation or exact equations. Here the solutions use the **exact relations**, and quote the **table-interpolated** value next to them wherever a table look-up is the normal route.
+> - **Gas and data.** Air, $\gamma=1.4$, $R=287$ J/(kg K). The exam provides the formula sheet, the IFT, the NST and the OSC ([[SESA3029 Formula Sheet#What the exam formula sheet gives you|what is and is not given]]). Exam questions name the method: nearest table value, average, linear interpolation or exact equations. Here the solutions use the **exact relations**, and quote the **table-interpolated** value next to them wherever a table look-up is the normal route.
 > - **Verification.** Every number was computed in Python (SciPy root finders for θ–β–M, $\nu^{-1}$ and $A/A^*$ inversions). The key values are in each `[!check]` callout. The table-interpolated values were generated from the exact relations rounded to 4 d.p. at the tables' 0.02 spacing, which reproduces `IFT.pdf` and `NST.pdf`.
 
 | Q | Topic | Marks | Time | Theory |

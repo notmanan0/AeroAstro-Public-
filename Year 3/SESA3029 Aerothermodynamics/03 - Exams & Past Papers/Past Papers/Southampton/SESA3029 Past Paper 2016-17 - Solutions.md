@@ -19,7 +19,7 @@ sources: ["03 - Exams & Past Papers/Past Papers/Southampton/SESA3029-201617-01-S
 | 1 | 30 | $M=3.0$ wind tunnel ($p_0=500\ \text{kPa}$, $T_0=420\ \text{K}$) with a shock generator of $13^\circ$ and $26^\circ$: regular and Mach reflection, viscous shock–boundary-layer interaction | [[SESA3029 W02 - Oblique Shock Relations and Mach Waves\|W02]], [[SESA3029 W03 - Shock Reflections, Expansion Waves and the Shock-Expansion Method\|W03]], [[SESA3029 W04 - Laval Nozzle, Under- and Over-Expanded Flow\|W04]] |
 | 2 | 30 | Derivation of Ackeret's $C_p=2\theta/\sqrt{M_\infty^2-1}$, flat-plate $\mathrm{d}C_L/\mathrm{d}\alpha$, plano-convex aerofoil $C_D$ at $M_\infty=3.0$ | [[SESA3029 W07c - Ackeret Theory and Optimum Supersonic Aerofoils\|W07c]] |
 | 3 | 30 | Two-wave minimum-length nozzle ($M_e=1.5$): flow regions, $\theta_{\max}=\nu(M_e)/2$, MoC states and coordinates at points 1–4 | [[SESA3029 W05a - Method of Characteristics\|W05a]], [[SESA3029 W05b - Minimum-Length Nozzle Design\|W05b]] |
-| 4 | 30 | (i)–(ii) $\text{Nu}=\text{St}\,\text{Re}\,\text{Pr}$ and heat flux from a tripped flat plate; heat transfer (Weeks 9–12, not yet lectured). (iii) 1D Euler characteristic speeds | not yet lectured (i–ii); [[SESA3029 W05a - Method of Characteristics\|W05a]] (iii) |
+| 4 | 30 | (i)–(ii) $\text{Nu}=\text{St}\,\text{Re}\,\text{Pr}$ and heat-transfer rate from a tripped flat plate; heat transfer (Weeks 9–12, not yet lectured). (iii) 1D Euler characteristic speeds | not yet lectured (i–ii); [[SESA3029 W05a - Method of Characteristics\|W05a]] (iii) |
 
 ---
 
@@ -627,7 +627,7 @@ $$
 
 which is below 300 000, so the boundary layer is laminar up to the trip wire.
 
-#### (b) Heat flux from the leading edge to the trip [7 marks]
+#### (b) Heat-transfer rate from the leading edge to the trip [7 marks]
 
 The formula sheet gives $\text{Nu}_x=0.332\,\text{Re}_x^{1/2}\text{Pr}^{1/3}$ for a laminar layer at uniform wall temperature. With $\text{Re}_x=(\rho U_\infty/\mu)x$ the local coefficient is
 
@@ -657,13 +657,13 @@ $$
 \bar h_{\text{lam}}=\frac{\overline{\text{Nu}}_{x_t}k}{x_t}=\frac{267.14(0.02569)}{0.05}=137.2\ \text{W/(m}^2\text{ K)},
 $$
 
-and the heat flux through the area $x_tw$ is
+and the heat-transfer rate through the area $x_tw$ is the flux $\bar h_{\text{lam}}\Delta T=137.2(30)=4116\ \text{W/m}^2$ multiplied by that area,
 
 $$
 q_{\text{lam}}=\bar h_{\text{lam}}\,x_tw\,\Delta T=137.2(0.05)(0.10)(30)=\boxed{20.6\ \text{W}} .
 $$
 
-#### (c) Total heat flux over the whole plate [8 marks]
+#### (c) Total heat-transfer rate over the whole plate [8 marks]
 
 Downstream of the trip the boundary layer is turbulent, and the formula sheet gives $\text{Nu}_x=0.029\,\text{Re}_x^{0.8}\text{Pr}^{0.6}$ with $x$ measured from the leading edge. Writing $\text{Re}_x=(\rho U_\infty/\mu)x$, the local coefficient is
 
@@ -671,13 +671,13 @@ $$
 h_x=\frac{k}{x}\,0.029\left(\frac{\rho U_\infty}{\mu}x\right)^{0.8}\text{Pr}^{0.6}=0.029\,k\left(\frac{\rho U_\infty}{\mu}\right)^{0.8}\text{Pr}^{0.6}\,x^{-0.2} .
 $$
 
-The constant factor is evaluated first. With $\rho U_\infty/\mu=73.5/1.79\times10^{-5}=4.1061\times10^6\ \text{m}^{-1}$, $(4.1061\times10^6)^{0.8}=1.9532\times10^5$ and $0.7^{0.6}=0.80734$,
+The constant factor is evaluated first. With $\rho U_\infty/\mu=73.5/(1.79\times10^{-5})=4.1061\times10^6\ \text{m}^{-1}$, $(4.1061\times10^6)^{0.8}=1.9532\times10^5$ and $0.7^{0.6}=0.80734$,
 
 $$
 K=0.029(0.02569)(1.9532\times10^5)(0.80734)=117.47\ \text{W/(m}^{1.8}\text{ K)} .
 $$
 
-The turbulent heat flux is the integral of $h_x\Delta T$ over the strip of width $w$ from $x_t$ to $L$,
+The turbulent heat-transfer rate is the integral of $h_x\Delta T$ over the strip of width $w$ from $x_t$ to $L$,
 
 $$
 q_{\text{turb}}=w\,\Delta T\,K\int_{x_t}^{L}x^{-0.2}\,\mathrm dx=w\,\Delta T\,K\,\frac{L^{0.8}-x_t^{0.8}}{0.8} .
@@ -749,6 +749,6 @@ $$
 
 ## Paper slips and ambiguities
 
-- The front page gives $R$ and $\gamma$ but not $c_p$, and $\text{Pr}=0.7$ appears only in Q4(ii). Using $c_p=\gamma R/(\gamma-1)=1004.5\ \text{J/(kg K)}$ instead of 1005 changes the heat fluxes by 0.05 %.
+- The front page gives $R$ and $\gamma$ but not $c_p$, and $\text{Pr}=0.7$ appears only in Q4(ii). Using $c_p=\gamma R/(\gamma-1)=1004.5\ \text{J/(kg K)}$ instead of 1005 changes the heat-transfer rates by 0.05 %.
 - Q4(ii)(c) says only that transition is abrupt at the trip. The answer above uses the formula-sheet correlation with $x$ from the leading edge (148.6 W). Starting a new turbulent layer at the trip, with $x$ measured from the wire, gives a thinner layer and higher $h$: $q_{\text{turb}}=145.3$ W and a total of 165.9 W.
 - Corrections to the earlier draft of this note: the IFT entries used in Q3(iii) are $\nu(1.16)=2.6073^\circ$ and $\nu(1.18)=3.0743^\circ$ (the draft had 2.553 and 3.081; the interpolated $M_{0a}=1.177$ was unaffected); the $C^+$ and $C^-$ invariants now follow the course convention $R^+=\nu-\theta$, $R^-=\nu+\theta$ in place of Anderson's $\theta\mp\nu$; the drag check in Q2(iii) was rewritten because it contained an unfinished formula; and the claims in Q2(iv) that the section is "close to minimum wave drag" in a "Sears–Haack family" were wrong, since its drag is twice that of a symmetric biconvex section of the same thickness.

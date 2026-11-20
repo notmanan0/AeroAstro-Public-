@@ -132,7 +132,7 @@ The discriminant is zero when $K_D^2 = 4rK_D$, i.e. $K_D = 4r$. There the roots 
    - Angles: $\theta_k = \dfrac{(2k+1)\pi}{n-m}$.
    - Centroid: $\sigma_a = \dfrac{\sum\text{poles}-\sum\text{zeros}}{n-m}$.
 5. Branch directions:
-   - Departure/arrival angle: $\phi = \pi+\sum\angle(\text{to zeros})-\sum\angle(\text{to poles})$.
+   - Departure angle from a pole: $\phi_d = \pi+\sum\angle(\text{to zeros})-\sum\angle(\text{to other poles})$. Arrival angle at a zero: $\phi_a = \pi-\sum\angle(\text{to other zeros})+\sum\angle(\text{to poles})$.
    - Break-in/away points satisfy $\dfrac{dK}{ds} = 0$, with $K(s) = -A(s)/B(s)$.
 6. Sketch the locus (then verify it numerically).
 
@@ -186,7 +186,7 @@ Far from the origin every arrow points in nearly the same direction $\theta$, so
 
 The centroid comes from expanding both polynomials, $A=s^n-(\Sigma p)s^{n-1}+\dots$ and $B=s^m-(\Sigma z)s^{m-1}+\dots$. Long division gives $A/B=s^{n-m}-(\Sigma p-\Sigma z)s^{n-m-1}+\dots$. Comparing with $(s-\sigma_a)^{n-m}=s^{n-m}-(n-m)\sigma_as^{n-m-1}+\dots$ shows that the far-field locus looks like $n-m$ straight lines from $\sigma_a=(\Sigma p-\Sigma z)/(n-m)$.
 
-For the departure angle, apply the angle condition at a test point a tiny distance from a complex pole $p_d$. All other arrows are as if drawn to $p_d$ itself, and the one unknown is the departure angle $\phi$: $\sum\angle(\text{to zeros})-\sum_{j\ne d}\angle(\text{to poles})-\phi=180°$, which rearranges to the step 5 formula.
+For the departure angle, apply the angle condition at a test point a tiny distance from a complex pole $p_d$. All other arrows are as if drawn to $p_d$ itself, and the one unknown is the departure angle $\phi$: $\sum\angle(\text{to zeros})-\sum_{j\ne d}\angle(\text{to poles})-\phi=180°$, which rearranges to the step 5 departure formula. For the arrival angle the test point sits next to a complex zero $z_a$ instead, and the unknown is that zero's own arrow: $\phi_a+\sum_{i\ne a}\angle(\text{to zeros})-\sum\angle(\text{to poles})=180°$, so the zero and pole sums enter with the opposite signs to the departure case.
 
 > [!warning] Negative gain: the complementary locus
 > If $K<0$ (or the plant's gain $k_0<0$, as for the SPO), $KG=-1$ needs $\angle G=0°+k\,360°$. Every rule above flips: real-axis segments have an even number to the right, asymptotes sit at $k\,360°/(n-m)$. This is why the SPO pitch-rate locus must be drawn for $K$ from 0 to $-\infty$.
@@ -317,6 +317,11 @@ Two tasks were set in L2.04 (marked lecturer-set). The effect of P on the $1/s^2
 > Where: [[#3. Six construction steps]].
 >
 > The slide's version of the break-point condition has a sign/order slip, corrected verbally. The correct condition is $A'(s)B(s)-A(s)B'(s)=0$, as written in the note.
+
+> [!warning] One formula given for both departure and arrival angles (L2.04, ll. 449–450)
+> Where: [[#3. Six construction steps]].
+>
+> A single expression, $\pi+\sum\angle(\text{to zeros})-\sum\angle(\text{to poles})$, is given for both angles. It is the departure angle from a pole. Applying the angle condition next to a zero gives the arrival angle with the two sums swapped in sign, $\pi-\sum\angle(\text{to other zeros})+\sum\angle(\text{to poles})$, as in step 5.
 
 ### Transcript slips
 

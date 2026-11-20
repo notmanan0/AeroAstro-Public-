@@ -579,7 +579,7 @@ a mean heat flux of $11.9/0.02=594\ \text{W/m}^2$.
 
 #### (c) Laminar check
 
-$\text{Re}_L=6.84\times10^4$ is well below the usual flat-plate transition value of about $5\times10^5$, so the boundary layer is laminar over the whole plate, as assumed.
+$\text{Re}_L=6.84\times10^4$ is well below the course's flat-plate transition value of $3\times10^5$, so the boundary layer is laminar over the whole plate, as assumed.
 
 ### (ii) Lunar re-entry shock layer and surface radiative equilibrium [6 marks]
 
@@ -642,4 +642,4 @@ Besides grid refinement, the solution should be checked as follows:
 
 - Q3 data. The given states are consistent with an evenly spaced four-line fan: $R^+_4=2.68^\circ$, $R^+_7=22.05^\circ$, $R^-_7=41.41^\circ$ and $R^-_4=60.78^\circ$ are $2\theta$ for fan angles $1.34^\circ$, $11.03^\circ$, $20.71^\circ$ and $30.39^\circ$, spaced $9.69^\circ$ apart. That makes $\nu(M_e)=60.78^\circ$ and $M_e=3.65$, slightly above the stated $3.6$ ($\nu(3.6)=60.09^\circ$). The answers use the given point data. An earlier draft called the equal Mach numbers at points 4 and 7 an exam convention; they follow from the even spacing.
 - Q3 sign convention. An earlier draft used Anderson's $K^+=\theta-\nu$ under the name $R^+$. The solution above uses the course's $R^+=\nu-\theta$; the values of $\theta_8$ and $\nu_8$ are unchanged.
-- Q4(i)(c). An earlier draft used $3\times10^5$ as the transition Reynolds number; the usual flat-plate value is about $5\times10^5$. Either way $\text{Re}_L=6.84\times10^4$ is laminar.
+- Q4(i)(c). The transition Reynolds number is the course's $3\times10^5$; many textbooks quote about $5\times10^5$. Either way $\text{Re}_L=6.84\times10^4$ is laminar.

@@ -557,7 +557,7 @@ $$
 
 #### Surface temperatures at the grid columns
 
-The grid columns are at $x=0,\ 0.125,\ 0.250,\ 0.375,\ 0.500$ m, with $\text{Pr}^{1/3}=0.89211$ and $\text{Pr}^{0.6}=0.81424$. At each column, $\text{Re}_x=u_\infty x/\nu=45x/4.940\times10^{-5}$.
+The grid columns are at $x=0,\ 0.125,\ 0.250,\ 0.375,\ 0.500$ m, with $\text{Pr}^{1/3}=0.89211$ and $\text{Pr}^{0.6}=0.81424$. At each column, $\text{Re}_x=u_\infty x/\nu=45x/(4.940\times10^{-5})$.
 
 At $x=0.125$ m (node 2, laminar),
 

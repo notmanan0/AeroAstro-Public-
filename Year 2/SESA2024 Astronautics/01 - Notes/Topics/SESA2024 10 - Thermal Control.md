@@ -80,7 +80,7 @@ Q_{BB}=\sigma T^4,\qquad\sigma=5.67\times10^{-8}\ \mathrm{W\,m^{-2}\,K^{-4}}.
 $$
 
 > [!check] The solar constant from the Sun's temperature
-> A black body at 5800 K emits $\sigma T^4=6.4\times10^7\ \mathrm{W/m^2}$ from the Sun's surface, radius $6.96\times10^5$ km. Spread over a sphere of radius 1 AU the flux falls by $(6.96\times10^5/1.496\times10^8)^2=2.16\times10^{-5}$, giving about 1390 W/m², consistent with the 1350–1400 W/m² used throughout. Run backwards, the Earth's infrared output of 240 W/m² corresponds to $T=(240/\sigma)^{1/4}=255$ K, a little below the 290 K from Wien's law because much of the outgoing infrared comes from the colder upper atmosphere rather than the surface.
+> A black body at 5800 K emits $\sigma T^4=6.4\times10^7\ \mathrm{W/m^2}$ from the Sun's surface, radius $6.96\times10^5$ km. Spread over a sphere of radius 1 AU the flux falls by $(6.96\times10^5/(1.496\times10^8))^2=2.16\times10^{-5}$, giving about 1390 W/m², consistent with the 1350–1400 W/m² used throughout. Run backwards, the Earth's infrared output of 240 W/m² corresponds to $T=(240/\sigma)^{1/4}=255$ K, a little below the 290 K from Wien's law because much of the outgoing infrared comes from the colder upper atmosphere rather than the surface.
 
 A real surface emits less. Its emittance is the ratio to a black body at the same temperature, always below 1:
 

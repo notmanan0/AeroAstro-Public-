@@ -222,7 +222,7 @@ $$
 p=\log_2\frac{\varepsilon(h)}{\varepsilon(h/2)}.
 $$
 
-For the central column between $N=256$ and $512$, $p=\log_2(7.10\times10^{-5}/1.80\times10^{-5})=\log_23.94=1.98$. A fourth-order scheme would fall sixteenfold per doubling.
+For the central column between $N=256$ and $512$, $p=\log_2(7.10\times10^{-5}/(1.80\times10^{-5}))=\log_23.94=1.98$. A fourth-order scheme would fall sixteenfold per doubling.
 
 ![[dam_fd_convergence.png|900]]
 

@@ -63,7 +63,7 @@ L=F_n\cos\alpha-F_t\sin\alpha,\qquad
 D=F_t\cos\alpha+F_n\sin\alpha.
 $$
 
-Exact, for a point $x$ aft of the LE **along the chord** ($C_n=F_n'/q_\infty c$, nose-up positive):
+Exact, for a point $x$ aft of the LE **along the chord** ($C_n=F_n'/(q_\infty c)$, nose-up positive):
 
 $$
 C_{m,x}=C_{m,LE}+\frac{x}{c}C_n,\qquad

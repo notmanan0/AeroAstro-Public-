@@ -524,7 +524,7 @@ $$
 Entropy generated:
 
 $$
-s_2-s_1 = 1005\ln\frac{689.3}{300}-287\ln15 = 836.9-777.2 = 58.8\ \mathrm{J\,kg^{-1}K^{-1}}
+s_2-s_1 = 1005\ln\frac{689.3}{300}-287\ln15 = 836.05-777.21 = 58.8\ \mathrm{J\,kg^{-1}K^{-1}}
 $$
 
 Positive, as it must be for an irreversible adiabatic process.

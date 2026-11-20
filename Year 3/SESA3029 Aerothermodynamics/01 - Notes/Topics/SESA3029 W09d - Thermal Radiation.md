@@ -37,7 +37,7 @@ The subject splits into two parts. The first concerns a single surface: how inci
 
 ## 1. Thermal radiation and the electromagnetic spectrum
 
-**Thermal radiation** is the electromagnetic radiation a body emits because of its temperature. It is emitted by all bodies above absolute zero, by solids, liquids and gases alike. On the electromagnetic spectrum, which runs from electrical power waves ($\lambda\sim10^{10}$ nm) through radio, microwave, infrared, visible, ultraviolet, X-rays and γ-rays to cosmic rays ($\lambda\sim10^{-9}$ nm), thermal radiation occupies the band from about 0.1 μm to 100 μm. That band covers part of the ultraviolet, all of the visible (0.40–0.76 μm) and most of the infrared. Shorter wavelength means higher photon energy, $E=h\nu=hc_0/\lambda$.
+**Thermal radiation** is the electromagnetic radiation a body emits because of its temperature. It is emitted by all bodies above absolute zero, by solids, liquids and gases alike. On the electromagnetic spectrum, which runs from electrical power waves ($\lambda\sim10^{10}$ μm) through radio, microwave, infrared, visible, ultraviolet, X-rays and γ-rays to cosmic rays ($\lambda\sim10^{-9}$ μm), thermal radiation occupies the band from about 0.1 μm to 100 μm. That band covers part of the ultraviolet, all of the visible (0.40–0.76 μm) and most of the infrared. Shorter wavelength means higher photon energy, $E=h\nu=hc_0/\lambda$.
 
 What a body emits depends on three things: its temperature, its material and the condition of its surface. Measured spectra of different bodies at the same temperature (600 K, say) differ in shape and size, but they all lie below one limiting curve. That limiting curve is always measured from the pin hole of an isothermal cavity, and the same curve comes from a surface coated in carbon black (soot). It is the blackbody spectrum of §4.
 
@@ -599,6 +599,11 @@ No transcript yet; the tasks below cite the slide where each example or question
 > Where: [[#4. The blackbody and Planck's law]].
 >
 > The units are printed as $[\mathrm{W\,m^{-2}\,\mu m}]$. Spectral emissive power is per unit wavelength, $\mathrm{W\,m^{-2}\,\mu m^{-1}}$, which is also what the $C_1$ and $C_2$ units give and what the 5.5 slide 10 axis (W/m²·μm, meaning per μm) shows.
+
+> [!warning] Spectrum axis labelled in nm (5.5 slide 3)
+> Where: [[#1. Thermal radiation and the electromagnetic spectrum]].
+>
+> The wavelength axis of the spectrum figure is labelled "λ (nm)", but its scale is in μm: the thermal band is bracketed between the $10^2$ and $10^{-1}$ ticks, and the same slide gives that band as 0.1 μm to 100 μm. The ends of the spectrum are therefore $10^{10}$ μm and $10^{-9}$ μm, as in §1.
 
 > [!warning] Visible range quoted two ways (5.5 slides 3 and 11)
 > Where: [[#1. Thermal radiation and the electromagnetic spectrum]].
