@@ -6,16 +6,16 @@ stream: "Block 5: Heat transfer"
 aliases: ["Nu", "Nusselt number", "dimensionless heat transfer coefficient", "local Nusselt number", "Nusselt correlation"]
 tags: [sesa3029, concept, heat-transfer, convection, dimensionless-numbers]
 status: complete
-parent_lectures: ["[[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]]"]
+parent_lectures: ["[[SESA3029 W09a - Heat Conduction and Thermal Resistance]]", "[[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy]]"]
 related_concepts: ["[[Newton's Law of Cooling]]", "[[Stanton Number]]", "[[Prandtl Number]]", "[[Reynolds Analogy]]", "[[Reynolds Number]]"]
-sources: ["02 - Sources/Lectures/Lecture5.3.pdf"]
+sources: ["02 - Sources/Lectures/Lecture5.2.pdf", "02 - Sources/Lectures/20 November 2026 at 16_48_17.txt", "02 - Sources/Lectures/Lecture5.3.pdf"]
 ---
 
 # Nusselt Number
 
 The Nusselt number is the dimensionless heat transfer coefficient, $\mathrm{Nu}=hL/k$, with $L$ a characteristic length and $k$ the conductivity of the fluid. It is the ratio of the heat transferred by convection to the heat that pure conduction would carry across a fluid layer of thickness $L$ under the same temperature difference.
 
-$\mathrm{Nu}=1$ would mean the flow adds nothing to conduction; large Nu means the motion multiplies the heat transfer many times, so $\mathrm{Nu}=10$ means convection carries ten times what conduction would. As rough guides, Nu is of order 1 (about 1–10) for laminar flow and most free convection, of order 10–100 for turbulent flow, and above 1000 only with a phase change such as boiling; these hold for $L$ comparable with the fluid layer, and a correlation with $L$ measured along the flow gives larger values ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#11. The Nusselt number|W09a §11]]). $L$ is the same length the Reynolds number uses: a pipe's diameter, or the distance from a leading edge. With $L=x$, the distance from a leading edge, it becomes the local value $\mathrm{Nu}_x=hx/k$. It is related to the other groups by
+$\mathrm{Nu}=1$ would mean the flow adds nothing to conduction; large Nu means the motion multiplies the heat transfer many times, so $\mathrm{Nu}=10$ means convection carries ten times what conduction would. As rough guides, Nu is of order 1 (about 1–10) for laminar flow and most free convection, of order 10–100 for turbulent flow, and above 1000 often with a phase change such as boiling, though very high-Re or high-Pr turbulent flow also gets there (Dittus–Boelter gives $\mathrm{Nu}_D\approx1200$ for water at $\mathrm{Re}_D=3\times10^5$, $\mathrm{Pr}=7$ being heated, $n=0.4$); these hold for $L$ comparable with the fluid layer, and a correlation with $L$ measured along the flow gives larger values ([[SESA3029 W09a - Heat Conduction and Thermal Resistance#11. The Nusselt number|W09a §11]]). $L$ is the same length the Reynolds number uses: a pipe's diameter, or the distance from a leading edge. With $L=x$, the distance from a leading edge, it becomes the local value $\mathrm{Nu}_x=hx/k$. It is related to the other groups by
 
 $$
 \mathrm{Nu}=\mathrm{St}\times\mathrm{Re}\times\mathrm{Pr}.

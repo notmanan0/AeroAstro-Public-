@@ -458,7 +458,7 @@ The tank holds $\tfrac43\pi(1.50)^3\times1141=16.1$ t of LOX, so it loses 5.9 % 
 
 Convection is heat transfer through bulk fluid motion: a bulk of fluid flowing over a surface, which may be a solid or a liquid surface. When the fluid moves, heat is transferred by convection; in the absence of bulk fluid motion it is transferred by conduction alone. Like conduction, convection requires a material medium.
 
-The gas-turbine blade is the standard aerospace case. Combustion in an aero engine produces gas at around 1800–2000 °C, and that temperature is what the fuel pays for, but no turbine blade survives it: blade alloys melt at around 1250 °C, and well before that an overheated blade creeps, growing in length under the centrifugal load, which a turbine with tight tip clearances cannot tolerate. Cold air taken from the engine casing is mixed into the combustion products just downstream of the combustor, so the gas reaching the turbine is cooler, around 1500 °C, though still above the melting point. The blades are then cooled. Air from the casing is fed through the blade and out of rows of small cooling holes as microjets, which cover the surface in a blanket of cool air (film cooling), so the hot gas, particularly at the first turbine row, never touches the metal; a ceramic coating on the blade helps but is not enough on its own. Turbine entry temperature is a key selling point of an engine, because a higher one gives more performance and a small gain in blade life saves an airline a great deal over the engine's life.
+The gas-turbine blade is the standard aerospace case. Combustion in an aero engine produces gas at around 1800–2000 °C, and that temperature is what the fuel pays for, but no turbine blade survives it: blade alloys melt at around 1250 °C, and well before that an overheated blade creeps, growing in length under the centrifugal load, which a turbine with tight tip clearances cannot tolerate. Cooler air from the compressor, routed through the engine casing, is mixed into the combustion products just downstream of the combustor, so the gas reaching the turbine is cooler, around 1500 °C, though still above the melting point. The blades are then cooled. The same compressor air is fed through the blade and out of rows of small cooling holes as microjets, which cover the surface in a blanket of cool air (film cooling), so the hot gas, particularly at the first turbine row, is kept largely off the metal; a ceramic coating on the blade helps but is not enough on its own. Turbine entry temperature is a key selling point of an engine, because a higher one gives more performance and a small gain in blade life saves an airline a great deal over the engine's life.
 
 There are two types of convective heat transfer:
 
@@ -475,7 +475,7 @@ $$
 \dot Q=hA_s\left(T_s-T_\infty\right),
 $$
 
-where $h$ is the heat transfer coefficient in W/(m² K), $A_s$ the heat transfer surface area in m², $T_s$ the temperature of the surface and $T_\infty$ the temperature of the fluid far from the surface. The area is the surface **over** which heat is convected, not the one through which it is conducted: the fluid flowing over the plate takes heat from the face it touches. In both modes the heat flows normal to the surface. For the sign: with $T_s>T_\infty$, $\dot Q$ is the heat leaving the surface.
+where $h$ is the heat transfer coefficient in W/(m² K), $A_s$ the heat transfer surface area in m², $T_s$ the temperature of the surface and $T_\infty$ the temperature of the fluid far from the surface. The area is the surface **over** which heat is convected, not the one through which it is conducted: the fluid flowing over the plate takes heat from the face it touches. In the one-dimensional problems here the heat flows normal to the surface in both modes. For the sign: with $T_s>T_\infty$, $\dot Q$ is the heat leaving the surface.
 
 The law is purely algebraic, simpler in form than Fourier's law, and all the difficulty of convection is hidden in $h$. The thermal conductivity $k$ is a material property: given the material and its temperature, it can be read from a table and nothing else changes it. The heat transfer coefficient $h$ depends on the fluid, as $k$ does, but also on the fluid dynamics of the whole system: laminar or turbulent flow, a jet or a wake, an internal or an external flow, and hundreds of other configurations change it substantially. So no table of $h$ exists. Finding it exactly needs CFD or accurate measurement; engineering estimates come from correlations, the subject of [[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]].
 
@@ -598,9 +598,9 @@ As a guide to magnitudes:
 |---|---|
 | laminar flow, and most free convection (laminar or slightly turbulent) | order 1, roughly 1–10 |
 | turbulent flow | order 10–100 |
-| flows with phase change, such as boiling on a hot surface | above 1000 |
+| flows with phase change, such as boiling on a hot surface (the usual way to exceed 1000) | above 1000 |
 
-These are order-of-magnitude guides for a Nusselt number based on a thickness comparable with the fluid layer across which the heat crosses. A correlation that uses a length along the flow gives far larger values for the same physics: a laminar flat plate in air ($\mathrm{Pr}=0.7$) at $\mathrm{Re}_x=3\times10^5$ already has $\mathrm{Nu}_x=0.332\,\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}=161$ (W09b). So the table compares regimes; it is not a check on a correlation's answer.
+These are order-of-magnitude guides for a Nusselt number based on a thickness comparable with the fluid layer across which the heat crosses. A correlation that uses a length along the flow gives far larger values for the same physics: a laminar flat plate in air ($\mathrm{Pr}=0.7$) at $\mathrm{Re}_x=3\times10^5$ already has $\mathrm{Nu}_x=0.332\,\mathrm{Re}_x^{1/2}\mathrm{Pr}^{1/3}=161$ ([[SESA3029 W09b - Convective Heat Transfer and the Reynolds Analogy|W09b]]), and high-Re turbulent pipe flow passes 1000 without any phase change. So the table compares regimes; it is not a check on a correlation's answer.
 
 Which mode dominates depends on whether the fluid can move. In water boiling in a pot, warm air circulated round a room by a radiator, and a processor cooled by a fan, the fluid moves and convection dominates. In a double- or triple-glazed window the 6–10 mm gap is kept narrow so that the air barely circulates; it then behaves as a still layer, Nu stays close to 1, and the gap acts as a conduction resistance with the low $k$ of air.
 
@@ -684,25 +684,29 @@ Tasks citing L5-1 come from `Lecture 5-1 (2025-26 version).txt` (last year's rec
 
 ## Transcript and slide slips
 
-> [!warning] L5.1 slides 17–20: two values of the heat flux, and a wrong $T_2$
-> Where: [[#Worked example - the insulated plane block]].
->
-> Slide 17 gives $\dot q=140/1.3949=100.39$ W/m², and slide 20 repeats 100.39; the quotient is 100.36 W/m², the value slides 18–19 use. Slide 18 then writes $T_2=150-62.73=82.27$ °C; the subtraction gives 87.27 °C, which is the value slide 19 uses to get $T_3=72.73$ °C. Both slips are read aloud in `Lecture 5-1 (2025-26 version).txt` (see table below). On slide 20, $k_B$ is printed as "0.69 W m⁻¹ K" in the block-alone line; it is W m⁻¹ K⁻¹.
+### Slide slips: L5.1 slides 17–20, the heat flux and T2
 
-> [!warning] L5.2 slide 3: "thin cylinder"
-> Where: [[#6. Radial conduction in a long hollow cylinder]].
->
-> The slide gives "thin cylinder → heat flows mainly in the radial direction". What makes the heat flow radial is a **long** cylinder (end effects negligible) with surface temperatures uniform round and along it, as in the slide's own first line, "long hollow cylinder". A thin wall is not needed: the logarithmic result holds for any $r_o/r_i$, and it is for a thin wall that the result reduces to the plane wall.
+Where: [[#Worked example - the insulated plane block]].
 
-> [!warning] L5.2 slide 10: "Bypass air" for the turbine cooling air
-> Where: [[#9. Convection heat transfer]].
->
-> The slide says bypass air is passed through the cooling holes. The cooling and dilution air is taken from the engine casing, i.e. bled from the compressor through the core, not from the fan's bypass duct; asked how the combustion products are cooled, the class answer "bypass" was accepted in substance with the remark that this air is not called bypass (L5-2, ll. 205–209).
+Slide 17 gives $\dot q=140/1.3949=100.39$ W/m², and slide 20 repeats 100.39; the quotient is 100.36 W/m², the value slides 18–19 use. Slide 18 then writes $T_2=150-62.73=82.27$ °C; the subtraction gives 87.27 °C, which is the value slide 19 uses to get $T_3=72.73$ °C. Both slips are read aloud in `Lecture 5-1 (2025-26 version).txt` (see table below). On slide 20, $k_B$ is printed as "0.69 W m⁻¹ K" in the block-alone line; it is W m⁻¹ K⁻¹.
 
-> [!warning] L5.2 slide 16: one area for two convection resistances, and $L_A$, $L_B$
-> Where: [[#Composite tubes]].
->
-> The slide writes the convection resistances as $1/h_1A$ and $1/h_2A$ and the conduction terms as $\ln(r_2/r_1)/2\pi k_AL_A$ and $\ln(r_3/r_2)/2\pi k_BL_B$. The two convection areas differ: $2\pi r_1L$ inside and $2\pi r_3L$ outside (using one area for both gives 11.4 instead of 14.3 W/m in the pipe example). Both conduction terms use the same tube length $L$; $L_A$ and $L_B$ in the plane-wall slide before it are layer thicknesses, which have no place in the cylindrical formula.
+### Slide slips: L5.2 slide 3, thin cylinder
+
+Where: [[#6. Radial conduction in a long hollow cylinder]].
+
+The slide gives "thin cylinder → heat flows mainly in the radial direction". What makes the heat flow radial is a **long** cylinder (end effects negligible) with surface temperatures uniform round and along it, as in the slide's own first line, "long hollow cylinder". A thin wall is not needed: the logarithmic result holds for any $r_o/r_i$, and it is for a thin wall that the result reduces to the plane wall.
+
+### Slide slips: L5.2 slide 10, bypass air
+
+Where: [[#9. Convection heat transfer]].
+
+The slide says bypass air is passed through the cooling holes. The cooling and dilution air is taken from the engine casing, i.e. bled from the compressor through the core, not from the fan's bypass duct; asked how the combustion products are cooled, the class answer "bypass" was accepted in substance with the remark that this air is not called bypass (L5-2, ll. 205–209).
+
+### Slide slips: L5.2 slide 16, convection areas on the tube
+
+Where: [[#Composite tubes]].
+
+The slide writes the convection resistances as $1/h_1A$ and $1/h_2A$ and the conduction terms as $\ln(r_2/r_1)/2\pi k_AL_A$ and $\ln(r_3/r_2)/2\pi k_BL_B$. The two convection areas differ: $2\pi r_1L$ inside and $2\pi r_3L$ outside (using one area for both gives 11.4 instead of 14.3 W/m in the pipe example). Both conduction terms use the same tube length $L$; $L_A$ and $L_B$ in the plane-wall slide before it are layer thicknesses, which have no place in the cylindrical formula.
 
 ### Transcript slips (L5-1, 2025–26 recording)
 
@@ -721,16 +725,17 @@ These slips are from last year's recording, not this year's lecture; this year's
 
 ### Transcript slips (L5-2, 20 Nov)
 
-Where: [[#6. Radial conduction in a long hollow cylinder]], [[#8. Conduction in a spherical shell]], [[#9. Convection heat transfer]] and [[#11. The Nusselt number]].
+Where: [[#6. Radial conduction in a long hollow cylinder]], [[#7. Multiple cylindrical layers]], [[#8. Conduction in a spherical shell]], [[#Convection as a thermal resistance]] and [[#11. The Nusselt number]].
 
-The first four rows are slips of substance in the spherical-shell derivation and the units of $k$; the slides have the right forms. Whisper also writes *"G0"* for $T_o$ (l. 74), *"the coverage of a wire"* for its covering (l. 34) and *"Lenz scale"* for length scale (ll. 478–484); these are not listed.
+The first six rows are slips of substance: a dropped minus sign, Ohm's law inverted, the spherical shell without its factor 4, and the units of $k$; the slides have the right forms. Whisper also writes *"G0"* for $T_o$ (l. 74), *"the coverage of a wire"* for its covering (l. 34) and *"Lenz scale"* for length scale (ll. 478–484); these are not listed.
 
 | Line | Said | Correct |
 |---|---|---|
+| l. 83 | after multiplying by $\mathrm dr/r$, *"on the right hand side i will have 2 pi k l times dt"* | $-2\pi kL\,\mathrm dT$: the minus sign of Fourier's law stays, and it is what makes $\dot Q_r>0$ for $T_i>T_o$ |
+| l. 411 | Newton's law written *"in the form of V being I over R"* | $I=V/R$, i.e. $\dot Q=\Delta T/R$ with $R=1/hA$ |
 | ll. 152–154 | *"What happens if the shape is a cylindrical shape?"* | a spherical shape: the cylinder was done just before, and the next lines treat the sphere |
-| l. 158 | *"the surface area at any arbitrary radii R will be 2 pi times R squared"* | $4\pi r^2$, the area of a sphere; the Fourier's law on the next line uses $4\pi kr^2$ |
-| l. 172 | *"the thermal resistance for this configuration will be 1 over pi k"* | $\dfrac{1}{4\pi k}\left(\dfrac1{r_i}-\dfrac1{r_o}\right)$ (slide 7) |
+| l. 158 | *"the surface area at any arbitrary radii R will be 2 pi times R squared"* | $4\pi r^2$, the area of a sphere; the Fourier's law at l. 164 uses $4\pi kr^2$ |
+| ll. 172–173 | *"the thermal resistance for this configuration will be 1 over pi k"* times the difference of the inverse radii | the factor 4 is missing: $\dfrac{1}{4\pi k}\left(\dfrac1{r_i}-\dfrac1{r_o}\right)$ (slide 7) |
 | ll. 487–488 | *"thermal conductivity, it was watts meter times Kelvin"* | W/(m K), watts per metre per kelvin (slide 17) |
 | l. 130 | *"the fuel rods for solid rocket motors"* | the propellant of a solid rocket motor, with insulation and casing round it (slide 6) |
 | ll. 473–475 | Nusselt described as *"a German aerodynamicist"* of the *"19th century, early 20th century"* | Wilhelm Nusselt (1882–1957), a German engineer known for his work in heat transfer (slide 17) |
-| ll. 434–435 | inside convection *"1 over H2 times A"*, outside *"1 over H1A"* | consistent with slide 15 only if the outside is the hot side ($T_1$, $h_1$); the slide labels the fluids hot and cold, not inside and outside |
